@@ -2,3 +2,6 @@
 xcuserdata
 *.xccheckout
 Products/
+Pods/
+Podfile.lock
+
