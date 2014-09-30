@@ -1,833 +1,3136 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		3B8BA7C119D9FBEB00996B9F /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
-		3B8BA7C219D9FBEB00996B9F /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
-		3B8BA7C319D9FBEB00996B9F /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73219D9FBEB00996B9F /* MBDevice.m */; };
-		3B8BA7C419D9FBEB00996B9F /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */; };
-		3B8BA7C519D9FBEB00996B9F /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */; };
-		3B8BA7C619D9FBEB00996B9F /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */; };
-		3B8BA7C719D9FBEB00996B9F /* MBExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73D19D9FBEB00996B9F /* MBExpression.m */; };
-		3B8BA7C819D9FBEB00996B9F /* MBExpressionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73F19D9FBEB00996B9F /* MBExpressionCache.m */; };
-		3B8BA7C919D9FBEB00996B9F /* MBExpressionError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74119D9FBEB00996B9F /* MBExpressionError.m */; };
-		3B8BA7CA19D9FBEB00996B9F /* MBExpressionExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74319D9FBEB00996B9F /* MBExpressionExtensions.m */; };
-		3B8BA7CB19D9FBEB00996B9F /* MBExpressionGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74619D9FBEB00996B9F /* MBExpressionGrammar.m */; };
-		3B8BA7CC19D9FBEB00996B9F /* MBExpressionTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74819D9FBEB00996B9F /* MBExpressionTokenizer.m */; };
-		3B8BA7CD19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74B19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m */; };
-		3B8BA7CE19D9FBEB00996B9F /* MBMLFunctionCallToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74D19D9FBEB00996B9F /* MBMLFunctionCallToken.m */; };
-		3B8BA7CF19D9FBEB00996B9F /* MBMLGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74F19D9FBEB00996B9F /* MBMLGroupingToken.m */; };
-		3B8BA7D019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75119D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m */; };
-		3B8BA7D119D9FBEB00996B9F /* MBMLKeywordMatchingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75319D9FBEB00996B9F /* MBMLKeywordMatchingToken.m */; };
-		3B8BA7D219D9FBEB00996B9F /* MBMLLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75519D9FBEB00996B9F /* MBMLLiteralToken.m */; };
-		3B8BA7D319D9FBEB00996B9F /* MBMLMathExpressionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75719D9FBEB00996B9F /* MBMLMathExpressionToken.m */; };
-		3B8BA7D419D9FBEB00996B9F /* MBMLNumericLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75919D9FBEB00996B9F /* MBMLNumericLiteralToken.m */; };
-		3B8BA7D519D9FBEB00996B9F /* MBMLObjectReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75B19D9FBEB00996B9F /* MBMLObjectReferenceToken.m */; };
-		3B8BA7D619D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75D19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m */; };
-		3B8BA7D719D9FBEB00996B9F /* MBMLParameterDelimiterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75F19D9FBEB00996B9F /* MBMLParameterDelimiterToken.m */; };
-		3B8BA7D819D9FBEB00996B9F /* MBMLParameterGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76119D9FBEB00996B9F /* MBMLParameterGroupingToken.m */; };
-		3B8BA7D919D9FBEB00996B9F /* MBMLParseToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76319D9FBEB00996B9F /* MBMLParseToken.m */; };
-		3B8BA7DA19D9FBEB00996B9F /* MBMLVariableReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76519D9FBEB00996B9F /* MBMLVariableReferenceToken.m */; };
-		3B8BA7DB19D9FBEB00996B9F /* MBMLWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76719D9FBEB00996B9F /* MBMLWhitespaceToken.m */; };
-		3B8BA7DC19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76B19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m */; };
-		3B8BA7DD19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76D19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m */; };
-		3B8BA7DE19D9FBEB00996B9F /* MBMLBooleanNegationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76F19D9FBEB00996B9F /* MBMLBooleanNegationToken.m */; };
-		3B8BA7DF19D9FBEB00996B9F /* MBMLBooleanOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77119D9FBEB00996B9F /* MBMLBooleanOperatorToken.m */; };
-		3B8BA7E019D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77319D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m */; };
-		3B8BA7E119D9FBEB00996B9F /* MBMLEqualityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77519D9FBEB00996B9F /* MBMLEqualityTestToken.m */; };
-		3B8BA7E219D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77719D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m */; };
-		3B8BA7E319D9FBEB00996B9F /* MBMLGreaterThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77919D9FBEB00996B9F /* MBMLGreaterThanTestToken.m */; };
-		3B8BA7E419D9FBEB00996B9F /* MBMLInequalityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77B19D9FBEB00996B9F /* MBMLInequalityTestToken.m */; };
-		3B8BA7E519D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77D19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m */; };
-		3B8BA7E619D9FBEB00996B9F /* MBMLLessThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77F19D9FBEB00996B9F /* MBMLLessThanTestToken.m */; };
-		3B8BA7E719D9FBEB00996B9F /* MBMLAdditionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78219D9FBEB00996B9F /* MBMLAdditionOperatorToken.m */; };
-		3B8BA7E819D9FBEB00996B9F /* MBMLDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78419D9FBEB00996B9F /* MBMLDivisionOperatorToken.m */; };
-		3B8BA7E919D9FBEB00996B9F /* MBMLMathGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78619D9FBEB00996B9F /* MBMLMathGroupingToken.m */; };
-		3B8BA7EA19D9FBEB00996B9F /* MBMLMathOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78819D9FBEB00996B9F /* MBMLMathOperatorToken.m */; };
-		3B8BA7EB19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78A19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m */; };
-		3B8BA7EC19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78C19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m */; };
-		3B8BA7ED19D9FBEB00996B9F /* MBMLCollectionFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79019D9FBEB00996B9F /* MBMLCollectionFunctions.m */; };
-		3B8BA7EE19D9FBEB00996B9F /* MBMLDataProcessingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79219D9FBEB00996B9F /* MBMLDataProcessingFunctions.m */; };
-		3B8BA7EF19D9FBEB00996B9F /* MBMLDateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79419D9FBEB00996B9F /* MBMLDateFunctions.m */; };
-		3B8BA7F019D9FBEB00996B9F /* MBMLDebugFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79619D9FBEB00996B9F /* MBMLDebugFunctions.m */; };
-		3B8BA7F119D9FBEB00996B9F /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */; };
-		3B8BA7F219D9FBEB00996B9F /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */; };
-		3B8BA7F319D9FBEB00996B9F /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */; };
-		3B8BA7F419D9FBEB00996B9F /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */; };
-		3B8BA7F519D9FBEB00996B9F /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */; };
-		3B8BA7F619D9FBEB00996B9F /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */; };
-		3B8BA7F719D9FBEB00996B9F /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */; };
-		3B8BA7F819D9FBEB00996B9F /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */; };
-		3B8BA7F919D9FBEB00996B9F /* MBMLResourceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A819D9FBEB00996B9F /* MBMLResourceFunctions.m */; };
-		3B8BA7FA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m */; };
-		3B8BA7FB19D9FBEB00996B9F /* MBMLStringFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AC19D9FBEB00996B9F /* MBMLStringFunctions.m */; };
-		3B8BA7FC19D9FBEB00996B9F /* MBMLFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AE19D9FBEB00996B9F /* MBMLFunction.m */; };
-		3B8BA7FD19D9FBEB00996B9F /* MBDataEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B219D9FBEB00996B9F /* MBDataEnvironment.m */; };
-		3B8BA7FE19D9FBEB00996B9F /* MBDataEnvironmentConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B419D9FBEB00996B9F /* MBDataEnvironmentConstants.m */; };
-		3B8BA7FF19D9FBEB00996B9F /* MBStringConversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B719D9FBEB00996B9F /* MBStringConversions.m */; };
-		3B8BA80019D9FBEB00996B9F /* TypeCoercionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B919D9FBEB00996B9F /* TypeCoercionSupport.m */; };
-		3B8BA80119D9FBEB00996B9F /* MBScopedVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BC19D9FBEB00996B9F /* MBScopedVariables.m */; };
-		3B8BA80219D9FBEB00996B9F /* MBVariableDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */; };
-		3B8BA80319D9FBEB00996B9F /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */; };
-		8AC21FFE94904AF4A5A75D93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748C53F01464830A2605981 /* libPods.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		3B0A9D9419D9E15B002848CD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFileReference section */
-		3748C53F01464830A2605981 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		38E3065063027DCB078CF78A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		3B0A9D9619D9E15B002848CD /* libMBDataEnvironment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBDataEnvironment.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAttributeValidator.h; sourceTree = "<group>"; };
-		3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAttributeValidator.m; sourceTree = "<group>"; };
-		3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataModel.h; sourceTree = "<group>"; };
-		3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataModel.m; sourceTree = "<group>"; };
-		3B8BA73119D9FBEB00996B9F /* MBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDevice.h; sourceTree = "<group>"; };
-		3B8BA73219D9FBEB00996B9F /* MBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDevice.m; sourceTree = "<group>"; };
-		3B8BA73419D9FBEB00996B9F /* MBEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironment.h; sourceTree = "<group>"; };
-		3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironment.m; sourceTree = "<group>"; };
-		3B8BA73619D9FBEB00996B9F /* MBEnvironmentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironmentLoader.h; sourceTree = "<group>"; };
-		3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironmentLoader.m; sourceTree = "<group>"; };
-		3B8BA73919D9FBEB00996B9F /* MBEvents+DataLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBEvents+DataLoading.h"; sourceTree = "<group>"; };
-		3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBEvents+DataLoading.m"; sourceTree = "<group>"; };
-		3B8BA73C19D9FBEB00996B9F /* MBExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpression.h; sourceTree = "<group>"; };
-		3B8BA73D19D9FBEB00996B9F /* MBExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpression.m; sourceTree = "<group>"; };
-		3B8BA73E19D9FBEB00996B9F /* MBExpressionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionCache.h; sourceTree = "<group>"; };
-		3B8BA73F19D9FBEB00996B9F /* MBExpressionCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionCache.m; sourceTree = "<group>"; };
-		3B8BA74019D9FBEB00996B9F /* MBExpressionError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionError.h; sourceTree = "<group>"; };
-		3B8BA74119D9FBEB00996B9F /* MBExpressionError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionError.m; sourceTree = "<group>"; };
-		3B8BA74219D9FBEB00996B9F /* MBExpressionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionExtensions.h; sourceTree = "<group>"; };
-		3B8BA74319D9FBEB00996B9F /* MBExpressionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionExtensions.m; sourceTree = "<group>"; };
-		3B8BA74519D9FBEB00996B9F /* MBExpressionGrammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionGrammar.h; sourceTree = "<group>"; };
-		3B8BA74619D9FBEB00996B9F /* MBExpressionGrammar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionGrammar.m; sourceTree = "<group>"; };
-		3B8BA74719D9FBEB00996B9F /* MBExpressionTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionTokenizer.h; sourceTree = "<group>"; };
-		3B8BA74819D9FBEB00996B9F /* MBExpressionTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionTokenizer.m; sourceTree = "<group>"; };
-		3B8BA74A19D9FBEB00996B9F /* MBMLEscapeSequenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEscapeSequenceToken.h; sourceTree = "<group>"; };
-		3B8BA74B19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEscapeSequenceToken.m; sourceTree = "<group>"; };
-		3B8BA74C19D9FBEB00996B9F /* MBMLFunctionCallToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFunctionCallToken.h; sourceTree = "<group>"; };
-		3B8BA74D19D9FBEB00996B9F /* MBMLFunctionCallToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFunctionCallToken.m; sourceTree = "<group>"; };
-		3B8BA74E19D9FBEB00996B9F /* MBMLGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGroupingToken.h; sourceTree = "<group>"; };
-		3B8BA74F19D9FBEB00996B9F /* MBMLGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGroupingToken.m; sourceTree = "<group>"; };
-		3B8BA75019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLIgnorableWhitespaceToken.h; sourceTree = "<group>"; };
-		3B8BA75119D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLIgnorableWhitespaceToken.m; sourceTree = "<group>"; };
-		3B8BA75219D9FBEB00996B9F /* MBMLKeywordMatchingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLKeywordMatchingToken.h; sourceTree = "<group>"; };
-		3B8BA75319D9FBEB00996B9F /* MBMLKeywordMatchingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLKeywordMatchingToken.m; sourceTree = "<group>"; };
-		3B8BA75419D9FBEB00996B9F /* MBMLLiteralToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLiteralToken.h; sourceTree = "<group>"; };
-		3B8BA75519D9FBEB00996B9F /* MBMLLiteralToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLiteralToken.m; sourceTree = "<group>"; };
-		3B8BA75619D9FBEB00996B9F /* MBMLMathExpressionToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathExpressionToken.h; sourceTree = "<group>"; };
-		3B8BA75719D9FBEB00996B9F /* MBMLMathExpressionToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathExpressionToken.m; sourceTree = "<group>"; };
-		3B8BA75819D9FBEB00996B9F /* MBMLNumericLiteralToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLNumericLiteralToken.h; sourceTree = "<group>"; };
-		3B8BA75919D9FBEB00996B9F /* MBMLNumericLiteralToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLNumericLiteralToken.m; sourceTree = "<group>"; };
-		3B8BA75A19D9FBEB00996B9F /* MBMLObjectReferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLObjectReferenceToken.h; sourceTree = "<group>"; };
-		3B8BA75B19D9FBEB00996B9F /* MBMLObjectReferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLObjectReferenceToken.m; sourceTree = "<group>"; };
-		3B8BA75C19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLObjectSubreferenceToken.h; sourceTree = "<group>"; };
-		3B8BA75D19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLObjectSubreferenceToken.m; sourceTree = "<group>"; };
-		3B8BA75E19D9FBEB00996B9F /* MBMLParameterDelimiterToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParameterDelimiterToken.h; sourceTree = "<group>"; };
-		3B8BA75F19D9FBEB00996B9F /* MBMLParameterDelimiterToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParameterDelimiterToken.m; sourceTree = "<group>"; };
-		3B8BA76019D9FBEB00996B9F /* MBMLParameterGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParameterGroupingToken.h; sourceTree = "<group>"; };
-		3B8BA76119D9FBEB00996B9F /* MBMLParameterGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParameterGroupingToken.m; sourceTree = "<group>"; };
-		3B8BA76219D9FBEB00996B9F /* MBMLParseToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParseToken.h; sourceTree = "<group>"; };
-		3B8BA76319D9FBEB00996B9F /* MBMLParseToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParseToken.m; sourceTree = "<group>"; };
-		3B8BA76419D9FBEB00996B9F /* MBMLVariableReferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLVariableReferenceToken.h; sourceTree = "<group>"; };
-		3B8BA76519D9FBEB00996B9F /* MBMLVariableReferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLVariableReferenceToken.m; sourceTree = "<group>"; };
-		3B8BA76619D9FBEB00996B9F /* MBMLWhitespaceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLWhitespaceToken.h; sourceTree = "<group>"; };
-		3B8BA76719D9FBEB00996B9F /* MBMLWhitespaceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLWhitespaceToken.m; sourceTree = "<group>"; };
-		3B8BA76819D9FBEB00996B9F /* OperationTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTokens.h; sourceTree = "<group>"; };
-		3B8BA76A19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanAndOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA76B19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanAndOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA76C19D9FBEB00996B9F /* MBMLBooleanGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanGroupingToken.h; sourceTree = "<group>"; };
-		3B8BA76D19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanGroupingToken.m; sourceTree = "<group>"; };
-		3B8BA76E19D9FBEB00996B9F /* MBMLBooleanNegationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanNegationToken.h; sourceTree = "<group>"; };
-		3B8BA76F19D9FBEB00996B9F /* MBMLBooleanNegationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanNegationToken.m; sourceTree = "<group>"; };
-		3B8BA77019D9FBEB00996B9F /* MBMLBooleanOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA77119D9FBEB00996B9F /* MBMLBooleanOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA77219D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanOrOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA77319D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanOrOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA77419D9FBEB00996B9F /* MBMLEqualityTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEqualityTestToken.h; sourceTree = "<group>"; };
-		3B8BA77519D9FBEB00996B9F /* MBMLEqualityTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEqualityTestToken.m; sourceTree = "<group>"; };
-		3B8BA77619D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGreaterThanEqualsTestToken.h; sourceTree = "<group>"; };
-		3B8BA77719D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGreaterThanEqualsTestToken.m; sourceTree = "<group>"; };
-		3B8BA77819D9FBEB00996B9F /* MBMLGreaterThanTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGreaterThanTestToken.h; sourceTree = "<group>"; };
-		3B8BA77919D9FBEB00996B9F /* MBMLGreaterThanTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGreaterThanTestToken.m; sourceTree = "<group>"; };
-		3B8BA77A19D9FBEB00996B9F /* MBMLInequalityTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLInequalityTestToken.h; sourceTree = "<group>"; };
-		3B8BA77B19D9FBEB00996B9F /* MBMLInequalityTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLInequalityTestToken.m; sourceTree = "<group>"; };
-		3B8BA77C19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLessThanEqualsTestToken.h; sourceTree = "<group>"; };
-		3B8BA77D19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLessThanEqualsTestToken.m; sourceTree = "<group>"; };
-		3B8BA77E19D9FBEB00996B9F /* MBMLLessThanTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLessThanTestToken.h; sourceTree = "<group>"; };
-		3B8BA77F19D9FBEB00996B9F /* MBMLLessThanTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLessThanTestToken.m; sourceTree = "<group>"; };
-		3B8BA78119D9FBEB00996B9F /* MBMLAdditionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLAdditionOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA78219D9FBEB00996B9F /* MBMLAdditionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLAdditionOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA78319D9FBEB00996B9F /* MBMLDivisionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDivisionOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA78419D9FBEB00996B9F /* MBMLDivisionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDivisionOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA78519D9FBEB00996B9F /* MBMLMathGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathGroupingToken.h; sourceTree = "<group>"; };
-		3B8BA78619D9FBEB00996B9F /* MBMLMathGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathGroupingToken.m; sourceTree = "<group>"; };
-		3B8BA78719D9FBEB00996B9F /* MBMLMathOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA78819D9FBEB00996B9F /* MBMLMathOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA78919D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMultiplicationOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA78A19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMultiplicationOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA78B19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLSubtractionOperatorToken.h; sourceTree = "<group>"; };
-		3B8BA78C19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLSubtractionOperatorToken.m; sourceTree = "<group>"; };
-		3B8BA78F19D9FBEB00996B9F /* MBMLCollectionFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLCollectionFunctions.h; sourceTree = "<group>"; };
-		3B8BA79019D9FBEB00996B9F /* MBMLCollectionFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLCollectionFunctions.m; sourceTree = "<group>"; };
-		3B8BA79119D9FBEB00996B9F /* MBMLDataProcessingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDataProcessingFunctions.h; sourceTree = "<group>"; };
-		3B8BA79219D9FBEB00996B9F /* MBMLDataProcessingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDataProcessingFunctions.m; sourceTree = "<group>"; };
-		3B8BA79319D9FBEB00996B9F /* MBMLDateFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDateFunctions.h; sourceTree = "<group>"; };
-		3B8BA79419D9FBEB00996B9F /* MBMLDateFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDateFunctions.m; sourceTree = "<group>"; };
-		3B8BA79519D9FBEB00996B9F /* MBMLDebugFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDebugFunctions.h; sourceTree = "<group>"; };
-		3B8BA79619D9FBEB00996B9F /* MBMLDebugFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDebugFunctions.m; sourceTree = "<group>"; };
-		3B8BA79719D9FBEB00996B9F /* MBMLEncodingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEncodingFunctions.h; sourceTree = "<group>"; };
-		3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEncodingFunctions.m; sourceTree = "<group>"; };
-		3B8BA79919D9FBEB00996B9F /* MBMLEnvironmentFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEnvironmentFunctions.h; sourceTree = "<group>"; };
-		3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEnvironmentFunctions.m; sourceTree = "<group>"; };
-		3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFileFunctions.h; sourceTree = "<group>"; };
-		3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFileFunctions.m; sourceTree = "<group>"; };
-		3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFontFunctions.h; sourceTree = "<group>"; };
-		3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFontFunctions.m; sourceTree = "<group>"; };
-		3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGeometryFunctions.h; sourceTree = "<group>"; };
-		3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGeometryFunctions.m; sourceTree = "<group>"; };
-		3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLogicFunctions.h; sourceTree = "<group>"; };
-		3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLogicFunctions.m; sourceTree = "<group>"; };
-		3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathFunctions.h; sourceTree = "<group>"; };
-		3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathFunctions.m; sourceTree = "<group>"; };
-		3B8BA7A519D9FBEB00996B9F /* MBMLRegexFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLRegexFunctions.h; sourceTree = "<group>"; };
-		3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLRegexFunctions.m; sourceTree = "<group>"; };
-		3B8BA7A719D9FBEB00996B9F /* MBMLResourceFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLResourceFunctions.h; sourceTree = "<group>"; };
-		3B8BA7A819D9FBEB00996B9F /* MBMLResourceFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLResourceFunctions.m; sourceTree = "<group>"; };
-		3B8BA7A919D9FBEB00996B9F /* MBMLRuntimeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLRuntimeFunctions.h; sourceTree = "<group>"; };
-		3B8BA7AA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLRuntimeFunctions.m; sourceTree = "<group>"; };
-		3B8BA7AB19D9FBEB00996B9F /* MBMLStringFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLStringFunctions.h; sourceTree = "<group>"; };
-		3B8BA7AC19D9FBEB00996B9F /* MBMLStringFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLStringFunctions.m; sourceTree = "<group>"; };
-		3B8BA7AD19D9FBEB00996B9F /* MBMLFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFunction.h; sourceTree = "<group>"; };
-		3B8BA7AE19D9FBEB00996B9F /* MBMLFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFunction.m; sourceTree = "<group>"; };
-		3B8BA7AF19D9FBEB00996B9F /* Mockingbird-DataEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mockingbird-DataEnvironment.h"; sourceTree = "<group>"; };
-		3B8BA7B119D9FBEB00996B9F /* MBDataEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironment.h; sourceTree = "<group>"; };
-		3B8BA7B219D9FBEB00996B9F /* MBDataEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataEnvironment.m; sourceTree = "<group>"; };
-		3B8BA7B319D9FBEB00996B9F /* MBDataEnvironmentConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironmentConstants.h; sourceTree = "<group>"; };
-		3B8BA7B419D9FBEB00996B9F /* MBDataEnvironmentConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataEnvironmentConstants.m; sourceTree = "<group>"; };
-		3B8BA7B619D9FBEB00996B9F /* MBStringConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBStringConversions.h; sourceTree = "<group>"; };
-		3B8BA7B719D9FBEB00996B9F /* MBStringConversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBStringConversions.m; sourceTree = "<group>"; };
-		3B8BA7B819D9FBEB00996B9F /* TypeCoercionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeCoercionSupport.h; sourceTree = "<group>"; };
-		3B8BA7B919D9FBEB00996B9F /* TypeCoercionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeCoercionSupport.m; sourceTree = "<group>"; };
-		3B8BA7BB19D9FBEB00996B9F /* MBScopedVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBScopedVariables.h; sourceTree = "<group>"; };
-		3B8BA7BC19D9FBEB00996B9F /* MBScopedVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBScopedVariables.m; sourceTree = "<group>"; };
-		3B8BA7BD19D9FBEB00996B9F /* MBVariableDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableDeclaration.h; sourceTree = "<group>"; };
-		3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableDeclaration.m; sourceTree = "<group>"; };
-		3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableSpace.h; sourceTree = "<group>"; };
-		3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableSpace.m; sourceTree = "<group>"; };
-		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		3B0A9D9319D9E15B002848CD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8AC21FFE94904AF4A5A75D93 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		1BFAC2BAA53D7391E67F450D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				38E3065063027DCB078CF78A /* Pods.debug.xcconfig */,
-				A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3732FC3D8302400A859A2682 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3748C53F01464830A2605981 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3B0A9D8D19D9E15B002848CD = {
-			isa = PBXGroup;
-			children = (
-				3B8BA72A19D9FBEB00996B9F /* Code */,
-				3B0A9D9719D9E15B002848CD /* Products */,
-				3732FC3D8302400A859A2682 /* Frameworks */,
-				1BFAC2BAA53D7391E67F450D /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		3B0A9D9719D9E15B002848CD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3B0A9D9619D9E15B002848CD /* libMBDataEnvironment.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3B8BA72A19D9FBEB00996B9F /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA72B19D9FBEB00996B9F /* DataModel */,
-				3B8BA73019D9FBEB00996B9F /* Device */,
-				3B8BA73319D9FBEB00996B9F /* Environment */,
-				3B8BA73819D9FBEB00996B9F /* Events */,
-				3B8BA73B19D9FBEB00996B9F /* ExpressionEngine */,
-				3B8BA78D19D9FBEB00996B9F /* Functions */,
-				3B8BA7AF19D9FBEB00996B9F /* Mockingbird-DataEnvironment.h */,
-				3B8BA7B019D9FBEB00996B9F /* Module */,
-				3B8BA7B519D9FBEB00996B9F /* TypeConversion */,
-				3B8BA7BA19D9FBEB00996B9F /* VariableSpace */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		3B8BA72B19D9FBEB00996B9F /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */,
-				3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */,
-				3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */,
-				3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */,
-			);
-			path = DataModel;
-			sourceTree = "<group>";
-		};
-		3B8BA73019D9FBEB00996B9F /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA73119D9FBEB00996B9F /* MBDevice.h */,
-				3B8BA73219D9FBEB00996B9F /* MBDevice.m */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
-		3B8BA73319D9FBEB00996B9F /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA73419D9FBEB00996B9F /* MBEnvironment.h */,
-				3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */,
-				3B8BA73619D9FBEB00996B9F /* MBEnvironmentLoader.h */,
-				3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		3B8BA73819D9FBEB00996B9F /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA73919D9FBEB00996B9F /* MBEvents+DataLoading.h */,
-				3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		3B8BA73B19D9FBEB00996B9F /* ExpressionEngine */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA73C19D9FBEB00996B9F /* MBExpression.h */,
-				3B8BA73D19D9FBEB00996B9F /* MBExpression.m */,
-				3B8BA73E19D9FBEB00996B9F /* MBExpressionCache.h */,
-				3B8BA73F19D9FBEB00996B9F /* MBExpressionCache.m */,
-				3B8BA74019D9FBEB00996B9F /* MBExpressionError.h */,
-				3B8BA74119D9FBEB00996B9F /* MBExpressionError.m */,
-				3B8BA74219D9FBEB00996B9F /* MBExpressionExtensions.h */,
-				3B8BA74319D9FBEB00996B9F /* MBExpressionExtensions.m */,
-				3B8BA74419D9FBEB00996B9F /* Private */,
-			);
-			path = ExpressionEngine;
-			sourceTree = "<group>";
-		};
-		3B8BA74419D9FBEB00996B9F /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA74519D9FBEB00996B9F /* MBExpressionGrammar.h */,
-				3B8BA74619D9FBEB00996B9F /* MBExpressionGrammar.m */,
-				3B8BA74719D9FBEB00996B9F /* MBExpressionTokenizer.h */,
-				3B8BA74819D9FBEB00996B9F /* MBExpressionTokenizer.m */,
-				3B8BA74919D9FBEB00996B9F /* Tokens */,
-				3B8BA76919D9FBEB00996B9F /* Tokens-Boolean */,
-				3B8BA78019D9FBEB00996B9F /* Tokens-Math */,
-			);
-			path = Private;
-			sourceTree = "<group>";
-		};
-		3B8BA74919D9FBEB00996B9F /* Tokens */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA74A19D9FBEB00996B9F /* MBMLEscapeSequenceToken.h */,
-				3B8BA74B19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m */,
-				3B8BA74C19D9FBEB00996B9F /* MBMLFunctionCallToken.h */,
-				3B8BA74D19D9FBEB00996B9F /* MBMLFunctionCallToken.m */,
-				3B8BA74E19D9FBEB00996B9F /* MBMLGroupingToken.h */,
-				3B8BA74F19D9FBEB00996B9F /* MBMLGroupingToken.m */,
-				3B8BA75019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.h */,
-				3B8BA75119D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m */,
-				3B8BA75219D9FBEB00996B9F /* MBMLKeywordMatchingToken.h */,
-				3B8BA75319D9FBEB00996B9F /* MBMLKeywordMatchingToken.m */,
-				3B8BA75419D9FBEB00996B9F /* MBMLLiteralToken.h */,
-				3B8BA75519D9FBEB00996B9F /* MBMLLiteralToken.m */,
-				3B8BA75619D9FBEB00996B9F /* MBMLMathExpressionToken.h */,
-				3B8BA75719D9FBEB00996B9F /* MBMLMathExpressionToken.m */,
-				3B8BA75819D9FBEB00996B9F /* MBMLNumericLiteralToken.h */,
-				3B8BA75919D9FBEB00996B9F /* MBMLNumericLiteralToken.m */,
-				3B8BA75A19D9FBEB00996B9F /* MBMLObjectReferenceToken.h */,
-				3B8BA75B19D9FBEB00996B9F /* MBMLObjectReferenceToken.m */,
-				3B8BA75C19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.h */,
-				3B8BA75D19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m */,
-				3B8BA75E19D9FBEB00996B9F /* MBMLParameterDelimiterToken.h */,
-				3B8BA75F19D9FBEB00996B9F /* MBMLParameterDelimiterToken.m */,
-				3B8BA76019D9FBEB00996B9F /* MBMLParameterGroupingToken.h */,
-				3B8BA76119D9FBEB00996B9F /* MBMLParameterGroupingToken.m */,
-				3B8BA76219D9FBEB00996B9F /* MBMLParseToken.h */,
-				3B8BA76319D9FBEB00996B9F /* MBMLParseToken.m */,
-				3B8BA76419D9FBEB00996B9F /* MBMLVariableReferenceToken.h */,
-				3B8BA76519D9FBEB00996B9F /* MBMLVariableReferenceToken.m */,
-				3B8BA76619D9FBEB00996B9F /* MBMLWhitespaceToken.h */,
-				3B8BA76719D9FBEB00996B9F /* MBMLWhitespaceToken.m */,
-				3B8BA76819D9FBEB00996B9F /* OperationTokens.h */,
-			);
-			path = Tokens;
-			sourceTree = "<group>";
-		};
-		3B8BA76919D9FBEB00996B9F /* Tokens-Boolean */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA76A19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.h */,
-				3B8BA76B19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m */,
-				3B8BA76C19D9FBEB00996B9F /* MBMLBooleanGroupingToken.h */,
-				3B8BA76D19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m */,
-				3B8BA76E19D9FBEB00996B9F /* MBMLBooleanNegationToken.h */,
-				3B8BA76F19D9FBEB00996B9F /* MBMLBooleanNegationToken.m */,
-				3B8BA77019D9FBEB00996B9F /* MBMLBooleanOperatorToken.h */,
-				3B8BA77119D9FBEB00996B9F /* MBMLBooleanOperatorToken.m */,
-				3B8BA77219D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.h */,
-				3B8BA77319D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m */,
-				3B8BA77419D9FBEB00996B9F /* MBMLEqualityTestToken.h */,
-				3B8BA77519D9FBEB00996B9F /* MBMLEqualityTestToken.m */,
-				3B8BA77619D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.h */,
-				3B8BA77719D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m */,
-				3B8BA77819D9FBEB00996B9F /* MBMLGreaterThanTestToken.h */,
-				3B8BA77919D9FBEB00996B9F /* MBMLGreaterThanTestToken.m */,
-				3B8BA77A19D9FBEB00996B9F /* MBMLInequalityTestToken.h */,
-				3B8BA77B19D9FBEB00996B9F /* MBMLInequalityTestToken.m */,
-				3B8BA77C19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.h */,
-				3B8BA77D19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m */,
-				3B8BA77E19D9FBEB00996B9F /* MBMLLessThanTestToken.h */,
-				3B8BA77F19D9FBEB00996B9F /* MBMLLessThanTestToken.m */,
-			);
-			path = "Tokens-Boolean";
-			sourceTree = "<group>";
-		};
-		3B8BA78019D9FBEB00996B9F /* Tokens-Math */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA78119D9FBEB00996B9F /* MBMLAdditionOperatorToken.h */,
-				3B8BA78219D9FBEB00996B9F /* MBMLAdditionOperatorToken.m */,
-				3B8BA78319D9FBEB00996B9F /* MBMLDivisionOperatorToken.h */,
-				3B8BA78419D9FBEB00996B9F /* MBMLDivisionOperatorToken.m */,
-				3B8BA78519D9FBEB00996B9F /* MBMLMathGroupingToken.h */,
-				3B8BA78619D9FBEB00996B9F /* MBMLMathGroupingToken.m */,
-				3B8BA78719D9FBEB00996B9F /* MBMLMathOperatorToken.h */,
-				3B8BA78819D9FBEB00996B9F /* MBMLMathOperatorToken.m */,
-				3B8BA78919D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.h */,
-				3B8BA78A19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m */,
-				3B8BA78B19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.h */,
-				3B8BA78C19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m */,
-			);
-			path = "Tokens-Math";
-			sourceTree = "<group>";
-		};
-		3B8BA78D19D9FBEB00996B9F /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA78E19D9FBEB00996B9F /* Implementation */,
-				3B8BA7AD19D9FBEB00996B9F /* MBMLFunction.h */,
-				3B8BA7AE19D9FBEB00996B9F /* MBMLFunction.m */,
-			);
-			path = Functions;
-			sourceTree = "<group>";
-		};
-		3B8BA78E19D9FBEB00996B9F /* Implementation */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA78F19D9FBEB00996B9F /* MBMLCollectionFunctions.h */,
-				3B8BA79019D9FBEB00996B9F /* MBMLCollectionFunctions.m */,
-				3B8BA79119D9FBEB00996B9F /* MBMLDataProcessingFunctions.h */,
-				3B8BA79219D9FBEB00996B9F /* MBMLDataProcessingFunctions.m */,
-				3B8BA79319D9FBEB00996B9F /* MBMLDateFunctions.h */,
-				3B8BA79419D9FBEB00996B9F /* MBMLDateFunctions.m */,
-				3B8BA79519D9FBEB00996B9F /* MBMLDebugFunctions.h */,
-				3B8BA79619D9FBEB00996B9F /* MBMLDebugFunctions.m */,
-				3B8BA79719D9FBEB00996B9F /* MBMLEncodingFunctions.h */,
-				3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */,
-				3B8BA79919D9FBEB00996B9F /* MBMLEnvironmentFunctions.h */,
-				3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */,
-				3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */,
-				3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */,
-				3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */,
-				3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */,
-				3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */,
-				3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */,
-				3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */,
-				3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */,
-				3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */,
-				3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */,
-				3B8BA7A519D9FBEB00996B9F /* MBMLRegexFunctions.h */,
-				3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */,
-				3B8BA7A719D9FBEB00996B9F /* MBMLResourceFunctions.h */,
-				3B8BA7A819D9FBEB00996B9F /* MBMLResourceFunctions.m */,
-				3B8BA7A919D9FBEB00996B9F /* MBMLRuntimeFunctions.h */,
-				3B8BA7AA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m */,
-				3B8BA7AB19D9FBEB00996B9F /* MBMLStringFunctions.h */,
-				3B8BA7AC19D9FBEB00996B9F /* MBMLStringFunctions.m */,
-			);
-			path = Implementation;
-			sourceTree = "<group>";
-		};
-		3B8BA7B019D9FBEB00996B9F /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA7B119D9FBEB00996B9F /* MBDataEnvironment.h */,
-				3B8BA7B219D9FBEB00996B9F /* MBDataEnvironment.m */,
-				3B8BA7B319D9FBEB00996B9F /* MBDataEnvironmentConstants.h */,
-				3B8BA7B419D9FBEB00996B9F /* MBDataEnvironmentConstants.m */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		3B8BA7B519D9FBEB00996B9F /* TypeConversion */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA7B619D9FBEB00996B9F /* MBStringConversions.h */,
-				3B8BA7B719D9FBEB00996B9F /* MBStringConversions.m */,
-				3B8BA7B819D9FBEB00996B9F /* TypeCoercionSupport.h */,
-				3B8BA7B919D9FBEB00996B9F /* TypeCoercionSupport.m */,
-			);
-			path = TypeConversion;
-			sourceTree = "<group>";
-		};
-		3B8BA7BA19D9FBEB00996B9F /* VariableSpace */ = {
-			isa = PBXGroup;
-			children = (
-				3B8BA7BB19D9FBEB00996B9F /* MBScopedVariables.h */,
-				3B8BA7BC19D9FBEB00996B9F /* MBScopedVariables.m */,
-				3B8BA7BD19D9FBEB00996B9F /* MBVariableDeclaration.h */,
-				3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */,
-				3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */,
-				3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */,
-			);
-			path = VariableSpace;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		3B0A9D9519D9E15B002848CD /* MBDataEnvironment */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3B0A9DA719D9E15B002848CD /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */;
-			buildPhases = (
-				1131BDAE7C4A417198CCB31C /* Check Pods Manifest.lock */,
-				3B0A9D9219D9E15B002848CD /* Sources */,
-				3B0A9D9319D9E15B002848CD /* Frameworks */,
-				3B0A9D9419D9E15B002848CD /* CopyFiles */,
-				2E4245E8C0D94E29BD2A0DCD /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MBDataEnvironment;
-			productName = MBDataEnvironment;
-			productReference = 3B0A9D9619D9E15B002848CD /* libMBDataEnvironment.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		3B0A9D8E19D9E15B002848CD /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = "Gilt Groupe";
-				TargetAttributes = {
-					3B0A9D9519D9E15B002848CD = {
-						CreatedOnToolsVersion = 6.0.1;
-					};
-				};
-			};
-			buildConfigurationList = 3B0A9D9119D9E15B002848CD /* Build configuration list for PBXProject "MBDataEnvironment" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 3B0A9D8D19D9E15B002848CD;
-			productRefGroup = 3B0A9D9719D9E15B002848CD /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				3B0A9D9519D9E15B002848CD /* MBDataEnvironment */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1131BDAE7C4A417198CCB31C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2E4245E8C0D94E29BD2A0DCD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		3B0A9D9219D9E15B002848CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3B8BA7EC19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m in Sources */,
-				3B8BA80019D9FBEB00996B9F /* TypeCoercionSupport.m in Sources */,
-				3B8BA7FD19D9FBEB00996B9F /* MBDataEnvironment.m in Sources */,
-				3B8BA7CB19D9FBEB00996B9F /* MBExpressionGrammar.m in Sources */,
-				3B8BA7E619D9FBEB00996B9F /* MBMLLessThanTestToken.m in Sources */,
-				3B8BA7C519D9FBEB00996B9F /* MBEnvironmentLoader.m in Sources */,
-				3B8BA7D519D9FBEB00996B9F /* MBMLObjectReferenceToken.m in Sources */,
-				3B8BA7D019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m in Sources */,
-				3B8BA7D819D9FBEB00996B9F /* MBMLParameterGroupingToken.m in Sources */,
-				3B8BA7F219D9FBEB00996B9F /* MBMLEnvironmentFunctions.m in Sources */,
-				3B8BA7C819D9FBEB00996B9F /* MBExpressionCache.m in Sources */,
-				3B8BA7CF19D9FBEB00996B9F /* MBMLGroupingToken.m in Sources */,
-				3B8BA7F919D9FBEB00996B9F /* MBMLResourceFunctions.m in Sources */,
-				3B8BA80319D9FBEB00996B9F /* MBVariableSpace.m in Sources */,
-				3B8BA7EB19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m in Sources */,
-				3B8BA7E819D9FBEB00996B9F /* MBMLDivisionOperatorToken.m in Sources */,
-				3B8BA7E719D9FBEB00996B9F /* MBMLAdditionOperatorToken.m in Sources */,
-				3B8BA7DB19D9FBEB00996B9F /* MBMLWhitespaceToken.m in Sources */,
-				3B8BA7D219D9FBEB00996B9F /* MBMLLiteralToken.m in Sources */,
-				3B8BA7C219D9FBEB00996B9F /* MBDataModel.m in Sources */,
-				3B8BA7D319D9FBEB00996B9F /* MBMLMathExpressionToken.m in Sources */,
-				3B8BA7DE19D9FBEB00996B9F /* MBMLBooleanNegationToken.m in Sources */,
-				3B8BA7F519D9FBEB00996B9F /* MBMLGeometryFunctions.m in Sources */,
-				3B8BA7EF19D9FBEB00996B9F /* MBMLDateFunctions.m in Sources */,
-				3B8BA7F619D9FBEB00996B9F /* MBMLLogicFunctions.m in Sources */,
-				3B8BA7E319D9FBEB00996B9F /* MBMLGreaterThanTestToken.m in Sources */,
-				3B8BA7E219D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m in Sources */,
-				3B8BA7CC19D9FBEB00996B9F /* MBExpressionTokenizer.m in Sources */,
-				3B8BA7EE19D9FBEB00996B9F /* MBMLDataProcessingFunctions.m in Sources */,
-				3B8BA7E019D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m in Sources */,
-				3B8BA7FC19D9FBEB00996B9F /* MBMLFunction.m in Sources */,
-				3B8BA7F019D9FBEB00996B9F /* MBMLDebugFunctions.m in Sources */,
-				3B8BA7FB19D9FBEB00996B9F /* MBMLStringFunctions.m in Sources */,
-				3B8BA7F819D9FBEB00996B9F /* MBMLRegexFunctions.m in Sources */,
-				3B8BA80119D9FBEB00996B9F /* MBScopedVariables.m in Sources */,
-				3B8BA7C619D9FBEB00996B9F /* MBEvents+DataLoading.m in Sources */,
-				3B8BA7FF19D9FBEB00996B9F /* MBStringConversions.m in Sources */,
-				3B8BA7D619D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m in Sources */,
-				3B8BA7C319D9FBEB00996B9F /* MBDevice.m in Sources */,
-				3B8BA7CD19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m in Sources */,
-				3B8BA7EA19D9FBEB00996B9F /* MBMLMathOperatorToken.m in Sources */,
-				3B8BA7F419D9FBEB00996B9F /* MBMLFontFunctions.m in Sources */,
-				3B8BA7C419D9FBEB00996B9F /* MBEnvironment.m in Sources */,
-				3B8BA7CA19D9FBEB00996B9F /* MBExpressionExtensions.m in Sources */,
-				3B8BA7C919D9FBEB00996B9F /* MBExpressionError.m in Sources */,
-				3B8BA7E919D9FBEB00996B9F /* MBMLMathGroupingToken.m in Sources */,
-				3B8BA7CE19D9FBEB00996B9F /* MBMLFunctionCallToken.m in Sources */,
-				3B8BA7DA19D9FBEB00996B9F /* MBMLVariableReferenceToken.m in Sources */,
-				3B8BA7D119D9FBEB00996B9F /* MBMLKeywordMatchingToken.m in Sources */,
-				3B8BA7F719D9FBEB00996B9F /* MBMLMathFunctions.m in Sources */,
-				3B8BA7D719D9FBEB00996B9F /* MBMLParameterDelimiterToken.m in Sources */,
-				3B8BA7F119D9FBEB00996B9F /* MBMLEncodingFunctions.m in Sources */,
-				3B8BA80219D9FBEB00996B9F /* MBVariableDeclaration.m in Sources */,
-				3B8BA7F319D9FBEB00996B9F /* MBMLFileFunctions.m in Sources */,
-				3B8BA7DD19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m in Sources */,
-				3B8BA7ED19D9FBEB00996B9F /* MBMLCollectionFunctions.m in Sources */,
-				3B8BA7FA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m in Sources */,
-				3B8BA7D419D9FBEB00996B9F /* MBMLNumericLiteralToken.m in Sources */,
-				3B8BA7E119D9FBEB00996B9F /* MBMLEqualityTestToken.m in Sources */,
-				3B8BA7E419D9FBEB00996B9F /* MBMLInequalityTestToken.m in Sources */,
-				3B8BA7DF19D9FBEB00996B9F /* MBMLBooleanOperatorToken.m in Sources */,
-				3B8BA7FE19D9FBEB00996B9F /* MBDataEnvironmentConstants.m in Sources */,
-				3B8BA7DC19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m in Sources */,
-				3B8BA7C119D9FBEB00996B9F /* MBAttributeValidator.m in Sources */,
-				3B8BA7C719D9FBEB00996B9F /* MBExpression.m in Sources */,
-				3B8BA7D919D9FBEB00996B9F /* MBMLParseToken.m in Sources */,
-				3B8BA7E519D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		3B0A9DA519D9E15B002848CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		3B0A9DA619D9E15B002848CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3B0A9DA819D9E15B002848CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38E3065063027DCB078CF78A /* Pods.debug.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public/MBToolbox\"",
-					"\"${PODS_ROOT}/Headers/Public\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public/RaptureXML\"",
-					"$(SDKROOT)/usr/include/libxml2",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		3B0A9DA919D9E15B002848CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public/MBToolbox\"",
-					"\"${PODS_ROOT}/Headers/Public\"",
-				);
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public/RaptureXML\"",
-					"$(SDKROOT)/usr/include/libxml2",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		3B0A9D9119D9E15B002848CD /* Build configuration list for PBXProject "MBDataEnvironment" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3B0A9DA519D9E15B002848CD /* Debug */,
-				3B0A9DA619D9E15B002848CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3B0A9DA719D9E15B002848CD /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3B0A9DA819D9E15B002848CD /* Debug */,
-				3B0A9DA919D9E15B002848CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 3B0A9D8E19D9E15B002848CD /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>1131BDAE7C4A417198CCB31C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>1BFAC2BAA53D7391E67F450D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>38E3065063027DCB078CF78A</string>
+				<string>A05207EBD318D61DBCA7396F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2E4245E8C0D94E29BD2A0DCD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>3732FC3D8302400A859A2682</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3748C53F01464830A2605981</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3748C53F01464830A2605981</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>38E3065063027DCB078CF78A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B0A9D8D19D9E15B002848CD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA72A19D9FBEB00996B9F</string>
+				<string>3B0A9D9719D9E15B002848CD</string>
+				<string>3732FC3D8302400A859A2682</string>
+				<string>1BFAC2BAA53D7391E67F450D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B0A9D8E19D9E15B002848CD</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0600</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Gilt Groupe</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>3B0A9D9519D9E15B002848CD</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.0.1</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>3B0A9D9119D9E15B002848CD</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>3B0A9D8D19D9E15B002848CD</string>
+			<key>productRefGroup</key>
+			<string>3B0A9D9719D9E15B002848CD</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>3B0A9D9519D9E15B002848CD</string>
+			</array>
+		</dict>
+		<key>3B0A9D9119D9E15B002848CD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3B0A9DA519D9E15B002848CD</string>
+				<string>3B0A9DA619D9E15B002848CD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3B0A9D9219D9E15B002848CD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3B8BA7EC19D9FBEB00996B9F</string>
+				<string>3B8BA80019D9FBEB00996B9F</string>
+				<string>3B8BA7FD19D9FBEB00996B9F</string>
+				<string>3B8BA7CB19D9FBEB00996B9F</string>
+				<string>3B8BA7E619D9FBEB00996B9F</string>
+				<string>3B8BA7C519D9FBEB00996B9F</string>
+				<string>3B8BA7D519D9FBEB00996B9F</string>
+				<string>3B8BA7D019D9FBEB00996B9F</string>
+				<string>3B8BA7D819D9FBEB00996B9F</string>
+				<string>3B8BA7F219D9FBEB00996B9F</string>
+				<string>3B8BA7C819D9FBEB00996B9F</string>
+				<string>3B8BA7CF19D9FBEB00996B9F</string>
+				<string>3B8BA7F919D9FBEB00996B9F</string>
+				<string>3B8BA80319D9FBEB00996B9F</string>
+				<string>3B8BA7EB19D9FBEB00996B9F</string>
+				<string>3B8BA7E819D9FBEB00996B9F</string>
+				<string>3B8BA7E719D9FBEB00996B9F</string>
+				<string>3B8BA7DB19D9FBEB00996B9F</string>
+				<string>3B8BA7D219D9FBEB00996B9F</string>
+				<string>3B8BA7C219D9FBEB00996B9F</string>
+				<string>3B8BA7D319D9FBEB00996B9F</string>
+				<string>3B8BA7DE19D9FBEB00996B9F</string>
+				<string>3B8BA7F519D9FBEB00996B9F</string>
+				<string>3B8BA7EF19D9FBEB00996B9F</string>
+				<string>3B8BA7F619D9FBEB00996B9F</string>
+				<string>3B8BA7E319D9FBEB00996B9F</string>
+				<string>3B8BA7E219D9FBEB00996B9F</string>
+				<string>3B8BA7CC19D9FBEB00996B9F</string>
+				<string>3B8BA7EE19D9FBEB00996B9F</string>
+				<string>3B8BA7E019D9FBEB00996B9F</string>
+				<string>3B8BA7FC19D9FBEB00996B9F</string>
+				<string>3B8BA7F019D9FBEB00996B9F</string>
+				<string>3B8BA7FB19D9FBEB00996B9F</string>
+				<string>3B8BA7F819D9FBEB00996B9F</string>
+				<string>3B8BA80119D9FBEB00996B9F</string>
+				<string>3B8BA7C619D9FBEB00996B9F</string>
+				<string>3B8BA7FF19D9FBEB00996B9F</string>
+				<string>3B8BA7D619D9FBEB00996B9F</string>
+				<string>3B8BA7C319D9FBEB00996B9F</string>
+				<string>3B8BA7CD19D9FBEB00996B9F</string>
+				<string>3B8BA7EA19D9FBEB00996B9F</string>
+				<string>3B8BA7F419D9FBEB00996B9F</string>
+				<string>3B8BA7C419D9FBEB00996B9F</string>
+				<string>3B8BA7CA19D9FBEB00996B9F</string>
+				<string>3B8BA7C919D9FBEB00996B9F</string>
+				<string>3B8BA7E919D9FBEB00996B9F</string>
+				<string>3B8BA7CE19D9FBEB00996B9F</string>
+				<string>3B8BA7DA19D9FBEB00996B9F</string>
+				<string>3B8BA7D119D9FBEB00996B9F</string>
+				<string>3B8BA7F719D9FBEB00996B9F</string>
+				<string>3B8BA7D719D9FBEB00996B9F</string>
+				<string>3B8BA7F119D9FBEB00996B9F</string>
+				<string>3B8BA80219D9FBEB00996B9F</string>
+				<string>3B8BA7F319D9FBEB00996B9F</string>
+				<string>3B8BA7DD19D9FBEB00996B9F</string>
+				<string>3B8BA7ED19D9FBEB00996B9F</string>
+				<string>3B8BA7FA19D9FBEB00996B9F</string>
+				<string>3B8BA7D419D9FBEB00996B9F</string>
+				<string>3B8BA7E119D9FBEB00996B9F</string>
+				<string>3B8BA7E419D9FBEB00996B9F</string>
+				<string>3B8BA7DF19D9FBEB00996B9F</string>
+				<string>3B8BA7FE19D9FBEB00996B9F</string>
+				<string>3B8BA7DC19D9FBEB00996B9F</string>
+				<string>3B8BA7C119D9FBEB00996B9F</string>
+				<string>3B8BA7C719D9FBEB00996B9F</string>
+				<string>3B8BA7D919D9FBEB00996B9F</string>
+				<string>3B8BA7E519D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3B0A9D9319D9E15B002848CD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>8AC21FFE94904AF4A5A75D93</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3B0A9D9419D9E15B002848CD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>dstPath</key>
+			<string>include/$(PRODUCT_NAME)</string>
+			<key>dstSubfolderSpec</key>
+			<string>16</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXCopyFilesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3B0A9D9519D9E15B002848CD</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3B0A9DA719D9E15B002848CD</string>
+			<key>buildPhases</key>
+			<array>
+				<string>1131BDAE7C4A417198CCB31C</string>
+				<string>3B0A9D9219D9E15B002848CD</string>
+				<string>3B0A9D9319D9E15B002848CD</string>
+				<string>3B0A9D9419D9E15B002848CD</string>
+				<string>2E4245E8C0D94E29BD2A0DCD</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>MBDataEnvironment</string>
+			<key>productName</key>
+			<string>MBDataEnvironment</string>
+			<key>productReference</key>
+			<string>3B0A9D9619D9E15B002848CD</string>
+			<key>productType</key>
+			<string>com.apple.product-type.library.static</string>
+		</dict>
+		<key>3B0A9D9619D9E15B002848CD</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libMBDataEnvironment.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>3B0A9D9719D9E15B002848CD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B0A9D9619D9E15B002848CD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B0A9DA519D9E15B002848CD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3B0A9DA619D9E15B002848CD</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3B0A9DA719D9E15B002848CD</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3B0A9DA819D9E15B002848CD</string>
+				<string>3B0A9DA919D9E15B002848CD</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>3B0A9DA819D9E15B002848CD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>38E3065063027DCB078CF78A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3B0A9DA919D9E15B002848CD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A05207EBD318D61DBCA7396F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>3B8BA72A19D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA72B19D9FBEB00996B9F</string>
+				<string>3B8BA73019D9FBEB00996B9F</string>
+				<string>3B8BA73319D9FBEB00996B9F</string>
+				<string>3B8BA73819D9FBEB00996B9F</string>
+				<string>3B8BA73B19D9FBEB00996B9F</string>
+				<string>3B8BA78D19D9FBEB00996B9F</string>
+				<string>3B8BA7AF19D9FBEB00996B9F</string>
+				<string>3B8BA7B019D9FBEB00996B9F</string>
+				<string>3B8BA7B519D9FBEB00996B9F</string>
+				<string>3B8BA7BA19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Code</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA72B19D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA72C19D9FBEB00996B9F</string>
+				<string>3B8BA72D19D9FBEB00996B9F</string>
+				<string>3B8BA72E19D9FBEB00996B9F</string>
+				<string>3B8BA72F19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>DataModel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA72C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBAttributeValidator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA72D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBAttributeValidator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA72E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBDataModel.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA72F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBDataModel.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73019D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA73119D9FBEB00996B9F</string>
+				<string>3B8BA73219D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Device</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBDevice.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBDevice.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73319D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA73419D9FBEB00996B9F</string>
+				<string>3B8BA73519D9FBEB00996B9F</string>
+				<string>3B8BA73619D9FBEB00996B9F</string>
+				<string>3B8BA73719D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Environment</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBEnvironment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBEnvironment.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBEnvironmentLoader.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBEnvironmentLoader.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73819D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA73919D9FBEB00996B9F</string>
+				<string>3B8BA73A19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Events</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBEvents+DataLoading.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBEvents+DataLoading.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73B19D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA73C19D9FBEB00996B9F</string>
+				<string>3B8BA73D19D9FBEB00996B9F</string>
+				<string>3B8BA73E19D9FBEB00996B9F</string>
+				<string>3B8BA73F19D9FBEB00996B9F</string>
+				<string>3B8BA74019D9FBEB00996B9F</string>
+				<string>3B8BA74119D9FBEB00996B9F</string>
+				<string>3B8BA74219D9FBEB00996B9F</string>
+				<string>3B8BA74319D9FBEB00996B9F</string>
+				<string>3B8BA74419D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ExpressionEngine</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBExpression.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBExpression.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBExpressionCache.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA73F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBExpressionCache.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBExpressionError.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBExpressionError.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBExpressionExtensions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBExpressionExtensions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74419D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA74519D9FBEB00996B9F</string>
+				<string>3B8BA74619D9FBEB00996B9F</string>
+				<string>3B8BA74719D9FBEB00996B9F</string>
+				<string>3B8BA74819D9FBEB00996B9F</string>
+				<string>3B8BA74919D9FBEB00996B9F</string>
+				<string>3B8BA76919D9FBEB00996B9F</string>
+				<string>3B8BA78019D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Private</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBExpressionGrammar.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBExpressionGrammar.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBExpressionTokenizer.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBExpressionTokenizer.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74919D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA74A19D9FBEB00996B9F</string>
+				<string>3B8BA74B19D9FBEB00996B9F</string>
+				<string>3B8BA74C19D9FBEB00996B9F</string>
+				<string>3B8BA74D19D9FBEB00996B9F</string>
+				<string>3B8BA74E19D9FBEB00996B9F</string>
+				<string>3B8BA74F19D9FBEB00996B9F</string>
+				<string>3B8BA75019D9FBEB00996B9F</string>
+				<string>3B8BA75119D9FBEB00996B9F</string>
+				<string>3B8BA75219D9FBEB00996B9F</string>
+				<string>3B8BA75319D9FBEB00996B9F</string>
+				<string>3B8BA75419D9FBEB00996B9F</string>
+				<string>3B8BA75519D9FBEB00996B9F</string>
+				<string>3B8BA75619D9FBEB00996B9F</string>
+				<string>3B8BA75719D9FBEB00996B9F</string>
+				<string>3B8BA75819D9FBEB00996B9F</string>
+				<string>3B8BA75919D9FBEB00996B9F</string>
+				<string>3B8BA75A19D9FBEB00996B9F</string>
+				<string>3B8BA75B19D9FBEB00996B9F</string>
+				<string>3B8BA75C19D9FBEB00996B9F</string>
+				<string>3B8BA75D19D9FBEB00996B9F</string>
+				<string>3B8BA75E19D9FBEB00996B9F</string>
+				<string>3B8BA75F19D9FBEB00996B9F</string>
+				<string>3B8BA76019D9FBEB00996B9F</string>
+				<string>3B8BA76119D9FBEB00996B9F</string>
+				<string>3B8BA76219D9FBEB00996B9F</string>
+				<string>3B8BA76319D9FBEB00996B9F</string>
+				<string>3B8BA76419D9FBEB00996B9F</string>
+				<string>3B8BA76519D9FBEB00996B9F</string>
+				<string>3B8BA76619D9FBEB00996B9F</string>
+				<string>3B8BA76719D9FBEB00996B9F</string>
+				<string>3B8BA76819D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tokens</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLEscapeSequenceToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74B19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLEscapeSequenceToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLFunctionCallToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLFunctionCallToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLGroupingToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA74F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLGroupingToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLIgnorableWhitespaceToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLIgnorableWhitespaceToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLKeywordMatchingToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLKeywordMatchingToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLLiteralToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLLiteralToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLMathExpressionToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLMathExpressionToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLNumericLiteralToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLNumericLiteralToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLObjectReferenceToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75B19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLObjectReferenceToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLObjectSubreferenceToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLObjectSubreferenceToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLParameterDelimiterToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA75F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLParameterDelimiterToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLParameterGroupingToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLParameterGroupingToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLParseToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLParseToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLVariableReferenceToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLVariableReferenceToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLWhitespaceToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLWhitespaceToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>OperationTokens.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76919D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA76A19D9FBEB00996B9F</string>
+				<string>3B8BA76B19D9FBEB00996B9F</string>
+				<string>3B8BA76C19D9FBEB00996B9F</string>
+				<string>3B8BA76D19D9FBEB00996B9F</string>
+				<string>3B8BA76E19D9FBEB00996B9F</string>
+				<string>3B8BA76F19D9FBEB00996B9F</string>
+				<string>3B8BA77019D9FBEB00996B9F</string>
+				<string>3B8BA77119D9FBEB00996B9F</string>
+				<string>3B8BA77219D9FBEB00996B9F</string>
+				<string>3B8BA77319D9FBEB00996B9F</string>
+				<string>3B8BA77419D9FBEB00996B9F</string>
+				<string>3B8BA77519D9FBEB00996B9F</string>
+				<string>3B8BA77619D9FBEB00996B9F</string>
+				<string>3B8BA77719D9FBEB00996B9F</string>
+				<string>3B8BA77819D9FBEB00996B9F</string>
+				<string>3B8BA77919D9FBEB00996B9F</string>
+				<string>3B8BA77A19D9FBEB00996B9F</string>
+				<string>3B8BA77B19D9FBEB00996B9F</string>
+				<string>3B8BA77C19D9FBEB00996B9F</string>
+				<string>3B8BA77D19D9FBEB00996B9F</string>
+				<string>3B8BA77E19D9FBEB00996B9F</string>
+				<string>3B8BA77F19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tokens-Boolean</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLBooleanAndOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76B19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLBooleanAndOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLBooleanGroupingToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLBooleanGroupingToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLBooleanNegationToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA76F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLBooleanNegationToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLBooleanOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLBooleanOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLBooleanOrOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLBooleanOrOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLEqualityTestToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLEqualityTestToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLGreaterThanEqualsTestToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLGreaterThanEqualsTestToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLGreaterThanTestToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLGreaterThanTestToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLInequalityTestToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77B19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLInequalityTestToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLLessThanEqualsTestToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLLessThanEqualsTestToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLLessThanTestToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA77F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLLessThanTestToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78019D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA78119D9FBEB00996B9F</string>
+				<string>3B8BA78219D9FBEB00996B9F</string>
+				<string>3B8BA78319D9FBEB00996B9F</string>
+				<string>3B8BA78419D9FBEB00996B9F</string>
+				<string>3B8BA78519D9FBEB00996B9F</string>
+				<string>3B8BA78619D9FBEB00996B9F</string>
+				<string>3B8BA78719D9FBEB00996B9F</string>
+				<string>3B8BA78819D9FBEB00996B9F</string>
+				<string>3B8BA78919D9FBEB00996B9F</string>
+				<string>3B8BA78A19D9FBEB00996B9F</string>
+				<string>3B8BA78B19D9FBEB00996B9F</string>
+				<string>3B8BA78C19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tokens-Math</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLAdditionOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLAdditionOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLDivisionOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLDivisionOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLMathGroupingToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLMathGroupingToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLMathOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLMathOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLMultiplicationOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLMultiplicationOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78B19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLSubtractionOperatorToken.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLSubtractionOperatorToken.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78D19D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA78E19D9FBEB00996B9F</string>
+				<string>3B8BA7AD19D9FBEB00996B9F</string>
+				<string>3B8BA7AE19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Functions</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78E19D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA78F19D9FBEB00996B9F</string>
+				<string>3B8BA79019D9FBEB00996B9F</string>
+				<string>3B8BA79119D9FBEB00996B9F</string>
+				<string>3B8BA79219D9FBEB00996B9F</string>
+				<string>3B8BA79319D9FBEB00996B9F</string>
+				<string>3B8BA79419D9FBEB00996B9F</string>
+				<string>3B8BA79519D9FBEB00996B9F</string>
+				<string>3B8BA79619D9FBEB00996B9F</string>
+				<string>3B8BA79719D9FBEB00996B9F</string>
+				<string>3B8BA79819D9FBEB00996B9F</string>
+				<string>3B8BA79919D9FBEB00996B9F</string>
+				<string>3B8BA79A19D9FBEB00996B9F</string>
+				<string>3B8BA79B19D9FBEB00996B9F</string>
+				<string>3B8BA79C19D9FBEB00996B9F</string>
+				<string>3B8BA79D19D9FBEB00996B9F</string>
+				<string>3B8BA79E19D9FBEB00996B9F</string>
+				<string>3B8BA79F19D9FBEB00996B9F</string>
+				<string>3B8BA7A019D9FBEB00996B9F</string>
+				<string>3B8BA7A119D9FBEB00996B9F</string>
+				<string>3B8BA7A219D9FBEB00996B9F</string>
+				<string>3B8BA7A319D9FBEB00996B9F</string>
+				<string>3B8BA7A419D9FBEB00996B9F</string>
+				<string>3B8BA7A519D9FBEB00996B9F</string>
+				<string>3B8BA7A619D9FBEB00996B9F</string>
+				<string>3B8BA7A719D9FBEB00996B9F</string>
+				<string>3B8BA7A819D9FBEB00996B9F</string>
+				<string>3B8BA7A919D9FBEB00996B9F</string>
+				<string>3B8BA7AA19D9FBEB00996B9F</string>
+				<string>3B8BA7AB19D9FBEB00996B9F</string>
+				<string>3B8BA7AC19D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Implementation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA78F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLCollectionFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLCollectionFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLDataProcessingFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLDataProcessingFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLDateFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLDateFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLDebugFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLDebugFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLEncodingFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLEncodingFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLEnvironmentFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79A19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLEnvironmentFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79B19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLFileFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79C19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLFileFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79D19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLFontFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79E19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLFontFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA79F19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLGeometryFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLGeometryFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLLogicFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLLogicFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLMathFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLMathFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLRegexFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLRegexFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLResourceFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLResourceFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7A919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLRuntimeFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7AA19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLRuntimeFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7AB19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLStringFunctions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7AC19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLStringFunctions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7AD19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBMLFunction.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7AE19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBMLFunction.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7AF19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Mockingbird-DataEnvironment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B019D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA7B119D9FBEB00996B9F</string>
+				<string>3B8BA7B219D9FBEB00996B9F</string>
+				<string>3B8BA7B319D9FBEB00996B9F</string>
+				<string>3B8BA7B419D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Module</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBDataEnvironment.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBDataEnvironment.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBDataEnvironmentConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBDataEnvironmentConstants.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B519D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA7B619D9FBEB00996B9F</string>
+				<string>3B8BA7B719D9FBEB00996B9F</string>
+				<string>3B8BA7B819D9FBEB00996B9F</string>
+				<string>3B8BA7B919D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TypeConversion</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBStringConversions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBStringConversions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TypeCoercionSupport.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7B919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TypeCoercionSupport.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7BA19D9FBEB00996B9F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3B8BA7BB19D9FBEB00996B9F</string>
+				<string>3B8BA7BC19D9FBEB00996B9F</string>
+				<string>3B8BA7BD19D9FBEB00996B9F</string>
+				<string>3B8BA7BE19D9FBEB00996B9F</string>
+				<string>3B8BA7BF19D9FBEB00996B9F</string>
+				<string>3B8BA7C019D9FBEB00996B9F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>VariableSpace</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7BB19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBScopedVariables.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7BC19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBScopedVariables.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7BD19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBVariableDeclaration.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7BE19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBVariableDeclaration.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7BF19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>MBVariableSpace.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7C019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>MBVariableSpace.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B8BA7C119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA72D19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA72F19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA73219D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA73519D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA73719D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA73A19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA73D19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA73F19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7C919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74119D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7CA19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74319D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7CB19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74619D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7CC19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74819D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7CD19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74B19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7CE19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74D19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7CF19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA74F19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75119D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75319D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75519D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75719D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75919D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75B19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75D19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA75F19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76119D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7D919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76319D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7DA19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76519D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7DB19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76719D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7DC19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76B19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7DD19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76D19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7DE19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA76F19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7DF19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77119D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77319D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77519D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77719D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77919D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77B19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77D19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA77F19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA78219D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA78419D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7E919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA78619D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7EA19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA78819D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7EB19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA78A19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7EC19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA78C19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7ED19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79019D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7EE19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79219D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7EF19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79419D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79619D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79819D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79A19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79C19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F419D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA79E19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F519D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7A019D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F619D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7A219D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F719D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7A419D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F819D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7A619D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7F919D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7A819D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7FA19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7AA19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7FB19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7AC19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7FC19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7AE19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7FD19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7B219D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7FE19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7B419D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA7FF19D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7B719D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA80019D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7B919D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA80119D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7BC19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA80219D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7BE19D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3B8BA80319D9FBEB00996B9F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3B8BA7C019D9FBEB00996B9F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8AC21FFE94904AF4A5A75D93</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3748C53F01464830A2605981</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A05207EBD318D61DBCA7396F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>3B0A9D8E19D9E15B002848CD</string>
+</dict>
+</plist>
