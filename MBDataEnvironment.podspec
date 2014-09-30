@@ -11,8 +11,10 @@ Pod::Spec.new do |s|
 
 	s.name                  = "MBDataEnvironment"
 	s.version               = "0.9.0"
-	s.summary               = "Mockingbird Data Environment: Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
-	s.homepage         	    = "https://github.com/gilt/MBDataEnvironment"
+	s.summary               = "Mockingbird Data Environment"
+	s.description			= "Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
+	s.homepage         	    = "https://github.com/gilt/"
+#	s.homepage         	    = "https://github.com/gilt/MBDataEnvironment"
 	s.license               = { :type => 'MIT', :file => 'LICENSE' }
 	s.author                = { "Evan Coyne Maloney" => "emaloney@gilt.com" }
 	s.platform              = :ios, '8.0'
@@ -27,6 +29,8 @@ Pod::Spec.new do |s|
 	s.source_files			= 'Code/**/*.{h,m}'
 	s.public_header_files	= 'Code/**/*.h'
 	s.private_header_files	= 'Code/ExpressionEngine/Private/**/*.h'
+
+	s.xcconfig				= { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
 
 	#----------------------------------------------------------------
 	# Dependencies
