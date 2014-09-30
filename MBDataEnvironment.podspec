@@ -32,15 +32,7 @@ Pod::Spec.new do |s|
 	# Dependencies
 	#----------------------------------------------------------------
 
-	s.dependency = 'MBToolbox', '~> 1.0'	
-	
-	# Include the latest (as of this writing) RaptureXML library.
-	# We have to specify master because the published podspec is
-	# does not include the latest changes. We're also locking to
-	# a specific commit to ensure we don't break in the future.
-	s.dependency = 'RaptureXML',
-						:git => 'https://github.com/ZaBlanc/RaptureXML.git',
-						:branch => 'master',
-						:commit => '76b59ec0abf68c06d27cc027d7750b6a4da08650'
+	s.dependency 'MBToolbox', '~> 1.0'	
+	s.dependency 'RaptureXML@Gilt', '~> 1.0.3'
 
 end
