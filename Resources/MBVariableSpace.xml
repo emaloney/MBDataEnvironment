@@ -156,10 +156,6 @@
     <Function class="MBMLLogicFunctions" name="if" method="ifOperator" input="pipedExpressions"/>
     <Function class="MBMLLogicFunctions" name="selectFirstValue" input="pipedExpressions"/>
 
-    <Function class="MBMLMapFunctions" name="distance" input="pipedObjects"/>
-    <Function class="MBMLMapFunctions" name="formatDistance" input="pipedObjects"/>
-    <Function class="MBMLMapFunctions" name="parseLocation" input="string"/>
-
     <Function class="MBMLMathFunctions" name="mod" input="pipedMath"/>
     <Function class="MBMLMathFunctions" name="modFloat" input="pipedMath"/>
     <Function class="MBMLMathFunctions" name="percent" input="pipedExpressions"/>
