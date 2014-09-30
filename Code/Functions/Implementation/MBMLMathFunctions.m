@@ -6,7 +6,9 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import <stdlib.h>
+#import <MBToolbox/MBDebug.h>
 
 #import "MBMLMathFunctions.h"
 #import "MBExpression.h"

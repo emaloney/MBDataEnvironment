@@ -6,6 +6,8 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBDebug.h>
+
 #import "MBDevice.h"
 #import "MBStringConversions.h"
 #import "MBDataEnvironmentConstants.h"

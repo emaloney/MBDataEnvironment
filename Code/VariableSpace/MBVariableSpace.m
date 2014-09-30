@@ -7,7 +7,7 @@
 //
 
 #import <RaptureXML@Gilt/RXMLElement.h>
-#import <MBToolbox/MBEvents.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBVariableSpace.h"
 #import "MBEnvironment.h"

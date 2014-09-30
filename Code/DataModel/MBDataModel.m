@@ -7,8 +7,7 @@
 //
 
 #import <RaptureXML@Gilt/RXMLElement.h>
-#import <MBToolbox/NSString+MBIndentation.h>
-#import <MBToolbox/NSError+MBToolbox.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBDataModel.h"
 #import "MBExpression.h"

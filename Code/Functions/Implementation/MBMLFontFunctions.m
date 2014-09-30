@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBDebug.h>
+
 #import "MBMLFontFunctions.h"
 #import "MBExpressionError.h"
 #import "MBMLFunction.h"

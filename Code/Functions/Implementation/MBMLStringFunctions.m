@@ -6,8 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/NSString+MBIndentation.h>
-#import <MBToolbox/UIFont+MBStringSizing.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBMLStringFunctions.h"
 #import "MBExpression.h"

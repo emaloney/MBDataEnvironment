@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/NSString+MBMessageDigest.h>
-#import <MBToolbox/NSData+MBMessageDigest.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBMLEncodingFunctions.h"
 

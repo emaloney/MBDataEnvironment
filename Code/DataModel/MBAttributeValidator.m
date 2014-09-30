@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Evan Coyne Maloney. All rights reserved.
 //
 
+#import <MBToolbox/MBDebug.h>
+
 #import "MBAttributeValidator.h"
 
 #define DEBUG_LOCAL     0

@@ -12,9 +12,7 @@
 
 #else
 
-#import <MBToolbox/Mockingbird-Toolbox.h>
-#import <MBToolbox/MBEvents.h>
-#import <MBToolbox/MBStringFunctions.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBExpression.h"
 #import "MBVariableSpace.h"

@@ -7,7 +7,7 @@
 //
 
 #import <objc/runtime.h>
-#import <MBToolbox/MBSingleton.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBMLRuntimeFunctions.h"
 #import "MBExpressionError.h"

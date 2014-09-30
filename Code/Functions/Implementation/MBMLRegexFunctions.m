@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/NSString+MBRegex.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBMLRegexFunctions.h"
 #import "MBMLFunction.h"

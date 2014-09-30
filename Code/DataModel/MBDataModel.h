@@ -6,8 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBFormattedDescriptionObject.h>
-#import <MBToolbox/MBStringFunctions.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBExpression.h"
 #import "MBDataEnvironmentConstants.h"
