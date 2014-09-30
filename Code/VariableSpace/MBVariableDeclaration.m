@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <RaptureXML/RXMLElement.h>
+#import <RaptureXML@Gilt/RXMLElement.h>
 
 #import "MBVariableDeclaration.h"
 #import "Mockingbird-DataEnvironment.h"

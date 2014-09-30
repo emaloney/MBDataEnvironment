@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <RaptureXML/RXMLElement.h>
+#import <RaptureXML@Gilt/RXMLElement.h>
 #import <MBToolbox/NSString+MBIndentation.h>
 #import <MBToolbox/NSError+MBToolbox.h>
 
