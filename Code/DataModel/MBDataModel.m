@@ -12,7 +12,7 @@
 #import "MBDataModel.h"
 #import "MBExpression.h"
 #import "MBEnvironment.h"
-#import "MBDataEnvironment.h"
+#import "MBDataEnvironmentModule.h"
 
 #define DEBUG_LOCAL         0
 #define DEBUG_VERBOSE		0
@@ -528,10 +528,10 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     if (deprecatedValue) {
         [self removeAttribute:deprecatedAttribute];
         if ([self hasAttribute:newAttribute]) {
-            [[MBDataEnvironment log] issueDeprecationWarningWithFormat:@"The <%@> attribute \"%@\" is deprecated in favor of \"%@\"; the value of \"%@\" will be ignored because there is already a value for \"%@\"", self.xmlTagName, deprecatedAttribute, newAttribute, deprecatedAttribute, newAttribute];
+            [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"The <%@> attribute \"%@\" is deprecated in favor of \"%@\"; the value of \"%@\" will be ignored because there is already a value for \"%@\"", self.xmlTagName, deprecatedAttribute, newAttribute, deprecatedAttribute, newAttribute];
         }
         else {
-            [[MBDataEnvironment log] issueDeprecationWarningWithFormat:@"The <%@> attribute \"%@\" is deprecated in favor of \"%@\"", self.xmlTagName, deprecatedAttribute, newAttribute];
+            [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"The <%@> attribute \"%@\" is deprecated in favor of \"%@\"", self.xmlTagName, deprecatedAttribute, newAttribute];
             [self setAttribute:deprecatedValue forName:newAttribute];
         }
     }

@@ -1,19 +1,19 @@
 //
-//  MBDataEnvironment.m
+//  MBDataEnvironmentModule.m
 //  Mockingbird Data Environment
 //
 //  Created by Evan Coyne Maloney on 7/30/14.
 //  Copyright (c) 2014 Gilt Groupe. All rights reserved.
 //
 
-#import "MBDataEnvironment.h"
+#import "MBDataEnvironmentModule.h"
 
 #define DEBUG_LOCAL     0
 
 /******************************************************************************/
 #pragma mark -
-#pragma mark MBDataEnvironment implementation
+#pragma mark MBDataEnvironmentModule implementation
 /******************************************************************************/
 
-@implementation MBDataEnvironment
+@implementation MBDataEnvironmentModule
 @end

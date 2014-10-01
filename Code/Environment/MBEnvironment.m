@@ -13,7 +13,7 @@
 #import "MBEnvironmentLoader.h"
 #import "MBVariableSpace.h"
 #import "MBExpression.h"
-#import "MBDataEnvironment.h"
+#import "MBDataEnvironmentModule.h"
 #import "MBDataEnvironmentConstants.h"
 
 #define DEBUG_LOCAL         0

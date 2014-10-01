@@ -15,7 +15,7 @@
 #import "MBExpression.h"
 #import "MBMLFunction.h"
 #import "MBExpressionCache.h"
-#import "MBDataEnvironment.h"
+#import "MBDataEnvironmentModule.h"
 
 #define DEBUG_LOCAL         0
 #define DEBUG_VERBOSE       0

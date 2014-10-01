@@ -1,5 +1,5 @@
 //
-//  MBDataEnvironment.h
+//  MBDataEnvironmentModule.h
 //  Mockingbird Data Environment
 //
 //  Created by Evan Coyne Maloney on 7/30/14.
@@ -10,8 +10,8 @@
 
 /******************************************************************************/
 #pragma mark -
-#pragma mark MBDataEnvironment class
+#pragma mark MBDataEnvironmentModule class
 /******************************************************************************/
 
-@interface MBDataEnvironment : MBModuleBase
+@interface MBDataEnvironmentModule : MBModuleBase
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MBMLFunction.h"
-#import "MBDataEnvironment.h"
+#import "MBDataEnvironmentModule.h"
 
 #define DEBUG_LOCAL                 0       // turns on tracing of function calls
 #define DEBUG_VERBOSE               0       // turns on tracing of function parameter validation
@@ -795,16 +795,16 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 {
     @try {
         if (_deprecationMessage && !_deprecatedInFavorOf) {
-            [[MBDataEnvironment log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated: %@", _name, _deprecationMessage];
+            [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated: %@", _name, _deprecationMessage];
         }
         else if (_deprecationMessage && _deprecatedInFavorOf) {
-            [[MBDataEnvironment log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated: %@; please update your code to use ^%@() instead", _name, _deprecationMessage, _deprecatedInFavorOf];
+            [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated: %@; please update your code to use ^%@() instead", _name, _deprecationMessage, _deprecatedInFavorOf];
         }
         else if (_deprecatedInFavorOf) {
-            [[MBDataEnvironment log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated; please update your code to use ^%@() instead", _name, _deprecatedInFavorOf];
+            [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated; please update your code to use ^%@() instead", _name, _deprecatedInFavorOf];
         }
         else if (_deprecated && [MBExpression booleanFromValue:_deprecated]) {
-            [[MBDataEnvironment log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated; please update your code to avoid using it", _name];
+            [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"^%@() has been deprecated; please update your code to avoid using it", _name];
         }
         
 #pragma clang diagnostic push

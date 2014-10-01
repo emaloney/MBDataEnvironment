@@ -12,7 +12,7 @@
 #import "MBExpression.h"
 #import "MBMLFunction.h"
 #import "MBExpressionGrammar.h"
-#import "MBDataEnvironment.h"
+#import "MBDataEnvironmentModule.h"
 
 /******************************************************************************/
 #pragma mark -
@@ -201,7 +201,7 @@
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
     if (err) return err;
 
-    MBModuleLog* log = [MBDataEnvironment log];
+    MBModuleLog* log = [MBDataEnvironmentModule log];
     if (paramCnt == 3) {
         Class specifiedClass = NSClassFromString([params[2] evaluateAsString]);
         if (specifiedClass && [specifiedClass conformsToProtocol:@protocol(MBModule)]) {
