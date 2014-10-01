@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import "Mockingbird-DataEnvironment.h"
+#import <Foundation/Foundation.h>
 
 @class MBVariableSpace;
 @class MBExpressionGrammar;

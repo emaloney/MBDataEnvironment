@@ -6,6 +6,8 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBDebug.h>
+
 #import "MBMLBooleanGroupingToken.h"
 #import "MBExpression.h"
 #import "MBExpressionTokenizer.h"

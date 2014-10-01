@@ -6,6 +6,8 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBDebug.h>
+
 #import "MBExpressionExtensions.h"
 #import "MBMLVariableReferenceToken.h"
 

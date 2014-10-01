@@ -9,7 +9,7 @@
 #import <RaptureXML@Gilt/RXMLElement.h>
 
 #import "MBVariableDeclaration.h"
-#import "Mockingbird-DataEnvironment.h"
+#import "MBVariableSpace.h"
 
 #define DEBUG_LOCAL         0
 

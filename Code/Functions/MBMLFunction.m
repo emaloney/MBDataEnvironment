@@ -7,7 +7,7 @@
 //
 
 #import "MBMLFunction.h"
-#import "Mockingbird-DataEnvironment.h"
+#import "MBDataEnvironment.h"
 
 #define DEBUG_LOCAL                 0       // turns on tracing of function calls
 #define DEBUG_VERBOSE               0       // turns on tracing of function parameter validation

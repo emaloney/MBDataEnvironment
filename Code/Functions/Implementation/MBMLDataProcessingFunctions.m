@@ -6,10 +6,9 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
-#import "Mockingbird-DataEnvironment.h"
-
 #import "MBMLDataProcessingFunctions.h"
 #import "MBMLFunction.h"
+#import "MBVariableSpace.h"
 
 #define DEBUG_LOCAL     0
 

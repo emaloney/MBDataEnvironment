@@ -7,9 +7,8 @@
 //
 
 #import "MBEvents+DataLoading.h"
-#import "Mockingbird-DataEnvironment.h"
-
-#define DEBUG_LOCAL         0
+#import "MBVariableSpace.h"
+#import "MBDataEnvironmentConstants.h"
 
 /******************************************************************************/
 #pragma mark Constants

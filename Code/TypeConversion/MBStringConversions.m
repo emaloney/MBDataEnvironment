@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/NSError+MBToolbox.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBStringConversions.h"
 #import "MBExpression.h"
-#import "Mockingbird-DataEnvironment.h"
+#import "MBDataEnvironmentConstants.h"
 
 #define DEBUG_LOCAL		0
 
