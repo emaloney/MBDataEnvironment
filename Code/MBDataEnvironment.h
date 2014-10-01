@@ -12,6 +12,11 @@
 
 #else
 
+//
+// NOTE: This header file is indended for external use. It should *not* be
+//       included from within code in the Mockingbird Data Environment itself.
+//
+
 // import headers from inherited modules
 #import <MBToolbox/MBToolbox.h>
 
