@@ -97,11 +97,6 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Managing the environment
 /******************************************************************************/
 
-- (NSString*) defaultEnvironmentFilename
-{
-    return [[[self class] description] stringByAppendingPathExtension:@"xml"];
-}
-
 - (NSArray*) acceptedTagNames
 {
     return @[kMBVariableSpaceXMLTagVar,

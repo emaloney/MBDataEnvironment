@@ -16,4 +16,10 @@
 /******************************************************************************/
 
 @implementation MBDataEnvironmentModule
+
++ (NSString*) moduleEnvironmentFilename
+{
+    return [[[self class] description] stringByAppendingPathExtension:@"xml"];
+}
+
 @end
