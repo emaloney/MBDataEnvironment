@@ -229,7 +229,7 @@
 		3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableDeclaration.m; sourceTree = "<group>"; };
 		3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableSpace.h; sourceTree = "<group>"; };
 		3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableSpace.m; sourceTree = "<group>"; };
-		3BBE05E019E3327B007C92A2 /* MBDataEnvironment.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MBDataEnvironment.xml; sourceTree = "<group>"; };
+		3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MBDataEnvironmentModule.xml; sourceTree = "<group>"; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -539,7 +539,7 @@
 		3BBE05DF19E3327B007C92A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3BBE05E019E3327B007C92A2 /* MBDataEnvironment.xml */,
+				3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

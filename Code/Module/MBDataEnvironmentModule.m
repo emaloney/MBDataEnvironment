@@ -19,7 +19,7 @@
 
 + (NSString*) moduleEnvironmentFilename
 {
-    return [[[self class] description] stringByAppendingPathExtension:@"xml"];
+    return [[self description] stringByAppendingPathExtension:@"xml"];
 }
 
 @end
