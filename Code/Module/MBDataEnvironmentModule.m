@@ -7,6 +7,7 @@
 //
 
 #import "MBDataEnvironmentModule.h"
+#import "MBVariableSpace.h"
 
 #define DEBUG_LOCAL     0
 
@@ -16,6 +17,11 @@
 /******************************************************************************/
 
 @implementation MBDataEnvironmentModule
+
++ (NSArray*) environmentLoaderClasses
+{
+    return @[[MBVariableSpace class]];
+}
 
 + (NSString*) moduleEnvironmentFilename
 {

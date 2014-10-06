@@ -66,8 +66,6 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
         s_registeredLoaderClasses = [NSMutableArray new];
 
         [self addSupportedLibraryClassPrefix:kMBLibraryClassPrefix];
-
-        [self registerEnvironmentLoaderClass:[MBVariableSpace class]];
     }
 }
 
@@ -79,7 +77,7 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
 {
     self = [super init];
     if (self) {
-        _modules = [NSMutableArray new];
+        _modules = [NSMutableArray arrayWithObject:[MBDataEnvironmentModule class]];    // this module is always included
         _loaders = [NSMutableArray new];
         _elementNamesToLoaders = [NSMutableDictionary new];
 
@@ -519,46 +517,31 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     for (NSString* attrName in attrNames) {
         NSString* val = [xml attribute:attrName];
         if ([attrName isEqualToString:kMBMLAttributeModules]) {
-            // the extensions attribute can be a comma-separated list
-            NSArray* modules = [val componentsSeparatedByString:@","];
-            for (__strong NSString* moduleClassName in modules) {
-                moduleClassName = MBTrimString(moduleClassName);
-                if (moduleClassName && moduleClassName.length > 0) {
-                    Class moduleClass = NSClassFromString(moduleClassName);
-                    if (moduleClass) {
-                        if ([moduleClass conformsToProtocol:@protocol(MBModule)]) {
-                            if (![_modules containsObject:moduleClass]) {
-                                [_modules addObject:moduleClass];
-                                if ([moduleClass respondsToSelector:@selector(environmentLoaderClasses)]) {
-                                    NSArray* loaderClasses = [moduleClass environmentLoaderClasses];
-                                    for (Class loaderClass in loaderClasses) {
-                                        if ([loaderClass isSubclassOfClass:[MBEnvironmentLoader class]]) {
-                                            if ([MBEnvironment registerEnvironmentLoaderClass:loaderClass]) {
-                                                MBEnvironmentLoader* loader = [self addEnvironmentLoaderFromClass:loaderClass];
-                                                if ([MBEnvironment instance] == self) {
-                                                    // if we're the active environment, activate the new loader, too
-                                                    [loader environmentWillActivate:self];
-                                                    [loader environmentDidActivate:self];
-                                                }
-                                                // notify the loader that we're loading
-                                                [loader environmentWillLoad:self];
-                                            }
-                                        }
-                                        else {
-                                            errorLog(@"Invalid loader class \"%@\"; must be a subclass of %@", loaderClass, [MBEnvironmentLoader class]);
-                                        }
-                                    }
+            if (depth == 0) {
+                // the extensions attribute can be a comma-separated list
+                NSArray* modules = [val componentsSeparatedByString:@","];
+                for (__strong NSString* moduleClassName in modules) {
+                    moduleClassName = MBTrimString(moduleClassName);
+                    if (moduleClassName && moduleClassName.length > 0) {
+                        Class moduleClass = NSClassFromString(moduleClassName);
+                        if (moduleClass) {
+                            if ([moduleClass conformsToProtocol:@protocol(MBModule)]) {
+                                if (![_modules containsObject:moduleClass]) {
+                                    [_modules addObject:moduleClass];
                                 }
+                            }
+                            else {
+                                errorLog(@"Invalid module class \"%@\"; must conform to the protocol %@", moduleClassName, NSStringFromProtocol(@protocol(MBModule)));
                             }
                         }
                         else {
-                            errorLog(@"Invalid module class \"%@\"; must conform to the protocol %@", moduleClassName, NSStringFromProtocol(@protocol(MBModule)));
+                            errorLog(@"Couldn't load module class \"%@\"; no implementation found", moduleClassName);
                         }
                     }
-                    else {
-                        errorLog(@"Couldn't load module class \"%@\"; no implementation found", moduleClassName);
-                    }
                 }
+            }
+            else {
+                errorLog(@"Modules can only be specified in the top level environment file; the value for this \"%@\" attribute will be ignored: %@", kMBMLAttributeModules, val);
             }
         }
         else {
@@ -570,12 +553,36 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     // figure out what include files we need to load
     NSMutableArray* includes = [NSMutableArray new];
 
-    // each code module may have its own environment file
-    for (Class moduleClass in _modules) {
-        if ([moduleClass respondsToSelector:@selector(moduleEnvironmentFilename)]) {
-            NSString* includeFile = [moduleClass moduleEnvironmentFilename];
-            if (includeFile && ![includes containsObject:includeFile]) {
-                [includes addObject:includeFile];
+    if (depth == 0) {
+        for (Class moduleClass in _modules) {
+            // process each enable code modules
+            if ([moduleClass respondsToSelector:@selector(environmentLoaderClasses)]) {
+                NSArray* loaderClasses = [moduleClass environmentLoaderClasses];
+                for (Class loaderClass in loaderClasses) {
+                    if ([loaderClass isSubclassOfClass:[MBEnvironmentLoader class]]) {
+                        if ([MBEnvironment registerEnvironmentLoaderClass:loaderClass]) {
+                            MBEnvironmentLoader* loader = [self addEnvironmentLoaderFromClass:loaderClass];
+                            if ([MBEnvironment instance] == self) {
+                                // if we're the active environment, activate the new loader, too
+                                [loader environmentWillActivate:self];
+                                [loader environmentDidActivate:self];
+                            }
+                            // notify the loader that we're loading
+                            [loader environmentWillLoad:self];
+                        }
+                    }
+                    else {
+                        errorLog(@"Invalid loader class \"%@\"; must be a subclass of %@", loaderClass, [MBEnvironmentLoader class]);
+                    }
+                }
+            }
+
+            // each code module may have its own environment file
+            if ([moduleClass respondsToSelector:@selector(moduleEnvironmentFilename)]) {
+                NSString* includeFile = [moduleClass moduleEnvironmentFilename];
+                if (includeFile) {
+                    [includes addObject:includeFile];
+                }
             }
         }
     }
