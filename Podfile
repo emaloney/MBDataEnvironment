@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 #
 # include Mockingbird Toolbox
 #
-pod 'MBToolbox', '~> 1.0.4'
+pod 'MBToolbox', '~> 1.0.5'
 
 #
 # include our forked version of Rapture XML
