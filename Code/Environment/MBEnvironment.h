@@ -66,6 +66,18 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 + (Class) libraryClassForName:(NSString*)className;
 
 /******************************************************************************/
+#pragma mark Code modules
+/******************************************************************************/
+
+/*!
+ Returns an array of `Class`es representing the `MBModule`s enabled in the
+ receiver.
+ 
+ @return    The enabled modules.
+ */
+- (NSArray*) enabledModuleClasses;
+
+/******************************************************************************/
 #pragma mark Managing environment loaders
 /******************************************************************************/
 

@@ -31,11 +31,6 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 /*! Returns `YES` if the receiver is associated witho the active environment. */ 
 @property(nonatomic, readonly) BOOL isActive;
 
-/*! If the receiver declares a default environment in an external file, 
-    this property returns the filename. The default implementation returns
-    `nil`, indicating that the receiver has no default environment file. */
-@property(nonatomic, readonly) NSString* defaultEnvironmentFilename;
-
 /*******************************************************************************
  @name MBML parsing
  ******************************************************************************/

@@ -27,15 +27,6 @@ NSString* const kMBMLEnvironmentDidLoadNotification         = @"Environment:didL
 @implementation MBEnvironmentLoader
 
 /******************************************************************************/
-#pragma mark Property handling
-/******************************************************************************/
-
-- (NSString*) defaultEnvironmentFilename
-{
-    return nil;
-}
-
-/******************************************************************************/
 #pragma mark Environment state changes
 /******************************************************************************/
 

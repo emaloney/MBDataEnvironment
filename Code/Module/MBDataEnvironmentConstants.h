@@ -68,7 +68,6 @@ extern NSString* const kMBMLAttributeUserDefaultsName;
 extern NSString* const kMBMLAttributeFile;
 extern NSString* const kMBMLAttributeExpression;
 extern NSString* const kMBMLAttributeModules;
-extern NSString* const kMBMLAttributeIncludeDefaultDeclarations;
 
 /******************************************************************************/
 #pragma mark Constants - MBML attribute names used by multiple external modules
