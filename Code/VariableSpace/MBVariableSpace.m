@@ -272,9 +272,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
         map = [NSMutableDictionary dictionary];
     }
     else if ([map isKindOfClass:[NSDictionary class]]) {
-        if (![map isKindOfClass:[NSMutableDictionary class]]) {
-            map = [map mutableCopy];
-        }
+        map = [map mutableCopy];
     }
     else {
         // set values on non-maps using key/value coding

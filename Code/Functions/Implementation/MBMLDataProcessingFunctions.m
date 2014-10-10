@@ -823,8 +823,10 @@ keyExpressions:(NSArray*)keyExprs
                     id curVal = map[keyVal];
                     if (curVal) {
                         // key already has a value; check to see what to do with it
-                        if ([curVal isKindOfClass:[NSMutableArray class]]) {
+                        if ([curVal isKindOfClass:[NSArray class]]) {
+                            curVal = [curVal mutableCopy];
                             [(NSMutableArray*)curVal addObject:mapValObject];
+                            map[keyVal] = curVal;
                         }
                         else {
                             NSMutableArray* values = [NSMutableArray new];
