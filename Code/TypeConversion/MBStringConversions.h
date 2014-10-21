@@ -230,6 +230,24 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*----------------------------------------------------------------------------*/
 
 /*!
+ Evaluates an expression as a dimension value, resulting in a `CGFloat`
+ representing that value.
+ 
+ Used to convert expressions into values for `width` and `height` dimensions.
+ Since these dimensions may be specified as wildcards (meaning that their
+ values are derived programmatically during layout), this method may return
+ `UIViewNoIntrinsicMetric` to indicate that the passed-in expression evaluated
+ to the wildcard ('`*`') character.
+ 
+ @param     expr An expression specifying a numeric value, or the wildcard
+            string ("`*`").
+ 
+ @return    A numerical representation of `expr`. Will be
+            `UIViewNoIntrinsicMetric` if `str` evaluates to the wildcard string.
+ */
++ (CGFloat) sizeDimensionFromExpression:(NSString*)expr;
+
+/*!
  Parses a string-based dimension value into a `CGFloat` representing that
  value.
 

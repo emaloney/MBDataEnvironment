@@ -15,7 +15,7 @@
 #define DEBUG_LOCAL		0
 
 /******************************************************************************/
-#pragma mark Constants 
+#pragma mark Constants
 /******************************************************************************/
 
 NSString* const kMBMLTextAlignmentLeft                      = @"left";
@@ -172,7 +172,7 @@ NSString* const kMBMLPopoverArrowDirectionRight             = @"right";
 NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 /******************************************************************************/
-#pragma mark - 
+#pragma mark -
 #pragma mark MBStringConversions implementation
 /******************************************************************************/
 
@@ -332,6 +332,20 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark CGSize conversions
 /******************************************************************************/
 
++ (CGFloat) sizeDimensionFromExpression:(NSString*)dimensionExpr
+{
+    if ([dimensionExpr isEqualToString:kMBWildcardString]) {
+        return UIViewNoIntrinsicMetric;
+    }
+    
+    MBExpressionError* err = nil;
+    NSNumber* num = [MBExpression asNumber:dimensionExpr error:&err];
+    if (err) {
+        return [self sizeDimensionFromString:[dimensionExpr evaluateAsString]];
+    }
+    return [num doubleValue];
+}
+
 + (CGFloat) sizeDimensionFromString:(NSString*)dimensionValue
 {
     CGFloat dim = UIViewNoIntrinsicMetric;
@@ -344,7 +358,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (BOOL) parseString:(NSString*)sizeStr asSize:(CGSize*)sizePtr
 {
     MBArgNonNil(sizePtr);
-
+    
     NSArray* dims = [sizeStr componentsSeparatedByString:@","];
     if (dims.count == 2) {
         CGFloat width = [self sizeDimensionFromString:dims[0]];
@@ -363,7 +377,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (CGSize) sizeFromString:(NSString*)str error:(NSError**)errPtr
 {
     debugTrace();
-
+    
     CGSize retVal = CGSizeZero;
     if (str && str.length > 0) {
         if (![self parseString:str asSize:&retVal]) {
@@ -422,7 +436,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (BOOL) parseString:(NSString*)rectStr asRect:(CGRect*)rectPtr
 {
     MBArgNonNil(rectPtr);
-
+    
     NSArray* dims = [rectStr componentsSeparatedByString:@","];
     if (dims.count == 4) {
         CGFloat x = [dims[0] doubleValue];
@@ -443,7 +457,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (CGRect) rectFromString:(NSString*)str error:(NSError**)errPtr
 {
     debugTrace();
-
+    
     CGRect retVal = CGRectZero;
     if (str && str.length > 0) {
         if (![self parseString:str asRect:&retVal]) {
@@ -571,7 +585,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(NSError**)errPtr
 {
     debugTrace();
-
+    
     UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
     if (str && str.length > 0) {
         NSArray* dims = [str componentsSeparatedByString:@","];
@@ -638,7 +652,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (UIColor*) colorFromString:(NSString*)str error:(NSError**)errPtr
 {
     debugTrace();
-
+    
     if (!str || str.length < 1) {
         [self _reportErrorWithMessage:@"couldn't parse an empty string as a color" to:errPtr];
         return kInvalidColorSpecification;
@@ -667,7 +681,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     
     for (int idx = 1; idx < str.length; idx++) {
         value <<= 4;
-
+        
         unichar ch = [str characterAtIndex:idx];
         if (ch >= '0' && ch <= '9')
             value += ch - '0';
@@ -683,7 +697,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     }
     
     return [UIColor colorWithRed:((value >> 24) & 0xFF)/255.0
-                           green:((value >> 16) & 0xFF)/255.0 
+                           green:((value >> 16) & 0xFF)/255.0
                             blue:((value >> 8) & 0xFF) / 255.0
                            alpha:(value & 0xFF) / 255.0];
 }
@@ -759,7 +773,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSError**)errPtr
 {
     debugTrace();
-
+    
     if ([kMBMLTextAlignmentLeft isEqualToString:alignStr]) {
         return NSTextAlignmentLeft;
     }
@@ -774,7 +788,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                                 as:MBStringify(NSTextAlignment)
                expectingValueAmong:@[kMBMLTextAlignmentLeft, kMBMLTextAlignmentCenter, kMBMLTextAlignmentRight]
                                 to:errPtr];
-
+        
     }
     return NSTextAlignmentLeft;         // default to left
 }
@@ -855,7 +869,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLActivityIndicatorViewStyleWhiteLarge, kMBMLActivityIndicatorViewStyleWhite, kMBMLActivityIndicatorViewStyleGray]
                                 to:errPtr];
     }
-
+    
     return UIActivityIndicatorViewStyleWhite;
 }
 
@@ -904,7 +918,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLButtonTypeCustom, kMBMLButtonTypeRoundedRect, kMBMLButtonTypeDetailDisclosure, kMBMLButtonTypeInfoLight, kMBMLButtonTypeInfoDark, kMBMLButtonTypeContactAdd]
                                 to:errPtr];
     }
-
+    
     return UIButtonTypeCustom;      // use custom button type by default
 }
 
@@ -950,7 +964,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLDateFormatterNoStyle, kMBMLDateFormatterShortStyle, kMBMLDateFormatterMediumStyle, kMBMLDateFormatterLongStyle, kMBMLDateFormatterFullStyle]
                                 to:errPtr];
     }
-
+    
     return NSDateFormatterNoStyle;
 }
 
@@ -1732,7 +1746,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLPopoverArrowDirectionUp, kMBMLPopoverArrowDirectionDown, kMBMLPopoverArrowDirectionLeft, kMBMLPopoverArrowDirectionRight, kMBMLPopoverArrowDirectionAny]
                                 to:errPtr];
     }
-
+    
     return UIPopoverArrowDirectionAny;
 }
 
