@@ -590,8 +590,13 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     // process <Include file="..."/> tags
     for (RXMLElement* el in [xml children:kMBMLIncludeTagName]) {
         NSString* includeFile = [el attribute:kMBMLAttributeFile];
+        verboseDebugLog(@"May include: %@", includeFile);
         if (includeFile && ![includes containsObject:includeFile]) {
-            [includes addObject:includeFile];
+            NSString* shouldInclude = [el attribute:kMBMLAttributeIf];
+            if (!shouldInclude || [shouldInclude evaluateAsBoolean]) {
+                [includes addObject:includeFile];
+                verboseDebugLog(@"Did include: %@", includeFile);
+            }
         }
     }
 
