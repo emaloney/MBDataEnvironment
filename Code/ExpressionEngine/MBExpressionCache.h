@@ -96,6 +96,12 @@
 - (void) removeFilesystemCache;
 
 /*!
+ Clears the in-memory cache and resets knowledge of data that could affect
+ automatic cache invalidation.
+ */
+- (void) resetMemoryCache;
+
+/*!
  Saves an empty cache file to the filesystem, replacing the existing
  cache file (if there is one).
 
@@ -120,8 +126,7 @@
  Determines whether the expression cache will utilize the filesystem for
  persisting the cached expression tokens.
 
- Cache persistence is disabled by default, and is turned on only after the
- `MBEnvironment` completes its initial load.
+ This value is manipulated during the `MBEnvironment` load process.
  */
 @property(nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled;
 

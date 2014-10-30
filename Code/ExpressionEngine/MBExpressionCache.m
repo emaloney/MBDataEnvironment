@@ -15,8 +15,8 @@
 #import "MBVariableSpace.h"
 #import "MBExpression.h"
 
-#define DEBUG_LOCAL                 01
-#define DEBUG_VERBOSE               01
+#define DEBUG_LOCAL                 0
+#define DEBUG_VERBOSE               0
 #define DEBUG_BYPASS_CACHE          NO
 #define DEBUG_DONT_PERSIST          NO
 
@@ -510,7 +510,6 @@ MBImplementSingleton();
     verboseDebugTrace();
     
     [_grammarToTokenCache removeAllObjects];
-    
     [self _setCacheDirty:NO];
 }
 
@@ -520,6 +519,18 @@ MBImplementSingleton();
     
     [_cacheLock lock];
     
+    [self _clearMemoryCacheHoldingLock];
+    
+    [_cacheLock unlock];
+}
+
+- (void) resetMemoryCache
+{
+    debugTrace();
+    
+    [_cacheLock lock];
+    
+    [_functionSignatures removeAllObjects];
     [self _clearMemoryCacheHoldingLock];
     
     [_cacheLock unlock];
