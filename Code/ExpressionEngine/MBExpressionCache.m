@@ -160,7 +160,7 @@ MBImplementSingleton();
 {
     self = [super init];
     if (self) {
-        _cacheFileName = [NSString stringWithFormat:@"%@.ser%lu", [self class], kMBExpressionCacheSerializationVersion];
+        _cacheFileName = [NSString stringWithFormat:@"%@.ser%lu", [self class], (unsigned long)kMBExpressionCacheSerializationVersion];
         _cacheLock = [NSLock new];
         _grammarToTokenCache = [NSMutableDictionary new];
         _functionSignatures = [NSMutableDictionary new];

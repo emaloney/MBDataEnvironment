@@ -629,7 +629,7 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
                 }
             }
             if (!include) {
-                debugLog(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
+                debugLog(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, (unsigned long)conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
             }
             else {
                 NSString* includeFilePath = [dir stringByAppendingPathComponent:includeFile];
