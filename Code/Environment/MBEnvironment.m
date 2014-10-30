@@ -510,7 +510,7 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
         [_loadedFilePaths addObject:filePath];
         [_processedFileNames addObject:[filePath lastPathComponent]];
     }
-
+    
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     
     NSArray* attrNames = [xml attributeNames];
@@ -549,10 +549,11 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
             [self setAttribute:val forName:attrName];
         }
     }
-
+    
     // figure out what include files we need to load
     NSMutableArray* includes = [NSMutableArray new];
-
+    NSMutableDictionary* includeConditionals = [NSMutableDictionary new];
+    
     if (depth == 0) {
         for (Class moduleClass in _modules) {
             // process each enable code modules
@@ -576,35 +577,62 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
                     }
                 }
             }
-
+            
             // each code module may have its own environment file
             if ([moduleClass respondsToSelector:@selector(moduleEnvironmentFilename)]) {
                 NSString* includeFile = [moduleClass moduleEnvironmentFilename];
                 if (includeFile) {
                     [includes addObject:includeFile];
+                    includeConditionals[includeFile] = @[kMBMLBooleanStringTrue];
                 }
             }
         }
     }
-
+    
     // process <Include file="..."/> tags
     for (RXMLElement* el in [xml children:kMBMLIncludeTagName]) {
         NSString* includeFile = [el attribute:kMBMLAttributeFile];
-        verboseDebugLog(@"May include: %@", includeFile);
-        if (includeFile && ![includes containsObject:includeFile]) {
-            NSString* shouldInclude = [el attribute:kMBMLAttributeIf];
-            if (!shouldInclude || [shouldInclude evaluateAsBoolean]) {
+        if (includeFile) {
+            NSString* shouldIncludeExpr = [el attribute:kMBMLAttributeIf];
+            if (!shouldIncludeExpr) {
+                shouldIncludeExpr = kMBMLBooleanStringTrue;
+            }
+            NSArray* conditionals = includeConditionals[includeFile];
+            if (conditionals) {
+                conditionals = [conditionals arrayByAddingObject:shouldIncludeExpr];
+            } else {
+                conditionals = @[shouldIncludeExpr];
+            }
+            includeConditionals[includeFile] = conditionals;
+            if (![includes containsObject:includeFile]) {
                 [includes addObject:includeFile];
-                verboseDebugLog(@"Did include: %@", includeFile);
             }
         }
+        else {
+            errorLog(@"Invalid <%@> tag: the \"%@\" attribute is required in: %@", kMBMLIncludeTagName, kMBMLAttributeFile, el.xml);
+        }
     }
-
+    
     // process each include
     for (NSString* includeFile in includes) {
-        NSString* includeFilePath = [dir stringByAppendingPathComponent:includeFile];
-        if (includeFile) {
-            if (![_processedFileNames containsObject:includeFile]) {
+        if ([_processedFileNames containsObject:includeFile]) {
+            debugLog(@"Skipping <%@> of file \"%@\"; was previously included", kMBMLIncludeTagName, includeFile);
+        }
+        else {
+            NSArray* conditionals = includeConditionals[includeFile];
+            BOOL include = NO;
+            for (NSString* conditional in conditionals) {
+                if ([conditional evaluateAsBoolean]) {
+                    debugLog(@"Will <%@> file \"%@\"", kMBMLIncludeTagName, includeFile);
+                    include = YES;
+                    break;
+                }
+            }
+            if (!include) {
+                debugLog(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
+            }
+            else {
+                NSString* includeFilePath = [dir stringByAppendingPathComponent:includeFile];
                 BOOL hasFile = [fileMgr fileExistsAtPath:includeFilePath];
                 
                 // first, see if the file exists in the same parent directory
@@ -638,17 +666,11 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
                     [self didAmendDataModelWithXMLFromFile:includeFilePath];
                 }
             }
-            else {
-                debugLog(@"Skipping include file because it has already been processed: %@", includeFile);
-            }
-        }
-        else {
-            errorLog(@"The <%@> MBML tag requires a \"%@\" attribute specifying the name of the to include", kMBMLIncludeTagName, kMBMLAttributeFile);
         }
     }
-
+    
     [self amendDataModelWithXML:xml];
-
+    
     if (depth == 0) {
         [self environmentDidLoad];
     }
