@@ -15,8 +15,8 @@
 #import "MBVariableSpace.h"
 #import "MBExpression.h"
 
-#define DEBUG_LOCAL                 0
-#define DEBUG_VERBOSE               0
+#define DEBUG_LOCAL                 01
+#define DEBUG_VERBOSE               01
 #define DEBUG_BYPASS_CACHE          NO
 #define DEBUG_DONT_PERSIST          NO
 
@@ -24,9 +24,113 @@
 #pragma mark Constants
 /******************************************************************************/
 
-const NSUInteger kMBExpressionCacheSerializationVersion     = 13;  // increment if file schema changes
+const NSUInteger kMBExpressionCacheSerializationVersion     = 0;  // increment if file schema changes
 const NSTimeInterval kMBExpressionCacheDontAutopersistAfter = -1;  // optimize for fast startup by only autopersisting expressions encountered within X seconds of startup (-1 to disable)
 const NSTimeInterval kMBExpressionCacheDelayBeforeFlushing  = 60;  // when a clean cache is first made dirty, we wait this long before autopersisting
+
+NSString* const kMBExpressionCacheFunctionSignaturesKey     = @"functionSignatures";
+NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCache";
+
+/******************************************************************************/
+#pragma mark -
+#pragma mark MBSerializedExpressionCache private class
+/******************************************************************************/
+
+@interface MBSerializedExpressionCache : NSObject < NSCoding >
+
+@property(nonatomic, strong) NSMutableDictionary* functionSignatures;
+@property(nonatomic, strong) NSMutableDictionary* grammarToTokenCache;
+
++ (MBSerializedExpressionCache*) loadFromFileAtPath:(NSString*)filePath;    // may throw exception
+- (BOOL) saveToFileAtPath:(NSString*)filePath;
+
+@end
+
+/******************************************************************************/
+#pragma mark -
+#pragma mark MBSerializedExpressionCache implementation
+/******************************************************************************/
+
+@implementation MBSerializedExpressionCache
+
+/******************************************************************************/
+#pragma mark NSCoding support
+/******************************************************************************/
+
+- (instancetype) initWithCoder:(NSCoder*)coder
+{
+    debugTrace();
+    
+    if ([coder allowsKeyedCoding]) {
+        self = [self init];
+        if (self) {
+            _functionSignatures = [coder decodeObjectForKey:kMBExpressionCacheFunctionSignaturesKey];
+            if (!_functionSignatures) {
+                _functionSignatures = [NSMutableDictionary new];
+            }
+            
+            _grammarToTokenCache = [coder decodeObjectForKey:kMBExpressionCacheGrammarToTokenCacheKey];
+            if (!_grammarToTokenCache) {
+                _grammarToTokenCache = [NSMutableDictionary new];
+            }
+        }
+        return self;
+    }
+    else {
+        [NSException raise:NSInvalidUnarchiveOperationException
+                    format:@"The %@ class is only compatible with keyed coding", [self class]];
+    }
+    return nil;
+}
+
+- (void) encodeWithCoder:(NSCoder*)coder
+{
+    debugTrace();
+    
+    if ([coder allowsKeyedCoding]) {
+        [coder encodeObject:_functionSignatures forKey:kMBExpressionCacheFunctionSignaturesKey];
+        [coder encodeObject:_grammarToTokenCache forKey:kMBExpressionCacheGrammarToTokenCacheKey];
+    }
+    else {
+        [NSException raise:NSInvalidArchiveOperationException
+                    format:@"The %@ class is only compatible with keyed coding", [self class]];
+    }
+}
+
+/******************************************************************************/
+#pragma mark Loading & saving
+/******************************************************************************/
+
++ (MBSerializedExpressionCache*) loadFromFileAtPath:(NSString*)filePath
+{
+    NSError* err = nil;
+    NSData* data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:&err];
+    if (!data) {
+        errorLog(@"%@ failed to read file <%@> due to error: %@", [self class], filePath, err);
+        return nil;
+    }
+    
+    MBSerializedExpressionCache* cache = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if (!cache) {
+        [NSException raise:NSInvalidArchiveOperationException
+                    format:@"Expected the file <%@> to contain an %@ instance", filePath, [self class]];
+    }
+    return cache;
+}
+
+- (BOOL) saveToFileAtPath:(NSString*)filePath
+{
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:self];
+    
+    NSError* err = nil;
+    if (![data writeToFile:filePath options:NSDataWritingAtomic error:&err]) {
+        errorLog(@"%@ failed to write file <%@> due to error: %@", [self class], filePath, err);
+        return NO;
+    }
+    return YES;
+}
+
+@end
 
 /******************************************************************************/
 #pragma mark -
@@ -37,6 +141,7 @@ const NSTimeInterval kMBExpressionCacheDelayBeforeFlushing  = 60;  // when a cle
 {
     NSDate* _cacheInstantiationTime;
     NSLock* _cacheLock;
+    NSMutableDictionary* _functionSignatures;
     NSMutableDictionary* _grammarToTokenCache;
     BOOL _cacheDirty;
     NSTimer* _saveCacheTimer;
@@ -44,7 +149,7 @@ const NSTimeInterval kMBExpressionCacheDelayBeforeFlushing  = 60;  // when a cle
 }
 
 MBImplementSingleton();
-                  
+
 /******************************************************************************/
 #pragma mark Object lifecycle
 /******************************************************************************/
@@ -55,26 +160,76 @@ MBImplementSingleton();
 {
     self = [super init];
     if (self) {
+        _cacheFileName = [NSString stringWithFormat:@"%@.ser%lu", [self class], kMBExpressionCacheSerializationVersion];
         _cacheLock = [NSLock new];
         _grammarToTokenCache = [NSMutableDictionary new];
-
+        _functionSignatures = [NSMutableDictionary new];
+        
         NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-
+        
         // when a memory warning occurs, we clear the cache
-		[nc addObserver:self
+        [nc addObserver:self
                selector:@selector(memoryWarning:)
                    name:UIApplicationDidReceiveMemoryWarningNotification
                  object:nil];
-
-        // when a new MBML function is declared, we need to clear the in-memory
-        // cache and reset the _cacheFileName since function parameter
-        // tokenization may not be compatible with what it was previously
-		[nc addObserver:self
-               selector:@selector(_handlePossibleCacheKeyChange)
+        
+        // because tokenized function parameters are stored in the cache, and
+        // because the function's inputType determines the structure of those
+        // tokens, we need to take this account when determining whether a cache
+        // file is compatible with the current set of functions as described by
+        // the variable space.
+        //
+        // as functions are declared, if an existing function is redefined with
+        // a new inputType, we will invalidate the cache to prevent incorrect
+        // results when passing function parameters from cached tokens
+        [nc addObserver:self
+               selector:@selector(_handlePossibleFunctionRedeclaration:)
                    name:kMBVariableSpaceDidDeclareFunctionEvent
                  object:nil];
     }
     return self;
+}
+
+/******************************************************************************/
+#pragma mark Ensuring cache consistency
+/******************************************************************************/
+
+- (void) _handlePossibleFunctionRedeclaration:(NSNotification*)notif
+{
+    verboseDebugTrace();
+    
+    MBMLFunction* func = notif.object;
+    NSString* funcName = func.name;
+    NSNumber* inputType = @(func.inputType);
+    
+    [_cacheLock lock];
+    
+    if (![self _isFunctionNamed:funcName compatibleWithInputType:inputType]) {
+        [self _clearMemoryCacheHoldingLock];
+    }
+    _functionSignatures[funcName] = inputType;
+    
+    [_cacheLock unlock];
+}
+
+- (BOOL) _isFunctionNamed:(NSString*)funcName compatibleWithInputType:(NSNumber*)inputType
+{
+    NSNumber* curInputType = _functionSignatures[funcName];
+    return (!curInputType || [curInputType isEqualToNumber:inputType]);
+}
+
+- (BOOL) _isCacheDataCompatible:(MBSerializedExpressionCache*)cacheData
+{
+    debugTrace();
+    
+    NSDictionary* signatures = cacheData.functionSignatures;
+    for (NSString* funcName in signatures) {
+        NSNumber* inputType = signatures[funcName];
+        if (![self _isFunctionNamed:funcName compatibleWithInputType:inputType]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 /******************************************************************************/
@@ -83,8 +238,8 @@ MBImplementSingleton();
 
 - (void) memoryWarning:(id)sender
 {
-	debugTrace();
-
+    debugTrace();
+    
     [self clearMemoryCache];
 }
 
@@ -112,11 +267,11 @@ MBImplementSingleton();
         
         if (setDirty && !_saveCacheTimer) {
             // if there isn't already a timer scheduled, set one to go off soon
-            _saveCacheTimer = [NSTimer scheduledTimerWithTimeInterval:kMBExpressionCacheDelayBeforeFlushing 
-                                                                target:self
-                                                              selector:@selector(_saveTimerFired:)
-                                                              userInfo:nil
-                                                               repeats:NO];
+            _saveCacheTimer = [NSTimer scheduledTimerWithTimeInterval:kMBExpressionCacheDelayBeforeFlushing
+                                                               target:self
+                                                             selector:@selector(_saveTimerFired:)
+                                                             userInfo:nil
+                                                              repeats:NO];
         }
         else if (!setDirty && _saveCacheTimer) {
             [_saveCacheTimer invalidate];
@@ -141,56 +296,16 @@ MBImplementSingleton();
 #pragma mark Accessing cache files
 /******************************************************************************/
 
-- (void) _handlePossibleCacheKeyChange
-{
-    verboseDebugTrace();
-
-    _cacheFileName = nil;
-
-    [self clearMemoryCache];
-}
-
-- (NSString*) _cacheFileName
-{
-    //
-    // because tokenized function parameters are stored in the cache, and
-    // because the function's inputType determines the structure of those
-    // tokens, we need to take this account when determining whether a cache
-    // file is compatible with the current set of functions as described by
-    // the variable space. if the list of functions changes, or if a
-    // function's inputType changes, the tokens in the cache may not be
-    // compatible. (See IPHONE-1076 and IOS-273)            --ECM 3/27/2014
-    //
-    if (!_cacheFileName) {
-        MBVariableSpace* vars = [MBVariableSpace instance];
-        NSArray* funcNames = [vars functionNames];
-        NSArray* sortedFuncNames = [funcNames sortedArrayUsingSelector:@selector(compare:)];
-
-        NSMutableArray* cacheKeyElements = [NSMutableArray new];
-        [cacheKeyElements addObject:[NSString stringWithFormat:@"%@:%u", [self class], (unsigned int)kMBExpressionCacheSerializationVersion]];
-        for (NSString* functionName in sortedFuncNames) {
-            MBMLFunction* func = [vars functionWithName:functionName];
-            MBMLFunctionInputType inputType = func.inputType;
-            [cacheKeyElements addObject:[NSString stringWithFormat:@"%@:%lu", functionName, (unsigned long)inputType]];
-        }
-        NSString* cacheKeySrc = [cacheKeyElements componentsJoinedByString:@","];
-        NSString* cacheKey = [cacheKeySrc MD5];
-        
-        _cacheFileName = [NSString stringWithFormat:@"%@-%@.tokenCache", [MBExpression class], cacheKey];
-    }
-    return _cacheFileName;
-}
-
 - (NSString*) _pathForPrebuiltCacheFile
 {
-    return [[NSBundle mainBundle] pathForResource:[self _cacheFileName] ofType:nil];
+    return [[NSBundle mainBundle] pathForResource:_cacheFileName ofType:nil];
 }
 
 - (NSString*) _pathForUserCacheFile
 {
     NSString* cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, NO) firstObject];
     NSString* exprCacheDir = [[cacheDir stringByAppendingPathComponent:[[self class] description]] stringByExpandingTildeInPath];
-
+    
     NSError* err = nil;
     NSFileManager* mgr = [NSFileManager defaultManager];
     if (![mgr fileExistsAtPath:exprCacheDir]) {
@@ -199,30 +314,27 @@ MBImplementSingleton();
             return nil;
         }
     }
-
-    return [exprCacheDir stringByAppendingPathComponent:[self _cacheFileName]];
+    
+    return [exprCacheDir stringByAppendingPathComponent:_cacheFileName];
 }
 
-- (NSMutableDictionary*) _loadCacheFromFile:(NSString*)cacheFile isResource:(BOOL)rsrc
+- (MBSerializedExpressionCache*) _loadCacheFromFile:(NSString*)cacheFile isResource:(BOOL)rsrc
 {
-    NSError* err = nil;
-    NSData* data = [NSData dataWithContentsOfFile:cacheFile options:NSDataReadingUncached error:&err];
-    if (!data) {
-        errorLog(@"%@ failed to read file <%@> due to error: %@", [self class], cacheFile, err);
-        return nil;
-    }
-    
     @try {
-        return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        return [MBSerializedExpressionCache loadFromFileAtPath:cacheFile];
     }
     @catch (NSException* ex) {
-        errorLog(@"%@ failed to properly deserialize file <%@> (it may be corrupted and will be deleted); error: %@", [self class], cacheFile, ex);
-
-        // if we're dealing with a regular file and not a compiled-in resource, 
-        // delete the file that caused exception
-        NSError* err = nil;
-        if (![[NSFileManager defaultManager] removeItemAtPath:cacheFile error:&err]) {
-            errorLog(@"%@ failed to delete (apparently) corrupted file <%@>: %@", [self class], cacheFile, err);
+        errorLog(@"%@ failed to properly deserialize file <%@> (it may be corrupted); error: %@", [self class], cacheFile, ex);
+        
+        // if we're dealing with a regular file and not a compiled-in resource, delete the file that caused exception
+        if (!rsrc) {
+            NSError* err = nil;
+            if (![[NSFileManager defaultManager] removeItemAtPath:cacheFile error:&err]) {
+                errorLog(@"%@ failed to delete (apparently) corrupted file <%@>: %@", [self class], cacheFile, err);
+            }
+            else {
+                errorLog(@"%@ deleted (apparently) corrupted file <%@>", [self class], cacheFile);
+            }
         }
     }
     
@@ -233,46 +345,51 @@ MBImplementSingleton();
 #pragma mark Cache persistence
 /******************************************************************************/
 
-- (NSMutableDictionary*) _cacheDataFromFilesystem
+- (MBSerializedExpressionCache*) _cacheDataFromFilesystem
 {
-    NSMutableDictionary* cache = nil;
+    MBSerializedExpressionCache* cacheData = nil;
     if (!DEBUG_FLAG(DEBUG_DONT_PERSIST) && self.isPersistenceEnabled) {
         NSFileManager* fileMgr = [NSFileManager defaultManager];
-
+        
         NSString* cacheFile = [self _pathForUserCacheFile];
         if ([fileMgr isReadableFileAtPath:cacheFile]) {
-            cache = [self _loadCacheFromFile:cacheFile isResource:NO];
-            if (cache) {
+            cacheData = [self _loadCacheFromFile:cacheFile isResource:NO];
+            if (cacheData) {
                 if (!self.suppressConsoleLogging) consoleLog(@"%@ loaded from file: %@", [self class], cacheFile);
             }
         }
-
-        if (!cache) {
+        
+        if (!cacheData) {
             cacheFile = [self _pathForPrebuiltCacheFile];
             if ([fileMgr isReadableFileAtPath:cacheFile]) {
-                cache = [self _loadCacheFromFile:cacheFile isResource:YES];
-                if (cache) {
-                    if (!self.suppressConsoleLogging) consoleLog(@"%@ loaded from file: %@", [self class], cacheFile);
+                cacheData = [self _loadCacheFromFile:cacheFile isResource:YES];
+                if (cacheData) {
+                    if (!self.suppressConsoleLogging) consoleLog(@"%@ loaded from resource: %@", [self class], cacheFile);
                 }
             }
         }
-
-        if (!cache) {
-            if (!self.suppressConsoleLogging) consoleLog(@"%@ did not find a cache file named %@", [self class], [self _cacheFileName]);
+        
+        if (!cacheData) {
+            if (!self.suppressConsoleLogging) consoleLog(@"%@ did not find a cache file named %@", [self class], _cacheFileName);
         }
     }
-    return cache;
+    return cacheData;
 }
 
 - (void) loadCache
 {
     debugTrace();
-
-    NSMutableDictionary* cache = [self _cacheDataFromFilesystem];
-    if (cache) {
+    
+    MBSerializedExpressionCache* cacheData = [self _cacheDataFromFilesystem];
+    if (cacheData) {
         [_cacheLock lock];
-        _grammarToTokenCache = cache;
-        [self _setCacheDirty:NO];
+        
+        if ([self _isCacheDataCompatible:cacheData]) {
+            _functionSignatures = cacheData.functionSignatures;
+            _grammarToTokenCache = cacheData.grammarToTokenCache;
+            [self _setCacheDirty:NO];
+        }
+        
         [_cacheLock unlock];
     }
 }
@@ -280,75 +397,80 @@ MBImplementSingleton();
 - (void) loadAndMergeCache
 {
     debugTrace();
-
-    NSMutableDictionary* cache = [self _cacheDataFromFilesystem];
-    if (cache) {
+    
+    MBSerializedExpressionCache* cacheData = [self _cacheDataFromFilesystem];
+    if (cacheData) {
         [_cacheLock lock];
-
-        if (!_grammarToTokenCache.count) {
-            _grammarToTokenCache = cache;
-        }
-        else {
-            for (NSString* grammar in cache) {
-                NSMutableDictionary* tokensFromFile = cache[grammar];
-                NSMutableDictionary* tokensInMemory = _grammarToTokenCache[grammar];
-
-                if (!tokensInMemory) {
-                    _grammarToTokenCache[grammar] = tokensFromFile;
-                }
-                else {
-                    for (NSString* expr in tokensFromFile) {
-                        if (!tokensInMemory[expr]) {
-                            debugLog(@"   Adding expression tokens from file to memory for: %@", expr);
-                            tokensInMemory[expr] = tokensFromFile[expr];
-                        }
-                        else {
-                            debugLog(@"Already in memory cache; won't overwrite tokens for: %@", expr);
+        
+        if ([self _isCacheDataCompatible:cacheData]) {
+            NSMutableDictionary* newFunctionSignatures = cacheData.functionSignatures;
+            if (_functionSignatures.count == 0) {
+                _functionSignatures = newFunctionSignatures;
+            }
+            else {
+                [_functionSignatures addEntriesFromDictionary:newFunctionSignatures];
+            }
+            
+            NSMutableDictionary* newGrammarToTokenCache = cacheData.grammarToTokenCache;
+            if (_grammarToTokenCache.count == 0) {
+                _grammarToTokenCache = newGrammarToTokenCache;
+            }
+            else {
+                for (NSString* grammar in newGrammarToTokenCache) {
+                    NSMutableDictionary* tokensFromFile = newGrammarToTokenCache[grammar];
+                    NSMutableDictionary* tokensInMemory = _grammarToTokenCache[grammar];
+                    
+                    if (!tokensInMemory) {
+                        _grammarToTokenCache[grammar] = tokensFromFile;
+                    }
+                    else {
+                        for (NSString* expr in tokensFromFile) {
+                            if (!tokensInMemory[expr]) {
+                                debugLog(@"   Adding expression tokens from file to memory for: %@", expr);
+                                tokensInMemory[expr] = tokensFromFile[expr];
+                            }
+                            else {
+                                debugLog(@"Already in memory cache; won't overwrite tokens for: %@", expr);
+                            }
                         }
                     }
                 }
             }
         }
-
+        else {
+            errorLog(@"Incompatible cache data in file; not merging %@", [self class]);
+        }
+        
         [_cacheLock unlock];
     }
 }
 
-- (BOOL) _saveCache:(NSDictionary*)cache toFile:(NSString*)cacheFile suppressLog:(BOOL)suppress
+- (BOOL) _saveCache:(MBSerializedExpressionCache*)cacheData toFile:(NSString*)cacheFile suppressLog:(BOOL)suppress
 {
-    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:cache];
-
-    NSError* err = nil;
-    if (![data writeToFile:cacheFile options:NSDataWritingAtomic error:&err]) {
-        errorLog(@"%@ failed to write file <%@> due to error: %@", [self class], cacheFile, err);
-        return NO;
-    }
-    else {
+    if ([cacheData saveToFileAtPath:cacheFile]) {
         if (!suppress) consoleLog(@"%@ written to file: %@", [self class], cacheFile);
         return YES;
     }
+    return NO;
 }
 
 - (void) saveCache
 {
     debugTrace();
-
+    
     if (!DEBUG_FLAG(DEBUG_DONT_PERSIST) && self.isPersistenceEnabled) {
-        NSDictionary* cacheCopy = nil;
+        MBSerializedExpressionCache* cacheData = [MBSerializedExpressionCache new];
         
         [_cacheLock lock];
-                
-        if (_grammarToTokenCache) {
-            cacheCopy = [_grammarToTokenCache mutableCopy];
-        }
+        
+        cacheData.functionSignatures = [_functionSignatures mutableCopy];
+        cacheData.grammarToTokenCache = [_grammarToTokenCache mutableCopy];
         
         [self _setCacheDirty:NO];
         
         [_cacheLock unlock];
         
-        if (cacheCopy) {
-            [self _saveCache:cacheCopy toFile:[self _pathForUserCacheFile] suppressLog:self.suppressConsoleLogging];
-        }
+        [self _saveCache:cacheData toFile:[self _pathForUserCacheFile] suppressLog:self.suppressConsoleLogging];
     }
 }
 
@@ -364,7 +486,7 @@ MBImplementSingleton();
     
     NSError* err = nil;
     NSString* cacheFile = [self _pathForUserCacheFile];
-
+    
     if ([fileMgr fileExistsAtPath:cacheFile]) {
         [fileMgr removeItemAtPath:cacheFile error:&err];
         if (err) errorObj(err);
@@ -374,32 +496,39 @@ MBImplementSingleton();
 - (void) resetFilesystemCache
 {
     debugTrace();
-
+    
     [self removeFilesystemCache];
-
+    
     NSString* cacheFile = [self _pathForUserCacheFile];
-    if ([self _saveCache:[NSMutableDictionary new] toFile:cacheFile suppressLog:YES]) {
+    if ([self _saveCache:[MBSerializedExpressionCache new] toFile:cacheFile suppressLog:YES]) {
         if (!self.suppressConsoleLogging) consoleLog(@"Reset filesystem cache; empty %@ written to file: %@", [self class], cacheFile);
     }
 }
 
-- (void) clearMemoryCache
+- (void) _clearMemoryCacheHoldingLock
 {
     verboseDebugTrace();
     
-    [_cacheLock lock];
-
     [_grammarToTokenCache removeAllObjects];
-
+    
     [self _setCacheDirty:NO];
+}
 
+- (void) clearMemoryCache
+{
+    debugTrace();
+    
+    [_cacheLock lock];
+    
+    [self _clearMemoryCacheHoldingLock];
+    
     [_cacheLock unlock];
 }
 
 - (void) clearCache
 {
     debugTrace();
-
+    
     [self removeFilesystemCache];
     [self clearMemoryCache];
 }
@@ -411,25 +540,23 @@ MBImplementSingleton();
 - (NSArray*) cachedTokensForExpression:(NSString*)expr
                           usingGrammar:(MBExpressionGrammar*)grammar
 {
-    verboseDebugTrace();
-
     if (!expr || !grammar) return nil;
-
+    
     if (!DEBUG_FLAG(DEBUG_BYPASS_CACHE)) {
         NSString* grammarClassName = NSStringFromClass([grammar class]);
         if (grammarClassName) {
             NSArray* tokens = nil;
-
+            
             [_cacheLock lock];
-
+            
             tokens = _grammarToTokenCache[grammarClassName][expr];
-
+            
             [_cacheLock unlock];
-
+            
             return tokens;
         }
     }
-
+    
     return nil;
 }
 
@@ -438,35 +565,33 @@ MBImplementSingleton();
                     usingGrammar:(MBExpressionGrammar*)grammar
                            error:(MBExpressionError**)errPtr
 {
-    verboseDebugTrace();
-    
     if (!expr || !grammar || !space) return nil;
-
+    
     NSArray* tokens = [self cachedTokensForExpression:expr usingGrammar:grammar];
     if (tokens) {
         return tokens;
     }
-
+    
     // if we don't have tokens, we'll need to tokenize
     tokens = [[MBExpressionTokenizer tokenizerWithGrammar:grammar] tokenize:expr
                                                             inVariableSpace:space
                                                                       error:errPtr];
-
+    
     if (!DEBUG_FLAG(DEBUG_BYPASS_CACHE)) {
         if (tokens) {
             NSString* grammarClassName = NSStringFromClass([grammar class]);
             if (grammarClassName) {
                 [_cacheLock lock];
-
+                
                 NSMutableDictionary* tokenCache = _grammarToTokenCache[grammarClassName];
                 if (!tokenCache) {
                     tokenCache = [NSMutableDictionary dictionary];
                     _grammarToTokenCache[grammarClassName] = tokenCache;
                 }
                 tokenCache[expr] = tokens;
-
+                
                 [self _setCacheDirty:YES];
-
+                
                 [_cacheLock unlock];
             }
         }
