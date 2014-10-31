@@ -24,12 +24,15 @@
 #pragma mark Constants
 /******************************************************************************/
 
-const NSUInteger kMBExpressionCacheSerializationVersion     = 0;  // increment if file schema changes
-const NSTimeInterval kMBExpressionCacheDontAutopersistAfter = -1;  // optimize for fast startup by only autopersisting expressions encountered within X seconds of startup (-1 to disable)
-const NSTimeInterval kMBExpressionCacheDelayBeforeFlushing  = 60;  // when a clean cache is first made dirty, we wait this long before autopersisting
+const NSTimeInterval kMBExpressionCacheDontAutopersistAfter     = -1;   // optimize for fast startup by only autopersisting expressions encountered within X seconds of startup (-1 to disable)
+const NSTimeInterval kMBExpressionCacheDelayBeforeFlushing      = 60;   // when a clean cache is first made dirty, we wait this long before autopersisting
 
-NSString* const kMBExpressionCacheFunctionSignaturesKey     = @"functionSignatures";
-NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCache";
+const NSInteger kMBExpressionCacheCurrentSerializationVersion   = 1;    // increment whenever file schema changes
+const NSInteger kMBExpressionCacheMinimumSerializationVersion   = 1;    // update when file schema changes in non-backwards-compatible way
+
+NSString* const kMBExpressionCacheSerializationVersionKey       = @"serializationVersion";
+NSString* const kMBExpressionCacheFunctionSignaturesKey         = @"functionSignatures";
+NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTokenCache";
 
 /******************************************************************************/
 #pragma mark -
@@ -38,6 +41,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCa
 
 @interface MBSerializedExpressionCache : NSObject < NSCoding >
 
+@property(nonatomic, assign) NSInteger serializationVersion;
 @property(nonatomic, strong) NSMutableDictionary* functionSignatures;
 @property(nonatomic, strong) NSMutableDictionary* grammarToTokenCache;
 
@@ -64,6 +68,8 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCa
     if ([coder allowsKeyedCoding]) {
         self = [self init];
         if (self) {
+            _serializationVersion = [coder decodeIntegerForKey:kMBExpressionCacheSerializationVersionKey];
+            
             _functionSignatures = [coder decodeObjectForKey:kMBExpressionCacheFunctionSignaturesKey];
             if (!_functionSignatures) {
                 _functionSignatures = [NSMutableDictionary new];
@@ -88,6 +94,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCa
     debugTrace();
     
     if ([coder allowsKeyedCoding]) {
+        [coder encodeInteger:kMBExpressionCacheCurrentSerializationVersion forKey:kMBExpressionCacheSerializationVersionKey];
         [coder encodeObject:_functionSignatures forKey:kMBExpressionCacheFunctionSignaturesKey];
         [coder encodeObject:_grammarToTokenCache forKey:kMBExpressionCacheGrammarToTokenCacheKey];
     }
@@ -115,6 +122,17 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCa
         [NSException raise:NSInvalidArchiveOperationException
                     format:@"Expected the file <%@> to contain an %@ instance", filePath, [self class]];
     }
+    
+    if (cache.serializationVersion < kMBExpressionCacheMinimumSerializationVersion) {
+        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is older than the minimum compatible version (%ld)", [self class], filePath, (long)cache.serializationVersion, kMBExpressionCacheMinimumSerializationVersion);
+        return nil;
+    }
+    
+    if (cache.serializationVersion > kMBExpressionCacheCurrentSerializationVersion) {
+        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is newer than the one currently supported (%ld)", [self class], filePath, (long)cache.serializationVersion, kMBExpressionCacheMinimumSerializationVersion);
+        return nil;
+    }
+    
     return cache;
 }
 
@@ -160,7 +178,7 @@ MBImplementSingleton();
 {
     self = [super init];
     if (self) {
-        _cacheFileName = [NSString stringWithFormat:@"%@.ser%lu", [self class], (unsigned long)kMBExpressionCacheSerializationVersion];
+        _cacheFileName = [NSString stringWithFormat:@"%@.serialized", [self class]];
         _cacheLock = [NSLock new];
         _grammarToTokenCache = [NSMutableDictionary new];
         _functionSignatures = [NSMutableDictionary new];
