@@ -111,7 +111,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey    = @"grammarToTokenCa
     }
     
     MBSerializedExpressionCache* cache = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if (!cache) {
+    if (!cache || ![cache isKindOfClass:[MBSerializedExpressionCache class]]) {
         [NSException raise:NSInvalidArchiveOperationException
                     format:@"Expected the file <%@> to contain an %@ instance", filePath, [self class]];
     }
