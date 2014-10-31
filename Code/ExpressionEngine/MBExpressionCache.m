@@ -124,12 +124,12 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
     }
     
     if (cache.serializationVersion < kMBExpressionCacheMinimumSerializationVersion) {
-        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is older than the minimum compatible version (%ld)", [self class], filePath, (long)cache.serializationVersion, kMBExpressionCacheMinimumSerializationVersion);
+        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is older than the minimum compatible version (%ld)", [self class], filePath, (long)cache.serializationVersion, (long)kMBExpressionCacheMinimumSerializationVersion);
         return nil;
     }
     
     if (cache.serializationVersion > kMBExpressionCacheCurrentSerializationVersion) {
-        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is newer than the one currently supported (%ld)", [self class], filePath, (long)cache.serializationVersion, kMBExpressionCacheMinimumSerializationVersion);
+        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is newer than the one currently supported (%ld)", [self class], filePath, (long)cache.serializationVersion, (long)kMBExpressionCacheMinimumSerializationVersion);
         return nil;
     }
     
