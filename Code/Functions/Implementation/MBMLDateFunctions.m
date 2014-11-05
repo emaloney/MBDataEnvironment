@@ -80,6 +80,28 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
     return @((NSInteger)[date timeIntervalSinceNow]);
 }
 
++ (id)unixTimestampToDate:(id)timestamp
+{
+    debugTrace();
+    
+    MBMLFunctionError* err = nil;
+    NSNumber* timestampNumber = [MBMLFunction validateParameterContainsNumber:timestamp error:&err];
+    if (err) {
+        return err;
+    }
+    return [NSDate dateWithTimeIntervalSince1970:[timestampNumber doubleValue]];
+}
+
++ (id)dateToUnixTimestamp:(NSDate *)date
+{
+    debugTrace();
+    
+    MBMLFunctionError* err = [self _validateIsDate:date];
+    if (err) return err;
+    
+    return @((NSInteger)[date timeIntervalSince1970]);
+}
+
 + (id) formatTimeUntil:(NSDate*)date
 {
     debugTrace();
