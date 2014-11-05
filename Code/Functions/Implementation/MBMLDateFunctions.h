@@ -206,6 +206,50 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) secondsUntil:(NSDate*)date;
 
 /*!
+ An MBML function implementation that returns a date representation of the
+ unix timestamp.
+ 
+ This function accepts a single expression parameter that is expected to yield
+ a number.
+ 
+ **MBML Example**
+ 
+ The expression:
+ 
+ ^unixTimestampToDate($timestamp)
+ 
+ would return the `NSDate` representation of `$timestamp`.
+ 
+ @param     timestamp The function's input parameter.
+ 
+ @return    An `NSDate` instance containing the date representation of given 
+ timestamp.
+ */
++ (id) unixTimestampToDate:(id)timestamp;
+
+/*!
+ An MBML function implementation that returns a unix timestamp representation 
+ of the given date.
+ 
+ This function accepts a single expression parameter that is expected to yield
+ an `NSDate` instance.
+ 
+ **MBML Example**
+ 
+ The expression:
+ 
+ ^dateToUnixTimestamp($referenceDate)
+ 
+ would return the unix timestamp representation of `$referenceDate`.
+ 
+ @param     date The function's input parameter.
+ 
+ @return    An `NSNumber` instance containing the unix timestamp
+ representation of the input date.
+ */
++ (id) dateToUnixTimestamp:(NSDate*)date;
+
+/*!
  An MBML function implementation that returns a string representation of the
  time until the given date.
 
