@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
 
 	s.name                  = "MBDataEnvironment"
-	s.version               = "0.9.16"
+	s.version               = "0.9.17"
 	s.summary               = "Mockingbird Data Environment"
 	s.description		= "Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
 	s.homepage		= "https://github.com/gilt/MBDataEnvironment"
