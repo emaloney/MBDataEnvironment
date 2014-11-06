@@ -93,6 +93,16 @@ MBImplementSingleton();
     return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
 }
 
+- (NSNumber*) screenScale
+{
+    return @([[UIScreen mainScreen] scale]);
+}
+
+- (BOOL) isRetina
+{
+    return ([[UIScreen mainScreen] scale] >= 2.0);
+}
+
 - (CGSize) _screenSize
 {
     if ([self isPortrait]) {
@@ -168,11 +178,6 @@ MBImplementSingleton();
 {
     CGSize size = [UIScreen mainScreen].applicationFrame.size;
     return [MBStringConversions stringFromSize:(CGSize){size.height, size.width}];  // flip width & height in landscape
-}
-
-- (BOOL) isRetina
-{
-    return ([[UIScreen mainScreen] scale] >= 2.0);
 }
 
 - (BOOL) appIsInBackground

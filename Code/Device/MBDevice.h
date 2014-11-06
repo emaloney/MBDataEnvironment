@@ -36,6 +36,9 @@
 - (BOOL) isLandscape;
 - (BOOL) isPortrait;
 
+- (NSNumber*) screenScale;              // the scaling factor of the screen (1.0 = non-retina, 2.0 = retina, 3.0 = retina iPhone 6+)
+- (BOOL) isRetina;  // returns YES if the main UIScreen's scale is 2.0 or greater
+
 - (NSNumber*) screenWidth;
 - (NSNumber*) screenHeight;
 - (NSString*) screenSize;               // returns the size of the main screen, as a comma-separated string in the format "width,height"; for use from within MBML
@@ -48,8 +51,6 @@
 - (NSString*) contentSize;              // returns the size of the main screen's application frame, as a comma-separated string in the format "width,height"; for use from within MBML
 - (NSString*) contentSizePortrait;
 - (NSString*) contentSizeLandscape;
-
-- (BOOL) isRetina;  // returns YES if the main UIScreen's scale is 2.0 or greater
 
 - (BOOL) appIsInBackground;
 
