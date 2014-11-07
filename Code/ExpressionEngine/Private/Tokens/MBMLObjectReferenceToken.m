@@ -21,8 +21,8 @@
 #pragma mark Constants
 /******************************************************************************/
 
-#define kIdentifierInitialCharacters        @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_"
-#define kIdentifierRemainingCharacters      @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_:"
+NSString* const kIdentifierInitialCharacters    = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_";
+NSString* const kIdentifierRemainingCharacters  = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_:-";
 
 /******************************************************************************/
 #pragma mark Static variables
