@@ -326,6 +326,7 @@
     
     MBMLFunctionError *err = nil;
     [MBMLFunction validateParameter:params countIs:4 error:&err];
+    NSNumber* rectWidthNumber = [MBMLFunction validateParameter:params containsNumberAtIndex:3 error:&err];
     if (err) return err;
     
     if (params[0] == [NSNull null])
@@ -337,7 +338,7 @@
     NSString *textToCompute = [MBExpression asString:params[0]];
     NSString *fontName = [MBExpression asString:params[1]];
     CGFloat fontSize = [[MBExpression asNumber:params[2]] doubleValue];
-    CGFloat rectWidth = [[MBExpression asNumber:params[3]] doubleValue];
+    CGFloat rectWidth = [rectWidthNumber doubleValue];
     UIFont *textFont = [UIFont fontWithName:fontName size:fontSize];
     
     return @(ceil([textFont sizeString:textToCompute maxWidth:rectWidth fractional:YES].height / textFont.lineHeight));
