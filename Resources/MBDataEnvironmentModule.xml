@@ -207,7 +207,7 @@
     <Function class="MBMLStringFunctions" name="parseDouble" input="string"/>
     <Function class="MBMLStringFunctions" name="parseNumber" input="string"/>
     <Function class="MBMLStringFunctions" name="stringWidth" input="pipedObjects"/>
-    <Function class="MBMLStringFunctions" name="linesNeededToDrawText" input="pipedObjects"/>
+    <Function class="MBMLStringFunctions" name="linesNeededToDrawText" input="pipedExpressions"/>
     <Function class="MBMLStringFunctions" name="rangeOfString" input="pipedObjects"/>
     <Function class="MBMLStringFunctions" name="formatInteger" input="string"/>
     <Function class="MBMLStringFunctions" name="hasPrefix" input="pipedStrings"/>
