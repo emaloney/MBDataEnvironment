@@ -102,6 +102,21 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
     return @((NSInteger)[date timeIntervalSince1970]);
 }
 
++ (id) plusSeconds:(NSArray *)input
+{
+    debugTrace();
+
+    MBMLFunctionError* err = nil;
+    [MBMLFunction validateParameter:input countIs:2 error:&err];
+
+    NSDate* d8 = [self _dateFromObject:input[0] error:&err];
+    if (err) return err;
+
+    NSTimeInterval interval = [input[1] doubleValue];
+
+    return [d8 dateByAddingTimeInterval:interval];
+}
+
 + (id) formatTimeUntil:(NSDate*)date
 {
     debugTrace();
