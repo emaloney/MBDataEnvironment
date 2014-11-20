@@ -255,15 +255,15 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  This function accepts two expressions as input parameters:
 
- * the *input date*, an `NSDate` or `NSString` that contains the date to format
-
  * an *interval seconds*, specifying the interval in seconds to add
+
+ * the *input date*, an `NSDate` or `NSString` that contains the date to format
 
  **MBML Example**
 
  The following expression:
 
- ^plusSeconds(^currentTime()|30)
+ ^addSecondsToDate(30|^currentTime())
 
  would result in an `NSDate` 30 seconds from now.
 
@@ -271,7 +271,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  @return    An `NSDate` plus the interval in seconds.
   */
-+ (id) plusSeconds:(NSArray*)input;
++ (id) addSecondsToDate:(NSArray*)input;
 
 /*!
  An MBML function implementation that returns a string representation of the

@@ -67,7 +67,7 @@
     <Function class="MBMLDateFunctions" name="secondsUntil"/>
     <Function class="MBMLDateFunctions" name="unixTimestampToDate"/>
     <Function class="MBMLDateFunctions" name="dateToUnixTimestamp"/>
-    <Function class="MBMLDateFunctions" name="plusSeconds" input="pipedObjects"/>
+    <Function class="MBMLDateFunctions" name="addSecondsToDate" input="pipedObjects"/>
     <Function class="MBMLDateFunctions" name="formatTimeUntil"/>
     <Function class="MBMLDateFunctions" name="formatDate" input="pipedObjects"/>
     <Function class="MBMLDateFunctions" name="formatSortableDate" input="object"/>
