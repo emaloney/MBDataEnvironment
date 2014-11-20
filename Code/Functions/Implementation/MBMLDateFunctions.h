@@ -250,6 +250,30 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) dateToUnixTimestamp:(NSDate*)date;
 
 /*!
+ An MBML function implementation that returns an `NSDate` instance representing
+ the given date plus the provided seconds.
+
+ This function accepts two expressions as input parameters:
+
+ * an *interval seconds*, specifying the interval in seconds to add
+
+ * the *input date*, an `NSDate` or `NSString` that contains the date to format
+
+ **MBML Example**
+
+ The following expression:
+
+ ^addSecondsToDate(30|^currentTime())
+
+ would result in an `NSDate` 30 seconds from now.
+
+ @param     params The function's input parameters.
+
+ @return    An `NSDate` plus the interval in seconds.
+  */
++ (id) addSecondsToDate:(NSArray*)input;
+
+/*!
  An MBML function implementation that returns a string representation of the
  time until the given date.
 
