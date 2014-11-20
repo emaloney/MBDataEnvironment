@@ -284,8 +284,8 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 + (NSDate*) _dateFromObject:(id)obj error:(MBMLFunctionError**)errPtr
 {
     if (![MBMLFunction validateParameter:obj
-                                isOneKindOfClass:@[(id)[NSString class], (id)[NSDate class]]
-                                           error:errPtr])
+                        isOneKindOfClass:@[(id)[NSString class], (id)[NSDate class]]
+                                   error:errPtr])
     {
         return nil;
     }
@@ -297,7 +297,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
         NSString* dateStr = (NSString*)obj;
         NSDate* d8 = [self parseDate:dateStr];
         if (!d8) {
-            *errPtr = [self errorForFailingToParseDate:dateStr];
+            [[self errorForFailingToParseDate:dateStr] reportErrorTo:errPtr];
         }
         return d8;
     }
@@ -309,7 +309,8 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:input countIs:2 error:&err];
-
+    if (err) return err;
+    
     NSDate* d8 = [self _dateFromObject:input[0] error:&err];
     if (err) return err;
 
@@ -342,7 +343,8 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
                                            countIsAtLeast:1
                                                 andAtMost:2
                                                     error:&err];
-
+    if (err) return err;
+    
     NSDate* d8 = [self _dateFromObject:input[0] error:&err];
     NSTimeZone* timeZone = paramCnt == 2 ? [NSTimeZone timeZoneWithAbbreviation:input[1]] : [NSTimeZone localTimeZone];
     if (err) return err;
@@ -359,7 +361,8 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
                                            countIsAtLeast:1
                                                 andAtMost:2
                                                     error:&err];
-
+    if (err) return err;
+    
     NSDate* d8 = [self _dateFromObject:input[0] error:&err];
     NSTimeZone* timeZone = paramCnt == 2 ? [NSTimeZone timeZoneWithAbbreviation:input[1]] : [NSTimeZone localTimeZone];
     if (err) return err;
@@ -376,7 +379,8 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
                                            countIsAtLeast:1
                                                 andAtMost:2
                                                     error:&err];
-
+    if (err) return err;
+    
     NSDate* d8 = [self _dateFromObject:input[0] error:&err];
     NSTimeZone* timeZone = paramCnt == 2 ? [NSTimeZone timeZoneWithAbbreviation:input[1]] : [NSTimeZone localTimeZone];
     if (err) return err;
@@ -393,7 +397,8 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
                                            countIsAtLeast:1
                                                 andAtMost:2
                                                     error:&err];
-
+    if (err) return err;
+    
     NSDate* d8 = [self _dateFromObject:input[0] error:&err];
     NSTimeZone* timeZone = paramCnt == 2 ? [NSTimeZone timeZoneWithAbbreviation:input[1]] : [NSTimeZone localTimeZone];
     if (err) return err;
