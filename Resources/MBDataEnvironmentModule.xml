@@ -51,9 +51,12 @@
     <Function class="MBMLDataProcessingFunctions" name="list" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="pruneMatchingLeaves" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="pruneNonmatchingLeaves" input="pipedExpressions"/>
-    <Function class="MBMLDataProcessingFunctions" name="map" input="pipedExpressions"/>
-    <Function class="MBMLDataProcessingFunctions" name="mapToSingleValue" input="pipedExpressions"/>
-    <Function class="MBMLDataProcessingFunctions" name="mapToArray" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="associate" method="map" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="associateWithSingleValue" method="mapToSingleValue" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="associateWithArray" method="mapToArray" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="map" input="pipedExpressions" deprecatedInFavorOf="associate"/>
+    <Function class="MBMLDataProcessingFunctions" name="mapToSingleValue" input="pipedExpressions" deprecatedInFavorOf="associateWithSingleValue"/>
+    <Function class="MBMLDataProcessingFunctions" name="mapToArray" input="pipedExpressions" deprecatedInFavorOf="associateWithArray"/>
     <Function class="MBMLDataProcessingFunctions" name="sort" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="merge" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="unique" input="object"/>
