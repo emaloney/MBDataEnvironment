@@ -113,3 +113,151 @@ To access the gender of any specific cat, we could use the bracket notation to y
 
 This expression yields the string "`female`".
 
+### Evaluating Expressions
+
+So, you've got a variable space populated with some values, and a set of expressions you'd like to use to extract data from the values in the variable space. Where do you go from here?
+
+The `MBExpression` class provides an interface for evaluating expressions.
+
+Depending on the data you have and how you want to use it, you would evaluate a given expression according to one of the following *expression types*:
+
+#### String Expressions
+
+If you're evaluating an expression that you expect to yield a string, you should use one of the `asString:` class methods provided by `MBExpression`:
+
+```objc
+    NSString* gender = [MBExpression asString:@"$catGenders[Barrett]"];
+```
+
+This evaluates the expression `$catGenders[Barrett]` as a string, meaning that the return value will either be `nil` or an `NSString` instance.
+
+In this particular case, the `gender` variable would contain the string value "`female`".
+
+> **Note:** If the underlying object isn't an `NSString` instance, it will be coerced into a string using the object's `description` method, which returns a string representation of the object.
+
+#### Object Expressions
+
+If, say, you have an `NSArray` or an `NSDictionary` in the variable space (as is the case with the "`catGenders`" variable), you can retrieve the underlying object by evaluating an expression referencing it *as an object expression*:
+
+```objc
+    NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
+```
+
+The `genders` variable now contains the `NSDictionary` instance that was previously bound to the Mockingbird variable name "`catGenders`" via the `setVariable:value:` method of `MBVariableSpace`.
+
+> **Note:** Because the `asObject:` method returns the generic object type `id`; it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.
+
+#### Numeric Expressions
+
+To retrieve the value of a numeric variable, or to perform a simple mathematical calculation, you can evaluate an expression *as a number*:
+
+```objc
+    NSNumber* five = [MBExpression asNumber:@"5"];
+    five = [MBExpression asNumber:@"2 + 3"];
+    five = [MBExpression asNumber:@"8 - 3"];
+    five = [MBExpression asNumber:@"10 / 2"];
+    five = [MBExpression asNumber:@"2.5 * 2"];
+    five = [MBExpression asNumber:@"((5 * 2) - 5)"];
+```
+
+All of the expressions above yield an `NSNumber` containing the value `5`.
+
+As you can see, numeric expressions can contain simple math expressions. The `+`, `-`, `*` and `/` operators are supported. (Operators must be separated from surrounding tokens with a space.)
+
+> By default, C language order is used when evaluating math operators. Parenthetical groupings can be used to ensure specific evaluation order.
+
+Evaluating an expression as a number also handles converting Mockingbird variable values to numbers:
+
+```objc
+    [[MBVariableSpace instance] setVariable:@"five" value:@(5)];
+    NSNumber* val = [MBExpression asNumber:@"$five"];
+```
+
+The variable `val` will contain the integer value `5`.
+
+In the code above, the `@(5)` notation in the `setVariable:value:` method call ensures that the Mockingbird variable is set to an `NSNumber` instance. However, the object instance that underlies a Mockingbird variable doesn't need to be an `NSNumber` in order for an expression to be evaluated numerically.
+
+In the code below, we're setting the Mockingbird variable named "`five`" to an `NSString` containing the text "`5`":
+
+```objc
+    [[MBVariableSpace instance] setVariable:@"five" value:@"5"];
+    NSNumber* val = [MBExpression asNumber:@"$five"];
+```
+
+Because the Mockingbird expression engine will attempt to convert the value of a non-`NSNumber` into an `NSNumber`, `val` contains the integer value `5`.
+
+For `NSString`s, the conversion is straightforward; the string is parsed as a numeric value. For non-`NSString` instances, the `description` method is called to convert the object into a string, and then that string is parsed as a number.
+
+#### Boolean Expressions
+
+When an expression is evaluated in a boolean context, the Mockingbird expression engine recognizes an additional set of operators and comparators to make boolean logic possible:
+
+Boolean operator|Purpose
+----------------|-------
+*lVal* `-AND` *rVal* **or** *lVal* `&&` *rVal* | The **logical and** operator; evaluates *lVal* as a boolean expression and, if it is `true`, evaluates *rVal* as a boolean expression. The operator evaluates to `true` if and only if both *lVal* and *rVal* are `true`.
+*lVal* `-OR` *rVal* **or** *lVal* `||` *rVal* | The **logical or** operator; evaluates *lVal* and *rVal* as boolean expressions. The operator evaluates to `true` if either *lVal* or *rVal* are `true`.
+`!`*rVal* | The **logical not** operator; evaluates *rVal* as a boolean expression and negates that value. The operator evaluates to `true` when *rVal* evaluates to `false` and vise-versa.
+
+Boolean operators can be combined into compound forms:
+
+```objc
+	MBVariableSpace* vars = [MBVariableSpace instance];
+	vars[@"catName"] = @"Barrett";
+	BOOL isFemale = [MBExpression asBoolean:@"$catName -AND $catGenders[$catName] -AND $catGenders[$catName] == female"];
+```
+
+In this example, `isFemale` would be `YES`.
+
+> **Note:** Parenthetical grouping can also be used within boolean expressions to ensure specific evaluation logic.
+
+In addition to the expected boolean operators, a number of boolean comparators are supported as well.
+
+Comparators rely on the standard `isEqual:` and `compare:` methods for their work, but not exclusively. In some cases, type coercion may occur (for example, when comparing an `NSString` to an `NSNumber`).
+
+Boolean comparator|Purpose
+----------------|-------
+*lVal* `-EQ` *rVal* **or** *lVal* `==` *rVal* | The **equal to** comparator. The operator evaluates to `true` when *lVal* and *rVal* are considered equivalent.
+*lVal* `-NE` *rVal* **or** *lVal* `!=` *rVal* | The **not equal to** comparator. The operator evaluates to `true` when *lVal* and *rVal* are not considered equivalent.
+*lVal* `-LT` *rVal* **or** *lVal* `<` *rVal* | The **less than** comparator. Evaluates to `true` when *lVal* is considered less than *rVal*.
+*lVal* `-LTE` *rVal* **or** *lVal* `<=` *rVal* **or** *lVal* `=<` *rVal* | The **less than or equal to** comparator. Evaluates to `true` when *lVal* is considered less than or equal to *rVal*.
+*lVal* `-GT` *rVal* **or** *lVal* `>` *rVal* | The **greater than** comparator. Evaluates to `true` when *lVal* is considered greater than *rVal*.
+*lVal* `-GTE` *rVal* **or** *lVal* `>=` *rVal* **or** *lVal* `=>` *rVal* | The **greater than or equal to** comparator. Evaluates to `true` when *lVal* is considered greater than or equal to *rVal*.
+
+For example:
+
+```objc
+	BOOL hasThreeCats = [MBExpression asBoolean:@"$cats.count == 3"];
+	BOOL hasAnyCats = [MBExpression asBoolean:@"$cats.count -GTE 1"];
+	BOOL theCatLady = [MBExpression asBoolean:@"!($cats.count -LT 7)"];
+```
+
+Here, `hasThreeCats` would be `YES`, `hasAnyCats` would also be `YES`, and `theCatLady` would be `NO`.
+
+Finally, two boolean literals can be used in a boolean expression context:
+
+Boolean literal|Purpose
+---------------|-------
+`T` | A boolean `true` (or `YES`)
+`F` | A boolean `false` (or `NO`)
+
+These values work as you might expect:
+
+```objc
+	BOOL tValue = [MBExpression asBoolean:@"T"];
+	BOOL fValue = [MBExpression asBoolean:@"F"];
+```
+
+The variable `tValue` will be `YES`, and `fValue` will be `NO`.
+
+This allows you to store a boolean value in a string, and have it evaluate as the intended boolean value:
+
+```objc
+    [[MBVariableSpace instance] setVariable:@"featureFlag"
+                                      value:@"T"];
+
+	// somewhere later on...
+
+	if ([MBExpression asBoolean:@"$featureFlag"]) {
+		// do something awesome with our great new feature
+	}
+```
