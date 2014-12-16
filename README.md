@@ -135,6 +135,24 @@ In this particular case, the `gender` variable would contain the string value "`
 
 > **Note:** If the underlying object isn't an `NSString` instance, it will be coerced into a string using the object's `description` method, which returns a string representation of the object.
 
+##### String Interpolation
+
+When evaluating string expressions, you can include *text literals* within your expression. You can think of a text literal as an expression whose result is the same as its original form.
+
+When a string expression is evaluated, any text literals contained within the expression are returned as-is, while any variable references will be evaluated and replaced with their actual values. This is called *string interpolation*.
+
+For example, consider the expression:
+
+```objc
+	NSString* barrett = [MBExpression asString:@"Barrett is a $catGenders[Barrett] cat."];
+```
+
+Here, the string "`Barrett is a `" and "` cat.`" are text literals, while "`$catGenders[Barrett]`" is a variable reference.
+
+Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, that's the string "`female`". Everything else in the expression is a text literal, so it is returned as-is.
+
+The value of the `barrett` variable is the string "`Barrett is a female cat.`"
+
 #### Object Expressions
 
 If, say, you have an `NSArray` or an `NSDictionary` in the variable space (as is the case with the "`catGenders`" variable), you can retrieve the underlying object by evaluating an expression referencing it *as an object expression*:
