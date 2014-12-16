@@ -25,7 +25,7 @@ An app might be interested in a *product list*, for example, but the fact that t
 
 The Mockingbird Data Environment allows you to build apps where the server can host the logic required to navigate the data structures it returns. Services can return a data model and also a set of expressions needed to extract meaningful information from that data model.
 
-Because everything is hosted on the server—both the data model and the knowledge of that data model—every installed copy of your app can automatically adapt to new data models.
+Because everything is hosted on the server—both the data model and the knowledge of that data model—every installed copy of your app can automatically adapt to new data models whenever you choose to deploy them.
 
 You can change the way your services return data any time you want. You won't need to resubmit your app for review, and you don't need to run multiple versions of your backend for legacy versions of your app.
 
@@ -99,8 +99,8 @@ Let's assume a new Mockingbird variable:
 ```objc
     [[MBVariableSpace instance] setVariable:@"catGenders"
                                       value:@{@"Barrett": @"female",
-                                              @"Duncan": @"male",
-                                              @"Gabby": @"female"}];
+                                              @"Duncan":  @"male",
+                                              @"Gabby":   @"female"}];
 ```
 
 In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with the Mockingbird variable name "`catGenders`".
@@ -145,7 +145,7 @@ If, say, you have an `NSArray` or an `NSDictionary` in the variable space (as is
 
 The `genders` variable now contains the `NSDictionary` instance that was previously bound to the Mockingbird variable name "`catGenders`" via the `setVariable:value:` method of `MBVariableSpace`.
 
-> **Note:** Because the `asObject:` method returns the generic object type `id`; it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.
+> **Note:** Because the `asObject:` method returns the generic object type `id`, it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.
 
 #### Numeric Expressions
 
