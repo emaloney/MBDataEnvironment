@@ -149,7 +149,7 @@ For example, consider the expression:
 
 Here, the string "`Barrett is a `" and "` cat.`" are text literals, while "`$catGenders[Barrett]`" is a variable reference.
 
-Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, that's the string "`female`". Everything else in the expression is a text literal, so it is returned as-is.
+Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, the string "`female`". Everything else in the expression is a text literal, so it is returned as-is.
 
 The value of the `barrett` variable is the string "`Barrett is a female cat.`"
 
