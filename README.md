@@ -1,9 +1,7 @@
 MBDataEnvironment
 =================
 
-**Note:** This open-source project is a pre-release version that is not yet fully documented.
-
-More complete documentation will be available in the 1.0.0 release.
+This repository hosts the Mockingbird Data Environment, an open-source project from Gilt Groupe that builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) project to provide a dynamic data processing engine for iOS applications.
 
 # Mockingbird Data Environment
 
@@ -12,6 +10,8 @@ The Mockingbird Data Environment provides a *variable space* through which named
 Mockingbird expressions are useful for extracting data from object graphs, particularly those sent by a server.
 
 The Mockingbird Data Environment is specifically designed to allow moving the knowledge of how to access server-side data out of native code.
+
+### The Problem
 
 With iOS applications, the server typically defines its own data model and native client code implements the logic required to extract meaningful information from that data.
 
@@ -22,6 +22,8 @@ By definition, the server *must* maintain knowledge of the data structure—afte
 But if you think about what a client application really cares about, it's not the details of a data structure, it's specific bits of information embedded in that data structure.
 
 An app might be interested in a *product list*, for example, but the fact that the product list can be assembled from information three levels deep into a JSON structure is merely incidental.
+
+### The Solution
 
 The Mockingbird Data Environment allows you to build apps where the server can host the logic required to navigate the data structures it returns. Services can return a data model and also a set of expressions needed to extract meaningful information from that data model.
 
@@ -149,7 +151,7 @@ For example, consider the expression:
 
 Here, the string "`Barrett is a `" and "` cat.`" are text literals, while "`$catGenders[Barrett]`" is a variable reference.
 
-Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, the string "`female`". Everything else in the expression is a text literal, so it is returned as-is.
+Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, that's the string "`female`". Everything else in the expression is a text literal, so it is returned as-is.
 
 The value of the `barrett` variable is the string "`Barrett is a female cat.`"
 
