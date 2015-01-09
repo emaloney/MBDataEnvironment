@@ -282,3 +282,57 @@ This allows you to store a boolean value in a string, and have it evaluate as th
 		// do something awesome with our great new feature
 	}
 ```
+
+#### Expression Contexts
+
+The four expression types—*string*, *object*, *numeric* and *boolean*—all handle their input and output differently. Therefore, an expression evaluated in a *string context* may yield a different result from the same expression evaluated in an *boolean context*. Likewise, an expression that's valid in a *numeric context* might not be valid in any other context.
+
+For example, tokens like `-EQ`, `-LTE`, `-GT`, etc. are only valid in a boolean expression context. When encountered outside of a boolean context, the expression engine will treat those values as simple text literals. If you've got an expression that's not behaving as you expect, double-check that the expression context is what you assume it is.
+
+Sometimes, you might want to mix contexts. For example, you might want to display a string in a `UILabel` that includes a mathematical calculation. Or you might want to display a message that contains some conditional text within it.
+
+##### Forcing a Numeric Context
+
+You can embed a numeric expression within any other expression context using the notation: **`#(`** *numeric expression* **`)`**.
+
+For example:
+
+```objc
+    [MBExpression asString:@"There are #(10 - 3) days in the week."];
+```
+
+In this example, the expression consists of three components: the text literal "`There are `", then the numeric expression `#(10 - 3)`, followed by another text literal: "` days in the week.`".
+
+As usual, the text literals are returned as-is, but the numeric expression is evaluated as such, resulting in the value `7`. So, the expression above would return the value `"There are 7 days in the week."`
+
+##### Forcing a Boolean Context
+
+You can evaluate a boolean expression within a non-boolean context using the notation: **`^if(`** *boolean expression* **`|`** *true result* [ **`|`** *false result* ] **`)`**. 
+
+When this notation is encountered, *boolean expression* is evaluated in the boolean context, and based on the resulting value, either *true result* or *false result* is returned.
+
+```objc
+    [MBExpression asString:@"You ^if($user.isAdmin|have|do not have) administrative privileges"];
+```
+
+The result of evaluating the expression above depends on the boolean value of the `$user.isAdmin` expression. If it evaluates to `true`, the return value will be "`You have administrative privileges`"; otherwise, it will be "`You do not have administrative privileges`".
+
+Because either *true result* or *false result* can be empty strings, the expression above could be rewritten slightly more succinctly while achieving the same result:
+
+```objc
+    [MBExpression asString:@"You ^if($user.isAdmin||do not )have administrative privileges"];
+```
+
+Which is also the logical equivalent of:
+
+```objc
+    [MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have administrative privileges"];
+```
+
+Note that the entire *false result* clause is optional. If the *false result* clause and the `|` (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
+
+```objc
+    [MBExpression asObject:@"^if(false|hello)"];
+```
+
+The expression above will always return `nil`.
