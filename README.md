@@ -43,8 +43,8 @@ Any native runtime object instance can be stored in the Mockingbird variable spa
 Variable values can be exposed to the variable space through several means, including through Objective-C code:
 
 ```objc
-    [[MBVariableSpace instance] setVariable:@"cats"
-                                      value:@[@"Barrett", @"Duncan", @"Gabby"]];
+[[MBVariableSpace instance] setVariable:@"cats"
+								  value:@[@"Barrett", @"Duncan", @"Gabby"]];
 ```
 
 The code above associates the variable name "`cats`" with an `NSArray` instance containing three items (the strings "`Barrett`", "`Duncan`" and "`Gabby`").
@@ -52,7 +52,7 @@ The code above associates the variable name "`cats`" with an `NSArray` instance 
 This array can be accessed through the Mockingbird expression:
 
 ```
-    $cats
+$cats
 ```
 
 This shows the most basic expression form: a simple *variable reference*, where the variable name is prefixed with a dollar sign.
@@ -64,7 +64,7 @@ You can access these sub-values through *variable subreferences*, which can take
 You can use the *dot accessor* to access the value of an object property or KVC value. For example, to determine the number of objects in the `$cats` array, you would use the expression:
 
 ```
-    $cats.count
+$cats.count
 ```
 
 When that expression is evaluated, the Mockingbird expression engine accesses the `count` property of the `NSArray` instance associated with the variable named "`cats`", and returns that value.
@@ -78,7 +78,7 @@ In this example, the value of the expression `$cats.count` would be an `NSNumber
 To access items within an array, you use the *bracket accessor*:
 
 ```
-    $cats[1]
+$cats[1]
 ```
 
 The expression above would yield the object at index `1` of the `NSArray` associated with the variable named "`cats`". Because array indexes are zero-based, this is actually the second item in the array: the string "`Duncan`".
@@ -86,7 +86,7 @@ The expression above would yield the object at index `1` of the `NSArray` associ
 Subreferences in Mockingbird expressions can also be chained together:
 
 ```
-    $cats[1].length
+$cats[1].length
 ```
 
 This expression yields the value of the `length` property of the object at index `1` of the `NSArray` associated with the variable named "`cats`".
@@ -100,10 +100,10 @@ Values contained in dictionaries can also be retrieved using the bracket accesso
 Let's assume a new Mockingbird variable:
 
 ```objc
-    [[MBVariableSpace instance] setVariable:@"catGenders"
-                                      value:@{@"Barrett": @"female",
-                                              @"Duncan":  @"male",
-                                              @"Gabby":   @"female"}];
+[[MBVariableSpace instance] setVariable:@"catGenders"
+								  value:@{@"Barrett": @"female",
+										  @"Duncan":  @"male",
+										  @"Gabby":   @"female"}];
 ```
 
 In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with the Mockingbird variable name "`catGenders`".
@@ -111,7 +111,7 @@ In the code above, we've created a dictionary containing a mapping of cat names 
 To access the gender of any specific cat, we could use the bracket notation to yield the value associated with the given dictionary key:
 
 ```
-	$catGenders[Barrett]
+$catGenders[Barrett]
 ```
 
 This expression yields the string "`female`".
@@ -129,7 +129,7 @@ Depending on the data you have and how you want to use it, you would evaluate a 
 If you're evaluating an expression that you expect to yield a string, you should use one of the `asString:` class methods provided by `MBExpression`:
 
 ```objc
-    NSString* gender = [MBExpression asString:@"$catGenders[Barrett]"];
+NSString* gender = [MBExpression asString:@"$catGenders[Barrett]"];
 ```
 
 This evaluates the expression `$catGenders[Barrett]` as a string, meaning that the return value will either be `nil` or an `NSString` instance.
@@ -147,7 +147,7 @@ When a string expression is evaluated, any text literals contained within the ex
 For example, consider the expression:
 
 ```objc
-	NSString* barrett = [MBExpression asString:@"Barrett is a $catGenders[Barrett] cat."];
+NSString* barrett = [MBExpression asString:@"Barrett is a $catGenders[Barrett] cat."];
 ```
 
 Here, the string "`Barrett is a `" and "` cat.`" are text literals, while "`$catGenders[Barrett]`" is a variable reference.
@@ -161,7 +161,7 @@ The value of the `barrett` variable is the string "`Barrett is a female cat.`"
 If, say, you have an `NSArray` or an `NSDictionary` in the variable space (as is the case with the "`catGenders`" variable), you can retrieve the underlying object by evaluating an expression referencing it *as an object expression*:
 
 ```objc
-    NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
+NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
 ```
 
 The `genders` variable now contains the `NSDictionary` instance that was previously bound to the Mockingbird variable name "`catGenders`" via the `setVariable:value:` method of `MBVariableSpace`.
@@ -173,12 +173,12 @@ The `genders` variable now contains the `NSDictionary` instance that was previou
 To retrieve the value of a numeric variable, or to perform a simple mathematical calculation, you can evaluate an expression *as a number*:
 
 ```objc
-    NSNumber* five = [MBExpression asNumber:@"5"];
-    five = [MBExpression asNumber:@"2 + 3"];
-    five = [MBExpression asNumber:@"8 - 3"];
-    five = [MBExpression asNumber:@"10 / 2"];
-    five = [MBExpression asNumber:@"2.5 * 2"];
-    five = [MBExpression asNumber:@"((5 * 2) - 5)"];
+NSNumber* five = [MBExpression asNumber:@"5"];
+five = [MBExpression asNumber:@"2 + 3"];
+five = [MBExpression asNumber:@"8 - 3"];
+five = [MBExpression asNumber:@"10 / 2"];
+five = [MBExpression asNumber:@"2.5 * 2"];
+five = [MBExpression asNumber:@"((5 * 2) - 5)"];
 ```
 
 All of the expressions above yield an `NSNumber` containing the value `5`.
@@ -190,8 +190,8 @@ As you can see, numeric expressions can contain simple math expressions. The `+`
 Evaluating an expression as a number also handles converting Mockingbird variable values to numbers:
 
 ```objc
-    [[MBVariableSpace instance] setVariable:@"five" value:@(5)];
-    NSNumber* val = [MBExpression asNumber:@"$five"];
+[[MBVariableSpace instance] setVariable:@"five" value:@(5)];
+NSNumber* val = [MBExpression asNumber:@"$five"];
 ```
 
 The variable `val` will contain the integer value `5`.
@@ -201,8 +201,8 @@ In the code above, the `@(5)` notation in the `setVariable:value:` method call e
 In the code below, we're setting the Mockingbird variable named "`five`" to an `NSString` containing the text "`5`":
 
 ```objc
-    [[MBVariableSpace instance] setVariable:@"five" value:@"5"];
-    NSNumber* val = [MBExpression asNumber:@"$five"];
+[[MBVariableSpace instance] setVariable:@"five" value:@"5"];
+NSNumber* val = [MBExpression asNumber:@"$five"];
 ```
 
 Because the Mockingbird expression engine will attempt to convert the value of a non-`NSNumber` into an `NSNumber`, `val` contains the integer value `5`.
@@ -222,9 +222,9 @@ Boolean operator|Purpose
 Boolean operators can be combined into compound forms:
 
 ```objc
-	MBVariableSpace* vars = [MBVariableSpace instance];
-	vars[@"catName"] = @"Barrett";
-	BOOL isFemale = [MBExpression asBoolean:@"$catName -AND $catGenders[$catName] -AND $catGenders[$catName] == female"];
+MBVariableSpace* vars = [MBVariableSpace instance];
+vars[@"catName"] = @"Barrett";
+BOOL isFemale = [MBExpression asBoolean:@"$catName -AND $catGenders[$catName] -AND $catGenders[$catName] == female"];
 ```
 
 In this example, `isFemale` would be `YES`.
@@ -247,9 +247,9 @@ Boolean comparator|Purpose
 For example:
 
 ```objc
-	BOOL hasThreeCats = [MBExpression asBoolean:@"$cats.count == 3"];
-	BOOL hasAnyCats = [MBExpression asBoolean:@"$cats.count -GTE 1"];
-	BOOL theCatLady = [MBExpression asBoolean:@"!($cats.count -LT 7)"];
+BOOL hasThreeCats = [MBExpression asBoolean:@"$cats.count == 3"];
+BOOL hasAnyCats = [MBExpression asBoolean:@"$cats.count -GTE 1"];
+BOOL theCatLady = [MBExpression asBoolean:@"!($cats.count -LT 7)"];
 ```
 
 Here, `hasThreeCats` would be `YES`, `hasAnyCats` would also be `YES`, and `theCatLady` would be `NO`.
@@ -264,8 +264,8 @@ Boolean literal|Purpose
 These values work as you might expect:
 
 ```objc
-	BOOL tValue = [MBExpression asBoolean:@"T"];
-	BOOL fValue = [MBExpression asBoolean:@"F"];
+BOOL tValue = [MBExpression asBoolean:@"T"];
+BOOL fValue = [MBExpression asBoolean:@"F"];
 ```
 
 The variable `tValue` will be `YES`, and `fValue` will be `NO`.
@@ -273,14 +273,14 @@ The variable `tValue` will be `YES`, and `fValue` will be `NO`.
 This allows you to store a boolean value in a string, and have it evaluate as the intended boolean value:
 
 ```objc
-    [[MBVariableSpace instance] setVariable:@"featureFlag"
-                                      value:@"T"];
+[[MBVariableSpace instance] setVariable:@"featureFlag"
+								  value:@"T"];
 
-	// somewhere later on...
+// somewhere later on...
 
-	if ([MBExpression asBoolean:@"$featureFlag"]) {
-		// do something awesome with our great new feature
-	}
+if ([MBExpression asBoolean:@"$featureFlag"]) {
+	// do something awesome with our great new feature
+}
 ```
 
 #### Expression Contexts
@@ -298,7 +298,7 @@ You can embed a numeric expression within any other expression context using the
 For example:
 
 ```objc
-    [MBExpression asString:@"There are #(10 - 3) days in the week."];
+[MBExpression asString:@"There are #(10 - 3) days in the week."];
 ```
 
 In this example, the expression consists of three components: the text literal "`There are `", then the numeric expression `#(10 - 3)`, followed by another text literal: "` days in the week.`".
@@ -312,7 +312,7 @@ You can evaluate a boolean expression within a non-boolean context using the not
 When this notation is encountered, *boolean expression* is evaluated in the boolean context, and based on the resulting value, either *true result* or *false result* is returned.
 
 ```objc
-    [MBExpression asString:@"You ^if($user.isAdmin|have|do not have) administrative privileges"];
+[MBExpression asString:@"You ^if($user.isAdmin|have|do not have) administrative privileges"];
 ```
 
 The result of evaluating the expression above depends on the boolean value of the `$user.isAdmin` expression. If it evaluates to `true`, the return value will be "`You have administrative privileges`"; otherwise, it will be "`You do not have administrative privileges`".
@@ -320,19 +320,19 @@ The result of evaluating the expression above depends on the boolean value of th
 Because either *true result* or *false result* can be empty strings, the expression above could be rewritten slightly more succinctly while achieving the same result:
 
 ```objc
-    [MBExpression asString:@"You ^if($user.isAdmin||do not )have administrative privileges"];
+[MBExpression asString:@"You ^if($user.isAdmin||do not )have administrative privileges"];
 ```
 
 Which is also the logical equivalent of:
 
 ```objc
-    [MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have administrative privileges"];
+[MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have administrative privileges"];
 ```
 
 Note that the entire *false result* clause is optional. If the *false result* clause and the `|` (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
 
 ```objc
-    [MBExpression asObject:@"^if(false|hello)"];
+[MBExpression asObject:@"^if(false|hello)"];
 ```
 
 The expression above will always return `nil`.
