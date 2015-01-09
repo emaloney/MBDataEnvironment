@@ -1,7 +1,6 @@
 ## Mockingbird Documentation
 
-This directory contains [automatically-generated Mockingbird API documentation](https://rawgit.com/gilt/MBToolbox/master/Documentation/html/index.html).
-
+This directory contains [automatically-generated Mockingbird Data Environment API documentation](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/index.html).
 
 ### Building
 
