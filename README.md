@@ -312,21 +312,21 @@ You can evaluate a boolean expression within a non-boolean context using the not
 When this notation is encountered, *boolean expression* is evaluated in the boolean context, and based on the resulting value, either *true result* or *false result* is returned.
 
 ```objc
-[MBExpression asString:@"You ^if($user.isAdmin|have|do not have) administrative privileges"];
+[MBExpression asString:@"You ^if($user.isAdmin|have|do not have) admin privileges"];
 ```
 
-The result of evaluating the expression above depends on the boolean value of the `$user.isAdmin` expression. If it evaluates to `true`, the return value will be "`You have administrative privileges`"; otherwise, it will be "`You do not have administrative privileges`".
+The result of evaluating the expression above depends on the boolean value of the `$user.isAdmin` expression. If it evaluates to `true`, the return value will be "`You have admin privileges`"; otherwise, it will be "`You do not have admin privileges`".
 
 Because either *true result* or *false result* can be empty strings, the expression above could be rewritten slightly more succinctly while achieving the same result:
 
 ```objc
-[MBExpression asString:@"You ^if($user.isAdmin||do not )have administrative privileges"];
+[MBExpression asString:@"You ^if($user.isAdmin||do not )have admin privileges"];
 ```
 
 Which is also the logical equivalent of:
 
 ```objc
-[MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have administrative privileges"];
+[MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have admin privileges"];
 ```
 
 Note that the entire *false result* clause is optional. If the *false result* clause and the `|` (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
