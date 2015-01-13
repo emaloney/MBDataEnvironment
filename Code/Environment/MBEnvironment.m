@@ -32,10 +32,10 @@ NSString* const kMBMLIncludeTagName         = @"Include";
 #pragma mark MBEnvironment private
 /******************************************************************************/
 
-static dispatch_queue_t s_serializationQueue = nil;
-static NSArray* s_libraryClassPrefixes = nil;
+static MBConcurrentReadWriteCoordinator* s_readerWriter = nil;
 static MBEnvironment* s_currentEnvironment = nil;
 static NSMutableArray* s_environmentStack = nil;
+static NSMutableArray* s_libraryClassPrefixes = nil;
 static NSMutableArray* s_enabledModuleClasses = nil;
 static NSMutableArray* s_resourceBundles = nil;
 
@@ -62,13 +62,12 @@ static NSMutableArray* s_resourceBundles = nil;
 + (void) initialize
 {
     if (self == [MBEnvironment class]) {
-        s_serializationQueue = dispatch_queue_create("MBEnvironment", DISPATCH_QUEUE_SERIAL);
+        s_readerWriter = [MBConcurrentReadWriteCoordinator new];
 
         s_environmentStack = [NSMutableArray new];
+        s_libraryClassPrefixes = [NSMutableArray new];
         s_enabledModuleClasses = [NSMutableArray new];
-        s_resourceBundles = [NSMutableArray new];
-
-        [s_resourceBundles addObject:[NSBundle mainBundle]];
+        s_resourceBundles = [NSMutableArray arrayWithObject:[NSBundle mainBundle]];
 
         [self addSupportedLibraryClassPrefix:kMBLibraryClassPrefix];
 
@@ -100,17 +99,6 @@ static NSMutableArray* s_resourceBundles = nil;
 }
 
 /******************************************************************************/
-#pragma mark Thread safety
-/******************************************************************************/
-
-+ (void) serialize:(dispatch_block_t)block
-{
-    debugTrace();
-
-    dispatch_barrier_sync(s_serializationQueue, block);
-}
-
-/******************************************************************************/
 #pragma mark Working with external libraries
 /******************************************************************************/
 
@@ -121,18 +109,18 @@ static NSMutableArray* s_resourceBundles = nil;
     if (!prefix)
         return;
 
-    [self serialize:^{
-        if (!s_libraryClassPrefixes) {
-            s_libraryClassPrefixes = @[prefix];
-        } else {
-            s_libraryClassPrefixes = [s_libraryClassPrefixes arrayByAddingObject:prefix];
-        }
+    [s_readerWriter enqueueWrite:^{
+        [s_libraryClassPrefixes addObject:prefix];
     }];
 }
 
 + (NSArray*) supportedLibraryClassPrefixes
 {
-    return s_libraryClassPrefixes;
+    __block NSArray* array = nil;
+    [s_readerWriter read:^{
+        array = [s_libraryClassPrefixes copy];
+    }];
+    return array;
 }
 
 + (Class) libraryClassForName:(NSString*)className
@@ -158,18 +146,26 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (BOOL) enableModuleClass:(Class)cls
 {
-    if (cls && ![s_enabledModuleClasses containsObject:cls]) {
-        if ([cls conformsToProtocol:@protocol(MBModule)]) {
-            [s_enabledModuleClasses addObject:cls];
-            return YES;
-        }
+    if (!cls || ![cls conformsToProtocol:@protocol(MBModule)]) {
+        return NO;
     }
+
+    [s_readerWriter enqueueWrite:^{
+        if (![s_enabledModuleClasses containsObject:cls]) {
+            [s_enabledModuleClasses addObject:cls];
+        }
+    }];
+
     return NO;
 }
 
 + (NSArray*) enabledModuleClasses
 {
-    return [s_enabledModuleClasses copy];
+    __block NSArray* array = nil;
+    [s_readerWriter read:^{
+        array = [s_enabledModuleClasses copy];
+    }];
+    return array;
 }
 
 - (NSArray*) enabledModuleClasses
@@ -256,21 +252,28 @@ static NSMutableArray* s_resourceBundles = nil;
     }
 }
 
-
 /******************************************************************************/
 #pragma mark Finding resources
 /******************************************************************************/
 
 + (void) addResourceSearchBundle:(NSBundle*)bundle
 {
-    if (bundle && ![s_resourceBundles containsObject:bundle]) {
-        [s_resourceBundles addObject:bundle];
+    if (bundle) {
+        [s_readerWriter enqueueWrite:^{
+            if (![s_resourceBundles containsObject:bundle]) {
+                [s_resourceBundles addObject:bundle];
+            }
+        }];
     }
 }
 
 + (NSArray*) resourceSearchBundles
 {
-    return [s_resourceBundles copy];
+    __block NSArray* array = nil;
+    [s_readerWriter read:^{
+        array = [s_resourceBundles copy];
+    }];
+    return array;
 }
 
 - (NSString*) _findPathOfFileNamed:(NSString*)rsrcName
@@ -588,58 +591,72 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (instancetype) instance
 {
-    return s_currentEnvironment;
+    __block MBEnvironment* env = nil;
+    [s_readerWriter read:^{
+        env = s_currentEnvironment;
+    }];
+    return env;
 }
 
 + (MBEnvironment*) setEnvironment:(MBEnvironment*)env
 {
     debugTrace();
     
-    MBEnvironment* deactivating = s_currentEnvironment;
+    MBEnvironment* deactivating = [self instance];
+    if (deactivating != env) {
+        [s_readerWriter enqueueWrite:^{
+            [deactivating environmentWillDeactivate];
+            [env environmentWillActivate];
 
-    [deactivating environmentWillDeactivate];
-    [env environmentWillActivate];
-    
-    s_currentEnvironment = env;
-    
-    [deactivating environmentDidDeactivate];
-    [env environmentDidActivate];
-        
+            s_currentEnvironment = env;
+
+            [deactivating environmentDidDeactivate];
+            [env environmentDidActivate];
+        }];
+    }
     return deactivating;
 }
 
 + (void) pushEnvironment:(MBEnvironment*)env
 {
     debugTrace();
-    
+
     MBEnvironment* previous = [self setEnvironment:env];
-    [s_environmentStack addObject:previous];
+
+    [s_readerWriter enqueueWrite:^{
+        [s_environmentStack addObject:previous];
+    }];
 }
 
 + (instancetype) popEnvironment
 {
     debugTrace();
-    
-    if (s_environmentStack.count > 0) {
-        MBEnvironment* popped = [s_environmentStack lastObject];
+
+    MBEnvironment* popped = [self peekEnvironment];
+    if (popped) {
+        [s_readerWriter enqueueWrite:^{
+            [s_environmentStack removeLastObject];
+        }];
+
         [self setEnvironment:popped];
-        [s_environmentStack removeLastObject];
-        return popped;
     }
     else {
         [NSException raise:NSInternalInconsistencyException format:@"Attempt to pop an %@ when there aren't any on the stack right now", [MBEnvironment class]];
     }
-    return nil;
+    return popped;
 }
 
 + (instancetype) peekEnvironment
 {
     debugTrace();
-    
-    if (s_environmentStack.count > 0) {
-        return [s_environmentStack lastObject];
-    }
-    return nil;
+
+    __block MBEnvironment* peek = nil;
+
+    [s_readerWriter read:^{
+        peek = [s_environmentStack lastObject];
+    }];
+
+    return peek;
 }
 
 /******************************************************************************/

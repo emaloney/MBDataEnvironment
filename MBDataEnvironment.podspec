@@ -10,7 +10,7 @@
 Pod::Spec.new do |s|
 
 	s.name                  = "MBDataEnvironment"
-	s.version               = "0.9.22"
+	s.version               = "0.9.23"
 	s.summary               = "Mockingbird Data Environment"
 	s.description		= "Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
 	s.homepage		= "https://github.com/emaloney/MBDataEnvironment"
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
 	# Dependencies
 	#----------------------------------------------------------------
 
-	s.dependency 'MBToolbox', '~> 1.0.8'
+	s.dependency 'MBToolbox', '~> 1.0.10'
 	s.dependency 'RaptureXML@Gilt', '~> 1.0.3'
 
 end
