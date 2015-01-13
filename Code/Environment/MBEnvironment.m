@@ -36,7 +36,8 @@ static dispatch_queue_t s_serializationQueue = nil;
 static NSArray* s_libraryClassPrefixes = nil;
 static MBEnvironment* s_currentEnvironment = nil;
 static NSMutableArray* s_environmentStack = nil;
-static NSMutableArray* s_registeredLoaderClasses = nil;
+static NSMutableArray* s_enabledModuleClasses = nil;
+static NSMutableArray* s_resourceBundles = nil;
 
 /******************************************************************************/
 #pragma mark -
@@ -50,6 +51,8 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     NSMutableArray* _loadedFilePaths;
     NSMutableSet* _processedFileNames;
     NSMutableDictionary* _elementNamesToLoaders;
+    NSMutableArray* _resourceBundles;
+    NSArray* _additionalSearchDirectories;
 }
 
 /******************************************************************************/
@@ -62,10 +65,14 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
         s_serializationQueue = dispatch_queue_create("MBEnvironment", DISPATCH_QUEUE_SERIAL);
 
         s_environmentStack = [NSMutableArray new];
+        s_enabledModuleClasses = [NSMutableArray new];
+        s_resourceBundles = [NSMutableArray new];
 
-        s_registeredLoaderClasses = [NSMutableArray new];
+        [s_resourceBundles addObject:[NSBundle mainBundle]];
 
         [self addSupportedLibraryClassPrefix:kMBLibraryClassPrefix];
+
+        [self enableModuleClass:[MBDataEnvironmentModule class]];
     }
 }
 
@@ -77,16 +84,17 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
 {
     self = [super init];
     if (self) {
-        _modules = [NSMutableArray arrayWithObject:[MBDataEnvironmentModule class]];    // this module is always included
+        _modules = [NSMutableArray new];
         _loaders = [NSMutableArray new];
         _elementNamesToLoaders = [NSMutableDictionary new];
-
-        for (Class extClass in [[self class] registeredEnvironmentLoaderClasses]) {
-            [self addEnvironmentLoaderFromClass:extClass];
-        }
+        _resourceBundles = [NSMutableArray arrayWithArray:[[self class] resourceSearchBundles]];
 
         _loadedFilePaths = [NSMutableArray new];
         _processedFileNames = [NSMutableSet new];
+
+        for (Class cls in [[self class] enabledModuleClasses]) {
+            [self _addModule:cls];
+        }
     }
     return self;
 }
@@ -148,47 +156,77 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
 #pragma mark Code modules
 /******************************************************************************/
 
-- (NSArray*) enabledModuleClasses
++ (BOOL) enableModuleClass:(Class)cls
 {
-    return [_modules copy];
-}
-
-/******************************************************************************/
-#pragma mark Managing environment loaders
-/******************************************************************************/
-
-+ (BOOL) registerEnvironmentLoaderClass:(Class)extClass
-{
-    if (extClass && ![s_registeredLoaderClasses containsObject:extClass]) {
-        if ([extClass isSubclassOfClass:[MBEnvironmentLoader class]]) {
-            [s_registeredLoaderClasses addObject:extClass];
+    if (cls && ![s_enabledModuleClasses containsObject:cls]) {
+        if ([cls conformsToProtocol:@protocol(MBModule)]) {
+            [s_enabledModuleClasses addObject:cls];
             return YES;
         }
     }
     return NO;
 }
 
-+ (NSArray*) registeredEnvironmentLoaderClasses
++ (NSArray*) enabledModuleClasses
 {
-    return [s_registeredLoaderClasses copy];
+    return [s_enabledModuleClasses copy];
 }
 
-- (MBEnvironmentLoader*) addEnvironmentLoaderFromClass:(Class)extClass
+- (NSArray*) enabledModuleClasses
 {
-    if ([extClass isSubclassOfClass:[MBEnvironmentLoader class]]) {
-        MBEnvironmentLoader* loader = [extClass new];
-        if ([self addEnvironmentLoader:loader]) {
-            return loader;
+    return [_modules copy];
+}
+
+- (void) _addModule:(Class)moduleClass
+{
+    if ([moduleClass conformsToProtocol:@protocol(MBModule)]) {
+        if (![_modules containsObject:moduleClass]) {
+            [_modules addObject:moduleClass];
+
+            if ([moduleClass respondsToSelector:@selector(environmentLoaderClasses)]) {
+                NSArray* loaderClasses = [moduleClass environmentLoaderClasses];
+                for (Class loaderClass in loaderClasses) {
+                    if (![self addEnvironmentLoaderFromClass:loaderClass]) {
+                        errorLog(@"Invalid loader class \"%@\"; must be a subclass of %@", loaderClass, [MBEnvironmentLoader class]);
+                    }
+                }
+            }
+
+            if ([moduleClass respondsToSelector:@selector(resourceBundle)]) {
+                NSBundle* bundle = [moduleClass resourceBundle];
+                if (bundle) {
+                    [_resourceBundles addObject:bundle];
+                }
+            }
         }
     }
-    return nil;
+    else {
+        errorLog(@"Invalid module class \"%@\"; must conform to the protocol %@", moduleClass, NSStringFromProtocol(@protocol(MBModule)));
+    }
+}
+
+/******************************************************************************/
+#pragma mark Managing environment loaders
+/******************************************************************************/
+
+- (BOOL) addEnvironmentLoaderFromClass:(Class)cls
+{
+    if ([cls isSubclassOfClass:[MBEnvironmentLoader class]]) {
+        MBEnvironmentLoader* loader = [cls new];
+        if ([self addEnvironmentLoader:loader]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (BOOL) addEnvironmentLoader:(MBEnvironmentLoader*)loader
 {
-    if (loader && ![_loaders containsObject:loader]) {
-        [_loaders addObject:loader];
-        [self _registerElementNamesForLoader:loader];
+    if (loader) {
+        if (![_loaders containsObject:loader]) {
+            [_loaders addObject:loader];
+            [self _registerElementNamesForLoader:loader];
+        }
         return YES;
     }
     return NO;
@@ -199,10 +237,10 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     return [_loaders copy];
 }
 
-- (MBEnvironmentLoader*) environmentLoaderOfClass:(Class)extClass
+- (MBEnvironmentLoader*) environmentLoaderOfClass:(Class)cls
 {
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
-        if ([loader isKindOfClass:extClass]) {
+        if ([loader isKindOfClass:cls]) {
             return loader;
         }
     }
@@ -218,6 +256,44 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     }
 }
 
+
+/******************************************************************************/
+#pragma mark Finding resources
+/******************************************************************************/
+
++ (void) addResourceSearchBundle:(NSBundle*)bundle
+{
+    if (bundle && ![s_resourceBundles containsObject:bundle]) {
+        [s_resourceBundles addObject:bundle];
+    }
+}
+
++ (NSArray*) resourceSearchBundles
+{
+    return [s_resourceBundles copy];
+}
+
+- (NSString*) _findPathOfFileNamed:(NSString*)rsrcName
+{
+    if (_additionalSearchDirectories.count > 0) {
+        NSFileManager* fileMgr = [NSFileManager defaultManager];
+        for (NSString* dir in _additionalSearchDirectories) {
+            NSString* filePath = [dir stringByAppendingPathComponent:rsrcName];
+            if ([fileMgr fileExistsAtPath:filePath]) {
+                return filePath;
+            }
+        }
+    }
+
+    for (NSBundle* bundle in _resourceBundles) {
+        NSString* filePath = [bundle pathForResource:rsrcName ofType:nil];
+        if (filePath) {
+            return filePath;
+        }
+    }
+    return nil;
+}
+
 /******************************************************************************/
 #pragma mark Loading the Mockingbird environment
 /******************************************************************************/
@@ -228,74 +304,244 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     return (env && env.isLoaded);
 }
 
-+ (MBEnvironment*) loadFromResources
+- (BOOL) _loadFileAtPath:(NSString*)filePath includeDepth:(NSUInteger)depth
+{
+    if (!filePath && depth != 0) {
+        // file path can only be omitted at depth = 0, where it represents
+        // loading the default environment (i.e., one where no manifest is
+        // processed)
+        return NO;
+    }
+
+    RXMLElement* xml = nil;
+    if (filePath) {
+        xml = [self mbmlFromFile:filePath];
+        if (!xml) {
+            return NO;
+        }
+
+        if (depth == 0) {
+            // keep track of the original manifest file
+            [_loadedFilePaths addObject:filePath];
+            [_processedFileNames addObject:[filePath lastPathComponent]];
+        }
+
+        NSArray* attrNames = [xml attributeNames];
+        for (NSString* attrName in attrNames) {
+            NSString* val = [xml attribute:attrName];
+            if ([attrName isEqualToString:kMBMLAttributeModules]) {
+                if (depth == 0) {
+                    // the extensions attribute can be a comma-separated list
+                    NSArray* modules = [val componentsSeparatedByString:@","];
+                    for (__strong NSString* moduleClassName in modules) {
+                        moduleClassName = MBTrimString(moduleClassName);
+                        if (moduleClassName && moduleClassName.length > 0) {
+                            Class moduleClass = NSClassFromString(moduleClassName);
+                            if (moduleClass) {
+                                [self _addModule:moduleClass];
+                            }
+                            else {
+                                errorLog(@"Couldn't load module class \"%@\"; no implementation found", moduleClassName);
+                            }
+                        }
+                    }
+                }
+                else {
+                    errorLog(@"Modules can only be specified in the top level environment file; the value for this \"%@\" attribute will be ignored: %@", kMBMLAttributeModules, val);
+                }
+            }
+            else {
+                // other attributes on the MBML tag will get stored as MBEnvironment attributes
+                [self setAttribute:val forName:attrName];
+            }
+        }
+    }
+
+    if (depth == 0) {
+        [MBEnvironment setEnvironment:self];
+        [self environmentWillLoad];
+    }
+
+    // figure out what include files we need to load
+    NSMutableArray* includes = [NSMutableArray new];
+    NSMutableDictionary* includeConditionals = [NSMutableDictionary new];
+
+    if (depth == 0) {
+        for (Class moduleClass in _modules) {
+            // each code module may have its own environment file
+            if ([moduleClass respondsToSelector:@selector(moduleEnvironmentFilename)]) {
+                NSString* includeFile = [moduleClass moduleEnvironmentFilename];
+                if (includeFile) {
+                    [includes addObject:includeFile];
+                    includeConditionals[includeFile] = @[kMBMLBooleanStringTrue];
+                }
+            }
+        }
+    }
+
+    // xml won't exist at depth=0 when loading without a manifest
+    if (xml) {
+        // process <Include file="..."/> tags in any XML
+        for (RXMLElement* el in [xml children:kMBMLIncludeTagName]) {
+            NSString* includeFile = [el attribute:kMBMLAttributeFile];
+            if (includeFile) {
+                NSString* shouldIncludeExpr = [el attribute:kMBMLAttributeIf];
+                if (!shouldIncludeExpr) {
+                    shouldIncludeExpr = kMBMLBooleanStringTrue;
+                }
+                NSArray* conditionals = includeConditionals[includeFile];
+                if (conditionals) {
+                    conditionals = [conditionals arrayByAddingObject:shouldIncludeExpr];
+                } else {
+                    conditionals = @[shouldIncludeExpr];
+                }
+                includeConditionals[includeFile] = conditionals;
+                if (![includes containsObject:includeFile]) {
+                    [includes addObject:includeFile];
+                }
+            }
+            else {
+                errorLog(@"Invalid <%@> tag: the \"%@\" attribute is required in: %@", kMBMLIncludeTagName, kMBMLAttributeFile, el.xml);
+            }
+        }
+    }
+
+    // process each include
+    for (NSString* includeFile in includes) {
+        if ([_processedFileNames containsObject:includeFile]) {
+            debugLog(@"Skipping <%@> of file \"%@\"; was previously included", kMBMLIncludeTagName, includeFile);
+        }
+        else {
+            NSArray* conditionals = includeConditionals[includeFile];
+            BOOL include = NO;
+            for (NSString* conditional in conditionals) {
+                if ([conditional evaluateAsBoolean]) {
+                    debugLog(@"Will <%@> file \"%@\"", kMBMLIncludeTagName, includeFile);
+                    include = YES;
+                    break;
+                }
+            }
+            if (!include) {
+                debugLog(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, (unsigned long)conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
+            }
+            else {
+                NSString* includeFilePath = [self _findPathOfFileNamed:includeFile];
+                if (includeFilePath) {
+                    if ([self _loadFileAtPath:includeFilePath includeDepth:(depth + 1)]) {
+                        // keep track of the file we just successfully loaded
+                        [self didAmendDataModelWithXMLFromFile:includeFilePath];
+                    }
+                    else {
+                        // couldn't load resource; report failure
+                        errorLog(@"Failed to process MBML include file: \"%@\"", includeFilePath);
+                    }
+                }
+                else {
+                    // didn't find path for file
+                    errorLog(@"Couldn't find path of MBML file named \"%@\" in known resource bundles and search directories", includeFile);
+                }
+            }
+        }
+    }
+
+    // xml won't exist at depth=0 when loading without a manifest
+    if (xml) {
+        [self amendDataModelWithXML:xml];
+    }
+
+    if (depth == 0) {
+        [self environmentDidLoad];
+    }
+
+    return YES;
+}
+
+- (BOOL) loadWithManifest:(NSString*)manifestName additionalSearchDirectories:(NSArray*)dirs
+{
+    debugTrace();
+
+    [_loadedFilePaths removeAllObjects];
+    [_processedFileNames removeAllObjects];
+
+    _manifestFilePath = nil;
+    _additionalSearchDirectories = dirs;
+
+    if (manifestName) {
+        NSString* manifestPath = [self _findPathOfFileNamed:manifestName];
+        if (!manifestPath) {
+            errorLog(@"Couldn't find path for manifest file named: %@", manifestName);
+            return NO;
+        }
+        _manifestFilePath = manifestPath;
+    }
+
+    _isLoaded = [self _loadFileAtPath:_manifestFilePath includeDepth:0];
+
+    return _isLoaded;
+}
+
++ (instancetype) loadDefaultEnvironment
+{
+    return [self loadFromManifestFile:nil
+                withSearchDirectories:nil];
+}
+
++ (instancetype) loadFromManifest
 {
     return [self loadFromManifestFile:kMBMLManifestFilename
-                        baseDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
+                withSearchDirectories:nil];
 }
 
-+ (MBEnvironment*) loadFromDirectory:(NSString*)dirPath
++ (instancetype) loadFromManifestWithSearchDirectory:(NSString*)dirPath
 {
     return [self loadFromManifestFile:kMBMLManifestFilename
-                        baseDirectory:dirPath];
+                withSearchDirectories:@[dirPath]];
 }
 
-+ (MBEnvironment*) loadFromManifestFile:(NSString*)fileName
++ (instancetype) loadFromManifestFile:(NSString*)manifestName
+                  withSearchDirectory:(NSString*)dirPath
 {
-    return [self loadFromManifestFile:fileName
-                        baseDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
+    return [self loadFromManifestFile:manifestName
+                withSearchDirectories:@[dirPath]];
 }
 
-+ (MBEnvironment*) loadFromManifestFile:(NSString*)fileName
-                          baseDirectory:(NSString*)dirPath
++ (instancetype) loadFromManifestWithSearchDirectories:(NSArray*)dirPaths
+{
+    return [self loadFromManifestFile:kMBMLManifestFilename
+                withSearchDirectories:dirPaths];
+}
+
++ (instancetype) loadFromManifestFile:(NSString*)manifestName
+                withSearchDirectories:(NSArray*)dirPaths
 {
     debugTrace();
 
     MBEnvironment* env = [MBEnvironment new];
 
-    MBEnvironment* prevEnv = [MBEnvironment setEnvironment:env];
-
-    BOOL initialLoadFailed = NO;
+    MBEnvironment* revert = [MBEnvironment instance];
     @try {
-        if ([env loadFromManifestFile:fileName baseDirectory:dirPath]) {
-            [MBEvents postEvent:kMBMLEnvironmentDidLoadNotification fromSender:self];
-        }
-        else {
-            initialLoadFailed = (prevEnv == nil);
-            if (!initialLoadFailed) {
-                // if we had a previous environment, reset it and log an error.
-                // however, if this was an attempt to load our initial environment,
-                // there's nothing we can do; the app can't load, we'll throw an
-                // exception later
-                errorLog(@"Failed to load %@ environment; reverting to previous state", self);
-            }
-            [MBEnvironment setEnvironment:prevEnv];
+        if ([env loadWithManifest:manifestName additionalSearchDirectories:dirPaths]) {
+            [MBEvents postEvent:kMBMLEnvironmentDidLoadNotification withObject:env];
+            return env;
         }
     }
     @catch (NSException* ex) {
         errorLog(@"Exception while attempting to load %@ environment: %@", self, ex);
     }
 
-    if (initialLoadFailed) {
-        [NSException raise:@"Failed to load initial app environment" format:@"The initial %@ application environment could not be loaded. Please check the console log for more information about the source of the problem.", self];
-    }
-
-    return [MBEnvironment instance];
-}
-
-+ (MBEnvironment*) reload
-{
-    debugTrace();
-
-    MBEnvironment* env = [MBEnvironment instance];
-    if (env) {
-        return [self loadFromManifestFile:[env.manifestFilePath lastPathComponent]
-                            baseDirectory:env.baseDirectory];
+    // if we had a previous environment, reset it and log an error.
+    // however, if this was an attempt to load our initial environment,
+    // there's nothing we can do; the app can't load, we'll throw an
+    // exception later
+    if (revert) {
+        errorLog(@"Failed to load %@ environment; existing state will remain the same", self);
+        [MBEnvironment setEnvironment:revert];
     }
     else {
-        errorLog(@"%@ has no active %@ to reload", self, [MBEnvironment class]);
+        [NSException raise:@"Failed to load initial app environment" format:@"The initial %@ could not be loaded. Please check the console log for more information about the source of the problem.", self];
     }
-    return [MBEnvironment instance];
+
+    return nil;
 }
 
 /******************************************************************************/
@@ -475,242 +721,18 @@ static NSMutableArray* s_registeredLoaderClasses = nil;
     return nil;
 }
 
-- (NSString*) pathOfEnvironmentFile:(NSString*)fileName baseDirectory:(NSString*)dir
-{
-    NSString* path = [dir stringByAppendingPathComponent:fileName];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-        return path;
-    }
-
-    for (NSBundle* bundle in [NSBundle allBundles]) {
-        NSString* path = [bundle pathForResource:fileName ofType:nil];
-        if (path) {
-            return path;
-        }
-    }
-    return nil;
-}
-
-- (BOOL) _loadFromFile:(NSString*)filePath baseDirectory:(NSString*)dir includeDepth:(NSUInteger)depth
-{
-    if (depth == 0) {
-        [self environmentWillLoad];
-    }
-    
-    RXMLElement* xml = [self mbmlFromFile:filePath];
-    if (!xml) {
-        if (depth == 0) {
-            [self environmentLoadFailed];
-        }
-        return NO;
-    }
-    
-    if (depth == 0) {
-        // keep track of the original manifest file
-        [_loadedFilePaths addObject:filePath];
-        [_processedFileNames addObject:[filePath lastPathComponent]];
-    }
-    
-    NSFileManager* fileMgr = [NSFileManager defaultManager];
-    
-    NSArray* attrNames = [xml attributeNames];
-    for (NSString* attrName in attrNames) {
-        NSString* val = [xml attribute:attrName];
-        if ([attrName isEqualToString:kMBMLAttributeModules]) {
-            if (depth == 0) {
-                // the extensions attribute can be a comma-separated list
-                NSArray* modules = [val componentsSeparatedByString:@","];
-                for (__strong NSString* moduleClassName in modules) {
-                    moduleClassName = MBTrimString(moduleClassName);
-                    if (moduleClassName && moduleClassName.length > 0) {
-                        Class moduleClass = NSClassFromString(moduleClassName);
-                        if (moduleClass) {
-                            if ([moduleClass conformsToProtocol:@protocol(MBModule)]) {
-                                if (![_modules containsObject:moduleClass]) {
-                                    [_modules addObject:moduleClass];
-                                }
-                            }
-                            else {
-                                errorLog(@"Invalid module class \"%@\"; must conform to the protocol %@", moduleClassName, NSStringFromProtocol(@protocol(MBModule)));
-                            }
-                        }
-                        else {
-                            errorLog(@"Couldn't load module class \"%@\"; no implementation found", moduleClassName);
-                        }
-                    }
-                }
-            }
-            else {
-                errorLog(@"Modules can only be specified in the top level environment file; the value for this \"%@\" attribute will be ignored: %@", kMBMLAttributeModules, val);
-            }
-        }
-        else {
-            // other attributes on the MBML tag will get stored as MBEnvironment attributes
-            [self setAttribute:val forName:attrName];
-        }
-    }
-    
-    // figure out what include files we need to load
-    NSMutableArray* includes = [NSMutableArray new];
-    NSMutableDictionary* includeConditionals = [NSMutableDictionary new];
-    
-    if (depth == 0) {
-        for (Class moduleClass in _modules) {
-            // process each enable code modules
-            if ([moduleClass respondsToSelector:@selector(environmentLoaderClasses)]) {
-                NSArray* loaderClasses = [moduleClass environmentLoaderClasses];
-                for (Class loaderClass in loaderClasses) {
-                    if ([loaderClass isSubclassOfClass:[MBEnvironmentLoader class]]) {
-                        if ([MBEnvironment registerEnvironmentLoaderClass:loaderClass]) {
-                            MBEnvironmentLoader* loader = [self addEnvironmentLoaderFromClass:loaderClass];
-                            if ([MBEnvironment instance] == self) {
-                                // if we're the active environment, activate the new loader, too
-                                [loader environmentWillActivate:self];
-                                [loader environmentDidActivate:self];
-                            }
-                            // notify the loader that we're loading
-                            [loader environmentWillLoad:self];
-                        }
-                    }
-                    else {
-                        errorLog(@"Invalid loader class \"%@\"; must be a subclass of %@", loaderClass, [MBEnvironmentLoader class]);
-                    }
-                }
-            }
-            
-            // each code module may have its own environment file
-            if ([moduleClass respondsToSelector:@selector(moduleEnvironmentFilename)]) {
-                NSString* includeFile = [moduleClass moduleEnvironmentFilename];
-                if (includeFile) {
-                    [includes addObject:includeFile];
-                    includeConditionals[includeFile] = @[kMBMLBooleanStringTrue];
-                }
-            }
-        }
-    }
-    
-    // process <Include file="..."/> tags
-    for (RXMLElement* el in [xml children:kMBMLIncludeTagName]) {
-        NSString* includeFile = [el attribute:kMBMLAttributeFile];
-        if (includeFile) {
-            NSString* shouldIncludeExpr = [el attribute:kMBMLAttributeIf];
-            if (!shouldIncludeExpr) {
-                shouldIncludeExpr = kMBMLBooleanStringTrue;
-            }
-            NSArray* conditionals = includeConditionals[includeFile];
-            if (conditionals) {
-                conditionals = [conditionals arrayByAddingObject:shouldIncludeExpr];
-            } else {
-                conditionals = @[shouldIncludeExpr];
-            }
-            includeConditionals[includeFile] = conditionals;
-            if (![includes containsObject:includeFile]) {
-                [includes addObject:includeFile];
-            }
-        }
-        else {
-            errorLog(@"Invalid <%@> tag: the \"%@\" attribute is required in: %@", kMBMLIncludeTagName, kMBMLAttributeFile, el.xml);
-        }
-    }
-    
-    // process each include
-    for (NSString* includeFile in includes) {
-        if ([_processedFileNames containsObject:includeFile]) {
-            debugLog(@"Skipping <%@> of file \"%@\"; was previously included", kMBMLIncludeTagName, includeFile);
-        }
-        else {
-            NSArray* conditionals = includeConditionals[includeFile];
-            BOOL include = NO;
-            for (NSString* conditional in conditionals) {
-                if ([conditional evaluateAsBoolean]) {
-                    debugLog(@"Will <%@> file \"%@\"", kMBMLIncludeTagName, includeFile);
-                    include = YES;
-                    break;
-                }
-            }
-            if (!include) {
-                debugLog(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, (unsigned long)conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
-            }
-            else {
-                NSString* includeFilePath = [dir stringByAppendingPathComponent:includeFile];
-                BOOL hasFile = [fileMgr fileExistsAtPath:includeFilePath];
-                
-                // first, see if the file exists in the same parent directory
-                if (!hasFile || ![self _loadFromFile:includeFilePath
-                                       baseDirectory:dir
-                                        includeDepth:(depth + 1)])
-                {
-                    // include file wasn't found there; check the resources
-                    includeFilePath = [self pathOfEnvironmentFile:includeFile baseDirectory:dir];
-                    if (includeFilePath) {
-                        // looks like we've got a resource for the include file; try to load it
-                        if (![self _loadFromFile:includeFilePath
-                                   baseDirectory:dir
-                                    includeDepth:(depth + 1)])
-                        {
-                            // couldn't load resource; report failure
-                            errorLog(@"Failed to process MBML include file: \"%@\"", includeFile);
-                        }
-                        else {
-                            // keep track of the file we just successfully loaded
-                            [self didAmendDataModelWithXMLFromFile:includeFilePath];
-                        }
-                    }
-                    else {
-                        // didn't find a resource either
-                        errorLog(@"Couldn't find MBML file \"%@\" in application resources or in directory: %@", includeFile, dir);
-                    }
-                }
-                else {
-                    // keep track of the file we just successfully loaded
-                    [self didAmendDataModelWithXMLFromFile:includeFilePath];
-                }
-            }
-        }
-    }
-    
-    [self amendDataModelWithXML:xml];
-    
-    if (depth == 0) {
-        [self environmentDidLoad];
-    }
-    
-    return YES;
-}
-
-- (BOOL) loadFromManifestFile:(NSString*)manifestFileName
-                baseDirectory:(NSString*)dir
+- (BOOL) loadMBMLFile:(NSString*)fileName
 {
     debugTrace();
-    
-    _manifestFilePath = [dir stringByAppendingPathComponent:manifestFileName];
-    _baseDirectory = dir;
-    [_loadedFilePaths removeAllObjects];
-    [_processedFileNames removeAllObjects];
-    
-    _isLoaded = [self _loadFromFile:_manifestFilePath baseDirectory:_baseDirectory includeDepth:0];
-    
-    return _isLoaded;
-}
 
-- (BOOL) loadTemplateFile:(NSString*)fileName
-            baseDirectory:(NSString*)dir
-{
-    debugTrace();
-    
-    NSString* templateFilePath = [dir stringByAppendingPathComponent:fileName];
-    if ([self _loadFromFile:templateFilePath baseDirectory:dir includeDepth:1]) {
-        [self didAmendDataModelWithXMLFromFile:templateFilePath];
-        return YES;
+    NSString* filePath = [self _findPathOfFileNamed:fileName];
+    if (filePath) {
+        if ([self _loadFileAtPath:filePath includeDepth:1]) {
+            [self didAmendDataModelWithXMLFromFile:filePath];
+            return YES;
+        }
     }
     return NO;
-}
-
-- (BOOL) loadTemplateFile:(NSString*)fileName
-{
-    debugTrace();
-    
-    return [self loadTemplateFile:fileName baseDirectory:_baseDirectory];
 }
 
 /******************************************************************************/
