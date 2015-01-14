@@ -139,47 +139,6 @@ MBImplementSingleton();
     return [MBStringConversions stringFromSize:(CGSize){size.height, size.width}];  // flip width & height in landscape
 }
 
-- (NSString*) contentFrame
-{
-    return [MBStringConversions stringFromRect:[UIScreen mainScreen].applicationFrame];
-}
-
-- (CGSize) _contentSize
-{
-    if ([self isPortrait]) {
-        return [UIScreen mainScreen].applicationFrame.size;
-    } else {
-        CGSize size = [UIScreen mainScreen].applicationFrame.size;
-        return (CGSize){size.height, size.width};  // flip width & height in landscape
-    }
-}
-
-- (NSNumber*) contentWidth
-{
-    return @([self _contentSize].width);
-}
-
-- (NSNumber*) contentHeight
-{
-    return @([self _contentSize].height);
-}
-
-- (NSString*) contentSize
-{
-    return [MBStringConversions stringFromSize:[self _contentSize]];
-}
-
-- (NSString*) contentSizePortrait
-{
-    return [MBStringConversions stringFromSize:[UIScreen mainScreen].applicationFrame.size];
-}
-
-- (NSString*) contentSizeLandscape
-{
-    CGSize size = [UIScreen mainScreen].applicationFrame.size;
-    return [MBStringConversions stringFromSize:(CGSize){size.height, size.width}];  // flip width & height in landscape
-}
-
 - (BOOL) appIsInBackground
 {
     return [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground;

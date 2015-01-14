@@ -45,13 +45,6 @@
 - (NSString*) screenSizePortrait;
 - (NSString*) screenSizeLandscape;
 
-- (NSString*) contentFrame;
-- (NSNumber*) contentWidth;
-- (NSNumber*) contentHeight;
-- (NSString*) contentSize;              // returns the size of the main screen's application frame, as a comma-separated string in the format "width,height"; for use from within MBML
-- (NSString*) contentSizePortrait;
-- (NSString*) contentSizeLandscape;
-
 - (BOOL) appIsInBackground;
 
 @end
