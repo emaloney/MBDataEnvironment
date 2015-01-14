@@ -50,32 +50,27 @@ MBImplementSingleton();
 
 - (NSArray*) osVersionComponents
 {
-    return [[self osVersion] componentsSeparatedByString:@"."]; 
-}
-
-- (NSUInteger) _osVersionComponentAtIndex:(NSUInteger)index
-{
-    NSUInteger v = 0;
-    NSArray* vComp = [self osVersionComponents];
-    if (vComp.count > index) {
-        v = [[vComp objectAtIndex:index] integerValue];
+    NSMutableArray* compNums = [NSMutableArray new];
+    NSArray* comps = [[self osVersion] componentsSeparatedByString:@"."];
+    for (NSString* comp in comps) {
+        [compNums addObject:@((NSUInteger)[comp integerValue])];
     }
-    return v;
+    return [compNums copy];
 }
 
-- (NSUInteger) osVersionMajor
+- (NSNumber*) osVersionMajor
 {
-    return [self _osVersionComponentAtIndex:0];
+    return [self osVersionComponents][0];
 }
 
-- (NSUInteger) osVersionMinor
+- (NSNumber*) osVersionMinor
 {
-    return [self _osVersionComponentAtIndex:1];
+    return [self osVersionComponents][1];
 }
 
-- (NSUInteger) osVersionRevision
+- (NSNumber*) osVersionRevision
 {
-    return [self _osVersionComponentAtIndex:2];
+    return [self osVersionComponents][2];
 }
 
 - (NSString*) currentOrientation
