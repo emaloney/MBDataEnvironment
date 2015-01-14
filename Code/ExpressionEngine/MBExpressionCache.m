@@ -24,9 +24,6 @@
 #pragma mark Constants
 /******************************************************************************/
 
-const NSTimeInterval kMBExpressionCacheDontAutopersistAfter     = -1;   // optimize for fast startup by only autopersisting expressions encountered within X seconds of startup (-1 to disable)
-const NSTimeInterval kMBExpressionCacheDelayBeforeFlushing      = 60;   // when a clean cache is first made dirty, we wait this long before autopersisting
-
 const NSInteger kMBExpressionCacheCurrentSerializationVersion   = 1;    // increment whenever file schema changes
 const NSInteger kMBExpressionCacheMinimumSerializationVersion   = 1;    // update when file schema changes in non-backwards-compatible way
 
@@ -271,13 +268,13 @@ MBImplementSingleton();
     if (!DEBUG_FLAG(DEBUG_DONT_PERSIST) && _cacheDirty != setDirty) {
         _cacheDirty = setDirty;
         
-        if (kMBExpressionCacheDontAutopersistAfter > 0) {
+        if (_cacheSerialization == MBExpressionCacheSerializationOptimizeForLaunch) {
             if (!_cacheInstantiationTime) {
                 _cacheInstantiationTime = [NSDate new];
             }
             else {
                 NSTimeInterval val = -[_cacheInstantiationTime timeIntervalSinceNow];
-                if (val > kMBExpressionCacheDontAutopersistAfter) {
+                if (val > _cacheSerializationInterval) {
                     return;
                 }
             }
@@ -285,7 +282,7 @@ MBImplementSingleton();
         
         if (setDirty && !_saveCacheTimer) {
             // if there isn't already a timer scheduled, set one to go off soon
-            _saveCacheTimer = [NSTimer scheduledTimerWithTimeInterval:kMBExpressionCacheDelayBeforeFlushing
+            _saveCacheTimer = [NSTimer scheduledTimerWithTimeInterval:_cacheSerializationInterval
                                                                target:self
                                                              selector:@selector(_saveTimerFired:)
                                                              userInfo:nil
@@ -363,10 +360,31 @@ MBImplementSingleton();
 #pragma mark Cache persistence
 /******************************************************************************/
 
+- (void) setCacheSerialization:(MBExpressionCacheSerialization)serialization
+                  withInterval:(NSTimeInterval)interval
+{
+    _cacheSerialization = serialization;
+    if (serialization != MBExpressionCacheSerializationNone) {
+        _cacheSerializationInterval = interval;
+    } else {
+        _cacheSerializationInterval = 0.0;
+    }
+}
+
+- (BOOL) _shouldCache
+{
+    return (!DEBUG_FLAG(DEBUG_BYPASS_CACHE) && !self.disableCaching);
+}
+
+- (BOOL) _shouldPersist
+{
+    return ([self _shouldCache] && !DEBUG_FLAG(DEBUG_DONT_PERSIST) && self.enablePersistence && self.cacheSerialization != MBExpressionCacheSerializationNone);
+}
+
 - (MBSerializedExpressionCache*) _cacheDataFromFilesystem
 {
     MBSerializedExpressionCache* cacheData = nil;
-    if (!DEBUG_FLAG(DEBUG_DONT_PERSIST) && self.isPersistenceEnabled) {
+    if ([self _shouldPersist]) {
         NSFileManager* fileMgr = [NSFileManager defaultManager];
         
         NSString* cacheFile = [self _pathForUserCacheFile];
@@ -476,7 +494,7 @@ MBImplementSingleton();
 {
     debugTrace();
     
-    if (!DEBUG_FLAG(DEBUG_DONT_PERSIST) && self.isPersistenceEnabled) {
+    if ([self _shouldPersist]) {
         MBSerializedExpressionCache* cacheData = [MBSerializedExpressionCache new];
         
         [_cacheLock lock];
@@ -571,7 +589,7 @@ MBImplementSingleton();
 {
     if (!expr || !grammar) return nil;
     
-    if (!DEBUG_FLAG(DEBUG_BYPASS_CACHE)) {
+    if ([self _shouldCache]) {
         NSString* grammarClassName = NSStringFromClass([grammar class]);
         if (grammarClassName) {
             NSArray* tokens = nil;
@@ -606,7 +624,7 @@ MBImplementSingleton();
                                                             inVariableSpace:space
                                                                       error:errPtr];
     
-    if (!DEBUG_FLAG(DEBUG_BYPASS_CACHE)) {
+    if ([self _shouldCache]) {
         if (tokens) {
             NSString* grammarClassName = NSStringFromClass([grammar class]);
             if (grammarClassName) {

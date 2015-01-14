@@ -13,6 +13,31 @@
 @class MBExpressionError;
 
 /******************************************************************************/
+#pragma mark Types
+/******************************************************************************/
+
+/*!
+ Specifies the serialization behavior for the `MBExpressionCache`.
+ */
+typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization) {
+    /*! The cache will not serialize any changes to the filesystem. This is
+        the default value of the `MBExpressionCache`'s `cacheSerialization` 
+        property. */
+    MBExpressionCacheSerializationNone,
+
+    /*! The cache will serialize only those changes occurring within a given
+        period of time after application launch. Cache files will be smaller. */
+    MBExpressionCacheSerializationOptimizeForLaunch,
+
+    /*! The cache will periodically serialize changes to the filesystem.
+        Over time, the cache will grow to encompass all expressions
+        encountered at runtime, making expression evaluation quicker. 
+        Cache files will be larger, however, which can affect application
+        launch times in extreme cases. */
+    MBExpressionCacheSerializationOptimizeForPerformance,
+};
+
+/******************************************************************************/
 #pragma mark -
 #pragma mark MBExpressionCache class
 /******************************************************************************/
@@ -24,6 +49,69 @@
             `MBSingleton` protocol) to acquire the singleton instance.
  */
 @interface MBExpressionCache : NSObject <MBSingleton>
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Controlling cache behavior
+/*!    @name Controlling cache behavior                                       */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Disables caching altogether when set to `YES`. Defaults to `NO`.
+ */
+@property(nonatomic, assign) BOOL disableCaching;
+
+/*!
+ By default, the expression cache will log status messages to the console
+ when attempting to load or save cache files. This property can be set to `YES`
+ to suppress those log messages.
+ */
+@property(nonatomic, assign) BOOL suppressConsoleLogging;
+
+/*!
+ Determines whether the expression cache will utilize the filesystem for
+ persisting the cached expression tokens.
+
+ This value is manipulated during the `MBEnvironment` load process. Typically,
+ you would not change this property yourself; instead, consider using
+ the `setCacheSerialization:withInterval:` if you wish to control how the
+ cache handles persistence.
+ */
+@property(nonatomic, assign) BOOL enablePersistence;
+
+/*!
+ Controls whether and how the expression cache writes files to the filesystem.
+ 
+ By default, the expression cache will not serialize.
+ 
+ @param     serialization Specifies whether and how the cache should serialize
+            persistent copies to the filesystem.
+
+ @param     interval The time interval that applies to the `serialization`
+            value. If `serialization` is 
+            `MBExpressionCacheSerializationOptimizeForLaunch`, the cache
+            will serialize at most once per run of the application, and only
+            after `interval` seconds have elapsed. If `serialization` is
+            `MBExpressionCacheSerializationOptimizeForPerformance`, then
+            serialization may occur periodically, no more than every `interval`
+            seconds. If `serialization` is `MBExpressionCacheSerializationNone`,
+            this value is ignored.
+ */
+- (void) setCacheSerialization:(MBExpressionCacheSerialization)serialization
+                  withInterval:(NSTimeInterval)interval;
+
+/*!
+ Specifies the cache's serialization behavior. The default value is 
+ `MBExpressionCacheSerializationNone`, but it can be changed by calling
+ `setCacheSerialization:withInterval:`.
+ */
+@property(nonatomic, readonly) MBExpressionCacheSerialization cacheSerialization;
+
+/*!
+ Specifies the cache serialization interval. The meaning of this value depends
+ on the value of the `cacheSerialization` property. Will be `0.0` if
+ `cacheSerialization` is `MBExpressionCacheSerializationNone`.
+ */
+@property(nonatomic, readonly) NSTimeInterval cacheSerializationInterval;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Retrieving tokens for expressions
@@ -123,14 +211,6 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Determines whether the expression cache will utilize the filesystem for
- persisting the cached expression tokens.
-
- This value is manipulated during the `MBEnvironment` load process.
- */
-@property(nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled;
-
-/*!
  If an expression cache file is available, it is loaded, and the file's contents
  are used to replace the existing contents of the in-memory cache.
  
@@ -139,7 +219,7 @@
 
  The memory cache is not modified if no file was loaded.
  
- @note      If the expression cache's `isPersistenceEnabled` property is `NO`,
+ @note      If the expression cache's `enablePersistence` property is `NO`,
             calling this method does nothing.
  */
 - (void) loadCache;
@@ -157,7 +237,7 @@
 
  The memory cache is not modified if no file was loaded.
  
- @note      If the expression cache's `isPersistenceEnabled` property is `NO`,
+ @note      If the expression cache's `enablePersistence` property is `NO`,
             calling this method does nothing.
  */
 - (void) loadAndMergeCache;
@@ -165,21 +245,9 @@
 /*!
  Saves the current in-memory expression cache to the filesystem.
  
- @note      If the expression cache's `isPersistenceEnabled` property is `NO`,
+ @note      If the expression cache's `enablePersistence` property is `NO`,
             calling this method does nothing.
  */
 - (void) saveCache;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark Controlling logging
-/*!    @name Controlling logging                                              */
-/*----------------------------------------------------------------------------*/
-
-/*!
- By default, the expression cache will log status messages to the console
- when attempting to load or save cache files. This property can be set to `YES`
- to suppress those log messages.
- */
-@property(nonatomic, assign) BOOL suppressConsoleLogging;
 
 @end
