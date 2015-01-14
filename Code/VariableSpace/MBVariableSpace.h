@@ -11,7 +11,6 @@
 #import "MBEnvironmentLoader.h"
 
 @class MBVariableDeclaration;
-@class MBDataFilter;
 @class MBMLFunction;
 
 /******************************************************************************/
