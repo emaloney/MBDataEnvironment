@@ -222,7 +222,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
         id retVal = [decl currentValueInVariableSpace:self error:&err];
         if (err) {
             [err log];
-            return nil;
+            return def;
         }
         return retVal;
     }
