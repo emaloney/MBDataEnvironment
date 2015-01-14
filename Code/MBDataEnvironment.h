@@ -12,6 +12,14 @@
 
 #else
 
+#import <Foundation/Foundation.h>
+
+//! Project version number for MBDataEnvironment.
+FOUNDATION_EXPORT double MBDataEnvironmentVersionNumber;
+
+//! Project version string for MBDataEnvironment.
+FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
+
 //
 // NOTE: This header file is indended for external use. It should *not* be
 //       included from within code in the Mockingbird Data Environment itself.

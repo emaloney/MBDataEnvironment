@@ -6,93 +6,37 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3B2FCA7E1A605CB80044BEB0 /* MBDataEnvironmentDocumentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3B2FCA811A605CB80044BEB0 /* Build configuration list for PBXAggregateTarget "MBDataEnvironmentDocumentation" */;
+			buildPhases = (
+				3B2FCA841A605CF70044BEB0 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = MBDataEnvironmentDocumentation;
+			productName = "MBDataEnvironment-Docs";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		3B8BA7C119D9FBEB00996B9F /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
-		3B8BA7C219D9FBEB00996B9F /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
-		3B8BA7C319D9FBEB00996B9F /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73219D9FBEB00996B9F /* MBDevice.m */; };
-		3B8BA7C419D9FBEB00996B9F /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */; };
-		3B8BA7C519D9FBEB00996B9F /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */; };
-		3B8BA7C619D9FBEB00996B9F /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */; };
-		3B8BA7C719D9FBEB00996B9F /* MBExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73D19D9FBEB00996B9F /* MBExpression.m */; };
-		3B8BA7C819D9FBEB00996B9F /* MBExpressionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73F19D9FBEB00996B9F /* MBExpressionCache.m */; };
-		3B8BA7C919D9FBEB00996B9F /* MBExpressionError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74119D9FBEB00996B9F /* MBExpressionError.m */; };
-		3B8BA7CA19D9FBEB00996B9F /* MBExpressionExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74319D9FBEB00996B9F /* MBExpressionExtensions.m */; };
-		3B8BA7CB19D9FBEB00996B9F /* MBExpressionGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74619D9FBEB00996B9F /* MBExpressionGrammar.m */; };
-		3B8BA7CC19D9FBEB00996B9F /* MBExpressionTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74819D9FBEB00996B9F /* MBExpressionTokenizer.m */; };
-		3B8BA7CD19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74B19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m */; };
-		3B8BA7CE19D9FBEB00996B9F /* MBMLFunctionCallToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74D19D9FBEB00996B9F /* MBMLFunctionCallToken.m */; };
-		3B8BA7CF19D9FBEB00996B9F /* MBMLGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74F19D9FBEB00996B9F /* MBMLGroupingToken.m */; };
-		3B8BA7D019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75119D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m */; };
-		3B8BA7D119D9FBEB00996B9F /* MBMLKeywordMatchingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75319D9FBEB00996B9F /* MBMLKeywordMatchingToken.m */; };
-		3B8BA7D219D9FBEB00996B9F /* MBMLLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75519D9FBEB00996B9F /* MBMLLiteralToken.m */; };
-		3B8BA7D319D9FBEB00996B9F /* MBMLMathExpressionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75719D9FBEB00996B9F /* MBMLMathExpressionToken.m */; };
-		3B8BA7D419D9FBEB00996B9F /* MBMLNumericLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75919D9FBEB00996B9F /* MBMLNumericLiteralToken.m */; };
-		3B8BA7D519D9FBEB00996B9F /* MBMLObjectReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75B19D9FBEB00996B9F /* MBMLObjectReferenceToken.m */; };
-		3B8BA7D619D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75D19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m */; };
-		3B8BA7D719D9FBEB00996B9F /* MBMLParameterDelimiterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75F19D9FBEB00996B9F /* MBMLParameterDelimiterToken.m */; };
-		3B8BA7D819D9FBEB00996B9F /* MBMLParameterGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76119D9FBEB00996B9F /* MBMLParameterGroupingToken.m */; };
-		3B8BA7D919D9FBEB00996B9F /* MBMLParseToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76319D9FBEB00996B9F /* MBMLParseToken.m */; };
-		3B8BA7DA19D9FBEB00996B9F /* MBMLVariableReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76519D9FBEB00996B9F /* MBMLVariableReferenceToken.m */; };
-		3B8BA7DB19D9FBEB00996B9F /* MBMLWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76719D9FBEB00996B9F /* MBMLWhitespaceToken.m */; };
-		3B8BA7DC19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76B19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m */; };
-		3B8BA7DD19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76D19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m */; };
-		3B8BA7DE19D9FBEB00996B9F /* MBMLBooleanNegationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76F19D9FBEB00996B9F /* MBMLBooleanNegationToken.m */; };
-		3B8BA7DF19D9FBEB00996B9F /* MBMLBooleanOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77119D9FBEB00996B9F /* MBMLBooleanOperatorToken.m */; };
-		3B8BA7E019D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77319D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m */; };
-		3B8BA7E119D9FBEB00996B9F /* MBMLEqualityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77519D9FBEB00996B9F /* MBMLEqualityTestToken.m */; };
-		3B8BA7E219D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77719D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m */; };
-		3B8BA7E319D9FBEB00996B9F /* MBMLGreaterThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77919D9FBEB00996B9F /* MBMLGreaterThanTestToken.m */; };
-		3B8BA7E419D9FBEB00996B9F /* MBMLInequalityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77B19D9FBEB00996B9F /* MBMLInequalityTestToken.m */; };
-		3B8BA7E519D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77D19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m */; };
-		3B8BA7E619D9FBEB00996B9F /* MBMLLessThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77F19D9FBEB00996B9F /* MBMLLessThanTestToken.m */; };
-		3B8BA7E719D9FBEB00996B9F /* MBMLAdditionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78219D9FBEB00996B9F /* MBMLAdditionOperatorToken.m */; };
-		3B8BA7E819D9FBEB00996B9F /* MBMLDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78419D9FBEB00996B9F /* MBMLDivisionOperatorToken.m */; };
-		3B8BA7E919D9FBEB00996B9F /* MBMLMathGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78619D9FBEB00996B9F /* MBMLMathGroupingToken.m */; };
-		3B8BA7EA19D9FBEB00996B9F /* MBMLMathOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78819D9FBEB00996B9F /* MBMLMathOperatorToken.m */; };
-		3B8BA7EB19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78A19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m */; };
-		3B8BA7EC19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78C19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m */; };
-		3B8BA7ED19D9FBEB00996B9F /* MBMLCollectionFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79019D9FBEB00996B9F /* MBMLCollectionFunctions.m */; };
-		3B8BA7EE19D9FBEB00996B9F /* MBMLDataProcessingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79219D9FBEB00996B9F /* MBMLDataProcessingFunctions.m */; };
-		3B8BA7EF19D9FBEB00996B9F /* MBMLDateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79419D9FBEB00996B9F /* MBMLDateFunctions.m */; };
-		3B8BA7F019D9FBEB00996B9F /* MBMLDebugFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79619D9FBEB00996B9F /* MBMLDebugFunctions.m */; };
-		3B8BA7F119D9FBEB00996B9F /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */; };
-		3B8BA7F219D9FBEB00996B9F /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */; };
-		3B8BA7F319D9FBEB00996B9F /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */; };
-		3B8BA7F419D9FBEB00996B9F /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */; };
-		3B8BA7F519D9FBEB00996B9F /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */; };
-		3B8BA7F619D9FBEB00996B9F /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */; };
-		3B8BA7F719D9FBEB00996B9F /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */; };
-		3B8BA7F819D9FBEB00996B9F /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */; };
-		3B8BA7F919D9FBEB00996B9F /* MBMLResourceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A819D9FBEB00996B9F /* MBMLResourceFunctions.m */; };
-		3B8BA7FA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m */; };
-		3B8BA7FB19D9FBEB00996B9F /* MBMLStringFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AC19D9FBEB00996B9F /* MBMLStringFunctions.m */; };
-		3B8BA7FC19D9FBEB00996B9F /* MBMLFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AE19D9FBEB00996B9F /* MBMLFunction.m */; };
-		3B8BA7FD19D9FBEB00996B9F /* MBDataEnvironmentModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B219D9FBEB00996B9F /* MBDataEnvironmentModule.m */; };
-		3B8BA7FE19D9FBEB00996B9F /* MBDataEnvironmentConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B419D9FBEB00996B9F /* MBDataEnvironmentConstants.m */; };
-		3B8BA7FF19D9FBEB00996B9F /* MBStringConversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B719D9FBEB00996B9F /* MBStringConversions.m */; };
-		3B8BA80019D9FBEB00996B9F /* TypeCoercionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B919D9FBEB00996B9F /* TypeCoercionSupport.m */; };
-		3B8BA80119D9FBEB00996B9F /* MBScopedVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BC19D9FBEB00996B9F /* MBScopedVariables.m */; };
-		3B8BA80219D9FBEB00996B9F /* MBVariableDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */; };
-		3B8BA80319D9FBEB00996B9F /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */; };
-		8AC21FFE94904AF4A5A75D93 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748C53F01464830A2605981 /* libPods.a */; };
+		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3B0A9D9419D9E15B002848CD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		3BD23C781A65ED0F001F7869 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B0A9D8E19D9E15B002848CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BD23C6B1A65ED0E001F7869;
+			remoteInfo = MBDataEnvironment;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3748C53F01464830A2605981 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E3065063027DCB078CF78A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		3B0A9D9619D9E15B002848CD /* libMBDataEnvironment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBDataEnvironment.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAttributeValidator.h; sourceTree = "<group>"; };
 		3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAttributeValidator.m; sourceTree = "<group>"; };
 		3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataModel.h; sourceTree = "<group>"; };
@@ -230,15 +174,26 @@
 		3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableSpace.h; sourceTree = "<group>"; };
 		3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableSpace.m; sourceTree = "<group>"; };
 		3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MBDataEnvironmentModule.xml; sourceTree = "<group>"; };
+		3BCB5ED71A6065A1007D06FC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3BCB5ED91A6065AA007D06FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBDataEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBDataEnvironmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3B0A9D9319D9E15B002848CD /* Frameworks */ = {
+		3BD23C681A65ED0E001F7869 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8AC21FFE94904AF4A5A75D93 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD23C731A65ED0F001F7869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +212,8 @@
 		3732FC3D8302400A859A2682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BCB5ED91A6065AA007D06FC /* libxml2.dylib */,
+				3BCB5ED71A6065A1007D06FC /* libz.dylib */,
 				3748C53F01464830A2605981 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -267,6 +224,7 @@
 			children = (
 				3B8BA72A19D9FBEB00996B9F /* Code */,
 				3BBE05DF19E3327B007C92A2 /* Resources */,
+				3BD23C7A1A65ED0F001F7869 /* Tests */,
 				3B0A9D9719D9E15B002848CD /* Products */,
 				3732FC3D8302400A859A2682 /* Frameworks */,
 				1BFAC2BAA53D7391E67F450D /* Pods */,
@@ -276,7 +234,8 @@
 		3B0A9D9719D9E15B002848CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B0A9D9619D9E15B002848CD /* libMBDataEnvironment.a */,
+				3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */,
+				3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -544,18 +503,35 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3BD23C7A1A65ED0F001F7869 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			path = MBDataEnvironmentTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3BD23C691A65ED0E001F7869 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		3B0A9D9519D9E15B002848CD /* MBDataEnvironment */ = {
+		3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B0A9DA719D9E15B002848CD /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */;
+			buildConfigurationList = 3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */;
 			buildPhases = (
-				1131BDAE7C4A417198CCB31C /* Check Pods Manifest.lock */,
-				3B0A9D9219D9E15B002848CD /* Sources */,
-				3B0A9D9319D9E15B002848CD /* Frameworks */,
-				3B0A9D9419D9E15B002848CD /* CopyFiles */,
-				2E4245E8C0D94E29BD2A0DCD /* Copy Pods Resources */,
+				3BD23C671A65ED0E001F7869 /* Sources */,
+				3BD23C681A65ED0E001F7869 /* Frameworks */,
+				3BD23C691A65ED0E001F7869 /* Headers */,
+				3BD23C6A1A65ED0E001F7869 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -563,8 +539,26 @@
 			);
 			name = MBDataEnvironment;
 			productName = MBDataEnvironment;
-			productReference = 3B0A9D9619D9E15B002848CD /* libMBDataEnvironment.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3BD23C751A65ED0F001F7869 /* MBDataEnvironmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests" */;
+			buildPhases = (
+				3BD23C721A65ED0F001F7869 /* Sources */,
+				3BD23C731A65ED0F001F7869 /* Frameworks */,
+				3BD23C741A65ED0F001F7869 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BD23C791A65ED0F001F7869 /* PBXTargetDependency */,
+			);
+			name = MBDataEnvironmentTests;
+			productName = MBDataEnvironmentTests;
+			productReference = 3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -575,8 +569,14 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Gilt Groupe";
 				TargetAttributes = {
-					3B0A9D9519D9E15B002848CD = {
-						CreatedOnToolsVersion = 6.0.1;
+					3B2FCA7E1A605CB80044BEB0 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					3BD23C6B1A65ED0E001F7869 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					3BD23C751A65ED0F001F7869 = {
+						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
@@ -592,120 +592,70 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B0A9D9519D9E15B002848CD /* MBDataEnvironment */,
+				3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment */,
+				3BD23C751A65ED0F001F7869 /* MBDataEnvironmentTests */,
+				3B2FCA7E1A605CB80044BEB0 /* MBDataEnvironmentDocumentation */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1131BDAE7C4A417198CCB31C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		3BD23C6A1A65ED0E001F7869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
 		};
-		2E4245E8C0D94E29BD2A0DCD /* Copy Pods Resources */ = {
+		3BD23C741A65ED0F001F7869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B2FCA841A605CF70044BEB0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "$PROJECT_DIR/Pods/MBToolbox/BuildControl/public/buildMockingbirdDocumentation.sh --module \"Data Environment\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3B0A9D9219D9E15B002848CD /* Sources */ = {
+		3BD23C671A65ED0E001F7869 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B8BA7EC19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m in Sources */,
-				3B8BA80019D9FBEB00996B9F /* TypeCoercionSupport.m in Sources */,
-				3B8BA7FD19D9FBEB00996B9F /* MBDataEnvironmentModule.m in Sources */,
-				3B8BA7CB19D9FBEB00996B9F /* MBExpressionGrammar.m in Sources */,
-				3B8BA7E619D9FBEB00996B9F /* MBMLLessThanTestToken.m in Sources */,
-				3B8BA7C519D9FBEB00996B9F /* MBEnvironmentLoader.m in Sources */,
-				3B8BA7D519D9FBEB00996B9F /* MBMLObjectReferenceToken.m in Sources */,
-				3B8BA7D019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m in Sources */,
-				3B8BA7D819D9FBEB00996B9F /* MBMLParameterGroupingToken.m in Sources */,
-				3B8BA7F219D9FBEB00996B9F /* MBMLEnvironmentFunctions.m in Sources */,
-				3B8BA7C819D9FBEB00996B9F /* MBExpressionCache.m in Sources */,
-				3B8BA7CF19D9FBEB00996B9F /* MBMLGroupingToken.m in Sources */,
-				3B8BA7F919D9FBEB00996B9F /* MBMLResourceFunctions.m in Sources */,
-				3B8BA80319D9FBEB00996B9F /* MBVariableSpace.m in Sources */,
-				3B8BA7EB19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m in Sources */,
-				3B8BA7E819D9FBEB00996B9F /* MBMLDivisionOperatorToken.m in Sources */,
-				3B8BA7E719D9FBEB00996B9F /* MBMLAdditionOperatorToken.m in Sources */,
-				3B8BA7DB19D9FBEB00996B9F /* MBMLWhitespaceToken.m in Sources */,
-				3B8BA7D219D9FBEB00996B9F /* MBMLLiteralToken.m in Sources */,
-				3B8BA7C219D9FBEB00996B9F /* MBDataModel.m in Sources */,
-				3B8BA7D319D9FBEB00996B9F /* MBMLMathExpressionToken.m in Sources */,
-				3B8BA7DE19D9FBEB00996B9F /* MBMLBooleanNegationToken.m in Sources */,
-				3B8BA7F519D9FBEB00996B9F /* MBMLGeometryFunctions.m in Sources */,
-				3B8BA7EF19D9FBEB00996B9F /* MBMLDateFunctions.m in Sources */,
-				3B8BA7F619D9FBEB00996B9F /* MBMLLogicFunctions.m in Sources */,
-				3B8BA7E319D9FBEB00996B9F /* MBMLGreaterThanTestToken.m in Sources */,
-				3B8BA7E219D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m in Sources */,
-				3B8BA7CC19D9FBEB00996B9F /* MBExpressionTokenizer.m in Sources */,
-				3B8BA7EE19D9FBEB00996B9F /* MBMLDataProcessingFunctions.m in Sources */,
-				3B8BA7E019D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m in Sources */,
-				3B8BA7FC19D9FBEB00996B9F /* MBMLFunction.m in Sources */,
-				3B8BA7F019D9FBEB00996B9F /* MBMLDebugFunctions.m in Sources */,
-				3B8BA7FB19D9FBEB00996B9F /* MBMLStringFunctions.m in Sources */,
-				3B8BA7F819D9FBEB00996B9F /* MBMLRegexFunctions.m in Sources */,
-				3B8BA80119D9FBEB00996B9F /* MBScopedVariables.m in Sources */,
-				3B8BA7C619D9FBEB00996B9F /* MBEvents+DataLoading.m in Sources */,
-				3B8BA7FF19D9FBEB00996B9F /* MBStringConversions.m in Sources */,
-				3B8BA7D619D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m in Sources */,
-				3B8BA7C319D9FBEB00996B9F /* MBDevice.m in Sources */,
-				3B8BA7CD19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m in Sources */,
-				3B8BA7EA19D9FBEB00996B9F /* MBMLMathOperatorToken.m in Sources */,
-				3B8BA7F419D9FBEB00996B9F /* MBMLFontFunctions.m in Sources */,
-				3B8BA7C419D9FBEB00996B9F /* MBEnvironment.m in Sources */,
-				3B8BA7CA19D9FBEB00996B9F /* MBExpressionExtensions.m in Sources */,
-				3B8BA7C919D9FBEB00996B9F /* MBExpressionError.m in Sources */,
-				3B8BA7E919D9FBEB00996B9F /* MBMLMathGroupingToken.m in Sources */,
-				3B8BA7CE19D9FBEB00996B9F /* MBMLFunctionCallToken.m in Sources */,
-				3B8BA7DA19D9FBEB00996B9F /* MBMLVariableReferenceToken.m in Sources */,
-				3B8BA7D119D9FBEB00996B9F /* MBMLKeywordMatchingToken.m in Sources */,
-				3B8BA7F719D9FBEB00996B9F /* MBMLMathFunctions.m in Sources */,
-				3B8BA7D719D9FBEB00996B9F /* MBMLParameterDelimiterToken.m in Sources */,
-				3B8BA7F119D9FBEB00996B9F /* MBMLEncodingFunctions.m in Sources */,
-				3B8BA80219D9FBEB00996B9F /* MBVariableDeclaration.m in Sources */,
-				3B8BA7F319D9FBEB00996B9F /* MBMLFileFunctions.m in Sources */,
-				3B8BA7DD19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m in Sources */,
-				3B8BA7ED19D9FBEB00996B9F /* MBMLCollectionFunctions.m in Sources */,
-				3B8BA7FA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m in Sources */,
-				3B8BA7D419D9FBEB00996B9F /* MBMLNumericLiteralToken.m in Sources */,
-				3B8BA7E119D9FBEB00996B9F /* MBMLEqualityTestToken.m in Sources */,
-				3B8BA7E419D9FBEB00996B9F /* MBMLInequalityTestToken.m in Sources */,
-				3B8BA7DF19D9FBEB00996B9F /* MBMLBooleanOperatorToken.m in Sources */,
-				3B8BA7FE19D9FBEB00996B9F /* MBDataEnvironmentConstants.m in Sources */,
-				3B8BA7DC19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m in Sources */,
-				3B8BA7C119D9FBEB00996B9F /* MBAttributeValidator.m in Sources */,
-				3B8BA7C719D9FBEB00996B9F /* MBExpression.m in Sources */,
-				3B8BA7D919D9FBEB00996B9F /* MBMLParseToken.m in Sources */,
-				3B8BA7E519D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BD23C721A65ED0F001F7869 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BD23C791A65ED0F001F7869 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment */;
+			targetProxy = 3BD23C781A65ED0F001F7869 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3B0A9DA519D9E15B002848CD /* Debug */ = {
@@ -741,10 +691,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -775,28 +726,97 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		3B0A9DA819D9E15B002848CD /* Debug */ = {
+		3B2FCA7F1A605CB80044BEB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38E3065063027DCB078CF78A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		3B0A9DA919D9E15B002848CD /* Release */ = {
+		3B2FCA801A605CB80044BEB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3BD23C801A65ED0F001F7869 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BuildControl/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3BD23C811A65ED0F001F7869 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "BuildControl/Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3BD23C831A65ED0F001F7869 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BuildControl/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3BD23C841A65ED0F001F7869 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BuildControl/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -812,14 +832,30 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B0A9DA719D9E15B002848CD /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */ = {
+		3B2FCA811A605CB80044BEB0 /* Build configuration list for PBXAggregateTarget "MBDataEnvironmentDocumentation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3B0A9DA819D9E15B002848CD /* Debug */,
-				3B0A9DA919D9E15B002848CD /* Release */,
+				3B2FCA7F1A605CB80044BEB0 /* Debug */,
+				3B2FCA801A605CB80044BEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BD23C801A65ED0F001F7869 /* Debug */,
+				3BD23C811A65ED0F001F7869 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BD23C831A65ED0F001F7869 /* Debug */,
+				3BD23C841A65ED0F001F7869 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
