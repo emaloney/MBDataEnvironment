@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBConcreteVariableDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBConcreteVariableDeclaration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setDeclaredType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBConcreteVariableType declaredType</Declaration>
+			
+			
+			<Anchor>//api/name/declaredType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/declaredType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBConcreteVariableType declaredType</Declaration>
+			
+			
+			<Anchor>//api/name/declaredType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/declaredType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBConcreteVariableType declaredType</Declaration>
+			
+			
+			<Anchor>//api/name/declaredType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setDeclaredValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) id declaredValue</Declaration>
+			
+			
+			<Anchor>//api/name/declaredValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/declaredValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) id declaredValue</Declaration>
+			
+			
+			<Anchor>//api/name/declaredValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/declaredValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) id declaredValue</Declaration>
+			
+			
+			<Anchor>//api/name/declaredValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setIsLiteralValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLiteralValue</Declaration>
+			
+			
+			<Anchor>//api/name/isLiteralValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/isLiteralValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLiteralValue</Declaration>
+			
+			
+			<Anchor>//api/name/isLiteralValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/isLiteralValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLiteralValue</Declaration>
+			
+			
+			<Anchor>//api/name/isLiteralValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setIsBooleanValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isBooleanValue</Declaration>
+			
+			
+			<Anchor>//api/name/isBooleanValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/isBooleanValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isBooleanValue</Declaration>
+			
+			
+			<Anchor>//api/name/isBooleanValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/isBooleanValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isBooleanValue</Declaration>
+			
+			
+			<Anchor>//api/name/isBooleanValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setUserDefaultsName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/userDefaultsName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/userDefaultsName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/userDefaultsName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/userDefaultsName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/userDefaultsName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLRegexFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLRegexFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLRegexFunctions/stripRegex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripRegex:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/stripRegex:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLRegexFunctions/replaceRegex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)replaceRegex:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/replaceRegex:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLRegexFunctions/matchesRegex:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)matchesRegex:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/matchesRegex:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

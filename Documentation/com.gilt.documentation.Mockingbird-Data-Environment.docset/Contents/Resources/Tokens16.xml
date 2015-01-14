@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLDebugFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLDebugFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/log:</TokenIdentifier>
+			<Abstract type="html">Evaluates the passed-in template expression, takes the resulting
+object and logs the result to the console. The object that results
+from evaluating the expression is returned by the function. This
+function must be declared input=&quot;raw&quot; in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)log:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/log:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/test:</TokenIdentifier>
+			<Abstract type="html">Evaluates the passed-in boolean template expression, takes the
+result and logs the result to the console. The boolean value that
+results from evaluating the expression is returned by the function.
+This function must be declared input=&quot;raw&quot; and output=&quot;boolean&quot;
+in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSNumber *)test:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/test:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/dump:</TokenIdentifier>
+			<Abstract type="html">Evaluates the passed-in template expression, takes the resulting
+object and logs the result to the console. A string description
+of the object is returned by the function. This function
+must be declared input=&quot;raw&quot; in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)dump:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/dump:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/debugBreak:</TokenIdentifier>
+			<Abstract type="html">When evaluated in a debug build, this expression will trigger
+a debug breakpoint, allowing the developer to trap execution
+at a specific point. This function must be declared input=&quot;raw&quot;
+in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)debugBreak:(NSString *)input</Declaration>
+			
+			
+			<Anchor>//api/name/debugBreak:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tok:</TokenIdentifier>
+			<Abstract type="html">Tokenizes a variable expansion expression and logs the resulting tokens
+to the console. The input expression is returned, allowing the function
+to be used as a pass-through. This function must be declared input=&quot;raw&quot;
+in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)tok:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tok:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokBool:</TokenIdentifier>
+			<Abstract type="html">Tokenizes a boolean expression and logs the resulting tokens to the console.
+The input expression is returned, allowing the function to be used as a
+pass-through. This function must be declared input=&quot;raw&quot; in the template
+XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)tokBool:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tokBool:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/bench:</TokenIdentifier>
+			<Abstract type="html">Performs a benchmark of a variable expansion expression by measuring the
+time it takes to evaluate the expression, and logging the resulting time to
+the console. The input expression is returned, allowing the function
+to be used as a pass-through. This function must be declared input=&quot;raw&quot;
+in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)bench:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/bench:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/benchBool:</TokenIdentifier>
+			<Abstract type="html">Performs a benchmark of a boolean expression by measuring the time it takes to
+evaluate the expression, and logging the resulting time to the console. The
+input expression is returned, allowing the function to be used as a
+pass-through. This function must be declared input=&quot;raw&quot;
+in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)benchBool:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/benchBool:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/repeat:</TokenIdentifier>
+			<Abstract type="html">Repeatedly evaluates a variable expansion expression a given number of times.
+This function takes two parameters: the first being the number of
+repetitions to perform, and the second being the expression that will be
+repeatedly evaluated. The result of the final evaluation of the evaluation
+expression (i.e., the second parameter) is returned. This function must be
+declared input=&quot;pipedExpressions&quot; in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)repeat:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/repeat:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/repeatBool:</TokenIdentifier>
+			<Abstract type="html">Repeatedly evaluates a boolean expression a given number of times.
+This function takes two parameters: the first being the number of
+repetitions to perform, and the second being the expression that will be
+repeatedly evaluated. The result of the final evaluation of the evaluation
+expression (i.e., the second parameter) is returned. This function must be
+declared input=&quot;pipedExpressions&quot; in the template XML.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)repeatBool:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/repeatBool:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/deprecateVariableInFavorOf:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)deprecateVariableInFavorOf:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/deprecateVariableInFavorOf:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBExpressionCache.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBExpressionCache</TokenIdentifier>
+			<Abstract type="html">You must not create instances of this class yourself; this class
+            is a singleton. Call the instance class method (declared by the
+            MBSingleton protocol) to acquire the singleton instance.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+            
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/cachedTokensForExpression:usingGrammar:</TokenIdentifier>
+			<Abstract type="html">Returns the cached MBMLParseTokens for the given expression.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)cachedTokensForExpression:(NSString *)expr usingGrammar:(MBExpressionGrammar *)grammar</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression for which the cached tokens are sought.</Abstract>
+				</Parameter><Parameter>
+					<Name>grammar</Name>
+					<Abstract type="html">The grammar used to tokenize the expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of the cached tokens for the passed-in expression, or
+            nil if there are no cached tokens for the given expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/cachedTokensForExpression:usingGrammar:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/tokensForExpression:inVariableSpace:usingGrammar:error:</TokenIdentifier>
+			<Abstract type="html">Returns an array of MBMLParseToken instances representing the tokenized
+version of the passed-in expression.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)tokensForExpression:(NSString *)expr inVariableSpace:(MBVariableSpace *)space usingGrammar:(MBExpressionGrammar *)grammar error:(MBExpressionError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to tokenize.</Abstract>
+				</Parameter><Parameter>
+					<Name>space</Name>
+					<Abstract type="html">The variable space that will be used to look up values for
+            any variable references contained in the expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>grammar</Name>
+					<Abstract type="html">The grammar to be used for tokenizing the expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            MBExpressionError instance. If this parameter is non-nil
+            and an error occurs during tokenization, errPtr will be updated
+            to point to an MBExpressionError instance describing the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array of tokens representing the passed-in expression. Will be
+            nil if an error occurs.</Abstract></ReturnValue>
+			<Anchor>//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/clearMemoryCache</TokenIdentifier>
+			<Abstract type="html">Throws away the in-memory token cache.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)clearMemoryCache</Declaration>
+			
+			
+			<Anchor>//api/name/clearMemoryCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/removeFilesystemCache</TokenIdentifier>
+			<Abstract type="html">Removes the expression cache&apos;s file if it was previously written to the
+filesystem.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)removeFilesystemCache</Declaration>
+			
+			
+			<Anchor>//api/name/removeFilesystemCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/resetMemoryCache</TokenIdentifier>
+			<Abstract type="html">Clears the in-memory cache and resets knowledge of data that could affect
+automatic cache invalidation.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)resetMemoryCache</Declaration>
+			
+			
+			<Anchor>//api/name/resetMemoryCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/resetFilesystemCache</TokenIdentifier>
+			<Abstract type="html">Saves an empty cache file to the filesystem, replacing the existing
+cache file (if there is one).</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)resetFilesystemCache</Declaration>
+			
+			
+			<Anchor>//api/name/resetFilesystemCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/clearCache</TokenIdentifier>
+			<Abstract type="html">Clears the in-memory cache and removes the filesystem cache by calling
+clearMemoryCache and then removeFilesystemCache.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)clearCache</Declaration>
+			
+			
+			<Anchor>//api/name/clearCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/setPersistenceEnabled:</TokenIdentifier>
+			<Abstract type="html">Determines whether the expression cache will utilize the filesystem for
+persisting the cached expression tokens.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/persistenceEnabled</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/isPersistenceEnabled</TokenIdentifier>
+			<Abstract type="html">Determines whether the expression cache will utilize the filesystem for
+persisting the cached expression tokens.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/persistenceEnabled</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionCache/persistenceEnabled</TokenIdentifier>
+			<Abstract type="html">Determines whether the expression cache will utilize the filesystem for
+persisting the cached expression tokens.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled</Declaration>
+			
+			
+			<Anchor>//api/name/persistenceEnabled</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/loadCache</TokenIdentifier>
+			<Abstract type="html">If an expression cache file is available, it is loaded, and the file&apos;s contents
+are used to replace the existing contents of the in-memory cache.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)loadCache</Declaration>
+			
+			
+			<Anchor>//api/name/loadCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/loadAndMergeCache</TokenIdentifier>
+			<Abstract type="html">If an expression cache file is available, it is loaded, and the file&apos;s contents
+are merged with the current contents of the in-memory cache.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)loadAndMergeCache</Declaration>
+			
+			
+			<Anchor>//api/name/loadAndMergeCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/saveCache</TokenIdentifier>
+			<Abstract type="html">Saves the current in-memory expression cache to the filesystem.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (void)saveCache</Declaration>
+			
+			
+			<Anchor>//api/name/saveCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/setSuppressConsoleLogging:</TokenIdentifier>
+			<Abstract type="html">By default, the expression cache will log status messages to the console
+when attempting to load or save cache files. This property can be set to YES
+to suppress those log messages.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL suppressConsoleLogging</Declaration>
+			
+			
+			<Anchor>//api/name/suppressConsoleLogging</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/suppressConsoleLogging</TokenIdentifier>
+			<Abstract type="html">By default, the expression cache will log status messages to the console
+when attempting to load or save cache files. This property can be set to YES
+to suppress those log messages.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL suppressConsoleLogging</Declaration>
+			
+			
+			<Anchor>//api/name/suppressConsoleLogging</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionCache/suppressConsoleLogging</TokenIdentifier>
+			<Abstract type="html">By default, the expression cache will log status messages to the console
+when attempting to load or save cache files. This property can be set to YES
+to suppress those log messages.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL suppressConsoleLogging</Declaration>
+			
+			
+			<Anchor>//api/name/suppressConsoleLogging</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

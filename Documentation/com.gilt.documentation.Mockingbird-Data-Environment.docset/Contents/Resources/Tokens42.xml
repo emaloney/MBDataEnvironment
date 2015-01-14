@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/MBNumericPrimitiveAccessors.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/MBNumericPrimitiveAccessors</TokenIdentifier>
+			<Abstract type="html">This is the base protocol that will be adopted by our NSString and NSNull
+extensions to ensure proper KVC type coercion on 64-bit processors.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+            
+			
+			<NodeRef refid="42"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/charValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (char)charValue</Declaration>
+			
+			
+			<Anchor>//api/name/charValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedCharValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned char)unsignedCharValue</Declaration>
+			
+			
+			<Anchor>//api/name/unsignedCharValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/shortValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (short)shortValue</Declaration>
+			
+			
+			<Anchor>//api/name/shortValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedShortValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned short)unsignedShortValue</Declaration>
+			
+			
+			<Anchor>//api/name/unsignedShortValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/intValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (int)intValue</Declaration>
+			
+			
+			<Anchor>//api/name/intValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedIntValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned int)unsignedIntValue</Declaration>
+			
+			
+			<Anchor>//api/name/unsignedIntValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/longValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (long)longValue</Declaration>
+			
+			
+			<Anchor>//api/name/longValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedLongValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned long)unsignedLongValue</Declaration>
+			
+			
+			<Anchor>//api/name/unsignedLongValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/longLongValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (long long)longLongValue</Declaration>
+			
+			
+			<Anchor>//api/name/longLongValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedLongLongValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned long long)unsignedLongLongValue</Declaration>
+			
+			
+			<Anchor>//api/name/unsignedLongLongValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/floatValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (float)floatValue</Declaration>
+			
+			
+			<Anchor>//api/name/floatValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/doubleValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (double)doubleValue</Declaration>
+			
+			
+			<Anchor>//api/name/doubleValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/boolValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)boolValue</Declaration>
+			
+			
+			<Anchor>//api/name/boolValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/integerValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)integerValue</Declaration>
+			
+			
+			<Anchor>//api/name/integerValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedIntegerValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)unsignedIntegerValue</Declaration>
+			
+			
+			<Anchor>//api/name/unsignedIntegerValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/stringValue</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)stringValue</Declaration>
+			
+			
+			<Anchor>//api/name/stringValue</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

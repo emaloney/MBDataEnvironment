@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLFontFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLFontFunctions</TokenIdentifier>
+			<Abstract type="html">A class containing implementations for MBML functions that return information
+about the fonts available at runtine.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="20"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/fontFamilyNames</TokenIdentifier>
+			<Abstract type="html">An MBML function implementation that returns an array of the available
+UIFont family names.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fontFamilyNames</Declaration>
+			
+			<ReturnValue><Abstract type="html">The names of the available font families.</Abstract></ReturnValue>
+			<Anchor>//api/name/fontFamilyNames</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/fontNamesForFamilyName:</TokenIdentifier>
+			<Abstract type="html">An MBML function implementation that returns an array of the available
+UIFont family names.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fontNamesForFamilyName:(NSString *)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The names of the fonts available in the given font family.</Abstract></ReturnValue>
+			<Anchor>//api/name/fontNamesForFamilyName:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/fontWithNameAndSize:</TokenIdentifier>
+			<Abstract type="html">An MBML function implementation that returns a UIFont instance for the
+given font name and size.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fontWithNameAndSize:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The requested UIFont.</Abstract></ReturnValue>
+			<Anchor>//api/name/fontWithNameAndSize:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/sizeOfTextWithFont:</TokenIdentifier>
+			<Abstract type="html">An MBML function implementation that measures the size of text in a given font.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)sizeOfTextWithFont:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The requested UIFont.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeOfTextWithFont:</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSDictionary+MBExpression.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSDictionary(MBExpression)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="37"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (id)evaluateAsObject:(NSString *)key</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsObject:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsObject:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (id)evaluateAsObject:(NSString *)key defaultValue:(id)def</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsObject:defaultValue:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)evaluateAsString:(NSString *)key</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsString:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsString:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)evaluateAsString:(NSString *)key defaultValue:(NSString *)def</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsString:defaultValue:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsNumber:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)key</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsNumber:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsNumber:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)key defaultValue:(NSDecimalNumber *)def</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsNumber:defaultValue:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsBoolean:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)key</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsBoolean:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsBoolean:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)key defaultValue:(BOOL)def</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateAsBoolean:defaultValue:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

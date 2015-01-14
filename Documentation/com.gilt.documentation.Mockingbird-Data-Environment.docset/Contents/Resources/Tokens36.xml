@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/MBEvents+DataLoading.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/MBEvents(DataLoading)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+            
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/willRequestDataEventName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)willRequestDataEventName:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/willRequestDataEventName:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/dataLoadedEventName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)dataLoadedEventName:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/dataLoadedEventName:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/dataLoadFailedEventName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)dataLoadFailedEventName:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/dataLoadFailedEventName:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postWillRequestData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (void)postWillRequestData:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/postWillRequestData:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoaded:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (void)postDataLoaded:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/postDataLoaded:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoadFailed:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (void)postDataLoadFailed:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/postDataLoadFailed:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postWillRequestData:withEventObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (void)postWillRequestData:(NSString *)name withEventObject:(id)eventObj</Declaration>
+			
+			
+			<Anchor>//api/name/postWillRequestData:withEventObject:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoaded:withEventObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (void)postDataLoaded:(NSString *)name withEventObject:(id)eventObj</Declaration>
+			
+			
+			<Anchor>//api/name/postDataLoaded:withEventObject:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoadFailed:withEventObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
+			
+			<Declaration>+ (void)postDataLoadFailed:(NSString *)name withEventObject:(id)eventObj</Declaration>
+			
+			
+			<Anchor>//api/name/postDataLoadFailed:withEventObject:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

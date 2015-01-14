@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBStringConversions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBStringConversions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGPoint)pointFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/pointFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGPoint)pointFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/pointFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromObject:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGPoint)pointFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/pointFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGPoint)pointFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/pointFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromPoint:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromPoint:(CGPoint)pt</Declaration>
+			
+			
+			<Anchor>//api/name/stringFromPoint:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeDimensionFromExpression:</TokenIdentifier>
+			<Abstract type="html">Evaluates an expression as a dimension value, resulting in a CGFloat
+representing that value.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGFloat)sizeDimensionFromExpression:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">An expression specifying a numeric value, or the wildcard
+            string (&quot;*&quot;).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A numerical representation of expr. Will be
+            UIViewNoIntrinsicMetric if str evaluates to the wildcard string.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeDimensionFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeDimensionFromString:</TokenIdentifier>
+			<Abstract type="html">Parses a string-based dimension value into a CGFloat representing that
+value.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGFloat)sizeDimensionFromString:(NSString *)str</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">Contains a string specifying a numeric value, or the wildcard
+            string (&quot;*&quot;).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A numerical representation of str. Will be
+            UIViewNoIntrinsicMetric if str was the wildcard
+            string.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeDimensionFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/parseString:asSize:</TokenIdentifier>
+			<Abstract type="html">Parses a CGSize from a comma-separated string containing two components:
+a width and a height.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)parseString:(NSString *)sizeStr asSize:(CGSize *)sizePtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sizeStr</Name>
+					<Abstract type="html">A string following the format &quot;width,height&quot; where
+            each dimension is specified as a number or a wildcard character.</Abstract>
+				</Parameter><Parameter>
+					<Name>sizePtr</Name>
+					<Abstract type="html">If the string to be parsed is in the expected format,
+            on exit, the CGSize at the memory address sizePtr will be
+            updated to reflect the value of the size dimensions parsed from
+            sizeStr. No modification occurs if the method returns NO.
+            This parameter must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES on success; NO if the input string is not in the expected
+            format.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseString:asSize:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/sizeFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/sizeFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromObject:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/sizeFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/sizeFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromSize:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromSize:(CGSize)sz</Declaration>
+			
+			
+			<Anchor>//api/name/stringFromSize:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/parseString:asRect:</TokenIdentifier>
+			<Abstract type="html">Parses a CGRect from a comma-separated string containing four components:
+the x and y coordinates of the rectangle&apos;s origin, followed by the width
+and height dimensions of the rectangle.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)parseString:(NSString *)rectStr asRect:(CGRect *)rectPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rectStr</Name>
+					<Abstract type="html">A string following the format
+&quot;originX,originY,width,height&quot;. The originX and originY
+values must be specified numerically. The width and height
+dimensions can either be specified as a number or a wildcard
+character.</Abstract>
+				</Parameter><Parameter>
+					<Name>rectPtr</Name>
+					<Abstract type="html">If the string to be parsed is in the expected format,
+on exit, the CGRect at the memory address rectPtr will be
+updated to reflect the value of the rectangle parsed from
+rectStr. No modification occurs if the method returns NO.
+This parameter must not be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES on success; NO if the input string is not in the expected
+format.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseString:asRect:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/rectFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/rectFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromObject:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/rectFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/rectFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromRect:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromRect:(CGRect)rect</Declaration>
+			
+			
+			<Anchor>//api/name/stringFromRect:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/offsetFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/offsetFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromObject:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIOffset)offsetFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/offsetFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIOffset)offsetFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/offsetFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/edgeInsetsFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/edgeInsetsFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromObject:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/edgeInsetsFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/edgeInsetsFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/colorFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)colorFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/colorFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/colorFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)colorFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/colorFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/colorFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIColor *)colorFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/colorFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/lineBreakModeFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/lineBreakModeFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSLineBreakMode)lineBreakModeFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/lineBreakModeFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignmentFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignmentFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSTextAlignment)textAlignmentFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/textAlignmentFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/scrollViewIndicatorStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/scrollViewIndicatorStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/scrollViewIndicatorStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/scrollViewIndicatorStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/scrollViewIndicatorStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/scrollViewIndicatorStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/activityIndicatorViewStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/activityIndicatorViewStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/activityIndicatorViewStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/activityIndicatorViewStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/activityIndicatorViewStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/activityIndicatorViewStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/buttonTypeFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/buttonTypeFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/buttonTypeFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/buttonTypeFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/buttonTypeFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIButtonType)buttonTypeFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/buttonTypeFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatterStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatterStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/dateFormatterStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textBorderStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/textBorderStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textBorderStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/textBorderStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textBorderStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITextBorderStyle)textBorderStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/textBorderStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewStyle)tableViewStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellSelectionStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellSelectionStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellSelectionStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellSelectionStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellSelectionStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellSelectionStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellAccessoryTypeFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellAccessoryTypeFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellAccessoryTypeFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellAccessoryTypeFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellAccessoryTypeFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewCellAccessoryTypeFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewRowAnimationFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewRowAnimationFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewRowAnimationFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewRowAnimationFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewRowAnimationFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tableViewRowAnimationFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/controlStateFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/controlStateFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/controlStateFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/controlStateFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/controlStateFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIControlState)controlStateFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/controlStateFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewAnimationOptionsFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/viewAnimationOptionsFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewAnimationOptionsFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/viewAnimationOptionsFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewAnimationOptionsFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/viewAnimationOptionsFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/modalTransitionStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/modalTransitionStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/modalTransitionStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/modalTransitionStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/modalTransitionStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/modalTransitionStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewContentModeFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/viewContentModeFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewContentModeFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/viewContentModeFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewContentModeFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIViewContentMode)viewContentModeFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/viewContentModeFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/barStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/barStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarStyle)barStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/barStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/barButtonSystemItemFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/barButtonSystemItemFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/barButtonSystemItemFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonItemStyleFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/barButtonItemStyleFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonItemStyleFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/barButtonItemStyleFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonItemStyleFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/barButtonItemStyleFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/statusBarAnimationFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/statusBarAnimationFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/statusBarAnimationFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/statusBarAnimationFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/statusBarAnimationFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/statusBarAnimationFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/popoverArrowDirectionFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str</Declaration>
+			
+			
+			<Anchor>//api/name/popoverArrowDirectionFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/popoverArrowDirectionFromString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/popoverArrowDirectionFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/popoverArrowDirectionFromExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromExpression:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/popoverArrowDirectionFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

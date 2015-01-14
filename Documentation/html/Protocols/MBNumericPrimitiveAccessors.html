@@ -1,0 +1,593 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBNumericPrimitiveAccessors Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBNumericPrimitiveAccessors Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/boolValue">&nbsp;&nbsp;&nbsp;&nbsp;- boolValue</option>
+	
+	<option value="//api/name/charValue">&nbsp;&nbsp;&nbsp;&nbsp;- charValue</option>
+	
+	<option value="//api/name/doubleValue">&nbsp;&nbsp;&nbsp;&nbsp;- doubleValue</option>
+	
+	<option value="//api/name/floatValue">&nbsp;&nbsp;&nbsp;&nbsp;- floatValue</option>
+	
+	<option value="//api/name/intValue">&nbsp;&nbsp;&nbsp;&nbsp;- intValue</option>
+	
+	<option value="//api/name/integerValue">&nbsp;&nbsp;&nbsp;&nbsp;- integerValue</option>
+	
+	<option value="//api/name/longLongValue">&nbsp;&nbsp;&nbsp;&nbsp;- longLongValue</option>
+	
+	<option value="//api/name/longValue">&nbsp;&nbsp;&nbsp;&nbsp;- longValue</option>
+	
+	<option value="//api/name/shortValue">&nbsp;&nbsp;&nbsp;&nbsp;- shortValue</option>
+	
+	<option value="//api/name/stringValue">&nbsp;&nbsp;&nbsp;&nbsp;- stringValue</option>
+	
+	<option value="//api/name/unsignedCharValue">&nbsp;&nbsp;&nbsp;&nbsp;- unsignedCharValue</option>
+	
+	<option value="//api/name/unsignedIntValue">&nbsp;&nbsp;&nbsp;&nbsp;- unsignedIntValue</option>
+	
+	<option value="//api/name/unsignedIntegerValue">&nbsp;&nbsp;&nbsp;&nbsp;- unsignedIntegerValue</option>
+	
+	<option value="//api/name/unsignedLongLongValue">&nbsp;&nbsp;&nbsp;&nbsp;- unsignedLongLongValue</option>
+	
+	<option value="//api/name/unsignedLongValue">&nbsp;&nbsp;&nbsp;&nbsp;- unsignedLongValue</option>
+	
+	<option value="//api/name/unsignedShortValue">&nbsp;&nbsp;&nbsp;&nbsp;- unsignedShortValue</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/boolValue">boolValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/charValue">charValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doubleValue">doubleValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/floatValue">floatValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/intValue">intValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/integerValue">integerValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/longLongValue">longLongValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/longValue">longValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shortValue">shortValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringValue">stringValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsignedCharValue">unsignedCharValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsignedIntValue">unsignedIntValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsignedIntegerValue">unsignedIntegerValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsignedLongLongValue">unsignedLongLongValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsignedLongValue">unsignedLongValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsignedShortValue">unsignedShortValue</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBNumericPrimitiveAccessors Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBNumericPrimitiveAccessors Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TypeCoercionSupport.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This is the base protocol that will be adopted by our NSString and NSNull
+extensions to ensure proper KVC type coercion on 64-bit processors.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/charValue">&ndash;&nbsp;charValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsignedCharValue">&ndash;&nbsp;unsignedCharValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shortValue">&ndash;&nbsp;shortValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsignedShortValue">&ndash;&nbsp;unsignedShortValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/intValue">&ndash;&nbsp;intValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsignedIntValue">&ndash;&nbsp;unsignedIntValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/longValue">&ndash;&nbsp;longValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsignedLongValue">&ndash;&nbsp;unsignedLongValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/longLongValue">&ndash;&nbsp;longLongValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsignedLongLongValue">&ndash;&nbsp;unsignedLongLongValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/floatValue">&ndash;&nbsp;floatValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/doubleValue">&ndash;&nbsp;doubleValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/boolValue">&ndash;&nbsp;boolValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/integerValue">&ndash;&nbsp;integerValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsignedIntegerValue">&ndash;&nbsp;unsignedIntegerValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringValue">&ndash;&nbsp;stringValue</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/boolValue" title="boolValue"></a>
+	<h3 class="subsubtitle method-title">boolValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)boolValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/charValue" title="charValue"></a>
+	<h3 class="subsubtitle method-title">charValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (char)charValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/doubleValue" title="doubleValue"></a>
+	<h3 class="subsubtitle method-title">doubleValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (double)doubleValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/floatValue" title="floatValue"></a>
+	<h3 class="subsubtitle method-title">floatValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (float)floatValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/intValue" title="intValue"></a>
+	<h3 class="subsubtitle method-title">intValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (int)intValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/integerValue" title="integerValue"></a>
+	<h3 class="subsubtitle method-title">integerValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)integerValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/longLongValue" title="longLongValue"></a>
+	<h3 class="subsubtitle method-title">longLongValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (long long)longLongValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/longValue" title="longValue"></a>
+	<h3 class="subsubtitle method-title">longValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (long)longValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shortValue" title="shortValue"></a>
+	<h3 class="subsubtitle method-title">shortValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (short)shortValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringValue" title="stringValue"></a>
+	<h3 class="subsubtitle method-title">stringValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsignedCharValue" title="unsignedCharValue"></a>
+	<h3 class="subsubtitle method-title">unsignedCharValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (unsigned char)unsignedCharValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsignedIntValue" title="unsignedIntValue"></a>
+	<h3 class="subsubtitle method-title">unsignedIntValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (unsigned int)unsignedIntValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsignedIntegerValue" title="unsignedIntegerValue"></a>
+	<h3 class="subsubtitle method-title">unsignedIntegerValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)unsignedIntegerValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsignedLongLongValue" title="unsignedLongLongValue"></a>
+	<h3 class="subsubtitle method-title">unsignedLongLongValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (unsigned long long)unsignedLongLongValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsignedLongValue" title="unsignedLongValue"></a>
+	<h3 class="subsubtitle method-title">unsignedLongValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (unsigned long)unsignedLongValue</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsignedShortValue" title="unsignedShortValue"></a>
+	<h3 class="subsubtitle method-title">unsignedShortValue</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (unsigned short)unsignedShortValue</code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,2737 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBMLDateFunctions Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBMLDateFunctions Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/addSecondsToDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ addSecondsToDate:</option>
+	
+	<option value="//api/name/currentTime">&nbsp;&nbsp;&nbsp;&nbsp;+ currentTime</option>
+	
+	<option value="//api/name/dateToUnixTimestamp:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateToUnixTimestamp:</option>
+	
+	<option value="//api/name/defaultDateParsingFormat">&nbsp;&nbsp;&nbsp;&nbsp;+ defaultDateParsingFormat</option>
+	
+	<option value="//api/name/defaultDateParsingLocale">&nbsp;&nbsp;&nbsp;&nbsp;+ defaultDateParsingLocale</option>
+	
+	<option value="//api/name/formatDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatDate:</option>
+	
+	<option value="//api/name/formatDate:withStyle:usingTimeZone:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatDate:withStyle:usingTimeZone:</option>
+	
+	<option value="//api/name/formatDateTime:withStyle:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatDateTime:withStyle:</option>
+	
+	<option value="//api/name/formatFullDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatFullDate:</option>
+	
+	<option value="//api/name/formatFullDateTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatFullDateTime:</option>
+	
+	<option value="//api/name/formatFullTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatFullTime:</option>
+	
+	<option value="//api/name/formatLongDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatLongDate:</option>
+	
+	<option value="//api/name/formatLongDateTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatLongDateTime:</option>
+	
+	<option value="//api/name/formatLongTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatLongTime:</option>
+	
+	<option value="//api/name/formatMediumDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatMediumDate:</option>
+	
+	<option value="//api/name/formatMediumDateTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatMediumDateTime:</option>
+	
+	<option value="//api/name/formatMediumTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatMediumTime:</option>
+	
+	<option value="//api/name/formatShortDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatShortDate:</option>
+	
+	<option value="//api/name/formatShortDateTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatShortDateTime:</option>
+	
+	<option value="//api/name/formatShortTime:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatShortTime:</option>
+	
+	<option value="//api/name/formatSortableDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatSortableDate:</option>
+	
+	<option value="//api/name/formatTime:withStyle:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatTime:withStyle:</option>
+	
+	<option value="//api/name/formatTimeUntil:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatTimeUntil:</option>
+	
+	<option value="//api/name/mbmlParseDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ mbmlParseDate:</option>
+	
+	<option value="//api/name/parseDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseDate:</option>
+	
+	<option value="//api/name/parseDate:fromLocale:usingFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseDate:fromLocale:usingFormat:</option>
+	
+	<option value="//api/name/reformatDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ reformatDate:</option>
+	
+	<option value="//api/name/reformatDateWithLocale:">&nbsp;&nbsp;&nbsp;&nbsp;+ reformatDateWithLocale:</option>
+	
+	<option value="//api/name/secondsSince:">&nbsp;&nbsp;&nbsp;&nbsp;+ secondsSince:</option>
+	
+	<option value="//api/name/secondsUntil:">&nbsp;&nbsp;&nbsp;&nbsp;+ secondsUntil:</option>
+	
+	<option value="//api/name/timeZoneOffset">&nbsp;&nbsp;&nbsp;&nbsp;+ timeZoneOffset</option>
+	
+	<option value="//api/name/unixTimestampToDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ unixTimestampToDate:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addSecondsToDate:">addSecondsToDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentTime">currentTime</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateToUnixTimestamp:">dateToUnixTimestamp:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultDateParsingFormat">defaultDateParsingFormat</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultDateParsingLocale">defaultDateParsingLocale</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatDate:">formatDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatDate:withStyle:usingTimeZone:">formatDate:withStyle:usingTimeZone:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatDateTime:withStyle:">formatDateTime:withStyle:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatFullDate:">formatFullDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatFullDateTime:">formatFullDateTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatFullTime:">formatFullTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatLongDate:">formatLongDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatLongDateTime:">formatLongDateTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatLongTime:">formatLongTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatMediumDate:">formatMediumDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatMediumDateTime:">formatMediumDateTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatMediumTime:">formatMediumTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatShortDate:">formatShortDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatShortDateTime:">formatShortDateTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatShortTime:">formatShortTime:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatSortableDate:">formatSortableDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatTime:withStyle:">formatTime:withStyle:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatTimeUntil:">formatTimeUntil:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mbmlParseDate:">mbmlParseDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseDate:">parseDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseDate:fromLocale:usingFormat:">parseDate:fromLocale:usingFormat:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reformatDate:">reformatDate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reformatDateWithLocale:">reformatDateWithLocale:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsSince:">secondsSince:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secondsUntil:">secondsUntil:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeZoneOffset">timeZoneOffset</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unixTimestampToDate:">unixTimestampToDate:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBMLDateFunctions Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBMLDateFunctions Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBMLDateFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A class containing a set of MBML functions and supporting methods that provide
+date manipulation tools.</p>
+
+<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultDateParsingFormat">+&nbsp;defaultDateParsingFormat</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultDateParsingLocale">+&nbsp;defaultDateParsingLocale</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatDate:withStyle:usingTimeZone:">+&nbsp;formatDate:withStyle:usingTimeZone:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatTime:withStyle:">+&nbsp;formatTime:withStyle:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatDateTime:withStyle:">+&nbsp;formatDateTime:withStyle:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseDate:fromLocale:usingFormat:">+&nbsp;parseDate:fromLocale:usingFormat:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseDate:">+&nbsp;parseDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentTime">+&nbsp;currentTime</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secondsSince:">+&nbsp;secondsSince:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/secondsUntil:">+&nbsp;secondsUntil:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unixTimestampToDate:">+&nbsp;unixTimestampToDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateToUnixTimestamp:">+&nbsp;dateToUnixTimestamp:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addSecondsToDate:">+&nbsp;addSecondsToDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatTimeUntil:">+&nbsp;formatTimeUntil:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatDate:">+&nbsp;formatDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatSortableDate:">+&nbsp;formatSortableDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatShortDate:">+&nbsp;formatShortDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatMediumDate:">+&nbsp;formatMediumDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatLongDate:">+&nbsp;formatLongDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatFullDate:">+&nbsp;formatFullDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatShortTime:">+&nbsp;formatShortTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatMediumTime:">+&nbsp;formatMediumTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatLongTime:">+&nbsp;formatLongTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatFullTime:">+&nbsp;formatFullTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatShortDateTime:">+&nbsp;formatShortDateTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatMediumDateTime:">+&nbsp;formatMediumDateTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatLongDateTime:">+&nbsp;formatLongDateTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatFullDateTime:">+&nbsp;formatFullDateTime:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reformatDate:">+&nbsp;reformatDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reformatDateWithLocale:">+&nbsp;reformatDateWithLocale:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mbmlParseDate:">+&nbsp;mbmlParseDate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeZoneOffset">+&nbsp;timeZoneOffset</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addSecondsToDate:" title="addSecondsToDate:"></a>
+	<h3 class="subsubtitle method-title">addSecondsToDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns an <code>NSDate</code> instance representing
+the given date plus the provided seconds.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)addSecondsToDate:(NSArray *)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSDate</code> plus the interval in seconds.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two expressions as input parameters:</p>
+
+<ul>
+<li><p>an <em>interval seconds</em>, specifying the interval in seconds to add</p></li>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<p>^addSecondsToDate(30|^<a href="#//api/name/currentTime">currentTime</a>())</p>
+
+<p>would result in an <code>NSDate</code> 30 seconds from now.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentTime" title="currentTime"></a>
+	<h3 class="subsubtitle method-title">currentTime</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns an <code>NSDate</code> instance representing
+the current date and time.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDate *)currentTime</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSDate</code> instance representing the current date and time.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts no input.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<pre><code>^currentTime()
+</code></pre>
+
+<p>would return the same value that would result from calling the Objective-C
+method <code>[NSDate date]</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateToUnixTimestamp:" title="dateToUnixTimestamp:"></a>
+	<h3 class="subsubtitle method-title">dateToUnixTimestamp:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns a unix timestamp representation
+of the given date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)dateToUnixTimestamp:(NSDate *)<em>date</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> instance containing the unix timestamp
+representation of the input date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+an <code>NSDate</code> instance.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<p>^dateToUnixTimestamp($referenceDate)</p>
+
+<p>would return the unix timestamp representation of <code>$referenceDate</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultDateParsingFormat" title="defaultDateParsingFormat"></a>
+	<h3 class="subsubtitle method-title">defaultDateParsingFormat</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the date parsing format used by default. First, the MBML expression
+<code>$MBMLDateFunctions:dateParsingFormat</code> is checked for a value; if a value is
+present, it is returned. Otherwise, the value of the constant
+<code>kRFC1123DateStringFormat</code> is returned.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)defaultDateParsingFormat</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default date parsing format string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultDateParsingLocale" title="defaultDateParsingLocale"></a>
+	<h3 class="subsubtitle method-title">defaultDateParsingLocale</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the date parsing locale used by default. First, the MBML expression
+<code>$MBMLDateFunctions:dateParsingLocale</code> is checked for a value; if a value is
+present, it is used as the locale identifier. Otherwise, the value of the
+constant <code>kMBDateParsingLocaleVariableName</code> is used to construct the locale.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSLocale *)defaultDateParsingLocale</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default date parsing locale.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If all else fails, the device&rsquo;s current locale is used.</p><div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatDate:" title="formatDate:"></a>
+	<h3 class="subsubtitle method-title">formatDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and a format string, and
+returns a string representation of the date in the specified format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatDate:(NSArray *)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+<li><p>an <em>output format</em>, specifying the date format to be used for creating the
+returned date string</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatDate(^currentTime()|MM/dd/yy)
+</code></pre>
+
+<p>would result in the string &ldquo;<code>12/12/13</code>&rdquo; if called on December 12th, 2013.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatDate:withStyle:usingTimeZone:" title="formatDate:withStyle:usingTimeZone:"></a>
+	<h3 class="subsubtitle method-title">formatDate:withStyle:usingTimeZone:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a date-formatted string using the specified formatter style.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)formatDate:(NSDate *)<em>d8</em> withStyle:(NSDateFormatterStyle)<em>style</em> usingTimeZone:(NSTimeZone *)<em>timeZone</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>d8</em></dt>
+			<dd><p>The <code>NSDate</code> to format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>style</em></dt>
+			<dd><p>The <code>NSDateFormatterStyle</code> to use for formatting the date.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the formatted date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatDateTime:withStyle:" title="formatDateTime:withStyle:"></a>
+	<h3 class="subsubtitle method-title">formatDateTime:withStyle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a date/time-formatted string using the specified formatter style.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)formatDateTime:(NSDate *)<em>d8</em> withStyle:(NSDateFormatterStyle)<em>style</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>d8</em></dt>
+			<dd><p>The <code>NSDate</code> to format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>style</em></dt>
+			<dd><p>The <code>NSDateFormatterStyle</code> to use for formatting the
+            date/time.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the formatted date/time.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatFullDate:" title="formatFullDate:"></a>
+	<h3 class="subsubtitle method-title">formatFullDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date string
+formatted using the <code>NSDateFormatterFullStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatFullDate:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one of two expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+<li><p>an optional <em>timezone string</em>, specifying the timezone to use when
+formatting the <em>input date</em> parameter (if this parameter is omitted, the local
+timezone is used)</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatFullDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>Friday, October 27, 1972</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatFullDateTime:" title="formatFullDateTime:"></a>
+	<h3 class="subsubtitle method-title">formatFullDateTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date/time
+string formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatFullDateTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date/time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatFullDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>Friday, October 27, 1972, 10:53:42 AM Eastern
+Daylight Time</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatFullTime:" title="formatFullTime:"></a>
+	<h3 class="subsubtitle method-title">formatFullTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a time string
+formatted using the <code>NSDateFormatterFullStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatFullTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatFullTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10:53:42 AM Eastern Daylight Time</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatLongDate:" title="formatLongDate:"></a>
+	<h3 class="subsubtitle method-title">formatLongDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date string
+formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatLongDate:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one of two expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+<li><p>an optional <em>timezone string</em>, specifying the timezone to use when
+formatting the <em>input date</em> parameter (if this parameter is omitted, the local
+timezone is used)</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatLongDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>October 27, 1972</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatLongDateTime:" title="formatLongDateTime:"></a>
+	<h3 class="subsubtitle method-title">formatLongDateTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date/time
+string formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatLongDateTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date/time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatLongDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>October 27, 1972, 10:53:42 AM EDT</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatLongTime:" title="formatLongTime:"></a>
+	<h3 class="subsubtitle method-title">formatLongTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a time string
+formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatLongTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatLongTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10:53:42 AM EDT</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatMediumDate:" title="formatMediumDate:"></a>
+	<h3 class="subsubtitle method-title">formatMediumDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date string
+formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatMediumDate:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one of two expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+<li><p>an optional <em>timezone string</em>, specifying the timezone to use when
+formatting the <em>input date</em> parameter (if this parameter is omitted, the local
+timezone is used)</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatMediumDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>Oct 27, 1972</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatMediumDateTime:" title="formatMediumDateTime:"></a>
+	<h3 class="subsubtitle method-title">formatMediumDateTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date/time
+string formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatMediumDateTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date/time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatMediumDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>Oct 27, 1972, 10:53:42 AM</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatMediumTime:" title="formatMediumTime:"></a>
+	<h3 class="subsubtitle method-title">formatMediumTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a time string
+formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatMediumTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatMediumTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10:53:42 AM</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatShortDate:" title="formatShortDate:"></a>
+	<h3 class="subsubtitle method-title">formatShortDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date string
+formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatShortDate:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one of two expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+<li><p>an optional <em>timezone string</em>, specifying the timezone to use when
+formatting the <em>input date</em> parameter (if this parameter is omitted, the local
+timezone is used)</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatShortDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10/27/72</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatShortDateTime:" title="formatShortDateTime:"></a>
+	<h3 class="subsubtitle method-title">formatShortDateTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date/time
+string formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatShortDateTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date/time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatShortDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10/27/72, 10:53 AM</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatShortTime:" title="formatShortTime:"></a>
+	<h3 class="subsubtitle method-title">formatShortTime:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a time string
+formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatShortTime:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The time-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
+that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatShortTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10:53 AM</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The string returned depends on the device&rsquo;s locale settings
+            and may not match the example above.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatSortableDate:" title="formatSortableDate:"></a>
+	<h3 class="subsubtitle method-title">formatSortableDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date and returns a date string
+formatted using the format &ldquo;<code>YYYY-MM-dd HH:mm:ss</code>&rdquo;. This format ensures allows
+dates to be sorted using simple string sorting.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatSortableDate:(id)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one input parameter, the <em>input date</em>, an <code>NSDate</code> or
+<code>NSString</code> that contains the date to format.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^formatSortableDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+</code></pre>
+
+<p>would result in the string &ldquo;<code>1972-10-27 10:53:42</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The time in the returned string will be in 24-hour format.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatTime:withStyle:" title="formatTime:withStyle:"></a>
+	<h3 class="subsubtitle method-title">formatTime:withStyle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a time-formatted string using the specified formatter style.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)formatTime:(NSDate *)<em>d8</em> withStyle:(NSDateFormatterStyle)<em>style</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>d8</em></dt>
+			<dd><p>The <code>NSDate</code> to format.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>style</em></dt>
+			<dd><p>The <code>NSDateFormatterStyle</code> to use for formatting the time.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the formatted time.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatTimeUntil:" title="formatTimeUntil:"></a>
+	<h3 class="subsubtitle method-title">formatTimeUntil:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns a string representation of the
+time until the given date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatTimeUntil:(NSDate *)<em>date</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSString</code> instance containing the time until
+the input date; if the input date is in the past, the return
+value will be negative.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+an <code>NSDate</code> instance.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<p>^formatTimeUntil($referenceDate)</p>
+
+<p>would return the time until <code>$referenceDate</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mbmlParseDate:" title="mbmlParseDate:"></a>
+	<h3 class="subsubtitle method-title">mbmlParseDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that attempts to construct an <code>NSDate</code>
+instance by parsing a string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)mbmlParseDate:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSDate</code> representing the parsed date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two or three expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>date</em>, a string to be parsed</p></li>
+<li><p>an optional <em>format string</em>, a string in the format that would be used
+by a <code>NSDateFormatter</code>. If this parameter is omitted, the value returned
+by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a> is used as the format string.</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>Assuming the default date parsing format hasn&rsquo;t been overridden by the
+<code>$MBMLDateFunctions:dateParsingFormat</code> variable, this expression:</p>
+
+<pre><code>^parseDate(Thu, 26 Jan 2012 15:58:19 UTC)
+</code></pre>
+
+<p>would return an <code>NSDate</code> instance representing a date equivalent to
+Thursday, January 26th, 2012 at 10:58:19AM in New York City (eastern standard
+time, or the <code>America/New_York</code> timezone).</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as
+            <code>^parseDate()</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseDate:" title="parseDate:"></a>
+	<h3 class="subsubtitle method-title">parseDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to parse an <code>NSDate</code> from a string in the locale
+<a href="#//api/name/defaultDateParsingLocale"><code>defaultDateParsingLocale</code></a> using the date format returned
+by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDate *)parseDate:(NSString *)<em>str</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The date string to parse.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSDate</code> representing the parsed date string, or <code>nil</code> if there
+            was an error parsing the string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function; instead, the
+            <a href="#//api/name/mbmlParseDate:"><code>mbmlParseDate:</code></a> method implements the <code>^parseDate()</code> MBML function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseDate:fromLocale:usingFormat:" title="parseDate:fromLocale:usingFormat:"></a>
+	<h3 class="subsubtitle method-title">parseDate:fromLocale:usingFormat:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to parse an <code>NSDate</code> from a string using the specified date format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDate *)parseDate:(NSString *)<em>str</em> fromLocale:(NSLocale *)<em>locale</em> usingFormat:(NSString *)<em>dateFormat</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The date string to parse.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>locale</em></dt>
+			<dd><p>The locale of the input string <code>str</code>. If <code>nil</code>, the value
+            <code>str</code> is assumed to be in the device&rsquo;s current locale.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dateFormat</em></dt>
+			<dd><p>A date format string as accepted by <code>NSDateFormatter</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSDate</code> representing the parsed date string, or <code>nil</code> if there
+            was an error parsing the string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function; instead, the
+            <a href="#//api/name/mbmlParseDate:"><code>mbmlParseDate:</code></a> method implements the <code>^parseDate()</code> MBML function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reformatDate:" title="reformatDate:"></a>
+	<h3 class="subsubtitle method-title">reformatDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date-formatted string and
+converts it into a date string of another format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)reformatDate:(NSArray *)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two or three expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, a date-formatted string to be parsed,</p></li>
+<li><p>an optional <em>input format</em>, specifying the date format used by the
+<em>input date</em> parameter (if this parameter is omitted, the default format
+used is the one specified by the <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a> method), and</p></li>
+<li><p>an <em>output format</em>, specifying the date format to be used for creating the
+returned date string</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^reformatDate(27 Oct 1972|dd MMM yyyy|MM/dd/yy)
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10/27/72</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reformatDateWithLocale:" title="reformatDateWithLocale:"></a>
+	<h3 class="subsubtitle method-title">reformatDateWithLocale:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that accepts a date-formatted input string&ndash;
+along with a locale specification for that input string&ndash;and converts the
+input into a date string of another format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)reformatDateWithLocale:(NSArray *)<em>input</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A date-formatted string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts three or four expressions as input parameters:</p>
+
+<ul>
+<li><p>the <em>input date</em>, a date-formatted string to be parsed,</p></li>
+<li><p>the <em>input date locale</em>, a string specifying the locale identifier of the
+<em>input date</em>&rsquo;s locale,</p></li>
+<li><p>an optional <em>input format</em>, specifying the date format used by the
+<em>input date</em> parameter (if this parameter is omitted, the default format
+used is the one specified by the <code>defaultDateParsingFormat</code> method), and</p></li>
+<li><p>an <em>output format</em>, specifying the date format to be used for creating the
+returned date string</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<p>The following expression:</p>
+
+<pre><code>^reformatDateWithLocale(27 Oct 1972|en_US|dd MMM yyyy|MM/dd/yy)
+</code></pre>
+
+<p>would result in the string &ldquo;<code>10/27/72</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secondsSince:" title="secondsSince:"></a>
+	<h3 class="subsubtitle method-title">secondsSince:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns the number of seconds that have
+elapsed since the given past date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)secondsSince:(NSDate *)<em>date</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> instance containing the number of seconds since
+            the input date; if the input date is in the future, the return
+            value will be negative.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+an <code>NSDate</code> instance.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<pre><code>^secondsSince($referenceDate)
+</code></pre>
+
+<p>would return the number of seconds elapsed since <code>$referenceDate</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/secondsUntil:" title="secondsUntil:"></a>
+	<h3 class="subsubtitle method-title">secondsUntil:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns the number of seconds
+between now and the given future date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)secondsUntil:(NSDate *)<em>date</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>date</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> instance containing the number of seconds until
+            the input date; if the input date is in the past, the return
+            value will be negative.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+an <code>NSDate</code> instance.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<pre><code>^secondsUntil($referenceDate)
+</code></pre>
+
+<p>would return the number of seconds until <code>$referenceDate</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timeZoneOffset" title="timeZoneOffset"></a>
+	<h3 class="subsubtitle method-title">timeZoneOffset</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns the offset, in minutes,
+between the current time zone and UTC.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)timeZoneOffset</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The time zone offset.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts no input.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<pre><code>^timeZoneOffset()
+</code></pre>
+
+<p>would return an <code>NSNumber</code> instance containing the time zone offset, in
+minutes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unixTimestampToDate:" title="unixTimestampToDate:"></a>
+	<h3 class="subsubtitle method-title">unixTimestampToDate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns a date representation of the
+unix timestamp.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)unixTimestampToDate:(id)<em>timestamp</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timestamp</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSDate</code> instance containing the date representation of given
+timestamp.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+a number.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<p>The expression:</p>
+
+<p>^unixTimestampToDate($timestamp)</p>
+
+<p>would return the <code>NSDate</code> representation of <code>$timestamp</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDateFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

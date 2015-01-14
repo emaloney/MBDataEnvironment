@@ -1,0 +1,988 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBExpressionCache Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBExpressionCache Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/persistenceEnabled">&nbsp;&nbsp;&nbsp;&nbsp;persistenceEnabled</option>
+	
+	<option value="//api/name/suppressConsoleLogging">&nbsp;&nbsp;&nbsp;&nbsp;suppressConsoleLogging</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cachedTokensForExpression:usingGrammar:">&nbsp;&nbsp;&nbsp;&nbsp;- cachedTokensForExpression:usingGrammar:</option>
+	
+	<option value="//api/name/clearCache">&nbsp;&nbsp;&nbsp;&nbsp;- clearCache</option>
+	
+	<option value="//api/name/clearMemoryCache">&nbsp;&nbsp;&nbsp;&nbsp;- clearMemoryCache</option>
+	
+	<option value="//api/name/loadAndMergeCache">&nbsp;&nbsp;&nbsp;&nbsp;- loadAndMergeCache</option>
+	
+	<option value="//api/name/loadCache">&nbsp;&nbsp;&nbsp;&nbsp;- loadCache</option>
+	
+	<option value="//api/name/removeFilesystemCache">&nbsp;&nbsp;&nbsp;&nbsp;- removeFilesystemCache</option>
+	
+	<option value="//api/name/resetFilesystemCache">&nbsp;&nbsp;&nbsp;&nbsp;- resetFilesystemCache</option>
+	
+	<option value="//api/name/resetMemoryCache">&nbsp;&nbsp;&nbsp;&nbsp;- resetMemoryCache</option>
+	
+	<option value="//api/name/saveCache">&nbsp;&nbsp;&nbsp;&nbsp;- saveCache</option>
+	
+	<option value="//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;- tokensForExpression:inVariableSpace:usingGrammar:error:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving tokens for expressions">Retrieving tokens for expressions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Clearing the cache">Clearing the cache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Cache persistence">Cache persistence</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Controlling logging">Controlling logging</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistenceEnabled">persistenceEnabled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suppressConsoleLogging">suppressConsoleLogging</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cachedTokensForExpression:usingGrammar:">cachedTokensForExpression:usingGrammar:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCache">clearCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearMemoryCache">clearMemoryCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadAndMergeCache">loadAndMergeCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadCache">loadCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeFilesystemCache">removeFilesystemCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetFilesystemCache">resetFilesystemCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetMemoryCache">resetMemoryCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveCache">saveCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">tokensForExpression:inVariableSpace:usingGrammar:error:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBExpressionCache Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBExpressionCache Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">MBSingleton</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBExpressionCache.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<div class="warning"><p><strong>Warning:</strong> You <em>must not</em> create instances of this class yourself; this class
+            is a singleton. Call the <code>instance</code> class method (declared by the
+            <code>MBSingleton</code> protocol) to acquire the singleton instance.</p></div>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Retrieving tokens for expressions" name="task_Retrieving tokens for expressions"></a>
+						<h3 class="subsubtitle task-title">Retrieving tokens for expressions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cachedTokensForExpression:usingGrammar:">&ndash;&nbsp;cachedTokensForExpression:usingGrammar:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">&ndash;&nbsp;tokensForExpression:inVariableSpace:usingGrammar:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Clearing the cache" name="task_Clearing the cache"></a>
+						<h3 class="subsubtitle task-title">Clearing the cache</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearMemoryCache">&ndash;&nbsp;clearMemoryCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeFilesystemCache">&ndash;&nbsp;removeFilesystemCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resetMemoryCache">&ndash;&nbsp;resetMemoryCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resetFilesystemCache">&ndash;&nbsp;resetFilesystemCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearCache">&ndash;&nbsp;clearCache</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Cache persistence" name="task_Cache persistence"></a>
+						<h3 class="subsubtitle task-title">Cache persistence</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/persistenceEnabled">&nbsp;&nbsp;persistenceEnabled</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadCache">&ndash;&nbsp;loadCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadAndMergeCache">&ndash;&nbsp;loadAndMergeCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/saveCache">&ndash;&nbsp;saveCache</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Controlling logging" name="task_Controlling logging"></a>
+						<h3 class="subsubtitle task-title">Controlling logging</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/suppressConsoleLogging">&nbsp;&nbsp;suppressConsoleLogging</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/persistenceEnabled" title="persistenceEnabled"></a>
+	<h3 class="subsubtitle method-title">persistenceEnabled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether the expression cache will utilize the filesystem for
+persisting the cached expression tokens.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This value is manipulated during the <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> load process.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/suppressConsoleLogging" title="suppressConsoleLogging"></a>
+	<h3 class="subsubtitle method-title">suppressConsoleLogging</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>By default, the expression cache will log status messages to the console
+when attempting to load or save cache files. This property can be set to <code>YES</code>
+to suppress those log messages.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL suppressConsoleLogging</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cachedTokensForExpression:usingGrammar:" title="cachedTokensForExpression:usingGrammar:"></a>
+	<h3 class="subsubtitle method-title">cachedTokensForExpression:usingGrammar:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the cached <code>MBMLParseToken</code>s for the given expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)cachedTokensForExpression:(NSString *)<em>expr</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression for which the cached tokens are sought.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>grammar</em></dt>
+			<dd><p>The grammar used to tokenize the expression.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of the cached tokens for the passed-in expression, or
+            <code>nil</code> if there are no cached tokens for the given expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearCache" title="clearCache"></a>
+	<h3 class="subsubtitle method-title">clearCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears the in-memory cache and removes the filesystem cache by calling
+<a href="#//api/name/clearMemoryCache"><code>clearMemoryCache</code></a> and then <a href="#//api/name/removeFilesystemCache"><code>removeFilesystemCache</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)clearCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearMemoryCache" title="clearMemoryCache"></a>
+	<h3 class="subsubtitle method-title">clearMemoryCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Throws away the in-memory token cache.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)clearMemoryCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method is called automatically during memory warnings.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadAndMergeCache" title="loadAndMergeCache"></a>
+	<h3 class="subsubtitle method-title">loadAndMergeCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If an expression cache file is available, it is loaded, and the file&rsquo;s contents
+are merged with the current contents of the in-memory cache.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loadAndMergeCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>During the merge process, cached expressions contained within the file are
+added to the memory cache only if the expression does not already exist
+in the memory cache.</p>
+
+<p>If there is no cache file available in the filesystem, the cache will attempt
+to load a cache file from the app&rsquo;s resources.</p>
+
+<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/persistenceEnabled"><code>isPersistenceEnabled</code></a> property is <code>NO</code>,
+            calling this method does nothing.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadCache" title="loadCache"></a>
+	<h3 class="subsubtitle method-title">loadCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If an expression cache file is available, it is loaded, and the file&rsquo;s contents
+are used to replace the existing contents of the in-memory cache.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)loadCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If there is no cache file available in the filesystem, the cache will attempt
+to load a cache file from the app&rsquo;s resources.</p>
+
+<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/persistenceEnabled"><code>isPersistenceEnabled</code></a> property is <code>NO</code>,
+            calling this method does nothing.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeFilesystemCache" title="removeFilesystemCache"></a>
+	<h3 class="subsubtitle method-title">removeFilesystemCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the expression cache&rsquo;s file if it was previously written to the
+filesystem.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeFilesystemCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method does not remove any compiled-in resources
+            representing an expression cache file. Next time <a href="#//api/name/loadCache"><code>loadCache</code></a> is
+            called, a compiled-in expression cache may be loaded. If you want
+            to prevent this from happening, call the <a href="#//api/name/resetFilesystemCache"><code>resetFilesystemCache</code></a>
+            method instead.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resetFilesystemCache" title="resetFilesystemCache"></a>
+	<h3 class="subsubtitle method-title">resetFilesystemCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves an empty cache file to the filesystem, replacing the existing
+cache file (if there is one).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)resetFilesystemCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method provides a way to override any compiled-in expression cache
+file resource; next time the <a href="#//api/name/loadCache"><code>loadCache</code></a> method is called, the cache file
+in the filesystem will be loaded instead of the compiled-in resource.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resetMemoryCache" title="resetMemoryCache"></a>
+	<h3 class="subsubtitle method-title">resetMemoryCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears the in-memory cache and resets knowledge of data that could affect
+automatic cache invalidation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)resetMemoryCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/saveCache" title="saveCache"></a>
+	<h3 class="subsubtitle method-title">saveCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Saves the current in-memory expression cache to the filesystem.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)saveCache</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/persistenceEnabled"><code>isPersistenceEnabled</code></a> property is <code>NO</code>,
+            calling this method does nothing.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:" title="tokensForExpression:inVariableSpace:usingGrammar:error:"></a>
+	<h3 class="subsubtitle method-title">tokensForExpression:inVariableSpace:usingGrammar:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of <code>MBMLParseToken</code> instances representing the tokenized
+version of the passed-in expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)tokensForExpression:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to tokenize.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>space</em></dt>
+			<dd><p>The variable space that will be used to look up values for
+            any variable references contained in the expression.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>grammar</em></dt>
+			<dd><p>The grammar to be used for tokenizing the expression.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during tokenization, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of tokens representing the passed-in expression. Will be
+            <code>nil</code> if an error occurs.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the expression is already in the cache, the cached tokens are returned.
+Otherwise, the expression is be tokenized using the specified grammar,
+the resulting tokens are added to the cache, and are then returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

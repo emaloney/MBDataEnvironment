@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLMathFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLMathFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/performMathFunction:withParameters:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)performMathFunction:(MathTransformationFunctionBlock)funcBlock withParameters:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/performMathFunction:withParameters:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/mod:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)mod:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/mod:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/modFloat:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)modFloat:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/modFloat:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/percent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)percent:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/percent:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/ceil:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)ceil:(id)number</Declaration>
+			
+			
+			<Anchor>//api/name/ceil:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/floor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)floor:(id)number</Declaration>
+			
+			
+			<Anchor>//api/name/floor:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/round:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)round:(id)number</Declaration>
+			
+			
+			<Anchor>//api/name/round:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/max:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)max:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/max:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/min:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)min:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/min:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/randomPercent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)randomPercent</Declaration>
+			
+			
+			<Anchor>//api/name/randomPercent</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/random:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)random:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/random:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/arrayFilledWithIntegers:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)arrayFilledWithIntegers:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/arrayFilledWithIntegers:</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

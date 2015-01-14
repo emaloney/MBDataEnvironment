@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLLogicFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLLogicFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLLogicFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLLogicFunctions/ifOperator:</TokenIdentifier>
+			<Abstract type="html">Implements an if operator.</Abstract>
+			<DeclaredIn>MBMLLogicFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)ifOperator:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">an array containing the input parameters for the function</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of performing the evaluations described above.</Abstract></ReturnValue>
+			<Anchor>//api/name/ifOperator:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLLogicFunctions/selectFirstValue:</TokenIdentifier>
+			<Abstract type="html">Accepts two or more template expressions as input parameters, and returns
+the first one that evaluates to a non-&lt;code&gt;nil&lt;/code&gt; (and
+non-&lt;code&gt;NSNull&lt;/code&gt;) value.
+  
+&lt;b&gt;Template example:&lt;/b&gt;</Abstract>
+			<DeclaredIn>MBMLLogicFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)selectFirstValue:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">an array containing the input parameters for the function</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of performing the evaluations described above.</Abstract></ReturnValue>
+			<Anchor>//api/name/selectFirstValue:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

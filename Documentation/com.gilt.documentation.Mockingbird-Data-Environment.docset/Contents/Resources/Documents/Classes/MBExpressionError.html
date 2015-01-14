@@ -1,0 +1,790 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBExpressionError Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBExpressionError Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/additionalErrors">&nbsp;&nbsp;&nbsp;&nbsp;additionalErrors</option>
+	
+	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;error</option>
+	
+	<option value="//api/name/exception">&nbsp;&nbsp;&nbsp;&nbsp;exception</option>
+	
+	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
+	
+	<option value="//api/name/offendingExpression">&nbsp;&nbsp;&nbsp;&nbsp;offendingExpression</option>
+	
+	<option value="//api/name/offendingToken">&nbsp;&nbsp;&nbsp;&nbsp;offendingToken</option>
+	
+	<option value="//api/name/value">&nbsp;&nbsp;&nbsp;&nbsp;value</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;+ error</option>
+	
+	<option value="//api/name/errorWithError:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithError:</option>
+	
+	<option value="//api/name/errorWithException:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithException:</option>
+	
+	<option value="//api/name/errorWithExpressionErrors:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithExpressionErrors:</option>
+	
+	<option value="//api/name/errorWithFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithFormat:</option>
+	
+	<option value="//api/name/errorWithMessage:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithMessage:</option>
+	
+	<option value="//api/name/errorWithMessage:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithMessage:error:</option>
+	
+	<option value="//api/name/errorWithMessage:exception:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithMessage:exception:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addError:">&nbsp;&nbsp;&nbsp;&nbsp;- addError:</option>
+	
+	<option value="//api/name/clearErrorReported">&nbsp;&nbsp;&nbsp;&nbsp;- clearErrorReported</option>
+	
+	<option value="//api/name/describeOffense">&nbsp;&nbsp;&nbsp;&nbsp;- describeOffense</option>
+	
+	<option value="//api/name/errorReported">&nbsp;&nbsp;&nbsp;&nbsp;- errorReported</option>
+	
+	<option value="//api/name/lastErrorReported">&nbsp;&nbsp;&nbsp;&nbsp;- lastErrorReported</option>
+	
+	<option value="//api/name/log">&nbsp;&nbsp;&nbsp;&nbsp;- log</option>
+	
+	<option value="//api/name/logOutput">&nbsp;&nbsp;&nbsp;&nbsp;- logOutput</option>
+	
+	<option value="//api/name/reportErrorTo:">&nbsp;&nbsp;&nbsp;&nbsp;- reportErrorTo:</option>
+	
+	<option value="//api/name/reportErrorTo:suppressLog:">&nbsp;&nbsp;&nbsp;&nbsp;- reportErrorTo:suppressLog:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/additionalErrors">additionalErrors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exception">exception</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offendingExpression">offendingExpression</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/offendingToken">offendingToken</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/value">value</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithError:">errorWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithException:">errorWithException:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithExpressionErrors:">errorWithExpressionErrors:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithFormat:">errorWithFormat:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithMessage:">errorWithMessage:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithMessage:error:">errorWithMessage:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithMessage:exception:">errorWithMessage:exception:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addError:">addError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearErrorReported">clearErrorReported</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/describeOffense">describeOffense</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorReported">errorReported</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastErrorReported">lastErrorReported</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/log">log</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logOutput">logOutput</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reportErrorTo:">reportErrorTo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reportErrorTo:suppressLog:">reportErrorTo:suppressLog:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBExpressionError Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBExpressionError Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBExpressionError.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Used internally by the <a href="../Classes/MBExpression.html">MBExpression</a> engine to represent errors
+during expression parsing and evaluation.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exception">&nbsp;&nbsp;exception</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/additionalErrors">&nbsp;&nbsp;additionalErrors</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/value">&nbsp;&nbsp;value</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offendingToken">&nbsp;&nbsp;offendingToken</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/offendingExpression">&nbsp;&nbsp;offendingExpression</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/error">+&nbsp;error</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithMessage:">+&nbsp;errorWithMessage:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithMessage:error:">+&nbsp;errorWithMessage:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithMessage:exception:">+&nbsp;errorWithMessage:exception:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithFormat:">+&nbsp;errorWithFormat:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithError:">+&nbsp;errorWithError:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithException:">+&nbsp;errorWithException:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorWithExpressionErrors:">+&nbsp;errorWithExpressionErrors:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logOutput">&ndash;&nbsp;logOutput</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/log">&ndash;&nbsp;log</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addError:">&ndash;&nbsp;addError:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reportErrorTo:">&ndash;&nbsp;reportErrorTo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reportErrorTo:suppressLog:">&ndash;&nbsp;reportErrorTo:suppressLog:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorReported">&ndash;&nbsp;errorReported</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lastErrorReported">&ndash;&nbsp;lastErrorReported</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/clearErrorReported">&ndash;&nbsp;clearErrorReported</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/describeOffense">&ndash;&nbsp;describeOffense</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/additionalErrors" title="additionalErrors"></a>
+	<h3 class="subsubtitle method-title">additionalErrors</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray *additionalErrors</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="subsubtitle method-title">error</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSError *error</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exception" title="exception"></a>
+	<h3 class="subsubtitle method-title">exception</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSException *exception</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/message" title="message"></a>
+	<h3 class="subsubtitle method-title">message</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *message</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offendingExpression" title="offendingExpression"></a>
+	<h3 class="subsubtitle method-title">offendingExpression</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *offendingExpression</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/offendingToken" title="offendingToken"></a>
+	<h3 class="subsubtitle method-title">offendingToken</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) MBMLParseToken *offendingToken</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/value" title="value"></a>
+	<h3 class="subsubtitle method-title">value</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id value</code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/error" title="error"></a>
+	<h3 class="subsubtitle method-title">error</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)error</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithError:" title="errorWithError:"></a>
+	<h3 class="subsubtitle method-title">errorWithError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithError:(NSError *)<em>nsErr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithException:" title="errorWithException:"></a>
+	<h3 class="subsubtitle method-title">errorWithException:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithException:(NSException *)<em>ex</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithExpressionErrors:" title="errorWithExpressionErrors:"></a>
+	<h3 class="subsubtitle method-title">errorWithExpressionErrors:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithExpressionErrors:(NSArray *)<em>errors</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithFormat:" title="errorWithFormat:"></a>
+	<h3 class="subsubtitle method-title">errorWithFormat:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithFormat:(NSString *)<em>format</em>, <em>...</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithMessage:" title="errorWithMessage:"></a>
+	<h3 class="subsubtitle method-title">errorWithMessage:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithMessage:(NSString *)<em>msg</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithMessage:error:" title="errorWithMessage:error:"></a>
+	<h3 class="subsubtitle method-title">errorWithMessage:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithMessage:(NSString *)<em>msg</em> error:(NSError *)<em>nsErr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorWithMessage:exception:" title="errorWithMessage:exception:"></a>
+	<h3 class="subsubtitle method-title">errorWithMessage:exception:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)errorWithMessage:(NSString *)<em>msg</em> exception:(NSException *)<em>ex</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addError:" title="addError:"></a>
+	<h3 class="subsubtitle method-title">addError:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)addError:(MBExpressionError *)<em>error</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/clearErrorReported" title="clearErrorReported"></a>
+	<h3 class="subsubtitle method-title">clearErrorReported</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)clearErrorReported</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/describeOffense" title="describeOffense"></a>
+	<h3 class="subsubtitle method-title">describeOffense</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)describeOffense</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorReported" title="errorReported"></a>
+	<h3 class="subsubtitle method-title">errorReported</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)errorReported</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lastErrorReported" title="lastErrorReported"></a>
+	<h3 class="subsubtitle method-title">lastErrorReported</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (MBExpressionError *)lastErrorReported</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/log" title="log"></a>
+	<h3 class="subsubtitle method-title">log</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)log</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/logOutput" title="logOutput"></a>
+	<h3 class="subsubtitle method-title">logOutput</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)logOutput</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reportErrorTo:" title="reportErrorTo:"></a>
+	<h3 class="subsubtitle method-title">reportErrorTo:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionError **)<em>reportTo</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reportErrorTo:suppressLog:" title="reportErrorTo:suppressLog:"></a>
+	<h3 class="subsubtitle method-title">reportErrorTo:suppressLog:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionError **)<em>reportTo</em> suppressLog:(BOOL)<em>suppress</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

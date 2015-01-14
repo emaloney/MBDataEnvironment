@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBExpression.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBExpression</TokenIdentifier>
+			<Abstract type="html">This class is responsible for evaluating MBML expressions.</Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+            
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)asString:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/asString:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asString:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)asString:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asString:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asString:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)asString:(NSString *)expr defaultValue:(NSString *)def</Declaration>
+			
+			
+			<Anchor>//api/name/asString:defaultValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asString:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)asString:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSString *)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asString:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (id)asObject:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/asObject:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (id)asObject:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asObject:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (id)asObject:(NSString *)expr defaultValue:(id)def</Declaration>
+			
+			
+			<Anchor>//api/name/asObject:defaultValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (id)asObject:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asObject:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asNumber:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/asNumber:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asNumber:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asNumber:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asNumber:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr defaultValue:(NSDecimalNumber *)def</Declaration>
+			
+			
+			<Anchor>//api/name/asNumber:defaultValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asNumber:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSDecimalNumber *)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asNumber:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asBoolean:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/asBoolean:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asBoolean:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asBoolean:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asBoolean:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr defaultValue:(BOOL)def</Declaration>
+			
+			
+			<Anchor>//api/name/asBoolean:defaultValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asBoolean:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(BOOL)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asBoolean:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asArray:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/asArray:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asArray:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asArray:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asArray:inVariableSpace:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr inVariableSpace:(MBVariableSpace *)space error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/asArray:inVariableSpace:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/booleanFromValue:</TokenIdentifier>
+			<Abstract type="html">Exposes the mechanism the expression evaluator engine uses for
+converting arbitrary object values into booleans.</Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)booleanFromValue:(id)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>val</Name>
+					<Abstract type="html">the object being evaluated as a boolean</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the boolean value of &lt;code&gt;val&lt;/code&gt;</Abstract></ReturnValue>
+			<Anchor>//api/name/booleanFromValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/stringFromBoolean:</TokenIdentifier>
+			<Abstract type="html">Exposes the mechanism the expression evaluator engine uses for
+converting boolean values into strings.</Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromBoolean:(BOOL)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>val</Name>
+					<Abstract type="html">the boolean value</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">the string representing the boolean value passed in; will be
+            either &lt;code&gt;kMBMLBooleanStringTrue&lt;/code&gt; or
+            &lt;code&gt;kMBMLBooleanStringFalse&lt;/code&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringFromBoolean:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/numberFromValue:</TokenIdentifier>
+			<Abstract type="html">Exposes the mechanism the expression evaluator engine uses for
+converting arbitrary object values into NSDecimalNumber instances.</Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSDecimalNumber *)numberFromValue:(id)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>val</Name>
+					<Abstract type="html">the object being evaluated as an NSDecimalNumber</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">if &lt;code&gt;val&lt;/code&gt; can be interpreted as a number,
+            the return value is an &lt;code&gt;NSDecimalNumber&lt;/code&gt; 
+            instance representing that number. If the value could
+            not be interpreted as a decimal number, or if the
+            resulting &lt;code&gt;NSDecimalNumber&lt;/code&gt; is equal to
+            &lt;code&gt;[NSNumber notANumber]&lt;/code&gt;, &lt;code&gt;nil&lt;/code&gt;
+            is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/numberFromValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/value:isEqualTo:</TokenIdentifier>
+			<Abstract type="html">Exposes the mechanism the expression evaluator engine uses for
+comparing two objects for equality.</Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)value:(id)lValue isEqualTo:(id)rValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lValue</Name>
+					<Abstract type="html">the left value of the comparison</Abstract>
+				</Parameter><Parameter>
+					<Name>rValue</Name>
+					<Abstract type="html">the right value of the comparison</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;code&gt;[lValue isEqual:rValue];&lt;/code&gt; if &lt;code&gt;lValue&lt;/code&gt;
+and &lt;code&gt;rValue&lt;/code&gt; are of the same types. Otherwise this method
+falls back on
+&lt;code&gt;[MBExpression compareLeftValue:lValue againstRightValue:rValue]
+== NSOrderedSame;&lt;/code&gt;</Abstract></ReturnValue>
+			<Anchor>//api/name/value:isEqualTo:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/compareLeftValue:againstRightValue:</TokenIdentifier>
+			<Abstract type="html">Exposes the mechanism the expression evaluator engine uses for
+comparing two objects.</Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSComparisonResult)compareLeftValue:(id)lValue againstRightValue:(id)rValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lValue</Name>
+					<Abstract type="html">the left value of the comparison</Abstract>
+				</Parameter><Parameter>
+					<Name>rValue</Name>
+					<Abstract type="html">the right value of the comparison</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;code&gt;NSOrderedAscending&lt;/code&gt; if &lt;code&gt;lValue&lt;/code&gt;
+            is considered less than &lt;code&gt;rValue&lt;/code&gt;;
+            &lt;code&gt;NSOrderedDescending&lt;/code&gt; if &lt;code&gt;lValue&lt;/code&gt;
+            is considered greater than &lt;code&gt;rValue&lt;/code&gt;;
+            &lt;code&gt;NSOrderedSame&lt;/code&gt; if &lt;code&gt;lValue&lt;/code&gt;
+            is considered equal to &lt;code&gt;rValue&lt;/code&gt;.</Abstract></ReturnValue>
+			<Anchor>//api/name/compareLeftValue:againstRightValue:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/expression:usingGrammar:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)expression:(NSString *)exprStr usingGrammar:(MBExpressionGrammar *)grammar error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/expression:usingGrammar:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/expression:inVariableSpace:usingGrammar:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)expression:(NSString *)exprStr inVariableSpace:(MBVariableSpace *)space usingGrammar:(MBExpressionGrammar *)grammar error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/expression:inVariableSpace:usingGrammar:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/setExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/expression</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpression/expression</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/setVariableSpace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			
+			
+			<Anchor>//api/name/variableSpace</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/variableSpace</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			
+			
+			<Anchor>//api/name/variableSpace</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpression/variableSpace</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			
+			
+			<Anchor>//api/name/variableSpace</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/setTokens:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *tokens</Declaration>
+			
+			
+			<Anchor>//api/name/tokens</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/tokens</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *tokens</Declaration>
+			
+			
+			<Anchor>//api/name/tokens</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpression/tokens</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *tokens</Declaration>
+			
+			
+			<Anchor>//api/name/tokens</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/setGrammar:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBExpressionGrammar *grammar</Declaration>
+			
+			
+			<Anchor>//api/name/grammar</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpression/grammar</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBExpressionGrammar *grammar</Declaration>
+			
+			
+			<Anchor>//api/name/grammar</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpression/grammar</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBExpressionGrammar *grammar</Declaration>
+			
+			
+			<Anchor>//api/name/grammar</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/objectFromTokens:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (id)objectFromTokens:(NSArray *)tokens error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/objectFromTokens:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/objectFromTokens:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (id)objectFromTokens:(NSArray *)tokens inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/objectFromTokens:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/stringFromTokens:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromTokens:(NSArray *)tokens error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/stringFromTokens:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/stringFromTokens:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromTokens:(NSArray *)tokens inVariableSpace:(MBVariableSpace *)space defaultValue:(NSString *)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/stringFromTokens:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/booleanFromTokens:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)booleanFromTokens:(NSArray *)tokens error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/booleanFromTokens:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/booleanFromTokens:inVariableSpace:defaultValue:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)booleanFromTokens:(NSArray *)tokens inVariableSpace:(MBVariableSpace *)space defaultValue:(BOOL)def error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/booleanFromTokens:inVariableSpace:defaultValue:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/evaluateTokens:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)evaluateTokens:(NSArray *)tokens error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateTokens:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/evaluateTokens:inVariableSpace:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpression.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)evaluateTokens:(NSArray *)tokens inVariableSpace:(MBVariableSpace *)space error:(MBExpressionError **)errPtr</Declaration>
+			
+			
+			<Anchor>//api/name/evaluateTokens:inVariableSpace:error:</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

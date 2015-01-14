@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBVariableSpace.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBVariableSpace</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+            
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/varDictionary</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (NSDictionary *)varDictionary</Declaration>
+			
+			
+			<Anchor>//api/name/varDictionary</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableForName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (id)variableForName:(NSString *)varName</Declaration>
+			
+			
+			<Anchor>//api/name/variableForName:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableForName:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (id)variableForName:(NSString *)varName defaultValue:(id)def</Declaration>
+			
+			
+			<Anchor>//api/name/variableForName:defaultValue:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableAsString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)variableAsString:(NSString *)varName</Declaration>
+			
+			
+			<Anchor>//api/name/variableAsString:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableAsString:defaultValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)variableAsString:(NSString *)varName defaultValue:(NSString *)def</Declaration>
+			
+			
+			<Anchor>//api/name/variableAsString:defaultValue:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setVariable:value:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)setVariable:(NSString *)varName value:(id)val</Declaration>
+			
+			
+			<Anchor>//api/name/setVariable:value:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/pushVariable:value:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)pushVariable:(NSString *)varName value:(id)val</Declaration>
+			
+			
+			<Anchor>//api/name/pushVariable:value:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/popVariable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (id)popVariable:(NSString *)varName</Declaration>
+			
+			
+			<Anchor>//api/name/popVariable:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setMapVariable:mapKey:value:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)setMapVariable:(NSString *)varName mapKey:(NSString *)key value:(id)val</Declaration>
+			
+			
+			<Anchor>//api/name/setMapVariable:mapKey:value:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setListVariable:listIndex:value:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)setListVariable:(NSString *)varName listIndex:(NSUInteger)idx value:(id)val</Declaration>
+			
+			
+			<Anchor>//api/name/setListVariable:listIndex:value:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/unsetVariable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)unsetVariable:(NSString *)varName</Declaration>
+			
+			
+			<Anchor>//api/name/unsetVariable:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBVariableSpace/name:withSuffix:</TokenIdentifier>
+			<Abstract type="html">Constructs a string for an variable-related name with the given suffix.</Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)name:(NSString *)name withSuffix:(NSString *)suffix</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name to use for the root of the returned string. If
+            nil, this method returns nil.</Abstract>
+				</Parameter><Parameter>
+					<Name>suffix</Name>
+					<Abstract type="html">The optional suffix to apply to name. If nil, this
+            method returns name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If name and suffix are both non-nil, the concatenation of
+            name, : and suffix is returned. Otherwise, the value of the
+            name parameter is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/name:withSuffix:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/isReadOnlyVariable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isReadOnlyVariable:(NSString *)varName</Declaration>
+			
+			
+			<Anchor>//api/name/isReadOnlyVariable:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/declareVariable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)declareVariable:(MBVariableDeclaration *)declaration</Declaration>
+			
+			
+			<Anchor>//api/name/declareVariable:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/declarationForVariable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (MBVariableDeclaration *)declarationForVariable:(NSString *)varName</Declaration>
+			
+			
+			<Anchor>//api/name/declarationForVariable:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/declareFunction:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)declareFunction:(MBMLFunction *)function</Declaration>
+			
+			
+			<Anchor>//api/name/declareFunction:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/functionNames</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)functionNames</Declaration>
+			
+			
+			<Anchor>//api/name/functionNames</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/functionWithName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (MBMLFunction *)functionWithName:(NSString *)name</Declaration>
+			
+			
+			<Anchor>//api/name/functionWithName:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/addObserverForUserDefault:target:action:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)addObserverForUserDefault:(NSString *)userDefaultsName target:(id)target action:(SEL)action</Declaration>
+			
+			
+			<Anchor>//api/name/addObserverForUserDefault:target:action:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/removeObserver:forUserDefault:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)removeObserver:(id)observer forUserDefault:(NSString *)userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/removeObserver:forUserDefault:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/objectForKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Allows accessing MBML variable values using the Objective-C keyed subscripting
+notation.</Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>variableName</Name>
+					<Abstract type="html">The name of the MBML variable whose value is to be
+            retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the MBML variable named variableName.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setObject:forKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Allows setting an MBML variable value using the Objective-C keyed subscripting
+notation.</Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The new value for the MBML variable.</Abstract>
+				</Parameter><Parameter>
+					<Name>variableName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setObject:forKeyedSubscript:</Anchor>
+            <NodeRef refid="35"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

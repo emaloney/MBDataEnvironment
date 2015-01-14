@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSNull+NSFastEnumeration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSNull(NSFastEnumeration)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+            
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,2554 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBMLFunction Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBMLFunction Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/inputType">&nbsp;&nbsp;&nbsp;&nbsp;inputType</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;name</option>
+	
+	<option value="//api/name/outputType">&nbsp;&nbsp;&nbsp;&nbsp;outputType</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/validateExpression:containsNumberAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateExpression:containsNumberAtIndex:error:</option>
+	
+	<option value="//api/name/validateExpression:isArrayAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateExpression:isArrayAtIndex:error:</option>
+	
+	<option value="//api/name/validateExpression:isDictionaryAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateExpression:isDictionaryAtIndex:error:</option>
+	
+	<option value="//api/name/validateExpression:isStringAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateExpression:isStringAtIndex:error:</option>
+	
+	<option value="//api/name/validateParameter:containsNumberAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:containsNumberAtIndex:error:</option>
+	
+	<option value="//api/name/validateParameter:countIs:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:countIs:error:</option>
+	
+	<option value="//api/name/validateParameter:countIsAtLeast:andAtMost:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:countIsAtLeast:andAtMost:error:</option>
+	
+	<option value="//api/name/validateParameter:countIsAtLeast:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:countIsAtLeast:error:</option>
+	
+	<option value="//api/name/validateParameter:countIsAtMost:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:countIsAtMost:error:</option>
+	
+	<option value="//api/name/validateParameter:indexIsInRange:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:indexIsInRange:error:</option>
+	
+	<option value="//api/name/validateParameter:isArrayAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:isArrayAtIndex:error:</option>
+	
+	<option value="//api/name/validateParameter:isDictionaryAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:isDictionaryAtIndex:error:</option>
+	
+	<option value="//api/name/validateParameter:isKindOfClass:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:isKindOfClass:error:</option>
+	
+	<option value="//api/name/validateParameter:isOneKindOfClass:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:isOneKindOfClass:error:</option>
+	
+	<option value="//api/name/validateParameter:isStringAtIndex:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:isStringAtIndex:error:</option>
+	
+	<option value="//api/name/validateParameter:objectAtIndex:isKindOfClass:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:objectAtIndex:isKindOfClass:error:</option>
+	
+	<option value="//api/name/validateParameter:objectAtIndex:isOneKindOfClass:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:objectAtIndex:isOneKindOfClass:error:</option>
+	
+	<option value="//api/name/validateParameter:respondsToSelector:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameter:respondsToSelector:error:</option>
+	
+	<option value="//api/name/validateParameterContainsNumber:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameterContainsNumber:error:</option>
+	
+	<option value="//api/name/validateParameterIsArray:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameterIsArray:error:</option>
+	
+	<option value="//api/name/validateParameterIsDictionary:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameterIsDictionary:error:</option>
+	
+	<option value="//api/name/validateParameterIsString:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ validateParameterIsString:error:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/executeWithInput:error:">&nbsp;&nbsp;&nbsp;&nbsp;- executeWithInput:error:</option>
+	
+	<option value="//api/name/functionDescription">&nbsp;&nbsp;&nbsp;&nbsp;- functionDescription</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function parameter validation (high-level)">Function parameter validation (high-level)</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function parameter validation (mid-level)">Function parameter validation (mid-level)</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function execution">Function execution</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Debugging output">Debugging output</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inputType">inputType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/outputType">outputType</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateExpression:containsNumberAtIndex:error:">validateExpression:containsNumberAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateExpression:isArrayAtIndex:error:">validateExpression:isArrayAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateExpression:isDictionaryAtIndex:error:">validateExpression:isDictionaryAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateExpression:isStringAtIndex:error:">validateExpression:isStringAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:containsNumberAtIndex:error:">validateParameter:containsNumberAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:countIs:error:">validateParameter:countIs:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:countIsAtLeast:andAtMost:error:">validateParameter:countIsAtLeast:andAtMost:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:countIsAtLeast:error:">validateParameter:countIsAtLeast:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:countIsAtMost:error:">validateParameter:countIsAtMost:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:indexIsInRange:error:">validateParameter:indexIsInRange:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:isArrayAtIndex:error:">validateParameter:isArrayAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:isDictionaryAtIndex:error:">validateParameter:isDictionaryAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:isKindOfClass:error:">validateParameter:isKindOfClass:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:isOneKindOfClass:error:">validateParameter:isOneKindOfClass:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:isStringAtIndex:error:">validateParameter:isStringAtIndex:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:objectAtIndex:isKindOfClass:error:">validateParameter:objectAtIndex:isKindOfClass:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:objectAtIndex:isOneKindOfClass:error:">validateParameter:objectAtIndex:isOneKindOfClass:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameter:respondsToSelector:error:">validateParameter:respondsToSelector:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameterContainsNumber:error:">validateParameterContainsNumber:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameterIsArray:error:">validateParameterIsArray:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameterIsDictionary:error:">validateParameterIsDictionary:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateParameterIsString:error:">validateParameterIsString:error:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/executeWithInput:error:">executeWithInput:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/functionDescription">functionDescription</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBMLFunction Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBMLFunction Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/MBDataModel.html">MBDataModel</a> : MBFormattedDescriptionObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBMLFunction.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Represents an Objective-C method that is exposed to the Mockingbird environment
+as an MBML function.</p>
+
+<p>Functions allow native Objective-C code to be called from MBML. When an MBML
+expression containing a function call is evaluated, the implementing method
+of the function is executed, and the value returned by the method (if any) is
+passed back to MBML.</p>
+
+<p>Functions may take zero or more input parameters, and they may return an
+optional result.</p>
+
+<p><strong> Calling Functions </strong></p>
+
+<p>In MBML, a function call can be embedded within an MBML expression. Function
+calls start with a caret character (&ldquo;<code>^</code>&rdquo;), followed by the <a href="#//api/name/name">name</a> of the
+function, and end in a list of zero or pipe-separated parameters contained in
+parentheses.</p>
+
+<p>For example, to call a function that creates an array, you could write:</p>
+
+<pre><code>^array(pizza|pasta|sushi|lobster)
+</code></pre>
+
+<p>The function above would return an <code>NSArray</code> instance containing four items:
+the strings &ldquo;pizza&rdquo;, &ldquo;pasta&rdquo;, &ldquo;sushi&rdquo; and &ldquo;lobster&rdquo;.</p>
+
+<p>Because this particular expression returns an object, we can access values in
+the returned object as if it were a regular MBML object reference. To access
+the fourth element in the (zero-based-indexed) array, you would write:</p>
+
+<pre><code>^array(pizza|pasta|sushi|lobster)[3]
+</code></pre>
+
+<p>This expression return the value &ldquo;lobster&rdquo;.</p>
+
+<p><strong> Implementing MBML Functions </strong></p>
+
+<p>MBML functions are implemented as Objective-C class methods. MBML functions
+that accept multiple parameters will receive those values in an array. The
+<code>MBMLFunction</code> class handles the marshalling of parameters to the function
+implementation. Precisely how this is done depends on how the function is
+declared within MBML:</p>
+
+<p><strong> Declaring Functions </strong></p>
+
+<p>A standard set of MBML functions is declared in Mockingbird, and it is included
+by default. You can also add your own function implementations, which must be
+explicitly declared in order to expose them to the MBML environment.</p>
+
+<p>A function declaration looks like:</p>
+
+<pre><code>&lt;Function name="functionName" class="ImplementingClass" method="methodName" input="inputType" output="outputType"/&gt;
+</code></pre>
+
+<p>The <code>&lt;Function&gt;</code> tag accepts the following attributes:</p>
+
+<ul>
+<li><p><code>name</code> - The <a href="#//api/name/name">name</a> of the function as it will be invoked in MBML (eg., a
+function with the <a href="#//api/name/name">name</a> <code>foo</code> and taking no parameters is called from within
+MBML as &ldquo;<code>^foo()</code>&rdquo;.)</p></li>
+<li><p><code>class</code> - Specifies the <a href="#//api/name/name">name</a> of the Objective-C class that implements the
+function.</p></li>
+<li><p><code>method</code> - The implementing method. This attribute is optional if the
+method is the same as the function <a href="#//api/name/name">name</a>. Unlike with Objective-C selectors,
+colons are <em>not</em> considered part of the method and therefore should not be
+included in the declaration.</p></li>
+<li><p><code>input</code> - Specifies the type of input the function expects. The
+<code>MBMLFunction</code> class will marshal input parameters accordingly.</p></li>
+<li><p><code>output</code> - Specifies the type of output returned by the function.</p></li>
+</ul>
+
+
+<p><strong> Function Input </strong></p>
+
+<p>The <code>input</code> attribute of the <code>&lt;Function&gt;</code> declaration in MBML accepts the
+following values:</p>
+
+<ul>
+<li><p><code>none</code> - The function accepts no input parameters. The implementing
+method should take no parameters.</p></li>
+<li><p><code>raw</code> - The function accepts a single uninterpreted string as input. The
+implementing method should take an <code>NSString</code> parameter.</p></li>
+<li><p><code>string</code> - The function accepts as input an MBML expression yielding a
+string. Prior to executing the implementing method, the <code>MBMLFunction</code> will
+evaluate the input parameter as a string expression. The implementing method
+should take an <code>NSString</code> parameter.</p></li>
+<li><p><code>object</code> - The function accepts as input an MBML expression yielding an
+object. Prior to executing the implementing method, the <code>MBMLFunction</code> will
+evaluate the input parameter as an object expression. The implementing method
+should take an <code>NSObject</code> or <code>id</code> parameter.</p></li>
+<li><p><code>math</code> - The function accepts as input an MBML math expression yielding
+a numeric value. Prior to executing the implementing method, the <code>MBMLFunction</code>
+will evaluate the input parameter as a math expression. The implementing method
+should take an <code>NSNumber</code> parameter.</p></li>
+<li><p><code>pipedExpressions</code> - The function accepts zero or more MBML expressions as
+input. Prior to executing the implementing method, the <code>MBMLFunction</code> will
+split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) resulting in an <code>NSArray</code>,
+which is then passed to the implementing method.</p></li>
+<li><p><code>pipedStrings</code> - The function accepts zero or more MBML expressions
+yielding strings as input. Prior to executing the implementing method, the
+<code>MBMLFunction</code> will split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) and then
+evaluate each resulting expression as a string expression. The results are
+placed into an <code>NSArray</code> which is then passed to the implementing method.</p></li>
+<li><p><code>pipedObjects</code> - The function accepts zero or more MBML expressions
+yielding objects as input. Prior to executing the implementing method, the
+<code>MBMLFunction</code> will split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) and then
+evaluate each resulting expression as an object expression. The results are
+placed into an <code>NSArray</code> which is then passed to the implementing method.</p></li>
+<li><p><code>pipedMath</code> - The function accepts zero or more MBML math expressions
+yielding numbers as input. Prior to executing the implementing method, the
+<code>MBMLFunction</code> will split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) and then
+evaluate each resulting expression as a math expression. The results are
+placed into an <code>NSArray</code> which is then passed to the implementing method.</p></li>
+</ul>
+
+
+<p><strong> Function Output </strong></p>
+
+<p>The <code>output</code> attribute of the <code>&lt;Function&gt;</code> declaration in MBML accepts the
+following values:</p>
+
+<ul>
+<li><p><code>none</code> - The function returns no output.</p></li>
+<li><p><code>object</code> - The function returns an arbitrary Objective-C object.</p></li>
+</ul>
+
+
+<p><strong> Parameter Validation </strong></p>
+
+<p><code>MBMLFunction</code> declares a number of parmater validation methods to simplify
+error reporting on behalf of function implementations. When a function
+is passed input it isn&rsquo;t expecting, the validation methods provide a mechanism
+to report descriptive errors in a standardized way.</p>
+
+<p>Here&rsquo;s an example of the validation code for a hypothetical function that
+takes 2 or 3 parameters and expects the second parameter to be an expression
+that evaluates to an <code>NSString</code> instance:</p>
+
+<pre><code>+ (id) hypotheticalFunction:(NSArray*)params
+{
+     MBMLFunctionError* err = nil;
+     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&amp;err];
+     NSString* key = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&amp;err];
+     if (err) return err;
+
+    ... function implementation here...
+}
+</code></pre>
+
+<p>As you can see, MBML functions return <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a> instances when an
+error occurs. The function execution infrastructure handles this automatically
+to report errors to the console to simplify debugging.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/inputType">&nbsp;&nbsp;inputType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/outputType">&nbsp;&nbsp;outputType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Function parameter validation (high-level)" name="task_Function parameter validation (high-level)"></a>
+						<h3 class="subsubtitle task-title">Function parameter validation (high-level)</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:countIs:error:">+&nbsp;validateParameter:countIs:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:countIsAtLeast:error:">+&nbsp;validateParameter:countIsAtLeast:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:countIsAtMost:error:">+&nbsp;validateParameter:countIsAtMost:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:countIsAtLeast:andAtMost:error:">+&nbsp;validateParameter:countIsAtLeast:andAtMost:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:indexIsInRange:error:">+&nbsp;validateParameter:indexIsInRange:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:objectAtIndex:isKindOfClass:error:">+&nbsp;validateParameter:objectAtIndex:isKindOfClass:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:objectAtIndex:isOneKindOfClass:error:">+&nbsp;validateParameter:objectAtIndex:isOneKindOfClass:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:isStringAtIndex:error:">+&nbsp;validateParameter:isStringAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:containsNumberAtIndex:error:">+&nbsp;validateParameter:containsNumberAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:isArrayAtIndex:error:">+&nbsp;validateParameter:isArrayAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:isDictionaryAtIndex:error:">+&nbsp;validateParameter:isDictionaryAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:isKindOfClass:error:">+&nbsp;validateParameter:isKindOfClass:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:isOneKindOfClass:error:">+&nbsp;validateParameter:isOneKindOfClass:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameter:respondsToSelector:error:">+&nbsp;validateParameter:respondsToSelector:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameterIsString:error:">+&nbsp;validateParameterIsString:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameterContainsNumber:error:">+&nbsp;validateParameterContainsNumber:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameterIsArray:error:">+&nbsp;validateParameterIsArray:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateParameterIsDictionary:error:">+&nbsp;validateParameterIsDictionary:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Function parameter validation (mid-level)" name="task_Function parameter validation (mid-level)"></a>
+						<h3 class="subsubtitle task-title">Function parameter validation (mid-level)</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateExpression:isStringAtIndex:error:">+&nbsp;validateExpression:isStringAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateExpression:containsNumberAtIndex:error:">+&nbsp;validateExpression:containsNumberAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateExpression:isArrayAtIndex:error:">+&nbsp;validateExpression:isArrayAtIndex:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateExpression:isDictionaryAtIndex:error:">+&nbsp;validateExpression:isDictionaryAtIndex:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Function execution" name="task_Function execution"></a>
+						<h3 class="subsubtitle task-title">Function execution</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/executeWithInput:error:">&ndash;&nbsp;executeWithInput:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Debugging output" name="task_Debugging output"></a>
+						<h3 class="subsubtitle task-title">Debugging output</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/functionDescription">&ndash;&nbsp;functionDescription</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/inputType" title="inputType"></a>
+	<h3 class="subsubtitle method-title">inputType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the input type of the function. The input type determines the
+format of the parameters (if any) expected by the function.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBMLFunctionInputType inputType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of the function. A function&rsquo;s name determines how it is
+invoked from within MBML. For example, the expression:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code>^functionName(param1|param2)
+</code></pre>
+
+<p>would invoke the function named <code>functionName</code> and pass it two parameters:
+<code>param1</code> and <code>param2</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/outputType" title="outputType"></a>
+	<h3 class="subsubtitle method-title">outputType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the output type of the function. Functions return either an object
+or no output.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBMLFunctionOutputType outputType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/validateExpression:containsNumberAtIndex:error:" title="validateExpression:containsNumberAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateExpression:containsNumberAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates an expression parameter (i.e., a parameter of a function whose
+<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
+expression at the specified array index yields a numeric value when evaluated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateExpression:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the number resulting from evaluating the
+            expression at the specified parameter index is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateExpression:isArrayAtIndex:error:" title="validateExpression:isArrayAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateExpression:isArrayAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates an expression parameter (i.e., a parameter of a function whose
+<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
+expression at the specified array index yields an <code>NSArray</code> when evaluated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateExpression:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the array resulting from evaluating the
+            expression at the specified parameter index is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateExpression:isDictionaryAtIndex:error:" title="validateExpression:isDictionaryAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateExpression:isDictionaryAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates an expression parameter (i.e., a parameter of a function whose
+<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
+expression at the specified array index yields an <code>NSDictionary</code> when
+evaluated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateExpression:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the dictionary resulting from evaluating
+            the expression at the specified parameter index is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateExpression:isStringAtIndex:error:" title="validateExpression:isStringAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateExpression:isStringAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates an expression parameter (i.e., a parameter of a function whose
+<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
+expression at the specified array index yields an <code>NSString</code> when evaluated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)validateExpression:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the string resulting from evaluating the
+            expression at the specified parameter index is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:containsNumberAtIndex:error:" title="validateParameter:containsNumberAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:containsNumberAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that an object at a
+given array index is a number. Validation will fail if the parameter at the
+specified index is not a numeric value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameter:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the number at the given array index is
+            returned. If validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:countIs:error:" title="validateParameter:countIs:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:countIs:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+doesn&rsquo;t contain the exact number of parameters expected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIs:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expectedCnt</em></dt>
+			<dd><p>The exact number of parameters expected by the function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of parameters contained in the array, or <code>0</code> if
+            parameter validation fails.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:countIsAtLeast:andAtMost:error:" title="validateParameter:countIsAtLeast:andAtMost:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:countIsAtLeast:andAtMost:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+contains fewer than or more than the expected number of parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>minCnt</em> andAtMost:(NSUInteger)<em>maxCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minCnt</em></dt>
+			<dd><p>The minimum number of parameters expected by the
+            function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>maxCnt</em></dt>
+			<dd><p>The maximum number of parameters expected by the
+            function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of parameters contained in the array, or <code>0</code> if
+            parameter validation fails.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:countIsAtLeast:error:" title="validateParameter:countIsAtLeast:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:countIsAtLeast:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+contains fewer than the expected number of parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expectedCnt</em></dt>
+			<dd><p>The minimum number of parameters expected by the
+            function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of parameters contained in the array, or <code>0</code> if
+            parameter validation fails.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:countIsAtMost:error:" title="validateParameter:countIsAtMost:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:countIsAtMost:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+contains more than the expected number of parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtMost:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expectedCnt</em></dt>
+			<dd><p>The maximum number of parameters expected by the
+            function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of parameters contained in the array, or <code>0</code> if
+            parameter validation fails.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:indexIsInRange:error:" title="validateParameter:indexIsInRange:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:indexIsInRange:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that a given index is
+within range for the array. Validation will fail if the array index is
+greater than the last index in the array.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> indexIsInRange:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index that&rsquo;s expected to be within range for the
+            parameter array.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of parameters contained in the array, or <code>0</code> if
+            parameter validation fails.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:isArrayAtIndex:error:" title="validateParameter:isArrayAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:isArrayAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that an object at a
+given array index is an array. Validation will fail if the parameter at the
+specified index is not an <code>NSArray</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameter:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the array at the given array index is
+            returned. If validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:isDictionaryAtIndex:error:" title="validateParameter:isDictionaryAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:isDictionaryAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that an object at a
+given array index is a dictionary. Validation will fail if the parameter at the
+specified index is not an <code>NSDictionary</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameter:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the dictionary at the given array index is
+            returned. If validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:isKindOfClass:error:" title="validateParameter:isKindOfClass:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:isKindOfClass:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure that the object is an instance
+of an expected class. Validation will fail if the parameter is not a kind of
+the expected class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(id)<em>param</em> isKindOfClass:(Class)<em>cls</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cls</em></dt>
+			<dd><p>The expected class of the input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter object is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:isOneKindOfClass:error:" title="validateParameter:isOneKindOfClass:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:isOneKindOfClass:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure that the object&rsquo;s class is
+among a list of expected classes. Validation will fail if the is not a kind
+of one of the expected classes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(id)<em>param</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>classes</em></dt>
+			<dd><p>An array of classes against which to validate the parameter.
+            Validation succeeds if the parameter is an instance of one of those
+            classes.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter object is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:isStringAtIndex:error:" title="validateParameter:isStringAtIndex:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:isStringAtIndex:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that an object at a
+given array index is a string. Validation will fail if the parameter at the
+specified index is not an <code>NSString</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameter:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the string at the given array index is
+            returned. If validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:objectAtIndex:isKindOfClass:error:" title="validateParameter:objectAtIndex:isKindOfClass:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:objectAtIndex:isKindOfClass:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that an object at a
+given array index is of an expected class. Validation will fail if the
+parameter at that array index is not a kind of the expected class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isKindOfClass:(Class)<em>cls</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cls</em></dt>
+			<dd><p>The expected class of the parameter at the given array index.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter at the given array index is
+            returned. If validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:objectAtIndex:isOneKindOfClass:error:" title="validateParameter:objectAtIndex:isOneKindOfClass:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:objectAtIndex:isOneKindOfClass:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s parameter list array to ensure that an object at a
+given array index is among a list of expected classes. Validation will fail
+if the parameter at the specified index is not a kind of one of the expected
+classes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>An array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The array index of the parameter being validated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>classes</em></dt>
+			<dd><p>An array of classes against which to validate the parameter
+            at the specified index. Validation succeeds if the parameter is
+            an instance of one of those classes.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter at the given array index is
+            returned. If validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+            the provided array index, and an exception will occur if the index
+            is out-of-range for the parameter array. Therefore, to avoid
+            problems, you should always validate array indexes prior to calling
+            this method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameter:respondsToSelector:error:" title="validateParameter:respondsToSelector:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameter:respondsToSelector:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure that the object responds
+to the provided selector. Validation will fail if the object does not
+respond to that selector.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id&lt;NSObject&gt;)validateParameter:(id&lt;NSObject&gt;)<em>param</em> respondsToSelector:(SEL)<em>selector</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selector</em></dt>
+			<dd><p>The selector to test against the input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter object is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameterContainsNumber:error:" title="validateParameterContainsNumber:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameterContainsNumber:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure it contains a numeric value.
+Validation will fail if the parameter is not a number.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameterContainsNumber:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter number is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameterIsArray:error:" title="validateParameterIsArray:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameterIsArray:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure it is an array.
+Validation will fail if the parameter is not an <code>NSArray</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameterIsArray:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter array is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameterIsDictionary:error:" title="validateParameterIsDictionary:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameterIsDictionary:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure it is a dictionary.
+Validation will fail if the parameter is not an <code>NSDictionary</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameterIsDictionary:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter dictionary is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateParameterIsString:error:" title="validateParameterIsString:error:"></a>
+	<h3 class="subsubtitle method-title">validateParameterIsString:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Validates a function&rsquo;s input parameter to ensure that it is a string.
+Validation will fail if the parameter is not an <code>NSString</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameterIsString:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if parameter validation fails. Note that
+            this must not be a <code>nil</code> value. If a previous validation error
+            occurred and <code>errPtr</code> already contains an error object, further
+            parameter validation will <strong>not</strong> be performed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If validation succeeds, the parameter string is returned. If
+            validation fails, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/executeWithInput:error:" title="executeWithInput:error:"></a>
+	<h3 class="subsubtitle method-title">executeWithInput:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called to execute the function.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)executeWithInput:(id)<em>input</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>input</em></dt>
+			<dd><p>The input parameter(s) for the function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
+            instance will be placed if function execution fails.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function&rsquo;s return value. <code>nil</code> is returned if an error occurred
+            while executing the function.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/functionDescription" title="functionDescription"></a>
+	<h3 class="subsubtitle method-title">functionDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a human-readable description of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)functionDescription</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

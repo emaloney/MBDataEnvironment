@@ -1,0 +1,2068 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBEnvironment Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBEnvironment Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/isLoaded">&nbsp;&nbsp;&nbsp;&nbsp;isLoaded</option>
+	
+	<option value="//api/name/manifestFilePath">&nbsp;&nbsp;&nbsp;&nbsp;manifestFilePath</option>
+	
+	<option value="//api/name/mbmlPathsLoaded">&nbsp;&nbsp;&nbsp;&nbsp;mbmlPathsLoaded</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/addResourceSearchBundle:">&nbsp;&nbsp;&nbsp;&nbsp;+ addResourceSearchBundle:</option>
+	
+	<option value="//api/name/addSupportedLibraryClassPrefix:">&nbsp;&nbsp;&nbsp;&nbsp;+ addSupportedLibraryClassPrefix:</option>
+	
+	<option value="//api/name/enableModuleClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ enableModuleClass:</option>
+	
+	<option value="//api/name/enabledModuleClasses">&nbsp;&nbsp;&nbsp;&nbsp;+ enabledModuleClasses</option>
+	
+	<option value="//api/name/libraryClassForName:">&nbsp;&nbsp;&nbsp;&nbsp;+ libraryClassForName:</option>
+	
+	<option value="//api/name/loadDefaultEnvironment">&nbsp;&nbsp;&nbsp;&nbsp;+ loadDefaultEnvironment</option>
+	
+	<option value="//api/name/loadFromManifest">&nbsp;&nbsp;&nbsp;&nbsp;+ loadFromManifest</option>
+	
+	<option value="//api/name/loadFromManifestFile:withSearchDirectories:">&nbsp;&nbsp;&nbsp;&nbsp;+ loadFromManifestFile:withSearchDirectories:</option>
+	
+	<option value="//api/name/loadFromManifestFile:withSearchDirectory:">&nbsp;&nbsp;&nbsp;&nbsp;+ loadFromManifestFile:withSearchDirectory:</option>
+	
+	<option value="//api/name/loadFromManifestWithSearchDirectories:">&nbsp;&nbsp;&nbsp;&nbsp;+ loadFromManifestWithSearchDirectories:</option>
+	
+	<option value="//api/name/loadFromManifestWithSearchDirectory:">&nbsp;&nbsp;&nbsp;&nbsp;+ loadFromManifestWithSearchDirectory:</option>
+	
+	<option value="//api/name/peekEnvironment">&nbsp;&nbsp;&nbsp;&nbsp;+ peekEnvironment</option>
+	
+	<option value="//api/name/popEnvironment">&nbsp;&nbsp;&nbsp;&nbsp;+ popEnvironment</option>
+	
+	<option value="//api/name/pushEnvironment:">&nbsp;&nbsp;&nbsp;&nbsp;+ pushEnvironment:</option>
+	
+	<option value="//api/name/resourceSearchBundles">&nbsp;&nbsp;&nbsp;&nbsp;+ resourceSearchBundles</option>
+	
+	<option value="//api/name/setEnvironment:">&nbsp;&nbsp;&nbsp;&nbsp;+ setEnvironment:</option>
+	
+	<option value="//api/name/supportedLibraryClassPrefixes">&nbsp;&nbsp;&nbsp;&nbsp;+ supportedLibraryClassPrefixes</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/enabledModuleClasses">&nbsp;&nbsp;&nbsp;&nbsp;- enabledModuleClasses</option>
+	
+	<option value="//api/name/environmentDidActivate">&nbsp;&nbsp;&nbsp;&nbsp;- environmentDidActivate</option>
+	
+	<option value="//api/name/environmentDidDeactivate">&nbsp;&nbsp;&nbsp;&nbsp;- environmentDidDeactivate</option>
+	
+	<option value="//api/name/environmentDidLoad">&nbsp;&nbsp;&nbsp;&nbsp;- environmentDidLoad</option>
+	
+	<option value="//api/name/environmentLoaderOfClass:">&nbsp;&nbsp;&nbsp;&nbsp;- environmentLoaderOfClass:</option>
+	
+	<option value="//api/name/environmentLoaders">&nbsp;&nbsp;&nbsp;&nbsp;- environmentLoaders</option>
+	
+	<option value="//api/name/environmentWillActivate">&nbsp;&nbsp;&nbsp;&nbsp;- environmentWillActivate</option>
+	
+	<option value="//api/name/environmentWillDeactivate">&nbsp;&nbsp;&nbsp;&nbsp;- environmentWillDeactivate</option>
+	
+	<option value="//api/name/environmentWillLoad">&nbsp;&nbsp;&nbsp;&nbsp;- environmentWillLoad</option>
+	
+	<option value="//api/name/loadMBMLFile:">&nbsp;&nbsp;&nbsp;&nbsp;- loadMBMLFile:</option>
+	
+	<option value="//api/name/mbmlFileIsLoaded:">&nbsp;&nbsp;&nbsp;&nbsp;- mbmlFileIsLoaded:</option>
+	
+	<option value="//api/name/mbmlPathIsLoaded:">&nbsp;&nbsp;&nbsp;&nbsp;- mbmlPathIsLoaded:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing the current environment">Managing the current environment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Loading the Mockingbird environment">Loading the Mockingbird environment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_MBML loading">MBML loading</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Controlling where resources are found">Controlling where resources are found</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Determining the load state of the environment">Determining the load state of the environment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Working with external libraries">Working with external libraries</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding functionality through modules">Adding functionality through modules</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing environment loaders">Accessing environment loaders</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Environment state change hooks">Environment state change hooks</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isLoaded">isLoaded</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/manifestFilePath">manifestFilePath</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mbmlPathsLoaded">mbmlPathsLoaded</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addResourceSearchBundle:">addResourceSearchBundle:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addSupportedLibraryClassPrefix:">addSupportedLibraryClassPrefix:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableModuleClass:">enableModuleClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enabledModuleClasses">enabledModuleClasses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libraryClassForName:">libraryClassForName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadDefaultEnvironment">loadDefaultEnvironment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFromManifest">loadFromManifest</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFromManifestFile:withSearchDirectories:">loadFromManifestFile:withSearchDirectories:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFromManifestFile:withSearchDirectory:">loadFromManifestFile:withSearchDirectory:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFromManifestWithSearchDirectories:">loadFromManifestWithSearchDirectories:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadFromManifestWithSearchDirectory:">loadFromManifestWithSearchDirectory:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/peekEnvironment">peekEnvironment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/popEnvironment">popEnvironment</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pushEnvironment:">pushEnvironment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resourceSearchBundles">resourceSearchBundles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setEnvironment:">setEnvironment:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedLibraryClassPrefixes">supportedLibraryClassPrefixes</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enabledModuleClasses">enabledModuleClasses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentDidActivate">environmentDidActivate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentDidDeactivate">environmentDidDeactivate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentDidLoad">environmentDidLoad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentLoaderOfClass:">environmentLoaderOfClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentLoaders">environmentLoaders</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentWillActivate">environmentWillActivate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentWillDeactivate">environmentWillDeactivate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/environmentWillLoad">environmentWillLoad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadMBMLFile:">loadMBMLFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mbmlFileIsLoaded:">mbmlFileIsLoaded:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mbmlPathIsLoaded:">mbmlPathIsLoaded:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBEnvironment Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBEnvironment Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/MBDataModel.html">MBDataModel</a> : MBFormattedDescriptionObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">MBInstanceVendor</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBEnvironment.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Managing the current environment" name="task_Managing the current environment"></a>
+						<h3 class="subsubtitle task-title">Managing the current environment</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setEnvironment:">+&nbsp;setEnvironment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pushEnvironment:">+&nbsp;pushEnvironment:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/popEnvironment">+&nbsp;popEnvironment</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/peekEnvironment">+&nbsp;peekEnvironment</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Loading the Mockingbird environment" name="task_Loading the Mockingbird environment"></a>
+						<h3 class="subsubtitle task-title">Loading the Mockingbird environment</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadDefaultEnvironment">+&nbsp;loadDefaultEnvironment</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFromManifest">+&nbsp;loadFromManifest</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFromManifestWithSearchDirectory:">+&nbsp;loadFromManifestWithSearchDirectory:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFromManifestFile:withSearchDirectory:">+&nbsp;loadFromManifestFile:withSearchDirectory:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFromManifestWithSearchDirectories:">+&nbsp;loadFromManifestWithSearchDirectories:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadFromManifestFile:withSearchDirectories:">+&nbsp;loadFromManifestFile:withSearchDirectories:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="MBML loading" name="task_MBML loading"></a>
+						<h3 class="subsubtitle task-title">MBML loading</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/loadMBMLFile:">&ndash;&nbsp;loadMBMLFile:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Controlling where resources are found" name="task_Controlling where resources are found"></a>
+						<h3 class="subsubtitle task-title">Controlling where resources are found</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addResourceSearchBundle:">+&nbsp;addResourceSearchBundle:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resourceSearchBundles">+&nbsp;resourceSearchBundles</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Determining the load state of the environment" name="task_Determining the load state of the environment"></a>
+						<h3 class="subsubtitle task-title">Determining the load state of the environment</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isLoaded">&nbsp;&nbsp;isLoaded</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/manifestFilePath">&nbsp;&nbsp;manifestFilePath</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mbmlPathsLoaded">&nbsp;&nbsp;mbmlPathsLoaded</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mbmlFileIsLoaded:">&ndash;&nbsp;mbmlFileIsLoaded:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mbmlPathIsLoaded:">&ndash;&nbsp;mbmlPathIsLoaded:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Working with external libraries" name="task_Working with external libraries"></a>
+						<h3 class="subsubtitle task-title">Working with external libraries</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addSupportedLibraryClassPrefix:">+&nbsp;addSupportedLibraryClassPrefix:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedLibraryClassPrefixes">+&nbsp;supportedLibraryClassPrefixes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/libraryClassForName:">+&nbsp;libraryClassForName:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Adding functionality through modules" name="task_Adding functionality through modules"></a>
+						<h3 class="subsubtitle task-title">Adding functionality through modules</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableModuleClass:">+&nbsp;enableModuleClass:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enabledModuleClasses">+&nbsp;enabledModuleClasses</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enabledModuleClasses">&ndash;&nbsp;enabledModuleClasses</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessing environment loaders" name="task_Accessing environment loaders"></a>
+						<h3 class="subsubtitle task-title">Accessing environment loaders</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentLoaders">&ndash;&nbsp;environmentLoaders</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentLoaderOfClass:">&ndash;&nbsp;environmentLoaderOfClass:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Environment state change hooks" name="task_Environment state change hooks"></a>
+						<h3 class="subsubtitle task-title">Environment state change hooks</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentWillLoad">&ndash;&nbsp;environmentWillLoad</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentDidLoad">&ndash;&nbsp;environmentDidLoad</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentWillActivate">&ndash;&nbsp;environmentWillActivate</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentDidActivate">&ndash;&nbsp;environmentDidActivate</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentWillDeactivate">&ndash;&nbsp;environmentWillDeactivate</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/environmentDidDeactivate">&ndash;&nbsp;environmentDidDeactivate</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/isLoaded" title="isLoaded"></a>
+	<h3 class="subsubtitle method-title">isLoaded</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL isLoaded</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/manifestFilePath" title="manifestFilePath"></a>
+	<h3 class="subsubtitle method-title">manifestFilePath</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *manifestFilePath</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mbmlPathsLoaded" title="mbmlPathsLoaded"></a>
+	<h3 class="subsubtitle method-title">mbmlPathsLoaded</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addResourceSearchBundle:" title="addResourceSearchBundle:"></a>
+	<h3 class="subsubtitle method-title">addResourceSearchBundle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds the specified bundle as one that will be consulted whenever an
+environment attempts to find a resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)addResourceSearchBundle:(NSBundle *)<em>bundle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bundle</em></dt>
+			<dd><p>An <code>NSBundle</code> instance that should be searched when
+            attempting to find resources.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addSupportedLibraryClassPrefix:" title="addSupportedLibraryClassPrefix:"></a>
+	<h3 class="subsubtitle method-title">addSupportedLibraryClassPrefix:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Allows the loading of environment classes from libraries whose class names
+begin with the specified prefix.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)addSupportedLibraryClassPrefix:(NSString *)<em>prefix</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>prefix</em></dt>
+			<dd><p>The class prefix Mockingbird should support for dynamic
+            class loading.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableModuleClass:" title="enableModuleClass:"></a>
+	<h3 class="subsubtitle method-title">enableModuleClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enables the <code>MBModule</code> represented by the specified class. When new
+<code>MBEnvironment</code> instances are created, they will gain support for the
+features added by the module implementation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)enableModuleClass:(Class)<em>cls</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cls</em></dt>
+			<dd><p>The implementing class of the <code>MBModule</code> to enable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if <code>cls</code> represents an <code>MBModule</code> that is now enabled. Will
+            be <code>NO</code> if <code>cls</code> does not conform to <code>MBModule</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enabledModuleClasses" title="enabledModuleClasses"></a>
+	<h3 class="subsubtitle method-title">enabledModuleClasses</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array containing the <code>MBModule</code> classes that will be enabled for all
+newly-created environments. Note when a given environment instance is loaded,
+additional modules not included in this array may be enabled through the
+manifest file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)enabledModuleClasses</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The currently-enabled modules. Will always contain at least one
+            item, because <a href="../Classes/MBDataEnvironmentModule.html"><code>MBDataEnvironmentModule</code></a> is always enabled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/libraryClassForName:" title="libraryClassForName:"></a>
+	<h3 class="subsubtitle method-title">libraryClassForName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Uses the <code>supportedClassPrefixes</code> to find an available <code>Class</code> that implements
+the class with the specified name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Class)libraryClassForName:(NSString *)<em>className</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>className</em></dt>
+			<dd><p>The class name for which a <code>Class</code> is sought.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>Class</code> for <code>className</code>, if a class exists among the supported
+            class prefixes, or without any prefix. Returns <code>nil</code> if no class
+            could be found.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadDefaultEnvironment" title="loadDefaultEnvironment"></a>
+	<h3 class="subsubtitle method-title">loadDefaultEnvironment</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads a new default environment, bypassing any <code>manifest.xml</code> file that might
+exist in the application&rsquo;s resources. The default environment is the
+environment that exists before any manifest file is processed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)loadDefaultEnvironment</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+            if the environment could not be loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFromManifest" title="loadFromManifest"></a>
+	<h3 class="subsubtitle method-title">loadFromManifest</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads a new environment by processing the <code>manifest.xml</code> file found in the
+application&rsquo;s resources.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifest</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+            if the environment could not be loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFromManifestFile:withSearchDirectories:" title="loadFromManifestFile:withSearchDirectories:"></a>
+	<h3 class="subsubtitle method-title">loadFromManifestFile:withSearchDirectories:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads a new environment by processing the manifest file with the given name
+found in the specified search directories or in the application&rsquo;s resources.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestFile:(NSString *)<em>manifestName</em> withSearchDirectories:(NSArray *)<em>dirPaths</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manifestName</em></dt>
+			<dd><p>The name of the manifest file.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dirPaths</em></dt>
+			<dd><p>An array containing the paths of directories that will be
+            searched when trying to locate the manifest and other MBML files.
+            These directories be searched first (and in the order specified by
+            <code>dirPaths</code>)  when MBML files are referenced. If a given file can&rsquo;t
+            be found in the any of the directories specified by <code>dirPaths</code>,
+            the <a href="#//api/name/resourceSearchBundles"><code>resourceSearchBundles</code></a> will then be searched.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+            if the environment could not be loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFromManifestFile:withSearchDirectory:" title="loadFromManifestFile:withSearchDirectory:"></a>
+	<h3 class="subsubtitle method-title">loadFromManifestFile:withSearchDirectory:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads a new environment by processing the manifest file with the given name
+found in the specified search directory or in the application&rsquo;s resources.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestFile:(NSString *)<em>manifestName</em> withSearchDirectory:(NSString *)<em>dirPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manifestName</em></dt>
+			<dd><p>The name of the manifest file.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dirPath</em></dt>
+			<dd><p>The path of a directory that will be searched when
+            trying to locate the manifest and other MBML files. This directory
+            will be the first one searched when MBML files are referenced. If
+            a given file doesn&rsquo;t exist in <code>dirPath</code>, the <a href="#//api/name/resourceSearchBundles"><code>resourceSearchBundles</code></a>
+            will then be searched.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+            if the environment could not be loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFromManifestWithSearchDirectories:" title="loadFromManifestWithSearchDirectories:"></a>
+	<h3 class="subsubtitle method-title">loadFromManifestWithSearchDirectories:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads a new environment by processing the <code>manifest.xml</code> file found in the
+specified search directories or in the application&rsquo;s resources.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestWithSearchDirectories:(NSArray *)<em>dirPaths</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dirPaths</em></dt>
+			<dd><p>An array containing the paths of directories that will be
+            searched when trying to locate the manifest and other MBML files.
+            These directories be searched first (and in the order specified by
+            <code>dirPaths</code>)  when MBML files are referenced. If a given file can&rsquo;t
+            be found in the any of the directories specified by <code>dirPaths</code>,
+            the <a href="#//api/name/resourceSearchBundles"><code>resourceSearchBundles</code></a> will then be searched.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+            if the environment could not be loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadFromManifestWithSearchDirectory:" title="loadFromManifestWithSearchDirectory:"></a>
+	<h3 class="subsubtitle method-title">loadFromManifestWithSearchDirectory:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Loads a new environment by processing the <code>manifest.xml</code> file found in the
+specified search directory or in the application&rsquo;s resources.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestWithSearchDirectory:(NSString *)<em>dirPath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dirPath</em></dt>
+			<dd><p>The path of a directory that will be searched when
+            trying to locate the manifest and other MBML files. This directory
+            will be the first one searched when MBML files are referenced. If
+            a given file doesn&rsquo;t exist in <code>dirPath</code>, the <a href="#//api/name/resourceSearchBundles"><code>resourceSearchBundles</code></a>
+            will then be searched.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+            if the environment could not be loaded.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/peekEnvironment" title="peekEnvironment"></a>
+	<h3 class="subsubtitle method-title">peekEnvironment</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns (but does not remove) the <code>MBEnvironment</code> instance at the top of the
+environment stack. This is the environment that would become active if
+<a href="#//api/name/popEnvironment"><code>popEnvironment</code></a> were called.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)peekEnvironment</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The environment at the top of the environment stack, or <code>nil</code> if
+            there is nothing in the stack.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/popEnvironment" title="popEnvironment"></a>
+	<h3 class="subsubtitle method-title">popEnvironment</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the active <code>MBEnvironment</code> instance by popping it from the environment
+stack.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)popEnvironment</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The newly-active environment.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>An <code>NSException</code> will be raised if the environment stack is empty.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pushEnvironment:" title="pushEnvironment:"></a>
+	<h3 class="subsubtitle method-title">pushEnvironment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the active <code>MBEnvironment</code> instance by pushing a new environment
+onto the environment stack.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)pushEnvironment:(MBEnvironment *)<em>env</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>env</em></dt>
+			<dd><p>the <code>MBEnvironment</code> to set as the active environment.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resourceSearchBundles" title="resourceSearchBundles"></a>
+	<h3 class="subsubtitle method-title">resourceSearchBundles</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <code>NSBundle</code> instances that will be consulted whenever an
+environment attempts to find a resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)resourceSearchBundles</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of <code>NSBundle</code>s. Will never be <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setEnvironment:" title="setEnvironment:"></a>
+	<h3 class="subsubtitle method-title">setEnvironment:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the active <code>MBEnvironment</code> instance. The active environment supplies
+the <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance used to evaluate expressions by default.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)setEnvironment:(MBEnvironment *)<em>env</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>env</em></dt>
+			<dd><p>the <code>MBEnvironment</code> to set as the active environment.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The previously-active <code>MBEnvironment</code> instance, if any.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedLibraryClassPrefixes" title="supportedLibraryClassPrefixes"></a>
+	<h3 class="subsubtitle method-title">supportedLibraryClassPrefixes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array containing the class prefixes that will be searched
+when attempting to load environment classes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)supportedLibraryClassPrefixes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array of strings containing the supported class prefix.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/enabledModuleClasses" title="enabledModuleClasses"></a>
+	<h3 class="subsubtitle method-title">enabledModuleClasses</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of <code>Class</code>es representing the <code>MBModule</code>s enabled in the
+receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)enabledModuleClasses</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The modules enabled in the receiving environment. Will always
+            contain at least one item, because <a href="../Classes/MBDataEnvironmentModule.html"><code>MBDataEnvironmentModule</code></a> is
+            always enabled. Additional modules may also be enabled through the
+            manifest file.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentDidActivate" title="environmentDidActivate"></a>
+	<h3 class="subsubtitle method-title">environmentDidActivate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the receiving <code>MBEnvironment</code> has become the active
+environment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)environmentDidActivate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Notifies the environment loaders known to the receiver by calling the
+<code>environmentDidActivate:</code> method of each and passing the parameter <code>self</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentDidDeactivate" title="environmentDidDeactivate"></a>
+	<h3 class="subsubtitle method-title">environmentDidDeactivate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the receiving <code>MBEnvironment</code> has been deactivated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)environmentDidDeactivate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Notifies the environment loaders known to the receiver by calling the
+<code>environmentDidDeactivate:</code> method of each and passing the parameter <code>self</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentDidLoad" title="environmentDidLoad"></a>
+	<h3 class="subsubtitle method-title">environmentDidLoad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the receiving <code>MBEnvironment</code> has been loaded.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)environmentDidLoad</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Notifies the environment loaders known to the receiver by calling the
+<code>environmentDidLoad:</code> method of each and passing the parameter <code>self</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentLoaderOfClass:" title="environmentLoaderOfClass:"></a>
+	<h3 class="subsubtitle method-title">environmentLoaderOfClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the first <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> instance known to the receiver that
+is an instance of the given class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MBEnvironmentLoader *)environmentLoaderOfClass:(Class)<em>cls</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cls</em></dt>
+			<dd><p>The class for which an implementing <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a>
+            instance is sought.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The first <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> representing an instance of <code>cls</code>.
+            Will be <code>nil</code> if no such environment loader was found.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentLoaders" title="environmentLoaders"></a>
+	<h3 class="subsubtitle method-title">environmentLoaders</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> instances representing the
+environment loaders consulted when the receiving environment is loaded.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)environmentLoaders</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The environment loaders used by the receiver. Will never be <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentWillActivate" title="environmentWillActivate"></a>
+	<h3 class="subsubtitle method-title">environmentWillActivate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the receiving <code>MBEnvironment</code> is about to become the active
+environment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)environmentWillActivate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Notifies the environment loaders known to the receiver by calling the
+<code>environmentWillActivate:</code> method of each and passing the parameter <code>self</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentWillDeactivate" title="environmentWillDeactivate"></a>
+	<h3 class="subsubtitle method-title">environmentWillDeactivate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the receiving <code>MBEnvironment</code> is about to be deactivated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)environmentWillDeactivate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Notifies the environment loaders known to the receiver by calling the
+<code>environmentWillActivate:</code> method of each and passing the parameter <code>self</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/environmentWillLoad" title="environmentWillLoad"></a>
+	<h3 class="subsubtitle method-title">environmentWillLoad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the receiving <code>MBEnvironment</code> is about to be loaded.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)environmentWillLoad</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Notifies the environment loaders known to the receiver by calling the
+<code>environmentWillLoad:</code> method of each and passing the parameter <code>self</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/loadMBMLFile:" title="loadMBMLFile:"></a>
+	<h3 class="subsubtitle method-title">loadMBMLFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to load the specified MBML file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)loadMBMLFile:(NSString *)<em>fileName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileName</em></dt>
+			<dd><p>The name of the MBML file to load. Note that this is not
+            a path name. MBML file loading follows a specific search order
+            that allows files to reference each other by name without
+            knowing precisely where they&rsquo;re located.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> on a successful load of the environment; NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mbmlFileIsLoaded:" title="mbmlFileIsLoaded:"></a>
+	<h3 class="subsubtitle method-title">mbmlFileIsLoaded:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mbmlFileIsLoaded:(NSString *)<em>fileName</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mbmlPathIsLoaded:" title="mbmlPathIsLoaded:"></a>
+	<h3 class="subsubtitle method-title">mbmlPathIsLoaded:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mbmlPathIsLoaded:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

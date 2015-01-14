@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBDevice.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBDevice</TokenIdentifier>
+			<Abstract type="html">You must not create instances of this class yourself; this class
+            is a singleton. Call the instance class method (declared by the
+            MBSingleton protocol) to acquire the singleton instance.</Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/isSimulator</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSimulator</Declaration>
+			
+			
+			<Anchor>//api/name/isSimulator</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/isIPhone</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isIPhone</Declaration>
+			
+			
+			<Anchor>//api/name/isIPhone</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/isIPad</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isIPad</Declaration>
+			
+			
+			<Anchor>//api/name/isIPad</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)osType</Declaration>
+			
+			
+			<Anchor>//api/name/osType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersion</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)osVersion</Declaration>
+			
+			
+			<Anchor>//api/name/osVersion</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionComponents</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)osVersionComponents</Declaration>
+			
+			
+			<Anchor>//api/name/osVersionComponents</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionMajor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)osVersionMajor</Declaration>
+			
+			
+			<Anchor>//api/name/osVersionMajor</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionMinor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)osVersionMinor</Declaration>
+			
+			
+			<Anchor>//api/name/osVersionMinor</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionRevision</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)osVersionRevision</Declaration>
+			
+			
+			<Anchor>//api/name/osVersionRevision</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/currentOrientation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)currentOrientation</Declaration>
+			
+			
+			<Anchor>//api/name/currentOrientation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/isLandscape</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isLandscape</Declaration>
+			
+			
+			<Anchor>//api/name/isLandscape</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/isPortrait</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isPortrait</Declaration>
+			
+			
+			<Anchor>//api/name/isPortrait</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenScale</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)screenScale</Declaration>
+			
+			
+			<Anchor>//api/name/screenScale</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/isRetina</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isRetina</Declaration>
+			
+			
+			<Anchor>//api/name/isRetina</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)screenWidth</Declaration>
+			
+			
+			<Anchor>//api/name/screenWidth</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)screenHeight</Declaration>
+			
+			
+			<Anchor>//api/name/screenHeight</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenSize</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)screenSize</Declaration>
+			
+			
+			<Anchor>//api/name/screenSize</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenSizePortrait</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)screenSizePortrait</Declaration>
+			
+			
+			<Anchor>//api/name/screenSizePortrait</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenSizeLandscape</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)screenSizeLandscape</Declaration>
+			
+			
+			<Anchor>//api/name/screenSizeLandscape</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/contentFrame</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)contentFrame</Declaration>
+			
+			
+			<Anchor>//api/name/contentFrame</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/contentWidth</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)contentWidth</Declaration>
+			
+			
+			<Anchor>//api/name/contentWidth</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/contentHeight</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)contentHeight</Declaration>
+			
+			
+			<Anchor>//api/name/contentHeight</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/contentSize</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)contentSize</Declaration>
+			
+			
+			<Anchor>//api/name/contentSize</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/contentSizePortrait</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)contentSizePortrait</Declaration>
+			
+			
+			<Anchor>//api/name/contentSizePortrait</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/contentSizeLandscape</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)contentSizeLandscape</Declaration>
+			
+			
+			<Anchor>//api/name/contentSizeLandscape</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/appIsInBackground</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBDevice.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)appIsInBackground</Declaration>
+			
+			
+			<Anchor>//api/name/appIsInBackground</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,842 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBMLRuntimeFunctions Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBMLRuntimeFunctions Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/classExists:">&nbsp;&nbsp;&nbsp;&nbsp;+ classExists:</option>
+	
+	<option value="//api/name/classRespondsToSelector:">&nbsp;&nbsp;&nbsp;&nbsp;+ classRespondsToSelector:</option>
+	
+	<option value="//api/name/getClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ getClass:</option>
+	
+	<option value="//api/name/inheritanceHierarchyForClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ inheritanceHierarchyForClass:</option>
+	
+	<option value="//api/name/objectRespondsToSelector:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectRespondsToSelector:</option>
+	
+	<option value="//api/name/resolveClass:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ resolveClass:error:</option>
+	
+	<option value="//api/name/singleton:">&nbsp;&nbsp;&nbsp;&nbsp;+ singleton:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Helper for ensuring we&apos;ve got Class">Helper for ensuring we&apos;ve got Class</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_MBML functions">MBML functions</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/classExists:">classExists:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/classRespondsToSelector:">classRespondsToSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getClass:">getClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/inheritanceHierarchyForClass:">inheritanceHierarchyForClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectRespondsToSelector:">objectRespondsToSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resolveClass:error:">resolveClass:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/singleton:">singleton:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBMLRuntimeFunctions Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBMLRuntimeFunctions Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBMLRuntimeFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A class containing a set of MBML functions and supporting methods that provide
+access to Objective-C runtime information.</p>
+
+<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Helper for ensuring we&apos;ve got Class" name="task_Helper for ensuring we&apos;ve got Class"></a>
+						<h3 class="subsubtitle task-title">Helper for ensuring we&apos;ve got Class</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resolveClass:error:">+&nbsp;resolveClass:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="MBML functions" name="task_MBML functions"></a>
+						<h3 class="subsubtitle task-title">MBML functions</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/classExists:">+&nbsp;classExists:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getClass:">+&nbsp;getClass:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/singleton:">+&nbsp;singleton:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/inheritanceHierarchyForClass:">+&nbsp;inheritanceHierarchyForClass:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectRespondsToSelector:">+&nbsp;objectRespondsToSelector:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/classRespondsToSelector:">+&nbsp;classRespondsToSelector:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/classExists:" title="classExists:"></a>
+	<h3 class="subsubtitle method-title">classExists:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that determines whether a given class exists
+in the Objective-C runtime.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)classExists:(NSString *)<em>className</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>className</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If there is a class with the given name, an <code>NSNumber</code> containing
+            the boolean value <code>YES</code> is returned. Otherwise, the returned
+            <code>NSNumber</code> will contain the value <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single MBML expression that will be evaluated as a
+string.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<pre><code>^classExists(NSString)
+</code></pre>
+
+<p>The expression above would return <code>YES</code>, because the class
+<code>NSString</code> is part of the iOS SDK.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/classRespondsToSelector:" title="classRespondsToSelector:"></a>
+	<h3 class="subsubtitle method-title">classRespondsToSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that determines whether a given class responds
+to a specific Objective-C message selector.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)classRespondsToSelector:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If the Objective-C class referenced in the <em>class</em> expression
+            responds to the selector specified in the <em>selector</em> expression,
+            the return value will be an <code>NSNumber</code> containing the boolean value
+            <code>YES</code>. Otherwise, an <code>NSNumber</code> containing the value <code>NO</code> will
+            be returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function expects two pipe-separated expressions as parameters:</p>
+
+<ul>
+<li><p>the <em>class</em> expression, which should yield a <code>Class</code> object or an <code>NSString</code>
+containing the name of an Objective-C class, and</p></li>
+<li><p>the <em>selector</em> expression, which should yield a string containing the
+name of the selector</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<pre><code>^classRespondsToSelector(NSString|availableStringEncodings)
+</code></pre>
+
+<p>The expression above evaluates to true because the <code>NSString</code> class responds
+to the <code>availableStringEncodings</code> message.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getClass:" title="getClass:"></a>
+	<h3 class="subsubtitle method-title">getClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns the <code>Class</code> object for the given
+class name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)getClass:(NSString *)<em>className</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>className</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If there is a class with the given name, the corresponding
+            <code>Class</code> object is returned. Otherwise, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single MBML expression that will be evaluated as a
+string.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<pre><code>^class(NSString)
+</code></pre>
+
+<p>The expression above would return the <code>Class</code> object representing the
+<code>NSString</code> class.</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as <code>^class()</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/inheritanceHierarchyForClass:" title="inheritanceHierarchyForClass:"></a>
+	<h3 class="subsubtitle method-title">inheritanceHierarchyForClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns the inheritance hierarchy of
+a given class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)inheritanceHierarchyForClass:(id)<em>forCls</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>forCls</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array containing the Objective-C class hierarchy for the
+            specified class. If no such class was found, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single MBML expression that will be evaluated as an
+object. The expression is expected to yield a <code>Class</code> object or an <code>NSString</code>
+containing the name of an Objective-C class. If the specified class responds
+to the selector <code>instance</code>, this function returns that instance.</p>
+
+<p>The first item in the returned array will contain a <code>Class</code> object for the
+passed-in parameter, while each subsequent item will the <code>Class</code> for the
+superclass of the preceding class. The last item in the returned array
+will contain the root class of the hierarchy (which is usually <code>NSObject</code>).</p>
+
+<p><strong>MBML Example</strong></p>
+
+<pre><code>^inheritanceHierarchyForClass(NSMutableString)
+</code></pre>
+
+<p>The expression above would return an array containing three objects: the
+<code>Class</code> object for the <code>NSMutableString</code> class, the <code>Class</code> object for
+<code>NSString</code>, and finally the <code>Class</code> for <code>NSObject</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectRespondsToSelector:" title="objectRespondsToSelector:"></a>
+	<h3 class="subsubtitle method-title">objectRespondsToSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that determines whether a given object
+instance responds to a specific Objective-C message selector.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)objectRespondsToSelector:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If object instance referenced in the <em>object</em> expression
+            responds to the selector specified in the <em>selector</em> expression,
+            the return value will be an <code>NSNumber</code> containing the boolean value
+            <code>YES</code>. Otherwise, an <code>NSNumber</code> containing the value <code>NO</code> will
+            be returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function expects two pipe-separated expressions as parameters:</p>
+
+<ul>
+<li><p>the <em>object</em> expression, which should yield an <code>NSObject</code> instance, and</p></li>
+<li><p>the <em>selector</em> expression, which should yield a string containing the
+name of the selector</p></li>
+</ul>
+
+
+<p><strong>MBML Example</strong></p>
+
+<pre><code>^objectRespondsToSelector($myName|isEqualToString:)
+</code></pre>
+
+<p>The expression above would evaluate to true if the expression <code>$myName</code>
+yields an <code>NSString</code> instance (or an instance of any other class that
+responds to the <code>isEqualToString:</code> message).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resolveClass:error:" title="resolveClass:error:"></a>
+	<h3 class="subsubtitle method-title">resolveClass:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Given a Class or a string containing the name of an Objective-C class, this
+method returns a Class object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (Class)resolveClass:(id)<em>resolveCls</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resolveCls</em></dt>
+			<dd><p>A <code>Class</code> object or an <code>NSString</code> instance containing
+            the name of a class.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>If non-<code>nil</code> and an error occurs, this pointer will be
+            set to an <code>NSError</code> instance indicating the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A <code>Class</code> object representing the specified class, or <code>nil</code> if
+            the specified class was not recognized by the Objective-C runtime.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/singleton:" title="singleton:"></a>
+	<h3 class="subsubtitle method-title">singleton:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>An MBML function implementation that returns the singleton instance of a
+given class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)singleton:(id)<em>forCls</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>forCls</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>If there is a class with the given name, the corresponding
+            <code>Class</code> object is returned. Otherwise, <code>nil</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single MBML expression that will be evaluated as an
+object. The expression is expected to yield a <code>Class</code> object or an <code>NSString</code>
+containing the name of an Objective-C class. If the specified class responds
+to the selector <code>instance</code>, this function returns that instance.</p>
+
+<p><strong>MBML Example</strong></p>
+
+<pre><code>^singleton(MBServiceManager)
+</code></pre>
+
+<p>The expression above would return the singleton instance of the
+<code>MBServiceManager</code> class.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRuntimeFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

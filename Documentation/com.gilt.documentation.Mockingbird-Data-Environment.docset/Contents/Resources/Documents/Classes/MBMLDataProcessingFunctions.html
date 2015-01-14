@@ -1,0 +1,2266 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBMLDataProcessingFunctions Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBMLDataProcessingFunctions Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/appendArrays:">&nbsp;&nbsp;&nbsp;&nbsp;+ appendArrays:</option>
+	
+	<option value="//api/name/collectionPassesTest:">&nbsp;&nbsp;&nbsp;&nbsp;+ collectionPassesTest:</option>
+	
+	<option value="//api/name/containsValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ containsValue:</option>
+	
+	<option value="//api/name/distributeArrayElements:">&nbsp;&nbsp;&nbsp;&nbsp;+ distributeArrayElements:</option>
+	
+	<option value="//api/name/filter:">&nbsp;&nbsp;&nbsp;&nbsp;+ filter:</option>
+	
+	<option value="//api/name/flattenArrays:">&nbsp;&nbsp;&nbsp;&nbsp;+ flattenArrays:</option>
+	
+	<option value="//api/name/groupArrayElements:">&nbsp;&nbsp;&nbsp;&nbsp;+ groupArrayElements:</option>
+	
+	<option value="//api/name/join:">&nbsp;&nbsp;&nbsp;&nbsp;+ join:</option>
+	
+	<option value="//api/name/list:">&nbsp;&nbsp;&nbsp;&nbsp;+ list:</option>
+	
+	<option value="//api/name/map:">&nbsp;&nbsp;&nbsp;&nbsp;+ map:</option>
+	
+	<option value="//api/name/mapToArray:">&nbsp;&nbsp;&nbsp;&nbsp;+ mapToArray:</option>
+	
+	<option value="//api/name/mapToSingleValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ mapToSingleValue:</option>
+	
+	<option value="//api/name/merge:">&nbsp;&nbsp;&nbsp;&nbsp;+ merge:</option>
+	
+	<option value="//api/name/pruneMatchingLeaves:">&nbsp;&nbsp;&nbsp;&nbsp;+ pruneMatchingLeaves:</option>
+	
+	<option value="//api/name/pruneNonmatchingLeaves:">&nbsp;&nbsp;&nbsp;&nbsp;+ pruneNonmatchingLeaves:</option>
+	
+	<option value="//api/name/reduce:">&nbsp;&nbsp;&nbsp;&nbsp;+ reduce:</option>
+	
+	<option value="//api/name/sort:">&nbsp;&nbsp;&nbsp;&nbsp;+ sort:</option>
+	
+	<option value="//api/name/split:">&nbsp;&nbsp;&nbsp;&nbsp;+ split:</option>
+	
+	<option value="//api/name/splitLines:">&nbsp;&nbsp;&nbsp;&nbsp;+ splitLines:</option>
+	
+	<option value="//api/name/unique:">&nbsp;&nbsp;&nbsp;&nbsp;+ unique:</option>
+	
+	<option value="//api/name/valuesIntersect:">&nbsp;&nbsp;&nbsp;&nbsp;+ valuesIntersect:</option>
+	
+	<option value="//api/name/valuesPassingTest:">&nbsp;&nbsp;&nbsp;&nbsp;+ valuesPassingTest:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendArrays:">appendArrays:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/collectionPassesTest:">collectionPassesTest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsValue:">containsValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/distributeArrayElements:">distributeArrayElements:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filter:">filter:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flattenArrays:">flattenArrays:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/groupArrayElements:">groupArrayElements:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/join:">join:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/list:">list:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/map:">map:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapToArray:">mapToArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapToSingleValue:">mapToSingleValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/merge:">merge:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneMatchingLeaves:">pruneMatchingLeaves:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneNonmatchingLeaves:">pruneNonmatchingLeaves:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reduce:">reduce:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sort:">sort:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/split:">split:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/splitLines:">splitLines:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unique:">unique:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valuesIntersect:">valuesIntersect:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valuesPassingTest:">valuesPassingTest:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBMLDataProcessingFunctions Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBMLDataProcessingFunctions Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBMLDataProcessingFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Provides a mechanism for manipulating data structures from within the template
+language.</p>
+
+<p><b>Container objects:</b> Where parameters are referred to as <i>container
+objects</i>, the function will accept <code>NSDictionary</code> and
+<code>NSArray</code> instances.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containsValue:">+&nbsp;containsValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/collectionPassesTest:">+&nbsp;collectionPassesTest:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valuesPassingTest:">+&nbsp;valuesPassingTest:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valuesIntersect:">+&nbsp;valuesIntersect:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/join:">+&nbsp;join:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/split:">+&nbsp;split:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/splitLines:">+&nbsp;splitLines:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/appendArrays:">+&nbsp;appendArrays:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/flattenArrays:">+&nbsp;flattenArrays:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/filter:">+&nbsp;filter:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pruneMatchingLeaves:">+&nbsp;pruneMatchingLeaves:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pruneNonmatchingLeaves:">+&nbsp;pruneNonmatchingLeaves:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/list:">+&nbsp;list:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/map:">+&nbsp;map:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapToSingleValue:">+&nbsp;mapToSingleValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mapToArray:">+&nbsp;mapToArray:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sort:">+&nbsp;sort:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/merge:">+&nbsp;merge:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unique:">+&nbsp;unique:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/distributeArrayElements:">+&nbsp;distributeArrayElements:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/groupArrayElements:">+&nbsp;groupArrayElements:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reduce:">+&nbsp;reduce:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/appendArrays:" title="appendArrays:"></a>
+	<h3 class="subsubtitle method-title">appendArrays:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a single array containing all the elements in the arrays specified
+in the input parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)appendArrays:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the
+            function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing all of the elements in the arrays referenced
+            by the passed-in expression parameters.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two or more template expressions as parameters,
+where each expression evaluates as an array value.</p>
+
+<p><b>Template example:</b> Assume that <code>$array1</code>, <code>$array2</code>
+and <code>$array3</code> resolve to array values:</p>
+
+<pre>^appendArrays($array1|$array2|$array3)</pre>
+
+
+<p>The expression above will evaluate to a single array, wherein the returned
+array will contain all the elements of <code>$array1</code>, in the same
+order they appear in the array, followed by the elements of <code>$array2</code>,
+and then those of <code>$array3</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/collectionPassesTest:" title="collectionPassesTest:"></a>
+	<h3 class="subsubtitle method-title">collectionPassesTest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Applies a template expression accross each member of the passed collection and returns
+whether or not all members passed the test (particularly useful for form validation).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)collectionPassesTest:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array or dictionary containing the input parameters for the function</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> instance containing either the boolean
+            value <code>YES</code> if all of the input collections pass the
+            specified template expression, or <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><b>Note:</b> This method tests equality through the <a href="../Classes/MBExpression.html">MBExpression</a>, not
+through the <code>isEqual:</code> method. As a result, implicit type conversions
+occur, allowing an <code>NSNumber</code> instance containing the integer
+<code>5</code> to equal an <code>NSString</code> containing the text
+&quot;<code>5</code>&quot;. Be forewarned, however: Do not expect normal
+<code>NSObject</code> equality test behavior!</p>
+
+<p>This function accepts two template expressions as parameters:</p>
+
+<ul>
+<li>One <i>container object</i>, which is expected to evaluate to array
+or dictionary
+
+<li>The <i>test value</i>, an expression whose value will be used to test
+against the values in the passed-in container(s)
+</ul>
+
+
+<p><b>Template example:</b></p>
+
+<pre>^collectionPassesTest($collection|$item.length -GT 0)</pre>
+
+
+<p>The expression above would return a boolean true value if all
+the members of <code>$collection</code> pass the template expression
+<code>$item.length -GT 0</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/containsValue:" title="containsValue:"></a>
+	<h3 class="subsubtitle method-title">containsValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether any of the values contained within one or more container
+objects equals a specified value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)containsValue:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the function</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> instance containing either the boolean
+            value <code>YES</code> if any of the input parameters contains the specified
+            element, or <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><b>Note:</b> This method tests equality through the <a href="../Classes/MBExpression.html">MBExpression</a>, not
+through the <code>isEqual:</code> method. As a result, implicit type conversions
+occur, allowing an <code>NSNumber</code> instance containing the integer
+<code>5</code> to equal an <code>NSString</code> containing the text
+&quot;<code>5</code>&quot;. Be forewarned, however: Do not expect normal
+<code>NSObject</code> equality test behavior!</p>
+
+<p>This function accepts two or more template expressions as parameters:</p>
+
+<ul>
+<li>One or more <i>container objects</i>, expressions that evaluate to array
+or dictionary values
+
+<li>The <i>test value</i>, an expression whose value will be used to test
+equality with the values in the passed-in container(s)
+</ul>
+
+
+<p><b>Template example:</b></p>
+
+<pre>^containsValue($colorsOne|$colorsTwo|yellow)</pre>
+
+
+<p>The expression above would return a boolean true value if either
+<code>$colorsOne</code> or <code>$colorsTwo</code> contained an item
+whose value is the string <code>yellow</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/distributeArrayElements:" title="distributeArrayElements:"></a>
+	<h3 class="subsubtitle method-title">distributeArrayElements:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Distributes the elements in a single array across multiple arrays.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)distributeArrayElements:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing <i>returned array count</i> arrays, each
+            containing the distributed elements from <i>source array</i>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two template expressions as parameters:</p>
+
+<ul>
+<li>The <i>source array</i>, an expression that is expected to evaluate
+as an array value.
+
+<li>The <i>returned array count</i>, which specifies the number of arrays
+across which to distribute the source array's elements. This expression
+will be interpreted as integer value, and must be <code>1</code> or
+greater.
+</ul>
+
+
+<p>The source array is iterated, and each item in it is distributed across
+<i>returned array count</i> arrays in sequence.</p>
+
+<p>The function will always return the number of arrays specified by
+<i>returned array count</i>. If the source array contains fewer elements
+than <i>returned array count</i>, one or more of the returned arrays
+will be empty.</p>
+
+<p><b>Template example:</b> Assume that <code>$newYorkTeams</code> is an
+array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
+<code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
+order.</p>
+
+<pre>^distributeArrayElements($newYorkTeams|2)</pre>
+
+
+<p>The template expression above would return an array containing two
+arrays, where the first array contains three items (<code>Yankees</code>,
+<code>Knicks</code> and <code>Islanders</code>) and the second array
+contains two (<code>Mets</code> and <code>Rangers</code>).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/filter:" title="filter:"></a>
+	<h3 class="subsubtitle method-title">filter:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Filters a collection object by applying a test expression to the contents
+of each object in the collection. Each top-level object in the collection
+where the test expression evaluates to true according to the rules of
+the filter behavior is returned.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)filter:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array or dictionary containing the filtered items. The type of
+            the object returned will match the <i>data model</i> input
+            parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Because you can recurse into portions of the data model where more than
+one element may exist, the filter may iterate over multiple items for each
+top-level object, and the test expression will get applied multiple times.
+You can specify whether the filter will return items that match at least
+once, or whether all of the existing items must match.</p>
+
+<p>This function accepts two or more template expressions as parameters:</p>
+
+<ul>
+<li>The <i>data model</i>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+filtering
+
+<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
+into portions of the data model
+
+<li>A <i>test expression</i>, which will be used for the basis of the
+filtering.
+
+<li>Finally, an optional <i>filter behavior</i>, which can be either
+<code>matchAtLeastOnce</code> or <code>matchAll</code> (note that these string
+literals must be used; this parameter is not evaluated). If the parameter is
+omitted <code>matchAtLeastOnce</code> behavior will be used.
+</ul>
+
+
+<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
+objects representing people:</p>
+
+<pre>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)</pre>
+
+
+<p>The template expression above would return all the objects contained in
+<code>$people</code> where every aunt of every child of the person has
+the first name Jill. The <code>matchAll</code> parameter can be omitted
+to return every person with at least one child who has at least one aunt
+with the first name Jill.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/flattenArrays:" title="flattenArrays:"></a>
+	<h3 class="subsubtitle method-title">flattenArrays:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a single array containing all the elements of the array(s) specified
+in the parameters, wherein any element that is an array will be flattened
+such that the returned array contains no nested arrays. This does a
+depth-first traversal of the input parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)flattenArrays:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the
+            function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the flattened array.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one or more template expressions as parameters,
+where each expression evaluates as an array value.</p>
+
+<p><b>Template example:</b> Assume that <code>$nestedArrays</code> refers to
+an array wherein each element is another array:</p>
+
+<pre>^flattenArrays($nestedArrays)</pre>
+
+
+<p>The example above would return an array containing the elements of each array
+contained in <code>$nestedArrays</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/groupArrayElements:" title="groupArrayElements:"></a>
+	<h3 class="subsubtitle method-title">groupArrayElements:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Groups the elements in a single array into multiple arrays.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)groupArrayElements:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing one or more <i>group arrays</i>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two template expressions as parameters:</p>
+
+<ul>
+<li>The <i>source array</i>, an expression that is expected to evaluate
+as an array value.
+
+<li>A <i>group size</i>, which specifies the maximum number of items to allow
+in a single group. This expression will be interpreted as integer value, and
+must be <code>1</code> or greater.
+</ul>
+
+
+<p>The source array is iterated, and for each <i>group size</i> number of
+items encountered, a new <i>group array</i> is created containing just those
+items. The return value is an array containing one or more group arrays
+created while iterating the source array.</p>
+
+<p>Unless <i>source array</i> contains an exact multiple of <i>group
+size</i> number of items, the last group array will contain fewer than
+<i>group size</i> number of items.</p>
+
+<p><b>Template example:</b> Assume that <code>$newYorkTeams</code> is an
+array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
+<code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
+order.</p>
+
+<pre>^groupArrayElements($newYorkTeams|2)</pre>
+
+
+<p>The template expression above would return an array containing three
+arrays, where the first array contains two items (<code>Yankees</code> and
+<code>Mets</code>), the second array contains two items (<code>Knicks</code>
+and <code>Rangers</code>), and the third array contains one item
+(<code>Islanders</code>).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/join:" title="join:"></a>
+	<h3 class="subsubtitle method-title">join:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a string by concatenating the string values of the elements
+in one or more container objects, using the specified separator
+string between each value in the returned string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)join:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the
+            function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a string containing the string values of the items in the
+            <i>container objects</i>, separated by the string specified
+            as the <i>separator string</i></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two or more template expressions as parameters:</p>
+
+<ul>
+<li>One or more <i>container objects</i>, expressions that evaluate to arrays
+or dictionaries
+
+<li>The <i>separator string</i>, which is placed between each value in the
+returned string
+</ul>
+
+
+<p><b>Template example:</b> Assume that <code>$values</code> is an array
+containing the strings &ldquo;string1&rdquo;, &ldquo;anotherString&rdquo;, and &ldquo;lastly&rdquo;:</p>
+
+<pre>^join($values|, )</pre>
+
+
+<p>The expression above would return the string &ldquo;string1, anotherString, lastly&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/list:" title="list:"></a>
+	<h3 class="subsubtitle method-title">list:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Iterates over (and potentially recurses into) the items in a container object,
+and returns a list of values. The values in the returned list will reflect the
+ordering of any arrays iterated, however iterating dictionaries will result in
+non-deterministic ordering.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)list:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing the listed items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two or more template expressions as parameters:</p>
+
+<ul>
+<li>The <i>data model</i>, an expression whose value is a container object
+(either an array or dictionary) that will be iterated
+
+<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
+into portions of the data model
+
+<li>A <i>value expression</i>, which will be evaluated once for each item
+encountered while iterating the data model and recursing into any
+intermediate expressions.
+</ul>
+
+
+<p>The function will return an array containing the result of evaluating the
+<i>value expression</i> once for each item encountered in the data
+model.</p>
+
+<p><b>Template example:</b> Assume that <code>$states</code> is a map where
+each item in the map represents a state. The key for each item is the
+two-letter postal code for the state, and the value associated with
+each key is another dictionary containing additional information about the
+state.</p>
+
+<pre>^list($states|$item.citiesBySize|$item.name, <span>$</span>root:key - $item.population residents)</pre>
+
+
+<p>The template expression above would iterate over all the elements in the
+<code>$states</code> dictionary, and for each state, it would then iterate over
+the elements contained in the states&rsquo;s <code>cityBySize</code> property, which
+in this case is an ordered array of cities in the state sorted by population.
+For each city in each state&rsquo;s <code>cityBySize</code>, the returned array would
+contain a string with values such as:</p>
+
+<pre>New York, NY - 8,391,881 residents</pre>
+
+
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/map:" title="map:"></a>
+	<h3 class="subsubtitle method-title">map:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a mapping of keys to values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.
+The keys and values of the returned dictionary are constructed based
+on expressions passed to the function.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)map:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a dictionary containing the mapped items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><b>Note:</b> If the mapping operation would result in more than one value
+being mapped to a given key, the multiple values will be placed into an
+array, and that array will be the value of the key.</p>
+
+<p>This function accepts three or more template expressions as parameters:</p>
+
+<ul>
+<li>The <i>data model</i>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+returned mapping
+
+<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
+into portions of the data model
+
+<li>The second-to-last expression in the input parameters is the <i>key
+expression</i>, which is used to construct the keys in the map
+
+<li>The last expression is the <i>value expression</i>, which is used to
+construct the values contained in the map
+</ul>
+
+
+<p>The intermediate, key and value expressions can refer to portions of the
+data model using several pre-defined variables:</p>
+
+<ul>
+<li><code>$item</code> refers to the value of the current item in the innermost
+scope being iterated/recursed
+
+<li>When iterating the values of a dictionary, the <code>$key</code> variable
+can be used to access the key associated with the current <code>$item</code>
+
+<li><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model
+
+<li>When the data model expression refers to a dictionary, <code>$rootKey</code>
+will contain the key associated with the current <code>$root</code> value.
+
+<li>In addition, when intermediate expressions are used to recurse into the
+data model, you can refer to items and keys contained in the outer scopes
+using the prefix <code>outer:</code> in the variable name, such as
+<code>$</code><code>outer:key</code> or <code>$outer:item</code>. This prefix
+can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
+levels of scope.
+</ul>
+
+
+<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
+objects representing people:</p>
+
+<pre>^map($people|$item.children|$item.fullName|$root)</pre>
+
+
+<p>The template expression above would iterate over all the values in
+<code>$people</code>, and for each person, it would then iterate over
+the elements contained in the person&rsquo;s <code>children</code> array. For
+each of those children, it would create a mapping from the value of that
+child&rsquo;s <code>fullName</code> attribute to the <code>$root</code> item,
+or the person from <code>$people</code> that&rsquo;s currently being iterated. In
+other words, the expression above would create a dictionary where the keys are
+the full names of children, and the value of each key is the item in
+<code>$people</code> representing that child&rsquo;s parent.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/mapToArray:">+ mapToArray:</a>, <a href="#//api/name/mapToSingleValue:">+ mapToSingleValue:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapToArray:" title="mapToArray:"></a>
+	<h3 class="subsubtitle method-title">mapToArray:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a mapping of keys to values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.
+The keys and values of the returned dictionary are constructed based
+on expressions passed to the function.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)mapToArray:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a dictionary containing the mapped items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><b>Note:</b> The value of each key will always be an array, even if the key
+only maps to a single value.</p>
+
+<p>This function accepts three or more template expressions as parameters:</p>
+
+<ul>
+<li>The <i>data model</i>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+returned mapping
+
+<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
+into portions of the data model
+
+<li>The second-to-last expression in the input parameters is the <i>key
+expression</i>, which is used to construct the keys in the map
+
+<li>The last expression is the <i>value expression</i>, which is used to
+construct the values contained in the map
+</ul>
+
+
+<p>The intermediate, key and value expressions can refer to portions of the
+data model using several pre-defined variables:</p>
+
+<ul>
+<li><code>$item</code> refers to the value of the current item in the innermost
+scope being iterated/recursed
+
+<li>When iterating the values of a dictionary, the <code>$key</code> variable
+can be used to access the key associated with the current <code>$item</code>
+
+<li><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model
+
+<li>When the data model expression refers to a dictionary, <code>$rootKey</code>
+will contain the key associated with the current <code>$root</code> value.
+
+<li>In addition, when intermediate expressions are used to recurse into the
+data model, you can refer to items and keys contained in the outer scopes
+using the prefix <code>outer:</code> in the variable name, such as
+<code>$</code><code>outer:key</code> or <code>$outer:item</code>. This prefix
+can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
+levels of scope.
+</ul>
+
+
+<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
+objects representing people:</p>
+
+<pre>^mapToArray($people|$item.children|$item.fullName|$root)</pre>
+
+
+<p>The template expression above would iterate over all the values in
+<code>$people</code>, and for each person, it would then iterate over
+the elements contained in the person&rsquo;s <code>children</code> array. For
+each of those children, it would create a mapping from the value of that
+child&rsquo;s <code>fullName</code> attribute to the <code>$root</code> item,
+or the person from <code>$people</code> that&rsquo;s currently being iterated. In
+other words, the expression above would create a dictionary where the keys are
+the full names of children, and the value of each key is the item in
+<code>$people</code> representing that child&rsquo;s parent.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/mapToArray:">+ mapToArray:</a>, <a href="#//api/name/mapToSingleValue:">+ mapToSingleValue:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mapToSingleValue:" title="mapToSingleValue:"></a>
+	<h3 class="subsubtitle method-title">mapToSingleValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a mapping of keys to values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.
+The keys and values of the returned dictionary are constructed based
+on expressions passed to the function.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)mapToSingleValue:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a dictionary containing the mapped items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><b>Note:</b> If the mapping operation would result in more than one value
+being mapped to a given key, additional values are ignored and only one
+value will be returned. Assume non-deterministic behavior for multiple
+values.</p>
+
+<p>This function accepts three or more template expressions as parameters:</p>
+
+<ul>
+<li>The <i>data model</i>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+returned mapping
+
+<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
+into portions of the data model
+
+<li>The second-to-last expression in the input parameters is the <i>key
+expression</i>, which is used to construct the keys in the map
+
+<li>The last expression is the <i>value expression</i>, which is used to
+construct the values contained in the map
+</ul>
+
+
+<p>The intermediate, key and value expressions can refer to portions of the
+data model using several pre-defined variables:</p>
+
+<ul>
+<li><code>$item</code> refers to the value of the current item in the innermost
+scope being iterated/recursed
+
+<li>When iterating the values of a dictionary, the <code>$key</code> variable
+can be used to access the key associated with the current <code>$item</code>
+
+<li><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model
+
+<li>When the data model expression refers to a dictionary, <code>$rootKey</code>
+will contain the key associated with the current <code>$root</code> value.
+
+<li>In addition, when intermediate expressions are used to recurse into the
+data model, you can refer to items and keys contained in the outer scopes
+using the prefix <code>outer:</code> in the variable name, such as
+<code>$</code><code>outer:key</code> or <code>$outer:item</code>. This prefix
+can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
+levels of scope.
+</ul>
+
+
+<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
+objects representing people:</p>
+
+<pre>^mapToSingleValue($people|$item.children|$item.fullName|$root)</pre>
+
+
+<p>The template expression above would iterate over all the values in
+<code>$people</code>, and for each person, it would then iterate over
+the elements contained in the person&rsquo;s <code>children</code> array. For
+each of those children, it would create a mapping from the value of that
+child&rsquo;s <code>fullName</code> attribute to the <code>$root</code> item,
+or the person from <code>$people</code> that&rsquo;s currently being iterated. In
+other words, the expression above would create a dictionary where the keys are
+the full names of children, and the value of each key is the item in
+<code>$people</code> representing that child&rsquo;s parent.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/mapToArray:">+ mapToArray:</a>, <a href="#//api/name/mapToSingleValue:">+ mapToSingleValue:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/merge:" title="merge:"></a>
+	<h3 class="subsubtitle method-title">merge:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Merges a set of dictionaries into a single dictionary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)merge:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pruneMatchingLeaves:" title="pruneMatchingLeaves:"></a>
+	<h3 class="subsubtitle method-title">pruneMatchingLeaves:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Traverses an array-based tree structure, removing any leaves whose values
+match a given test expression. The resulting pruned tree is then returned.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)pruneMatchingLeaves:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing the result of the operation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two template expressions as parameters:</p>
+
+<ul>
+<li>The <i>input array</i> representing the root of the tree; this expression
+must evaluate to an <code>NSArray</code> instance
+
+<li>The <i>test expression</i>, which will be evaluated once for each
+non-array element found while traversing the tree
+</ul>
+
+
+<p>The function will return an tree structure similar to the input
+structure, but containing only those non-array elements for which the
+<i>test expression</i> evaluates to <code>NO</code>.</p>
+
+<p><b>Template example:</b> Assume that <code>$input</code> is an array
+containing two inner arrays. The first inner array contains the strings:
+&ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second
+inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
+&ldquo;<code>Sally</code>&rdquo;.</p>
+
+<pre>^pruneMatchingLeaves($input|$item -EQ Pat)</pre>
+
+
+<p>The expression above would return an array containing two inner arrays,
+the first having the elements &ldquo;<code>Bob</code>&rdquo; and &ldquo;<code>Joe</code>&rdquo;,
+and the second having the elements &ldquo;<code>Alice</code>&rdquo; and
+&ldquo;<code>Sally</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pruneNonmatchingLeaves:" title="pruneNonmatchingLeaves:"></a>
+	<h3 class="subsubtitle method-title">pruneNonmatchingLeaves:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Traverses an array-based tree structure, removing any leaves whose values
+do not match a given test expression. The resulting pruned tree is then
+returned.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)pruneNonmatchingLeaves:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing the result of the operation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two template expressions as parameters:</p>
+
+<ul>
+<li>The <i>input array</i> representing the root of the tree; this expression
+must evaluate to an <code>NSArray</code> instance
+
+<li>The <i>test expression</i>, which will be evaluated once for each
+non-array element found while traversing the tree
+</ul>
+
+
+<p>The function will return an tree structure similar to the input
+structure, but containing only those non-array elements for which the
+<i>test expression</i> evaluates to <code>YES</code>.</p>
+
+<p><b>Template example:</b> Assume that <code>$input</code> is an array
+containing two inner arrays. The first inner array contains the strings:
+&ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second
+inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
+&ldquo;<code>Sally</code>&rdquo;.</p>
+
+<pre>^pruneNonmatchingLeaves($input|$item -EQ Pat)</pre>
+
+
+<p>The expression above would return an array containing two inner arrays,
+each with a single element: &ldquo;<code>Pat</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/reduce:" title="reduce:"></a>
+	<h3 class="subsubtitle method-title">reduce:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reduce an array of items into a single item.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)reduce:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a single value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts 3 template expressions as parameters:</p>
+
+<ul>
+<li>The source array, an expression that is expected to evaluate
+to an array.
+
+<li>A template expression that returns an initial value
+
+<li>A template expression that returns a single value
+</ul>
+
+
+<p>The source is iterated and the expression is evaluated with respect to each $item.</p>
+
+<p><b>Template example:</b> Assume that <code>$numbers</code> is an
+array with the numbers 1 through 5</p>
+
+<pre>^reduce($numbers|0|#($currentValue + $item))</pre>
+
+
+<p>The template expression above would return the value 15</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sort:" title="sort:"></a>
+	<h3 class="subsubtitle method-title">sort:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sorts a data structure based on the value of an expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)sort:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/split:" title="split:"></a>
+	<h3 class="subsubtitle method-title">split:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an array by splitting a string on a given delimeter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)split:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the
+            function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing the components of the split string</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two template expressions as parameters:</p>
+
+<ul>
+<li>An expression specifying the <i>delimiter</i>, which specifies where
+the <i>input string</i> will be split
+
+<li>An expression specifying the <i>input string</i>, which is the
+string to be split
+</ul>
+
+
+<p><b>Template example:</b>:</p>
+
+<pre>^split(, |Evan, Jesse, Yon)</pre>
+
+
+<p>The expression above would return an array containing three elements:
+&ldquo;<code>Evan</code>&rdquo;, &ldquo;<code>Jesse</code>&rdquo;, and &ldquo;<code>Yon</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/splitLines:" title="splitLines:"></a>
+	<h3 class="subsubtitle method-title">splitLines:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an array by splitting a string on newline characters (as determined
+by the <code>[NSCharacterSet newlineCharacterSet]</code> method).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)splitLines:(NSString *)<em>stringToSplit</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the
+function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>an array containing the components of the split string</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single template expression, the <i>input string</i>
+that will be split on newlines.</p>
+
+<p><b>Template example:</b> Assume that <code>$lines</code> is a string
+containing newlines:</p>
+
+<pre>^splitLines($lines)</pre>
+
+
+<p>The expression above would return an array containing one element for each
+line in <code>$lines</code>, where each element contains a single line of
+text (with the newlines stripped off).</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unique:" title="unique:"></a>
+	<h3 class="subsubtitle method-title">unique:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Iterates over the values supplied by the passed-in enumerator, and returns an
+array containing the unique values encountered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)unique:(NSObject&lt;NSFastEnumeration&gt; *)<em>enumerator</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enumerator</em></dt>
+			<dd><p>the function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a set containing the unique values in the input parameter.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single template expression, which it expects to
+evaluate to an object that implements the <code>NSFastEnumeration</code>
+protocol (such as an <code>NSArray</code> or <code>NSSet</code>). The values
+in the returned array will be in the same order that they were supplied by
+the enumerator.</p>
+
+<p><b>Template example:</b> Assume that <code>$animals</code> is an array with
+three elements: the strings <code>Duck</code>, <code>Duck</code> and
+<code>Goose</code>.</p>
+
+<pre>^unique($animals)</pre>
+
+
+<p>The template expression above would return an array containing two
+strings: <code>Duck</code> and <code>Goose</code>, in that order.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valuesIntersect:" title="valuesIntersect:"></a>
+	<h3 class="subsubtitle method-title">valuesIntersect:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)valuesIntersect:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valuesPassingTest:" title="valuesPassingTest:"></a>
+	<h3 class="subsubtitle method-title">valuesPassingTest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests a boolean expression against the values in one or more container objects,
+and returns an array of values for which the test expression is true.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)valuesPassingTest:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the
+            function.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array containing the values in the container objects
+            for which the test expression evaluates to true</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts an array of template expressions, and expects
+two or more objects in the array:</p>
+
+<ul>
+<li>One or more <i>container objects</i>, expressions that evaluate to arrays
+or dictionaries
+
+<li>The <i>test expression</i>, an expression that will be evaluated for each
+value in each container object in the input parameters
+</ul>
+
+
+<p>The test expression can refer to the following pre-defined variables:</p>
+
+<ul>
+<li><code>$item</code> refers to the value in a container object that's
+currently being tested
+
+<li>When the container object being tested is a dictionary, <code>$key</code>
+can be used to access the key associated with the current <code>$item</code>
+
+<li><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model
+</ul>
+
+
+<p><b>Template example:</b> Assume that <code>$articles</code> and <code>$videos</code>
+are containers whose values each have a <code>displayOrder</code> attribute:</p>
+
+<pre>^valuesPassingTest($articles|$videos|$item.displayOrder -EQ 1)</pre>
+
+
+<p>The template expression above would iterate over all the values in the
+<code>$articles</code> and then the <code>$videos</code> container objects, and
+for each value, it would perform a <code>$item.displayOrder -EQ 1</code> boolean
+test. Each value in <code>$articles</code> and <code>$videos</code> for which
+the expression <code>$item.displayOrder -EQ 1</code> evaluates to true will be
+placed into the array returned by the function.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

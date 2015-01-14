@@ -1,0 +1,772 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBMLFileFunctions Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBMLFileFunctions Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/deleteFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ deleteFile:</option>
+	
+	<option value="//api/name/directoryForApplicationSupport">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForApplicationSupport</option>
+	
+	<option value="//api/name/directoryForCaches">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForCaches</option>
+	
+	<option value="//api/name/directoryForDocuments">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForDocuments</option>
+	
+	<option value="//api/name/directoryForDownloads">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForDownloads</option>
+	
+	<option value="//api/name/directoryForMovies">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForMovies</option>
+	
+	<option value="//api/name/directoryForMusic">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForMusic</option>
+	
+	<option value="//api/name/directoryForPictures">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForPictures</option>
+	
+	<option value="//api/name/directoryForPublicFiles">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForPublicFiles</option>
+	
+	<option value="//api/name/directoryForTempFiles">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForTempFiles</option>
+	
+	<option value="//api/name/directoryForUserHome">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForUserHome</option>
+	
+	<option value="//api/name/fileContents:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileContents:</option>
+	
+	<option value="//api/name/fileData:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileData:</option>
+	
+	<option value="//api/name/fileExists:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileExists:</option>
+	
+	<option value="//api/name/fileIsDeletable:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileIsDeletable:</option>
+	
+	<option value="//api/name/fileIsReadable:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileIsReadable:</option>
+	
+	<option value="//api/name/fileIsWritable:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileIsWritable:</option>
+	
+	<option value="//api/name/isDirectoryAtPath:">&nbsp;&nbsp;&nbsp;&nbsp;+ isDirectoryAtPath:</option>
+	
+	<option value="//api/name/lastPathComponent:">&nbsp;&nbsp;&nbsp;&nbsp;+ lastPathComponent:</option>
+	
+	<option value="//api/name/listDirectory:">&nbsp;&nbsp;&nbsp;&nbsp;+ listDirectory:</option>
+	
+	<option value="//api/name/pathComponents:">&nbsp;&nbsp;&nbsp;&nbsp;+ pathComponents:</option>
+	
+	<option value="//api/name/pathExtension:">&nbsp;&nbsp;&nbsp;&nbsp;+ pathExtension:</option>
+	
+	<option value="//api/name/sizeOfFile:">&nbsp;&nbsp;&nbsp;&nbsp;+ sizeOfFile:</option>
+	
+	<option value="//api/name/stripLastPathComponent:">&nbsp;&nbsp;&nbsp;&nbsp;+ stripLastPathComponent:</option>
+	
+	<option value="//api/name/stripPathExtension:">&nbsp;&nbsp;&nbsp;&nbsp;+ stripPathExtension:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteFile:">deleteFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForApplicationSupport">directoryForApplicationSupport</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForCaches">directoryForCaches</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForDocuments">directoryForDocuments</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForDownloads">directoryForDownloads</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForMovies">directoryForMovies</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForMusic">directoryForMusic</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForPictures">directoryForPictures</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForPublicFiles">directoryForPublicFiles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForTempFiles">directoryForTempFiles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForUserHome">directoryForUserHome</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileContents:">fileContents:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileData:">fileData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileExists:">fileExists:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileIsDeletable:">fileIsDeletable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileIsReadable:">fileIsReadable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileIsWritable:">fileIsWritable:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDirectoryAtPath:">isDirectoryAtPath:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lastPathComponent:">lastPathComponent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listDirectory:">listDirectory:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pathComponents:">pathComponents:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pathExtension:">pathExtension:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sizeOfFile:">sizeOfFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stripLastPathComponent:">stripLastPathComponent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stripPathExtension:">stripPathExtension:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBMLFileFunctions Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBMLFileFunctions Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBMLFileFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lastPathComponent:">+&nbsp;lastPathComponent:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stripLastPathComponent:">+&nbsp;stripLastPathComponent:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pathExtension:">+&nbsp;pathExtension:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stripPathExtension:">+&nbsp;stripPathExtension:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pathComponents:">+&nbsp;pathComponents:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForUserHome">+&nbsp;directoryForUserHome</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForTempFiles">+&nbsp;directoryForTempFiles</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForCaches">+&nbsp;directoryForCaches</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForDocuments">+&nbsp;directoryForDocuments</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForDownloads">+&nbsp;directoryForDownloads</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForApplicationSupport">+&nbsp;directoryForApplicationSupport</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForMovies">+&nbsp;directoryForMovies</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForMusic">+&nbsp;directoryForMusic</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForPictures">+&nbsp;directoryForPictures</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/directoryForPublicFiles">+&nbsp;directoryForPublicFiles</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/listDirectory:">+&nbsp;listDirectory:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileExists:">+&nbsp;fileExists:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileIsReadable:">+&nbsp;fileIsReadable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileIsWritable:">+&nbsp;fileIsWritable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileIsDeletable:">+&nbsp;fileIsDeletable:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDirectoryAtPath:">+&nbsp;isDirectoryAtPath:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sizeOfFile:">+&nbsp;sizeOfFile:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileData:">+&nbsp;fileData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileContents:">+&nbsp;fileContents:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteFile:">+&nbsp;deleteFile:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteFile:" title="deleteFile:"></a>
+	<h3 class="subsubtitle method-title">deleteFile:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)deleteFile:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForApplicationSupport" title="directoryForApplicationSupport"></a>
+	<h3 class="subsubtitle method-title">directoryForApplicationSupport</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForApplicationSupport</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForCaches" title="directoryForCaches"></a>
+	<h3 class="subsubtitle method-title">directoryForCaches</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForCaches</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForDocuments" title="directoryForDocuments"></a>
+	<h3 class="subsubtitle method-title">directoryForDocuments</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForDocuments</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForDownloads" title="directoryForDownloads"></a>
+	<h3 class="subsubtitle method-title">directoryForDownloads</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForDownloads</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForMovies" title="directoryForMovies"></a>
+	<h3 class="subsubtitle method-title">directoryForMovies</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForMovies</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForMusic" title="directoryForMusic"></a>
+	<h3 class="subsubtitle method-title">directoryForMusic</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForMusic</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForPictures" title="directoryForPictures"></a>
+	<h3 class="subsubtitle method-title">directoryForPictures</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForPictures</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForPublicFiles" title="directoryForPublicFiles"></a>
+	<h3 class="subsubtitle method-title">directoryForPublicFiles</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForPublicFiles</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForTempFiles" title="directoryForTempFiles"></a>
+	<h3 class="subsubtitle method-title">directoryForTempFiles</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForTempFiles</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForUserHome" title="directoryForUserHome"></a>
+	<h3 class="subsubtitle method-title">directoryForUserHome</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForUserHome</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileContents:" title="fileContents:"></a>
+	<h3 class="subsubtitle method-title">fileContents:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)fileContents:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileData:" title="fileData:"></a>
+	<h3 class="subsubtitle method-title">fileData:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)fileData:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileExists:" title="fileExists:"></a>
+	<h3 class="subsubtitle method-title">fileExists:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)fileExists:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileIsDeletable:" title="fileIsDeletable:"></a>
+	<h3 class="subsubtitle method-title">fileIsDeletable:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)fileIsDeletable:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileIsReadable:" title="fileIsReadable:"></a>
+	<h3 class="subsubtitle method-title">fileIsReadable:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)fileIsReadable:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileIsWritable:" title="fileIsWritable:"></a>
+	<h3 class="subsubtitle method-title">fileIsWritable:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)fileIsWritable:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDirectoryAtPath:" title="isDirectoryAtPath:"></a>
+	<h3 class="subsubtitle method-title">isDirectoryAtPath:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)isDirectoryAtPath:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lastPathComponent:" title="lastPathComponent:"></a>
+	<h3 class="subsubtitle method-title">lastPathComponent:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)lastPathComponent:(NSString *)<em>input</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/listDirectory:" title="listDirectory:"></a>
+	<h3 class="subsubtitle method-title">listDirectory:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)listDirectory:(NSString *)<em>dir</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pathComponents:" title="pathComponents:"></a>
+	<h3 class="subsubtitle method-title">pathComponents:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)pathComponents:(NSString *)<em>input</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pathExtension:" title="pathExtension:"></a>
+	<h3 class="subsubtitle method-title">pathExtension:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)pathExtension:(NSString *)<em>input</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sizeOfFile:" title="sizeOfFile:"></a>
+	<h3 class="subsubtitle method-title">sizeOfFile:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)sizeOfFile:(NSString *)<em>filePath</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stripLastPathComponent:" title="stripLastPathComponent:"></a>
+	<h3 class="subsubtitle method-title">stripLastPathComponent:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)stripLastPathComponent:(NSString *)<em>input</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stripPathExtension:" title="stripPathExtension:"></a>
+	<h3 class="subsubtitle method-title">stripPathExtension:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)stripPathExtension:(NSString *)<em>input</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

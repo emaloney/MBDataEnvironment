@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBScopedVariables.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBScopedVariables</TokenIdentifier>
+			<Abstract type="html">Provides a mechanism for maintaining scoped variable values in the
+context of a particular &lt;code&gt;MBVariableSpace&lt;/code&gt; instance.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+            
+			
+			<NodeRef refid="31"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setVariableSpace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			
+			
+			<Anchor>//api/name/variableSpace</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/variableSpace</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			
+			
+			<Anchor>//api/name/variableSpace</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBScopedVariables/variableSpace</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			
+			
+			<Anchor>//api/name/variableSpace</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBScopedVariables/currentVariableScope</TokenIdentifier>
+			<Abstract type="html">Returns the MBScopedVariables instance that represents the current
+variable scope associated with the calling thread.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)currentVariableScope</Declaration>
+			
+			<ReturnValue><Abstract type="html">The current scope, or nil if there isn&apos;t one.</Abstract></ReturnValue>
+			<Anchor>//api/name/currentVariableScope</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBScopedVariables/enterVariableScope</TokenIdentifier>
+			<Abstract type="html">Enters a new variable scope on the calling thread using the MBVariableSpace
+associated with the current MBEnvironment.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)enterVariableScope</Declaration>
+			
+			<ReturnValue><Abstract type="html">A newly-created MBScopedVariables instance representing
+            the new scope. Until the scope is exited, code running on the
+            calling thread will be able to retrieve this scope through
+            the currentVariableScope method.</Abstract></ReturnValue>
+			<Anchor>//api/name/enterVariableScope</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBScopedVariables/exitVariableScope</TokenIdentifier>
+			<Abstract type="html">Exits the current variable scope--if there is one--associated with the
+calling thread. Any variables set within the scope being exited will be
+removed from that scope&apos;s variableSpace, and the variable values will
+return to what they were prior to entering the scope.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)exitVariableScope</Declaration>
+			
+			<ReturnValue><Abstract type="html">The MBScopedVariables instance representing the scope that
+            was exited, or nil if there was no current scope at the time
+            of calling and therefore there was no scope to exit.</Abstract></ReturnValue>
+			<Anchor>//api/name/exitVariableScope</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/initWithVariableSpace:</TokenIdentifier>
+			<Abstract type="html">Initializes the receiver with the given variable space.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithVariableSpace:(MBVariableSpace *)vars</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vars</Name>
+					<Abstract type="html">The MBVariableSpace instance where variable valued will
+            be maintained while the scope is in use.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">self</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithVariableSpace:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/init</TokenIdentifier>
+			<Abstract type="html">Initializes the receiver using the MBVariableSpace associated with the
+current MBEnvironment</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>- (id)init</Declaration>
+			
+			<ReturnValue><Abstract type="html">self</Abstract></ReturnValue>
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setScopedVariable:value:</TokenIdentifier>
+			<Abstract type="html">Sets the value of a scoped variable. This variable value will be reflected
+in the receiver&apos;s variableSpace.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>- (void)setScopedVariable:(NSString *)varName value:(id)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>varName</Name>
+					<Abstract type="html">The name of the variable whose value is being set.</Abstract>
+				</Parameter><Parameter>
+					<Name>val</Name>
+					<Abstract type="html">The variable value.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setScopedVariable:value:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/unsetScopedVariables</TokenIdentifier>
+			<Abstract type="html">Removes from the receiver&apos;s variableSpace all variables set using the scope.
+The values in the variableSpace will return to what they were prior to the
+scope becoming active.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>- (void)unsetScopedVariables</Declaration>
+			
+			
+			<Anchor>//api/name/unsetScopedVariables</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/reapplyScopedVariables</TokenIdentifier>
+			<Abstract type="html">Reapplies any scoped variables that were previously unset using
+unsetScopedVariables (and have not been set again since then using
+setScopedVariable:value:.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>- (void)reapplyScopedVariables</Declaration>
+			
+			
+			<Anchor>//api/name/reapplyScopedVariables</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

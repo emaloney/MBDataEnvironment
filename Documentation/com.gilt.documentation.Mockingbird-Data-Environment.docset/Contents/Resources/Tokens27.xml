@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLResourceFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLResourceFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForMainBundle</TokenIdentifier>
+			<Abstract type="html">Returns the path of the filesystem directory containing the main bundle&apos;s
+resources.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForMainBundle</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForMainBundle</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForBundleWithIdentifier:</TokenIdentifier>
+			<Abstract type="html">Returns the path of the filesystem directory containing the resources of
+the bundle with the specified identifier.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForBundleWithIdentifier:(NSString *)bundleName</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForBundleWithIdentifier:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForClassBundle:</TokenIdentifier>
+			<Abstract type="html">Returns the path of the filesystem directory containing the resources of
+the bundle associated with the specified class.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForClassBundle:(NSString *)className</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForClassBundle:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

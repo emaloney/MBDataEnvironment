@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLStringFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLStringFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/q:</TokenIdentifier>
+			<Abstract type="html">Allows for quoting a string in the template language. This is required, for
+example, to preserve space characters at the beginning or end of a string
+literal. (Normally, the expression evaluator ignores whitespace at the
+beginning or end of string literals.)</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)q:(NSString *)toQuote</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>toQuote</Name>
+					<Abstract type="html">the string</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">&lt;code&gt;toQuote&lt;/code&gt;</Abstract></ReturnValue>
+			<Anchor>//api/name/q:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/eval:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)eval:(NSString *)toQuote</Declaration>
+			
+			
+			<Anchor>//api/name/eval:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/evalBool:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)evalBool:(NSString *)toQuote</Declaration>
+			
+			
+			<Anchor>//api/name/evalBool:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stripQueryString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripQueryString:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/stripQueryString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stripSpaces:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripSpaces:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/stripSpaces:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/trimSpaces:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)trimSpaces:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/trimSpaces:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/indentLines:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)indentLines:(NSString *)toIndent</Declaration>
+			
+			
+			<Anchor>//api/name/indentLines:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/indentLinesToDepth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)indentLinesToDepth:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/indentLinesToDepth:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/prefixLinesWith:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)prefixLinesWith:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/prefixLinesWith:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/pluralize:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)pluralize:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/pluralize:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/lowercase:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)lowercase:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/lowercase:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/uppercase:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)uppercase:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/uppercase:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/titleCase:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)titleCase:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/titleCase:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/titleCaseIfAllCaps:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)titleCaseIfAllCaps:(NSString *)toTransform</Declaration>
+			
+			
+			<Anchor>//api/name/titleCaseIfAllCaps:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/concatenateFields:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)concatenateFields:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/concatenateFields:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/firstNonemptyString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)firstNonemptyString:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/firstNonemptyString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/firstNonemptyTrimmedString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)firstNonemptyTrimmedString:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/firstNonemptyTrimmedString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/truncate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)truncate:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/truncate:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/parseNumber:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)parseNumber:(NSString *)toParse</Declaration>
+			
+			
+			<Anchor>//api/name/parseNumber:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/parseInteger:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)parseInteger:(NSString *)toInt</Declaration>
+			
+			
+			<Anchor>//api/name/parseInteger:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/parseDouble:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)parseDouble:(NSString *)toFloat</Declaration>
+			
+			
+			<Anchor>//api/name/parseDouble:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stringWidth:</TokenIdentifier>
+			<Abstract type="html">Computes the width size for a string. Useful for dynamic sizing.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stringWidth:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>firstComponent</Name>
+					<Abstract type="html">String for which to compute width</Abstract>
+				</Parameter><Parameter>
+					<Name>secondComponent</Name>
+					<Abstract type="html">Name of font used</Abstract>
+				</Parameter><Parameter>
+					<Name>thirdComponent</Name>
+					<Abstract type="html">Size of font used</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">[firstComponent sizeWithFont:font].width</Abstract></ReturnValue>
+			<Anchor>//api/name/stringWidth:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/linesNeededToDrawText:</TokenIdentifier>
+			<Abstract type="html">Computes the number of lines for a string with specified width.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)linesNeededToDrawText:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>firstComponent</Name>
+					<Abstract type="html">String for which to compute number of lines</Abstract>
+				</Parameter><Parameter>
+					<Name>secondComponent</Name>
+					<Abstract type="html">Name of font used</Abstract>
+				</Parameter><Parameter>
+					<Name>thirdComponent</Name>
+					<Abstract type="html">Size of font used</Abstract>
+				</Parameter><Parameter>
+					<Name>fourthComponent</Name>
+					<Abstract type="html">Specified width for string</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the number of lines.</Abstract></ReturnValue>
+			<Anchor>//api/name/linesNeededToDrawText:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/rangeOfString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)rangeOfString:(NSArray *)params</Declaration>
+			
+			
+			<Anchor>//api/name/rangeOfString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/formatInteger:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatInteger:(NSString *)toParse</Declaration>
+			
+			
+			<Anchor>//api/name/formatInteger:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/hasPrefix:</TokenIdentifier>
+			<Abstract type="html">Determines if the string specified by the first expression parameter
+has the prefix indicated by the second expression parameter.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)hasPrefix:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">- the input parameters</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasPrefix:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/hasSuffix:</TokenIdentifier>
+			<Abstract type="html">Determines if the string specified by the first expression parameter
+has the suffix indicated by the second expression parameter.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)hasSuffix:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">- the input parameters</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasSuffix:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/containsString:</TokenIdentifier>
+			<Abstract type="html">Determines if the string specified by the first expression parameter
+contains the string indicated by the second expression parameter.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)containsString:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">- the input parameters</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

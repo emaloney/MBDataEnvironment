@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLFileFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLFileFunctions</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/lastPathComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)lastPathComponent:(NSString *)input</Declaration>
+			
+			
+			<Anchor>//api/name/lastPathComponent:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/stripLastPathComponent:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripLastPathComponent:(NSString *)input</Declaration>
+			
+			
+			<Anchor>//api/name/stripLastPathComponent:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/pathExtension:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)pathExtension:(NSString *)input</Declaration>
+			
+			
+			<Anchor>//api/name/pathExtension:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/stripPathExtension:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripPathExtension:(NSString *)input</Declaration>
+			
+			
+			<Anchor>//api/name/stripPathExtension:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/pathComponents:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)pathComponents:(NSString *)input</Declaration>
+			
+			
+			<Anchor>//api/name/pathComponents:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForUserHome</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForUserHome</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForUserHome</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForTempFiles</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForTempFiles</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForTempFiles</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForCaches</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForCaches</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForCaches</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForDocuments</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForDocuments</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForDocuments</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForDownloads</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForDownloads</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForDownloads</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForApplicationSupport</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForApplicationSupport</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForApplicationSupport</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForMovies</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForMovies</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForMovies</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForMusic</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForMusic</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForMusic</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForPictures</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForPictures</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForPictures</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForPublicFiles</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForPublicFiles</Declaration>
+			
+			
+			<Anchor>//api/name/directoryForPublicFiles</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/listDirectory:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)listDirectory:(NSString *)dir</Declaration>
+			
+			
+			<Anchor>//api/name/listDirectory:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileExists:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fileExists:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/fileExists:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileIsReadable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fileIsReadable:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/fileIsReadable:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileIsWritable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fileIsWritable:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/fileIsWritable:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileIsDeletable:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fileIsDeletable:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/fileIsDeletable:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/isDirectoryAtPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)isDirectoryAtPath:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/isDirectoryAtPath:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/sizeOfFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)sizeOfFile:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/sizeOfFile:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fileData:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/fileData:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileContents:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fileContents:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/fileContents:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/deleteFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)deleteFile:(NSString *)filePath</Declaration>
+			
+			
+			<Anchor>//api/name/deleteFile:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

@@ -1,0 +1,1681 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBExpression Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBExpression Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/expression">&nbsp;&nbsp;&nbsp;&nbsp;expression</option>
+	
+	<option value="//api/name/grammar">&nbsp;&nbsp;&nbsp;&nbsp;grammar</option>
+	
+	<option value="//api/name/tokens">&nbsp;&nbsp;&nbsp;&nbsp;tokens</option>
+	
+	<option value="//api/name/variableSpace">&nbsp;&nbsp;&nbsp;&nbsp;variableSpace</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/asArray:">&nbsp;&nbsp;&nbsp;&nbsp;+ asArray:</option>
+	
+	<option value="//api/name/asArray:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asArray:error:</option>
+	
+	<option value="//api/name/asArray:inVariableSpace:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asArray:inVariableSpace:error:</option>
+	
+	<option value="//api/name/asBoolean:">&nbsp;&nbsp;&nbsp;&nbsp;+ asBoolean:</option>
+	
+	<option value="//api/name/asBoolean:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ asBoolean:defaultValue:</option>
+	
+	<option value="//api/name/asBoolean:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asBoolean:error:</option>
+	
+	<option value="//api/name/asBoolean:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asBoolean:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/asNumber:">&nbsp;&nbsp;&nbsp;&nbsp;+ asNumber:</option>
+	
+	<option value="//api/name/asNumber:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ asNumber:defaultValue:</option>
+	
+	<option value="//api/name/asNumber:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asNumber:error:</option>
+	
+	<option value="//api/name/asNumber:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asNumber:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/asObject:">&nbsp;&nbsp;&nbsp;&nbsp;+ asObject:</option>
+	
+	<option value="//api/name/asObject:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ asObject:defaultValue:</option>
+	
+	<option value="//api/name/asObject:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asObject:error:</option>
+	
+	<option value="//api/name/asObject:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asObject:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/asString:">&nbsp;&nbsp;&nbsp;&nbsp;+ asString:</option>
+	
+	<option value="//api/name/asString:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ asString:defaultValue:</option>
+	
+	<option value="//api/name/asString:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asString:error:</option>
+	
+	<option value="//api/name/asString:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ asString:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/booleanFromTokens:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ booleanFromTokens:error:</option>
+	
+	<option value="//api/name/booleanFromTokens:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ booleanFromTokens:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/booleanFromValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ booleanFromValue:</option>
+	
+	<option value="//api/name/compareLeftValue:againstRightValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ compareLeftValue:againstRightValue:</option>
+	
+	<option value="//api/name/evaluateTokens:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ evaluateTokens:error:</option>
+	
+	<option value="//api/name/evaluateTokens:inVariableSpace:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ evaluateTokens:inVariableSpace:error:</option>
+	
+	<option value="//api/name/expression:inVariableSpace:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ expression:inVariableSpace:usingGrammar:error:</option>
+	
+	<option value="//api/name/expression:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ expression:usingGrammar:error:</option>
+	
+	<option value="//api/name/numberFromValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ numberFromValue:</option>
+	
+	<option value="//api/name/objectFromTokens:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectFromTokens:error:</option>
+	
+	<option value="//api/name/objectFromTokens:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectFromTokens:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/stringFromBoolean:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromBoolean:</option>
+	
+	<option value="//api/name/stringFromTokens:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromTokens:error:</option>
+	
+	<option value="//api/name/stringFromTokens:inVariableSpace:defaultValue:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromTokens:inVariableSpace:defaultValue:error:</option>
+	
+	<option value="//api/name/value:isEqualTo:">&nbsp;&nbsp;&nbsp;&nbsp;+ value:isEqualTo:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as strings">Evaluating expressions as strings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as objects">Evaluating expressions as objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as numeric values">Evaluating expressions as numeric values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as boolean values">Evaluating expressions as boolean values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as arrays">Evaluating expressions as arrays</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Coercing and comparing values">Coercing and comparing values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Representing expressions as objects">Representing expressions as objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Mid-level token evaluation API">Mid-level token evaluation API</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Low-level token evaluation API">Low-level token evaluation API</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expression">expression</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/grammar">grammar</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokens">tokens</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableSpace">variableSpace</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asArray:">asArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asArray:error:">asArray:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asArray:inVariableSpace:error:">asArray:inVariableSpace:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asBoolean:">asBoolean:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asBoolean:defaultValue:">asBoolean:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asBoolean:error:">asBoolean:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asBoolean:inVariableSpace:defaultValue:error:">asBoolean:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asNumber:">asNumber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asNumber:defaultValue:">asNumber:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asNumber:error:">asNumber:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asNumber:inVariableSpace:defaultValue:error:">asNumber:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asObject:">asObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asObject:defaultValue:">asObject:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asObject:error:">asObject:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asObject:inVariableSpace:defaultValue:error:">asObject:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asString:">asString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asString:defaultValue:">asString:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asString:error:">asString:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/asString:inVariableSpace:defaultValue:error:">asString:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/booleanFromTokens:error:">booleanFromTokens:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/booleanFromTokens:inVariableSpace:defaultValue:error:">booleanFromTokens:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/booleanFromValue:">booleanFromValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compareLeftValue:againstRightValue:">compareLeftValue:againstRightValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateTokens:error:">evaluateTokens:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateTokens:inVariableSpace:error:">evaluateTokens:inVariableSpace:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expression:inVariableSpace:usingGrammar:error:">expression:inVariableSpace:usingGrammar:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expression:usingGrammar:error:">expression:usingGrammar:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberFromValue:">numberFromValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectFromTokens:error:">objectFromTokens:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectFromTokens:inVariableSpace:defaultValue:error:">objectFromTokens:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromBoolean:">stringFromBoolean:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromTokens:error:">stringFromTokens:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromTokens:inVariableSpace:defaultValue:error:">stringFromTokens:inVariableSpace:defaultValue:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/value:isEqualTo:">value:isEqualTo:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBExpression Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBExpression Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBExpression.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is responsible for evaluating MBML expressions.</p>
+
+<p>MBML expressions are string-based expressions that, when evaluated, can result
+in one of the following types:</p>
+
+<ul>
+<li>arbitrary Objective-C objects (via the <a href="#//api/name/asObject:"><code>asObject:</code></a> method variants),</li>
+<li>strings (via the <a href="#//api/name/asString:"><code>asString:</code></a> method variants),</li>
+<li>numbers (via the <a href="#//api/name/asNumber:"><code>asNumber:</code></a> method variants),</li>
+<li>boolean values (via the <a href="#//api/name/asBoolean:"><code>asBoolean:</code></a> method variants), and</li>
+<li>arrays (via the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants).</li>
+</ul>
+
+
+<p>Although this class provides an Objective-C interface for evaluating MBML
+expressions, typically, expressions are used to perform string replacement
+within attributes of MBML tags. For example, in this tag:</p>
+
+<pre><code>&lt;Label text="Hello, $userName" ... /&gt;
+</code></pre>
+
+<p>the <code>text</code> attribute contains an MBML <a href="#//api/name/expression">expression</a>. This particular <a href="#//api/name/expression">expression</a>
+consists of two parts: a string literal (&ldquo;<code>Hello,</code>&rdquo;) followed by a reference
+to an MBML variable called <code>userName</code>.</p>
+
+<p>When this label is displayed onscreen, the <code>text</code> attribute is evaluated as
+an MBML <a href="#//api/name/expression">expression</a>, and the text &ldquo;<code>$userName</code>&rdquo; is replaced by the value of
+the <code>userName</code> MBML variable. If the value of <code>userName</code> is &ldquo;Cooper&rdquo;, then the
+label would display the text &ldquo;Hello, Cooper&rdquo;.</p>
+
+<p><strong>MBML Expression Evaluation Contexts</strong></p>
+
+<p>Depending on where an <a href="#//api/name/expression">expression</a> appears within MBML, it may be evaluated in a
+different context. The context determines how the <a href="#//api/name/expression">expression</a> is evaluated and
+what type of value will be returned.</p>
+
+<p>There are three evaluation contexts supported:</p>
+
+<ul>
+<li><p><em>object context</em> — An Objective-C object is returned as a result of
+evaluating the <a href="#//api/name/expression">expression</a>. For expressions that occur within MBML
+attributes that end up displayed onscreen, objects are converted to strings
+prior to display.</p></li>
+<li><p><em>boolean context</em> — A boolean value is returned as the result of evaluating
+the <a href="#//api/name/expression">expression</a>.</p></li>
+<li><p><em>numeric context</em> — An <code>NSNumber</code> is returned as a result of evaluating the
+<a href="#//api/name/expression">expression</a>.</p></li>
+</ul>
+
+
+<p>Most <a href="#//api/name/expression">expression</a> evaluations occur within the object context. However,
+expressions found within the MBML <code>if=""</code> attribute are evaluated in a
+boolean context.</p>
+
+<p><strong>MBML Functions</strong></p>
+
+<p>In addition to referencing variables, MBML expressions can also cause native
+Objective-C code to be executed. (See the class <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more
+information.) A variety of MBML functions ship with Mockingbird, which can be
+embedded within expressions. In this example:</p>
+
+<pre><code>&lt;Label text="The time now is ^currentTime()" ... /&gt;
+</code></pre>
+
+<p>the text &ldquo;<code>The time now is</code>&rdquo; is a string literal, and &ldquo;<code>^currentTime()</code>&rdquo;
+is a call to an MBML function. When this <a href="#//api/name/expression">expression</a> is evaluated, the
+MBML function named <code>currentTime</code> is executed, and the text
+&ldquo;<code>^currentTime()</code>&rdquo; is replaced with the result of calling that function.</p>
+
+<p>When placed onscreen, such a label might look like:</p>
+
+<pre><code>The time now is 2013-07-22 19:26:54 +0000
+</code></pre>
+
+<p>Many functions take one or more parameters; when multiple parameters are
+passed to a function, the pipe character (&ldquo;<code>|</code>&rdquo;) is used as the parameter
+separator.</p>
+
+<p>Parameters may consist of literals, variable references, or other function
+calls. For example, the label:</p>
+
+<pre><code>&lt;Label text="The time now is ^formatMediumDateTime(^currentTime())" ... /&gt;
+</code></pre>
+
+<p>would display:</p>
+
+<pre><code>The time now is Jul 22, 2013, 3:26:54 PM
+</code></pre>
+
+<p>(The exact output of the example above depends on the user&rsquo;s locale settings
+and, of course, the actual date and time.)</p>
+
+<p><strong>MBML Identifiers</strong></p>
+
+<p>When parsing a string of text, the <a href="#//api/name/expression">expression</a> evaluator looks for certain
+text patterns to identify variable references and function calls.</p>
+
+<p>MBML identifiers are names that begin with either an alphabetical character
+or an underscore (&ldquo;<code>_</code>&rdquo;), followed by zero or more characters that may also
+include digits and colons. Alphabetical identifier characters may be either
+uppercase or lowercase. Identifiers may contain a mix of cases.</p>
+
+<p>Variable references always start with a dollar sign (&ldquo;<code>$</code>&rdquo;) and must
+include an MBML variable name. Usually—but not always—MBML variable
+names adhere to the MBML identifier format. (The quoting mechanisms listed
+below allow access to variables whose names don&rsquo;t adhere to the MBML
+identifier format.)</p>
+
+<p>Function calls always start with a caret (&ldquo;<code>^</code>&rdquo;), followed by an MBML
+identifier, followed by an open parenthesis (&ldquo;<code>(</code>&rdquo;), a list of zero or more
+parameters separated by the pipe character (&ldquo;<code>|</code>&rdquo;), followed by a close
+parenthesis (&ldquo;<code>)</code>&rdquo;).</p>
+
+<p><strong>Escaping Special Characters</strong></p>
+
+<p>Within an <a href="#//api/name/expression">expression</a>, you may sometimes want to use characters within a
+string literal that would otherwise be interpreted as part of an <a href="#//api/name/expression">expression</a>.</p>
+
+<p>The following escape sequences can be used:</p>
+
+<ul>
+<li><code>$$</code> — Yields a single dollar sign</li>
+<li><code>^^</code> — Yields a single caret</li>
+<li><code>##</code> — Yields a single hash mark (aka pound sign)</li>
+<li><code>\n</code> — Yields a newline</li>
+</ul>
+
+
+<p><strong>Variable Reference Syntax</strong></p>
+
+<p>MBML variable names can be arbitrary strings, although using the simplest
+variable reference notation requires the variable name to be a valid
+MBML identifier.</p>
+
+<p>Variable references may also contain <em>subreferences</em>. A subreference is
+a reference to a value within a container object. Typical containers include
+arrays and dictionaries, but subreferences can also be used to access
+properties of any Objective-C object through key value coding.</p>
+
+<p>For example, if an MBML variable exists called <code>daysOfWeek</code>, and that
+variable is an array containing the names of the days of the week starting
+with Monday, the following <a href="#//api/name/expression">expression</a> would yield the value &ldquo;Wednesday&rdquo;:</p>
+
+<pre><code>$daysOfWeek[2]
+</code></pre>
+
+<p>Similarly, if an MBML variable exists called <code>monthNamesToNumbers</code>, and that
+variable is a dictionary containing a mapping of month names to the
+corresponding number of the month, the following <a href="#//api/name/expression">expression</a> would result
+in the number <code>10</code>:</p>
+
+<pre><code>$monthNamesToNumbers[October]
+</code></pre>
+
+<p>Lastly, any Objective-C property value can be accessed using the dot
+notation:</p>
+
+<pre><code>$userName.length
+</code></pre>
+
+<p>would result in the length of the string contained in the MBML variable
+<code>userName</code>.</p>
+
+<p>Bracket subreferences can be used for accessing values within an array or
+dictionary. Dot subreferences can be used to access values stored within a
+dictionary or made available through Objective-C properties and key value
+coding.</p>
+
+<p><strong>Variable Reference Quoting</strong></p>
+
+<p>The <code>$userName</code> variable reference shown above is an example of the most basic
+notation, called the <em>unquoted variable notation</em>, wherein <code>userName</code> is
+an MBML identifier.</p>
+
+<p>Alternate <em>quoted</em> forms of variable references make use of delimiters
+surrounding the variable name to provide different behavior. There are three
+quoted variable notations:</p>
+
+<ul>
+<li><p><em>curly-brace quoted</em>, which prevents characters after the closing curly
+brace from being interpreted as part of the variable reference</p></li>
+<li><p><em>bracket quoted</em>, which allows the use of variable names that aren&rsquo;t
+valid MBML identifiers</p></li>
+<li><p><em>parentheses quoted</em>, which is similar to bracket-quoted in that it allows
+the use of variable names that aren&rsquo;t valid MBML identifiers, but that like
+the curly-brace quoted notation, prevents characters after the closing
+delimiter from being interpreted as part of the variable reference</p></li>
+</ul>
+
+
+<p><strong>Curly-Brace Quoted Variable References</strong></p>
+
+<p>The expressions <code>$userName</code> and <code>${userName}</code> are equivalent, but they can
+behave differently if embedded within string literals.</p>
+
+<p>Let&rsquo;s say you have an MBML variable called <code>lastName</code> that contained a person&rsquo;s
+surname, and you want to construct a message such as &ldquo;How are the Maloneys
+doing?&rdquo; that refers to the surname in the plural form.</p>
+
+<p>You couldn&rsquo;t use the unquoted notation (eg., &ldquo;<code>How are the $lastNames doing?</code>&rdquo;)
+because the &ldquo;<code>s</code>&rdquo; at the end of <code>$lastName</code> would be interpreted as part of
+the variable name. Instead of referencing the variable <code>lastName</code> followed by
+the text character &ldquo;<code>s</code>&rdquo;, you&rsquo;re actually referencing an entirely different
+variable called <code>lastNames</code>, which is not what you want.</p>
+
+<p>Using the curly-brace notation allows you to separate the variable reference
+from any surrounding text that you want to remain a literal string. So, the
+expression:</p>
+
+<pre><code>How are the ${lastName}s doing?
+</code></pre>
+
+<p>is interpreted as the text literal &ldquo;<code>How are the</code>&rdquo; followed by a reference
+to the MBML variable <code>lastName</code>, followed by another text literal,
+&ldquo;<code>s doing?</code>&rdquo;.</p>
+
+<p>Note that the variable name contained within the curly-brace quoted notation
+must be a valid MBML identifier.</p>
+
+<p><strong>Bracket Quoted Variable References</strong></p>
+
+<p>Bracket quoted variable references allow you to access MBML variables whose
+names are not valid MBML identifiers.</p>
+
+<p>For example, spaces are not valid MBML identifier characters. When the
+expression evaluator encounters a space while interpreting a variable name,
+it assumes that the space signals the end of the variable name.</p>
+
+<p>But because MBML variables can be set programmatically within Objective-C or
+can be introduced by external backend systems that don&rsquo;t conform to MBML
+variable naming syntax, the bracket quoted notation provides a mechanism for
+accessing these variables.</p>
+
+<p>When evaluated, the expression:</p>
+
+<pre><code>$[total $]
+</code></pre>
+
+<p>would yield the current value of an MBML variable named <code>total $</code>.</p>
+
+<p>Using the bracket notation allows subreferences after the closing bracket.
+Assuming the MBML variable <code>total $</code> is a string, the following expression
+would yield the length of the string:</p>
+
+<pre><code>$[total $].length
+</code></pre>
+
+<p><strong>Parentheses Quoted Variable References</strong></p>
+
+<p>As with bracket quoted references, parentheses quoted references allow
+access to MBML variables whose names are not valid MBML identifiers. And
+like curly-brace quoted references, parentheses quoted references allow
+variable references to be embedded within text literals that would otherwise
+be interpreted as part of the variable reference.</p>
+
+<p>For example, consider these two expressions:</p>
+
+<pre><code>$[favorite color].length
+$(favorite color).length
+</code></pre>
+
+<p>The top <a href="#//api/name/expression">expression</a> uses the bracket quoted notation, which allows
+subreferences after the closing bracket. The bottom <a href="#//api/name/expression">expression</a> uses
+the parentheses quoted notation, which does not allow subreferences.</p>
+
+<p>Because subreferences are not allowed by the parentheses notation, any
+text that appears after the closing parenthesis will be considered the
+start of a new statement. In this case, since &ldquo;<code>.length</code>&rdquo; is not a valid
+variable reference, function call, or math <a href="#//api/name/expression">expression</a>, it is interpreted
+as a text literal by the <a href="#//api/name/expression">expression</a> evaluator.</p>
+
+<p>So while <code>$[favorite color].length</code> will return the length of the MBML
+variable called <code>favorite color</code>, <code>$(favorite color).length</code> will return
+the value of the MBML variable <code>favorite color</code> followed by the string
+literal &ldquo;<code>.length</code>&rdquo;.</p>
+
+<p><strong>Math Notation</strong></p>
+
+<p>MBML allows a simple math expressions. The addition (&ldquo;<code>+</code>&rdquo;), subtraction
+(&ldquo;<code>-</code>&rdquo;), multiplication (&ldquo;<code>*</code>&rdquo;) and division (&ldquo;<code>/</code>&rdquo;) operators are supported.
+In addition, the MBML math notation allows parenthetical grouping within
+expressions. Unless parentheses are used to change the order of evaluation
+of math operators, C language operator precedence is used.</p>
+
+<p>Math expressions can be embedded in a string or object evaluation context
+by placing the <a href="#//api/name/expression">expression</a> within <code>#(</code> &hellip; <code>)</code>. In a numeric context, the
+opening <code>#(</code> and closing <code>)</code> can be omitted.</p>
+
+<p>For example, suppose the MBML variable <code>states</code> is an array containing the
+name of each state in the United States. The label:</p>
+
+<pre><code>&lt;Label text="There are #($states.count * 2) U.S. Senators" ... /&gt;
+</code></pre>
+
+<p>would output &ldquo;There are 100 U.S. Senators&rdquo;.</p>
+
+<p><strong>Important:</strong> Within math expressions, operators <strong>must</strong> be surrounded by
+whitespace.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Evaluating expressions as strings" name="task_Evaluating expressions as strings"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as strings</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asString:">+&nbsp;asString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asString:error:">+&nbsp;asString:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asString:defaultValue:">+&nbsp;asString:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asString:inVariableSpace:defaultValue:error:">+&nbsp;asString:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Evaluating expressions as objects" name="task_Evaluating expressions as objects"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asObject:">+&nbsp;asObject:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asObject:error:">+&nbsp;asObject:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asObject:defaultValue:">+&nbsp;asObject:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asObject:inVariableSpace:defaultValue:error:">+&nbsp;asObject:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Evaluating expressions as numeric values" name="task_Evaluating expressions as numeric values"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as numeric values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asNumber:">+&nbsp;asNumber:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asNumber:error:">+&nbsp;asNumber:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asNumber:defaultValue:">+&nbsp;asNumber:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asNumber:inVariableSpace:defaultValue:error:">+&nbsp;asNumber:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Evaluating expressions as boolean values" name="task_Evaluating expressions as boolean values"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as boolean values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asBoolean:">+&nbsp;asBoolean:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asBoolean:error:">+&nbsp;asBoolean:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asBoolean:defaultValue:">+&nbsp;asBoolean:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asBoolean:inVariableSpace:defaultValue:error:">+&nbsp;asBoolean:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Evaluating expressions as arrays" name="task_Evaluating expressions as arrays"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as arrays</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asArray:">+&nbsp;asArray:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asArray:error:">+&nbsp;asArray:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asArray:inVariableSpace:error:">+&nbsp;asArray:inVariableSpace:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Coercing and comparing values" name="task_Coercing and comparing values"></a>
+						<h3 class="subsubtitle task-title">Coercing and comparing values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/booleanFromValue:">+&nbsp;booleanFromValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringFromBoolean:">+&nbsp;stringFromBoolean:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberFromValue:">+&nbsp;numberFromValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/value:isEqualTo:">+&nbsp;value:isEqualTo:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/compareLeftValue:againstRightValue:">+&nbsp;compareLeftValue:againstRightValue:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Representing expressions as objects" name="task_Representing expressions as objects"></a>
+						<h3 class="subsubtitle task-title">Representing expressions as objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/expression:usingGrammar:error:">+&nbsp;expression:usingGrammar:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/expression:inVariableSpace:usingGrammar:error:">+&nbsp;expression:inVariableSpace:usingGrammar:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/expression">&nbsp;&nbsp;expression</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/variableSpace">&nbsp;&nbsp;variableSpace</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tokens">&nbsp;&nbsp;tokens</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/grammar">&nbsp;&nbsp;grammar</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Mid-level token evaluation API" name="task_Mid-level token evaluation API"></a>
+						<h3 class="subsubtitle task-title">Mid-level token evaluation API</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectFromTokens:error:">+&nbsp;objectFromTokens:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectFromTokens:inVariableSpace:defaultValue:error:">+&nbsp;objectFromTokens:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringFromTokens:error:">+&nbsp;stringFromTokens:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringFromTokens:inVariableSpace:defaultValue:error:">+&nbsp;stringFromTokens:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/booleanFromTokens:error:">+&nbsp;booleanFromTokens:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/booleanFromTokens:inVariableSpace:defaultValue:error:">+&nbsp;booleanFromTokens:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Low-level token evaluation API" name="task_Low-level token evaluation API"></a>
+						<h3 class="subsubtitle task-title">Low-level token evaluation API</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateTokens:error:">+&nbsp;evaluateTokens:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateTokens:inVariableSpace:error:">+&nbsp;evaluateTokens:inVariableSpace:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/expression" title="expression"></a>
+	<h3 class="subsubtitle method-title">expression</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *expression</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/grammar" title="grammar"></a>
+	<h3 class="subsubtitle method-title">grammar</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBExpressionGrammar *grammar</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tokens" title="tokens"></a>
+	<h3 class="subsubtitle method-title">tokens</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *tokens</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/variableSpace" title="variableSpace"></a>
+	<h3 class="subsubtitle method-title">variableSpace</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBVariableSpace *variableSpace</code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/asArray:" title="asArray:"></a>
+	<h3 class="subsubtitle method-title">asArray:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asArray:error:" title="asArray:error:"></a>
+	<h3 class="subsubtitle method-title">asArray:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asArray:inVariableSpace:error:" title="asArray:inVariableSpace:error:"></a>
+	<h3 class="subsubtitle method-title">asArray:inVariableSpace:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asBoolean:" title="asBoolean:"></a>
+	<h3 class="subsubtitle method-title">asBoolean:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asBoolean:defaultValue:" title="asBoolean:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">asBoolean:defaultValue:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> defaultValue:(BOOL)<em>def</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asBoolean:error:" title="asBoolean:error:"></a>
+	<h3 class="subsubtitle method-title">asBoolean:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asBoolean:inVariableSpace:defaultValue:error:" title="asBoolean:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">asBoolean:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asNumber:" title="asNumber:"></a>
+	<h3 class="subsubtitle method-title">asNumber:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asNumber:defaultValue:" title="asNumber:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">asNumber:defaultValue:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> defaultValue:(NSDecimalNumber *)<em>def</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asNumber:error:" title="asNumber:error:"></a>
+	<h3 class="subsubtitle method-title">asNumber:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asNumber:inVariableSpace:defaultValue:error:" title="asNumber:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">asNumber:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asObject:" title="asObject:"></a>
+	<h3 class="subsubtitle method-title">asObject:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asObject:defaultValue:" title="asObject:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">asObject:defaultValue:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> defaultValue:(id)<em>def</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asObject:error:" title="asObject:error:"></a>
+	<h3 class="subsubtitle method-title">asObject:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asObject:inVariableSpace:defaultValue:error:" title="asObject:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">asObject:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asString:" title="asString:"></a>
+	<h3 class="subsubtitle method-title">asString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asString:defaultValue:" title="asString:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">asString:defaultValue:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> defaultValue:(NSString *)<em>def</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asString:error:" title="asString:error:"></a>
+	<h3 class="subsubtitle method-title">asString:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/asString:inVariableSpace:defaultValue:error:" title="asString:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">asString:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/booleanFromTokens:error:" title="booleanFromTokens:error:"></a>
+	<h3 class="subsubtitle method-title">booleanFromTokens:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)booleanFromTokens:(NSArray *)<em>tokens</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/booleanFromTokens:inVariableSpace:defaultValue:error:" title="booleanFromTokens:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">booleanFromTokens:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)booleanFromTokens:(NSArray *)<em>tokens</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/booleanFromValue:" title="booleanFromValue:"></a>
+	<h3 class="subsubtitle method-title">booleanFromValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
+converting arbitrary object values into booleans.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)booleanFromValue:(id)<em>val</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>the object being evaluated as a boolean</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the boolean value of <code>val</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/compareLeftValue:againstRightValue:" title="compareLeftValue:againstRightValue:"></a>
+	<h3 class="subsubtitle method-title">compareLeftValue:againstRightValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
+comparing two objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSComparisonResult)compareLeftValue:(id)<em>lValue</em> againstRightValue:(id)<em>rValue</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>lValue</em></dt>
+			<dd><p>the left value of the comparison</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rValue</em></dt>
+			<dd><p>the right value of the comparison</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>NSOrderedAscending</code> if <code>lValue</code>
+            is considered less than <code>rValue</code>;
+            <code>NSOrderedDescending</code> if <code>lValue</code>
+            is considered greater than <code>rValue</code>;
+            <code>NSOrderedSame</code> if <code>lValue</code>
+            is considered equal to <code>rValue</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateTokens:error:" title="evaluateTokens:error:"></a>
+	<h3 class="subsubtitle method-title">evaluateTokens:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)evaluateTokens:(NSArray *)<em>tokens</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateTokens:inVariableSpace:error:" title="evaluateTokens:inVariableSpace:error:"></a>
+	<h3 class="subsubtitle method-title">evaluateTokens:inVariableSpace:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)evaluateTokens:(NSArray *)<em>tokens</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/expression:inVariableSpace:usingGrammar:error:" title="expression:inVariableSpace:usingGrammar:error:"></a>
+	<h3 class="subsubtitle method-title">expression:inVariableSpace:usingGrammar:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)expression:(NSString *)<em>exprStr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/expression:usingGrammar:error:" title="expression:usingGrammar:error:"></a>
+	<h3 class="subsubtitle method-title">expression:usingGrammar:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)expression:(NSString *)<em>exprStr</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberFromValue:" title="numberFromValue:"></a>
+	<h3 class="subsubtitle method-title">numberFromValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
+converting arbitrary object values into NSDecimalNumber instances.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)numberFromValue:(id)<em>val</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>the object being evaluated as an NSDecimalNumber</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>if <code>val</code> can be interpreted as a number,
+            the return value is an <code>NSDecimalNumber</code>
+            instance representing that number. If the value could
+            not be interpreted as a decimal number, or if the
+            resulting <code>NSDecimalNumber</code> is equal to
+            <code>[NSNumber notANumber]</code>, <code>nil</code>
+            is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectFromTokens:error:" title="objectFromTokens:error:"></a>
+	<h3 class="subsubtitle method-title">objectFromTokens:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)objectFromTokens:(NSArray *)<em>tokens</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectFromTokens:inVariableSpace:defaultValue:error:" title="objectFromTokens:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">objectFromTokens:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)objectFromTokens:(NSArray *)<em>tokens</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringFromBoolean:" title="stringFromBoolean:"></a>
+	<h3 class="subsubtitle method-title">stringFromBoolean:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
+converting boolean values into strings.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromBoolean:(BOOL)<em>val</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>the boolean value</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the string representing the boolean value passed in; will be
+            either <code>kMBMLBooleanStringTrue</code> or
+            <code>kMBMLBooleanStringFalse</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringFromTokens:error:" title="stringFromTokens:error:"></a>
+	<h3 class="subsubtitle method-title">stringFromTokens:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromTokens:(NSArray *)<em>tokens</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringFromTokens:inVariableSpace:defaultValue:error:" title="stringFromTokens:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="subsubtitle method-title">stringFromTokens:inVariableSpace:defaultValue:error:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromTokens:(NSArray *)<em>tokens</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/value:isEqualTo:" title="value:isEqualTo:"></a>
+	<h3 class="subsubtitle method-title">value:isEqualTo:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
+comparing two objects for equality.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)value:(id)<em>lValue</em> isEqualTo:(id)<em>rValue</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>lValue</em></dt>
+			<dd><p>the left value of the comparison</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rValue</em></dt>
+			<dd><p>the right value of the comparison</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>[lValue isEqual:rValue];</code> if <code>lValue</code>
+and <code>rValue</code> are of the same types. Otherwise this method
+falls back on
+<code>[MBExpression compareLeftValue:lValue againstRightValue:rValue]
+== NSOrderedSame;</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

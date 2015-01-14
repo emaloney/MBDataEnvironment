@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBVariableDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBVariableDeclaration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="34"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/setName:</TokenIdentifier>
+			<Abstract type="html">Returns the name of the variable.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/name</TokenIdentifier>
+			<Abstract type="html">Returns the name of the variable.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBVariableDeclaration/name</TokenIdentifier>
+			<Abstract type="html">Returns the name of the variable.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/setIsReadOnly:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the variable contains a read-only value.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isReadOnly</Declaration>
+			
+			
+			<Anchor>//api/name/isReadOnly</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/isReadOnly</TokenIdentifier>
+			<Abstract type="html">Returns YES if the variable contains a read-only value.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isReadOnly</Declaration>
+			
+			
+			<Anchor>//api/name/isReadOnly</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBVariableDeclaration/isReadOnly</TokenIdentifier>
+			<Abstract type="html">Returns YES if the variable contains a read-only value.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isReadOnly</Declaration>
+			
+			
+			<Anchor>//api/name/isReadOnly</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/setDisallowsValueCaching:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the variable&apos;s value should not be cached by the
+    MBVariableSpace. By definition, such variables are also read-only. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL disallowsValueCaching</Declaration>
+			
+			
+			<Anchor>//api/name/disallowsValueCaching</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/disallowsValueCaching</TokenIdentifier>
+			<Abstract type="html">Returns YES if the variable&apos;s value should not be cached by the
+    MBVariableSpace. By definition, such variables are also read-only. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL disallowsValueCaching</Declaration>
+			
+			
+			<Anchor>//api/name/disallowsValueCaching</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBVariableDeclaration/disallowsValueCaching</TokenIdentifier>
+			<Abstract type="html">Returns YES if the variable&apos;s value should not be cached by the
+    MBVariableSpace. By definition, such variables are also read-only. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL disallowsValueCaching</Declaration>
+			
+			
+			<Anchor>//api/name/disallowsValueCaching</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/initialValueInVariableSpace:error:</TokenIdentifier>
+			<Abstract type="html">Returns the initial value of the variable in the given variable space.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>- (id)initialValueInVariableSpace:(MBVariableSpace *)space error:(out MBExpressionError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>space</Name>
+					<Abstract type="html">The MBVariableSpace for which the initial value is to be
+            retrieved.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">If non-nil and an error occurs during retrival of the
+            variable value, this value will be set to an MBExpressionError
+            object describing the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initialValueInVariableSpace:error:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/currentValueInVariableSpace:error:</TokenIdentifier>
+			<Abstract type="html">Returns the current value of the variable in the given variable space.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>- (id)currentValueInVariableSpace:(MBVariableSpace *)space error:(out MBExpressionError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>space</Name>
+					<Abstract type="html">The MBVariableSpace for which the current value is to be
+            retrieved.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">If non-nil and an error occurs during retrival of the
+            variable value, this value will be set to an MBExpressionError
+            object describing the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentValueInVariableSpace:error:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/valueChangedTo:inVariableSpace:</TokenIdentifier>
+			<Abstract type="html">Called when a variable value has changed in a given variable space.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>- (void)valueChangedTo:(id)value inVariableSpace:(MBVariableSpace *)space</Declaration>
+			
+			
+			<Anchor>//api/name/valueChangedTo:inVariableSpace:</Anchor>
+            <NodeRef refid="34"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

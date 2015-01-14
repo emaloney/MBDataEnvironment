@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBAttributeValidator.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBAttributeValidator</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBAttributeValidator/validatorForDataModel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)validatorForDataModel:(MBDataModel *)model</Declaration>
+			
+			
+			<Anchor>//api/name/validatorForDataModel:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/setModel:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBDataModel *model</Declaration>
+			
+			
+			<Anchor>//api/name/model</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/model</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBDataModel *model</Declaration>
+			
+			
+			<Anchor>//api/name/model</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBAttributeValidator/model</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBDataModel *model</Declaration>
+			
+			
+			<Anchor>//api/name/model</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/setValidationErrorMessages:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBDataModel *validationErrorMessages</Declaration>
+			
+			
+			<Anchor>//api/name/validationErrorMessages</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/validationErrorMessages</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBDataModel *validationErrorMessages</Declaration>
+			
+			
+			<Anchor>//api/name/validationErrorMessages</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBAttributeValidator/validationErrorMessages</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBDataModel *validationErrorMessages</Declaration>
+			
+			
+			<Anchor>//api/name/validationErrorMessages</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/require:or:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)require:(NSString *)attr1 or:(NSString *)attr2</Declaration>
+			
+			
+			<Anchor>//api/name/require:or:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/require:or:butNotBoth:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)require:(NSString *)attr1 or:(NSString *)attr2 butNotBoth:(BOOL)onlyAllowOne</Declaration>
+			
+			
+			<Anchor>//api/name/require:or:butNotBoth:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/requireAtLeastOneOf:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)requireAtLeastOneOf:(NSObject&lt;NSFastEnumeration&gt; *)attrs</Declaration>
+			
+			
+			<Anchor>//api/name/requireAtLeastOneOf:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/requireExactlyOneOf:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)requireExactlyOneOf:(NSObject&lt;NSFastEnumeration&gt; *)attrs</Declaration>
+			
+			
+			<Anchor>//api/name/requireExactlyOneOf:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBAttributeValidator/validate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)validate</Declaration>
+			
+			
+			<Anchor>//api/name/validate</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

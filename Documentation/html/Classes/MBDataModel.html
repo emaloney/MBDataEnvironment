@@ -1,0 +1,6424 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBDataModel Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBDataModel Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/containingRelative">&nbsp;&nbsp;&nbsp;&nbsp;containingRelative</option>
+	
+	<option value="//api/name/content">&nbsp;&nbsp;&nbsp;&nbsp;content</option>
+	
+	<option value="//api/name/debuggingXML">&nbsp;&nbsp;&nbsp;&nbsp;debuggingXML</option>
+	
+	<option value="//api/name/hasStringContent">&nbsp;&nbsp;&nbsp;&nbsp;hasStringContent</option>
+	
+	<option value="//api/name/simulatedXML">&nbsp;&nbsp;&nbsp;&nbsp;simulatedXML</option>
+	
+	<option value="//api/name/xmlTagName">&nbsp;&nbsp;&nbsp;&nbsp;xmlTagName</option>
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/dataEntityName">&nbsp;&nbsp;&nbsp;&nbsp;+ dataEntityName</option>
+	
+	<option value="//api/name/dataModelFromXML:">&nbsp;&nbsp;&nbsp;&nbsp;+ dataModelFromXML:</option>
+	
+	<option value="//api/name/defaultRelationType">&nbsp;&nbsp;&nbsp;&nbsp;+ defaultRelationType</option>
+	
+	<option value="//api/name/requiredAttributes">&nbsp;&nbsp;&nbsp;&nbsp;+ requiredAttributes</option>
+	
+	<option value="//api/name/supportedAttributes">&nbsp;&nbsp;&nbsp;&nbsp;+ supportedAttributes</option>
+	
+	<option value="//api/name/unsupportedAttributes">&nbsp;&nbsp;&nbsp;&nbsp;+ unsupportedAttributes</option>
+	
+	<option value="//api/name/xmlFromData:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ xmlFromData:error:</option>
+	
+	<option value="//api/name/xmlFromFile:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ xmlFromFile:error:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addAttributesFromDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- addAttributesFromDictionary:</option>
+	
+	<option value="//api/name/addAttributesFromXML:">&nbsp;&nbsp;&nbsp;&nbsp;- addAttributesFromXML:</option>
+	
+	<option value="//api/name/addAttributesToDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- addAttributesToDictionary:</option>
+	
+	<option value="//api/name/addRelative:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelative:</option>
+	
+	<option value="//api/name/addRelative:withRelationType:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelative:withRelationType:</option>
+	
+	<option value="//api/name/addRelativeOfClass:forEachChildOf:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:forEachChildOf:</option>
+	
+	<option value="//api/name/addRelativeOfClass:forEachChildOf:havingTag:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:forEachChildOf:havingTag:</option>
+	
+	<option value="//api/name/addRelativeOfClass:forElement:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:forElement:</option>
+	
+	<option value="//api/name/addRelativeOfClass:forFirstChildOf:havingTag:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:forFirstChildOf:havingTag:</option>
+	
+	<option value="//api/name/addRelativeOfClass:withRelationType:forEachChildOf:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:withRelationType:forEachChildOf:</option>
+	
+	<option value="//api/name/addRelativeOfClass:withRelationType:forEachChildOf:havingTag:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:withRelationType:forEachChildOf:havingTag:</option>
+	
+	<option value="//api/name/addRelativeOfClass:withRelationType:forElement:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:withRelationType:forElement:</option>
+	
+	<option value="//api/name/addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:</option>
+	
+	<option value="//api/name/addRelatives:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelatives:</option>
+	
+	<option value="//api/name/addRelatives:withRelationType:">&nbsp;&nbsp;&nbsp;&nbsp;- addRelatives:withRelationType:</option>
+	
+	<option value="//api/name/allRelatives">&nbsp;&nbsp;&nbsp;&nbsp;- allRelatives</option>
+	
+	<option value="//api/name/amendDataModelWithXML:">&nbsp;&nbsp;&nbsp;&nbsp;- amendDataModelWithXML:</option>
+	
+	<option value="//api/name/amendDataModelWithXMLFromData:">&nbsp;&nbsp;&nbsp;&nbsp;- amendDataModelWithXMLFromData:</option>
+	
+	<option value="//api/name/amendDataModelWithXMLFromData:error:">&nbsp;&nbsp;&nbsp;&nbsp;- amendDataModelWithXMLFromData:error:</option>
+	
+	<option value="//api/name/amendDataModelWithXMLFromFile:">&nbsp;&nbsp;&nbsp;&nbsp;- amendDataModelWithXMLFromFile:</option>
+	
+	<option value="//api/name/amendDataModelWithXMLFromFile:error:">&nbsp;&nbsp;&nbsp;&nbsp;- amendDataModelWithXMLFromFile:error:</option>
+	
+	<option value="//api/name/attributeNames">&nbsp;&nbsp;&nbsp;&nbsp;- attributeNames</option>
+	
+	<option value="//api/name/booleanValueOfAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- booleanValueOfAttribute:</option>
+	
+	<option value="//api/name/cloneDataModel:">&nbsp;&nbsp;&nbsp;&nbsp;- cloneDataModel:</option>
+	
+	<option value="//api/name/cloneDataModel:withZone:">&nbsp;&nbsp;&nbsp;&nbsp;- cloneDataModel:withZone:</option>
+	
+	<option value="//api/name/copyWithZone:">&nbsp;&nbsp;&nbsp;&nbsp;- copyWithZone:</option>
+	
+	<option value="//api/name/countAttributes">&nbsp;&nbsp;&nbsp;&nbsp;- countAttributes</option>
+	
+	<option value="//api/name/countRelatives">&nbsp;&nbsp;&nbsp;&nbsp;- countRelatives</option>
+	
+	<option value="//api/name/countRelativesWithDefaultRelation">&nbsp;&nbsp;&nbsp;&nbsp;- countRelativesWithDefaultRelation</option>
+	
+	<option value="//api/name/countRelativesWithRelationType:">&nbsp;&nbsp;&nbsp;&nbsp;- countRelativesWithRelationType:</option>
+	
+	<option value="//api/name/currentRelationTypes">&nbsp;&nbsp;&nbsp;&nbsp;- currentRelationTypes</option>
+	
+	<option value="//api/name/dataModelDidAddOrRemoveRelatives">&nbsp;&nbsp;&nbsp;&nbsp;- dataModelDidAddOrRemoveRelatives</option>
+	
+	<option value="//api/name/dataModelDidLoad">&nbsp;&nbsp;&nbsp;&nbsp;- dataModelDidLoad</option>
+	
+	<option value="//api/name/deprecateAttribute:inFavorOf:">&nbsp;&nbsp;&nbsp;&nbsp;- deprecateAttribute:inFavorOf:</option>
+	
+	<option value="//api/name/didAmendDataModelWithXMLFromFile:">&nbsp;&nbsp;&nbsp;&nbsp;- didAmendDataModelWithXMLFromFile:</option>
+	
+	<option value="//api/name/doesDataModelNeedValidation">&nbsp;&nbsp;&nbsp;&nbsp;- doesDataModelNeedValidation</option>
+	
+	<option value="//api/name/doubleValueOfAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- doubleValueOfAttribute:</option>
+	
+	<option value="//api/name/evaluateAsBoolean:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsBoolean:</option>
+	
+	<option value="//api/name/evaluateAsBoolean:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsBoolean:defaultValue:</option>
+	
+	<option value="//api/name/evaluateAsNumber:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsNumber:</option>
+	
+	<option value="//api/name/evaluateAsNumber:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsNumber:defaultValue:</option>
+	
+	<option value="//api/name/evaluateAsObject:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsObject:</option>
+	
+	<option value="//api/name/evaluateAsObject:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsObject:defaultValue:</option>
+	
+	<option value="//api/name/evaluateAsString:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsString:</option>
+	
+	<option value="//api/name/evaluateAsString:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- evaluateAsString:defaultValue:</option>
+	
+	<option value="//api/name/firstRelativeWithDefaultRelation">&nbsp;&nbsp;&nbsp;&nbsp;- firstRelativeWithDefaultRelation</option>
+	
+	<option value="//api/name/firstRelativeWithRelationType:">&nbsp;&nbsp;&nbsp;&nbsp;- firstRelativeWithRelationType:</option>
+	
+	<option value="//api/name/hasAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- hasAttribute:</option>
+	
+	<option value="//api/name/ignoredAttributes">&nbsp;&nbsp;&nbsp;&nbsp;- ignoredAttributes</option>
+	
+	<option value="//api/name/implementingClassAttributeName">&nbsp;&nbsp;&nbsp;&nbsp;- implementingClassAttributeName</option>
+	
+	<option value="//api/name/implementingClassForRelativeOfType:fromTag:">&nbsp;&nbsp;&nbsp;&nbsp;- implementingClassForRelativeOfType:fromTag:</option>
+	
+	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
+	
+	<option value="//api/name/initWithAttributes:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithAttributes:</option>
+	
+	<option value="//api/name/initWithXML:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithXML:</option>
+	
+	<option value="//api/name/integerValueOfAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- integerValueOfAttribute:</option>
+	
+	<option value="//api/name/isDataModelValid">&nbsp;&nbsp;&nbsp;&nbsp;- isDataModelValid</option>
+	
+	<option value="//api/name/markDataModelInvalid">&nbsp;&nbsp;&nbsp;&nbsp;- markDataModelInvalid</option>
+	
+	<option value="//api/name/markDataModelNeedsValidation">&nbsp;&nbsp;&nbsp;&nbsp;- markDataModelNeedsValidation</option>
+	
+	<option value="//api/name/mutableCopyWithZone:">&nbsp;&nbsp;&nbsp;&nbsp;- mutableCopyWithZone:</option>
+	
+	<option value="//api/name/numberValueOfAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- numberValueOfAttribute:</option>
+	
+	<option value="//api/name/objectAttributes">&nbsp;&nbsp;&nbsp;&nbsp;- objectAttributes</option>
+	
+	<option value="//api/name/objectForKeyedSubscript:">&nbsp;&nbsp;&nbsp;&nbsp;- objectForKeyedSubscript:</option>
+	
+	<option value="//api/name/overlayAttributesFromDictionary:">&nbsp;&nbsp;&nbsp;&nbsp;- overlayAttributesFromDictionary:</option>
+	
+	<option value="//api/name/populateDataModelFromXML:">&nbsp;&nbsp;&nbsp;&nbsp;- populateDataModelFromXML:</option>
+	
+	<option value="//api/name/poseAsClass:">&nbsp;&nbsp;&nbsp;&nbsp;- poseAsClass:</option>
+	
+	<option value="//api/name/relationTypeForTag:">&nbsp;&nbsp;&nbsp;&nbsp;- relationTypeForTag:</option>
+	
+	<option value="//api/name/relativesWithDefaultRelation">&nbsp;&nbsp;&nbsp;&nbsp;- relativesWithDefaultRelation</option>
+	
+	<option value="//api/name/relativesWithRelationType:">&nbsp;&nbsp;&nbsp;&nbsp;- relativesWithRelationType:</option>
+	
+	<option value="//api/name/removeAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- removeAttribute:</option>
+	
+	<option value="//api/name/removeRelative:">&nbsp;&nbsp;&nbsp;&nbsp;- removeRelative:</option>
+	
+	<option value="//api/name/removeRelative:withRelationType:">&nbsp;&nbsp;&nbsp;&nbsp;- removeRelative:withRelationType:</option>
+	
+	<option value="//api/name/renameAttribute:to:">&nbsp;&nbsp;&nbsp;&nbsp;- renameAttribute:to:</option>
+	
+	<option value="//api/name/requiredAttributes">&nbsp;&nbsp;&nbsp;&nbsp;- requiredAttributes</option>
+	
+	<option value="//api/name/setAttribute:forName:">&nbsp;&nbsp;&nbsp;&nbsp;- setAttribute:forName:</option>
+	
+	<option value="//api/name/setBooleanAttribute:forName:">&nbsp;&nbsp;&nbsp;&nbsp;- setBooleanAttribute:forName:</option>
+	
+	<option value="//api/name/setDoubleAttribute:forName:">&nbsp;&nbsp;&nbsp;&nbsp;- setDoubleAttribute:forName:</option>
+	
+	<option value="//api/name/setIntegerAttribute:forName:">&nbsp;&nbsp;&nbsp;&nbsp;- setIntegerAttribute:forName:</option>
+	
+	<option value="//api/name/setObject:forKeyedSubscript:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject:forKeyedSubscript:</option>
+	
+	<option value="//api/name/shouldAutomaticallyAddRelativeOfType:fromTag:">&nbsp;&nbsp;&nbsp;&nbsp;- shouldAutomaticallyAddRelativeOfType:fromTag:</option>
+	
+	<option value="//api/name/stringValueOfAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- stringValueOfAttribute:</option>
+	
+	<option value="//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:">&nbsp;&nbsp;&nbsp;&nbsp;- validateAsRelativeOf:relatedBy:dataModelRoot:</option>
+	
+	<option value="//api/name/validateAttributes">&nbsp;&nbsp;&nbsp;&nbsp;- validateAttributes</option>
+	
+	<option value="//api/name/validateDataModel">&nbsp;&nbsp;&nbsp;&nbsp;- validateDataModel</option>
+	
+	<option value="//api/name/validateDataModelIfNeeded">&nbsp;&nbsp;&nbsp;&nbsp;- validateDataModelIfNeeded</option>
+	
+	<option value="//api/name/valueOfAttribute:">&nbsp;&nbsp;&nbsp;&nbsp;- valueOfAttribute:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Factory &amp; initializer methods">Factory &amp; initializer methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_NSCopying support">NSCopying support</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Class posing">Class posing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_XML parsing convenience">XML parsing convenience</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Populating the data model">Populating the data model</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_XML representation">XML representation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Data model enforcement">Data model enforcement</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Data model validation">Data model validation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Copying data model attributes">Copying data model attributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing data model values">Accessing data model values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Keyed subscripting support">Keyed subscripting support</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Performing expression evaluation on attribute values">Performing expression evaluation on attribute values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Setting data model attribute values">Setting data model attribute values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Renaming and removing attributes">Renaming and removing attributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Determining relation types">Determining relation types</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Counting related objects">Counting related objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing related objects">Accessing related objects</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adding related objects to the data model">Adding related objects to the data model</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Building out the data model from an XML structure">Building out the data model from an XML structure</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Building out the data model automatically">Building out the data model automatically</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing related objects from the data model">Removing related objects from the data model</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Notification of changes to the set of relatives">Notification of changes to the set of relatives</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containingRelative">containingRelative</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/content">content</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/debuggingXML">debuggingXML</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasStringContent">hasStringContent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/simulatedXML">simulatedXML</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/xmlTagName">xmlTagName</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataEntityName">dataEntityName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataModelFromXML:">dataModelFromXML:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/defaultRelationType">defaultRelationType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requiredAttributes">requiredAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedAttributes">supportedAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsupportedAttributes">unsupportedAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/xmlFromData:error:">xmlFromData:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/xmlFromFile:error:">xmlFromFile:error:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addAttributesFromDictionary:">addAttributesFromDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addAttributesFromXML:">addAttributesFromXML:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addAttributesToDictionary:">addAttributesToDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelative:">addRelative:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelative:withRelationType:">addRelative:withRelationType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:forEachChildOf:">addRelativeOfClass:forEachChildOf:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:forEachChildOf:havingTag:">addRelativeOfClass:forEachChildOf:havingTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:forElement:">addRelativeOfClass:forElement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:forFirstChildOf:havingTag:">addRelativeOfClass:forFirstChildOf:havingTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:withRelationType:forEachChildOf:">addRelativeOfClass:withRelationType:forEachChildOf:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:withRelationType:forEachChildOf:havingTag:">addRelativeOfClass:withRelationType:forEachChildOf:havingTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:withRelationType:forElement:">addRelativeOfClass:withRelationType:forElement:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:">addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelatives:">addRelatives:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addRelatives:withRelationType:">addRelatives:withRelationType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/allRelatives">allRelatives</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amendDataModelWithXML:">amendDataModelWithXML:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amendDataModelWithXMLFromData:">amendDataModelWithXMLFromData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amendDataModelWithXMLFromData:error:">amendDataModelWithXMLFromData:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amendDataModelWithXMLFromFile:">amendDataModelWithXMLFromFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/amendDataModelWithXMLFromFile:error:">amendDataModelWithXMLFromFile:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attributeNames">attributeNames</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/booleanValueOfAttribute:">booleanValueOfAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cloneDataModel:">cloneDataModel:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cloneDataModel:withZone:">cloneDataModel:withZone:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/copyWithZone:">copyWithZone:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countAttributes">countAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countRelatives">countRelatives</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countRelativesWithDefaultRelation">countRelativesWithDefaultRelation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/countRelativesWithRelationType:">countRelativesWithRelationType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentRelationTypes">currentRelationTypes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataModelDidAddOrRemoveRelatives">dataModelDidAddOrRemoveRelatives</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataModelDidLoad">dataModelDidLoad</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deprecateAttribute:inFavorOf:">deprecateAttribute:inFavorOf:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didAmendDataModelWithXMLFromFile:">didAmendDataModelWithXMLFromFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doesDataModelNeedValidation">doesDataModelNeedValidation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/doubleValueOfAttribute:">doubleValueOfAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsBoolean:">evaluateAsBoolean:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsBoolean:defaultValue:">evaluateAsBoolean:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsNumber:">evaluateAsNumber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsNumber:defaultValue:">evaluateAsNumber:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsObject:">evaluateAsObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsObject:defaultValue:">evaluateAsObject:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsString:">evaluateAsString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateAsString:defaultValue:">evaluateAsString:defaultValue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstRelativeWithDefaultRelation">firstRelativeWithDefaultRelation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstRelativeWithRelationType:">firstRelativeWithRelationType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasAttribute:">hasAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ignoredAttributes">ignoredAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/implementingClassAttributeName">implementingClassAttributeName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/implementingClassForRelativeOfType:fromTag:">implementingClassForRelativeOfType:fromTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithAttributes:">initWithAttributes:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithXML:">initWithXML:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/integerValueOfAttribute:">integerValueOfAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isDataModelValid">isDataModelValid</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/markDataModelInvalid">markDataModelInvalid</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/markDataModelNeedsValidation">markDataModelNeedsValidation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mutableCopyWithZone:">mutableCopyWithZone:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberValueOfAttribute:">numberValueOfAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectAttributes">objectAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectForKeyedSubscript:">objectForKeyedSubscript:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/overlayAttributesFromDictionary:">overlayAttributesFromDictionary:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/populateDataModelFromXML:">populateDataModelFromXML:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/poseAsClass:">poseAsClass:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/relationTypeForTag:">relationTypeForTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/relativesWithDefaultRelation">relativesWithDefaultRelation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/relativesWithRelationType:">relativesWithRelationType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAttribute:">removeAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeRelative:">removeRelative:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeRelative:withRelationType:">removeRelative:withRelationType:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/renameAttribute:to:">renameAttribute:to:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requiredAttributes">requiredAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAttribute:forName:">setAttribute:forName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBooleanAttribute:forName:">setBooleanAttribute:forName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDoubleAttribute:forName:">setDoubleAttribute:forName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setIntegerAttribute:forName:">setIntegerAttribute:forName:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject:forKeyedSubscript:">setObject:forKeyedSubscript:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldAutomaticallyAddRelativeOfType:fromTag:">shouldAutomaticallyAddRelativeOfType:fromTag:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringValueOfAttribute:">stringValueOfAttribute:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:">validateAsRelativeOf:relatedBy:dataModelRoot:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateAttributes">validateAttributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateDataModel">validateDataModel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validateDataModelIfNeeded">validateDataModelIfNeeded</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/valueOfAttribute:">valueOfAttribute:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBDataModel Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBDataModel Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">MBFormattedDescriptionObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCoding<br />NSCopying<br />NSMutableCopying</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBDataModel.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An implementation of a generic class representing a data model. Each data
+model instance contains attributes and related objects that are typically
+populated from XML.</p>
+
+<p>When populated from an XML element, a data model may contain <em>attributes</em>
+and <em>related objects</em>. The data model&rsquo;s attributes are populated from the
+element&rsquo;s attributes, and the model will contain related objects for any
+child XML elements.</p>
+
+<p>Data models support validation, wherein their attributes and related objects
+are inspected to see whether they contain the expected values. Subclasses
+may implement any of the following methods to participate in validation:</p>
+
+<ul>
+<li><a href="#//api/name/requiredAttributes">requiredAttributes</a></li>
+<li><a href="#//api/name/supportedAttributes">supportedAttributes</a></li>
+<li><a href="#//api/name/unsupportedAttributes">unsupportedAttributes</a></li>
+<li><a href="#//api/name/validateAttributes">validateAttributes</a></li>
+<li><a href="#//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:">validateAsRelativeOf:relatedBy:dataModelRoot:</a></li>
+</ul>
+
+
+<p>Mockingbird uses instances of this class to represent data loaded from
+MBML (the XML-based <strong>M</strong>ocking<strong>b</strong>ird <strong>M</strong>arkup <strong>L</strong>anguage), and
+validation is performed to notify MBML developers of any errors in their code.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Factory &amp; initializer methods" name="task_Factory &amp; initializer methods"></a>
+						<h3 class="subsubtitle task-title">Factory &amp; initializer methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataModelFromXML:">+&nbsp;dataModelFromXML:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithXML:">&ndash;&nbsp;initWithXML:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithAttributes:">&ndash;&nbsp;initWithAttributes:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="NSCopying support" name="task_NSCopying support"></a>
+						<h3 class="subsubtitle task-title">NSCopying support</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/copyWithZone:">&ndash;&nbsp;copyWithZone:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mutableCopyWithZone:">&ndash;&nbsp;mutableCopyWithZone:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cloneDataModel:">&ndash;&nbsp;cloneDataModel:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cloneDataModel:withZone:">&ndash;&nbsp;cloneDataModel:withZone:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Class posing" name="task_Class posing"></a>
+						<h3 class="subsubtitle task-title">Class posing</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/poseAsClass:">&ndash;&nbsp;poseAsClass:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="XML parsing convenience" name="task_XML parsing convenience"></a>
+						<h3 class="subsubtitle task-title">XML parsing convenience</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/xmlFromFile:error:">+&nbsp;xmlFromFile:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/xmlFromData:error:">+&nbsp;xmlFromData:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Populating the data model" name="task_Populating the data model"></a>
+						<h3 class="subsubtitle task-title">Populating the data model</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/amendDataModelWithXML:">&ndash;&nbsp;amendDataModelWithXML:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/amendDataModelWithXMLFromFile:">&ndash;&nbsp;amendDataModelWithXMLFromFile:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/amendDataModelWithXMLFromFile:error:">&ndash;&nbsp;amendDataModelWithXMLFromFile:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/amendDataModelWithXMLFromData:">&ndash;&nbsp;amendDataModelWithXMLFromData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/amendDataModelWithXMLFromData:error:">&ndash;&nbsp;amendDataModelWithXMLFromData:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addAttributesFromXML:">&ndash;&nbsp;addAttributesFromXML:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addAttributesFromDictionary:">&ndash;&nbsp;addAttributesFromDictionary:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/overlayAttributesFromDictionary:">&ndash;&nbsp;overlayAttributesFromDictionary:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/populateDataModelFromXML:">&ndash;&nbsp;populateDataModelFromXML:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataModelDidLoad">&ndash;&nbsp;dataModelDidLoad</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didAmendDataModelWithXMLFromFile:">&ndash;&nbsp;didAmendDataModelWithXMLFromFile:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="XML representation" name="task_XML representation"></a>
+						<h3 class="subsubtitle task-title">XML representation</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataEntityName">+&nbsp;dataEntityName</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/xmlTagName">&nbsp;&nbsp;xmlTagName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/simulatedXML">&nbsp;&nbsp;simulatedXML</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/debuggingXML">&nbsp;&nbsp;debuggingXML</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Data model enforcement" name="task_Data model enforcement"></a>
+						<h3 class="subsubtitle task-title">Data model enforcement</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requiredAttributes">+&nbsp;requiredAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedAttributes">+&nbsp;supportedAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsupportedAttributes">+&nbsp;unsupportedAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/implementingClassAttributeName">&ndash;&nbsp;implementingClassAttributeName</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requiredAttributes">&ndash;&nbsp;requiredAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ignoredAttributes">&ndash;&nbsp;ignoredAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deprecateAttribute:inFavorOf:">&ndash;&nbsp;deprecateAttribute:inFavorOf:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Data model validation" name="task_Data model validation"></a>
+						<h3 class="subsubtitle task-title">Data model validation</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateDataModel">&ndash;&nbsp;validateDataModel</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateDataModelIfNeeded">&ndash;&nbsp;validateDataModelIfNeeded</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateAttributes">&ndash;&nbsp;validateAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:">&ndash;&nbsp;validateAsRelativeOf:relatedBy:dataModelRoot:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/markDataModelNeedsValidation">&ndash;&nbsp;markDataModelNeedsValidation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/doesDataModelNeedValidation">&ndash;&nbsp;doesDataModelNeedValidation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/markDataModelInvalid">&ndash;&nbsp;markDataModelInvalid</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isDataModelValid">&ndash;&nbsp;isDataModelValid</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Copying data model attributes" name="task_Copying data model attributes"></a>
+						<h3 class="subsubtitle task-title">Copying data model attributes</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectAttributes">&ndash;&nbsp;objectAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addAttributesToDictionary:">&ndash;&nbsp;addAttributesToDictionary:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessing data model values" name="task_Accessing data model values"></a>
+						<h3 class="subsubtitle task-title">Accessing data model values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/content">&nbsp;&nbsp;content</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasStringContent">&nbsp;&nbsp;hasStringContent</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countAttributes">&ndash;&nbsp;countAttributes</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/attributeNames">&ndash;&nbsp;attributeNames</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasAttribute:">&ndash;&nbsp;hasAttribute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/valueOfAttribute:">&ndash;&nbsp;valueOfAttribute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringValueOfAttribute:">&ndash;&nbsp;stringValueOfAttribute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberValueOfAttribute:">&ndash;&nbsp;numberValueOfAttribute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/booleanValueOfAttribute:">&ndash;&nbsp;booleanValueOfAttribute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/integerValueOfAttribute:">&ndash;&nbsp;integerValueOfAttribute:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/doubleValueOfAttribute:">&ndash;&nbsp;doubleValueOfAttribute:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Keyed subscripting support" name="task_Keyed subscripting support"></a>
+						<h3 class="subsubtitle task-title">Keyed subscripting support</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/objectForKeyedSubscript:">&ndash;&nbsp;objectForKeyedSubscript:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Performing expression evaluation on attribute values" name="task_Performing expression evaluation on attribute values"></a>
+						<h3 class="subsubtitle task-title">Performing expression evaluation on attribute values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsObject:">&ndash;&nbsp;evaluateAsObject:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsObject:defaultValue:">&ndash;&nbsp;evaluateAsObject:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsString:">&ndash;&nbsp;evaluateAsString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsString:defaultValue:">&ndash;&nbsp;evaluateAsString:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsNumber:">&ndash;&nbsp;evaluateAsNumber:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsNumber:defaultValue:">&ndash;&nbsp;evaluateAsNumber:defaultValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsBoolean:">&ndash;&nbsp;evaluateAsBoolean:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evaluateAsBoolean:defaultValue:">&ndash;&nbsp;evaluateAsBoolean:defaultValue:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Setting data model attribute values" name="task_Setting data model attribute values"></a>
+						<h3 class="subsubtitle task-title">Setting data model attribute values</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setAttribute:forName:">&ndash;&nbsp;setAttribute:forName:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setBooleanAttribute:forName:">&ndash;&nbsp;setBooleanAttribute:forName:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setIntegerAttribute:forName:">&ndash;&nbsp;setIntegerAttribute:forName:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDoubleAttribute:forName:">&ndash;&nbsp;setDoubleAttribute:forName:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Renaming and removing attributes" name="task_Renaming and removing attributes"></a>
+						<h3 class="subsubtitle task-title">Renaming and removing attributes</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/renameAttribute:to:">&ndash;&nbsp;renameAttribute:to:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAttribute:">&ndash;&nbsp;removeAttribute:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Determining relation types" name="task_Determining relation types"></a>
+						<h3 class="subsubtitle task-title">Determining relation types</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/defaultRelationType">+&nbsp;defaultRelationType</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentRelationTypes">&ndash;&nbsp;currentRelationTypes</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Counting related objects" name="task_Counting related objects"></a>
+						<h3 class="subsubtitle task-title">Counting related objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countRelatives">&ndash;&nbsp;countRelatives</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countRelativesWithRelationType:">&ndash;&nbsp;countRelativesWithRelationType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/countRelativesWithDefaultRelation">&ndash;&nbsp;countRelativesWithDefaultRelation</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessing related objects" name="task_Accessing related objects"></a>
+						<h3 class="subsubtitle task-title">Accessing related objects</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containingRelative">&nbsp;&nbsp;containingRelative</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/allRelatives">&ndash;&nbsp;allRelatives</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/relativesWithRelationType:">&ndash;&nbsp;relativesWithRelationType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/relativesWithDefaultRelation">&ndash;&nbsp;relativesWithDefaultRelation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstRelativeWithDefaultRelation">&ndash;&nbsp;firstRelativeWithDefaultRelation</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstRelativeWithRelationType:">&ndash;&nbsp;firstRelativeWithRelationType:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Adding related objects to the data model" name="task_Adding related objects to the data model"></a>
+						<h3 class="subsubtitle task-title">Adding related objects to the data model</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelative:">&ndash;&nbsp;addRelative:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelative:withRelationType:">&ndash;&nbsp;addRelative:withRelationType:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelatives:">&ndash;&nbsp;addRelatives:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelatives:withRelationType:">&ndash;&nbsp;addRelatives:withRelationType:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Building out the data model from an XML structure" name="task_Building out the data model from an XML structure"></a>
+						<h3 class="subsubtitle task-title">Building out the data model from an XML structure</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:forElement:">&ndash;&nbsp;addRelativeOfClass:forElement:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:withRelationType:forElement:">&ndash;&nbsp;addRelativeOfClass:withRelationType:forElement:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:forFirstChildOf:havingTag:">&ndash;&nbsp;addRelativeOfClass:forFirstChildOf:havingTag:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:">&ndash;&nbsp;addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:forEachChildOf:">&ndash;&nbsp;addRelativeOfClass:forEachChildOf:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:withRelationType:forEachChildOf:">&ndash;&nbsp;addRelativeOfClass:withRelationType:forEachChildOf:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:forEachChildOf:havingTag:">&ndash;&nbsp;addRelativeOfClass:forEachChildOf:havingTag:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addRelativeOfClass:withRelationType:forEachChildOf:havingTag:">&ndash;&nbsp;addRelativeOfClass:withRelationType:forEachChildOf:havingTag:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Building out the data model automatically" name="task_Building out the data model automatically"></a>
+						<h3 class="subsubtitle task-title">Building out the data model automatically</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/relationTypeForTag:">&ndash;&nbsp;relationTypeForTag:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldAutomaticallyAddRelativeOfType:fromTag:">&ndash;&nbsp;shouldAutomaticallyAddRelativeOfType:fromTag:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/implementingClassForRelativeOfType:fromTag:">&ndash;&nbsp;implementingClassForRelativeOfType:fromTag:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Removing related objects from the data model" name="task_Removing related objects from the data model"></a>
+						<h3 class="subsubtitle task-title">Removing related objects from the data model</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeRelative:">&ndash;&nbsp;removeRelative:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeRelative:withRelationType:">&ndash;&nbsp;removeRelative:withRelationType:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Notification of changes to the set of relatives" name="task_Notification of changes to the set of relatives"></a>
+						<h3 class="subsubtitle task-title">Notification of changes to the set of relatives</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataModelDidAddOrRemoveRelatives">&ndash;&nbsp;dataModelDidAddOrRemoveRelatives</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/containingRelative" title="containingRelative"></a>
+	<h3 class="subsubtitle method-title">containingRelative</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The owning data model relative (if any) of the receiver. Will be set if
+the receiver was added as a relative to another data model instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) MBDataModel *containingRelative</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/content" title="content"></a>
+	<h3 class="subsubtitle method-title">content</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Represents the content of this data model object. When the data model is
+populated from an XML element containing text content, this property will
+contain that text.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id content</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/debuggingXML" title="debuggingXML"></a>
+	<h3 class="subsubtitle method-title">debuggingXML</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Provides simulated XML output similar to that of the <a href="#//api/name/simulatedXML"><code>simulatedXML</code></a> property,
+but with XML comments added that describe the relation type of any related
+objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *debuggingXML</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasStringContent" title="hasStringContent"></a>
+	<h3 class="subsubtitle method-title">hasStringContent</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <code>YES</code> if the value of the <a href="#//api/name/content"><code>content</code></a> property is a string, and if
+that string contains at least one non-whitespace character.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL hasStringContent</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/simulatedXML" title="simulatedXML"></a>
+	<h3 class="subsubtitle method-title">simulatedXML</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string containing a simulated XML representation of the receiver&rsquo;s
+attributes and related objects. This method works even if the receiver was not
+populated from XML in the first place.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *simulatedXML</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> The XML output is simulated and may not be a byte-for-byte
+            representation of the originating XML (if any). Non-significant
+            whitespace and attribute order may differ, and if any attributes
+            were applied from an MBStyledDataModel, they will be represented
+            in the simulated XML as well.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/xmlTagName" title="xmlTagName"></a>
+	<h3 class="subsubtitle method-title">xmlTagName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If the receiver was created from an XML element, this method returns the name
+of the XML tag from which it originated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *xmlTagName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The XML tag name used to create the receiver, or <code>nil</code> if
+            the receiver was not created from XML.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dataEntityName" title="dataEntityName"></a>
+	<h3 class="subsubtitle method-title">dataEntityName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The entity name used to represent instances of the receiver&rsquo;s class. Used
+for the XML tag in simulated XML output when the <a href="#//api/name/xmlTagName"><code>xmlTagName</code></a> method would
+return <code>nil</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)dataEntityName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataModelFromXML:" title="dataModelFromXML:"></a>
+	<h3 class="subsubtitle method-title">dataModelFromXML:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates and returns a new data model populated with the contents of the
+passed-in XML element. Attribute values will be set from the attributes of
+the XML element, and further object relationships may be established by
+processing the children of the element.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)dataModelFromXML:(RXMLElement *)<em>xml</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xml</em></dt>
+			<dd><p>The XML to use for populating the data model</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/defaultRelationType" title="defaultRelationType"></a>
+	<h3 class="subsubtitle method-title">defaultRelationType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of the default relation used by the class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)defaultRelationType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requiredAttributes" title="requiredAttributes"></a>
+	<h3 class="subsubtitle method-title">requiredAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the set of attributes required by the receiving class (and not any
+superclass or subclass).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSSet *)requiredAttributes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default implementation returns <code>nil</code>, indicating that no
+            attributes are explicitly required. Subclasses must provide their
+            own implementation if they require specific attributes to be present
+            in order to pass validation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A data model object that is missing one or more of the required attributes
+will not pass validation.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedAttributes" title="supportedAttributes"></a>
+	<h3 class="subsubtitle method-title">supportedAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the set of attributes supported by the receiving class (and not any
+superclass or subclass).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSSet *)supportedAttributes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default implementation returns <code>nil</code>, indicating that no
+            attributes are explicitly supported. Subclasses must provide their
+            own implementation if they will report specific attributes as
+            unsupported when performing validation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>During validation, a data model object will issue a warning if it contains
+one or more attributes not appearing in the set of supported attributes.</p><div class="note"><p><strong>Note:</strong> Implementations do not need to report an attribute as supported
+            if it is also reported as required.</p></div><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unsupportedAttributes" title="unsupportedAttributes"></a>
+	<h3 class="subsubtitle method-title">unsupportedAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the set of attributes supported that are supported by one of the
+receiving class&rsquo;s superclasses that are unsupported by the receiving class.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSSet *)unsupportedAttributes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default implementation returns <code>nil</code>, indicating that no
+            attributes are explicitly unsupported.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This mechanism allows a class to declare that it does not support one or
+more attributes supported by a superclass.</p>
+
+<p>A data model object will issue warnings for each unsupported attribute
+present during validation.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/xmlFromData:error:" title="xmlFromData:error:"></a>
+	<h3 class="subsubtitle method-title">xmlFromData:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A convenience method for parsing an XML document from an <code>NSData</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (RXMLElement *)xmlFromData:(NSData *)<em>xmlData</em> error:(NSError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlData</em></dt>
+			<dd><p>The XML data to be processed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>If non-<code>nil</code> and an error occurs, this pointer will be
+            set to an <code>NSError</code> instance indicating the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An object representing the top-level element of the XML.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/xmlFromFile:error:" title="xmlFromFile:error:"></a>
+	<h3 class="subsubtitle method-title">xmlFromFile:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A convenience method for parsing an XML document from a file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (RXMLElement *)xmlFromFile:(NSString *)<em>filePath</em> error:(NSError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The path of the XML file to be processed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>If non-<code>nil</code> and an error occurs, this pointer will be
+            set to an <code>NSError</code> instance indicating the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An object representing the top-level element of the XML.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addAttributesFromDictionary:" title="addAttributesFromDictionary:"></a>
+	<h3 class="subsubtitle method-title">addAttributesFromDictionary:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>For each key/value pair contained in the passed-in dictionary, a corresponding
+attribute will be set on the receiver. If the receiver contains attributes
+also present on the XML element, the receiver&rsquo;s attributes are replaced, while
+new attributes are added.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addAttributesFromDictionary:(NSDictionary *)<em>dict</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dict</em></dt>
+			<dd><p>The dictionary containing the attributes values to be set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addAttributesFromXML:" title="addAttributesFromXML:"></a>
+	<h3 class="subsubtitle method-title">addAttributesFromXML:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>For each attribute value on the passed-in XML element, a corresponding
+attribute will be set on the receiver. If the receiver contains attributes
+also present on the XML element, the receiver&rsquo;s attributes are replaced, while
+new attributes are added.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addAttributesFromXML:(RXMLElement *)<em>el</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>el</em></dt>
+			<dd><p>The XML element to process.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addAttributesToDictionary:" title="addAttributesToDictionary:"></a>
+	<h3 class="subsubtitle method-title">addAttributesToDictionary:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds the receiver&rsquo;s attributes to the passed-in <code>NSMutableDictionary</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addAttributesToDictionary:(NSMutableDictionary *)<em>dict</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dict</em></dt>
+			<dd><p>The dictionary to which the receiver&rsquo;s attribute names
+            and values will be added.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelative:" title="addRelative:"></a>
+	<h3 class="subsubtitle method-title">addRelative:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Relates the passed-in data model object to the receiver using the default
+relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelative:(MBDataModel *)<em>relative</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relative</em></dt>
+			<dd><p>The data model object to add as a relative to the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelative:withRelationType:" title="addRelative:withRelationType:"></a>
+	<h3 class="subsubtitle method-title">addRelative:withRelationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Relates the passed-in data model object to the receiver using the specified
+relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelative:(MBDataModel *)<em>relative</em> withRelationType:(NSString *)<em>relation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relative</em></dt>
+			<dd><p>The data model object to add as a relative to the receiver.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The name of the relation type by which <code>relative</code> will be
+            added to the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:forEachChildOf:" title="addRelativeOfClass:forEachChildOf:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:forEachChildOf:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs a data model object of the given class for each child element of
+the passed-in XML. Each data model object instantiated is added to the receiver
+as a relative using the default relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forEachChildOf:(RXMLElement *)<em>container</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose child elements will be used to
+            populate any newly-created data model objects.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <code>container</code> has no children with the tag <code>tagName</code>, no action is taken.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:forEachChildOf:havingTag:" title="addRelativeOfClass:forEachChildOf:havingTag:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:forEachChildOf:havingTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs a data model object of the given class for each child element of
+the passed-in XML that has the specified tag name. Each data model object
+instantiated is added to the receiver as a relative using <code>tagName</code> as the
+relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forEachChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose child elements will be used to
+            populate any newly-created data model objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The tag name of the child elements of <code>container</code> to
+            use for populating any newly-created data model objects.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:forElement:" title="addRelativeOfClass:forElement:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:forElement:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a data model object of the given class based on the specified XML
+element, and adds it to the receiver as a relative using the XML tag name
+of the element as the relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forElement:(RXMLElement *)<em>element</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>element</em></dt>
+			<dd><p>The XML element that will be used to populate the
+            newly-created data model object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:forFirstChildOf:havingTag:" title="addRelativeOfClass:forFirstChildOf:havingTag:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:forFirstChildOf:havingTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a data model object of the given class based on the first child
+element of the passed-in XML having the given XML tag, and adds it to the
+receiver as a relative using <code>tagName</code> as the relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forFirstChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose first child element having
+            the tag name <code>tagName</code> will be used to populate the newly-created
+            data model object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The tag name of the first child element of <code>container</code> to
+            use for populating the newly-created data model object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <code>container</code> has no child element with the tag <code>tagName</code>, no action is taken.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:withRelationType:forEachChildOf:" title="addRelativeOfClass:withRelationType:forEachChildOf:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:withRelationType:forEachChildOf:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs a data model object of the given class for each child element of
+the passed-in XML. Each data model object instantiated is added to the receiver
+as a relative using the specified relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forEachChildOf:(RXMLElement *)<em>container</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The relation type to use for adding the newly-created
+            data model object as a relative to the receiver. If <code>nil</code>, the
+            receiver&rsquo;s default relation type is used.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose child elements will be used to
+            populate any newly-created data model objects.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:withRelationType:forEachChildOf:havingTag:" title="addRelativeOfClass:withRelationType:forEachChildOf:havingTag:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:withRelationType:forEachChildOf:havingTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs a data model object of the given class for each child element of
+the passed-in XML that has the specified tag name. Each data model object
+instantiated is added to the receiver as a relative using <code>relation</code> as the
+relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forEachChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The relation type to use for adding the newly-created
+            data model object as a relative to the receiver. If <code>nil</code>, the
+            receiver&rsquo;s default relation type is used.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose child elements will be used to
+            populate any newly-created data model objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The tag name of the child elements of <code>container</code> to
+            use for populating any newly-created data model objects.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:withRelationType:forElement:" title="addRelativeOfClass:withRelationType:forElement:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:withRelationType:forElement:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a data model object of the given class based on the specified XML
+element, and adds it to the receiver as a relative using the specified
+relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forElement:(RXMLElement *)<em>element</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The relation type to use for adding the newly-created
+            data model object to the receiver. If <code>nil</code>, the receiver&rsquo;s
+            default relation type is used.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>element</em></dt>
+			<dd><p>The XML element that will be used to populate the
+            newly-created data model object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:" title="addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:"></a>
+	<h3 class="subsubtitle method-title">addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a data model object of the given class based on the first child
+element of the passed-in XML having the given XML tag, and adds it to the
+receiver as a relative using <code>relation</code> as the relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forFirstChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relCls</em></dt>
+			<dd><p>The class of <code>MBDataModel</code> to create.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The relation type to use for adding the newly-created
+            data model object as a relative to the receiver. If <code>nil</code>, the
+            receiver&rsquo;s default relation type is used.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose first child element having
+            the tag name <code>tagName</code> will be used to populate the newly-created
+            data model object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The tag name of the first child element of <code>container</code> to
+            use for populating the newly-created data model object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <code>container</code> has no child element with the tag <code>tagName</code>, no action is taken.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelatives:" title="addRelatives:"></a>
+	<h3 class="subsubtitle method-title">addRelatives:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Relates each data model object returned by the passed-in enumeration
+to the receiver using the default relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelatives:(NSObject&lt;NSFastEnumeration&gt; *)<em>relatives</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relatives</em></dt>
+			<dd><p>An enumeration of relatives to add as relatives to the
+            receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addRelatives:withRelationType:" title="addRelatives:withRelationType:"></a>
+	<h3 class="subsubtitle method-title">addRelatives:withRelationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Relates each data model object returned by the passed-in enumeration
+to the receiver using the specified relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addRelatives:(NSObject&lt;NSFastEnumeration&gt; *)<em>relatives</em> withRelationType:(NSString *)<em>relation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relatives</em></dt>
+			<dd><p>An enumeration of relatives to add as relatives to the
+            receiver.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The name of the relation type by which the relatives will
+            be added to the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/allRelatives" title="allRelatives"></a>
+	<h3 class="subsubtitle method-title">allRelatives</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array containing all objects related to the receiver regardless
+of relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)allRelatives</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/amendDataModelWithXML:" title="amendDataModelWithXML:"></a>
+	<h3 class="subsubtitle method-title">amendDataModelWithXML:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.
+If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.
+If the XML element contains child elements, they are added to the receiver
+as related objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)amendDataModelWithXML:(RXMLElement *)<em>xml</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xml</em></dt>
+			<dd><p>The XML element to use for amending the data model.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/amendDataModelWithXMLFromData:" title="amendDataModelWithXMLFromData:"></a>
+	<h3 class="subsubtitle method-title">amendDataModelWithXMLFromData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.
+If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.
+If the XML element contains child elements, they are added to the receiver
+as related objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromData:(NSData *)<em>xmlData</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlData</em></dt>
+			<dd><p>An <code>NSData</code> instance containing the XML to process.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the XML data was processed successfully; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/amendDataModelWithXMLFromData:error:" title="amendDataModelWithXMLFromData:error:"></a>
+	<h3 class="subsubtitle method-title">amendDataModelWithXMLFromData:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.
+If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.
+If the XML element contains child elements, they are added to the receiver
+as related objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromData:(NSData *)<em>xmlData</em> error:(NSError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xmlData</em></dt>
+			<dd><p>An <code>NSData</code> instance containing the XML to process.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>If non-<code>nil</code> and an error occurs, this pointer will be
+            set to an <code>NSError</code> instance indicating the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the XML data was processed successfully; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/amendDataModelWithXMLFromFile:" title="amendDataModelWithXMLFromFile:"></a>
+	<h3 class="subsubtitle method-title">amendDataModelWithXMLFromFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.
+If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.
+If the XML element contains child elements, they are added to the receiver
+as related objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)<em>filePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The path of the file containing the XML to process.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the XML file was processed successfully; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/amendDataModelWithXMLFromFile:error:" title="amendDataModelWithXMLFromFile:error:"></a>
+	<h3 class="subsubtitle method-title">amendDataModelWithXMLFromFile:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.
+If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.
+If the XML element contains child elements, they are added to the receiver
+as related objects.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)<em>filePath</em> error:(NSError **)<em>errPtr</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The path of the file containing the XML to process.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>If non-<code>nil</code> and an error occurs, this pointer will be
+            set to an <code>NSError</code> instance indicating the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the XML file was processed successfully; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/attributeNames" title="attributeNames"></a>
+	<h3 class="subsubtitle method-title">attributeNames</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array containing the names of the attributes that currently
+have values set on the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)attributeNames</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/booleanValueOfAttribute:" title="booleanValueOfAttribute:"></a>
+	<h3 class="subsubtitle method-title">booleanValueOfAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the attribute with the specified name as a boolean,
+making a reasonable attempt to convert the attribute value&rsquo;s type if
+necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)booleanValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cloneDataModel:" title="cloneDataModel:"></a>
+	<h3 class="subsubtitle method-title">cloneDataModel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns the receiver into a clone of the passed-in data model. Any attributes
+and relatives held by the receiver are thrown away, and then the receiver
+is configured to contain all the same attributes and relatives as
+<code>cloneFrom</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cloneDataModel:(MBDataModel *)<em>cloneFrom</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cloneFrom</em></dt>
+			<dd><p>The data model to clone.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cloneDataModel:withZone:" title="cloneDataModel:withZone:"></a>
+	<h3 class="subsubtitle method-title">cloneDataModel:withZone:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns the receiver into a clone of the passed-in data model. Any attributes
+and relatives held by the receiver are thrown away, and then the receiver
+is configured to contain all the same attributes and relatives as
+<code>cloneFrom</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cloneDataModel:(MBDataModel *)<em>cloneFrom</em> withZone:(NSZone *)<em>zone</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cloneFrom</em></dt>
+			<dd><p>The data model to clone.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zone</em></dt>
+			<dd><p>The <code>NSZone</code> to use for any objects that need to be copied
+            as a result of the cloning process. If <code>nil</code>, the default zone
+            returned by <code>NSDefaultMallocZone()</code> is used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/copyWithZone:" title="copyWithZone:"></a>
+	<h3 class="subsubtitle method-title">copyWithZone:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a copy of the receiver. Since all <code>MBDataModel</code> instances are
+mutable, this method simply calls <a href="#//api/name/mutableCopyWithZone:">mutableCopyWithZone:</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)copyWithZone:(NSZone *)<em>zone</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zone</em></dt>
+			<dd><p>Identifies a memory zone to use for allocating any new
+            object instances. If <code>nil</code>, the default zone returned by
+            <code>NSDefaultMallocZone()</code> is used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countAttributes" title="countAttributes"></a>
+	<h3 class="subsubtitle method-title">countAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of attributes currently set on the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)countAttributes</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countRelatives" title="countRelatives"></a>
+	<h3 class="subsubtitle method-title">countRelatives</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the count of all related objects in the data model.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)countRelatives</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countRelativesWithDefaultRelation" title="countRelativesWithDefaultRelation"></a>
+	<h3 class="subsubtitle method-title">countRelativesWithDefaultRelation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the count of the related objects in the data model that
+have the default relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)countRelativesWithDefaultRelation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/countRelativesWithRelationType:" title="countRelativesWithRelationType:"></a>
+	<h3 class="subsubtitle method-title">countRelativesWithRelationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the count of the related objects in the data model that
+have the specified relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)countRelativesWithRelationType:(NSString *)<em>relation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The relation type whose relatives are to
+            be counted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentRelationTypes" title="currentRelationTypes"></a>
+	<h3 class="subsubtitle method-title">currentRelationTypes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array containing the names of each relation type for which
+there is currently at least one related object. The order of the elements
+in the returned array is nondeterministic and has no significance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)currentRelationTypes</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataModelDidAddOrRemoveRelatives" title="dataModelDidAddOrRemoveRelatives"></a>
+	<h3 class="subsubtitle method-title">dataModelDidAddOrRemoveRelatives</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Notifies the receiver that one or more relatives have been added or removed</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)dataModelDidAddOrRemoveRelatives</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Subclasses overriding this method must always call <code>super</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataModelDidLoad" title="dataModelDidLoad"></a>
+	<h3 class="subsubtitle method-title">dataModelDidLoad</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called to notify the data model that it has been loaded or instantiated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)dataModelDidLoad</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Subclasses overriding this method must always call <code>super</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deprecateAttribute:inFavorOf:" title="deprecateAttribute:inFavorOf:"></a>
+	<h3 class="subsubtitle method-title">deprecateAttribute:inFavorOf:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Marks an attribute as being deprecated in favor of another attribute. This
+mechanism is used to rename an attribute while still maintaining backwards
+compatibility with existing code.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deprecateAttribute:(NSString *)<em>deprecatedAttribute</em> inFavorOf:(NSString *)<em>newAttribute</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deprecatedAttribute</em></dt>
+			<dd><p>The name of the deprecated attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newAttribute</em></dt>
+			<dd><p>The name of the attribute to use instead of
+            <code>deprecatedAttribute</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Whenever a deprecated attribute is encountered during validation, a warning
+is issued and the value of the deprecated attribute is copied to the new
+attribute (assuming the new attribute doesn&rsquo;t already exist, in which case
+the value of the deprecated attribute is ignored altogether).</p><div class="note"><p><strong>Note:</strong> This method must be called prior to invoking the superclass
+            implementation of the <a href="#//api/name/validateAttributes"><code>validateAttributes</code></a> method.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didAmendDataModelWithXMLFromFile:" title="didAmendDataModelWithXMLFromFile:"></a>
+	<h3 class="subsubtitle method-title">didAmendDataModelWithXMLFromFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called to notify the data model that it has been amended using the contents
+of the given file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)didAmendDataModelWithXMLFromFile:(NSString *)<em>filePath</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The path of the file whose XML was loaded.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> Subclasses overriding this method must always call <code>super</code>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/doesDataModelNeedValidation" title="doesDataModelNeedValidation"></a>
+	<h3 class="subsubtitle method-title">doesDataModelNeedValidation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <code>YES</code> if the receiver needs data model validation, <code>NO</code> otherwise.
+Whenever the data model changes, it will be marked as needing validation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)doesDataModelNeedValidation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> At instantiation time, a data model is considered invalid and is
+            marked as needing validation. After a call to <a href="#//api/name/validateDataModel">validateDataModel</a>
+            returns, the receiver is marked as no longer needing validation,
+            even if validation fails.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/doubleValueOfAttribute:" title="doubleValueOfAttribute:"></a>
+	<h3 class="subsubtitle method-title">doubleValueOfAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the attribute with the specified name as a double,
+making a reasonable attempt to convert the attribute value&rsquo;s type if
+necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (double)doubleValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsBoolean:" title="evaluateAsBoolean:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsBoolean:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the boolean result of evaluating the string value of the specified
+attribute as an MBML boolean expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsBoolean:defaultValue:" title="evaluateAsBoolean:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsBoolean:defaultValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the boolean result of evaluating the string value of the specified
+attribute as an MBML boolean expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(NSString *)<em>attrName</em> defaultValue:(BOOL)<em>def</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>The value to return if the receiver has no attribute named
+            <code>attrName</code>, or if expression evaluation failed for some reason.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsNumber:" title="evaluateAsNumber:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsNumber:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the numeric result of evaluating the string value of the specified
+attribute as an MBML number expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsNumber:defaultValue:" title="evaluateAsNumber:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsNumber:defaultValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the numeric result of evaluating the string value of the specified
+attribute as an MBML number expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)<em>attrName</em> defaultValue:(NSDecimalNumber *)<em>def</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>The value to return if the receiver has no attribute named
+            <code>attrName</code>, or if expression evaluation failed for some reason.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsObject:" title="evaluateAsObject:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsObject:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the object result of evaluating the string value of the specified
+attribute as an MBML object expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)evaluateAsObject:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsObject:defaultValue:" title="evaluateAsObject:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsObject:defaultValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the object result of evaluating the string value of the specified
+attribute as an MBML object expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)evaluateAsObject:(NSString *)<em>attrName</em> defaultValue:(id)<em>def</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>The value to return if the receiver has no attribute named
+            <code>attrName</code>, or if expression evaluation failed for some reason.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsString:" title="evaluateAsString:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the string result of evaluating the string value of the specified
+attribute as an MBML string expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)evaluateAsString:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evaluateAsString:defaultValue:" title="evaluateAsString:defaultValue:"></a>
+	<h3 class="subsubtitle method-title">evaluateAsString:defaultValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the string result of evaluating the string value of the specified
+attribute as an MBML string expression.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)evaluateAsString:(NSString *)<em>attrName</em> defaultValue:(NSString *)<em>def</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>The value to return if the receiver has no attribute named
+            <code>attrName</code>, or if expression evaluation failed for some reason.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstRelativeWithDefaultRelation" title="firstRelativeWithDefaultRelation"></a>
+	<h3 class="subsubtitle method-title">firstRelativeWithDefaultRelation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the first object related to the receiver by the default relation
+type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MBDataModel *)firstRelativeWithDefaultRelation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstRelativeWithRelationType:" title="firstRelativeWithRelationType:"></a>
+	<h3 class="subsubtitle method-title">firstRelativeWithRelationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the first object related to the receiver by the specified relation
+type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (MBDataModel *)firstRelativeWithRelationType:(NSString *)<em>relation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The name of the relation type for which the first related
+            object will be returned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasAttribute:" title="hasAttribute:"></a>
+	<h3 class="subsubtitle method-title">hasAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <code>YES</code> if the receiver has an attribute with the specified name,
+<code>NO</code> otherwise.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)hasAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute to check.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/ignoredAttributes" title="ignoredAttributes"></a>
+	<h3 class="subsubtitle method-title">ignoredAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the names of the attributes that will ignored by the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSSet *)ignoredAttributes</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/implementingClassAttributeName" title="implementingClassAttributeName"></a>
+	<h3 class="subsubtitle method-title">implementingClassAttributeName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of an attribute that specifies an alternate implementing
+class for the data model object, allowing external classes to participate
+in attribute validation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)implementingClassAttributeName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The default implementation returns <code>nil</code>, indicating that the
+            receiver will not consult an external class for determining
+            which data model attributes are valid.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/implementingClassForRelativeOfType:fromTag:" title="implementingClassForRelativeOfType:fromTag:"></a>
+	<h3 class="subsubtitle method-title">implementingClassForRelativeOfType:fromTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called to query the implementation to determine the Class that should be used
+for instances of related objects that are created automatically from XML by the
+<code>MBDataModel</code> superclass.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (Class)implementingClassForRelativeOfType:(NSString *)<em>relationType</em> fromTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relationType</em></dt>
+			<dd><p>The relation type.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The XML tag name for which the related object is being
+            created.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The Class to create for the related object, or <code>nil</code> if the
+            receiver does not support the specified relation type. If a non-<code>nil</code>
+            value is returned, the Class <em>must</em> be a type of <code>MBDataModel</code>.
+            The default implementation returns <code>[MBDataModel class]</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="note"><p><strong>Note:</strong> This method is called from within the base implementation of
+            <a href="#//api/name/populateDataModelFromXML:"><code>populateDataModelFromXML:</code></a>. Subclasses may override that method
+            to perform custom XML handling, in which case this method may not
+            be called.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="subsubtitle method-title">init</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Default initializer; returns an empty data model instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithAttributes:" title="initWithAttributes:"></a>
+	<h3 class="subsubtitle method-title">initWithAttributes:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>For each key/value pair contained in the passed-in dictionary, a
+corresponding attribute name and value will be set on the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithAttributes:(NSDictionary *)<em>attrs</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrs</em></dt>
+			<dd><p>A dictionary containing the attribute names
+            and values to use for initializing the data model object.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithXML:" title="initWithXML:"></a>
+	<h3 class="subsubtitle method-title">initWithXML:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Populates the receiver with the data model inherent in the provided
+XML element. Attribute values will be set from the attributes of the XML
+element, and further object relationships may be established by processing
+the children of the element.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithXML:(RXMLElement *)<em>xml</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>xml</em></dt>
+			<dd><p>The XML to use for populating the data model</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/integerValueOfAttribute:" title="integerValueOfAttribute:"></a>
+	<h3 class="subsubtitle method-title">integerValueOfAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the attribute with the specified name as an integer,
+making a reasonable attempt to convert the attribute value&rsquo;s type if
+necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)integerValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isDataModelValid" title="isDataModelValid"></a>
+	<h3 class="subsubtitle method-title">isDataModelValid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <code>YES</code> if the receiver&rsquo;s most recent validation attempt succeeded
+and if the receiver is not marked as needing validation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isDataModelValid</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/markDataModelInvalid" title="markDataModelInvalid"></a>
+	<h3 class="subsubtitle method-title">markDataModelInvalid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called to mark the receiver&rsquo;s data model as invalid.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)markDataModelInvalid</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/markDataModelNeedsValidation" title="markDataModelNeedsValidation"></a>
+	<h3 class="subsubtitle method-title">markDataModelNeedsValidation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This method is called to mark the receiver as needing validation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)markDataModelNeedsValidation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mutableCopyWithZone:" title="mutableCopyWithZone:"></a>
+	<h3 class="subsubtitle method-title">mutableCopyWithZone:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a copy of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)mutableCopyWithZone:(NSZone *)<em>zone</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>zone</em></dt>
+			<dd><p>Identifies a memory zone to use for allocating any new
+            object instances. If <code>nil</code>, the default zone returned by
+            <code>NSDefaultMallocZone()</code> is used.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberValueOfAttribute:" title="numberValueOfAttribute:"></a>
+	<h3 class="subsubtitle method-title">numberValueOfAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the attribute with the specified name as a string,
+making a reasonable attempt to convert the attribute value&rsquo;s type if
+necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDecimalNumber *)numberValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectAttributes" title="objectAttributes"></a>
+	<h3 class="subsubtitle method-title">objectAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a copy of the receiver&rsquo;s attribute values.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)objectAttributes</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/objectForKeyedSubscript:" title="objectForKeyedSubscript:"></a>
+	<h3 class="subsubtitle method-title">objectForKeyedSubscript:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Allows accessing data model attributes using the Objective-C keyed
+subscripting notation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)objectForKeyedSubscript:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute with the name <code>attrName</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Assuming a data model object <code>node</code>, the following expression:</p>
+
+<pre><code>node[@"title"]
+</code></pre>
+
+<p>would yield <code>node</code>&rsquo;s value of the attribute named <code>title</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/overlayAttributesFromDictionary:" title="overlayAttributesFromDictionary:"></a>
+	<h3 class="subsubtitle method-title">overlayAttributesFromDictionary:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>For each attribute key contained in the passed-in dictionary, the receiver
+will be checked for an attribute having the same name. If the receiver has
+no attribute with that name, the corresponding key/value pair in the
+dictionary will be set on the receiver. Existing attributes will <strong>not</strong> be
+overwritten.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)overlayAttributesFromDictionary:(NSDictionary *)<em>dict</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dict</em></dt>
+			<dd><p>The dictionary containing the attributes values to overlay.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/populateDataModelFromXML:" title="populateDataModelFromXML:"></a>
+	<h3 class="subsubtitle method-title">populateDataModelFromXML:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds related objects, if appropriate, for each XML element contained in
+the passed-in element. The default implementation creates <code>MBDataModel</code>
+objects to represent the structure of the contained XML elements, and
+adds them as related objects to the receiver using the default relation
+type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)populateDataModelFromXML:(RXMLElement *)<em>container</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>container</em></dt>
+			<dd><p>The XML element whose child elements will be used
+            to populate the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/poseAsClass:" title="poseAsClass:"></a>
+	<h3 class="subsubtitle method-title">poseAsClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new data model instance of the specified class that contains
+the exact same attributes and relatives as the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)poseAsClass:(Class)<em>cls</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cls</em></dt>
+			<dd><p>The class to pose as.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new data model instance of type <code>cls</code> containing the same
+            data model attributes and related objects as the receiver, or
+            <code>nil</code> if <code>cls</code> is not a type of <code>MBDataModel</code> class.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is useful in cases where you need to instantiate generic data models
+from XML before doing the work of deciding what each node should be. Allows
+for faster loading of data models from XML.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/relationTypeForTag:" title="relationTypeForTag:"></a>
+	<h3 class="subsubtitle method-title">relationTypeForTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the relation type to use when automatically creating related data
+objects from XML.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)relationTypeForTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The XML tag name for which the relation type is desired.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The relation type. Implementations may return <code>nil</code> if they do
+            not support the specified tag name.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default implementation returns the default relation type for the
+receiver&rsquo;s class.</p><div class="note"><p><strong>Note:</strong> This method is called from within the base implementation of
+            <a href="#//api/name/populateDataModelFromXML:"><code>populateDataModelFromXML:</code></a>. Subclasses may override that method
+            to perform custom XML handling, in which case this method may not
+            be called.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/relativesWithDefaultRelation" title="relativesWithDefaultRelation"></a>
+	<h3 class="subsubtitle method-title">relativesWithDefaultRelation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects related to the receiver by the default relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)relativesWithDefaultRelation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/relativesWithRelationType:" title="relativesWithRelationType:"></a>
+	<h3 class="subsubtitle method-title">relativesWithRelationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all objects related to the receiver by the specified relation
+type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)relativesWithRelationType:(NSString *)<em>relation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The name of the relation type for which the related objects
+            will be returned.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAttribute:" title="removeAttribute:"></a>
+	<h3 class="subsubtitle method-title">removeAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the specified attribute from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute to remove from the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeRelative:" title="removeRelative:"></a>
+	<h3 class="subsubtitle method-title">removeRelative:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes from the receiver all instances of the given relative from any relation
+type in which it occurs.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeRelative:(MBDataModel *)<em>relative</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relative</em></dt>
+			<dd><p>The data model relative to remove.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeRelative:withRelationType:" title="removeRelative:withRelationType:"></a>
+	<h3 class="subsubtitle method-title">removeRelative:withRelationType:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes from the receiver any instance of the given relative from the
+specified relation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeRelative:(MBDataModel *)<em>relative</em> withRelationType:(NSString *)<em>relation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relative</em></dt>
+			<dd><p>The data model relative to remove.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relation</em></dt>
+			<dd><p>The name of the relation type for which <code>relative</code> should
+            be removed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/renameAttribute:to:" title="renameAttribute:to:"></a>
+	<h3 class="subsubtitle method-title">renameAttribute:to:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Renames an attribute, moving the value from the old attribute name to the
+new name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)renameAttribute:(NSString *)<em>oldName</em> to:(NSString *)<em>newName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldName</em></dt>
+			<dd><p>The name of the attribute to rename to <code>newName</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newName</em></dt>
+			<dd><p>The new name for the attribute currently known as <code>oldName</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requiredAttributes" title="requiredAttributes"></a>
+	<h3 class="subsubtitle method-title">requiredAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the names of the attributes that are required by the receiver in
+order to pass validation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSSet *)requiredAttributes</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAttribute:forName:" title="setAttribute:forName:"></a>
+	<h3 class="subsubtitle method-title">setAttribute:forName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a data model attribute value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setAttribute:(id)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrVal</em></dt>
+			<dd><p>The new value of the attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is being set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setBooleanAttribute:forName:" title="setBooleanAttribute:forName:"></a>
+	<h3 class="subsubtitle method-title">setBooleanAttribute:forName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a boolean data model attribute value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setBooleanAttribute:(BOOL)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrVal</em></dt>
+			<dd><p>The new value of the attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is being set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDoubleAttribute:forName:" title="setDoubleAttribute:forName:"></a>
+	<h3 class="subsubtitle method-title">setDoubleAttribute:forName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a double data model attribute value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setDoubleAttribute:(double)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrVal</em></dt>
+			<dd><p>The new value of the attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is being set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setIntegerAttribute:forName:" title="setIntegerAttribute:forName:"></a>
+	<h3 class="subsubtitle method-title">setIntegerAttribute:forName:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a boolean data model attribute value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setIntegerAttribute:(NSInteger)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrVal</em></dt>
+			<dd><p>The new value of the attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is being set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setObject:forKeyedSubscript:" title="setObject:forKeyedSubscript:"></a>
+	<h3 class="subsubtitle method-title">setObject:forKeyedSubscript:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Allows setting data model attributes using the Objective-C keyed
+subscripting notation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>obj</em> forKeyedSubscript:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The new value for the attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be set.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Assuming a data model object <code>node</code>. the following expression:</p>
+
+<pre><code>node[@"title"] = @"Mockingbird";
+</code></pre>
+
+<p>would set <code>node</code>&rsquo;s attribute named <code>title</code> to the string &ldquo;<code>Mockingbird</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldAutomaticallyAddRelativeOfType:fromTag:" title="shouldAutomaticallyAddRelativeOfType:fromTag:"></a>
+	<h3 class="subsubtitle method-title">shouldAutomaticallyAddRelativeOfType:fromTag:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether the receiver should attempt to add an automatically-created
+related object for the given relation type.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)shouldAutomaticallyAddRelativeOfType:(NSString *)<em>relationType</em> fromTag:(NSString *)<em>tagName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relationType</em></dt>
+			<dd><p>The relation type.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tagName</em></dt>
+			<dd><p>The XML tag name for which the related object may be
+            created.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if a relative should be automatically added for the given
+            relation type; <code>NO</code> otherwise. The default implementation returns
+            <code>YES</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This mechanism allows <code>MBDataModel</code> implementations to limit the number of
+related objects of a given type.</p><div class="note"><p><strong>Note:</strong> This method is called from within the base implementation of
+            <a href="#//api/name/populateDataModelFromXML:"><code>populateDataModelFromXML:</code></a>. Subclasses may override that method
+            to perform custom XML handling, in which case this method may not
+            be called.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringValueOfAttribute:" title="stringValueOfAttribute:"></a>
+	<h3 class="subsubtitle method-title">stringValueOfAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the attribute with the specified name as a string,
+making a reasonable attempt to convert the attribute value&rsquo;s type if
+necessary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:" title="validateAsRelativeOf:relatedBy:dataModelRoot:"></a>
+	<h3 class="subsubtitle method-title">validateAsRelativeOf:relatedBy:dataModelRoot:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called by <a href="#//api/name/validateDataModel">validateDataModel</a> to attempt to validate a member of a larger data
+model.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)validateAsRelativeOf:(MBDataModel *)<em>relative</em> relatedBy:(NSString *)<em>relationType</em> dataModelRoot:(MBDataModel *)<em>root</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relative</em></dt>
+			<dd><p>If the receiver is being validated as a relative of
+            another data model object, this parameter will contain the
+            relative. This parameter will be <code>nil</code> if the receiver is the
+            root node of the data model.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>relationType</em></dt>
+			<dd><p>If the receiver is being validated as a relative of
+            another data model object, this parameter will contain the name of
+            the relation type by which the receiver is related to <code>relative</code>.
+            This parameter will be <code>nil</code> if the receiver is the root node of
+            the data model.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>root</em></dt>
+			<dd><p>If the receiver is being validated as a relative of another
+            data model object, this parameter will contain the root node of the
+            data model (in other words, the original receiver of the call to
+            <a href="#//api/name/validateDataModel">validateDataModel</a>). If the receiver is the root node of the data
+            model being validated, this parameter will equal <code>self</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver&rsquo;s data model is valid; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that need to hook into the data model validation process may
+override this method. However, if subclasses only need to perform attribute
+validation, they should override the simpler <a href="#//api/name/validateAttributes">validateAttributes</a> method.</p>
+
+<p>If a subclass implementation detects no problem with the data model, it
+should return the value returned by calling the superclass&rsquo;s
+validateAsRelativeOf:relatedBy:dataModelRoot: method.</p>
+
+<p>At the first sign of an invalid data model, subclass implementations
+should return <code>NO</code>.</p><div class="warning"><p><strong>Warning:</strong> This method should not be called directly, except by subclasses
+            calling the superclass implementation.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateAttributes" title="validateAttributes"></a>
+	<h3 class="subsubtitle method-title">validateAttributes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the receiver to validate its data model attributes (but not any related
+objects).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)validateAttributes</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver&rsquo;s attributes are valid; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A data model object&rsquo;s attributes are considered valid if all required
+attributes are present.</p>
+
+<p>Subclasses that need to hook into the attribute validation process may
+override this method, but should call the superclass implementation.</p><div class="note"><p><strong>Note:</strong> For each unsupported attribute encountered during attribute
+            validation, a warning will be logged to the console. However,
+            the presence of unsupported attributes will not cause the data
+            model to be considered invalid.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateDataModel" title="validateDataModel"></a>
+	<h3 class="subsubtitle method-title">validateDataModel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to validate the data model using the receiver as the root node.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)validateDataModel</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver&rsquo;s data model is valid; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Validation will occur even if the receiver is not marked as needing validation.
+Use <a href="#//api/name/validateDataModelIfNeeded">validateDataModelIfNeeded</a> to ensure validation occurs only when necessary.</p><div class="warning"><p><strong>Warning:</strong> Subclasses shouldn&rsquo;t override this method. Instead, to hook into the
+            validation process, subclasses should override <a href="#//api/name/validateAttributes"><code>validateAttributes</code></a>
+            or <a href="#//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:"><code>validateAsRelativeOf:relatedBy:dataModelRoot:</code></a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validateDataModelIfNeeded" title="validateDataModelIfNeeded"></a>
+	<h3 class="subsubtitle method-title">validateDataModelIfNeeded</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If the data model is marked as needing validation, this method returns the
+result of calling <a href="#//api/name/validateDataModel">validateDataModel</a>; otherwise, this method returns the
+result of calling <a href="#//api/name/isDataModelValid">isDataModelValid</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)validateDataModelIfNeeded</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver&rsquo;s data model is valid; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> Subclasses shouldn&rsquo;t override this method. Instead, to hook into the
+            validation process, subclasses should override <a href="#//api/name/validateAttributes"><code>validateAttributes</code></a>
+            or <a href="#//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:"><code>validateAsRelativeOf:relatedBy:dataModelRoot:</code></a>.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/valueOfAttribute:" title="valueOfAttribute:"></a>
+	<h3 class="subsubtitle method-title">valueOfAttribute:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the value of the attribute with the specified name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)valueOfAttribute:(NSString *)<em>attrName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrName</em></dt>
+			<dd><p>The name of the attribute whose value is to be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBDataModel.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

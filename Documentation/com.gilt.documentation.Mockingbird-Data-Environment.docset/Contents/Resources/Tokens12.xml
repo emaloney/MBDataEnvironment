@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBExpressionError.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBExpressionError</TokenIdentifier>
+			<Abstract type="html">Used internally by the MBExpression engine to represent errors
+during expression parsing and evaluation.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+            
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/message</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/message</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/error</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/error</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSError *error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setException:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSException *exception</Declaration>
+			
+			
+			<Anchor>//api/name/exception</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/exception</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSException *exception</Declaration>
+			
+			
+			<Anchor>//api/name/exception</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/exception</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSException *exception</Declaration>
+			
+			
+			<Anchor>//api/name/exception</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setAdditionalErrors:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *additionalErrors</Declaration>
+			
+			
+			<Anchor>//api/name/additionalErrors</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/additionalErrors</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *additionalErrors</Declaration>
+			
+			
+			<Anchor>//api/name/additionalErrors</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/additionalErrors</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *additionalErrors</Declaration>
+			
+			
+			<Anchor>//api/name/additionalErrors</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setValue:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/value</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/value</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingToken:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
+			
+			
+			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingExpression</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
+			
+			
+			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingExpression</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
+			
+			
+			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/error</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)error</Declaration>
+			
+			
+			<Anchor>//api/name/error</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithMessage:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithMessage:(NSString *)msg</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithMessage:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithMessage:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithMessage:(NSString *)msg error:(NSError *)nsErr</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithMessage:error:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithMessage:exception:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithMessage:(NSString *)msg exception:(NSException *)ex</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithMessage:exception:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithFormat:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithFormat:(NSString *)format, ...</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithFormat:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithError:(NSError *)nsErr</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithError:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithException:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithException:(NSException *)ex</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithException:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithExpressionErrors:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (id)errorWithExpressionErrors:(NSArray *)errors</Declaration>
+			
+			
+			<Anchor>//api/name/errorWithExpressionErrors:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/logOutput</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)logOutput</Declaration>
+			
+			
+			<Anchor>//api/name/logOutput</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/log</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)log</Declaration>
+			
+			
+			<Anchor>//api/name/log</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/addError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)addError:(MBExpressionError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/addError:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/reportErrorTo:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)reportErrorTo:(MBExpressionError **)reportTo</Declaration>
+			
+			
+			<Anchor>//api/name/reportErrorTo:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/reportErrorTo:suppressLog:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)reportErrorTo:(MBExpressionError **)reportTo suppressLog:(BOOL)suppress</Declaration>
+			
+			
+			<Anchor>//api/name/reportErrorTo:suppressLog:</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/errorReported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)errorReported</Declaration>
+			
+			
+			<Anchor>//api/name/errorReported</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/lastErrorReported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (MBExpressionError *)lastErrorReported</Declaration>
+			
+			
+			<Anchor>//api/name/lastErrorReported</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/clearErrorReported</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)clearErrorReported</Declaration>
+			
+			
+			<Anchor>//api/name/clearErrorReported</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/describeOffense</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)describeOffense</Declaration>
+			
+			
+			<Anchor>//api/name/describeOffense</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

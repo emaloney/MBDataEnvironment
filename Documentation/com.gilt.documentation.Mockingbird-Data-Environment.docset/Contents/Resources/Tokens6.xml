@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBDynamicVariableDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBDynamicVariableDeclaration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDynamicVariableDeclaration/setExpression:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDynamicVariableDeclaration/expression</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDynamicVariableDeclaration/expression</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>

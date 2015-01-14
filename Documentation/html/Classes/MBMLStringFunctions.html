@@ -1,0 +1,1182 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>MBMLStringFunctions Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
+				<a id="developerHome" href="../index.html">Gilt Groupe</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">MBMLStringFunctions Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/concatenateFields:">&nbsp;&nbsp;&nbsp;&nbsp;+ concatenateFields:</option>
+	
+	<option value="//api/name/containsString:">&nbsp;&nbsp;&nbsp;&nbsp;+ containsString:</option>
+	
+	<option value="//api/name/eval:">&nbsp;&nbsp;&nbsp;&nbsp;+ eval:</option>
+	
+	<option value="//api/name/evalBool:">&nbsp;&nbsp;&nbsp;&nbsp;+ evalBool:</option>
+	
+	<option value="//api/name/firstNonemptyString:">&nbsp;&nbsp;&nbsp;&nbsp;+ firstNonemptyString:</option>
+	
+	<option value="//api/name/firstNonemptyTrimmedString:">&nbsp;&nbsp;&nbsp;&nbsp;+ firstNonemptyTrimmedString:</option>
+	
+	<option value="//api/name/formatInteger:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatInteger:</option>
+	
+	<option value="//api/name/hasPrefix:">&nbsp;&nbsp;&nbsp;&nbsp;+ hasPrefix:</option>
+	
+	<option value="//api/name/hasSuffix:">&nbsp;&nbsp;&nbsp;&nbsp;+ hasSuffix:</option>
+	
+	<option value="//api/name/indentLines:">&nbsp;&nbsp;&nbsp;&nbsp;+ indentLines:</option>
+	
+	<option value="//api/name/indentLinesToDepth:">&nbsp;&nbsp;&nbsp;&nbsp;+ indentLinesToDepth:</option>
+	
+	<option value="//api/name/linesNeededToDrawText:">&nbsp;&nbsp;&nbsp;&nbsp;+ linesNeededToDrawText:</option>
+	
+	<option value="//api/name/lowercase:">&nbsp;&nbsp;&nbsp;&nbsp;+ lowercase:</option>
+	
+	<option value="//api/name/parseDouble:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseDouble:</option>
+	
+	<option value="//api/name/parseInteger:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseInteger:</option>
+	
+	<option value="//api/name/parseNumber:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseNumber:</option>
+	
+	<option value="//api/name/pluralize:">&nbsp;&nbsp;&nbsp;&nbsp;+ pluralize:</option>
+	
+	<option value="//api/name/prefixLinesWith:">&nbsp;&nbsp;&nbsp;&nbsp;+ prefixLinesWith:</option>
+	
+	<option value="//api/name/q:">&nbsp;&nbsp;&nbsp;&nbsp;+ q:</option>
+	
+	<option value="//api/name/rangeOfString:">&nbsp;&nbsp;&nbsp;&nbsp;+ rangeOfString:</option>
+	
+	<option value="//api/name/stringWidth:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringWidth:</option>
+	
+	<option value="//api/name/stripQueryString:">&nbsp;&nbsp;&nbsp;&nbsp;+ stripQueryString:</option>
+	
+	<option value="//api/name/stripSpaces:">&nbsp;&nbsp;&nbsp;&nbsp;+ stripSpaces:</option>
+	
+	<option value="//api/name/titleCase:">&nbsp;&nbsp;&nbsp;&nbsp;+ titleCase:</option>
+	
+	<option value="//api/name/titleCaseIfAllCaps:">&nbsp;&nbsp;&nbsp;&nbsp;+ titleCaseIfAllCaps:</option>
+	
+	<option value="//api/name/trimSpaces:">&nbsp;&nbsp;&nbsp;&nbsp;+ trimSpaces:</option>
+	
+	<option value="//api/name/truncate:">&nbsp;&nbsp;&nbsp;&nbsp;+ truncate:</option>
+	
+	<option value="//api/name/uppercase:">&nbsp;&nbsp;&nbsp;&nbsp;+ uppercase:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/concatenateFields:">concatenateFields:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsString:">containsString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/eval:">eval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evalBool:">evalBool:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstNonemptyString:">firstNonemptyString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstNonemptyTrimmedString:">firstNonemptyTrimmedString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatInteger:">formatInteger:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasPrefix:">hasPrefix:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasSuffix:">hasSuffix:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indentLines:">indentLines:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indentLinesToDepth:">indentLinesToDepth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/linesNeededToDrawText:">linesNeededToDrawText:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lowercase:">lowercase:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseDouble:">parseDouble:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseInteger:">parseInteger:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseNumber:">parseNumber:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pluralize:">pluralize:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/prefixLinesWith:">prefixLinesWith:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/q:">q:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rangeOfString:">rangeOfString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringWidth:">stringWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stripQueryString:">stripQueryString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stripSpaces:">stripSpaces:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/titleCase:">titleCase:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/titleCaseIfAllCaps:">titleCaseIfAllCaps:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/trimSpaces:">trimSpaces:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/truncate:">truncate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uppercase:">uppercase:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="MBMLStringFunctions Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">MBMLStringFunctions Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">MBMLStringFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/q:">+&nbsp;q:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/eval:">+&nbsp;eval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/evalBool:">+&nbsp;evalBool:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stripQueryString:">+&nbsp;stripQueryString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stripSpaces:">+&nbsp;stripSpaces:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/trimSpaces:">+&nbsp;trimSpaces:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/indentLines:">+&nbsp;indentLines:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/indentLinesToDepth:">+&nbsp;indentLinesToDepth:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/prefixLinesWith:">+&nbsp;prefixLinesWith:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pluralize:">+&nbsp;pluralize:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lowercase:">+&nbsp;lowercase:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/uppercase:">+&nbsp;uppercase:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/titleCase:">+&nbsp;titleCase:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/titleCaseIfAllCaps:">+&nbsp;titleCaseIfAllCaps:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/concatenateFields:">+&nbsp;concatenateFields:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstNonemptyString:">+&nbsp;firstNonemptyString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstNonemptyTrimmedString:">+&nbsp;firstNonemptyTrimmedString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/truncate:">+&nbsp;truncate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseNumber:">+&nbsp;parseNumber:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseInteger:">+&nbsp;parseInteger:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseDouble:">+&nbsp;parseDouble:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringWidth:">+&nbsp;stringWidth:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/linesNeededToDrawText:">+&nbsp;linesNeededToDrawText:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rangeOfString:">+&nbsp;rangeOfString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/formatInteger:">+&nbsp;formatInteger:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasPrefix:">+&nbsp;hasPrefix:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hasSuffix:">+&nbsp;hasSuffix:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/containsString:">+&nbsp;containsString:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/concatenateFields:" title="concatenateFields:"></a>
+	<h3 class="subsubtitle method-title">concatenateFields:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)concatenateFields:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/containsString:" title="containsString:"></a>
+	<h3 class="subsubtitle method-title">containsString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines if the string specified by the first expression parameter
+contains the string indicated by the second expression parameter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)containsString:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><ul>
+<li>the input parameters</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSNumber containing the boolean result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two parameters:</p>
+
+<p>The first parameter a string expression that will be tested to see
+if it contains the substring.</p>
+
+<p>The second parameter is a string expression containing the substring.</p>
+
+<p><b>Template example:</b></p>
+
+<pre>^containsString($dayOfWeek|ues)</pre>
+
+
+<p>The template expression above returns YES if the string value of the
+expression $dayOfWeek contains the string &ldquo;ues&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/eval:" title="eval:"></a>
+	<h3 class="subsubtitle method-title">eval:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)eval:(NSString *)<em>toQuote</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/evalBool:" title="evalBool:"></a>
+	<h3 class="subsubtitle method-title">evalBool:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)evalBool:(NSString *)<em>toQuote</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstNonemptyString:" title="firstNonemptyString:"></a>
+	<h3 class="subsubtitle method-title">firstNonemptyString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)firstNonemptyString:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstNonemptyTrimmedString:" title="firstNonemptyTrimmedString:"></a>
+	<h3 class="subsubtitle method-title">firstNonemptyTrimmedString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)firstNonemptyTrimmedString:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/formatInteger:" title="formatInteger:"></a>
+	<h3 class="subsubtitle method-title">formatInteger:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)formatInteger:(NSString *)<em>toParse</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasPrefix:" title="hasPrefix:"></a>
+	<h3 class="subsubtitle method-title">hasPrefix:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines if the string specified by the first expression parameter
+has the prefix indicated by the second expression parameter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)hasPrefix:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><ul>
+<li>the input parameters</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSNumber containing the boolean result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two parameters:</p>
+
+<p>The first parameter a string expression whose prefix is to be tested.</p>
+
+<p>The second parameter is a string expression containing the prefix to
+test.</p>
+
+<p><b>Template example:</b></p>
+
+<pre>^hasPrefix($name|Coop)</pre>
+
+
+<p>The template expression above returns YES if the string value of the
+expression $name begins with the string &ldquo;Coop&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hasSuffix:" title="hasSuffix:"></a>
+	<h3 class="subsubtitle method-title">hasSuffix:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines if the string specified by the first expression parameter
+has the suffix indicated by the second expression parameter.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)hasSuffix:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><ul>
+<li>the input parameters</li>
+</ul>
+</dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSNumber containing the boolean result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts two parameters:</p>
+
+<p>The first parameter a string expression whose suffix is to be tested.</p>
+
+<p>The second parameter is a string expression containing the suffix to
+test.</p>
+
+<p><b>Template example:</b></p>
+
+<pre>^hasSuffix($dayOfWeek|day)</pre>
+
+
+<p>The template expression above returns YES if the string value of the
+expression $dayOfWeek ends with the string &ldquo;day&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/indentLines:" title="indentLines:"></a>
+	<h3 class="subsubtitle method-title">indentLines:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)indentLines:(NSString *)<em>toIndent</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/indentLinesToDepth:" title="indentLinesToDepth:"></a>
+	<h3 class="subsubtitle method-title">indentLinesToDepth:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)indentLinesToDepth:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/linesNeededToDrawText:" title="linesNeededToDrawText:"></a>
+	<h3 class="subsubtitle method-title">linesNeededToDrawText:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Computes the number of lines for a string with specified width.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)linesNeededToDrawText:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>firstComponent</em></dt>
+			<dd><p>String for which to compute number of lines</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secondComponent</em></dt>
+			<dd><p>Name of font used</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thirdComponent</em></dt>
+			<dd><p>Size of font used</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fourthComponent</em></dt>
+			<dd><p>Specified width for string</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An NSNumber containing the number of lines.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lowercase:" title="lowercase:"></a>
+	<h3 class="subsubtitle method-title">lowercase:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)lowercase:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseDouble:" title="parseDouble:"></a>
+	<h3 class="subsubtitle method-title">parseDouble:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)parseDouble:(NSString *)<em>toFloat</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseInteger:" title="parseInteger:"></a>
+	<h3 class="subsubtitle method-title">parseInteger:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)parseInteger:(NSString *)<em>toInt</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/parseNumber:" title="parseNumber:"></a>
+	<h3 class="subsubtitle method-title">parseNumber:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)parseNumber:(NSString *)<em>toParse</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pluralize:" title="pluralize:"></a>
+	<h3 class="subsubtitle method-title">pluralize:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)pluralize:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/prefixLinesWith:" title="prefixLinesWith:"></a>
+	<h3 class="subsubtitle method-title">prefixLinesWith:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)prefixLinesWith:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/q:" title="q:"></a>
+	<h3 class="subsubtitle method-title">q:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Allows for quoting a string in the template language. This is required, for
+example, to preserve space characters at the beginning or end of a string
+literal. (Normally, the expression evaluator ignores whitespace at the
+beginning or end of string literals.)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)q:(NSString *)<em>toQuote</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>toQuote</em></dt>
+			<dd><p>the string</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>toQuote</code></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts one parameter, the string to be quoted.</p>
+
+<p><b>Template example:</b></p>
+
+<pre>^q(   -- Please leave spaces intact --   )</pre>
+
+
+<p>The template expression above quotes the string so that the space characters
+at the beginning and end of the string are preserved.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rangeOfString:" title="rangeOfString:"></a>
+	<h3 class="subsubtitle method-title">rangeOfString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)rangeOfString:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringWidth:" title="stringWidth:"></a>
+	<h3 class="subsubtitle method-title">stringWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Computes the width size for a string. Useful for dynamic sizing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)stringWidth:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>firstComponent</em></dt>
+			<dd><p>String for which to compute width</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secondComponent</em></dt>
+			<dd><p>Name of font used</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>thirdComponent</em></dt>
+			<dd><p>Size of font used</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>[firstComponent sizeWithFont:font].width</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stripQueryString:" title="stripQueryString:"></a>
+	<h3 class="subsubtitle method-title">stripQueryString:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)stripQueryString:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stripSpaces:" title="stripSpaces:"></a>
+	<h3 class="subsubtitle method-title">stripSpaces:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)stripSpaces:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/titleCase:" title="titleCase:"></a>
+	<h3 class="subsubtitle method-title">titleCase:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)titleCase:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/titleCaseIfAllCaps:" title="titleCaseIfAllCaps:"></a>
+	<h3 class="subsubtitle method-title">titleCaseIfAllCaps:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)titleCaseIfAllCaps:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/trimSpaces:" title="trimSpaces:"></a>
+	<h3 class="subsubtitle method-title">trimSpaces:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)trimSpaces:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/truncate:" title="truncate:"></a>
+	<h3 class="subsubtitle method-title">truncate:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)truncate:(NSArray *)<em>params</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/uppercase:" title="uppercase:"></a>
+	<h3 class="subsubtitle method-title">uppercase:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (id)uppercase:(NSString *)<em>toTransform</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

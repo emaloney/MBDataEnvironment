@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBSingletonVariableDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBSingletonVariableDeclaration</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/setImplementingClass:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
+			
+			
+			<Anchor>//api/name/implementingClass</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/implementingClass</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
+			
+			
+			<Anchor>//api/name/implementingClass</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBSingletonVariableDeclaration/implementingClass</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
+			
+			
+			<Anchor>//api/name/implementingClass</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/setSingletonAccessor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
+			
+			
+			<Anchor>//api/name/singletonAccessor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/singletonAccessor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
+			
+			
+			<Anchor>//api/name/singletonAccessor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBSingletonVariableDeclaration/singletonAccessor</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
+			
+			
+			<Anchor>//api/name/singletonAccessor</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+        
+	</File>
+</Tokens>
