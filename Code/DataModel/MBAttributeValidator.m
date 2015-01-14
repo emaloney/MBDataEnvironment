@@ -35,15 +35,6 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) init
-{
-    self = [super init];
-    if (self) {
-        _errors = [NSMutableArray new];
-    }
-    return self;
-}
-
 + (instancetype) validatorForDataModel:(MBDataModel*)model
 {
     MBAttributeValidator* validator = [self new];
@@ -62,6 +53,9 @@
     NSString* error = [[NSString alloc] initWithFormat:format arguments:args];
     va_end(args);
 
+    if (!_errors) {
+        _errors = [NSMutableArray new];
+    }
     [_errors addObject:error];
 }
 
