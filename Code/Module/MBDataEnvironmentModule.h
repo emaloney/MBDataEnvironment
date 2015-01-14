@@ -13,5 +13,9 @@
 #pragma mark MBDataEnvironmentModule class
 /******************************************************************************/
 
+/*!
+ The `MBDataEnvironmentModule` class is an `MBModule` implementation that
+ represents the Mockingbird Data Environment itself.
+*/
 @interface MBDataEnvironmentModule : MBModuleBase
 @end

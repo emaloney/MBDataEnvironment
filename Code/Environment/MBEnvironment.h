@@ -26,7 +26,32 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 #pragma mark MBEnvironment class
 /******************************************************************************/
 
+/*!
+ The `MBEnvironment` class contains the state of the Mockingbird Data
+ Environment.
+ 
+ Typically, when an application starts, you would load an `MBEnvironment`
+ using the `loadDefaultEnvironment` class method or one of the 
+ `loadFromManifest` variants.
+
+ Once an environment has been loaded, you can store data in the
+ `MBVariableSpace` associated with the environment and reference that
+ data with Mockingbird expressions using the `MBExpression` class.
+*/
 @interface MBEnvironment : MBDataModel <MBInstanceVendor>
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Getting the current environment
+/*!    @name Getting the current environment                                 */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Retrieves the `MBEnvironment` instance representing the currently-active
+ environment.
+
+ @return    The currently-active environment.
+ */
++ (instancetype) instance;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Managing the current environment
@@ -225,14 +250,44 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 /*!    @name Determining the load state of the environment                    */
 /*----------------------------------------------------------------------------*/
 
+/*! Returns `YES` if the environment is loaded; `NO` otherwise. */
 @property(nonatomic, assign, readonly) BOOL isLoaded;
+
+/*! If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn't loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the `loadDefaultEnvironment` method), this value will be `nil`. */
 @property(nonatomic, strong, readonly) NSString* manifestFilePath;
 
+/*! This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. */
 @property(nonatomic, copy, readonly) NSArray* mbmlPathsLoaded;
 
-- (BOOL) mbmlFileIsLoaded:(NSString*)fileName;
-
+/*!
+ Determines if an MBML file with a specific path has been loaded by the
+ receiver.
+ 
+ @param     filePath The path of the file.
+ 
+ @return    `YES` if the environment has loaded an MBML file at the path
+            `filePath`; `NO` otherwise.
+ */
 - (BOOL) mbmlPathIsLoaded:(NSString*)filePath;
+
+/*!
+ Determines if an MBML file with a specific name has been loaded by the
+ receiver.
+ 
+ Because MBML is designed to be path-agnostic, the system does not support
+ multiple files with the same name, even if their paths are different.
+ Therefore, all MBML filenames are guaranteed to be unique.
+ 
+ @param     fileName The filename, also known as the last path component.
+ 
+ @return    `YES` if the environment has loaded an MBML file with the given
+            name; `NO` otherwise.
+ */
+- (BOOL) mbmlFileIsLoaded:(NSString*)fileName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Working with external libraries

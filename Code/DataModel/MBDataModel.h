@@ -1202,7 +1202,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 - (BOOL) shouldAutomaticallyAddRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName;
 
 /*!
- Called to query the implementation to determine the Class that should be used
+ Called to query the implementation to determine the `Class` that should be used
  for instances of related objects that are created automatically from XML by the
  `MBDataModel` superclass.
  
@@ -1216,10 +1216,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     tagName The XML tag name for which the related object is being
             created.
  
- @return    The Class to create for the related object, or `nil` if the
+ @return    The `Class` to create for the related object, or `nil` if the
             receiver does not support the specified relation type. If a non-`nil`
-            value is returned, the Class *must* be a type of `MBDataModel`.
-            The default implementation returns `[MBDataModel class]`.
+            value is returned, the class *must* be a type of `MBDataModel`.
+            The default implementation returns `[``MBDataModel class``]`.
  */
 - (Class) implementingClassForRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName;
 

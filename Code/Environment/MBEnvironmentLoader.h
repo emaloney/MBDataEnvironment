@@ -22,13 +22,29 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 #pragma mark MBEnvironmentLoader class
 /******************************************************************************/
 
+/*!
+ Instances of the `MBEnvironmentLoader` class are used to parse MBML tags when
+ loading an `MBEnvironment`.
+ 
+ For example, the `MBVariableSpace` class is an `MBEnvironmentLoader`, because
+ `MBVariableSpace` is capable of populating itself with variables based on the
+ contents of an MBML file.
+ 
+ Functionality can also be added to the Mockingbird Data Environment 
+ through the use of `MBModule`s. A module implementation has the option of
+ providing additional `MBEnvironmentLoader`s to use during the environment
+ loading process. This allows new MBML tags to be introduced without
+ needing to modify the code of the Mockingbird Data Environment itself.
+ See the documentation for the `MBEnvironment` class for more information
+ on extending the Mockingbird Data Environment using modules.
+ */
 @interface MBEnvironmentLoader : NSObject
 
 /*******************************************************************************
  @name Properties
  ******************************************************************************/
 
-/*! Returns `YES` if the receiver is associated witho the active environment. */ 
+/*! Returns `YES` if the receiver is associated with the active environment. */
 @property(nonatomic, readonly) BOOL isActive;
 
 /*******************************************************************************

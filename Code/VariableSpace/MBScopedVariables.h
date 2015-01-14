@@ -18,10 +18,14 @@
 
 /*!
  Provides a mechanism for maintaining scoped variable values in the
- context of a particular <code>MBVariableSpace</code> instance.
+ context of a particular `MBVariableSpace` instance.
  */
 @interface MBScopedVariables : MBFormattedDescriptionObject < NSCopying >
 
+/*!
+ Returns the `MBVariableSpace` instance in which the scoped variables will
+ be stored.
+ */
 @property(nonatomic, readonly) MBVariableSpace* variableSpace;
 
 /******************************************************************************

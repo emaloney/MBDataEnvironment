@@ -19,7 +19,8 @@
 /*!
  Specifies the serialization behavior for the `MBExpressionCache`.
  */
-typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization) {
+typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
+{
     /*! The cache will not serialize any changes to the filesystem. This is
         the default value of the `MBExpressionCache`'s `cacheSerialization` 
         property. */
