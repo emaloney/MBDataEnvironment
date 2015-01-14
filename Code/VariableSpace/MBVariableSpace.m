@@ -41,7 +41,6 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     NSMutableDictionary* _variables;
     NSMutableDictionary* _variableStack;        // map of variable names -> arrays of values for pushed variables
     NSMutableDictionary* _mbmlFunctions;        // map of MBML function names -> MBMLFunction instances
-    NSMutableArray* _variableDeclarations;      // an array of the MBVariableDeclaration instances that were used to declare the initial variables
     NSMutableDictionary* _namesToDeclarations;  // a map of declared variable names to MBVariableDeclaration instances
 }
 
@@ -65,7 +64,6 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
         _variables              = [NSMutableDictionary new];
         _variableStack          = [NSMutableDictionary new];
         _mbmlFunctions          = [NSMutableDictionary new];
-        _variableDeclarations   = [NSMutableArray new];
         _namesToDeclarations    = [NSMutableDictionary new];
     }
     return self;
@@ -163,24 +161,29 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     debugTrace();
 
     if ([decl validateDataModelIfNeeded]) {
-        [_variableDeclarations addObject:decl];
-
         NSString* varName = decl.name;
-
-        _namesToDeclarations[varName] = decl;
-
-        if (!decl.disallowsValueCaching) {
-            MBExpressionError* err = nil;
-            id val = [decl initialValueInVariableSpace:self error:&err];
-            if (err) {
-                [err log];
+        if (varName) {
+            if (_namesToDeclarations[varName]) {
+                errorLog(@"Ignoring attempt to redeclare variable named \"%@\" with: %@", varName, decl);
                 return NO;
             }
-            if (val) {
-                _variables[varName] = val;
+
+            if (!decl.disallowsValueCaching) {
+                MBExpressionError* err = nil;
+                id val = [decl initialValueInVariableSpace:self error:&err];
+                if (err) {
+                    [err log];
+                    return NO;
+                }
+                if (val) {
+                    _variables[varName] = val;
+                }
             }
+
+            _namesToDeclarations[varName] = decl;
+            
+            return YES;
         }
-        return YES;
     }
     return NO;
 }
@@ -454,14 +457,17 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 
 - (BOOL) declareFunction:(MBMLFunction*)function
 {
-    if (function) {
-        if ([function validateDataModelIfNeeded]) {
-            NSString* funcName = function.name;
-            if (funcName) {
-                _mbmlFunctions[funcName] = function;
-                [MBEvents postEvent:kMBVariableSpaceDidDeclareFunctionEvent withObject:function];
-                return YES;
+    if ([function validateDataModelIfNeeded]) {
+        NSString* funcName = function.name;
+        if (funcName) {
+            if (_mbmlFunctions[funcName]) {
+                errorLog(@"Ignoring attempt to redeclare MBML function named \"%@\" with: %@", funcName, function);
+                return NO;
             }
+
+            _mbmlFunctions[funcName] = function;
+            [MBEvents postEvent:kMBVariableSpaceDidDeclareFunctionEvent withObject:function];
+            return YES;
         }
     }
     return NO;
