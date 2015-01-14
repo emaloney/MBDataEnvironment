@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBVariableDeclaration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">A partially-implemented root class that represents a variable declared in MBML.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
             
 			
@@ -171,11 +171,19 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBVariableDeclaration/valueChangedTo:inVariableSpace:</TokenIdentifier>
-			<Abstract type="html">Called when a variable value has changed in a given variable space.</Abstract>
+			<Abstract type="html">Called when a mutable variable value has changed.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>- (void)valueChangedTo:(id)value inVariableSpace:(MBVariableSpace *)space</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The new value of the variable.</Abstract>
+				</Parameter><Parameter>
+					<Name>space</Name>
+					<Abstract type="html">The MBVariableSpace instance that owns the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/valueChangedTo:inVariableSpace:</Anchor>
             <NodeRef refid="34"/>

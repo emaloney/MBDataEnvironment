@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MBConcreteVariableType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MBConcreteVariableType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of variable declared by an MBConcreteVariableDeclaration.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="44"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The variable type is not yet known.</Abstract>
+            <Declaration>MBConcreteVariableTypeUnknown</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeSimple</TokenIdentifier>
+            <Abstract type="html">The variable type is declared as a simple NSObject instance.</Abstract>
+            <Declaration>MBConcreteVariableTypeSimple</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeMap</TokenIdentifier>
+            <Abstract type="html">The variable type is declared as a map (the underlying type is
+        NSDictionary). </Abstract>
+            <Declaration>MBConcreteVariableTypeMap</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeList</TokenIdentifier>
+            <Abstract type="html">The variable type is declared as a list (the underlying type is
+        NSArray). </Abstract>
+            <Declaration>MBConcreteVariableTypeList</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+            <NodeRef refid="44"/>
+        </Token>
+        
+	</File>
+</Tokens>

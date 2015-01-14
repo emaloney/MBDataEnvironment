@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -55,6 +57,8 @@
 	<option value="//api/name/enableModuleClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ enableModuleClass:</option>
 	
 	<option value="//api/name/enabledModuleClasses">&nbsp;&nbsp;&nbsp;&nbsp;+ enabledModuleClasses</option>
+	
+	<option value="//api/name/instance">&nbsp;&nbsp;&nbsp;&nbsp;+ instance</option>
 	
 	<option value="//api/name/libraryClassForName:">&nbsp;&nbsp;&nbsp;&nbsp;+ libraryClassForName:</option>
 	
@@ -120,10 +124,14 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting the current environment">Getting the current environment</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing the current environment">Managing the current environment</a></span></li>
 	
@@ -170,6 +178,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableModuleClass:">enableModuleClass:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enabledModuleClasses">enabledModuleClasses</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instance">instance</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/libraryClassForName:">libraryClassForName:</a></span></li>
 	
@@ -264,11 +274,42 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>MBEnvironment</code> class contains the state of the Mockingbird Data
+Environment.</p>
+
+<p>Typically, when an application starts, you would load an <code>MBEnvironment</code>
+using the <a href="#//api/name/loadDefaultEnvironment"><code>loadDefaultEnvironment</code></a> class method or one of the
+<a href="#//api/name/loadFromManifest"><code>loadFromManifest</code></a> variants.</p>
+
+<p>Once an environment has been loaded, you can store data in the
+<a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> associated with the environment and reference that
+data with Mockingbird expressions using the <a href="../Classes/MBExpression.html"><code>MBExpression</code></a> class.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Getting the current environment" name="task_Getting the current environment"></a>
+						<h3 class="subsubtitle task-title">Getting the current environment</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
 						
 						
 						<a title="Managing the current environment" name="task_Managing the current environment"></a>
@@ -405,13 +446,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mbmlFileIsLoaded:">&ndash;&nbsp;mbmlFileIsLoaded:</a></code>
+		<code><a href="#//api/name/mbmlPathIsLoaded:">&ndash;&nbsp;mbmlPathIsLoaded:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mbmlPathIsLoaded:">&ndash;&nbsp;mbmlPathIsLoaded:</a></code>
+		<code><a href="#//api/name/mbmlFileIsLoaded:">&ndash;&nbsp;mbmlFileIsLoaded:</a></code>
 	</span>
 	
 	
@@ -549,10 +590,35 @@
 	<h3 class="subsubtitle method-title">isLoaded</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <code>YES</code> if the environment is loaded; <code>NO</code> otherwise.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) BOOL isLoaded</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -560,10 +626,38 @@
 	<h3 class="subsubtitle method-title">manifestFilePath</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&rsquo;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the <a href="#//api/name/loadDefaultEnvironment"><code>loadDefaultEnvironment</code></a> method), this value will be <code>nil</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *manifestFilePath</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -571,10 +665,36 @@
 	<h3 class="subsubtitle method-title">mbmlPathsLoaded</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -607,7 +727,7 @@ environment attempts to find a resource.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>bundle</em></dt>
-			<dd><p>An <code>NSBundle</code> instance that should be searched when
+			<dd><p>An <code>NSBundle</code> <a href="#//api/name/instance">instance</a> that should be searched when
             attempting to find resources.</p></dd>
 		</dl>
 		
@@ -743,7 +863,7 @@ features added by the module implementation.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Returns an array containing the <code>MBModule</code> classes that will be enabled for all
-newly-created environments. Note when a given environment instance is loaded,
+newly-created environments. Note when a given environment <a href="#//api/name/instance">instance</a> is loaded,
 additional modules not included in this array may be enabled through the
 manifest file.</p>
 	</div>		
@@ -760,6 +880,48 @@ manifest file.</p>
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>The currently-enabled modules. Will always contain at least one
             item, because <a href="../Classes/MBDataEnvironmentModule.html"><code>MBDataEnvironmentModule</code></a> is always enabled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="subsubtitle method-title">instance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the <code>MBEnvironment</code> instance representing the currently-active
+environment.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)instance</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The currently-active environment.</p>
 	</div>
 	
 	
@@ -856,7 +1018,7 @@ environment that exists before any manifest file is processed.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
             if the environment could not be loaded.</p>
 	</div>
 	
@@ -905,7 +1067,7 @@ application&rsquo;s resources.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
             if the environment could not be loaded.</p>
 	</div>
 	
@@ -974,7 +1136,7 @@ found in the specified search directories or in the application&rsquo;s resource
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
             if the environment could not be loaded.</p>
 	</div>
 	
@@ -1042,7 +1204,7 @@ found in the specified search directory or in the application&rsquo;s resources.
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
             if the environment could not be loaded.</p>
 	</div>
 	
@@ -1106,7 +1268,7 @@ specified search directories or in the application&rsquo;s resources.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
             if the environment could not be loaded.</p>
 	</div>
 	
@@ -1169,7 +1331,7 @@ specified search directory or in the application&rsquo;s resources.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The newly-loaded, now-active <code>MBEnvironment</code> instance, or <code>nil</code>
+		<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
             if the environment could not be loaded.</p>
 	</div>
 	
@@ -1204,7 +1366,7 @@ active environment.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns (but does not remove) the <code>MBEnvironment</code> instance at the top of the
+		<p>Returns (but does not remove) the <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a> at the top of the
 environment stack. This is the environment that would become active if
 <a href="#//api/name/popEnvironment"><code>popEnvironment</code></a> were called.</p>
 	</div>		
@@ -1248,7 +1410,7 @@ environment stack. This is the environment that would become active if
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Sets the active <code>MBEnvironment</code> instance by popping it from the environment
+		<p>Sets the active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a> by popping it from the environment
 stack.</p>
 	</div>		
 	
@@ -1295,7 +1457,7 @@ stack.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Sets the active <code>MBEnvironment</code> instance by pushing a new environment
+		<p>Sets the active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a> by pushing a new environment
 onto the environment stack.</p>
 	</div>		
 	
@@ -1384,8 +1546,8 @@ environment attempts to find a resource.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Sets the active <code>MBEnvironment</code> instance. The active environment supplies
-the <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance used to evaluate expressions by default.</p>
+		<p>Sets the active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>. The active environment supplies
+the <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> <a href="#//api/name/instance">instance</a> used to evaluate expressions by default.</p>
 	</div>		
 	
     
@@ -1408,7 +1570,7 @@ the <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> i
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The previously-active <code>MBEnvironment</code> instance, if any.</p>
+		<p>The previously-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, if any.</p>
 	</div>
 	
 	
@@ -1658,8 +1820,8 @@ environment.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the first <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> instance known to the receiver that
-is an instance of the given class.</p>
+		<p>Returns the first <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> <a href="#//api/name/instance">instance</a> known to the receiver that
+is an <a href="#//api/name/instance">instance</a> of the given class.</p>
 	</div>		
 	
     
@@ -1674,7 +1836,7 @@ is an instance of the given class.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>cls</em></dt>
 			<dd><p>The class for which an implementing <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a>
-            instance is sought.</p></dd>
+            <a href="#//api/name/instance">instance</a> is sought.</p></dd>
 		</dl>
 		
 	</div>
@@ -1683,7 +1845,7 @@ is an instance of the given class.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The first <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> representing an instance of <code>cls</code>.
+		<p>The first <a href="../Classes/MBEnvironmentLoader.html"><code>MBEnvironmentLoader</code></a> representing an <a href="#//api/name/instance">instance</a> of <code>cls</code>.
             Will be <code>nil</code> if no such environment loader was found.</p>
 	</div>
 	
@@ -1933,10 +2095,59 @@ environment.</p>
 	<h3 class="subsubtitle method-title">mbmlFileIsLoaded:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines if an MBML file with a specific name has been loaded by the
+receiver.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)mbmlFileIsLoaded:(NSString *)<em>fileName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileName</em></dt>
+			<dd><p>The filename, also known as the last path component.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the environment has loaded an MBML file with the given
+            name; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Because MBML is designed to be path-agnostic, the system does not support
+multiple files with the same name, even if their paths are different.
+Therefore, all MBML filenames are guaranteed to be unique.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1944,10 +2155,52 @@ environment.</p>
 	<h3 class="subsubtitle method-title">mbmlPathIsLoaded:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines if an MBML file with a specific path has been loaded by the
+receiver.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)mbmlPathIsLoaded:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The path of the file.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the environment has loaded an MBML file at the path
+            <code>filePath</code>; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEnvironment.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -1965,7 +2218,7 @@ environment.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

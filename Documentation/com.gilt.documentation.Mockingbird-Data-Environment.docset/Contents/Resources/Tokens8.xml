@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBEnvironmentLoader</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Instances of the MBEnvironmentLoader class are used to parse MBML tags when
+loading an MBEnvironment.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
             
 			
@@ -14,7 +15,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/setIsActive:</TokenIdentifier>
-			<Abstract type="html">Returns YES if the receiver is associated witho the active environment.</Abstract>
+			<Abstract type="html">Returns YES if the receiver is associated with the active environment.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isActive</Declaration>
@@ -26,7 +27,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/isActive</TokenIdentifier>
-			<Abstract type="html">Returns YES if the receiver is associated witho the active environment.</Abstract>
+			<Abstract type="html">Returns YES if the receiver is associated with the active environment.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isActive</Declaration>
@@ -38,7 +39,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironmentLoader/isActive</TokenIdentifier>
-			<Abstract type="html">Returns YES if the receiver is associated witho the active environment.</Abstract>
+			<Abstract type="html">Returns YES if the receiver is associated with the active environment.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) BOOL isActive</Declaration>

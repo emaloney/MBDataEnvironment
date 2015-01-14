@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBDynamicVariableDeclaration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">An MBVariableDeclaration that represents a dynamic variable.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
             
 			
@@ -14,7 +14,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDynamicVariableDeclaration/setExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This property returns the Mockingbird expression that will provide the
+    variable&apos;s value when it is requested. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
@@ -26,7 +27,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDynamicVariableDeclaration/expression</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This property returns the Mockingbird expression that will provide the
+    variable&apos;s value when it is requested. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>
@@ -38,7 +40,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDynamicVariableDeclaration/expression</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This property returns the Mockingbird expression that will provide the
+    variable&apos;s value when it is requested. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *expression</Declaration>

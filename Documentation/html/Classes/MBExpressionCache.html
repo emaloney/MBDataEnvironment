@@ -39,7 +39,13 @@
 	
 	<option value="properties">Properties</option>
 	
-	<option value="//api/name/persistenceEnabled">&nbsp;&nbsp;&nbsp;&nbsp;persistenceEnabled</option>
+	<option value="//api/name/cacheSerialization">&nbsp;&nbsp;&nbsp;&nbsp;cacheSerialization</option>
+	
+	<option value="//api/name/cacheSerializationInterval">&nbsp;&nbsp;&nbsp;&nbsp;cacheSerializationInterval</option>
+	
+	<option value="//api/name/disableCaching">&nbsp;&nbsp;&nbsp;&nbsp;disableCaching</option>
+	
+	<option value="//api/name/enablePersistence">&nbsp;&nbsp;&nbsp;&nbsp;enablePersistence</option>
 	
 	<option value="//api/name/suppressConsoleLogging">&nbsp;&nbsp;&nbsp;&nbsp;suppressConsoleLogging</option>
 	
@@ -68,6 +74,8 @@
 	
 	<option value="//api/name/saveCache">&nbsp;&nbsp;&nbsp;&nbsp;- saveCache</option>
 	
+	<option value="//api/name/setCacheSerialization:withInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- setCacheSerialization:withInterval:</option>
+	
 	<option value="//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;- tokensForExpression:inVariableSpace:usingGrammar:error:</option>
 	
 	
@@ -86,13 +94,13 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Controlling cache behavior">Controlling cache behavior</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving tokens for expressions">Retrieving tokens for expressions</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Clearing the cache">Clearing the cache</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Cache persistence">Cache persistence</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Controlling logging">Controlling logging</a></span></li>
 	
 </ul></li>
 
@@ -102,7 +110,13 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/persistenceEnabled">persistenceEnabled</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheSerialization">cacheSerialization</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cacheSerializationInterval">cacheSerializationInterval</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableCaching">disableCaching</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enablePersistence">enablePersistence</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suppressConsoleLogging">suppressConsoleLogging</a></span></li>
 	
@@ -131,6 +145,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetMemoryCache">resetMemoryCache</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveCache">saveCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCacheSerialization:withInterval:">setCacheSerialization:withInterval:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">tokensForExpression:inVariableSpace:usingGrammar:error:</a></span></li>
 	
@@ -186,6 +202,50 @@
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Controlling cache behavior" name="task_Controlling cache behavior"></a>
+						<h3 class="subsubtitle task-title">Controlling cache behavior</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableCaching">&nbsp;&nbsp;disableCaching</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/suppressConsoleLogging">&nbsp;&nbsp;suppressConsoleLogging</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enablePersistence">&nbsp;&nbsp;enablePersistence</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCacheSerialization:withInterval:">&ndash;&nbsp;setCacheSerialization:withInterval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cacheSerialization">&nbsp;&nbsp;cacheSerialization</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cacheSerializationInterval">&nbsp;&nbsp;cacheSerializationInterval</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
 						
 						
 						<a title="Retrieving tokens for expressions" name="task_Retrieving tokens for expressions"></a>
@@ -252,12 +312,6 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/persistenceEnabled">&nbsp;&nbsp;persistenceEnabled</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/loadCache">&ndash;&nbsp;loadCache</a></code>
 	</span>
 	
@@ -277,20 +331,6 @@
 </li>
 						</ul>
 						
-						
-						<a title="Controlling logging" name="task_Controlling logging"></a>
-						<h3 class="subsubtitle task-title">Controlling logging</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/suppressConsoleLogging">&nbsp;&nbsp;suppressConsoleLogging</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li>
-						</ul>
-						
 					</div>
 					
 					
@@ -302,8 +342,120 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/persistenceEnabled" title="persistenceEnabled"></a>
-	<h3 class="subsubtitle method-title">persistenceEnabled</h3>
+	<a name="//api/name/cacheSerialization" title="cacheSerialization"></a>
+	<h3 class="subsubtitle method-title">cacheSerialization</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies the cache&rsquo;s serialization behavior. The default value is
+<code>MBExpressionCacheSerializationNone</code>, but it can be changed by calling
+<a href="#//api/name/setCacheSerialization:withInterval:"><code>setCacheSerialization:withInterval:</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBExpressionCacheSerialization cacheSerialization</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cacheSerializationInterval" title="cacheSerializationInterval"></a>
+	<h3 class="subsubtitle method-title">cacheSerializationInterval</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Specifies the cache serialization interval. The meaning of this value depends
+on the value of the <a href="#//api/name/cacheSerialization"><code>cacheSerialization</code></a> property. Will be <code>0.0</code> if
+<a href="#//api/name/cacheSerialization"><code>cacheSerialization</code></a> is <code>MBExpressionCacheSerializationNone</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval cacheSerializationInterval</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableCaching" title="disableCaching"></a>
+	<h3 class="subsubtitle method-title">disableCaching</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disables caching altogether when set to <code>YES</code>. Defaults to <code>NO</code>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL disableCaching</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enablePersistence" title="enablePersistence"></a>
+	<h3 class="subsubtitle method-title">enablePersistence</h3>
 	
 	
 	
@@ -314,7 +466,7 @@ persisting the cached expression tokens.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, getter=isPersistenceEnabled) BOOL persistenceEnabled</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL enablePersistence</code></div>
 
     
 	
@@ -326,7 +478,10 @@ persisting the cached expression tokens.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This value is manipulated during the <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> load process.</p>
+		<p>This value is manipulated during the <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> load process. Typically,
+you would not change this property yourself; instead, consider using
+the <a href="#//api/name/setCacheSerialization:withInterval:"><code>setCacheSerialization:withInterval:</code></a> if you wish to control how the
+cache handles persistence.</p>
 	</div>
 	
 	
@@ -558,7 +713,7 @@ in the memory cache.</p>
 <p>If there is no cache file available in the filesystem, the cache will attempt
 to load a cache file from the app&rsquo;s resources.</p>
 
-<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/persistenceEnabled"><code>isPersistenceEnabled</code></a> property is <code>NO</code>,
+<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/enablePersistence"><code>enablePersistence</code></a> property is <code>NO</code>,
             calling this method does nothing.</p></div>
 	</div>
 	
@@ -604,7 +759,7 @@ are used to replace the existing contents of the in-memory cache.</p>
 		<p>If there is no cache file available in the filesystem, the cache will attempt
 to load a cache file from the app&rsquo;s resources.</p>
 
-<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/persistenceEnabled"><code>isPersistenceEnabled</code></a> property is <code>NO</code>,
+<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/enablePersistence"><code>enablePersistence</code></a> property is <code>NO</code>,
             calling this method does nothing.</p></div>
 	</div>
 	
@@ -773,8 +928,73 @@ automatic cache invalidation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/persistenceEnabled"><code>isPersistenceEnabled</code></a> property is <code>NO</code>,
+		<div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/enablePersistence"><code>enablePersistence</code></a> property is <code>NO</code>,
             calling this method does nothing.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCacheSerialization:withInterval:" title="setCacheSerialization:withInterval:"></a>
+	<h3 class="subsubtitle method-title">setCacheSerialization:withInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Controls whether and how the expression cache writes files to the filesystem.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCacheSerialization:(MBExpressionCacheSerialization)<em>serialization</em> withInterval:(NSTimeInterval)<em>interval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>serialization</em></dt>
+			<dd><p>Specifies whether and how the cache should serialize
+            persistent copies to the filesystem.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interval</em></dt>
+			<dd><p>The time interval that applies to the <code>serialization</code>
+            value. If <code>serialization</code> is
+            <code>MBExpressionCacheSerializationOptimizeForLaunch</code>, the cache
+            will serialize at most once per run of the application, and only
+            after <code>interval</code> seconds have elapsed. If <code>serialization</code> is
+            <code>MBExpressionCacheSerializationOptimizeForPerformance</code>, then
+            serialization may occur periodically, no more than every <code>interval</code>
+            seconds. If <code>serialization</code> is <code>MBExpressionCacheSerializationNone</code>,
+            this value is ignored.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>By default, the expression cache will not serialize.</p>
 	</div>
 	
 	
@@ -885,7 +1105,7 @@ the resulting tokens are added to the cache, and are then returned.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

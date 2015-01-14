@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -72,6 +74,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -146,6 +150,15 @@
 					
                     
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>MBAttributeValidator</code> instances can be used to verify that a given
+<a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> contains an expected set of values.</p>
+					</div>
+					
+					
 					
 					
 					
@@ -224,10 +237,35 @@
 	<h3 class="subsubtitle method-title">model</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> that the receiver was constructed to <a href="#//api/name/validate">validate</a>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBDataModel *model</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -235,10 +273,37 @@
 	<h3 class="subsubtitle method-title">validationErrorMessages</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of <code>NSString</code>s containing error messages for any problems
+    encountered during validation. Will be <code>nil</code> if no validation errors
+    have occurred.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBDataModel *validationErrorMessages</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *validationErrorMessages</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -254,10 +319,51 @@
 	<h3 class="subsubtitle method-title">validatorForDataModel:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new <code>MBAttributeValidator</code> to be used for validating the specified
+<a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (instancetype)validatorForDataModel:(MBDataModel *)<em>model</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>model</em></dt>
+			<dd><p>The <a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> to be validated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>MBAttributeValidator</code> that can be used to <a href="#//api/name/validate">validate</a> <a href="#//api/name/model"><code>model</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -273,10 +379,56 @@
 	<h3 class="subsubtitle method-title">require:or:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Requires that the data <a href="#//api/name/model">model</a> contain either <code>attr1</code> or <code>attr2</code> but not
+both.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)require:(NSString *)<em>attr1</em> or:(NSString *)<em>attr2</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attr1</em></dt>
+			<dd><p>The name of the first attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attr2</em></dt>
+			<dd><p>The name of the second attribute.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -284,10 +436,63 @@
 	<h3 class="subsubtitle method-title">require:or:butNotBoth:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Requires that the data <a href="#//api/name/model">model</a> contain either <code>attr1</code> or <code>attr2</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)require:(NSString *)<em>attr1</em> or:(NSString *)<em>attr2</em> butNotBoth:(BOOL)<em>onlyAllowOne</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attr1</em></dt>
+			<dd><p>The name of the first attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attr2</em></dt>
+			<dd><p>The name of the second attribute.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>onlyAllowOne</em></dt>
+			<dd><p>If <code>YES</code>, the requirement will be satisfied only
+            if <code>attr1</code> or <code>attr2</code> exists but not both. If <code>NO</code>, the requirement
+            will be satisfied if either <code>attr1</code> or <code>attr2</code> is present <em>or</em>
+            if both are present.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -295,10 +500,52 @@
 	<h3 class="subsubtitle method-title">requireAtLeastOneOf:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Requires at least one of a set of attribute names to be present in the data
+<a href="#//api/name/model">model</a>. Validation will fail if none of the specified attributes are present.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)requireAtLeastOneOf:(NSObject&lt;NSFastEnumeration&gt; *)<em>attrs</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrs</em></dt>
+			<dd><p>An enumeration of <code>NSString</code>s representing the attribute names
+            to <a href="#//api/name/validate">validate</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -306,10 +553,53 @@
 	<h3 class="subsubtitle method-title">requireExactlyOneOf:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Requires exactly one of a set of attribute names to be present in the data
+<a href="#//api/name/model">model</a>. Validation will fail if none of the specified attributes are present,
+or if more than one is present.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)requireExactlyOneOf:(NSObject&lt;NSFastEnumeration&gt; *)<em>attrs</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>attrs</em></dt>
+			<dd><p>An enumeration of <code>NSString</code>s representing the attribute names
+            to <a href="#//api/name/validate">validate</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -317,10 +607,46 @@
 	<h3 class="subsubtitle method-title">validate</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns <code>YES</code> if all validation requirements were satisfied.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)validate</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if validation succeeded; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If validation did not succeed, the error messages contained in
+<a href="#//api/name/validationErrorMessages"><code>validationErrorMessages</code></a> will be logged to the console.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -338,7 +664,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

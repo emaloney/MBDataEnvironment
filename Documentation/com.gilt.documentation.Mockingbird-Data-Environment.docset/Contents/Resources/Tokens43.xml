@@ -5,9 +5,8 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/intf/MBStringValueCoding</TokenIdentifier>
 			<Abstract type="html">Classes that adopt this protocol gain the ability to be stored in the
-&lt;code&gt;NSUserDefaults&lt;/code&gt; as strings. This allows native objects to be
-stored using the template &amp;amp;lt;Var&amp;amp;gt;&apos;s &lt;code&gt;userDefaultsName&lt;/code&gt;
-mechanism.</Abstract>
+NSUserDefaults as strings. This allows native objects to be
+stored using the variable&apos;s userDefaultsName mechanism.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
             
 			
@@ -41,8 +40,8 @@ passed-in string.</Abstract>
 			
 			<Declaration>- (NSString *)stringValue</Declaration>
 			
-			<ReturnValue><Abstract type="html">a string that, if passed to &lt;code&gt;fromStringValue:&lt;/code&gt;, would
-            return a new instance that &lt;code&gt;isEqual:&lt;/code&gt; to this receiver.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">a string that, if passed to fromStringValue:, would
+            return a new instance that isEqual: to this receiver.</Abstract></ReturnValue>
 			<Anchor>//api/name/stringValue</Anchor>
             <NodeRef refid="43"/>
 		</Token>

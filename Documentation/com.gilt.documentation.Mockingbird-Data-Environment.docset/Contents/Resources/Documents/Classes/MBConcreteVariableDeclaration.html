@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -60,6 +62,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -121,6 +125,16 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An <a href="../Classes/MBVariableDeclaration.html"><code>MBVariableDeclaration</code></a> that represents a concrete variable. Concrete
+variables are those whose values are <code>NSObject</code> instances stored in the
+<a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a>.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -180,10 +194,38 @@
 	<h3 class="subsubtitle method-title">declaredType</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <a href="../Constants/MBConcreteVariableType.html"><code>MBConcreteVariableType</code></a> value indicating the variable&rsquo;s type
+    as declared by the <strong><code>type="</code></strong><em>type</em><strong><code>"</code></strong> attribute in MBML.
+    Defaults to <code>MBConcreteVariableTypeSimple</code> if no type attribute is
+    specified.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBConcreteVariableType declaredType</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableDeclaration.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -191,10 +233,36 @@
 	<h3 class="subsubtitle method-title">declaredValue</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the variable value as it was originally declared in MBML. Note
+    that this may not necessarily be the same as the current value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) id declaredValue</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableDeclaration.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -202,10 +270,38 @@
 	<h3 class="subsubtitle method-title">isBooleanValue</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the receiver represents a <em>boolean value</em>. Boolean values
+    are evaluated as boolean expressions when they are set. In MBML, a boolean
+    value is specified using the <strong><code>boolean="</code></strong><em>expr</em><strong><code>"</code></strong> attribute
+    where <em>expr</em> is an Mockingbird expression evaluated in a boolean context.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isBooleanValue</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableDeclaration.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -213,10 +309,38 @@
 	<h3 class="subsubtitle method-title">isLiteralValue</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Indicates whether the receiver represents a <em>literal value</em>. Literal values
+    are not evaluated as expressions when they are set. In MBML, a literal
+    value is specified using the <strong><code>literal="</code></strong><em>expr</em><strong><code>"</code></strong> attribute
+    where <em>expr</em> is an arbitrary text string.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isLiteralValue</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableDeclaration.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -224,10 +348,38 @@
 	<h3 class="subsubtitle method-title">userDefaultsName</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>If the receiver is bound to an <code>NSUserDefaults</code> value, this property
+    returns the name of the value (also known as the <em>key</em>) within the
+    <code>NSUserDefaults</code>&rsquo;s <code>standardUserDefaults</code>. Will be <code>nil</code> is there is
+    no <code>NSUserDefaults</code> value associated with the receiver.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *userDefaultsName</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableDeclaration.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -249,7 +401,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

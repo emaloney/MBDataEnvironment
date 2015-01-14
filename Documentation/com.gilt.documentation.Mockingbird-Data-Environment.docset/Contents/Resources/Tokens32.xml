@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBSingletonVariableDeclaration</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">An MBVariableDeclaration that represents a singleton object.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
             
 			
@@ -14,7 +14,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/setImplementingClass:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the Class that implements the singleton.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
@@ -26,7 +26,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/implementingClass</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the Class that implements the singleton.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
@@ -38,7 +38,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBSingletonVariableDeclaration/implementingClass</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the Class that implements the singleton.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
@@ -50,7 +50,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/setSingletonAccessor:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the method selector for the singleton&apos;s accessor.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
@@ -62,7 +62,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBSingletonVariableDeclaration/singletonAccessor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the method selector for the singleton&apos;s accessor.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
@@ -74,7 +74,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBSingletonVariableDeclaration/singletonAccessor</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the method selector for the singleton&apos;s accessor.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>

@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -38,6 +40,8 @@
 	
 	
 	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/instance">&nbsp;&nbsp;&nbsp;&nbsp;+ instance</option>
 	
 	<option value="//api/name/name:withSuffix:">&nbsp;&nbsp;&nbsp;&nbsp;+ name:withSuffix:</option>
 	
@@ -78,8 +82,6 @@
 	
 	<option value="//api/name/unsetVariable:">&nbsp;&nbsp;&nbsp;&nbsp;- unsetVariable:</option>
 	
-	<option value="//api/name/varDictionary">&nbsp;&nbsp;&nbsp;&nbsp;- varDictionary</option>
-	
 	<option value="//api/name/variableAsString:">&nbsp;&nbsp;&nbsp;&nbsp;- variableAsString:</option>
 	
 	<option value="//api/name/variableAsString:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- variableAsString:defaultValue:</option>
@@ -97,10 +99,14 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting the current variable space">Getting the current variable space</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing variable values">Accessing variable values</a></span></li>
 	
@@ -127,6 +133,8 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/instance">instance</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name:withSuffix:">name:withSuffix:</a></span></li>
 	
@@ -167,8 +175,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVariable:value:">setVariable:value:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsetVariable:">unsetVariable:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/varDictionary">varDictionary</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableAsString:">variableAsString:</a></span></li>
 	
@@ -215,6 +221,21 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>MBVariableSpace</code> class is responsible for loading variable declarations
+from MBML files and for maintaining the current values of named Mockingbird
+variables across the lifetime of the application.</p>
+
+<p>Each <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> will have an associated <code>MBVariableSpace</code> that will be
+consulted when Mockingbird expressions are evaluated. When that environment
+is active, its <code>MBVariableSpace</code> will provide the values when variables are
+referenced.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -222,17 +243,25 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
+						<a title="Getting the current variable space" name="task_Getting the current variable space"></a>
+						<h3 class="subsubtitle task-title">Getting the current variable space</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/instance">+&nbsp;instance</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
 						<a title="Accessing variable values" name="task_Accessing variable values"></a>
 						<h3 class="subsubtitle task-title">Accessing variable values</h3>
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/varDictionary">&ndash;&nbsp;varDictionary</a></code>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/variableForName:">&ndash;&nbsp;variableForName:</a></code>
 	</span>
@@ -430,6 +459,48 @@
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/instance" title="instance"></a>
+	<h3 class="subsubtitle method-title">instance</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the <code>MBVariableSpace</code> instance associated with the currently-active
+<a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (instancetype)instance</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current variable space.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/name:withSuffix:" title="name:withSuffix:"></a>
 	<h3 class="subsubtitle method-title">name:withSuffix:</h3>
 	
@@ -502,10 +573,57 @@
 	<h3 class="subsubtitle method-title">addObserverForUserDefault:target:action:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an observer to be notified of changes to the value of the Mockingbird
+variable with the given <code>NSUserDefaults</code> key name.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>- (void)addObserverForUserDefault:(NSString *)<em>userDefaultsName</em> target:(id)<em>target</em> action:(SEL)<em>action</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)addObserverForUserDefault:(NSString *)<em>userDefaultsName</em> target:(id)<em>observer</em> action:(SEL)<em>action</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userDefaultsName</em></dt>
+			<dd><p>The <code>userDefaultsName</code> of the variable to observe.
+            Note that this is <em>not necessarily</em> the same as the variable name.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>observer</em></dt>
+			<dd><p>The object to notify.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>action</em></dt>
+			<dd><p>The method selector of <code>observer</code> to call when notifying.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -513,10 +631,60 @@
 	<h3 class="subsubtitle method-title">declarationForVariable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <a href="../Classes/MBVariableDeclaration.html"><code>MBVariableDeclaration</code></a> for the variable with the given name.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (MBVariableDeclaration *)declarationForVariable:(NSString *)<em>varName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose declaration is being
+            retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The declaration for <code>varName</code>, or <code>nil</code> if no declaration exists.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Note that not all variables will have explicit declarations; only variables
+declared in MBML or created programmatically using <a href="#//api/name/declareVariable:"><code>declareVariable:</code></a> will
+have an associated <a href="../Classes/MBVariableDeclaration.html"><code>MBVariableDeclaration</code></a>. Undeclared variables can be
+created implicitly through calls to <a href="#//api/name/setVariable:value:"><code>setVariable:value:</code></a> and similar
+methods.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -524,10 +692,52 @@
 	<h3 class="subsubtitle method-title">declareFunction:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Programmatically declares an MBML function.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)declareFunction:(MBMLFunction *)<em>function</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>function</em></dt>
+			<dd><p>An <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> representing the function and its
+            implementation.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if <code>function</code> was successfully declared; <code>NO</code> if there was
+            already a function with the same name or if an error occurred.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -535,10 +745,53 @@
 	<h3 class="subsubtitle method-title">declareVariable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Programmatically declares a variable.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)declareVariable:(MBVariableDeclaration *)<em>declaration</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>declaration</em></dt>
+			<dd><p>An <a href="../Classes/MBVariableDeclaration.html"><code>MBVariableDeclaration</code></a> representing the variable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the variable represented by <code>declaration</code> was successfully
+            declared; <code>NO</code> if there was already a variable with the same name
+            declared or if an error occured while attempting to retrieve the
+            variable&rsquo;s initial value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -546,10 +799,40 @@
 	<h3 class="subsubtitle method-title">functionNames</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the names of the currently-declared MBML functions.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (NSArray *)functionNames</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing the names of the declared MBML functions.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -557,10 +840,51 @@
 	<h3 class="subsubtitle method-title">functionWithName:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> associated with the given name.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (MBMLFunction *)functionWithName:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the function whose <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> is sought.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a>, or <code>nil</code> if there is no function declared having
+            the given name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -568,10 +892,69 @@
 	<h3 class="subsubtitle method-title">isReadOnlyVariable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether the variable with the given name is a read-only variable.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)isReadOnlyVariable:(NSString *)<em>varName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the variable named <code>varName</code> is read-only; <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Read-only variables are marked as such in MBML or when they are declared
+programmatically via <a href="#//api/name/declareVariable:"><code>declareVariable:</code></a>.</p>
+
+<p>Certain types of variable declarations—such as those represented by
+<a href="../Classes/MBSingletonVariableDeclaration.html"><code>MBSingletonVariableDeclaration</code></a> and <a href="../Classes/MBDynamicVariableDeclaration.html"><code>MBDynamicVariableDeclaration</code></a>—are always
+read-only.</p>
+
+<p><a href="../Classes/MBConcreteVariableDeclaration.html"><code>MBConcreteVariableDeclaration</code></a>s may be declared with a <code>mutable="F"</code> MBML
+attribute to be marked as read-only. Otherwise, variables are not considered
+read-only.</p>
+
+<p>Note that the read-only concept only applies to whether or not the
+<code>MBVariableSpace</code> will allow you to change the value through its interface.
+In this way, even immutable objects such as <code>NSArray</code> may be considered
+read/write as far as the Mockingbird Data Environment goes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -642,10 +1025,57 @@ notation.</p>
 	<h3 class="subsubtitle method-title">popVariable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Pops the current value from the stack for the variable with the given name.
+(The value of the variable prior to the previous call to <a href="#//api/name/pushVariable:value:"><code>pushVariable:value:</code></a>
+will be restored.) If there are no stack values for the variable, an error
+will be logged to the console.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (id)popVariable:(NSString *)<em>varName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose value is to be set.
+            If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the variable <code>varName</code> that was popped from the stack.
+            If there were no stack values for the variable, <code>nil</code> will be
+            returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -653,10 +1083,52 @@ notation.</p>
 	<h3 class="subsubtitle method-title">pushVariable:value:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Pushes a new value onto the stack for the variable with the given name.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)pushVariable:(NSString *)<em>varName</em> value:(id)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose value is to be set.
+            If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The value to set for the variable named <code>varName</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -664,10 +1136,52 @@ notation.</p>
 	<h3 class="subsubtitle method-title">removeObserver:forUserDefault:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops an observer from being notified of changes to the value of the
+Mockingbird variable with the given <code>NSUserDefaults</code> key name.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)removeObserver:(id)<em>observer</em> forUserDefault:(NSString *)<em>userDefaultsName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>observer</em></dt>
+			<dd><p>The observer to remove.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>userDefaultsName</em></dt>
+			<dd><p>The <code>userDefaultsName</code> of the variable to stop
+            observing.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -675,10 +1189,63 @@ notation.</p>
 	<h3 class="subsubtitle method-title">setListVariable:listIndex:value:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the value of a given key for the <code>type="list"</code> variable with the specified
+name. (This method will also operate on any variable whose value is of type
+<code>NSArray</code>.)</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)setListVariable:(NSString *)<em>varName</em> listIndex:(NSUInteger)<em>idx</em> value:(id)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the list variable whose index-value is being
+            set. If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>idx</em></dt>
+			<dd><p>The list index whose value is being set. If <code>idx</code> is
+            greater than the last index of the list, the list array will be
+            expanded to include the new index, and any empty index slots
+            will be filled with <code>NSNull</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The new value to set at the given index. If <code>nil</code>, the value
+            will be set as <code>NSNull</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -686,10 +1253,60 @@ notation.</p>
 	<h3 class="subsubtitle method-title">setMapVariable:mapKey:value:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the value of a given key for the <code>type="map"</code> variable with the specified
+name. (This method will also operate on any variable whose value is of type
+<code>NSDictionary</code>.)</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)setMapVariable:(NSString *)<em>varName</em> mapKey:(NSString *)<em>key</em> value:(id)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the map variable whose key-value is being set.
+            If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The map key whose value is being set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The new value for the given key. If <code>nil</code>, the value for <code>key</code>
+            will be removed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -759,10 +1376,53 @@ notation.</p>
 	<h3 class="subsubtitle method-title">setVariable:value:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a variable to the given value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)setVariable:(NSString *)<em>varName</em> value:(id)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose value is to be set.
+            If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The value to set for the variable named <code>varName</code>. If this
+            is <code>nil</code>, the variable <code>varName</code> will be unset.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -770,21 +1430,48 @@ notation.</p>
 	<h3 class="subsubtitle method-title">unsetVariable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the current value of the variable with the specified name. Values on
+the variable stack will not be affected.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)unsetVariable:(NSString *)<em>varName</em></code></div>
 
     
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/varDictionary" title="varDictionary"></a>
-	<h3 class="subsubtitle method-title">varDictionary</h3>
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose value is to be unset.
+            If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>- (NSDictionary *)varDictionary</code></div>
-
-    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -792,10 +1479,59 @@ notation.</p>
 	<h3 class="subsubtitle method-title">variableAsString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current string value of the variable with the given name.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (NSString *)variableAsString:(NSString *)<em>varName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose string value is being
+            retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current string value of the variable. Will return <code>nil</code> if
+            there is no variable with the given name or if there was an error
+            retrieving the variable&rsquo;s value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the underlying variable value is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be called to convert the value into a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -803,10 +1539,66 @@ notation.</p>
 	<h3 class="subsubtitle method-title">variableAsString:defaultValue:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current string value for the variable with the given name, or a
+default value if there is no available variable value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (NSString *)variableAsString:(NSString *)<em>varName</em> defaultValue:(NSString *)<em>def</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose string value is being
+            retrieved.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default value to return in cases where the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current string value of the variable. Will return <code>def</code> if
+            there is no variable with the given name or if there was an error
+            retrieving the variable&rsquo;s value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the underlying variable value is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be called to convert the value into a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -814,10 +1606,52 @@ notation.</p>
 	<h3 class="subsubtitle method-title">variableForName:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current value for the variable with the given name.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (id)variableForName:(NSString *)<em>varName</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose value is being retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current variable value. Will return <code>nil</code> if there is no
+            variable with the given name or if there was an error retrieving
+            the variable&rsquo;s value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -825,10 +1659,59 @@ notation.</p>
 	<h3 class="subsubtitle method-title">variableForName:defaultValue:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current value for the variable with the given name, or a
+default value if there is no available variable value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (id)variableForName:(NSString *)<em>varName</em> defaultValue:(id)<em>def</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>varName</em></dt>
+			<dd><p>The name of the variable whose value is being retrieved.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default value to return in cases where the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The current variable value, or <code>def</code> if there is no variable with
+            the given name or if there was an error retrieving the variable&rsquo;s
+            value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBVariableSpace.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -846,7 +1729,7 @@ notation.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-13)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

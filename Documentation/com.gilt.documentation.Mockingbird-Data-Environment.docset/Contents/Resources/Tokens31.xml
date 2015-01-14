@@ -5,7 +5,7 @@
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBScopedVariables</TokenIdentifier>
 			<Abstract type="html">Provides a mechanism for maintaining scoped variable values in the
-context of a particular &lt;code&gt;MBVariableSpace&lt;/code&gt; instance.</Abstract>
+context of a particular MBVariableSpace instance.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
             
 			
@@ -15,7 +15,8 @@ context of a particular &lt;code&gt;MBVariableSpace&lt;/code&gt; instance.</Abst
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setVariableSpace:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the MBVariableSpace instance in which the scoped variables will
+be stored.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
@@ -27,7 +28,8 @@ context of a particular &lt;code&gt;MBVariableSpace&lt;/code&gt; instance.</Abst
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/variableSpace</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the MBVariableSpace instance in which the scoped variables will
+be stored.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
@@ -39,7 +41,8 @@ context of a particular &lt;code&gt;MBVariableSpace&lt;/code&gt; instance.</Abst
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBScopedVariables/variableSpace</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the MBVariableSpace instance in which the scoped variables will
+be stored.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>

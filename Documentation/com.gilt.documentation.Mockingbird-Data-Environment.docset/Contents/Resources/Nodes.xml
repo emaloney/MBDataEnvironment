@@ -77,6 +77,16 @@
 				</Node>
 				
                 
+				<Node>
+					<Name>Constants</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="44"/>
+						<NodeRef refid="45"/>
+						
+					</Subnodes>
+				</Node>
+				
 			</Subnodes>
         </Node>
     </TOC>
@@ -208,13 +218,13 @@
                     <Anchor>tasks</Anchor>
                 </Node>
                 
-                
-                
                 <Node type="section">
                     <Path>Classes/MBDevice.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
                 </Node>
+                
+                
                 
             </Subnodes>
             
@@ -1222,6 +1232,16 @@
             
         </Node>
 		
-        
+        <Node id="44" type="file" documentType="reference">
+            <Name>MBConcreteVariableType</Name>
+            <Path>Constants/MBConcreteVariableType.html</Path>
+            
+        </Node>
+		<Node id="45" type="file" documentType="reference">
+            <Name>MBExpressionCacheSerialization</Name>
+            <Path>Constants/MBExpressionCacheSerialization.html</Path>
+            
+        </Node>
+		
 	</Library>
 </DocSetNodes>

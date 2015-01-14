@@ -4,13 +4,27 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBEnvironment</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">The MBEnvironment class contains the state of the Mockingbird Data
+Environment.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/instance</TokenIdentifier>
+			<Abstract type="html">Retrieves the MBEnvironment instance representing the currently-active
+environment.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">The currently-active environment.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/setEnvironment:</TokenIdentifier>
@@ -259,7 +273,7 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/setIsLoaded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns YES if the environment is loaded; NO otherwise.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign, readonly) BOOL isLoaded</Declaration>
@@ -271,7 +285,7 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/isLoaded</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns YES if the environment is loaded; NO otherwise.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign, readonly) BOOL isLoaded</Declaration>
@@ -283,7 +297,7 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironment/isLoaded</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns YES if the environment is loaded; NO otherwise.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, assign, readonly) BOOL isLoaded</Declaration>
@@ -295,7 +309,10 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/setManifestFilePath:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&apos;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the loadDefaultEnvironment method), this value will be nil. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
@@ -307,7 +324,10 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/manifestFilePath</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&apos;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the loadDefaultEnvironment method), this value will be nil. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
@@ -319,7 +339,10 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironment/manifestFilePath</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&apos;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the loadDefaultEnvironment method), this value will be nil. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
@@ -331,7 +354,8 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/setMbmlPathsLoaded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
@@ -343,7 +367,8 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlPathsLoaded</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
@@ -355,7 +380,8 @@ environment attempts to find a resource.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironment/mbmlPathsLoaded</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
@@ -366,26 +392,40 @@ environment attempts to find a resource.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlFileIsLoaded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlPathIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Determines if an MBML file with a specific path has been loaded by the
+receiver.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)mbmlFileIsLoaded:(NSString *)fileName</Declaration>
-			
-			
-			<Anchor>//api/name/mbmlFileIsLoaded:</Anchor>
+			<Declaration>- (BOOL)mbmlPathIsLoaded:(NSString *)filePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The path of the file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the environment has loaded an MBML file at the path
+            filePath; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlPathIsLoaded:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlPathIsLoaded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlFileIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Determines if an MBML file with a specific name has been loaded by the
+receiver.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)mbmlPathIsLoaded:(NSString *)filePath</Declaration>
-			
-			
-			<Anchor>//api/name/mbmlPathIsLoaded:</Anchor>
+			<Declaration>- (BOOL)mbmlFileIsLoaded:(NSString *)fileName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileName</Name>
+					<Abstract type="html">The filename, also known as the last path component.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the environment has loaded an MBML file with the given
+            name; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlFileIsLoaded:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
