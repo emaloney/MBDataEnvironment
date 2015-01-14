@@ -462,7 +462,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 {
     debugTrace();
     
-    return [space varDictionary][self.name];
+    return space[self.name];
 }
 
 @end
