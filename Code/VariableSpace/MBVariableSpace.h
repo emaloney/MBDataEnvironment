@@ -32,7 +32,6 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 /*!    @name Accessing variable values                                        */
 /*----------------------------------------------------------------------------*/
 
-- (NSDictionary*) varDictionary;
 - (id) variableForName:(NSString*)varName;
 - (id) variableForName:(NSString*)varName defaultValue:(id)def;
 - (NSString*) variableAsString:(NSString*)varName;

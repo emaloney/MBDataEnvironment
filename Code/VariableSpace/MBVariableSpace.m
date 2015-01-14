@@ -158,11 +158,6 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Accessing variables
 /******************************************************************************/
 
-- (NSDictionary*) varDictionary
-{
-    return _variables;
-}
-
 - (BOOL) declareVariable:(MBVariableDeclaration*)decl
 {
     debugTrace();
