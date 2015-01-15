@@ -11,6 +11,7 @@
 #import "MBStringConversions.h"
 #import "MBExpression.h"
 #import "MBDataEnvironmentConstants.h"
+#import "MBDataEnvironmentModule.h"
 
 #define DEBUG_LOCAL		0
 
@@ -1649,7 +1650,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
         return UIBarButtonItemStylePlain;
     }
     else if ([str isEqualToString:kMBMLBarButtonItemStyleBordered]) {
-        return UIBarButtonItemStyleBordered;
+        [[MBDataEnvironmentModule log] issueDeprecationWarningWithFormat:@"The UIBarButtonItemStyleBordered value (specified by the string \"%@\") is deprecated by Apple in the latest versions of iOS. UIBarButtonItemStylePlain will be returned instead.", str];
+        return UIBarButtonItemStylePlain;
     }
     else if ([str isEqualToString:kMBMLBarButtonItemStyleDone]) {
         return UIBarButtonItemStyleDone;
