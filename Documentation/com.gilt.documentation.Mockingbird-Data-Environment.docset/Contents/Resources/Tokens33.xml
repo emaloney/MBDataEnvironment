@@ -4,8 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBStringConversions</TokenIdentifier>
-			<Abstract type="html">This class provides an interface for converting strings into values of
-various types.</Abstract>
+			<Abstract type="html">This class provides an interface for converting between strings and values of
+other types.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
             
 			
@@ -1273,12 +1273,22 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewAnimationOptionsFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIViewAnimationOptions value using the viewAnimationOptionsFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            0 and logs an error to the console if the expression result
+            couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewAnimationOptionsFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>

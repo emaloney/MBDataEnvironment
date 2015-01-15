@@ -89,17 +89,17 @@ in the template XML.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenizeBool:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenizeBoolean:</TokenIdentifier>
 			<Abstract type="html">Tokenizes a boolean expression and logs the resulting tokens to the console.
 The input expression is returned, allowing the function to be used as a
 pass-through. This function must be declared input=&quot;raw&quot; in the template
 XML.</Abstract>
 			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)tokenizeBool:(NSString *)expr</Declaration>
+			<Declaration>+ (NSString *)tokenizeBoolean:(NSString *)expr</Declaration>
 			
 			
-			<Anchor>//api/name/tokenizeBool:</Anchor>
+			<Anchor>//api/name/tokenizeBoolean:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		

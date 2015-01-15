@@ -530,8 +530,8 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class provides an interface for converting strings into values of
-various types.</p>
+						<p>This class provides an interface for converting between strings and values of
+other types.</p>
 					</div>
 					
 					
@@ -5528,10 +5528,55 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">viewAnimationOptionsFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIViewAnimationOptions</code> value using the <a href="#//api/name/viewAnimationOptionsFromString:"><code>viewAnimationOptionsFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIViewAnimationOptions)viewAnimationOptionsFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIViewAnimationOptions</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>0</code> and logs an error to the console if the expression result
+            couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
