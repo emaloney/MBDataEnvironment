@@ -655,7 +655,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     
     if (!str || str.length < 1) {
         [self _reportErrorWithMessage:@"couldn't parse an empty string as a color" to:errPtr];
-        return kInvalidColorSpecification;
+        return [UIColor yellowColor];
     }
     
     // see if we're dealing with one of the expected color names
@@ -675,7 +675,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                                 as:MBStringify(UIColor)
                          expecting:@"#RRGGBB or #RRGGBBAA format, or a UIColor-supported color name"
                                 to:errPtr];
-        return kInvalidColorSpecification;
+        return [UIColor yellowColor];
     }
     NSUInteger value = 0;
     
