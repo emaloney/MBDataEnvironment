@@ -476,43 +476,6 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 }
 
 /******************************************************************************/
-#pragma mark Expression representation
-/******************************************************************************/
-
-+ (instancetype) expression:(NSString*)exprStr
-               usingGrammar:(MBExpressionGrammar*)grammar
-                      error:(MBExpressionError**)errPtr
-{
-    return [self expression:exprStr
-            inVariableSpace:[MBVariableSpace instance]
-               usingGrammar:grammar
-                      error:errPtr];
-}
-
-+ (instancetype) expression:(NSString*)exprStr
-            inVariableSpace:(MBVariableSpace*)space
-               usingGrammar:(MBExpressionGrammar*)grammar
-                      error:(MBExpressionError**)errPtr
-{
-    MBExpressionError* err = nil;
-    NSArray* tokens = [[MBExpressionCache instance] tokensForExpression:exprStr
-                                                        inVariableSpace:space
-                                                           usingGrammar:grammar
-                                                                  error:&err];
-    if (err) {
-        [err reportErrorTo:errPtr];
-        return nil;
-    }
-
-    MBExpression* expr = [MBExpression new];
-    expr->_variableSpace = space;
-    expr->_expression = exprStr;
-    expr->_tokens = tokens;
-    expr->_grammar = grammar;
-    return expr;
-}
-
-/******************************************************************************/
 #pragma mark Mid-level token evaluation API
 /******************************************************************************/
 
