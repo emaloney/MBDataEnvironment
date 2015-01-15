@@ -4,8 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBStringConversions</TokenIdentifier>
-			<Abstract type="html">This class provides an interface for converting between strings and values of
-other types.</Abstract>
+			<Abstract type="html">This class provides an interface for converting between strings, expression
+results, and values of other types, such as:</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
             
 			
@@ -15,61 +15,313 @@ other types.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a CGPoint value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (CGPoint)pointFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGPoint value that corresponds with str.
+            Returns CGPointZero and logs an error to the
+            console if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a CGPoint value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (CGPoint)pointFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGPoint value that corresponds with str.
+            Returns CGPointZero if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromObject:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGPoint.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (CGPoint)pointFromObject:(id)obj error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">The object to be interpreted.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGPoint value that corresponds with obj. Returns
+            CGPointZero if obj couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointFromObject:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/pointFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates an object expression and attempts to interpret the result as a
+CGPoint value using the pointFromObject:error: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (CGPoint)pointFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGPoint value that corresponds with the
+            result of evaluating expr as a string. Returns
+            CGPointZero and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromPoint:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Converts a CGPoint value into a string that can be parsed by
+pointFromString:.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)stringFromPoint:(CGPoint)pt</Declaration>
-			
-			
+			<Declaration>+ (NSString *)stringFromPoint:(CGPoint)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>val</Name>
+					<Abstract type="html">The value to convert into a string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string representation of val; never nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/stringFromPoint:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromString:</TokenIdentifier>
+			<Abstract type="html">Attempts to interpret a string as a CGSize value.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromString:(NSString *)str</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGSize value that corresponds with str.
+            Returns CGPointZero and logs an error to the
+            console if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromString:error:</TokenIdentifier>
+			<Abstract type="html">Attempts to interpret a string as a CGSize value.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGSize value that corresponds with str.
+            Returns CGPointZero if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromObject:error:</TokenIdentifier>
+			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGSize.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">The object to be interpreted.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGSize value that corresponds with obj. Returns
+            CGSizeZero if obj couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromExpression:</TokenIdentifier>
+			<Abstract type="html">Evaluates an object expression and attempts to interpret the result as a
+CGSize value using the sizeFromObject:error: method.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGSize)sizeFromExpression:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGSize value that corresponds with the
+            result of evaluating expr as a string. Returns
+            CGSizeZero and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromSize:</TokenIdentifier>
+			<Abstract type="html">Converts a CGSize value into a string that can be parsed by
+sizeFromString:.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromSize:(CGSize)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>val</Name>
+					<Abstract type="html">The value to convert into a string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string representation of val; never nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringFromSize:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromString:</TokenIdentifier>
+			<Abstract type="html">Attempts to interpret a string as a CGRect value.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromString:(NSString *)str</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGRect value that corresponds with str.
+            Returns CGRectZero and logs an error to the
+            console if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/rectFromString:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromString:error:</TokenIdentifier>
+			<Abstract type="html">Attempts to interpret a string as a CGRect value.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGRect value that corresponds with str.
+            Returns CGRectZero if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/rectFromString:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromObject:error:</TokenIdentifier>
+			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGRect.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">The object to be interpreted.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGRect value that corresponds with obj. Returns
+            CGRectZero if obj couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/rectFromObject:error:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromExpression:</TokenIdentifier>
+			<Abstract type="html">Evaluates an object expression and attempts to interpret the result as a
+CGRect value using the rectFromObject:error: method.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (CGRect)rectFromExpression:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The CGRect value that corresponds with the
+            result of evaluating expr as a string. Returns
+            CGRectZero and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<Anchor>//api/name/rectFromExpression:</Anchor>
+            <NodeRef refid="33"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromRect:</TokenIdentifier>
+			<Abstract type="html">Converts a CGRect value into a string that can be parsed by
+rectFromString:.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)stringFromRect:(CGRect)val</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>val</Name>
+					<Abstract type="html">The value to convert into a string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string representation of val; never nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringFromRect:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
@@ -142,66 +394,6 @@ a width and a height.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGSize)sizeFromString:(NSString *)str</Declaration>
-			
-			
-			<Anchor>//api/name/sizeFromString:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
-			<Anchor>//api/name/sizeFromString:error:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromObject:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(NSError **)errPtr</Declaration>
-			
-			
-			<Anchor>//api/name/sizeFromObject:error:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGSize)sizeFromExpression:(NSString *)expr</Declaration>
-			
-			
-			<Anchor>//api/name/sizeFromExpression:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromSize:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (NSString *)stringFromSize:(CGSize)sz</Declaration>
-			
-			
-			<Anchor>//api/name/stringFromSize:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/parseString:asRect:</TokenIdentifier>
 			<Abstract type="html">Parses a CGRect from a comma-separated string containing four components:
 the x and y coordinates of the rectangle&apos;s origin, followed by the width
@@ -213,201 +405,238 @@ and height dimensions of the rectangle.</Abstract>
 				<Parameter>
 					<Name>rectStr</Name>
 					<Abstract type="html">A string following the format
-&quot;originX,originY,width,height&quot;. The originX and originY
-values must be specified numerically. The width and height
-dimensions can either be specified as a number or a wildcard
-character.</Abstract>
+            &quot;originX,originY,width,height&quot;. The originX and originY
+            values must be specified numerically. The width and height
+            dimensions can either be specified as a number or a wildcard
+            character.</Abstract>
 				</Parameter><Parameter>
 					<Name>rectPtr</Name>
 					<Abstract type="html">If the string to be parsed is in the expected format,
-on exit, the CGRect at the memory address rectPtr will be
-updated to reflect the value of the rectangle parsed from
-rectStr. No modification occurs if the method returns NO.
-This parameter must not be nil.</Abstract>
+            on exit, the CGRect at the memory address rectPtr will be
+            updated to reflect the value of the rectangle parsed from
+            rectStr. No modification occurs if the method returns NO.
+            This parameter must not be nil.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">YES on success; NO if the input string is not in the expected
-format.</Abstract></ReturnValue>
+            format.</Abstract></ReturnValue>
 			<Anchor>//api/name/parseString:asRect:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGRect)rectFromString:(NSString *)str</Declaration>
-			
-			
-			<Anchor>//api/name/rectFromString:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
-			<Anchor>//api/name/rectFromString:error:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromObject:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(NSError **)errPtr</Declaration>
-			
-			
-			<Anchor>//api/name/rectFromObject:error:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/rectFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (CGRect)rectFromExpression:(NSString *)expr</Declaration>
-			
-			
-			<Anchor>//api/name/rectFromExpression:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/stringFromRect:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
-			
-			<Declaration>+ (NSString *)stringFromRect:(CGRect)rect</Declaration>
-			
-			
-			<Anchor>//api/name/stringFromRect:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIOffset value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIOffset value that corresponds with str.
+            Returns UIOffsetZero and logs an error to the
+            console if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/offsetFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIOffset value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIOffset value that corresponds with str.
+            Returns UIOffsetZero if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/offsetFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromObject:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret an arbitrary object value as a UIOffset.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIOffset)offsetFromObject:(id)obj error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">The object to be interpreted.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIOffset value that corresponds with obj. Returns
+            UIOffsetZero if obj couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/offsetFromObject:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/offsetFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates an object expression and attempts to interpret the result as a
+UIOffset value using the offsetFromObject:error: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIOffset)offsetFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIOffset value that corresponds with the
+            result of evaluating expr as a string. Returns
+            UIOffsetZero and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/offsetFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIEdgeInsets value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIEdgeInsets value that corresponds with str.
+            Returns UIEdgeInsetsZero and logs an error to the
+            console if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/edgeInsetsFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIEdgeInsets value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIEdgeInsets value that corresponds with str.
+            Returns UIEdgeInsetsZero if str couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/edgeInsetsFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromObject:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret an arbitrary object value as a UIEdgeInsets.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIEdgeInsets)edgeInsetsFromObject:(id)obj error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">The object to be interpreted.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIEdgeInsets value that corresponds with obj. Returns
+            UIEdgeInsetsZero if obj couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/edgeInsetsFromObject:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/edgeInsetsFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates an object expression and attempts to interpret the result as a
+UIEdgeInsets value using the edgeInsetsFromObject:error: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIEdgeInsets)edgeInsetsFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIEdgeInsets value that corresponds with the
+            result of evaluating expr as a string. Returns
+            UIEdgeInsetsZero and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/edgeInsetsFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/colorFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIColor value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIColor *)colorFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIColor value that corresponds with the
+            result of evaluating expr as a string. Returns
+            [&lt;code&gt;UIColor yellowColor&lt;/code&gt;] and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/colorFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/colorFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIColor value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIColor *)colorFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIColor value that corresponds with the
+            result of evaluating expr as a string. Returns
+            [&lt;code&gt;UIColor yellowColor&lt;/code&gt;] if the expression result 
+            couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/colorFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -465,7 +694,7 @@ UIColor value using the colorFromString: method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -529,7 +758,7 @@ NSLineBreakMode value using the textAlignmentFromExpression: method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -593,7 +822,7 @@ NSTextAlignment value using the textAlignmentFromExpression: method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -658,7 +887,7 @@ scrollViewIndicatorStyleFromString: method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -723,7 +952,7 @@ activityIndicatorViewStyleFromString: method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -788,7 +1017,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -853,7 +1082,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -918,7 +1147,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -983,7 +1212,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1018,36 +1247,72 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellSelectionStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as an MBTableViewCellSelectionStyle value,
+a special type that is cast-compatible with  UITableViewCellSelectionStyle
+but adds the value MBTableViewCellSelectionStyleGradient to represent a
+custom cell selection style using a gradient.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The MBTableViewCellSelectionStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITableViewCellSelectionStyleBlue and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellSelectionStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellSelectionStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as an MBTableViewCellSelectionStyle value,
+a special type that is cast-compatible with  UITableViewCellSelectionStyle
+but adds the value MBTableViewCellSelectionStyleGradient to represent a
+custom cell selection style using a gradient.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The MBTableViewCellSelectionStyle value that corresponds with
+            str. Returns UITableViewCellSelectionStyleBlue if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellSelectionStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellSelectionStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as an
+MBTableViewCellSelectionStyle value using the
+tableViewCellSelectionStyleFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The MBTableViewCellSelectionStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITableViewCellSelectionStyleBlue and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellSelectionStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -1084,7 +1349,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1149,7 +1414,7 @@ tableViewCellAccessoryTypeFromString: method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1214,7 +1479,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1249,24 +1514,44 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewAnimationOptionsFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIViewAnimationOptions value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            0 and logs an error to the console if the expression result
+            couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewAnimationOptionsFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewAnimationOptionsFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIViewAnimationOptions value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem interpreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with the
+            result of evaluating expr as a string. Returns 0 if the
+            expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewAnimationOptionsFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -1325,7 +1610,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1390,7 +1675,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1454,7 +1739,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1541,7 +1826,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1605,7 +1890,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1669,7 +1954,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -1733,7 +2018,7 @@ method.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
-            NSError instance in the event of a problem intepreting str.
+            NSError instance in the event of a problem interpreting str.
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>

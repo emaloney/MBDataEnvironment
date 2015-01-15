@@ -15,6 +15,10 @@
 #pragma mark MBExpression NSString extensions
 /******************************************************************************/
 
+/*!
+ This `NSString` class category adds method for evaluating expressions
+ directly from `NSString` instances.
+ */
 @interface NSString (MBExpression)
 
 /*!
@@ -77,26 +81,174 @@
 #pragma mark MBExpression NSDictionary extensions
 /******************************************************************************/
 
+/*!
+ This `NSDictionary` class category adds method for evaluating expressions
+ using values contained in an `NSDictionary`.
+ */
 @interface NSDictionary (MBExpression)
 
-// takes the dictionary's value for the given key and use the
-// MBExpression to evaluate it as an object expression
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as an object expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asObject:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @return    The result of evaluating the value associated with `key` as
+            an expression.
+ */
 - (id) evaluateAsObject:(NSString*)key;
+
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as an object expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asObject:defaultValue:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @param     def A default value to be returned if expression evaluation would
+            otherwise return `nil`.
+ 
+ @return    The result of evaluating the value associated with `key` as 
+            an expression, or `def` if `nil` would otherwise be returned.
+ */
 - (id) evaluateAsObject:(NSString*)key defaultValue:(id)def;
 
-// takes the dictionary's value for the given key and use the
-// MBExpression to evaluate it as a string expression
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as a string expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asString:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @return    The result of evaluating the value associated with `key` as
+            an expression.
+ */
 - (NSString*) evaluateAsString:(NSString*)key;
+
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as a string expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asString:defaultValue:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @param     def A default value to be returned if expression evaluation would
+            otherwise return `nil`.
+ 
+ @return    The result of evaluating the value associated with `key` as 
+            an expression, or `def` if `nil` would otherwise be returned.
+ */
 - (NSString*) evaluateAsString:(NSString*)key defaultValue:(NSString*)def;
 
-// takes the dictionary's value for the given key and use the
-// MBExpression to evaluate it as a numeric expression
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as a numeric expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asNumber:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @return    The result of evaluating the value associated with `key` as
+            an expression.
+ */
 - (NSDecimalNumber*) evaluateAsNumber:(NSString*)key;
+
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as a numeric expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asNumber:defaultValue:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @param     def A default value to be returned if expression evaluation would
+            otherwise return `nil`.
+ 
+ @return    The result of evaluating the value associated with `key` as 
+            an expression, or `def` if `nil` would otherwise be returned.
+ */
 - (NSDecimalNumber*) evaluateAsNumber:(NSString*)key defaultValue:(NSDecimalNumber*)def;
 
-// takes the dictionary's value for the given key and use the
-// MBExpression to evaluate it as a boolean expression
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as a boolean expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asBoolean:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @return    The result of evaluating the value associated with `key` as
+            an expression.
+ */
 - (BOOL) evaluateAsBoolean:(NSString*)key;
+
+/*!
+ Takes the value associated with the receiver's `key` and attempts to
+ evaluate the value as a boolean expression.
+ 
+ If the value associated with `key` is not an `NSString`, value's `description`
+ method will be invoked to convert it into a string before it is
+ evaluated as an expression.
+
+ Equivalent to passing the receiver's value associated with `key` as the
+ parameter to the `[MBExpression asBoolean:defaultValue:]` method.
+
+ @param     key The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.
+ 
+ @param     def A default value to be returned if expression evaluation would
+            otherwise return `nil`.
+ 
+ @return    The result of evaluating the value associated with `key` as 
+            an expression, or `def` if `nil` would otherwise be returned.
+ */
 - (BOOL) evaluateAsBoolean:(NSString*)key defaultValue:(BOOL)def;
 
 @end

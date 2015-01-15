@@ -13,13 +13,24 @@
 #pragma mark Types
 /******************************************************************************/
 
-// an extension of UITableViewCellSelectionStyle that adds support for gradients
-typedef enum : NSInteger {
+/*!
+ Extends `UITableViewCellSelectionStyle` by providing a value representing
+ a custom gradient cell selection style.
+ */
+typedef NS_ENUM(NSInteger, MBTableViewCellSelectionStyle)
+{
+    /*! Equivalent to `UITableViewCellSelectionStyleNone`. */
     MBTableViewCellSelectionStyleNone       = UITableViewCellSelectionStyleNone,
+
+    /*! Equivalent to `UITableViewCellSelectionStyleBlue`. */
     MBTableViewCellSelectionStyleBlue       = UITableViewCellSelectionStyleBlue,
+
+    /*! Equivalent to `UITableViewCellSelectionStyleGray`. */
     MBTableViewCellSelectionStyleGray       = UITableViewCellSelectionStyleGray,
+
+    /*! Represents a custom cell selection style using a gradient. */
     MBTableViewCellSelectionStyleGradient   = NSIntegerMax
-} MBTableViewCellSelectionStyle;
+};
 
 /******************************************************************************/
 #pragma mark Constants
@@ -205,29 +216,296 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /******************************************************************************/
 
 /*!
- This class provides an interface for converting between strings and values of
- other types.
+ This class provides an interface for converting between strings, expression
+ results, and values of other types, such as:
+ 
+ * `CGFloat`
+ * `CGPoint`
+ * `CGRect`
+ * `CGSize`
+ * `NSDateFormatterStyle`
+ * `NSLineBreakMode`
+ * `NSTextAlignment`
+ * `UIActivityIndicatorViewStyle`
+ * `UIBarButtonItemStyle`
+ * `UIBarButtonSystemItem`
+ * `UIBarStyle`
+ * `UIButtonType`
+ * `UIColor`
+ * `UIControlState`
+ * `UIEdgeInsets`
+ * `UIModalTransitionStyle`
+ * `UIOffset`
+ * `UIPopoverArrowDirection`
+ * `UIScrollViewIndicatorStyle`
+ * `UIStatusBarAnimation`
+ * `UITableViewCellAccessoryType`
+ * `UITableViewCellSelectionStyle`
+ * `UITableViewCellStyle`
+ * `UITableViewRowAnimation`
+ * `UITableViewStyle`
+ * `UITextBorderStyle`
+ * `UIViewAnimationOptions`
+ * `UIViewContentMode`
+
  */
 @interface MBStringConversions : NSObject
 
-/*******************************************************************************
- @name CGPoint conversions
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark CGPoint conversions
+/*!    @name CGPoint conversions                                              */
+/*----------------------------------------------------------------------------*/
 
+/*!
+ Attempts to interpret a string as a `CGPoint` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`x`*,*`y`*" where *`x`* and *`y`* are interpreted as
+ floating-point numbers and used to populate the respective fields of the
+ returned `CGPoint`.
+
+ @param     str The string to interpret.
+
+ @return    The `CGPoint` value that corresponds with `str`.
+            Returns `CGPointZero` and logs an error to the
+            console if `str` couldn't be interpreted.
+ */
 + (CGPoint) pointFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `CGPoint` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`x`*,*`y`*" where *`x`* and *`y`* are interpreted as
+ floating-point numbers and used to populate the respective fields of the
+ returned `CGPoint`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `CGPoint` value that corresponds with `str`.
+            Returns `CGPointZero` if `str` couldn't be interpreted.
+ */
 + (CGPoint) pointFromString:(NSString*)str error:(NSError**)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `CGPoint`.
+ 
+ The input object is interpreted as follows:
+ 
+ * If it is an `NSString`, handling will be passed to `pointFromString:error:`
+ * If it is an `NSValue` containing a `CGPoint`, the underlying value is
+   returned
+ * All other cases are considered errors
+ 
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `CGPoint` value that corresponds with `obj`. Returns
+            `CGPointZero` if `obj` couldn't be interpreted.
+ */
 + (CGPoint) pointFromObject:(id)obj error:(NSError**)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `CGPoint` value using the `pointFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `CGPoint` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `CGPointZero` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
 + (CGPoint) pointFromExpression:(NSString*)expr;
 
-+ (NSString*) stringFromPoint:(CGPoint)pt;
-
-/*******************************************************************************
- @name CGSize conversions
- ******************************************************************************/
+/*!
+ Converts a `CGPoint` value into a string that can be parsed by
+ `pointFromString:`.
+ 
+ @param     val The value to convert into a string.
+ 
+ @return    A string representation of `val`; never `nil`.
+ */
++ (NSString*) stringFromPoint:(CGPoint)val;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark Parsing size dimensions from strings
-/*!    @name Parsing size dimensions from strings                             */
+#pragma mark CGSize conversions
+/*!    @name CGSize conversions                                               */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `CGSize` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`width`*,*`height`*" where *`width`* and *`height`* are interpreted as
+ floating-point numbers and used to populate the respective fields of the
+ returned `CGSize`.
+
+ @param     str The string to interpret.
+
+ @return    The `CGSize` value that corresponds with `str`.
+            Returns `CGPointZero` and logs an error to the
+            console if `str` couldn't be interpreted.
+ */
++ (CGSize) sizeFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `CGSize` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`width`*,*`height`*" where *`width`* and *`height`* are interpreted as
+ floating-point numbers and used to populate the respective fields of the
+ returned `CGSize`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `CGSize` value that corresponds with `str`.
+            Returns `CGPointZero` if `str` couldn't be interpreted.
+ */
++ (CGSize) sizeFromString:(NSString*)str error:(NSError**)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `CGSize`.
+ 
+ The input object is interpreted as follows:
+ 
+ * If it is an `NSString`, handling will be passed to `sizeFromString:error:`
+ * If it is an `NSValue` containing a `CGSize`, the underlying value is
+   returned
+ * All other cases are considered errors
+ 
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `CGSize` value that corresponds with `obj`. Returns
+            `CGSizeZero` if `obj` couldn't be interpreted.
+ */
++ (CGSize) sizeFromObject:(id)obj error:(NSError**)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `CGSize` value using the `sizeFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `CGSize` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `CGSizeZero` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
++ (CGSize) sizeFromExpression:(NSString*)expr;
+
+/*!
+ Converts a `CGSize` value into a string that can be parsed by 
+ `sizeFromString:`.
+ 
+ @param     val The value to convert into a string.
+ 
+ @return    A string representation of `val`; never `nil`.
+ */
++ (NSString*) stringFromSize:(CGSize)val;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark CGRect conversions
+/*!    @name CGRect conversions                                               */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `CGRect` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`x`*,*`y`*,*`width`*,*`height`*" where *`x`*, *`y`*, *`width`* and *`height`*
+ are interpreted as floating-point numbers and used to populate the respective
+ fields of the returned `CGRect`.
+
+ @param     str The string to interpret.
+
+ @return    The `CGRect` value that corresponds with `str`.
+            Returns `CGRectZero` and logs an error to the
+            console if `str` couldn't be interpreted.
+ */
++ (CGRect) rectFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `CGRect` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`x`*,*`y`*,*`width`*,*`height`*" where *`x`*, *`y`*, *`width`* and *`height`*
+ are interpreted as floating-point numbers and used to populate the respective
+ fields of the returned `CGRect`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `CGRect` value that corresponds with `str`.
+            Returns `CGRectZero` if `str` couldn't be interpreted.
+ */
++ (CGRect) rectFromString:(NSString*)str error:(NSError**)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `CGRect`.
+ 
+ The input object is interpreted as follows:
+ 
+ * If it is an `NSString`, handling will be passed to `rectFromString:error:`
+ * If it is an `NSValue` containing a `CGRect`, the underlying value is
+   returned
+ * All other cases are considered errors
+ 
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `CGRect` value that corresponds with `obj`. Returns
+            `CGRectZero` if `obj` couldn't be interpreted.
+ */
++ (CGRect) rectFromObject:(id)obj error:(NSError**)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `CGRect` value using the `rectFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `CGRect` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `CGRectZero` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
++ (CGRect) rectFromExpression:(NSString*)expr;
+
+/*!
+ Converts a `CGRect` value into a string that can be parsed by
+ `rectFromString:`.
+ 
+ @param     val The value to convert into a string.
+ 
+ @return    A string representation of `val`; never `nil`.
+ */
++ (NSString*) stringFromRect:(CGRect)val;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Parsing strings containing UIViewNoIntrinsicMetric wildcards
+/*!    @name Parsing strings containing UIViewNoIntrinsicMetric wildcards     */
 /*----------------------------------------------------------------------------*/
 
 /*!
@@ -290,17 +568,6 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  */
 + (BOOL) parseString:(NSString*)sizeStr asSize:(CGSize*)sizePtr;
 
-+ (CGSize) sizeFromString:(NSString*)str;
-+ (CGSize) sizeFromString:(NSString*)str error:(NSError**)errPtr;
-+ (CGSize) sizeFromObject:(id)obj error:(NSError**)errPtr;
-+ (CGSize) sizeFromExpression:(NSString*)expr;
-
-+ (NSString*) stringFromSize:(CGSize)sz;
-
-/*******************************************************************************
- @name CGRect conversions
- ******************************************************************************/
-
 /*!
  Parses a `CGRect` from a comma-separated string containing four components:
  the *x* and *y* coordinates of the rectangle's origin, followed by the *width*
@@ -312,37 +579,94 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  dimension is set to `UIViewNoIntrinsicMetric`.
 
  @param     rectStr A string following the format
- "*originX*,*originY*,*width*,*height*". The *originX* and *originY*
- values must be specified numerically. The *width* and *height*
- dimensions can either be specified as a number or a wildcard
- character.
+            "*originX*,*originY*,*width*,*height*". The *originX* and *originY*
+            values must be specified numerically. The *width* and *height*
+            dimensions can either be specified as a number or a wildcard
+            character.
 
  @param     rectPtr If the string to be parsed is in the expected format,
- on exit, the `CGRect` at the memory address `rectPtr` will be
- updated to reflect the value of the rectangle parsed from
- `rectStr`. No modification occurs if the method returns `NO`.
- This parameter must not be `nil`.
+            on exit, the `CGRect` at the memory address `rectPtr` will be
+            updated to reflect the value of the rectangle parsed from
+            `rectStr`. No modification occurs if the method returns `NO`.
+            This parameter must not be `nil`.
 
  @return    `YES` on success; `NO` if the input string is not in the expected
- format.
+            format.
  */
 + (BOOL) parseString:(NSString*)rectStr asRect:(CGRect*)rectPtr;
-
-+ (CGRect) rectFromString:(NSString*)str;
-+ (CGRect) rectFromString:(NSString*)str error:(NSError**)errPtr;
-+ (CGRect) rectFromObject:(id)obj error:(NSError**)errPtr;
-+ (CGRect) rectFromExpression:(NSString*)expr;
-
-+ (NSString*) stringFromRect:(CGRect)rect;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIOffset conversions
 /*!    @name UIOffset conversions                                             */
 /*----------------------------------------------------------------------------*/
 
+/*!
+ Attempts to interpret a string as a `UIOffset` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`horizontal`*,*`vertical`*" where *`horizontal`* and *`vertical`* are 
+ interpreted as floating-point numbers and used to populate the respective 
+ fields of the returned `UIOffset`.
+
+ @param     str The string to interpret.
+
+ @return    The `UIOffset` value that corresponds with `str`.
+            Returns `UIOffsetZero` and logs an error to the
+            console if `str` couldn't be interpreted.
+ */
 + (UIOffset) offsetFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIOffset` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`horizontal`*,*`vertical`*" where *`horizontal`* and *`vertical`* are
+ interpreted as floating-point numbers and used to populate the respective
+ fields of the returned `UIOffset`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `UIOffset` value that corresponds with `str`.
+            Returns `UIOffsetZero` if `str` couldn't be interpreted.
+ */
 + (UIOffset) offsetFromString:(NSString*)str error:(NSError**)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `UIOffset`.
+ 
+ The input object is interpreted as follows:
+ 
+ * If it is an `NSString`, handling will be passed to `offsetFromString:error:`
+ * If it is an `NSValue` containing a `UIOffset`, the underlying value is
+   returned
+ * All other cases are considered errors
+ 
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `UIOffset` value that corresponds with `obj`. Returns
+            `UIOffsetZero` if `obj` couldn't be interpreted.
+ */
 + (UIOffset) offsetFromObject:(id)obj error:(NSError**)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `UIOffset` value using the `offsetFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIOffset` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `UIOffsetZero` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
 + (UIOffset) offsetFromExpression:(NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
@@ -350,9 +674,75 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*!    @name UIEdgeInsets conversions                                         */
 /*----------------------------------------------------------------------------*/
 
+/*!
+ Attempts to interpret a string as a `UIEdgeInsets` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`top`*,*`left`*,*`bottom`*,*`right`*" where
+ *`top`*, *`left`*, *`bottom`* and *`right`* are interpreted as floating-point
+ numbers and used to populate the respective fields of the returned
+ `UIEdgeInsets`.
+
+ @param     str The string to interpret.
+
+ @return    The `UIEdgeInsets` value that corresponds with `str`.
+            Returns `UIEdgeInsetsZero` and logs an error to the
+            console if `str` couldn't be interpreted.
+ */
 + (UIEdgeInsets) edgeInsetsFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIEdgeInsets` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`top`*,*`left`*,*`bottom`*,*`right`*" where 
+ *`top`*, *`left`*, *`bottom`* and *`right`* are interpreted as floating-point
+ numbers and used to populate the respective fields of the returned 
+ `UIEdgeInsets`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `UIEdgeInsets` value that corresponds with `str`.
+            Returns `UIEdgeInsetsZero` if `str` couldn't be interpreted.
+ */
 + (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(NSError**)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `UIEdgeInsets`.
+ 
+ The input object is interpreted as follows:
+ 
+ * If it is an `NSString`, handling will be passed to `offsetFromString:error:`
+ * If it is an `NSValue` containing a `UIEdgeInsets`, the underlying value is
+   returned
+ * All other cases are considered errors
+ 
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `UIEdgeInsets` value that corresponds with `obj`. Returns
+            `UIEdgeInsetsZero` if `obj` couldn't be interpreted.
+ */
 + (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(NSError**)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `UIEdgeInsets` value using the `edgeInsetsFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIEdgeInsets` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `UIEdgeInsetsZero` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
 + (UIEdgeInsets) edgeInsetsFromExpression:(NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
@@ -360,9 +750,99 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*!    @name UIColor conversions                                              */
 /*----------------------------------------------------------------------------*/
 
-+ (UIColor*) colorFromString:(NSString*)str;
-+ (UIColor*) colorFromString:(NSString*)str error:(NSError**)errPtr;
+/*!
+ Attempts to interpret a string as a `UIColor` value.
 
+ This method can accept *named colors* as well as color values specified in 
+ hexadecimal notation, commonly referred to as *web colors*.
+ 
+ ##### Named colors
+
+ Named colors utilize the `UIColor` convention of providing a class method
+ with a selector following the format: *`name`*`Color`. The value returned by any
+ `UIColor` class method named in this way can be referenced simply as *`name`*.
+
+ In other words, passing the input string "white" will return
+ `[`<code>UIColor whiteColor</code>`]`, "clear" will return
+ `[`<code>UIColor clearColor</code>`]`, and "darkGray" will return
+ `[`<code>UIColor darkGrayColor</code>`]`.
+ 
+ This applies to all `UIColor` class methods following that naming convention,
+ including ones added through class categories. This means you can introduce
+ your own custom named colors simply by creating a `UIColor` category that
+ adds an implementation to return the appropriate `UIColor`.
+ 
+ ##### Web colors
+
+ Web colors are specified with a leading *hash sign* (`#`) followed by
+ 6 or 8 hexadecimal digits specifying 3 or 4 *color channels*, respectively.
+ 
+ Each *color channel* is specified with a two-digit case-insensitive
+ hexadecimal value between `00` and `FF` in the format `#`*`RRGGBB`* or 
+ `#`*`RRGGBBAA`* where:
+ 
+ * *`RR`* specifies the red component of the color
+ * *`GG`* specifies the green component of the color
+ * *`BB`* specifies the blue component of the color
+ * The optional *`AA`* specifies the color's alpha channel, which determines its opacity
+
+ @param     str The string to interpret.
+ 
+ @return    The `UIColor` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `[`<code>UIColor yellowColor</code>`]` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
++ (UIColor*) colorFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIColor` value.
+
+ This method can accept *named colors* as well as color values specified in 
+ hexadecimal notation, commonly referred to as *web colors*.
+ 
+ ##### Named colors
+
+ Named colors utilize the `UIColor` convention of providing a class method
+ with a selector following the format: *`name`*`Color`. The value returned by any
+ `UIColor` class method named in this way can be referenced simply as *`name`*.
+
+ In other words, passing the input string "white" will return
+ `[`<code>UIColor whiteColor</code>`]`, "clear" will return
+ `[`<code>UIColor clearColor</code>`]`, and "darkGray" will return
+ `[`<code>UIColor darkGrayColor</code>`]`.
+ 
+ This applies to all `UIColor` class methods following that naming convention,
+ including ones added through class categories. This means you can introduce
+ your own custom named colors simply by creating a `UIColor` category that
+ adds an implementation to return the appropriate `UIColor`.
+ 
+ ##### Web colors
+
+ Web colors are specified with a leading *hash sign* (`#`) followed by
+ 6 or 8 hexadecimal digits specifying 3 or 4 *color channels*, respectively.
+ 
+ Each *color channel* is specified with a two-digit case-insensitive
+ hexadecimal value between `00` and `FF` in the format `#`*`RRGGBB`* or 
+ `#`*`RRGGBBAA`* where:
+ 
+ * *`RR`* specifies the red component of the color
+ * *`GG`* specifies the green component of the color
+ * *`BB`* specifies the blue component of the color
+ * The optional *`AA`* specifies the color's alpha channel, which determines its opacity
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `UIColor` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `[`<code>UIColor yellowColor</code>`]` if the expression result 
+            couldn't be interpreted.
+ */
++ (UIColor*) colorFromString:(NSString*)str error:(NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -419,7 +899,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `NSLineBreakMode` value that corresponds with `str`.
@@ -477,7 +957,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `NSTextAlignment` value that corresponds with `str`.
@@ -535,7 +1015,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIScrollViewIndicatorStyle` value that corresponds with `str`.
@@ -594,7 +1074,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIActivityIndicatorViewStyle` value that corresponds with
@@ -659,7 +1139,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIButtonType` value that corresponds with `str`.
@@ -722,7 +1202,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `NSDateFormatterStyle` value that corresponds with `str`.
@@ -783,7 +1263,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UITextBorderStyle` value that corresponds with `str`.
@@ -840,7 +1320,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UITableViewStyle` value that corresponds with `str`.
@@ -901,7 +1381,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UITableViewCellStyle` value that corresponds with `str`.
@@ -924,11 +1404,78 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  */
 + (UITableViewCellStyle) tableViewCellStyleFromExpression:(NSString*)expr;
 
-// MBTableViewCellSelectionStyle is cast-compatible with UITableViewCellSelectionStyle but adds MBTableViewCellSelectionStyleGradient
+/*!
+ Attempts to interpret a string as an `MBTableViewCellSelectionStyle` value,
+ a special type that is cast-compatible with  `UITableViewCellSelectionStyle`
+ but adds the value `MBTableViewCellSelectionStyleGradient` to represent a
+ custom cell selection style using a gradient.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLTableViewCellSelectionStyleNone` ("none") = `UITableViewCellSelectionStyleNone`
+ * `kMBMLTableViewCellSelectionStyleBlue` ("blue") = `UITableViewCellSelectionStyleBlue`
+ * `kMBMLTableViewCellSelectionStyleGray` ("gray") = `UITableViewCellSelectionStyleGray`
+ * `kMBMLTableViewCellSelectionStyleGradient` ("gradient") = `MBTableViewCellSelectionStyleGradient`
+
+ @param     str The string to interpret.
+
+ @return    The `MBTableViewCellSelectionStyle` value that corresponds with the
+            result of evaluating `expr` as a string. Returns 
+            `UITableViewCellSelectionStyleBlue` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
 + (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as an `MBTableViewCellSelectionStyle` value,
+ a special type that is cast-compatible with  `UITableViewCellSelectionStyle`
+ but adds the value `MBTableViewCellSelectionStyleGradient` to represent a
+ custom cell selection style using a gradient.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLTableViewCellSelectionStyleNone` ("none") = `UITableViewCellSelectionStyleNone`
+ * `kMBMLTableViewCellSelectionStyleBlue` ("blue") = `UITableViewCellSelectionStyleBlue`
+ * `kMBMLTableViewCellSelectionStyleGray` ("gray") = `UITableViewCellSelectionStyleGray`
+ * `kMBMLTableViewCellSelectionStyleGradient` ("gradient") = `MBTableViewCellSelectionStyleGradient`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `MBTableViewCellSelectionStyle` value that corresponds with
+            `str`. Returns `UITableViewCellSelectionStyleBlue` if `str` isn't
+            recognized.
+ */
 + (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(NSError**)errPtr;
+
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as an
+ `MBTableViewCellSelectionStyle` value using the
+ `tableViewCellSelectionStyleFromString:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `MBTableViewCellSelectionStyle` value that corresponds with the
+            result of evaluating `expr` as a string. Returns 
+            `UITableViewCellSelectionStyleBlue` and logs an error to the
+            console if the expression result couldn't be interpreted.
+ */
 + (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromExpression:(NSString*)expr;
-                                                                  
+
+
+
+
+
+
+
+
+
 /*!
  Attempts to interpret a string as a `UITableViewCellAccessoryType` value.
 
@@ -962,7 +1509,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UITableViewCellAccessoryType` value that corresponds with 
@@ -1029,7 +1576,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UITableViewRowAnimation` value that corresponds with `str`.
@@ -1090,7 +1637,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIControlState` value that corresponds with `str`.
@@ -1118,7 +1665,93 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*!    @name UIViewAnimationOptions conversions                               */
 /*----------------------------------------------------------------------------*/
 
+/*!
+ Attempts to interpret a string as a `UIViewAnimationOptions` value.
+
+ `UIViewAnimationOptions` is constructed as a *bit flag*, which means each
+ individual value can be combined to indicate the selection of multiple options.
+
+ The input string expects a comma-separated list containing zero or more
+ *flags*. Whitespace between commas and flags is permitted but not required.
+
+ The following string constants show the accepted flags, along with their
+ corresponding values:
+
+ * `kMBMLViewAnimationOptionLayoutSubviews` ("layoutSubviews") = `UIViewAnimationOptionLayoutSubviews`
+ * `kMBMLViewAnimationOptionAllowUserInteraction` ("allowUserInteraction") = `UIViewAnimationOptionAllowUserInteraction`
+ * `kMBMLViewAnimationOptionBeginFromCurrentState` ("beginFromCurrentState") = `UIViewAnimationOptionBeginFromCurrentState`
+ * `kMBMLViewAnimationOptionRepeat` ("repeat") = `UIViewAnimationOptionRepeat`
+ * `kMBMLViewAnimationOptionAutoreverse` ("autoreverse") = `UIViewAnimationOptionAutoreverse`
+ * `kMBMLViewAnimationOptionOverrideInheritedDuration` ("overrideInheritedDuration") = `UIViewAnimationOptionOverrideInheritedDuration`
+ * `kMBMLViewAnimationOptionOverrideInheritedCurve` ("overrideInheritedCurve") = `UIViewAnimationOptionOverrideInheritedCurve`
+ * `kMBMLViewAnimationOptionAllowAnimatedContent` ("allowAnimatedContent") = `UIViewAnimationOptionAllowAnimatedContent`
+ * `kMBMLViewAnimationOptionShowHideTransitionViews` ("showHideTransitionViews") = `UIViewAnimationOptionShowHideTransitionViews`
+ * `kMBMLViewAnimationOptionCurveEaseInOut` ("curveEaseInOut") = `UIViewAnimationOptionCurveEaseInOut`
+ * `kMBMLViewAnimationOptionCurveEaseIn` ("curveEaseIn") = `UIViewAnimationOptionCurveEaseIn`
+ * `kMBMLViewAnimationOptionCurveEaseOut` ("curveEaseOut") = `UIViewAnimationOptionCurveEaseOut`
+ * `kMBMLViewAnimationOptionCurveLinear` ("curveLinear") = `UIViewAnimationOptionCurveLinear`
+ * `kMBMLViewAnimationOptionTransitionNone` ("transitionNone") = `UIViewAnimationOptionTransitionNone`
+ * `kMBMLViewAnimationOptionTransitionFlipFromLeft` ("transitionFlipFromLeft") = `UIViewAnimationOptionTransitionFlipFromLeft`
+ * `kMBMLViewAnimationOptionTransitionFlipFromRight` ("transitionFlipFromRight") = `UIViewAnimationOptionTransitionFlipFromRight`
+ * `kMBMLViewAnimationOptionTransitionCurlUp` ("transitionCurlUp") = `UIViewAnimationOptionTransitionCurlUp`
+ * `kMBMLViewAnimationOptionTransitionCurlDown` ("transitionCurlDown") = `UIViewAnimationOptionTransitionCurlDown`
+ * `kMBMLViewAnimationOptionTransitionCrossDissolve` ("transitionCrossDissolve") = `UIViewAnimationOptionTransitionCrossDissolve`
+ * `kMBMLViewAnimationOptionTransitionFlipFromTop` ("transitionFlipFromTop") = `UIViewAnimationOptionTransitionFlipFromTop`
+ * `kMBMLViewAnimationOptionTransitionFlipFromBottom` ("transitionFlipFromBottom") = `UIViewAnimationOptionTransitionFlipFromBottom`
+
+ @param     str The string to interpret.
+
+ @return    The `UIViewAnimationOptions` value that corresponds with the
+            result of evaluating `expr` as a string. Returns 
+            `0` and logs an error to the console if the expression result
+            couldn't be interpreted.
+ */
 + (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIViewAnimationOptions` value.
+
+ `UIViewAnimationOptions` is constructed as a *bit flag*, which means each
+ individual value can be combined to indicate the selection of multiple options.
+ 
+ The input string expects a comma-separated list containing zero or more
+ *flags*. Whitespace between commas and flags is permitted but not required.
+ 
+ The following string constants show the accepted flags, along with their
+ corresponding values:
+
+ * `kMBMLViewAnimationOptionLayoutSubviews` ("layoutSubviews") = `UIViewAnimationOptionLayoutSubviews`
+ * `kMBMLViewAnimationOptionAllowUserInteraction` ("allowUserInteraction") = `UIViewAnimationOptionAllowUserInteraction`
+ * `kMBMLViewAnimationOptionBeginFromCurrentState` ("beginFromCurrentState") = `UIViewAnimationOptionBeginFromCurrentState`
+ * `kMBMLViewAnimationOptionRepeat` ("repeat") = `UIViewAnimationOptionRepeat`
+ * `kMBMLViewAnimationOptionAutoreverse` ("autoreverse") = `UIViewAnimationOptionAutoreverse`
+ * `kMBMLViewAnimationOptionOverrideInheritedDuration` ("overrideInheritedDuration") = `UIViewAnimationOptionOverrideInheritedDuration`
+ * `kMBMLViewAnimationOptionOverrideInheritedCurve` ("overrideInheritedCurve") = `UIViewAnimationOptionOverrideInheritedCurve`
+ * `kMBMLViewAnimationOptionAllowAnimatedContent` ("allowAnimatedContent") = `UIViewAnimationOptionAllowAnimatedContent`
+ * `kMBMLViewAnimationOptionShowHideTransitionViews` ("showHideTransitionViews") = `UIViewAnimationOptionShowHideTransitionViews`
+ * `kMBMLViewAnimationOptionCurveEaseInOut` ("curveEaseInOut") = `UIViewAnimationOptionCurveEaseInOut`
+ * `kMBMLViewAnimationOptionCurveEaseIn` ("curveEaseIn") = `UIViewAnimationOptionCurveEaseIn`
+ * `kMBMLViewAnimationOptionCurveEaseOut` ("curveEaseOut") = `UIViewAnimationOptionCurveEaseOut`
+ * `kMBMLViewAnimationOptionCurveLinear` ("curveLinear") = `UIViewAnimationOptionCurveLinear`
+ * `kMBMLViewAnimationOptionTransitionNone` ("transitionNone") = `UIViewAnimationOptionTransitionNone`
+ * `kMBMLViewAnimationOptionTransitionFlipFromLeft` ("transitionFlipFromLeft") = `UIViewAnimationOptionTransitionFlipFromLeft`
+ * `kMBMLViewAnimationOptionTransitionFlipFromRight` ("transitionFlipFromRight") = `UIViewAnimationOptionTransitionFlipFromRight`
+ * `kMBMLViewAnimationOptionTransitionCurlUp` ("transitionCurlUp") = `UIViewAnimationOptionTransitionCurlUp`
+ * `kMBMLViewAnimationOptionTransitionCurlDown` ("transitionCurlDown") = `UIViewAnimationOptionTransitionCurlDown`
+ * `kMBMLViewAnimationOptionTransitionCrossDissolve` ("transitionCrossDissolve") = `UIViewAnimationOptionTransitionCrossDissolve`
+ * `kMBMLViewAnimationOptionTransitionFlipFromTop` ("transitionFlipFromTop") = `UIViewAnimationOptionTransitionFlipFromTop`
+ * `kMBMLViewAnimationOptionTransitionFlipFromBottom` ("transitionFlipFromBottom") = `UIViewAnimationOptionTransitionFlipFromBottom`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            May be `nil`.
+
+ @return    The `UIViewAnimationOptions` value that corresponds with the
+            result of evaluating `expr` as a string. Returns `0` if the
+            expression result couldn't be interpreted.
+ */
 + (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(NSError**)errPtr;
 
 /*!
@@ -1173,7 +1806,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIModalTransitionStyle` value that corresponds with `str`.
@@ -1252,7 +1885,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIViewContentMode` value that corresponds with `str`.
@@ -1312,7 +1945,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIBarStyle` value that corresponds with `str`.
@@ -1407,7 +2040,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIBarButtonSystemItem` value that corresponds with `str`.
@@ -1465,7 +2098,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIBarButtonItemStyle` value that corresponds with `str`.
@@ -1523,7 +2156,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIStatusBarAnimation` value that corresponds with `str`.
@@ -1585,7 +2218,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @param     str The string to interpret.
 
  @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem intepreting `str`.
+            `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
  @return    The `UIPopoverArrowDirection` value that corresponds with `str`.

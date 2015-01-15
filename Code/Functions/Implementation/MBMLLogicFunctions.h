@@ -13,6 +13,9 @@
 #pragma mark MBMLLogicFunctions class
 /******************************************************************************/
 
+/*!
+ This class implements MBML logic functions.
+ */
 @interface MBMLLogicFunctions : NSObject
 
 /*!
@@ -20,30 +23,29 @@
  
  This function accepts between one and three input expressions:
  
- <ul>
- <li>The first parameter is the <i>conditional expression</i>, a template
+ * The first parameter is the *conditional expression*, a template
  expression that will be evaluated in a boolean context. If only this parameter
  is provided, its object value is returned if the expression evaluates to true,
- while <code>nil</code> is returned if the single parameter evaluates to false.
+ while `nil` is returned if the single parameter evaluates to false.
  
- <li>An optional <i>true return value</i>, which is returned by the function
- if the conditional evaluates to <code>YES</code>.
+ * An optional *true return value*, which is returned by the function
+ if the conditional evaluates to `YES`.
  
- <li>An optional <i>false return value</i>, which is returned if the conditional
- evaluates to <code>NO</code>. If this parameter is omitted and the conditional
- evaluates to <code>NO</code>, <code>nil</code> is returned.
- </ul>
+ * An optional *false return value*, which is returned if the conditional
+ evaluates to `NO`. If this parameter is omitted and the conditional
+ evaluates to `NO`, `nil` is returned.
+
+ #### Usage example
+
+ **Note:** The MBML function is invoked with a name that differs from that of
+ this method. In MBML, this function is named `^if()`.
+
+     ^if($year -LT 2015|Past|This Year)
  
- <b>Template example:</b>
- 
- <pre>^if($year -LT 2012|Past|This Year)</pre>
- 
- The expression above would return the string "<code>Past</code>" if the
- conditional expression <code>$year -LT 2012</code> evaluates to
- <code>YES</code>; otherwise, the string "<code>This Year</code>" is returned.
- 
- @note      This function is exposed to the MBML environment as `^if()`.
- 
+ The expression above would return the string "`Past`" if the
+ conditional expression `$year -LT 2015` evaluates to
+ `YES`; otherwise, the string "`This Year`" is returned.
+
  @param     params an array containing the input parameters for the function
  
  @return    The result of performing the evaluations described above.
@@ -51,17 +53,18 @@
 + (id) ifOperator:(NSArray*)params;
 
 /*!
- Accepts two or more template expressions as input parameters, and returns
- the first one that evaluates to a non-<code>nil</code> (and 
- non-<code>NSNull</code>) value.
-  
- <b>Template example:</b>
+ Selects the first non-`nil` (and non-`NSNull`) value from among two or
+ more parameters.
+
+ This function accepts two or more MBML expressions as input parameters, and
+ returns the result of the first expression returning a valid value.
+
+ #### Usage example
  
- <pre>^selectFirstValue($dataSource|^array())</pre>
- 
- The expression above would return the value of <code>$dataSource</code>
- if it a non-<code>nil</code>/non-<code>NSNull</code> value; otherwise,
- an empty array is returned.
+     ^selectFirstValue($dataSource|^array())
+
+ The expression above would return the value of `$dataSource`
+ if it a non-`nil`/non-`NSNull` value; otherwise, an empty array is returned.
  
  @param     params an array containing the input parameters for the function
  

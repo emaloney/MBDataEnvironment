@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -68,6 +70,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -137,6 +141,15 @@
 					
                     
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This <code>MBEvents</code> class category adds methods for managing events related to
+the asynchronous loading of data.</p>
+					</div>
+					
+					
 					
 					
 					
@@ -231,10 +244,52 @@
 	<h3 class="subsubtitle method-title">dataLoadFailedEventName:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs the name of the event that is fired when an asynchronous
+data load attempt fails.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)dataLoadFailedEventName:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data that failed to load.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The name of the event fired when the data named <code>name</code> loads
+            successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -242,10 +297,52 @@
 	<h3 class="subsubtitle method-title">dataLoadedEventName:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs the name of the event that is fired when an asynchronous
+data load completed successfully.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)dataLoadedEventName:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data that was loaded.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The name of the event fired when the data named <code>name</code> loads
+            successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -253,10 +350,57 @@
 	<h3 class="subsubtitle method-title">postDataLoadFailed:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Posts an event indicating that an asynchronous data load completed
+successfully.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (void)postDataLoadFailed:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data that failed to load.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the <code>NSNotification</code> event fired is constructed based on the
+parameter <code>name</code>, and is constructed as: &ldquo;<em><code>name</code></em><code>`:dataLoadFailed</code>&rdquo;.</p>
+
+<p>In addition, when this event is fired, a boolean Mockingbird variable
+with the name &ldquo;<em><code>name</code></em><code>:lastRequestFailed`" will be set to `true`, and
+the value of the variable named "*`name`*</code>:requestPending`&rdquo; will
+be unset.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -264,10 +408,63 @@
 	<h3 class="subsubtitle method-title">postDataLoadFailed:withEventObject:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Posts an event indicating that an asynchronous data load completed
+successfully.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (void)postDataLoadFailed:(NSString *)<em>name</em> withEventObject:(id)<em>eventObj</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data that failed to load.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventObj</em></dt>
+			<dd><p>An object to include as the value of the <code>NSNotification</code>&rsquo;s
+            <code>object</code> property.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the <code>NSNotification</code> event fired is constructed based on the
+parameter <code>name</code>, and is constructed as: &ldquo;<em><code>name</code></em><code>`:dataLoadFailed</code>&rdquo;.</p>
+
+<p>In addition, when this event is fired, a boolean Mockingbird variable
+with the name &ldquo;<em><code>name</code></em><code>:lastRequestFailed`" will be set to `true`, and
+the value of the variable named "*`name`*</code>:requestPending`&rdquo; will
+be unset.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -275,10 +472,55 @@
 	<h3 class="subsubtitle method-title">postDataLoaded:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Posts an event indicating that an asynchronous data load completed
+successfully.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (void)postDataLoaded:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data that was loaded.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the <code>NSNotification</code> event fired is constructed based on the
+parameter <code>name</code>, and is constructed as: &ldquo;<em><code>name</code></em><code>`:dataLoaded</code>&rdquo;.</p>
+
+<p>In addition, when this event is fired, the Mockingbird variable
+with the name &ldquo;<em><code>name</code></em><code>`:requestPending</code>&rdquo; will be unset.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -286,10 +528,61 @@
 	<h3 class="subsubtitle method-title">postDataLoaded:withEventObject:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Posts an event indicating that an asynchronous data load completed
+successfully.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (void)postDataLoaded:(NSString *)<em>name</em> withEventObject:(id)<em>eventObj</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data that was loaded.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventObj</em></dt>
+			<dd><p>An object to include as the value of the <code>NSNotification</code>&rsquo;s
+            <code>object</code> property.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the <code>NSNotification</code> event fired is constructed based on the
+parameter <code>name</code>, and is constructed as: &ldquo;<em><code>name</code></em><code>`:dataLoaded</code>&rdquo;.</p>
+
+<p>In addition, when this event is fired, the Mockingbird variable
+with the name &ldquo;<em><code>name</code></em><code>`:requestPending</code>&rdquo; will be unset.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -297,10 +590,57 @@
 	<h3 class="subsubtitle method-title">postWillRequestData:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Posts an event indicating that an asynchronous data load attempt is about
+to begin.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (void)postWillRequestData:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data being requested.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the <code>NSNotification</code> event fired is constructed based on the
+parameter <code>name</code>, and is constructed as: &ldquo;<em><code>name</code></em><code>`:willRequestData</code>&rdquo;.</p>
+
+<p>In addition, when this event is fired, a boolean Mockingbird variable
+with the name &ldquo;<em><code>name</code></em><code>:requestPending`" will be set to `true`, and
+the value of the variable named "*`name`*</code>:lastRequestFailed`&rdquo; will
+be unset.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -308,10 +648,63 @@
 	<h3 class="subsubtitle method-title">postWillRequestData:withEventObject:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Posts an event indicating that an asynchronous data load attempt is about
+to begin.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (void)postWillRequestData:(NSString *)<em>name</em> withEventObject:(id)<em>eventObj</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data being requested.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventObj</em></dt>
+			<dd><p>An object to include as the value of the <code>NSNotification</code>&rsquo;s
+            <code>object</code> property.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The name of the <code>NSNotification</code> event fired is constructed based on the
+parameter <code>name</code>, and is constructed as: &ldquo;<em><code>name</code></em><code>`:willRequestData</code>&rdquo;.</p>
+
+<p>In addition, when this event is fired, a boolean Mockingbird variable
+with the name &ldquo;<em><code>name</code></em><code>:requestPending`" will be set to `true`, and
+the value of the variable named "*`name`*</code>:lastRequestFailed`&rdquo; will
+be unset.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -319,10 +712,52 @@
 	<h3 class="subsubtitle method-title">willRequestDataEventName:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Constructs the name of the event that is fired when an asynchronous data
+load attempt is about to begin.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)willRequestDataEventName:(NSString *)<em>name</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the data being requested.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The name of the event fired when the data named <code>name</code> is about
+            to be requested.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBEvents+DataLoading.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>

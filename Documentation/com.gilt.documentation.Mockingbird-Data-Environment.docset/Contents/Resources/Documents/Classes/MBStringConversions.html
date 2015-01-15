@@ -247,9 +247,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_CGPoint conversions">CGPoint conversions</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Parsing size dimensions from strings">Parsing size dimensions from strings</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_CGSize conversions">CGSize conversions</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_CGRect conversions">CGRect conversions</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Parsing strings containing UIViewNoIntrinsicMetric wildcards">Parsing strings containing UIViewNoIntrinsicMetric wildcards</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_UIOffset conversions">UIOffset conversions</a></span></li>
 	
@@ -530,8 +532,40 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class provides an interface for converting between strings and values of
-other types.</p>
+						<p>This class provides an interface for converting between strings, expression
+results, and values of other types, such as:</p>
+
+<ul>
+<li><code>CGFloat</code></li>
+<li><code>CGPoint</code></li>
+<li><code>CGRect</code></li>
+<li><code>CGSize</code></li>
+<li><code>NSDateFormatterStyle</code></li>
+<li><code>NSLineBreakMode</code></li>
+<li><code>NSTextAlignment</code></li>
+<li><code>UIActivityIndicatorViewStyle</code></li>
+<li><code>UIBarButtonItemStyle</code></li>
+<li><code>UIBarButtonSystemItem</code></li>
+<li><code>UIBarStyle</code></li>
+<li><code>UIButtonType</code></li>
+<li><code>UIColor</code></li>
+<li><code>UIControlState</code></li>
+<li><code>UIEdgeInsets</code></li>
+<li><code>UIModalTransitionStyle</code></li>
+<li><code>UIOffset</code></li>
+<li><code>UIPopoverArrowDirection</code></li>
+<li><code>UIScrollViewIndicatorStyle</code></li>
+<li><code>UIStatusBarAnimation</code></li>
+<li><code>UITableViewCellAccessoryType</code></li>
+<li><code>UITableViewCellSelectionStyle</code></li>
+<li><code>UITableViewCellStyle</code></li>
+<li><code>UITableViewRowAnimation</code></li>
+<li><code>UITableViewStyle</code></li>
+<li><code>UITextBorderStyle</code></li>
+<li><code>UIViewAnimationOptions</code></li>
+<li><code>UIViewContentMode</code></li>
+</ul>
+
 					</div>
 					
 					
@@ -581,29 +615,11 @@ other types.</p>
 						</ul>
 						
 						
-						<a title="Parsing size dimensions from strings" name="task_Parsing size dimensions from strings"></a>
-						<h3 class="subsubtitle task-title">Parsing size dimensions from strings</h3>
+						<a title="CGSize conversions" name="task_CGSize conversions"></a>
+						<h3 class="subsubtitle task-title">CGSize conversions</h3>
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/sizeDimensionFromExpression:">+&nbsp;sizeDimensionFromExpression:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/sizeDimensionFromString:">+&nbsp;sizeDimensionFromString:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/parseString:asSize:">+&nbsp;parseString:asSize:</a></code>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/sizeFromString:">+&nbsp;sizeFromString:</a></code>
 	</span>
@@ -643,12 +659,6 @@ other types.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/parseString:asRect:">+&nbsp;parseString:asRect:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
 		<code><a href="#//api/name/rectFromString:">+&nbsp;rectFromString:</a></code>
 	</span>
 	
@@ -674,6 +684,38 @@ other types.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/stringFromRect:">+&nbsp;stringFromRect:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Parsing strings containing UIViewNoIntrinsicMetric wildcards" name="task_Parsing strings containing UIViewNoIntrinsicMetric wildcards"></a>
+						<h3 class="subsubtitle task-title">Parsing strings containing UIViewNoIntrinsicMetric wildcards</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sizeDimensionFromExpression:">+&nbsp;sizeDimensionFromExpression:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sizeDimensionFromString:">+&nbsp;sizeDimensionFromString:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseString:asSize:">+&nbsp;parseString:asSize:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/parseString:asRect:">+&nbsp;parseString:asRect:</a></code>
 	</span>
 	
 	
@@ -1461,7 +1503,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -1656,7 +1698,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -1863,7 +1905,7 @@ method.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -2079,7 +2121,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -2277,7 +2319,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -2386,10 +2428,92 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">colorFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIColor</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIColor *)colorFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIColor</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>[</code><code>UIColor yellowColor</code><code>]</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method can accept <em>named colors</em> as well as color values specified in
+hexadecimal notation, commonly referred to as <em>web colors</em>.</p>
+
+<h5>Named colors</h5>
+
+<p>Named colors utilize the <code>UIColor</code> convention of providing a class method
+with a selector following the format: <em><code>name</code></em><code>Color</code>. The value returned by any
+<code>UIColor</code> class method named in this way can be referenced simply as <em><code>name</code></em>.</p>
+
+<p>In other words, passing the input string &ldquo;white&rdquo; will return
+<code>[</code><code>UIColor whiteColor</code><code>]</code>, &ldquo;clear&rdquo; will return
+<code>[</code><code>UIColor clearColor</code><code>]</code>, and &ldquo;darkGray&rdquo; will return
+<code>[</code><code>UIColor darkGrayColor</code><code>]</code>.</p>
+
+<p>This applies to all <code>UIColor</code> class methods following that naming convention,
+including ones added through class categories. This means you can introduce
+your own custom named colors simply by creating a <code>UIColor</code> category that
+adds an implementation to return the appropriate <code>UIColor</code>.</p>
+
+<h5>Web colors</h5>
+
+<p>Web colors are specified with a leading <em>hash sign</em> (<code>#</code>) followed by
+6 or 8 hexadecimal digits specifying 3 or 4 <em>color channels</em>, respectively.</p>
+
+<p>Each <em>color channel</em> is specified with a two-digit case-insensitive
+hexadecimal value between <code>00</code> and <code>FF</code> in the format <code>#</code><em><code>RRGGBB</code></em> or
+<code>#</code><em><code>RRGGBBAA</code></em> where:</p>
+
+<ul>
+<li><em><code>RR</code></em> specifies the red component of the color</li>
+<li><em><code>GG</code></em> specifies the green component of the color</li>
+<li><em><code>BB</code></em> specifies the blue component of the color</li>
+<li>The optional <em><code>AA</code></em> specifies the color&rsquo;s alpha channel, which determines its opacity</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2397,10 +2521,99 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">colorFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIColor</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIColor *)colorFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIColor</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>[</code><code>UIColor yellowColor</code><code>]</code> if the expression result
+            couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method can accept <em>named colors</em> as well as color values specified in
+hexadecimal notation, commonly referred to as <em>web colors</em>.</p>
+
+<h5>Named colors</h5>
+
+<p>Named colors utilize the <code>UIColor</code> convention of providing a class method
+with a selector following the format: <em><code>name</code></em><code>Color</code>. The value returned by any
+<code>UIColor</code> class method named in this way can be referenced simply as <em><code>name</code></em>.</p>
+
+<p>In other words, passing the input string &ldquo;white&rdquo; will return
+<code>[</code><code>UIColor whiteColor</code><code>]</code>, &ldquo;clear&rdquo; will return
+<code>[</code><code>UIColor clearColor</code><code>]</code>, and &ldquo;darkGray&rdquo; will return
+<code>[</code><code>UIColor darkGrayColor</code><code>]</code>.</p>
+
+<p>This applies to all <code>UIColor</code> class methods following that naming convention,
+including ones added through class categories. This means you can introduce
+your own custom named colors simply by creating a <code>UIColor</code> category that
+adds an implementation to return the appropriate <code>UIColor</code>.</p>
+
+<h5>Web colors</h5>
+
+<p>Web colors are specified with a leading <em>hash sign</em> (<code>#</code>) followed by
+6 or 8 hexadecimal digits specifying 3 or 4 <em>color channels</em>, respectively.</p>
+
+<p>Each <em>color channel</em> is specified with a two-digit case-insensitive
+hexadecimal value between <code>00</code> and <code>FF</code> in the format <code>#</code><em><code>RRGGBB</code></em> or
+<code>#</code><em><code>RRGGBBAA</code></em> where:</p>
+
+<ul>
+<li><em><code>RR</code></em> specifies the red component of the color</li>
+<li><em><code>GG</code></em> specifies the green component of the color</li>
+<li><em><code>BB</code></em> specifies the blue component of the color</li>
+<li>The optional <em><code>AA</code></em> specifies the color&rsquo;s alpha channel, which determines its opacity</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2553,7 +2766,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -2751,7 +2964,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -2804,10 +3017,54 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">edgeInsetsFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates an object expression and attempts to interpret the result as a
+<code>UIEdgeInsets</code> value using the <a href="#//api/name/edgeInsetsFromObject:error:"><code>edgeInsetsFromObject:error:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIEdgeInsets)edgeInsetsFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIEdgeInsets</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIEdgeInsetsZero</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2815,10 +3072,71 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">edgeInsetsFromObject:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret an arbitrary object value as a <code>UIEdgeInsets</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIEdgeInsets)edgeInsetsFromObject:(id)<em>obj</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The object to be interpreted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIEdgeInsets</code> value that corresponds with <code>obj</code>. Returns
+            <code>UIEdgeInsetsZero</code> if <code>obj</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input object is interpreted as follows:</p>
+
+<ul>
+<li>If it is an <code>NSString</code>, handling will be passed to <code>offsetFromString:error:</code></li>
+<li>If it is an <code>NSValue</code> containing a <code>UIEdgeInsets</code>, the underlying value is
+ returned</li>
+<li>All other cases are considered errors</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2826,10 +3144,61 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">edgeInsetsFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIEdgeInsets</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIEdgeInsets</code> value that corresponds with <code>str</code>.
+            Returns <code>UIEdgeInsetsZero</code> and logs an error to the
+            console if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>top</code></em>,<em><code>left</code></em>,<em><code>bottom</code></em>,<em><code>right</code></em>&rdquo; where
+<em><code>top</code></em>, <em><code>left</code></em>, <em><code>bottom</code></em> and <em><code>right</code></em> are interpreted as floating-point
+numbers and used to populate the respective fields of the returned
+<code>UIEdgeInsets</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2837,10 +3206,67 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">edgeInsetsFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIEdgeInsets</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIEdgeInsets</code> value that corresponds with <code>str</code>.
+            Returns <code>UIEdgeInsetsZero</code> if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>top</code></em>,<em><code>left</code></em>,<em><code>bottom</code></em>,<em><code>right</code></em>&rdquo; where
+<em><code>top</code></em>, <em><code>left</code></em>, <em><code>bottom</code></em> and <em><code>right</code></em> are interpreted as floating-point
+numbers and used to populate the respective fields of the returned
+<code>UIEdgeInsets</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2994,7 +3420,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -3193,7 +3619,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -3245,10 +3671,54 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">offsetFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates an object expression and attempts to interpret the result as a
+<code>UIOffset</code> value using the <a href="#//api/name/offsetFromObject:error:"><code>offsetFromObject:error:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIOffset)offsetFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIOffset</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIOffsetZero</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3256,10 +3726,71 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">offsetFromObject:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret an arbitrary object value as a <code>UIOffset</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIOffset)offsetFromObject:(id)<em>obj</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The object to be interpreted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIOffset</code> value that corresponds with <code>obj</code>. Returns
+            <code>UIOffsetZero</code> if <code>obj</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input object is interpreted as follows:</p>
+
+<ul>
+<li>If it is an <code>NSString</code>, handling will be passed to <code>offsetFromString:error:</code></li>
+<li>If it is an <code>NSValue</code> containing a <code>UIOffset</code>, the underlying value is
+ returned</li>
+<li>All other cases are considered errors</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3267,10 +3798,60 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">offsetFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIOffset</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIOffset)offsetFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIOffset</code> value that corresponds with <code>str</code>.
+            Returns <code>UIOffsetZero</code> and logs an error to the
+            console if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>horizontal</code></em>,<em><code>vertical</code></em>&rdquo; where <em><code>horizontal</code></em> and <em><code>vertical</code></em> are
+interpreted as floating-point numbers and used to populate the respective
+fields of the returned <code>UIOffset</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3278,10 +3859,66 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">offsetFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIOffset</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIOffset)offsetFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIOffset</code> value that corresponds with <code>str</code>.
+            Returns <code>UIOffsetZero</code> if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>horizontal</code></em>,<em><code>vertical</code></em>&rdquo; where <em><code>horizontal</code></em> and <em><code>vertical</code></em> are
+interpreted as floating-point numbers and used to populate the respective
+fields of the returned <code>UIOffset</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3308,19 +3945,19 @@ and <em>height</em> dimensions of the rectangle.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>rectStr</em></dt>
 			<dd><p>A string following the format
-&ldquo;<em>originX</em>,<em>originY</em>,<em>width</em>,<em>height</em>&rdquo;. The <em>originX</em> and <em>originY</em>
-values must be specified numerically. The <em>width</em> and <em>height</em>
-dimensions can either be specified as a number or a wildcard
-character.</p></dd>
+            &ldquo;<em>originX</em>,<em>originY</em>,<em>width</em>,<em>height</em>&rdquo;. The <em>originX</em> and <em>originY</em>
+            values must be specified numerically. The <em>width</em> and <em>height</em>
+            dimensions can either be specified as a number or a wildcard
+            character.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>rectPtr</em></dt>
 			<dd><p>If the string to be parsed is in the expected format,
-on exit, the <code>CGRect</code> at the memory address <code>rectPtr</code> will be
-updated to reflect the value of the rectangle parsed from
-<code>rectStr</code>. No modification occurs if the method returns <code>NO</code>.
-This parameter must not be <code>nil</code>.</p></dd>
+            on exit, the <code>CGRect</code> at the memory address <code>rectPtr</code> will be
+            updated to reflect the value of the rectangle parsed from
+            <code>rectStr</code>. No modification occurs if the method returns <code>NO</code>.
+            This parameter must not be <code>nil</code>.</p></dd>
 		</dl>
 		
 	</div>
@@ -3330,7 +3967,7 @@ This parameter must not be <code>nil</code>.</p></dd>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p><code>YES</code> on success; <code>NO</code> if the input string is not in the expected
-format.</p>
+            format.</p>
 	</div>
 	
 	
@@ -3435,10 +4072,54 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">pointFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates an object expression and attempts to interpret the result as a
+<code>CGPoint</code> value using the <a href="#//api/name/pointFromObject:error:"><code>pointFromObject:error:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGPoint)pointFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGPoint</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>CGPointZero</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3446,10 +4127,71 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">pointFromObject:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret an arbitrary object value as a <code>CGPoint</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGPoint)pointFromObject:(id)<em>obj</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The object to be interpreted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGPoint</code> value that corresponds with <code>obj</code>. Returns
+            <code>CGPointZero</code> if <code>obj</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input object is interpreted as follows:</p>
+
+<ul>
+<li>If it is an <code>NSString</code>, handling will be passed to <code>pointFromString:error:</code></li>
+<li>If it is an <code>NSValue</code> containing a <code>CGPoint</code>, the underlying value is
+ returned</li>
+<li>All other cases are considered errors</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3457,10 +4199,60 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">pointFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>CGPoint</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGPoint)pointFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGPoint</code> value that corresponds with <code>str</code>.
+            Returns <code>CGPointZero</code> and logs an error to the
+            console if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>x</code></em>,<em><code>y</code></em>&rdquo; where <em><code>x</code></em> and <em><code>y</code></em> are interpreted as
+floating-point numbers and used to populate the respective fields of the
+returned <code>CGPoint</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3468,10 +4260,66 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">pointFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>CGPoint</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGPoint)pointFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGPoint</code> value that corresponds with <code>str</code>.
+            Returns <code>CGPointZero</code> if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>x</code></em>,<em><code>y</code></em>&rdquo; where <em><code>x</code></em> and <em><code>y</code></em> are interpreted as
+floating-point numbers and used to populate the respective fields of the
+returned <code>CGPoint</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3625,7 +4473,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -3677,10 +4525,54 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">rectFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates an object expression and attempts to interpret the result as a
+<code>CGRect</code> value using the <a href="#//api/name/rectFromObject:error:"><code>rectFromObject:error:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGRect)rectFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGRect</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>CGRectZero</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3688,10 +4580,71 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">rectFromObject:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret an arbitrary object value as a <code>CGRect</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGRect)rectFromObject:(id)<em>obj</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The object to be interpreted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGRect</code> value that corresponds with <code>obj</code>. Returns
+            <code>CGRectZero</code> if <code>obj</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input object is interpreted as follows:</p>
+
+<ul>
+<li>If it is an <code>NSString</code>, handling will be passed to <code>rectFromString:error:</code></li>
+<li>If it is an <code>NSValue</code> containing a <code>CGRect</code>, the underlying value is
+ returned</li>
+<li>All other cases are considered errors</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3699,10 +4652,60 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">rectFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>CGRect</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGRect)rectFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGRect</code> value that corresponds with <code>str</code>.
+            Returns <code>CGRectZero</code> and logs an error to the
+            console if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>x</code></em>,<em><code>y</code></em>,<em><code>width</code></em>,<em><code>height</code></em>&rdquo; where <em><code>x</code></em>, <em><code>y</code></em>, <em><code>width</code></em> and <em><code>height</code></em>
+are interpreted as floating-point numbers and used to populate the respective
+fields of the returned <code>CGRect</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3710,10 +4713,66 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">rectFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>CGRect</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGRect)rectFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGRect</code> value that corresponds with <code>str</code>.
+            Returns <code>CGRectZero</code> if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>x</code></em>,<em><code>y</code></em>,<em><code>width</code></em>,<em><code>height</code></em>&rdquo; where <em><code>x</code></em>, <em><code>y</code></em>, <em><code>width</code></em> and <em><code>height</code></em>
+are interpreted as floating-point numbers and used to populate the respective
+fields of the returned <code>CGRect</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -3865,7 +4924,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -4043,10 +5102,54 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">sizeFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates an object expression and attempts to interpret the result as a
+<code>CGSize</code> value using the <a href="#//api/name/sizeFromObject:error:"><code>sizeFromObject:error:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGSize)sizeFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGSize</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>CGSizeZero</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4054,10 +5157,71 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">sizeFromObject:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret an arbitrary object value as a <code>CGSize</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGSize)sizeFromObject:(id)<em>obj</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>obj</em></dt>
+			<dd><p>The object to be interpreted.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGSize</code> value that corresponds with <code>obj</code>. Returns
+            <code>CGSizeZero</code> if <code>obj</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input object is interpreted as follows:</p>
+
+<ul>
+<li>If it is an <code>NSString</code>, handling will be passed to <code>sizeFromString:error:</code></li>
+<li>If it is an <code>NSValue</code> containing a <code>CGSize</code>, the underlying value is
+ returned</li>
+<li>All other cases are considered errors</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4065,10 +5229,60 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">sizeFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>CGSize</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGSize)sizeFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGSize</code> value that corresponds with <code>str</code>.
+            Returns <code>CGPointZero</code> and logs an error to the
+            console if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>width</code></em>,<em><code>height</code></em>&rdquo; where <em><code>width</code></em> and <em><code>height</code></em> are interpreted as
+floating-point numbers and used to populate the respective fields of the
+returned <code>CGSize</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4076,10 +5290,66 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">sizeFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>CGSize</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (CGSize)sizeFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>CGSize</code> value that corresponds with <code>str</code>.
+            Returns <code>CGPointZero</code> if <code>str</code> couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The input will be parsed as a comma-separating string in the format
+&ldquo;<em><code>width</code></em>,<em><code>height</code></em>&rdquo; where <em><code>width</code></em> and <em><code>height</code></em> are interpreted as
+floating-point numbers and used to populate the respective fields of the
+returned <code>CGSize</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4231,7 +5501,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -4281,10 +5551,51 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">stringFromPoint:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a <code>CGPoint</code> value into a string that can be parsed by
+<a href="#//api/name/pointFromString:"><code>pointFromString:</code></a>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromPoint:(CGPoint)<em>pt</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromPoint:(CGPoint)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The value to convert into a string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representation of <code>val</code>; never <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4292,10 +5603,51 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">stringFromRect:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a <code>CGRect</code> value into a string that can be parsed by
+<a href="#//api/name/rectFromString:"><code>rectFromString:</code></a>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromRect:(CGRect)<em>rect</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromRect:(CGRect)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The value to convert into a string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representation of <code>val</code>; never <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4303,10 +5655,51 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">stringFromSize:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts a <code>CGSize</code> value into a string that can be parsed by
+<a href="#//api/name/sizeFromString:"><code>sizeFromString:</code></a>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromSize:(CGSize)<em>sz</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromSize:(CGSize)<em>val</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>val</em></dt>
+			<dd><p>The value to convert into a string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string representation of <code>val</code>; never <code>nil</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4459,7 +5852,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -4511,10 +5904,55 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">tableViewCellSelectionStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as an
+<a href="../Constants/MBTableViewCellSelectionStyle.html"><code>MBTableViewCellSelectionStyle</code></a> value using the
+<a href="#//api/name/tableViewCellSelectionStyleFromString:"><code>tableViewCellSelectionStyleFromString:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="../Constants/MBTableViewCellSelectionStyle.html"><code>MBTableViewCellSelectionStyle</code></a> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITableViewCellSelectionStyleBlue</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4522,10 +5960,70 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">tableViewCellSelectionStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as an <a href="../Constants/MBTableViewCellSelectionStyle.html"><code>MBTableViewCellSelectionStyle</code></a> value,
+a special type that is cast-compatible with  <code>UITableViewCellSelectionStyle</code>
+but adds the value <code>MBTableViewCellSelectionStyleGradient</code> to represent a
+custom cell selection style using a gradient.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="../Constants/MBTableViewCellSelectionStyle.html"><code>MBTableViewCellSelectionStyle</code></a> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITableViewCellSelectionStyleBlue</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewCellSelectionStyleNone</code> (&ldquo;none&rdquo;) = <code>UITableViewCellSelectionStyleNone</code></li>
+<li><code>kMBMLTableViewCellSelectionStyleBlue</code> (&ldquo;blue&rdquo;) = <code>UITableViewCellSelectionStyleBlue</code></li>
+<li><code>kMBMLTableViewCellSelectionStyleGray</code> (&ldquo;gray&rdquo;) = <code>UITableViewCellSelectionStyleGray</code></li>
+<li><code>kMBMLTableViewCellSelectionStyleGradient</code> (&ldquo;gradient&rdquo;) = <code>MBTableViewCellSelectionStyleGradient</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4533,10 +6031,76 @@ corresponding values:</p>
 	<h3 class="subsubtitle method-title">tableViewCellSelectionStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as an <a href="../Constants/MBTableViewCellSelectionStyle.html"><code>MBTableViewCellSelectionStyle</code></a> value,
+a special type that is cast-compatible with  <code>UITableViewCellSelectionStyle</code>
+but adds the value <code>MBTableViewCellSelectionStyleGradient</code> to represent a
+custom cell selection style using a gradient.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="../Constants/MBTableViewCellSelectionStyle.html"><code>MBTableViewCellSelectionStyle</code></a> value that corresponds with
+            <code>str</code>. Returns <code>UITableViewCellSelectionStyleBlue</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewCellSelectionStyleNone</code> (&ldquo;none&rdquo;) = <code>UITableViewCellSelectionStyleNone</code></li>
+<li><code>kMBMLTableViewCellSelectionStyleBlue</code> (&ldquo;blue&rdquo;) = <code>UITableViewCellSelectionStyleBlue</code></li>
+<li><code>kMBMLTableViewCellSelectionStyleGray</code> (&ldquo;gray&rdquo;) = <code>UITableViewCellSelectionStyleGray</code></li>
+<li><code>kMBMLTableViewCellSelectionStyleGradient</code> (&ldquo;gradient&rdquo;) = <code>MBTableViewCellSelectionStyleGradient</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -4689,7 +6253,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -4889,7 +6453,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -5087,7 +6651,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -5280,7 +6844,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -5476,7 +7040,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		
@@ -5584,10 +7148,90 @@ method.</p>
 	<h3 class="subsubtitle method-title">viewAnimationOptionsFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIViewAnimationOptions</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIViewAnimationOptions</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>0</code> and logs an error to the console if the expression result
+            couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><code>UIViewAnimationOptions</code> is constructed as a <em>bit flag</em>, which means each
+individual value can be combined to indicate the selection of multiple options.</p>
+
+<p>The input string expects a comma-separated list containing zero or more
+<em>flags</em>. Whitespace between commas and flags is permitted but not required.</p>
+
+<p>The following string constants show the accepted flags, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLViewAnimationOptionLayoutSubviews</code> (&ldquo;layoutSubviews&rdquo;) = <code>UIViewAnimationOptionLayoutSubviews</code></li>
+<li><code>kMBMLViewAnimationOptionAllowUserInteraction</code> (&ldquo;allowUserInteraction&rdquo;) = <code>UIViewAnimationOptionAllowUserInteraction</code></li>
+<li><code>kMBMLViewAnimationOptionBeginFromCurrentState</code> (&ldquo;beginFromCurrentState&rdquo;) = <code>UIViewAnimationOptionBeginFromCurrentState</code></li>
+<li><code>kMBMLViewAnimationOptionRepeat</code> (&ldquo;repeat&rdquo;) = <code>UIViewAnimationOptionRepeat</code></li>
+<li><code>kMBMLViewAnimationOptionAutoreverse</code> (&ldquo;autoreverse&rdquo;) = <code>UIViewAnimationOptionAutoreverse</code></li>
+<li><code>kMBMLViewAnimationOptionOverrideInheritedDuration</code> (&ldquo;overrideInheritedDuration&rdquo;) = <code>UIViewAnimationOptionOverrideInheritedDuration</code></li>
+<li><code>kMBMLViewAnimationOptionOverrideInheritedCurve</code> (&ldquo;overrideInheritedCurve&rdquo;) = <code>UIViewAnimationOptionOverrideInheritedCurve</code></li>
+<li><code>kMBMLViewAnimationOptionAllowAnimatedContent</code> (&ldquo;allowAnimatedContent&rdquo;) = <code>UIViewAnimationOptionAllowAnimatedContent</code></li>
+<li><code>kMBMLViewAnimationOptionShowHideTransitionViews</code> (&ldquo;showHideTransitionViews&rdquo;) = <code>UIViewAnimationOptionShowHideTransitionViews</code></li>
+<li><code>kMBMLViewAnimationOptionCurveEaseInOut</code> (&ldquo;curveEaseInOut&rdquo;) = <code>UIViewAnimationOptionCurveEaseInOut</code></li>
+<li><code>kMBMLViewAnimationOptionCurveEaseIn</code> (&ldquo;curveEaseIn&rdquo;) = <code>UIViewAnimationOptionCurveEaseIn</code></li>
+<li><code>kMBMLViewAnimationOptionCurveEaseOut</code> (&ldquo;curveEaseOut&rdquo;) = <code>UIViewAnimationOptionCurveEaseOut</code></li>
+<li><code>kMBMLViewAnimationOptionCurveLinear</code> (&ldquo;curveLinear&rdquo;) = <code>UIViewAnimationOptionCurveLinear</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionNone</code> (&ldquo;transitionNone&rdquo;) = <code>UIViewAnimationOptionTransitionNone</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromLeft</code> (&ldquo;transitionFlipFromLeft&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromLeft</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromRight</code> (&ldquo;transitionFlipFromRight&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromRight</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionCurlUp</code> (&ldquo;transitionCurlUp&rdquo;) = <code>UIViewAnimationOptionTransitionCurlUp</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionCurlDown</code> (&ldquo;transitionCurlDown&rdquo;) = <code>UIViewAnimationOptionTransitionCurlDown</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionCrossDissolve</code> (&ldquo;transitionCrossDissolve&rdquo;) = <code>UIViewAnimationOptionTransitionCrossDissolve</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromTop</code> (&ldquo;transitionFlipFromTop&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromTop</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromBottom</code> (&ldquo;transitionFlipFromBottom&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromBottom</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -5595,10 +7239,96 @@ method.</p>
 	<h3 class="subsubtitle method-title">viewAnimationOptionsFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIViewAnimationOptions</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIViewAnimationOptions</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns <code>0</code> if the
+            expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><code>UIViewAnimationOptions</code> is constructed as a <em>bit flag</em>, which means each
+individual value can be combined to indicate the selection of multiple options.</p>
+
+<p>The input string expects a comma-separated list containing zero or more
+<em>flags</em>. Whitespace between commas and flags is permitted but not required.</p>
+
+<p>The following string constants show the accepted flags, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLViewAnimationOptionLayoutSubviews</code> (&ldquo;layoutSubviews&rdquo;) = <code>UIViewAnimationOptionLayoutSubviews</code></li>
+<li><code>kMBMLViewAnimationOptionAllowUserInteraction</code> (&ldquo;allowUserInteraction&rdquo;) = <code>UIViewAnimationOptionAllowUserInteraction</code></li>
+<li><code>kMBMLViewAnimationOptionBeginFromCurrentState</code> (&ldquo;beginFromCurrentState&rdquo;) = <code>UIViewAnimationOptionBeginFromCurrentState</code></li>
+<li><code>kMBMLViewAnimationOptionRepeat</code> (&ldquo;repeat&rdquo;) = <code>UIViewAnimationOptionRepeat</code></li>
+<li><code>kMBMLViewAnimationOptionAutoreverse</code> (&ldquo;autoreverse&rdquo;) = <code>UIViewAnimationOptionAutoreverse</code></li>
+<li><code>kMBMLViewAnimationOptionOverrideInheritedDuration</code> (&ldquo;overrideInheritedDuration&rdquo;) = <code>UIViewAnimationOptionOverrideInheritedDuration</code></li>
+<li><code>kMBMLViewAnimationOptionOverrideInheritedCurve</code> (&ldquo;overrideInheritedCurve&rdquo;) = <code>UIViewAnimationOptionOverrideInheritedCurve</code></li>
+<li><code>kMBMLViewAnimationOptionAllowAnimatedContent</code> (&ldquo;allowAnimatedContent&rdquo;) = <code>UIViewAnimationOptionAllowAnimatedContent</code></li>
+<li><code>kMBMLViewAnimationOptionShowHideTransitionViews</code> (&ldquo;showHideTransitionViews&rdquo;) = <code>UIViewAnimationOptionShowHideTransitionViews</code></li>
+<li><code>kMBMLViewAnimationOptionCurveEaseInOut</code> (&ldquo;curveEaseInOut&rdquo;) = <code>UIViewAnimationOptionCurveEaseInOut</code></li>
+<li><code>kMBMLViewAnimationOptionCurveEaseIn</code> (&ldquo;curveEaseIn&rdquo;) = <code>UIViewAnimationOptionCurveEaseIn</code></li>
+<li><code>kMBMLViewAnimationOptionCurveEaseOut</code> (&ldquo;curveEaseOut&rdquo;) = <code>UIViewAnimationOptionCurveEaseOut</code></li>
+<li><code>kMBMLViewAnimationOptionCurveLinear</code> (&ldquo;curveLinear&rdquo;) = <code>UIViewAnimationOptionCurveLinear</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionNone</code> (&ldquo;transitionNone&rdquo;) = <code>UIViewAnimationOptionTransitionNone</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromLeft</code> (&ldquo;transitionFlipFromLeft&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromLeft</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromRight</code> (&ldquo;transitionFlipFromRight&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromRight</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionCurlUp</code> (&ldquo;transitionCurlUp&rdquo;) = <code>UIViewAnimationOptionTransitionCurlUp</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionCurlDown</code> (&ldquo;transitionCurlDown&rdquo;) = <code>UIViewAnimationOptionTransitionCurlDown</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionCrossDissolve</code> (&ldquo;transitionCrossDissolve&rdquo;) = <code>UIViewAnimationOptionTransitionCrossDissolve</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromTop</code> (&ldquo;transitionFlipFromTop&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromTop</code></li>
+<li><code>kMBMLViewAnimationOptionTransitionFlipFromBottom</code> (&ldquo;transitionFlipFromBottom&rdquo;) = <code>UIViewAnimationOptionTransitionFlipFromBottom</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -5760,7 +7490,7 @@ corresponding values:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
-            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            <code>NSError</code> instance in the event of a problem interpreting <code>str</code>.
             May be <code>nil</code>.</p></dd>
 		</dl>
 		

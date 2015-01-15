@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cat/NSNull(NSFastEnumeration)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Our NSNull class category used to add support for the
+NSFastEnumeration protocol.</Abstract>
 			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
             
 			

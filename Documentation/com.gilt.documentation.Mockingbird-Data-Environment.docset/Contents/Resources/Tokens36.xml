@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cat/MBEvents(DataLoading)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This MBEvents class category adds methods for managing events related to
+the asynchronous loading of data.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
             
 			
@@ -14,47 +15,74 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/willRequestDataEventName:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Constructs the name of the event that is fired when an asynchronous data
+load attempt is about to begin.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (NSString *)willRequestDataEventName:(NSString *)name</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data being requested.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The name of the event fired when the data named name is about
+            to be requested.</Abstract></ReturnValue>
 			<Anchor>//api/name/willRequestDataEventName:</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/dataLoadedEventName:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Constructs the name of the event that is fired when an asynchronous
+data load completed successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (NSString *)dataLoadedEventName:(NSString *)name</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data that was loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The name of the event fired when the data named name loads
+            successfully.</Abstract></ReturnValue>
 			<Anchor>//api/name/dataLoadedEventName:</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/dataLoadFailedEventName:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Constructs the name of the event that is fired when an asynchronous
+data load attempt fails.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (NSString *)dataLoadFailedEventName:(NSString *)name</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data that failed to load.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The name of the event fired when the data named name loads
+            successfully.</Abstract></ReturnValue>
 			<Anchor>//api/name/dataLoadFailedEventName:</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postWillRequestData:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Posts an event indicating that an asynchronous data load attempt is about
+to begin.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (void)postWillRequestData:(NSString *)name</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data being requested.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/postWillRequestData:</Anchor>
             <NodeRef refid="36"/>
@@ -62,11 +90,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoaded:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Posts an event indicating that an asynchronous data load completed
+successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (void)postDataLoaded:(NSString *)name</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data that was loaded.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/postDataLoaded:</Anchor>
             <NodeRef refid="36"/>
@@ -74,11 +108,17 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoadFailed:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Posts an event indicating that an asynchronous data load completed
+successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (void)postDataLoadFailed:(NSString *)name</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data that failed to load.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/postDataLoadFailed:</Anchor>
             <NodeRef refid="36"/>
@@ -86,11 +126,21 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postWillRequestData:withEventObject:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Posts an event indicating that an asynchronous data load attempt is about
+to begin.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (void)postWillRequestData:(NSString *)name withEventObject:(id)eventObj</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data being requested.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventObj</Name>
+					<Abstract type="html">An object to include as the value of the NSNotification&apos;s
+            object property.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/postWillRequestData:withEventObject:</Anchor>
             <NodeRef refid="36"/>
@@ -98,11 +148,21 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoaded:withEventObject:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Posts an event indicating that an asynchronous data load completed
+successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (void)postDataLoaded:(NSString *)name withEventObject:(id)eventObj</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data that was loaded.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventObj</Name>
+					<Abstract type="html">An object to include as the value of the NSNotification&apos;s
+            object property.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/postDataLoaded:withEventObject:</Anchor>
             <NodeRef refid="36"/>
@@ -110,11 +170,21 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBEvents/postDataLoadFailed:withEventObject:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Posts an event indicating that an asynchronous data load completed
+successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
 			<Declaration>+ (void)postDataLoadFailed:(NSString *)name withEventObject:(id)eventObj</Declaration>
-			
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the data that failed to load.</Abstract>
+				</Parameter><Parameter>
+					<Name>eventObj</Name>
+					<Abstract type="html">An object to include as the value of the NSNotification&apos;s
+            object property.</Abstract>
+				</Parameter>
+			</Parameters>
 			
 			<Anchor>//api/name/postDataLoadFailed:withEventObject:</Anchor>
             <NodeRef refid="36"/>

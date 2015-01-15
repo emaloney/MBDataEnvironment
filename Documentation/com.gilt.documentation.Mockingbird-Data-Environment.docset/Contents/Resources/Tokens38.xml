@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cat/NSNull(MBNumericPrimitiveAccessors)</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Our NSNull class category used to add support for the
+MBNumericPrimitiveAccessors protocol.</Abstract>
 			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
             
 			
@@ -14,12 +15,12 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSNull/length</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Adds a length method to NSNull, which always returns 0.</Abstract>
 			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
 			
 			<Declaration>- (NSUInteger)length</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">0.</Abstract></ReturnValue>
 			<Anchor>//api/name/length</Anchor>
             <NodeRef refid="38"/>
 		</Token>

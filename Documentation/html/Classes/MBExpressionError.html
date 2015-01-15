@@ -41,9 +41,9 @@
 	
 	<option value="//api/name/additionalErrors">&nbsp;&nbsp;&nbsp;&nbsp;additionalErrors</option>
 	
-	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;error</option>
+	<option value="//api/name/causedByError">&nbsp;&nbsp;&nbsp;&nbsp;causedByError</option>
 	
-	<option value="//api/name/exception">&nbsp;&nbsp;&nbsp;&nbsp;exception</option>
+	<option value="//api/name/causedByException">&nbsp;&nbsp;&nbsp;&nbsp;causedByException</option>
 	
 	<option value="//api/name/message">&nbsp;&nbsp;&nbsp;&nbsp;message</option>
 	
@@ -58,13 +58,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/error">&nbsp;&nbsp;&nbsp;&nbsp;+ error</option>
-	
 	<option value="//api/name/errorWithError:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithError:</option>
 	
 	<option value="//api/name/errorWithException:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithException:</option>
-	
-	<option value="//api/name/errorWithExpressionErrors:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithExpressionErrors:</option>
 	
 	<option value="//api/name/errorWithFormat:">&nbsp;&nbsp;&nbsp;&nbsp;+ errorWithFormat:</option>
 	
@@ -79,11 +75,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/addError:">&nbsp;&nbsp;&nbsp;&nbsp;- addError:</option>
-	
 	<option value="//api/name/clearErrorReported">&nbsp;&nbsp;&nbsp;&nbsp;- clearErrorReported</option>
-	
-	<option value="//api/name/describeOffense">&nbsp;&nbsp;&nbsp;&nbsp;- describeOffense</option>
 	
 	<option value="//api/name/errorReported">&nbsp;&nbsp;&nbsp;&nbsp;- errorReported</option>
 	
@@ -113,6 +105,16 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating instances">Creating instances</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Error logging">Error logging</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Reporting errors">Reporting errors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Checking for additional errors">Checking for additional errors</a></span></li>
+	
 </ul></li>
 
 
@@ -123,9 +125,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/additionalErrors">additionalErrors</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/causedByError">causedByError</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exception">exception</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/causedByException">causedByException</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/message">message</a></span></li>
 	
@@ -141,13 +143,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/error">error</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithError:">errorWithError:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithException:">errorWithException:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithExpressionErrors:">errorWithExpressionErrors:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorWithFormat:">errorWithFormat:</a></span></li>
 	
@@ -163,11 +161,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addError:">addError:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearErrorReported">clearErrorReported</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/describeOffense">describeOffense</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorReported">errorReported</a></span></li>
 	
@@ -231,8 +225,8 @@ during expression parsing and evaluation.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Properties" name="task_Properties"></a>
+						<h3 class="subsubtitle task-title">Properties</h3>
 
 						<ul class="task-list">
 							<li>
@@ -243,13 +237,13 @@ during expression parsing and evaluation.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+		<code><a href="#//api/name/causedByError">&nbsp;&nbsp;causedByError</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/exception">&nbsp;&nbsp;exception</a></code>
+		<code><a href="#//api/name/causedByException">&nbsp;&nbsp;causedByException</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -277,13 +271,15 @@ during expression parsing and evaluation.</p>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/error">+&nbsp;error</a></code>
-	</span>
-	
-	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Creating instances" name="task_Creating instances"></a>
+						<h3 class="subsubtitle task-title">Creating instances</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/errorWithMessage:">+&nbsp;errorWithMessage:</a></code>
 	</span>
@@ -319,13 +315,15 @@ during expression parsing and evaluation.</p>
 	</span>
 	
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/errorWithExpressionErrors:">+&nbsp;errorWithExpressionErrors:</a></code>
-	</span>
-	
-	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Error logging" name="task_Error logging"></a>
+						<h3 class="subsubtitle task-title">Error logging</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/logOutput">&ndash;&nbsp;logOutput</a></code>
 	</span>
@@ -337,13 +335,15 @@ during expression parsing and evaluation.</p>
 	</span>
 	
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addError:">&ndash;&nbsp;addError:</a></code>
-	</span>
-	
-	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Reporting errors" name="task_Reporting errors"></a>
+						<h3 class="subsubtitle task-title">Reporting errors</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/reportErrorTo:">&ndash;&nbsp;reportErrorTo:</a></code>
 	</span>
@@ -355,15 +355,17 @@ during expression parsing and evaluation.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Checking for additional errors" name="task_Checking for additional errors"></a>
+						<h3 class="subsubtitle task-title">Checking for additional errors</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/errorReported">&ndash;&nbsp;errorReported</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/lastErrorReported">&ndash;&nbsp;lastErrorReported</a></code>
 	</span>
 	
 	
@@ -375,7 +377,7 @@ during expression parsing and evaluation.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/describeOffense">&ndash;&nbsp;describeOffense</a></code>
+		<code><a href="#//api/name/lastErrorReported">&ndash;&nbsp;lastErrorReported</a></code>
 	</span>
 	
 	
@@ -397,32 +399,110 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">additionalErrors</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of <code>MBExpressionError</code>s related to the receiver. May
+    be <code>nil</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSArray *additionalErrors</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *additionalErrors</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/error" title="error"></a>
-	<h3 class="subsubtitle method-title">error</h3>
+	<a name="//api/name/causedByError" title="causedByError"></a>
+	<h3 class="subsubtitle method-title">causedByError</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>If the receiver was caused by an underlying error, this property will
+    contain the original error. Otherwise, <code>nil</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSError *error</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *causedByError</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/exception" title="exception"></a>
-	<h3 class="subsubtitle method-title">exception</h3>
+	<a name="//api/name/causedByException" title="causedByException"></a>
+	<h3 class="subsubtitle method-title">causedByException</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>If the receiver was caused by an underlying exception, this property will
+    contain the original exception. Otherwise, <code>nil</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSException *exception</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSException *causedByException</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -430,10 +510,35 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">message</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a message explaining the error.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *message</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *message</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -441,10 +546,35 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">offendingExpression</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Stores a reference to the MBML expression that caused the error.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *offendingExpression</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -452,10 +582,35 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">offendingToken</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Stores a reference to the <code>MBMLParseToken</code> involved in the error.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) MBMLParseToken *offendingToken</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -463,10 +618,35 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">value</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Stores an arbitrary value related to the error.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id value</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -478,25 +658,55 @@ during expression parsing and evaluation.</p>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/error" title="error"></a>
-	<h3 class="subsubtitle method-title">error</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>+ (id)error</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/errorWithError:" title="errorWithError:"></a>
 	<h3 class="subsubtitle method-title">errorWithError:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <code>MBExpressionError</code> instance to represent an underlying
+<code>NSError</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithError:(NSError *)<em>nsErr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithError:(NSError *)<em>nsErr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nsErr</em></dt>
+			<dd><p>The <code>NSError</code> instance.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>MBExpressionError</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -504,21 +714,51 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">errorWithException:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <code>MBExpressionError</code> instance to represent an underlying
+<code>NSException</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithException:(NSException *)<em>ex</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithException:(NSException *)<em>ex</em></code></div>
 
     
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/errorWithExpressionErrors:" title="errorWithExpressionErrors:"></a>
-	<h3 class="subsubtitle method-title">errorWithExpressionErrors:</h3>
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ex</em></dt>
+			<dd><p>The <code>NSException</code> instance.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithExpressionErrors:(NSArray *)<em>errors</em></code></div>
-
-    
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>MBExpressionError</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -526,10 +766,58 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">errorWithFormat:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <code>MBExpressionError</code> instance containing a <a href="#//api/name/message">message</a> constructed
+from the specified format string and parameters.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithFormat:(NSString *)<em>format</em>, <em>...</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithFormat:(NSString *)<em>format</em>, <em>...</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>format</em></dt>
+			<dd><p>The format for the error <a href="#//api/name/message">message</a>, followed by zero or more
+            format parameters.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>A variable argument list of zero or more values referenced
+            within the <code>format</code> string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>MBExpressionError</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -537,10 +825,50 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">errorWithMessage:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <code>MBExpressionError</code> instance containing the specified <a href="#//api/name/message">message</a>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithMessage:(NSString *)<em>msg</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithMessage:(NSString *)<em>msg</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>The error <a href="#//api/name/message">message</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>MBExpressionError</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -548,10 +876,56 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">errorWithMessage:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <code>MBExpressionError</code> instance to represent an underlying
+<code>NSError</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithMessage:(NSString *)<em>msg</em> error:(NSError *)<em>nsErr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithMessage:(NSString *)<em>msg</em> error:(NSError *)<em>nsErr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>The error <a href="#//api/name/message">message</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>nsErr</em></dt>
+			<dd><p>The <code>NSError</code> instance.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>MBExpressionError</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -559,10 +933,56 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">errorWithMessage:exception:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <code>MBExpressionError</code> instance to represent an underlying
+<code>NSException</code>.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)errorWithMessage:(NSString *)<em>msg</em> exception:(NSException *)<em>ex</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithMessage:(NSString *)<em>msg</em> exception:(NSException *)<em>ex</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>msg</em></dt>
+			<dd><p>The error <a href="#//api/name/message">message</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ex</em></dt>
+			<dd><p>The <code>NSException</code> instance.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new <code>MBExpressionError</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -574,36 +994,41 @@ during expression parsing and evaluation.</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/addError:" title="addError:"></a>
-	<h3 class="subsubtitle method-title">addError:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>- (void)addError:(MBExpressionError *)<em>error</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/clearErrorReported" title="clearErrorReported"></a>
 	<h3 class="subsubtitle method-title">clearErrorReported</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Clears the flag returned by <a href="#//api/name/errorReported"><code>errorReported</code></a> so that subsequent calls to
+<a href="#//api/name/errorReported"><code>errorReported</code></a> return <code>NO</code> until the next time the receiver&rsquo;s <code>reportErrorTo</code>
+method is called.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)clearErrorReported</code></div>
 
     
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/describeOffense" title="describeOffense"></a>
-	<h3 class="subsubtitle method-title">describeOffense</h3>
 	
 	
-
-	<div class="method-subsection method-declaration"><code>- (NSString *)describeOffense</code></div>
-
-    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -611,10 +1036,46 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">errorReported</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines if an error has been reported since the last time the
+<a href="#//api/name/clearErrorReported"><code>clearErrorReported</code></a> method was called.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (BOOL)errorReported</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if an error has been reported, <code>NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Note that this flag starts out as <code>YES</code> when new object instances are created.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -622,10 +1083,47 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">lastErrorReported</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <code>MBExpressionError</code> most recently reported to the receiver, or
+<code>nil</code> if there isn&rsquo;t one.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (MBExpressionError *)lastErrorReported</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The most recently reported error.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><strong>Note:</strong> Calling the <a href="#//api/name/clearErrorReported"><code>clearErrorReported</code></a> method does not affect the return
+<a href="#//api/name/value">value</a> of this method.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -633,10 +1131,35 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">log</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Logs the error to the console.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)log</code></div>
 
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -644,10 +1167,41 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">logOutput</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a string containing the output that would be written to the console
+if <a href="#//api/name/log"><code>log</code></a> were to be called.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (NSString *)logOutput</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <a href="#//api/name/log">log</a> output.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -655,10 +1209,60 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">reportErrorTo:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Reports the receiving error. The behavior of reporting depends on the contents
+of the <code>reportTo</code> parameter:</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionError **)<em>reportTo</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reportTo</em></dt>
+			<dd><p>Determines where the receiver will be reported.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li><p>If <code>reportTo</code> is <code>nil</code>, the receiver will be logged to the console using
+ the <code>log</code> method.</p></li>
+<li><p>If <code>reportTo</code> is a non-<code>nil</code> but <code>*reportTo</code> is <code>nil</code>, the memory location
+ pointed to by <code>*reportTo</code> will be updated to contain the receiver.</p></li>
+<li><p>If <code>reportTo</code> is a non-<code>nil</code> pointer to an <code>MBExpressionError</code> instance
+ the receiver will be reported to that error, meaning the receiver becomes
+ its <a href="#//api/name/lastErrorReported"><code>lastErrorReported</code></a>.</p></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -666,10 +1270,66 @@ during expression parsing and evaluation.</p>
 	<h3 class="subsubtitle method-title">reportErrorTo:suppressLog:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Reports the receiving error. The behavior of reporting depends on the contents
+of the <code>reportTo</code> parameter:</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionError **)<em>reportTo</em> suppressLog:(BOOL)<em>suppress</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionError **)<em>reportTo</em> suppressLog:(BOOL)<em>suppressLog</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>reportTo</em></dt>
+			<dd><p>Determines where the receiver will be reported.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>suppressLog</em></dt>
+			<dd><p>If <code>YES</code>, calling this method will not result in a
+            <a href="#//api/name/message">message</a> being logged to the console.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<ul>
+<li><p>If <code>reportTo</code> is <code>nil</code> and <code>suppressLog</code> is <code>NO</code>, the receiver will be logged
+ to the console using the <code>log</code> method.</p></li>
+<li><p>If <code>reportTo</code> is a non-<code>nil</code> but <code>*reportTo</code> is <code>nil</code>, the memory location
+ pointed to by <code>*reportTo</code> will be updated to contain the receiver.</p></li>
+<li><p>If <code>reportTo</code> is a non-<code>nil</code> pointer to an <code>MBExpressionError</code> instance
+ the receiver will be reported to that error, meaning the receiver becomes
+ its <a href="#//api/name/lastErrorReported"><code>lastErrorReported</code></a>.</p></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionError.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>

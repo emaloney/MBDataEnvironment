@@ -14,6 +14,17 @@
 
 /******************************************************************************/
 #pragma mark -
+#pragma mark MBExpressionError private interface
+/******************************************************************************/
+
+@interface MBExpressionError ()
+@property(nonatomic, readwrite) NSString* message;
+@property(nonatomic, readwrite) NSError* causedByError;
+@property(nonatomic, readwrite) NSException* causedByException;
+@end
+
+/******************************************************************************/
+#pragma mark -
 #pragma mark MBExpressionError implementation
 /******************************************************************************/
 
@@ -28,7 +39,7 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
@@ -37,35 +48,35 @@
     return self;
 }
 
-+ (id) error
++ (instancetype) error
 {
     return [self new]; 
 }
 
-+ (id) errorWithMessage:(NSString*)msg
++ (instancetype) errorWithMessage:(NSString*)msg
 {
     MBExpressionError* err = [self error];
     err.message = msg;
     return err;
 }
 
-+ (id) errorWithMessage:(NSString*)msg error:(NSError*)nsErr
++ (instancetype) errorWithMessage:(NSString*)msg error:(NSError*)nsErr
 {
     MBExpressionError* err = [self error];
     err.message = msg;
-    err.error = nsErr;
+    err.causedByError = nsErr;
     return err;
 }
 
-+ (id) errorWithMessage:(NSString*)msg exception:(NSException*)ex
++ (instancetype) errorWithMessage:(NSString*)msg exception:(NSException*)ex
 {
     MBExpressionError* err = [self error];
     err.message = msg;
-    err.exception = ex;
+    err.causedByException = ex;
     return err;
 }
 
-+ (id) errorWithFormat:(NSString*)format, ...
++ (instancetype) errorWithFormat:(NSString*)format, ...
 {
     va_list args;
     va_start(args, format);
@@ -77,24 +88,17 @@
     return error;
 }
 
-+ (id) errorWithError:(NSError*)nsErr
++ (instancetype) errorWithError:(NSError*)nsErr
 {
     MBExpressionError* err = [self error];
-    err.error = nsErr;
+    err.causedByError = nsErr;
     return err;
 }
 
-+ (id) errorWithException:(NSException*)ex
++ (instancetype) errorWithException:(NSException*)ex
 {
     MBExpressionError* err = [self error];
-    err.exception = ex;
-    return err;
-}
-
-+ (id) errorWithExpressionErrors:(NSArray*)errors
-{
-    MBExpressionError* err = [self error];
-    err->_additionalErrors = [NSMutableArray arrayWithArray:errors];
+    err.causedByException = ex;
     return err;
 }
 
@@ -146,9 +150,18 @@
             *reportTo = self;
         }
         else {
-            [*reportTo addError:self];
+            [*reportTo _reportError:self];
         }
     }
+}
+
+- (void) _reportError:(MBExpressionError*)error
+{
+    if (!_additionalErrors) {
+        _additionalErrors = [NSMutableArray new];
+    }
+    [_additionalErrors addObject:error];
+    _errorReportedSinceLastInquiry = YES;
 }
 
 - (BOOL) errorReported
@@ -201,17 +214,17 @@
     if (_message) {
         [log appendString:_message];
     }
-    if (_error) {
+    if (_causedByError) {
         if (log.length > 0) {
             [log appendString:@"; "];
         }
-        [log appendFormat:@"%@: %@", [_error class], [_error description]];
+        [log appendFormat:@"%@: %@", [_causedByError class], [_causedByError description]];
     }
-    if (_exception) {
+    if (_causedByException) {
         if (log.length > 0) {
             [log appendString:@"; "];
         }
-        [log appendFormat:@"%@: %@", [_exception class], [_exception reason]];
+        [log appendFormat:@"%@: %@", [_causedByException class], [_causedByException reason]];
     }
     if (_value) {
         if (log.length > 0) {
@@ -236,15 +249,6 @@
     for (MBExpressionError* err in _additionalErrors) {
         [err log];
     }
-}
-
-- (void) addError:(MBExpressionError*)error
-{
-    if (!_additionalErrors) {
-        _additionalErrors = [NSMutableArray new];
-    }
-    [_additionalErrors addObject:error];
-    _errorReportedSinceLastInquiry = YES;
 }
 
 - (NSArray*) additionalErrors
@@ -313,7 +317,7 @@
         addSpacer = YES;
     }
     
-    NSError* err = self.error;
+    NSError* err = self.causedByError;
     if (err) {
         if (addSpacer) {
             [log appendString:@"; "];
@@ -322,7 +326,7 @@
         addSpacer = YES;
     }
     
-    NSException* ex = self.exception;
+    NSException* ex = self.causedByException;
     if (ex) {
         if (addSpacer) {
             [log appendString:@"; "];

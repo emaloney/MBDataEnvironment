@@ -83,6 +83,7 @@
 					<Subnodes>
 						<NodeRef refid="44"/>
 						<NodeRef refid="45"/>
+						<NodeRef refid="46"/>
 						
 					</Subnodes>
 				</Node>
@@ -1234,6 +1235,11 @@
 		<Node id="45" type="file" documentType="reference">
             <Name>MBExpressionCacheSerialization</Name>
             <Path>Constants/MBExpressionCacheSerialization.html</Path>
+            
+        </Node>
+		<Node id="46" type="file" documentType="reference">
+            <Name>MBTableViewCellSelectionStyle</Name>
+            <Path>Constants/MBTableViewCellSelectionStyle.html</Path>
             
         </Node>
 		

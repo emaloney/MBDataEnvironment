@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLLogicFunctions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class implements MBML logic functions.</Abstract>
 			<DeclaredIn>MBMLLogicFunctions.h</DeclaredIn>
             
 			
@@ -31,11 +31,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLLogicFunctions/selectFirstValue:</TokenIdentifier>
-			<Abstract type="html">Accepts two or more template expressions as input parameters, and returns
-the first one that evaluates to a non-&lt;code&gt;nil&lt;/code&gt; (and
-non-&lt;code&gt;NSNull&lt;/code&gt;) value.
-  
-&lt;b&gt;Template example:&lt;/b&gt;</Abstract>
+			<Abstract type="html">Selects the first non-nil (and non-NSNull) value from among two or
+more parameters.</Abstract>
 			<DeclaredIn>MBMLLogicFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)selectFirstValue:(NSArray *)params</Declaration>
