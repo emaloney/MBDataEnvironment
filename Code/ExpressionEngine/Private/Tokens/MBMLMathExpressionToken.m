@@ -13,6 +13,7 @@
 #import "MBExpressionTokenizer.h"
 #import "MBExpression.h"
 #import "MBExpressionError.h"
+#import "MBExpression+Internal.h"
 
 #define DEBUG_LOCAL         0
 

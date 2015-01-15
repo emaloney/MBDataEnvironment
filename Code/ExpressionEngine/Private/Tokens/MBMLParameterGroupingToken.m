@@ -12,6 +12,7 @@
 #import "MBExpression.h"
 #import "MBMLLiteralToken.h"
 #import "MBDataEnvironmentConstants.h"
+#import "MBExpression+Internal.h"
 
 #define DEBUG_LOCAL         0
 
