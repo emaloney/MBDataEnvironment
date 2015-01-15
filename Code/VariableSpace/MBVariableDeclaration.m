@@ -204,7 +204,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
         MBConcreteVariableDeclaration* container = (MBConcreteVariableDeclaration*) relative;
         MBConcreteVariableType containerVarType = container.declaredType;
         if (containerVarType != MBConcreteVariableTypeMap && containerVarType != MBConcreteVariableTypeList) {
-            errorLog(@"Unexpected container type (%u); variable declarations may only be contained within other variables declared with %@=\"%@\" or %@=\"%@\". Ignoring: %@", containerVarType, kMBMLAttributeType, kMBMLVariableTypeList, kMBMLAttributeType, kMBMLVariableTypeMap, self.simulatedXML);
+            errorLog(@"Unexpected container type (%u); variable declarations may only be contained within other variables declared with %@=\"%@\" or %@=\"%@\". Ignoring: %@", (unsigned int)containerVarType, kMBMLAttributeType, kMBMLVariableTypeList, kMBMLAttributeType, kMBMLVariableTypeMap, self.simulatedXML);
             return NO;
         }
         
