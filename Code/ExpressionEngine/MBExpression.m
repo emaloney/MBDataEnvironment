@@ -264,7 +264,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
         return def;
     }
 
-    return retVal;
+    return retVal ?: def;
 }
 
 /******************************************************************************/
@@ -329,7 +329,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
         return def;
     }
 
-    return retVal;
+    return retVal ?: def;
 }
 
 /******************************************************************************/
