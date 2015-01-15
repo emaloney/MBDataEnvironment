@@ -50,11 +50,11 @@
 
 /*!
  Tokenizes a variable expansion expression and logs the resulting tokens
- to the console. The input expression is returned, allowing the function 
+ to the console. The input expression is returned, allowing the function
  to be used as a pass-through. This function must be declared input="raw"
  in the template XML.
  */
-+ (NSString*) tok:(NSString*)expr;
++ (NSString*) tokenize:(NSString*)expr;
 
 /*!
  Tokenizes a boolean expression and logs the resulting tokens to the console.
@@ -62,7 +62,9 @@
  pass-through. This function must be declared input="raw" in the template
  XML.
  */
-+ (NSString*) tokBool:(NSString*)expr;
++ (NSString*) tokenizeBoolean:(NSString*)expr;
+
++ (NSString*) tokenizeMath:(NSString*)expr;
 
 /*!
  Performs a benchmark of a variable expansion expression by measuring the

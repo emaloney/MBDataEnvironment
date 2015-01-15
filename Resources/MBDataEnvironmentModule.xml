@@ -94,8 +94,9 @@
     <Function class="MBMLDebugFunctions" name="test" input="raw"/>
     <Function class="MBMLDebugFunctions" name="dump" input="raw"/>
     <Function class="MBMLDebugFunctions" name="debugBreak" input="raw"/>
-    <Function class="MBMLDebugFunctions" name="tok" input="raw"/>
-    <Function class="MBMLDebugFunctions" name="tokBool" input="raw"/>
+    <Function class="MBMLDebugFunctions" name="tokenize" input="raw"/>
+    <Function class="MBMLDebugFunctions" name="tokenizeBoolean" input="raw"/>
+    <Function class="MBMLDebugFunctions" name="tokenizeMath" input="raw"/>
     <Function class="MBMLDebugFunctions" name="bench" input="raw"/>
     <Function class="MBMLDebugFunctions" name="benchBool" input="raw"/>
     <Function class="MBMLDebugFunctions" name="repeat" input="pipedExpressions"/>

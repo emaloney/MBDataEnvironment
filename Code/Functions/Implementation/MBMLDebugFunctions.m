@@ -13,6 +13,8 @@
 #import "MBMLFunction.h"
 #import "MBExpressionGrammar.h"
 #import "MBDataEnvironmentModule.h"
+#import "MBExpressionCache.h"
+#import "MBVariableSpace.h"
 
 /******************************************************************************/
 #pragma mark -
@@ -87,42 +89,49 @@
     return input;
 }
 
-+ (NSString*) tok:(NSString*)exprStr
++ (NSString*) _tokenizeExpression:(NSString*)exprStr
+                           ofType:(NSString*)exprType
+                     usingGrammar:(MBMLGrammar*)grammar
 {
     MBExpressionError* err = nil;
-    MBExpression* expr = [MBExpression expression:exprStr
-                                     usingGrammar:[MBMLObjectExpressionGrammar instance]
-                                            error:&err];
+
+    NSArray* tokens = [[MBExpressionCache instance] tokensForExpression:exprStr
+                                                        inVariableSpace:[MBVariableSpace instance]
+                                                           usingGrammar:[MBMLObjectExpressionGrammar instance]
+                                                                  error:&err];
+
     if (err) {
-        NSLog(@"--> Failed to tokenize variable expansion expression \"%@\" due to error: %@", expr, err);
+        NSLog(@"--> Failed to tokenize %@ expression \"%@\" due to error: %@", exprType, exprStr, err);
     }
     else {
         NSMutableString* tokStr = [NSMutableString string];
-        for (id t in expr.tokens) {
+        for (id t in tokens) {
             [tokStr appendFormat:@"\n%@", [t description]];
         }
-        NSLog(@"--> Tokens for variable expansion expression \"%@\":%@", exprStr, tokStr);
+        NSLog(@"--> Tokens for %@ expression \"%@\":%@", exprType, exprStr, tokStr);
     }
     return exprStr;
 }
 
-+ (NSString*) tokBool:(NSString*)exprStr
++ (NSString*) tokenize:(NSString*)exprStr
 {
-    MBExpressionError* err = nil;
-    MBExpression* expr = [MBExpression expression:exprStr
-                                     usingGrammar:[MBMLBooleanExpressionGrammar instance]
-                                            error:&err];
-    if (err) {
-        NSLog(@"--> Failed to tokenize boolean expression \"%@\" due to error: %@", expr, err);
-    }
-    else {
-        NSMutableString* tokStr = [NSMutableString string];
-        for (id t in expr.tokens) {
-            [tokStr appendFormat:@"\n%@", [t description]];
-        }
-        NSLog(@"--> Tokens for boolean expression \"%@\":%@", exprStr, tokStr);
-    }
-    return exprStr;
+    return [self _tokenizeExpression:exprStr
+                              ofType:@"variable expansion"
+                        usingGrammar:[MBMLObjectExpressionGrammar instance]];
+}
+
++ (NSString*) tokenizeBoolean:(NSString*)exprStr
+{
+    return [self _tokenizeExpression:exprStr
+                              ofType:@"boolean"
+                        usingGrammar:[MBMLBooleanExpressionGrammar instance]];
+}
+
++ (NSString*) tokenizeMath:(NSString*)exprStr
+{
+    return [self _tokenizeExpression:exprStr
+                              ofType:@"math"
+                        usingGrammar:[MBMLMathExpressionGrammar instance]];
 }
 
 + (id) bench:(NSString*)expr
