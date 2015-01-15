@@ -57,6 +57,11 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
  */
 @interface MBVariableDeclaration : MBDataModel
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Variable information
+/*!    @name Variable information                                             */
+/*----------------------------------------------------------------------------*/
+
 /*! Returns the name of the variable. */
 @property(nonatomic, readonly) NSString* name;
 
@@ -67,9 +72,10 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
     `MBVariableSpace`. By definition, such variables are also read-only. */
 @property(nonatomic, readonly) BOOL disallowsValueCaching;
 
-/******************************************************************************/
+/*----------------------------------------------------------------------------*/
 #pragma mark Accessing variable values
-/******************************************************************************/
+/*!    @name Accessing variable values                                        */
+/*----------------------------------------------------------------------------*/
 
 /*! 
  Returns the initial value of the variable in the given variable space. 
@@ -101,9 +107,10 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space
                              error:(out MBExpressionError**)errPtr;
 
-/******************************************************************************/
+/*----------------------------------------------------------------------------*/
 #pragma mark Variable value change hook
-/******************************************************************************/
+/*!    @name Variable value change hook                                       */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Called when a mutable variable value has changed.

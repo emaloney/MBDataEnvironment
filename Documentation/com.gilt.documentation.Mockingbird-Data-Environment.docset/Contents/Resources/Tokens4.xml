@@ -1973,9 +1973,10 @@ MBDataModel superclass.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The Class to create for the related object, or nil if the
-            receiver does not support the specified relation type. If a non-nil
-            value is returned, the class must be a type of MBDataModel.
-            The default implementation returns [MBDataModel class].</Abstract></ReturnValue>
+            receiver does not support the specified relation type. If a 
+            non-nil value is returned, the class must be a type of
+            MBDataModel. The default implementation returns 
+            [&lt;code&gt;MBDataModel class&lt;/code&gt;].</Abstract></ReturnValue>
 			<Anchor>//api/name/implementingClassForRelativeOfType:fromTag:</Anchor>
             <NodeRef refid="4"/>
 		</Token>

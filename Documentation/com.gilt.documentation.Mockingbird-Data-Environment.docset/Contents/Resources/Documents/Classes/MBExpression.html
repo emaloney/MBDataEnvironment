@@ -37,17 +37,6 @@
 	
 	
 	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/expression">&nbsp;&nbsp;&nbsp;&nbsp;expression</option>
-	
-	<option value="//api/name/grammar">&nbsp;&nbsp;&nbsp;&nbsp;grammar</option>
-	
-	<option value="//api/name/tokens">&nbsp;&nbsp;&nbsp;&nbsp;tokens</option>
-	
-	<option value="//api/name/variableSpace">&nbsp;&nbsp;&nbsp;&nbsp;variableSpace</option>
-	
-	
 	
 	
 	<option value="class_methods">Class Methods</option>
@@ -102,10 +91,6 @@
 	
 	<option value="//api/name/evaluateTokens:inVariableSpace:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ evaluateTokens:inVariableSpace:error:</option>
 	
-	<option value="//api/name/expression:inVariableSpace:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ expression:inVariableSpace:usingGrammar:error:</option>
-	
-	<option value="//api/name/expression:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ expression:usingGrammar:error:</option>
-	
 	<option value="//api/name/numberFromValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ numberFromValue:</option>
 	
 	<option value="//api/name/objectFromTokens:error:">&nbsp;&nbsp;&nbsp;&nbsp;+ objectFromTokens:error:</option>
@@ -140,17 +125,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as strings">Evaluating expressions as strings</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as objects">Evaluating expressions as objects</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as objects with string interpolation">Evaluating expressions as objects with string interpolation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as objects without string interpolation">Evaluating expressions as objects without string interpolation</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as numeric values">Evaluating expressions as numeric values</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as boolean values">Evaluating expressions as boolean values</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Evaluating expressions as arrays">Evaluating expressions as arrays</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Value type coercion">Value type coercion</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Coercing and comparing values">Coercing and comparing values</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Representing expressions as objects">Representing expressions as objects</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Comparing values">Comparing values</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Mid-level token evaluation API">Mid-level token evaluation API</a></span></li>
 	
@@ -161,18 +146,6 @@
 
 
 
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expression">expression</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/grammar">grammar</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokens">tokens</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableSpace">variableSpace</a></span></li>
-	
-</ul></li>
 
 
 
@@ -227,10 +200,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateTokens:error:">evaluateTokens:error:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evaluateTokens:inVariableSpace:error:">evaluateTokens:inVariableSpace:error:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expression:inVariableSpace:usingGrammar:error:">expression:inVariableSpace:usingGrammar:error:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/expression:usingGrammar:error:">expression:usingGrammar:error:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberFromValue:">numberFromValue:</a></span></li>
 	
@@ -306,36 +275,36 @@ within attributes of MBML tags. For example, in this tag:</p>
 <pre><code>&lt;Label text="Hello, $userName" ... /&gt;
 </code></pre>
 
-<p>the <code>text</code> attribute contains an MBML <a href="#//api/name/expression">expression</a>. This particular <a href="#//api/name/expression">expression</a>
+<p>the <code>text</code> attribute contains an MBML expression. This particular expression
 consists of two parts: a string literal (&ldquo;<code>Hello,</code>&rdquo;) followed by a reference
 to an MBML variable called <code>userName</code>.</p>
 
 <p>When this label is displayed onscreen, the <code>text</code> attribute is evaluated as
-an MBML <a href="#//api/name/expression">expression</a>, and the text &ldquo;<code>$userName</code>&rdquo; is replaced by the value of
+an MBML expression, and the text &ldquo;<code>$userName</code>&rdquo; is replaced by the value of
 the <code>userName</code> MBML variable. If the value of <code>userName</code> is &ldquo;Cooper&rdquo;, then the
 label would display the text &ldquo;Hello, Cooper&rdquo;.</p>
 
 <p><strong>MBML Expression Evaluation Contexts</strong></p>
 
-<p>Depending on where an <a href="#//api/name/expression">expression</a> appears within MBML, it may be evaluated in a
-different context. The context determines how the <a href="#//api/name/expression">expression</a> is evaluated and
+<p>Depending on where an expression appears within MBML, it may be evaluated in a
+different context. The context determines how the expression is evaluated and
 what type of value will be returned.</p>
 
 <p>There are three evaluation contexts supported:</p>
 
 <ul>
 <li><p><em>object context</em> — An Objective-C object is returned as a result of
-evaluating the <a href="#//api/name/expression">expression</a>. For expressions that occur within MBML
+evaluating the expression. For expressions that occur within MBML
 attributes that end up displayed onscreen, objects are converted to strings
 prior to display.</p></li>
 <li><p><em>boolean context</em> — A boolean value is returned as the result of evaluating
-the <a href="#//api/name/expression">expression</a>.</p></li>
+the expression.</p></li>
 <li><p><em>numeric context</em> — An <code>NSNumber</code> is returned as a result of evaluating the
-<a href="#//api/name/expression">expression</a>.</p></li>
+expression.</p></li>
 </ul>
 
 
-<p>Most <a href="#//api/name/expression">expression</a> evaluations occur within the object context. However,
+<p>Most expression evaluations occur within the object context. However,
 expressions found within the MBML <code>if=""</code> attribute are evaluated in a
 boolean context.</p>
 
@@ -350,7 +319,7 @@ embedded within expressions. In this example:</p>
 </code></pre>
 
 <p>the text &ldquo;<code>The time now is</code>&rdquo; is a string literal, and &ldquo;<code>^currentTime()</code>&rdquo;
-is a call to an MBML function. When this <a href="#//api/name/expression">expression</a> is evaluated, the
+is a call to an MBML function. When this expression is evaluated, the
 MBML function named <code>currentTime</code> is executed, and the text
 &ldquo;<code>^currentTime()</code>&rdquo; is replaced with the result of calling that function.</p>
 
@@ -379,7 +348,7 @@ and, of course, the actual date and time.)</p>
 
 <p><strong>MBML Identifiers</strong></p>
 
-<p>When parsing a string of text, the <a href="#//api/name/expression">expression</a> evaluator looks for certain
+<p>When parsing a string of text, the expression evaluator looks for certain
 text patterns to identify variable references and function calls.</p>
 
 <p>MBML identifiers are names that begin with either an alphabetical character
@@ -400,8 +369,8 @@ parenthesis (&ldquo;<code>)</code>&rdquo;).</p>
 
 <p><strong>Escaping Special Characters</strong></p>
 
-<p>Within an <a href="#//api/name/expression">expression</a>, you may sometimes want to use characters within a
-string literal that would otherwise be interpreted as part of an <a href="#//api/name/expression">expression</a>.</p>
+<p>Within an expression, you may sometimes want to use characters within a
+string literal that would otherwise be interpreted as part of an expression.</p>
 
 <p>The following escape sequences can be used:</p>
 
@@ -426,14 +395,14 @@ properties of any Objective-C object through key value coding.</p>
 
 <p>For example, if an MBML variable exists called <code>daysOfWeek</code>, and that
 variable is an array containing the names of the days of the week starting
-with Monday, the following <a href="#//api/name/expression">expression</a> would yield the value &ldquo;Wednesday&rdquo;:</p>
+with Monday, the following expression would yield the value &ldquo;Wednesday&rdquo;:</p>
 
 <pre><code>$daysOfWeek[2]
 </code></pre>
 
 <p>Similarly, if an MBML variable exists called <code>monthNamesToNumbers</code>, and that
 variable is a dictionary containing a mapping of month names to the
-corresponding number of the month, the following <a href="#//api/name/expression">expression</a> would result
+corresponding number of the month, the following expression would result
 in the number <code>10</code>:</p>
 
 <pre><code>$monthNamesToNumbers[October]
@@ -546,15 +515,15 @@ be interpreted as part of the variable reference.</p>
 $(favorite color).length
 </code></pre>
 
-<p>The top <a href="#//api/name/expression">expression</a> uses the bracket quoted notation, which allows
-subreferences after the closing bracket. The bottom <a href="#//api/name/expression">expression</a> uses
+<p>The top expression uses the bracket quoted notation, which allows
+subreferences after the closing bracket. The bottom expression uses
 the parentheses quoted notation, which does not allow subreferences.</p>
 
 <p>Because subreferences are not allowed by the parentheses notation, any
 text that appears after the closing parenthesis will be considered the
 start of a new statement. In this case, since &ldquo;<code>.length</code>&rdquo; is not a valid
-variable reference, function call, or math <a href="#//api/name/expression">expression</a>, it is interpreted
-as a text literal by the <a href="#//api/name/expression">expression</a> evaluator.</p>
+variable reference, function call, or math expression, it is interpreted
+as a text literal by the expression evaluator.</p>
 
 <p>So while <code>$[favorite color].length</code> will return the length of the MBML
 variable called <code>favorite color</code>, <code>$(favorite color).length</code> will return
@@ -570,7 +539,7 @@ expressions. Unless parentheses are used to change the order of evaluation
 of math operators, C language operator precedence is used.</p>
 
 <p>Math expressions can be embedded in a string or object evaluation context
-by placing the <a href="#//api/name/expression">expression</a> within <code>#(</code> &hellip; <code>)</code>. In a numeric context, the
+by placing the expression within <code>#(</code> &hellip; <code>)</code>. In a numeric context, the
 opening <code>#(</code> and closing <code>)</code> can be omitted.</p>
 
 <p>For example, suppose the MBML variable <code>states</code> is an array containing the
@@ -626,8 +595,8 @@ whitespace.</p>
 						</ul>
 						
 						
-						<a title="Evaluating expressions as objects" name="task_Evaluating expressions as objects"></a>
-						<h3 class="subsubtitle task-title">Evaluating expressions as objects</h3>
+						<a title="Evaluating expressions as objects with string interpolation" name="task_Evaluating expressions as objects with string interpolation"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as objects with string interpolation</h3>
 
 						<ul class="task-list">
 							<li>
@@ -651,6 +620,32 @@ whitespace.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/asObject:inVariableSpace:defaultValue:error:">+&nbsp;asObject:inVariableSpace:defaultValue:error:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Evaluating expressions as objects without string interpolation" name="task_Evaluating expressions as objects without string interpolation"></a>
+						<h3 class="subsubtitle task-title">Evaluating expressions as objects without string interpolation</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asArray:">+&nbsp;asArray:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asArray:error:">+&nbsp;asArray:error:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/asArray:inVariableSpace:error:">+&nbsp;asArray:inVariableSpace:error:</a></code>
 	</span>
 	
 	
@@ -722,34 +717,8 @@ whitespace.</p>
 						</ul>
 						
 						
-						<a title="Evaluating expressions as arrays" name="task_Evaluating expressions as arrays"></a>
-						<h3 class="subsubtitle task-title">Evaluating expressions as arrays</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/asArray:">+&nbsp;asArray:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/asArray:error:">+&nbsp;asArray:error:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/asArray:inVariableSpace:error:">+&nbsp;asArray:inVariableSpace:error:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Coercing and comparing values" name="task_Coercing and comparing values"></a>
-						<h3 class="subsubtitle task-title">Coercing and comparing values</h3>
+						<a title="Value type coercion" name="task_Value type coercion"></a>
+						<h3 class="subsubtitle task-title">Value type coercion</h3>
 
 						<ul class="task-list">
 							<li>
@@ -770,7 +739,15 @@ whitespace.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Comparing values" name="task_Comparing values"></a>
+						<h3 class="subsubtitle task-title">Comparing values</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/value:isEqualTo:">+&nbsp;value:isEqualTo:</a></code>
 	</span>
@@ -781,50 +758,6 @@ whitespace.</p>
 		<code><a href="#//api/name/compareLeftValue:againstRightValue:">+&nbsp;compareLeftValue:againstRightValue:</a></code>
 	</span>
 	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Representing expressions as objects" name="task_Representing expressions as objects"></a>
-						<h3 class="subsubtitle task-title">Representing expressions as objects</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/expression:usingGrammar:error:">+&nbsp;expression:usingGrammar:error:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/expression:inVariableSpace:usingGrammar:error:">+&nbsp;expression:inVariableSpace:usingGrammar:error:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/expression">&nbsp;&nbsp;expression</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/variableSpace">&nbsp;&nbsp;variableSpace</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tokens">&nbsp;&nbsp;tokens</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/grammar">&nbsp;&nbsp;grammar</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -899,56 +832,6 @@ whitespace.</p>
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/expression" title="expression"></a>
-	<h3 class="subsubtitle method-title">expression</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *expression</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/grammar" title="grammar"></a>
-	<h3 class="subsubtitle method-title">grammar</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBExpressionGrammar *grammar</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tokens" title="tokens"></a>
-	<h3 class="subsubtitle method-title">tokens</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *tokens</code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/variableSpace" title="variableSpace"></a>
-	<h3 class="subsubtitle method-title">variableSpace</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBVariableSpace *variableSpace</code></div>
-
-    
-</div>
-						
-					</div>
-					
 					
 					
 					<div class="section section-methods">
@@ -960,10 +843,58 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asArray:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> without using string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an array of
+            objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The individual values encountered during the evaluation of the expression are
+returned in an array.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -971,10 +902,66 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asArray:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> without using string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an array of
+            objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The individual values encountered as a result of evaluating the expression
+are returned in an array.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -982,10 +969,74 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asArray:inVariableSpace:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> without using string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>space</em></dt>
+			<dd><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an array of
+            objects.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The individual values encountered as a result of evaluating the expression
+are returned in an array.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -993,10 +1044,51 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asBoolean:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1004,10 +1096,57 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asBoolean:defaultValue:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> defaultValue:(BOOL)<em>def</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1015,10 +1154,59 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asBoolean:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1026,10 +1214,73 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asBoolean:inVariableSpace:defaultValue:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>space</em></dt>
+			<dd><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1037,10 +1288,57 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asNumber:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Mathematical expressions may be used in the numeric context.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1048,10 +1346,63 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asNumber:defaultValue:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> defaultValue:(NSDecimalNumber *)<em>def</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Mathematical expressions may be used in the numeric context.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1059,10 +1410,65 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asNumber:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Mathematical expressions may be used in the numeric context.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1070,10 +1476,79 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asNumber:inVariableSpace:defaultValue:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>space</em></dt>
+			<dd><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Mathematical expressions may be used in the numeric context.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1081,10 +1556,70 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asObject:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> with string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an object
+            with string interpolation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
+
+<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values individually without them being coerced into a single string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1092,10 +1627,76 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asObject:defaultValue:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> with string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> defaultValue:(id)<em>def</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an object
+            with string interpolation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
+
+<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values individually without them being coerced into a single string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1103,10 +1704,78 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asObject:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> with string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an object
+            with string interpolation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
+
+<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values individually without them being coerced into a single string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1114,10 +1783,92 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asObject:inVariableSpace:defaultValue:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>object context</em> with string
+interpolation.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>space</em></dt>
+			<dd><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as an object
+            with string interpolation.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
+
+<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values individually without them being coerced into a single string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1125,10 +1876,50 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>string context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1136,10 +1927,56 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asString:defaultValue:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>string context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> defaultValue:(NSString *)<em>def</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1147,10 +1984,58 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>string context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1158,10 +2043,72 @@ whitespace.</p>
 	<h3 class="subsubtitle method-title">asString:inVariableSpace:defaultValue:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates the given expression in the <em>string context</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression to evaluate.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>space</em></dt>
+			<dd><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>def</em></dt>
+			<dd><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpression.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1193,8 +2140,8 @@ whitespace.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
-converting arbitrary object values into booleans.</p>
+		<p>Exposes the mechanism the expression evaluator uses for coercing arbitrary
+object values into booleans.</p>
 	</div>		
 	
     
@@ -1208,7 +2155,7 @@ converting arbitrary object values into booleans.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>val</em></dt>
-			<dd><p>the object being evaluated as a boolean</p></dd>
+			<dd><p>The object to interpret as a boolean</p></dd>
 		</dl>
 		
 	</div>
@@ -1217,7 +2164,7 @@ converting arbitrary object values into booleans.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>the boolean value of <code>val</code></p>
+		<p>The boolean representation of <code>val</code></p>
 	</div>
 	
 	
@@ -1245,8 +2192,8 @@ converting arbitrary object values into booleans.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
-comparing two objects.</p>
+		<p>Exposes the mechanism the expression evaluator uses to determine the relative
+order of two object values.</p>
 	</div>		
 	
     
@@ -1260,12 +2207,12 @@ comparing two objects.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>lValue</em></dt>
-			<dd><p>the left value of the comparison</p></dd>
+			<dd><p>The left value of the comparison</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>rValue</em></dt>
-			<dd><p>the right value of the comparison</p></dd>
+			<dd><p>The right value of the comparison</p></dd>
 		</dl>
 		
 	</div>
@@ -1274,12 +2221,9 @@ comparing two objects.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>NSOrderedAscending</code> if <code>lValue</code>
-            is considered less than <code>rValue</code>;
-            <code>NSOrderedDescending</code> if <code>lValue</code>
-            is considered greater than <code>rValue</code>;
-            <code>NSOrderedSame</code> if <code>lValue</code>
-            is considered equal to <code>rValue</code>.</p>
+		<p><code>NSOrderedAscending</code> if <code>lValue</code> is less than <code>rValue</code>;
+            <code>NSOrderedDescending</code> if <code>lValue</code> is greater than <code>rValue</code>;
+            <code>NSOrderedSame</code> if <code>lValue</code> is equal to <code>rValue</code>.</p>
 	</div>
 	
 	
@@ -1323,36 +2267,14 @@ comparing two objects.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/expression:inVariableSpace:usingGrammar:error:" title="expression:inVariableSpace:usingGrammar:error:"></a>
-	<h3 class="subsubtitle method-title">expression:inVariableSpace:usingGrammar:error:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>+ (instancetype)expression:(NSString *)<em>exprStr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/expression:usingGrammar:error:" title="expression:usingGrammar:error:"></a>
-	<h3 class="subsubtitle method-title">expression:usingGrammar:error:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>+ (instancetype)expression:(NSString *)<em>exprStr</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/numberFromValue:" title="numberFromValue:"></a>
 	<h3 class="subsubtitle method-title">numberFromValue:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
-converting arbitrary object values into NSDecimalNumber instances.</p>
+		<p>Exposes the mechanism the expression evaluator uses for coercing arbitrary
+object values into numbers.</p>
 	</div>		
 	
     
@@ -1366,7 +2288,7 @@ converting arbitrary object values into NSDecimalNumber instances.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>val</em></dt>
-			<dd><p>the object being evaluated as an NSDecimalNumber</p></dd>
+			<dd><p>The object to interpret as a number</p></dd>
 		</dl>
 		
 	</div>
@@ -1375,13 +2297,10 @@ converting arbitrary object values into NSDecimalNumber instances.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>if <code>val</code> can be interpreted as a number,
-            the return value is an <code>NSDecimalNumber</code>
-            instance representing that number. If the value could
-            not be interpreted as a decimal number, or if the
-            resulting <code>NSDecimalNumber</code> is equal to
-            <code>[NSNumber notANumber]</code>, <code>nil</code>
-            is returned.</p>
+		<p>If <code>val</code> can be interpreted as a number, the return value is an
+            <code>NSDecimalNumber</code> containing that number. If <code>val</code> cannot be
+            interpreted as a number, or if the resulting number is equal to
+            [<code>&lt;code&gt;NSNumber notANumber&lt;/code&gt;</code>]<code>,</code>nil` will be returned.</p>
 	</div>
 	
 	
@@ -1431,8 +2350,8 @@ converting arbitrary object values into NSDecimalNumber instances.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
-converting boolean values into strings.</p>
+		<p>Exposes the mechanism the expression evaluator uses for representing boolean
+values as strings.</p>
 	</div>		
 	
     
@@ -1446,7 +2365,7 @@ converting boolean values into strings.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>val</em></dt>
-			<dd><p>the boolean value</p></dd>
+			<dd><p>The boolean value</p></dd>
 		</dl>
 		
 	</div>
@@ -1455,9 +2374,8 @@ converting boolean values into strings.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>the string representing the boolean value passed in; will be
-            either <code>kMBMLBooleanStringTrue</code> or
-            <code>kMBMLBooleanStringFalse</code>.</p>
+		<p>The string representation of <code>val</code>; either <code>kMBMLBooleanStringTrue</code>
+            or <code>kMBMLBooleanStringFalse</code>.</p>
 	</div>
 	
 	
@@ -1507,8 +2425,8 @@ converting boolean values into strings.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Exposes the mechanism the <a href="#//api/name/expression">expression</a> evaluator engine uses for
-comparing two objects for equality.</p>
+		<p>Exposes the mechanism the expression evaluator uses for determining if two
+objects have equal values.</p>
 	</div>		
 	
     
@@ -1522,12 +2440,12 @@ comparing two objects for equality.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>lValue</em></dt>
-			<dd><p>the left value of the comparison</p></dd>
+			<dd><p>The left value of the comparison</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>rValue</em></dt>
-			<dd><p>the right value of the comparison</p></dd>
+			<dd><p>The right value of the comparison</p></dd>
 		</dl>
 		
 	</div>
@@ -1536,11 +2454,9 @@ comparing two objects for equality.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>[lValue isEqual:rValue];</code> if <code>lValue</code>
-and <code>rValue</code> are of the same types. Otherwise this method
-falls back on
-<code>[MBExpression compareLeftValue:lValue againstRightValue:rValue]
-== NSOrderedSame;</code></p>
+		<p>The return value of <code>[</code><code>lValue isEqual:rValue</code><code>]</code> if
+            <code>lValue</code> and <code>rValue</code> are of the same type. Otherwise, falls back on
+            <code>[MBExpression compareLeftValue:lValue againstRightValue:rValue]</code>.</p>
 	</div>
 	
 	
@@ -1578,7 +2494,7 @@ falls back on
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-15)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

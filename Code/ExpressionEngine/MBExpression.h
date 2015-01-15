@@ -307,159 +307,480 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 */
 @interface MBExpression : NSObject
 
-/*******************************************************************************
- @name Evaluating expressions as strings
- ******************************************************************************/
-
-// returns an NSString by expanding the references in the expression
-+ (NSString*) asString:(NSString*)expr;
-+ (NSString*) asString:(NSString*)expr error:(MBExpressionError**)errPtr;
-+ (NSString*) asString:(NSString*)expr defaultValue:(NSString*)def;
-+ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(MBExpressionError**)errPtr;
-
-/*******************************************************************************
- @name Evaluating expressions as objects
- ******************************************************************************/
-
-// if the expression refers to a single object, it is returned; if the
-// expression refers to multiple objects, the objects are converted to
-// strings and concatenated, and the resulting string is returned
-+ (id) asObject:(NSString*)expr;
-+ (id) asObject:(NSString*)expr error:(MBExpressionError**)errPtr;
-+ (id) asObject:(NSString*)expr defaultValue:(id)def;
-+ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(MBExpressionError**)errPtr;
-
-/*******************************************************************************
- @name Evaluating expressions as numeric values
- ******************************************************************************/
-
-// returns an NSDecimalNumber by expanding the references in the expression and
-// attempting to interpret the result as a number
-+ (NSDecimalNumber*) asNumber:(NSString*)expr;
-+ (NSDecimalNumber*) asNumber:(NSString*)expr error:(MBExpressionError**)errPtr;
-+ (NSDecimalNumber*) asNumber:(NSString*)expr defaultValue:(NSDecimalNumber*)def;
-+ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(MBExpressionError**)errPtr;
-
-/*******************************************************************************
- @name Evaluating expressions as boolean values
- ******************************************************************************/
-
-// interprets the expression in a boolean context and returns the result
-+ (BOOL) asBoolean:(NSString*)expr;
-+ (BOOL) asBoolean:(NSString*)expr error:(MBExpressionError**)errPtr;
-+ (BOOL) asBoolean:(NSString*)expr defaultValue:(BOOL)def;
-+ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(MBExpressionError**)errPtr;
-
-/*******************************************************************************
- @name Evaluating expressions as arrays
- ******************************************************************************/
-
-// returns an array containing the objects referred to by an expression. similar
-// to asObject:, except that each distinct variable references and
-// literal expression is represented as a separate item in the returned array 
-+ (NSArray*) asArray:(NSString*)expr;
-+ (NSArray*) asArray:(NSString*)expr error:(MBExpressionError**)errPtr;
-+ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(MBExpressionError**)errPtr;
-
-/*******************************************************************************
- @name Coercing and comparing values
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Evaluating expressions as strings
+/*!    @name Evaluating expressions as strings                                */
+/*----------------------------------------------------------------------------*/
 
 /*!
- Exposes the mechanism the expression evaluator engine uses for
- converting arbitrary object values into booleans.
+ Evaluates the given expression in the *string context*.
  
- @param     val the object being evaluated as a boolean
+ @param     expr The expression to evaluate.
  
- @return    the boolean value of <code>val</code>
+ @return    The result of evaluating the expression `expr` as a string.
+ */
++ (NSString*) asString:(NSString*)expr;
+
+/*!
+ Evaluates the given expression in the *string context*.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as a string.
+ */
++ (NSString*) asString:(NSString*)expr error:(MBExpressionError**)errPtr;
+
+/*!
+ Evaluates the given expression in the *string context*.
+
+ @param     expr The expression to evaluate.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @return    The result of evaluating the expression `expr` as a string.
+ */
++ (NSString*) asString:(NSString*)expr defaultValue:(NSString*)def;
+
+/*!
+ Evaluates the given expression in the *string context*.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     space The `MBVariableSpace` instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active `MBEnvironment`. Must not
+            be `nil`.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as a string.
+ */
++ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(MBExpressionError**)errPtr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Evaluating expressions as objects with string interpolation
+/*!    @name Evaluating expressions as objects with string interpolation      */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Evaluates the given expression in the *object context* with string
+ interpolation.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+
+ If an expression contains a reference to only a single value (and does not
+ also contain any text literals), the return value will be whatever `NSObject`
+ instance is referenced by the expression.
+
+ With string interpolation, if an expression contains references to multiple
+ discrete values or if it contains one or more text literals, those values are
+ coerced into strings and concatenated before being returned as a single
+ `NSString` instance.
+
+ You can also use one of the `asArray:` method variants to retrieve multiple
+ values individually without them being coerced into a single string.
+
+ @param     expr The expression to evaluate.
+
+ @return    The result of evaluating the expression `expr` as an object
+            with string interpolation.
+ */
++ (id) asObject:(NSString*)expr;
+
+/*!
+ Evaluates the given expression in the *object context* with string
+ interpolation.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+ 
+ If an expression contains a reference to only a single value (and does not
+ also contain any text literals), the return value will be whatever `NSObject`
+ instance is referenced by the expression.
+
+ With string interpolation, if an expression contains references to multiple
+ discrete values or if it contains one or more text literals, those values are
+ coerced into strings and concatenated before being returned as a single
+ `NSString` instance.
+ 
+ You can also use one of the `asArray:` method variants to retrieve multiple
+ values individually without them being coerced into a single string.
+
+ @param     expr The expression to evaluate.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as an object
+            with string interpolation.
+ */
++ (id) asObject:(NSString*)expr error:(MBExpressionError**)errPtr;
+
+/*!
+ Evaluates the given expression in the *object context* with string
+ interpolation.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+
+ If an expression contains a reference to only a single value (and does not
+ also contain any text literals), the return value will be whatever `NSObject`
+ instance is referenced by the expression.
+
+ With string interpolation, if an expression contains references to multiple
+ discrete values or if it contains one or more text literals, those values are
+ coerced into strings and concatenated before being returned as a single
+ `NSString` instance.
+
+ You can also use one of the `asArray:` method variants to retrieve multiple
+ values individually without them being coerced into a single string.
+
+ @param     expr The expression to evaluate.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @return    The result of evaluating the expression `expr` as an object
+            with string interpolation.
+ */
++ (id) asObject:(NSString*)expr defaultValue:(id)def;
+
+/*!
+ Evaluates the given expression in the *object context* with string
+ interpolation.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+
+ If an expression contains a reference to only a single value (and does not
+ also contain any text literals), the return value will be whatever `NSObject`
+ instance is referenced by the expression.
+
+ With string interpolation, if an expression contains references to multiple
+ discrete values or if it contains one or more text literals, those values are
+ coerced into strings and concatenated before being returned as a single
+ `NSString` instance.
+
+ You can also use one of the `asArray:` method variants to retrieve multiple
+ values individually without them being coerced into a single string.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     space The `MBVariableSpace` instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active `MBEnvironment`. Must not
+            be `nil`.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as an object
+            with string interpolation.
+ */
++ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(MBExpressionError**)errPtr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Evaluating expressions as objects without string interpolation
+/*!    @name Evaluating expressions as objects without string interpolation   */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Evaluates the given expression in the *object context* without using string
+ interpolation.
+
+ The individual values encountered during the evaluation of the expression are
+ returned in an array.
+
+ @param     expr The expression to evaluate.
+
+ @return    The result of evaluating the expression `expr` as an array of
+            objects.
+ */
++ (NSArray*) asArray:(NSString*)expr;
+
+/*!
+ Evaluates the given expression in the *object context* without using string
+ interpolation.
+
+ The individual values encountered as a result of evaluating the expression
+ are returned in an array.
+
+ @param     expr The expression to evaluate.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as an array of
+            objects.
+ */
++ (NSArray*) asArray:(NSString*)expr error:(MBExpressionError**)errPtr;
+
+/*!
+ Evaluates the given expression in the *object context* without using string
+ interpolation.
+
+ The individual values encountered as a result of evaluating the expression
+ are returned in an array.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     space The `MBVariableSpace` instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active `MBEnvironment`. Must not
+            be `nil`.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as an array of
+            objects.
+ */
++ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(MBExpressionError**)errPtr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Evaluating expressions as numeric values
+/*!    @name Evaluating expressions as numeric values                         */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Evaluates the given expression in the *numeric context*, coercing the result
+ into a number if necessary (and possible).
+ 
+ Mathematical expressions may be used in the numeric context.
+
+ @param     expr The expression to evaluate.
+
+ @return    The result of evaluating the expression `expr` as a numeric
+            expression.
+ */
++ (NSDecimalNumber*) asNumber:(NSString*)expr;
+
+/*!
+ Evaluates the given expression in the *numeric context*, coercing the result
+ into a number if necessary (and possible).
+ 
+ Mathematical expressions may be used in the numeric context.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as a numeric
+            expression.
+ */
++ (NSDecimalNumber*) asNumber:(NSString*)expr error:(MBExpressionError**)errPtr;
+
+/*!
+ Evaluates the given expression in the *numeric context*, coercing the result
+ into a number if necessary (and possible).
+
+ Mathematical expressions may be used in the numeric context.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @return    The result of evaluating the expression `expr` as a numeric
+            expression.
+ */
++ (NSDecimalNumber*) asNumber:(NSString*)expr defaultValue:(NSDecimalNumber*)def;
+
+/*!
+ Evaluates the given expression in the *numeric context*, coercing the result
+ into a number if necessary (and possible).
+
+ Mathematical expressions may be used in the numeric context.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     space The `MBVariableSpace` instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active `MBEnvironment`. Must not
+            be `nil`.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as a numeric
+            expression.
+ */
++ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(MBExpressionError**)errPtr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Evaluating expressions as boolean values
+/*!    @name Evaluating expressions as boolean values                         */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Evaluates the given expression in the *boolean context*.
+
+ @param     expr The expression to evaluate.
+
+ @return    The result of evaluating the expression `expr` as a boolean 
+            expression.
+ */
++ (BOOL) asBoolean:(NSString*)expr;
+
+/*!
+ Evaluates the given expression in the *boolean context*.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as a boolean 
+            expression.
+ */
++ (BOOL) asBoolean:(NSString*)expr error:(MBExpressionError**)errPtr;
+
+/*!
+ Evaluates the given expression in the *boolean context*.
+
+ @param     expr The expression to evaluate.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @return    The result of evaluating the expression `expr` as a boolean 
+            expression.
+ */
++ (BOOL) asBoolean:(NSString*)expr defaultValue:(BOOL)def;
+
+/*!
+ Evaluates the given expression in the *boolean context*.
+
+ @param     expr The expression to evaluate.
+ 
+ @param     space The `MBVariableSpace` instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active `MBEnvironment`. Must not
+            be `nil`.
+
+ @param     def A default return value to use if the method would
+            otherwise return `nil`.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
+ @return    The result of evaluating the expression `expr` as a boolean 
+            expression.
+ */
++ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(MBExpressionError**)errPtr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Value type coercion
+/*!    @name Value type coercion                                              */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Exposes the mechanism the expression evaluator uses for coercing arbitrary
+ object values into booleans.
+ 
+ @param     val The object to interpret as a boolean
+ 
+ @return    The boolean representation of `val`
  */
 + (BOOL) booleanFromValue:(id)val;
 
 /*!
- Exposes the mechanism the expression evaluator engine uses for
- converting boolean values into strings.
+ Exposes the mechanism the expression evaluator uses for representing boolean
+ values as strings.
+
+ @param     val The boolean value
  
- @param     val the boolean value
- 
- @return    the string representing the boolean value passed in; will be
-            either <code>kMBMLBooleanStringTrue</code> or
-            <code>kMBMLBooleanStringFalse</code>.
+ @return    The string representation of `val`; either `kMBMLBooleanStringTrue`
+            or `kMBMLBooleanStringFalse`.
  */
 + (NSString*) stringFromBoolean:(BOOL)val;
 
 /*!
- Exposes the mechanism the expression evaluator engine uses for
- converting arbitrary object values into NSDecimalNumber instances.
+ Exposes the mechanism the expression evaluator uses for coercing arbitrary
+ object values into numbers.
  
- @param     val the object being evaluated as an NSDecimalNumber
+ @param     val The object to interpret as a number
  
- @return    if <code>val</code> can be interpreted as a number,
-            the return value is an <code>NSDecimalNumber</code> 
-            instance representing that number. If the value could
-            not be interpreted as a decimal number, or if the
-            resulting <code>NSDecimalNumber</code> is equal to
-            <code>[NSNumber notANumber]</code>, <code>nil</code>
-            is returned.
+ @return    If `val` can be interpreted as a number, the return value is an
+            `NSDecimalNumber` containing that number. If `val` cannot be 
+            interpreted as a number, or if the resulting number is equal to
+            [`<code>NSNumber notANumber</code>`]`, `nil` will be returned.
  */
 + (NSDecimalNumber*) numberFromValue:(id)val;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Comparing values
+/*!    @name Comparing values                                                 */
+/*----------------------------------------------------------------------------*/
+
 /*!
- Exposes the mechanism the expression evaluator engine uses for
- comparing two objects for equality.
+ Exposes the mechanism the expression evaluator uses for determining if two
+ objects have equal values.
  
- @param     lValue the left value of the comparison
+ @param     lValue The left value of the comparison
  
- @param     rValue the right value of the comparison
- 
- @return    <code>[lValue isEqual:rValue];</code> if <code>lValue</code>
- and <code>rValue</code> are of the same types. Otherwise this method
- falls back on
- <code>[MBExpression compareLeftValue:lValue againstRightValue:rValue] 
- == NSOrderedSame;</code>
+ @param     rValue The right value of the comparison
+
+ @return    The return value of `[`<code>lValue isEqual:rValue</code>`]` if
+            `lValue` and `rValue` are of the same type. Otherwise, falls back on
+            `[MBExpression compareLeftValue:lValue againstRightValue:rValue]`.
  */
 + (BOOL) value:(id)lValue isEqualTo:(id)rValue;
 
 /*!
- Exposes the mechanism the expression evaluator engine uses for
- comparing two objects.
+ Exposes the mechanism the expression evaluator uses to determine the relative
+ order of two object values.
  
- @param     lValue the left value of the comparison
+ @param     lValue The left value of the comparison
  
- @param     rValue the right value of the comparison
+ @param     rValue The right value of the comparison
  
- @return    <code>NSOrderedAscending</code> if <code>lValue</code>
-            is considered less than <code>rValue</code>;
-            <code>NSOrderedDescending</code> if <code>lValue</code>
-            is considered greater than <code>rValue</code>;
-            <code>NSOrderedSame</code> if <code>lValue</code>
-            is considered equal to <code>rValue</code>.
+ @return    `NSOrderedAscending` if `lValue` is less than `rValue`;
+            `NSOrderedDescending` if `lValue` is greater than `rValue`;
+            `NSOrderedSame` if `lValue` is equal to `rValue`.
  */
 + (NSComparisonResult) compareLeftValue:(id)lValue againstRightValue:(id)rValue;
 
-/*******************************************************************************
- @name Representing expressions as objects
- ******************************************************************************/
-
-+ (instancetype) expression:(NSString*)exprStr
-               usingGrammar:(MBExpressionGrammar*)grammar
-                      error:(MBExpressionError**)errPtr;
-
-+ (instancetype) expression:(NSString*)exprStr
-            inVariableSpace:(MBVariableSpace*)space
-               usingGrammar:(MBExpressionGrammar*)grammar
-                      error:(MBExpressionError**)errPtr;
-
-@property(nonatomic, readonly) NSString* expression;
-
-@property(nonatomic, readonly) MBVariableSpace* variableSpace;
-
-@property(nonatomic, readonly) NSArray* tokens;
-
-@property(nonatomic, readonly) MBExpressionGrammar* grammar;
-
-/*******************************************************************************
- @name Mid-level token evaluation API
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Mid-level token evaluation API
+/*!    @name Mid-level token evaluation API                                   */
+/*----------------------------------------------------------------------------*/
 
 + (id) objectFromTokens:(NSArray*)tokens error:(MBExpressionError**)errPtr;
 + (id) objectFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(MBExpressionError**)errPtr;
@@ -470,9 +791,10 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 + (BOOL) booleanFromTokens:(NSArray*)tokens error:(MBExpressionError**)errPtr;
 + (BOOL) booleanFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(MBExpressionError**)errPtr;
 
-/*******************************************************************************
- @name Low-level token evaluation API
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Low-level token evaluation API
+/*!    @name Low-level token evaluation API                                   */
+/*----------------------------------------------------------------------------*/
 
 + (NSArray*) evaluateTokens:(NSArray*)tokens error:(MBExpressionError**)errPtr;
 + (NSArray*) evaluateTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space error:(MBExpressionError**)errPtr;

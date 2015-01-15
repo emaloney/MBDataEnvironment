@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -236,6 +238,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -522,6 +526,15 @@
 					
                     
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class provides an interface for converting strings into values of
+various types.</p>
+					</div>
+					
+					
 					
 					
 					
@@ -1304,10 +1317,55 @@
 	<h3 class="subsubtitle method-title">activityIndicatorViewStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIActivityIndicatorViewStyle</code> value using the
+<a href="#//api/name/activityIndicatorViewStyleFromString:"><code>activityIndicatorViewStyleFromString:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIActivityIndicatorViewStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIActivityIndicatorViewStyleWhite</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1315,10 +1373,65 @@
 	<h3 class="subsubtitle method-title">activityIndicatorViewStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIActivityIndicatorViewStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIActivityIndicatorViewStyle</code> value that corresponds with
+            <code>str</code>. Returns <code>UIActivityIndicatorViewStyleWhite</code> and logs an error
+            to the console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLActivityIndicatorViewStyleWhiteLarge</code> (&ldquo;whiteLarge&rdquo;) = <code>UIActivityIndicatorViewStyleWhiteLarge</code></li>
+<li><code>kMBMLActivityIndicatorViewStyleWhite</code> (&ldquo;white&rdquo;) = <code>UIActivityIndicatorViewStyleWhite</code></li>
+<li><code>kMBMLActivityIndicatorViewStyleGray</code> (&ldquo;gray&rdquo;) = <code>UIActivityIndicatorViewStyleGray</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1326,10 +1439,72 @@
 	<h3 class="subsubtitle method-title">activityIndicatorViewStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIActivityIndicatorViewStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIActivityIndicatorViewStyle</code> value that corresponds with
+            <code>str</code>. Returns <code>UIActivityIndicatorViewStyleWhite</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLActivityIndicatorViewStyleWhiteLarge</code> (&ldquo;whiteLarge&rdquo;) = <code>UIActivityIndicatorViewStyleWhiteLarge</code></li>
+<li><code>kMBMLActivityIndicatorViewStyleWhite</code> (&ldquo;white&rdquo;) = <code>UIActivityIndicatorViewStyleWhite</code></li>
+<li><code>kMBMLActivityIndicatorViewStyleGray</code> (&ldquo;gray&rdquo;) = <code>UIActivityIndicatorViewStyleGray</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1337,10 +1512,55 @@
 	<h3 class="subsubtitle method-title">barButtonItemStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIBarButtonItemStyle</code> value using the <a href="#//api/name/barButtonItemStyleFromString:"><code>barButtonItemStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItemStyle)barButtonItemStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarButtonItemStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIBarButtonItemStylePlain</code> and logs an error to the console
+            if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1348,10 +1568,65 @@
 	<h3 class="subsubtitle method-title">barButtonItemStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIBarButtonItemStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarButtonItemStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIBarButtonItemStylePlain</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLBarButtonItemStylePlain</code> (&ldquo;plain&rdquo;) = <code>UIBarButtonItemStylePlain</code></li>
+<li><strong>Deprecated:</strong> <code>kMBMLBarButtonItemStyleBordered</code> (&ldquo;bordered&rdquo;) = <code>UIBarButtonItemStyleBordered</code></li>
+<li><code>kMBMLBarButtonItemStyleDone</code> (&ldquo;done&rdquo;) = <code>UIBarButtonItemStyleDone</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1359,10 +1634,71 @@
 	<h3 class="subsubtitle method-title">barButtonItemStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIBarButtonItemStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarButtonItemStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIBarButtonItemStylePlain</code> if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLBarButtonItemStylePlain</code> (&ldquo;plain&rdquo;) = <code>UIBarButtonItemStylePlain</code></li>
+<li><strong>Deprecated:</strong> <code>kMBMLBarButtonItemStyleBordered</code> (&ldquo;bordered&rdquo;) = <code>UIBarButtonItemStyleBordered</code></li>
+<li><code>kMBMLBarButtonItemStyleDone</code> (&ldquo;done&rdquo;) = <code>UIBarButtonItemStyleDone</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1370,10 +1706,55 @@
 	<h3 class="subsubtitle method-title">barButtonSystemItemFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIBarButtonSystemItem</code> value using the <a href="#//api/name/barButtonSystemItemFromString:"><code>barButtonSystemItemFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarButtonSystemItem)barButtonSystemItemFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarButtonSystemItem</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIBarButtonSystemItemDone</code> and logs an error to the console
+            if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1381,10 +1762,78 @@
 	<h3 class="subsubtitle method-title">barButtonSystemItemFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<ul>
+<li><code>kMBMLBarButtonSystemItemDone</code> (&ldquo;done&rdquo;) = <code>UIBarButtonSystemItemDone</code></li>
+<li><code>kMBMLBarButtonSystemItemCancel</code> (&ldquo;cancel&rdquo;) = <code>UIBarButtonSystemItemCancel</code></li>
+<li><code>kMBMLBarButtonSystemItemEdit</code> (&ldquo;edit&rdquo;) = <code>UIBarButtonSystemItemEdit</code></li>
+<li><code>kMBMLBarButtonSystemItemSave</code> (&ldquo;save&rdquo;) = <code>UIBarButtonSystemItemSave</code></li>
+<li><code>kMBMLBarButtonSystemItemAdd</code> (&ldquo;add&rdquo;) = <code>UIBarButtonSystemItemAdd</code></li>
+<li><code>kMBMLBarButtonSystemItemFlexibleSpace</code> (&ldquo;flexibleSpace&rdquo;) = <code>UIBarButtonSystemItemFlexibleSpace</code></li>
+<li><code>kMBMLBarButtonSystemItemFixedSpace</code> (&ldquo;fixedSpace&rdquo;) = <code>UIBarButtonSystemItemFixedSpace</code></li>
+<li><code>kMBMLBarButtonSystemItemCompose</code> (&ldquo;compose&rdquo;) = <code>UIBarButtonSystemItemCompose</code></li>
+<li><code>kMBMLBarButtonSystemItemReply</code> (&ldquo;reply&rdquo;) = <code>UIBarButtonSystemItemReply</code></li>
+<li><code>kMBMLBarButtonSystemItemAction</code> (&ldquo;action&rdquo;) = <code>UIBarButtonSystemItemAction</code></li>
+<li><code>kMBMLBarButtonSystemItemOrganize</code> (&ldquo;organize&rdquo;) = <code>UIBarButtonSystemItemOrganize</code></li>
+<li><code>kMBMLBarButtonSystemItemBookmarks</code> (&ldquo;bookmarks&rdquo;) = <code>UIBarButtonSystemItemBookmarks</code></li>
+<li><code>kMBMLBarButtonSystemItemSearch</code> (&ldquo;search&rdquo;) = <code>UIBarButtonSystemItemSearch</code></li>
+<li><code>kMBMLBarButtonSystemItemRefresh</code> (&ldquo;refresh&rdquo;) = <code>UIBarButtonSystemItemRefresh</code></li>
+<li><code>kMBMLBarButtonSystemItemStop</code> (&ldquo;stop&rdquo;) = <code>UIBarButtonSystemItemStop</code></li>
+<li><code>kMBMLBarButtonSystemItemCamera</code> (&ldquo;camera&rdquo;) = <code>UIBarButtonSystemItemCamera</code></li>
+<li><code>kMBMLBarButtonSystemItemTrash</code> (&ldquo;trash&rdquo;) = <code>UIBarButtonSystemItemTrash</code></li>
+<li><code>kMBMLBarButtonSystemItemPlay</code> (&ldquo;play&rdquo;) = <code>UIBarButtonSystemItemPlay</code></li>
+<li><code>kMBMLBarButtonSystemItemPause</code> (&ldquo;pause&rdquo;) = <code>UIBarButtonSystemItemPause</code></li>
+<li><code>kMBMLBarButtonSystemItemRewind</code> (&ldquo;rewind&rdquo;) = <code>UIBarButtonSystemItemRewind</code></li>
+<li><code>kMBMLBarButtonSystemItemFastForward</code> (&ldquo;fastForward&rdquo;) = <code>UIBarButtonSystemItemFastForward</code></li>
+<li><code>kMBMLBarButtonSystemItemUndo</code> (&ldquo;undo&rdquo;) = <code>UIBarButtonSystemItemUndo</code></li>
+<li><code>kMBMLBarButtonSystemItemRedo</code> (&ldquo;redo&rdquo;) = <code>UIBarButtonSystemItemRedo</code></li>
+<li><code>kMBMLBarButtonSystemItemPageCurl</code> (&ldquo;pageCurl&rdquo;) = <code>UIBarButtonSystemItemPageCurl</code></li>
+</ul>
+
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarButtonSystemItem</code> value that corresponds with <code>str</code>.
+            Returns <code>UIBarButtonSystemItemDone</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1392,10 +1841,92 @@
 	<h3 class="subsubtitle method-title">barButtonSystemItemFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIBarButtonSystemItem</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarButtonSystemItem</code> value that corresponds with <code>str</code>.
+            Returns <code>UIBarButtonSystemItemDone</code> if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLBarButtonSystemItemDone</code> (&ldquo;done&rdquo;) = <code>UIBarButtonSystemItemDone</code></li>
+<li><code>kMBMLBarButtonSystemItemCancel</code> (&ldquo;cancel&rdquo;) = <code>UIBarButtonSystemItemCancel</code></li>
+<li><code>kMBMLBarButtonSystemItemEdit</code> (&ldquo;edit&rdquo;) = <code>UIBarButtonSystemItemEdit</code></li>
+<li><code>kMBMLBarButtonSystemItemSave</code> (&ldquo;save&rdquo;) = <code>UIBarButtonSystemItemSave</code></li>
+<li><code>kMBMLBarButtonSystemItemAdd</code> (&ldquo;add&rdquo;) = <code>UIBarButtonSystemItemAdd</code></li>
+<li><code>kMBMLBarButtonSystemItemFlexibleSpace</code> (&ldquo;flexibleSpace&rdquo;) = <code>UIBarButtonSystemItemFlexibleSpace</code></li>
+<li><code>kMBMLBarButtonSystemItemFixedSpace</code> (&ldquo;fixedSpace&rdquo;) = <code>UIBarButtonSystemItemFixedSpace</code></li>
+<li><code>kMBMLBarButtonSystemItemCompose</code> (&ldquo;compose&rdquo;) = <code>UIBarButtonSystemItemCompose</code></li>
+<li><code>kMBMLBarButtonSystemItemReply</code> (&ldquo;reply&rdquo;) = <code>UIBarButtonSystemItemReply</code></li>
+<li><code>kMBMLBarButtonSystemItemAction</code> (&ldquo;action&rdquo;) = <code>UIBarButtonSystemItemAction</code></li>
+<li><code>kMBMLBarButtonSystemItemOrganize</code> (&ldquo;organize&rdquo;) = <code>UIBarButtonSystemItemOrganize</code></li>
+<li><code>kMBMLBarButtonSystemItemBookmarks</code> (&ldquo;bookmarks&rdquo;) = <code>UIBarButtonSystemItemBookmarks</code></li>
+<li><code>kMBMLBarButtonSystemItemSearch</code> (&ldquo;search&rdquo;) = <code>UIBarButtonSystemItemSearch</code></li>
+<li><code>kMBMLBarButtonSystemItemRefresh</code> (&ldquo;refresh&rdquo;) = <code>UIBarButtonSystemItemRefresh</code></li>
+<li><code>kMBMLBarButtonSystemItemStop</code> (&ldquo;stop&rdquo;) = <code>UIBarButtonSystemItemStop</code></li>
+<li><code>kMBMLBarButtonSystemItemCamera</code> (&ldquo;camera&rdquo;) = <code>UIBarButtonSystemItemCamera</code></li>
+<li><code>kMBMLBarButtonSystemItemTrash</code> (&ldquo;trash&rdquo;) = <code>UIBarButtonSystemItemTrash</code></li>
+<li><code>kMBMLBarButtonSystemItemPlay</code> (&ldquo;play&rdquo;) = <code>UIBarButtonSystemItemPlay</code></li>
+<li><code>kMBMLBarButtonSystemItemPause</code> (&ldquo;pause&rdquo;) = <code>UIBarButtonSystemItemPause</code></li>
+<li><code>kMBMLBarButtonSystemItemRewind</code> (&ldquo;rewind&rdquo;) = <code>UIBarButtonSystemItemRewind</code></li>
+<li><code>kMBMLBarButtonSystemItemFastForward</code> (&ldquo;fastForward&rdquo;) = <code>UIBarButtonSystemItemFastForward</code></li>
+<li><code>kMBMLBarButtonSystemItemUndo</code> (&ldquo;undo&rdquo;) = <code>UIBarButtonSystemItemUndo</code></li>
+<li><code>kMBMLBarButtonSystemItemRedo</code> (&ldquo;redo&rdquo;) = <code>UIBarButtonSystemItemRedo</code></li>
+<li><code>kMBMLBarButtonSystemItemPageCurl</code> (&ldquo;pageCurl&rdquo;) = <code>UIBarButtonSystemItemPageCurl</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1403,10 +1934,55 @@
 	<h3 class="subsubtitle method-title">barStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIBarStyle</code> value using the <a href="#//api/name/barStyleFromString:"><code>barStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarStyle)barStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIBarStyleDefault</code> and logs an error to the console
+            if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1414,10 +1990,66 @@
 	<h3 class="subsubtitle method-title">barStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIBarStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarStyle)barStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIBarStyleDefault</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLBarStyleDefault</code> (&ldquo;default&rdquo;) = <code>UIBarStyleDefault</code></li>
+<li><code>kMBMLBarStyleBlack</code> (&ldquo;black&rdquo;) = <code>UIBarStyleBlack</code></li>
+<li><code>kMBMLBarStyleBlackOpaque</code> (&ldquo;blackOpaque&rdquo;) = <code>UIBarStyleBlackOpaque</code></li>
+<li><code>kMBMLBarStyleBlackTranslucent</code> (&ldquo;blackTranslucent&rdquo;) = <code>UIBarStyleBlackTranslucent</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1425,10 +2057,72 @@
 	<h3 class="subsubtitle method-title">barStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIBarStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIBarStyle)barStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIBarStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIBarStyleDefault</code> if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLBarStyleDefault</code> (&ldquo;default&rdquo;) = <code>UIBarStyleDefault</code></li>
+<li><code>kMBMLBarStyleBlack</code> (&ldquo;black&rdquo;) = <code>UIBarStyleBlack</code></li>
+<li><code>kMBMLBarStyleBlackOpaque</code> (&ldquo;blackOpaque&rdquo;) = <code>UIBarStyleBlackOpaque</code></li>
+<li><code>kMBMLBarStyleBlackTranslucent</code> (&ldquo;blackTranslucent&rdquo;) = <code>UIBarStyleBlackTranslucent</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1436,10 +2130,55 @@
 	<h3 class="subsubtitle method-title">buttonTypeFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIButtonType</code> value using the <a href="#//api/name/buttonTypeFromString:"><code>buttonTypeFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIButtonType)buttonTypeFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIButtonType</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIButtonTypeCustom</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1447,10 +2186,68 @@
 	<h3 class="subsubtitle method-title">buttonTypeFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIButtonType</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIButtonType)buttonTypeFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIButtonType</code> value that corresponds with <code>str</code>.
+            Returns <code>UIButtonTypeCustom</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLButtonTypeCustom</code> (&ldquo;custom&rdquo;) = <code>UIButtonTypeCustom</code></li>
+<li><code>kMBMLButtonTypeRoundedRect</code> (&ldquo;rounded&rdquo;) = <code>UIButtonTypeRoundedRect</code></li>
+<li><code>kMBMLButtonTypeDetailDisclosure</code> (&ldquo;detailDisclosure&rdquo;) = <code>UIButtonTypeDetailDisclosure</code></li>
+<li><code>kMBMLButtonTypeInfoLight</code> (&ldquo;infoLight&rdquo;) = <code>UIButtonTypeInfoLight</code></li>
+<li><code>kMBMLButtonTypeInfoDark</code> (&ldquo;infoDark&rdquo;) = <code>UIButtonTypeInfoDark</code></li>
+<li><code>kMBMLButtonTypeContactAdd</code> (&ldquo;contactAdd&rdquo;) = <code>UIButtonTypeContactAdd</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1458,10 +2255,75 @@
 	<h3 class="subsubtitle method-title">buttonTypeFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIButtonType</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIButtonType)buttonTypeFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIButtonType</code> value that corresponds with <code>str</code>.
+            Returns <code>UIButtonTypeCustom</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLButtonTypeCustom</code> (&ldquo;custom&rdquo;) = <code>UIButtonTypeCustom</code></li>
+<li><code>kMBMLButtonTypeRoundedRect</code> (&ldquo;rounded&rdquo;) = <code>UIButtonTypeRoundedRect</code></li>
+<li><code>kMBMLButtonTypeDetailDisclosure</code> (&ldquo;detailDisclosure&rdquo;) = <code>UIButtonTypeDetailDisclosure</code></li>
+<li><code>kMBMLButtonTypeInfoLight</code> (&ldquo;infoLight&rdquo;) = <code>UIButtonTypeInfoLight</code></li>
+<li><code>kMBMLButtonTypeInfoDark</code> (&ldquo;infoDark&rdquo;) = <code>UIButtonTypeInfoDark</code></li>
+<li><code>kMBMLButtonTypeContactAdd</code> (&ldquo;contactAdd&rdquo;) = <code>UIButtonTypeContactAdd</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1469,10 +2331,54 @@
 	<h3 class="subsubtitle method-title">colorFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIColor</code> value using the <a href="#//api/name/colorFromString:"><code>colorFromString:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIColor *)colorFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIColor</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>[</code><code>UIColor yellowColor</code><code>]</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1502,10 +2408,55 @@
 	<h3 class="subsubtitle method-title">controlStateFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIControlState</code> value using the <a href="#//api/name/controlStateFromString:"><code>controlStateFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIControlState)controlStateFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIControlState</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIControlStateNormal</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1513,10 +2464,66 @@
 	<h3 class="subsubtitle method-title">controlStateFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIControlState</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIControlState)controlStateFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIControlState</code> value that corresponds with <code>str</code>.
+            Returns <code>UIControlStateNormal</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLControlStateNormal</code> (&ldquo;normal&rdquo;) = <code>UIControlStateNormal</code></li>
+<li><code>kMBMLControlStateHighlighted</code> (&ldquo;highlighted&rdquo;) = <code>UIControlStateHighlighted</code></li>
+<li><code>kMBMLControlStateDisabled</code> (&ldquo;disabled&rdquo;) = <code>UIControlStateDisabled</code></li>
+<li><code>kMBMLControlStateSelected</code> (&ldquo;selected&rdquo;) = <code>UIControlStateSelected</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1524,10 +2531,73 @@
 	<h3 class="subsubtitle method-title">controlStateFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIControlState</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIControlState)controlStateFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIControlState</code> value that corresponds with <code>str</code>.
+            Returns <code>UIControlStateNormal</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLControlStateNormal</code> (&ldquo;normal&rdquo;) = <code>UIControlStateNormal</code></li>
+<li><code>kMBMLControlStateHighlighted</code> (&ldquo;highlighted&rdquo;) = <code>UIControlStateHighlighted</code></li>
+<li><code>kMBMLControlStateDisabled</code> (&ldquo;disabled&rdquo;) = <code>UIControlStateDisabled</code></li>
+<li><code>kMBMLControlStateSelected</code> (&ldquo;selected&rdquo;) = <code>UIControlStateSelected</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1535,10 +2605,55 @@
 	<h3 class="subsubtitle method-title">dateFormatterStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>NSDateFormatterStyle</code> value using the <a href="#//api/name/dateFormatterStyleFromString:"><code>dateFormatterStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDateFormatterStyle)dateFormatterStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSDateFormatterStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>NSDateFormatterNoStyle</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1546,10 +2661,67 @@
 	<h3 class="subsubtitle method-title">dateFormatterStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>NSDateFormatterStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSDateFormatterStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>NSDateFormatterNoStyle</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLDateFormatterNoStyle</code> (&ldquo;none&rdquo;) = <code>NSDateFormatterNoStyle</code></li>
+<li><code>kMBMLDateFormatterShortStyle</code> (&ldquo;short&rdquo;) = <code>NSDateFormatterShortStyle</code></li>
+<li><code>kMBMLDateFormatterMediumStyle</code> (&ldquo;medium&rdquo;) = <code>NSDateFormatterMediumStyle</code></li>
+<li><code>kMBMLDateFormatterLongStyle</code> (&ldquo;long&rdquo;) = <code>NSDateFormatterLongStyle</code></li>
+<li><code>kMBMLDateFormatterFullStyle</code> (&ldquo;full&rdquo;) = <code>NSDateFormatterFullStyle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1557,10 +2729,74 @@
 	<h3 class="subsubtitle method-title">dateFormatterStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>NSDateFormatterStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSDateFormatterStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>NSDateFormatterNoStyle</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLDateFormatterNoStyle</code> (&ldquo;none&rdquo;) = <code>NSDateFormatterNoStyle</code></li>
+<li><code>kMBMLDateFormatterShortStyle</code> (&ldquo;short&rdquo;) = <code>NSDateFormatterShortStyle</code></li>
+<li><code>kMBMLDateFormatterMediumStyle</code> (&ldquo;medium&rdquo;) = <code>NSDateFormatterMediumStyle</code></li>
+<li><code>kMBMLDateFormatterLongStyle</code> (&ldquo;long&rdquo;) = <code>NSDateFormatterLongStyle</code></li>
+<li><code>kMBMLDateFormatterFullStyle</code> (&ldquo;full&rdquo;) = <code>NSDateFormatterFullStyle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1612,10 +2848,54 @@
 	<h3 class="subsubtitle method-title">lineBreakModeFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>NSLineBreakMode</code> value using the <a href="#//api/name/textAlignmentFromExpression:"><code>textAlignmentFromExpression:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSLineBreakMode)lineBreakModeFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSLineBreakMode</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>NSLineBreakByWordWrapping</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1623,10 +2903,68 @@
 	<h3 class="subsubtitle method-title">lineBreakModeFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>NSLineBreakMode</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSLineBreakMode</code> value that corresponds with <code>str</code>.
+            Returns <code>NSLineBreakByWordWrapping</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLLineBreakByWordWrapping</code> (&ldquo;wordWrap&rdquo;) = <code>NSLineBreakByWordWrapping</code></li>
+<li><code>kMBMLLineBreakByCharWrapping</code> (&ldquo;charWrap&rdquo;) = <code>NSLineBreakByCharWrapping</code></li>
+<li><code>kMBMLLineBreakByClipping</code> (&ldquo;clip&rdquo;) = <code>NSLineBreakByClipping</code></li>
+<li><code>kMBMLLineBreakByTruncatingHead</code> (&ldquo;headTruncation&rdquo;) = <code>NSLineBreakByTruncatingHead</code></li>
+<li><code>kMBMLLineBreakByTruncatingTail</code> (&ldquo;tailTruncation&rdquo;) = <code>NSLineBreakByTruncatingTail</code></li>
+<li><code>kMBMLLineBreakByTruncatingMiddle</code> (&ldquo;middleTruncation&rdquo;) = <code>NSLineBreakByTruncatingMiddle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1634,10 +2972,75 @@
 	<h3 class="subsubtitle method-title">lineBreakModeFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>NSLineBreakMode</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSLineBreakMode</code> value that corresponds with <code>str</code>.
+            Returns <code>NSLineBreakByWordWrapping</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLLineBreakByWordWrapping</code> (&ldquo;wordWrap&rdquo;) = <code>NSLineBreakByWordWrapping</code></li>
+<li><code>kMBMLLineBreakByCharWrapping</code> (&ldquo;charWrap&rdquo;) = <code>NSLineBreakByCharWrapping</code></li>
+<li><code>kMBMLLineBreakByClipping</code> (&ldquo;clip&rdquo;) = <code>NSLineBreakByClipping</code></li>
+<li><code>kMBMLLineBreakByTruncatingHead</code> (&ldquo;headTruncation&rdquo;) = <code>NSLineBreakByTruncatingHead</code></li>
+<li><code>kMBMLLineBreakByTruncatingTail</code> (&ldquo;tailTruncation&rdquo;) = <code>NSLineBreakByTruncatingTail</code></li>
+<li><code>kMBMLLineBreakByTruncatingMiddle</code> (&ldquo;middleTruncation&rdquo;) = <code>NSLineBreakByTruncatingMiddle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1645,10 +3048,55 @@
 	<h3 class="subsubtitle method-title">modalTransitionStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIModalTransitionStyle</code> value using the <a href="#//api/name/modalTransitionStyleFromString:"><code>modalTransitionStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIModalTransitionStyle)modalTransitionStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIModalTransitionStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIModalTransitionStyleCoverVertical</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1656,10 +3104,66 @@
 	<h3 class="subsubtitle method-title">modalTransitionStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIModalTransitionStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIModalTransitionStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIModalTransitionStyleCoverVertical</code> and logs an error to
+            the console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLModalTransitionStyleCoverVertical</code> (&ldquo;coverVertical&rdquo;) = <code>UIModalTransitionStyleCoverVertical</code></li>
+<li><code>kMBMLModalTransitionStyleFlipHorizontal</code> (&ldquo;flipHorizontal&rdquo;) = <code>UIModalTransitionStyleFlipHorizontal</code></li>
+<li><code>kMBMLModalTransitionStyleCrossDissolve</code> (&ldquo;crossDissolve&rdquo;) = <code>UIModalTransitionStyleCrossDissolve</code></li>
+<li><code>kMBMLModalTransitionStylePartialCurl</code> (&ldquo;partialCurl&rdquo;) = <code>UIModalTransitionStylePartialCurl</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1667,10 +3171,73 @@
 	<h3 class="subsubtitle method-title">modalTransitionStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIModalTransitionStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIModalTransitionStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIModalTransitionStyleCoverVertical</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLModalTransitionStyleCoverVertical</code> (&ldquo;coverVertical&rdquo;) = <code>UIModalTransitionStyleCoverVertical</code></li>
+<li><code>kMBMLModalTransitionStyleFlipHorizontal</code> (&ldquo;flipHorizontal&rdquo;) = <code>UIModalTransitionStyleFlipHorizontal</code></li>
+<li><code>kMBMLModalTransitionStyleCrossDissolve</code> (&ldquo;crossDissolve&rdquo;) = <code>UIModalTransitionStyleCrossDissolve</code></li>
+<li><code>kMBMLModalTransitionStylePartialCurl</code> (&ldquo;partialCurl&rdquo;) = <code>UIModalTransitionStylePartialCurl</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1912,10 +3479,55 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">popoverArrowDirectionFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIPopoverArrowDirection</code> value using the <a href="#//api/name/popoverArrowDirectionFromString:"><code>popoverArrowDirectionFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIPopoverArrowDirection)popoverArrowDirectionFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIPopoverArrowDirection</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIPopoverArrowDirectionAny</code> and logs an error to the console
+            if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1923,10 +3535,67 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">popoverArrowDirectionFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIPopoverArrowDirection</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIPopoverArrowDirection</code> value that corresponds with <code>str</code>.
+            Returns <code>UIPopoverArrowDirectionAny</code> logs an error to the console
+            if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLPopoverArrowDirectionUp</code> (&ldquo;up&rdquo;) = <code>UIPopoverArrowDirectionUp</code></li>
+<li><code>kMBMLPopoverArrowDirectionDown</code> (&ldquo;down&rdquo;) = <code>UIPopoverArrowDirectionDown</code></li>
+<li><code>kMBMLPopoverArrowDirectionLeft</code> (&ldquo;left&rdquo;) = <code>UIPopoverArrowDirectionLeft</code></li>
+<li><code>kMBMLPopoverArrowDirectionRight</code> (&ldquo;right&rdquo;) = <code>UIPopoverArrowDirectionRight</code></li>
+<li><code>kMBMLPopoverArrowDirectionAny</code> (&ldquo;any&rdquo;) = <code>UIPopoverArrowDirectionAny</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1934,10 +3603,73 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">popoverArrowDirectionFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIPopoverArrowDirection</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIPopoverArrowDirection</code> value that corresponds with <code>str</code>.
+            Returns <code>UIPopoverArrowDirectionAny</code> if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLPopoverArrowDirectionUp</code> (&ldquo;up&rdquo;) = <code>UIPopoverArrowDirectionUp</code></li>
+<li><code>kMBMLPopoverArrowDirectionDown</code> (&ldquo;down&rdquo;) = <code>UIPopoverArrowDirectionDown</code></li>
+<li><code>kMBMLPopoverArrowDirectionLeft</code> (&ldquo;left&rdquo;) = <code>UIPopoverArrowDirectionLeft</code></li>
+<li><code>kMBMLPopoverArrowDirectionRight</code> (&ldquo;right&rdquo;) = <code>UIPopoverArrowDirectionRight</code></li>
+<li><code>kMBMLPopoverArrowDirectionAny</code> (&ldquo;any&rdquo;) = <code>UIPopoverArrowDirectionAny</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -1989,10 +3721,55 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">scrollViewIndicatorStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIScrollViewIndicatorStyle</code> value using the
+<a href="#//api/name/scrollViewIndicatorStyleFromString:"><code>scrollViewIndicatorStyleFromString:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIScrollViewIndicatorStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIScrollViewIndicatorStyleDefault</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2000,10 +3777,65 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">scrollViewIndicatorStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIScrollViewIndicatorStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIScrollViewIndicatorStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIScrollViewIndicatorStyleDefault</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLScrollViewIndicatorStyleDefault</code> (&ldquo;default&rdquo;) = <code>UIScrollViewIndicatorStyleDefault</code></li>
+<li><code>kMBMLScrollViewIndicatorStyleBlack</code> (&ldquo;black&rdquo;) = <code>UIScrollViewIndicatorStyleBlack</code></li>
+<li><code>kMBMLScrollViewIndicatorStyleWhite</code> (&ldquo;white&rdquo;) = <code>UIScrollViewIndicatorStyleWhite</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2011,10 +3843,72 @@ is specified as the value for a given dimension, that dimension is set to
 	<h3 class="subsubtitle method-title">scrollViewIndicatorStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIScrollViewIndicatorStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIScrollViewIndicatorStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UIScrollViewIndicatorStyleDefault</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLScrollViewIndicatorStyleDefault</code> (&ldquo;default&rdquo;) = <code>UIScrollViewIndicatorStyleDefault</code></li>
+<li><code>kMBMLScrollViewIndicatorStyleBlack</code> (&ldquo;black&rdquo;) = <code>UIScrollViewIndicatorStyleBlack</code></li>
+<li><code>kMBMLScrollViewIndicatorStyleWhite</code> (&ldquo;white&rdquo;) = <code>UIScrollViewIndicatorStyleWhite</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2193,10 +4087,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">statusBarAnimationFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIStatusBarAnimation</code> value using the <a href="#//api/name/statusBarAnimationFromString:"><code>statusBarAnimationFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIStatusBarAnimation)statusBarAnimationFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIStatusBarAnimation</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIStatusBarAnimationNone</code> and logs an error to the console
+            if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2204,10 +4143,65 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">statusBarAnimationFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIStatusBarAnimation</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIStatusBarAnimation</code> value that corresponds with <code>str</code>.
+            Returns <code>UIStatusBarAnimationNone</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLStatusBarAnimationNone</code> (&ldquo;none&rdquo;) = <code>UIStatusBarAnimationNone</code></li>
+<li><code>kMBMLStatusBarAnimationFade</code> (&ldquo;fade&rdquo;) = <code>UIStatusBarAnimationFade</code></li>
+<li><code>kMBMLStatusBarAnimationSlide</code> (&ldquo;slide&rdquo;) = <code>UIStatusBarAnimationSlide</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2215,10 +4209,71 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">statusBarAnimationFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIStatusBarAnimation</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIStatusBarAnimation</code> value that corresponds with <code>str</code>.
+            Returns <code>UIStatusBarAnimationNone</code> if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLStatusBarAnimationNone</code> (&ldquo;none&rdquo;) = <code>UIStatusBarAnimationNone</code></li>
+<li><code>kMBMLStatusBarAnimationFade</code> (&ldquo;fade&rdquo;) = <code>UIStatusBarAnimationFade</code></li>
+<li><code>kMBMLStatusBarAnimationSlide</code> (&ldquo;slide&rdquo;) = <code>UIStatusBarAnimationSlide</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2259,10 +4314,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewCellAccessoryTypeFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UITableViewCellAccessoryType</code> value using the
+<a href="#//api/name/tableViewCellAccessoryTypeFromString:"><code>tableViewCellAccessoryTypeFromString:</code></a> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewCellAccessoryType</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITableViewCellAccessoryNone</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2270,10 +4370,66 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewCellAccessoryTypeFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewCellAccessoryType</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewCellAccessoryType</code> value that corresponds with
+            <code>str</code>. Returns <code>UITableViewCellAccessoryNone</code> and logs an error to
+            the console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewCellAccessoryNone</code> (&ldquo;none&rdquo;) = <code>UITableViewCellAccessoryNone</code></li>
+<li><code>kMBMLTableViewCellAccessoryDisclosureIndicator</code> (&ldquo;disclosureIndicator&rdquo;) = <code>UITableViewCellAccessoryDisclosureIndicator</code></li>
+<li><code>kMBMLTableViewCellAccessoryDetailDisclosureButton</code> (&ldquo;detailDisclosureButton&rdquo;) = <code>UITableViewCellAccessoryDetailDisclosureButton</code></li>
+<li><code>kMBMLTableViewCellAccessoryCheckmark</code> (&ldquo;checkmark&rdquo;) = <code>UITableViewCellAccessoryCheckmark</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2281,10 +4437,73 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewCellAccessoryTypeFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewCellAccessoryType</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewCellAccessoryType</code> value that corresponds with
+            <code>str</code>. Returns <code>UITableViewCellAccessoryNone</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewCellAccessoryNone</code> (&ldquo;none&rdquo;) = <code>UITableViewCellAccessoryNone</code></li>
+<li><code>kMBMLTableViewCellAccessoryDisclosureIndicator</code> (&ldquo;disclosureIndicator&rdquo;) = <code>UITableViewCellAccessoryDisclosureIndicator</code></li>
+<li><code>kMBMLTableViewCellAccessoryDetailDisclosureButton</code> (&ldquo;detailDisclosureButton&rdquo;) = <code>UITableViewCellAccessoryDetailDisclosureButton</code></li>
+<li><code>kMBMLTableViewCellAccessoryCheckmark</code> (&ldquo;checkmark&rdquo;) = <code>UITableViewCellAccessoryCheckmark</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2325,10 +4544,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewCellStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UITableViewCellStyle</code> value using the <a href="#//api/name/tableViewCellStyleFromString:"><code>tableViewCellStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewCellStyle)tableViewCellStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewCellStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITableViewCellStyleDefault</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2336,10 +4600,66 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewCellStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewCellStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewCellStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UITableViewCellStyleDefault</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewCellStyleDefault</code> (&ldquo;default&rdquo;) = <code>UITableViewCellStyleDefault</code></li>
+<li><code>kMBMLTableViewCellStyleValue1</code> (&ldquo;value1&rdquo;) = <code>UITableViewCellStyleValue1</code></li>
+<li><code>kMBMLTableViewCellStyleValue2</code> (&ldquo;value2&rdquo;) = <code>UITableViewCellStyleValue2</code></li>
+<li><code>kMBMLTableViewCellStyleSubtitle</code> (&ldquo;subtitle&rdquo;) = <code>UITableViewCellStyleSubtitle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2347,10 +4667,73 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewCellStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewCellStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewCellStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UITableViewCellStyleDefault</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewCellStyleDefault</code> (&ldquo;default&rdquo;) = <code>UITableViewCellStyleDefault</code></li>
+<li><code>kMBMLTableViewCellStyleValue1</code> (&ldquo;value1&rdquo;) = <code>UITableViewCellStyleValue1</code></li>
+<li><code>kMBMLTableViewCellStyleValue2</code> (&ldquo;value2&rdquo;) = <code>UITableViewCellStyleValue2</code></li>
+<li><code>kMBMLTableViewCellStyleSubtitle</code> (&ldquo;subtitle&rdquo;) = <code>UITableViewCellStyleSubtitle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2358,10 +4741,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewRowAnimationFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UITableViewRowAnimation</code> value using the <a href="#//api/name/tableViewRowAnimationFromString:"><code>tableViewRowAnimationFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewRowAnimation)tableViewRowAnimationFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewRowAnimation</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITableViewRowAnimationNone</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2369,10 +4797,69 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewRowAnimationFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewRowAnimation</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewRowAnimation</code> value that corresponds with <code>str</code>.
+            Returns <code>UITableViewRowAnimationNone</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewRowAnimationNone</code> (&ldquo;none&rdquo;) = <code>UITableViewRowAnimationNone</code></li>
+<li><code>kMBMLTableViewRowAnimationFade</code> (&ldquo;fade&rdquo;) = <code>UITableViewRowAnimationFade</code></li>
+<li><code>kMBMLTableViewRowAnimationRight</code> (&ldquo;right&rdquo;) = <code>UITableViewRowAnimationRight</code></li>
+<li><code>kMBMLTableViewRowAnimationLeft</code> (&ldquo;left&rdquo;) = <code>UITableViewRowAnimationLeft</code></li>
+<li><code>kMBMLTableViewRowAnimationTop</code> (&ldquo;top&rdquo;) = <code>UITableViewRowAnimationTop</code></li>
+<li><code>kMBMLTableViewRowAnimationBottom</code> (&ldquo;bottom&rdquo;) = <code>UITableViewRowAnimationBottom</code></li>
+<li><code>kMBMLTableViewRowAnimationMiddle</code> (&ldquo;middle&rdquo;) = <code>UITableViewRowAnimationMiddle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2380,10 +4867,76 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewRowAnimationFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewRowAnimation</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewRowAnimation</code> value that corresponds with <code>str</code>.
+            Returns <code>UITableViewRowAnimationNone</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewRowAnimationNone</code> (&ldquo;none&rdquo;) = <code>UITableViewRowAnimationNone</code></li>
+<li><code>kMBMLTableViewRowAnimationFade</code> (&ldquo;fade&rdquo;) = <code>UITableViewRowAnimationFade</code></li>
+<li><code>kMBMLTableViewRowAnimationRight</code> (&ldquo;right&rdquo;) = <code>UITableViewRowAnimationRight</code></li>
+<li><code>kMBMLTableViewRowAnimationLeft</code> (&ldquo;left&rdquo;) = <code>UITableViewRowAnimationLeft</code></li>
+<li><code>kMBMLTableViewRowAnimationTop</code> (&ldquo;top&rdquo;) = <code>UITableViewRowAnimationTop</code></li>
+<li><code>kMBMLTableViewRowAnimationBottom</code> (&ldquo;bottom&rdquo;) = <code>UITableViewRowAnimationBottom</code></li>
+<li><code>kMBMLTableViewRowAnimationMiddle</code> (&ldquo;middle&rdquo;) = <code>UITableViewRowAnimationMiddle</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2391,10 +4944,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UITableViewStyle</code> value using the <a href="#//api/name/tableViewStyleFromString:"><code>tableViewStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewStyle)tableViewStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITableViewStylePlain</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2402,10 +5000,64 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UITableViewStylePlain</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewStylePlain</code> (&ldquo;plain&rdquo;) = <code>UITableViewStylePlain</code></li>
+<li><code>kMBMLTableViewStyleGrouped</code> (&ldquo;grouped&rdquo;) = <code>UITableViewStyleGrouped</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2413,10 +5065,71 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">tableViewStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITableViewStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITableViewStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UITableViewStylePlain</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTableViewStylePlain</code> (&ldquo;plain&rdquo;) = <code>UITableViewStylePlain</code></li>
+<li><code>kMBMLTableViewStyleGrouped</code> (&ldquo;grouped&rdquo;) = <code>UITableViewStyleGrouped</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2424,10 +5137,54 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">textAlignmentFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>NSTextAlignment</code> value using the <code>textAlignmentFromExpression:</code> method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSTextAlignment)textAlignmentFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSTextAlignment</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>NSTextAlignmentLeft</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2435,10 +5192,65 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">textAlignmentFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>NSTextAlignment</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSTextAlignment)textAlignmentFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSTextAlignment</code> value that corresponds with <code>str</code>.
+            Returns <code>NSTextAlignmentLeft</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTextAlignmentLeft</code> (&ldquo;left&rdquo;) = <code>NSTextAlignmentLeft</code></li>
+<li><code>kMBMLTextAlignmentCenter</code> (&ldquo;center&rdquo;) = <code>NSTextAlignmentCenter</code></li>
+<li><code>kMBMLTextAlignmentRight</code> (&ldquo;right&rdquo;) = <code>NSTextAlignmentRight</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2446,10 +5258,72 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">textAlignmentFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>NSTextAlignment</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (NSTextAlignment)textAlignmentFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>NSTextAlignment</code> value that corresponds with <code>str</code>.
+            Returns <code>NSTextAlignmentLeft</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTextAlignmentLeft</code> (&ldquo;left&rdquo;) = <code>NSTextAlignmentLeft</code></li>
+<li><code>kMBMLTextAlignmentCenter</code> (&ldquo;center&rdquo;) = <code>NSTextAlignmentCenter</code></li>
+<li><code>kMBMLTextAlignmentRight</code> (&ldquo;right&rdquo;) = <code>NSTextAlignmentRight</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2457,10 +5331,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">textBorderStyleFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UITextBorderStyle</code> value using the <a href="#//api/name/textBorderStyleFromString:"><code>textBorderStyleFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITextBorderStyle)textBorderStyleFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITextBorderStyle</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UITextBorderStyleNone</code> and logs an error to the
+            console if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2468,10 +5387,66 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">textBorderStyleFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITextBorderStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITextBorderStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UITextBorderStyleNone</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTextBorderStyleNone</code> (&ldquo;none&rdquo;) = <code>UITextBorderStyleNone</code></li>
+<li><code>kMBMLTextBorderStyleLine</code> (&ldquo;line&rdquo;) = <code>UITextBorderStyleNone</code></li>
+<li><code>kMBMLTextBorderStyleBezel</code> (&ldquo;bezel&rdquo;) = <code>UITextBorderStyleBezel</code></li>
+<li><code>kMBMLTextBorderStyleRoundedRect</code> (&ldquo;rounded&rdquo;) = <code>UITextBorderStyleRoundedRect</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2479,10 +5454,73 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">textBorderStyleFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UITextBorderStyle</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UITextBorderStyle</code> value that corresponds with <code>str</code>.
+            Returns <code>UITextBorderStyleNone</code> if <code>str</code> isn&rsquo;t
+            recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLTextBorderStyleNone</code> (&ldquo;none&rdquo;) = <code>UITextBorderStyleNone</code></li>
+<li><code>kMBMLTextBorderStyleLine</code> (&ldquo;line&rdquo;) = <code>UITextBorderStyleNone</code></li>
+<li><code>kMBMLTextBorderStyleBezel</code> (&ldquo;bezel&rdquo;) = <code>UITextBorderStyleBezel</code></li>
+<li><code>kMBMLTextBorderStyleRoundedRect</code> (&ldquo;rounded&rdquo;) = <code>UITextBorderStyleRoundedRect</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2523,10 +5561,55 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">viewContentModeFromExpression:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Evaluates a string expression and attempts to interpret the result as a
+<code>UIViewContentMode</code> value using the <a href="#//api/name/viewContentModeFromString:"><code>viewContentModeFromString:</code></a>
+method.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIViewContentMode)viewContentModeFromExpression:(NSString *)<em>expr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>expr</em></dt>
+			<dd><p>The expression whose result will be interpreted.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIViewContentMode</code> value that corresponds with the
+            result of evaluating <code>expr</code> as a string. Returns
+            <code>UIViewContentModeScaleToFill</code> and logs an error to the console
+            if the expression result couldn&rsquo;t be interpreted.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2534,10 +5617,75 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">viewContentModeFromString:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIViewContentMode</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIViewContentMode)viewContentModeFromString:(NSString *)<em>str</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIViewContentMode</code> value that corresponds with <code>str</code>.
+            Returns <code>UIViewContentModeScaleToFill</code> and logs an error to the
+            console if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLViewContentModeScaleToFill</code> (&ldquo;scaleToFill&rdquo;) = <code>UIViewContentModeScaleToFill</code></li>
+<li><code>kMBMLViewContentModeScaleAspectFit</code> (&ldquo;aspectFit&rdquo;) = <code>UIViewContentModeScaleAspectFit</code></li>
+<li><code>kMBMLViewContentModeScaleAspectFill</code> (&ldquo;aspectFill&rdquo;) = <code>UIViewContentModeScaleAspectFill</code></li>
+<li><code>kMBMLViewContentModeRedraw</code> (&ldquo;redraw&rdquo;) = <code>UIViewContentModeRedraw</code></li>
+<li><code>kMBMLViewContentModeCenter</code> (&ldquo;center&rdquo;) = <code>UIViewContentModeCenter</code></li>
+<li><code>kMBMLViewContentModeTop</code> (&ldquo;top&rdquo;) = <code>UIViewContentModeTop</code></li>
+<li><code>kMBMLViewContentModeBottom</code> (&ldquo;bottom&rdquo;) = <code>UIViewContentModeBottom</code></li>
+<li><code>kMBMLViewContentModeLeft</code> (&ldquo;left&rdquo;) = <code>UIViewContentModeLeft</code></li>
+<li><code>kMBMLViewContentModeRight</code> (&ldquo;right&rdquo;) = <code>UIViewContentModeRight</code></li>
+<li><code>kMBMLViewContentModeTopLeft</code> (&ldquo;topLeft&rdquo;) = <code>UIViewContentModeTopLeft</code></li>
+<li><code>kMBMLViewContentModeTopRight</code> (&ldquo;topRight&rdquo;) = <code>UIViewContentModeTopRight</code></li>
+<li><code>kMBMLViewContentModeBottomLeft</code> (&ldquo;bottomLeft&rdquo;) = <code>UIViewContentModeBottomLeft</code></li>
+<li><code>kMBMLViewContentModeBottomRight</code> (&ldquo;bottomRight&rdquo;) = <code>UIViewContentModeBottomRight</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2545,10 +5693,81 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 	<h3 class="subsubtitle method-title">viewContentModeFromString:error:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to interpret a string as a <code>UIViewContentMode</code> value.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (UIViewContentMode)viewContentModeFromString:(NSString *)<em>str</em> error:(NSError **)<em>errPtr</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>str</em></dt>
+			<dd><p>The string to interpret.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>errPtr</em></dt>
+			<dd><p>An optional pointer to a memory location for storing an
+            <code>NSError</code> instance in the event of a problem intepreting <code>str</code>.
+            May be <code>nil</code>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>UIViewContentMode</code> value that corresponds with <code>str</code>.
+            Returns <code>UIViewContentModeScaleToFill</code> if <code>str</code> isn&rsquo;t recognized.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The following string constants show the accepted inputs, along with their
+corresponding values:</p>
+
+<ul>
+<li><code>kMBMLViewContentModeScaleToFill</code> (&ldquo;scaleToFill&rdquo;) = <code>UIViewContentModeScaleToFill</code></li>
+<li><code>kMBMLViewContentModeScaleAspectFit</code> (&ldquo;aspectFit&rdquo;) = <code>UIViewContentModeScaleAspectFit</code></li>
+<li><code>kMBMLViewContentModeScaleAspectFill</code> (&ldquo;aspectFill&rdquo;) = <code>UIViewContentModeScaleAspectFill</code></li>
+<li><code>kMBMLViewContentModeRedraw</code> (&ldquo;redraw&rdquo;) = <code>UIViewContentModeRedraw</code></li>
+<li><code>kMBMLViewContentModeCenter</code> (&ldquo;center&rdquo;) = <code>UIViewContentModeCenter</code></li>
+<li><code>kMBMLViewContentModeTop</code> (&ldquo;top&rdquo;) = <code>UIViewContentModeTop</code></li>
+<li><code>kMBMLViewContentModeBottom</code> (&ldquo;bottom&rdquo;) = <code>UIViewContentModeBottom</code></li>
+<li><code>kMBMLViewContentModeLeft</code> (&ldquo;left&rdquo;) = <code>UIViewContentModeLeft</code></li>
+<li><code>kMBMLViewContentModeRight</code> (&ldquo;right&rdquo;) = <code>UIViewContentModeRight</code></li>
+<li><code>kMBMLViewContentModeTopLeft</code> (&ldquo;topLeft&rdquo;) = <code>UIViewContentModeTopLeft</code></li>
+<li><code>kMBMLViewContentModeTopRight</code> (&ldquo;topRight&rdquo;) = <code>UIViewContentModeTopRight</code></li>
+<li><code>kMBMLViewContentModeBottomLeft</code> (&ldquo;bottomLeft&rdquo;) = <code>UIViewContentModeBottomLeft</code></li>
+<li><code>kMBMLViewContentModeBottomRight</code> (&ldquo;bottomRight&rdquo;) = <code>UIViewContentModeBottomRight</code></li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBStringConversions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -2568,7 +5787,7 @@ the wildcard (&lsquo;<code>*</code>&rsquo;) character.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-14)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-15)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

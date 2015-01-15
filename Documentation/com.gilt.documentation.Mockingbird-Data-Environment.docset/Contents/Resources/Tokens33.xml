@@ -4,7 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBStringConversions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class provides an interface for converting strings into values of
+various types.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
             
 			
@@ -413,336 +414,604 @@ format.</Abstract></ReturnValue>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/colorFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIColor value using the colorFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIColor *)colorFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIColor value that corresponds with the
+            result of evaluating expr as a string. Returns
+            [&lt;code&gt;UIColor yellowColor&lt;/code&gt;] and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/colorFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a NSLineBreakMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSLineBreakMode value that corresponds with str.
+            Returns NSLineBreakByWordWrapping and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/lineBreakModeFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a NSLineBreakMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSLineBreakMode value that corresponds with str.
+            Returns NSLineBreakByWordWrapping if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/lineBreakModeFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+NSLineBreakMode value using the textAlignmentFromExpression: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLineBreakMode)lineBreakModeFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSLineBreakMode value that corresponds with the
+            result of evaluating expr as a string. Returns
+            NSLineBreakByWordWrapping and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/lineBreakModeFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a NSTextAlignment value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSTextAlignment value that corresponds with str.
+            Returns NSTextAlignmentLeft and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/textAlignmentFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a NSTextAlignment value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSTextAlignment value that corresponds with str.
+            Returns NSTextAlignmentLeft if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/textAlignmentFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+NSTextAlignment value using the textAlignmentFromExpression: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSTextAlignment)textAlignmentFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSTextAlignment value that corresponds with the
+            result of evaluating expr as a string. Returns
+            NSTextAlignmentLeft and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/textAlignmentFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/scrollViewIndicatorStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIScrollViewIndicatorStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIScrollViewIndicatorStyle value that corresponds with str.
+            Returns UIScrollViewIndicatorStyleDefault and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/scrollViewIndicatorStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/scrollViewIndicatorStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIScrollViewIndicatorStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIScrollViewIndicatorStyle value that corresponds with str.
+            Returns UIScrollViewIndicatorStyleDefault if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/scrollViewIndicatorStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/scrollViewIndicatorStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIScrollViewIndicatorStyle value using the
+scrollViewIndicatorStyleFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIScrollViewIndicatorStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIScrollViewIndicatorStyleDefault and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/scrollViewIndicatorStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/activityIndicatorViewStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIActivityIndicatorViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIActivityIndicatorViewStyle value that corresponds with
+            str. Returns UIActivityIndicatorViewStyleWhite and logs an error 
+            to the console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/activityIndicatorViewStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/activityIndicatorViewStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIActivityIndicatorViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIActivityIndicatorViewStyle value that corresponds with
+            str. Returns UIActivityIndicatorViewStyleWhite if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/activityIndicatorViewStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/activityIndicatorViewStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIActivityIndicatorViewStyle value using the
+activityIndicatorViewStyleFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIActivityIndicatorViewStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIActivityIndicatorViewStyleWhite and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/activityIndicatorViewStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/buttonTypeFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIButtonType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIButtonType value that corresponds with str.
+            Returns UIButtonTypeCustom and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/buttonTypeFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/buttonTypeFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIButtonType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIButtonType value that corresponds with str.
+            Returns UIButtonTypeCustom if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/buttonTypeFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/buttonTypeFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIButtonType value using the buttonTypeFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIButtonType)buttonTypeFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIButtonType value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIButtonTypeCustom and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/buttonTypeFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a NSDateFormatterStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSDateFormatterStyle value that corresponds with str.
+            Returns NSDateFormatterNoStyle and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/dateFormatterStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a NSDateFormatterStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSDateFormatterStyle value that corresponds with str.
+            Returns NSDateFormatterNoStyle if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/dateFormatterStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+NSDateFormatterStyle value using the dateFormatterStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The NSDateFormatterStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            NSDateFormatterNoStyle and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/dateFormatterStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textBorderStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITextBorderStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITextBorderStyle value that corresponds with str.
+            Returns UITextBorderStyleNone and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/textBorderStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textBorderStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITextBorderStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITextBorderStyle value that corresponds with str.
+            Returns UITextBorderStyleNone if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/textBorderStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textBorderStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UITextBorderStyle value using the textBorderStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITextBorderStyle)textBorderStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITextBorderStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITextBorderStyleNone and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/textBorderStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewStyle value that corresponds with str.
+            Returns UITableViewStylePlain and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewStyle value that corresponds with str.
+            Returns UITableViewStylePlain if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UITableViewStyle value using the tableViewStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewStyle)tableViewStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITableViewStylePlain and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewCellStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewCellStyle value that corresponds with str.
+            Returns UITableViewCellStyleDefault and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewCellStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewCellStyle value that corresponds with str.
+            Returns UITableViewCellStyleDefault if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UITableViewCellStyle value using the tableViewCellStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewCellStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITableViewCellStyleDefault and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -785,108 +1054,195 @@ format.</Abstract></ReturnValue>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellAccessoryTypeFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewCellAccessoryType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewCellAccessoryType value that corresponds with
+            str. Returns UITableViewCellAccessoryNone and logs an error to
+            the console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellAccessoryTypeFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellAccessoryTypeFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewCellAccessoryType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewCellAccessoryType value that corresponds with
+            str. Returns UITableViewCellAccessoryNone if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellAccessoryTypeFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewCellAccessoryTypeFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UITableViewCellAccessoryType value using the
+tableViewCellAccessoryTypeFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewCellAccessoryType value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITableViewCellAccessoryNone and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewCellAccessoryTypeFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewRowAnimationFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewRowAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewRowAnimation value that corresponds with str.
+            Returns UITableViewRowAnimationNone and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewRowAnimationFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewRowAnimationFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UITableViewRowAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewRowAnimation value that corresponds with str.
+            Returns UITableViewRowAnimationNone if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewRowAnimationFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/tableViewRowAnimationFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UITableViewRowAnimation value using the tableViewRowAnimationFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UITableViewRowAnimation value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UITableViewRowAnimationNone and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/tableViewRowAnimationFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/controlStateFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIControlState value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIControlState value that corresponds with str.
+            Returns UIControlStateNormal and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/controlStateFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/controlStateFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIControlState value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIControlState value that corresponds with str.
+            Returns UIControlStateNormal if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/controlStateFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/controlStateFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIControlState value using the controlStateFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIControlState)controlStateFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIControlState value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIControlStateNormal and logs an error to the
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/controlStateFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -929,252 +1285,472 @@ format.</Abstract></ReturnValue>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/modalTransitionStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIModalTransitionStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIModalTransitionStyle value that corresponds with str.
+            Returns UIModalTransitionStyleCoverVertical and logs an error to
+            the console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/modalTransitionStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/modalTransitionStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIModalTransitionStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIModalTransitionStyle value that corresponds with str.
+            Returns UIModalTransitionStyleCoverVertical if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/modalTransitionStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/modalTransitionStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIModalTransitionStyle value using the modalTransitionStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIModalTransitionStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIModalTransitionStyleCoverVertical and logs an error to the 
+            console if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/modalTransitionStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewContentModeFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIViewContentMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIViewContentMode value that corresponds with str.
+            Returns UIViewContentModeScaleToFill and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewContentModeFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewContentModeFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIViewContentMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIViewContentMode value that corresponds with str.
+            Returns UIViewContentModeScaleToFill if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewContentModeFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/viewContentModeFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIViewContentMode value using the viewContentModeFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIViewContentMode)viewContentModeFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIViewContentMode value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIViewContentModeScaleToFill and logs an error to the console
+            if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewContentModeFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIBarStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarStyle value that corresponds with str.
+            Returns UIBarStyleDefault and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/barStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIBarStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarStyle value that corresponds with str.
+            Returns UIBarStyleDefault if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/barStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIBarStyle value using the barStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarStyle)barStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIBarStyleDefault and logs an error to the console
+            if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/barStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">* kMBMLBarButtonSystemItemDone (&quot;done&quot;) = UIBarButtonSystemItemDone
+* kMBMLBarButtonSystemItemCancel (&quot;cancel&quot;) = UIBarButtonSystemItemCancel
+* kMBMLBarButtonSystemItemEdit (&quot;edit&quot;) = UIBarButtonSystemItemEdit
+* kMBMLBarButtonSystemItemSave (&quot;save&quot;) = UIBarButtonSystemItemSave
+* kMBMLBarButtonSystemItemAdd (&quot;add&quot;) = UIBarButtonSystemItemAdd
+* kMBMLBarButtonSystemItemFlexibleSpace (&quot;flexibleSpace&quot;) = UIBarButtonSystemItemFlexibleSpace
+* kMBMLBarButtonSystemItemFixedSpace (&quot;fixedSpace&quot;) = UIBarButtonSystemItemFixedSpace
+* kMBMLBarButtonSystemItemCompose (&quot;compose&quot;) = UIBarButtonSystemItemCompose
+* kMBMLBarButtonSystemItemReply (&quot;reply&quot;) = UIBarButtonSystemItemReply
+* kMBMLBarButtonSystemItemAction (&quot;action&quot;) = UIBarButtonSystemItemAction
+* kMBMLBarButtonSystemItemOrganize (&quot;organize&quot;) = UIBarButtonSystemItemOrganize
+* kMBMLBarButtonSystemItemBookmarks (&quot;bookmarks&quot;) = UIBarButtonSystemItemBookmarks
+* kMBMLBarButtonSystemItemSearch (&quot;search&quot;) = UIBarButtonSystemItemSearch
+* kMBMLBarButtonSystemItemRefresh (&quot;refresh&quot;) = UIBarButtonSystemItemRefresh
+* kMBMLBarButtonSystemItemStop (&quot;stop&quot;) = UIBarButtonSystemItemStop
+* kMBMLBarButtonSystemItemCamera (&quot;camera&quot;) = UIBarButtonSystemItemCamera
+* kMBMLBarButtonSystemItemTrash (&quot;trash&quot;) = UIBarButtonSystemItemTrash
+* kMBMLBarButtonSystemItemPlay (&quot;play&quot;) = UIBarButtonSystemItemPlay
+* kMBMLBarButtonSystemItemPause (&quot;pause&quot;) = UIBarButtonSystemItemPause
+* kMBMLBarButtonSystemItemRewind (&quot;rewind&quot;) = UIBarButtonSystemItemRewind
+* kMBMLBarButtonSystemItemFastForward (&quot;fastForward&quot;) = UIBarButtonSystemItemFastForward
+* kMBMLBarButtonSystemItemUndo (&quot;undo&quot;) = UIBarButtonSystemItemUndo
+* kMBMLBarButtonSystemItemRedo (&quot;redo&quot;) = UIBarButtonSystemItemRedo
+* kMBMLBarButtonSystemItemPageCurl (&quot;pageCurl&quot;) = UIBarButtonSystemItemPageCurl</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarButtonSystemItem value that corresponds with str.
+            Returns UIBarButtonSystemItemDone and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/barButtonSystemItemFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIBarButtonSystemItem value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarButtonSystemItem value that corresponds with str.
+            Returns UIBarButtonSystemItemDone if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/barButtonSystemItemFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIBarButtonSystemItem value using the barButtonSystemItemFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarButtonSystemItem value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIBarButtonSystemItemDone and logs an error to the console
+            if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/barButtonSystemItemFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonItemStyleFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIBarButtonItemStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarButtonItemStyle value that corresponds with str.
+            Returns UIBarButtonItemStylePlain and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/barButtonItemStyleFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonItemStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIBarButtonItemStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarButtonItemStyle value that corresponds with str.
+            Returns UIBarButtonItemStylePlain if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/barButtonItemStyleFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonItemStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIBarButtonItemStyle value using the barButtonItemStyleFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIBarButtonItemStyle value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIBarButtonItemStylePlain and logs an error to the console
+            if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/barButtonItemStyleFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/statusBarAnimationFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIStatusBarAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIStatusBarAnimation value that corresponds with str.
+            Returns UIStatusBarAnimationNone and logs an error to the
+            console if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/statusBarAnimationFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/statusBarAnimationFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIStatusBarAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIStatusBarAnimation value that corresponds with str.
+            Returns UIStatusBarAnimationNone if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/statusBarAnimationFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/statusBarAnimationFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIStatusBarAnimation value using the statusBarAnimationFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIStatusBarAnimation value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIStatusBarAnimationNone and logs an error to the console
+            if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/statusBarAnimationFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/popoverArrowDirectionFromString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIPopoverArrowDirection value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIPopoverArrowDirection value that corresponds with str.
+            Returns UIPopoverArrowDirectionAny logs an error to the console 
+            if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/popoverArrowDirectionFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/popoverArrowDirectionFromString:error:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIPopoverArrowDirection value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The string to interpret.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">An optional pointer to a memory location for storing an
+            NSError instance in the event of a problem intepreting str.
+            May be nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIPopoverArrowDirection value that corresponds with str.
+            Returns UIPopoverArrowDirectionAny if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/popoverArrowDirectionFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/popoverArrowDirectionFromExpression:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+UIPopoverArrowDirection value using the popoverArrowDirectionFromString:
+method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromExpression:(NSString *)expr</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression whose result will be interpreted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The UIPopoverArrowDirection value that corresponds with the
+            result of evaluating expr as a string. Returns 
+            UIPopoverArrowDirectionAny and logs an error to the console
+            if the expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
 			<Anchor>//api/name/popoverArrowDirectionFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>

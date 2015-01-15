@@ -1217,9 +1217,10 @@ extern NSString* const kMBDataModelDefaultRelation;
             created.
  
  @return    The `Class` to create for the related object, or `nil` if the
-            receiver does not support the specified relation type. If a non-`nil`
-            value is returned, the class *must* be a type of `MBDataModel`.
-            The default implementation returns `[``MBDataModel class``]`.
+            receiver does not support the specified relation type. If a 
+            non-`nil` value is returned, the class *must* be a type of
+            `MBDataModel`. The default implementation returns 
+            `[`<code>MBDataModel class</code>`]`.
  */
 - (Class) implementingClassForRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName;
 

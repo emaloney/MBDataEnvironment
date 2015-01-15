@@ -74,32 +74,44 @@ in the template XML.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tok:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenize:</TokenIdentifier>
 			<Abstract type="html">Tokenizes a variable expansion expression and logs the resulting tokens
 to the console. The input expression is returned, allowing the function
 to be used as a pass-through. This function must be declared input=&quot;raw&quot;
 in the template XML.</Abstract>
 			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)tok:(NSString *)expr</Declaration>
+			<Declaration>+ (NSString *)tokenize:(NSString *)expr</Declaration>
 			
 			
-			<Anchor>//api/name/tok:</Anchor>
+			<Anchor>//api/name/tokenize:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokBool:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenizeBool:</TokenIdentifier>
 			<Abstract type="html">Tokenizes a boolean expression and logs the resulting tokens to the console.
 The input expression is returned, allowing the function to be used as a
 pass-through. This function must be declared input=&quot;raw&quot; in the template
 XML.</Abstract>
 			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)tokBool:(NSString *)expr</Declaration>
+			<Declaration>+ (NSString *)tokenizeBool:(NSString *)expr</Declaration>
 			
 			
-			<Anchor>//api/name/tokBool:</Anchor>
+			<Anchor>//api/name/tokenizeBool:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenizeMath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)tokenizeMath:(NSString *)expr</Declaration>
+			
+			
+			<Anchor>//api/name/tokenizeMath:</Anchor>
             <NodeRef refid="16"/>
 		</Token>
 		
