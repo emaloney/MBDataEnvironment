@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -55,8 +57,6 @@
 	
 	<option value="//api/name/percent:">&nbsp;&nbsp;&nbsp;&nbsp;+ percent:</option>
 	
-	<option value="//api/name/performMathFunction:withParameters:">&nbsp;&nbsp;&nbsp;&nbsp;+ performMathFunction:withParameters:</option>
-	
 	<option value="//api/name/random:">&nbsp;&nbsp;&nbsp;&nbsp;+ random:</option>
 	
 	<option value="//api/name/randomPercent">&nbsp;&nbsp;&nbsp;&nbsp;+ randomPercent</option>
@@ -74,6 +74,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -104,8 +106,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/modFloat:">modFloat:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/percent:">percent:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performMathFunction:withParameters:">performMathFunction:withParameters:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/random:">random:</a></span></li>
 	
@@ -149,6 +149,23 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions for performing mathematical operations.</p>
+
+<p><strong>Note:</strong> Simple math operations are available using the math expression
+notation.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -161,12 +178,6 @@
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/performMathFunction:withParameters:">+&nbsp;performMathFunction:withParameters:</a></code>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/mod:">+&nbsp;mod:</a></code>
 	</span>
@@ -252,10 +263,78 @@
 	<h3 class="subsubtitle method-title">arrayFilledWithIntegers:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates an array filled with <code>NSNumber</code>s containing integers created
+according to a simple step pattern.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)arrayFilledWithIntegers:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two or three pipe-separated parameters:</p>
+
+<ul>
+<li><p>The <em>starting number</em>, a numeric expression that yields the value for the
+ first element in the returned array</p></li>
+<li><p>The <em>maximum number</em>, a numeric expression. The returned array will contain
+ no values greater than the <em>maximum number</em>.</p></li>
+<li><p>An optional <em>step increment</em>, a numeric expression indicating the amount
+ by which <em>starting number</em> will increase in each step towards the <em>maximum
+ number</em>. If this parameter is omitted, the step increment will be <code>1</code>.</p></li>
+</ul>
+
+
+<p>The return value will be an array of integers beginning with <em>starting number</em>
+and increasing by the <em>step increment</em> until the <em>maximum number</em> is reached.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^arrayFilledWithIntegers(1|10)
+</code></pre>
+
+<p>The expression above would return an array containing the elements
+[<code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code>, <code>9</code>, <code>10</code>].</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -336,17 +415,6 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performMathFunction:withParameters:" title="performMathFunction:withParameters:"></a>
-	<h3 class="subsubtitle method-title">performMathFunction:withParameters:</h3>
-	
-	
-
-	<div class="method-subsection method-declaration"><code>+ (id)performMathFunction:(MathTransformationFunctionBlock)<em>funcBlock</em> withParameters:(NSArray *)<em>params</em></code></div>
-
-    
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/random:" title="random:"></a>
 	<h3 class="subsubtitle method-title">random:</h3>
 	
@@ -396,7 +464,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-15)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-16)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

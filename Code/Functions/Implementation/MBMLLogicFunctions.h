@@ -15,6 +15,12 @@
 
 /*!
  This class implements MBML logic functions.
+ 
+ These functions are exposed to the Mockingbird environment via
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
+
+ For more information on MBML functions, see the `MBMLFunction` class.
  */
 @interface MBMLLogicFunctions : NSObject
 
@@ -35,7 +41,7 @@
  evaluates to `NO`. If this parameter is omitted and the conditional
  evaluates to `NO`, `nil` is returned.
 
- #### Usage example
+ #### Expression usage
 
  **Note:** The MBML function is invoked with a name that differs from that of
  this method. In MBML, this function is named `^if()`.
@@ -59,8 +65,8 @@
  This function accepts two or more MBML expressions as input parameters, and
  returns the result of the first expression returning a valid value.
 
- #### Usage example
- 
+ #### Expression usage
+
      ^selectFirstValue($dataSource|^array())
 
  The expression above would return the value of `$dataSource`

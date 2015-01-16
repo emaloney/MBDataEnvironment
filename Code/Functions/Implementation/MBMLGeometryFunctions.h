@@ -32,7 +32,7 @@
  
  <code><i>origin-x</i>,<i>origin-y</i></code>
 
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^rectOrigin(10,20,80,90)</pre>
  
@@ -53,7 +53,7 @@
  
  <code><i>width</i>,<i>height</i></code>
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^rectSize(10,20,80,90)</pre>
  
@@ -72,7 +72,7 @@
  The return value is a number containing the value of the rectangle's origin
  X coordinate.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^rectX(10,20,80,90)</pre>
  
@@ -91,7 +91,7 @@
  The return value is a number containing the value of the rectangle's origin
  Y coordinate.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^rectY(10,20,80,90)</pre>
  
@@ -109,7 +109,7 @@
  
  The return value is a number containing the value of the rectangle's width.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^rectWidth(10,20,80,90)</pre>
  
@@ -127,7 +127,7 @@
  
  The return value is a number containing the value of the rectangle's height.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^rectHeight(10,20,80,90)</pre>
  
@@ -155,7 +155,7 @@
  The return value is a string containing the new rectangle, in comma-separated
  coordinate format.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^insetRect(10,10,100,100|-5,-5,15,15)</pre>
  
@@ -179,7 +179,7 @@
  The return value is a string containing the new rectangle, in comma-separated
  coordinate format.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^insetRectTop(10,10,100,100|-5)</pre>
  
@@ -203,7 +203,7 @@
  The return value is a string containing the new rectangle, in comma-separated
  coordinate format.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^insetRectLeft(50,50,50,50|25)</pre>
  
@@ -227,7 +227,7 @@
  The return value is a string containing the new rectangle, in comma-separated
  coordinate format.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^insetRectBottom(20,20,100,100|25)</pre>
  
@@ -251,7 +251,7 @@
  The return value is a string containing the new rectangle, in comma-separated
  coordinate format.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^insetRectRight(10,10,50,50|-10)</pre>
  
@@ -273,7 +273,7 @@
  
  The return value is a number containing the width.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^sizeWidth(10,20)</pre>
  
@@ -291,7 +291,7 @@
  
  The return value is a number containing the height.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^sizeHeight(10,20)</pre>
  
@@ -313,7 +313,7 @@
  
  The return value is a number containing the X coordinate.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^pointX(10,20)</pre>
  
@@ -331,7 +331,7 @@
  
  The return value is a number containing the Y coordinate.
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^pointY(10,20)</pre>
  

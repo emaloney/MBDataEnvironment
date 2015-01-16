@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLStringFunctions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class implements MBML functions for manipulating strings.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
             
 			
@@ -14,334 +14,430 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/q:</TokenIdentifier>
-			<Abstract type="html">Allows for quoting a string in the template language. This is required, for
-example, to preserve space characters at the beginning or end of a string
-literal. (Normally, the expression evaluator ignores whitespace at the
-beginning or end of string literals.)</Abstract>
+			<Abstract type="html">Quotes a string, ensuring that it is not interpreted by the Mockingbird
+expression evaluator.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)q:(NSString *)toQuote</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>toQuote</Name>
-					<Abstract type="html">the string</Abstract>
+					<Abstract type="html">The string being quoted.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">&lt;code&gt;toQuote&lt;/code&gt;</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The quoted string.</Abstract></ReturnValue>
 			<Anchor>//api/name/q:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/eval:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the result of evaluating the given string as an object expression.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)eval:(NSString *)toQuote</Declaration>
-			
-			
+			<Declaration>+ (id)eval:(NSString *)evalStr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>evalStr</Name>
+					<Abstract type="html">The string containing the expression to evaluate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating evalStr in the object context.</Abstract></ReturnValue>
 			<Anchor>//api/name/eval:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/evalBool:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the result of evaluating the given string as a boolean expression.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)evalBool:(NSString *)toQuote</Declaration>
-			
-			
+			<Declaration>+ (id)evalBool:(NSString *)evalStr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>evalStr</Name>
+					<Abstract type="html">The string containing the expression to evaluate.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating evalStr in the boolean context.</Abstract></ReturnValue>
 			<Anchor>//api/name/evalBool:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stripQueryString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)stripQueryString:(NSString *)toTransform</Declaration>
-			
-			
-			<Anchor>//api/name/stripQueryString:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stripSpaces:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)stripSpaces:(NSString *)toTransform</Declaration>
-			
-			
-			<Anchor>//api/name/stripSpaces:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/trimSpaces:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Removes any leading and trailing whitespace from the given string.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)trimSpaces:(NSString *)toTransform</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string being
+            trimmed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The trimmed string.</Abstract></ReturnValue>
 			<Anchor>//api/name/trimSpaces:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stripSpaces:</TokenIdentifier>
+			<Abstract type="html">Removes all space characters from the given string.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripSpaces:(NSString *)toTransform</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string being
+            stripped.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The string, stripped of spaces.</Abstract></ReturnValue>
+			<Anchor>//api/name/stripSpaces:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stripQueryString:</TokenIdentifier>
+			<Abstract type="html">Removes the query string from a string containing a URL.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stripQueryString:(NSString *)toTransform</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the URL string from
+            which the query string will be stripped.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The URL with the query string removed.</Abstract></ReturnValue>
+			<Anchor>//api/name/stripQueryString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/indentLines:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Indents each line in a given string with a tab character.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)indentLines:(NSString *)toIndent</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toIndent</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string being indented.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of performing the indentation.</Abstract></ReturnValue>
 			<Anchor>//api/name/indentLines:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/indentLinesToDepth:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Indents each line in a given string with a specific number of tab characters.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)indentLinesToDepth:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of performing the indentation.</Abstract></ReturnValue>
 			<Anchor>//api/name/indentLinesToDepth:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/prefixLinesWith:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Prefixes each line in a given string with another string.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)prefixLinesWith:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of performing the prefixing.</Abstract></ReturnValue>
 			<Anchor>//api/name/prefixLinesWith:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/pluralize:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Selects a properly pluralized form of a term based on a count of items.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)pluralize:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The appropriate pluralization, based on the value of count.</Abstract></ReturnValue>
 			<Anchor>//api/name/pluralize:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/lowercase:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns a version of the input string that contains only lowercase
+characters.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)lowercase:(NSString *)toTransform</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string whose
+            case is to be changed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of changing the input parameter&apos;s case.</Abstract></ReturnValue>
 			<Anchor>//api/name/lowercase:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/uppercase:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns a version of the input string that contains only uppercase
+characters.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)uppercase:(NSString *)toTransform</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string whose
+            case is to be changed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of changing the input parameter&apos;s case.</Abstract></ReturnValue>
 			<Anchor>//api/name/uppercase:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/titleCase:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns a title-case version of the input string.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)titleCase:(NSString *)toTransform</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string whose
+            case is to be changed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of changing the input parameter&apos;s case.</Abstract></ReturnValue>
 			<Anchor>//api/name/titleCase:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/titleCaseIfAllCaps:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns a title-case version of the input string if the letters in the input
+string are all capitals. If the input string contains any lowercase
+characters, the input string will be returned unchanged.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)titleCaseIfAllCaps:(NSString *)toTransform</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toTransform</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string whose
+            case is to be changed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of changing the input parameter&apos;s case.</Abstract></ReturnValue>
 			<Anchor>//api/name/titleCaseIfAllCaps:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/concatenateFields:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Constructs a string by concatenating an arbitrary set of fields using
+a field separator.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)concatenateFields:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/concatenateFields:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/firstNonemptyString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Given a set of expressions, returns the value of the first expression
+that returns a non-nil, non-empty string.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)firstNonemptyString:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/firstNonemptyString:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/firstNonemptyTrimmedString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Given a set of expressions, returns a trimmed version of the value of the
+first expression that returns a non-nil, non-empty string.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)firstNonemptyTrimmedString:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/firstNonemptyTrimmedString:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/truncate:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Truncates a string if it is longer than a given length, and appends a
+truncation marker if truncation has occurred.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)truncate:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/truncate:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/parseNumber:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to parse a string into an NSNumber instance containing an
+arbitrary numeric value.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)parseNumber:(NSString *)toParse</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toParse</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string being parsed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of parsing the input parameter.</Abstract></ReturnValue>
 			<Anchor>//api/name/parseNumber:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/parseInteger:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to parse a string into an NSNumber instance containing an
+NSInteger value.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)parseInteger:(NSString *)toInt</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toInt</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string being parsed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of parsing the input parameter.</Abstract></ReturnValue>
 			<Anchor>//api/name/parseInteger:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/parseDouble:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to parse a string into an NSNumber instance containing a
+double value.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)parseDouble:(NSString *)toFloat</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>toFloat</Name>
+					<Abstract type="html">The function&apos;s input parameter, the string being parsed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of parsing the input parameter.</Abstract></ReturnValue>
 			<Anchor>//api/name/parseDouble:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/formatInteger:</TokenIdentifier>
+			<Abstract type="html">Formats a number as an integer string using a NSNumberFormatter with a
+numberStyle of NSNumberFormatterDecimalStyle.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatInteger:(NSString *)toFormat</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>toFormat</Name>
+					<Abstract type="html">The function&apos;s input parameter, the number being formatted.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of formatting the input parameter.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatInteger:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stringWidth:</TokenIdentifier>
-			<Abstract type="html">Computes the width size for a string. Useful for dynamic sizing.</Abstract>
+			<Abstract type="html">Calculates the width of a string given a specific font and size.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)stringWidth:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>firstComponent</Name>
-					<Abstract type="html">String for which to compute width</Abstract>
-				</Parameter><Parameter>
-					<Name>secondComponent</Name>
-					<Abstract type="html">Name of font used</Abstract>
-				</Parameter><Parameter>
-					<Name>thirdComponent</Name>
-					<Abstract type="html">Size of font used</Abstract>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">[firstComponent sizeWithFont:font].width</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The width of content.</Abstract></ReturnValue>
 			<Anchor>//api/name/stringWidth:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/linesNeededToDrawText:</TokenIdentifier>
-			<Abstract type="html">Computes the number of lines for a string with specified width.</Abstract>
+			<Abstract type="html">Calculates the number of text lines required to fully display a string
+constrained to a specific width.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)linesNeededToDrawText:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>firstComponent</Name>
-					<Abstract type="html">String for which to compute number of lines</Abstract>
-				</Parameter><Parameter>
-					<Name>secondComponent</Name>
-					<Abstract type="html">Name of font used</Abstract>
-				</Parameter><Parameter>
-					<Name>thirdComponent</Name>
-					<Abstract type="html">Size of font used</Abstract>
-				</Parameter><Parameter>
-					<Name>fourthComponent</Name>
-					<Abstract type="html">Specified width for string</Abstract>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber containing the number of lines.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The number of lines.</Abstract></ReturnValue>
 			<Anchor>//api/name/linesNeededToDrawText:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/rangeOfString:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)rangeOfString:(NSArray *)params</Declaration>
-			
-			
-			<Anchor>//api/name/rangeOfString:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/formatInteger:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)formatInteger:(NSString *)toParse</Declaration>
-			
-			
-			<Anchor>//api/name/formatInteger:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
@@ -355,7 +451,7 @@ has the prefix indicated by the second expression parameter.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">- the input parameters</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
@@ -373,7 +469,7 @@ has the suffix indicated by the second expression parameter.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">- the input parameters</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
@@ -391,11 +487,28 @@ contains the string indicated by the second expression parameter.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">- the input parameters</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
 			<Anchor>//api/name/containsString:</Anchor>
+            <NodeRef refid="29"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/rangeOfString:</TokenIdentifier>
+			<Abstract type="html">Attempts to locate the first instance of a substring within another string.</Abstract>
+			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)rangeOfString:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The range of substring within string to test.</Abstract></ReturnValue>
+			<Anchor>//api/name/rangeOfString:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		

@@ -4,25 +4,13 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLMathFunctions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class implements MBML functions for performing mathematical operations.</Abstract>
 			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/performMathFunction:withParameters:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)performMathFunction:(MathTransformationFunctionBlock)funcBlock withParameters:(NSArray *)params</Declaration>
-			
-			
-			<Anchor>//api/name/performMathFunction:withParameters:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/mod:</TokenIdentifier>
@@ -146,12 +134,18 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/arrayFilledWithIntegers:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Creates an array filled with NSNumbers containing integers created
+according to a simple step pattern.</Abstract>
 			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)arrayFilledWithIntegers:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/arrayFilledWithIntegers:</Anchor>
             <NodeRef refid="25"/>
 		</Token>

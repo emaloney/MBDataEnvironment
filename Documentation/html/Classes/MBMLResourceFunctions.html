@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -56,6 +58,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -113,6 +117,21 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions for obtaining information about
+<code>NSBundle</code> resources.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -164,21 +183,51 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the path of the filesystem directory containing the resources of
-the bundle with the specified identifier.</p>
+		<p>Determines the directory containing the resources for the <code>NSBundle</code> with the
+specified name.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)directoryForBundleWithIdentifier:(NSString *)<em>bundleName</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForBundleWithIdentifier:(NSString *)<em>bundleID</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bundleID</em></dt>
+			<dd><p>The bundle identifier.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The directory containing the resources for the <code>NSBundle</code> with the
+            identifier <code>bundleID</code>, or <code>nil</code> if it couldn&rsquo;t be found.</p>
+	</div>
 	
 	
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Within a Mockingbird expression, this function takes a single parameter:
+the bundle identifier.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForBundleWithIdentifier(com.gilt.ios)
+</code></pre>
+
+<p>The expression above would return the resource directory for the <code>NSBundle</code>
+with the identifier <code>com.gilt.ios</code> if it exists. Otherwise, <code>nil</code> is returned.</p>
+	</div>
 	
 	
 	
@@ -201,8 +250,8 @@ the bundle with the specified identifier.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the path of the filesystem directory containing the resources of
-the bundle associated with the specified class.</p>
+		<p>Determines the directory containing the resources for the <code>NSBundle</code> associated
+with the specified class.</p>
 	</div>		
 	
     
@@ -211,11 +260,41 @@ the bundle associated with the specified class.</p>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>className</em></dt>
+			<dd><p>The class name.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The directory containing the resources for the <code>NSBundle</code> associated
+            with the class <code>className</code>, or <code>nil</code> if it couldn&rsquo;t be found.</p>
+	</div>
 	
 	
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Within a Mockingbird expression, this function takes a single parameter:
+the class name.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForClassBundle(MBEnvironment)
+</code></pre>
+
+<p>The expression above would return the resource directory for the <code>NSBundle</code>
+associated with the <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> class.</p>
+	</div>
 	
 	
 	
@@ -238,8 +317,7 @@ the bundle associated with the specified class.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the path of the filesystem directory containing the main bundle&rsquo;s
-resources.</p>
+		<p>Determines the directory containing the resources for the main <code>NSBundle</code>.</p>
 	</div>		
 	
     
@@ -250,9 +328,21 @@ resources.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The path of the filesystem directory containing the main bundle&rsquo;s
+            resource files, or <code>nil</code> if it couldn&rsquo;t be found.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Within a Mockingbird expression, this function is called as
+<code>^directoryForMainBundle()</code>.</p>
+	</div>
 	
 	
 	
@@ -285,7 +375,7 @@ resources.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-15)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-16)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -61,7 +61,7 @@
 {
     debugTrace();
     
-    return [toTransform stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return [toTransform stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 + (id) indentLines:(NSString*)toIndent

@@ -409,8 +409,9 @@ in the input parameters.</p>
 		<p>This function accepts two or more template expressions as parameters,
 where each expression evaluates as an array value.</p>
 
-<p><b>Template example:</b> Assume that <code>$array1</code>, <code>$array2</code>
-and <code>$array3</code> resolve to array values:</p>
+<h4>Expression usage Assume that <code>$array1</code>, <code>$array2</code></h4>
+
+<p>and <code>$array3</code> resolve to array values:</p>
 
 <pre>^appendArrays($array1|$array2|$array3)</pre>
 
@@ -495,7 +496,7 @@ against the values in the passed-in container(s)
 </ul>
 
 
-<p><b>Template example:</b></p>
+<h4>Expression usage</h4>
 
 <pre>^collectionPassesTest($collection|$item.length -GT 0)</pre>
 
@@ -579,7 +580,7 @@ equality with the values in the passed-in container(s)
 </ul>
 
 
-<p><b>Template example:</b></p>
+<h4>Expression usage</h4>
 
 <pre>^containsValue($colorsOne|$colorsTwo|yellow)</pre>
 
@@ -664,8 +665,9 @@ greater.
 than <i>returned array count</i>, one or more of the returned arrays
 will be empty.</p>
 
-<p><b>Template example:</b> Assume that <code>$newYorkTeams</code> is an
-array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
+<h4>Expression usage Assume that <code>$newYorkTeams</code> is an</h4>
+
+<p>array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
 <code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
 order.</p>
 
@@ -762,8 +764,9 @@ omitted <code>matchAtLeastOnce</code> behavior will be used.
 </ul>
 
 
-<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
-objects representing people:</p>
+<h4>Expression usage Assume that <code>$people</code> is an array of data</h4>
+
+<p>objects representing people:</p>
 
 <pre>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)</pre>
 
@@ -835,8 +838,9 @@ depth-first traversal of the input parameters.</p>
 		<p>This function accepts one or more template expressions as parameters,
 where each expression evaluates as an array value.</p>
 
-<p><b>Template example:</b> Assume that <code>$nestedArrays</code> refers to
-an array wherein each element is another array:</p>
+<h4>Expression usage Assume that <code>$nestedArrays</code> refers to</h4>
+
+<p>an array wherein each element is another array:</p>
 
 <pre>^flattenArrays($nestedArrays)</pre>
 
@@ -919,8 +923,9 @@ created while iterating the source array.</p>
 size</i> number of items, the last group array will contain fewer than
 <i>group size</i> number of items.</p>
 
-<p><b>Template example:</b> Assume that <code>$newYorkTeams</code> is an
-array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
+<h4>Expression usage Assume that <code>$newYorkTeams</code> is an</h4>
+
+<p>array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
 <code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
 order.</p>
 
@@ -1003,8 +1008,9 @@ returned string
 </ul>
 
 
-<p><b>Template example:</b> Assume that <code>$values</code> is an array
-containing the strings &ldquo;string1&rdquo;, &ldquo;anotherString&rdquo;, and &ldquo;lastly&rdquo;:</p>
+<h4>Expression usage Assume that <code>$values</code> is an array</h4>
+
+<p>containing the strings &ldquo;string1&rdquo;, &ldquo;anotherString&rdquo;, and &ldquo;lastly&rdquo;:</p>
 
 <pre>^join($values|, )</pre>
 
@@ -1087,8 +1093,9 @@ intermediate expressions.
 <i>value expression</i> once for each item encountered in the data
 model.</p>
 
-<p><b>Template example:</b> Assume that <code>$states</code> is a map where
-each item in the map represents a state. The key for each item is the
+<h4>Expression usage Assume that <code>$states</code> is a map where</h4>
+
+<p>each item in the map represents a state. The key for each item is the
 two-letter postal code for the state, and the value associated with
 each key is another dictionary containing additional information about the
 state.</p>
@@ -1212,8 +1219,9 @@ levels of scope.
 </ul>
 
 
-<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
-objects representing people:</p>
+<h4>Expression usage Assume that <code>$people</code> is an array of data</h4>
+
+<p>objects representing people:</p>
 
 <pre>^map($people|$item.children|$item.fullName|$root)</pre>
 
@@ -1340,8 +1348,9 @@ levels of scope.
 </ul>
 
 
-<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
-objects representing people:</p>
+<h4>Expression usage Assume that <code>$people</code> is an array of data</h4>
+
+<p>objects representing people:</p>
 
 <pre>^mapToArray($people|$item.children|$item.fullName|$root)</pre>
 
@@ -1470,8 +1479,9 @@ levels of scope.
 </ul>
 
 
-<p><b>Template example:</b> Assume that <code>$people</code> is an array of data
-objects representing people:</p>
+<h4>Expression usage Assume that <code>$people</code> is an array of data</h4>
+
+<p>objects representing people:</p>
 
 <pre>^mapToSingleValue($people|$item.children|$item.fullName|$root)</pre>
 
@@ -1601,8 +1611,9 @@ non-array element found while traversing the tree
 structure, but containing only those non-array elements for which the
 <i>test expression</i> evaluates to <code>NO</code>.</p>
 
-<p><b>Template example:</b> Assume that <code>$input</code> is an array
-containing two inner arrays. The first inner array contains the strings:
+<h4>Expression usage Assume that <code>$input</code> is an array</h4>
+
+<p>containing two inner arrays. The first inner array contains the strings:
 &ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second
 inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
 &ldquo;<code>Sally</code>&rdquo;.</p>
@@ -1686,8 +1697,9 @@ non-array element found while traversing the tree
 structure, but containing only those non-array elements for which the
 <i>test expression</i> evaluates to <code>YES</code>.</p>
 
-<p><b>Template example:</b> Assume that <code>$input</code> is an array
-containing two inner arrays. The first inner array contains the strings:
+<h4>Expression usage Assume that <code>$input</code> is an array</h4>
+
+<p>containing two inner arrays. The first inner array contains the strings:
 &ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second
 inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
 &ldquo;<code>Sally</code>&rdquo;.</p>
@@ -1766,8 +1778,9 @@ to an array.
 
 <p>The source is iterated and the expression is evaluated with respect to each $item.</p>
 
-<p><b>Template example:</b> Assume that <code>$numbers</code> is an
-array with the numbers 1 through 5</p>
+<h4>Expression usage Assume that <code>$numbers</code> is an</h4>
+
+<p>array with the numbers 1 through 5</p>
 
 <pre>^reduce($numbers|0|#($currentValue + $item))</pre>
 
@@ -1876,7 +1889,7 @@ string to be split
 </ul>
 
 
-<p><b>Template example:</b>:</p>
+<h4>Expression usage:</h4>
 
 <pre>^split(, |Evan, Jesse, Yon)</pre>
 
@@ -1943,8 +1956,9 @@ function.</p></dd>
 		<p>This function accepts a single template expression, the <i>input string</i>
 that will be split on newlines.</p>
 
-<p><b>Template example:</b> Assume that <code>$lines</code> is a string
-containing newlines:</p>
+<h4>Expression usage Assume that <code>$lines</code> is a string</h4>
+
+<p>containing newlines:</p>
 
 <pre>^splitLines($lines)</pre>
 
@@ -2014,8 +2028,9 @@ protocol (such as an <code>NSArray</code> or <code>NSSet</code>). The values
 in the returned array will be in the same order that they were supplied by
 the enumerator.</p>
 
-<p><b>Template example:</b> Assume that <code>$animals</code> is an array with
-three elements: the strings <code>Duck</code>, <code>Duck</code> and
+<h4>Expression usage Assume that <code>$animals</code> is an array with</h4>
+
+<p>three elements: the strings <code>Duck</code>, <code>Duck</code> and
 <code>Goose</code>.</p>
 
 <pre>^unique($animals)</pre>
@@ -2118,8 +2133,9 @@ at the top level of the data model
 </ul>
 
 
-<p><b>Template example:</b> Assume that <code>$articles</code> and <code>$videos</code>
-are containers whose values each have a <code>displayOrder</code> attribute:</p>
+<h4>Expression usage Assume that <code>$articles</code> and <code>$videos</code></h4>
+
+<p>are containers whose values each have a <code>displayOrder</code> attribute:</p>
 
 <pre>^valuesPassingTest($articles|$videos|$item.displayOrder -EQ 1)</pre>
 
@@ -2163,7 +2179,7 @@ placed into the array returned by the function.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-15)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-16)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
