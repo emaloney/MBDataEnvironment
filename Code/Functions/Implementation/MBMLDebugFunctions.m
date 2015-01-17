@@ -97,7 +97,7 @@
 
     NSArray* tokens = [[MBExpressionCache instance] tokensForExpression:exprStr
                                                         inVariableSpace:[MBVariableSpace instance]
-                                                           usingGrammar:[MBMLObjectExpressionGrammar instance]
+                                                           usingGrammar:grammar
                                                                   error:&err];
 
     if (err) {
