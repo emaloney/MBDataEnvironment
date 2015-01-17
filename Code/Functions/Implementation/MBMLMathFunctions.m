@@ -17,6 +17,7 @@
 #define DEBUG_LOCAL             0
 
 #define RANDOM_TYPE             long
+#define RANDOM_TYPE_ABS         labs
 #define RANDOM_MIN              ((RANDOM_TYPE)0)
 #define RANDOM_MAX              ((RANDOM_TYPE)RAND_MAX)
 
@@ -44,17 +45,17 @@
                                      error:(MBMLFunctionError**)errPtr
 {
     MBMLFunctionError* err = nil;
-    
+
     NSMutableArray* numbers = [NSMutableArray array];
     for (NSUInteger i=startIdx; i<endingBefore; i++) {
         id val = params[i];
         if ([val isKindOfClass:[NSArray class]]) {
             NSArray* flattened = [self _flattenNumbersFromParameters:val
-                                                     startingAtIndex:0 
+                                                     startingAtIndex:0
                                                    endingBeforeIndex:[val count]
                                                                error:&err];
             if (err) return nil;
-            
+
             [numbers addObjectsFromArray:flattened];
         }
         else {
@@ -62,7 +63,7 @@
                                                 containsNumberAtIndex:i
                                                                 error:&err];
             if (err) return nil;
-            
+
             [numbers addObject:numVal];
         }
     }
@@ -77,17 +78,17 @@
             withParameters:(NSArray*)params
 {
     MBMLFunctionError* err = nil;
-    
+
     NSArray* numbers = [self _flattenNumbersFromParameters:params
                                            startingAtIndex:0
                                          endingBeforeIndex:params.count
                                                      error:&err];
     if (err) return err;
-    
+
     NSUInteger numCnt = numbers.count;
     if (numCnt < 2)
         return [MBMLFunctionError errorWithMessage:@"expecting at least two valid numeric input parameters"];
-    
+
     NSDecimalNumber* curVal = numbers[0];
     for (NSUInteger i=1; i<numCnt; i++) {
         curVal = funcBlock(curVal, numbers[i]);
@@ -102,29 +103,29 @@
 + (id) mod:(NSArray*)params
 {
     debugTrace();
-    
+
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
-    
+
     return @([params[0] integerValue] % [params[1] integerValue]);
 }
 
 + (id) modFloat:(NSArray*)params
 {
     debugTrace();
-    
+
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
-    
+
     return @(fmod([params[0] doubleValue], [params[1] doubleValue]));
 }
 
 + (id) ceil:(id)number
 {
     debugTrace();
-    
+
     MBMLFunctionError* err = nil;
     NSDecimalNumber* decimalNumber = [MBMLFunction validateParameterContainsNumber:number error:&err];
     if (err) {
@@ -160,11 +161,11 @@
 + (id) min:(NSArray*)params
 {
     debugTrace();
-    
+
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
-    
+
     return [self performMathFunction:^(NSDecimalNumber* lVal, NSDecimalNumber* rVal){ return [lVal compare:rVal] == NSOrderedAscending ? lVal : rVal; }
                       withParameters:params];
 }
@@ -172,11 +173,11 @@
 + (id) max:(NSArray*)params
 {
     debugTrace();
-    
+
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
-    
+
     return [self performMathFunction:^(NSDecimalNumber* lVal, NSDecimalNumber* rVal){ return [lVal compare:rVal] == NSOrderedDescending ? lVal : rVal; }
                       withParameters:params];
 }
@@ -210,7 +211,7 @@
         formatString = [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
         if (err) return err;
     }
-    
+
     CGFloat num = [num1 doubleValue];
     CGFloat denom = [num2 doubleValue];
     return [NSString stringWithFormat:formatString, ((num*100)/denom)];
@@ -222,17 +223,17 @@
 
 + (id) randomPercent
 {
-    return @(random() / RANDOM_MAX);
+    return @((double)random() / (double)RANDOM_MAX);
 }
 
 + (id) random:(NSArray*)params
 {
     debugTrace();
-    
+
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:1 andAtMost:2 error:&err];
     if (err) return err;
-    
+
     NSNumber* param1 = [MBMLFunction validateParameter:params containsNumberAtIndex:0 error:&err];
     if (err) return err;
 
@@ -241,7 +242,7 @@
         param2 = [MBMLFunction validateParameter:params containsNumberAtIndex:1 error:&err];
         if (err) return err;
     }
-    
+
     RANDOM_TYPE lowerBounds = RANDOM_MIN;
     RANDOM_TYPE upperBounds = RANDOM_MAX;
     if (paramCnt == 1) {
@@ -251,7 +252,7 @@
         upperBounds = (RANDOM_TYPE)[param2 longValue];
     }
 
-    RANDOM_TYPE range = upperBounds - lowerBounds;
+    RANDOM_TYPE range = RANDOM_TYPE_ABS(RANDOM_TYPE_ABS(upperBounds + 1) - RANDOM_TYPE_ABS(lowerBounds));
     RANDOM_TYPE rnd = random();
     RANDOM_TYPE result = (rnd % range) + lowerBounds;
     return @(result);
@@ -261,7 +262,6 @@
 #pragma mark Filling an array with numbers
 /******************************************************************************/
 
-// params: ($startNum|$count|$step)
 + (id) arrayFilledWithIntegers:(NSArray*)params
 {
     debugTrace();
