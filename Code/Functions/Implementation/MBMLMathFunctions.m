@@ -16,6 +16,12 @@
 
 #define DEBUG_LOCAL             0
 
+/******************************************************************************/
+#pragma mark Types
+/******************************************************************************/
+
+typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVal, NSDecimalNumber* rVal);
+
 #define RANDOM_TYPE             long
 #define RANDOM_TYPE_ABS         labs
 #define RANDOM_MIN              ((RANDOM_TYPE)0)
