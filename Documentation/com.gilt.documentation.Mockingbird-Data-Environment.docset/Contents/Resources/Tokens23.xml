@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLGeometryFunctions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class implements MBML functions for working with geometric values.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
             
 			
@@ -17,9 +17,16 @@
 			<Abstract type="html">Returns the origin point of a rectangle.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)rectOrigin:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)rectOrigin:(NSString *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The function&apos;s input parameter, a rectangle expressed as
+            a comma-separated string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result, the origin point of the rectangle expressed
+            as a comma-separated string.</Abstract></ReturnValue>
 			<Anchor>//api/name/rectOrigin:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -29,9 +36,16 @@
 			<Abstract type="html">Returns the size of a rectangle.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)rectSize:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)rectSize:(NSString *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The function&apos;s input parameter, a rectangle expressed as
+            a comma-separated string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result, the size of the rectangle expressed
+            as a comma-separated string.</Abstract></ReturnValue>
 			<Anchor>//api/name/rectSize:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -41,9 +55,15 @@
 			<Abstract type="html">Returns the X coordinate of a rectangle&apos;s origin.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)rectX:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)rectX:(NSString *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The function&apos;s input parameter, a rectangle expressed as
+            a comma-separated string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result, the origin X coordinate of the rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/rectX:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -53,9 +73,15 @@
 			<Abstract type="html">Returns the Y coordinate of a rectangle&apos;s origin.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)rectY:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)rectY:(NSString *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The function&apos;s input parameter, a rectangle expressed as
+            a comma-separated string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result, the origin Y coordinate of the rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/rectY:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -65,21 +91,33 @@
 			<Abstract type="html">Returns the rectangle&apos;s width.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)rectWidth:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)rectWidth:(NSString *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The function&apos;s input parameter, a rectangle expressed as
+            a comma-separated string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result, the width of the rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/rectWidth:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLGeometryFunctions/rectHeight:</TokenIdentifier>
-			<Abstract type="html">Returns the rectangle&apos;s height.</Abstract>
+			<Abstract type="html">Returns the rectangle&apos;s width.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)rectHeight:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)rectHeight:(NSString *)rect</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rect</Name>
+					<Abstract type="html">The function&apos;s input parameter, a rectangle expressed as
+            a comma-separated string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result, the height of the rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/rectHeight:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -90,8 +128,13 @@
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)insetRect:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the adjusted rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/insetRect:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -102,8 +145,13 @@
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)insetRectTop:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the adjusted rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/insetRectTop:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -114,20 +162,30 @@
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)insetRectLeft:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the adjusted rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/insetRectLeft:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLGeometryFunctions/insetRectBottom:</TokenIdentifier>
-			<Abstract type="html">Adjusts a rectangle by applying an inset to the top edge.</Abstract>
+			<Abstract type="html">Adjusts a rectangle by applying an inset to the bottom edge.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)insetRectBottom:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the adjusted rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/insetRectBottom:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -138,8 +196,13 @@
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)insetRectRight:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the adjusted rectangle.</Abstract></ReturnValue>
 			<Anchor>//api/name/insetRectRight:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -149,9 +212,14 @@
 			<Abstract type="html">Returns the width component of a size.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)sizeWidth:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)sizeWidth:(NSString *)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The width component of size expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/sizeWidth:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -161,9 +229,14 @@
 			<Abstract type="html">Returns the height component of a size.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)sizeHeight:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)sizeHeight:(NSString *)size</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>size</Name>
+					<Abstract type="html">The size expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The height component of size expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/sizeHeight:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -173,9 +246,14 @@
 			<Abstract type="html">Returns the X coordinate of a point.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)pointX:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)pointX:(NSString *)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">The point expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The X coordinate of point expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointX:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
@@ -185,9 +263,14 @@
 			<Abstract type="html">Returns the Y coordinate of a point.</Abstract>
 			<DeclaredIn>MBMLGeometryFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)pointY:(NSString *)param</Declaration>
-			
-			
+			<Declaration>+ (id)pointY:(NSString *)point</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>point</Name>
+					<Abstract type="html">The point expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The Y coordinate of point expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/pointY:</Anchor>
             <NodeRef refid="23"/>
 		</Token>

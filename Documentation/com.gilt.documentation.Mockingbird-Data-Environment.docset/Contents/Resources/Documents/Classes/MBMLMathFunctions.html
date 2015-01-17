@@ -81,6 +81,16 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modulo operations">Modulo operations</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Rounding numbers">Rounding numbers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Comparing numbers">Comparing numbers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Random number generation">Random number generation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating sequences of numbers">Creating sequences of numbers</a></span></li>
+	
 </ul></li>
 
 
@@ -173,8 +183,8 @@ file.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Modulo operations" name="task_Modulo operations"></a>
+						<h3 class="subsubtitle task-title">Modulo operations</h3>
 
 						<ul class="task-list">
 							<li>
@@ -189,7 +199,15 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Rounding numbers" name="task_Rounding numbers"></a>
+						<h3 class="subsubtitle task-title">Rounding numbers</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/percent:">+&nbsp;percent:</a></code>
 	</span>
@@ -213,7 +231,15 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Comparing numbers" name="task_Comparing numbers"></a>
+						<h3 class="subsubtitle task-title">Comparing numbers</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/max:">+&nbsp;max:</a></code>
 	</span>
@@ -225,7 +251,15 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Random number generation" name="task_Random number generation"></a>
+						<h3 class="subsubtitle task-title">Random number generation</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/randomPercent">+&nbsp;randomPercent</a></code>
 	</span>
@@ -237,7 +271,15 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Creating sequences of numbers" name="task_Creating sequences of numbers"></a>
+						<h3 class="subsubtitle task-title">Creating sequences of numbers</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/arrayFilledWithIntegers:">+&nbsp;arrayFilledWithIntegers:</a></code>
 	</span>
@@ -342,10 +384,70 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">ceil:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <em>ceiling</em> of a numeric value; that is, the smallest integral value
+greater than or equal to the specified value. This can be thought of as
+&ldquo;rounding up.&rdquo;</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)ceil:(id)<em>number</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>number</em></dt>
+			<dd><p>The input value.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The ceiling of the input value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts one parameter, a numeric expression for
+which the ceiling should be returned.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^ceil(10.27)
+</code></pre>
+
+<p>The expression above yields the value <code>11</code>.</p>
+
+<pre><code>^ceil(-10.27)
+</code></pre>
+
+<p>The expression above yields the value <code>-10</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -353,10 +455,70 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">floor:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <em>floor</em> of a numeric value; that is, the largest integral value
+less than or equal to the specified value. This can be thought of as &ldquo;rounding
+down.&rdquo;</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)floor:(id)<em>number</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>number</em></dt>
+			<dd><p>The input value.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The floor of the input value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts one parameter, a numeric expression for
+which the floor should be returned.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^floor(10.27)
+</code></pre>
+
+<p>The expression above yields the value <code>10</code>.</p>
+
+<pre><code>^floor(-10.27)
+</code></pre>
+
+<p>The expression above yields the value <code>-11</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -364,10 +526,71 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">max:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the greater of two numeric values.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)max:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The lesser value of the two input parameters.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
+
+<ul>
+<li><em>a</em>, a numeric expression representing the first value, and</li>
+<li><em>b</em>, a numeric expression representing the second value</li>
+</ul>
+
+
+<p>If <em>a</em> is greater than <em>b</em>, the function returns <em>a</em>; if <em>a</em> is less than
+<em>b</em>, the function returns <em>b</em>.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^max(5|10)
+</code></pre>
+
+<p>The expression above yields the numeric value <code>10</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -375,10 +598,71 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">min:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the lesser of two numeric values.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)min:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The lesser value of the two input parameters.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
+
+<ul>
+<li><em>a</em>, a numeric expression representing the first value, and</li>
+<li><em>b</em>, a numeric expression representing the second value</li>
+</ul>
+
+
+<p>If <em>a</em> is less than <em>b</em>, the function returns <em>a</em>; if <em>a</em> is greater than
+<em>b</em>, the function returns <em>b</em>.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^min(5|10)
+</code></pre>
+
+<p>The expression above yields the numeric value <code>5</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -386,10 +670,73 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">mod:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs an integer modulo operation on a <em>dividend</em> and a <em>divisor</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)mod:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> containing the result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The modulo operation returns the <em>remainder</em> of dividing the <em>dividend</em> by
+the <em>divisor</em>.</p>
+
+<p>This Mockingbird function accepts two pipe-separated parameters:</p>
+
+<ul>
+<li><p>The <em>dividend</em>, a numeric expression that will be interpreted as an
+ integer value</p></li>
+<li><p>The <em>divisor</em>, a numeric expression that will be interpreted as an
+ integer value</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code>^mod(7|4)
+</code></pre>
+
+<p>The expression above yields the value <code>3</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -397,10 +744,73 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">modFloat:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a floating-point modulo operation on a <em>dividend</em> and a <em>divisor</em>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)modFloat:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> containing the result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The modulo operation returns the <em>remainder</em> of dividing the <em>dividend</em> by
+the <em>divisor</em>.</p>
+
+<p>This Mockingbird function accepts two pipe-separated parameters:</p>
+
+<ul>
+<li><p>The <em>dividend</em>, a numeric expression that will be interpreted as a
+ floating-point value</p></li>
+<li><p>The <em>divisor</em>, a numeric expression that will be interpreted as an
+ floating-point value</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code>^modFloat(10.25|.5)
+</code></pre>
+
+<p>The expression above yields the value <code>0.25</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -408,10 +818,81 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">percent:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Formats a string to display a human-readable percentage.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)percent:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSString</code> containing the result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two or three pipe-separated parameters:</p>
+
+<ul>
+<li><p>An optional <em>format string</em>, a string expression containing a <code>printf</code>-style
+ formatting sequence. If <em>format string</em> is omitted, the format string
+ defaults to &ldquo;<code>%.0f%%</code>&rdquo;.</p></li>
+<li><p>The <em>dividend</em>, a numeric expression</p></li>
+<li><p>The <em>divisor</em>, a numeric expression that&rsquo;s expected to be greater than
+ the <em>dividend</em></p></li>
+</ul>
+
+
+<p>The percent string is constructed by dividing the <em>dividend</em> by the
+<em>divisor</em> and formatting the resulting floating-point number using
+the <em>format string</em>.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^percent(32|78)
+</code></pre>
+
+<p>The expression above yields the string &ldquo;<code>41%</code>&rdquo;.</p>
+
+<pre><code>^percent(%.2f percent|27|72)
+</code></pre>
+
+<p>The expression above yields the string &ldquo;<code>37.50 percent</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -419,10 +900,74 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">random:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a random integer within a specified range.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)random:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> containing a random integer value between
+             <em>minimum value</em> and <em>maximum value</em>, inclusive.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts one or two pipe-separated parameters,
+depending on how it being used:</p>
+
+<ul>
+<li><p>An optional <em>minimum value</em>, a numeric expression specifying the minimum
+ value to be returned by the function. If this value is not specified, <code>0</code>
+ will be used as the minimum value.</p></li>
+<li><p>The <em>maximum value</em>, a numeric expression specifying the maximum value
+ to be returned by the function.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code>^random(1|52)
+</code></pre>
+
+<p>One run of the expression above resulted in the value <code>27</code>.
+Other runs will produce different results.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -430,10 +975,54 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">randomPercent</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a random percentage. Possible values range from <code>0.0</code> to <code>1.0</code>,
+inclusive.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)randomPercent</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> containing a random percentage.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters, and returns an <code>NSNumber</code>.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^randomPercent()
+</code></pre>
+
+<p>One run of the expression above resulted in the value <code>0.3335955009486505</code>.
+Other runs will produce different results.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -441,10 +1030,89 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 	<h3 class="subsubtitle method-title">round:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Rounds a numeric value to the nearest integral value. Values halfway between
+the nearest integrals are rounded away from zero.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)round:(id)<em>number</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>number</em></dt>
+			<dd><p>The input value.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The floor of the input value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts one parameter, a numeric expression for
+which the rounded value should be returned.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^round(10.27)
+</code></pre>
+
+<p>The expression above yields the value <code>10</code>.</p>
+
+<pre><code>^round(10.5)
+</code></pre>
+
+<p>The expression above yields the value <code>11</code>.</p>
+
+<pre><code>^round(10.72)
+</code></pre>
+
+<p>The expression above yields the value <code>11</code>.</p>
+
+<pre><code>^round(-10.27)
+</code></pre>
+
+<p>The expression above yields the value <code>-10</code>.</p>
+
+<pre><code>^round(-10.5)
+</code></pre>
+
+<p>The expression above yields the value <code>-11</code>.</p>
+
+<pre><code>^round(-10.72)
+</code></pre>
+
+<p>The expression above yields the value <code>-11</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLMathFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -464,7 +1132,7 @@ and increasing by the <em>step increment</em> until the <em>maximum number</em> 
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-16)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

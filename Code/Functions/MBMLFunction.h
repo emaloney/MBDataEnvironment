@@ -109,7 +109,11 @@ typedef enum : NSUInteger {
  
  A function declaration looks like:
  
-    <Function name="functionName" class="ImplementingClass" method="methodName" input="inputType" output="outputType"/>
+    <Function name="functionName" 
+              class="ImplementingClass" 
+              method="methodName" 
+              input="inputType"
+              output="outputType"/>
 
  The `<Function>` tag accepts the following attributes:
  

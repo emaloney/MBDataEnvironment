@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -80,10 +82,18 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing components of rectangles">Accessing components of rectangles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Adjusting rectangles">Adjusting rectangles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing the width and height components of sizes">Accessing the width and height components of sizes</a></span></li>
 	
 </ul></li>
 
@@ -161,6 +171,20 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions for working with geometric values.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -168,8 +192,8 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Accessing components of rectangles" name="task_Accessing components of rectangles"></a>
+						<h3 class="subsubtitle task-title">Accessing components of rectangles</h3>
 
 						<ul class="task-list">
 							<li>
@@ -208,7 +232,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Adjusting rectangles" name="task_Adjusting rectangles"></a>
+						<h3 class="subsubtitle task-title">Adjusting rectangles</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/insetRect:">+&nbsp;insetRect:</a></code>
 	</span>
@@ -238,7 +270,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Accessing the width and height components of sizes" name="task_Accessing the width and height components of sizes"></a>
+						<h3 class="subsubtitle task-title">Accessing the width and height components of sizes</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/sizeWidth:">+&nbsp;sizeWidth:</a></code>
 	</span>
@@ -293,7 +333,22 @@
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the adjusted rectangle.</p>
+	</div>
 	
 	
 	
@@ -301,27 +356,27 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated parameters. The first parameter
-is a comma-separated string specifying the rectangle to be modified, in the
-format:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+<ul>
+<li><p>The <em>rectangle</em> to be adjusted, a string expression yielding a
+ comma-separated string specifying the rectangle in the format:
+ &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>The <em>edge insets</em> to apply to <em>rectangle</em>. Edge insets are expressed as a
+ string expression yielding a comma-separated in the format:
+ &ldquo;<em><code>topInset</code></em><code>,</code><em><code>leftInset</code></em><code>,</code><em><code>bottomInset</code></em><code>,</code><em><code>rightInset</code></em>&rdquo;.</p></li>
+</ul>
 
-<p>The second parameter is a comma-separated string specifying the insets to apply
-to the rectangle, in the format:</p>
-
-<p><code><i>topInset</i>,<i>leftInset</i>,<i>bottomInset</i>,<i>rightInset</i></code></p>
 
 <p>Positive inset values adjust the rectangle by making it smaller at the specified
 edge, whereas negative inset values make the rectangle larger.</p>
 
-<p>The return value is a string containing the new rectangle, in comma-separated
-coordinate format.</p>
+<p>The return value is a comma-separated string specifying the adjusted rectangle.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^insetRect(10,10,100,100|-5,-5,15,15)</pre>
-
+<pre><code> ^insetRect(10,10,100,100|-5,-5,15,15)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>5,5,90,90</code>&rdquo;.</p>
 	</div>
@@ -347,7 +402,7 @@ coordinate format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Adjusts a rectangle by applying an inset to the top edge.</p>
+		<p>Adjusts a rectangle by applying an inset to the bottom edge.</p>
 	</div>		
 	
     
@@ -356,7 +411,22 @@ coordinate format.</p>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the adjusted rectangle.</p>
+	</div>
 	
 	
 	
@@ -364,23 +434,27 @@ coordinate format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated parameters. The first parameter
-is a comma-separated string specifying the rectangle to be modified, in the
-format:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+<ul>
+<li><p>The <em>rectangle</em> to be adjusted, a string expression yielding a
+ comma-separated string specifying the rectangle in the format:
+ &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>The <em>inset amount</em>, a numeric expression indicating the amount by which
+ the edge of <em>rectangle</em> will be adjusted.</p></li>
+</ul>
 
-<p>The second parameter is the inset amount. A negative value makes the rectangle
-taller by moving the bottom edge downwards; a positive value makes the rectangle
-shorter by raising the bottom edge.</p>
 
-<p>The return value is a string containing the new rectangle, in comma-separated
-coordinate format.</p>
+<p>A negative <em>inset amount</em> makes the rectangle taller by moving the bottom
+edge downwards; a positive value makes the rectangle shorter by raising the
+bottom edge.</p>
+
+<p>The return value is a comma-separated string specifying the adjusted rectangle.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^insetRectBottom(20,20,100,100|25)</pre>
-
+<pre><code> ^insetRectBottom(20,20,100,100|25)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>20,20,100,75</code>&rdquo;.</p>
 	</div>
@@ -415,7 +489,22 @@ coordinate format.</p>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the adjusted rectangle.</p>
+	</div>
 	
 	
 	
@@ -423,23 +512,27 @@ coordinate format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated parameters. The first parameter
-is a comma-separated string specifying the rectangle to be modified, in the
-format:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+<ul>
+<li><p>The <em>rectangle</em> to be adjusted, a string expression yielding a
+ comma-separated string specifying the rectangle in the format:
+ &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>The <em>inset amount</em>, a numeric expression indicating the amount by which
+ the edge of <em>rectangle</em> will be adjusted.</p></li>
+</ul>
 
-<p>The second parameter is the inset amount. A negative value makes the rectangle
-wider by moving the left edge further leftwards; a positive value makes the
-rectangle narrower by moving the left edge rightwards.</p>
 
-<p>The return value is a string containing the new rectangle, in comma-separated
-coordinate format.</p>
+<p>A negative <em>inset amount</em> makes the rectangle wider by moving the left edge
+further leftwards; a positive value makes the rectangle narrower by moving the
+left edge rightwards.</p>
+
+<p>The return value is a comma-separated string specifying the adjusted rectangle.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^insetRectLeft(50,50,50,50|25)</pre>
-
+<pre><code> ^insetRectLeft(50,50,50,50|25)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>75,50,25,50</code>&rdquo;.</p>
 	</div>
@@ -474,7 +567,22 @@ coordinate format.</p>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the adjusted rectangle.</p>
+	</div>
 	
 	
 	
@@ -482,23 +590,27 @@ coordinate format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated parameters. The first parameter
-is a comma-separated string specifying the rectangle to be modified, in the
-format:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+<ul>
+<li><p>The <em>rectangle</em> to be adjusted, a string expression yielding a
+ comma-separated string specifying the rectangle in the format:
+ &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>The <em>inset amount</em>, a numeric expression indicating the amount by which
+ the edge of <em>rectangle</em> will be adjusted.</p></li>
+</ul>
 
-<p>The second parameter is the inset amount. A negative value makes the rectangle
-larger by moving the right edge further rightwards; a positive value makes the
-rectangle smaller by moving the right edge leftwards.</p>
 
-<p>The return value is a string containing the new rectangle, in comma-separated
-coordinate format.</p>
+<p>A negative <em>inset amount</em> makes the rectangle larger by moving the right
+edge further rightwards; a positive value makes the rectangle smaller by
+moving the right edge leftwards.</p>
+
+<p>The return value is a comma-separated string specifying the adjusted rectangle.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^insetRectRight(10,10,50,50|-10)</pre>
-
+<pre><code> ^insetRectRight(10,10,50,50|-10)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>10,10,60,50</code>&rdquo;.</p>
 	</div>
@@ -533,7 +645,22 @@ coordinate format.</p>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A string containing the adjusted rectangle.</p>
+	</div>
 	
 	
 	
@@ -541,23 +668,26 @@ coordinate format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated parameters. The first parameter
-is a comma-separated string specifying the rectangle to be modified, in the
-format:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+<ul>
+<li><p>The <em>rectangle</em> to be adjusted, a string expression yielding a
+ comma-separated string specifying the rectangle in the format:
+ &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>The <em>inset amount</em>, a numeric expression indicating the amount by which
+ the edge of <em>rectangle</em> will be adjusted.</p></li>
+</ul>
 
-<p>The second parameter is the inset amount. A negative value makes the rectangle
-taller by moving the top edge upwards; a positive value makes the rectangle
-shorter by lowering the top edge.</p>
 
-<p>The return value is a string containing the new rectangle, in comma-separated
-coordinate format.</p>
+<p>A negative <em>inset amount</em> makes the rectangle taller by moving the top edge
+upwards; a positive value makes the rectangle shorter by lowering the top edge.</p>
+
+<p>The return value is a comma-separated string specifying the adjusted rectangle.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^insetRectTop(10,10,100,100|-5)</pre>
-
+<pre><code> ^insetRectTop(10,10,100,100|-5)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>10,5,100,105</code>&rdquo;.</p>
 	</div>
@@ -588,11 +718,26 @@ coordinate format.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)pointX:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)pointX:(NSString *)<em>point</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>point</em></dt>
+			<dd><p>The <em>point expression</em>.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The X coordinate of <em>point expression</em>.</p>
+	</div>
 	
 	
 	
@@ -600,19 +745,19 @@ coordinate format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the point in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, the <em>point expression</em>
+yielding a comma-separated string specifying the point in the format:
+&ldquo;<em><code>x</code></em><code>,</code><em><code>y</code></em>&rdquo;.</p>
 
-<p><code><i>x</i>,<i>y</i></code></p>
-
-<p>The return value is a number containing the X coordinate.</p>
+<p>The return value is an <code>NSNumber</code> instance containing the X coordinate
+of the <em>point expression</em>.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^pointX(10,20)</pre>
+<pre><code> ^pointX(10,20)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>10</code>&rdquo;.</p>
+<p>The expression above would return the value <code>10</code>.</p>
 	</div>
 	
 	
@@ -641,11 +786,26 @@ specifying the point in the format:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)pointY:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)pointY:(NSString *)<em>point</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>point</em></dt>
+			<dd><p>The <em>point expression</em>.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The Y coordinate of <em>point expression</em>.</p>
+	</div>
 	
 	
 	
@@ -653,19 +813,19 @@ specifying the point in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the point in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, the <em>point expression</em>
+yielding a comma-separated string specifying the point in the format:
+&ldquo;<em><code>x</code></em><code>,</code><em><code>y</code></em>&rdquo;.</p>
 
-<p><code><i>x</i>,<i>y</i></code></p>
-
-<p>The return value is a number containing the Y coordinate.</p>
+<p>The return value is an <code>NSNumber</code> instance containing the Y coordinate
+of the <em>point expression</em>.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^pointY(10,20)</pre>
+<pre><code> ^pointY(10,20)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>20</code>&rdquo;.</p>
+<p>The expression above would return the value <code>20</code>.</p>
 	</div>
 	
 	
@@ -689,16 +849,32 @@ specifying the point in the format:</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the rectangle&rsquo;s height.</p>
+		<p>Returns the rectangle&rsquo;s width.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)rectHeight:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)rectHeight:(NSString *)<em>rect</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The function&rsquo;s input parameter, a rectangle expressed as
+            a comma-separated string.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result, the height of the rectangle.</p>
+	</div>
 	
 	
 	
@@ -706,19 +882,18 @@ specifying the point in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the rectangle in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, a comma-separated string
+specifying the rectangle in the format:
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
-
-<p>The return value is a number containing the value of the rectangle&rsquo;s height.</p>
+<p>The return value is an <code>NSNumber</code> containing the rectangle&rsquo;s height.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^rectHeight(10,20,80,90)</pre>
+<pre><code> ^rectHeight(10,20,80,90)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>90</code>&rdquo;.</p>
+<p>The expression above would return the value <code>90</code>.</p>
 	</div>
 	
 	
@@ -747,11 +922,28 @@ specifying the rectangle in the format:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)rectOrigin:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)rectOrigin:(NSString *)<em>rect</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The function&rsquo;s input parameter, a rectangle expressed as
+            a comma-separated string.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result, the origin point of the rectangle expressed
+            as a comma-separated string.</p>
+	</div>
 	
 	
 	
@@ -759,20 +951,17 @@ specifying the rectangle in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the rectangle in the format:</p>
-
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+		<p>This Mockingbird function accepts a single parameter, a comma-separated string
+specifying the rectangle in the format:
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
 <p>The return value contains the rectangle&rsquo;s origin as a comma-separated string
-in the format:</p>
-
-<p><code><i>origin-x</i>,<i>origin-y</i></code></p>
+in the format: &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em>&rdquo;</p>
 
 <h4>Expression usage</h4>
 
-<pre>^rectOrigin(10,20,80,90)</pre>
-
+<pre><code> ^rectOrigin(10,20,80,90)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>10,20</code>&rdquo;.</p>
 	</div>
@@ -803,11 +992,28 @@ in the format:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)rectSize:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)rectSize:(NSString *)<em>rect</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The function&rsquo;s input parameter, a rectangle expressed as
+            a comma-separated string.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result, the size of the rectangle expressed
+            as a comma-separated string.</p>
+	</div>
 	
 	
 	
@@ -815,20 +1021,17 @@ in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the rectangle in the format:</p>
-
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
+		<p>This Mockingbird function accepts a single parameter, a comma-separated string
+specifying the rectangle in the format:
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
 <p>The return value contains the rectangle&rsquo;s size as a comma-separated string
-in the format:</p>
-
-<p><code><i>width</i>,<i>height</i></code></p>
+in the format: &ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^rectSize(10,20,80,90)</pre>
-
+<pre><code> ^rectSize(10,20,80,90)
+</code></pre>
 
 <p>The expression above would return the string &ldquo;<code>80,90</code>&rdquo;.</p>
 	</div>
@@ -859,11 +1062,27 @@ in the format:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)rectWidth:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)rectWidth:(NSString *)<em>rect</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The function&rsquo;s input parameter, a rectangle expressed as
+            a comma-separated string.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result, the width of the rectangle.</p>
+	</div>
 	
 	
 	
@@ -871,19 +1090,18 @@ in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the rectangle in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, a comma-separated string
+specifying the rectangle in the format:
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
-
-<p>The return value is a number containing the value of the rectangle&rsquo;s width.</p>
+<p>The return value is an <code>NSNumber</code> containing the rectangle&rsquo;s width.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^rectWidth(10,20,80,90)</pre>
+<pre><code> ^rectWidth(10,20,80,90)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>80</code>&rdquo;.</p>
+<p>The expression above would return the value <code>80</code>.</p>
 	</div>
 	
 	
@@ -912,11 +1130,27 @@ specifying the rectangle in the format:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)rectX:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)rectX:(NSString *)<em>rect</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The function&rsquo;s input parameter, a rectangle expressed as
+            a comma-separated string.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result, the origin X coordinate of the rectangle.</p>
+	</div>
 	
 	
 	
@@ -924,20 +1158,19 @@ specifying the rectangle in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the rectangle in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, a comma-separated string
+specifying the rectangle in the format:
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
-
-<p>The return value is a number containing the value of the rectangle&rsquo;s origin
-X coordinate.</p>
+<p>The return value is an <code>NSNumber</code> containing the rectangle&rsquo;s origin X
+coordinate.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^rectX(10,20,80,90)</pre>
+<pre><code> ^rectX(10,20,80,90)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>10</code>&rdquo;.</p>
+<p>The expression above would return the value <code>10</code>.</p>
 	</div>
 	
 	
@@ -966,11 +1199,27 @@ X coordinate.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)rectY:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)rectY:(NSString *)<em>rect</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>rect</em></dt>
+			<dd><p>The function&rsquo;s input parameter, a rectangle expressed as
+            a comma-separated string.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result, the origin Y coordinate of the rectangle.</p>
+	</div>
 	
 	
 	
@@ -978,20 +1227,19 @@ X coordinate.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the rectangle in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, a comma-separated string
+specifying the rectangle in the format:
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
-<p><code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code></p>
-
-<p>The return value is a number containing the value of the rectangle&rsquo;s origin
-Y coordinate.</p>
+<p>The return value is an <code>NSNumber</code> containing the rectangle&rsquo;s origin Y
+coordinate.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^rectY(10,20,80,90)</pre>
+<pre><code> ^rectY(10,20,80,90)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>20</code>&rdquo;.</p>
+<p>The expression above would return the value <code>20</code>.</p>
 	</div>
 	
 	
@@ -1020,11 +1268,26 @@ Y coordinate.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)sizeHeight:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)sizeHeight:(NSString *)<em>size</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The <em>size expression</em>.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The height component of <em>size expression</em>.</p>
+	</div>
 	
 	
 	
@@ -1032,19 +1295,19 @@ Y coordinate.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the size in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, the <em>size expression</em>
+yielding a comma-separated string specifying the size in the format:
+&ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
-<p><code><i>width</i>,<i>height</i></code></p>
-
-<p>The return value is a number containing the height.</p>
+<p>The return value is an <code>NSNumber</code> instance containing the height component
+of the <em>size expression</em>.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^sizeHeight(10,20)</pre>
+<pre><code> ^sizeWidth(10,20)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>20</code>&rdquo;.</p>
+<p>The expression above would return the value <code>20</code>.</p>
 	</div>
 	
 	
@@ -1073,11 +1336,26 @@ specifying the size in the format:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)sizeWidth:(NSString *)<em>param</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)sizeWidth:(NSString *)<em>size</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>The <em>size expression</em>.</p></dd>
+		</dl>
+		
+	</div>
 	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The width component of <em>size expression</em>.</p>
+	</div>
 	
 	
 	
@@ -1085,19 +1363,19 @@ specifying the size in the format:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, a comma-separated string
-specifying the size in the format:</p>
+		<p>This Mockingbird function accepts a single parameter, the <em>size expression</em>
+yielding a comma-separated string specifying the size in the format:
+&ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
 
-<p><code><i>width</i>,<i>height</i></code></p>
-
-<p>The return value is a number containing the width.</p>
+<p>The return value is an <code>NSNumber</code> instance containing the width component
+of the <em>size expression</em>.</p>
 
 <h4>Expression usage</h4>
 
-<pre>^sizeWidth(10,20)</pre>
+<pre><code> ^sizeWidth(10,20)
+</code></pre>
 
-
-<p>The expression above would return the string &ldquo;<code>10</code>&rdquo;.</p>
+<p>The expression above would return the value <code>10</code>.</p>
 	</div>
 	
 	
@@ -1131,7 +1409,7 @@ specifying the size in the format:</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-16)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-17)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
