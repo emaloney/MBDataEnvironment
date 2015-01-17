@@ -141,10 +141,10 @@
     id obj = [MBExpression asObject:expr error:&err];
     CFAbsoluteTime end = CFAbsoluteTimeGetCurrent();
     if (err) {
-        NSLog(@"--> Evaluated variable expansion expression \"%@\" with error %@ in %g seconds", expr, err, end - start);
+        NSLog(@"--> Evaluated object expression \"%@\" with error %@ in %g seconds", expr, err, end - start);
         return err;
     } else {
-        NSLog(@"--> Evaluated variable expansion expression \"%@\" in %g seconds", expr, end - start);
+        NSLog(@"--> Evaluated object expression \"%@\" in %g seconds", expr, end - start);
         return obj;
     }
 }
@@ -176,11 +176,11 @@
     for (NSInteger i=0; i<repeat; i++) {
         retVal = [MBExpression asObject:expr error:&err];
         if (err) {
-            NSLog(@"--> Error while attempting to repeat variable expansion expression \"%@\" (at run %ld of %ld): %@", expr, (long)i, (long)repeat, err);
+            NSLog(@"--> Error while attempting to repeat object expression \"%@\" (at run %ld of %ld): %@", expr, (long)i, (long)repeat, err);
             return err;
         }
     }
-    NSLog(@"--> Successfully repeated variable expansion expression \"%@\" %ld times", expr, (long)repeat);
+    NSLog(@"--> Successfully repeated object expression \"%@\" %ld times", expr, (long)repeat);
     return retVal;
 }
 
