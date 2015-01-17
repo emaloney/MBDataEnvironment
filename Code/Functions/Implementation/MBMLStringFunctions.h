@@ -35,7 +35,7 @@
  or end of a string literal. (Normally, the expression evaluator ignores
  whitespace at the beginning or end of string literals.)
 
- This function accepts one parameter, the string to be quoted.
+ This Mockingbird function accepts one parameter, the string to be quoted.
  
  #### Expression usage
 

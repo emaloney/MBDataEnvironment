@@ -13,291 +13,367 @@
 #pragma mark MBMLGeometryFunctions class
 /******************************************************************************/
 
+/*!
+ This class implements MBML functions for working with geometric values.
+ 
+ These functions are exposed to the Mockingbird environment via 
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
+ 
+ For more information on MBML functions, see the `MBMLFunction` class.
+ */
 @interface MBMLGeometryFunctions : NSObject
 
-/******************************************************************************/
-#pragma mark Working with rectangles
-/******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Accessing components of rectangles
+/*!    @name Accessing components of rectangles                               */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the origin point of a rectangle. 
  
- This function accepts a single parameter, a comma-separated string 
+ This Mockingbird function accepts a single parameter, a comma-separated string 
  specifying the rectangle in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
+ "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
  The return value contains the rectangle's origin as a comma-separated string 
- in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i></code>
+ in the format: "*`origin-x`*`,`*`origin-y`*"
 
  #### Expression usage
  
- <pre>^rectOrigin(10,20,80,90)</pre>
+     ^rectOrigin(10,20,80,90)
  
- The expression above would return the string "<code>10,20</code>".
+ The expression above would return the string "`10,20`".
+ 
+ @param     rect The function's input parameter, a rectangle expressed as
+            a comma-separated string.
+
+ @return    The function result, the origin point of the rectangle expressed
+            as a comma-separated string.
  */
-+ (id) rectOrigin:(NSString*)param;
++ (id) rectOrigin:(NSString*)rect;
 
 /*!
  Returns the size of a rectangle. 
  
- This function accepts a single parameter, a comma-separated string 
+ This Mockingbird function accepts a single parameter, a comma-separated string
  specifying the rectangle in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The return value contains the rectangle's size as a comma-separated string 
- in the format:
- 
- <code><i>width</i>,<i>height</i></code>
- 
+ "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ The return value contains the rectangle's size as a comma-separated string
+ in the format: "*`width`*`,`*`height`*".
+
  #### Expression usage
  
- <pre>^rectSize(10,20,80,90)</pre>
+     ^rectSize(10,20,80,90)
  
- The expression above would return the string "<code>80,90</code>".
+ The expression above would return the string "`80,90`".
+ 
+ @param     rect The function's input parameter, a rectangle expressed as
+            a comma-separated string.
+
+ @return    The function result, the size of the rectangle expressed
+            as a comma-separated string.
  */
-+ (id) rectSize:(NSString*)param;
++ (id) rectSize:(NSString*)rect;
 
 /*!
  Returns the X coordinate of a rectangle's origin. 
  
- This function accepts a single parameter, a comma-separated string 
+ This Mockingbird function accepts a single parameter, a comma-separated string
  specifying the rectangle in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The return value is a number containing the value of the rectangle's origin
- X coordinate.
- 
+ "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ The return value is an `NSNumber` containing the rectangle's origin X
+ coordinate.
+
  #### Expression usage
  
- <pre>^rectX(10,20,80,90)</pre>
+     ^rectX(10,20,80,90)
  
- The expression above would return the string "<code>10</code>".
+ The expression above would return the value `10`.
+
+ @param     rect The function's input parameter, a rectangle expressed as
+            a comma-separated string.
+
+ @return    The function result, the origin X coordinate of the rectangle.
  */
-+ (id) rectX:(NSString*)param;
++ (id) rectX:(NSString*)rect;
 
 /*!
- Returns the Y coordinate of a rectangle's origin. 
+ Returns the Y coordinate of a rectangle's origin.
  
- This function accepts a single parameter, a comma-separated string 
+ This Mockingbird function accepts a single parameter, a comma-separated string
  specifying the rectangle in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The return value is a number containing the value of the rectangle's origin
- Y coordinate.
+ "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ The return value is an `NSNumber` containing the rectangle's origin Y
+ coordinate.
  
  #### Expression usage
  
- <pre>^rectY(10,20,80,90)</pre>
+     ^rectY(10,20,80,90)
  
- The expression above would return the string "<code>20</code>".
+ The expression above would return the value `20`.
+
+ @param     rect The function's input parameter, a rectangle expressed as
+            a comma-separated string.
+
+ @return    The function result, the origin Y coordinate of the rectangle.
  */
-+ (id) rectY:(NSString*)param;
++ (id) rectY:(NSString*)rect;
 
 /*!
  Returns the rectangle's width. 
  
- This function accepts a single parameter, a comma-separated string 
+ This Mockingbird function accepts a single parameter, a comma-separated string
  specifying the rectangle in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The return value is a number containing the value of the rectangle's width.
- 
+ "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ The return value is an `NSNumber` containing the rectangle's width.
+
  #### Expression usage
  
- <pre>^rectWidth(10,20,80,90)</pre>
+     ^rectWidth(10,20,80,90)
  
- The expression above would return the string "<code>80</code>".
+ The expression above would return the value `80`.
+
+ @param     rect The function's input parameter, a rectangle expressed as
+            a comma-separated string.
+
+ @return    The function result, the width of the rectangle.
  */
-+ (id) rectWidth:(NSString*)param;
++ (id) rectWidth:(NSString*)rect;
 
 /*!
- Returns the rectangle's height. 
+ Returns the rectangle's width. 
  
- This function accepts a single parameter, a comma-separated string 
+ This Mockingbird function accepts a single parameter, a comma-separated string
  specifying the rectangle in the format:
- 
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The return value is a number containing the value of the rectangle's height.
- 
+ "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ The return value is an `NSNumber` containing the rectangle's height.
+
  #### Expression usage
  
- <pre>^rectHeight(10,20,80,90)</pre>
+     ^rectHeight(10,20,80,90)
  
- The expression above would return the string "<code>90</code>".
+ The expression above would return the value `90`.
+
+ @param     rect The function's input parameter, a rectangle expressed as
+            a comma-separated string.
+
+ @return    The function result, the height of the rectangle.
  */
-+ (id) rectHeight:(NSString*)param;
++ (id) rectHeight:(NSString*)rect;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Adjusting rectangles
+/*!    @name Adjusting rectangles                                             */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Adjusts a rectangle by applying insets to each edge. 
  
- This function accepts two pipe-separated parameters. The first parameter
- is a comma-separated string specifying the rectangle to be modified, in the
- format:
+ This Mockingbird function accepts two pipe-separated parameters:
  
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The second parameter is a comma-separated string specifying the insets to apply
- to the rectangle, in the format:
- 
- <code><i>topInset</i>,<i>leftInset</i>,<i>bottomInset</i>,<i>rightInset</i></code>
- 
+ * The *rectangle* to be adjusted, a string expression yielding a 
+   comma-separated string specifying the rectangle in the format:
+   "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ * The *edge insets* to apply to *rectangle*. Edge insets are expressed as a
+   string expression yielding a comma-separated in the format:
+   "*`topInset`*`,`*`leftInset`*`,`*`bottomInset`*`,`*`rightInset`*".
+
  Positive inset values adjust the rectangle by making it smaller at the specified
  edge, whereas negative inset values make the rectangle larger.
  
- The return value is a string containing the new rectangle, in comma-separated
- coordinate format.
+ The return value is a comma-separated string specifying the adjusted rectangle.
  
  #### Expression usage
  
- <pre>^insetRect(10,10,100,100|-5,-5,15,15)</pre>
+     ^insetRect(10,10,100,100|-5,-5,15,15)
  
- The expression above would return the string "<code>5,5,90,90</code>".
+ The expression above would return the string "`5,5,90,90`".
+ 
+ @param     params The function's input parameters.
+
+ @return    A string containing the adjusted rectangle.
  */
 + (id) insetRect:(NSArray*)params;
 
 /*!
  Adjusts a rectangle by applying an inset to the top edge. 
  
- This function accepts two pipe-separated parameters. The first parameter
- is a comma-separated string specifying the rectangle to be modified, in the
- format:
+ This Mockingbird function accepts two pipe-separated parameters:
  
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
+ * The *rectangle* to be adjusted, a string expression yielding a 
+   comma-separated string specifying the rectangle in the format:
+   "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ * The *inset amount*, a numeric expression indicating the amount by which
+   the edge of *rectangle* will be adjusted.
+
+ A negative *inset amount* makes the rectangle taller by moving the top edge
+ upwards; a positive value makes the rectangle shorter by lowering the top edge.
  
- The second parameter is the inset amount. A negative value makes the rectangle
- taller by moving the top edge upwards; a positive value makes the rectangle
- shorter by lowering the top edge.
- 
- The return value is a string containing the new rectangle, in comma-separated
- coordinate format.
- 
+ The return value is a comma-separated string specifying the adjusted rectangle.
+
  #### Expression usage
  
- <pre>^insetRectTop(10,10,100,100|-5)</pre>
+     ^insetRectTop(10,10,100,100|-5)
  
- The expression above would return the string "<code>10,5,100,105</code>".
+ The expression above would return the string "`10,5,100,105`".
+ 
+ @param     params The function's input parameters.
+
+ @return    A string containing the adjusted rectangle.
  */
 + (id) insetRectTop:(NSArray*)params;
 
 /*!
  Adjusts a rectangle by applying an inset to the left edge. 
+
+ This Mockingbird function accepts two pipe-separated parameters:
  
- This function accepts two pipe-separated parameters. The first parameter
- is a comma-separated string specifying the rectangle to be modified, in the
- format:
+ * The *rectangle* to be adjusted, a string expression yielding a 
+   comma-separated string specifying the rectangle in the format:
+   "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ * The *inset amount*, a numeric expression indicating the amount by which
+   the edge of *rectangle* will be adjusted.
+
+ A negative *inset amount* makes the rectangle wider by moving the left edge 
+ further leftwards; a positive value makes the rectangle narrower by moving the
+ left edge rightwards.
  
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
- 
- The second parameter is the inset amount. A negative value makes the rectangle
- wider by moving the left edge further leftwards; a positive value makes the
- rectangle narrower by moving the left edge rightwards.
- 
- The return value is a string containing the new rectangle, in comma-separated
- coordinate format.
- 
+ The return value is a comma-separated string specifying the adjusted rectangle.
+
  #### Expression usage
  
- <pre>^insetRectLeft(50,50,50,50|25)</pre>
+     ^insetRectLeft(50,50,50,50|25)
  
- The expression above would return the string "<code>75,50,25,50</code>".
+ The expression above would return the string "`75,50,25,50`".
+
+ @param     params The function's input parameters.
+
+ @return    A string containing the adjusted rectangle.
  */
 + (id) insetRectLeft:(NSArray*)params;
 
 /*!
- Adjusts a rectangle by applying an inset to the top edge. 
+ Adjusts a rectangle by applying an inset to the bottom edge.
  
- This function accepts two pipe-separated parameters. The first parameter
- is a comma-separated string specifying the rectangle to be modified, in the
- format:
+ This Mockingbird function accepts two pipe-separated parameters:
  
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
+ * The *rectangle* to be adjusted, a string expression yielding a 
+   comma-separated string specifying the rectangle in the format:
+   "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ * The *inset amount*, a numeric expression indicating the amount by which
+   the edge of *rectangle* will be adjusted.
+
+ A negative *inset amount* makes the rectangle taller by moving the bottom
+ edge downwards; a positive value makes the rectangle shorter by raising the
+ bottom edge.
  
- The second parameter is the inset amount. A negative value makes the rectangle
- taller by moving the bottom edge downwards; a positive value makes the rectangle
- shorter by raising the bottom edge.
- 
- The return value is a string containing the new rectangle, in comma-separated
- coordinate format.
- 
+ The return value is a comma-separated string specifying the adjusted rectangle.
+
  #### Expression usage
  
- <pre>^insetRectBottom(20,20,100,100|25)</pre>
+     ^insetRectBottom(20,20,100,100|25)
  
- The expression above would return the string "<code>20,20,100,75</code>".
+ The expression above would return the string "`20,20,100,75`".
+
+ @param     params The function's input parameters.
+
+ @return    A string containing the adjusted rectangle.
  */
 + (id) insetRectBottom:(NSArray*)params;
 
 /*!
  Adjusts a rectangle by applying an inset to the right edge. 
  
- This function accepts two pipe-separated parameters. The first parameter
- is a comma-separated string specifying the rectangle to be modified, in the
- format:
+ This Mockingbird function accepts two pipe-separated parameters:
  
- <code><i>origin-x</i>,<i>origin-y</i>,<i>width</i>,<i>height</i></code>
+ * The *rectangle* to be adjusted, a string expression yielding a 
+   comma-separated string specifying the rectangle in the format:
+   "*`origin-x`*`,`*`origin-y`*`,`*`width`*`,`*`height`*".
+
+ * The *inset amount*, a numeric expression indicating the amount by which
+   the edge of *rectangle* will be adjusted.
+
+ A negative *inset amount* makes the rectangle larger by moving the right
+ edge further rightwards; a positive value makes the rectangle smaller by
+ moving the right edge leftwards.
  
- The second parameter is the inset amount. A negative value makes the rectangle
- larger by moving the right edge further rightwards; a positive value makes the
- rectangle smaller by moving the right edge leftwards.
- 
- The return value is a string containing the new rectangle, in comma-separated
- coordinate format.
- 
+ The return value is a comma-separated string specifying the adjusted rectangle.
+
  #### Expression usage
  
- <pre>^insetRectRight(10,10,50,50|-10)</pre>
+     ^insetRectRight(10,10,50,50|-10)
  
- The expression above would return the string "<code>10,10,60,50</code>".
+ The expression above would return the string "`10,10,60,50`".
+
+ @param     params The function's input parameters.
+
+ @return    A string containing the adjusted rectangle.
  */
 + (id) insetRectRight:(NSArray*)params;
 
-/******************************************************************************/
-#pragma mark Working with sizes
-/******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Accessing the width and height components of sizes
+/*!    @name Accessing the width and height components of sizes               */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the width component of a size. 
- 
- This function accepts a single parameter, a comma-separated string 
- specifying the size in the format:
- 
- <code><i>width</i>,<i>height</i></code>
- 
- The return value is a number containing the width.
+
+ This Mockingbird function accepts a single parameter, the *size expression*
+ yielding a comma-separated string specifying the size in the format:
+ "*`width`*`,`*`height`*".
+
+ The return value is an `NSNumber` instance containing the width component
+ of the *size expression*.
  
  #### Expression usage
  
- <pre>^sizeWidth(10,20)</pre>
+     ^sizeWidth(10,20)
  
- The expression above would return the string "<code>10</code>".
+ The expression above would return the value `10`.
+
+ @param     size The *size expression*.
+
+ @return    The width component of *size expression*.
  */
-+ (id) sizeWidth:(NSString*)param;
++ (id) sizeWidth:(NSString*)size;
 
 /*!
- Returns the height component of a size. 
- 
- This function accepts a single parameter, a comma-separated string 
- specifying the size in the format:
- 
- <code><i>width</i>,<i>height</i></code>
- 
- The return value is a number containing the height.
+ Returns the height component of a size.
+
+ This Mockingbird function accepts a single parameter, the *size expression*
+ yielding a comma-separated string specifying the size in the format:
+ "*`width`*`,`*`height`*".
+
+ The return value is an `NSNumber` instance containing the height component
+ of the *size expression*.
  
  #### Expression usage
  
- <pre>^sizeHeight(10,20)</pre>
+     ^sizeWidth(10,20)
  
- The expression above would return the string "<code>20</code>".
+ The expression above would return the value `20`.
+
+ @param     size The *size expression*.
+
+ @return    The height component of *size expression*.
  */
-+ (id) sizeHeight:(NSString*)param;
++ (id) sizeHeight:(NSString*)size;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Accessing the x and y coordinates of points
+/*!    @name Accessing the x and y coordinates of points                      */
+/*----------------------------------------------------------------------------*/
 
 /******************************************************************************/
 #pragma mark Working with points
@@ -306,37 +382,45 @@
 /*!
  Returns the X coordinate of a point. 
  
- This function accepts a single parameter, a comma-separated string 
- specifying the point in the format:
- 
- <code><i>x</i>,<i>y</i></code>
- 
- The return value is a number containing the X coordinate.
- 
+ This Mockingbird function accepts a single parameter, the *point expression*
+ yielding a comma-separated string specifying the point in the format:
+ "*`x`*`,`*`y`*".
+
+ The return value is an `NSNumber` instance containing the X coordinate
+ of the *point expression*.
+
  #### Expression usage
  
- <pre>^pointX(10,20)</pre>
+     ^pointX(10,20)
  
- The expression above would return the string "<code>10</code>".
+ The expression above would return the value `10`.
+
+ @param     point The *point expression*.
+
+ @return    The X coordinate of *point expression*.
  */
-+ (id) pointX:(NSString*)param;
++ (id) pointX:(NSString*)point;
 
 /*!
  Returns the Y coordinate of a point. 
  
- This function accepts a single parameter, a comma-separated string 
- specifying the point in the format:
- 
- <code><i>x</i>,<i>y</i></code>
- 
- The return value is a number containing the Y coordinate.
- 
+ This Mockingbird function accepts a single parameter, the *point expression*
+ yielding a comma-separated string specifying the point in the format:
+ "*`x`*`,`*`y`*".
+
+ The return value is an `NSNumber` instance containing the Y coordinate
+ of the *point expression*.
+
  #### Expression usage
  
- <pre>^pointY(10,20)</pre>
+     ^pointY(10,20)
  
- The expression above would return the string "<code>20</code>".
+ The expression above would return the value `20`.
+
+ @param     point The *point expression*.
+
+ @return    The Y coordinate of *point expression*.
  */
-+ (id) pointY:(NSString*)param;
++ (id) pointY:(NSString*)point;
 
 @end
