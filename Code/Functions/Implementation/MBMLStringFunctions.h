@@ -719,7 +719,7 @@
  Determines if the string specified by the first expression parameter
  has the prefix indicated by the second expression parameter.
 
- This function accepts two parameters:
+ This Mockingbird function accepts two parameters:
  
  * The *string to test*, a string expression that will be tested to see if it
    has the given prefix.
@@ -731,8 +731,8 @@
 
     ^hasPrefix($name|Coop)
  
- The template expression above returns YES if the string value of the
- expression $name begins with the string "Coop".
+ The expression above returns YES if the string value of the
+ expression $name begins with the string "`Coop`".
  
  @param     params The function's input parameters.
 

@@ -308,7 +308,7 @@ an NSDictionary.</Abstract>
 and returns the resulting array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)removeLastObject:(id)input</Declaration>
+			<Declaration>+ (id)removeLastObject:(id)array</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>array</Name>
@@ -367,7 +367,7 @@ the NSCopying protocol.</Abstract>
 			<Declaration>+ (id)copyOf:(id)param</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>params</Name>
+					<Name>param</Name>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -385,7 +385,7 @@ adopting the NSMutableCopying protocol.</Abstract>
 			<Declaration>+ (id)mutableCopyOf:(id)param</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>params</Name>
+					<Name>param</Name>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>

@@ -406,7 +406,7 @@
  
  @return    A copy of the input array, with the last item removed.
  */
-+ (id) removeLastObject:(id)input;
++ (id) removeLastObject:(id)array;
 
 /*!
  An MBML function implementation that returns the last object in an array.
@@ -474,7 +474,7 @@
  would return an `NSArray` containing the same contents as the original
  array. If the original array is modified, the copy would be unaffected.
  
- @param     params The function's input parameters.
+ @param     param The function's input parameters.
  
  @return    A copy of the object yielded by the input parameter expression.
  
@@ -500,7 +500,7 @@
  array. If the original array is modified, the copy would be unaffected. 
  Similarly, if the copy is modified, the original array would be unaffected.
  
- @param     params The function's input parameters.
+ @param     param The function's input parameters.
  
  @return    A mutable copy of the object yielded by the input parameter
             expression.

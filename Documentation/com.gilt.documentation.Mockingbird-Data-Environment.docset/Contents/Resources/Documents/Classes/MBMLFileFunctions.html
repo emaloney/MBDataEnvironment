@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -100,10 +102,24 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Working with file paths">Working with file paths</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting paths for common directories">Getting paths for common directories</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Listing directory contents">Listing directory contents</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting file information">Getting file information</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting file content">Getting file content</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing files">Removing files</a></span></li>
 	
 </ul></li>
 
@@ -201,6 +217,20 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions for file management.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -208,8 +238,8 @@
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Working with file paths" name="task_Working with file paths"></a>
+						<h3 class="subsubtitle task-title">Working with file paths</h3>
 
 						<ul class="task-list">
 							<li>
@@ -242,7 +272,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Getting paths for common directories" name="task_Getting paths for common directories"></a>
+						<h3 class="subsubtitle task-title">Getting paths for common directories</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/directoryForUserHome">+&nbsp;directoryForUserHome</a></code>
 	</span>
@@ -302,13 +340,29 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Listing directory contents" name="task_Listing directory contents"></a>
+						<h3 class="subsubtitle task-title">Listing directory contents</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/listDirectory:">+&nbsp;listDirectory:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Getting file information" name="task_Getting file information"></a>
+						<h3 class="subsubtitle task-title">Getting file information</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fileExists:">+&nbsp;fileExists:</a></code>
 	</span>
@@ -344,7 +398,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Getting file content" name="task_Getting file content"></a>
+						<h3 class="subsubtitle task-title">Getting file content</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fileData:">+&nbsp;fileData:</a></code>
 	</span>
@@ -356,7 +418,15 @@
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Removing files" name="task_Removing files"></a>
+						<h3 class="subsubtitle task-title">Removing files</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/deleteFile:">+&nbsp;deleteFile:</a></code>
 	</span>
@@ -382,10 +452,66 @@
 	<h3 class="subsubtitle method-title">deleteFile:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to delete the item at the specified filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)deleteFile:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if <code>filePath</code> was successfully deleted; <code>@NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^deleteFile(/tmp/download-in-progress)
+</code></pre>
+
+<p>attempts to delete the file at <code>/tmp/download-in-progress</code>. If successful,
+<code>@YES</code> is returned; otherwise, <code>@NO</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -393,10 +519,54 @@
 	<h3 class="subsubtitle method-title">directoryForApplicationSupport</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSApplicationSupportDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForApplicationSupport</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForApplicationSupport()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSApplicationSupportDirectory</code>. This will be unique for each user within each
+application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -404,10 +574,53 @@
 	<h3 class="subsubtitle method-title">directoryForCaches</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSCachesDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForCaches</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForCaches()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSCachesDirectory</code>. This will be unique for each user within each application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -415,10 +628,54 @@
 	<h3 class="subsubtitle method-title">directoryForDocuments</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSDocumentDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForDocuments</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForDocuments()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSDocumentDirectory</code>. This will be unique for each user within each
+application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -426,10 +683,53 @@
 	<h3 class="subsubtitle method-title">directoryForDownloads</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSDownloadsDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForDownloads</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForDownloads()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSDownloadsDirectory</code>. This will be unique for each user within each application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -437,10 +737,53 @@
 	<h3 class="subsubtitle method-title">directoryForMovies</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSMoviesDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForMovies</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForMovies()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSMoviesDirectory</code>. This will be unique for each user within each application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -448,10 +791,53 @@
 	<h3 class="subsubtitle method-title">directoryForMusic</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSMusicDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForMusic</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForMusic()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSMusicDirectory</code>. This will be unique for each user within each application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -459,10 +845,54 @@
 	<h3 class="subsubtitle method-title">directoryForPictures</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSPicturesDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForPictures</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForPictures()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSPicturesDirectory</code>. This will be unique for each user within each
+application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -470,10 +900,54 @@
 	<h3 class="subsubtitle method-title">directoryForPublicFiles</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSSharedPublicDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForPublicFiles</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForPublicFiles()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSSharedPublicDirectory</code>. This will be unique for each user within each
+application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -481,10 +955,54 @@
 	<h3 class="subsubtitle method-title">directoryForTempFiles</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSTemporaryDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForTempFiles</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForTempFiles()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSTemporaryDirectory</code>. This will be unique for each user within each
+application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -492,10 +1010,53 @@
 	<h3 class="subsubtitle method-title">directoryForUserHome</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the user&rsquo;s <code>NSHomeDirectory</code>.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)directoryForUserHome</code></div>
 
     
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForUserHome()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the user&rsquo;s
+<code>NSHomeDirectory</code>. This will be unique for each user within each application.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -503,10 +1064,67 @@
 	<h3 class="subsubtitle method-title">fileContents:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a UTF-8 encoded <code>NSString</code> instance with the content of the file at
+the specified filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)fileContents:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSString</code> instance containing the content of the file at
+            <code>filePath</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^fileContents(~/Documents/README.txt)
+</code></pre>
+
+<p>returns the content of <code>~/Documents/README.txt</code> as an <code>NSString</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -514,10 +1132,68 @@
 	<h3 class="subsubtitle method-title">fileData:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an <code>NSData</code> instance with the content of the file at the specified
+filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)fileData:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSData</code> instance containing the content of the file at
+            <code>filePath</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^fileData(~/Caches/com.gilt.ios/Images/superhero.jpg)
+</code></pre>
+
+<p>returns the content of <code>~/Caches/com.gilt.ios/Images/superhero.jpg</code> as an
+<code>NSData</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -525,10 +1201,64 @@
 	<h3 class="subsubtitle method-title">fileExists:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests whether an item exists at the specified filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)fileExists:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path to test.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if the file exists at <code>filePath</code>; <code>@NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^fileExists(~/Downloads/MBToolbox.zip)
+</code></pre>
+
+<p>If a file exists at the path <code>~/Downloads/MBToolbox.zip</code>, this expression will
+return <code>@YES</code>. Otherwise, <code>@NO</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -536,10 +1266,64 @@
 	<h3 class="subsubtitle method-title">fileIsDeletable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests whether a deletable item exists at the specified filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)fileIsDeletable:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path to test.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if a deletable file exists at <code>filePath</code>; <code>@NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^fileIsDeletable(/tmp)
+</code></pre>
+
+<p>If a deletable file exists at the path <code>/tmp</code>, this expression will
+return <code>@YES</code>. Otherwise, <code>@NO</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -547,10 +1331,64 @@
 	<h3 class="subsubtitle method-title">fileIsReadable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests whether a readable item exists at the specified filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)fileIsReadable:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path to test.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if a readable file exists at <code>filePath</code>; <code>@NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^fileIsReadable(/etc/passwd)
+</code></pre>
+
+<p>If a readable file exists at the path <code>/etc/passwd</code>, this expression will
+return <code>@YES</code>. Otherwise, <code>@NO</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -558,10 +1396,64 @@
 	<h3 class="subsubtitle method-title">fileIsWritable:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests whether a writable item exists at the specified filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)fileIsWritable:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path to test.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if a writable file exists at <code>filePath</code>; <code>@NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^fileIsWritable(/usr/bin/login)
+</code></pre>
+
+<p>If a writable file exists at the path <code>/usr/bin/login</code>, this expression will
+return <code>@YES</code>. Otherwise, <code>@NO</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -569,10 +1461,64 @@
 	<h3 class="subsubtitle method-title">isDirectoryAtPath:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests whether a directory exists at a given filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)isDirectoryAtPath:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path to test.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if a directory exists at <code>filePath</code>; <code>@NO</code> otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^isDirectoryAtPath(~/Caches/com.gilt.ios)
+</code></pre>
+
+<p>If a directory file exists at the path <code>~/Caches/com.gilt.ios</code>, this expression
+will return <code>@YES</code>. Otherwise, <code>@NO</code> is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -580,10 +1526,66 @@
 	<h3 class="subsubtitle method-title">lastPathComponent:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <code>lastPathComponent</code> of a string containing a filesystem path.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)lastPathComponent:(NSString *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)lastPathComponent:(NSString *)<em>path</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>lastPathComponent</code> of <code>path</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding a filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$file</code> contains the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
+
+<pre><code>^lastPathComponent($file)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>com.apple.Safari.plist</code>&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -591,10 +1593,65 @@
 	<h3 class="subsubtitle method-title">listDirectory:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Lists the filenames within a given directory.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)listDirectory:(NSString *)<em>dir</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dir</em></dt>
+			<dd><p>The filesystem path of the directory.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing the names of the files contained within
+            <code>dir</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path of the directory whose contents are sought.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^listDirectory(~/Documents)
+</code></pre>
+
+<p>The expression above returns an array containing the names of the files
+within the user&rsquo;s Documents directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -602,10 +1659,68 @@
 	<h3 class="subsubtitle method-title">pathComponents:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Splits a filesystem path into individual path components and returns the
+result in an array.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)pathComponents:(NSString *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)pathComponents:(NSString *)<em>path</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing the path components of <code>path</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding a filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$file</code> contains the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
+
+<pre><code>^stripLastPathComponent($file)
+</code></pre>
+
+<p>The expression above would return the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari</code>&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -613,10 +1728,66 @@
 	<h3 class="subsubtitle method-title">pathExtension:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <code>pathExtension</code> of a string containing a filesystem path.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)pathExtension:(NSString *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)pathExtension:(NSString *)<em>path</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The <code>pathExtension</code> of <code>path</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding a filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$file</code> contains the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
+
+<pre><code>^pathExtension($file)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>plist</code>&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -624,10 +1795,66 @@
 	<h3 class="subsubtitle method-title">sizeOfFile:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the size of the file at the given filesystem path.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)sizeOfFile:(NSString *)<em>filePath</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>filePath</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> containing the size of the file at <code>filePath</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^sizeOfFile(~/Caches/com.gilt.ios/Images/superhero.jpg)
+</code></pre>
+
+<p>returns the size of the file at <code>~/Caches/com.gilt.ios/Images/superhero.jpg</code>
+in an <code>NSNumber</code> containing an <code>unsigned long long</code> value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -635,10 +1862,67 @@
 	<h3 class="subsubtitle method-title">stripLastPathComponent:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the <code>lastPathComponent</code> from a filesystem path and returns the
+resulting string.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)stripLastPathComponent:(NSString *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)stripLastPathComponent:(NSString *)<em>path</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of removing the <code>lastPathComponent</code> from <code>path</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding a filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$file</code> contains the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
+
+<pre><code>^stripLastPathComponent($file)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>~/Library/Preferences</code>&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -646,10 +1930,68 @@
 	<h3 class="subsubtitle method-title">stripPathExtension:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes the <code>pathExtension</code> from a filesystem path and returns the
+resulting string.</p>
+	</div>		
+	
+    
 
-	<div class="method-subsection method-declaration"><code>+ (id)stripPathExtension:(NSString *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)stripPathExtension:(NSString *)<em>path</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>path</em></dt>
+			<dd><p>The filesystem path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of removing the <code>pathExtension</code> from <code>path</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding a filesystem path.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$file</code> contains the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
+
+<pre><code>^stripLastPathComponent($file)
+</code></pre>
+
+<p>The expression above would return the string
+&ldquo;<code>~/Library/Preferences/com.apple.Safari</code>&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -669,7 +2011,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-17)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-18)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

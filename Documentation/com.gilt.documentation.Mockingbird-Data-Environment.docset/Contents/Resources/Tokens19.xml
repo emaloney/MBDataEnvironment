@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLFileFunctions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class implements MBML functions for file management.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
             
 			
@@ -14,300 +14,383 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/lastPathComponent:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the lastPathComponent of a string containing a filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)lastPathComponent:(NSString *)input</Declaration>
-			
-			
+			<Declaration>+ (id)lastPathComponent:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The lastPathComponent of path.</Abstract></ReturnValue>
 			<Anchor>//api/name/lastPathComponent:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/stripLastPathComponent:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Removes the lastPathComponent from a filesystem path and returns the
+resulting string.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)stripLastPathComponent:(NSString *)input</Declaration>
-			
-			
+			<Declaration>+ (id)stripLastPathComponent:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of removing the lastPathComponent from path.</Abstract></ReturnValue>
 			<Anchor>//api/name/stripLastPathComponent:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/pathExtension:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the pathExtension of a string containing a filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)pathExtension:(NSString *)input</Declaration>
-			
-			
+			<Declaration>+ (id)pathExtension:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The pathExtension of path.</Abstract></ReturnValue>
 			<Anchor>//api/name/pathExtension:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/stripPathExtension:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Removes the pathExtension from a filesystem path and returns the
+resulting string.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)stripPathExtension:(NSString *)input</Declaration>
-			
-			
+			<Declaration>+ (id)stripPathExtension:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of removing the pathExtension from path.</Abstract></ReturnValue>
 			<Anchor>//api/name/stripPathExtension:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/pathComponents:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Splits a filesystem path into individual path components and returns the
+result in an array.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)pathComponents:(NSString *)input</Declaration>
-			
-			
+			<Declaration>+ (id)pathComponents:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray containing the path components of path.</Abstract></ReturnValue>
 			<Anchor>//api/name/pathComponents:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForUserHome</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSHomeDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForUserHome</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForUserHome</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForTempFiles</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSTemporaryDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForTempFiles</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForTempFiles</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForCaches</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSCachesDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForCaches</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForCaches</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForDocuments</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSDocumentDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForDocuments</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForDocuments</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForDownloads</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSDownloadsDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForDownloads</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForDownloads</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForApplicationSupport</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSApplicationSupportDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForApplicationSupport</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForApplicationSupport</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForMovies</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSMoviesDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForMovies</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForMovies</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForMusic</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSMusicDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForMusic</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForMusic</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForPictures</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSPicturesDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForPictures</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForPictures</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForPublicFiles</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the filesystem path of the user&apos;s NSSharedPublicDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForPublicFiles</Declaration>
 			
-			
+			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForPublicFiles</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/listDirectory:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Lists the filenames within a given directory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)listDirectory:(NSString *)dir</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>dir</Name>
+					<Abstract type="html">The filesystem path of the directory.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray containing the names of the files contained within
+            dir.</Abstract></ReturnValue>
 			<Anchor>//api/name/listDirectory:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileExists:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Tests whether an item exists at the specified filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)fileExists:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if the file exists at filePath; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/fileExists:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileIsReadable:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Tests whether a readable item exists at the specified filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)fileIsReadable:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if a readable file exists at filePath; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/fileIsReadable:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileIsWritable:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Tests whether a writable item exists at the specified filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)fileIsWritable:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if a writable file exists at filePath; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/fileIsWritable:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileIsDeletable:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Tests whether a deletable item exists at the specified filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)fileIsDeletable:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if a deletable file exists at filePath; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/fileIsDeletable:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/isDirectoryAtPath:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Tests whether a directory exists at a given filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)isDirectoryAtPath:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path to test.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if a directory exists at filePath; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/isDirectoryAtPath:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/sizeOfFile:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns the size of the file at the given filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)sizeOfFile:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the size of the file at filePath.</Abstract></ReturnValue>
 			<Anchor>//api/name/sizeOfFile:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileData:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns an NSData instance with the content of the file at the specified
+filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)fileData:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSData instance containing the content of the file at
+            filePath.</Abstract></ReturnValue>
 			<Anchor>//api/name/fileData:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/fileContents:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Returns a UTF-8 encoded NSString instance with the content of the file at
+the specified filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)fileContents:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSString instance containing the content of the file at
+            filePath.</Abstract></ReturnValue>
 			<Anchor>//api/name/fileContents:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/deleteFile:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Attempts to delete the item at the specified filesystem path.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)deleteFile:(NSString *)filePath</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The filesystem path.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if filePath was successfully deleted; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/deleteFile:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
