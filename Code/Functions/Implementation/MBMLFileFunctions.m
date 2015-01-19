@@ -48,7 +48,7 @@
 {
     debugTrace();
     
-    return [input stringByDeletingLastPathComponent];
+    return [input stringByDeletingPathExtension];
 }
 
 + (id) pathComponents:(NSString*)input
@@ -141,7 +141,7 @@
     
     NSError* err = nil;
     NSArray* files = [fileMgr contentsOfDirectoryAtPath:dir error:&err];
-    if (files) {
+    if (!err) {
         return files;
     }
 
