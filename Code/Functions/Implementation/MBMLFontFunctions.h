@@ -27,7 +27,7 @@
  
  This function takes no parameters.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -47,7 +47,7 @@
  This function takes a single expression as input, the name of the
  font family whose font names are sought.
  
- **MBML Example**
+ #### Expression usage
  
  On a first-generation iPad, the expression:
  
@@ -80,7 +80,7 @@
  * The *font size*, a numeric expression indicating the size of the font to
  return
  
- **MBML Example**
+ #### Expression usage
  
     ^fontWithNameAndSize(Helvetica|14)
  
@@ -105,7 +105,7 @@
  The function returns a string containing the size of the specified text in
  "*width*,*height*" format.
  
- **MBML Example**
+ #### Expression usage
  
     ^sizeOfTextWithFont(This is my text to measure|^fontWithNameAndSize(Helvetica|14))
  

@@ -146,7 +146,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  This function accepts no input.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -166,7 +166,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expression parameter that is expected to yield
  an `NSDate` instance.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -189,7 +189,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expression parameter that is expected to yield
  an `NSDate` instance.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -212,7 +212,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expression parameter that is expected to yield
  a number.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -234,7 +234,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expression parameter that is expected to yield
  an `NSDate` instance.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -259,7 +259,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  * the *input date*, an `NSDate` or `NSString` that contains the date to format
 
- **MBML Example**
+ #### Expression usage
 
  The following expression:
 
@@ -280,7 +280,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expression parameter that is expected to yield
  an `NSDate` instance.
 
- **MBML Example**
+ #### Expression usage
 
  The expression:
 
@@ -307,7 +307,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  * an *output format*, specifying the date format to be used for creating the
  returned date string
 
- **MBML Example**
+ #### Expression usage
 
  The following expression:
 
@@ -329,7 +329,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts one input parameter, the *input date*, an `NSDate` or
  `NSString` that contains the date to format.
 
- **MBML Example**
+ #### Expression usage
 
  The following expression:
 
@@ -357,7 +357,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  formatting the *input date* parameter (if this parameter is omitted, the local
  timezone is used)
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -386,7 +386,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  formatting the *input date* parameter (if this parameter is omitted, the local
  timezone is used)
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -415,7 +415,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  formatting the *input date* parameter (if this parameter is omitted, the local
  timezone is used)
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -444,7 +444,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  formatting the *input date* parameter (if this parameter is omitted, the local
  timezone is used)
 
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -468,7 +468,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -492,7 +492,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -516,7 +516,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -540,7 +540,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -564,7 +564,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -588,7 +588,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -612,7 +612,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -636,7 +636,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This function accepts a single expressions as input, an `NSDate` or `NSString`
  that contains the date to format.
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -669,7 +669,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  * an *output format*, specifying the date format to be used for creating the
  returned date string
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -702,7 +702,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  * an *output format*, specifying the date format to be used for creating the
  returned date string
  
- **MBML Example**
+ #### Expression usage
  
  The following expression:
  
@@ -728,7 +728,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  by a `NSDateFormatter`. If this parameter is omitted, the value returned
  by the method `defaultDateParsingFormat` is used as the format string.
   
- **MBML Example**
+ #### Expression usage
 
  Assuming the default date parsing format hasn't been overridden by the 
  `$MBMLDateFunctions:dateParsingFormat` variable, this expression:
@@ -754,7 +754,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  This function accepts no input.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  

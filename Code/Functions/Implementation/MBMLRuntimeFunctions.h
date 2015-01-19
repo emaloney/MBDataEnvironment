@@ -55,7 +55,7 @@
  This function accepts a single MBML expression that will be evaluated as a
  string. 
  
- **MBML Example**
+ #### Expression usage
  
     ^classExists(NSString)
  
@@ -77,7 +77,7 @@
  This function accepts a single MBML expression that will be evaluated as a
  string.
 
- **MBML Example**
+ #### Expression usage
  
     ^class(NSString)
  
@@ -102,7 +102,7 @@
  containing the name of an Objective-C class. If the specified class responds
  to the selector `instance`, this function returns that instance.
  
- **MBML Example**
+ #### Expression usage
  
     ^singleton(MBServiceManager)
  
@@ -130,7 +130,7 @@
  superclass of the preceding class. The last item in the returned array 
  will contain the root class of the hierarchy (which is usually `NSObject`).
  
- **MBML Example**
+ #### Expression usage
  
     ^inheritanceHierarchyForClass(NSMutableString)
 
@@ -156,7 +156,7 @@
  * the *selector* expression, which should yield a string containing the
  name of the selector
 
- **MBML Example**
+ #### Expression usage
  
     ^objectRespondsToSelector($myName|isEqualToString:)
  
@@ -186,7 +186,7 @@
  * the *selector* expression, which should yield a string containing the
  name of the selector
  
- **MBML Example**
+ #### Expression usage
  
     ^classRespondsToSelector(NSString|availableStringEncodings)
  

@@ -27,7 +27,7 @@
  a collection. A collection is an object that's an instance of `NSSet`, 
  `NSArray` or `NSDictionary`.
  
- **MBML Example**
+ #### Expression usage
  
  Assume the MBML variable `$cities` contains an array value. The expression:
  
@@ -45,7 +45,7 @@
  An MBML function implementation that determines whether a given value is
  an instance of `NSSet`.
  
- **MBML Example**
+ #### Expression usage
  
  Assume the MBML variable `$cities` contains an array value. The expression:
  
@@ -63,7 +63,7 @@
  An MBML function implementation that determines whether a given value is
  an instance of `NSSet`.
  
- **MBML Example**
+ #### Expression usage
  
  Assume `$accountIdsToNames` is a dictionary. The expression:
  
@@ -81,7 +81,7 @@
  An MBML function implementation that determines whether a given value is
  an instance of `NSSet`.
  
- **MBML Example**
+ #### Expression usage
  
  Assume `$cities` is an array. The expression:
  
@@ -102,7 +102,7 @@
  This function accepts a single parameter, the collection expression, which
  is expected to yield an `NSSet`, `NSArray` or `NSDictionary` instance.
  
- **MBML Example**
+ #### Expression usage
  
  Assume `$cities` is an array containing the values "New York", "London", and
  "Boston". The expression:
@@ -129,7 +129,7 @@
  * One or more *object* expressions, which should evaluate to the object(s)
  to be removed from the array.
  
- **MBML Example**
+ #### Expression usage
  
  Assume `$babies` is an array containing the values "Juno", "Theo", "Cooper" 
  and "Shiloh". The expression:
@@ -157,7 +157,7 @@
  * An *index* expression, which should evaluate to a number specifying the
  array index of the object to remove.
  
- **MBML Example**
+ #### Expression usage
  
  Assume `$cities` is an array containing the values "New York", "London", and
  "Boston". The expression:
@@ -185,7 +185,7 @@
  * One or more *object* expressions, which yield the object(s) to append to
  the array.
  
- **MBML Example**
+ #### Expression usage
  
  Assume `$cities` is an array containing the values "New York", "London", and
  "Boston". The expression:
@@ -216,7 +216,7 @@
  * The *index* expression, which should evaluate to a numeric value specifying
  the array index into which the object should be inserted.
   
- **MBML Example**
+ #### Expression usage
  
  Assume `$cities` is an array containing the values "New York", "London", and
  "Boston". The expression:
@@ -243,7 +243,7 @@
  This function accepts zero or more pipe-separated expressions as parameters.
  If zero parameters are provided, an empty array is returned.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
 
@@ -264,7 +264,7 @@
  This function accepts zero or more pipe-separated expressions as parameters.
  If zero parameters are provided, an empty set is returned.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -289,7 +289,7 @@
  * An *object* expression, which yields the object whose presence in the
  set is to be tested.
  
- **MBML Example**
+ #### Expression usage
  
  Assume that the MBML variable `$colors` is a set containing the values "red",
  "yellow", "green", and "blue":
@@ -320,7 +320,7 @@
  expression representing dictionary *key*, followed by an expression 
  representing the corresponding *value* for that key.
  
- **MBML Example**
+ #### Expression usage
 
  The expression:
  
@@ -342,7 +342,7 @@
  This function accepts a single parameter: an expression that evaluates to
  a dictionary instance.
  
- **MBML Example**
+ #### Expression usage
  
  Assume that the expression `$namesToAges` yields a dictionary containing a
  mapping of people's names (keys) to their ages (values). The expression:
@@ -367,7 +367,7 @@
  This function accepts a single parameter: an expression that evaluates to
  a dictionary instance.
 
- **MBML Example**
+ #### Expression usage
 
  Assume that the expression `$namesToAges` yields a dictionary containing a
  mapping of people's names (keys) to their ages (values). The expression:
@@ -392,7 +392,7 @@
  This function accepts a single parameter: an expression that evaluates to
  an array instance.
  
- **MBML Example**
+ #### Expression usage
  
  Assume that the MBML expression `$colors` yields an array containing the 
  values "red", "yellow", "green", and "blue" in that order. The expression:
@@ -414,7 +414,7 @@
  This function accepts a single parameter: an expression that evaluates to
  an array instance.
  
- **MBML Example**
+ #### Expression usage
 
  Assume that the MBML expression `$colors` yields an array containing the 
  values "red", "yellow", "green", and "blue" in that order. The expression:
@@ -441,7 +441,7 @@
  * The *value*, an expression yielding a value that will be searched for in the
  array
  
- **MBML Example**
+ #### Expression usage
 
  Assume that the MBML expression `$colors` yields an array containing the 
  values "red", "yellow", "green", and "blue" in that order. The expression:
@@ -465,7 +465,7 @@
  This function accepts a single MBML expression parameter which yields the
  object to be copied.
  
- **MBML Example**
+ #### Expression usage
  
  Assume that the MBML expression `$array` yields an `NSArray`. The expression:
  
@@ -490,7 +490,7 @@
  This function accepts a single MBML expression parameter which yields the
  object to be copied.
  
- **MBML Example**
+ #### Expression usage
  
  Assume that the MBML expression `$array` yields an `NSArray`. The expression:
  
@@ -523,7 +523,7 @@
  * An optional *default value* expression, which will be returned if the
  object does not possess a value for the specified key.
  
- **MBML Example**
+ #### Expression usage
 
  Assume that the MBML expression `$dictionaryOfImages` yields a dictionary.
  The expression:

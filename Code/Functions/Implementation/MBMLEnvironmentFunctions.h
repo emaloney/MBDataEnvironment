@@ -27,7 +27,7 @@
 
  This function accepts no parameters.
 
- **MBML Example**
+ #### Expression usage
 
  The expression:
 
@@ -48,7 +48,7 @@
 
  This function accepts no parameters.
 
- **MBML Example**
+ #### Expression usage
 
  The expression:
 
@@ -69,7 +69,7 @@
  This function accepts a single parameter: the full path of the file being
  tested.
 
- **MBML Example**
+ #### Expression usage
 
  Assume `$file` evaluates to the full file path of the initial `manifest.xml`
  file. The expression:
@@ -93,7 +93,7 @@
  This function accepts a single parameter: the file name (i.e., the
  `lastPathComponent`) of the file being tested.
 
- **MBML Example**
+ #### Expression usage
 
  The expression:
 

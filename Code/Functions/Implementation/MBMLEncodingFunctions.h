@@ -32,7 +32,7 @@
  This function accepts a single expression parameter that is expected to yield
  a string.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -54,7 +54,7 @@
  This function accepts a single expression parameter that is expected to yield
  an `NSData` instance.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  
@@ -76,7 +76,7 @@
  This function accepts a single expression parameter that is expected to yield
  an `NSData` instance.
  
- **MBML Example**
+ #### Expression usage
  
  The expression:
  

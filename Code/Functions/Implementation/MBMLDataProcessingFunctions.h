@@ -44,7 +44,7 @@
  equality with the values in the passed-in container(s)
  </ul>
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^containsValue($colorsOne|$colorsTwo|yellow)</pre>
  
@@ -81,7 +81,7 @@
  against the values in the passed-in container(s)
  </ul>
  
- <b>Template example:</b>
+ #### Expression usage
  
  <pre>^collectionPassesTest($collection|$item.length -GT 0)</pre>
  
@@ -125,12 +125,14 @@
  at the top level of the data model
  </ul>
 
- <b>Template example:</b> Assume that <code>$articles</code> and <code>$videos</code>
+ #### Expression usage
+
+ Assume that <code>$articles</code> and <code>$videos</code>
  are containers whose values each have a <code>displayOrder</code> attribute:
  
  <pre>^valuesPassingTest($articles|$videos|$item.displayOrder -EQ 1)</pre>
  
- The template expression above would iterate over all the values in the
+ The expression above would iterate over all the values in the
  <code>$articles</code> and then the <code>$videos</code> container objects, and 
  for each value, it would perform a <code>$item.displayOrder -EQ 1</code> boolean
  test. Each value in <code>$articles</code> and <code>$videos</code> for which
@@ -168,7 +170,9 @@
  returned string
  </ul>
  
- <b>Template example:</b> Assume that <code>$values</code> is an array
+ #### Expression usage
+
+ Assume that <code>$values</code> is an array
  containing the strings "string1", "anotherString", and "lastly":
 
  <pre>^join($values|, )</pre>
@@ -197,7 +201,7 @@
  string to be split 
  </ul>
  
- <b>Template example:</b>:
+ #### Expression usage:
  
  <pre>^split(, |Evan, Jesse, Yon)</pre>
  
@@ -218,7 +222,9 @@
  This function accepts a single template expression, the <i>input string</i>
  that will be split on newlines.
  
- <b>Template example:</b> Assume that <code>$lines</code> is a string 
+ #### Expression usage
+
+ Assume that <code>$lines</code> is a string 
  containing newlines:
  
  <pre>^splitLines($lines)</pre>
@@ -241,7 +247,9 @@
  This function accepts two or more template expressions as parameters,
  where each expression evaluates as an array value.
 
- <b>Template example:</b> Assume that <code>$array1</code>, <code>$array2</code>
+ #### Expression usage
+
+ Assume that <code>$array1</code>, <code>$array2</code>
  and <code>$array3</code> resolve to array values:
 
  <pre>^appendArrays($array1|$array2|$array3)</pre>
@@ -268,7 +276,9 @@
  This function accepts one or more template expressions as parameters,
  where each expression evaluates as an array value.
  
- <b>Template example:</b> Assume that <code>$nestedArrays</code> refers to
+ #### Expression usage
+
+ Assume that <code>$nestedArrays</code> refers to
  an array wherein each element is another array:
 
  <pre>^flattenArrays($nestedArrays)</pre>
@@ -314,12 +324,14 @@
  omitted <code>matchAtLeastOnce</code> behavior will be used.
  </ul>
 
- <b>Template example:</b> Assume that <code>$people</code> is an array of data
+ #### Expression usage
+
+ Assume that <code>$people</code> is an array of data
  objects representing people:
  
  <pre>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)</pre>
  
- The template expression above would return all the objects contained in 
+ The expression above would return all the objects contained in 
  <code>$people</code> where every aunt of every child of the person has
  the first name Jill. The <code>matchAll</code> parameter can be omitted
  to return every person with at least one child who has at least one aunt
@@ -351,7 +363,9 @@
  structure, but containing only those non-array elements for which the
  <i>test expression</i> evaluates to <code>NO</code>.
 
- <b>Template example:</b> Assume that <code>$input</code> is an array 
+ #### Expression usage
+
+ Assume that <code>$input</code> is an array 
  containing two inner arrays. The first inner array contains the strings:
  "<code>Bob</code>", "<code>Joe</code>" and "<code>Pat</code>"; the second
  inner array contains: "<code>Alice</code>", "<code>Pat</code>" and 
@@ -389,7 +403,9 @@
  structure, but containing only those non-array elements for which the
  <i>test expression</i> evaluates to <code>YES</code>.
  
- <b>Template example:</b> Assume that <code>$input</code> is an array 
+ #### Expression usage
+
+ Assume that <code>$input</code> is an array 
  containing two inner arrays. The first inner array contains the strings:
  "<code>Bob</code>", "<code>Joe</code>" and "<code>Pat</code>"; the second
  inner array contains: "<code>Alice</code>", "<code>Pat</code>" and 
@@ -430,7 +446,9 @@
  <i>value expression</i> once for each item encountered in the data
  model.
 
- <b>Template example:</b> Assume that <code>$states</code> is a map where
+ #### Expression usage
+
+ Assume that <code>$states</code> is a map where
  each item in the map represents a state. The key for each item is the
  two-letter postal code for the state, and the value associated with
  each key is another dictionary containing additional information about the
@@ -438,7 +456,7 @@
  
  <pre>^list($states|$item.citiesBySize|$item.name, <span>$</span>root:key - $item.population residents)</pre>
  
- The template expression above would iterate over all the elements in the
+ The expression above would iterate over all the elements in the
  <code>$states</code> dictionary, and for each state, it would then iterate over
  the elements contained in the states's <code>cityBySize</code> property, which
  in this case is an ordered array of cities in the state sorted by population.
@@ -504,12 +522,14 @@
  levels of scope.
  </ul>
  
- <b>Template example:</b> Assume that <code>$people</code> is an array of data
+ #### Expression usage
+
+ Assume that <code>$people</code> is an array of data
  objects representing people:
  
  <pre>^map($people|$item.children|$item.fullName|$root)</pre>
  
- The template expression above would iterate over all the values in
+ The expression above would iterate over all the values in
  <code>$people</code>, and for each person, it would then iterate over
  the elements contained in the person's <code>children</code> array. For
  each of those children, it would create a mapping from the value of that
@@ -579,12 +599,14 @@
  levels of scope.
  </ul>
  
- <b>Template example:</b> Assume that <code>$people</code> is an array of data
+ #### Expression usage
+
+ Assume that <code>$people</code> is an array of data
  objects representing people:
  
  <pre>^mapToSingleValue($people|$item.children|$item.fullName|$root)</pre>
  
- The template expression above would iterate over all the values in
+ The expression above would iterate over all the values in
  <code>$people</code>, and for each person, it would then iterate over
  the elements contained in the person's <code>children</code> array. For
  each of those children, it would create a mapping from the value of that
@@ -652,12 +674,14 @@
  levels of scope.
  </ul>
  
- <b>Template example:</b> Assume that <code>$people</code> is an array of data
+ #### Expression usage
+
+ Assume that <code>$people</code> is an array of data
  objects representing people:
  
  <pre>^mapToArray($people|$item.children|$item.fullName|$root)</pre>
  
- The template expression above would iterate over all the values in
+ The expression above would iterate over all the values in
  <code>$people</code>, and for each person, it would then iterate over
  the elements contained in the person's <code>children</code> array. For
  each of those children, it would create a mapping from the value of that
@@ -697,13 +721,15 @@
  in the returned array will be in the same order that they were supplied by 
  the enumerator.
  
- <b>Template example:</b> Assume that <code>$animals</code> is an array with
+ #### Expression usage
+
+ Assume that <code>$animals</code> is an array with
  three elements: the strings <code>Duck</code>, <code>Duck</code> and
  <code>Goose</code>.
  
  <pre>^unique($animals)</pre>
  
- The template expression above would return an array containing two
+ The expression above would return an array containing two
  strings: <code>Duck</code> and <code>Goose</code>, in that order.
  
  @param     enumerator the function's input parameter.
@@ -735,14 +761,16 @@
  than <i>returned array count</i>, one or more of the returned arrays
  will be empty.
  
- <b>Template example:</b> Assume that <code>$newYorkTeams</code> is an
+ #### Expression usage
+
+ Assume that <code>$newYorkTeams</code> is an
  array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
  <code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
  order.
  
  <pre>^distributeArrayElements($newYorkTeams|2)</pre>
  
- The template expression above would return an array containing two
+ The expression above would return an array containing two
  arrays, where the first array contains three items (<code>Yankees</code>,
  <code>Knicks</code> and <code>Islanders</code>) and the second array
  contains two (<code>Mets</code> and <code>Rangers</code>).
@@ -777,14 +805,16 @@
  size</i> number of items, the last group array will contain fewer than 
  <i>group size</i> number of items.
  
- <b>Template example:</b> Assume that <code>$newYorkTeams</code> is an
+ #### Expression usage
+
+ Assume that <code>$newYorkTeams</code> is an
  array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
  <code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that 
  order.
  
  <pre>^groupArrayElements($newYorkTeams|2)</pre>
  
- The template expression above would return an array containing three
+ The expression above would return an array containing three
  arrays, where the first array contains two items (<code>Yankees</code> and
  <code>Mets</code>), the second array contains two items (<code>Knicks</code> 
  and <code>Rangers</code>), and the third array contains one item 
@@ -812,12 +842,14 @@
  
  The source is iterated and the expression is evaluated with respect to each $item.
  
- <b>Template example:</b> Assume that <code>$numbers</code> is an
+ #### Expression usage
+
+ Assume that <code>$numbers</code> is an
  array with the numbers 1 through 5
  
  <pre>^reduce($numbers|0|#($currentValue + $item))</pre>
  
- The template expression above would return the value 15
+ The expression above would return the value 15
 
  @param     params the function's input parameters.
  
