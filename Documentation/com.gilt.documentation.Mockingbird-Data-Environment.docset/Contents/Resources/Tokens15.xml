@@ -57,6 +57,9 @@ constant kMBDateParsingLocaleVariableName is used to construct the locale.</Abst
 				</Parameter><Parameter>
 					<Name>style</Name>
 					<Abstract type="html">The NSDateFormatterStyle to use for formatting the date.</Abstract>
+				</Parameter><Parameter>
+					<Name>timeZone</Name>
+					<Abstract type="html">The NSTimeZone to use for the output.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A string containing the formatted date.</Abstract></ReturnValue>
@@ -247,7 +250,7 @@ representation of the input date.</Abstract></ReturnValue>
 the given date plus the provided seconds.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)addSecondsToDate:(NSArray *)input</Declaration>
+			<Declaration>+ (id)addSecondsToDate:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -286,7 +289,7 @@ value will be negative.</Abstract></ReturnValue>
 returns a string representation of the date in the specified format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)formatDate:(NSArray *)input</Declaration>
+			<Declaration>+ (id)formatDate:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -539,7 +542,7 @@ string formatted using the NSDateFormatterLongStyle format.</Abstract>
 converts it into a date string of another format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)reformatDate:(NSArray *)input</Declaration>
+			<Declaration>+ (id)reformatDate:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -558,7 +561,7 @@ along with a locale specification for that input string--and converts the
 input into a date string of another format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)reformatDateWithLocale:(NSArray *)input</Declaration>
+			<Declaration>+ (id)reformatDateWithLocale:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>

@@ -475,7 +475,7 @@ the given date plus the provided seconds.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)addSecondsToDate:(NSArray *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)addSecondsToDate:(NSArray *)<em>params</em></code></div>
 
     
 	
@@ -572,8 +572,7 @@ the current date and time.</p>
 <pre><code>^currentTime()
 </code></pre>
 
-<p>would return the same value that would result from calling the Objective-C
-method <code>[NSDate date]</code>.</p>
+<p>returns an <code>NSDate</code> containing the current date and time.</p>
 	</div>
 	
 	
@@ -768,7 +767,7 @@ returns a string representation of the date in the specified format.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)formatDate:(NSArray *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)formatDate:(NSArray *)<em>params</em></code></div>
 
     
 	
@@ -855,6 +854,11 @@ returned date string</p></li>
 		<dl class="argument-def parameter-def">
 			<dt><em>style</em></dt>
 			<dd><p>The <code>NSDateFormatterStyle</code> to use for formatting the date.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>timeZone</em></dt>
+			<dd><p>The <code>NSTimeZone</code> to use for the output.</p></dd>
 		</dl>
 		
 	</div>
@@ -2213,7 +2217,7 @@ converts it into a date string of another format.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)reformatDate:(NSArray *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)reformatDate:(NSArray *)<em>params</em></code></div>
 
     
 	
@@ -2290,7 +2294,7 @@ input into a date string of another format.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)reformatDateWithLocale:(NSArray *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)reformatDateWithLocale:(NSArray *)<em>params</em></code></div>
 
     
 	

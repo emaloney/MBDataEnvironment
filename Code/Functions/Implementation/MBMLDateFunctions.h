@@ -68,6 +68,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  @param     style The `NSDateFormatterStyle` to use for formatting the date.
  
+ @param     timeZone The `NSTimeZone` to use for the output.
+ 
  @return    A string containing the formatted date.
  
  @note      This method is not exposed to MBML as a function.
@@ -152,8 +154,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
     ^currentTime()
  
- would return the same value that would result from calling the Objective-C
- method `+[NSDate date]`.
+ returns an `NSDate` containing the current date and time.
  
  @return    An `NSDate` instance representing the current date and time.
  */
@@ -271,7 +272,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  @return    An `NSDate` plus the interval in seconds.
   */
-+ (id) addSecondsToDate:(NSArray*)input;
++ (id) addSecondsToDate:(NSArray*)params;
 
 /*!
  An MBML function implementation that returns a string representation of the
@@ -319,7 +320,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  @return    A date-formatted string.
  */
-+ (id) formatDate:(NSArray*)input;
++ (id) formatDate:(NSArray*)params;
 
 /*!
  An MBML function implementation that accepts a date and returns a date string
@@ -681,7 +682,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  @return    A date-formatted string.
  */
-+ (id) reformatDate:(NSArray*)input;
++ (id) reformatDate:(NSArray*)params;
 
 /*!
  An MBML function implementation that accepts a date-formatted input string--
@@ -714,7 +715,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  @return    A date-formatted string.
  */
-+ (id) reformatDateWithLocale:(NSArray*)input;
++ (id) reformatDateWithLocale:(NSArray*)params;
 
 /*!
  An MBML function implementation that attempts to construct an `NSDate`
