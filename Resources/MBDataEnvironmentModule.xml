@@ -190,7 +190,7 @@
     <Function class="MBMLRuntimeFunctions" name="respondsToSelector" method="objectRespondsToSelector" input="pipedObjects"/>
     <Function class="MBMLRuntimeFunctions" name="instancesRespondToSelector" method="classRespondsToSelector" input="pipedObjects"/>
 
-    <Function class="MBMLStringFunctions" name="q" input="string"/>
+    <Function class="MBMLStringFunctions" name="q" input="raw"/>
     <Function class="MBMLStringFunctions" name="eval" input="string"/>
     <Function class="MBMLStringFunctions" name="evalBool" input="string"/>
     <Function class="MBMLStringFunctions" name="stripQueryString" input="string"/>
@@ -214,7 +214,7 @@
     <Function class="MBMLStringFunctions" name="stringWidth" input="pipedObjects"/>
     <Function class="MBMLStringFunctions" name="linesNeededToDrawText" input="pipedExpressions"/>
     <Function class="MBMLStringFunctions" name="rangeOfString" input="pipedObjects"/>
-    <Function class="MBMLStringFunctions" name="formatInteger" input="string"/>
+    <Function class="MBMLStringFunctions" name="formatInteger" input="math"/>
     <Function class="MBMLStringFunctions" name="hasPrefix" input="pipedStrings"/>
     <Function class="MBMLStringFunctions" name="hasSuffix" input="pipedStrings"/>
     <Function class="MBMLStringFunctions" name="containsString" input="pipedStrings"/>
