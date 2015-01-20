@@ -24,16 +24,21 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /******************************************************************************/
 
 /*!
- A class containing a set of MBML functions and supporting methods that provide
+ This class contains a set of MBML functions and supporting methods that provide
  date manipulation tools.
- 
- See `MBMLFunction` for more information on MBML functions and how they're used.
+
+ These functions are exposed to the Mockingbird environment via
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
+
+ For more information on MBML functions, see the `MBMLFunction` class.
  */
 @interface MBMLDateFunctions : NSObject
 
-/******************************************************************************/
+/*----------------------------------------------------------------------------*/
 #pragma mark Supporting methods
-/******************************************************************************/
+/*!    @name Supporting methods                                               */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the date parsing format used by default. First, the MBML expression
@@ -138,15 +143,16 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  */
 + (NSDate*) parseDate:(NSString*)str;
 
-/******************************************************************************/
-#pragma mark MBML Functions
-/******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Getting the current time
+/*!    @name Getting the current time                                         */
+/*----------------------------------------------------------------------------*/
 
 /*!
  An MBML function implementation that returns an `NSDate` instance representing
  the current date and time.
  
- This function accepts no input.
+ This Mockingbird function accepts no input.
  
  #### Expression usage
  
@@ -160,12 +166,17 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  */
 + (NSDate*) currentTime;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Calculating time deltas to the present
+/*!    @name Calculating time deltas to the present                           */
+/*----------------------------------------------------------------------------*/
+
 /*!
  An MBML function implementation that returns the number of seconds that have
  elapsed since the given past date.
  
- This function accepts a single expression parameter that is expected to yield
- an `NSDate` instance.
+ This Mockingbird function accepts a single object expression parameter
+ yielding an `NSDate` instance.
  
  #### Expression usage
  
@@ -205,6 +216,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
             value will be negative.
  */
 + (id) secondsUntil:(NSDate*)date;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Converting to and from UNIX timestamps
+/*!    @name Converting to and from UNIX timestamps                           */
+/*----------------------------------------------------------------------------*/
 
 /*!
  An MBML function implementation that returns a date representation of the
@@ -250,6 +266,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  */
 + (id) dateToUnixTimestamp:(NSDate*)date;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Date/time addition
+/*!    @name Date/time addition                                               */
+/*----------------------------------------------------------------------------*/
+
 /*!
  An MBML function implementation that returns an `NSDate` instance representing
  the given date plus the provided seconds.
@@ -274,6 +295,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
   */
 + (id) addSecondsToDate:(NSArray*)params;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Date/time formatting
+/*!    @name Date/time formatting                                             */
+/*----------------------------------------------------------------------------*/
+
 /*!
  An MBML function implementation that returns a string representation of the
  time until the given date.
@@ -292,8 +318,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @param     date The function's input parameter.
 
  @return    An `NSString` instance containing the time until
- the input date; if the input date is in the past, the return
- value will be negative.
+            the input date.
  */
 + (id) formatTimeUntil:(NSDate*)date;
 
@@ -655,6 +680,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  */
 + (id) formatFullDateTime:(id)input;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Converting from one string format to another
+/*!    @name Converting from one string format to another                     */
+/*----------------------------------------------------------------------------*/
+
 /*!
  An MBML function implementation that accepts a date-formatted string and
  converts it into a date string of another format.
@@ -717,6 +747,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  */
 + (id) reformatDateWithLocale:(NSArray*)params;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Parsing date strings
+/*!    @name Parsing date strings                                             */
+/*----------------------------------------------------------------------------*/
+
 /*!
  An MBML function implementation that attempts to construct an `NSDate`
  instance by parsing a string.
@@ -748,6 +783,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
             `^parseDate()`.
  */
 + (id) mbmlParseDate:(NSArray*)params;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Time zone information
+/*!    @name Time zone information                                            */
+/*----------------------------------------------------------------------------*/
 
 /*!
  An MBML function implementation that returns the offset, in minutes, 

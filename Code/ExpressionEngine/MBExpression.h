@@ -27,10 +27,10 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 /******************************************************************************/
 
 /*!
- This class is responsible for evaluating MBML expressions.
+ This class is responsible for evaluating Mockingbird expressions.
  
- MBML expressions are string-based expressions that, when evaluated, can result
- in one of the following types:
+ Mockingbird expressions are string-based expressions that, when evaluated, can 
+ result in one of the following types:
  
  - arbitrary Objective-C objects (via the `asObject:` method variants),
  - strings (via the `asString:` method variants),
@@ -38,7 +38,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  - boolean values (via the `asBoolean:` method variants), and
  - arrays (via the `asArray:` method variants).
  
- Although this class provides an Objective-C interface for evaluating MBML
+ This class provides an Objective-C interface for evaluating MBML
  expressions, typically, expressions are used to perform string replacement
  within attributes of MBML tags. For example, in this tag:
  
@@ -245,15 +245,15 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  
  When evaluated, the expression:
  
-    $[total $]
- 
- would yield the current value of an MBML variable named `total $`.
+    $[total$]
+
+ would yield the current value of an MBML variable named `total$`.
  
  Using the bracket notation allows subreferences after the closing bracket.
- Assuming the MBML variable `total $` is a string, the following expression
+ Assuming the MBML variable `total$` is a string, the following expression
  would yield the length of the string:
  
-    $[total $].length
+    $[total$].length
  
  **Parentheses Quoted Variable References**
 
@@ -265,8 +265,8 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  
  For example, consider these two expressions:
  
-    $[favorite color].length
-    $(favorite color).length
+    $[total$].length
+    $(total$).length
  
  The top expression uses the bracket quoted notation, which allows 
  subreferences after the closing bracket. The bottom expression uses
@@ -278,9 +278,9 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  variable reference, function call, or math expression, it is interpreted
  as a text literal by the expression evaluator.
  
- So while `$[favorite color].length` will return the length of the MBML
- variable called `favorite color`, `$(favorite color).length` will return
- the value of the MBML variable `favorite color` followed by the string
+ So while `$[total$].length` will return the length of the MBML
+ variable called `total$`, `$(total$).length` will return
+ the value of the MBML variable `total$` followed by the string
  literal "`.length`".
  
  **Math Notation**
