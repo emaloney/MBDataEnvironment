@@ -22,6 +22,150 @@
 
 /* Begin PBXBuildFile section */
 		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
+		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
+		3BD23C8B1A65FBA9001F7869 /* MBMLFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLFunctionTests.m */; };
+		3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */; };
+		3BD23C8D1A65FBA9001F7869 /* VariableExpansionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */; };
+		3BD23C901A65FBBB001F7869 /* test-app-data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */; };
+		3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
+		3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
+		3BD23C931A65FC54001F7869 /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73219D9FBEB00996B9F /* MBDevice.m */; };
+		3BD23C941A65FC54001F7869 /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */; };
+		3BD23C951A65FC54001F7869 /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */; };
+		3BD23C961A65FC54001F7869 /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */; };
+		3BD23C971A65FC54001F7869 /* MBExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73D19D9FBEB00996B9F /* MBExpression.m */; };
+		3BD23C981A65FC54001F7869 /* MBExpressionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73F19D9FBEB00996B9F /* MBExpressionCache.m */; };
+		3BD23C991A65FC54001F7869 /* MBExpressionError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74119D9FBEB00996B9F /* MBExpressionError.m */; };
+		3BD23C9A1A65FC54001F7869 /* MBExpressionExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74319D9FBEB00996B9F /* MBExpressionExtensions.m */; };
+		3BD23C9B1A65FC54001F7869 /* MBExpressionGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74619D9FBEB00996B9F /* MBExpressionGrammar.m */; };
+		3BD23C9C1A65FC54001F7869 /* MBExpressionTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74819D9FBEB00996B9F /* MBExpressionTokenizer.m */; };
+		3BD23C9D1A65FC54001F7869 /* MBMLEscapeSequenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74B19D9FBEB00996B9F /* MBMLEscapeSequenceToken.m */; };
+		3BD23C9E1A65FC54001F7869 /* MBMLFunctionCallToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74D19D9FBEB00996B9F /* MBMLFunctionCallToken.m */; };
+		3BD23C9F1A65FC54001F7869 /* MBMLGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA74F19D9FBEB00996B9F /* MBMLGroupingToken.m */; };
+		3BD23CA01A65FC54001F7869 /* MBMLIgnorableWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75119D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.m */; };
+		3BD23CA11A65FC54001F7869 /* MBMLKeywordMatchingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75319D9FBEB00996B9F /* MBMLKeywordMatchingToken.m */; };
+		3BD23CA21A65FC54001F7869 /* MBMLLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75519D9FBEB00996B9F /* MBMLLiteralToken.m */; };
+		3BD23CA31A65FC54001F7869 /* MBMLMathExpressionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75719D9FBEB00996B9F /* MBMLMathExpressionToken.m */; };
+		3BD23CA41A65FC54001F7869 /* MBMLNumericLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75919D9FBEB00996B9F /* MBMLNumericLiteralToken.m */; };
+		3BD23CA51A65FC54001F7869 /* MBMLObjectReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75B19D9FBEB00996B9F /* MBMLObjectReferenceToken.m */; };
+		3BD23CA61A65FC54001F7869 /* MBMLObjectSubreferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75D19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.m */; };
+		3BD23CA71A65FC54001F7869 /* MBMLParameterDelimiterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA75F19D9FBEB00996B9F /* MBMLParameterDelimiterToken.m */; };
+		3BD23CA81A65FC54001F7869 /* MBMLParameterGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76119D9FBEB00996B9F /* MBMLParameterGroupingToken.m */; };
+		3BD23CA91A65FC54001F7869 /* MBMLParseToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76319D9FBEB00996B9F /* MBMLParseToken.m */; };
+		3BD23CAA1A65FC54001F7869 /* MBMLVariableReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76519D9FBEB00996B9F /* MBMLVariableReferenceToken.m */; };
+		3BD23CAB1A65FC54001F7869 /* MBMLWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76719D9FBEB00996B9F /* MBMLWhitespaceToken.m */; };
+		3BD23CAC1A65FC54001F7869 /* MBMLBooleanAndOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76B19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.m */; };
+		3BD23CAD1A65FC54001F7869 /* MBMLBooleanGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76D19D9FBEB00996B9F /* MBMLBooleanGroupingToken.m */; };
+		3BD23CAE1A65FC54001F7869 /* MBMLBooleanNegationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA76F19D9FBEB00996B9F /* MBMLBooleanNegationToken.m */; };
+		3BD23CAF1A65FC54001F7869 /* MBMLBooleanOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77119D9FBEB00996B9F /* MBMLBooleanOperatorToken.m */; };
+		3BD23CB01A65FC54001F7869 /* MBMLBooleanOrOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77319D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.m */; };
+		3BD23CB11A65FC54001F7869 /* MBMLEqualityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77519D9FBEB00996B9F /* MBMLEqualityTestToken.m */; };
+		3BD23CB21A65FC54001F7869 /* MBMLGreaterThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77719D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.m */; };
+		3BD23CB31A65FC54001F7869 /* MBMLGreaterThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77919D9FBEB00996B9F /* MBMLGreaterThanTestToken.m */; };
+		3BD23CB41A65FC54001F7869 /* MBMLInequalityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77B19D9FBEB00996B9F /* MBMLInequalityTestToken.m */; };
+		3BD23CB51A65FC54001F7869 /* MBMLLessThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77D19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.m */; };
+		3BD23CB61A65FC54001F7869 /* MBMLLessThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA77F19D9FBEB00996B9F /* MBMLLessThanTestToken.m */; };
+		3BD23CB71A65FC54001F7869 /* MBMLAdditionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78219D9FBEB00996B9F /* MBMLAdditionOperatorToken.m */; };
+		3BD23CB81A65FC54001F7869 /* MBMLDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78419D9FBEB00996B9F /* MBMLDivisionOperatorToken.m */; };
+		3BD23CB91A65FC54001F7869 /* MBMLMathGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78619D9FBEB00996B9F /* MBMLMathGroupingToken.m */; };
+		3BD23CBA1A65FC54001F7869 /* MBMLMathOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78819D9FBEB00996B9F /* MBMLMathOperatorToken.m */; };
+		3BD23CBB1A65FC54001F7869 /* MBMLMultiplicationOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78A19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m */; };
+		3BD23CBC1A65FC54001F7869 /* MBMLSubtractionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA78C19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.m */; };
+		3BD23CBD1A65FC54001F7869 /* MBMLCollectionFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79019D9FBEB00996B9F /* MBMLCollectionFunctions.m */; };
+		3BD23CBE1A65FC54001F7869 /* MBMLDataProcessingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79219D9FBEB00996B9F /* MBMLDataProcessingFunctions.m */; };
+		3BD23CBF1A65FC54001F7869 /* MBMLDateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79419D9FBEB00996B9F /* MBMLDateFunctions.m */; };
+		3BD23CC01A65FC54001F7869 /* MBMLDebugFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79619D9FBEB00996B9F /* MBMLDebugFunctions.m */; };
+		3BD23CC11A65FC54001F7869 /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */; };
+		3BD23CC21A65FC54001F7869 /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */; };
+		3BD23CC31A65FC54001F7869 /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */; };
+		3BD23CC41A65FC54001F7869 /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */; };
+		3BD23CC51A65FC54001F7869 /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */; };
+		3BD23CC61A65FC54001F7869 /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */; };
+		3BD23CC71A65FC54001F7869 /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */; };
+		3BD23CC81A65FC54001F7869 /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */; };
+		3BD23CC91A65FC54001F7869 /* MBMLResourceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A819D9FBEB00996B9F /* MBMLResourceFunctions.m */; };
+		3BD23CCA1A65FC54001F7869 /* MBMLRuntimeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AA19D9FBEB00996B9F /* MBMLRuntimeFunctions.m */; };
+		3BD23CCB1A65FC54001F7869 /* MBMLStringFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AC19D9FBEB00996B9F /* MBMLStringFunctions.m */; };
+		3BD23CCC1A65FC54001F7869 /* MBMLFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7AE19D9FBEB00996B9F /* MBMLFunction.m */; };
+		3BD23CCD1A65FC54001F7869 /* MBDataEnvironmentModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B219D9FBEB00996B9F /* MBDataEnvironmentModule.m */; };
+		3BD23CCE1A65FC54001F7869 /* MBDataEnvironmentConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B419D9FBEB00996B9F /* MBDataEnvironmentConstants.m */; };
+		3BD23CCF1A65FC54001F7869 /* MBStringConversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B719D9FBEB00996B9F /* MBStringConversions.m */; };
+		3BD23CD01A65FC54001F7869 /* TypeCoercionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7B919D9FBEB00996B9F /* TypeCoercionSupport.m */; };
+		3BD23CD11A65FC54001F7869 /* MBScopedVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BC19D9FBEB00996B9F /* MBScopedVariables.m */; };
+		3BD23CD21A65FC54001F7869 /* MBVariableDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */; };
+		3BD23CD31A65FC54001F7869 /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */; };
+		3BD23CD41A65FCCC001F7869 /* MBAttributeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CD51A65FCCC001F7869 /* MBDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CD61A65FCCD001F7869 /* MBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73119D9FBEB00996B9F /* MBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CD71A65FCCD001F7869 /* MBEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73419D9FBEB00996B9F /* MBEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CD81A65FCCD001F7869 /* MBEnvironmentLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73619D9FBEB00996B9F /* MBEnvironmentLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CD91A65FCCD001F7869 /* MBEvents+DataLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73919D9FBEB00996B9F /* MBEvents+DataLoading.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CDA1A65FCCD001F7869 /* MBExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73C19D9FBEB00996B9F /* MBExpression.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CDB1A65FCCD001F7869 /* MBExpressionCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73E19D9FBEB00996B9F /* MBExpressionCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CDC1A65FCCD001F7869 /* MBExpressionError.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74019D9FBEB00996B9F /* MBExpressionError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CDD1A65FCCD001F7869 /* MBExpressionExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74219D9FBEB00996B9F /* MBExpressionExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23CDE1A65FCEA001F7869 /* MBExpressionGrammar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74519D9FBEB00996B9F /* MBExpressionGrammar.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CDF1A65FCEA001F7869 /* MBExpressionTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74719D9FBEB00996B9F /* MBExpressionTokenizer.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE01A65FCEA001F7869 /* MBMLEscapeSequenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74A19D9FBEB00996B9F /* MBMLEscapeSequenceToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE11A65FCEA001F7869 /* MBMLFunctionCallToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74C19D9FBEB00996B9F /* MBMLFunctionCallToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE21A65FCEA001F7869 /* MBMLGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA74E19D9FBEB00996B9F /* MBMLGroupingToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE31A65FCEA001F7869 /* MBMLIgnorableWhitespaceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75019D9FBEB00996B9F /* MBMLIgnorableWhitespaceToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE41A65FCEA001F7869 /* MBMLKeywordMatchingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75219D9FBEB00996B9F /* MBMLKeywordMatchingToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE51A65FCEA001F7869 /* MBMLLiteralToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75419D9FBEB00996B9F /* MBMLLiteralToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE61A65FCEA001F7869 /* MBMLMathExpressionToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75619D9FBEB00996B9F /* MBMLMathExpressionToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE71A65FCEA001F7869 /* MBMLNumericLiteralToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75819D9FBEB00996B9F /* MBMLNumericLiteralToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE81A65FCEA001F7869 /* MBMLObjectReferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75A19D9FBEB00996B9F /* MBMLObjectReferenceToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CE91A65FCEA001F7869 /* MBMLObjectSubreferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75C19D9FBEB00996B9F /* MBMLObjectSubreferenceToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CEA1A65FCEA001F7869 /* MBMLParameterDelimiterToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA75E19D9FBEB00996B9F /* MBMLParameterDelimiterToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CEB1A65FCEA001F7869 /* MBMLParameterGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76019D9FBEB00996B9F /* MBMLParameterGroupingToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CEC1A65FCEA001F7869 /* MBMLParseToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76219D9FBEB00996B9F /* MBMLParseToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CED1A65FCEA001F7869 /* MBMLVariableReferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76419D9FBEB00996B9F /* MBMLVariableReferenceToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CEE1A65FCEA001F7869 /* MBMLWhitespaceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76619D9FBEB00996B9F /* MBMLWhitespaceToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CEF1A65FCEA001F7869 /* OperationTokens.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76819D9FBEB00996B9F /* OperationTokens.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF01A65FCEA001F7869 /* MBMLBooleanAndOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76A19D9FBEB00996B9F /* MBMLBooleanAndOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF11A65FCEA001F7869 /* MBMLBooleanGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76C19D9FBEB00996B9F /* MBMLBooleanGroupingToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF21A65FCEA001F7869 /* MBMLBooleanNegationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA76E19D9FBEB00996B9F /* MBMLBooleanNegationToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF31A65FCEA001F7869 /* MBMLBooleanOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77019D9FBEB00996B9F /* MBMLBooleanOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF41A65FCEA001F7869 /* MBMLBooleanOrOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77219D9FBEB00996B9F /* MBMLBooleanOrOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF51A65FCEA001F7869 /* MBMLEqualityTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77419D9FBEB00996B9F /* MBMLEqualityTestToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF61A65FCEA001F7869 /* MBMLGreaterThanEqualsTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77619D9FBEB00996B9F /* MBMLGreaterThanEqualsTestToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF71A65FCEA001F7869 /* MBMLGreaterThanTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77819D9FBEB00996B9F /* MBMLGreaterThanTestToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF81A65FCEA001F7869 /* MBMLInequalityTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77A19D9FBEB00996B9F /* MBMLInequalityTestToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CF91A65FCEA001F7869 /* MBMLLessThanEqualsTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77C19D9FBEB00996B9F /* MBMLLessThanEqualsTestToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CFA1A65FCEA001F7869 /* MBMLLessThanTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA77E19D9FBEB00996B9F /* MBMLLessThanTestToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CFB1A65FCEA001F7869 /* MBMLAdditionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78119D9FBEB00996B9F /* MBMLAdditionOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CFC1A65FCEA001F7869 /* MBMLDivisionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78319D9FBEB00996B9F /* MBMLDivisionOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CFD1A65FCEA001F7869 /* MBMLMathGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78519D9FBEB00996B9F /* MBMLMathGroupingToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CFE1A65FCEA001F7869 /* MBMLMathOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78719D9FBEB00996B9F /* MBMLMathOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23CFF1A65FCEB001F7869 /* MBMLMultiplicationOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78919D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23D001A65FCEB001F7869 /* MBMLSubtractionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78B19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BD23D011A65FD07001F7869 /* MBMLCollectionFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78F19D9FBEB00996B9F /* MBMLCollectionFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D021A65FD07001F7869 /* MBMLDataProcessingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79119D9FBEB00996B9F /* MBMLDataProcessingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D031A65FD07001F7869 /* MBMLDateFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79319D9FBEB00996B9F /* MBMLDateFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D041A65FD07001F7869 /* MBMLDebugFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79519D9FBEB00996B9F /* MBMLDebugFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D051A65FD07001F7869 /* MBMLEncodingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79719D9FBEB00996B9F /* MBMLEncodingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D061A65FD07001F7869 /* MBMLEnvironmentFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79919D9FBEB00996B9F /* MBMLEnvironmentFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D071A65FD07001F7869 /* MBMLFileFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D081A65FD07001F7869 /* MBMLFontFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D091A65FD07001F7869 /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D0A1A65FD07001F7869 /* MBMLLogicFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D0B1A65FD07001F7869 /* MBMLMathFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D0C1A65FD07001F7869 /* MBMLRegexFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A519D9FBEB00996B9F /* MBMLRegexFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D0D1A65FD07001F7869 /* MBMLResourceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A719D9FBEB00996B9F /* MBMLResourceFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D0E1A65FD07001F7869 /* MBMLRuntimeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A919D9FBEB00996B9F /* MBMLRuntimeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D0F1A65FD07001F7869 /* MBMLStringFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7AB19D9FBEB00996B9F /* MBMLStringFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D101A65FD07001F7869 /* MBMLFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7AD19D9FBEB00996B9F /* MBMLFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D111A65FD07001F7869 /* MBDataEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7AF19D9FBEB00996B9F /* MBDataEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D121A65FD07001F7869 /* MBDataEnvironmentModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7B119D9FBEB00996B9F /* MBDataEnvironmentModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D131A65FD07001F7869 /* MBDataEnvironmentConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7B319D9FBEB00996B9F /* MBDataEnvironmentConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D141A65FD07001F7869 /* MBStringConversions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7B619D9FBEB00996B9F /* MBStringConversions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D151A65FD07001F7869 /* TypeCoercionSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7B819D9FBEB00996B9F /* TypeCoercionSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D161A65FD07001F7869 /* MBScopedVariables.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BB19D9FBEB00996B9F /* MBScopedVariables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D171A65FD07001F7869 /* MBVariableDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BD19D9FBEB00996B9F /* MBVariableDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3BD23D191A65FDA4001F7869 /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */; };
+		3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */; };
+		9DEB82F2E6E86B7507960F7C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748C53F01464830A2605981 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +322,13 @@
 		3BCB5ED91A6065AA007D06FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBDataEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBDataEnvironmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpressionEvaluatorTests.m; path = Tests/ExpressionEvaluatorTests.m; sourceTree = SOURCE_ROOT; };
+		3BD23C861A65FBA9001F7869 /* MBMLFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLFunctionTests.m; path = Tests/MBMLFunctionTests.m; sourceTree = SOURCE_ROOT; };
+		3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockingbirdTestSuite.h; path = Tests/MockingbirdTestSuite.h; sourceTree = SOURCE_ROOT; };
+		3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockingbirdTestSuite.m; path = Tests/MockingbirdTestSuite.m; sourceTree = SOURCE_ROOT; };
+		3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VariableExpansionTest.m; path = Tests/VariableExpansionTest.m; sourceTree = SOURCE_ROOT; };
+		3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-app-data.xml"; sourceTree = "<group>"; };
+		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +337,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DEB82F2E6E86B7507960F7C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +468,7 @@
 		3B8BA74419D9FBEB00996B9F /* Private */ = {
 			isa = PBXGroup;
 			children = (
+				3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */,
 				3B8BA74519D9FBEB00996B9F /* MBExpressionGrammar.h */,
 				3B8BA74619D9FBEB00996B9F /* MBExpressionGrammar.m */,
 				3B8BA74719D9FBEB00996B9F /* MBExpressionTokenizer.h */,
@@ -506,10 +659,25 @@
 		3BD23C7A1A65ED0F001F7869 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3BD23C8E1A65FBBB001F7869 /* Resources */,
+				3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */,
+				3BD23C861A65FBA9001F7869 /* MBMLFunctionTests.m */,
+				3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */,
+				3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */,
+				3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */,
 			);
 			name = Tests;
 			path = MBDataEnvironmentTests;
 			sourceTree = "<group>";
+		};
+		3BD23C8E1A65FBBB001F7869 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */,
+			);
+			name = Resources;
+			path = Tests/Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -518,6 +686,76 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD23CD41A65FCCC001F7869 /* MBAttributeValidator.h in Headers */,
+				3BD23CD51A65FCCC001F7869 /* MBDataModel.h in Headers */,
+				3BD23CD61A65FCCD001F7869 /* MBDevice.h in Headers */,
+				3BD23CD71A65FCCD001F7869 /* MBEnvironment.h in Headers */,
+				3BD23CD81A65FCCD001F7869 /* MBEnvironmentLoader.h in Headers */,
+				3BD23CD91A65FCCD001F7869 /* MBEvents+DataLoading.h in Headers */,
+				3BD23CDA1A65FCCD001F7869 /* MBExpression.h in Headers */,
+				3BD23CDB1A65FCCD001F7869 /* MBExpressionCache.h in Headers */,
+				3BD23CDC1A65FCCD001F7869 /* MBExpressionError.h in Headers */,
+				3BD23CDD1A65FCCD001F7869 /* MBExpressionExtensions.h in Headers */,
+				3BD23D011A65FD07001F7869 /* MBMLCollectionFunctions.h in Headers */,
+				3BD23D021A65FD07001F7869 /* MBMLDataProcessingFunctions.h in Headers */,
+				3BD23D031A65FD07001F7869 /* MBMLDateFunctions.h in Headers */,
+				3BD23D041A65FD07001F7869 /* MBMLDebugFunctions.h in Headers */,
+				3BD23D051A65FD07001F7869 /* MBMLEncodingFunctions.h in Headers */,
+				3BD23D061A65FD07001F7869 /* MBMLEnvironmentFunctions.h in Headers */,
+				3BD23D071A65FD07001F7869 /* MBMLFileFunctions.h in Headers */,
+				3BD23D081A65FD07001F7869 /* MBMLFontFunctions.h in Headers */,
+				3BD23D091A65FD07001F7869 /* MBMLGeometryFunctions.h in Headers */,
+				3BD23D0A1A65FD07001F7869 /* MBMLLogicFunctions.h in Headers */,
+				3BD23D0B1A65FD07001F7869 /* MBMLMathFunctions.h in Headers */,
+				3BD23D0C1A65FD07001F7869 /* MBMLRegexFunctions.h in Headers */,
+				3BD23D0D1A65FD07001F7869 /* MBMLResourceFunctions.h in Headers */,
+				3BD23D0E1A65FD07001F7869 /* MBMLRuntimeFunctions.h in Headers */,
+				3BD23D0F1A65FD07001F7869 /* MBMLStringFunctions.h in Headers */,
+				3BD23D101A65FD07001F7869 /* MBMLFunction.h in Headers */,
+				3BD23D111A65FD07001F7869 /* MBDataEnvironment.h in Headers */,
+				3BD23D121A65FD07001F7869 /* MBDataEnvironmentModule.h in Headers */,
+				3BD23D131A65FD07001F7869 /* MBDataEnvironmentConstants.h in Headers */,
+				3BD23D141A65FD07001F7869 /* MBStringConversions.h in Headers */,
+				3BD23D151A65FD07001F7869 /* TypeCoercionSupport.h in Headers */,
+				3BD23D161A65FD07001F7869 /* MBScopedVariables.h in Headers */,
+				3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */,
+				3BD23D171A65FD07001F7869 /* MBVariableDeclaration.h in Headers */,
+				3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */,
+				3BD23CDE1A65FCEA001F7869 /* MBExpressionGrammar.h in Headers */,
+				3BD23CDF1A65FCEA001F7869 /* MBExpressionTokenizer.h in Headers */,
+				3BD23CE01A65FCEA001F7869 /* MBMLEscapeSequenceToken.h in Headers */,
+				3BD23CE11A65FCEA001F7869 /* MBMLFunctionCallToken.h in Headers */,
+				3BD23CE21A65FCEA001F7869 /* MBMLGroupingToken.h in Headers */,
+				3BD23CE31A65FCEA001F7869 /* MBMLIgnorableWhitespaceToken.h in Headers */,
+				3BD23CE41A65FCEA001F7869 /* MBMLKeywordMatchingToken.h in Headers */,
+				3BD23CE51A65FCEA001F7869 /* MBMLLiteralToken.h in Headers */,
+				3BD23CE61A65FCEA001F7869 /* MBMLMathExpressionToken.h in Headers */,
+				3BD23CE71A65FCEA001F7869 /* MBMLNumericLiteralToken.h in Headers */,
+				3BD23CE81A65FCEA001F7869 /* MBMLObjectReferenceToken.h in Headers */,
+				3BD23CE91A65FCEA001F7869 /* MBMLObjectSubreferenceToken.h in Headers */,
+				3BD23CEA1A65FCEA001F7869 /* MBMLParameterDelimiterToken.h in Headers */,
+				3BD23CEB1A65FCEA001F7869 /* MBMLParameterGroupingToken.h in Headers */,
+				3BD23CEC1A65FCEA001F7869 /* MBMLParseToken.h in Headers */,
+				3BD23CED1A65FCEA001F7869 /* MBMLVariableReferenceToken.h in Headers */,
+				3BD23CEE1A65FCEA001F7869 /* MBMLWhitespaceToken.h in Headers */,
+				3BD23CEF1A65FCEA001F7869 /* OperationTokens.h in Headers */,
+				3BD23CF01A65FCEA001F7869 /* MBMLBooleanAndOperatorToken.h in Headers */,
+				3BD23CF11A65FCEA001F7869 /* MBMLBooleanGroupingToken.h in Headers */,
+				3BD23CF21A65FCEA001F7869 /* MBMLBooleanNegationToken.h in Headers */,
+				3BD23CF31A65FCEA001F7869 /* MBMLBooleanOperatorToken.h in Headers */,
+				3BD23CF41A65FCEA001F7869 /* MBMLBooleanOrOperatorToken.h in Headers */,
+				3BD23CF51A65FCEA001F7869 /* MBMLEqualityTestToken.h in Headers */,
+				3BD23CF61A65FCEA001F7869 /* MBMLGreaterThanEqualsTestToken.h in Headers */,
+				3BD23CF71A65FCEA001F7869 /* MBMLGreaterThanTestToken.h in Headers */,
+				3BD23CF81A65FCEA001F7869 /* MBMLInequalityTestToken.h in Headers */,
+				3BD23CF91A65FCEA001F7869 /* MBMLLessThanEqualsTestToken.h in Headers */,
+				3BD23CFA1A65FCEA001F7869 /* MBMLLessThanTestToken.h in Headers */,
+				3BD23CFB1A65FCEA001F7869 /* MBMLAdditionOperatorToken.h in Headers */,
+				3BD23CFC1A65FCEA001F7869 /* MBMLDivisionOperatorToken.h in Headers */,
+				3BD23CFD1A65FCEA001F7869 /* MBMLMathGroupingToken.h in Headers */,
+				3BD23CFE1A65FCEA001F7869 /* MBMLMathOperatorToken.h in Headers */,
+				3BD23CFF1A65FCEB001F7869 /* MBMLMultiplicationOperatorToken.h in Headers */,
+				3BD23D001A65FCEB001F7869 /* MBMLSubtractionOperatorToken.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,10 +766,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment" */;
 			buildPhases = (
+				0A37EA3D009B24516123E0E0 /* Check Pods Manifest.lock */,
 				3BD23C671A65ED0E001F7869 /* Sources */,
 				3BD23C681A65ED0E001F7869 /* Frameworks */,
 				3BD23C691A65ED0E001F7869 /* Headers */,
 				3BD23C6A1A65ED0E001F7869 /* Resources */,
+				23191DAF1AF5CB5EF3134E9F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -604,6 +844,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD23D191A65FDA4001F7869 /* MBDataEnvironmentModule.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,12 +852,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD23C901A65FBBB001F7869 /* test-app-data.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A37EA3D009B24516123E0E0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23191DAF1AF5CB5EF3134E9F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B2FCA841A605CF70044BEB0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -637,6 +909,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */,
+				3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */,
+				3BD23C931A65FC54001F7869 /* MBDevice.m in Sources */,
+				3BD23C941A65FC54001F7869 /* MBEnvironment.m in Sources */,
+				3BD23C951A65FC54001F7869 /* MBEnvironmentLoader.m in Sources */,
+				3BD23C961A65FC54001F7869 /* MBEvents+DataLoading.m in Sources */,
+				3BD23C971A65FC54001F7869 /* MBExpression.m in Sources */,
+				3BD23C981A65FC54001F7869 /* MBExpressionCache.m in Sources */,
+				3BD23C991A65FC54001F7869 /* MBExpressionError.m in Sources */,
+				3BD23C9A1A65FC54001F7869 /* MBExpressionExtensions.m in Sources */,
+				3BD23C9B1A65FC54001F7869 /* MBExpressionGrammar.m in Sources */,
+				3BD23C9C1A65FC54001F7869 /* MBExpressionTokenizer.m in Sources */,
+				3BD23C9D1A65FC54001F7869 /* MBMLEscapeSequenceToken.m in Sources */,
+				3BD23C9E1A65FC54001F7869 /* MBMLFunctionCallToken.m in Sources */,
+				3BD23C9F1A65FC54001F7869 /* MBMLGroupingToken.m in Sources */,
+				3BD23CA01A65FC54001F7869 /* MBMLIgnorableWhitespaceToken.m in Sources */,
+				3BD23CA11A65FC54001F7869 /* MBMLKeywordMatchingToken.m in Sources */,
+				3BD23CA21A65FC54001F7869 /* MBMLLiteralToken.m in Sources */,
+				3BD23CA31A65FC54001F7869 /* MBMLMathExpressionToken.m in Sources */,
+				3BD23CA41A65FC54001F7869 /* MBMLNumericLiteralToken.m in Sources */,
+				3BD23CA51A65FC54001F7869 /* MBMLObjectReferenceToken.m in Sources */,
+				3BD23CA61A65FC54001F7869 /* MBMLObjectSubreferenceToken.m in Sources */,
+				3BD23CA71A65FC54001F7869 /* MBMLParameterDelimiterToken.m in Sources */,
+				3BD23CA81A65FC54001F7869 /* MBMLParameterGroupingToken.m in Sources */,
+				3BD23CA91A65FC54001F7869 /* MBMLParseToken.m in Sources */,
+				3BD23CAA1A65FC54001F7869 /* MBMLVariableReferenceToken.m in Sources */,
+				3BD23CAB1A65FC54001F7869 /* MBMLWhitespaceToken.m in Sources */,
+				3BD23CAC1A65FC54001F7869 /* MBMLBooleanAndOperatorToken.m in Sources */,
+				3BD23CAD1A65FC54001F7869 /* MBMLBooleanGroupingToken.m in Sources */,
+				3BD23CAE1A65FC54001F7869 /* MBMLBooleanNegationToken.m in Sources */,
+				3BD23CAF1A65FC54001F7869 /* MBMLBooleanOperatorToken.m in Sources */,
+				3BD23CB01A65FC54001F7869 /* MBMLBooleanOrOperatorToken.m in Sources */,
+				3BD23CB11A65FC54001F7869 /* MBMLEqualityTestToken.m in Sources */,
+				3BD23CB21A65FC54001F7869 /* MBMLGreaterThanEqualsTestToken.m in Sources */,
+				3BD23CB31A65FC54001F7869 /* MBMLGreaterThanTestToken.m in Sources */,
+				3BD23CB41A65FC54001F7869 /* MBMLInequalityTestToken.m in Sources */,
+				3BD23CB51A65FC54001F7869 /* MBMLLessThanEqualsTestToken.m in Sources */,
+				3BD23CB61A65FC54001F7869 /* MBMLLessThanTestToken.m in Sources */,
+				3BD23CB71A65FC54001F7869 /* MBMLAdditionOperatorToken.m in Sources */,
+				3BD23CB81A65FC54001F7869 /* MBMLDivisionOperatorToken.m in Sources */,
+				3BD23CB91A65FC54001F7869 /* MBMLMathGroupingToken.m in Sources */,
+				3BD23CBA1A65FC54001F7869 /* MBMLMathOperatorToken.m in Sources */,
+				3BD23CBB1A65FC54001F7869 /* MBMLMultiplicationOperatorToken.m in Sources */,
+				3BD23CBC1A65FC54001F7869 /* MBMLSubtractionOperatorToken.m in Sources */,
+				3BD23CBD1A65FC54001F7869 /* MBMLCollectionFunctions.m in Sources */,
+				3BD23CBE1A65FC54001F7869 /* MBMLDataProcessingFunctions.m in Sources */,
+				3BD23CBF1A65FC54001F7869 /* MBMLDateFunctions.m in Sources */,
+				3BD23CC01A65FC54001F7869 /* MBMLDebugFunctions.m in Sources */,
+				3BD23CC11A65FC54001F7869 /* MBMLEncodingFunctions.m in Sources */,
+				3BD23CC21A65FC54001F7869 /* MBMLEnvironmentFunctions.m in Sources */,
+				3BD23CC31A65FC54001F7869 /* MBMLFileFunctions.m in Sources */,
+				3BD23CC41A65FC54001F7869 /* MBMLFontFunctions.m in Sources */,
+				3BD23CC51A65FC54001F7869 /* MBMLGeometryFunctions.m in Sources */,
+				3BD23CC61A65FC54001F7869 /* MBMLLogicFunctions.m in Sources */,
+				3BD23CC71A65FC54001F7869 /* MBMLMathFunctions.m in Sources */,
+				3BD23CC81A65FC54001F7869 /* MBMLRegexFunctions.m in Sources */,
+				3BD23CC91A65FC54001F7869 /* MBMLResourceFunctions.m in Sources */,
+				3BD23CCA1A65FC54001F7869 /* MBMLRuntimeFunctions.m in Sources */,
+				3BD23CCB1A65FC54001F7869 /* MBMLStringFunctions.m in Sources */,
+				3BD23CCC1A65FC54001F7869 /* MBMLFunction.m in Sources */,
+				3BD23CCD1A65FC54001F7869 /* MBDataEnvironmentModule.m in Sources */,
+				3BD23CCE1A65FC54001F7869 /* MBDataEnvironmentConstants.m in Sources */,
+				3BD23CCF1A65FC54001F7869 /* MBStringConversions.m in Sources */,
+				3BD23CD01A65FC54001F7869 /* TypeCoercionSupport.m in Sources */,
+				3BD23CD11A65FC54001F7869 /* MBScopedVariables.m in Sources */,
+				3BD23CD21A65FC54001F7869 /* MBVariableDeclaration.m in Sources */,
+				3BD23CD31A65FC54001F7869 /* MBVariableSpace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +983,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */,
+				3BD23C8D1A65FBA9001F7869 /* VariableExpansionTest.m in Sources */,
+				3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */,
+				3BD23C8B1A65FBA9001F7869 /* MBMLFunctionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +1018,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -716,6 +1060,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -750,8 +1095,8 @@
 		};
 		3BD23C801A65ED0F001F7869 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38E3065063027DCB078CF78A /* Pods.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -773,8 +1118,8 @@
 		};
 		3BD23C811A65ED0F001F7869 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -801,6 +1146,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${PODS_ROOT}/Headers/Public",
+					"${PODS_ROOT}/Headers/Public/MBToolbox",
+					"${PODS_ROOT}/Headers/Public/RaptureXML@Gilt",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "BuildControl/Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,6 +1166,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"${PODS_ROOT}/Headers/Public",
+					"${PODS_ROOT}/Headers/Public/MBToolbox",
+					"${PODS_ROOT}/Headers/Public/RaptureXML@Gilt",
+					"$(SDKROOT)/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = "BuildControl/Tests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -848,6 +1209,7 @@
 				3BD23C811A65ED0F001F7869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests" */ = {
 			isa = XCConfigurationList;
@@ -856,6 +1218,7 @@
 				3BD23C841A65ED0F001F7869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
