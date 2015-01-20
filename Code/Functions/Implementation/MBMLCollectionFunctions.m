@@ -149,19 +149,6 @@
     return tArray;
 }
 
-+ (id) setContains:(NSArray*)params
-{
-    debugTrace();
-    
-    MBMLFunctionError* err = nil;
-    [MBMLFunction validateParameter:params countIs:2 error:&err];
-    NSSet* operateOn = [MBMLFunction validateParameter:params objectAtIndex:0 isKindOfClass:[NSSet class] error:&err];
-    if (err) return err;
-
-    NSObject* testObj = params[1];
-    return [NSNumber numberWithBool:[operateOn containsObject:testObj]];
-}
-
 + (id) array:(NSArray*)params
 {
     debugTrace();

@@ -73,9 +73,15 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Helper for ensuring we&apos;ve got Class">Helper for ensuring we&apos;ve got Class</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Helper method for looking up classes">Helper method for looking up classes</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_MBML functions">MBML functions</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Looking up Classes">Looking up Classes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing singleton instances">Accessing singleton instances</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting a class&apos;s hierarchy">Getting a class&apos;s hierarchy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Checking for method implementations">Checking for method implementations</a></span></li>
 	
 </ul></li>
 
@@ -140,10 +146,14 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class containing a set of MBML functions and supporting methods that provide
-access to Objective-C runtime information.</p>
+						<p>This class implements a set of MBML functions and supporting methods that
+provide access to Objective-C runtime information.</p>
 
-<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 					</div>
 					
 					
@@ -155,8 +165,8 @@ access to Objective-C runtime information.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						<a title="Helper for ensuring we&apos;ve got Class" name="task_Helper for ensuring we&apos;ve got Class"></a>
-						<h3 class="subsubtitle task-title">Helper for ensuring we&apos;ve got Class</h3>
+						<a title="Helper method for looking up classes" name="task_Helper method for looking up classes"></a>
+						<h3 class="subsubtitle task-title">Helper method for looking up classes</h3>
 
 						<ul class="task-list">
 							<li>
@@ -169,8 +179,8 @@ access to Objective-C runtime information.</p>
 						</ul>
 						
 						
-						<a title="MBML functions" name="task_MBML functions"></a>
-						<h3 class="subsubtitle task-title">MBML functions</h3>
+						<a title="Looking up Classes" name="task_Looking up Classes"></a>
+						<h3 class="subsubtitle task-title">Looking up Classes</h3>
 
 						<ul class="task-list">
 							<li>
@@ -185,19 +195,43 @@ access to Objective-C runtime information.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Accessing singleton instances" name="task_Accessing singleton instances"></a>
+						<h3 class="subsubtitle task-title">Accessing singleton instances</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/singleton:">+&nbsp;singleton:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Getting a class&apos;s hierarchy" name="task_Getting a class&apos;s hierarchy"></a>
+						<h3 class="subsubtitle task-title">Getting a class&apos;s hierarchy</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/inheritanceHierarchyForClass:">+&nbsp;inheritanceHierarchyForClass:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Checking for method implementations" name="task_Checking for method implementations"></a>
+						<h3 class="subsubtitle task-title">Checking for method implementations</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/objectRespondsToSelector:">+&nbsp;objectRespondsToSelector:</a></code>
 	</span>
@@ -231,8 +265,7 @@ access to Objective-C runtime information.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given class exists
-in the Objective-C runtime.</p>
+		<p>Determines whether a given class exists in the Objective-C runtime.</p>
 	</div>		
 	
     
@@ -266,8 +299,8 @@ in the Objective-C runtime.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single MBML expression that will be evaluated as a
-string.</p>
+		<p>This Mockingbird function accepts a single string expression yielding the name
+of the class.</p>
 
 <h4>Expression usage</h4>
 
@@ -299,8 +332,8 @@ string.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given class responds
-to a specific Objective-C message selector.</p>
+		<p>Determines whether a given class responds to a specific Objective-C message
+selector.</p>
 	</div>		
 	
     
@@ -325,9 +358,7 @@ to a specific Objective-C message selector.</p>
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>If the Objective-C class referenced in the <em>class</em> expression
             responds to the selector specified in the <em>selector</em> expression,
-            the return value will be an <code>NSNumber</code> containing the boolean value
-            <code>YES</code>. Otherwise, an <code>NSNumber</code> containing the value <code>NO</code> will
-            be returned.</p>
+            the return value will be <code>@YES</code>. Otherwise, <code>@NO</code> will be returned.</p>
 	</div>
 	
 	
@@ -336,13 +367,11 @@ to a specific Objective-C message selector.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function expects two pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
 <ul>
-<li><p>the <em>class</em> expression, which should yield a <code>Class</code> object or an <code>NSString</code>
-containing the name of an Objective-C class, and</p></li>
-<li><p>the <em>selector</em> expression, which should yield a string containing the
-name of the selector</p></li>
+<li><p>The <em>object</em>, an object expression yielding an <code>NSObject</code> instance, and</p></li>
+<li><p>The <em>selector</em>, a string expression yielding the selector name.</p></li>
 </ul>
 
 
@@ -351,7 +380,7 @@ name of the selector</p></li>
 <pre><code>^classRespondsToSelector(NSString|availableStringEncodings)
 </code></pre>
 
-<p>The expression above evaluates to true because the <code>NSString</code> class responds
+<p>The expression above evaluates to <code>@YES</code> because the <code>NSString</code> class responds
 to the <code>availableStringEncodings</code> message.</p>
 	</div>
 	
@@ -376,8 +405,7 @@ to the <code>availableStringEncodings</code> message.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the <code>Class</code> object for the given
-class name.</p>
+		<p>Returns the <code>Class</code> object for the given class name.</p>
 	</div>		
 	
     
@@ -410,16 +438,19 @@ class name.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single MBML expression that will be evaluated as a
-string.</p>
+		<p>This Mockingbird function accepts a single string expression yielding the name
+of the class.</p>
 
 <h4>Expression usage</h4>
+
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
 
 <pre><code>^class(NSString)
 </code></pre>
 
 <p>The expression above would return the <code>Class</code> object representing the
-<code>NSString</code> class.</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as <code>^class()</code>.</p></div>
+<code>NSString</code> class.</p>
 	</div>
 	
 	
@@ -443,8 +474,7 @@ string.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the inheritance hierarchy of
-a given class.</p>
+		<p>Returns an array containing the inheritance hierarchy of a given class.</p>
 	</div>		
 	
     
@@ -477,10 +507,8 @@ a given class.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single MBML expression that will be evaluated as an
-object. The expression is expected to yield a <code>Class</code> object or an <code>NSString</code>
-containing the name of an Objective-C class. If the specified class responds
-to the selector <code>instance</code>, this function returns that instance.</p>
+		<p>This Mockingbird function accepts a single object expression yielding either
+a <code>Class</code> object or an <code>NSString</code> containing the name of an Objective-C class.</p>
 
 <p>The first item in the returned array will contain a <code>Class</code> object for the
 passed-in parameter, while each subsequent item will the <code>Class</code> for the
@@ -518,8 +546,8 @@ will contain the root class of the hierarchy (which is usually <code>NSObject</c
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given object
-instance responds to a specific Objective-C message selector.</p>
+		<p>Determines whether a given object instance responds to a specific Objective-C
+message selector.</p>
 	</div>		
 	
     
@@ -544,9 +572,7 @@ instance responds to a specific Objective-C message selector.</p>
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>If object instance referenced in the <em>object</em> expression
             responds to the selector specified in the <em>selector</em> expression,
-            the return value will be an <code>NSNumber</code> containing the boolean value
-            <code>YES</code>. Otherwise, an <code>NSNumber</code> containing the value <code>NO</code> will
-            be returned.</p>
+            the return value will be <code>@YES</code>. Otherwise, <code>@NO</code> will be returned.</p>
 	</div>
 	
 	
@@ -555,12 +581,11 @@ instance responds to a specific Objective-C message selector.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function expects two pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
 
 <ul>
-<li><p>the <em>object</em> expression, which should yield an <code>NSObject</code> instance, and</p></li>
-<li><p>the <em>selector</em> expression, which should yield a string containing the
-name of the selector</p></li>
+<li><p>The <em>object</em>, an object expression yielding an <code>NSObject</code> instance, and</p></li>
+<li><p>The <em>selector</em>, a string expression yielding the selector name.</p></li>
 </ul>
 
 
@@ -636,7 +661,8 @@ method returns a Class object.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function.</p></div>
 	</div>
 	
 	
@@ -660,8 +686,7 @@ method returns a Class object.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the singleton instance of a
-given class.</p>
+		<p>Returns the singleton instance of a given class.</p>
 	</div>		
 	
     
@@ -694,10 +719,10 @@ given class.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single MBML expression that will be evaluated as an
-object. The expression is expected to yield a <code>Class</code> object or an <code>NSString</code>
-containing the name of an Objective-C class. If the specified class responds
-to the selector <code>instance</code>, this function returns that instance.</p>
+		<p>This Mockingbird function accepts a single object expression yielding either
+a <code>Class</code> object or an <code>NSString</code> containing the name of an Objective-C class.
+If the specified class responds to the selector <code>instance</code>, this function
+returns that instance.</p>
 
 <h4>Expression usage</h4>
 

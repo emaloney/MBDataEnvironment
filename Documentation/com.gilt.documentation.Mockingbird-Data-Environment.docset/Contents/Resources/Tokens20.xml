@@ -4,8 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLFontFunctions</TokenIdentifier>
-			<Abstract type="html">A class containing implementations for MBML functions that return information
-about the fonts available at runtine.</Abstract>
+			<Abstract type="html">This class implements MBML functions for accessing information about the
+fonts available at runtine.</Abstract>
 			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
             
 			

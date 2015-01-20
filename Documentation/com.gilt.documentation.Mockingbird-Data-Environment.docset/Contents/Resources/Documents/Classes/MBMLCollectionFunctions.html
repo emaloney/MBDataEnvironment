@@ -79,8 +79,6 @@
 	
 	<option value="//api/name/set:">&nbsp;&nbsp;&nbsp;&nbsp;+ set:</option>
 	
-	<option value="//api/name/setContains:">&nbsp;&nbsp;&nbsp;&nbsp;+ setContains:</option>
-	
 	<option value="//api/name/values:">&nbsp;&nbsp;&nbsp;&nbsp;+ values:</option>
 	
 	
@@ -100,6 +98,14 @@
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Testing for collection types">Testing for collection types</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Counting the items in a collection">Counting the items in a collection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Modifying collections">Modifying collections</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating collections">Creating collections</a></span></li>
 	
 </ul></li>
 
@@ -149,8 +155,6 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/set:">set:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setContains:">setContains:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/values:">values:</a></span></li>
 	
 </ul></li>
@@ -192,11 +196,15 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class containing implementations for MBML functions that perform common
+						<p>This class provides a set of MBML functions that perform common
 operations on collections such as <code>NSArray</code>, <code>NSSet</code> and <code>NSDictionary</code>
 objects.</p>
 
-<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 					</div>
 					
 					
@@ -208,8 +216,8 @@ objects.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Testing for collection types" name="task_Testing for collection types"></a>
+						<h3 class="subsubtitle task-title">Testing for collection types</h3>
 
 						<ul class="task-list">
 							<li>
@@ -236,13 +244,29 @@ objects.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Counting the items in a collection" name="task_Counting the items in a collection"></a>
+						<h3 class="subsubtitle task-title">Counting the items in a collection</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/count:">+&nbsp;count:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Modifying collections" name="task_Modifying collections"></a>
+						<h3 class="subsubtitle task-title">Modifying collections</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeObject:">+&nbsp;removeObject:</a></code>
 	</span>
@@ -266,7 +290,15 @@ objects.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Creating collections" name="task_Creating collections"></a>
+						<h3 class="subsubtitle task-title">Creating collections</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/array:">+&nbsp;array:</a></code>
 	</span>
@@ -275,12 +307,6 @@ objects.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/set:">+&nbsp;set:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setContains:">+&nbsp;setContains:</a></code>
 	</span>
 	
 	
@@ -360,8 +386,8 @@ objects.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that adds one or more items to the end of
-an existing array and returns the resulting array.</p>
+		<p>Creates and returns a new <code>NSArray</code> instance by adding one or more items to
+the end of the input array.</p>
 	</div>		
 	
     
@@ -394,7 +420,8 @@ an existing array and returns the resulting array.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts two or more pipe-separated expressions
+as parameters:</p>
 
 <ul>
 <li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,
@@ -406,14 +433,14 @@ the array.</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$cities</code> is an array containing the values &ldquo;New York&rdquo;, &ldquo;London&rdquo;, and
-&ldquo;Boston&rdquo;. The expression:</p>
+<p>Assume <code>$cities</code> is an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>London</code>&rdquo;,
+and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 
 <pre><code>^appendObject($cities|Chicago|Las Vegas)
 </code></pre>
 
-<p>would return an array containing the values &ldquo;New York&rdquo;, &ldquo;London&rdquo;, &ldquo;Boston&rdquo;,
-&ldquo;Chicago&rdquo; and &ldquo;Las Vegas&rdquo;.</p>
+<p>would return an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>London</code>&rdquo;,
+&ldquo;<code>Boston</code>&rdquo;, &ldquo;<code>Chicago</code>&rdquo; and &ldquo;<code>Las Vegas</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -437,8 +464,7 @@ the array.</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an <code>NSArray</code> containing the
-value of each input parameter expression as an array element.</p>
+		<p>Returns an <code>NSArray</code> containing the result of each input parameter expression.</p>
 	</div>		
 	
     
@@ -470,8 +496,8 @@ value of each input parameter expression as an array element.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts zero or more pipe-separated expressions as parameters.
-If zero parameters are provided, an empty array is returned.</p>
+		<p>This Mockingbird function accepts zero or more pipe-separated expressions as
+parameters. If zero parameters are provided, an empty array is returned.</p>
 
 <h4>Expression usage</h4>
 
@@ -480,7 +506,7 @@ If zero parameters are provided, an empty array is returned.</p>
 <pre><code>^array(One|2|III)
 </code></pre>
 
-<p>would return an <code>NSArray</code> containing the strings &ldquo;One&rdquo;, &ldquo;2&rdquo;, and &ldquo;III&rdquo;.</p>
+<p>would return an <code>NSArray</code> containing the strings &ldquo;<code>One</code>&rdquo;, &ldquo;<code>2</code>&rdquo;, and &ldquo;<code>III</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -504,8 +530,7 @@ If zero parameters are provided, an empty array is returned.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a copy of an object adopting
-the <code>NSCopying</code> protocol.</p>
+		<p>Returns an immutable copy of an object adopting the <code>NSCopying</code> protocol.</p>
 	</div>		
 	
     
@@ -537,19 +562,21 @@ the <code>NSCopying</code> protocol.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single MBML expression parameter which yields the
-object to be copied.</p>
+		<p>This Mockingbird function accepts a single object expression parameter
+yielding the object instance to be copied.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the MBML expression <code>$array</code> yields an <code>NSArray</code>. The expression:</p>
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
 
 <pre><code>^copy($array)
 </code></pre>
 
-<p>would return an <code>NSArray</code> containing the same contents as the original
-array. If the original array is modified, the copy would be unaffected.</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as
-            <code>^copy()</code>.</p></div>
+<p>Assuming the object expression <code>$array</code> yields an <code>NSArray</code>, the expression
+above would return an <code>NSArray</code> containing the same contents as the original
+array. If the original array is subsequently modified, the copy would be
+unaffected.</p>
 	</div>
 	
 	
@@ -573,8 +600,7 @@ array. If the original array is modified, the copy would be unaffected.</p><div 
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the count of items in a
-collection object.</p>
+		<p>Returns the count of items in a collection object.</p>
 	</div>		
 	
     
@@ -606,13 +632,13 @@ collection object.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter, the collection expression, which
-is expected to yield an <code>NSSet</code>, <code>NSArray</code> or <code>NSDictionary</code> instance.</p>
+		<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSSet</code>, <code>NSArray</code> or <code>NSDictionary</code> instance.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$cities</code> is an array containing the values &ldquo;New York&rdquo;, &ldquo;London&rdquo;, and
-&ldquo;Boston&rdquo;. The expression:</p>
+<p>Assume <code>$cities</code> is an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>London</code>&rdquo;,
+and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 
 <pre><code>^count($cities)
 </code></pre>
@@ -641,8 +667,8 @@ is expected to yield an <code>NSSet</code>, <code>NSArray</code> or <code>NSDict
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an <code>NSDictionary</code> containing the
-items provided as keys and values.</p>
+		<p>Creates a new <code>NSDictionary</code> instance containing the items provided as
+keys and values.</p>
 	</div>		
 	
     
@@ -674,7 +700,7 @@ items provided as keys and values.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a pipe-separated list of zero or more expression
+		<p>This Mockingbird function accepts zero or more pipe-separated expressions as
 parameters:</p>
 
 <ul>
@@ -693,8 +719,8 @@ representing the corresponding <em>value</em> for that key.</p></li>
 <pre><code>^dictionary(firstKey|The first item|secondKey|item 2)
 </code></pre>
 
-<p>would return an <code>NSDictionary</code> containing the key &ldquo;firstKey&rdquo; having the
-value &ldquo;The first item&rdquo; and &ldquo;secondKey&rdquo; having the value &ldquo;item 2&rdquo;.</p>
+<p>would return an <code>NSDictionary</code> containing the key &ldquo;<code>firstKey</code>&rdquo; having the
+value &ldquo;<code>The first item</code>&rdquo; and &ldquo;<code>secondKey</code>&rdquo; having the value &ldquo;<code>item 2</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -718,8 +744,7 @@ value &ldquo;The first item&rdquo; and &ldquo;secondKey&rdquo; having the value 
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that uses key-value coding to retrieve a
-value from an object.</p>
+		<p>Retrieves a value from an object using key-value coding (KVC).</p>
 	</div>		
 	
     
@@ -753,7 +778,8 @@ value from an object.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or three MBML expressions as parameters:</p>
+		<p>This Mockingbird function accepts two or three pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>An <em>object</em> expression, which yields the object whose key will be queried,</p></li>
@@ -765,17 +791,18 @@ object does not possess a value for the specified key.</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the MBML expression <code>$dictionaryOfImages</code> yields a dictionary.
-The expression:</p>
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
 
 <pre><code>^valueForKey($dictionaryOfImages|$myImageKey|default.png)
 </code></pre>
 
-<p>would return the value for the key identified by the MBML expression
-<code>$myImageKey</code> in <code>$dictionaryOfImages</code>. If <code>$dictionaryOfImages</code> contains no
-value for the key identified by <code>$myImageKey</code>, the value of &ldquo;default.png&rdquo; will
-be returned.</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as
-            <code>^valueForKey()</code>.</p></div>
+<p>Assuming that the expression <code>$dictionaryOfImages</code> yields a dictionary, the
+expression above would return the value for the key identified by the string
+expression <code>$myImageKey</code> in the dictionary <code>$dictionaryOfImages</code>.</p>
+
+<p>If <code>$dictionaryOfImages</code> contains no value for the key identified by
+<code>$myImageKey</code>, the value of &ldquo;<code>default.png</code>&rdquo; will be returned.</p>
 	</div>
 	
 	
@@ -799,8 +826,8 @@ be returned.</p><div class="note"><p><strong>Note:</strong> This function is exp
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines the index of a specified value
-within an array, or <code>-1</code> if the value is not found.</p>
+		<p>Returns the index of a specified value within an array, or <code>-1</code> if the
+value is not found.</p>
 	</div>		
 	
     
@@ -833,7 +860,7 @@ within an array, or <code>-1</code> if the value is not found.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two MBML expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>An <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance</p></li>
@@ -844,13 +871,15 @@ array</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the MBML expression <code>$colors</code> yields an array containing the
-values &ldquo;red&rdquo;, &ldquo;yellow&rdquo;, &ldquo;green&rdquo;, and &ldquo;blue&rdquo; in that order. The expression:</p>
+<p>Assume that the object expression <code>$colors</code> yields an array containing the
+values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo;<code>green</code>&rdquo;, and &ldquo;<code>blue</code>&rdquo; in that order.</p>
+
+<p>The expression:</p>
 
 <pre><code>^indexOf($colors|yellow)
 </code></pre>
 
-<p>would return the number <code>1</code> indicating that the value &ldquo;yellow&rdquo; exists
+<p>would return the number <code>1</code> indicating that the value &ldquo;<code>yellow</code>&rdquo; exists
 in <code>$colors</code> at array index <code>1</code>.</p>
 	</div>
 	
@@ -875,8 +904,8 @@ in <code>$colors</code> at array index <code>1</code>.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that inserts an item into an array and returns
-the resulting array.</p>
+		<p>Creates and returns a new <code>NSArray</code> instance by inserting an item into the
+input array.</p>
 	</div>		
 	
     
@@ -909,7 +938,8 @@ the resulting array.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts three pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts three pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,</p></li>
@@ -922,14 +952,14 @@ the array index into which the object should be inserted.</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$cities</code> is an array containing the values &ldquo;New York&rdquo;, &ldquo;London&rdquo;, and
-&ldquo;Boston&rdquo;. The expression:</p>
+<p>Assume <code>$cities</code> is an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>London</code>&rdquo;,
+and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 
 <pre><code>^insertObject($cities|Chicago|1)
 </code></pre>
 
-<p>would return an array containing the values &ldquo;New York&rdquo;, &ldquo;Chicago&rdquo;, &ldquo;London&rdquo;,
-and &ldquo;Boston&rdquo;.</p><div class="warning"><p><strong>Warning:</strong> An error will be logged to the console if the index is out-of-range
+<p>would return an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>Chicago</code>&rdquo;,
+&ldquo;<code>London</code>&rdquo;, and &ldquo;<code>Boston</code>&rdquo;.</p><div class="warning"><p><strong>Warning:</strong> An error will be logged to the console if the index is out-of-range
             for the given array.</p></div>
 	</div>
 	
@@ -954,8 +984,7 @@ and &ldquo;Boston&rdquo;.</p><div class="warning"><p><strong>Warning:</strong> A
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given value is
-an instance of <code>NSSet</code>.</p>
+		<p>Determines whether a given object is an instance of <code>NSArray</code>.</p>
 	</div>		
 	
     
@@ -987,14 +1016,17 @@ an instance of <code>NSSet</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<h4>Expression usage</h4>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding the instance to be tested.</p>
+
+<h4>Expression usage</h4>
 
 <p>Assume <code>$cities</code> is an array. The expression:</p>
 
 <pre><code>^isArray($cities)
 </code></pre>
 
-<p>would return the boolean value <code>YES</code>.</p>
+<p>would return the value <code>@YES</code>.</p>
 	</div>
 	
 	
@@ -1018,9 +1050,8 @@ an instance of <code>NSSet</code>.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given value is
-a collection. A collection is an object that&rsquo;s an instance of <code>NSSet</code>,
-<code>NSArray</code> or <code>NSDictionary</code>.</p>
+		<p>Determines whether a given object instance is a collection, that is, of type
+<code>NSSet</code>, <code>NSArray</code> or <code>NSDictionary</code>.</p>
 	</div>		
 	
     
@@ -1052,14 +1083,17 @@ a collection. A collection is an object that&rsquo;s an instance of <code>NSSet<
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<h4>Expression usage</h4>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding the instance to be tested.</p>
+
+<h4>Expression usage</h4>
 
 <p>Assume the MBML variable <code>$cities</code> contains an array value. The expression:</p>
 
 <pre><code>^isCollection($cities)
 </code></pre>
 
-<p>would return the boolean value <code>YES</code>.</p>
+<p>would return the value <code>@YES</code>.</p>
 	</div>
 	
 	
@@ -1083,8 +1117,7 @@ a collection. A collection is an object that&rsquo;s an instance of <code>NSSet<
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given value is
-an instance of <code>NSSet</code>.</p>
+		<p>Determines whether a given object is an instance of <code>NSDictionary</code>.</p>
 	</div>		
 	
     
@@ -1116,14 +1149,17 @@ an instance of <code>NSSet</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<h4>Expression usage</h4>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding the instance to be tested.</p>
+
+<h4>Expression usage</h4>
 
 <p>Assume <code>$accountIdsToNames</code> is a dictionary. The expression:</p>
 
 <pre><code>^isDictionary($accountIdsToNames)
 </code></pre>
 
-<p>would return the boolean value <code>YES</code>.</p>
+<p>would return the value <code>@YES</code>.</p>
 	</div>
 	
 	
@@ -1147,8 +1183,7 @@ an instance of <code>NSSet</code>.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given value is
-an instance of <code>NSSet</code>.</p>
+		<p>Determines whether a given object is an instance of <code>NSSet</code>.</p>
 	</div>		
 	
     
@@ -1180,14 +1215,17 @@ an instance of <code>NSSet</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<h4>Expression usage</h4>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding the instance to be tested.</p>
+
+<h4>Expression usage</h4>
 
 <p>Assume the MBML variable <code>$cities</code> contains an array value. The expression:</p>
 
 <pre><code>^isSet($cities)
 </code></pre>
 
-<p>would return the boolean value <code>YES</code>.</p>
+<p>would return the value <code>@YES</code>.</p>
 	</div>
 	
 	
@@ -1211,8 +1249,7 @@ an instance of <code>NSSet</code>.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an array containing the keys of
-an <code>NSDictionary</code>.</p>
+		<p>Returns an array containing the keys of an <code>NSDictionary</code>.</p>
 	</div>		
 	
     
@@ -1245,8 +1282,8 @@ an <code>NSDictionary</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter: an expression that evaluates to
-a dictionary instance.</p>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding an <code>NSDictinary</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -1289,7 +1326,7 @@ mapping of people&rsquo;s names (keys) to their ages (values). The expression:</
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the last object in an array.</p>
+		<p>Returns the last object in an array.</p>
 	</div>		
 	
     
@@ -1322,18 +1359,20 @@ mapping of people&rsquo;s names (keys) to their ages (values). The expression:</
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter: an expression that evaluates to
-an array instance.</p>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding an <code>NSArray</code> instance.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the MBML expression <code>$colors</code> yields an array containing the
-values &ldquo;red&rdquo;, &ldquo;yellow&rdquo;, &ldquo;green&rdquo;, and &ldquo;blue&rdquo; in that order. The expression:</p>
+<p>Assume that the object expression <code>$colors</code> yields an array containing the
+values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo;<code>green</code>&rdquo;, and &ldquo;<code>blue</code>&rdquo; in that order.</p>
+
+<p>The expression:</p>
 
 <pre><code>^lastObject($colors)
 </code></pre>
 
-<p>would return the string &ldquo;blue&rdquo;.</p>
+<p>would return the string &ldquo;<code>blue</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1357,8 +1396,7 @@ values &ldquo;red&rdquo;, &ldquo;yellow&rdquo;, &ldquo;green&rdquo;, and &ldquo;
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a mutable copy of an object
-adopting the <code>NSMutableCopying</code> protocol.</p>
+		<p>Returns a mutable copy of an object adopting the <code>NSMutableCopying</code> protocol.</p>
 	</div>		
 	
     
@@ -1391,20 +1429,22 @@ adopting the <code>NSMutableCopying</code> protocol.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single MBML expression parameter which yields the
-object to be copied.</p>
+		<p>This Mockingbird function accepts a single object expression parameter
+yielding the object instance to be copied.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the MBML expression <code>$array</code> yields an <code>NSArray</code>. The expression:</p>
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
 
 <pre><code>^mutableCopy($array)
 </code></pre>
 
-<p>would return an <code>NSMutableArray</code> containing the same contents as the original
-array. If the original array is modified, the copy would be unaffected.
-Similarly, if the copy is modified, the original array would be unaffected.</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as
-            <code>^mutableCopy()</code>.</p></div>
+<p>Assuming that the object expression <code>$array</code> yields an <code>NSArray</code>, the
+expression above would return an <code>NSMutableArray</code> containing the same contents
+as the original array. If the original array is subsequently modified, the
+copy would be unaffected. Similarly, if the copy is modified, the original
+array would be unaffected.</p>
 	</div>
 	
 	
@@ -1428,8 +1468,7 @@ Similarly, if the copy is modified, the original array would be unaffected.</p><
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that removes the last object in an array
-and returns the resulting array.</p>
+		<p>Removes the last object in an array and returns the resulting array.</p>
 	</div>		
 	
     
@@ -1462,18 +1501,20 @@ and returns the resulting array.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter: an expression that evaluates to
-an array instance.</p>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding an <code>NSArray</code> instance.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the MBML expression <code>$colors</code> yields an array containing the
-values &ldquo;red&rdquo;, &ldquo;yellow&rdquo;, &ldquo;green&rdquo;, and &ldquo;blue&rdquo; in that order. The expression:</p>
+<p>Assume that the object expression <code>$colors</code> yields an array containing the
+values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo;<code>green</code>&rdquo;, and &ldquo;<code>blue</code>&rdquo; in that order.</p>
+
+<p>The expression:</p>
 
 <pre><code>^removeLastObject($colors)
 </code></pre>
 
-<p>would return an array containing the values &ldquo;red&rdquo;, &ldquo;yellow&rdquo; and &ldquo;green&rdquo;.</p>
+<p>would return an array containing the values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo; and &ldquo;<code>green</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1497,8 +1538,8 @@ values &ldquo;red&rdquo;, &ldquo;yellow&rdquo;, &ldquo;green&rdquo;, and &ldquo;
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that removes all instances of one or more
-objects from an array and returns the resulting array.</p>
+		<p>Creates and returns a new <code>NSArray</code> instance by removing all instances of
+one or more objects from an input array.</p>
 	</div>		
 	
     
@@ -1531,7 +1572,8 @@ objects from an array and returns the resulting array.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts two or more pipe-separated expressions
+as parameters:</p>
 
 <ul>
 <li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,
@@ -1543,13 +1585,13 @@ to be removed from the array.</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$babies</code> is an array containing the values &ldquo;Juno&rdquo;, &ldquo;Theo&rdquo;, &ldquo;Cooper&rdquo;
-and &ldquo;Shiloh&rdquo;. The expression:</p>
+<p>Assume <code>$babies</code> is an array containing the values &ldquo;<code>Juno</code>&rdquo;, &ldquo;<code>Theo</code>&rdquo;,
+&ldquo;<code>Cooper</code>&rdquo; and &ldquo;<code>Shiloh</code>&rdquo;. The expression:</p>
 
-<pre><code>^removeObject($babies|Theo|Cooper)
+<pre><code>^removeObject($babies|Juno|Shiloh)
 </code></pre>
 
-<p>would return an array containing the values &ldquo;Juno&rdquo; and &ldquo;Shiloh&rdquo;.</p>
+<p>would return an array containing the values &ldquo;<code>Cooper</code>&rdquo; and &ldquo;<code>Theo</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1573,8 +1615,8 @@ and &ldquo;Shiloh&rdquo;. The expression:</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that removes an object at a given index from
-an array and returns the resulting array.</p>
+		<p>Creates and returns a new <code>NSArray</code> instance by removing an object at a
+given index from the input array.</p>
 	</div>		
 	
     
@@ -1607,7 +1649,8 @@ an array and returns the resulting array.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,
@@ -1619,13 +1662,13 @@ array index of the object to remove.</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$cities</code> is an array containing the values &ldquo;New York&rdquo;, &ldquo;London&rdquo;, and
-&ldquo;Boston&rdquo;. The expression:</p>
+<p>Assume <code>$cities</code> is an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>London</code>&rdquo;,
+and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 
 <pre><code>^removeObjectAtIndex($cities|2)
 </code></pre>
 
-<p>would return an array containing the values &ldquo;New York&rdquo; and &ldquo;London&rdquo;.</p>
+<p>would return an array containing the values &ldquo;<code>New York</code>&rdquo; and &ldquo;<code>London</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1649,8 +1692,7 @@ array index of the object to remove.</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an <code>NSSet</code> containing the
-value of each input parameter expression as set elements.</p>
+		<p>Returns an <code>NSSet</code> containing the result of each input parameter expression.</p>
 	</div>		
 	
     
@@ -1682,8 +1724,8 @@ value of each input parameter expression as set elements.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts zero or more pipe-separated expressions as parameters.
-If zero parameters are provided, an empty set is returned.</p>
+		<p>This Mockingbird function accepts zero or more pipe-separated expressions as
+parameters. If zero parameters are provided, an empty set is returned.</p>
 
 <h4>Expression usage</h4>
 
@@ -1692,83 +1734,7 @@ If zero parameters are provided, an empty set is returned.</p>
 <pre><code>^set(One|2|III)
 </code></pre>
 
-<p>would return an <code>NSSet</code> containing the strings &ldquo;One&rdquo;, &ldquo;2&rdquo;, and &ldquo;III&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLCollectionFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setContains:" title="setContains:"></a>
-	<h3 class="subsubtitle method-title">setContains:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a set contains a
-given object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)setContains:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSNumber</code> containing a boolean value indicating the result
-            of the function.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two pipe-separated expressions as parameters:</p>
-
-<ul>
-<li><p>A <em>set</em> expression, which should yield an <code>NSSet</code> instance, and</p></li>
-<li><p>An <em>object</em> expression, which yields the object whose presence in the
-set is to be tested.</p></li>
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<p>Assume that the MBML variable <code>$colors</code> is a set containing the values &ldquo;red&rdquo;,
-&ldquo;yellow&rdquo;, &ldquo;green&rdquo;, and &ldquo;blue&rdquo;:</p>
-
-<pre><code>^setContains($colors|orange)
-</code></pre>
-
-<p>The expression above would return a boolean <code>NO</code>, because <code>$colors</code> does
-not contain the value &ldquo;orange&rdquo;.</p>
+<p>would return an <code>NSSet</code> containing the strings &ldquo;<code>One</code>&rdquo;, &ldquo;<code>2</code>&rdquo;, and &ldquo;<code>III</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1792,8 +1758,7 @@ not contain the value &ldquo;orange&rdquo;.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an array containing the values of
-an <code>NSDictionary</code>.</p>
+		<p>Returns an array containing the values of an <code>NSDictionary</code>.</p>
 	</div>		
 	
     
@@ -1826,8 +1791,8 @@ an <code>NSDictionary</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter: an expression that evaluates to
-a dictionary instance.</p>
+		<p>This Mockingbird function accepts a single parameter: an object expression
+yielding an <code>NSDictinary</code> instance.</p>
 
 <h4>Expression usage</h4>
 

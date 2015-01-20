@@ -14,26 +14,37 @@
 /******************************************************************************/
 
 /*!
- A class containing implementations for MBML functions that perform common
+ This class provides a set of MBML functions that perform common
  operations on collections such as `NSArray`, `NSSet` and `NSDictionary`
  objects.
- 
- See `MBMLFunction` for more information on MBML functions and how they're used.
+
+ These functions are exposed to the Mockingbird environment via
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
+
+ For more information on MBML functions, see the `MBMLFunction` class.
  */
 @interface MBMLCollectionFunctions : NSObject
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Testing for collection types
+/*!    @name Testing for collection types                                     */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that determines whether a given value is
- a collection. A collection is an object that's an instance of `NSSet`, 
- `NSArray` or `NSDictionary`.
+ Determines whether a given object instance is a collection, that is, of type
+ `NSSet`, `NSArray` or `NSDictionary`.
  
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding the instance to be tested.
+
  #### Expression usage
  
  Assume the MBML variable `$cities` contains an array value. The expression:
  
     ^isCollection($cities)
 
- would return the boolean value `YES`.
+ would return the value `@YES`.
  
  @param     param The function's input parameter.
  
@@ -42,17 +53,19 @@
 + (NSNumber*) isCollection:(id)param;
 
 /*!
- An MBML function implementation that determines whether a given value is
- an instance of `NSSet`.
+ Determines whether a given object is an instance of `NSSet`.
  
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding the instance to be tested.
+
  #### Expression usage
  
  Assume the MBML variable `$cities` contains an array value. The expression:
  
     ^isSet($cities)
 
- would return the boolean value `YES`.
- 
+ would return the value `@YES`.
+
  @param     param The function's input parameter.
  
  @return    A boolean result, contained in an `NSNumber`.
@@ -60,17 +73,19 @@
 + (NSNumber*) isSet:(id)param;
 
 /*!
- An MBML function implementation that determines whether a given value is
- an instance of `NSSet`.
- 
+ Determines whether a given object is an instance of `NSDictionary`.
+
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding the instance to be tested.
+
  #### Expression usage
  
  Assume `$accountIdsToNames` is a dictionary. The expression:
  
     ^isDictionary($accountIdsToNames)
 
- would return the boolean value `YES`.
- 
+ would return the value `@YES`.
+
  @param     param The function's input parameter.
  
  @return    A boolean result, contained in an `NSNumber`.
@@ -78,34 +93,40 @@
 + (NSNumber*) isDictionary:(id)param;
 
 /*!
- An MBML function implementation that determines whether a given value is
- an instance of `NSSet`.
- 
+ Determines whether a given object is an instance of `NSArray`.
+
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding the instance to be tested.
+
  #### Expression usage
  
  Assume `$cities` is an array. The expression:
  
     ^isArray($cities)
 
- would return the boolean value `YES`.
- 
+ would return the value `@YES`.
+
  @param     param The function's input parameter.
  
  @return    A boolean result, contained in an `NSNumber`.
  */
 + (NSNumber*) isArray:(id)param;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Counting the items in a collection
+/*!    @name Counting the items in a collection                               */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that returns the count of items in a
- collection object.
+ Returns the count of items in a collection object.
  
- This function accepts a single parameter, the collection expression, which
- is expected to yield an `NSSet`, `NSArray` or `NSDictionary` instance.
+ This Mockingbird function accepts a single parameter, an object expression
+ that's expected to yield an `NSSet`, `NSArray` or `NSDictionary` instance.
  
  #### Expression usage
  
- Assume `$cities` is an array containing the values "New York", "London", and
- "Boston". The expression:
+ Assume `$cities` is an array containing the values "`New York`", "`London`",
+ and "`Boston`". The expression:
  
     ^count($cities)
 
@@ -117,11 +138,17 @@
  */
 + (id) count:(id)param;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Modifying collections
+/*!    @name Modifying collections                                            */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that removes all instances of one or more
- objects from an array and returns the resulting array.
+ Creates and returns a new `NSArray` instance by removing all instances of
+ one or more objects from an input array.
  
- This function accepts two or more pipe-separated expressions as parameters:
+ This Mockingbird function accepts two or more pipe-separated expressions 
+ as parameters:
  
  * The *array* expression, which should evaluate to an `NSArray` instance,
  and
@@ -131,12 +158,12 @@
  
  #### Expression usage
  
- Assume `$babies` is an array containing the values "Juno", "Theo", "Cooper" 
- and "Shiloh". The expression:
+ Assume `$babies` is an array containing the values "`Juno`", "`Theo`", 
+ "`Cooper`" and "`Shiloh`". The expression:
  
-    ^removeObject($babies|Theo|Cooper)
+    ^removeObject($babies|Juno|Shiloh)
  
- would return an array containing the values "Juno" and "Shiloh".
+ would return an array containing the values "`Cooper`" and "`Theo`".
  
  @param     params The function's input parameters.
  
@@ -146,11 +173,12 @@
 + (id) removeObject:(NSArray*)params;
 
 /*!
- An MBML function implementation that removes an object at a given index from
- an array and returns the resulting array.
- 
- This function accepts two pipe-separated expressions as parameters:
- 
+ Creates and returns a new `NSArray` instance by removing an object at a
+ given index from the input array.
+
+ This Mockingbird function accepts two pipe-separated expressions as
+ parameters:
+
  * The *array* expression, which should evaluate to an `NSArray` instance,
  and
  
@@ -159,12 +187,12 @@
  
  #### Expression usage
  
- Assume `$cities` is an array containing the values "New York", "London", and
- "Boston". The expression:
+ Assume `$cities` is an array containing the values "`New York`", "`London`",
+ and "`Boston`". The expression:
   
     ^removeObjectAtIndex($cities|2)
  
- would return an array containing the values "New York" and "London".
+ would return an array containing the values "`New York`" and "`London`".
  
  @param     params The function's input parameters.
  
@@ -174,11 +202,12 @@
 + (id) removeObjectAtIndex:(NSArray*)params;
 
 /*!
- An MBML function implementation that adds one or more items to the end of
- an existing array and returns the resulting array.
+ Creates and returns a new `NSArray` instance by adding one or more items to
+ the end of the input array.
  
- This function accepts two or more pipe-separated expressions as parameters:
- 
+ This Mockingbird function accepts two or more pipe-separated expressions
+ as parameters:
+
  * The *array* expression, which should evaluate to an `NSArray` instance,
  and
  
@@ -187,13 +216,13 @@
  
  #### Expression usage
  
- Assume `$cities` is an array containing the values "New York", "London", and
- "Boston". The expression:
- 
+ Assume `$cities` is an array containing the values "`New York`", "`London`",
+ and "`Boston`". The expression:
+
     ^appendObject($cities|Chicago|Las Vegas)
  
- would return an array containing the values "New York", "London", "Boston",
- "Chicago" and "Las Vegas".
+ would return an array containing the values "`New York`", "`London`", 
+ "`Boston`", "`Chicago`" and "`Las Vegas`".
  
  @param     params The function's input parameters.
  
@@ -203,10 +232,11 @@
 + (id) appendObject:(NSArray*)params;
 
 /*!
- An MBML function implementation that inserts an item into an array and returns
- the resulting array.
+ Creates and returns a new `NSArray` instance by inserting an item into the
+ input array.
  
- This function accepts three pipe-separated expressions as parameters:
+ This Mockingbird function accepts three pipe-separated expressions as
+ parameters:
 
  * The *array* expression, which should evaluate to an `NSArray` instance,
  
@@ -218,13 +248,13 @@
   
  #### Expression usage
  
- Assume `$cities` is an array containing the values "New York", "London", and
- "Boston". The expression:
- 
+ Assume `$cities` is an array containing the values "`New York`", "`London`",
+ and "`Boston`". The expression:
+
     ^insertObject($cities|Chicago|1)
  
- would return an array containing the values "New York", "Chicago", "London",
- and "Boston".
+ would return an array containing the values "`New York`", "`Chicago`", 
+ "`London`", and "`Boston`".
  
  @param     params The function's input parameters.
  
@@ -236,12 +266,16 @@
  */
 + (id) insertObjectAtIndex:(NSArray*)params;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Creating collections
+/*!    @name Creating collections                                             */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that returns an `NSArray` containing the
- value of each input parameter expression as an array element.
- 
- This function accepts zero or more pipe-separated expressions as parameters.
- If zero parameters are provided, an empty array is returned.
+ Returns an `NSArray` containing the result of each input parameter expression.
+
+ This Mockingbird function accepts zero or more pipe-separated expressions as 
+ parameters. If zero parameters are provided, an empty array is returned.
  
  #### Expression usage
  
@@ -249,7 +283,7 @@
 
     ^array(One|2|III)
  
- would return an `NSArray` containing the strings "One", "2", and "III".
+ would return an `NSArray` containing the strings "`One`", "`2`", and "`III`".
  
  @param     params The function's input parameters.
  
@@ -258,20 +292,19 @@
 + (id) array:(NSArray*)params;
 
 /*!
- An MBML function implementation that returns an `NSSet` containing the
- value of each input parameter expression as set elements.
+ Returns an `NSSet` containing the result of each input parameter expression.
 
- This function accepts zero or more pipe-separated expressions as parameters.
- If zero parameters are provided, an empty set is returned.
- 
+ This Mockingbird function accepts zero or more pipe-separated expressions as
+ parameters. If zero parameters are provided, an empty set is returned.
+
  #### Expression usage
  
  The expression:
  
     ^set(One|2|III)
  
- would return an `NSSet` containing the strings "One", "2", and "III".
- 
+ would return an `NSSet` containing the strings "`One`", "`2`", and "`III`".
+
  @param     params The function's input parameters.
  
  @return    A set containing the value of each input parameter expression.
@@ -279,38 +312,10 @@
 + (id) set:(NSArray*)params;
 
 /*!
- An MBML function implementation that determines whether a set contains a
- given object.
+ Creates a new `NSDictionary` instance containing the items provided as 
+ keys and values.
  
- This function accepts two pipe-separated expressions as parameters:
- 
- * A *set* expression, which should yield an `NSSet` instance, and
- 
- * An *object* expression, which yields the object whose presence in the
- set is to be tested.
- 
- #### Expression usage
- 
- Assume that the MBML variable `$colors` is a set containing the values "red",
- "yellow", "green", and "blue":
- 
-    ^setContains($colors|orange)
- 
- The expression above would return a boolean `NO`, because `$colors` does
- not contain the value "orange".
- 
- @param     params The function's input parameters.
- 
- @return    An `NSNumber` containing a boolean value indicating the result
-            of the function.
- */
-+ (id) setContains:(NSArray*)params;
-
-/*!
- An MBML function implementation that returns an `NSDictionary` containing the
- items provided as keys and values.
- 
- This function accepts a pipe-separated list of zero or more expression 
+ This Mockingbird function accepts zero or more pipe-separated expressions as
  parameters:
  
  * If zero parameters are provided, an empty dictionary is returned.
@@ -326,8 +331,8 @@
  
     ^dictionary(firstKey|The first item|secondKey|item 2)
  
- would return an `NSDictionary` containing the key "firstKey" having the
- value "The first item" and "secondKey" having the value "item 2".
+ would return an `NSDictionary` containing the key "`firstKey`" having the
+ value "`The first item`" and "`secondKey`" having the value "`item 2`".
  
  @param     params The function's input parameters.
  
@@ -336,11 +341,10 @@
 + (id) dictionary:(NSArray*)params;
 
 /*!
- An MBML function implementation that returns an array containing the keys of
- an `NSDictionary`.
+ Returns an array containing the keys of an `NSDictionary`.
 
- This function accepts a single parameter: an expression that evaluates to
- a dictionary instance.
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding an `NSDictinary` instance.
  
  #### Expression usage
  
@@ -361,11 +365,10 @@
 + (id) keys:(NSDictionary*)dict;
 
 /*!
- An MBML function implementation that returns an array containing the values of
- an `NSDictionary`.
+ Returns an array containing the values of an `NSDictionary`.
  
- This function accepts a single parameter: an expression that evaluates to
- a dictionary instance.
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding an `NSDictinary` instance.
 
  #### Expression usage
 
@@ -386,20 +389,21 @@
 + (id) values:(NSDictionary*)dict;
 
 /*!
- An MBML function implementation that removes the last object in an array
- and returns the resulting array.
+ Removes the last object in an array and returns the resulting array.
  
- This function accepts a single parameter: an expression that evaluates to
- an array instance.
- 
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding an `NSArray` instance.
+
  #### Expression usage
  
- Assume that the MBML expression `$colors` yields an array containing the 
- values "red", "yellow", "green", and "blue" in that order. The expression:
+ Assume that the object expression `$colors` yields an array containing the
+ values "`red`", "`yellow`", "`green`", and "`blue`" in that order.
+ 
+ The expression:
  
     ^removeLastObject($colors)
  
- would return an array containing the values "red", "yellow" and "green".
+ would return an array containing the values "`red`", "`yellow`" and "`green`".
  
  @param     array The function's input parameter, which is expected to
             be an array.
@@ -409,19 +413,21 @@
 + (id) removeLastObject:(id)array;
 
 /*!
- An MBML function implementation that returns the last object in an array.
+ Returns the last object in an array.
  
- This function accepts a single parameter: an expression that evaluates to
- an array instance.
- 
+ This Mockingbird function accepts a single parameter: an object expression
+ yielding an `NSArray` instance.
+
  #### Expression usage
 
- Assume that the MBML expression `$colors` yields an array containing the 
- values "red", "yellow", "green", and "blue" in that order. The expression:
+ Assume that the object expression `$colors` yields an array containing the
+ values "`red`", "`yellow`", "`green`", and "`blue`" in that order.
+ 
+ The expression:
 
     ^lastObject($colors)
  
- would return the string "blue".
+ would return the string "`blue`".
  
  @param     array The function's input parameter, which is expected to
             be an array.
@@ -431,10 +437,10 @@
 + (id) lastObject:(id)array;
 
 /*!
- An MBML function implementation that determines the index of a specified value
- within an array, or `-1` if the value is not found.
+ Returns the index of a specified value within an array, or `-1` if the
+ value is not found.
  
- This function accepts two MBML expressions as parameters:
+ This Mockingbird function accepts two pipe-separated expressions as parameters:
  
  * An *array* expression, which should evaluate to an `NSArray` instance
  
@@ -443,12 +449,14 @@
  
  #### Expression usage
 
- Assume that the MBML expression `$colors` yields an array containing the 
- values "red", "yellow", "green", and "blue" in that order. The expression:
- 
+ Assume that the object expression `$colors` yields an array containing the
+ values "`red`", "`yellow`", "`green`", and "`blue`" in that order.
+
+ The expression:
+
     ^indexOf($colors|yellow)
  
- would return the number `1` indicating that the value "yellow" exists
+ would return the number `1` indicating that the value "`yellow`" exists
  in `$colors` at array index `1`.
  
  @param     params an array containing the input parameters for the function
@@ -459,62 +467,60 @@
 + (id) indexOf:(NSArray*)params;
 
 /*!
- An MBML function implementation that returns a copy of an object adopting
- the `NSCopying` protocol.
+ Returns an immutable copy of an object adopting the `NSCopying` protocol.
  
- This function accepts a single MBML expression parameter which yields the
- object to be copied.
+ This Mockingbird function accepts a single object expression parameter
+ yielding the object instance to be copied.
  
  #### Expression usage
  
- Assume that the MBML expression `$array` yields an `NSArray`. The expression:
- 
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
+
     ^copy($array)
- 
- would return an `NSArray` containing the same contents as the original
- array. If the original array is modified, the copy would be unaffected.
+
+ Assuming the object expression `$array` yields an `NSArray`, the expression
+ above would return an `NSArray` containing the same contents as the original
+ array. If the original array is subsequently modified, the copy would be
+ unaffected.
  
  @param     param The function's input parameters.
  
  @return    A copy of the object yielded by the input parameter expression.
- 
- @note      This function is exposed to the MBML environment as
-            `^copy()`.
  */
 + (id) copyOf:(id)param;
 
 /*!
- An MBML function implementation that returns a mutable copy of an object
- adopting the `NSMutableCopying` protocol.
- 
- This function accepts a single MBML expression parameter which yields the
- object to be copied.
- 
+ Returns a mutable copy of an object adopting the `NSMutableCopying` protocol.
+
+ This Mockingbird function accepts a single object expression parameter
+ yielding the object instance to be copied.
+
  #### Expression usage
- 
- Assume that the MBML expression `$array` yields an `NSArray`. The expression:
- 
+
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
+
     ^mutableCopy($array)
- 
- would return an `NSMutableArray` containing the same contents as the original
- array. If the original array is modified, the copy would be unaffected. 
- Similarly, if the copy is modified, the original array would be unaffected.
+
+ Assuming that the object expression `$array` yields an `NSArray`, the
+ expression above would return an `NSMutableArray` containing the same contents
+ as the original array. If the original array is subsequently modified, the
+ copy would be unaffected. Similarly, if the copy is modified, the original
+ array would be unaffected.
  
  @param     param The function's input parameters.
  
  @return    A mutable copy of the object yielded by the input parameter
             expression.
- 
- @note      This function is exposed to the MBML environment as
-            `^mutableCopy()`.
  */
 + (id) mutableCopyOf:(id)param;
 
 /*!
- An MBML function implementation that uses key-value coding to retrieve a
- value from an object.
+ Retrieves a value from an object using key-value coding (KVC).
  
- This function accepts two or three MBML expressions as parameters:
+ This Mockingbird function accepts two or three pipe-separated expressions as
+ parameters:
  
  * An *object* expression, which yields the object whose key will be queried,
  
@@ -525,24 +531,23 @@
  
  #### Expression usage
 
- Assume that the MBML expression `$dictionaryOfImages` yields a dictionary.
- The expression:
- 
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
+
     ^valueForKey($dictionaryOfImages|$myImageKey|default.png)
+
+ Assuming that the expression `$dictionaryOfImages` yields a dictionary, the
+ expression above would return the value for the key identified by the string
+ expression `$myImageKey` in the dictionary `$dictionaryOfImages`.
  
- would return the value for the key identified by the MBML expression
- `$myImageKey` in `$dictionaryOfImages`. If `$dictionaryOfImages` contains no
- value for the key identified by `$myImageKey`, the value of "default.png" will
- be returned.
+ If `$dictionaryOfImages` contains no value for the key identified by 
+ `$myImageKey`, the value of "`default.png`" will be returned.
 
  @param     params The function's input parameters.
 
  @return    The value for the given key. If the key does not have an associated
             value, the default value (if it was provided) or `nil` (if no
             default was provided) is returned.
-
- @note      This function is exposed to the MBML environment as
-            `^valueForKey()`.
 */
 + (id) getValueForKey:(NSArray*)params;
 

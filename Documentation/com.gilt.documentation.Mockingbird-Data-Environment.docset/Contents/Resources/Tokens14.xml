@@ -22,13 +22,31 @@ objects equals a specified value.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the function</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSNumber instance containing either the boolean
             value YES if any of the input parameters contains the specified
             element, or NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/containsValue:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/setContains:</TokenIdentifier>
+			<Abstract type="html">Determines whether a set contains a given object.</Abstract>
+			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)setContains:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing a boolean value indicating the result
+            of the function.</Abstract></ReturnValue>
+			<Anchor>//api/name/setContains:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
@@ -42,7 +60,7 @@ and returns whether or not all members passed the test.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array or dictionary containing the input parameters for the function</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSNumber instance containing either the boolean
@@ -62,8 +80,7 @@ and returns an array of values for which the test expression is true.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the
-            function.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An array containing the values in the container objects
@@ -74,12 +91,18 @@ and returns an array of values for which the test expression is true.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesIntersect:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Tests whether two container objects share at least one value in common.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)valuesIntersect:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if the two container objects share at least one common value,
+            @NO if they do not.</Abstract></ReturnValue>
 			<Anchor>//api/name/valuesIntersect:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -95,11 +118,10 @@ string between each value in the returned string.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the
-            function.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a string containing the string values of the items in the
+			<ReturnValue><Abstract type="html">A string containing the string values of the items in the
             container objects, separated by the string specified
             as the separator string</Abstract></ReturnValue>
 			<Anchor>//api/name/join:</Anchor>
@@ -115,11 +137,10 @@ string between each value in the returned string.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the
-            function.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing the components of the split string</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array containing the components of the split string.</Abstract></ReturnValue>
 			<Anchor>//api/name/split:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -136,7 +157,7 @@ string between each value in the returned string.</Abstract>
 					<Abstract type="html">The string being split.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSArray containing the individual lines of stringToSplit</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An NSArray containing the individual lines of stringToSplit.</Abstract></ReturnValue>
 			<Anchor>//api/name/splitLines:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -151,8 +172,7 @@ in the input parameters.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">An array containing the input parameters for the
-            function.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An array containing all of the elements in the arrays referenced
@@ -173,8 +193,7 @@ depth-first traversal of the input parameters.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">An array containing the input parameters for the
-            function.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The flattened array.</Abstract></ReturnValue>
@@ -183,24 +202,19 @@ depth-first traversal of the input parameters.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/filter:</TokenIdentifier>
-			<Abstract type="html">Filters a collection object by applying a test expression to the contents
-of each object in the collection. Each top-level object in the collection
-where the test expression evaluates to true according to the rules of
-the filter behavior is returned.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mergeDictionaries:</TokenIdentifier>
+			<Abstract type="html">Merges a set of dictionaries into a single dictionary.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)filter:(NSArray *)params</Declaration>
+			<Declaration>+ (id)mergeDictionaries:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array or dictionary containing the filtered items. The type of
-            the object returned will match the data model input
-            parameter.</Abstract></ReturnValue>
-			<Anchor>//api/name/filter:</Anchor>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
+			<Anchor>//api/name/mergeDictionaries:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
@@ -214,10 +228,10 @@ match a given test expression. The resulting pruned tree is then returned.</Abst
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing the result of the operation.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/pruneMatchingLeaves:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -233,11 +247,33 @@ returned.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing the result of the operation.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/pruneNonmatchingLeaves:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/filter:</TokenIdentifier>
+			<Abstract type="html">Filters a collection object by applying a test expression to the contents
+of each object in the collection. Each top-level object in the collection
+where the test expression evaluates to true according to the rules of
+the filter behavior is returned.</Abstract>
+			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)filter:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array or dictionary containing the filtered items. The type of
+            the object returned will match the data model input
+            parameter.</Abstract></ReturnValue>
+			<Anchor>//api/name/filter:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
@@ -253,10 +289,10 @@ non-deterministic ordering.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing the listed items.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/list:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -278,11 +314,10 @@ on expressions passed to the function.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a dictionary containing the mapped items.
-  </Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/associate:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -302,10 +337,10 @@ recursing into) a container object holding an arbitrary data model.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a dictionary containing the mapped items.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/associateWithSingleValue:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -325,10 +360,10 @@ recursing into) a container object holding an arbitrary data model.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a dictionary containing the mapped items.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/associateWithArray:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -351,18 +386,6 @@ recursing into) a container object holding an arbitrary data model.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/merge:</TokenIdentifier>
-			<Abstract type="html">Merges a set of dictionaries into a single dictionary.</Abstract>
-			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)merge:(NSArray *)params</Declaration>
-			
-			
-			<Anchor>//api/name/merge:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/unique:</TokenIdentifier>
 			<Abstract type="html">Iterates over the values supplied by the passed-in enumerator, and returns an
 array containing the unique values encountered.</Abstract>
@@ -372,11 +395,28 @@ array containing the unique values encountered.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>enumerator</Name>
-					<Abstract type="html">the function&apos;s input parameter.</Abstract>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a set containing the unique values in the input parameter.</Abstract></ReturnValue>
 			<Anchor>//api/name/unique:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/reduce:</TokenIdentifier>
+			<Abstract type="html">Reduce an array of items into a single item.</Abstract>
+			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)reduce:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of the reduction.</Abstract></ReturnValue>
+			<Anchor>//api/name/reduce:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
@@ -389,10 +429,10 @@ array containing the unique values encountered.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing returned array count arrays, each
+			<ReturnValue><Abstract type="html">An array containing returned array count arrays, each
             containing the distributed elements from source array.</Abstract></ReturnValue>
 			<Anchor>//api/name/distributeArrayElements:</Anchor>
             <NodeRef refid="14"/>
@@ -407,28 +447,11 @@ array containing the unique values encountered.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">the function&apos;s input parameters.</Abstract>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">an array containing one or more group arrays.</Abstract></ReturnValue>
 			<Anchor>//api/name/groupArrayElements:</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/reduce:</TokenIdentifier>
-			<Abstract type="html">Reduce an array of items into a single item.</Abstract>
-			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)reduce:(NSArray *)params</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>params</Name>
-					<Abstract type="html">the function&apos;s input parameters.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">a single value.</Abstract></ReturnValue>
-			<Anchor>//api/name/reduce:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

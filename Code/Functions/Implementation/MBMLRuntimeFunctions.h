@@ -16,16 +16,21 @@
 /******************************************************************************/
 
 /*!
- A class containing a set of MBML functions and supporting methods that provide
- access to Objective-C runtime information.
+ This class implements a set of MBML functions and supporting methods that 
+ provide access to Objective-C runtime information.
  
- See `MBMLFunction` for more information on MBML functions and how they're used.
+ These functions are exposed to the Mockingbird environment via 
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
+ 
+ For more information on MBML functions, see the `MBMLFunction` class.
  */
 @interface MBMLRuntimeFunctions : NSObject
 
-/*******************************************************************************
- @name Helper for ensuring we've got Class
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Helper method for looking up classes
+/*!    @name Helper method for looking up classes                             */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Given a Class or a string containing the name of an Objective-C class, this
@@ -40,27 +45,28 @@
  @return    A `Class` object representing the specified class, or `nil` if
             the specified class was not recognized by the Objective-C runtime.
  
- @note      This method is not exposed to MBML as a function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function.
  */
 + (Class) resolveClass:(id)resolveCls error:(MBMLFunctionError**)errPtr;
 
-/*******************************************************************************
- @name MBML functions
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Looking up Classes
+/*!    @name Looking up Classes                                               */
+/*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that determines whether a given class exists
- in the Objective-C runtime.
+ Determines whether a given class exists in the Objective-C runtime.
  
- This function accepts a single MBML expression that will be evaluated as a
- string. 
+ This Mockingbird function accepts a single string expression yielding the name
+ of the class.
  
  #### Expression usage
  
     ^classExists(NSString)
  
- The expression above would return <code>YES</code>, because the class
- <code>NSString</code> is part of the iOS SDK.
+ The expression above would return `YES`, because the class
+ `NSString` is part of the iOS SDK.
  
  @param     className The function's input parameter.
 
@@ -71,14 +77,16 @@
 + (id) classExists:(NSString*)className;
 
 /*!
- An MBML function implementation that returns the `Class` object for the given
- class name.
+ Returns the `Class` object for the given class name.
  
- This function accepts a single MBML expression that will be evaluated as a
- string.
+ This Mockingbird function accepts a single string expression yielding the name
+ of the class.
 
  #### Expression usage
  
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
+
     ^class(NSString)
  
  The expression above would return the `Class` object representing the
@@ -88,19 +96,21 @@
  
  @return    If there is a class with the given name, the corresponding 
             `Class` object is returned. Otherwise, `nil` is returned.
- 
- @note      This function is exposed to the MBML environment as `^class()`.
  */
 + (id) getClass:(NSString*)className;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Accessing singleton instances
+/*!    @name Accessing singleton instances                                    */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that returns the singleton instance of a
- given class.
+ Returns the singleton instance of a given class.
  
- This function accepts a single MBML expression that will be evaluated as an
- object. The expression is expected to yield a `Class` object or an `NSString`
- containing the name of an Objective-C class. If the specified class responds
- to the selector `instance`, this function returns that instance.
+ This Mockingbird function accepts a single object expression yielding either
+ a `Class` object or an `NSString` containing the name of an Objective-C class. 
+ If the specified class responds to the selector `instance`, this function 
+ returns that instance.
  
  #### Expression usage
  
@@ -116,14 +126,16 @@
  */
 + (id) singleton:(id)forCls;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Getting a class's hierarchy
+/*!    @name Getting a class's hierarchy                                      */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that returns the inheritance hierarchy of 
- a given class.
- 
- This function accepts a single MBML expression that will be evaluated as an
- object. The expression is expected to yield a `Class` object or an `NSString`
- containing the name of an Objective-C class. If the specified class responds
- to the selector `instance`, this function returns that instance.
+ Returns an array containing the inheritance hierarchy of a given class.
+
+ This Mockingbird function accepts a single object expression yielding either
+ a `Class` object or an `NSString` containing the name of an Objective-C class.
 
  The first item in the returned array will contain a `Class` object for the
  passed-in parameter, while each subsequent item will the `Class` for the
@@ -145,16 +157,20 @@
  */
 + (id) inheritanceHierarchyForClass:(id)forCls;
 
+/*----------------------------------------------------------------------------*/
+#pragma mark Checking for method implementations
+/*!    @name Checking for method implementations                              */
+/*----------------------------------------------------------------------------*/
+
 /*!
- An MBML function implementation that determines whether a given object 
- instance responds to a specific Objective-C message selector.
+ Determines whether a given object instance responds to a specific Objective-C
+ message selector.
  
- This function expects two pipe-separated expressions as parameters:
+ This Mockingbird function accepts two pipe-separated parameters:
  
- * the *object* expression, which should yield an `NSObject` instance, and
+ * The *object*, an object expression yielding an `NSObject` instance, and
  
- * the *selector* expression, which should yield a string containing the
- name of the selector
+ * The *selector*, a string expression yielding the selector name.
 
  #### Expression usage
  
@@ -168,38 +184,32 @@
 
  @return    If object instance referenced in the *object* expression
             responds to the selector specified in the *selector* expression,
-            the return value will be an `NSNumber` containing the boolean value
-            `YES`. Otherwise, an `NSNumber` containing the value `NO` will
-            be returned.
+            the return value will be `@YES`. Otherwise, `@NO` will be returned.
 */
 + (id) objectRespondsToSelector:(NSArray*)params;
 
 /*!
- An MBML function implementation that determines whether a given class responds
- to a specific Objective-C message selector.
+ Determines whether a given class responds to a specific Objective-C message
+ selector.
  
- This function expects two pipe-separated expressions as parameters:
- 
- * the *class* expression, which should yield a `Class` object or an `NSString`
- containing the name of an Objective-C class, and
- 
- * the *selector* expression, which should yield a string containing the
- name of the selector
- 
+ This Mockingbird function accepts two pipe-separated parameters:
+
+ * The *object*, an object expression yielding an `NSObject` instance, and
+
+ * The *selector*, a string expression yielding the selector name.
+
  #### Expression usage
  
     ^classRespondsToSelector(NSString|availableStringEncodings)
  
- The expression above evaluates to true because the `NSString` class responds
+ The expression above evaluates to `@YES` because the `NSString` class responds
  to the `availableStringEncodings` message.
  
  @param     params The function's input parameters.
  
  @return    If the Objective-C class referenced in the *class* expression
             responds to the selector specified in the *selector* expression,
-            the return value will be an `NSNumber` containing the boolean value
-            `YES`. Otherwise, an `NSNumber` containing the value `NO` will
-            be returned.
+            the return value will be `@YES`. Otherwise, `@NO` will be returned.
  */
 + (id) classRespondsToSelector:(NSArray*)params;
 

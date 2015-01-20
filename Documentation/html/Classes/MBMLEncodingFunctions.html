@@ -45,7 +45,13 @@
 	
 	<option value="//api/name/MD5FromString:">&nbsp;&nbsp;&nbsp;&nbsp;+ MD5FromString:</option>
 	
+	<option value="//api/name/SHA1FromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ SHA1FromData:</option>
+	
+	<option value="//api/name/SHA1FromString:">&nbsp;&nbsp;&nbsp;&nbsp;+ SHA1FromString:</option>
+	
 	<option value="//api/name/base64FromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ base64FromData:</option>
+	
+	<option value="//api/name/dataFromBase64:">&nbsp;&nbsp;&nbsp;&nbsp;+ dataFromBase64:</option>
 	
 	
 	
@@ -65,6 +71,12 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_MD5 encoding">MD5 encoding</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SHA-1 encoding">SHA-1 encoding</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Base-64 encoding &amp; decoding">Base-64 encoding &amp; decoding</a></span></li>
+	
 </ul></li>
 
 
@@ -79,7 +91,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/MD5FromString:">MD5FromString:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA1FromData:">SHA1FromData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA1FromString:">SHA1FromString:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/base64FromData:">base64FromData:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataFromBase64:">dataFromBase64:</a></span></li>
 	
 </ul></li>
 
@@ -120,10 +138,13 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class containing a set of MBML functions to be used for encoding strings
+						<p>This class implements a set of MBML functions to be used for encoding strings
 and data into other representations, such as MD5, base-64, etc.</p>
 
-<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+<p><code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 					</div>
 					
 					
@@ -135,8 +156,8 @@ and data into other representations, such as MD5, base-64, etc.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="MD5 encoding" name="task_MD5 encoding"></a>
+						<h3 class="subsubtitle task-title">MD5 encoding</h3>
 
 						<ul class="task-list">
 							<li>
@@ -151,9 +172,43 @@ and data into other representations, such as MD5, base-64, etc.</p>
 	</span>
 	
 	
+</li>
+						</ul>
+						
+						
+						<a title="SHA-1 encoding" name="task_SHA-1 encoding"></a>
+						<h3 class="subsubtitle task-title">SHA-1 encoding</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/SHA1FromString:">+&nbsp;SHA1FromString:</a></code>
+	</span>
+	
+	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/SHA1FromData:">+&nbsp;SHA1FromData:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Base-64 encoding &amp; decoding" name="task_Base-64 encoding &amp; decoding"></a>
+						<h3 class="subsubtitle task-title">Base-64 encoding &amp; decoding</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
 		<code><a href="#//api/name/base64FromData:">+&nbsp;base64FromData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataFromBase64:">+&nbsp;dataFromBase64:</a></code>
 	</span>
 	
 	
@@ -179,8 +234,7 @@ and data into other representations, such as MD5, base-64, etc.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a hexadecimal string
-representing the MD5 computed from the input data.</p>
+		<p>Computes an MD5 hash from an <code>NSData</code> instance.</p>
 	</div>		
 	
     
@@ -212,8 +266,8 @@ representing the MD5 computed from the input data.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-an <code>NSData</code> instance.</p>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSData</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -247,8 +301,7 @@ contained in the <code>NSData</code> instance yielded by the MBML expression &ld
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a hexadecimal string
-representing the MD5 computed from the input string.</p>
+		<p>Computes an MD5 hash from an input string.</p>
 	</div>		
 	
     
@@ -280,8 +333,8 @@ representing the MD5 computed from the input string.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-a string.</p>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield the input string.</p>
 
 <h4>Expression usage</h4>
 
@@ -292,6 +345,146 @@ a string.</p>
 
 <p>would return the string <code>51eae4327df7f0617eaaf305832fe219</code>, a hexadecimal
 representation of the MD5 hash of the string &ldquo;<code>12 Galaxies</code>&rdquo;.</p>
+
+<p><strong>Note:</strong> This function is also exposed to the Mockingbird environment with
+the alias <code>^MD5()</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/SHA1FromData:" title="SHA1FromData:"></a>
+	<h3 class="subsubtitle method-title">SHA1FromData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Computes an SHA-1 hash from an <code>NSData</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)SHA1FromData:(NSData *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The function&rsquo;s input data.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An MD5 hash computed from the input data.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSData</code> instance.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^SHA1FromData($myData)
+</code></pre>
+
+<p>would return a hexadecimal string representation of the SHA-1 hash of the bytes
+contained in the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/SHA1FromString:" title="SHA1FromString:"></a>
+	<h3 class="subsubtitle method-title">SHA1FromString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Computes an SHA-1 hash from an input string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)SHA1FromString:(NSString *)<em>string</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>string</em></dt>
+			<dd><p>The function&rsquo;s input string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An MD5 hash computed from the input string.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+the input string.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^SHA1FromString(12 Galaxies)
+</code></pre>
+
+<p>would return the string <code>51eae4327df7f0617eaaf305832fe219</code>, a hexadecimal
+representation of the MD5 hash of the string &ldquo;<code>12 Galaxies</code>&rdquo;.</p>
+
+<p><strong>Note:</strong> This function is also exposed to the Mockingbird environment with
+the alias <code>^SHA1()</code>.</p>
 	</div>
 	
 	
@@ -315,8 +508,8 @@ representation of the MD5 hash of the string &ldquo;<code>12 Galaxies</code>&rdq
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a string representing the
-base-64 encoding of the input data.</p>
+		<p>Computes a Base-64 representation of a given <code>NSData</code> instance, and returns
+the resulting string.</p>
 	</div>		
 	
     
@@ -348,8 +541,8 @@ base-64 encoding of the input data.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-an <code>NSData</code> instance.</p>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSData</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -358,8 +551,75 @@ an <code>NSData</code> instance.</p>
 <pre><code>^base64FromData($myData)
 </code></pre>
 
-<p>would return a string that contains the base-64 encoding of the bytes within
+<p>would return a string that contains the Base-64 encoding of the bytes within
 the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataFromBase64:" title="dataFromBase64:"></a>
+	<h3 class="subsubtitle method-title">dataFromBase64:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Decodes a Base-64 string representation of data, and returns the resulting
+<code>NSData</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)dataFromBase64:(NSString *)<em>base64</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>base64</em></dt>
+			<dd><p>The function&rsquo;s input data, a Base-64-encoded string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The Base-64-decoded form of <code>base64</code>, contained in an
+            <code>NSData</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+the input string.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^dataFromBase64(aHR0cDovL3RlY2guZ2lsdC5jb20v)
+</code></pre>
+
+<p>The expression above returns an <code>NSData</code> instance containing the bytes
+representing the UTF-8 encoded string, &ldquo;<a href="http://tech.gilt.com/"><code>http://tech.gilt.com/</code></a>&rdquo;.</p>
 	</div>
 	
 	

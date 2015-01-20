@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLCollectionFunctions</TokenIdentifier>
-			<Abstract type="html">A class containing implementations for MBML functions that perform common
+			<Abstract type="html">This class provides a set of MBML functions that perform common
 operations on collections such as NSArray, NSSet and NSDictionary
 objects.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
@@ -16,9 +16,8 @@ objects.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/isCollection:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given value is
-a collection. A collection is an object that&apos;s an instance of NSSet,
-NSArray or NSDictionary.</Abstract>
+			<Abstract type="html">Determines whether a given object instance is a collection, that is, of type
+NSSet, NSArray or NSDictionary.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSNumber *)isCollection:(id)param</Declaration>
@@ -35,8 +34,7 @@ NSArray or NSDictionary.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/isSet:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given value is
-an instance of NSSet.</Abstract>
+			<Abstract type="html">Determines whether a given object is an instance of NSSet.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSNumber *)isSet:(id)param</Declaration>
@@ -53,8 +51,7 @@ an instance of NSSet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/isDictionary:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given value is
-an instance of NSSet.</Abstract>
+			<Abstract type="html">Determines whether a given object is an instance of NSDictionary.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSNumber *)isDictionary:(id)param</Declaration>
@@ -71,8 +68,7 @@ an instance of NSSet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/isArray:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given value is
-an instance of NSSet.</Abstract>
+			<Abstract type="html">Determines whether a given object is an instance of NSArray.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSNumber *)isArray:(id)param</Declaration>
@@ -89,8 +85,7 @@ an instance of NSSet.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/count:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the count of items in a
-collection object.</Abstract>
+			<Abstract type="html">Returns the count of items in a collection object.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)count:(id)param</Declaration>
@@ -107,8 +102,8 @@ collection object.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/removeObject:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that removes all instances of one or more
-objects from an array and returns the resulting array.</Abstract>
+			<Abstract type="html">Creates and returns a new NSArray instance by removing all instances of
+one or more objects from an input array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)removeObject:(NSArray *)params</Declaration>
@@ -126,8 +121,8 @@ objects from an array and returns the resulting array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/removeObjectAtIndex:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that removes an object at a given index from
-an array and returns the resulting array.</Abstract>
+			<Abstract type="html">Creates and returns a new NSArray instance by removing an object at a
+given index from the input array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)removeObjectAtIndex:(NSArray *)params</Declaration>
@@ -145,8 +140,8 @@ an array and returns the resulting array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/appendObject:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that adds one or more items to the end of
-an existing array and returns the resulting array.</Abstract>
+			<Abstract type="html">Creates and returns a new NSArray instance by adding one or more items to
+the end of the input array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)appendObject:(NSArray *)params</Declaration>
@@ -164,8 +159,8 @@ an existing array and returns the resulting array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/insertObjectAtIndex:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that inserts an item into an array and returns
-the resulting array.</Abstract>
+			<Abstract type="html">Creates and returns a new NSArray instance by inserting an item into the
+input array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)insertObjectAtIndex:(NSArray *)params</Declaration>
@@ -183,8 +178,7 @@ the resulting array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/array:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an NSArray containing the
-value of each input parameter expression as an array element.</Abstract>
+			<Abstract type="html">Returns an NSArray containing the result of each input parameter expression.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)array:(NSArray *)params</Declaration>
@@ -201,8 +195,7 @@ value of each input parameter expression as an array element.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/set:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an NSSet containing the
-value of each input parameter expression as set elements.</Abstract>
+			<Abstract type="html">Returns an NSSet containing the result of each input parameter expression.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)set:(NSArray *)params</Declaration>
@@ -218,28 +211,9 @@ value of each input parameter expression as set elements.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/setContains:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a set contains a
-given object.</Abstract>
-			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)setContains:(NSArray *)params</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>params</Name>
-					<Abstract type="html">The function&apos;s input parameters.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber containing a boolean value indicating the result
-            of the function.</Abstract></ReturnValue>
-			<Anchor>//api/name/setContains:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/dictionary:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an NSDictionary containing the
-items provided as keys and values.</Abstract>
+			<Abstract type="html">Creates a new NSDictionary instance containing the items provided as
+keys and values.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)dictionary:(NSArray *)params</Declaration>
@@ -256,8 +230,7 @@ items provided as keys and values.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/keys:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an array containing the keys of
-an NSDictionary.</Abstract>
+			<Abstract type="html">Returns an array containing the keys of an NSDictionary.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
@@ -280,8 +253,7 @@ an NSDictionary.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/values:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an array containing the values of
-an NSDictionary.</Abstract>
+			<Abstract type="html">Returns an array containing the values of an NSDictionary.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
@@ -304,8 +276,7 @@ an NSDictionary.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/removeLastObject:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that removes the last object in an array
-and returns the resulting array.</Abstract>
+			<Abstract type="html">Removes the last object in an array and returns the resulting array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)removeLastObject:(id)array</Declaration>
@@ -323,7 +294,7 @@ and returns the resulting array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/lastObject:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the last object in an array.</Abstract>
+			<Abstract type="html">Returns the last object in an array.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)lastObject:(id)array</Declaration>
@@ -341,8 +312,8 @@ and returns the resulting array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/indexOf:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines the index of a specified value
-within an array, or -1 if the value is not found.</Abstract>
+			<Abstract type="html">Returns the index of a specified value within an array, or -1 if the
+value is not found.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)indexOf:(NSArray *)params</Declaration>
@@ -360,8 +331,7 @@ within an array, or -1 if the value is not found.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/copyOf:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a copy of an object adopting
-the NSCopying protocol.</Abstract>
+			<Abstract type="html">Returns an immutable copy of an object adopting the NSCopying protocol.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)copyOf:(id)param</Declaration>
@@ -378,8 +348,7 @@ the NSCopying protocol.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/mutableCopyOf:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a mutable copy of an object
-adopting the NSMutableCopying protocol.</Abstract>
+			<Abstract type="html">Returns a mutable copy of an object adopting the NSMutableCopying protocol.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)mutableCopyOf:(id)param</Declaration>
@@ -397,8 +366,7 @@ adopting the NSMutableCopying protocol.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/getValueForKey:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that uses key-value coding to retrieve a
-value from an object.</Abstract>
+			<Abstract type="html">Retrieves a value from an object using key-value coding (KVC).</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)getValueForKey:(NSArray *)params</Declaration>

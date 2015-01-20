@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLEncodingFunctions</TokenIdentifier>
-			<Abstract type="html">A class containing a set of MBML functions to be used for encoding strings
+			<Abstract type="html">This class implements a set of MBML functions to be used for encoding strings
 and data into other representations, such as MD5, base-64, etc.</Abstract>
 			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
             
@@ -15,8 +15,7 @@ and data into other representations, such as MD5, base-64, etc.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEncodingFunctions/MD5FromString:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a hexadecimal string
-representing the MD5 computed from the input string.</Abstract>
+			<Abstract type="html">Computes an MD5 hash from an input string.</Abstract>
 			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)MD5FromString:(NSString *)string</Declaration>
@@ -33,8 +32,7 @@ representing the MD5 computed from the input string.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEncodingFunctions/MD5FromData:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a hexadecimal string
-representing the MD5 computed from the input data.</Abstract>
+			<Abstract type="html">Computes an MD5 hash from an NSData instance.</Abstract>
 			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)MD5FromData:(NSData *)data</Declaration>
@@ -50,9 +48,43 @@ representing the MD5 computed from the input data.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEncodingFunctions/SHA1FromString:</TokenIdentifier>
+			<Abstract type="html">Computes an SHA-1 hash from an input string.</Abstract>
+			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)SHA1FromString:(NSString *)string</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract type="html">The function&apos;s input string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An MD5 hash computed from the input string.</Abstract></ReturnValue>
+			<Anchor>//api/name/SHA1FromString:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEncodingFunctions/SHA1FromData:</TokenIdentifier>
+			<Abstract type="html">Computes an SHA-1 hash from an NSData instance.</Abstract>
+			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)SHA1FromData:(NSData *)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">The function&apos;s input data.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An MD5 hash computed from the input data.</Abstract></ReturnValue>
+			<Anchor>//api/name/SHA1FromData:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEncodingFunctions/base64FromData:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a string representing the
-base-64 encoding of the input data.</Abstract>
+			<Abstract type="html">Computes a Base-64 representation of a given NSData instance, and returns
+the resulting string.</Abstract>
 			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)base64FromData:(NSData *)data</Declaration>
@@ -64,6 +96,25 @@ base-64 encoding of the input data.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The base-64 representation of the input data.</Abstract></ReturnValue>
 			<Anchor>//api/name/base64FromData:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEncodingFunctions/dataFromBase64:</TokenIdentifier>
+			<Abstract type="html">Decodes a Base-64 string representation of data, and returns the resulting
+NSData instance.</Abstract>
+			<DeclaredIn>MBMLEncodingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)dataFromBase64:(NSString *)base64</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>base64</Name>
+					<Abstract type="html">The function&apos;s input data, a Base-64-encoded string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The Base-64-decoded form of base64, contained in an
+            NSData instance.</Abstract></ReturnValue>
+			<Anchor>//api/name/dataFromBase64:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

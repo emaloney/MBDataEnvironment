@@ -136,8 +136,8 @@ constant kMBDateParsingLocaleVariableName is used to construct the locale.</Abst
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/parseDate:</TokenIdentifier>
 			<Abstract type="html">Attempts to parse an NSDate from a string in the locale
-defaultDateParsingLocale using the date format returned
-by the method defaultDateParsingFormat.</Abstract>
+defaultDateParsingLocale using the date format returned by the
+method defaultDateParsingFormat.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDate *)parseDate:(NSString *)str</Declaration>
@@ -155,8 +155,7 @@ by the method defaultDateParsingFormat.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/currentTime</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an NSDate instance representing
-the current date and time.</Abstract>
+			<Abstract type="html">Returns an NSDate instance representing the current date and time.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDate *)currentTime</Declaration>
@@ -168,8 +167,8 @@ the current date and time.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsSince:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the number of seconds that have
-elapsed since the given past date.</Abstract>
+			<Abstract type="html">Returns the number of seconds that have elapsed since the given date in
+the past.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)secondsSince:(NSDate *)date</Declaration>
@@ -188,8 +187,7 @@ elapsed since the given past date.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsUntil:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the number of seconds
-between now and the given future date.</Abstract>
+			<Abstract type="html">Returns the number of seconds between now and the given date in the future.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)secondsUntil:(NSDate *)date</Declaration>
@@ -208,8 +206,7 @@ between now and the given future date.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/unixTimestampToDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a date representation of the
-unix timestamp.</Abstract>
+			<Abstract type="html">Converts a UNIX timestamp into an NSDate.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)unixTimestampToDate:(id)timestamp</Declaration>
@@ -220,15 +217,14 @@ unix timestamp.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSDate instance containing the date representation of given
-timestamp.</Abstract></ReturnValue>
+            timestamp.</Abstract></ReturnValue>
 			<Anchor>//api/name/unixTimestampToDate:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/dateToUnixTimestamp:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a unix timestamp representation
-of the given date.</Abstract>
+			<Abstract type="html">Returns a UNIX timestamp representation of a given NSDate.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)dateToUnixTimestamp:(NSDate *)date</Declaration>
@@ -239,15 +235,15 @@ of the given date.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSNumber instance containing the unix timestamp
-representation of the input date.</Abstract></ReturnValue>
+            representation of the input date.</Abstract></ReturnValue>
 			<Anchor>//api/name/dateToUnixTimestamp:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/addSecondsToDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns an NSDate instance representing
-the given date plus the provided seconds.</Abstract>
+			<Abstract type="html">Returns an NSDate instance representing the given date plus the specified
+number of seconds.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)addSecondsToDate:(NSArray *)params</Declaration>
@@ -265,8 +261,7 @@ the given date plus the provided seconds.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatTimeUntil:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns a string representation of the
-time until the given date.</Abstract>
+			<Abstract type="html">Returns a string representation of the time remaining until the given date.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatTimeUntil:(NSDate *)date</Declaration>
@@ -284,8 +279,8 @@ time until the given date.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and a format string, and
-returns a string representation of the date in the specified format.</Abstract>
+			<Abstract type="html">Accepts a date and a format string, and returns a string representation of the
+date in the specified format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatDate:(NSArray *)params</Declaration>
@@ -302,9 +297,9 @@ returns a string representation of the date in the specified format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatSortableDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date string
-formatted using the format &quot;YYYY-MM-dd HH:mm:ss&quot;. This format ensures allows
-dates to be sorted using simple string sorting.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the format
+&quot;YYYY-MM-dd HH:mm:ss&quot;. This format ensures allows dates to be sorted using
+simple string sorting.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatSortableDate:(id)input</Declaration>
@@ -321,8 +316,8 @@ dates to be sorted using simple string sorting.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatShortDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date string
-formatted using the NSDateFormatterShortStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterShortStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatShortDate:(id)input</Declaration>
@@ -339,8 +334,8 @@ formatted using the NSDateFormatterShortStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatMediumDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date string
-formatted using the NSDateFormatterMediumStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterMediumStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatMediumDate:(id)input</Declaration>
@@ -357,8 +352,8 @@ formatted using the NSDateFormatterMediumStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatLongDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date string
-formatted using the NSDateFormatterLongStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatLongDate:(id)input</Declaration>
@@ -375,8 +370,8 @@ formatted using the NSDateFormatterLongStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatFullDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date string
-formatted using the NSDateFormatterFullStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterFullStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatFullDate:(id)input</Declaration>
@@ -393,8 +388,8 @@ formatted using the NSDateFormatterFullStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatShortTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a time string
-formatted using the NSDateFormatterShortStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterShortStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatShortTime:(id)input</Declaration>
@@ -411,8 +406,8 @@ formatted using the NSDateFormatterShortStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatMediumTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a time string
-formatted using the NSDateFormatterMediumStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterMediumStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatMediumTime:(id)input</Declaration>
@@ -429,8 +424,8 @@ formatted using the NSDateFormatterMediumStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatLongTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a time string
-formatted using the NSDateFormatterLongStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatLongTime:(id)input</Declaration>
@@ -447,8 +442,8 @@ formatted using the NSDateFormatterLongStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatFullTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a time string
-formatted using the NSDateFormatterFullStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterFullStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatFullTime:(id)input</Declaration>
@@ -465,8 +460,8 @@ formatted using the NSDateFormatterFullStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatShortDateTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date/time
-string formatted using the NSDateFormatterShortStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterShortStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatShortDateTime:(id)input</Declaration>
@@ -483,8 +478,8 @@ string formatted using the NSDateFormatterShortStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatMediumDateTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date/time
-string formatted using the NSDateFormatterMediumStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterMediumStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatMediumDateTime:(id)input</Declaration>
@@ -501,8 +496,8 @@ string formatted using the NSDateFormatterMediumStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatLongDateTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date/time
-string formatted using the NSDateFormatterLongStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatLongDateTime:(id)input</Declaration>
@@ -519,8 +514,8 @@ string formatted using the NSDateFormatterLongStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatFullDateTime:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date and returns a date/time
-string formatted using the NSDateFormatterLongStyle format.</Abstract>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)formatFullDateTime:(id)input</Declaration>
@@ -537,8 +532,8 @@ string formatted using the NSDateFormatterLongStyle format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date-formatted string and
-converts it into a date string of another format.</Abstract>
+			<Abstract type="html">Accepts a date-formatted string and converts it into a date string of
+another format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)reformatDate:(NSArray *)params</Declaration>
@@ -555,9 +550,8 @@ converts it into a date string of another format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDateWithLocale:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that accepts a date-formatted input string--
-along with a locale specification for that input string--and converts the
-input into a date string of another format.</Abstract>
+			<Abstract type="html">Accepts a date-formatted input string—along with a locale specification for
+that input string—and converts the input into a date string of another format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)reformatDateWithLocale:(NSArray *)params</Declaration>
@@ -574,8 +568,7 @@ input into a date string of another format.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/mbmlParseDate:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that attempts to construct an NSDate
-instance by parsing a string.</Abstract>
+			<Abstract type="html">Attempts to construct an NSDate instance by parsing a string.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)mbmlParseDate:(NSArray *)params</Declaration>
@@ -592,8 +585,7 @@ instance by parsing a string.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/timeZoneOffset</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the offset, in minutes,
-between the current time zone and UTC.</Abstract>
+			<Abstract type="html">Returns the offset, in minutes, between the current time zone and UTC.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSNumber *)timeZoneOffset</Declaration>

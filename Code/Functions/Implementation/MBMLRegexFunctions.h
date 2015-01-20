@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+/******************************************************************************/
+#pragma mark -
+#pragma mark MBMLRegexFunctions class
+/******************************************************************************/
+
 /*!
  This class implements MBML functions providing regular expression support.
 

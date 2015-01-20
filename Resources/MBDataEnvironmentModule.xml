@@ -40,6 +40,7 @@
 
     <Function class="MBMLDataProcessingFunctions" name="collectionPassesTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="containsValue" input="pipedObjects"/>
+    <Function class="MBMLDataProcessingFunctions" name="setContains" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesPassingTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesIntersect" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="join" input="pipedObjects"/>
@@ -58,7 +59,8 @@
     <Function class="MBMLDataProcessingFunctions" name="mapToSingleValue" method="associateWithSingleValue" input="pipedExpressions" deprecatedInFavorOf="associateWithSingleValue"/>
     <Function class="MBMLDataProcessingFunctions" name="mapToArray" method="associateWithArray" input="pipedExpressions" deprecatedInFavorOf="associateWithArray"/>
     <Function class="MBMLDataProcessingFunctions" name="sort" input="pipedExpressions"/>
-    <Function class="MBMLDataProcessingFunctions" name="merge" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="merge" method="mergeDictionaries" deprecatedInFavorOf="mergeDictionaries" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="mergeDictionaries" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="unique" input="object"/>
     <Function class="MBMLDataProcessingFunctions" name="distributeArrayElements" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="groupArrayElements" input="pipedObjects"/>
@@ -106,7 +108,11 @@
     <Function class="MBMLEncodingFunctions" name="MD5" method="MD5FromString" input="string"/>
     <Function class="MBMLEncodingFunctions" name="MD5FromString" input="string"/>
     <Function class="MBMLEncodingFunctions" name="MD5FromData" input="object"/>
+    <Function class="MBMLEncodingFunctions" name="SHA1" method="SHA1FromString" input="string"/>
+    <Function class="MBMLEncodingFunctions" name="SHA1FromString" input="string"/>
+    <Function class="MBMLEncodingFunctions" name="SHA1FromData" input="object"/>
     <Function class="MBMLEncodingFunctions" name="base64FromData" input="object"/>
+    <Function class="MBMLEncodingFunctions" name="dataFromBase64" input="string"/>
 
     <Function class="MBMLEnvironmentFunctions" name="mbmlLoadedPaths" input="none"/>
     <Function class="MBMLEnvironmentFunctions" name="mbmlLoadedFiles" input="none"/>

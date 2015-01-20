@@ -33,11 +33,32 @@
     return [data MD5];
 }
 
++ (id) SHA1FromString:(NSString*)string
+{
+    debugTrace();
+    
+    return [string SHA1];
+}
+
++ (id) SHA1FromData:(NSData*)data
+{
+    debugTrace();
+    
+    return [data SHA1];
+}
+
 + (id) base64FromData:(NSData*)data
 {
     debugTrace();
     
     return [data base64EncodedStringWithOptions:0];
+}
+
++ (id) dataFromBase64:(NSString*)base64
+{
+    debugTrace();
+    
+    return [[NSData alloc] initWithBase64EncodedString:base64 options:0];
 }
 
 @end

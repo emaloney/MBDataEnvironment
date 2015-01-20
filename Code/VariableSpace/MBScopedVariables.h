@@ -28,9 +28,10 @@
  */
 @property(nonatomic, readonly) MBVariableSpace* variableSpace;
 
-/******************************************************************************
- @name Thread-local scoped variables
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Thread-local scoped variables
+/*!    @name Thread-local scoped variables                                    */
+/*----------------------------------------------------------------------------*/
 
 /*! 
  Returns the `MBScopedVariables` instance that represents the current
@@ -72,9 +73,10 @@
  */
 + (instancetype) exitVariableScope;
 
-/******************************************************************************
- @name Creating variable scopes
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Creating variable scopes
+/*!    @name Creating variable scopes                                         */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Initializes the receiver with the given variable space.
@@ -94,9 +96,10 @@
  */
 - (id) init;
 
-/******************************************************************************
- @name Setting & unsetting scoped variable values
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Setting & unsetting scoped variable values
+/*!    @name Setting & unsetting scoped variable values                       */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Sets the value of a scoped variable. This variable value will be reflected

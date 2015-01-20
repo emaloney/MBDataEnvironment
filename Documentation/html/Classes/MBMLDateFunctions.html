@@ -555,8 +555,8 @@ file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an <code>NSDate</code> instance representing
-the given date plus the provided seconds.</p>
+		<p>Returns an <code>NSDate</code> instance representing the given date plus the specified
+number of seconds.</p>
 	</div>		
 	
     
@@ -588,7 +588,7 @@ the given date plus the provided seconds.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two expressions as input parameters:</p>
+		<p>This Mockingbird function accepts two expressions as input parameters:</p>
 
 <ul>
 <li><p>an <em>interval seconds</em>, specifying the interval in seconds to add</p></li>
@@ -600,7 +600,8 @@ the given date plus the provided seconds.</p>
 
 <p>The following expression:</p>
 
-<p>^addSecondsToDate(30|^<a href="#//api/name/currentTime">currentTime</a>())</p>
+<pre><code>^addSecondsToDate(30|^currentTime())
+</code></pre>
 
 <p>would result in an <code>NSDate</code> 30 seconds from now.</p>
 	</div>
@@ -626,8 +627,7 @@ the given date plus the provided seconds.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an <code>NSDate</code> instance representing
-the current date and time.</p>
+		<p>Returns an <code>NSDate</code> instance representing the current date and time.</p>
 	</div>		
 	
     
@@ -682,8 +682,7 @@ the current date and time.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a unix timestamp representation
-of the given date.</p>
+		<p>Returns a UNIX timestamp representation of a given <code>NSDate</code>.</p>
 	</div>		
 	
     
@@ -707,7 +706,7 @@ of the given date.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>An <code>NSNumber</code> instance containing the unix timestamp
-representation of the input date.</p>
+            representation of the input date.</p>
 	</div>
 	
 	
@@ -716,14 +715,15 @@ representation of the input date.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-an <code>NSDate</code> instance.</p>
+		<p>This Mockingbird function accepts a single input parameter: an object
+expression yielding an <code>NSDate</code> instance.</p>
 
 <h4>Expression usage</h4>
 
 <p>The expression:</p>
 
-<p>^dateToUnixTimestamp($referenceDate)</p>
+<pre><code>^dateToUnixTimestamp($referenceDate)
+</code></pre>
 
 <p>would return the unix timestamp representation of <code>$referenceDate</code>.</p>
 	</div>
@@ -774,7 +774,8 @@ present, it is returned. Otherwise, the value of the constant
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function.</p></div>
 	</div>
 	
 	
@@ -823,7 +824,8 @@ constant <code>kMBDateParsingLocaleVariableName</code> is used to construct the 
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>If all else fails, the device&rsquo;s current locale is used.</p><div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+		<p>If all else fails, the device&rsquo;s current locale is used.</p><div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function.</p></div>
 	</div>
 	
 	
@@ -847,8 +849,8 @@ constant <code>kMBDateParsingLocaleVariableName</code> is used to construct the 
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and a format string, and
-returns a string representation of the date in the specified format.</p>
+		<p>Accepts a date and a format string, and returns a string representation of the
+date in the specified format.</p>
 	</div>		
 	
     
@@ -880,7 +882,7 @@ returns a string representation of the date in the specified format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two expressions as input parameters:</p>
+		<p>This Mockingbird function accepts two expressions as input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
@@ -962,7 +964,8 @@ returned date string</p></li>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function.</p></div>
 	</div>
 	
 	
@@ -1024,7 +1027,8 @@ returned date string</p></li>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function.</p></div>
 	</div>
 	
 	
@@ -1048,8 +1052,8 @@ returned date string</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date string
-formatted using the <code>NSDateFormatterFullStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterFullStyle</code> format.</p>
 	</div>		
 	
     
@@ -1081,7 +1085,7 @@ formatted using the <code>NSDateFormatterFullStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one of two expressions as input parameters:</p>
+		<p>This Mockingbird function accepts one of two expressions as input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
@@ -1123,8 +1127,8 @@ timezone is used)</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date/time
-string formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterLongStyle</code> format.</p>
 	</div>		
 	
     
@@ -1156,8 +1160,9 @@ string formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1192,8 +1197,8 @@ Daylight Time</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The 
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a time string
-formatted using the <code>NSDateFormatterFullStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterFullStyle</code> format.</p>
 	</div>		
 	
     
@@ -1225,8 +1230,9 @@ formatted using the <code>NSDateFormatterFullStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1260,8 +1266,8 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date string
-formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterLongStyle</code> format.</p>
 	</div>		
 	
     
@@ -1293,7 +1299,7 @@ formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one of two expressions as input parameters:</p>
+		<p>This Mockingbird function accepts one of two expressions as input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
@@ -1335,8 +1341,8 @@ timezone is used)</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date/time
-string formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterLongStyle</code> format.</p>
 	</div>		
 	
     
@@ -1368,8 +1374,9 @@ string formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1403,8 +1410,8 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a time string
-formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterLongStyle</code> format.</p>
 	</div>		
 	
     
@@ -1436,8 +1443,9 @@ formatted using the <code>NSDateFormatterLongStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1471,8 +1479,8 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date string
-formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterMediumStyle</code> format.</p>
 	</div>		
 	
     
@@ -1504,7 +1512,7 @@ formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one of two expressions as input parameters:</p>
+		<p>This Mockingbird function accepts one of two expressions as input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
@@ -1546,8 +1554,8 @@ timezone is used)</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date/time
-string formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterMediumStyle</code> format.</p>
 	</div>		
 	
     
@@ -1579,8 +1587,9 @@ string formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1614,8 +1623,8 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a time string
-formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterMediumStyle</code> format.</p>
 	</div>		
 	
     
@@ -1647,8 +1656,9 @@ formatted using the <code>NSDateFormatterMediumStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1682,8 +1692,8 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date string
-formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterShortStyle</code> format.</p>
 	</div>		
 	
     
@@ -1715,7 +1725,7 @@ formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one of two expressions as input parameters:</p>
+		<p>This Mockingbird function accepts one of two expressions as input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
@@ -1757,8 +1767,8 @@ timezone is used)</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date/time
-string formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterShortStyle</code> format.</p>
 	</div>		
 	
     
@@ -1790,8 +1800,9 @@ string formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1825,8 +1836,8 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a time string
-formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
+		<p>Accepts a date and returns a date string formatted using the
+<code>NSDateFormatterShortStyle</code> format.</p>
 	</div>		
 	
     
@@ -1858,8 +1869,9 @@ formatted using the <code>NSDateFormatterShortStyle</code> format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expressions as input, an <code>NSDate</code> or <code>NSString</code>
-that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1893,9 +1905,9 @@ that contains the date to format.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date and returns a date string
-formatted using the format &ldquo;<code>YYYY-MM-dd HH:mm:ss</code>&rdquo;. This format ensures allows
-dates to be sorted using simple string sorting.</p>
+		<p>Accepts a date and returns a date string formatted using the format
+&ldquo;<code>YYYY-MM-dd HH:mm:ss</code>&rdquo;. This format ensures allows dates to be sorted using
+simple string sorting.</p>
 	</div>		
 	
     
@@ -1927,8 +1939,9 @@ dates to be sorted using simple string sorting.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one input parameter, the <em>input date</em>, an <code>NSDate</code> or
-<code>NSString</code> that contains the date to format.</p>
+		<p>This Mockingbird function accepts a single expression as input, an object
+expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
+format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1998,7 +2011,8 @@ dates to be sorted using simple string sorting.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function.</p></div>
 	</div>
 	
 	
@@ -2022,8 +2036,7 @@ dates to be sorted using simple string sorting.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a string representation of the
-time until the given date.</p>
+		<p>Returns a string representation of the time remaining until the given date.</p>
 	</div>		
 	
     
@@ -2056,14 +2069,15 @@ time until the given date.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-an <code>NSDate</code> instance.</p>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSDate</code> instance.</p>
 
 <h4>Expression usage</h4>
 
 <p>The expression:</p>
 
-<p>^formatTimeUntil($referenceDate)</p>
+<pre><code>^formatTimeUntil($referenceDate)
+</code></pre>
 
 <p>would return the time until <code>$referenceDate</code>.</p>
 	</div>
@@ -2089,8 +2103,7 @@ an <code>NSDate</code> instance.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that attempts to construct an <code>NSDate</code>
-instance by parsing a string.</p>
+		<p>Attempts to construct an <code>NSDate</code> instance by parsing a string.</p>
 	</div>		
 	
     
@@ -2122,7 +2135,8 @@ instance by parsing a string.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or three expressions as input parameters:</p>
+		<p>This Mockingbird function accepts two or three pipe-separated expressions
+as input parameters:</p>
 
 <ul>
 <li><p>the <em>date</em>, a string to be parsed</p></li>
@@ -2134,6 +2148,9 @@ by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDatePa
 
 <h4>Expression usage</h4>
 
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method.</p>
+
 <p>Assuming the default date parsing format hasn&rsquo;t been overridden by the
 <code>$MBMLDateFunctions:dateParsingFormat</code> variable, this expression:</p>
 
@@ -2142,8 +2159,7 @@ by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDatePa
 
 <p>would return an <code>NSDate</code> instance representing a date equivalent to
 Thursday, January 26th, 2012 at 10:58:19AM in New York City (eastern standard
-time, or the <code>America/New_York</code> timezone).</p><div class="note"><p><strong>Note:</strong> This function is exposed to the MBML environment as
-            <code>^parseDate()</code>.</p></div>
+time, or the <code>America/New_York</code> timezone).</p>
 	</div>
 	
 	
@@ -2168,8 +2184,8 @@ time, or the <code>America/New_York</code> timezone).</p><div class="note"><p><s
 	
 	<div class="method-subsection brief-description">
 		<p>Attempts to parse an <code>NSDate</code> from a string in the locale
-<a href="#//api/name/defaultDateParsingLocale"><code>defaultDateParsingLocale</code></a> using the date format returned
-by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a>.</p>
+<a href="#//api/name/defaultDateParsingLocale"><code>defaultDateParsingLocale</code></a> using the date format returned by the
+method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a>.</p>
 	</div>		
 	
     
@@ -2202,8 +2218,9 @@ by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDatePa
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function; instead, the
-            <a href="#//api/name/mbmlParseDate:"><code>mbmlParseDate:</code></a> method implements the <code>^parseDate()</code> MBML function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function. The <a href="#//api/name/mbmlParseDate:"><code>mbmlParseDate:</code></a> method implements the
+            <code>^parseDate()</code> MBML function.</p></div>
 	</div>
 	
 	
@@ -2271,8 +2288,9 @@ by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDatePa
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to MBML as a function; instead, the
-            <a href="#//api/name/mbmlParseDate:"><code>mbmlParseDate:</code></a> method implements the <code>^parseDate()</code> MBML function.</p></div>
+		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+            an MBML function. The <a href="#//api/name/mbmlParseDate:"><code>mbmlParseDate:</code></a> method implements the
+            <code>^parseDate()</code> MBML function.</p></div>
 	</div>
 	
 	
@@ -2296,8 +2314,8 @@ by the method <a href="#//api/name/defaultDateParsingFormat"><code>defaultDatePa
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date-formatted string and
-converts it into a date string of another format.</p>
+		<p>Accepts a date-formatted string and converts it into a date string of
+another format.</p>
 	</div>		
 	
     
@@ -2329,7 +2347,8 @@ converts it into a date string of another format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or three expressions as input parameters:</p>
+		<p>This Mockingbird function accepts two or three pipe-separated expressions as
+input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, a date-formatted string to be parsed,</p></li>
@@ -2372,9 +2391,8 @@ returned date string</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that accepts a date-formatted input string&ndash;
-along with a locale specification for that input string&ndash;and converts the
-input into a date string of another format.</p>
+		<p>Accepts a date-formatted input string—along with a locale specification for
+that input string—and converts the input into a date string of another format.</p>
 	</div>		
 	
     
@@ -2406,7 +2424,8 @@ input into a date string of another format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts three or four expressions as input parameters:</p>
+		<p>This Mockingbird function accepts three or four pipe-separated expressions as
+input parameters:</p>
 
 <ul>
 <li><p>the <em>input date</em>, a date-formatted string to be parsed,</p></li>
@@ -2451,8 +2470,8 @@ returned date string</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the number of seconds that have
-elapsed since the given past date.</p>
+		<p>Returns the number of seconds that have elapsed since the given date in
+the past.</p>
 	</div>		
 	
     
@@ -2520,8 +2539,7 @@ yielding an <code>NSDate</code> instance.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the number of seconds
-between now and the given future date.</p>
+		<p>Returns the number of seconds between now and the given date in the future.</p>
 	</div>		
 	
     
@@ -2555,8 +2573,8 @@ between now and the given future date.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-an <code>NSDate</code> instance.</p>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSDate</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -2589,8 +2607,7 @@ an <code>NSDate</code> instance.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns the offset, in minutes,
-between the current time zone and UTC.</p>
+		<p>Returns the offset, in minutes, between the current time zone and UTC.</p>
 	</div>		
 	
     
@@ -2612,7 +2629,7 @@ between the current time zone and UTC.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts no input.</p>
+		<p>This Mockingbird function accepts no input.</p>
 
 <h4>Expression usage</h4>
 
@@ -2646,8 +2663,7 @@ minutes.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a date representation of the
-unix timestamp.</p>
+		<p>Converts a UNIX timestamp into an <code>NSDate</code>.</p>
 	</div>		
 	
     
@@ -2671,7 +2687,7 @@ unix timestamp.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>An <code>NSDate</code> instance containing the date representation of given
-timestamp.</p>
+            timestamp.</p>
 	</div>
 	
 	
@@ -2680,14 +2696,15 @@ timestamp.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-a number.</p>
+		<p>This Mockingbird function accepts a single numeric expression as an input
+parameter: the UNIX timestamp.</p>
 
 <h4>Expression usage</h4>
 
 <p>The expression:</p>
 
-<p>^unixTimestampToDate($timestamp)</p>
+<pre><code>^unixTimestampToDate($timestamp)
+</code></pre>
 
 <p>would return the <code>NSDate</code> representation of <code>$timestamp</code>.</p>
 	</div>

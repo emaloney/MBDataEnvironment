@@ -14,10 +14,14 @@
 /******************************************************************************/
 
 /*!
- A class providing a MBML functions for accessing Mockingbird runtime
+ This class implements MBML functions for accessing Mockingbird runtime
  environment information.
+
+ These functions are exposed to the Mockingbird environment via
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
  
- See `MBMLFunction` for more information on MBML functions and how they're used.
+ For more information on MBML functions, see the `MBMLFunction` class.
  */
 @interface MBMLEnvironmentFunctions : NSObject
 
@@ -25,7 +29,7 @@
  An MBML function implementation returns an array of the full paths of the files
  that have been loaded into the current Mockingbird environment.
 
- This function accepts no parameters.
+ This Mockingbird function accepts no parameters.
 
  #### Expression usage
 
@@ -46,7 +50,7 @@
  `lastPathComponent`s of the file paths) for the files that have been loaded
  into the current Mockingbird environment.
 
- This function accepts no parameters.
+ This Mockingbird function accepts no parameters.
 
  #### Expression usage
 
@@ -66,8 +70,8 @@
  An MBML function implementation that determines whether a given MBML file has
  been loaded into the current Mockingbird environment.
 
- This function accepts a single parameter: the full path of the file being
- tested.
+ This Mockingbird function accepts a single parameter: a string expression
+ yielding the full path of the file being tested.
 
  #### Expression usage
 
@@ -90,8 +94,9 @@
  An MBML function implementation that determines whether a given MBML file has
  been loaded into the current Mockingbird environment.
 
- This function accepts a single parameter: the file name (i.e., the
- `lastPathComponent`) of the file being tested.
+ This Mockingbird function accepts a single parameter: a string expression
+ yielding the file name (i.e., the `lastPathComponent`) of the file being 
+ tested.
 
  #### Expression usage
 

@@ -40,16 +40,18 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
  */
 @interface MBEnvironmentLoader : NSObject
 
-/*******************************************************************************
- @name Properties
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Properties
+/*!    @name Properties                                                       */
+/*----------------------------------------------------------------------------*/
 
 /*! Returns `YES` if the receiver is associated with the active environment. */
 @property(nonatomic, readonly) BOOL isActive;
 
-/*******************************************************************************
- @name MBML parsing
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark MBML parsing
+/*!    @name MBML parsing                                                     */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the names of the XML tags accepted by the receiver.
@@ -70,9 +72,10 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
  */
 - (BOOL) parseElement:(RXMLElement*)mbml forMatch:(NSString*)match;
 
-/*******************************************************************************
- @name Environment state changes
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Environment state changes
+/*!    @name Environment state changes                                        */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Called to notify that the environment loading is about to begin. Subclasses

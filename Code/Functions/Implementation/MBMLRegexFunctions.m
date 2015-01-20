@@ -13,6 +13,11 @@
 
 #define DEBUG_LOCAL     0
 
+/******************************************************************************/
+#pragma mark -
+#pragma mark MBMLRegexFunctions implementation
+/******************************************************************************/
+
 @implementation MBMLRegexFunctions
 
 + (id) stripRegex:(NSArray*)params 

@@ -62,9 +62,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 @interface MBDataModel : MBFormattedDescriptionObject < NSCopying, NSMutableCopying, NSCoding >
 
-/*******************************************************************************
- @name Factory & initializer methods
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Factory & initializer methods
+/*!    @name Factory & initializer methods                                    */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Creates and returns a new data model populated with the contents of the
@@ -101,9 +102,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (id) initWithAttributes:(NSDictionary*)attrs;
 
-/******************************************************************************
- @name NSCopying support
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark NSCopying support
+/*!    @name NSCopying support                                                */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns a copy of the receiver. Since all `MBDataModel` instances are
@@ -148,9 +150,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) cloneDataModel:(MBDataModel*)cloneFrom withZone:(NSZone*)zone;
 
-/*******************************************************************************
- @name Class posing
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Class posing
+/*!    @name Class posing                                                     */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns a new data model instance of the specified class that contains
@@ -168,9 +171,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (id) poseAsClass:(Class)cls;
 
-/*******************************************************************************
- @name XML parsing convenience
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark XML parsing convenience
+/*!    @name XML parsing convenience                                          */
+/*----------------------------------------------------------------------------*/
 
 /*!
  A convenience method for parsing an XML document from a file.
@@ -196,9 +200,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 + (RXMLElement*) xmlFromData:(NSData*)xmlData error:(NSError**)errPtr;
 
-/*******************************************************************************
- @name Populating the data model
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Populating the data model
+/*!    @name Populating the data model                                        */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -334,9 +339,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) didAmendDataModelWithXMLFromFile:(NSString*)filePath;
 
-/*******************************************************************************
- @name XML representation
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark XML representation
+/*!    @name XML representation                                               */
+/*----------------------------------------------------------------------------*/
 
 /*!
  The entity name used to represent instances of the receiver's class. Used
@@ -374,9 +380,10 @@ extern NSString* const kMBDataModelDefaultRelation;
 */
 @property(nonatomic, readonly) NSString* debuggingXML;
 
-/*******************************************************************************
- @name Data model enforcement
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Data model enforcement
+/*!    @name Data model enforcement                                           */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the set of attributes required by the receiving class (and not any
@@ -472,9 +479,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) deprecateAttribute:(NSString*)deprecatedAttribute inFavorOf:(NSString*)newAttribute;
 
-/*******************************************************************************
- @name Data model validation
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Data model validation
+/*!    @name Data model validation                                            */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Attempts to validate the data model using the receiver as the root node.
@@ -590,9 +598,10 @@ extern NSString* const kMBDataModelDefaultRelation;
 */
 - (BOOL) isDataModelValid;
 
-/*******************************************************************************
- @name Copying data model attributes
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Copying data model attributes
+/*!    @name Copying data model attributes                                    */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns a copy of the receiver's attribute values.
@@ -607,9 +616,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) addAttributesToDictionary:(NSMutableDictionary*)dict;
 
-/*******************************************************************************
- @name Accessing data model values
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Accessing data model values
+/*!    @name Accessing data model values                                      */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Represents the content of this data model object. When the data model is
@@ -695,9 +705,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (double) doubleValueOfAttribute:(NSString*)attrName;
 
-/*******************************************************************************
- @name Keyed subscripting support
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Keyed subscripting support
+/*!    @name Keyed subscripting support                                       */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Allows accessing data model attributes using the Objective-C keyed 
@@ -731,9 +742,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) setObject:(id)obj forKeyedSubscript:(NSString*)attrName;
 
-/*******************************************************************************
- @name Performing expression evaluation on attribute values
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Performing expression evaluation on attribute values
+/*!    @name Performing expression evaluation on attribute values             */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the object result of evaluating the string value of the specified 
@@ -811,9 +823,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (BOOL) evaluateAsBoolean:(NSString*)attrName defaultValue:(BOOL)def;
 
-/*******************************************************************************
- @name Setting data model attribute values
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Setting data model attribute values
+/*!    @name Setting data model attribute values                              */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Sets a data model attribute value.
@@ -851,9 +864,10 @@ extern NSString* const kMBDataModelDefaultRelation;
 */
 - (void) setDoubleAttribute:(double)attrVal forName:(NSString*)attrName;
 
-/*******************************************************************************
- @name Renaming and removing attributes
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Renaming and removing attributes
+/*!    @name Renaming and removing attributes                                 */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Renames an attribute, moving the value from the old attribute name to the
@@ -872,9 +886,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) removeAttribute:(NSString*)attrName;
 
-/*******************************************************************************
- @name Determining relation types
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Determining relation types
+/*!    @name Determining relation types                                       */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the name of the default relation used by the class.
@@ -888,9 +903,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (NSArray*) currentRelationTypes;
 
-/*******************************************************************************
- @name Counting related objects
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Counting related objects
+/*!    @name Counting related objects                                         */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the count of all related objects in the data model.
@@ -912,9 +928,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (NSUInteger) countRelativesWithDefaultRelation;
 
-/*******************************************************************************
- @name Accessing related objects
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Accessing related objects
+/*!    @name Accessing related objects                                        */
+/*----------------------------------------------------------------------------*/
 
 /*!
  The owning data model relative (if any) of the receiver. Will be set if
@@ -957,9 +974,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (MBDataModel*) firstRelativeWithRelationType:(NSString*)relation;
 
-/*******************************************************************************
- @name Adding related objects to the data model
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Adding related objects to the data model
+/*!    @name Adding related objects to the data model                         */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Relates the passed-in data model object to the receiver using the default
@@ -1001,9 +1019,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (void) addRelatives:(NSObject<NSFastEnumeration>*)relatives withRelationType:(NSString*)relation;
 
-/*******************************************************************************
- @name Building out the data model from an XML structure
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Building out the data model from an XML structure
+/*!    @name Building out the data model from an XML structure                */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Creates a data model object of the given class based on the specified XML
@@ -1155,9 +1174,10 @@ extern NSString* const kMBDataModelDefaultRelation;
              forEachChildOf:(RXMLElement*)container
                   havingTag:(NSString*)tagName;
 
-/*******************************************************************************
- @name Building out the data model automatically
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Building out the data model automatically
+/*!    @name Building out the data model automatically                        */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Returns the relation type to use when automatically creating related data
@@ -1224,9 +1244,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  */
 - (Class) implementingClassForRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName;
 
-/*******************************************************************************
- @name Removing related objects from the data model
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Removing related objects from the data model
+/*!    @name Removing related objects from the data model                     */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Removes from the receiver all instances of the given relative from any relation
@@ -1247,9 +1268,10 @@ extern NSString* const kMBDataModelDefaultRelation;
 */
 - (void) removeRelative:(MBDataModel*)relative withRelationType:(NSString*)relation;
 
-/*******************************************************************************
- @name Notification of changes to the set of relatives
- ******************************************************************************/
+/*----------------------------------------------------------------------------*/
+#pragma mark Notification of changes to the set of relatives
+/*!    @name Notification of changes to the set of relatives                  */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Notifies the receiver that one or more relatives have been added or removed

@@ -27,7 +27,7 @@
 /*!
  Implements an if operator.
  
- This function accepts between one and three input expressions:
+ This Mockingbird function accepts between one and three input expressions:
  
  * The first parameter is the *conditional expression*, a template
  expression that will be evaluated in a boolean context. If only this parameter
@@ -43,8 +43,8 @@
 
  #### Expression usage
 
- **Note:** The MBML function is invoked with a name that differs from that of
- this method. In MBML, this function is named `^if()`.
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
 
      ^if($year -LT 2015|Past|This Year)
  
@@ -62,8 +62,9 @@
  Selects the first non-`nil` (and non-`NSNull`) value from among two or
  more parameters.
 
- This function accepts two or more MBML expressions as input parameters, and
- returns the result of the first expression returning a valid value.
+ This Mockingbird function accepts two or more object expressions as input
+ parameters and returns the result of the first expression returning a valid 
+ value.
 
  #### Expression usage
 

@@ -4,8 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLRuntimeFunctions</TokenIdentifier>
-			<Abstract type="html">A class containing a set of MBML functions and supporting methods that provide
-access to Objective-C runtime information.</Abstract>
+			<Abstract type="html">This class implements a set of MBML functions and supporting methods that
+provide access to Objective-C runtime information.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
             
 			
@@ -39,8 +39,7 @@ method returns a Class object.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRuntimeFunctions/classExists:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given class exists
-in the Objective-C runtime.</Abstract>
+			<Abstract type="html">Determines whether a given class exists in the Objective-C runtime.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)classExists:(NSString *)className</Declaration>
@@ -59,8 +58,7 @@ in the Objective-C runtime.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRuntimeFunctions/getClass:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the Class object for the given
-class name.</Abstract>
+			<Abstract type="html">Returns the Class object for the given class name.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)getClass:(NSString *)className</Declaration>
@@ -78,8 +76,7 @@ class name.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRuntimeFunctions/singleton:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the singleton instance of a
-given class.</Abstract>
+			<Abstract type="html">Returns the singleton instance of a given class.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)singleton:(id)forCls</Declaration>
@@ -97,8 +94,7 @@ given class.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRuntimeFunctions/inheritanceHierarchyForClass:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that returns the inheritance hierarchy of
-a given class.</Abstract>
+			<Abstract type="html">Returns an array containing the inheritance hierarchy of a given class.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)inheritanceHierarchyForClass:(id)forCls</Declaration>
@@ -116,8 +112,8 @@ a given class.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRuntimeFunctions/objectRespondsToSelector:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given object
-instance responds to a specific Objective-C message selector.</Abstract>
+			<Abstract type="html">Determines whether a given object instance responds to a specific Objective-C
+message selector.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)objectRespondsToSelector:(NSArray *)params</Declaration>
@@ -129,17 +125,15 @@ instance responds to a specific Objective-C message selector.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">If object instance referenced in the object expression
             responds to the selector specified in the selector expression,
-            the return value will be an NSNumber containing the boolean value
-            YES. Otherwise, an NSNumber containing the value NO will
-            be returned.</Abstract></ReturnValue>
+            the return value will be @YES. Otherwise, @NO will be returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/objectRespondsToSelector:</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRuntimeFunctions/classRespondsToSelector:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given class responds
-to a specific Objective-C message selector.</Abstract>
+			<Abstract type="html">Determines whether a given class responds to a specific Objective-C message
+selector.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)classRespondsToSelector:(NSArray *)params</Declaration>
@@ -151,9 +145,7 @@ to a specific Objective-C message selector.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">If the Objective-C class referenced in the class expression
             responds to the selector specified in the selector expression,
-            the return value will be an NSNumber containing the boolean value
-            YES. Otherwise, an NSNumber containing the value NO will
-            be returned.</Abstract></ReturnValue>
+            the return value will be @YES. Otherwise, @NO will be returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/classRespondsToSelector:</Anchor>
             <NodeRef refid="28"/>
 		</Token>

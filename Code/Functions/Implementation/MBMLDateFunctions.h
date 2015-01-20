@@ -48,7 +48,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
   
  @return    The default date parsing format string.
  
- @note      This method is not exposed to MBML as a function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function.
  */
 + (NSString*) defaultDateParsingFormat;
 
@@ -62,7 +63,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
   
  @return    The default date parsing locale.
  
- @note      This method is not exposed to MBML as a function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function.
  */
 + (NSLocale*) defaultDateParsingLocale;
 
@@ -77,7 +79,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  @return    A string containing the formatted date.
  
- @note      This method is not exposed to MBML as a function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function.
  */
 + (NSString*) formatDate:(NSDate*)d8 withStyle:(NSDateFormatterStyle)style usingTimeZone:(NSTimeZone*)timeZone;
 
@@ -90,7 +93,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  @return    A string containing the formatted time.
  
- @note      This method is not exposed to MBML as a function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function.
  */
 + (NSString*) formatTime:(NSDate*)d8 withStyle:(NSDateFormatterStyle)style;
 
@@ -104,7 +108,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  @return    A string containing the formatted date/time.
  
- @note      This method is not exposed to MBML as a function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function.
  */
 + (NSString*) formatDateTime:(NSDate*)d8 withStyle:(NSDateFormatterStyle)style;
 
@@ -121,8 +126,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @return    An `NSDate` representing the parsed date string, or `nil` if there
             was an error parsing the string.
  
- @note      This method is not exposed to MBML as a function; instead, the
-            `mbmlParseDate:` method implements the `^parseDate()` MBML function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function. The `mbmlParseDate:` method implements the 
+            `^parseDate()` MBML function.
  */
 + (NSDate*) parseDate:(NSString*)str
            fromLocale:(NSLocale*)locale
@@ -130,16 +136,17 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
 /*!
  Attempts to parse an `NSDate` from a string in the locale 
- `defaultDateParsingLocale` using the date format returned
- by the method `defaultDateParsingFormat`.
+ `defaultDateParsingLocale` using the date format returned by the 
+ method `defaultDateParsingFormat`.
  
  @param     str The date string to parse.
  
  @return    An `NSDate` representing the parsed date string, or `nil` if there
             was an error parsing the string.
  
- @note      This method is not exposed to MBML as a function; instead, the
-            `mbmlParseDate:` method implements the `^parseDate()` MBML function.
+ @note      This method is not exposed to the Mockingbird environment as a
+            an MBML function. The `mbmlParseDate:` method implements the 
+            `^parseDate()` MBML function.
  */
 + (NSDate*) parseDate:(NSString*)str;
 
@@ -149,8 +156,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that returns an `NSDate` instance representing
- the current date and time.
+ Returns an `NSDate` instance representing the current date and time.
  
  This Mockingbird function accepts no input.
  
@@ -172,8 +178,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that returns the number of seconds that have
- elapsed since the given past date.
+ Returns the number of seconds that have elapsed since the given date in
+ the past.
  
  This Mockingbird function accepts a single object expression parameter
  yielding an `NSDate` instance.
@@ -195,11 +201,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) secondsSince:(NSDate*)date;
 
 /*!
- An MBML function implementation that returns the number of seconds
- between now and the given future date.
+ Returns the number of seconds between now and the given date in the future.
  
- This function accepts a single expression parameter that is expected to yield
- an `NSDate` instance.
+ This Mockingbird function accepts a single expression parameter that is 
+ expected to yield an `NSDate` instance.
  
  #### Expression usage
  
@@ -223,46 +228,44 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that returns a date representation of the
- unix timestamp.
- 
- This function accepts a single expression parameter that is expected to yield
- a number.
+ Converts a UNIX timestamp into an `NSDate`.
+
+ This Mockingbird function accepts a single numeric expression as an input
+ parameter: the UNIX timestamp.
  
  #### Expression usage
  
  The expression:
  
- ^unixTimestampToDate($timestamp)
+    ^unixTimestampToDate($timestamp)
  
  would return the `NSDate` representation of `$timestamp`.
  
  @param     timestamp The function's input parameter.
  
  @return    An `NSDate` instance containing the date representation of given 
- timestamp.
+            timestamp.
  */
 + (id) unixTimestampToDate:(id)timestamp;
 
 /*!
- An MBML function implementation that returns a unix timestamp representation 
- of the given date.
+ Returns a UNIX timestamp representation of a given `NSDate`.
  
- This function accepts a single expression parameter that is expected to yield
- an `NSDate` instance.
+ This Mockingbird function accepts a single input parameter: an object
+ expression yielding an `NSDate` instance.
  
  #### Expression usage
  
  The expression:
  
- ^dateToUnixTimestamp($referenceDate)
+    ^dateToUnixTimestamp($referenceDate)
  
  would return the unix timestamp representation of `$referenceDate`.
  
  @param     date The function's input parameter.
  
  @return    An `NSNumber` instance containing the unix timestamp
- representation of the input date.
+            representation of the input date.
  */
 + (id) dateToUnixTimestamp:(NSDate*)date;
 
@@ -272,10 +275,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that returns an `NSDate` instance representing
- the given date plus the provided seconds.
+ Returns an `NSDate` instance representing the given date plus the specified
+ number of seconds.
 
- This function accepts two expressions as input parameters:
+ This Mockingbird function accepts two expressions as input parameters:
 
  * an *interval seconds*, specifying the interval in seconds to add
 
@@ -285,7 +288,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  The following expression:
 
- ^addSecondsToDate(30|^currentTime())
+    ^addSecondsToDate(30|^currentTime())
 
  would result in an `NSDate` 30 seconds from now.
 
@@ -301,17 +304,16 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that returns a string representation of the
- time until the given date.
+ Returns a string representation of the time remaining until the given date.
 
- This function accepts a single expression parameter that is expected to yield
- an `NSDate` instance.
+ This Mockingbird function accepts a single expression parameter that is
+ expected to yield an `NSDate` instance.
 
  #### Expression usage
 
  The expression:
 
- ^formatTimeUntil($referenceDate)
+    ^formatTimeUntil($referenceDate)
 
  would return the time until `$referenceDate`.
 
@@ -323,10 +325,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatTimeUntil:(NSDate*)date;
 
 /*!
- An MBML function implementation that accepts a date and a format string, and
- returns a string representation of the date in the specified format.
+ Accepts a date and a format string, and returns a string representation of the
+ date in the specified format.
 
- This function accepts two expressions as input parameters:
+ This Mockingbird function accepts two expressions as input parameters:
 
  * the *input date*, an `NSDate` or `NSString` that contains the date to format
 
@@ -348,12 +350,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatDate:(NSArray*)params;
 
 /*!
- An MBML function implementation that accepts a date and returns a date string
- formatted using the format "`YYYY-MM-dd HH:mm:ss`". This format ensures allows
- dates to be sorted using simple string sorting.
+ Accepts a date and returns a date string formatted using the format
+ "`YYYY-MM-dd HH:mm:ss`". This format ensures allows dates to be sorted using
+ simple string sorting.
 
- This function accepts one input parameter, the *input date*, an `NSDate` or
- `NSString` that contains the date to format.
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
 
  #### Expression usage
 
@@ -372,10 +375,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatSortableDate:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date string
- formatted using the `NSDateFormatterShortStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterShortStyle` format.
  
- This function accepts one of two expressions as input parameters:
+ This Mockingbird function accepts one of two expressions as input parameters:
  
  * the *input date*, an `NSDate` or `NSString` that contains the date to format
  
@@ -401,10 +404,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatShortDate:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date string
- formatted using the `NSDateFormatterMediumStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterMediumStyle` format.
  
- This function accepts one of two expressions as input parameters:
+ This Mockingbird function accepts one of two expressions as input parameters:
  
  * the *input date*, an `NSDate` or `NSString` that contains the date to format
  
@@ -430,10 +433,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatMediumDate:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date string
- formatted using the `NSDateFormatterLongStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterLongStyle` format.
  
- This function accepts one of two expressions as input parameters:
+ This Mockingbird function accepts one of two expressions as input parameters:
  
  * the *input date*, an `NSDate` or `NSString` that contains the date to format
  
@@ -459,10 +462,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatLongDate:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date string
- formatted using the `NSDateFormatterFullStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterFullStyle` format.
  
- This function accepts one of two expressions as input parameters:
+ This Mockingbird function accepts one of two expressions as input parameters:
  
  * the *input date*, an `NSDate` or `NSString` that contains the date to format
  
@@ -488,12 +491,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatFullDate:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a time string
- formatted using the `NSDateFormatterShortStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterShortStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -512,12 +516,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatShortTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a time string
- formatted using the `NSDateFormatterMediumStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterMediumStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -536,12 +541,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatMediumTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a time string
- formatted using the `NSDateFormatterLongStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterLongStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -560,12 +566,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatLongTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a time string
- formatted using the `NSDateFormatterFullStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterFullStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -584,12 +591,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatFullTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date/time
- string formatted using the `NSDateFormatterShortStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterShortStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -608,12 +616,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatShortDateTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date/time
- string formatted using the `NSDateFormatterMediumStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterMediumStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -632,12 +641,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatMediumDateTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date/time
- string formatted using the `NSDateFormatterLongStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterLongStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -656,12 +666,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) formatLongDateTime:(id)input;
 
 /*!
- An MBML function implementation that accepts a date and returns a date/time
- string formatted using the `NSDateFormatterLongStyle` format.
+ Accepts a date and returns a date string formatted using the
+ `NSDateFormatterLongStyle` format.
  
- This function accepts a single expressions as input, an `NSDate` or `NSString`
- that contains the date to format.
- 
+ This Mockingbird function accepts a single expression as input, an object
+ expression yielding either an `NSDate` or `NSString` containing the date to 
+ format.
+
  #### Expression usage
  
  The following expression:
@@ -686,10 +697,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that accepts a date-formatted string and
- converts it into a date string of another format.
+ Accepts a date-formatted string and converts it into a date string of
+ another format.
  
- This function accepts two or three expressions as input parameters:
+ This Mockingbird function accepts two or three pipe-separated expressions as
+ input parameters:
  
  * the *input date*, a date-formatted string to be parsed,
  
@@ -715,11 +727,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (id) reformatDate:(NSArray*)params;
 
 /*!
- An MBML function implementation that accepts a date-formatted input string--
- along with a locale specification for that input string--and converts the
- input into a date string of another format.
+ Accepts a date-formatted input string—along with a locale specification for
+ that input string—and converts the input into a date string of another format.
  
- This function accepts three or four expressions as input parameters:
+ This Mockingbird function accepts three or four pipe-separated expressions as
+ input parameters:
  
  * the *input date*, a date-formatted string to be parsed,
  
@@ -753,10 +765,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that attempts to construct an `NSDate`
- instance by parsing a string.
+ Attempts to construct an `NSDate` instance by parsing a string.
  
- This function accepts two or three expressions as input parameters:
+ This Mockingbird function accepts two or three pipe-separated expressions
+ as input parameters:
  
  * the *date*, a string to be parsed
  
@@ -765,6 +777,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  by the method `defaultDateParsingFormat` is used as the format string.
   
  #### Expression usage
+
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method.
 
  Assuming the default date parsing format hasn't been overridden by the 
  `$MBMLDateFunctions:dateParsingFormat` variable, this expression:
@@ -778,9 +793,6 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @param     params The function's input parameters.
  
  @return    An `NSDate` representing the parsed date.
- 
- @note      This function is exposed to the MBML environment as
-            `^parseDate()`.
  */
 + (id) mbmlParseDate:(NSArray*)params;
 
@@ -790,10 +802,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- An MBML function implementation that returns the offset, in minutes, 
- between the current time zone and UTC.
+ Returns the offset, in minutes, between the current time zone and UTC.
  
- This function accepts no input.
+ This Mockingbird function accepts no input.
  
  #### Expression usage
  

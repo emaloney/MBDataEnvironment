@@ -65,13 +65,15 @@
 	
 	<option value="//api/name/list:">&nbsp;&nbsp;&nbsp;&nbsp;+ list:</option>
 	
-	<option value="//api/name/merge:">&nbsp;&nbsp;&nbsp;&nbsp;+ merge:</option>
+	<option value="//api/name/mergeDictionaries:">&nbsp;&nbsp;&nbsp;&nbsp;+ mergeDictionaries:</option>
 	
 	<option value="//api/name/pruneMatchingLeaves:">&nbsp;&nbsp;&nbsp;&nbsp;+ pruneMatchingLeaves:</option>
 	
 	<option value="//api/name/pruneNonmatchingLeaves:">&nbsp;&nbsp;&nbsp;&nbsp;+ pruneNonmatchingLeaves:</option>
 	
 	<option value="//api/name/reduce:">&nbsp;&nbsp;&nbsp;&nbsp;+ reduce:</option>
+	
+	<option value="//api/name/setContains:">&nbsp;&nbsp;&nbsp;&nbsp;+ setContains:</option>
 	
 	<option value="//api/name/sort:">&nbsp;&nbsp;&nbsp;&nbsp;+ sort:</option>
 	
@@ -102,6 +104,26 @@
 
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Testing containers">Testing containers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Joining &amp; splitting strings">Joining &amp; splitting strings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Manipulating arrays">Manipulating arrays</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Manipulating dictionaries">Manipulating dictionaries</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Pruning trees">Pruning trees</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Extracting data">Extracting data</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Sorting">Sorting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing duplicate values">Removing duplicate values</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Reducing an array of items">Reducing an array of items</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Distributing values">Distributing values</a></span></li>
 	
 </ul></li>
 
@@ -137,13 +159,15 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/list:">list:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/merge:">merge:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mergeDictionaries:">mergeDictionaries:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneMatchingLeaves:">pruneMatchingLeaves:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneNonmatchingLeaves:">pruneNonmatchingLeaves:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reduce:">reduce:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setContains:">setContains:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sort:">sort:</a></span></li>
 	
@@ -201,7 +225,8 @@
 <h3>Terminology</h3>
 
 <p><strong>Container objects:</strong> Where parameters are referred to as <em>container
-objects</em>, the function will accept <code>NSDictionary</code> and <code>NSArray</code> instances.</p>
+objects</em>, the function will accept <code>NSDictionary</code>, <code>NSArray</code> or <code>NSSet</code>
+instances.</p>
 
 <h3>About function declarations</h3>
 
@@ -221,13 +246,19 @@ file.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Testing containers" name="task_Testing containers"></a>
+						<h3 class="subsubtitle task-title">Testing containers</h3>
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/containsValue:">+&nbsp;containsValue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setContains:">+&nbsp;setContains:</a></code>
 	</span>
 	
 	
@@ -249,7 +280,15 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Joining &amp; splitting strings" name="task_Joining &amp; splitting strings"></a>
+						<h3 class="subsubtitle task-title">Joining &amp; splitting strings</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/join:">+&nbsp;join:</a></code>
 	</span>
@@ -267,7 +306,15 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Manipulating arrays" name="task_Manipulating arrays"></a>
+						<h3 class="subsubtitle task-title">Manipulating arrays</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/appendArrays:">+&nbsp;appendArrays:</a></code>
 	</span>
@@ -279,13 +326,29 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Manipulating dictionaries" name="task_Manipulating dictionaries"></a>
+						<h3 class="subsubtitle task-title">Manipulating dictionaries</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/filter:">+&nbsp;filter:</a></code>
+		<code><a href="#//api/name/mergeDictionaries:">+&nbsp;mergeDictionaries:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Pruning trees" name="task_Pruning trees"></a>
+						<h3 class="subsubtitle task-title">Pruning trees</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/pruneMatchingLeaves:">+&nbsp;pruneMatchingLeaves:</a></code>
 	</span>
@@ -294,6 +357,20 @@ file.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/pruneNonmatchingLeaves:">+&nbsp;pruneNonmatchingLeaves:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Extracting data" name="task_Extracting data"></a>
+						<h3 class="subsubtitle task-title">Extracting data</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/filter:">+&nbsp;filter:</a></code>
 	</span>
 	
 	
@@ -321,25 +398,57 @@ file.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Sorting" name="task_Sorting"></a>
+						<h3 class="subsubtitle task-title">Sorting</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/sort:">+&nbsp;sort:</a></code>
 	</span>
 	
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/merge:">+&nbsp;merge:</a></code>
-	</span>
-	
-	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Removing duplicate values" name="task_Removing duplicate values"></a>
+						<h3 class="subsubtitle task-title">Removing duplicate values</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/unique:">+&nbsp;unique:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Reducing an array of items" name="task_Reducing an array of items"></a>
+						<h3 class="subsubtitle task-title">Reducing an array of items</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reduce:">+&nbsp;reduce:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Distributing values" name="task_Distributing values"></a>
+						<h3 class="subsubtitle task-title">Distributing values</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/distributeArrayElements:">+&nbsp;distributeArrayElements:</a></code>
 	</span>
@@ -348,12 +457,6 @@ file.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/groupArrayElements:">+&nbsp;groupArrayElements:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/reduce:">+&nbsp;reduce:</a></code>
 	</span>
 	
 	
@@ -394,8 +497,7 @@ in the input parameters.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>An array containing the input parameters for the
-            function.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -414,8 +516,8 @@ in the input parameters.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more Mockingbird expressions as parameters,
-where each expression evaluates as an array value.</p>
+		<p>This Mockingbird function accepts two or more pipe-separated object expressions
+as parameters, where each expression yields an <code>NSArray</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -425,9 +527,9 @@ where each expression evaluates as an array value.</p>
 </code></pre>
 
 <p>The expression above will evaluate to a single array, wherein the returned
-array will contain all the elements of <code>$array1</code>, in the same
-order they appear in the array, followed by the elements of <code>$array2</code>,
-and then those of <code>$array3</code>.</p>
+array will contain all the elements of <code>$array1</code>, in the same order they
+appear in the array, followed by the elements of <code>$array2</code>, and then those
+of <code>$array3</code>.</p>
 	</div>
 	
 	
@@ -468,7 +570,7 @@ on expressions passed to the function.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -477,7 +579,7 @@ on expressions passed to the function.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a dictionary containing the mapped items.</p>
+		<p>The function result.</p>
 	</div>
 	
 	
@@ -490,7 +592,8 @@ on expressions passed to the function.</p>
 key, the multiple values will be placed into an array, and that array will be
 the value of the key.</p>
 
-<p>This function accepts three or more Mockingbird expressions as parameters:</p>
+<p>This Mockingbird function accepts three or more pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>The <em>data model</em>, an expression whose value is a container object
@@ -592,7 +695,7 @@ recursing into) a container object holding an arbitrary data model.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -601,7 +704,7 @@ recursing into) a container object holding an arbitrary data model.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a dictionary containing the mapped items.</p>
+		<p>The function result.</p>
 	</div>
 	
 	
@@ -616,7 +719,8 @@ on expressions passed to the function.</p>
 <p><strong>Note:</strong> The value of each key will always be an array, even if the key
 only maps to a single value.</p>
 
-<p>This function accepts three or more Mockingbird expressions as parameters:</p>
+<p>This Mockingbird function accepts three or more pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>The <em>data model</em>, an expression whose value is a container object
@@ -717,7 +821,7 @@ recursing into) a container object holding an arbitrary data model.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -726,7 +830,7 @@ recursing into) a container object holding an arbitrary data model.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a dictionary containing the mapped items.</p>
+		<p>The function result.</p>
 	</div>
 	
 	
@@ -742,7 +846,7 @@ on expressions passed to the function.</p>
 key, additional values are ignored and only one value will be returned. Assume
 non-deterministic behavior for multiple values.</p>
 
-<p>This function accepts three or more Mockingbird expressions as parameters:</p>
+<p>This Mockingbird function accepts three or more pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>The <em>data model</em>, an expression whose value is a container object
@@ -844,7 +948,7 @@ and returns whether or not all members passed the test.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array or dictionary containing the input parameters for the function</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -870,11 +974,10 @@ an <code>NSNumber</code> instance containing the integer <code>5</code> to equal
 containing the text &ldquo;<code>5</code>&rdquo;. Be forewarned, however: Do not expect normal
 <code>NSObject</code> equality test behavior!</p>
 
-<p>This function accepts two Mockingbird expressions as parameters:</p>
+<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
-<li><p>One <em>container object</em>, which is expected to evaluate to array
-or dictionary</p></li>
+<li><p>One <em>container object</em></p></li>
 <li><p>The <em>test value</em>, an expression whose value will be used to test
 against the values in the passed-in container(s)</p></li>
 </ul>
@@ -926,7 +1029,7 @@ objects equals a specified value.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the function</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -952,7 +1055,8 @@ an <code>NSNumber</code> instance containing the integer <code>5</code> to equal
 containing the text &ldquo;<code>5</code>&rdquo;. Be forewarned, however: Do not expect normal
 <code>NSObject</code> equality test behavior!</p>
 
-<p>This function accepts two or more Mockingbird expressions as parameters:</p>
+<p>This Mockingbird function accepts two or more pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>One or more <em>container objects</em>, expressions that evaluate to array
@@ -967,9 +1071,8 @@ equality with the values in the passed-in container(s)</p></li>
 <pre><code>^containsValue($colorsOne|$colorsTwo|yellow)
 </code></pre>
 
-<p>The expression above would return a boolean true value if either
-<code>$colorsOne</code> or <code>$colorsTwo</code> contained an item
-whose value is the string <code>yellow</code>.</p>
+<p>The expression above would return a boolean true value if either <code>$colorsOne</code>
+or <code>$colorsTwo</code> contained an item whose value is the string &ldquo;<code>yellow</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1007,7 +1110,7 @@ whose value is the string <code>yellow</code>.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1016,7 +1119,7 @@ whose value is the string <code>yellow</code>.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing <em>returned array count</em> arrays, each
+		<p>An array containing <em>returned array count</em> arrays, each
             containing the distributed elements from <em>source array</em>.</p>
 	</div>
 	
@@ -1026,7 +1129,7 @@ whose value is the string <code>yellow</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>The <em>source array</em>, an expression that is expected to evaluate
@@ -1098,7 +1201,7 @@ the filter behavior is returned.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1107,7 +1210,7 @@ the filter behavior is returned.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array or dictionary containing the filtered items. The type of
+		<p>An array or dictionary containing the filtered items. The type of
             the object returned will match the <em>data model</em> input
             parameter.</p>
 	</div>
@@ -1124,7 +1227,8 @@ top-level object, and the test expression will get applied multiple times.
 You can specify whether the filter will return items that match at least
 once, or whether all of the existing items must match.</p>
 
-<p>This function accepts two or more Mockingbird expressions as parameters:</p>
+<p>This Mockingbird function accepts two or more pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>The <em>data model</em>, an expression whose value is a container object
@@ -1143,8 +1247,7 @@ omitted <code>matchAtLeastOnce</code> behavior will be used.</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$people</code> is an array of data
-objects representing people:</p>
+<p>Assume that <code>$people</code> is an array of data objects representing people:</p>
 
 <pre><code>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)
 </code></pre>
@@ -1194,8 +1297,7 @@ depth-first traversal of the input parameters.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>An array containing the input parameters for the
-            function.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1213,8 +1315,8 @@ depth-first traversal of the input parameters.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one or more Mockingbird expressions as parameters,
-where each expression evaluates as an array value.</p>
+		<p>This Mockingbird function accepts one or more pipe-separated object expressions
+as parameters, where each expression yields an <code>NSArray</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -1263,7 +1365,7 @@ contained in <code>$nestedArrays</code>.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1281,7 +1383,7 @@ contained in <code>$nestedArrays</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>The <em>source array</em>, an expression that is expected to evaluate
@@ -1353,8 +1455,7 @@ string between each value in the returned string.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the
-            function.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1363,7 +1464,7 @@ string between each value in the returned string.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a string containing the string values of the items in the
+		<p>A string containing the string values of the items in the
             <em>container objects</em>, separated by the string specified
             as the <em>separator string</em></p>
 	</div>
@@ -1374,7 +1475,8 @@ string between each value in the returned string.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two or more pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>One or more <em>container objects</em>, expressions that evaluate to arrays
@@ -1386,13 +1488,13 @@ returned string</p></li>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$values</code> is an array
-containing the strings &ldquo;string1&rdquo;, &ldquo;anotherString&rdquo;, and &ldquo;lastly&rdquo;:</p>
+<p>Assume that <code>$values</code> is an array containing the strings &ldquo;<code>string1</code>&rdquo;,
+&ldquo;<code>anotherString</code>&rdquo;, and &ldquo;<code>lastly</code>&rdquo;:</p>
 
 <pre><code>^join($values|, )
 </code></pre>
 
-<p>The expression above would return the string &ldquo;string1, anotherString, lastly&rdquo;.</p>
+<p>The expression above would yield the string &ldquo;<code>string1, anotherString, lastly</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1433,7 +1535,7 @@ non-deterministic ordering.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1442,7 +1544,7 @@ non-deterministic ordering.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing the listed items.</p>
+		<p>The function result.</p>
 	</div>
 	
 	
@@ -1451,7 +1553,8 @@ non-deterministic ordering.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two or more pipe-separated expressions as
+parameters:</p>
 
 <ul>
 <li><p>The <em>data model</em>, an expression whose value is a container object
@@ -1504,8 +1607,8 @@ contain a string with values such as:</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/merge:" title="merge:"></a>
-	<h3 class="subsubtitle method-title">merge:</h3>
+	<a name="//api/name/mergeDictionaries:" title="mergeDictionaries:"></a>
+	<h3 class="subsubtitle method-title">mergeDictionaries:</h3>
 	
 	
 	
@@ -1515,15 +1618,74 @@ contain a string with values such as:</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)merge:(NSArray *)<em>params</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)mergeDictionaries:(NSArray *)<em>params</em></code></div>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result.</p>
+	</div>
 	
 	
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts at least two pipe-separated object
+expressions as input parameters:</p>
+
+<ul>
+<li><p>The <em>first input dictionary</em>, an <code>NSDictionary</code> instance</p></li>
+<li><p>The <em>second input dictionary</em>, an <code>NSDictionary</code> instance</p></li>
+<li><p>Zero or more <em>additional input dictionaries</em>, each an <code>NSDictionary</code> instance</p></li>
+</ul>
+
+
+<p>The return value will be the result of overlaying the values of each input
+dictionary parameter with the dictionary parameter that preceded it. The
+resulting dictionary will contain keys from all input dictionaries, and if
+there are any duplicate keys, the value from the right-most parameter
+will be selected.</p>
+
+<p>For example, if <em>second input dictionary</em> contains a value for a key that&rsquo;s
+also present in <em>first input dictionary</em>, the key/value pair from <em>second input
+dictionary</em> will overwrite the first.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^mergeDictionaries($localUsers|$remoteUsers|$automatedUsers)
+</code></pre>
+
+<p>The dictionaries yielded by the expressions <code>$localUsers</code>, <code>$remoteUsers</code> and
+<code>$automatedUsers</code> are merged such that:</p>
+
+<ul>
+<li><p>Each key/value pair in <code>$automatedUsers</code> will be present in the returned
+ dictionary</p></li>
+<li><p>For each key in <code>$remoteUsers</code> not present in <code>$automatedUsers</code>, the
+ key/value in <code>$remoteUsers</code> will be present in the returned dictionary</p></li>
+<li><p>For each key in <code>$remoteUsers</code> not present in <code>$automatedUsers</code>, the
+ key/value in <code>$remoteUsers</code> will be present in the returned dictionary</p></li>
+<li><p>For each key in <code>$localUsers</code> not present in <code>$remoteUsers</code> or
+ <code>$automatedUsers</code>, the key/value in <code>$localUsers</code> will be present in the
+ returned dictionary</p></li>
+</ul>
+
+	</div>
 	
 	
 	
@@ -1561,7 +1723,7 @@ match a given test expression. The resulting pruned tree is then returned.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1570,7 +1732,7 @@ match a given test expression. The resulting pruned tree is then returned.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing the result of the operation.</p>
+		<p>The function result.</p>
 	</div>
 	
 	
@@ -1579,7 +1741,7 @@ match a given test expression. The resulting pruned tree is then returned.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>The <em>input array</em> representing the root of the tree; this expression
@@ -1595,19 +1757,16 @@ structure, but containing only those non-array elements for which the
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$input</code> is an array
-containing two inner arrays. The first inner array contains the strings:
-&ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second
-inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
-&ldquo;<code>Sally</code>&rdquo;.</p>
+<p>Assume that <code>$input</code> is an array containing two inner arrays. The first inner
+array contains the strings: &ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second inner
+array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and &ldquo;<code>Sally</code>&rdquo;.</p>
 
 <pre><code>^pruneMatchingLeaves($input|$item -EQ Pat)
 </code></pre>
 
 <p>The expression above would return an array containing two inner arrays,
-the first having the elements &ldquo;<code>Bob</code>&rdquo; and &ldquo;<code>Joe</code>&rdquo;,
-and the second having the elements &ldquo;<code>Alice</code>&rdquo; and
-&ldquo;<code>Sally</code>&rdquo;.</p>
+the first having the elements &ldquo;<code>Bob</code>&rdquo; and &ldquo;<code>Joe</code>&rdquo;, and the second having
+the elements &ldquo;<code>Alice</code>&rdquo; and &ldquo;<code>Sally</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1647,7 +1806,7 @@ returned.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1656,7 +1815,7 @@ returned.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing the result of the operation.</p>
+		<p>The function result.</p>
 	</div>
 	
 	
@@ -1665,7 +1824,7 @@ returned.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>The <em>input array</em> representing the root of the tree; this expression
@@ -1681,11 +1840,9 @@ structure, but containing only those non-array elements for which the
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$input</code> is an array
-containing two inner arrays. The first inner array contains the strings:
-&ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second
-inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
-&ldquo;<code>Sally</code>&rdquo;.</p>
+<p>Assume that <code>$input</code> is an array containing two inner arrays. The first inner
+array contains the strings: &ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and &ldquo;<code>Pat</code>&rdquo;; the second inner
+array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and &ldquo;<code>Sally</code>&rdquo;.</p>
 
 <pre><code>^pruneNonmatchingLeaves($input|$item -EQ Pat)
 </code></pre>
@@ -1729,7 +1886,7 @@ each with a single element: &ldquo;<code>Pat</code>&rdquo;.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>the function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1738,7 +1895,7 @@ each with a single element: &ldquo;<code>Pat</code>&rdquo;.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a single value.</p>
+		<p>The result of the reduction.</p>
 	</div>
 	
 	
@@ -1747,27 +1904,112 @@ each with a single element: &ldquo;<code>Pat</code>&rdquo;.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts 3 Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts 3 pipe-separated expressions as parameters:</p>
 
 <ul>
-<li><p>The source array, an expression that is expected to evaluate
-to an array.</p></li>
-<li><p>A Mockingbird expression that returns an initial value</p></li>
-<li><p>A Mockingbird expression that returns a single value</p></li>
+<li><p>The <em>source array</em>, an object expression expected to yield an <code>NSArray</code>
+ instance</p></li>
+<li><p>The <em>initial value</em>, an object expression yielding the initial value for
+ the reduce operation</p></li>
+<li><p>The <em>combining expression</em>, an object expression yielding the result of
+ combining the <em>current value</em> with the current item in the array.</p></li>
 </ul>
 
 
-<p>The source is iterated and the expression is evaluated with respect to each $item.</p>
+<p>The return value is an array whose items are constructed by iterating over the
+source array and for each item in the array, evaluating the combining
+expression.</p>
+
+<p>The combining expression may refer to the <em>current reduced value</em> using
+<code>$currentValue</code>. The current reduced value is the result of the previous
+evaluation of the combining expression. For the first item in the source
+array, the combining expression has not yet been evaluated, so the
+initial value is used as <code>$currentValue</code>.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$numbers</code> is an
-array with the numbers 1 through 5</p>
-
-<pre><code>^reduce($numbers|0|#($currentValue + $item))
+<pre><code>^reduce(^arrayFilledWithIntegers(1|10)|0|#($currentValue + $item))
 </code></pre>
 
-<p>The expression above would return the value 15</p>
+<p>The expression above would return the result <code>55</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setContains:" title="setContains:"></a>
+	<h3 class="subsubtitle method-title">setContains:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether a set contains a given object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)setContains:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSNumber</code> containing a boolean value indicating the result
+            of the function.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Because this function is optimized to work with <code>NSSet</code> instances, it is
+more efficient than using <code>^containsValue()</code> for the same purpose.</p>
+
+<p>This function accepts two pipe-separated expressions as parameters:</p>
+
+<ul>
+<li><p>A <em>set</em> expression, which should yield an <code>NSSet</code> instance, and</p></li>
+<li><p>An <em>object</em> expression, which yields the object whose presence in the
+set is to be tested.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<p>Assume that the MBML variable <code>$colors</code> is a set containing the values &ldquo;<code>red</code>&rdquo;,
+&ldquo;<code>yellow</code>&rdquo;, &ldquo;<code>green</code>&rdquo;, and &ldquo;<code>blue</code>&rdquo;:</p>
+
+<pre><code>^setContains($colors|orange)
+</code></pre>
+
+<p>The expression above would return a boolean <code>NO</code>, because <code>$colors</code> does
+not contain the value &ldquo;<code>orange</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1850,7 +2092,7 @@ input parameters:</p>
 <pre><code>^sort($buildings|$item.height|desc)
 </code></pre>
 
-<p>The expression above would return an array containing each item in $building
+<p>The expression above would return an array containing each item in <code>$building</code>
 sorted from tallest to shortest.</p>
 
 <pre><code>^sort(^array(z|x|a|c|y|b))
@@ -1895,8 +2137,7 @@ sorted from tallest to shortest.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the
-            function.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -1905,7 +2146,7 @@ sorted from tallest to shortest.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing the components of the split string</p>
+		<p>An array containing the components of the split string.</p>
 	</div>
 	
 	
@@ -1914,7 +2155,7 @@ sorted from tallest to shortest.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two Mockingbird expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
 
 <ul>
 <li><p>An expression specifying the <em>delimiter</em>, which specifies where
@@ -1977,7 +2218,7 @@ string to be split</p></li>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSArray</code> containing the individual lines of <code>stringToSplit</code></p>
+		<p>An <code>NSArray</code> containing the individual lines of <code>stringToSplit</code>.</p>
 	</div>
 	
 	
@@ -2037,7 +2278,7 @@ array containing the unique values encountered.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>enumerator</em></dt>
-			<dd><p>the function&rsquo;s input parameter.</p></dd>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
 		</dl>
 		
 	</div>
@@ -2092,10 +2333,72 @@ and &ldquo;<code>Goose</code>&rdquo;, in that order.</p>
 	<h3 class="subsubtitle method-title">valuesIntersect:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Tests whether two container objects share at least one value in common.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)valuesIntersect:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>@YES</code> if the two container objects share at least one common value,
+            <code>@NO</code> if they do not.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two pipe-separated object expressions
+yielding the container objects to test.</p>
+
+<p>The function returns <code>@YES</code> if the two container objects share at least
+one common value, <code>@NO</code> if they do not.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume that <code>$boys</code> is an <code>NSSet</code> containing the strings &ldquo;<code>Bob</code>&rdquo;, &ldquo;<code>Joe</code>&rdquo; and
+&ldquo;<code>Pat</code>&rdquo;, and that <code>$girls</code> is an <code>NSSet</code> containing the strings &ldquo;<code>Alice</code>&rdquo;,
+&ldquo;<code>Pat</code>&rdquo; and &ldquo;<code>Sally</code>&rdquo;.</p>
+
+<pre><code>^valuesIntersect($boys|$girls)
+</code></pre>
+
+<p>The expression above would return <code>@YES</code> because both <code>$boys</code> and <code>$girls</code>
+share a common value: the string &ldquo;<code>Pat</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -2120,8 +2423,7 @@ and returns an array of values for which the test expression is true.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the
-            function.</p></dd>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
 		</dl>
 		
 	</div>
@@ -2140,12 +2442,11 @@ and returns an array of values for which the test expression is true.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts an array of Mockingbird expressions, and expects
-two or more objects in the array:</p>
+		<p>This Mockingbird function accepts two or more pipe-separated expressions
+yielding:</p>
 
 <ul>
-<li><p>One or more <em>container objects</em>, expressions that evaluate to arrays
-or dictionaries</p></li>
+<li><p>One or more <em>container objects</em></p></li>
 <li><p>The <em>test expression</em>, an expression that will be evaluated for each
 value in each container object in the input parameters</p></li>
 </ul>

@@ -14,18 +14,22 @@
 /******************************************************************************/
 
 /*!
- A class containing implementations for MBML functions that return information
- about the fonts available at runtine.
+ This class implements MBML functions for accessing information about the
+ fonts available at runtine.
+
+ These functions are exposed to the Mockingbird environment via
+ `<Function ... />` declarations in the <code>MBDataEnvironmentModule.xml</code>
+ file.
  
- See `MBMLFunction` for more information on MBML functions and how they're used.
-*/
+ For more information on MBML functions, see the `MBMLFunction` class.
+ */
 @interface MBMLFontFunctions : NSObject
 
 /*!
  An MBML function implementation that returns an array of the available
  `UIFont` family names.
  
- This function takes no parameters.
+ This Mockingbird function takes no parameters.
  
  #### Expression usage
  
@@ -44,8 +48,8 @@
  An MBML function implementation that returns an array of the available
  `UIFont` family names.
  
- This function takes a single expression as input, the name of the
- font family whose font names are sought.
+ This Mockingbird function takes a single string expression as input, yielding
+ the name of the font family whose font names are sought.
  
  #### Expression usage
  
@@ -55,12 +59,12 @@
  
  would return an array containing the following font names:
  
- - Helvetica-LightOblique
- - Helvetica
- - Helvetica-Oblique
- - Helvetica-BoldOblique
- - Helvetica-Bold
- - Helvetica-Light
+ * Helvetica-LightOblique
+ * Helvetica
+ * Helvetica-Oblique
+ * Helvetica-BoldOblique
+ * Helvetica-Bold
+ * Helvetica-Light
  
  @param     input The function's input parameter.
  
@@ -72,7 +76,8 @@
  An MBML function implementation that returns a `UIFont` instance for the
  given font name and size.
  
- This function takes a two parameters as input:
+ This Mockingbird function accepts two pipe-separated expressions as input
+ parameters:
  
  * The *font name*, a string expression that specifies the name of the font
  requested
@@ -96,8 +101,9 @@
 /*!
  An MBML function implementation that measures the size of text in a given font.
  
- This function takes a two parameters as input:
- 
+ This Mockingbird function accepts two pipe-separated expressions as input
+ parameters:
+
  * The *text*, a string expression specifying the text to measure
  
  * The *font*, an object expression that yields a `UIFont` instance

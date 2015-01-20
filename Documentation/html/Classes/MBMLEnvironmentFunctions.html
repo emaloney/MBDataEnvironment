@@ -124,10 +124,14 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class providing a MBML functions for accessing Mockingbird runtime
+						<p>This class implements MBML functions for accessing Mockingbird runtime
 environment information.</p>
 
-<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 					</div>
 					
 					
@@ -223,8 +227,9 @@ been loaded into the current Mockingbird environment.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter: the file name (i.e., the
-<code>lastPathComponent</code>) of the file being tested.</p>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the file name (i.e., the <code>lastPathComponent</code>) of the file being
+tested.</p>
 
 <h4>Expression usage</h4>
 
@@ -283,7 +288,7 @@ into the current Mockingbird environment.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts no parameters.</p>
+		<p>This Mockingbird function accepts no parameters.</p>
 
 <h4>Expression usage</h4>
 
@@ -341,7 +346,7 @@ that have been loaded into the current Mockingbird environment.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts no parameters.</p>
+		<p>This Mockingbird function accepts no parameters.</p>
 
 <h4>Expression usage</h4>
 
@@ -409,8 +414,8 @@ been loaded into the current Mockingbird environment.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single parameter: the full path of the file being
-tested.</p>
+		<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the full path of the file being tested.</p>
 
 <h4>Expression usage</h4>
 
