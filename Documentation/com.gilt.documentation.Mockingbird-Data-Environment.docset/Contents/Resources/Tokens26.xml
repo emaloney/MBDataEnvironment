@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLRegexFunctions</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">This class implements MBML functions providing regular expression support.</Abstract>
 			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
             
 			
@@ -14,36 +14,54 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRegexFunctions/stripRegex:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Matches one or more regular expressions against an input string, and returns
+a new string with all matches removed from the input string.</Abstract>
 			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)stripRegex:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/stripRegex:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRegexFunctions/replaceRegex:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Performs a regular expression match against an input string and replaces
+all matches with a given a replacement string.</Abstract>
 			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)replaceRegex:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/replaceRegex:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLRegexFunctions/matchesRegex:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
+			<Abstract type="html">Determines whether one or more regular expressions match a given input string
+at least once.</Abstract>
 			<DeclaredIn>MBMLRegexFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)matchesRegex:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/matchesRegex:</Anchor>
             <NodeRef refid="26"/>
 		</Token>

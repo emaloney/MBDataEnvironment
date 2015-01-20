@@ -43,6 +43,12 @@
 	
 	<option value="//api/name/appendArrays:">&nbsp;&nbsp;&nbsp;&nbsp;+ appendArrays:</option>
 	
+	<option value="//api/name/associate:">&nbsp;&nbsp;&nbsp;&nbsp;+ associate:</option>
+	
+	<option value="//api/name/associateWithArray:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateWithArray:</option>
+	
+	<option value="//api/name/associateWithSingleValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ associateWithSingleValue:</option>
+	
 	<option value="//api/name/collectionPassesTest:">&nbsp;&nbsp;&nbsp;&nbsp;+ collectionPassesTest:</option>
 	
 	<option value="//api/name/containsValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ containsValue:</option>
@@ -58,12 +64,6 @@
 	<option value="//api/name/join:">&nbsp;&nbsp;&nbsp;&nbsp;+ join:</option>
 	
 	<option value="//api/name/list:">&nbsp;&nbsp;&nbsp;&nbsp;+ list:</option>
-	
-	<option value="//api/name/map:">&nbsp;&nbsp;&nbsp;&nbsp;+ map:</option>
-	
-	<option value="//api/name/mapToArray:">&nbsp;&nbsp;&nbsp;&nbsp;+ mapToArray:</option>
-	
-	<option value="//api/name/mapToSingleValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ mapToSingleValue:</option>
 	
 	<option value="//api/name/merge:">&nbsp;&nbsp;&nbsp;&nbsp;+ merge:</option>
 	
@@ -115,6 +115,12 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/appendArrays:">appendArrays:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associate:">associate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateWithArray:">associateWithArray:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/associateWithSingleValue:">associateWithSingleValue:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/collectionPassesTest:">collectionPassesTest:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsValue:">containsValue:</a></span></li>
@@ -130,12 +136,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/join:">join:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/list:">list:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/map:">map:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapToArray:">mapToArray:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mapToSingleValue:">mapToSingleValue:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/merge:">merge:</a></span></li>
 	
@@ -196,12 +196,20 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Provides a mechanism for manipulating data structures from within the template
-language.</p>
+						<p>This class provides a set of MBML functions for manipulating data structures.</p>
 
-<p><b>Container objects:</b> Where parameters are referred to as <i>container
-objects</i>, the function will accept <code>NSDictionary</code> and
-<code>NSArray</code> instances.</p>
+<h3>Terminology</h3>
+
+<p><strong>Container objects:</strong> Where parameters are referred to as <em>container
+objects</em>, the function will accept <code>NSDictionary</code> and <code>NSArray</code> instances.</p>
+
+<h3>About function declarations</h3>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 					</div>
 					
 					
@@ -297,19 +305,19 @@ objects</i>, the function will accept <code>NSDictionary</code> and
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/map:">+&nbsp;map:</a></code>
+		<code><a href="#//api/name/associate:">+&nbsp;associate:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapToSingleValue:">+&nbsp;mapToSingleValue:</a></code>
+		<code><a href="#//api/name/associateWithSingleValue:">+&nbsp;associateWithSingleValue:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/mapToArray:">+&nbsp;mapToArray:</a></code>
+		<code><a href="#//api/name/associateWithArray:">+&nbsp;associateWithArray:</a></code>
 	</span>
 	
 	
@@ -386,7 +394,7 @@ in the input parameters.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the
+			<dd><p>An array containing the input parameters for the
             function.</p></dd>
 		</dl>
 		
@@ -396,7 +404,7 @@ in the input parameters.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing all of the elements in the arrays referenced
+		<p>An array containing all of the elements in the arrays referenced
             by the passed-in expression parameters.</p>
 	</div>
 	
@@ -406,16 +414,15 @@ in the input parameters.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more template expressions as parameters,
+		<p>This function accepts two or more Mockingbird expressions as parameters,
 where each expression evaluates as an array value.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$array1</code>, <code>$array2</code>
-and <code>$array3</code> resolve to array values:</p>
+<p>Assume that <code>$array1</code>, <code>$array2</code> and <code>$array3</code> resolve to array values:</p>
 
-<pre>^appendArrays($array1|$array2|$array3)</pre>
-
+<pre><code>^appendArrays($array1|$array2|$array3)
+</code></pre>
 
 <p>The expression above will evaluate to a single array, wherein the returned
 array will contain all the elements of <code>$array1</code>, in the same
@@ -438,14 +445,392 @@ and then those of <code>$array3</code>.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/associate:" title="associate:"></a>
+	<h3 class="subsubtitle method-title">associate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Associates a set of keys with values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.
+The keys and values of the returned dictionary are constructed based
+on expressions passed to the function.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)associate:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a dictionary containing the mapped items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p><strong>Note:</strong> If the association would result in more than one value for a given
+key, the multiple values will be placed into an array, and that array will be
+the value of the key.</p>
+
+<p>This function accepts three or more Mockingbird expressions as parameters:</p>
+
+<ul>
+<li><p>The <em>data model</em>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+returned dictionary</p></li>
+<li><p>Zero or more <em>intermediate expressions</em>, which are used to recurse
+into portions of the data model</p></li>
+<li><p>The second-to-last expression in the input parameters is the <em>key
+expression</em>, which is used to construct the keys in the map</p></li>
+<li><p>The last expression is the <em>value expression</em>, which is used to
+construct the values contained in the map</p></li>
+</ul>
+
+
+<p>The intermediate, key and value expressions can refer to portions of the
+data model using several pre-defined variables:</p>
+
+<ul>
+<li><p><code>$item</code> refers to the value of the current item in the innermost
+scope being iterated/recursed</p></li>
+<li><p>When iterating the values of a dictionary, the <code>$key</code> variable
+can be used to access the key associated with the current <code>$item</code></p></li>
+<li><p><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model</p></li>
+<li><p>When the data model expression refers to a dictionary, <code>$rootKey</code>
+will contain the key associated with the current <code>$root</code> value.</p></li>
+<li><p>In addition, when intermediate expressions are used to recurse into the
+data model, you can refer to items and keys contained in the outer scopes
+using the prefix <code>outer:</code> in the variable name, such as
+<code>$``outer:key</code> or <code>$outer:item</code>. This prefix
+can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
+levels of scope.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<p>Assume that <code>$people</code> is an array of data objects representing people:</p>
+
+<pre><code>^associate($people|$item.children|$item.fullName|$root)
+</code></pre>
+
+<p>The expression above would iterate over all the values in <code>$people</code>, and for
+each person, it would then iterate over the elements contained in the person&rsquo;s
+<code>children</code> array. For each of those children, it would create an association
+between the <em>key</em>—the value of that child&rsquo;s <code>fullName</code> attribute—and the
+<em>value</em>—the <code>$root</code> item (the current person in the iteration from <code>$people</code>).</p>
+
+<p>In other words, the expression above would create a dictionary where the keys
+are the full names of children, and the value of each key is the item in
+<code>$people</code> representing that child&rsquo;s parent.</p>
+
+<p>In the event that more than one child has a given full name, the corresponding
+value in the dictionary will be an array.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/associateWithArray:">+ associateWithArray:</a>, <a href="#//api/name/associateWithSingleValue:">+ associateWithSingleValue:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/associateWithArray:" title="associateWithArray:"></a>
+	<h3 class="subsubtitle method-title">associateWithArray:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Associates a set of keys with values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)associateWithArray:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a dictionary containing the mapped items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The keys and values of the returned dictionary are constructed based
+on expressions passed to the function.</p>
+
+<p><strong>Note:</strong> The value of each key will always be an array, even if the key
+only maps to a single value.</p>
+
+<p>This function accepts three or more Mockingbird expressions as parameters:</p>
+
+<ul>
+<li><p>The <em>data model</em>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+returned dictionary</p></li>
+<li><p>Zero or more <em>intermediate expressions</em>, which are used to recurse
+into portions of the data model</p></li>
+<li><p>The second-to-last expression in the input parameters is the <em>key
+expression</em>, which is used to construct the keys in the map</p></li>
+<li><p>The last expression is the <em>value expression</em>, which is used to
+construct the values contained in the map</p></li>
+</ul>
+
+
+<p>The intermediate, key and value expressions can refer to portions of the
+data model using several pre-defined variables:</p>
+
+<ul>
+<li><p><code>$item</code> refers to the value of the current item in the innermost
+scope being iterated/recursed</p></li>
+<li><p>When iterating the values of a dictionary, the <code>$key</code> variable
+can be used to access the key associated with the current <code>$item</code></p></li>
+<li><p><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model</p></li>
+<li><p>When the data model expression refers to a dictionary, <code>$rootKey</code>
+will contain the key associated with the current <code>$root</code> value.</p></li>
+<li><p>In addition, when intermediate expressions are used to recurse into the
+data model, you can refer to items and keys contained in the outer scopes
+using the prefix <code>outer:</code> in the variable name, such as <code>$outer:key</code> or
+<code>$outer:item</code>. This prefix can also be compounded (eg.: <code>$outer:outer:key</code>)
+to reach different levels of scope.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<p>Assume that <code>$people</code> is an array of data objects representing people:</p>
+
+<pre><code>^associateWithArray($people|$item.children|$item.fullName|$root)
+</code></pre>
+
+<p>The expression above would iterate over all the values in <code>$people</code>, and for
+each person, it would then iterate over the elements contained in the person&rsquo;s
+<code>children</code> array. For each of those children, it would create an association
+between the <em>key</em>—the value of that child&rsquo;s <code>fullName</code> attribute—and the
+<em>value</em>—the <code>$root</code> item (the current person in the iteration from <code>$people</code>).</p>
+
+<p>In other words, the expression above would create a dictionary where the keys
+are the full names of children, and the value of each key is the item in
+<code>$people</code> representing that child&rsquo;s parent.</p>
+
+<p>Regardless of whether or not a given key has multiple values, each key
+in the returned dictionary will have an array value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/associate:">+ associate:</a>, <a href="#//api/name/associateWithSingleValue:">+ associateWithSingleValue:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/associateWithSingleValue:" title="associateWithSingleValue:"></a>
+	<h3 class="subsubtitle method-title">associateWithSingleValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Associates a set of keys with values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)associateWithSingleValue:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>a dictionary containing the mapped items.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The keys and values of the returned dictionary are constructed based
+on expressions passed to the function.</p>
+
+<p><strong>Note:</strong> If the association would result in more than one value for a given
+key, additional values are ignored and only one value will be returned. Assume
+non-deterministic behavior for multiple values.</p>
+
+<p>This function accepts three or more Mockingbird expressions as parameters:</p>
+
+<ul>
+<li><p>The <em>data model</em>, an expression whose value is a container object
+(either an array or dictionary) that will be used as the source for the
+returned dictionary</p></li>
+<li><p>Zero or more <em>intermediate expressions</em>, which are used to recurse
+into portions of the data model</p></li>
+<li><p>The second-to-last expression in the input parameters is the <em>key
+expression</em>, which is used to construct the keys in the map</p></li>
+<li><p>The last expression is the <em>value expression</em>, which is used to
+construct the values contained in the map</p></li>
+</ul>
+
+
+<p>The intermediate, key and value expressions can refer to portions of the
+data model using several pre-defined variables:</p>
+
+<ul>
+<li><p><code>$item</code> refers to the value of the current item in the innermost
+scope being iterated/recursed</p></li>
+<li><p>When iterating the values of a dictionary, the <code>$key</code> variable
+can be used to access the key associated with the current <code>$item</code></p></li>
+<li><p><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model</p></li>
+<li><p>When the data model expression refers to a dictionary, <code>$rootKey</code>
+will contain the key associated with the current <code>$root</code> value.</p></li>
+<li><p>In addition, when intermediate expressions are used to recurse into the
+data model, you can refer to items and keys contained in the outer scopes
+using the prefix <code>outer:</code> in the variable name, such as <code>$outer:key</code> or
+<code>$outer:item</code>. This prefix can also be compounded (eg.: <code>$outer:outer:key</code>)
+to reach different levels of scope.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<p>Assume that <code>$people</code> is an array of data objects representing people:</p>
+
+<pre><code>^associateWithSingleValue($people|$item.children|$item.fullName|$root)
+</code></pre>
+
+<p>The expression above would iterate over all the values in <code>$people</code>, and for
+each person, it would then iterate over the elements contained in the person&rsquo;s
+<code>children</code> array. For each of those children, it would create an association
+between the <em>key</em>—the value of that child&rsquo;s <code>fullName</code> attribute—and the
+<em>value</em>—the <code>$root</code> item (the current person in the iteration from <code>$people</code>).</p>
+
+<p>In other words, the expression above would create a dictionary where the keys
+are the full names of children, and the value of each key is the item in
+<code>$people</code> representing that child&rsquo;s parent.</p>
+
+<p>Because this function associates a given key with at most one value, in the
+event that more than one child has a given full name, some values will be
+ignored.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/associateWithArray:">+ associateWithArray:</a>, <a href="#//api/name/associate:">+ associate:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/collectionPassesTest:" title="collectionPassesTest:"></a>
 	<h3 class="subsubtitle method-title">collectionPassesTest:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Applies a template expression accross each member of the passed collection and returns
-whether or not all members passed the test (particularly useful for form validation).</p>
+		<p>Applies a boolean expression test to each member of the passed collection
+and returns whether or not all members passed the test.</p>
 	</div>		
 	
     
@@ -470,7 +855,7 @@ whether or not all members passed the test (particularly useful for form validat
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>An <code>NSNumber</code> instance containing either the boolean
             value <code>YES</code> if all of the input collections pass the
-            specified template expression, or <code>NO</code> otherwise.</p>
+            specified Mockingbird expression, or <code>NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -479,31 +864,29 @@ whether or not all members passed the test (particularly useful for form validat
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p><b>Note:</b> This method tests equality through the <a href="../Classes/MBExpression.html">MBExpression</a>, not
-through the <code>isEqual:</code> method. As a result, implicit type conversions
-occur, allowing an <code>NSNumber</code> instance containing the integer
-<code>5</code> to equal an <code>NSString</code> containing the text
-&quot;<code>5</code>&quot;. Be forewarned, however: Do not expect normal
+		<p><strong>Note:</strong> This method tests equality through the <a href="../Classes/MBExpression.html">MBExpression</a> class, not the
+<code>isEqual:</code> method. As a result, implicit type conversions occur, allowing
+an <code>NSNumber</code> instance containing the integer <code>5</code> to equal an <code>NSString</code>
+containing the text &ldquo;<code>5</code>&rdquo;. Be forewarned, however: Do not expect normal
 <code>NSObject</code> equality test behavior!</p>
 
-<p>This function accepts two template expressions as parameters:</p>
+<p>This function accepts two Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>One <i>container object</i>, which is expected to evaluate to array
-or dictionary
-
-<li>The <i>test value</i>, an expression whose value will be used to test
-against the values in the passed-in container(s)
+<li><p>One <em>container object</em>, which is expected to evaluate to array
+or dictionary</p></li>
+<li><p>The <em>test value</em>, an expression whose value will be used to test
+against the values in the passed-in container(s)</p></li>
 </ul>
 
 
 <h4>Expression usage</h4>
 
-<pre>^collectionPassesTest($collection|$item.length -GT 0)</pre>
-
+<pre><code>^collectionPassesTest($collection|$item.length -GT 0)
+</code></pre>
 
 <p>The expression above would return a boolean true value if all
-the members of <code>$collection</code> pass the template expression
+the members of <code>$collection</code> pass the Mockingbird expression
 <code>$item.length -GT 0</code></p>
 	</div>
 	
@@ -563,28 +946,26 @@ objects equals a specified value.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p><b>Note:</b> This method tests equality through the <a href="../Classes/MBExpression.html">MBExpression</a>, not
-through the <code>isEqual:</code> method. As a result, implicit type conversions
-occur, allowing an <code>NSNumber</code> instance containing the integer
-<code>5</code> to equal an <code>NSString</code> containing the text
-&quot;<code>5</code>&quot;. Be forewarned, however: Do not expect normal
+		<p><strong>Note:</strong> This method tests equality through the <a href="../Classes/MBExpression.html">MBExpression</a> class, not the
+<code>isEqual:</code> method. As a result, implicit type conversions occur, allowing
+an <code>NSNumber</code> instance containing the integer <code>5</code> to equal an <code>NSString</code>
+containing the text &ldquo;<code>5</code>&rdquo;. Be forewarned, however: Do not expect normal
 <code>NSObject</code> equality test behavior!</p>
 
-<p>This function accepts two or more template expressions as parameters:</p>
+<p>This function accepts two or more Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>One or more <i>container objects</i>, expressions that evaluate to array
-or dictionary values
-
-<li>The <i>test value</i>, an expression whose value will be used to test
-equality with the values in the passed-in container(s)
+<li><p>One or more <em>container objects</em>, expressions that evaluate to array
+or dictionary values</p></li>
+<li><p>The <em>test value</em>, an expression whose value will be used to test
+equality with the values in the passed-in container(s)</p></li>
 </ul>
 
 
 <h4>Expression usage</h4>
 
-<pre>^containsValue($colorsOne|$colorsTwo|yellow)</pre>
-
+<pre><code>^containsValue($colorsOne|$colorsTwo|yellow)
+</code></pre>
 
 <p>The expression above would return a boolean true value if either
 <code>$colorsOne</code> or <code>$colorsTwo</code> contained an item
@@ -635,8 +1016,8 @@ whose value is the string <code>yellow</code>.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing <i>returned array count</i> arrays, each
-            containing the distributed elements from <i>source array</i>.</p>
+		<p>an array containing <em>returned array count</em> arrays, each
+            containing the distributed elements from <em>source array</em>.</p>
 	</div>
 	
 	
@@ -645,41 +1026,38 @@ whose value is the string <code>yellow</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two template expressions as parameters:</p>
+		<p>This function accepts two Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The <i>source array</i>, an expression that is expected to evaluate
-as an array value.
-
-<li>The <i>returned array count</i>, which specifies the number of arrays
-across which to distribute the source array's elements. This expression
+<li><p>The <em>source array</em>, an expression that is expected to evaluate
+as an array value.</p></li>
+<li><p>The <em>returned array count</em>, which specifies the number of arrays
+across which to distribute the source array&rsquo;s elements. This expression
 will be interpreted as integer value, and must be <code>1</code> or
-greater.
+greater.</p></li>
 </ul>
 
 
 <p>The source array is iterated, and each item in it is distributed across
-<i>returned array count</i> arrays in sequence.</p>
+<em>returned array count</em> arrays in sequence.</p>
 
 <p>The function will always return the number of arrays specified by
-<i>returned array count</i>. If the source array contains fewer elements
-than <i>returned array count</i>, one or more of the returned arrays
+<em>returned array count</em>. If the source array contains fewer elements
+than <em>returned array count</em>, one or more of the returned arrays
 will be empty.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$newYorkTeams</code> is an
-array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
-<code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
+<p>Assume that <code>$newYorkTeams</code> is an array with five elements: the strings
+&ldquo;<code>Yankees</code>&rdquo;, &ldquo;<code>Mets</code>&rdquo;, &ldquo;<code>Knicks</code>&rdquo;, <code>Rangers</code> and &ldquo;<code>Nets</code>&rdquo; in that
 order.</p>
 
-<pre>^distributeArrayElements($newYorkTeams|2)</pre>
+<pre><code>^distributeArrayElements($newYorkTeams|2)
+</code></pre>
 
-
-<p>The expression above would return an array containing two
-arrays, where the first array contains three items (<code>Yankees</code>,
-<code>Knicks</code> and <code>Islanders</code>) and the second array
-contains two (<code>Mets</code> and <code>Rangers</code>).</p>
+<p>The expression above would return an array containing two arrays, where the
+first array contains three items (&ldquo;<code>Yankees</code>&rdquo;, &ldquo;<code>Knicks</code>&rdquo; and &ldquo;<code>Nets</code>&rdquo;) and
+the second array contains two (&ldquo;<code>Mets</code>&rdquo; and &ldquo;<code>Rangers</code>&rdquo;).</p>
 	</div>
 	
 	
@@ -730,7 +1108,7 @@ the filter behavior is returned.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>an array or dictionary containing the filtered items. The type of
-            the object returned will match the <i>data model</i> input
+            the object returned will match the <em>data model</em> input
             parameter.</p>
 	</div>
 	
@@ -746,23 +1124,20 @@ top-level object, and the test expression will get applied multiple times.
 You can specify whether the filter will return items that match at least
 once, or whether all of the existing items must match.</p>
 
-<p>This function accepts two or more template expressions as parameters:</p>
+<p>This function accepts two or more Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The <i>data model</i>, an expression whose value is a container object
+<li><p>The <em>data model</em>, an expression whose value is a container object
 (either an array or dictionary) that will be used as the source for the
-filtering
-
-<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
-into portions of the data model
-
-<li>A <i>test expression</i>, which will be used for the basis of the
-filtering.
-
-<li>Finally, an optional <i>filter behavior</i>, which can be either
+filtering</p></li>
+<li><p>Zero or more <em>intermediate expressions</em>, which are used to recurse
+into portions of the data model</p></li>
+<li><p>A <em>test expression</em>, which will be used for the basis of the
+filtering.</p></li>
+<li><p>Finally, an optional <em>filter behavior</em>, which can be either
 <code>matchAtLeastOnce</code> or <code>matchAll</code> (note that these string
 literals must be used; this parameter is not evaluated). If the parameter is
-omitted <code>matchAtLeastOnce</code> behavior will be used.
+omitted <code>matchAtLeastOnce</code> behavior will be used.</p></li>
 </ul>
 
 
@@ -771,8 +1146,8 @@ omitted <code>matchAtLeastOnce</code> behavior will be used.
 <p>Assume that <code>$people</code> is an array of data
 objects representing people:</p>
 
-<pre>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)</pre>
-
+<pre><code>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)
+</code></pre>
 
 <p>The expression above would return all the objects contained in
 <code>$people</code> where every aunt of every child of the person has
@@ -819,7 +1194,7 @@ depth-first traversal of the input parameters.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the
+			<dd><p>An array containing the input parameters for the
             function.</p></dd>
 		</dl>
 		
@@ -829,7 +1204,7 @@ depth-first traversal of the input parameters.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>the flattened array.</p>
+		<p>The flattened array.</p>
 	</div>
 	
 	
@@ -838,16 +1213,16 @@ depth-first traversal of the input parameters.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts one or more template expressions as parameters,
+		<p>This function accepts one or more Mockingbird expressions as parameters,
 where each expression evaluates as an array value.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$nestedArrays</code> refers to
-an array wherein each element is another array:</p>
+<p>Assume that <code>$nestedArrays</code> refers to an array wherein each element is
+another array:</p>
 
-<pre>^flattenArrays($nestedArrays)</pre>
-
+<pre><code>^flattenArrays($nestedArrays)
+</code></pre>
 
 <p>The example above would return an array containing the elements of each array
 contained in <code>$nestedArrays</code>.</p>
@@ -897,7 +1272,7 @@ contained in <code>$nestedArrays</code>.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing one or more <i>group arrays</i>.</p>
+		<p>an array containing one or more <em>group arrays</em>.</p>
 	</div>
 	
 	
@@ -906,42 +1281,39 @@ contained in <code>$nestedArrays</code>.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two template expressions as parameters:</p>
+		<p>This function accepts two Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The <i>source array</i>, an expression that is expected to evaluate
-as an array value.
-
-<li>A <i>group size</i>, which specifies the maximum number of items to allow
+<li><p>The <em>source array</em>, an expression that is expected to evaluate
+as an array value.</p></li>
+<li><p>A <em>group size</em>, which specifies the maximum number of items to allow
 in a single group. This expression will be interpreted as integer value, and
-must be <code>1</code> or greater.
+must be <code>1</code> or greater.</p></li>
 </ul>
 
 
-<p>The source array is iterated, and for each <i>group size</i> number of
-items encountered, a new <i>group array</i> is created containing just those
+<p>The source array is iterated, and for each <em>group size</em> number of
+items encountered, a new <em>group array</em> is created containing just those
 items. The return value is an array containing one or more group arrays
 created while iterating the source array.</p>
 
-<p>Unless <i>source array</i> contains an exact multiple of <i>group
-size</i> number of items, the last group array will contain fewer than
-<i>group size</i> number of items.</p>
+<p>Unless <em>source array</em> contains an exact multiple of <em>group size</em> number of
+items, the last group array will contain fewer than <em>group size</em> number of
+items.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$newYorkTeams</code> is an
-array with five elements: the strings <code>Yankees</code>, <code>Mets</code>,
-<code>Knicks</code>, <code>Rangers</code> and <code>Islanders</code> in that
+<p>Assume that <code>$newYorkTeams</code> is an array with five elements: the strings
+&ldquo;<code>Yankees</code>&rdquo;, &ldquo;<code>Mets</code>&rdquo;, &ldquo;<code>Knicks</code>&rdquo;, <code>Rangers</code> and &ldquo;<code>Nets</code>&rdquo; in that
 order.</p>
 
-<pre>^groupArrayElements($newYorkTeams|2)</pre>
+<pre><code>^groupArrayElements($newYorkTeams|2)
+</code></pre>
 
-
-<p>The expression above would return an array containing three
-arrays, where the first array contains two items (<code>Yankees</code> and
-<code>Mets</code>), the second array contains two items (<code>Knicks</code>
-and <code>Rangers</code>), and the third array contains one item
-(<code>Islanders</code>).</p>
+<p>The expression above would return an array containing three arrays, where the
+first array contains two items (&ldquo;<code>Yankees</code>&rdquo; and &ldquo;<code>Mets</code>&rdquo;), the second array
+contains two items (&ldquo;<code>Knicks</code>&rdquo; and &ldquo;<code>Rangers</code>&rdquo;), and the third array contains
+one item (&ldquo;<code>Nets</code>&rdquo;).</p>
 	</div>
 	
 	
@@ -992,8 +1364,8 @@ string between each value in the returned string.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>a string containing the string values of the items in the
-            <i>container objects</i>, separated by the string specified
-            as the <i>separator string</i></p>
+            <em>container objects</em>, separated by the string specified
+            as the <em>separator string</em></p>
 	</div>
 	
 	
@@ -1002,14 +1374,13 @@ string between each value in the returned string.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more template expressions as parameters:</p>
+		<p>This function accepts two or more Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>One or more <i>container objects</i>, expressions that evaluate to arrays
-or dictionaries
-
-<li>The <i>separator string</i>, which is placed between each value in the
-returned string
+<li><p>One or more <em>container objects</em>, expressions that evaluate to arrays
+or dictionaries</p></li>
+<li><p>The <em>separator string</em>, which is placed between each value in the
+returned string</p></li>
 </ul>
 
 
@@ -1018,8 +1389,8 @@ returned string
 <p>Assume that <code>$values</code> is an array
 containing the strings &ldquo;string1&rdquo;, &ldquo;anotherString&rdquo;, and &ldquo;lastly&rdquo;:</p>
 
-<pre>^join($values|, )</pre>
-
+<pre><code>^join($values|, )
+</code></pre>
 
 <p>The expression above would return the string &ldquo;string1, anotherString, lastly&rdquo;.</p>
 	</div>
@@ -1080,35 +1451,32 @@ non-deterministic ordering.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two or more template expressions as parameters:</p>
+		<p>This function accepts two or more Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The <i>data model</i>, an expression whose value is a container object
-(either an array or dictionary) that will be iterated
-
-<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
-into portions of the data model
-
-<li>A <i>value expression</i>, which will be evaluated once for each item
+<li><p>The <em>data model</em>, an expression whose value is a container object
+(either an array or dictionary) that will be iterated</p></li>
+<li><p>Zero or more <em>intermediate expressions</em>, which are used to recurse
+into portions of the data model</p></li>
+<li><p>A <em>value expression</em>, which will be evaluated once for each item
 encountered while iterating the data model and recursing into any
-intermediate expressions.
+intermediate expressions.</p></li>
 </ul>
 
 
 <p>The function will return an array containing the result of evaluating the
-<i>value expression</i> once for each item encountered in the data
+<em>value expression</em> once for each item encountered in the data
 model.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$states</code> is a map where
-each item in the map represents a state. The key for each item is the
-two-letter postal code for the state, and the value associated with
-each key is another dictionary containing additional information about the
-state.</p>
+<p>Assume that <code>$states</code> is a map where each item in the map represents a state.
+The key for each item is the two-letter postal code for the state, and the
+value associated with each key is another dictionary containing additional
+information about the state.</p>
 
-<pre>^list($states|$item.citiesBySize|$item.name, <span>$</span>root:key - $item.population residents)</pre>
-
+<pre><code>^list($states|$item.citiesBySize|$item.name, &lt;span&gt;$&lt;/span&gt;root:key - $item.population residents)
+</code></pre>
 
 <p>The expression above would iterate over all the elements in the
 <code>$states</code> dictionary, and for each state, it would then iterate over
@@ -1117,408 +1485,13 @@ in this case is an ordered array of cities in the state sorted by population.
 For each city in each state&rsquo;s <code>cityBySize</code>, the returned array would
 contain a string with values such as:</p>
 
-<pre>New York, NY - 8,391,881 residents</pre>
-
-
-
+<pre><code>New York, NY - 8,391,881 residents
+</code></pre>
 	</div>
 	
 	
 	
 	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/map:" title="map:"></a>
-	<h3 class="subsubtitle method-title">map:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates a mapping of keys to values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.
-The keys and values of the returned dictionary are constructed based
-on expressions passed to the function.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)map:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a dictionary containing the mapped items.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p><b>Note:</b> If the mapping operation would result in more than one value
-being mapped to a given key, the multiple values will be placed into an
-array, and that array will be the value of the key.</p>
-
-<p>This function accepts three or more template expressions as parameters:</p>
-
-<ul>
-<li>The <i>data model</i>, an expression whose value is a container object
-(either an array or dictionary) that will be used as the source for the
-returned mapping
-
-<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
-into portions of the data model
-
-<li>The second-to-last expression in the input parameters is the <i>key
-expression</i>, which is used to construct the keys in the map
-
-<li>The last expression is the <i>value expression</i>, which is used to
-construct the values contained in the map
-</ul>
-
-
-<p>The intermediate, key and value expressions can refer to portions of the
-data model using several pre-defined variables:</p>
-
-<ul>
-<li><code>$item</code> refers to the value of the current item in the innermost
-scope being iterated/recursed
-
-<li>When iterating the values of a dictionary, the <code>$key</code> variable
-can be used to access the key associated with the current <code>$item</code>
-
-<li><code>$root</code> contains the value of the current item being iterated
-at the top level of the data model
-
-<li>When the data model expression refers to a dictionary, <code>$rootKey</code>
-will contain the key associated with the current <code>$root</code> value.
-
-<li>In addition, when intermediate expressions are used to recurse into the
-data model, you can refer to items and keys contained in the outer scopes
-using the prefix <code>outer:</code> in the variable name, such as
-<code>$</code><code>outer:key</code> or <code>$outer:item</code>. This prefix
-can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
-levels of scope.
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<p>Assume that <code>$people</code> is an array of data
-objects representing people:</p>
-
-<pre>^map($people|$item.children|$item.fullName|$root)</pre>
-
-
-<p>The expression above would iterate over all the values in
-<code>$people</code>, and for each person, it would then iterate over
-the elements contained in the person&rsquo;s <code>children</code> array. For
-each of those children, it would create a mapping from the value of that
-child&rsquo;s <code>fullName</code> attribute to the <code>$root</code> item,
-or the person from <code>$people</code> that&rsquo;s currently being iterated. In
-other words, the expression above would create a dictionary where the keys are
-the full names of children, and the value of each key is the item in
-<code>$people</code> representing that child&rsquo;s parent.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/mapToArray:">+ mapToArray:</a>, <a href="#//api/name/mapToSingleValue:">+ mapToSingleValue:</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/mapToArray:" title="mapToArray:"></a>
-	<h3 class="subsubtitle method-title">mapToArray:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates a mapping of keys to values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.
-The keys and values of the returned dictionary are constructed based
-on expressions passed to the function.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)mapToArray:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a dictionary containing the mapped items.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p><b>Note:</b> The value of each key will always be an array, even if the key
-only maps to a single value.</p>
-
-<p>This function accepts three or more template expressions as parameters:</p>
-
-<ul>
-<li>The <i>data model</i>, an expression whose value is a container object
-(either an array or dictionary) that will be used as the source for the
-returned mapping
-
-<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
-into portions of the data model
-
-<li>The second-to-last expression in the input parameters is the <i>key
-expression</i>, which is used to construct the keys in the map
-
-<li>The last expression is the <i>value expression</i>, which is used to
-construct the values contained in the map
-</ul>
-
-
-<p>The intermediate, key and value expressions can refer to portions of the
-data model using several pre-defined variables:</p>
-
-<ul>
-<li><code>$item</code> refers to the value of the current item in the innermost
-scope being iterated/recursed
-
-<li>When iterating the values of a dictionary, the <code>$key</code> variable
-can be used to access the key associated with the current <code>$item</code>
-
-<li><code>$root</code> contains the value of the current item being iterated
-at the top level of the data model
-
-<li>When the data model expression refers to a dictionary, <code>$rootKey</code>
-will contain the key associated with the current <code>$root</code> value.
-
-<li>In addition, when intermediate expressions are used to recurse into the
-data model, you can refer to items and keys contained in the outer scopes
-using the prefix <code>outer:</code> in the variable name, such as
-<code>$</code><code>outer:key</code> or <code>$outer:item</code>. This prefix
-can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
-levels of scope.
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<p>Assume that <code>$people</code> is an array of data
-objects representing people:</p>
-
-<pre>^mapToArray($people|$item.children|$item.fullName|$root)</pre>
-
-
-<p>The expression above would iterate over all the values in
-<code>$people</code>, and for each person, it would then iterate over
-the elements contained in the person&rsquo;s <code>children</code> array. For
-each of those children, it would create a mapping from the value of that
-child&rsquo;s <code>fullName</code> attribute to the <code>$root</code> item,
-or the person from <code>$people</code> that&rsquo;s currently being iterated. In
-other words, the expression above would create a dictionary where the keys are
-the full names of children, and the value of each key is the item in
-<code>$people</code> representing that child&rsquo;s parent.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/mapToArray:">+ mapToArray:</a>, <a href="#//api/name/mapToSingleValue:">+ mapToSingleValue:</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/mapToSingleValue:" title="mapToSingleValue:"></a>
-	<h3 class="subsubtitle method-title">mapToSingleValue:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Creates a mapping of keys to values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.
-The keys and values of the returned dictionary are constructed based
-on expressions passed to the function.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)mapToSingleValue:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>an array containing the function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>a dictionary containing the mapped items.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p><b>Note:</b> If the mapping operation would result in more than one value
-being mapped to a given key, additional values are ignored and only one
-value will be returned. Assume non-deterministic behavior for multiple
-values.</p>
-
-<p>This function accepts three or more template expressions as parameters:</p>
-
-<ul>
-<li>The <i>data model</i>, an expression whose value is a container object
-(either an array or dictionary) that will be used as the source for the
-returned mapping
-
-<li>Zero or more <i>intermediate expressions</i>, which are used to recurse
-into portions of the data model
-
-<li>The second-to-last expression in the input parameters is the <i>key
-expression</i>, which is used to construct the keys in the map
-
-<li>The last expression is the <i>value expression</i>, which is used to
-construct the values contained in the map
-</ul>
-
-
-<p>The intermediate, key and value expressions can refer to portions of the
-data model using several pre-defined variables:</p>
-
-<ul>
-<li><code>$item</code> refers to the value of the current item in the innermost
-scope being iterated/recursed
-
-<li>When iterating the values of a dictionary, the <code>$key</code> variable
-can be used to access the key associated with the current <code>$item</code>
-
-<li><code>$root</code> contains the value of the current item being iterated
-at the top level of the data model
-
-<li>When the data model expression refers to a dictionary, <code>$rootKey</code>
-will contain the key associated with the current <code>$root</code> value.
-
-<li>In addition, when intermediate expressions are used to recurse into the
-data model, you can refer to items and keys contained in the outer scopes
-using the prefix <code>outer:</code> in the variable name, such as
-<code>$</code><code>outer:key</code> or <code>$outer:item</code>. This prefix
-can also be compounded (eg.: <code>$outer:outer:key</code>) to reach different
-levels of scope.
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<p>Assume that <code>$people</code> is an array of data
-objects representing people:</p>
-
-<pre>^mapToSingleValue($people|$item.children|$item.fullName|$root)</pre>
-
-
-<p>The expression above would iterate over all the values in
-<code>$people</code>, and for each person, it would then iterate over
-the elements contained in the person&rsquo;s <code>children</code> array. For
-each of those children, it would create a mapping from the value of that
-child&rsquo;s <code>fullName</code> attribute to the <code>$root</code> item,
-or the person from <code>$people</code> that&rsquo;s currently being iterated. In
-other words, the expression above would create a dictionary where the keys are
-the full names of children, and the value of each key is the item in
-<code>$people</code> representing that child&rsquo;s parent.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/mapToArray:">+ mapToArray:</a>, <a href="#//api/name/mapToSingleValue:">+ mapToSingleValue:</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
@@ -1606,20 +1579,19 @@ match a given test expression. The resulting pruned tree is then returned.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two template expressions as parameters:</p>
+		<p>This function accepts two Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The <i>input array</i> representing the root of the tree; this expression
-must evaluate to an <code>NSArray</code> instance
-
-<li>The <i>test expression</i>, which will be evaluated once for each
-non-array element found while traversing the tree
+<li><p>The <em>input array</em> representing the root of the tree; this expression
+must evaluate to an <code>NSArray</code> instance</p></li>
+<li><p>The <em>test expression</em>, which will be evaluated once for each
+non-array element found while traversing the tree</p></li>
 </ul>
 
 
 <p>The function will return an tree structure similar to the input
 structure, but containing only those non-array elements for which the
-<i>test expression</i> evaluates to <code>NO</code>.</p>
+<em>test expression</em> evaluates to <code>NO</code>.</p>
 
 <h4>Expression usage</h4>
 
@@ -1629,8 +1601,8 @@ containing two inner arrays. The first inner array contains the strings:
 inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
 &ldquo;<code>Sally</code>&rdquo;.</p>
 
-<pre>^pruneMatchingLeaves($input|$item -EQ Pat)</pre>
-
+<pre><code>^pruneMatchingLeaves($input|$item -EQ Pat)
+</code></pre>
 
 <p>The expression above would return an array containing two inner arrays,
 the first having the elements &ldquo;<code>Bob</code>&rdquo; and &ldquo;<code>Joe</code>&rdquo;,
@@ -1693,20 +1665,19 @@ returned.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two template expressions as parameters:</p>
+		<p>This function accepts two Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The <i>input array</i> representing the root of the tree; this expression
-must evaluate to an <code>NSArray</code> instance
-
-<li>The <i>test expression</i>, which will be evaluated once for each
-non-array element found while traversing the tree
+<li><p>The <em>input array</em> representing the root of the tree; this expression
+must evaluate to an <code>NSArray</code> instance</p></li>
+<li><p>The <em>test expression</em>, which will be evaluated once for each
+non-array element found while traversing the tree</p></li>
 </ul>
 
 
 <p>The function will return an tree structure similar to the input
 structure, but containing only those non-array elements for which the
-<i>test expression</i> evaluates to <code>YES</code>.</p>
+<em>test expression</em> evaluates to <code>YES</code>.</p>
 
 <h4>Expression usage</h4>
 
@@ -1716,8 +1687,8 @@ containing two inner arrays. The first inner array contains the strings:
 inner array contains: &ldquo;<code>Alice</code>&rdquo;, &ldquo;<code>Pat</code>&rdquo; and
 &ldquo;<code>Sally</code>&rdquo;.</p>
 
-<pre>^pruneNonmatchingLeaves($input|$item -EQ Pat)</pre>
-
+<pre><code>^pruneNonmatchingLeaves($input|$item -EQ Pat)
+</code></pre>
 
 <p>The expression above would return an array containing two inner arrays,
 each with a single element: &ldquo;<code>Pat</code>&rdquo;.</p>
@@ -1776,15 +1747,13 @@ each with a single element: &ldquo;<code>Pat</code>&rdquo;.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts 3 template expressions as parameters:</p>
+		<p>This function accepts 3 Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>The source array, an expression that is expected to evaluate
-to an array.
-
-<li>A template expression that returns an initial value
-
-<li>A template expression that returns a single value
+<li><p>The source array, an expression that is expected to evaluate
+to an array.</p></li>
+<li><p>A Mockingbird expression that returns an initial value</p></li>
+<li><p>A Mockingbird expression that returns a single value</p></li>
 </ul>
 
 
@@ -1795,8 +1764,8 @@ to an array.
 <p>Assume that <code>$numbers</code> is an
 array with the numbers 1 through 5</p>
 
-<pre>^reduce($numbers|0|#($currentValue + $item))</pre>
-
+<pre><code>^reduce($numbers|0|#($currentValue + $item))
+</code></pre>
 
 <p>The expression above would return the value 15</p>
 	</div>
@@ -1822,7 +1791,7 @@ array with the numbers 1 through 5</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Sorts a data structure based on the value of an expression.</p>
+		<p>Returns an array containing the sorted values of a container object.</p>
 	</div>		
 	
     
@@ -1831,11 +1800,65 @@ array with the numbers 1 through 5</p>
 
     
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result.</p>
+	</div>
 	
 	
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts between one and three expressions as
+input parameters:</p>
+
+<ul>
+<li><p>The <em>data model</em>, the container object whose sorted values are to be
+ returned</p></li>
+<li><p>An optional <em>sort key</em>, an expression indicating the value within <em>data
+ model</em> that should be used for the basis of sorting. If omitted, the
+ default value is <code>$item</code>, meaning that the value itself should be
+ used for sorting. Subvalues of <code>$item</code> may also be specified. This
+ parameter must be provided when the <em>descending order specifier</em>
+ parameter is used.</p></li>
+<li><p>An optional <em>descending order specifier</em>. If this string expression yields
+ the value &ldquo;<code>desc</code>&rdquo;, sorting will occur in descending order. If this
+ parameter is omitted or if the value is anything else, sorting will occur
+ in the default ascending order.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<p>Assume <code>$buildings</code> represents a collection object whose members have a
+<code>height</code> property indicating the corresponding building&rsquo;s height in feet:</p>
+
+<pre><code>^sort($buildings|$item.height|desc)
+</code></pre>
+
+<p>The expression above would return an array containing each item in $building
+sorted from tallest to shortest.</p>
+
+<pre><code>^sort(^array(z|x|a|c|y|b))
+</code></pre>
+
+<p>The expression above yields the array: [&ldquo;<code>a</code>&rdquo;, &ldquo;<code>b</code>&rdquo;, &ldquo;<code>c</code>&rdquo;, &ldquo;<code>x</code>&rdquo;, &ldquo;<code>y</code>&rdquo;,
+&ldquo;<code>z</code>&rdquo;].</p>
+	</div>
 	
 	
 	
@@ -1891,21 +1914,20 @@ array with the numbers 1 through 5</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts two template expressions as parameters:</p>
+		<p>This function accepts two Mockingbird expressions as parameters:</p>
 
 <ul>
-<li>An expression specifying the <i>delimiter</i>, which specifies where
-the <i>input string</i> will be split
-
-<li>An expression specifying the <i>input string</i>, which is the
-string to be split
+<li><p>An expression specifying the <em>delimiter</em>, which specifies where
+the <em>input string</em> will be split</p></li>
+<li><p>An expression specifying the <em>input string</em>, which is the
+string to be split</p></li>
 </ul>
 
 
 <h4>Expression usage:</h4>
 
-<pre>^split(, |Evan, Jesse, Yon)</pre>
-
+<pre><code>^split(, |Evan, Jesse, Yon)
+</code></pre>
 
 <p>The expression above would return an array containing three elements:
 &ldquo;<code>Evan</code>&rdquo;, &ldquo;<code>Jesse</code>&rdquo;, and &ldquo;<code>Yon</code>&rdquo;.</p>
@@ -1932,8 +1954,7 @@ string to be split
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates an array by splitting a string on newline characters (as determined
-by the <code>[NSCharacterSet newlineCharacterSet]</code> method).</p>
+		<p>Creates an array by splitting a string at newlines.</p>
 	</div>		
 	
     
@@ -1946,9 +1967,8 @@ by the <code>[NSCharacterSet newlineCharacterSet]</code> method).</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>an array containing the input parameters for the
-function.</p></dd>
+			<dt><em>stringToSplit</em></dt>
+			<dd><p>The string being split.</p></dd>
 		</dl>
 		
 	</div>
@@ -1957,7 +1977,7 @@ function.</p></dd>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>an array containing the components of the split string</p>
+		<p>An <code>NSArray</code> containing the individual lines of <code>stringToSplit</code></p>
 	</div>
 	
 	
@@ -1966,20 +1986,19 @@ function.</p></dd>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single template expression, the <i>input string</i>
+		<p>This function accepts a single Mockingbird expression, the <em>input string</em>
 that will be split on newlines.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$lines</code> is a string
-containing newlines:</p>
+<p>Assume that <code>$lines</code> is a string containing newlines:</p>
 
-<pre>^splitLines($lines)</pre>
-
+<pre><code>^splitLines($lines)
+</code></pre>
 
 <p>The expression above would return an array containing one element for each
-line in <code>$lines</code>, where each element contains a single line of
-text (with the newlines stripped off).</p>
+line in <code>$lines</code>, where each element contains a single line of text (with
+newlines stripped off).</p>
 	</div>
 	
 	
@@ -2036,7 +2055,7 @@ array containing the unique values encountered.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single template expression, which it expects to
+		<p>This function accepts a single Mockingbird expression, which it expects to
 evaluate to an object that implements the <code>NSFastEnumeration</code>
 protocol (such as an <code>NSArray</code> or <code>NSSet</code>). The values
 in the returned array will be in the same order that they were supplied by
@@ -2044,15 +2063,14 @@ the enumerator.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that <code>$animals</code> is an array with
-three elements: the strings <code>Duck</code>, <code>Duck</code> and
-<code>Goose</code>.</p>
+<p>Assume that <code>$animals</code> is an array with three elements: the strings &ldquo;<code>Duck</code>&rdquo;,
+&ldquo;<code>Duck</code>&rdquo; and &ldquo;<code>Goose</code>&rdquo;.</p>
 
-<pre>^unique($animals)</pre>
+<pre><code>^unique($animals)
+</code></pre>
 
-
-<p>The expression above would return an array containing two
-strings: <code>Duck</code> and <code>Goose</code>, in that order.</p>
+<p>The expression above would return an array containing two strings: &ldquo;<code>Duck</code>&rdquo;
+and &ldquo;<code>Goose</code>&rdquo;, in that order.</p>
 	</div>
 	
 	
@@ -2122,29 +2140,26 @@ and returns an array of values for which the test expression is true.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts an array of template expressions, and expects
+		<p>This function accepts an array of Mockingbird expressions, and expects
 two or more objects in the array:</p>
 
 <ul>
-<li>One or more <i>container objects</i>, expressions that evaluate to arrays
-or dictionaries
-
-<li>The <i>test expression</i>, an expression that will be evaluated for each
-value in each container object in the input parameters
+<li><p>One or more <em>container objects</em>, expressions that evaluate to arrays
+or dictionaries</p></li>
+<li><p>The <em>test expression</em>, an expression that will be evaluated for each
+value in each container object in the input parameters</p></li>
 </ul>
 
 
 <p>The test expression can refer to the following pre-defined variables:</p>
 
 <ul>
-<li><code>$item</code> refers to the value in a container object that's
-currently being tested
-
-<li>When the container object being tested is a dictionary, <code>$key</code>
-can be used to access the key associated with the current <code>$item</code>
-
-<li><code>$root</code> contains the value of the current item being iterated
-at the top level of the data model
+<li><p><code>$item</code> refers to the value in a container object that&rsquo;s
+currently being tested</p></li>
+<li><p>When the container object being tested is a dictionary, <code>$key</code>
+can be used to access the key associated with the current <code>$item</code></p></li>
+<li><p><code>$root</code> contains the value of the current item being iterated
+at the top level of the data model</p></li>
 </ul>
 
 
@@ -2153,8 +2168,8 @@ at the top level of the data model
 <p>Assume that <code>$articles</code> and <code>$videos</code>
 are containers whose values each have a <code>displayOrder</code> attribute:</p>
 
-<pre>^valuesPassingTest($articles|$videos|$item.displayOrder -EQ 1)</pre>
-
+<pre><code>^valuesPassingTest($articles|$videos|$item.displayOrder -EQ 1)
+</code></pre>
 
 <p>The expression above would iterate over all the values in the
 <code>$articles</code> and then the <code>$videos</code> container objects, and
@@ -2195,7 +2210,7 @@ placed into the array returned by the function.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-19)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

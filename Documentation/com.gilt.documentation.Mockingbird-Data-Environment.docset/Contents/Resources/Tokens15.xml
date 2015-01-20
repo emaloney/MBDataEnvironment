@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLDateFunctions</TokenIdentifier>
-			<Abstract type="html">A class containing a set of MBML functions and supporting methods that provide
+			<Abstract type="html">This class contains a set of MBML functions and supporting methods that provide
 date manipulation tools.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
             
@@ -277,8 +277,7 @@ time until the given date.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An NSString instance containing the time until
-the input date; if the input date is in the past, the return
-value will be negative.</Abstract></ReturnValue>
+            the input date.</Abstract></ReturnValue>
 			<Anchor>//api/name/formatTimeUntil:</Anchor>
             <NodeRef refid="15"/>
 		</Token>

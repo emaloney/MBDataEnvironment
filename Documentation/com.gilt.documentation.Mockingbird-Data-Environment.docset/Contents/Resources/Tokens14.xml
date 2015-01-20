@@ -4,8 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBMLDataProcessingFunctions</TokenIdentifier>
-			<Abstract type="html">Provides a mechanism for manipulating data structures from within the template
-language.</Abstract>
+			<Abstract type="html">This class provides a set of MBML functions for manipulating data structures.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
             
 			
@@ -26,17 +25,17 @@ objects equals a specified value.</Abstract>
 					<Abstract type="html">an array containing the input parameters for the function</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An &lt;code&gt;NSNumber&lt;/code&gt; instance containing either the boolean
-            value &lt;code&gt;YES&lt;/code&gt; if any of the input parameters contains the specified
-            element, or &lt;code&gt;NO&lt;/code&gt; otherwise.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An NSNumber instance containing either the boolean
+            value YES if any of the input parameters contains the specified
+            element, or NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/containsValue:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/collectionPassesTest:</TokenIdentifier>
-			<Abstract type="html">Applies a template expression accross each member of the passed collection and returns
-whether or not all members passed the test (particularly useful for form validation).</Abstract>
+			<Abstract type="html">Applies a boolean expression test to each member of the passed collection
+and returns whether or not all members passed the test.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)collectionPassesTest:(NSArray *)params</Declaration>
@@ -46,9 +45,9 @@ whether or not all members passed the test (particularly useful for form validat
 					<Abstract type="html">an array or dictionary containing the input parameters for the function</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An &lt;code&gt;NSNumber&lt;/code&gt; instance containing either the boolean
-            value &lt;code&gt;YES&lt;/code&gt; if all of the input collections pass the 
-            specified template expression, or &lt;code&gt;NO&lt;/code&gt; otherwise.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An NSNumber instance containing either the boolean
+            value YES if all of the input collections pass the 
+            specified Mockingbird expression, or NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/collectionPassesTest:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -101,8 +100,8 @@ string between each value in the returned string.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a string containing the string values of the items in the
-            &lt;i&gt;container objects&lt;/i&gt;, separated by the string specified
-            as the &lt;i&gt;separator string&lt;/i&gt;</Abstract></ReturnValue>
+            container objects, separated by the string specified
+            as the separator string</Abstract></ReturnValue>
 			<Anchor>//api/name/join:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -127,19 +126,17 @@ string between each value in the returned string.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/splitLines:</TokenIdentifier>
-			<Abstract type="html">Creates an array by splitting a string on newline characters (as determined
-by the &lt;code&gt;[NSCharacterSet newlineCharacterSet]&lt;/code&gt; method).</Abstract>
+			<Abstract type="html">Creates an array by splitting a string at newlines.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)splitLines:(NSString *)stringToSplit</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the
-function.</Abstract>
+					<Name>stringToSplit</Name>
+					<Abstract type="html">The string being split.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing the components of the split string</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An NSArray containing the individual lines of stringToSplit</Abstract></ReturnValue>
 			<Anchor>//api/name/splitLines:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -154,11 +151,11 @@ in the input parameters.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the
+					<Abstract type="html">An array containing the input parameters for the
             function.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing all of the elements in the arrays referenced
+			<ReturnValue><Abstract type="html">An array containing all of the elements in the arrays referenced
             by the passed-in expression parameters.</Abstract></ReturnValue>
 			<Anchor>//api/name/appendArrays:</Anchor>
             <NodeRef refid="14"/>
@@ -176,11 +173,11 @@ depth-first traversal of the input parameters.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the
+					<Abstract type="html">An array containing the input parameters for the
             function.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">the flattened array.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The flattened array.</Abstract></ReturnValue>
 			<Anchor>//api/name/flattenArrays:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -201,7 +198,7 @@ the filter behavior is returned.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">an array or dictionary containing the filtered items. The type of
-            the object returned will match the &lt;i&gt;data model&lt;/i&gt; input
+            the object returned will match the data model input
             parameter.</Abstract></ReturnValue>
 			<Anchor>//api/name/filter:</Anchor>
             <NodeRef refid="14"/>
@@ -265,19 +262,19 @@ non-deterministic ordering.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/map:</TokenIdentifier>
-			<Abstract type="html">Creates a mapping of keys to values by iterating over (and potentially
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associate:</TokenIdentifier>
+			<Abstract type="html">Associates a set of keys with values by iterating over (and potentially
 recursing into) a container object holding an arbitrary data model.
 The keys and values of the returned dictionary are constructed based
 on expressions passed to the function.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mapToSingleValue:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associateWithSingleValue:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (id)map:(NSArray *)params</Declaration>
+			<Declaration>+ (id)associate:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -286,24 +283,22 @@ on expressions passed to the function.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a dictionary containing the mapped items.
   </Abstract></ReturnValue>
-			<Anchor>//api/name/map:</Anchor>
+			<Anchor>//api/name/associate:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mapToSingleValue:</TokenIdentifier>
-			<Abstract type="html">Creates a mapping of keys to values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.
-The keys and values of the returned dictionary are constructed based
-on expressions passed to the function.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associateWithSingleValue:</TokenIdentifier>
+			<Abstract type="html">Associates a set of keys with values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mapToSingleValue:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associate:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (id)mapToSingleValue:(NSArray *)params</Declaration>
+			<Declaration>+ (id)associateWithSingleValue:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -311,24 +306,22 @@ on expressions passed to the function.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a dictionary containing the mapped items.</Abstract></ReturnValue>
-			<Anchor>//api/name/mapToSingleValue:</Anchor>
+			<Anchor>//api/name/associateWithSingleValue:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mapToArray:</TokenIdentifier>
-			<Abstract type="html">Creates a mapping of keys to values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.
-The keys and values of the returned dictionary are constructed based
-on expressions passed to the function.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associateWithArray:</TokenIdentifier>
+			<Abstract type="html">Associates a set of keys with values by iterating over (and potentially
+recursing into) a container object holding an arbitrary data model.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mapToSingleValue:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associateWithSingleValue:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
-			<Declaration>+ (id)mapToArray:(NSArray *)params</Declaration>
+			<Declaration>+ (id)associateWithArray:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -336,18 +329,23 @@ on expressions passed to the function.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">a dictionary containing the mapped items.</Abstract></ReturnValue>
-			<Anchor>//api/name/mapToArray:</Anchor>
+			<Anchor>//api/name/associateWithArray:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/sort:</TokenIdentifier>
-			<Abstract type="html">Sorts a data structure based on the value of an expression.</Abstract>
+			<Abstract type="html">Returns an array containing the sorted values of a container object.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)sort:(NSArray *)params</Declaration>
-			
-			
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
 			<Anchor>//api/name/sort:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -394,8 +392,8 @@ array containing the unique values encountered.</Abstract>
 					<Abstract type="html">the function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing &lt;i&gt;returned array count&lt;/i&gt; arrays, each
-            containing the distributed elements from &lt;i&gt;source array&lt;/i&gt;.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">an array containing returned array count arrays, each
+            containing the distributed elements from source array.</Abstract></ReturnValue>
 			<Anchor>//api/name/distributeArrayElements:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -412,7 +410,7 @@ array containing the unique values encountered.</Abstract>
 					<Abstract type="html">the function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing one or more &lt;i&gt;group arrays&lt;/i&gt;.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">an array containing one or more group arrays.</Abstract></ReturnValue>
 			<Anchor>//api/name/groupArrayElements:</Anchor>
             <NodeRef refid="14"/>
 		</Token>

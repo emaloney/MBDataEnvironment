@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBExpression</TokenIdentifier>
-			<Abstract type="html">This class is responsible for evaluating MBML expressions.</Abstract>
+			<Abstract type="html">This class is responsible for evaluating Mockingbird expressions.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
             
 			

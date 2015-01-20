@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -56,6 +58,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -113,6 +117,20 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions providing regular expression support.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -162,10 +180,88 @@
 	<h3 class="subsubtitle method-title">matchesRegex:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Determines whether one or more regular expressions match a given input string
+at least once.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)matchesRegex:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts three pipe-separated string expressions as
+parameters:</p>
+
+<ul>
+<li><p>The <em>input string</em> against which the <em>regular expressions</em> will be matched</p></li>
+<li><p>One or more <em>regular expressions</em> to be matched against the <em>input string</em></p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code>^matchesRegex(212-555-1212|[0-9]{3}-[0-9]{3}-[0-9]{4})
+</code></pre>
+
+<p>The expression above results in the value <code>@YES</code>.</p>
+
+<h4>Quoting regular expressions</h4>
+
+<p>It is sometimes necessary to quote the regular expression string to prevent it
+from being incorrectly interpreted.</p>
+
+<p>For example, the Mockingbird expression engine will normally recognize a pipe
+character (<code>|</code>) within the parentheses of a function call as being a parameter
+separator. If you want to use the pipe character within a regular expression,
+you will need to quote it.</p>
+
+<p>If you want to apply the regular expression <code>(^212-|^718-|^917-|^646-)</code>, you
+would use the quoted form <code>^q((^212-|^718-|^917-|^646-))</code>, as in:</p>
+
+<pre><code>^matchesRegex(516-555-1212|^q(^212-|^718-|^917-|^646-))
+</code></pre>
+
+<p>The expression above results in the value <code>@NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRegexFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -173,10 +269,92 @@
 	<h3 class="subsubtitle method-title">replaceRegex:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Performs a regular expression match against an input string and replaces
+all matches with a given a replacement string.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)replaceRegex:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts three pipe-separated string expressions as
+parameters:</p>
+
+<ul>
+<li><p>The <em>input string</em> against which the <em>regular expressions</em> will be matched</p></li>
+<li><p>The <em>regular expression</em> to be matched against the <em>input string</em></p></li>
+<li><p>The <em>replacement string</em></p></li>
+</ul>
+
+
+<p>All matches of <em>regular expression</em> in the <em>input string</em> will be replaced
+by the <em>replacement string</em>, and the resulting string will be returned.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^replaceRegex(Release Me, Release Me|Release|Replace)
+</code></pre>
+
+<p>The expression above would result in the string &ldquo;<code>Replace Me, Replace Me</code>&rdquo;.</p>
+
+<h4>Quoting regular expressions</h4>
+
+<p>It is sometimes necessary to quote the regular expression string to prevent it
+from being incorrectly interpreted.</p>
+
+<p>For example, the Mockingbird expression engine will normally recognize a pipe
+character (<code>|</code>) within the parentheses of a function call as being a parameter
+separator. If you want to use the pipe character within a regular expression,
+you will need to quote it.</p>
+
+<p>If you want to apply the regular expression <code>([A-Z]ets|, )</code>, you would use
+the quoted form <code>^q(([A-Z]ets|, ))</code>, as in:</p>
+
+<pre><code>^replaceRegex(Yankees, Mets, Jets, Nets|^q(([A-Z]ets|, ))|!)
+</code></pre>
+
+<p>The expression above results in the string &ldquo;<code>Yankees!!!!!!</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRegexFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 						<div class="section-method">
@@ -184,10 +362,91 @@
 	<h3 class="subsubtitle method-title">stripRegex:</h3>
 	
 	
+	
+	<div class="method-subsection brief-description">
+		<p>Matches one or more regular expressions against an input string, and returns
+a new string with all matches removed from the input string.</p>
+	</div>		
+	
+    
 
 	<div class="method-subsection method-declaration"><code>+ (id)stripRegex:(NSArray *)<em>params</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The function result.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two or more pipe-separated string expressions
+as parameters:</p>
+
+<ul>
+<li><p>The <em>input string</em> against which the <em>regular expressions</em> will be matched</p></li>
+<li><p>One or more <em>regular expressions</em> to be matched against the <em>input string</em></p></li>
+</ul>
+
+
+<p>All characters in the <em>input string</em> matching any of the <em>regular expressions</em>
+will be removed, and the resulting string will be returned.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^stripRegex(ThisIsAStringThatWillBeStripped|[TIASWB]|[a-e]|ripp)
+</code></pre>
+
+<p>The expression above would result in the string &ldquo;<code>hisstringhtillt</code>&rdquo;.</p>
+
+<h4>Quoting regular expressions</h4>
+
+<p>It is sometimes necessary to quote the regular expression string to prevent it
+from being incorrectly interpreted.</p>
+
+<p>For example, the Mockingbird expression engine will normally recognize a pipe
+character (<code>|</code>) within the parentheses of a function call as being a parameter
+separator. If you want to use the pipe character within a regular expression,
+you will need to quote it.</p>
+
+<p>If you want to apply the regular expression <code>(send |don't )</code>, you would use the
+quoted form <code>^q((send |don't ))</code>, as in:</p>
+
+<pre><code>^stripRegex(send now, don't send later|^q((send |don't )))
+</code></pre>
+
+<p>The expression above returns the string &ldquo;<code>now, later</code>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLRegexFunctions.h</code><br />
+	</div>				
+	
+	
 </div>
 						
 					</div>
@@ -207,7 +466,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-19)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

@@ -123,6 +123,24 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Supporting methods">Supporting methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting the current time">Getting the current time</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Calculating time deltas to the present">Calculating time deltas to the present</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Converting to and from UNIX timestamps">Converting to and from UNIX timestamps</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Date/time addition">Date/time addition</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Date/time formatting">Date/time formatting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Converting from one string format to another">Converting from one string format to another</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Parsing date strings">Parsing date strings</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Time zone information">Time zone information</a></span></li>
+	
 </ul></li>
 
 
@@ -236,10 +254,14 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A class containing a set of MBML functions and supporting methods that provide
+						<p>This class contains a set of MBML functions and supporting methods that provide
 date manipulation tools.</p>
 
-<p>See <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more information on MBML functions and how they&rsquo;re used.</p>
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 					</div>
 					
 					
@@ -251,8 +273,8 @@ date manipulation tools.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Supporting methods" name="task_Supporting methods"></a>
+						<h3 class="subsubtitle task-title">Supporting methods</h3>
 
 						<ul class="task-list">
 							<li>
@@ -297,13 +319,29 @@ date manipulation tools.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Getting the current time" name="task_Getting the current time"></a>
+						<h3 class="subsubtitle task-title">Getting the current time</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/currentTime">+&nbsp;currentTime</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Calculating time deltas to the present" name="task_Calculating time deltas to the present"></a>
+						<h3 class="subsubtitle task-title">Calculating time deltas to the present</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/secondsSince:">+&nbsp;secondsSince:</a></code>
 	</span>
@@ -315,7 +353,15 @@ date manipulation tools.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Converting to and from UNIX timestamps" name="task_Converting to and from UNIX timestamps"></a>
+						<h3 class="subsubtitle task-title">Converting to and from UNIX timestamps</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/unixTimestampToDate:">+&nbsp;unixTimestampToDate:</a></code>
 	</span>
@@ -327,13 +373,29 @@ date manipulation tools.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Date/time addition" name="task_Date/time addition"></a>
+						<h3 class="subsubtitle task-title">Date/time addition</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addSecondsToDate:">+&nbsp;addSecondsToDate:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Date/time formatting" name="task_Date/time formatting"></a>
+						<h3 class="subsubtitle task-title">Date/time formatting</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/formatTimeUntil:">+&nbsp;formatTimeUntil:</a></code>
 	</span>
@@ -423,7 +485,15 @@ date manipulation tools.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Converting from one string format to another" name="task_Converting from one string format to another"></a>
+						<h3 class="subsubtitle task-title">Converting from one string format to another</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/reformatDate:">+&nbsp;reformatDate:</a></code>
 	</span>
@@ -435,13 +505,29 @@ date manipulation tools.</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Parsing date strings" name="task_Parsing date strings"></a>
+						<h3 class="subsubtitle task-title">Parsing date strings</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/mbmlParseDate:">+&nbsp;mbmlParseDate:</a></code>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Time zone information" name="task_Time zone information"></a>
+						<h3 class="subsubtitle task-title">Time zone information</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/timeZoneOffset">+&nbsp;timeZoneOffset</a></code>
 	</span>
@@ -563,7 +649,7 @@ the current date and time.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts no input.</p>
+		<p>This Mockingbird function accepts no input.</p>
 
 <h4>Expression usage</h4>
 
@@ -1961,8 +2047,7 @@ time until the given date.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>An <code>NSString</code> instance containing the time until
-the input date; if the input date is in the past, the return
-value will be negative.</p>
+            the input date.</p>
 	</div>
 	
 	
@@ -2401,8 +2486,8 @@ elapsed since the given past date.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function accepts a single expression parameter that is expected to yield
-an <code>NSDate</code> instance.</p>
+		<p>This Mockingbird function accepts a single object expression parameter
+yielding an <code>NSDate</code> instance.</p>
 
 <h4>Expression usage</h4>
 
@@ -2638,7 +2723,7 @@ a number.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-19)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
