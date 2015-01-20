@@ -39,12 +39,12 @@
 #pragma mark Type definitions
 /******************************************************************************/
 
-// determines how the mapping function associates values with keys
+// determines how the values are associated with keys
 typedef enum {
-    MapFunctionReturnsSingleValue,          // the value of a given key will always be a single object instance
-    MapFunctionAllowsMultipleValues,        // if multiple values map into a given key, an array of values is returned; otherwise, a single value is returned
-    MapFunctionAlwaysReturnsArray           // an array is always returned, even if there is only one value for a given key
-} MapFunctionValueHandling;
+    AssociationReturnsSingleValue,          // the value of a given key will always be a single object instance
+    AssociationAllowsMultipleValues,        // if multiple values map into a given key, an array of values is returned; otherwise, a single value is returned
+    AssociationAlwaysReturnsArray           // an array is always returned, even if there is only one value for a given key
+} AssociationValueHandling;
 
 // determines how filters return results
 typedef enum {
@@ -773,7 +773,7 @@ keyExpressions:(NSArray*)keyExprs
 
 + (void) _mapItem:(id)item 
              into:(NSMutableDictionary*)map
-    valueHandling:(MapFunctionValueHandling)valueHandling
+    valueHandling:(AssociationValueHandling)valueHandling
    keyExpressions:(NSArray*)keyExprs
          keyIndex:(NSUInteger)keyExprIdx
             error:(MBExpressionError**)errPtr
@@ -816,7 +816,7 @@ keyExpressions:(NSArray*)keyExprs
             id mapValObject = [MBExpression asObject:mapValExpr];
             
             if (mapValObject) {
-                if (valueHandling == MapFunctionReturnsSingleValue) {
+                if (valueHandling == AssociationReturnsSingleValue) {
                     map[keyVal] = mapValObject;
                 }
                 else {
@@ -837,7 +837,7 @@ keyExpressions:(NSArray*)keyExprs
                     }
                     else {
                         // no value currently exists for this key
-                        if (valueHandling == MapFunctionAlwaysReturnsArray) {
+                        if (valueHandling == AssociationAlwaysReturnsArray) {
                             NSMutableArray* values = [NSMutableArray new];
                             [values addObject:mapValObject];
                             map[keyVal] = values;
@@ -854,7 +854,7 @@ keyExpressions:(NSArray*)keyExprs
     [vars popVariable:kMBMLVariableItem];
 }
 
-+ (id) _map:(NSArray*)params valueHandling:(MapFunctionValueHandling)valueHandling
++ (id) _associate:(NSArray*)params valueHandling:(AssociationValueHandling)valueHandling
 {
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIsAtLeast:3 error:&err];
@@ -907,25 +907,25 @@ keyExpressions:(NSArray*)keyExprs
     return retVal;
 }
 
-+ (id) map:(NSArray*)params
++ (id) associate:(NSArray*)params
 {
     debugTrace();
 
-    return [self _map:params valueHandling:MapFunctionAllowsMultipleValues];
+    return [self _associate:params valueHandling:AssociationAllowsMultipleValues];
 }
 
-+ (id) mapToSingleValue:(NSArray*)params
++ (id) associateWithSingleValue:(NSArray*)params
 {
     debugTrace();
 
-    return [self _map:params valueHandling:MapFunctionReturnsSingleValue];
+    return [self _associate:params valueHandling:AssociationReturnsSingleValue];
 }
 
-+ (id) mapToArray:(NSArray*)params
++ (id) associateWithArray:(NSArray*)params
 {
     debugTrace();
 
-    return [self _map:params valueHandling:MapFunctionAlwaysReturnsArray];
+    return [self _associate:params valueHandling:AssociationAlwaysReturnsArray];
 }
 
 /******************************************************************************/
@@ -988,7 +988,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
     debugTrace();
 
     MBMLFunctionError* err = nil;
-    NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:1 error:&err];
+    NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:1 andAtMost:3 error:&err];
     if (err) return err;
     
     BOOL asc = YES;
