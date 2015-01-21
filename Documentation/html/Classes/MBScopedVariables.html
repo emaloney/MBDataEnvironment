@@ -57,10 +57,6 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/init">&nbsp;&nbsp;&nbsp;&nbsp;- init</option>
-	
-	<option value="//api/name/initWithVariableSpace:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithVariableSpace:</option>
-	
 	<option value="//api/name/reapplyScopedVariables">&nbsp;&nbsp;&nbsp;&nbsp;- reapplyScopedVariables</option>
 	
 	<option value="//api/name/setScopedVariable:value:">&nbsp;&nbsp;&nbsp;&nbsp;- setScopedVariable:value:</option>
@@ -84,8 +80,6 @@
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread-local scoped variables">Thread-local scoped variables</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating variable scopes">Creating variable scopes</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Setting &amp; unsetting scoped variable values">Setting &amp; unsetting scoped variable values</a></span></li>
 	
@@ -116,10 +110,6 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/init">init</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithVariableSpace:">initWithVariableSpace:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reapplyScopedVariables">reapplyScopedVariables</a></span></li>
 	
@@ -169,6 +159,72 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>Provides a mechanism for maintaining scoped variable values in the
 context of a particular <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance.</p>
+
+<h3>About variable scopes</h3>
+
+<p>A <em>variable scope</em> allows the creation of a short-lived values for named
+Mockingbird variables.</p>
+
+<p>The <code>MBScopedVariables</code> class provides an interface for <em>entering</em> and
+<em>exiting</em> a variable scope.</p>
+
+<p>When a scope is <em>entered</em>, an <code>MBScopedVariables</code> instance is associated
+with the calling thread. That instance can then be used to set values for
+scoped variables. When a scoped variable value is set, it is <em>pushed</em>
+on top of the existing value (if any) in the associated <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a>.</p>
+
+<p>When the scope is <em>exited</em>, any scoped variable values that were set are
+then <em>popped</em> from the associated <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a>, restoring it to the
+state that existed before the scope was entered.</p>
+
+<h3>Setting a scoped variable</h3>
+
+<p>To set a scoped variable, you first need an <code>MBScopedVariables</code> instance.
+If there&rsquo;s already a scope associated with the calling thread, you can
+retrieve it by calling:</p>
+
+<pre><code>MBScopedVariables* scope = [MBScopedVariables currentVariableScope];
+</code></pre>
+
+<p>If there&rsquo;s no pre-existing scope, or if you want to create a new scope
+that masks any existing scope, you would call:</p>
+
+<pre><code>MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+</code></pre>
+
+<p>Once you&rsquo;ve got a scope instance, you can use it to set a scoped
+variable:</p>
+
+<pre><code>NSString* userName = ... // a string set elsewhere
+[scope setScopedVariable:@"user" value:userName];
+</code></pre>
+
+<p>The value <code>userName</code> is then <em>pushed</em> onto the Mockingbird variable stack
+for the name &ldquo;<code>user</code>&rdquo;. If there is a pre-existing value for the &ldquo;<code>user</code>&rdquo;
+variable, it is temporarily masked by the new value. When the scope is
+exited—or when a scope&rsquo;s <code>unsetScopedVariables</code> method is called—the &ldquo;<code>user</code>&rdquo;
+variable will be <em>popped</em>, and the previous value will be restored.</p>
+
+<h3>Exiting the current scope</h3>
+
+<p>When you no longer need a scope that you&rsquo;ve previously entered, you <strong>must</strong>
+call:</p>
+
+<pre><code>[MBScopedVariables exitVariableScope];
+</code></pre>
+
+<p>It is considered a coding error if you do not explicitly exit a
+scope you&rsquo;ve previously entered.</p>
+
+<p>For performance reasons, you should keep any scopes you create as short-lived
+as possible.</p>
+
+<h3>Threading concerns</h3>
+
+<p>Although a given <code>MBScopedVariables</code> instance is specific to the thread that
+created it, the underlying <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> manipulated by the scope is
+a global resource. Therefore, values set within your scope will be visible
+to all threads until your scope is exited.</p>
 					</div>
 					
 					
@@ -213,26 +269,6 @@ context of a particular <a href="../Classes/MBVariableSpace.html"><code>MBVariab
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/exitVariableScope">+&nbsp;exitVariableScope</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Creating variable scopes" name="task_Creating variable scopes"></a>
-						<h3 class="subsubtitle task-title">Creating variable scopes</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/initWithVariableSpace:">&ndash;&nbsp;initWithVariableSpace:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
 	</span>
 	
 	
@@ -470,100 +506,6 @@ return to what they were prior to entering the scope.</p>
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/init" title="init"></a>
-	<h3 class="subsubtitle method-title">init</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes the receiver using the <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> associated with the
-current <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a></p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>self</code></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBScopedVariables.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/initWithVariableSpace:" title="initWithVariableSpace:"></a>
-	<h3 class="subsubtitle method-title">initWithVariableSpace:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Initializes the receiver with the given variable space.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)initWithVariableSpace:(MBVariableSpace *)<em>vars</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>vars</em></dt>
-			<dd><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance where variable valued will
-            be maintained while the scope is in use.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>self</code></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBScopedVariables.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/reapplyScopedVariables" title="reapplyScopedVariables"></a>

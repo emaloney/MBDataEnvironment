@@ -17,8 +17,8 @@
  The `MBDevice` singleton provides information about the device and operating
  environment of the running application.
 
- The `MBDevice` singleton is available by default as the MBML variable 
- "`$Device`".
+ The `MBDevice` singleton is available by default as the Mockingbird variable
+ `$Device`.
 
  @warning   You *must not* create instances of this class yourself; this class
             is a singleton. Call the `instance` class method (declared by the
@@ -47,26 +47,26 @@
 /*----------------------------------------------------------------------------*/
 
 /*! Returns a human-readable string indicating the operating system type, 
-    eg. "iOS". */
+    eg. "`iPhone OS`". */
 @property(nonatomic, readonly) NSString* osType;
 
-/*! Returns the operating system version string, eg. "8.1.2" */
+/*! Returns the operating system version string, eg. "`8.1.3`" */
 @property(nonatomic, readonly) NSString* osVersion;
 
 /*! Returns the individual components of the operating system version as an
-    array of `NSNumber`s, eg. [`8`, `1`, `2`]. */
+    array of `NSNumber`s, eg. [`8`, `1`, `3`]. */
 @property(nonatomic, readonly) NSArray* osVersionComponents;
 
-/*! Returns the major component of the operating system version, eg. the "8"
-    in "8.1.3". */
+/*! Returns the major component of the operating system version, eg. the `8`
+    in "`8.1.3`". */
 @property(nonatomic, readonly) NSNumber* osVersionMajor;
 
-/*! Returns the minor component of the operating system version, eg. the "1"
-    in "8.1.3". */
+/*! Returns the minor component of the operating system version, eg. the `1`
+    in "`8.1.3`". */
 @property(nonatomic, readonly) NSNumber* osVersionMinor;
 
-/*! Returns the revision component of the operating system version, eg. the "3"
-    in "8.1.3". */
+/*! Returns the revision component of the operating system version, eg. the `3`
+    in "`8.1.3`". */
 @property(nonatomic, readonly) NSNumber* osVersionRevision;
 
 /*----------------------------------------------------------------------------*/
@@ -82,7 +82,7 @@
 /*!    @name Screen orientation information                                   */
 /*----------------------------------------------------------------------------*/
 
-/*! Returns the string "portrait" or "landscape" depending on the current
+/*! Returns the string "`portrait`" or "`landscape`" depending on the current
     orientation of the device. */
 @property(nonatomic, readonly) NSString* currentOrientation;
 
@@ -110,7 +110,7 @@
 @property(nonatomic, readonly) NSNumber* screenHeight;
 
 /*! Returns a comma-separated string containing the width and height of the
-    screen in the current orientation: "*width*,*height*". */
+    screen in the current orientation as "*`width`*`,`*`height`*". */
 @property(nonatomic, readonly) NSString* screenSize;
 
 /*! Returns a comma-separated string containing the width and height of the

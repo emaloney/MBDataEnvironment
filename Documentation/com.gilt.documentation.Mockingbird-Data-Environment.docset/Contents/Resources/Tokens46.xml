@@ -15,8 +15,8 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputUnset</TokenIdentifier>
-            <Abstract type="html">The function input type hasn&apos;t yet been set. Used when processing
-        &lt;Function&gt; declarations. </Abstract>
+            <Abstract type="html">The function input type hasn&apos;t yet been set. Used as an initial value
+        when processing MBML &lt;Function&gt; declarations. </Abstract>
             <Declaration>MBMLFunctionInputUnset</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
@@ -61,7 +61,7 @@
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputObject</TokenIdentifier>
             <Abstract type="html">The function accepts a Mockingbird object expression as input. The
-        expression will be evaluated and the resulting id will be passed
+        expression will be evaluated and the resulting NSObject will be passed
         to the implementing method. </Abstract>
             <Declaration>MBMLFunctionInputObject</Declaration>
             
@@ -84,9 +84,10 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedExpressions</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated
+            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird
         expressions as input. Each individual expression is passed to the
-        implementing method in an NSArray. </Abstract>
+        implementing method as an element in an NSArray The function
+        implementation is responsible for evaluating the expressions. </Abstract>
             <Declaration>MBMLFunctionInputPipedExpressions</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
@@ -96,7 +97,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedStrings</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated string
+            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird string
         expressions as input. Each individual expression is evaluated and the
         resulting NSStrings are passed to the implementing method in an
         NSArray. </Abstract>
@@ -109,9 +110,9 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedObjects</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated object
+            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird object
         expressions as input. Each individual expression is evaluated and the
-        resulting ids are passed to the implementing method in an
+        resulting NSObjects are passed to the implementing method in an
         NSArray. </Abstract>
             <Declaration>MBMLFunctionInputPipedObjects</Declaration>
             
@@ -122,7 +123,7 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedMath</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated math
+            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird math
         expressions as input. Each individual expression is evaluated and the
         resulting NSNumbers are passed to the implementing method in an
         NSArray. </Abstract>

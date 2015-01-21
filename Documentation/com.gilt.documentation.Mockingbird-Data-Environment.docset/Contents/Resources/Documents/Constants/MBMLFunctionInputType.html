@@ -122,8 +122,8 @@
 <dd>
 
 
-<p>The function input type hasn&rsquo;t yet been set. Used when processing
-        <code>&lt;Function&gt;</code> declarations.</p>
+<p>The function input type hasn&rsquo;t yet been set. Used as an initial value
+        when processing MBML <code>&lt;Function&gt;</code> declarations.</p>
 
     
 
@@ -196,7 +196,7 @@
 
 
 <p>The function accepts a Mockingbird object expression as input. The
-        expression will be evaluated and the resulting <code>id</code> will be passed
+        expression will be evaluated and the resulting <code>NSObject</code> will be passed
         to the implementing method.</p>
 
     
@@ -233,9 +233,10 @@
 <dd>
 
 
-<p>The function accepts zero or more Mockingbird pipe-separated
+<p>The function accepts zero or more pipe-separated Mockingbird
         expressions as input. Each individual expression is passed to the
-        implementing method in an <code>NSArray</code>.</p>
+        implementing method as an element in an <code>NSArray</code> The function
+        implementation is responsible for evaluating the expressions.</p>
 
     
 
@@ -252,7 +253,7 @@
 <dd>
 
 
-<p>The function accepts zero or more Mockingbird pipe-separated string
+<p>The function accepts zero or more pipe-separated Mockingbird string
         expressions as input. Each individual expression is evaluated and the
         resulting <code>NSString</code>s are passed to the implementing method in an
         <code>NSArray</code>.</p>
@@ -272,9 +273,9 @@
 <dd>
 
 
-<p>The function accepts zero or more Mockingbird pipe-separated object
+<p>The function accepts zero or more pipe-separated Mockingbird object
         expressions as input. Each individual expression is evaluated and the
-        resulting <code>id</code>s are passed to the implementing method in an
+        resulting <code>NSObject</code>s are passed to the implementing method in an
         <code>NSArray</code>.</p>
 
     
@@ -292,7 +293,7 @@
 <dd>
 
 
-<p>The function accepts zero or more Mockingbird pipe-separated math
+<p>The function accepts zero or more pipe-separated Mockingbird math
         expressions as input. Each individual expression is evaluated and the
         resulting <code>NSNumber</code>s are passed to the implementing method in an
         <code>NSArray</code>.</p>

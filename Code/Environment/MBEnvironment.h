@@ -16,6 +16,7 @@
 #pragma mark Constants
 /******************************************************************************/
 
+/*! Will this be commented? */
 extern NSString* const kMBMLManifestFilename;               // @"manifest.xml"
 
 extern NSString* const kMBMLRootTagName;                    // @"MBML"
@@ -62,7 +63,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  Sets the active `MBEnvironment` instance. The active environment supplies
  the `MBVariableSpace` instance used to evaluate expressions by default.
 
- @param     env the `MBEnvironment` to set as the active environment.
+ @param     env The `MBEnvironment` to set as the active environment.
 
  @return    The previously-active `MBEnvironment` instance, if any.
  */
@@ -72,7 +73,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  Sets the active `MBEnvironment` instance by pushing a new environment
  onto the environment stack.
  
- @param     env the `MBEnvironment` to set as the active environment.
+ @param     env The `MBEnvironment` to set as the active environment.
  */
 + (void) pushEnvironment:(MBEnvironment*)env;
 
@@ -174,8 +175,8 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
  @param     dirPaths An array containing the paths of directories that will be
             searched when trying to locate the manifest and other MBML files. 
-            These directories be searched first (and in the order specified by
-            `dirPaths`)  when MBML files are referenced. If a given file can't
+            These directories will be searched first (and in the order specified
+            by `dirPaths`) when MBML files are referenced. If a given file can't
             be found in the any of the directories specified by `dirPaths`,
             the `resourceSearchBundles` will then be searched.
 
@@ -195,8 +196,8 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
  @param     dirPaths An array containing the paths of directories that will be
             searched when trying to locate the manifest and other MBML files. 
-            These directories be searched first (and in the order specified by
-            `dirPaths`)  when MBML files are referenced. If a given file can't
+            These directories will be searched first (and in the order specified
+            by `dirPaths`) when MBML files are referenced. If a given file can't
             be found in the any of the directories specified by `dirPaths`,
             the `resourceSearchBundles` will then be searched.
 
@@ -219,7 +220,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
             that allows files to reference each other by name without
             knowing precisely where they're located.
 
- @return    `YES` on a successful load of the environment; NO otherwise.
+ @return    `YES` if `fileName` was loaded successfully; `NO` otherwise.
  */
 - (BOOL) loadMBMLFile:(NSString*)fileName;
 
@@ -230,7 +231,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
 /*!
  Adds the specified bundle as one that will be consulted whenever an 
- environment attempts to find a resource.
+ environment attempts to find a resource such as an MBML file.
  
  @param     bundle An `NSBundle` instance that should be searched when
             attempting to find resources.
@@ -239,15 +240,15 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
 /*!
  Returns the `NSBundle` instances that will be consulted whenever an
- environment attempts to find a resource.
+ environment attempts to find a resource such as an MBML file.
  
  @return    An array of `NSBundle`s. Will never be `nil`.
  */
 + (NSArray*) resourceSearchBundles;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark Determining the load state of the environment
-/*!    @name Determining the load state of the environment                    */
+#pragma mark Determining the state of the environment
+/*!    @name Determining the state of the environment                         */
 /*----------------------------------------------------------------------------*/
 
 /*! Returns `YES` if the environment is loaded; `NO` otherwise. */
@@ -297,7 +298,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 /*!
  Allows the loading of environment classes from libraries whose class names
  begin with the specified prefix.
- 
+
  @param     prefix The class prefix Mockingbird should support for dynamic
             class loading.
  */
@@ -307,7 +308,9 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  Returns an array containing the class prefixes that will be searched
  when attempting to load environment classes.
  
- @return    An array of strings containing the supported class prefix.
+ @return    An array of strings containing the supported class prefixes.
+            Will never be `nil` and will always contain at least one value,
+            the string "`MB`".
  */
 + (NSArray*) supportedLibraryClassPrefixes;
 
@@ -315,6 +318,15 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  Uses the `supportedClassPrefixes` to find an available `Class` that implements
  the class with the specified name.
  
+ Mockingbird uses this method to find classes that are dynamically loaded by
+ name.
+ 
+ First, a class with a name matching the `className` parameter is sought. If
+ no such class exists, the system will then iterate over the 
+ `supportedClassPrefixes` and, for each prefix, will attempt to find a class
+ whose name is `className` with the given prefix. The first one found (if any) 
+ is returned.
+
  @param     className The class name for which a `Class` is sought.
  
  @return    A `Class` for `className`, if a class exists among the supported
@@ -387,60 +399,5 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
             Will be `nil` if no such environment loader was found.
  */
 - (MBEnvironmentLoader*) environmentLoaderOfClass:(Class)cls;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark Environment state change hooks
-/*!    @name Environment state change hooks                                   */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Called when the receiving `MBEnvironment` is about to be loaded.
- 
- Notifies the environment loaders known to the receiver by calling the 
- `environmentWillLoad:` method of each and passing the parameter `self`.
- */
-- (void) environmentWillLoad;
-
-/*!
- Called when the receiving `MBEnvironment` has been loaded.
-
- Notifies the environment loaders known to the receiver by calling the
- `environmentDidLoad:` method of each and passing the parameter `self`.
- */
-- (void) environmentDidLoad;
-
-/*!
- Called when the receiving `MBEnvironment` is about to become the active
- environment.
-
- Notifies the environment loaders known to the receiver by calling the
- `environmentWillActivate:` method of each and passing the parameter `self`.
- */
-- (void) environmentWillActivate;
-
-/*!
- Called when the receiving `MBEnvironment` has become the active
- environment.
-
- Notifies the environment loaders known to the receiver by calling the
- `environmentDidActivate:` method of each and passing the parameter `self`.
- */
-- (void) environmentDidActivate;
-
-/*!
- Called when the receiving `MBEnvironment` is about to be deactivated.
-
- Notifies the environment loaders known to the receiver by calling the
- `environmentWillActivate:` method of each and passing the parameter `self`.
- */
-- (void) environmentWillDeactivate;
-
-/*!
- Called when the receiving `MBEnvironment` has been deactivated.
-
- Notifies the environment loaders known to the receiver by calling the
- `environmentDidDeactivate:` method of each and passing the parameter `self`.
- */
-- (void) environmentDidDeactivate;
 
 @end

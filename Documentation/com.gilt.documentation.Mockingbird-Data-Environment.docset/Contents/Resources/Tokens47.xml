@@ -15,8 +15,8 @@
         
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputUnset</TokenIdentifier>
-            <Abstract type="html">The function output type hasn&apos;t yet been set. Used when processing
-        &lt;Function&gt; declarations. </Abstract>
+            <Abstract type="html">The function output type hasn&apos;t yet been set. Used as an initial value
+        when processing MBML &lt;Function&gt; declarations. </Abstract>
             <Declaration>MBMLFunctionOutputUnset</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
@@ -27,7 +27,7 @@
         <Token>
             <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputNone</TokenIdentifier>
             <Abstract type="html">The function returns no output. The implementing method should
-        return void. If it does not, the return value is ignored anyway. </Abstract>
+        return void; any return value is ignored. </Abstract>
             <Declaration>MBMLFunctionOutputNone</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>

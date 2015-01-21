@@ -36,7 +36,7 @@ the MBVariableSpace instance used to evaluate expressions by default.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
-					<Abstract type="html">the MBEnvironment to set as the active environment.</Abstract>
+					<Abstract type="html">The MBEnvironment to set as the active environment.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The previously-active MBEnvironment instance, if any.</Abstract></ReturnValue>
@@ -54,7 +54,7 @@ onto the environment stack.</Abstract>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
-					<Abstract type="html">the MBEnvironment to set as the active environment.</Abstract>
+					<Abstract type="html">The MBEnvironment to set as the active environment.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -180,8 +180,8 @@ specified search directories or in the application&apos;s resources.</Abstract>
 					<Name>dirPaths</Name>
 					<Abstract type="html">An array containing the paths of directories that will be
             searched when trying to locate the manifest and other MBML files. 
-            These directories be searched first (and in the order specified by
-            dirPaths)  when MBML files are referenced. If a given file can&apos;t
+            These directories will be searched first (and in the order specified
+            by dirPaths) when MBML files are referenced. If a given file can&apos;t
             be found in the any of the directories specified by dirPaths,
             the resourceSearchBundles will then be searched.</Abstract>
 				</Parameter>
@@ -207,8 +207,8 @@ found in the specified search directories or in the application&apos;s resources
 					<Name>dirPaths</Name>
 					<Abstract type="html">An array containing the paths of directories that will be
             searched when trying to locate the manifest and other MBML files. 
-            These directories be searched first (and in the order specified by
-            dirPaths)  when MBML files are referenced. If a given file can&apos;t
+            These directories will be searched first (and in the order specified
+            by dirPaths) when MBML files are referenced. If a given file can&apos;t
             be found in the any of the directories specified by dirPaths,
             the resourceSearchBundles will then be searched.</Abstract>
 				</Parameter>
@@ -234,7 +234,7 @@ found in the specified search directories or in the application&apos;s resources
             knowing precisely where they&apos;re located.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES on a successful load of the environment; NO otherwise.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">YES if fileName was loaded successfully; NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/loadMBMLFile:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
@@ -242,7 +242,7 @@ found in the specified search directories or in the application&apos;s resources
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/addResourceSearchBundle:</TokenIdentifier>
 			<Abstract type="html">Adds the specified bundle as one that will be consulted whenever an
-environment attempts to find a resource.</Abstract>
+environment attempts to find a resource such as an MBML file.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>+ (void)addResourceSearchBundle:(NSBundle *)bundle</Declaration>
@@ -261,7 +261,7 @@ environment attempts to find a resource.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/resourceSearchBundles</TokenIdentifier>
 			<Abstract type="html">Returns the NSBundle instances that will be consulted whenever an
-environment attempts to find a resource.</Abstract>
+environment attempts to find a resource such as an MBML file.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
 			<Declaration>+ (NSArray *)resourceSearchBundles</Declaration>
@@ -456,7 +456,9 @@ when attempting to load environment classes.</Abstract>
 			
 			<Declaration>+ (NSArray *)supportedLibraryClassPrefixes</Declaration>
 			
-			<ReturnValue><Abstract type="html">An array of strings containing the supported class prefix.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array of strings containing the supported class prefixes.
+            Will never be nil and will always contain at least one value,
+            the string &quot;MB&quot;.</Abstract></ReturnValue>
 			<Anchor>//api/name/supportedLibraryClassPrefixes</Anchor>
             <NodeRef refid="7"/>
 		</Token>
@@ -563,80 +565,6 @@ is an instance of the given class.</Abstract>
 			<ReturnValue><Abstract type="html">The first MBEnvironmentLoader representing an instance of cls.
             Will be nil if no such environment loader was found.</Abstract></ReturnValue>
 			<Anchor>//api/name/environmentLoaderOfClass:</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentWillLoad</TokenIdentifier>
-			<Abstract type="html">Called when the receiving MBEnvironment is about to be loaded.</Abstract>
-			<DeclaredIn>MBEnvironment.h</DeclaredIn>
-			
-			<Declaration>- (void)environmentWillLoad</Declaration>
-			
-			
-			<Anchor>//api/name/environmentWillLoad</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentDidLoad</TokenIdentifier>
-			<Abstract type="html">Called when the receiving MBEnvironment has been loaded.</Abstract>
-			<DeclaredIn>MBEnvironment.h</DeclaredIn>
-			
-			<Declaration>- (void)environmentDidLoad</Declaration>
-			
-			
-			<Anchor>//api/name/environmentDidLoad</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentWillActivate</TokenIdentifier>
-			<Abstract type="html">Called when the receiving MBEnvironment is about to become the active
-environment.</Abstract>
-			<DeclaredIn>MBEnvironment.h</DeclaredIn>
-			
-			<Declaration>- (void)environmentWillActivate</Declaration>
-			
-			
-			<Anchor>//api/name/environmentWillActivate</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentDidActivate</TokenIdentifier>
-			<Abstract type="html">Called when the receiving MBEnvironment has become the active
-environment.</Abstract>
-			<DeclaredIn>MBEnvironment.h</DeclaredIn>
-			
-			<Declaration>- (void)environmentDidActivate</Declaration>
-			
-			
-			<Anchor>//api/name/environmentDidActivate</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentWillDeactivate</TokenIdentifier>
-			<Abstract type="html">Called when the receiving MBEnvironment is about to be deactivated.</Abstract>
-			<DeclaredIn>MBEnvironment.h</DeclaredIn>
-			
-			<Declaration>- (void)environmentWillDeactivate</Declaration>
-			
-			
-			<Anchor>//api/name/environmentWillDeactivate</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentDidDeactivate</TokenIdentifier>
-			<Abstract type="html">Called when the receiving MBEnvironment has been deactivated.</Abstract>
-			<DeclaredIn>MBEnvironment.h</DeclaredIn>
-			
-			<Declaration>- (void)environmentDidDeactivate</Declaration>
-			
-			
-			<Anchor>//api/name/environmentDidDeactivate</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

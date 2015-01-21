@@ -99,37 +99,6 @@ return to what they were prior to entering the scope.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/initWithVariableSpace:</TokenIdentifier>
-			<Abstract type="html">Initializes the receiver with the given variable space.</Abstract>
-			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
-			
-			<Declaration>- (id)initWithVariableSpace:(MBVariableSpace *)vars</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>vars</Name>
-					<Abstract type="html">The MBVariableSpace instance where variable valued will
-            be maintained while the scope is in use.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">self</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithVariableSpace:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/init</TokenIdentifier>
-			<Abstract type="html">Initializes the receiver using the MBVariableSpace associated with the
-current MBEnvironment</Abstract>
-			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
-			
-			<Declaration>- (id)init</Declaration>
-			
-			<ReturnValue><Abstract type="html">self</Abstract></ReturnValue>
-			<Anchor>//api/name/init</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setScopedVariable:value:</TokenIdentifier>
 			<Abstract type="html">Sets the value of a scoped variable. This variable value will be reflected
 in the receiver&apos;s variableSpace.</Abstract>

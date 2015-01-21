@@ -36,20 +36,20 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  Constructs the name of the event that is fired when an asynchronous data
  load attempt is about to begin.
  
- @param     name The name of the data being requested.
+ @param     name The name of the data item being requested.
  
- @return    The name of the event fired when the data named `name` is about
-            to be requested.
+ @return    The name of the event fired when the data item named `name` is
+            about to be requested.
  */
 + (NSString*) willRequestDataEventName:(NSString*)name;
 
 /*!
  Constructs the name of the event that is fired when an asynchronous
- data load completed successfully.
+ data load completes successfully.
  
- @param     name The name of the data that was loaded.
+ @param     name The name of the data item that was loaded.
  
- @return    The name of the event fired when the data named `name` loads
+ @return    The name of the event fired when the data item named `name` loads
             successfully.
  */
 + (NSString*) dataLoadedEventName:(NSString*)name;
@@ -58,10 +58,10 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  Constructs the name of the event that is fired when an asynchronous
  data load attempt fails.
 
- @param     name The name of the data that failed to load.
+ @param     name The name of the data item that failed to load.
 
- @return    The name of the event fired when the data named `name` loads
-            successfully.
+ @return    The name of the event fired when the data item named `name` fails
+            to load.
  */
 + (NSString*) dataLoadFailedEventName:(NSString*)name;
 
@@ -75,14 +75,14 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  to begin.
  
  The name of the `NSNotification` event fired is constructed based on the
- parameter `name`, and is constructed as: "*`name`*``:willRequestData`".
+ parameter `name`, and is constructed as: "*`name`*`:willRequestData`".
  
  In addition, when this event is fired, a boolean Mockingbird variable
- with the name "*`name`*``:requestPending`" will be set to `true`, and
- the value of the variable named "*`name`*``:lastRequestFailed`" will
+ with the name "*`name`*`:requestPending`" will be set to `true`, and
+ the value of the variable named "*`name`*`:lastRequestFailed`" will
  be unset.
 
- @param     name The name of the data being requested.
+ @param     name The name of the data item being requested.
  */
 + (void) postWillRequestData:(NSString*)name;
 
@@ -91,28 +91,27 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  successfully.
 
  The name of the `NSNotification` event fired is constructed based on the
- parameter `name`, and is constructed as: "*`name`*``:dataLoaded`".
+ parameter `name`, and is constructed as: "*`name`*`:dataLoaded`".
 
  In addition, when this event is fired, the Mockingbird variable
- with the name "*`name`*``:requestPending`" will be unset.
+ with the name "*`name`*`:requestPending`" will be unset.
 
- @param     name The name of the data that was loaded.
+ @param     name The name of the data item that was loaded.
  */
 + (void) postDataLoaded:(NSString*)name;
 
 /*!
- Posts an event indicating that an asynchronous data load completed
- successfully.
+ Posts an event indicating that an asynchronous data load failed.
 
  The name of the `NSNotification` event fired is constructed based on the
- parameter `name`, and is constructed as: "*`name`*``:dataLoadFailed`".
+ parameter `name`, and is constructed as: "*`name`*`:dataLoadFailed`".
 
  In addition, when this event is fired, a boolean Mockingbird variable
- with the name "*`name`*``:lastRequestFailed`" will be set to `true`, and
- the value of the variable named "*`name`*``:requestPending`" will
+ with the name "*`name`*`:lastRequestFailed`" will be set to `true`, and
+ the value of the variable named "*`name`*`:requestPending`" will
  be unset.
 
- @param     name The name of the data that failed to load.
+ @param     name The name of the data item that failed to load.
  */
 + (void) postDataLoadFailed:(NSString*)name;
 
@@ -121,14 +120,14 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  to begin.
  
  The name of the `NSNotification` event fired is constructed based on the
- parameter `name`, and is constructed as: "*`name`*``:willRequestData`".
-
+ parameter `name`, and is constructed as: "*`name`*`:willRequestData`".
+ 
  In addition, when this event is fired, a boolean Mockingbird variable
- with the name "*`name`*``:requestPending`" will be set to `true`, and
- the value of the variable named "*`name`*``:lastRequestFailed`" will
+ with the name "*`name`*`:requestPending`" will be set to `true`, and
+ the value of the variable named "*`name`*`:lastRequestFailed`" will
  be unset.
 
- @param     name The name of the data being requested.
+ @param     name The name of the data item being requested.
  
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.
@@ -140,12 +139,12 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  successfully.
 
  The name of the `NSNotification` event fired is constructed based on the
- parameter `name`, and is constructed as: "*`name`*``:dataLoaded`".
+ parameter `name`, and is constructed as: "*`name`*`:dataLoaded`".
 
  In addition, when this event is fired, the Mockingbird variable
- with the name "*`name`*``:requestPending`" will be unset.
+ with the name "*`name`*`:requestPending`" will be unset.
 
- @param     name The name of the data that was loaded.
+ @param     name The name of the data item that was loaded.
  
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.
@@ -153,18 +152,17 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
 + (void) postDataLoaded:(NSString*)name withEventObject:(id)eventObj;
 
 /*!
- Posts an event indicating that an asynchronous data load completed
- successfully.
+ Posts an event indicating that an asynchronous data load failed.
 
  The name of the `NSNotification` event fired is constructed based on the
- parameter `name`, and is constructed as: "*`name`*``:dataLoadFailed`".
+ parameter `name`, and is constructed as: "*`name`*`:dataLoadFailed`".
 
  In addition, when this event is fired, a boolean Mockingbird variable
- with the name "*`name`*``:lastRequestFailed`" will be set to `true`, and
- the value of the variable named "*`name`*``:requestPending`" will
+ with the name "*`name`*`:lastRequestFailed`" will be set to `true`, and
+ the value of the variable named "*`name`*`:requestPending`" will
  be unset.
 
- @param     name The name of the data that failed to load.
+ @param     name The name of the data item that failed to load.
  
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.

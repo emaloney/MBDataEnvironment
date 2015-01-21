@@ -127,7 +127,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setOsType:</TokenIdentifier>
 			<Abstract type="html">Returns a human-readable string indicating the operating system type,
-    eg. &quot;iOS&quot;. </Abstract>
+    eg. &quot;iPhone OS&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *osType</Declaration>
@@ -140,7 +140,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osType</TokenIdentifier>
 			<Abstract type="html">Returns a human-readable string indicating the operating system type,
-    eg. &quot;iOS&quot;. </Abstract>
+    eg. &quot;iPhone OS&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *osType</Declaration>
@@ -153,7 +153,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/osType</TokenIdentifier>
 			<Abstract type="html">Returns a human-readable string indicating the operating system type,
-    eg. &quot;iOS&quot;. </Abstract>
+    eg. &quot;iPhone OS&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *osType</Declaration>
@@ -165,7 +165,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setOsVersion:</TokenIdentifier>
-			<Abstract type="html">Returns the operating system version string, eg. &quot;8.1.2&quot;</Abstract>
+			<Abstract type="html">Returns the operating system version string, eg. &quot;8.1.3&quot;</Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *osVersion</Declaration>
@@ -177,7 +177,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersion</TokenIdentifier>
-			<Abstract type="html">Returns the operating system version string, eg. &quot;8.1.2&quot;</Abstract>
+			<Abstract type="html">Returns the operating system version string, eg. &quot;8.1.3&quot;</Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *osVersion</Declaration>
@@ -189,7 +189,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/osVersion</TokenIdentifier>
-			<Abstract type="html">Returns the operating system version string, eg. &quot;8.1.2&quot;</Abstract>
+			<Abstract type="html">Returns the operating system version string, eg. &quot;8.1.3&quot;</Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *osVersion</Declaration>
@@ -202,7 +202,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setOsVersionComponents:</TokenIdentifier>
 			<Abstract type="html">Returns the individual components of the operating system version as an
-    array of NSNumbers, eg. [8, 1, 2]. </Abstract>
+    array of NSNumbers, eg. [8, 1, 3]. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSArray *osVersionComponents</Declaration>
@@ -215,7 +215,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionComponents</TokenIdentifier>
 			<Abstract type="html">Returns the individual components of the operating system version as an
-    array of NSNumbers, eg. [8, 1, 2]. </Abstract>
+    array of NSNumbers, eg. [8, 1, 3]. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSArray *osVersionComponents</Declaration>
@@ -228,7 +228,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/osVersionComponents</TokenIdentifier>
 			<Abstract type="html">Returns the individual components of the operating system version as an
-    array of NSNumbers, eg. [8, 1, 2]. </Abstract>
+    array of NSNumbers, eg. [8, 1, 3]. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSArray *osVersionComponents</Declaration>
@@ -240,7 +240,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setOsVersionMajor:</TokenIdentifier>
-			<Abstract type="html">Returns the major component of the operating system version, eg. the &quot;8&quot;
+			<Abstract type="html">Returns the major component of the operating system version, eg. the 8
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -253,7 +253,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionMajor</TokenIdentifier>
-			<Abstract type="html">Returns the major component of the operating system version, eg. the &quot;8&quot;
+			<Abstract type="html">Returns the major component of the operating system version, eg. the 8
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -266,7 +266,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/osVersionMajor</TokenIdentifier>
-			<Abstract type="html">Returns the major component of the operating system version, eg. the &quot;8&quot;
+			<Abstract type="html">Returns the major component of the operating system version, eg. the 8
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -279,7 +279,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setOsVersionMinor:</TokenIdentifier>
-			<Abstract type="html">Returns the minor component of the operating system version, eg. the &quot;1&quot;
+			<Abstract type="html">Returns the minor component of the operating system version, eg. the 1
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -292,7 +292,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionMinor</TokenIdentifier>
-			<Abstract type="html">Returns the minor component of the operating system version, eg. the &quot;1&quot;
+			<Abstract type="html">Returns the minor component of the operating system version, eg. the 1
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -305,7 +305,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/osVersionMinor</TokenIdentifier>
-			<Abstract type="html">Returns the minor component of the operating system version, eg. the &quot;1&quot;
+			<Abstract type="html">Returns the minor component of the operating system version, eg. the 1
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -318,7 +318,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setOsVersionRevision:</TokenIdentifier>
-			<Abstract type="html">Returns the revision component of the operating system version, eg. the &quot;3&quot;
+			<Abstract type="html">Returns the revision component of the operating system version, eg. the 3
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -331,7 +331,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/osVersionRevision</TokenIdentifier>
-			<Abstract type="html">Returns the revision component of the operating system version, eg. the &quot;3&quot;
+			<Abstract type="html">Returns the revision component of the operating system version, eg. the 3
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -344,7 +344,7 @@ environment of the running application.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/osVersionRevision</TokenIdentifier>
-			<Abstract type="html">Returns the revision component of the operating system version, eg. the &quot;3&quot;
+			<Abstract type="html">Returns the revision component of the operating system version, eg. the 3
     in &quot;8.1.3&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
@@ -649,7 +649,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/setScreenSize:</TokenIdentifier>
 			<Abstract type="html">Returns a comma-separated string containing the width and height of the
-    screen in the current orientation: &quot;width,height&quot;. </Abstract>
+    screen in the current orientation as &quot;width,height&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *screenSize</Declaration>
@@ -662,7 +662,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBDevice/screenSize</TokenIdentifier>
 			<Abstract type="html">Returns a comma-separated string containing the width and height of the
-    screen in the current orientation: &quot;width,height&quot;. </Abstract>
+    screen in the current orientation as &quot;width,height&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *screenSize</Declaration>
@@ -675,7 +675,7 @@ environment of the running application.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBDevice/screenSize</TokenIdentifier>
 			<Abstract type="html">Returns a comma-separated string containing the width and height of the
-    screen in the current orientation: &quot;width,height&quot;. </Abstract>
+    screen in the current orientation as &quot;width,height&quot;. </Abstract>
 			<DeclaredIn>MBDevice.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *screenSize</Declaration>

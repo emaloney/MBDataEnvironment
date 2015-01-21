@@ -19,6 +19,68 @@
 /*!
  Provides a mechanism for maintaining scoped variable values in the
  context of a particular `MBVariableSpace` instance.
+ 
+ ### About variable scopes
+ 
+ A *variable scope* allows the creation of a short-lived values for named
+ Mockingbird variables.
+ 
+ The `MBScopedVariables` class provides an interface for *entering* and
+ *exiting* a variable scope.
+ 
+ When a scope is *entered*, an `MBScopedVariables` instance is associated
+ with the calling thread. That instance can then be used to set values for
+ scoped variables. When a scoped variable value is set, it is *pushed*
+ on top of the existing value (if any) in the associated `MBVariableSpace`.
+
+ When the scope is *exited*, any scoped variable values that were set are
+ then *popped* from the associated `MBVariableSpace`, restoring it to the
+ state that existed before the scope was entered.
+ 
+ ### Setting a scoped variable
+ 
+ To set a scoped variable, you first need an `MBScopedVariables` instance.
+ If there's already a scope associated with the calling thread, you can
+ retrieve it by calling:
+ 
+    MBScopedVariables* scope = [MBScopedVariables currentVariableScope];
+ 
+ If there's no pre-existing scope, or if you want to create a new scope
+ that masks any existing scope, you would call:
+ 
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+
+ Once you've got a scope instance, you can use it to set a scoped
+ variable:
+ 
+    NSString* userName = ... // a string set elsewhere
+    [scope setScopedVariable:@"user" value:userName];
+ 
+ The value `userName` is then *pushed* onto the Mockingbird variable stack
+ for the name "`user`". If there is a pre-existing value for the "`user`"
+ variable, it is temporarily masked by the new value. When the scope is
+ exited—or when a scope's `unsetScopedVariables` method is called—the "`user`"
+ variable will be *popped*, and the previous value will be restored.
+ 
+ ### Exiting the current scope
+ 
+ When you no longer need a scope that you've previously entered, you **must**
+ call:
+ 
+    [MBScopedVariables exitVariableScope];
+ 
+ It is considered a coding error if you do not explicitly exit a
+ scope you've previously entered.
+ 
+ For performance reasons, you should keep any scopes you create as short-lived
+ as possible.
+
+ ### Threading concerns
+ 
+ Although a given `MBScopedVariables` instance is specific to the thread that
+ created it, the underlying `MBVariableSpace` manipulated by the scope is
+ a global resource. Therefore, values set within your scope will be visible
+ to all threads until your scope is exited.
  */
 @interface MBScopedVariables : MBFormattedDescriptionObject < NSCopying >
 
@@ -72,29 +134,6 @@
             of calling and therefore there was no scope to exit.
  */
 + (instancetype) exitVariableScope;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark Creating variable scopes
-/*!    @name Creating variable scopes                                         */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Initializes the receiver with the given variable space.
- 
- @param     vars The `MBVariableSpace` instance where variable valued will
-            be maintained while the scope is in use.
-
- @return    `self`
- */
-- (id) initWithVariableSpace:(MBVariableSpace*)vars;
-
-/*!
- Initializes the receiver using the `MBVariableSpace` associated with the
- current `MBEnvironment`
- 
- @return    `self`
- */
-- (id) init;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Setting & unsetting scoped variable values

@@ -37,8 +37,8 @@ extern NSString* const kMBMLFunctionInputParameterName;
  Specifies the type of input an `MBMLFunction` implementation expects.
 */
 typedef NS_ENUM(NSUInteger, MBMLFunctionInputType) {
-    /*! The function input type hasn't yet been set. Used when processing
-        `<Function>` declarations. */
+    /*! The function input type hasn't yet been set. Used as an initial value
+        when processing MBML `<Function>` declarations. */
     MBMLFunctionInputUnset = 0,
 
     /*! The function accepts no input parameters. The implementing method
@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionInputType) {
     MBMLFunctionInputString,
 
     /*! The function accepts a Mockingbird object expression as input. The
-        expression will be evaluated and the resulting `id` will be passed
+        expression will be evaluated and the resulting `NSObject` will be passed
         to the implementing method. */
     MBMLFunctionInputObject,
 
@@ -64,24 +64,25 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionInputType) {
         passed to the implementing method. */
     MBMLFunctionInputMath,
 
-    /*! The function accepts zero or more Mockingbird pipe-separated
+    /*! The function accepts zero or more pipe-separated Mockingbird
         expressions as input. Each individual expression is passed to the
-        implementing method in an `NSArray`. */
+        implementing method as an element in an `NSArray` The function
+        implementation is responsible for evaluating the expressions. */
     MBMLFunctionInputPipedExpressions,
 
-    /*! The function accepts zero or more Mockingbird pipe-separated string
+    /*! The function accepts zero or more pipe-separated Mockingbird string
         expressions as input. Each individual expression is evaluated and the
         resulting `NSString`s are passed to the implementing method in an
         `NSArray`. */
     MBMLFunctionInputPipedStrings,
 
-    /*! The function accepts zero or more Mockingbird pipe-separated object
+    /*! The function accepts zero or more pipe-separated Mockingbird object
         expressions as input. Each individual expression is evaluated and the
-        resulting `id`s are passed to the implementing method in an
+        resulting `NSObject`s are passed to the implementing method in an
         `NSArray`. */
     MBMLFunctionInputPipedObjects,
 
-    /*! The function accepts zero or more Mockingbird pipe-separated math
+    /*! The function accepts zero or more pipe-separated Mockingbird math
         expressions as input. Each individual expression is evaluated and the
         resulting `NSNumber`s are passed to the implementing method in an
         `NSArray`. */
@@ -95,12 +96,12 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionInputType) {
  Specifies the type of output an `MBMLFunction` implementation returns.
 */
 typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
-    /*! The function output type hasn't yet been set. Used when processing
-        `<Function>` declarations. */
+    /*! The function output type hasn't yet been set. Used as an initial value
+        when processing MBML `<Function>` declarations. */
     MBMLFunctionOutputUnset = 0,
 
     /*! The function returns no output. The implementing method should
-        return `void`. If it does not, the return value is ignored anyway. */
+        return `void`; any return value is ignored. */
     MBMLFunctionOutputNone,
 
     /*! The function returns an object instance as output. */

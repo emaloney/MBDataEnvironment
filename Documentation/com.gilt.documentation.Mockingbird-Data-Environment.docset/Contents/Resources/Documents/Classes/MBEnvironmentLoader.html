@@ -368,8 +368,7 @@ on extending the Mockingbird Data Environment using modules.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment became active. Subclasses
-must call super.</p>
+		<p>Called to notify the receiver that the environment became active.</p>
 	</div>		
 	
     
@@ -394,6 +393,11 @@ must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -415,8 +419,7 @@ must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment was deactived. Subclasses
-must call super.</p>
+		<p>Called to notify the receiver that the environment was deactived.</p>
 	</div>		
 	
     
@@ -441,6 +444,11 @@ must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -462,8 +470,7 @@ must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment loading has finished. Subclasses
-must call super.</p>
+		<p>Called to notify the receiver that the environment loading has finished.</p>
 	</div>		
 	
     
@@ -488,6 +495,11 @@ must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -509,8 +521,8 @@ must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment loading was stopped due to an error.
-Subclasses must call super.</p>
+		<p>Called to notify the receiver that the environment loading was stopped due
+to an error.</p>
 	</div>		
 	
     
@@ -535,6 +547,11 @@ Subclasses must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -556,8 +573,7 @@ Subclasses must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment is about to become active. Subclasses
-must call super.</p>
+		<p>Called to notify the receiver that the environment is about to become active.</p>
 	</div>		
 	
     
@@ -582,6 +598,11 @@ must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -603,8 +624,7 @@ must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment is about to be deactived. Subclasses
-must call super.</p>
+		<p>Called to notify the receiver that the environment is about to be deactived.</p>
 	</div>		
 	
     
@@ -629,6 +649,11 @@ must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -650,8 +675,8 @@ must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to notify that the environment loading is about to begin. Subclasses
-must call super.</p>
+		<p>Called to notify the receiver the receiver that the environment loading is
+about to begin.</p>
 	</div>		
 	
     
@@ -676,6 +701,11 @@ must call super.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Subclasses that override this method must call <code>super</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -697,8 +727,7 @@ must call super.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Asks the receiver to parse MBML represented by the passed-in XML element.
-Must be implemented by subclasses.</p>
+		<p>Asks the receiver to parse MBML represented by the passed-in XML element.</p>
 	</div>		
 	
     
@@ -712,13 +741,13 @@ Must be implemented by subclasses.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>mbml</em></dt>
-			<dd><p>the MBML element</p></dd>
+			<dd><p>The MBML element.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>match</em></dt>
 			<dd><p>The criterion that caused the match. Normally this is the
-            XML tag name, but in the case of a wildcard match, it will be &ldquo;*&rdquo;</p></dd>
+            XML tag name, but in the case of a wildcard match, it will be &ldquo;<code>*</code>&rdquo;.</p></dd>
 		</dl>
 		
 	</div>
@@ -734,6 +763,11 @@ Must be implemented by subclasses.</p>
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This method <em>must</em> be implemented by subclasses.</p>
+	</div>
 	
 	
 	
