@@ -459,9 +459,14 @@ static NSMutableArray* s_resourceBundles = nil;
     return YES;
 }
 
-- (BOOL) loadWithManifest:(NSString*)manifestName additionalSearchDirectories:(NSArray*)dirs
+- (BOOL) _loadWithManifest:(NSString*)manifestName additionalSearchDirectories:(NSArray*)dirs
 {
     debugTrace();
+
+    if (_isLoaded) {
+        errorLog(@"Can't load an already-loaded %@", [self class]);
+        return NO;
+    }
 
     [_loadedFilePaths removeAllObjects];
     [_processedFileNames removeAllObjects];
@@ -523,7 +528,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
     MBEnvironment* revert = [MBEnvironment instance];
     @try {
-        if ([env loadWithManifest:manifestName additionalSearchDirectories:dirPaths]) {
+        if ([env _loadWithManifest:manifestName additionalSearchDirectories:dirPaths]) {
             [MBEvents postEvent:kMBMLEnvironmentDidLoadNotification withObject:env];
             return env;
         }
@@ -531,6 +536,8 @@ static NSMutableArray* s_resourceBundles = nil;
     @catch (NSException* ex) {
         errorLog(@"Exception while attempting to load %@ environment: %@", self, ex);
     }
+
+    [env environmentLoadFailed];
 
     // if we had a previous environment, reset it and log an error.
     // however, if this was an attempt to load our initial environment,
