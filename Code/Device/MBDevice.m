@@ -139,16 +139,4 @@ MBImplementSingleton();
     return [[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground;
 }
 
-- (id) valueForUndefinedKey:(NSString*)key
-{
-    // Pass anything we don't know about on to UIDevice
-    @try {
-        return [[UIDevice currentDevice] valueForKey:key];
-    }
-    @catch (NSException* ex) {
-        errorObj(ex);
-    }
-    return nil;
-}
-
 @end
