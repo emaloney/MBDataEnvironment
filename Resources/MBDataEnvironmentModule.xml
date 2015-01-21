@@ -55,11 +55,7 @@
     <Function class="MBMLDataProcessingFunctions" name="associate" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="associateWithSingleValue" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="associateWithArray" input="pipedExpressions"/>
-    <Function class="MBMLDataProcessingFunctions" name="map" method="associate" input="pipedExpressions" deprecatedInFavorOf="associate"/>
-    <Function class="MBMLDataProcessingFunctions" name="mapToSingleValue" method="associateWithSingleValue" input="pipedExpressions" deprecatedInFavorOf="associateWithSingleValue"/>
-    <Function class="MBMLDataProcessingFunctions" name="mapToArray" method="associateWithArray" input="pipedExpressions" deprecatedInFavorOf="associateWithArray"/>
     <Function class="MBMLDataProcessingFunctions" name="sort" input="pipedExpressions"/>
-    <Function class="MBMLDataProcessingFunctions" name="merge" method="mergeDictionaries" deprecatedInFavorOf="mergeDictionaries" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="mergeDictionaries" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="unique" input="object"/>
     <Function class="MBMLDataProcessingFunctions" name="distributeArrayElements" input="pipedObjects"/>
