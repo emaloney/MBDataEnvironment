@@ -377,7 +377,10 @@ selector.</p>
 
 <h4>Expression usage</h4>
 
-<pre><code>^classRespondsToSelector(NSString|availableStringEncodings)
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
+
+<pre><code>^instancesRespondToSelector(NSString|availableStringEncodings)
 </code></pre>
 
 <p>The expression above evaluates to <code>@YES</code> because the <code>NSString</code> class responds
@@ -591,7 +594,10 @@ message selector.</p>
 
 <h4>Expression usage</h4>
 
-<pre><code>^objectRespondsToSelector($myName|isEqualToString:)
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
+
+<pre><code>^respondsToSelector($myName|isEqualToString:)
 </code></pre>
 
 <p>The expression above would evaluate to true if the expression <code>$myName</code>

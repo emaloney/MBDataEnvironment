@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/MBTableViewCellSelectionStyle.html">
+	<File path="Constants/MBMLFunctionInputType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/MBTableViewCellSelectionStyle</TokenIdentifier>
-			<Abstract type="html">Extends UITableViewCellSelectionStyle by providing a value representing
-a custom gradient cell selection style.</Abstract>
-			<DeclaredIn>MBStringConversions.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/MBMLFunctionInputType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of input an MBMLFunction implementation expects.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
             
 			
 			<NodeRef refid="46"/>
@@ -15,41 +14,131 @@ a custom gradient cell selection style.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleNone</TokenIdentifier>
-            <Abstract type="html">Equivalent to UITableViewCellSelectionStyleNone.</Abstract>
-            <Declaration>MBTableViewCellSelectionStyleNone</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputUnset</TokenIdentifier>
+            <Abstract type="html">The function input type hasn&apos;t yet been set. Used when processing
+        &lt;Function&gt; declarations. </Abstract>
+            <Declaration>MBMLFunctionInputUnset</Declaration>
             
-            <DeclaredIn>MBStringConversions.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleBlue</TokenIdentifier>
-            <Abstract type="html">Equivalent to UITableViewCellSelectionStyleBlue.</Abstract>
-            <Declaration>MBTableViewCellSelectionStyleBlue</Declaration>
-            
-            <DeclaredIn>MBStringConversions.h</DeclaredIn>
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
             
             <NodeRef refid="46"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleGray</TokenIdentifier>
-            <Abstract type="html">Equivalent to UITableViewCellSelectionStyleGray.</Abstract>
-            <Declaration>MBTableViewCellSelectionStyleGray</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputNone</TokenIdentifier>
+            <Abstract type="html">The function accepts no input parameters. The implementing method
+        should take no parameters. </Abstract>
+            <Declaration>MBMLFunctionInputNone</Declaration>
             
-            <DeclaredIn>MBStringConversions.h</DeclaredIn>
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
             
             <NodeRef refid="46"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleGradient</TokenIdentifier>
-            <Abstract type="html">Represents a custom cell selection style using a gradient.</Abstract>
-            <Declaration>MBTableViewCellSelectionStyleGradient</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputRaw</TokenIdentifier>
+            <Abstract type="html">The function accepts a single uninterpreted string as input. The
+        string is passed as-is to the implementing method. </Abstract>
+            <Declaration>MBMLFunctionInputRaw</Declaration>
             
-            <DeclaredIn>MBStringConversions.h</DeclaredIn>
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputString</TokenIdentifier>
+            <Abstract type="html">The function accepts a Mockingbird string expression as input. The
+        expression will be evaluated and the resulting NSString will be passed
+        to the implementing method. </Abstract>
+            <Declaration>MBMLFunctionInputString</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputObject</TokenIdentifier>
+            <Abstract type="html">The function accepts a Mockingbird object expression as input. The
+        expression will be evaluated and the resulting id will be passed
+        to the implementing method. </Abstract>
+            <Declaration>MBMLFunctionInputObject</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputMath</TokenIdentifier>
+            <Abstract type="html">The function accepts a Mockingbird math expression as input. The
+        expression will be evaluated and the resulting NSNumber will be
+        passed to the implementing method. </Abstract>
+            <Declaration>MBMLFunctionInputMath</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedExpressions</TokenIdentifier>
+            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated
+        expressions as input. Each individual expression is passed to the
+        implementing method in an NSArray. </Abstract>
+            <Declaration>MBMLFunctionInputPipedExpressions</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedStrings</TokenIdentifier>
+            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated string
+        expressions as input. Each individual expression is evaluated and the
+        resulting NSStrings are passed to the implementing method in an
+        NSArray. </Abstract>
+            <Declaration>MBMLFunctionInputPipedStrings</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedObjects</TokenIdentifier>
+            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated object
+        expressions as input. Each individual expression is evaluated and the
+        resulting ids are passed to the implementing method in an
+        NSArray. </Abstract>
+            <Declaration>MBMLFunctionInputPipedObjects</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedMath</TokenIdentifier>
+            <Abstract type="html">The function accepts zero or more Mockingbird pipe-separated math
+        expressions as input. Each individual expression is evaluated and the
+        resulting NSNumbers are passed to the implementing method in an
+        NSArray. </Abstract>
+            <Declaration>MBMLFunctionInputPipedMath</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputDefault</TokenIdentifier>
+            <Abstract type="html">The function input type used by default: MBMLFunctionInputObject.</Abstract>
+            <Declaration>MBMLFunctionInputDefault</Declaration>
+            
+            <DeclaredIn>MBMLFunction.h</DeclaredIn>
             
             <NodeRef refid="46"/>
         </Token>

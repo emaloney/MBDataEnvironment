@@ -173,8 +173,11 @@
  * The *selector*, a string expression yielding the selector name.
 
  #### Expression usage
- 
-    ^objectRespondsToSelector($myName|isEqualToString:)
+
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
+
+    ^respondsToSelector($myName|isEqualToString:)
  
  The expression above would evaluate to true if the expression `$myName` 
  yields an `NSString` instance (or an instance of any other class that
@@ -200,7 +203,10 @@
 
  #### Expression usage
  
-    ^classRespondsToSelector(NSString|availableStringEncodings)
+ **Note:** This function is exposed to the Mockingbird environment with a
+ name that differs from that of its implementing method:
+
+    ^instancesRespondToSelector(NSString|availableStringEncodings)
  
  The expression above evaluates to `@YES` because the `NSString` class responds
  to the `availableStringEncodings` message.
