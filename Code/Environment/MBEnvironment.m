@@ -156,7 +156,7 @@ static NSMutableArray* s_resourceBundles = nil;
         }
     }];
 
-    return NO;
+    return YES;
 }
 
 + (NSArray*) enabledModuleClasses
