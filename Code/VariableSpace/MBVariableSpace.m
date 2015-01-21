@@ -163,9 +163,9 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     if ([decl validateDataModelIfNeeded]) {
         NSString* varName = decl.name;
         if (varName) {
-            if (_namesToDeclarations[varName]) {
-                errorLog(@"Ignoring attempt to redeclare variable named \"%@\" with: %@", varName, decl);
-                return NO;
+            MBVariableDeclaration* curDecl = _namesToDeclarations[varName];
+            if (curDecl) {
+                consoleLog(@"WARNING: Variable \"%@\" redeclared from %@ to %@", varName, curDecl.simulatedXML, decl.simulatedXML);
             }
 
             if (!decl.disallowsValueCaching) {
@@ -181,7 +181,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
             }
 
             _namesToDeclarations[varName] = decl;
-            
+
             return YES;
         }
     }
@@ -242,7 +242,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (NSString*) variableAsString:(NSString*)varName defaultValue:(NSString*)def
 {
     verboseDebugTrace();
-    
+
     id value = [self variableForName:varName defaultValue:def];
     if (!value) {
         return def;
@@ -260,12 +260,12 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (void) setMapVariable:(NSString*)varName mapKey:(NSString*)key value:(id)val
 {
     verboseDebugTrace();
-    
+
     if ([self isReadOnlyVariable:varName]) {
         errorLog(@"Attempted to set value for immutable map variable named %@", varName);
         return;
     }
-    
+
     BOOL isDict = YES;
     NSMutableDictionary* map = _variables[varName];
     if (!map) {
@@ -285,7 +285,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
             return;
         }
     }
-    
+
     if (isDict) {
         if (val) {
             map[key] = val;
@@ -293,19 +293,19 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
             [map removeObjectForKey:key];
         }
     }
-    
+
     [self _setVariable:varName value:map];
 }
 
 - (void) setListVariable:(NSString*)varName listIndex:(NSUInteger)idx value:(id)val
 {
     verboseDebugTrace();
-    
+
     if ([self isReadOnlyVariable:varName]) {
         errorLog(@"Attempted to set value for immutable list variable named %@", varName);
         return;
     }
-    
+
     NSMutableArray* list = _variables[varName];
     if (!list) {
         list = [NSMutableArray array];
@@ -319,13 +319,13 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
         errorLog(@"Attempted to set a list index value for a variable (%@) that isn't an array (it's a %@)", varName, [list class]);
         return;
     }
-    
+
     NSNull* null = [NSNull null];
     while (idx >= [list count]) {
         [list addObject:null];
     }
     list[idx] = (val ? val : null);
-    
+
     [self _setVariable:varName value:list];
 }
 
@@ -351,7 +351,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (void) setVariable:(NSString*)varName value:(id)val
 {
     verboseDebugTrace();
-    
+
     if ([self isReadOnlyVariable:varName]) {
         errorLog(@"Attempted to change value of read-only variable named %@", varName);
     }
@@ -363,7 +363,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (void) unsetVariable:(NSString*)varName
 {
     verboseDebugTrace();
-    
+
     [self setVariable:varName value:nil];
 }
 
@@ -374,42 +374,42 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (void) pushVariable:(NSString*)varName value:(id)val
 {
     verboseDebugTrace();
-    
+
     if ([self isReadOnlyVariable:varName]) {
         errorLog(@"Attempted to push value for immutable variable named %@", varName);
         return;
     }
-    
+
     id curVal = _variables[varName];
     if (!curVal) {
         curVal = [NSNull null];
     }
-    
+
     NSMutableArray* stack = _variableStack[varName];
     if (!stack) {
         stack = [NSMutableArray array];
         _variableStack[varName] = stack;
     }
     [stack addObject:curVal];
-    
+
     [self _setVariable:varName value:val];
 }
 
 - (id) popVariable:(NSString*)varName
 {
     verboseDebugTrace();
-    
+
     if ([self isReadOnlyVariable:varName]) {
         errorLog(@"Attempted to pop value for immutable variable named %@", varName);
         return nil;
     }
-    
+
     NSMutableArray* stack = _variableStack[varName];
     if (!stack || stack.count < 1) {
         errorLog(@"Can't pop a variable that has no pushed values: %@", varName);
         return nil;
     }
-    
+
     id popVal = [stack lastObject];
     if (popVal == [NSNull null]) {
         popVal = nil;
@@ -435,7 +435,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (void) addObserverForUserDefault:(NSString*)userDefaultsName target:(id)target action:(SEL)action
 {
     debugTrace();
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:target
                                              selector:action
                                                  name:[NSString stringWithFormat:@"UserDefault:%@:valueChanged", userDefaultsName]
@@ -445,7 +445,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (void) removeObserver:(id)observer forUserDefault:(NSString*)userDefaultsName
 {
     debugTrace();
-    
+
     [[NSNotificationCenter defaultCenter] removeObserver:observer
                                                     name:[NSString stringWithFormat:@"UserDefault:%@:valueChanged", userDefaultsName]
                                                   object:nil];
@@ -460,9 +460,9 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     if ([function validateDataModelIfNeeded]) {
         NSString* funcName = function.name;
         if (funcName) {
-            if (_mbmlFunctions[funcName]) {
-                errorLog(@"Ignoring attempt to redeclare MBML function named \"%@\" with: %@", funcName, function);
-                return NO;
+            MBMLFunction* curDecl = _mbmlFunctions[funcName];
+            if (curDecl) {
+                consoleLog(@"WARNING: Function ^%@() redeclared from %@ to %@", funcName, curDecl.simulatedXML, function.simulatedXML);
             }
 
             _mbmlFunctions[funcName] = function;
@@ -483,7 +483,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 - (MBMLFunction*) functionWithName:(NSString*)name
 {
     verboseDebugTrace();
-
+    
     return _mbmlFunctions[name];
 }
 
