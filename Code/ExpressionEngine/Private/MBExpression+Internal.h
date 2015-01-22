@@ -8,6 +8,9 @@
 
 #import "MBExpression.h"
 
+/*!
+ Internal interface for `MBExpression` class.
+ */
 @interface MBExpression (Private)
 
 /*----------------------------------------------------------------------------*/

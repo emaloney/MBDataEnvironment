@@ -12,6 +12,7 @@
 #import "MBMLFunction.h"
 #import "MBVariableSpace.h"
 #import "MBExpressionGrammar.h"
+#import "MBExpressionCache+Internal.h"
 
 #define DEBUG_LOCAL             0
 

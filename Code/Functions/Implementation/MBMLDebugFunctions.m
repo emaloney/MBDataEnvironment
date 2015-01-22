@@ -15,6 +15,7 @@
 #import "MBDataEnvironmentModule.h"
 #import "MBExpressionCache.h"
 #import "MBVariableSpace.h"
+#import "MBExpressionCache+Internal.h"
 
 /******************************************************************************/
 #pragma mark -
