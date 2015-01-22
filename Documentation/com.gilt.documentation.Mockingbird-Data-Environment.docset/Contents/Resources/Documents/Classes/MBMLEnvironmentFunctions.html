@@ -193,13 +193,13 @@ file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given MBML file has
-been loaded into the current Mockingbird environment.</p>
+		<p>Determines whether a given MBML file has been loaded into the current
+Mockingbird environment.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSNumber *)mbmlFileIsLoaded:(NSString *)<em>templateName</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)mbmlFileIsLoaded:(NSString *)<em>fileName</em></code></div>
 
     
 	
@@ -207,8 +207,8 @@ been loaded into the current Mockingbird environment.</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>templateName</em></dt>
-			<dd><p>The function&rsquo;s input parameter.</p></dd>
+			<dt><em>fileName</em></dt>
+			<dd><p>The name of the file.</p></dd>
 		</dl>
 		
 	</div>
@@ -217,8 +217,8 @@ been loaded into the current Mockingbird environment.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSNumber</code> wrapping a boolean value indicating whether the
-            specified file has been loaded into the current environment.</p>
+		<p><code>@YES</code> if the specified file has been loaded into the current
+            environment, <code>@NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -263,9 +263,9 @@ has already been loaded.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation returns an array of the names (i.e., the
-<code>lastPathComponent</code>s of the file paths) for the files that have been loaded
-into the current Mockingbird environment.</p>
+		<p>Returns an array of the names (i.e., the <code>lastPathComponent</code>s of the file
+paths) for the files that have been loaded into the current Mockingbird
+environment.</p>
 	</div>		
 	
     
@@ -322,8 +322,8 @@ loaded.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation returns an array of the full paths of the files
-that have been loaded into the current Mockingbird environment.</p>
+		<p>Returns an array of the full pathnames of the MBML files that have been loaded
+into the current Mockingbird environment.</p>
 	</div>		
 	
     
@@ -355,8 +355,8 @@ that have been loaded into the current Mockingbird environment.</p>
 <pre><code>^mbmlLoadedPaths()
 </code></pre>
 
-<p>returns an array containing the full paths of the files that have already been
-loaded.</p>
+<p>returns an array containing the full pathnames of the files that have already
+been loaded.</p>
 	</div>
 	
 	
@@ -380,13 +380,13 @@ loaded.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that determines whether a given MBML file has
-been loaded into the current Mockingbird environment.</p>
+		<p>Determines whether an MBML file with the given pathname has been loaded into
+the current Mockingbird environment.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSNumber *)mbmlPathIsLoaded:(NSString *)<em>templateName</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSNumber *)mbmlPathIsLoaded:(NSString *)<em>pathName</em></code></div>
 
     
 	
@@ -394,8 +394,8 @@ been loaded into the current Mockingbird environment.</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>templateName</em></dt>
-			<dd><p>The function&rsquo;s input parameter.</p></dd>
+			<dt><em>pathName</em></dt>
+			<dd><p>The full pathname of the file.</p></dd>
 		</dl>
 		
 	</div>
@@ -404,8 +404,8 @@ been loaded into the current Mockingbird environment.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSNumber</code> wrapping a boolean value indicating whether the
-            specified file has been loaded into the current environment.</p>
+		<p><code>@YES</code> if the specified file has been loaded into the current
+            environment, <code>@NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -419,13 +419,13 @@ yielding the full path of the file being tested.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$file</code> evaluates to the full file path of the initial <code>manifest.xml</code>
+<p>Assume <code>$path</code> evaluates to the full file path of the initial <code>manifest.xml</code>
 file. The expression:</p>
 
-<pre><code>^mbmlPathIsLoaded($file)
+<pre><code>^mbmlPathIsLoaded($path)
 </code></pre>
 
-<p>would return a boolean <code>YES</code> if the path represented by the expression <code>$file</code>
+<p>would return <code>@YES</code> if the path represented by the expression <code>$path</code>
 has already been loaded.</p>
 	</div>
 	

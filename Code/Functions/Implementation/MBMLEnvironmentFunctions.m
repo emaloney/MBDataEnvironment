@@ -40,18 +40,18 @@
     return files;
 }
 
-+ (NSNumber*) mbmlPathIsLoaded:(NSString*)templateName
++ (NSNumber*) mbmlPathIsLoaded:(NSString*)pathName
 {
     debugTrace();
 
-    return @([[MBEnvironment instance] mbmlPathIsLoaded:templateName]);
+    return @([[MBEnvironment instance] mbmlPathIsLoaded:pathName]);
 }
 
-+ (NSNumber*) mbmlFileIsLoaded:(NSString*)templateName
++ (NSNumber*) mbmlFileIsLoaded:(NSString*)fileName
 {
     debugTrace();
 
-    return @([[MBEnvironment instance] mbmlFileIsLoaded:templateName]);
+    return @([[MBEnvironment instance] mbmlFileIsLoaded:fileName]);
 }
 
 @end

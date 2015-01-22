@@ -193,8 +193,7 @@ file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an array of the available
-<code>UIFont</code> family names.</p>
+		<p>Returns an array containing the available font family names.</p>
 	</div>		
 	
     
@@ -225,7 +224,7 @@ file.</p>
 <pre><code>^fontFamilyNames()
 </code></pre>
 
-<p>would return the names of all font families available on the device on which
+<p>returns the names of all font families available on the device on which
 the expression is evaluated.</p>
 	</div>
 	
@@ -250,13 +249,13 @@ the expression is evaluated.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns an array of the available
-<code>UIFont</code> family names.</p>
+		<p>Returns an array containing the available <code>UIFont</code> names given a font family
+name.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)fontNamesForFamilyName:(NSString *)<em>input</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)fontNamesForFamilyName:(NSString *)<em>familyName</em></code></div>
 
     
 	
@@ -264,8 +263,8 @@ the expression is evaluated.</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>input</em></dt>
-			<dd><p>The function&rsquo;s input parameter.</p></dd>
+			<dt><em>familyName</em></dt>
+			<dd><p>The function&rsquo;s input parameter, the font family name.</p></dd>
 		</dl>
 		
 	</div>
@@ -288,12 +287,12 @@ the name of the font family whose font names are sought.</p>
 
 <h4>Expression usage</h4>
 
-<p>On a first-generation iPad, the expression:</p>
+<p>The expression:</p>
 
 <pre><code>^fontNamesForFamilyName(Helvetica)
 </code></pre>
 
-<p>would return an array containing the following font names:</p>
+<p>returns an array containing the following font names:</p>
 
 <ul>
 <li>Helvetica-LightOblique</li>
@@ -304,6 +303,8 @@ the name of the font family whose font names are sought.</p>
 <li>Helvetica-Light</li>
 </ul>
 
+
+<p>Results may differ depending on the device type and operating system version.</p>
 	</div>
 	
 	
@@ -327,8 +328,7 @@ the name of the font family whose font names are sought.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that returns a <code>UIFont</code> instance for the
-given font name and size.</p>
+		<p>Returns a <code>UIFont</code> instance for the given font name and size.</p>
 	</div>		
 	
     
@@ -351,7 +351,7 @@ given font name and size.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The requested <code>UIFont</code>.</p>
+		<p>The requested <code>UIFont</code>, or <code>nil</code> if it couldn&rsquo;t be found.</p>
 	</div>
 	
 	
@@ -365,19 +365,21 @@ parameters:</p>
 
 <ul>
 <li><p>The <em>font name</em>, a string expression that specifies the name of the font
-requested</p></li>
+ requested</p></li>
 <li><p>The <em>font size</em>, a numeric expression indicating the size of the font to
-return</p></li>
+ return</p></li>
 </ul>
 
 
 <h4>Expression usage</h4>
 
-<pre><code>^fontWithNameAndSize(Helvetica|14)
+<p>The expression:</p>
+
+<pre><code>^fontWithNameAndSize(Helvetica-BoldOblique|14)
 </code></pre>
 
-<p>would return a <code>UIFont</code> instance for the font named &ldquo;Helvetica&rdquo; at 14-point
-size.</p>
+<p>returns a <code>UIFont</code> instance for the font named &ldquo;Helvetica-BoldOblique&rdquo; at
+14-point size.</p>
 	</div>
 	
 	
@@ -401,7 +403,7 @@ size.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>An MBML function implementation that measures the size of text in a given font.</p>
+		<p>Measures the size of width and height needed to render text in a given font.</p>
 	</div>		
 	
     
@@ -424,7 +426,7 @@ size.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The requested <code>UIFont</code>.</p>
+		<p>The size of the text in the given font, as a comma-separated string.</p>
 	</div>
 	
 	
@@ -442,16 +444,22 @@ parameters:</p>
 </ul>
 
 
-<p>The function returns a string containing the size of the specified text in
-&ldquo;<em>width</em>,<em>height</em>&rdquo; format.</p>
+<p>The function returns a string in &ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo; format containing
+the size of <em>text</em> when rendered in <em>font</em></p>
+
+<p>Note that fractional pixel values may be returned.</p>
 
 <h4>Expression usage</h4>
+
+<p>The expression:</p>
 
 <pre><code>^sizeOfTextWithFont(This is my text to measure|^fontWithNameAndSize(Helvetica|14))
 </code></pre>
 
-<p>would return a <code>UIFont</code> instance for the font named &ldquo;Helvetica&rdquo; at 14-point
-size.</p>
+<p>returns the string &ldquo;<code>163.379,16.1</code>&rdquo;, indicating a width of <code>163.379</code> pixels
+and a height of <code>16.1</code> pixels.</p>
+
+<p>Results may differ depending on the device type and operating system version.</p>
 	</div>
 	
 	

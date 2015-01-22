@@ -26,8 +26,8 @@
 @interface MBMLEnvironmentFunctions : NSObject
 
 /*!
- An MBML function implementation returns an array of the full paths of the files
- that have been loaded into the current Mockingbird environment.
+ Returns an array of the full pathnames of the MBML files that have been loaded
+ into the current Mockingbird environment.
 
  This Mockingbird function accepts no parameters.
 
@@ -37,8 +37,8 @@
 
     ^mbmlLoadedPaths()
 
- returns an array containing the full paths of the files that have already been
- loaded.
+ returns an array containing the full pathnames of the files that have already
+ been loaded.
 
  @return    An array containing the paths of the files that have been loaded
             into the current environment.
@@ -46,9 +46,9 @@
 + (NSArray*) mbmlLoadedPaths;
 
 /*!
- An MBML function implementation returns an array of the names (i.e., the
- `lastPathComponent`s of the file paths) for the files that have been loaded
- into the current Mockingbird environment.
+ Returns an array of the names (i.e., the `lastPathComponent`s of the file
+ paths) for the files that have been loaded into the current Mockingbird 
+ environment.
 
  This Mockingbird function accepts no parameters.
 
@@ -67,32 +67,32 @@
 + (NSArray*) mbmlLoadedFiles;
 
 /*!
- An MBML function implementation that determines whether a given MBML file has
- been loaded into the current Mockingbird environment.
+ Determines whether an MBML file with the given pathname has been loaded into
+ the current Mockingbird environment.
 
  This Mockingbird function accepts a single parameter: a string expression
  yielding the full path of the file being tested.
 
  #### Expression usage
 
- Assume `$file` evaluates to the full file path of the initial `manifest.xml`
+ Assume `$path` evaluates to the full file path of the initial `manifest.xml`
  file. The expression:
 
-    ^mbmlPathIsLoaded($file)
+    ^mbmlPathIsLoaded($path)
 
- would return a boolean `YES` if the path represented by the expression `$file`
+ would return `@YES` if the path represented by the expression `$path`
  has already been loaded.
 
- @param     templateName The function's input parameter.
+ @param     pathName The full pathname of the file.
 
- @return    An `NSNumber` wrapping a boolean value indicating whether the
-            specified file has been loaded into the current environment.
+ @return    `@YES` if the specified file has been loaded into the current
+            environment, `@NO` otherwise.
  */
-+ (NSNumber*) mbmlPathIsLoaded:(NSString*)templateName;
++ (NSNumber*) mbmlPathIsLoaded:(NSString*)pathName;
 
 /*!
- An MBML function implementation that determines whether a given MBML file has
- been loaded into the current Mockingbird environment.
+ Determines whether a given MBML file has been loaded into the current
+ Mockingbird environment.
 
  This Mockingbird function accepts a single parameter: a string expression
  yielding the file name (i.e., the `lastPathComponent`) of the file being 
@@ -107,11 +107,11 @@
  would return a boolean `YES` if any file named `manifest.xml` (at any path)
  has already been loaded.
 
- @param     templateName The function's input parameter.
+ @param     fileName The name of the file.
 
- @return    An `NSNumber` wrapping a boolean value indicating whether the
-            specified file has been loaded into the current environment.
+ @return    `@YES` if the specified file has been loaded into the current
+            environment, `@NO` otherwise.
  */
-+ (NSNumber*) mbmlFileIsLoaded:(NSString*)templateName;
++ (NSNumber*) mbmlFileIsLoaded:(NSString*)fileName;
 
 @end

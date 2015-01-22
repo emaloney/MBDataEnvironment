@@ -53,6 +53,10 @@
 	
 	<option value="//api/name/dataFromBase64:">&nbsp;&nbsp;&nbsp;&nbsp;+ dataFromBase64:</option>
 	
+	<option value="//api/name/dataFromHexString:">&nbsp;&nbsp;&nbsp;&nbsp;+ dataFromHexString:</option>
+	
+	<option value="//api/name/hexStringFromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ hexStringFromData:</option>
+	
 	
 	
 	
@@ -77,6 +81,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Base-64 encoding &amp; decoding">Base-64 encoding &amp; decoding</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Hexadecimal string encoding &amp; decoding">Hexadecimal string encoding &amp; decoding</a></span></li>
+	
 </ul></li>
 
 
@@ -98,6 +104,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/base64FromData:">base64FromData:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataFromBase64:">dataFromBase64:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataFromHexString:">dataFromHexString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hexStringFromData:">hexStringFromData:</a></span></li>
 	
 </ul></li>
 
@@ -215,6 +225,26 @@ file.</p>
 </li>
 						</ul>
 						
+						
+						<a title="Hexadecimal string encoding &amp; decoding" name="task_Hexadecimal string encoding &amp; decoding"></a>
+						<h3 class="subsubtitle task-title">Hexadecimal string encoding &amp; decoding</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hexStringFromData:">+&nbsp;hexStringFromData:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dataFromHexString:">+&nbsp;dataFromHexString:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
 					</div>
 					
 					
@@ -257,7 +287,8 @@ file.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An MD5 hash computed from the input data.</p>
+		<p>An MD5 hash computed from the input data. The hash is returned
+            as a hexadecimal string.</p>
 	</div>
 	
 	
@@ -324,7 +355,8 @@ contained in the <code>NSData</code> instance yielded by the MBML expression &ld
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An MD5 hash computed from the input string.</p>
+		<p>An MD5 hash computed from the input string. The hash is returned
+            as a hexadecimal string.</p>
 	</div>
 	
 	
@@ -394,7 +426,8 @@ the alias <code>^MD5()</code>.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An MD5 hash computed from the input data.</p>
+		<p>An SHA-1 hash computed from the input data.The hash is returned
+            as a hexadecimal string.</p>
 	</div>
 	
 	
@@ -461,7 +494,8 @@ contained in the <code>NSData</code> instance yielded by the MBML expression &ld
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An MD5 hash computed from the input string.</p>
+		<p>An SHA-1 hash computed from the input string.The hash is returned
+            as a hexadecimal string.</p>
 	</div>
 	
 	
@@ -480,8 +514,8 @@ the input string.</p>
 <pre><code>^SHA1FromString(12 Galaxies)
 </code></pre>
 
-<p>would return the string <code>51eae4327df7f0617eaaf305832fe219</code>, a hexadecimal
-representation of the MD5 hash of the string &ldquo;<code>12 Galaxies</code>&rdquo;.</p>
+<p>would return the string <code>b9f4599289911696e76d1e401a449dbf3dd97b72</code>, a
+hexadecimal representation of the SHA1 hash of the string &ldquo;<code>12 Galaxies</code>&rdquo;.</p>
 
 <p><strong>Note:</strong> This function is also exposed to the Mockingbird environment with
 the alias <code>^SHA1()</code>.</p>
@@ -620,6 +654,141 @@ the input string.</p>
 
 <p>The expression above returns an <code>NSData</code> instance containing the bytes
 representing the UTF-8 encoded string, &ldquo;<a href="http://tech.gilt.com/"><code>http://tech.gilt.com/</code></a>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dataFromHexString:" title="dataFromHexString:"></a>
+	<h3 class="subsubtitle method-title">dataFromHexString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Decodes a hexadecimal string representation of data, and returns the resulting
+<code>NSData</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)dataFromHexString:(NSString *)<em>hexString</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hexString</em></dt>
+			<dd><p>The function&rsquo;s input data, a hexadecimal-encoded string.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The hexadecimal-decoded form of <code>hexString</code>, contained in an
+            <code>NSData</code> instance.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts a single expression parameter that is expected to yield
+the input string.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^dataFromHexString(687474703a2f2f746563682e67696c742e636f6d2f)
+</code></pre>
+
+<p>The expression above returns an <code>NSData</code> instance containing the bytes
+representing the UTF-8 encoded string, &ldquo;<a href="http://tech.gilt.com/"><code>http://tech.gilt.com/</code></a>&rdquo;.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hexStringFromData:" title="hexStringFromData:"></a>
+	<h3 class="subsubtitle method-title">hexStringFromData:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Converts an <code>NSData</code> instance into a hexadecimal string representing its
+byte content.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)hexStringFromData:(NSData *)<em>data</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>The function&rsquo;s input data.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The hexadecimal representation of the input data.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSData</code> instance.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^hexStringFromData($myData)
+</code></pre>
+
+<p>would return a string that contains the hexadecimal representation of the bytes
+within the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;.</p>
 	</div>
 	
 	

@@ -26,8 +26,7 @@
 @interface MBMLFontFunctions : NSObject
 
 /*!
- An MBML function implementation that returns an array of the available
- `UIFont` family names.
+ Returns an array containing the available font family names.
  
  This Mockingbird function takes no parameters.
  
@@ -37,7 +36,7 @@
  
     ^fontFamilyNames()
  
- would return the names of all font families available on the device on which
+ returns the names of all font families available on the device on which
  the expression is evaluated.
   
  @return    The names of the available font families.
@@ -45,19 +44,19 @@
 + (id) fontFamilyNames;
 
 /*!
- An MBML function implementation that returns an array of the available
- `UIFont` family names.
+ Returns an array containing the available `UIFont` names given a font family
+ name.
  
  This Mockingbird function takes a single string expression as input, yielding
  the name of the font family whose font names are sought.
  
  #### Expression usage
  
- On a first-generation iPad, the expression:
+ The expression:
  
     ^fontNamesForFamilyName(Helvetica)
  
- would return an array containing the following font names:
+ returns an array containing the following font names:
  
  * Helvetica-LightOblique
  * Helvetica
@@ -66,40 +65,43 @@
  * Helvetica-Bold
  * Helvetica-Light
  
- @param     input The function's input parameter.
+ Results may differ depending on the device type and operating system version.
+
+ @param     familyName The function's input parameter, the font family name.
  
  @return    The names of the fonts available in the given font family.
  */
-+ (id) fontNamesForFamilyName:(NSString*)input;
++ (id) fontNamesForFamilyName:(NSString*)familyName;
 
 /*!
- An MBML function implementation that returns a `UIFont` instance for the
- given font name and size.
+ Returns a `UIFont` instance for the given font name and size.
  
  This Mockingbird function accepts two pipe-separated expressions as input
  parameters:
  
  * The *font name*, a string expression that specifies the name of the font
- requested
+   requested
  
  * The *font size*, a numeric expression indicating the size of the font to
- return
+   return
  
  #### Expression usage
  
-    ^fontWithNameAndSize(Helvetica|14)
+ The expression:
+
+    ^fontWithNameAndSize(Helvetica-BoldOblique|14)
  
- would return a `UIFont` instance for the font named "Helvetica" at 14-point
- size.
+ returns a `UIFont` instance for the font named "Helvetica-BoldOblique" at
+ 14-point size.
  
  @param     params The function's input parameters.
  
- @return    The requested `UIFont`.
+ @return    The requested `UIFont`, or `nil` if it couldn't be found.
  */
 + (id) fontWithNameAndSize:(NSArray*)params;
 
 /*!
- An MBML function implementation that measures the size of text in a given font.
+ Measures the size of width and height needed to render text in a given font.
  
  This Mockingbird function accepts two pipe-separated expressions as input
  parameters:
@@ -108,19 +110,25 @@
  
  * The *font*, an object expression that yields a `UIFont` instance
  
- The function returns a string containing the size of the specified text in
- "*width*,*height*" format.
+ The function returns a string in "*`width`*`,`*`height`*" format containing 
+ the size of *text* when rendered in *font*
+
+ Note that fractional pixel values may be returned.
  
  #### Expression usage
- 
+
+ The expression:
+
     ^sizeOfTextWithFont(This is my text to measure|^fontWithNameAndSize(Helvetica|14))
  
- would return a `UIFont` instance for the font named "Helvetica" at 14-point
- size.
- 
+ returns the string "`163.379,16.1`", indicating a width of `163.379` pixels
+ and a height of `16.1` pixels.
+
+ Results may differ depending on the device type and operating system version.
+
  @param     params The function's input parameters.
  
- @return    The requested `UIFont`.
+ @return    The size of the text in the given font, as a comma-separated string.
  */
 + (id) sizeOfTextWithFont:(NSArray*)params;
 

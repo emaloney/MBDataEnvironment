@@ -172,7 +172,7 @@ file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Implements an if operator.</p>
+		<p>Implements an <code>if</code> operator usable within Mockingbird expressions.</p>
 	</div>		
 	
     
@@ -195,7 +195,7 @@ file.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of performing the evaluations described above.</p>
+		<p>The result of the <code>if</code> operator.</p>
 	</div>
 	
 	
@@ -207,15 +207,16 @@ file.</p>
 		<p>This Mockingbird function accepts between one and three input expressions:</p>
 
 <ul>
-<li><p>The first parameter is the <em>conditional expression</em>, a template
-expression that will be evaluated in a boolean context. If only this parameter
-is provided, its object value is returned if the expression evaluates to true,
-while <code>nil</code> is returned if the single parameter evaluates to false.</p></li>
+<li><p>The first parameter is the <em>conditional expression</em>, a Mockingbird
+ expression that will be evaluated in a boolean context. If only this
+ parameter is provided and it evaluates to <code>true</code>, the result of evaluating
+ the <em>conditional expression</em> in the object context will be returned, while
+<code>nil</code> is returned if the single parameter evaluates to <code>false</code>.</p></li>
 <li><p>An optional <em>true return value</em>, which is returned by the function
-if the conditional evaluates to <code>YES</code>.</p></li>
+ if the conditional evaluates to <code>true</code>.</p></li>
 <li><p>An optional <em>false return value</em>, which is returned if the conditional
-evaluates to <code>NO</code>. If this parameter is omitted and the conditional
-evaluates to <code>NO</code>, <code>nil</code> is returned.</p></li>
+ evaluates to <code>false</code>. If this parameter is omitted and the conditional
+ evaluates to <code>false</code>, <code>nil</code> is returned.</p></li>
 </ul>
 
 
@@ -224,12 +225,33 @@ evaluates to <code>NO</code>, <code>nil</code> is returned.</p></li>
 <p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
 name that differs from that of its implementing method:</p>
 
-<pre><code> ^if($year -LT 2015|Past|This Year)
+<pre><code> ^if($year -LT 2015|Past|Present or future?)
 </code></pre>
 
 <p>The expression above would return the string &ldquo;<code>Past</code>&rdquo; if the
 conditional expression <code>$year -LT 2015</code> evaluates to
-<code>YES</code>; otherwise, the string &ldquo;<code>This Year</code>&rdquo; is returned.</p>
+<code>true</code>; otherwise, the string &ldquo;<code>Present or future?</code>&rdquo; is returned.</p>
+
+<p>In the following expression:</p>
+
+<pre><code> ^if($year -EQ 2015|This Year)
+</code></pre>
+
+<p>the string &ldquo;<code>This Year</code>&rdquo; is returned if <code>$year</code> equals <code>2015</code>; if <code>$year</code>
+is any other value, <code>nil</code> is returned.</p>
+
+<p>Finally, assume <code>$cartItems</code> refers to an array:</p>
+
+<pre><code> ^if($cartItems.count)
+</code></pre>
+
+<p>if <code>$cartItems.count</code> evaluates to <code>true</code> in a boolean context (i.e.,
+if <code>$cartItems.count</code> is non-zero), the object value of <code>$cartItems.count</code> is
+returned. Otherwise, if <code>$cartItems.count</code> is <code>0</code>, <code>nil</code> is returned.</p>
+
+<p>So, if <code>$cartItems</code> contains <code>7</code> items, the expression <code>^if($cartItems.count)</code>
+would yield the result <code>7</code>. But if the array containeds no items, <code>nil</code> would
+be returned.</p>
 	</div>
 	
 	

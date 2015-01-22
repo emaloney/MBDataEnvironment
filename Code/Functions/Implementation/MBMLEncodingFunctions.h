@@ -49,7 +49,8 @@
 
  @param     string The function's input string.
  
- @return    An MD5 hash computed from the input string.
+ @return    An MD5 hash computed from the input string. The hash is returned
+            as a hexadecimal string.
  */
 + (id) MD5FromString:(NSString*)string;
 
@@ -70,7 +71,8 @@
  
  @param     data The function's input data.
  
- @return    An MD5 hash computed from the input data.
+ @return    An MD5 hash computed from the input data. The hash is returned
+            as a hexadecimal string.
  */
 + (id) MD5FromData:(NSData*)data;
 
@@ -91,15 +93,16 @@
  
     ^SHA1FromString(12 Galaxies)
  
- would return the string `51eae4327df7f0617eaaf305832fe219`, a hexadecimal
- representation of the MD5 hash of the string "`12 Galaxies`".
+ would return the string `b9f4599289911696e76d1e401a449dbf3dd97b72`, a 
+ hexadecimal representation of the SHA1 hash of the string "`12 Galaxies`".
  
  **Note:** This function is also exposed to the Mockingbird environment with
  the alias `^SHA1()`.
 
  @param     string The function's input string.
  
- @return    An MD5 hash computed from the input string.
+ @return    An SHA-1 hash computed from the input string.The hash is returned
+            as a hexadecimal string.
  */
 + (id) SHA1FromString:(NSString*)string;
 
@@ -120,7 +123,8 @@
  
  @param     data The function's input data.
  
- @return    An MD5 hash computed from the input data.
+ @return    An SHA-1 hash computed from the input data.The hash is returned
+            as a hexadecimal string.
  */
 + (id) SHA1FromData:(NSData*)data;
 
@@ -171,5 +175,53 @@
             `NSData` instance.
  */
 + (id) dataFromBase64:(NSString*)base64;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Hexadecimal string encoding & decoding
+/*!    @name Hexadecimal string encoding & decoding                           */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Converts an `NSData` instance into a hexadecimal string representing its
+ byte content.
+
+ This Mockingbird function accepts a single expression parameter that is
+ expected to yield an `NSData` instance.
+
+ #### Expression usage
+ 
+ The expression:
+ 
+    ^hexStringFromData($myData)
+ 
+ would return a string that contains the hexadecimal representation of the bytes
+ within the `NSData` instance yielded by the MBML expression "`$myData`".
+ 
+ @param     data The function's input data.
+ 
+ @return    The hexadecimal representation of the input data.
+ */
++ (id) hexStringFromData:(NSData*)data;
+
+/*!
+ Decodes a hexadecimal string representation of data, and returns the resulting
+ `NSData` instance.
+
+ This function accepts a single expression parameter that is expected to yield
+ the input string.
+
+ #### Expression usage
+
+    ^dataFromHexString(687474703a2f2f746563682e67696c742e636f6d2f)
+ 
+ The expression above returns an `NSData` instance containing the bytes
+ representing the UTF-8 encoded string, "`http://tech.gilt.com/`".
+
+ @param     hexString The function's input data, a hexadecimal-encoded string.
+ 
+ @return    The hexadecimal-decoded form of `hexString`, contained in an
+            `NSData` instance.
+ */
++ (id) dataFromHexString:(NSString*)hexString;
 
 @end

@@ -15,8 +15,8 @@ environment information.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlLoadedPaths</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation returns an array of the full paths of the files
-that have been loaded into the current Mockingbird environment.</Abstract>
+			<Abstract type="html">Returns an array of the full pathnames of the MBML files that have been loaded
+into the current Mockingbird environment.</Abstract>
 			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSArray *)mbmlLoadedPaths</Declaration>
@@ -29,9 +29,9 @@ that have been loaded into the current Mockingbird environment.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlLoadedFiles</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation returns an array of the names (i.e., the
-lastPathComponents of the file paths) for the files that have been loaded
-into the current Mockingbird environment.</Abstract>
+			<Abstract type="html">Returns an array of the names (i.e., the lastPathComponents of the file
+paths) for the files that have been loaded into the current Mockingbird
+environment.</Abstract>
 			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSArray *)mbmlLoadedFiles</Declaration>
@@ -44,38 +44,38 @@ into the current Mockingbird environment.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlPathIsLoaded:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given MBML file has
-been loaded into the current Mockingbird environment.</Abstract>
+			<Abstract type="html">Determines whether an MBML file with the given pathname has been loaded into
+the current Mockingbird environment.</Abstract>
 			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSNumber *)mbmlPathIsLoaded:(NSString *)templateName</Declaration>
+			<Declaration>+ (NSNumber *)mbmlPathIsLoaded:(NSString *)pathName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>templateName</Name>
-					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+					<Name>pathName</Name>
+					<Abstract type="html">The full pathname of the file.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber wrapping a boolean value indicating whether the
-            specified file has been loaded into the current environment.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if the specified file has been loaded into the current
+            environment, @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/mbmlPathIsLoaded:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlFileIsLoaded:</TokenIdentifier>
-			<Abstract type="html">An MBML function implementation that determines whether a given MBML file has
-been loaded into the current Mockingbird environment.</Abstract>
+			<Abstract type="html">Determines whether a given MBML file has been loaded into the current
+Mockingbird environment.</Abstract>
 			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSNumber *)mbmlFileIsLoaded:(NSString *)templateName</Declaration>
+			<Declaration>+ (NSNumber *)mbmlFileIsLoaded:(NSString *)fileName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>templateName</Name>
-					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+					<Name>fileName</Name>
+					<Abstract type="html">The name of the file.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber wrapping a boolean value indicating whether the
-            specified file has been loaded into the current environment.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if the specified file has been loaded into the current
+            environment, @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/mbmlFileIsLoaded:</Anchor>
             <NodeRef refid="18"/>
 		</Token>

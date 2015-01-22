@@ -109,6 +109,8 @@
     <Function class="MBMLEncodingFunctions" name="SHA1FromData" input="object"/>
     <Function class="MBMLEncodingFunctions" name="base64FromData" input="object"/>
     <Function class="MBMLEncodingFunctions" name="dataFromBase64" input="string"/>
+    <Function class="MBMLEncodingFunctions" name="hexStringFromData" input="object"/>
+    <Function class="MBMLEncodingFunctions" name="dataFromHexString" input="string"/>
 
     <Function class="MBMLEnvironmentFunctions" name="mbmlLoadedPaths" input="none"/>
     <Function class="MBMLEnvironmentFunctions" name="mbmlLoadedFiles" input="none"/>
