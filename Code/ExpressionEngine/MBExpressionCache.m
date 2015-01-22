@@ -529,6 +529,24 @@ MBImplementSingleton();
     }
 }
 
+- (NSNumber*) filesystemCacheSize
+{
+    debugTrace();
+
+    NSFileManager* fileMgr = [NSFileManager defaultManager];
+
+    NSError* err = nil;
+    NSString* cacheFile = [self _pathForUserCacheFile];
+    if ([fileMgr fileExistsAtPath:cacheFile]) {
+        NSDictionary* attrs = [fileMgr attributesOfItemAtPath:cacheFile error:&err];
+        if (!err) {
+            return attrs[NSFileSize];
+        }
+        errorLog(@"%@ couldn't get file attributes for: %@", [self class], cacheFile);
+    }
+    return nil;
+}
+
 - (void) resetFilesystemCache
 {
     debugTrace();

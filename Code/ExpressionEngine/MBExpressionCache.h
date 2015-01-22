@@ -140,6 +140,17 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
 - (void) removeFilesystemCache;
 
 /*!
+ Returns the size of the serialized filesystem cache, if any.
+ 
+ This does not take into account the size of any compiled-in expression
+ cache resource.
+ 
+ @return    The filesystem cache size (in bytes), or `nil` if there is no
+            filesystem cache.
+ */
+- (NSNumber*) filesystemCacheSize;
+
+/*!
  Clears the in-memory cache and resets knowledge of data that could affect
  automatic cache invalidation.
  */
