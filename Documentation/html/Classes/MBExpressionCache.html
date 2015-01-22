@@ -45,7 +45,7 @@
 	
 	<option value="//api/name/disableCaching">&nbsp;&nbsp;&nbsp;&nbsp;disableCaching</option>
 	
-	<option value="//api/name/enablePersistence">&nbsp;&nbsp;&nbsp;&nbsp;enablePersistence</option>
+	<option value="//api/name/pausePersistence">&nbsp;&nbsp;&nbsp;&nbsp;pausePersistence</option>
 	
 	<option value="//api/name/suppressConsoleLogging">&nbsp;&nbsp;&nbsp;&nbsp;suppressConsoleLogging</option>
 	
@@ -56,11 +56,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/cachedTokensForExpression:usingGrammar:">&nbsp;&nbsp;&nbsp;&nbsp;- cachedTokensForExpression:usingGrammar:</option>
-	
 	<option value="//api/name/clearCache">&nbsp;&nbsp;&nbsp;&nbsp;- clearCache</option>
 	
 	<option value="//api/name/clearMemoryCache">&nbsp;&nbsp;&nbsp;&nbsp;- clearMemoryCache</option>
+	
+	<option value="//api/name/filesystemCacheSize">&nbsp;&nbsp;&nbsp;&nbsp;- filesystemCacheSize</option>
 	
 	<option value="//api/name/loadAndMergeCache">&nbsp;&nbsp;&nbsp;&nbsp;- loadAndMergeCache</option>
 	
@@ -75,8 +75,6 @@
 	<option value="//api/name/saveCache">&nbsp;&nbsp;&nbsp;&nbsp;- saveCache</option>
 	
 	<option value="//api/name/setCacheSerialization:withInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- setCacheSerialization:withInterval:</option>
-	
-	<option value="//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">&nbsp;&nbsp;&nbsp;&nbsp;- tokensForExpression:inVariableSpace:usingGrammar:error:</option>
 	
 	
 	
@@ -96,9 +94,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Controlling cache behavior">Controlling cache behavior</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving tokens for expressions">Retrieving tokens for expressions</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Clearing the cache">Clearing the cache</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Clearing and resetting the cache">Clearing and resetting the cache</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Cache persistence">Cache persistence</a></span></li>
 	
@@ -116,7 +112,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableCaching">disableCaching</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enablePersistence">enablePersistence</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pausePersistence">pausePersistence</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/suppressConsoleLogging">suppressConsoleLogging</a></span></li>
 	
@@ -128,11 +124,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cachedTokensForExpression:usingGrammar:">cachedTokensForExpression:usingGrammar:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearCache">clearCache</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearMemoryCache">clearMemoryCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/filesystemCacheSize">filesystemCacheSize</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/loadAndMergeCache">loadAndMergeCache</a></span></li>
 	
@@ -147,8 +143,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveCache">saveCache</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCacheSerialization:withInterval:">setCacheSerialization:withInterval:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">tokensForExpression:inVariableSpace:usingGrammar:error:</a></span></li>
 	
 </ul></li>
 
@@ -190,7 +184,83 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<div class="warning"><p><strong>Warning:</strong> You <em>must not</em> create instances of this class yourself; this class
+						<p>The <code>MBExpressionCache</code> class is used to cache tokenized versions of
+Mockingbird expressions.</p>
+
+<h3>How expression caching works</h3>
+
+<p>The process of evaluating an expression consists of two parts:</p>
+
+<ul>
+<li><p><strong>Tokenization:</strong> First, the expression is parsed, resulting in a set of
+ <em>tokens</em> that represent the grammatical structure of an expression.</p></li>
+<li><p><strong>Evaluation:</strong> Then, once the expression has been tokenized, the tokens are
+ <em>evaluted</em>, yielding an <em>expression result</em>.</p></li>
+</ul>
+
+
+<p>Tokenization only needs to occur once for a given expression. Once the tokens
+have been created, they can be reused any number of times for evaluation.</p>
+
+<p>To optimize the process of evaluating expressions, Mockingbird caches
+expression tokens in memory by default.</p>
+
+<p>And to be respectful of memory usage, if your application receives a
+<code>UIApplicationDidReceiveMemoryWarningNotification</code>, the in-memory portion of
+the expression cache clears itself automatically.</p>
+
+<h3>Cache serialization</h3>
+
+<p>The <code>MBExpressionCache</code> can also be configured to serialize the token cache
+to the filesystem.</p>
+
+<p>Storing the expression cache in the filesystem can provide performance benefits
+for applications that rely heavily on Mockingbird expressions.</p>
+
+<p>Serialization allows the cache to be pre-filled with tokenized expressions
+when the <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> is loaded. With a serialized cache, expressions
+in the cache won&rsquo;t ever need to be re-tokenized, even after a fresh launch of
+your application.</p>
+
+<p>To enable cache serialization, call <a href="#//api/name/setCacheSerialization:withInterval:"><code>setCacheSerialization:withInterval:</code></a>.</p>
+
+<h3>Where cache files are stored</h3>
+
+<p>If serialization is used, the cache file will be stored in your application&rsquo;s
+<code>Caches</code> directory, in a file named <code>MBExpressionCache.serialized</code>.</p>
+
+<p>During development, you can inspect this file to get a sense of what&rsquo;s
+ending up in the cache.</p>
+
+<h3>Filesystem cache management strategies</h3>
+
+<p>Typical applications won&rsquo;t need to worry about the size of the expression
+cache. However, if your application is likely to encounter tens or hundreds
+of thousands of unique expressions, your cache file may grow large and
+you may want to consider:</p>
+
+<ul>
+<li><p>Limiting cache serialization using
+ <code>MBExpressionCacheSerializationOptimizeForLaunch</code>. Instead of serializing
+ every expression ever encountered, your application can be set to
+ serialize only those encountered only within a certain period of time
+ from application launch.</p></li>
+<li><p>Manually managing the size of the filesystem cache. Listen for the
+ <code>NSNotification</code> event named &ldquo;<code>MBExpressionCache:didSerialize</code>&rdquo;, and
+ when it is fired, check the return value of the <a href="#//api/name/filesystemCacheSize"><code>filesystemCacheSize</code></a> method
+ and call <a href="#//api/name/removeFilesystemCache"><code>removeFilesystemCache</code></a> as needed.</p></li>
+</ul>
+
+
+<h3>Shipping with a compiled-in cache file</h3>
+
+<p>When developing your application in the simulator, if you&rsquo;re relying on
+cache serialization, you can copy the <code>MBExpressionCache.serialized</code> file
+into your application&rsquo;s resources. This will allow you to ship your
+application with a pre-built cache file.</p>
+
+<p><strong>Note:</strong> The pre-built expression cache must be included in the main
+<code>NSBundle</code>&rsquo;s resources in order to be found.</p><div class="warning"><p><strong>Warning:</strong> You <em>must not</em> create instances of this class yourself; this class
             is a singleton. Call the <code>instance</code> class method (declared by the
             <code>MBSingleton</code> protocol) to acquire the singleton instance.</p></div>
 					</div>
@@ -222,7 +292,7 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/enablePersistence">&nbsp;&nbsp;enablePersistence</a></code>
+		<code><a href="#//api/name/pausePersistence">&nbsp;&nbsp;pausePersistence</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -248,28 +318,8 @@
 						</ul>
 						
 						
-						<a title="Retrieving tokens for expressions" name="task_Retrieving tokens for expressions"></a>
-						<h3 class="subsubtitle task-title">Retrieving tokens for expressions</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/cachedTokensForExpression:usingGrammar:">&ndash;&nbsp;cachedTokensForExpression:usingGrammar:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:">&ndash;&nbsp;tokensForExpression:inVariableSpace:usingGrammar:error:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Clearing the cache" name="task_Clearing the cache"></a>
-						<h3 class="subsubtitle task-title">Clearing the cache</h3>
+						<a title="Clearing and resetting the cache" name="task_Clearing and resetting the cache"></a>
+						<h3 class="subsubtitle task-title">Clearing and resetting the cache</h3>
 
 						<ul class="task-list">
 							<li>
@@ -281,6 +331,12 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeFilesystemCache">&ndash;&nbsp;removeFilesystemCache</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/filesystemCacheSize">&ndash;&nbsp;filesystemCacheSize</a></code>
 	</span>
 	
 	
@@ -454,19 +510,18 @@ on the value of the <a href="#//api/name/cacheSerialization"><code>cacheSerializ
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/enablePersistence" title="enablePersistence"></a>
-	<h3 class="subsubtitle method-title">enablePersistence</h3>
+	<a name="//api/name/pausePersistence" title="pausePersistence"></a>
+	<h3 class="subsubtitle method-title">pausePersistence</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Determines whether the expression cache will utilize the filesystem for
-persisting the cached expression tokens.</p>
+		<p>Allows expression cache serialization to be temporarily disabled.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL enablePersistence</code></div>
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL pausePersistence</code></div>
 
     
 	
@@ -480,8 +535,8 @@ persisting the cached expression tokens.</p>
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>This value is manipulated during the <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> load process. Typically,
 you would not change this property yourself; instead, consider using
-the <a href="#//api/name/setCacheSerialization:withInterval:"><code>setCacheSerialization:withInterval:</code></a> if you wish to control how the
-cache handles persistence.</p>
+the <a href="#//api/name/setCacheSerialization:withInterval:"><code>setCacheSerialization:withInterval:</code></a> method if you wish to control how
+persistence is handled.</p>
 	</div>
 	
 	
@@ -547,63 +602,6 @@ to suppress those log messages.</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/cachedTokensForExpression:usingGrammar:" title="cachedTokensForExpression:usingGrammar:"></a>
-	<h3 class="subsubtitle method-title">cachedTokensForExpression:usingGrammar:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the cached <code>MBMLParseToken</code>s for the given expression.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSArray *)cachedTokensForExpression:(NSString *)<em>expr</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression for which the cached tokens are sought.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>grammar</em></dt>
-			<dd><p>The grammar used to tokenize the expression.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An array of the cached tokens for the passed-in expression, or
-            <code>nil</code> if there are no cached tokens for the given expression.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBExpressionCache.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/clearCache" title="clearCache"></a>
 	<h3 class="subsubtitle method-title">clearCache</h3>
 	
@@ -664,7 +662,56 @@ to suppress those log messages.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This method is called automatically during memory warnings.</p>
+		<p>This method is called automatically in response to the
+<code>UIApplicationDidReceiveMemoryWarningNotification</code> event being fired.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBExpressionCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/filesystemCacheSize" title="filesystemCacheSize"></a>
+	<h3 class="subsubtitle method-title">filesystemCacheSize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the size of the serialized filesystem cache, if any.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSNumber *)filesystemCacheSize</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem cache size (in bytes), or <code>nil</code> if there is no
+            filesystem cache.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This does not take into account the size of any compiled-in expression
+cache resource.</p>
 	</div>
 	
 	
@@ -711,10 +758,12 @@ added to the memory cache only if the expression does not already exist
 in the memory cache.</p>
 
 <p>If there is no cache file available in the filesystem, the cache will attempt
-to load a cache file from the app&rsquo;s resources.</p>
+to load a file named <code>MBExpressionCache.serialized</code> from the application&rsquo;s
+main <code>NSBundle</code>.</p>
 
-<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/enablePersistence"><code>enablePersistence</code></a> property is <code>NO</code>,
-            calling this method does nothing.</p></div>
+<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> Calling this method has no effect if <a href="#//api/name/cacheSerialization"><code>cacheSerialization</code></a> is
+            <code>MBExpressionCacheSerializationNone</code> or if <a href="#//api/name/pausePersistence"><code>pausePersistence</code></a>
+            is <code>YES</code>.</p></div>
 	</div>
 	
 	
@@ -757,10 +806,12 @@ are used to replace the existing contents of the in-memory cache.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>If there is no cache file available in the filesystem, the cache will attempt
-to load a cache file from the app&rsquo;s resources.</p>
+to load a file named <code>MBExpressionCache.serialized</code> from the application&rsquo;s
+main <code>NSBundle</code>.</p>
 
-<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/enablePersistence"><code>enablePersistence</code></a> property is <code>NO</code>,
-            calling this method does nothing.</p></div>
+<p>The memory cache is not modified if no file was loaded.</p><div class="note"><p><strong>Note:</strong> Calling this method has no effect if <a href="#//api/name/cacheSerialization"><code>cacheSerialization</code></a> is
+            <code>MBExpressionCacheSerializationNone</code> or if <a href="#//api/name/pausePersistence"><code>pausePersistence</code></a>
+            is <code>YES</code>.</p></div>
 	</div>
 	
 	
@@ -784,8 +835,11 @@ to load a cache file from the app&rsquo;s resources.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Removes the expression cache&rsquo;s file if it was previously written to the
-filesystem.</p>
+		<p>Removes the serialized expression cache file, if any.</p>
+
+<p>The next time <a href="#//api/name/loadCache"><code>loadCache</code></a> is called, a compiled-in expression cache may be
+loaded. If you want to prevent this from happening, call <a href="#//api/name/resetFilesystemCache"><code>resetFilesystemCache</code></a>
+instead.</p>
 	</div>		
 	
     
@@ -799,15 +853,6 @@ filesystem.</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method does not remove any compiled-in resources
-            representing an expression cache file. Next time <a href="#//api/name/loadCache"><code>loadCache</code></a> is
-            called, a compiled-in expression cache may be loaded. If you want
-            to prevent this from happening, call the <a href="#//api/name/resetFilesystemCache"><code>resetFilesystemCache</code></a>
-            method instead.</p></div>
-	</div>
 	
 	
 	
@@ -928,8 +973,9 @@ automatic cache invalidation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> If the expression cache&rsquo;s <a href="#//api/name/enablePersistence"><code>enablePersistence</code></a> property is <code>NO</code>,
-            calling this method does nothing.</p></div>
+		<div class="note"><p><strong>Note:</strong> Calling this method has no effect if <a href="#//api/name/cacheSerialization"><code>cacheSerialization</code></a> is
+            <code>MBExpressionCacheSerializationNone</code> or if <a href="#//api/name/pausePersistence"><code>pausePersistence</code></a>
+            is <code>YES</code>.</p></div>
 	</div>
 	
 	
@@ -953,7 +999,8 @@ automatic cache invalidation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Controls whether and how the expression cache writes files to the filesystem.</p>
+		<p>Controls whether and how the expression cache serializes cached tokens
+to the filesystem.</p>
 	</div>		
 	
     
@@ -967,8 +1014,7 @@ automatic cache invalidation.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>serialization</em></dt>
-			<dd><p>Specifies whether and how the cache should serialize
-            persistent copies to the filesystem.</p></dd>
+			<dd><p>Specifies the serialization strategy to use</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -994,86 +1040,8 @@ automatic cache invalidation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>By default, the expression cache will not serialize.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBExpressionCache.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:" title="tokensForExpression:inVariableSpace:usingGrammar:error:"></a>
-	<h3 class="subsubtitle method-title">tokensForExpression:inVariableSpace:usingGrammar:error:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an array of <code>MBMLParseToken</code> instances representing the tokenized
-version of the passed-in expression.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSArray *)tokensForExpression:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> usingGrammar:(MBExpressionGrammar *)<em>grammar</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to tokenize.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>space</em></dt>
-			<dd><p>The variable space that will be used to look up values for
-            any variable references contained in the expression.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>grammar</em></dt>
-			<dd><p>The grammar to be used for tokenizing the expression.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>errPtr</em></dt>
-			<dd><p>An optional pointer to a memory location for storing an
-            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during tokenization, <code>errPtr</code> will be updated
-            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An array of tokens representing the passed-in expression. Will be
-            <code>nil</code> if an error occurs.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>If the expression is already in the cache, the cached tokens are returned.
-Otherwise, the expression is be tokenized using the specified grammar,
-the resulting tokens are added to the cache, and are then returned.</p>
+		<p>The expression cache will not serialize by default. This method must be
+called with the appropriate parameters to enable serialization.</p>
 	</div>
 	
 	
@@ -1105,7 +1073,7 @@ the resulting tokens are added to the cache, and are then returned.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-21)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-22)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

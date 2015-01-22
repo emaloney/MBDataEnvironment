@@ -4,9 +4,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBExpressionCache</TokenIdentifier>
-			<Abstract type="html">You must not create instances of this class yourself; this class
-            is a singleton. Call the instance class method (declared by the
-            MBSingleton protocol) to acquire the singleton instance.</Abstract>
+			<Abstract type="html">The MBExpressionCache class is used to cache tokenized versions of
+Mockingbird expressions.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
             
 			
@@ -93,55 +92,52 @@ to suppress those log messages.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/setEnablePersistence:</TokenIdentifier>
-			<Abstract type="html">Determines whether the expression cache will utilize the filesystem for
-persisting the cached expression tokens.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/setPausePersistence:</TokenIdentifier>
+			<Abstract type="html">Allows expression cache serialization to be temporarily disabled.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL enablePersistence</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL pausePersistence</Declaration>
 			
 			
-			<Anchor>//api/name/enablePersistence</Anchor>
+			<Anchor>//api/name/pausePersistence</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/enablePersistence</TokenIdentifier>
-			<Abstract type="html">Determines whether the expression cache will utilize the filesystem for
-persisting the cached expression tokens.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/pausePersistence</TokenIdentifier>
+			<Abstract type="html">Allows expression cache serialization to be temporarily disabled.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL enablePersistence</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL pausePersistence</Declaration>
 			
 			
-			<Anchor>//api/name/enablePersistence</Anchor>
+			<Anchor>//api/name/pausePersistence</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionCache/enablePersistence</TokenIdentifier>
-			<Abstract type="html">Determines whether the expression cache will utilize the filesystem for
-persisting the cached expression tokens.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionCache/pausePersistence</TokenIdentifier>
+			<Abstract type="html">Allows expression cache serialization to be temporarily disabled.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL enablePersistence</Declaration>
+			<Declaration>@property (nonatomic, assign) BOOL pausePersistence</Declaration>
 			
 			
-			<Anchor>//api/name/enablePersistence</Anchor>
+			<Anchor>//api/name/pausePersistence</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/setCacheSerialization:withInterval:</TokenIdentifier>
-			<Abstract type="html">Controls whether and how the expression cache writes files to the filesystem.</Abstract>
+			<Abstract type="html">Controls whether and how the expression cache serializes cached tokens
+to the filesystem.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
 			
 			<Declaration>- (void)setCacheSerialization:(MBExpressionCacheSerialization)serialization withInterval:(NSTimeInterval)interval</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>serialization</Name>
-					<Abstract type="html">Specifies whether and how the cache should serialize
-            persistent copies to the filesystem.</Abstract>
+					<Abstract type="html">Specifies the serialization strategy to use</Abstract>
 				</Parameter><Parameter>
 					<Name>interval</Name>
 					<Abstract type="html">The time interval that applies to the serialization
@@ -245,59 +241,6 @@ cacheSerialization is MBExpressionCacheSerializationNone.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/cachedTokensForExpression:usingGrammar:</TokenIdentifier>
-			<Abstract type="html">Returns the cached MBMLParseTokens for the given expression.</Abstract>
-			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)cachedTokensForExpression:(NSString *)expr usingGrammar:(MBExpressionGrammar *)grammar</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>expr</Name>
-					<Abstract type="html">The expression for which the cached tokens are sought.</Abstract>
-				</Parameter><Parameter>
-					<Name>grammar</Name>
-					<Abstract type="html">The grammar used to tokenize the expression.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An array of the cached tokens for the passed-in expression, or
-            nil if there are no cached tokens for the given expression.</Abstract></ReturnValue>
-			<Anchor>//api/name/cachedTokensForExpression:usingGrammar:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/tokensForExpression:inVariableSpace:usingGrammar:error:</TokenIdentifier>
-			<Abstract type="html">Returns an array of MBMLParseToken instances representing the tokenized
-version of the passed-in expression.</Abstract>
-			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
-			
-			<Declaration>- (NSArray *)tokensForExpression:(NSString *)expr inVariableSpace:(MBVariableSpace *)space usingGrammar:(MBExpressionGrammar *)grammar error:(MBExpressionError **)errPtr</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>expr</Name>
-					<Abstract type="html">The expression to tokenize.</Abstract>
-				</Parameter><Parameter>
-					<Name>space</Name>
-					<Abstract type="html">The variable space that will be used to look up values for
-            any variable references contained in the expression.</Abstract>
-				</Parameter><Parameter>
-					<Name>grammar</Name>
-					<Abstract type="html">The grammar to be used for tokenizing the expression.</Abstract>
-				</Parameter><Parameter>
-					<Name>errPtr</Name>
-					<Abstract type="html">An optional pointer to a memory location for storing an
-            MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during tokenization, errPtr will be updated
-            to point to an MBExpressionError instance describing the error.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">An array of tokens representing the passed-in expression. Will be
-            nil if an error occurs.</Abstract></ReturnValue>
-			<Anchor>//api/name/tokensForExpression:inVariableSpace:usingGrammar:error:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/clearMemoryCache</TokenIdentifier>
 			<Abstract type="html">Throws away the in-memory token cache.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
@@ -311,14 +254,30 @@ version of the passed-in expression.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/removeFilesystemCache</TokenIdentifier>
-			<Abstract type="html">Removes the expression cache&apos;s file if it was previously written to the
-filesystem.</Abstract>
+			<Abstract type="html">Removes the serialized expression cache file, if any.
+  
+The next time loadCache is called, a compiled-in expression cache may be
+loaded. If you want to prevent this from happening, call resetFilesystemCache
+instead.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
 			
 			<Declaration>- (void)removeFilesystemCache</Declaration>
 			
 			
 			<Anchor>//api/name/removeFilesystemCache</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionCache/filesystemCacheSize</TokenIdentifier>
+			<Abstract type="html">Returns the size of the serialized filesystem cache, if any.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+			
+			<Declaration>- (NSNumber *)filesystemCacheSize</Declaration>
+			
+			<ReturnValue><Abstract type="html">The filesystem cache size (in bytes), or nil if there is no
+            filesystem cache.</Abstract></ReturnValue>
+			<Anchor>//api/name/filesystemCacheSize</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

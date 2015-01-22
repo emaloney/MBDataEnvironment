@@ -78,11 +78,11 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     debugTrace();
 
     MBExpressionCache* cache = [MBExpressionCache instance];
-    cache.enablePersistence = NO;      // turn off persistence while we reset
+    cache.pausePersistence = YES;    // turn off persistence while we reset
     [cache resetMemoryCache];
-    cache.enablePersistence = YES;     // turn on persistence so we can load the environment
+    cache.pausePersistence = NO;     // turn on persistence so we can load the environment
     [cache loadCache];
-    cache.enablePersistence = NO;      // turn off persistence once more to avoid thrashing while loading the environment
+    cache.pausePersistence = YES;    // turn off persistence once more to avoid thrashing while loading the environment
 }
 
 - (void) environmentDidLoad:(MBEnvironment*)env
@@ -90,7 +90,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     debugTrace();
 
     MBExpressionCache* cache = [MBExpressionCache instance];
-    cache.enablePersistence = YES;     // re-enable cache persistence now that we're done loading
+    cache.pausePersistence = NO;     // re-enable cache persistence now that we're done loading
 }
 
 /******************************************************************************/

@@ -50,7 +50,80 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
 /******************************************************************************/
 
 /*!
+ The `MBExpressionCache` class is used to cache tokenized versions of
+ Mockingbird expressions.
+
+ ### How expression caching works
+
+ The process of evaluating an expression consists of two parts:
  
+ * **Tokenization:** First, the expression is parsed, resulting in a set of
+   *tokens* that represent the grammatical structure of an expression.
+ 
+ * **Evaluation:** Then, once the expression has been tokenized, the tokens are
+   *evaluted*, yielding an *expression result*.
+ 
+ Tokenization only needs to occur once for a given expression. Once the tokens
+ have been created, they can be reused any number of times for evaluation.
+ 
+ To optimize the process of evaluating expressions, Mockingbird caches 
+ expression tokens in memory by default.
+ 
+ And to be respectful of memory usage, if your application receives a
+ `UIApplicationDidReceiveMemoryWarningNotification`, the in-memory portion of
+ the expression cache clears itself automatically.
+
+ ### Cache serialization
+
+ The `MBExpressionCache` can also be configured to serialize the token cache
+ to the filesystem.
+ 
+ Storing the expression cache in the filesystem can provide performance benefits
+ for applications that rely heavily on Mockingbird expressions.
+
+ Serialization allows the cache to be pre-filled with tokenized expressions
+ when the `MBEnvironment` is loaded. With a serialized cache, expressions
+ in the cache won't ever need to be re-tokenized, even after a fresh launch of
+ your application.
+
+ To enable cache serialization, call `setCacheSerialization:withInterval:`.
+
+ ### Where cache files are stored
+ 
+ If serialization is used, the cache file will be stored in your application's
+ `Caches` directory, in a file named `MBExpressionCache.serialized`.
+
+ During development, you can inspect this file to get a sense of what's
+ ending up in the cache.
+
+ ### Filesystem cache management strategies
+
+ Typical applications won't need to worry about the size of the expression
+ cache. However, if your application is likely to encounter tens or hundreds
+ of thousands of unique expressions, your cache file may grow large and
+ you may want to consider:
+ 
+ * Limiting cache serialization using 
+   `MBExpressionCacheSerializationOptimizeForLaunch`. Instead of serializing
+   every expression ever encountered, your application can be set to
+   serialize only those encountered only within a certain period of time
+   from application launch.
+
+ * Manually managing the size of the filesystem cache. Listen for the
+   `NSNotification` event named "`MBExpressionCache:didSerialize`", and
+   when it is fired, check the return value of the `filesystemCacheSize` method
+   and call `removeFilesystemCache` as needed.
+
+ ### Shipping with a compiled-in cache file
+ 
+ When developing your application in the simulator, if you're relying on 
+ cache serialization, you can copy the `MBExpressionCache.serialized` file
+ into your application's resources. This will allow you to ship your
+ application with a pre-built cache file.
+ 
+ **Note:** The pre-built expression cache must be included in the main
+ `NSBundle`'s resources in order to be found.
+
  @warning   You *must not* create instances of this class yourself; this class
             is a singleton. Call the `instance` class method (declared by the
             `MBSingleton` protocol) to acquire the singleton instance.
@@ -75,23 +148,23 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
 @property(nonatomic, assign) BOOL suppressConsoleLogging;
 
 /*!
- Determines whether the expression cache will utilize the filesystem for
- persisting the cached expression tokens.
+ Allows expression cache serialization to be temporarily disabled.
 
  This value is manipulated during the `MBEnvironment` load process. Typically,
  you would not change this property yourself; instead, consider using
- the `setCacheSerialization:withInterval:` if you wish to control how the
- cache handles persistence.
+ the `setCacheSerialization:withInterval:` method if you wish to control how 
+ persistence is handled.
  */
-@property(nonatomic, assign) BOOL enablePersistence;
+@property(nonatomic, assign) BOOL pausePersistence;
 
 /*!
- Controls whether and how the expression cache writes files to the filesystem.
+ Controls whether and how the expression cache serializes cached tokens
+ to the filesystem.
  
- By default, the expression cache will not serialize.
- 
- @param     serialization Specifies whether and how the cache should serialize
-            persistent copies to the filesystem.
+ The expression cache will not serialize by default. This method must be
+ called with the appropriate parameters to enable serialization.
+
+ @param     serialization Specifies the serialization strategy to use
 
  @param     interval The time interval that applies to the `serialization`
             value. If `serialization` is 
@@ -121,27 +194,24 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
 @property(nonatomic, readonly) NSTimeInterval cacheSerializationInterval;
 
 /*----------------------------------------------------------------------------*/
-/*----------------------------------------------------------------------------*/
-#pragma mark Clearing the cache
-/*!    @name Clearing the cache                                               */
+#pragma mark Clearing and resetting the cache
+/*!    @name Clearing and resetting the cache                                 */
 /*----------------------------------------------------------------------------*/
 
 /*!
  Throws away the in-memory token cache.
  
- This method is called automatically during memory warnings.
+ This method is called automatically in response to the
+ `UIApplicationDidReceiveMemoryWarningNotification` event being fired.
  */
 - (void) clearMemoryCache;
 
 /*!
- Removes the expression cache's file if it was previously written to the
- filesystem.
- 
- @note      This method does not remove any compiled-in resources
-            representing an expression cache file. Next time `loadCache` is
-            called, a compiled-in expression cache may be loaded. If you want
-            to prevent this from happening, call the `resetFilesystemCache`
-            method instead.
+ Removes the serialized expression cache file, if any.
+  
+ The next time `loadCache` is called, a compiled-in expression cache may be
+ loaded. If you want to prevent this from happening, call `resetFilesystemCache`
+ instead.
  */
 - (void) removeFilesystemCache;
 
@@ -188,12 +258,14 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
  are used to replace the existing contents of the in-memory cache.
  
  If there is no cache file available in the filesystem, the cache will attempt
- to load a cache file from the app's resources.
+ to load a file named `MBExpressionCache.serialized` from the application's
+ main `NSBundle`.
 
  The memory cache is not modified if no file was loaded.
  
- @note      If the expression cache's `enablePersistence` property is `NO`,
-            calling this method does nothing.
+ @note      Calling this method has no effect if `cacheSerialization` is
+            `MBExpressionCacheSerializationNone` or if `pausePersistence`
+            is `YES`.
  */
 - (void) loadCache;
 
@@ -206,20 +278,23 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
  in the memory cache.
 
  If there is no cache file available in the filesystem, the cache will attempt
- to load a cache file from the app's resources.
+ to load a file named `MBExpressionCache.serialized` from the application's
+ main `NSBundle`.
 
  The memory cache is not modified if no file was loaded.
  
- @note      If the expression cache's `enablePersistence` property is `NO`,
-            calling this method does nothing.
+ @note      Calling this method has no effect if `cacheSerialization` is
+            `MBExpressionCacheSerializationNone` or if `pausePersistence`
+            is `YES`.
  */
 - (void) loadAndMergeCache;
 
 /*!
  Saves the current in-memory expression cache to the filesystem.
  
- @note      If the expression cache's `enablePersistence` property is `NO`,
-            calling this method does nothing.
+ @note      Calling this method has no effect if `cacheSerialization` is
+            `MBExpressionCacheSerializationNone` or if `pausePersistence`
+            is `YES`.
  */
 - (void) saveCache;
 

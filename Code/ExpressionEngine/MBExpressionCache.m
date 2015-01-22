@@ -381,7 +381,7 @@ MBImplementSingleton();
 
 - (BOOL) _shouldPersist
 {
-    return ([self _shouldCache] && !DEBUG_FLAG(DEBUG_DONT_PERSIST) && self.enablePersistence && self.cacheSerialization != MBExpressionCacheSerializationNone);
+    return ([self _shouldCache] && !DEBUG_FLAG(DEBUG_DONT_PERSIST) && !self.pausePersistence && self.cacheSerialization != MBExpressionCacheSerializationNone);
 }
 
 - (MBSerializedExpressionCache*) _cacheDataFromFilesystem
