@@ -319,18 +319,18 @@ MBImplementSingleton();
 - (NSString*) _pathForUserCacheFile
 {
     NSString* cacheDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, NO) firstObject];
-    NSString* exprCacheDir = [[cacheDir stringByAppendingPathComponent:[[self class] description]] stringByExpandingTildeInPath];
+    NSString* expandedDir = [cacheDir stringByExpandingTildeInPath];
     
     NSError* err = nil;
     NSFileManager* mgr = [NSFileManager defaultManager];
-    if (![mgr fileExistsAtPath:exprCacheDir]) {
-        if (![mgr createDirectoryAtPath:exprCacheDir withIntermediateDirectories:YES attributes:nil error:&err]) {
-            errorLog(@"Couldn't create directory <%@> for writing %@ due to error: %@", exprCacheDir, [self class], err);
+    if (![mgr fileExistsAtPath:expandedDir]) {
+        if (![mgr createDirectoryAtPath:expandedDir withIntermediateDirectories:YES attributes:nil error:&err]) {
+            errorLog(@"Couldn't create directory <%@> for writing %@ due to error: %@", expandedDir, [self class], err);
             return nil;
         }
     }
     
-    return [exprCacheDir stringByAppendingPathComponent:_cacheFileName];
+    return [expandedDir stringByAppendingPathComponent:_cacheFileName];
 }
 
 - (MBSerializedExpressionCache*) _loadCacheFromFile:(NSString*)cacheFile isResource:(BOOL)rsrc
