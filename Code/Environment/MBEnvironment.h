@@ -16,7 +16,6 @@
 #pragma mark Constants
 /******************************************************************************/
 
-/*! Will this be commented? */
 extern NSString* const kMBMLManifestFilename;               // @"manifest.xml"
 
 extern NSString* const kMBMLRootTagName;                    // @"MBML"
