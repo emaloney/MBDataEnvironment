@@ -24,6 +24,8 @@
 #pragma mark Constants
 /******************************************************************************/
 
+NSString* const kMBExpressionCacheDidSerializeEvent             = @"MBExpressionCache:didSerialize";
+
 const NSInteger kMBExpressionCacheCurrentSerializationVersion   = 1;    // increment whenever file schema changes
 const NSInteger kMBExpressionCacheMinimumSerializationVersion   = 1;    // update when file schema changes in non-backwards-compatible way
 
@@ -142,6 +144,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
         errorLog(@"%@ failed to write file <%@> due to error: %@", [self class], filePath, err);
         return NO;
     }
+    [MBEvents postEvent:kMBExpressionCacheDidSerializeEvent fromSender:self];
     return YES;
 }
 
