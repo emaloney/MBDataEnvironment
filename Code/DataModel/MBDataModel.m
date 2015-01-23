@@ -790,73 +790,47 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (NSUInteger) countAttributes
 {
-    verboseDebugTrace();
-    
     return _objectAttributes.count;
 }
 
 - (NSArray*) attributeNames
 {
-    verboseDebugTrace();
-    
     return [_attributeOrder copy];
 }
 
 - (BOOL) hasAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-        
     return _objectAttributes[attrName] != nil;
 }
 
 - (id) valueOfAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-    
     return _objectAttributes[attrName];
 }
 
 - (NSString*) stringValueOfAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-    
     return [_objectAttributes[attrName] description];
 }
 
-- (NSNumber*) numberValueOfAttribute:(NSString*)attrName
+- (NSDecimalNumber*) numberValueOfAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-
     return [MBExpression numberFromValue:_objectAttributes[attrName]];
 }
 
 - (BOOL) booleanValueOfAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-
     return [MBExpression booleanFromValue:_objectAttributes[attrName]];
 }
 
 - (NSInteger) integerValueOfAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-
-    NSNumber* numVal = _objectAttributes[attrName];
-    if (numVal && [numVal isKindOfClass:[NSNumber class]]) {
-        return [numVal integerValue];
-    }
-    return 0;
+    return [[self numberValueOfAttribute:attrName] integerValue];
 }
 
 - (double) doubleValueOfAttribute:(NSString*)attrName
 {
-    verboseDebugTrace();
-
-    NSNumber* numVal = _objectAttributes[attrName];
-    if (numVal && [numVal isKindOfClass:[NSNumber class]]) {
-        return [numVal doubleValue];
-    }
-    return 0;
+    return [[self numberValueOfAttribute:attrName] doubleValue];
 }
 
 /******************************************************************************/
