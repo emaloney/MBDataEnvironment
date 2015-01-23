@@ -58,7 +58,7 @@
     return [input pathComponents];
 }
 
-+ (id) directoryForUserHome
++ (id) directoryForHome
 {
     debugTrace();
     

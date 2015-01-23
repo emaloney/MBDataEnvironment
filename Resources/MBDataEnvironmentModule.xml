@@ -126,7 +126,7 @@
     <Function class="MBMLFileFunctions" name="directoryForDocuments" input="none"/>
     <Function class="MBMLFileFunctions" name="directoryForDownloads" input="none"/>
     <Function class="MBMLFileFunctions" name="directoryForApplicationSupport" input="none"/>
-    <Function class="MBMLFileFunctions" name="directoryForUserHome" input="none"/>
+    <Function class="MBMLFileFunctions" name="directoryForHome" input="none"/>
     <Function class="MBMLFileFunctions" name="directoryForTempFiles" input="none"/>
     <Function class="MBMLFileFunctions" name="directoryForMovies" input="none"/>
     <Function class="MBMLFileFunctions" name="directoryForMusic" input="none"/>

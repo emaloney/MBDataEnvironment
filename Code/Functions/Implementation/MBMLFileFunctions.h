@@ -37,10 +37,7 @@
 
  #### Expression usage
 
- Assume the variable `$file` contains the string 
- "`~/Library/Preferences/com.apple.Safari.plist`":
-
-    ^lastPathComponent($file)
+    ^lastPathComponent(~/Library/Preferences/com.apple.Safari.plist)
  
  The expression above would return the string "`com.apple.Safari.plist`"
 
@@ -59,10 +56,7 @@
 
  #### Expression usage
 
- Assume the variable `$file` contains the string 
- "`~/Library/Preferences/com.apple.Safari.plist`":
-
-    ^stripLastPathComponent($file)
+    ^stripLastPathComponent(~/Library/Preferences/com.apple.Safari.plist)
  
  The expression above would return the string "`~/Library/Preferences`"
 
@@ -80,10 +74,7 @@
 
  #### Expression usage
 
- Assume the variable `$file` contains the string 
- "`~/Library/Preferences/com.apple.Safari.plist`":
-
-    ^pathExtension($file)
+    ^pathExtension(~/Library/Preferences/com.apple.Safari.plist)
  
  The expression above would return the string "`plist`"
 
@@ -102,10 +93,7 @@
 
  #### Expression usage
 
- Assume the variable `$file` contains the string
- "`~/Library/Preferences/com.apple.Safari.plist`":
-
-    ^stripLastPathComponent($file)
+    ^stripPathExtension(~/Library/Preferences/com.apple.Safari.plist)
 
  The expression above would return the string 
  "`~/Library/Preferences/com.apple.Safari`"
@@ -125,13 +113,10 @@
 
  #### Expression usage
 
- Assume the variable `$file` contains the string
- "`~/Library/Preferences/com.apple.Safari.plist`":
+    ^pathComponents(~/Library/Preferences/com.apple.Safari.plist)
 
-    ^stripLastPathComponent($file)
-
- The expression above would return the string 
- "`~/Library/Preferences/com.apple.Safari`"
+ The expression returns an array of strings containing: ["`~`", "`Library`",
+ "`Preferences`", "`com.apple.Safari.plist`" ].
 
  @param     path The filesystem path.
 
@@ -145,23 +130,23 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns the filesystem path of the user's `NSHomeDirectory`.
+ Returns the filesystem path of the `NSHomeDirectory`. On iOS, this is the
+ filesystem path of the *application's* home.
 
  This Mockingbird function accepts no parameters.
 
  #### Expression usage
 
-    ^directoryForUserHome()
+    ^directoryForHome()
 
- The expression above returns the filesystem path of the user's
- `NSHomeDirectory`. This will be unique for each user within each application.
+ The expression above returns the filesystem path of the `NSHomeDirectory`.
 
  @return    The filesystem path of the directory.
  */
-+ (id) directoryForUserHome;
++ (id) directoryForHome;
 
 /*!
- Returns the filesystem path of the user's `NSTemporaryDirectory`.
+ Returns the filesystem path of the `NSTemporaryDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -169,16 +154,14 @@
 
     ^directoryForTempFiles()
 
- The expression above returns the filesystem path of the user's
- `NSTemporaryDirectory`. This will be unique for each user within each 
- application.
+ The expression above returns the filesystem path of the `NSTemporaryDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForTempFiles;
 
 /*!
- Returns the filesystem path of the user's `NSCachesDirectory`.
+ Returns the filesystem path of the `NSCachesDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -186,15 +169,14 @@
 
     ^directoryForCaches()
 
- The expression above returns the filesystem path of the user's
- `NSCachesDirectory`. This will be unique for each user within each application.
+ The expression above returns the filesystem path of the `NSCachesDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForCaches;
 
 /*!
- Returns the filesystem path of the user's `NSDocumentDirectory`.
+ Returns the filesystem path of the `NSDocumentDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -202,16 +184,14 @@
 
     ^directoryForDocuments()
 
- The expression above returns the filesystem path of the user's
- `NSDocumentDirectory`. This will be unique for each user within each 
- application.
+ The expression above returns the filesystem path of the `NSDocumentDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForDocuments;
 
 /*!
- Returns the filesystem path of the user's `NSDownloadsDirectory`.
+ Returns the filesystem path of the `NSDownloadsDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -219,15 +199,14 @@
 
     ^directoryForDownloads()
 
- The expression above returns the filesystem path of the user's
- `NSDownloadsDirectory`. This will be unique for each user within each application.
+ The expression above returns the filesystem path of the `NSDownloadsDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForDownloads;
 
 /*!
- Returns the filesystem path of the user's `NSApplicationSupportDirectory`.
+ Returns the filesystem path of the `NSApplicationSupportDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -235,16 +214,15 @@
 
     ^directoryForApplicationSupport()
 
- The expression above returns the filesystem path of the user's
- `NSApplicationSupportDirectory`. This will be unique for each user within each 
- application.
+ The expression above returns the filesystem path of the
+ `NSApplicationSupportDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForApplicationSupport;
 
 /*!
- Returns the filesystem path of the user's `NSMoviesDirectory`.
+ Returns the filesystem path of the `NSMoviesDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -252,15 +230,14 @@
 
     ^directoryForMovies()
 
- The expression above returns the filesystem path of the user's
- `NSMoviesDirectory`. This will be unique for each user within each application.
+ The expression above returns the filesystem path of the `NSMoviesDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForMovies;
 
 /*!
- Returns the filesystem path of the user's `NSMusicDirectory`.
+ Returns the filesystem path of the `NSMusicDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -268,15 +245,14 @@
 
     ^directoryForMusic()
 
- The expression above returns the filesystem path of the user's
- `NSMusicDirectory`. This will be unique for each user within each application.
+ The expression above returns the filesystem path of the `NSMusicDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForMusic;
 
 /*!
- Returns the filesystem path of the user's `NSPicturesDirectory`.
+ Returns the filesystem path of the `NSPicturesDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -284,16 +260,14 @@
 
     ^directoryForPictures()
 
- The expression above returns the filesystem path of the user's
- `NSPicturesDirectory`. This will be unique for each user within each 
- application.
+ The expression above returns the filesystem path of the `NSPicturesDirectory`.
 
  @return    The filesystem path of the directory.
  */
 + (id) directoryForPictures;
 
 /*!
- Returns the filesystem path of the user's `NSSharedPublicDirectory`.
+ Returns the filesystem path of the `NSSharedPublicDirectory`.
 
  This Mockingbird function accepts no parameters.
 
@@ -301,9 +275,8 @@
 
     ^directoryForPublicFiles()
 
- The expression above returns the filesystem path of the user's
- `NSSharedPublicDirectory`. This will be unique for each user within each 
- application.
+ The expression above returns the filesystem path of the
+ `NSSharedPublicDirectory`.
 
  @return    The filesystem path of the directory.
  */
@@ -322,10 +295,10 @@
 
  #### Expression usage
 
-    ^listDirectory(~/Documents)
-
- The expression above returns an array containing the names of the files 
- within the user's Documents directory.
+    ^listDirectory(^directoryForHome())
+ 
+ The expression above returns an array containing the names of the files
+ within `NSHomeDirectory`.
 
  @param     dir The filesystem path of the directory.
  
@@ -476,6 +449,8 @@
  returns the content of `~/Caches/com.gilt.ios/Images/superhero.jpg` as an
  `NSData` instance.
 
+ If the file doesn't exist or couldn't be read, `nil` will be returned.
+
  @param     filePath The filesystem path.
  
  @return    An `NSData` instance containing the content of the file at
@@ -497,6 +472,8 @@
     ^fileContents(~/Documents/README.txt)
 
  returns the content of `~/Documents/README.txt` as an `NSString` instance.
+
+ If the file doesn't exist or couldn't be read, `nil` will be returned.
 
  @param     filePath The filesystem path.
  
