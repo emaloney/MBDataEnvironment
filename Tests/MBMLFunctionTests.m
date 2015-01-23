@@ -7,11 +7,6 @@
 //
 
 #import "MockingbirdTestSuite.h"
-#import "MBVariableSpace.h"
-#import "MBExpression.h"
-#import "MBEnvironment.h"
-
-#define TEST_EXPECTED_FAILURES      1
 
 /******************************************************************************/
 #pragma mark -
@@ -763,8 +758,6 @@
 - (void) testMathFunctions
 {
     [self _setupMathVariables];
-    
-    MBVariableSpace* vars = [MBVariableSpace instance];
     
     XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^ceil(1.0)"], @"expected ^ceil(1.0) == 1");
     XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.1)"], @"expected ^ceil(1.1) == 2");
