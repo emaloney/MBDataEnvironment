@@ -26,88 +26,16 @@
 #pragma mark Private - value validation & extraction
 /******************************************************************************/
 
-+ (CGRect) _validateParameterIsRect:(id)param
-                              error:(MBMLFunctionError**)errPtr
-{
-    if ([param isKindOfClass:[NSString class]]) {
-        NSError* parseErr = nil;
-        CGRect rect = [MBStringConversions rectFromString:(NSString*)param error:&parseErr];
-        if (!parseErr) {
-            return rect;
-        }
-        [[MBMLFunctionError errorWithFormat:@"%@ encountered an error trying to convert value of class %@ into a CGRect: %@", self, [param class], parseErr] reportErrorTo:errPtr];
-    }
-    else if ([param isKindOfClass:[NSValue class]]) {
-        return [(NSValue*)param CGRectValue];
-    }
-    else {
-        [[MBMLFunctionError errorWithFormat:@"%@ can't convert value of class %@ into a CGRect", self, [param class]] reportErrorTo:errPtr];
-    }
-    return CGRectZero;
-}
-
 + (CGRect) _validateParameter:(NSArray*)params
                 isRectAtIndex:(NSUInteger)index
                         error:(MBMLFunctionError**)errPtr
 {
-    id param = params[index];
-    if ([param isKindOfClass:[NSString class]]) {
-        NSError* parseErr = nil;
-        CGRect rect = [MBStringConversions rectFromString:(NSString*)param error:&parseErr];
-        if (!parseErr) {
-            return rect;
-        }
-        [[MBMLFunctionError errorWithFormat:@"%@ encountered an error trying to convert value of class %@ (parameter %@) into a CGRect: %@", self, index, [param class], parseErr] reportErrorTo:errPtr];
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:params[index] error:&err];
+    if (err) {
+        [[MBMLFunctionError errorWithError:err] reportErrorTo:errPtr];
     }
-    else if ([param isKindOfClass:[NSValue class]]) {
-        return [(NSValue*)param CGRectValue];
-    }
-    else {
-        [[MBMLFunctionError errorWithFormat:@"%@ can't convert value of class %@ (parameter %@) into a CGRect", self, index, [param class]] reportErrorTo:errPtr];
-    }
-    return CGRectZero;
-}
-
-+ (CGSize) _validateParameterIsSize:(id)param
-                              error:(MBMLFunctionError**)errPtr
-{
-    if ([param isKindOfClass:[NSString class]]) {
-        NSError* parseErr = nil;
-        CGSize size = [MBStringConversions sizeFromString:(NSString*)param error:&parseErr];
-        if (!parseErr) {
-            return size;
-        }
-        MBMLFunctionError* err = [MBMLFunctionError errorWithFormat:@"%@ encountered an error trying to convert value of class %@ into a CGSize: %@", self, [param class], parseErr];
-        [err reportErrorTo:errPtr];
-    }
-    else if ([param isKindOfClass:[NSValue class]]) {
-        return [(NSValue*)param CGSizeValue];
-    }
-    else {
-        [[MBMLFunctionError errorWithFormat:@"%@ can't convert value of class %@ into a CGSize", self, [param class]] reportErrorTo:errPtr];
-    }
-    return CGSizeZero;
-}
-
-+ (CGPoint) _validateParameterIsPoint:(id)param
-                                error:(MBMLFunctionError**)errPtr
-{
-    if ([param isKindOfClass:[NSString class]]) {
-        NSError* parseErr = nil;
-        CGPoint point = [MBStringConversions pointFromString:(NSString*)param error:&parseErr];
-        if (!parseErr) {
-            return point;
-        }
-        
-        [[MBMLFunctionError errorWithFormat:@"%@ encountered an error trying to convert value of class %@ into a CGPoint: %@", self, [param class], parseErr] reportErrorTo:errPtr];
-    }
-    else if ([param isKindOfClass:[NSValue class]]) {
-        return [(NSValue*)param CGPointValue];
-    }
-    else {
-        [[MBMLFunctionError errorWithFormat:@"%@ can't convert value of class %@ into a CGPoint", self, [param class]] reportErrorTo:errPtr];
-    }
-    return CGPointZero;
+    return rect;
 }
 
 /******************************************************************************/
@@ -122,13 +50,12 @@
     [MBMLFunction validateParameterIsArray:params error:&err];
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     CGRect rect = [self _validateParameter:params isRectAtIndex:0 error:&err];
-    NSString* insetStr = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&err];
     if (err) return err;
 
     NSError* parseErr = nil;
-    UIEdgeInsets insets = [MBStringConversions edgeInsetsFromString:insetStr error:&parseErr];
+    UIEdgeInsets insets = [MBStringConversions edgeInsetsFromObject:params[1] error:&parseErr];
     if (parseErr) {
-        return [MBExpressionError errorWithError:parseErr];
+        return [MBMLFunctionError errorWithError:parseErr];
     }
     
     CGRect insetRect = UIEdgeInsetsInsetRect(rect, insets);
@@ -199,69 +126,80 @@
     return [MBStringConversions stringFromRect:insetRect];
 }
 
-+ (id) rectOrigin:(NSString*)param
++ (id) rectOrigin:(id)param
 {
     debugTrace();
     
-    MBMLFunctionError* err = nil;
-    CGRect rect = [self _validateParameterIsRect:param error:&err];
-    if (err) return err;
-
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
     return [MBStringConversions stringFromPoint:rect.origin];
 }
 
-+ (id) rectSize:(NSString*)param
++ (id) rectSize:(id)param
 {
     debugTrace();
     
-    MBMLFunctionError* err = nil;
-    CGRect rect = [self _validateParameterIsRect:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return [MBStringConversions stringFromSize:rect.size];
 }
 
-+ (id) rectX:(NSString*)param
++ (id) rectX:(id)param
 {
     debugTrace();
 
-    MBMLFunctionError* err = nil;
-    CGRect rect = [self _validateParameterIsRect:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(rect.origin.x);
 }
 
-+ (id) rectY:(NSString*)param
++ (id) rectY:(id)param
 {
     debugTrace();
 
-    MBMLFunctionError* err = nil;
-    CGRect rect = [self _validateParameterIsRect:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(rect.origin.y);
 }
 
-+ (id) rectWidth:(NSString*)param
++ (id) rectWidth:(id)param
 {
     debugTrace();
 
-    MBMLFunctionError* err = nil;
-    CGRect rect = [self _validateParameterIsRect:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(rect.size.width);
 }
 
-+ (id) rectHeight:(NSString*)param
++ (id) rectHeight:(id)param
 {
     debugTrace();
 
-    MBMLFunctionError* err = nil;
-    CGRect rect = [self _validateParameterIsRect:param error:&err];
-    if (err) return err;
-    
+    NSError* err = nil;
+    CGRect rect = [MBStringConversions rectFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
+
     return @(rect.size.height);
 }
 
@@ -269,24 +207,28 @@
 #pragma mark Working with sizes
 /******************************************************************************/
 
-+ (id) sizeWidth:(NSString*)param
++ (id) sizeWidth:(id)param
 {
     debugTrace();
 
-    MBMLFunctionError* err = nil;
-    CGSize size = [self _validateParameterIsSize:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGSize size = [MBStringConversions sizeFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(size.width);
 }
 
-+ (id) sizeHeight:(NSString*)param
++ (id) sizeHeight:(id)param
 {
     debugTrace();
     
-    MBMLFunctionError* err = nil;
-    CGSize size = [self _validateParameterIsSize:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGSize size = [MBStringConversions sizeFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(size.height);
 }
@@ -295,24 +237,28 @@
 #pragma mark Working with points
 /******************************************************************************/
 
-+ (id) pointX:(NSString*)param
++ (id) pointX:(id)param
 {
     debugTrace();
-    
-    MBMLFunctionError* err = nil;
-    CGPoint pt = [self _validateParameterIsPoint:param error:&err];
-    if (err) return err;
+
+    NSError* err = nil;
+    CGPoint pt = [MBStringConversions pointFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(pt.x);
 }
 
-+ (id) pointY:(NSString*)param
++ (id) pointY:(id)param
 {
     debugTrace();
     
-    MBMLFunctionError* err = nil;
-    CGPoint pt = [self _validateParameterIsPoint:param error:&err];
-    if (err) return err;
+    NSError* err = nil;
+    CGPoint pt = [MBStringConversions pointFromObject:param error:&err];
+    if (err) {
+        return [MBMLFunctionError errorWithError:err];
+    }
 
     return @(pt.y);
 }
