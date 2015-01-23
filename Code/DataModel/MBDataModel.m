@@ -54,12 +54,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-+ (id) dataModelFromXML:(RXMLElement*)xml
++ (instancetype) dataModelFromXML:(RXMLElement*)xml
 {
     return [[self alloc] initWithXML:xml];
 }
 
-- (id) init
+- (instancetype) init
 {
     debugTrace();
     
@@ -71,7 +71,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return self;
 }
 
-- (id) initWithXML:(RXMLElement*)el
+- (instancetype) initWithXML:(RXMLElement*)el
 {
     self = [self init];
     if (self) {
@@ -82,7 +82,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return self;
 }
 
-- (id) initWithAttributes:(NSDictionary*)attrs
+- (instancetype) initWithAttributes:(NSDictionary*)attrs
 {
     self = [self init];
     if (self) {
@@ -165,7 +165,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark NSCoding support
 /******************************************************************************/
 
-- (id) initWithCoder:(NSCoder*)coder
+- (instancetype) initWithCoder:(NSCoder*)coder
 {
     debugTrace();
     
