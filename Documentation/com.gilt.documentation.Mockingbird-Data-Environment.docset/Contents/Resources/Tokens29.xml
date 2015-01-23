@@ -301,7 +301,8 @@ that returns a non-nil, non-empty string.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/firstNonemptyTrimmedString:</TokenIdentifier>
 			<Abstract type="html">Given a set of expressions, returns a trimmed version of the value of the
-first expression that returns a non-nil, non-empty string.</Abstract>
+first expression that returns a non-nil, non-empty string. Leading and
+trailing whitespace is removed from the result before it is returned.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)firstNonemptyTrimmedString:(NSArray *)params</Declaration>
@@ -358,10 +359,10 @@ arbitrary numeric value.</Abstract>
 NSInteger value.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)parseInteger:(NSString *)toInt</Declaration>
+			<Declaration>+ (id)parseInteger:(NSString *)toParse</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>toInt</Name>
+					<Name>toParse</Name>
 					<Abstract type="html">The function&apos;s input parameter, the string being parsed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -376,10 +377,10 @@ NSInteger value.</Abstract>
 double value.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)parseDouble:(NSString *)toFloat</Declaration>
+			<Declaration>+ (id)parseDouble:(NSString *)toParse</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>toFloat</Name>
+					<Name>toParse</Name>
 					<Abstract type="html">The function&apos;s input parameter, the string being parsed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -394,7 +395,7 @@ double value.</Abstract>
 numberStyle of NSNumberFormatterDecimalStyle.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)formatInteger:(NSString *)toFormat</Declaration>
+			<Declaration>+ (id)formatInteger:(NSNumber *)toFormat</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>toFormat</Name>
@@ -407,44 +408,8 @@ numberStyle of NSNumberFormatterDecimalStyle.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/stringWidth:</TokenIdentifier>
-			<Abstract type="html">Calculates the width of a string given a specific font and size.</Abstract>
-			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)stringWidth:(NSArray *)params</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>params</Name>
-					<Abstract type="html">The function&apos;s input parameters.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The width of content.</Abstract></ReturnValue>
-			<Anchor>//api/name/stringWidth:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/linesNeededToDrawText:</TokenIdentifier>
-			<Abstract type="html">Calculates the number of text lines required to fully display a string
-constrained to a specific width.</Abstract>
-			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)linesNeededToDrawText:(NSArray *)params</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>params</Name>
-					<Abstract type="html">The function&apos;s input parameters.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The number of lines.</Abstract></ReturnValue>
-			<Anchor>//api/name/linesNeededToDrawText:</Anchor>
-            <NodeRef refid="29"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/hasPrefix:</TokenIdentifier>
-			<Abstract type="html">Determines if the string specified by the first expression parameter
-has the prefix indicated by the second expression parameter.</Abstract>
+			<Abstract type="html">Determines if a string has a given prefix.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)hasPrefix:(NSArray *)params</Declaration>
@@ -454,15 +419,14 @@ has the prefix indicated by the second expression parameter.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if string to test has the given prefix; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/hasPrefix:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/hasSuffix:</TokenIdentifier>
-			<Abstract type="html">Determines if the string specified by the first expression parameter
-has the suffix indicated by the second expression parameter.</Abstract>
+			<Abstract type="html">Determines if a string has a given suffix.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)hasSuffix:(NSArray *)params</Declaration>
@@ -472,15 +436,14 @@ has the suffix indicated by the second expression parameter.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber containing the boolean result.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if string to test has the given suffix; @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/hasSuffix:</Anchor>
             <NodeRef refid="29"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLStringFunctions/containsString:</TokenIdentifier>
-			<Abstract type="html">Determines if the string specified by the first expression parameter
-contains the string indicated by the second expression parameter.</Abstract>
+			<Abstract type="html">Determines if a string contains a given substring.</Abstract>
 			<DeclaredIn>MBMLStringFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)containsString:(NSArray *)params</Declaration>

@@ -47,7 +47,11 @@
 	
 	<option value="//api/name/fontWithNameAndSize:">&nbsp;&nbsp;&nbsp;&nbsp;+ fontWithNameAndSize:</option>
 	
+	<option value="//api/name/linesNeededToDrawText:">&nbsp;&nbsp;&nbsp;&nbsp;+ linesNeededToDrawText:</option>
+	
 	<option value="//api/name/sizeOfTextWithFont:">&nbsp;&nbsp;&nbsp;&nbsp;+ sizeOfTextWithFont:</option>
+	
+	<option value="//api/name/stringWidth:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringWidth:</option>
 	
 	
 	
@@ -67,6 +71,10 @@
 
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing fonts">Accessing fonts</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Measuring text using a specific font">Measuring text using a specific font</a></span></li>
+	
 </ul></li>
 
 
@@ -83,7 +91,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fontWithNameAndSize:">fontWithNameAndSize:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/linesNeededToDrawText:">linesNeededToDrawText:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sizeOfTextWithFont:">sizeOfTextWithFont:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringWidth:">stringWidth:</a></span></li>
 	
 </ul></li>
 
@@ -125,7 +137,7 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>This class implements MBML functions for accessing information about the
-fonts available at runtine.</p>
+fonts available at runtime.</p>
 
 <p>These functions are exposed to the Mockingbird environment via
 <code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
@@ -143,8 +155,8 @@ file.</p>
 						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
 						
-						
-						
+						<a title="Accessing fonts" name="task_Accessing fonts"></a>
+						<h3 class="subsubtitle task-title">Accessing fonts</h3>
 
 						<ul class="task-list">
 							<li>
@@ -165,9 +177,29 @@ file.</p>
 	</span>
 	
 	
+</li>
+						</ul>
+						
+						
+						<a title="Measuring text using a specific font" name="task_Measuring text using a specific font"></a>
+						<h3 class="subsubtitle task-title">Measuring text using a specific font</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringWidth:">+&nbsp;stringWidth:</a></code>
+	</span>
+	
+	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/sizeOfTextWithFont:">+&nbsp;sizeOfTextWithFont:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/linesNeededToDrawText:">+&nbsp;linesNeededToDrawText:</a></code>
 	</span>
 	
 	
@@ -397,6 +429,102 @@ parameters:</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/linesNeededToDrawText:" title="linesNeededToDrawText:"></a>
+	<h3 class="subsubtitle method-title">linesNeededToDrawText:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the number of text lines required to fully display a string
+constrained to a specific width.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)linesNeededToDrawText:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The number of lines needed to draw the text.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts three or four pipe-separated expressions as
+input parameters.</p>
+
+<p>If three parameters are provided, they are interpreted as:</p>
+
+<ul>
+<li><p>The <em>text</em>, a string expression specifying the text to measure</p></li>
+<li><p>The <em>font</em>, an object expression that yields a <code>UIFont</code> instance</p></li>
+<li><p>The <em>width</em> within which <em>text</em> must fit, a numeric expression</p></li>
+</ul>
+
+
+<p>If four parameters are provided, they are interpreted as:</p>
+
+<ul>
+<li><p>The <em>text</em>, a string expression specifying the text to measure</p></li>
+<li><p>The <em>font name</em>, a string expression providing the name of the font to use
+ for calculating the number of lines required to display <em>text</em></p></li>
+<li><p>The <em>font size</em>, a numeric expression providing the size of <em>font name</em> that
+ will be used for calculating the number of lines required to display <em>text</em></p></li>
+<li><p>The <em>width</em> within which <em>text</em> must fit, a numeric expression</p></li>
+</ul>
+
+
+<p>The function returns an <code>NSNumber</code> specifying the number of text lines
+to fully display <em>text</em>.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^linesNeededToDrawText(This is my argument|^fontWithNameAndSize(Helvetica-Bold|18)|150)
+</code></pre>
+
+<p>The expression above yields an <code>NSNumber</code> containing the value <code>2</code>, indicating
+that two lines are needed to draw the text &ldquo;<code>This is my argument</code>&rdquo; with a
+width of 150 points using 18-point Helvetica-Bold.</p>
+
+<p>The expression above is also equivalent to:</p>
+
+<pre><code>^linesNeededToDrawText(This is my argument|Helvetica-Bold|18|150)
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFontFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/sizeOfTextWithFont:" title="sizeOfTextWithFont:"></a>
 	<h3 class="subsubtitle method-title">sizeOfTextWithFont:</h3>
 	
@@ -435,8 +563,10 @@ parameters:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two pipe-separated expressions as input
-parameters:</p>
+		<p>This Mockingbird function accepts two or three pipe-separated expressions as
+input parameters.</p>
+
+<p>If two parameters are provided, they are interpreted as:</p>
 
 <ul>
 <li><p>The <em>text</em>, a string expression specifying the text to measure</p></li>
@@ -444,8 +574,19 @@ parameters:</p>
 </ul>
 
 
+<p>If three parameters are provided, they are interpreted as:</p>
+
+<ul>
+<li><p>The <em>text</em>, a string expression specifying the text to measure</p></li>
+<li><p>The <em>font name</em>, a string expression providing the name of the font to use
+ for calculating the number of lines required to display <em>text</em></p></li>
+<li><p>The <em>font size</em>, a numeric expression providing the size of <em>font</em> that will
+ be used for calculating the number of lines required to display <em>text</em></p></li>
+</ul>
+
+
 <p>The function returns a string in &ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo; format containing
-the size of <em>text</em> when rendered in <em>font</em></p>
+the size of <em>text</em> when rendered in the specified font.</p>
 
 <p>Note that fractional pixel values may be returned.</p>
 
@@ -457,9 +598,106 @@ the size of <em>text</em> when rendered in <em>font</em></p>
 </code></pre>
 
 <p>returns the string &ldquo;<code>163.379,16.1</code>&rdquo;, indicating a width of <code>163.379</code> pixels
-and a height of <code>16.1</code> pixels.</p>
+and a height of <code>16.1</code> pixels. (Exact results may differ depending on the
+device type and operating system version.)</p>
 
-<p>Results may differ depending on the device type and operating system version.</p>
+<p>The expression above is also equivalent to:</p>
+
+<pre><code>^sizeOfTextWithFont(This is my text to measure|Helvetica|14)
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFontFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringWidth:" title="stringWidth:"></a>
+	<h3 class="subsubtitle method-title">stringWidth:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Calculates the width of a string given a specific font and size.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)stringWidth:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>The function&rsquo;s input parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The width of <em>text</em>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two or three pipe-separated expressions as
+input parameters.</p>
+
+<p>If two parameters are provided, they are interpreted as:</p>
+
+<ul>
+<li><p>The <em>text</em>, a string expression specifying the text to measure</p></li>
+<li><p>The <em>font</em>, an object expression that yields a <code>UIFont</code> instance</p></li>
+</ul>
+
+
+<p>If three parameters are provided, they are interpreted as:</p>
+
+<ul>
+<li><p>The <em>text</em>, a string expression yielding the string whose width is
+ to be calculated</p></li>
+<li><p>The <em>font name</em>, a string expression providing the name of the font to use
+ for calculating the width of <em>text</em></p></li>
+<li><p>The <em>font size</em>, a numeric expression providing the size of <em>font</em> that will
+ be used for calculating the width of <em>text</em></p></li>
+</ul>
+
+
+<p>The function returns an <code>NSNumber</code> specifying the width (in points) required
+to display <em>text</em> using the given font.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^stringWidth(What's the deal with airline peanuts?|^fontWithNameAndSize(Helvetica Neue|23))
+</code></pre>
+
+<p>The expression above yields <code>377.867</code>. (Exact results may differ depending on the
+device type and operating system version.)</p>
+
+<p>The expression above is also equivalent to:</p>
+
+<pre><code>^stringWidth(What's the deal with airline peanuts?|Helvetica Neue|23)
+</code></pre>
 	</div>
 	
 	

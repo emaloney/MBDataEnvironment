@@ -41,9 +41,10 @@
 
     ^q(   -- Please leave spaces intact --   )
  
- The Mockingbird expression above quotes the string so that the space 
- characters at the beginning and end of the string are preserved.
- 
+ The Mockingbird expression above quotes the string so that the spaces at
+ the beginning and end of the string are preserved. The return value is:
+ "&nbsp;&nbsp;&nbsp;`-- Please leave spaces intact --`&nbsp;&nbsp;&nbsp;".
+
     ^q(Ke$ha)
  
  The expression above would return the string "`Ke$ha`".
@@ -51,8 +52,12 @@
  Normally, the expression evaluator interprets a dollar sign (`$`) as the
  beginning of a variable reference. By itself, the string "`Ke$ha`" would
  be recognized as: *the text literal "`Ke`" followed by a reference to the
- Mockingbird variable "`ha`"*. Quoting the string ensures that it is left
- intact and not misinterpreted as containing a variable reference.
+ Mockingbird variable "`ha`"*. Assuming there is no value for "`$ha`", without
+ quoting, the expression "`Ke$ha`" would actually result in the string "`Ke`",
+ which is probably not the desired result.
+ 
+ Quoting the string ensures that it is left intact and not misinterpreted as
+ containing a variable reference.
 
  @param     toQuote The string being quoted.
  
@@ -153,7 +158,7 @@
 /*!
  Removes the query string from a string containing a URL.
  
- This Mockingbird function accepts a single parameter, an expression
+ This Mockingbird function accepts a single parameter, a string expression
  yielding the URL string from which the query string should be removed.
  
  #### Expression usage
@@ -239,7 +244,8 @@
     ^prefixLinesWith($emailBody|> )
 
  The expression above will interpret the `emailBody` Mockingbird variable as
- a string, and will then prefix each line of the result with the text "`> `".
+ a string, and will then prefix each line of the result with the text 
+ "`>`&nbsp;".
  
  The implementation attempts to be platform-agnostic with respect to the
  exact sequence of characters that signal line endings.
@@ -267,7 +273,8 @@
  
  * "`You have no discounts`" if there are `0` discounts
  * "`You have one discount`" if there is `1` discount
- * "`You have *number* discounts`" if there is more than `1` discount
+ * "`You have`&nbsp;*`number`*&nbsp;`discounts`" if there is more than `1` 
+   discount (where *`number`* represents the exact value of *count*)
 
  Sometimes, you might not need a zero-count form:
  
@@ -301,17 +308,23 @@
 
  Here's an example of pluralization involving a zero-count form:
 
-    ^pluralize($user.discounts.count|You have no discounts|You have one discount|You have $user.discounts.count discounts)
+    ^pluralize($user.discounts.count
+        |You have no discounts
+        |You have one discount
+        |You have $user.discounts.count discounts)
 
  If `$user.discounts.count == 2`, the expression above would yield the string
  "`You have 2 discounts`".
 
  Pluralization without a zero-count form looks like:
 
-    ^pluralize($launchCount|Welcome to our application!|We're glad to have you back!)
+    ^pluralize($launchCount
+        |Welcome to our application!
+        |We're glad to have you back!)
 
- When `$launchCount` is `1`, the expression above yields `"Welcome to our
- application!`"
+ When `$launchCount` is `1`, the expression above yields "`Welcome to our
+ application!`" For any other value, "`We're glad to have you back!`" is
+ returned.
 
  @param     params The function's input parameters.
 
@@ -418,22 +431,24 @@
  a *field separator*.
  
  Each *field* is comprised of two components: a *field label* and a *field
- value*. For each field, the *field label* is added to the string, followed
- by the *field value*. If multiple fields are provided, the *field separator*
- is included between each *field label/value pair*.
+ value*.
+ 
+ For each field with a non-`nil` value, the *field label* is added to the
+ string, followed by the *field value*. If multiple fields are provided, 
+ the *field separator* is included between each *field label/field value* pair.
  
  This Mockingbird function accepts two or more pipe-separated input parameters:
  
  * An optional *field separator*, a string expression specifying the separator
-   to be used between each field label/value pair added to the output string.
-   If the field separator parameter is not explicitly specified, the separator
-   string "`; `" (a semicolon followed by a space) is used.
+   to be used between each label/value pair added to the output string. If the
+   field separator parameter is not explicitly specified, the separator string
+   "`; `" (a semicolon followed by a space) is used.
 
  * A *field label*, a string expression
  
  * A *field value*, a string expression
  
- * An optional set of additional *field label*s and *field value*s.
+ * An optional set of additional label/value pairs.
  
  Note that if the field separator parameter is specified, the function will
  always expect an odd number of parameters, whereas if the field separator
@@ -488,10 +503,8 @@
 
 /*!
  Given a set of expressions, returns a trimmed version of the value of the
- first expression that returns a non-`nil`, non-empty string.
- 
- Leading and trailing whitespace will be removed from the string before
- it is returned.
+ first expression that returns a non-`nil`, non-empty string. Leading and
+ trailing whitespace is removed from the result before it is returned.
 
  This Mockingbird function accepts an arbitrary list of pipe-separated
  parameters, where each parameter is an expression that will be evaluated
@@ -503,14 +516,14 @@
 
  #### Expression usage
  
- Assume `$firstName` is "`Lon`" and `$nickname` has no value:
+ Assume that the expression `$user.salutation` yields `nil`:
 
-    ^firstNonemptyString($nickname|$firstName|Valued Customer)
- 
- The expression above would yield the string "`Lon`".
- 
- If `$firstName` were undefined, the return value would be "`Valued Customer`".
- 
+    ^firstNonemptyTrimmedString($user.salutation|Dear )
+
+ The expression above would yield the string "`Dear`" (with no trailing space)
+ even though the second parameter consists of a string ("`Dear`&nbsp;")
+ containing a trailing space.
+
  @param     params The function's input parameters.
 
  @return    The function result.
@@ -602,18 +615,18 @@
 
  returns an `NSNumber` containing the value `-5`.
  
- @param     toInt The function's input parameter, the string being parsed.
+ @param     toParse The function's input parameter, the string being parsed.
  
  @return    The result of parsing the input parameter.
  */
-+ (id) parseInteger:(NSString*)toInt;
++ (id) parseInteger:(NSString*)toParse;
 
 /*!
  Attempts to parse a string into an `NSNumber` instance containing a
  `double` value.
  
  This Mockingbird function accepts a single input parameter: an expression
- yielding the string to be parsed as a double.
+ yielding the string to be parsed as a `double`.
  
  #### Expression usage
 
@@ -624,11 +637,11 @@
 
  returns an `NSNumber` containing the value `-5.25`.
  
- @param     toFloat The function's input parameter, the string being parsed.
+ @param     toParse The function's input parameter, the string being parsed.
  
  @return    The result of parsing the input parameter.
  */
-+ (id) parseDouble:(NSString*)toFloat;
++ (id) parseDouble:(NSString*)toParse;
 
 /*!
  Formats a number as an integer string using a `NSNumberFormatter` with a
@@ -641,74 +654,13 @@
 
     ^formatInteger(11 / 2)
 
- The expression above yields an `NSString` containing the value `5`.
+ The expression above yields an `NSString` containing the value "`5`".
  
  @param     toFormat The function's input parameter, the number being formatted.
  
  @return    The result of formatting the input parameter.
  */
-+ (id) formatInteger:(NSString*)toFormat;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark Calculating string sizes
-/*!    @name Calculating string sizes                                         */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Calculates the width of a string given a specific font and size.
-
- This Mockingbird function accepts three pipe-separated input parameters:
- 
- * The *content*, a string expression yielding the string whose width is
-   to be calculated
-
- * The *font name*, a string expression providing the name of the font to use
-   for calculating the width of *content*
- 
- * The *font size*, a numeric expression providing the size of *font* that will
-   be used for calculating the width of *content*
- 
- The function returns an `NSNumber` specifying the width (in points) required
- to display *content*.
-
- #### Expression usage
-
-    ^stringWidth(What's the deal with airline peanuts?|Helvetica Neue|23)
-
- The expression above yields `377.867` (your mileage may vary depending on the
- exact OS version and device type you're using).
-
- @param     params The function's input parameters.
-
- @return    The width of *content*.
- */
-+ (id) stringWidth:(NSArray*)params;
-
-/*!
- Calculates the number of text lines required to fully display a string
- constrained to a specific width.
- 
- This Mockingbird function accepts four pipe-separated input parameters:
- 
- * The *content*, a string expression yielding the string whose width is
-   to be calculated
-
- * The *font name*, a string expression providing the name of the font to use
-   for calculating the number of lines required to display *content*
- 
- * The *font size*, a numeric expression providing the size of *font* that will
-   be used for calculating the number of lines required to display *content*
-
- * The *width* within which *content* must fit, a numeric expression
-
- The function returns an `NSNumber` specifying the number of text lines
- to fully display *content*.
- 
- @param     params The function's input parameters.
-
- @return    The number of lines.
- */
-+ (id) linesNeededToDrawText:(NSArray*)params;
++ (id) formatInteger:(NSNumber*)toFormat;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Finding substrings
@@ -716,8 +668,7 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Determines if the string specified by the first expression parameter
- has the prefix indicated by the second expression parameter.
+ Determines if a string has a given prefix.
 
  This Mockingbird function accepts two parameters:
  
@@ -731,18 +682,17 @@
 
     ^hasPrefix($name|Coop)
  
- The expression above returns YES if the string value of the
- expression $name begins with the string "`Coop`".
+ The expression above evaluates to `true` if string value of the expression 
+ `$name` begins with "`Coop`".
  
  @param     params The function's input parameters.
 
- @return    An `NSNumber` containing the boolean result.
+ @return    `@YES` if *string to test* has the given *prefix*; `@NO` otherwise.
  */
 + (id) hasPrefix:(NSArray*)params;
 
 /*!
- Determines if the string specified by the first expression parameter
- has the suffix indicated by the second expression parameter.
+ Determines if a string has a given suffix.
 
  This Mockingbird function accepts two input parameters:
 
@@ -756,18 +706,17 @@
 
     ^hasSuffix($dayOfWeek|day)
  
- The Mockingbird expression above returns `YES` if the string value of the
- expression `$dayOfWeek` ends with the string "`day`".
+ The expression above evaluates to `true` if string value of the expression
+ `$dayOfWeek` ends with "`day`".
  
  @param     params The function's input parameters.
 
- @return    An `NSNumber` containing the boolean result.
+ @return    `@YES` if *string to test* has the given *suffix*; `@NO` otherwise.
 */
 + (id) hasSuffix:(NSArray*)params;
     
 /*!
- Determines if the string specified by the first expression parameter
- contains the string indicated by the second expression parameter.
+ Determines if a string contains a given substring.
  
  This Mockingbird function accepts two input parameters:
 

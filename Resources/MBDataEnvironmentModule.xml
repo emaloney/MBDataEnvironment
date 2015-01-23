@@ -147,6 +147,8 @@
     <Function class="MBMLFontFunctions" name="fontNamesForFamilyName" input="string"/>
     <Function class="MBMLFontFunctions" name="fontWithNameAndSize" input="pipedObjects"/>
     <Function class="MBMLFontFunctions" name="sizeOfTextWithFont" input="pipedObjects"/>
+    <Function class="MBMLFontFunctions" name="linesNeededToDrawText" input="pipedObjects"/>
+    <Function class="MBMLFontFunctions" name="stringWidth" input="pipedObjects"/>
 
     <Function class="MBMLGeometryFunctions" name="rectOrigin" input="object"/>
     <Function class="MBMLGeometryFunctions" name="rectSize" input="object"/>
@@ -215,8 +217,6 @@
     <Function class="MBMLStringFunctions" name="parseInteger" input="string"/>
     <Function class="MBMLStringFunctions" name="parseDouble" input="string"/>
     <Function class="MBMLStringFunctions" name="parseNumber" input="string"/>
-    <Function class="MBMLStringFunctions" name="stringWidth" input="pipedObjects"/>
-    <Function class="MBMLStringFunctions" name="linesNeededToDrawText" input="pipedExpressions"/>
     <Function class="MBMLStringFunctions" name="rangeOfString" input="pipedObjects"/>
     <Function class="MBMLStringFunctions" name="formatInteger" input="math"/>
     <Function class="MBMLStringFunctions" name="hasPrefix" input="pipedStrings"/>

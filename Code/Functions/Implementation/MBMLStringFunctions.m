@@ -297,52 +297,6 @@
     return @([num doubleValue]);
 }
 
-+ (id) stringWidth:(NSArray*)params
-{
-    debugTrace();
-    
-    MBMLFunctionError *err = nil;
-    [MBMLFunction validateParameter:params countIs:3 error:&err];
-    if (err) return err;
-
-    if (params[0] == [NSNull null])
-        return @(0);
-
-    [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
-    if (err) return err;
-    
-    NSString *textToCompute = [MBExpression asString:params[0]];
-    NSString *fontName = [MBExpression asString:params[1]];
-    CGFloat fontSize = [[MBExpression asNumber:params[2]] doubleValue];
-    UIFont *textFont = [UIFont fontWithName:fontName size:fontSize];
-    CGFloat width = [textToCompute sizeWithAttributes:@{NSFontAttributeName:textFont}].width;
-    
-    return @(width);
-}
-
-+ (id) linesNeededToDrawText:(NSArray*)params
-{
-    debugTrace();
-    
-    MBMLFunctionError *err = nil;
-    [MBMLFunction validateParameter:params countIs:4 error:&err];
-    if (err) return err;
-    
-    if (params[0] == [NSNull null])
-        return @(0);
-    
-    [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
-    if (err) return err;
-    
-    NSString *textToCompute = [MBExpression asString:params[0]];
-    NSString *fontName = [MBExpression asString:params[1]];
-    CGFloat fontSize = [[MBExpression asNumber:params[2]] doubleValue];
-    CGFloat rectWidth = [[MBExpression asNumber:params[3]] doubleValue];
-    UIFont *textFont = [UIFont fontWithName:fontName size:fontSize];
-    
-    return @(ceil([textFont sizeString:textToCompute maxWidth:rectWidth fractional:YES].height / textFont.lineHeight));
-}
-
 + (id) rangeOfString:(NSArray*)params
 {
     debugTrace();
@@ -360,12 +314,12 @@
     return @[@(range.location), @(range.length)];
 }
 
-+ (id) formatInteger:(NSString*)toParse
++ (id) formatInteger:(NSNumber*)toFormat
 {
     debugTrace();
     
     MBMLFunctionError* err = nil;
-    NSNumber* num = [MBMLFunction validateParameterContainsNumber:toParse error:&err];
+    NSNumber* num = [MBMLFunction validateParameterContainsNumber:toFormat error:&err];
     if (err) return err;
     
     NSNumberFormatter *formatter = [NSNumberFormatter new];
