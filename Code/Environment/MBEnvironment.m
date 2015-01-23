@@ -67,7 +67,17 @@ static NSMutableArray* s_resourceBundles = nil;
         s_environmentStack = [NSMutableArray new];
         s_libraryClassPrefixes = [NSMutableArray new];
         s_enabledModuleClasses = [NSMutableArray new];
-        s_resourceBundles = [NSMutableArray arrayWithObject:[NSBundle mainBundle]];
+        s_resourceBundles = [NSMutableArray new];
+
+        NSBundle* myBundle = [NSBundle bundleForClass:self];
+        if (myBundle) {
+            [s_resourceBundles addObject:myBundle];
+        }
+
+        NSBundle* mainBundle = [NSBundle mainBundle];
+        if (mainBundle && ![mainBundle isEqual:myBundle]) {
+            [s_resourceBundles addObject:mainBundle];
+        }
 
         [self addSupportedLibraryClassPrefix:kMBLibraryClassPrefix];
 
