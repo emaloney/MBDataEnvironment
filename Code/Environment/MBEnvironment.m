@@ -79,7 +79,7 @@ static NSMutableArray* s_resourceBundles = nil;
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {

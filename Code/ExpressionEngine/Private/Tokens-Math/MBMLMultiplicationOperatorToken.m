@@ -17,7 +17,7 @@
 
 @implementation MBMLMultiplicationOperatorToken
 
-- (id) init
+- (instancetype) init
 {
     return [super initWithOperatorCharacter:'*'];
 }

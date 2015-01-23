@@ -174,7 +174,7 @@ MBImplementSingleton();
 
 // no corresponding dealloc since this is a singleton
 // that will live for the life of the app
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {

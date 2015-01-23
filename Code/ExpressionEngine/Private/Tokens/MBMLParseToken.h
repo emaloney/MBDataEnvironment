@@ -52,9 +52,9 @@ typedef enum
 
 @property(nonatomic, strong, readonly) NSArray* childTokens;
 
-+ (id) tokenWithGrammar:(MBExpressionGrammar*)grammar;
++ (instancetype) tokenWithGrammar:(MBExpressionGrammar*)grammar;
 
-- (id) initWithGrammar:(MBExpressionGrammar*)grammar;
+- (instancetype) initWithGrammar:(MBExpressionGrammar*)grammar;
 
 - (NSString*) expression;   // nil unless isMatchCompleted is YES
 - (NSString*) normalizedRepresentation;

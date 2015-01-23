@@ -24,7 +24,7 @@
     unichar _opChar;
 }
 
-- (id) initWithOperatorCharacter:(unichar)ch
+- (instancetype) initWithOperatorCharacter:(unichar)ch
 {
     self = [super init];
     if (self) {

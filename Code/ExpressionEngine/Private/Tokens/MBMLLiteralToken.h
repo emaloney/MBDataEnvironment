@@ -21,6 +21,6 @@
  */
 @interface MBMLLiteralToken : MBMLParseToken < MBMLOperandToken >
 
-+ (id) literalTokenWithValue:(id)value;
++ (instancetype) literalTokenWithValue:(id)value;
 
 @end

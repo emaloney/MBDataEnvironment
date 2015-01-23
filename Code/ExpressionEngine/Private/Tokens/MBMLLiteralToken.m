@@ -34,12 +34,12 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-+ (id) literalTokenWithValue:(id)value
++ (instancetype) literalTokenWithValue:(id)value
 {
     return [[self alloc] initWithValue:value];
 }
 
-- (id) initWithValue:(id)value
+- (instancetype) initWithValue:(id)value
 {
     self = [super init];
     if (self) {
@@ -55,7 +55,7 @@
 #pragma mark Object serialization
 /******************************************************************************/
 
-- (id) initWithCoder:(NSCoder*)coder
+- (instancetype) initWithCoder:(NSCoder*)coder
 {
     debugTrace();
     

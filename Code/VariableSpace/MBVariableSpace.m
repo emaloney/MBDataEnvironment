@@ -57,7 +57,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {

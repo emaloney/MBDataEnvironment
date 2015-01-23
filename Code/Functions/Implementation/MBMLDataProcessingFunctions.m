@@ -1254,7 +1254,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) initWithSortKey:(NSString*)sortKey
+- (instancetype) initWithSortKey:(NSString*)sortKey
 {
     self = [super init];
     if (self) {

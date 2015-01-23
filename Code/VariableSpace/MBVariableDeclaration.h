@@ -230,7 +230,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
  @return    a new instance of the receiver
  */
 @required
-+ (id) fromStringValue:(NSString*)str;
++ (instancetype) fromStringValue:(NSString*)str;
 
 /*!
  Returns a string representation of the object's internal state.

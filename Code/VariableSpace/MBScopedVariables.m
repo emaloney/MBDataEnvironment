@@ -70,7 +70,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) initWithVariableSpace:(MBVariableSpace*)vars
+- (instancetype) initWithVariableSpace:(MBVariableSpace*)vars
 {
     self = [super init];
     if (self) {
@@ -81,7 +81,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
     return self;    
 }
 
-- (id) init
+- (instancetype) init
 {
     return [self initWithVariableSpace:[MBVariableSpace instance]];
 }

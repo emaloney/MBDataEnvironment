@@ -55,7 +55,7 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
@@ -292,7 +292,7 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {

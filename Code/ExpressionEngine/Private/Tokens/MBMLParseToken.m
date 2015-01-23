@@ -40,7 +40,7 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (id) initWithGrammar:(MBExpressionGrammar*)grammar
+- (instancetype) initWithGrammar:(MBExpressionGrammar*)grammar
 {
     self = [self init];
     if (self) {
@@ -55,7 +55,7 @@
     return self;
 }
 
-+ (id) tokenWithGrammar:(MBExpressionGrammar*)grammar
++ (instancetype) tokenWithGrammar:(MBExpressionGrammar*)grammar
 {
     return [[self alloc] initWithGrammar:grammar];
 }
@@ -64,7 +64,7 @@
 #pragma mark Object serialization
 /******************************************************************************/
 
-- (id) initWithCoder:(NSCoder*)coder
+- (instancetype) initWithCoder:(NSCoder*)coder
 {
     debugTrace();
     

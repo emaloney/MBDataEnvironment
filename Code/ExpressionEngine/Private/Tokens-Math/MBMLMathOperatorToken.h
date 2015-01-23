@@ -31,7 +31,7 @@
  A base class for math operators.
  */
 @interface MBMLMathOperatorToken : MBMLParseToken < MBMLBinaryOperatorToken, MBMLMathToken, MBMLOperandToken >
-- (id) initWithOperatorCharacter:(unichar)ch;
+- (instancetype) initWithOperatorCharacter:(unichar)ch;
 
 // must be implemented by subclasses
 - (NSUInteger) precedence;

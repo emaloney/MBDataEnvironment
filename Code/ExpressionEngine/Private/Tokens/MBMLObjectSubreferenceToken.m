@@ -45,7 +45,7 @@
     [coder encodeObject:markerStr forKey:kCoderKeyMarkerCharacter];
 }
 
-- (id) initWithCoder:(NSCoder*)coder
+- (instancetype) initWithCoder:(NSCoder*)coder
 {
     debugTrace();
     

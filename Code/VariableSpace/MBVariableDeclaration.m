@@ -33,7 +33,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-+ (id) dataModelFromXML:(RXMLElement*)xml
++ (instancetype) dataModelFromXML:(RXMLElement*)xml
 {
     NSString* varType = [xml attribute:kMBMLAttributeType];
     if (varType) {
@@ -425,7 +425,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
     return list;
 }
 
-- (id) initialValueInVariableSpace:(MBVariableSpace*)space
+- (instancetype) initialValueInVariableSpace:(MBVariableSpace*)space
                              error:(out MBExpressionError**)errPtr
 {
     debugTrace();

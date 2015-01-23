@@ -17,7 +17,7 @@
 
 @implementation MBMLAdditionOperatorToken
 
-- (id) init
+- (instancetype) init
 {
     return [super initWithOperatorCharacter:'+'];
 }

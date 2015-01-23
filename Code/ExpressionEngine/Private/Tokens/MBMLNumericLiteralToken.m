@@ -35,7 +35,7 @@
 #pragma mark Object serialization
 /******************************************************************************/
 
-- (id) initWithCoder:(NSCoder*)coder
+- (instancetype) initWithCoder:(NSCoder*)coder
 {
     debugTrace();
     
