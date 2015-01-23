@@ -70,9 +70,8 @@
  
  @param     className The function's input parameter.
 
- @return    If there is a class with the given name, an `NSNumber` containing
-            the boolean value `YES` is returned. Otherwise, the returned
-            `NSNumber` will contain the value `NO`.
+ @return    If there is a class with the given name, `@YES` is returned. 
+            Otherwise, `@NO`.
  */
 + (id) classExists:(NSString*)className;
 
@@ -134,13 +133,18 @@
 /*!
  Returns an array containing the inheritance hierarchy of a given class.
 
- This Mockingbird function accepts a single object expression yielding either
- a `Class` object or an `NSString` containing the name of an Objective-C class.
+ This Mockingbird function accepts a single parameter, the *class* expression,
+ an object expression yielding either a `Class` object or an `NSString`
+ containing the name of an Objective-C class.
 
- The first item in the returned array will contain a `Class` object for the
- passed-in parameter, while each subsequent item will the `Class` for the
- superclass of the preceding class. The last item in the returned array 
- will contain the root class of the hierarchy (which is usually `NSObject`).
+ The first item in the returned array will contain the `Class` object
+ representing the class identified by *class*.
+
+ Each subsequent item in the array will contain a `Class` representing the
+ superclass of the item that preceded it.
+ 
+ The last item in the returned array will contain the root class of the
+ hierarchy (which is usually `NSObject`).
  
  #### Expression usage
  
@@ -197,7 +201,8 @@
  
  This Mockingbird function accepts two pipe-separated parameters:
 
- * The *object*, an object expression yielding an `NSObject` instance, and
+ * The *class*, an object expression yielding either a `Class` object or an
+  `NSString` containing the name of an Objective-C class
 
  * The *selector*, a string expression yielding the selector name.
 

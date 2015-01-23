@@ -21,7 +21,7 @@ returned object&apos;s internal state will be set based on the value of the
 passed-in string.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>+ (id)fromStringValue:(NSString *)str</Declaration>
+			<Declaration>+ (instancetype)fromStringValue:(NSString *)str</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>

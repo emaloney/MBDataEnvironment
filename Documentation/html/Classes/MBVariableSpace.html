@@ -229,7 +229,7 @@ from MBML files and for maintaining the current values of named Mockingbird
 variables across the lifetime of the application.</p>
 
 <p>Each <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a> will have an associated <code>MBVariableSpace</code> that will be
-consulted when Mockingbird expressions are evaluated. When that environment
+consulted when Mockingbird expressions are evaluated. When a given environment
 is active, its <code>MBVariableSpace</code> will provide the values when variables are
 referenced.</p>
 					</div>
@@ -507,7 +507,7 @@ referenced.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Constructs a string for an variable-related name with the given suffix.</p>
+		<p>Constructs a string for a variable-related name with the given suffix.</p>
 	</div>		
 	
     
@@ -538,13 +538,19 @@ referenced.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>If <code>name</code> and <code>suffix</code> are both non-<code>nil</code>, the concatenation of
-            <code>name</code>, <code>:</code> and <code>suffix</code> is returned. Otherwise, the value of the
+            <code>name</code>, &ldquo;<code>:</code>&rdquo; and <code>suffix</code> is returned. Otherwise, the value of the
             <code>name</code> parameter is returned.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calling this method with the name &ldquo;<code>Foo</code>&rdquo; and the suffix &ldquo;<code>willBar</code>&rdquo; would
+return the string &ldquo;<code>Foo:willBar</code>&rdquo;.</p>
+	</div>
 	
 	
 	
@@ -718,8 +724,8 @@ methods.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if <code>function</code> was successfully declared; <code>NO</code> if there was
-            already a function with the same name or if an error occurred.</p>
+		<p><code>YES</code> if <code>function</code> was successfully declared; <code>NO</code> if an error
+            occurred.</p>
 	</div>
 	
 	
@@ -771,9 +777,7 @@ methods.</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p><code>YES</code> if the variable represented by <code>declaration</code> was successfully
-            declared; <code>NO</code> if there was already a variable with the same name
-            declared or if an error occured while attempting to retrieve the
-            variable&rsquo;s initial value.</p>
+            declared; <code>NO</code> if an error occured.</p>
 	</div>
 	
 	
@@ -933,14 +937,20 @@ programmatically via <a href="#//api/name/declareVariable:"><code>declareVariabl
 <a href="../Classes/MBSingletonVariableDeclaration.html"><code>MBSingletonVariableDeclaration</code></a> and <a href="../Classes/MBDynamicVariableDeclaration.html"><code>MBDynamicVariableDeclaration</code></a>—are always
 read-only.</p>
 
-<p><a href="../Classes/MBConcreteVariableDeclaration.html"><code>MBConcreteVariableDeclaration</code></a>s may be declared with a <code>mutable="F"</code> MBML
-attribute to be marked as read-only. Otherwise, variables are not considered
-read-only.</p>
+<p><a href="../Classes/MBConcreteVariableDeclaration.html"><code>MBConcreteVariableDeclaration</code></a>s declared in MBML with a <code>mutable="F"</code>
+attribute are read-only.</p>
+
+<p>Otherwise, variables are not considered read-only.</p>
 
 <p>Note that the read-only concept only applies to whether or not the
-<code>MBVariableSpace</code> will allow you to change the value through its interface.
-In this way, even immutable objects such as <code>NSArray</code> may be considered
+<code>MBVariableSpace</code> will allow you to change the value through its interface.</p>
+
+<p>In this way, even immutable objects such as <code>NSArray</code> may be considered
 read/write as far as the Mockingbird Data Environment goes.</p>
+
+<p>Conversely, a <code>NSMutableDictionary</code>, for example, may be declared as a
+read-only Mockingbird variable, but the dictionary can still be mutated
+directly.</p>
 	</div>
 	
 	
@@ -1029,8 +1039,7 @@ notation.</p>
 	<div class="method-subsection brief-description">
 		<p>Pops the current value from the stack for the variable with the given name.
 (The value of the variable prior to the previous call to <a href="#//api/name/pushVariable:value:"><code>pushVariable:value:</code></a>
-will be restored.) If there are no stack values for the variable, an error
-will be logged to the console.</p>
+will be restored.)</p>
 	</div>		
 	
     
@@ -1063,6 +1072,12 @@ will be logged to the console.</p>
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If there are no stack values for the variable, an error will be logged to
+the console.</p>
+	</div>
 	
 	
 	
@@ -1729,7 +1744,7 @@ default value if there is no available variable value.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-22)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

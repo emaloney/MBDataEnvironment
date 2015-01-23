@@ -49,9 +49,8 @@ method returns a Class object.</Abstract>
 					<Abstract type="html">The function&apos;s input parameter.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">If there is a class with the given name, an NSNumber containing
-            the boolean value YES is returned. Otherwise, the returned
-            NSNumber will contain the value NO.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">If there is a class with the given name, @YES is returned.
+            Otherwise, @NO.</Abstract></ReturnValue>
 			<Anchor>//api/name/classExists:</Anchor>
             <NodeRef refid="28"/>
 		</Token>

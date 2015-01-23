@@ -371,7 +371,8 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Issues a deprecation warning to the console for the given MBML variable name.
+ Issues a deprecation warning to the console for the MBML variable with the
+ given name.
  
  This Mockingbird function accepts two or three pipe-separated parameters:
  
@@ -383,7 +384,7 @@
 
  * An optional *module class*, a string expression representing the name of a
    class implementing the `MBModule` protocol. If specified, the `MBModuleLog`
-   associated with the *module class* will be used to issue the deprecation
+   associated with *module class* will be used to issue the deprecation
    warning. If this parameter is omitted, the deprecation warning will be
    issued using the `MBDataEnvironmentModule`'s log.
 
@@ -396,9 +397,11 @@
  
  The expression above would result in the following message
 
- DEPRECATION WARNING: Support will be dropped from a future version of the MBGeolocation module for Mockingbird:
+    DEPRECATION WARNING: Support will be dropped from a future version of the
+    MBGeolocation module for Mockingbird:
 
-	The MBML variable "place" has been deprecated; please update your code to use "location" instead
+        The MBML variable "place" has been deprecated; please update your code
+        to use "location" instead
 
  @param     params The function's input parameters.
 

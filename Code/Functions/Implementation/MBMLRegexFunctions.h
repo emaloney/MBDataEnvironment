@@ -116,8 +116,8 @@
  Determines whether one or more regular expressions match a given input string
  at least once.
  
- This Mockingbird function accepts three pipe-separated string expressions as
- parameters:
+ This Mockingbird function accepts two or more pipe-separated string expressions
+ as parameters:
  
  * The *input string* against which the *regular expressions* will be matched
 

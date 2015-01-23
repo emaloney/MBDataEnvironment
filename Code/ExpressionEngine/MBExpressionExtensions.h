@@ -16,7 +16,7 @@
 /******************************************************************************/
 
 /*!
- This `NSString` class category adds method for evaluating expressions
+ This `NSString` class category adds methods for evaluating expressions
  directly from `NSString` instances.
  */
 @interface NSString (MBExpression)
@@ -31,9 +31,6 @@
  */
 - (id) evaluateAsObject;
 
-/*! Evaluates the receiver as an expression returning a string. */
-
-
 /*!
  Evaluates the receiver as an expression returning a string.
 
@@ -44,10 +41,8 @@
  */
 - (NSString*) evaluateAsString;
 
-/*! Evaluates the receiver as an expression returning a numeric value. */
-
 /*!
- Evaluates the receiver as an expression returning a number.
+ Evaluates the receiver as an expression returning a numeric value.
 
  Equivalent to calling `[MBExpression asNumber:]` with the receiver as the
  parameter.
@@ -67,10 +62,18 @@
 - (BOOL) evaluateAsBoolean;
 
 /*!
- Returns a string expression usable for referencing the MBML variable whose
+ Returns an expression usable for referencing the MBML variable whose
  name is contained in the receiver.
  
- @return        An expression referencing the variable named by the receiver.
+ If the receiver contains the text "`user`", this method will return the
+ value "`$user`".
+ 
+ More complicated variable names will be returned in the correct form. For
+ example, if the receiver contains the text "`total$`", this method will 
+ return "`$[total$]`".
+
+ @return        A Mockingbird expression usable for referencing the variable 
+                named by the receiver.
  */
 - (NSString*) asVariableExpression;
 
@@ -89,14 +92,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as an object expression.
+ evaluate that value as an object expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asObject:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asObject:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -108,14 +111,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as an object expression.
+ evaluate that value as an object expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asObject:defaultValue:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asObject:defaultValue:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -130,14 +133,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as a string expression.
+ evaluate that value as a string expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asString:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asString:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -149,14 +152,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as a string expression.
+ evaluate that value as a string expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asString:defaultValue:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asString:defaultValue:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -171,14 +174,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as a numeric expression.
+ evaluate that value as a numeric expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asNumber:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asNumber:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -190,14 +193,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as a numeric expression.
+ evaluate that value as a numeric expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asNumber:defaultValue:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asNumber:defaultValue:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -212,14 +215,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as a boolean expression.
+ evaluate that value as a boolean expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asBoolean:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asBoolean:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.
@@ -231,14 +234,14 @@
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
- evaluate the value as a boolean expression.
+ evaluate that value as a boolean expression.
  
- If the value associated with `key` is not an `NSString`, value's `description`
- method will be invoked to convert it into a string before it is
+ If the value associated with `key` is not an `NSString`, the value's 
+ `description` method will be invoked to convert it into a string before it is
  evaluated as an expression.
 
- Equivalent to passing the receiver's value associated with `key` as the
- parameter to the `[MBExpression asBoolean:defaultValue:]` method.
+ Equivalent to passing the value associated with `key` as the parameter to
+ the `[MBExpression asBoolean:defaultValue:]` method.
 
  @param     key The key in the receiving dictionary whose associated
             value should be evaluated as an expression.

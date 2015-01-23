@@ -327,41 +327,37 @@ rectFromString:.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeDimensionFromExpression:</TokenIdentifier>
-			<Abstract type="html">Evaluates an expression as a dimension value, resulting in a CGFloat
-representing that value.</Abstract>
+			<Abstract type="html">Evaluates an expression as a size dimension value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (CGFloat)sizeDimensionFromExpression:(NSString *)expr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
-					<Abstract type="html">An expression specifying a numeric value, or the wildcard
-            string (&quot;*&quot;).</Abstract>
+					<Abstract type="html">The size dimension expression. This expression is expected to
+            yield either a numeric value or a string containing only the 
+            wildcard character.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A numerical representation of expr. Will be
-            UIViewNoIntrinsicMetric if str evaluates to the wildcard string.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The value of the size dimension yielded by the expression expr.</Abstract></ReturnValue>
 			<Anchor>//api/name/sizeDimensionFromExpression:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/sizeDimensionFromString:</TokenIdentifier>
-			<Abstract type="html">Parses a string-based dimension value into a CGFloat representing that
-value.</Abstract>
+			<Abstract type="html">Parses a string into a size dimension value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (CGFloat)sizeDimensionFromString:(NSString *)str</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
-					<Abstract type="html">Contains a string specifying a numeric value, or the wildcard
-            string (&quot;*&quot;).</Abstract>
+					<Abstract type="html">The size dimension, as a string. This string is expected to
+            contain either a numeric value or the wildcard character.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A numerical representation of str. Will be
-            UIViewNoIntrinsicMetric if str was the wildcard
-            string.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The value of the size dimension specified by str.</Abstract></ReturnValue>
 			<Anchor>//api/name/sizeDimensionFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -405,10 +401,10 @@ and height dimensions of the rectangle.</Abstract>
 				<Parameter>
 					<Name>rectStr</Name>
 					<Abstract type="html">A string following the format
-            &quot;originX,originY,width,height&quot;. The originX and originY
-            values must be specified numerically. The width and height
-            dimensions can either be specified as a number or a wildcard
-            character.</Abstract>
+            &quot;originX,originY,width,height&quot;. 
+            The originX and originY values must be specified 
+            numerically. The width and height dimensions can 
+            either be specified as a number or a wildcard character.</Abstract>
 				</Parameter><Parameter>
 					<Name>rectPtr</Name>
 					<Abstract type="html">If the string to be parsed is in the expected format,
@@ -664,7 +660,7 @@ UIColor value using the colorFromString: method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromString:</TokenIdentifier>
-			<Abstract type="html">Attempts to interpret a string as a NSLineBreakMode value.</Abstract>
+			<Abstract type="html">Attempts to interpret a string as an NSLineBreakMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str</Declaration>
@@ -683,7 +679,7 @@ UIColor value using the colorFromString: method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromString:error:</TokenIdentifier>
-			<Abstract type="html">Attempts to interpret a string as a NSLineBreakMode value.</Abstract>
+			<Abstract type="html">Attempts to interpret a string as an NSLineBreakMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
@@ -707,8 +703,8 @@ UIColor value using the colorFromString: method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/lineBreakModeFromExpression:</TokenIdentifier>
-			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
-NSLineBreakMode value using the textAlignmentFromExpression: method.</Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as an
+NSLineBreakMode value using the lineBreakModeFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLineBreakMode)lineBreakModeFromExpression:(NSString *)expr</Declaration>
@@ -728,7 +724,7 @@ NSLineBreakMode value using the textAlignmentFromExpression: method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromString:</TokenIdentifier>
-			<Abstract type="html">Attempts to interpret a string as a NSTextAlignment value.</Abstract>
+			<Abstract type="html">Attempts to interpret a string as an NSTextAlignment value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str</Declaration>
@@ -747,7 +743,7 @@ NSLineBreakMode value using the textAlignmentFromExpression: method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromString:error:</TokenIdentifier>
-			<Abstract type="html">Attempts to interpret a string as a NSTextAlignment value.</Abstract>
+			<Abstract type="html">Attempts to interpret a string as an NSTextAlignment value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
@@ -771,8 +767,8 @@ NSLineBreakMode value using the textAlignmentFromExpression: method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/textAlignmentFromExpression:</TokenIdentifier>
-			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
-NSTextAlignment value using the textAlignmentFromExpression: method.</Abstract>
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as an
+NSTextAlignment value using the textAlignmentFromString: method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSTextAlignment)textAlignmentFromExpression:(NSString *)expr</Declaration>
@@ -987,7 +983,7 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromString:</TokenIdentifier>
-			<Abstract type="html">Attempts to interpret a string as a NSDateFormatterStyle value.</Abstract>
+			<Abstract type="html">Attempts to interpret a string as an NSDateFormatterStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str</Declaration>
@@ -1006,7 +1002,7 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromString:error:</TokenIdentifier>
-			<Abstract type="html">Attempts to interpret a string as a NSDateFormatterStyle value.</Abstract>
+			<Abstract type="html">Attempts to interpret a string as an NSDateFormatterStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
@@ -1030,7 +1026,7 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/dateFormatterStyleFromExpression:</TokenIdentifier>
-			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as a
+			<Abstract type="html">Evaluates a string expression and attempts to interpret the result as an
 NSDateFormatterStyle value using the dateFormatterStyleFromString:
 method.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
@@ -1524,10 +1520,9 @@ method.</Abstract>
 					<Abstract type="html">The string to interpret.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with the
-            result of evaluating expr as a string. Returns 
-            0 and logs an error to the console if the expression result
-            couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with str.
+            Returns 0 and logs an error to the console if str isn&apos;t
+            recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewAnimationOptionsFromString:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -1549,9 +1544,8 @@ method.</Abstract>
             May be nil.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with the
-            result of evaluating expr as a string. Returns 0 if the
-            expression result couldn&apos;t be interpreted.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with str.
+            Returns 0 if str isn&apos;t recognized.</Abstract></ReturnValue>
 			<Anchor>//api/name/viewAnimationOptionsFromString:error:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
@@ -1773,30 +1767,7 @@ method.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBStringConversions/barButtonSystemItemFromString:</TokenIdentifier>
-			<Abstract type="html">* kMBMLBarButtonSystemItemDone (&quot;done&quot;) = UIBarButtonSystemItemDone
-* kMBMLBarButtonSystemItemCancel (&quot;cancel&quot;) = UIBarButtonSystemItemCancel
-* kMBMLBarButtonSystemItemEdit (&quot;edit&quot;) = UIBarButtonSystemItemEdit
-* kMBMLBarButtonSystemItemSave (&quot;save&quot;) = UIBarButtonSystemItemSave
-* kMBMLBarButtonSystemItemAdd (&quot;add&quot;) = UIBarButtonSystemItemAdd
-* kMBMLBarButtonSystemItemFlexibleSpace (&quot;flexibleSpace&quot;) = UIBarButtonSystemItemFlexibleSpace
-* kMBMLBarButtonSystemItemFixedSpace (&quot;fixedSpace&quot;) = UIBarButtonSystemItemFixedSpace
-* kMBMLBarButtonSystemItemCompose (&quot;compose&quot;) = UIBarButtonSystemItemCompose
-* kMBMLBarButtonSystemItemReply (&quot;reply&quot;) = UIBarButtonSystemItemReply
-* kMBMLBarButtonSystemItemAction (&quot;action&quot;) = UIBarButtonSystemItemAction
-* kMBMLBarButtonSystemItemOrganize (&quot;organize&quot;) = UIBarButtonSystemItemOrganize
-* kMBMLBarButtonSystemItemBookmarks (&quot;bookmarks&quot;) = UIBarButtonSystemItemBookmarks
-* kMBMLBarButtonSystemItemSearch (&quot;search&quot;) = UIBarButtonSystemItemSearch
-* kMBMLBarButtonSystemItemRefresh (&quot;refresh&quot;) = UIBarButtonSystemItemRefresh
-* kMBMLBarButtonSystemItemStop (&quot;stop&quot;) = UIBarButtonSystemItemStop
-* kMBMLBarButtonSystemItemCamera (&quot;camera&quot;) = UIBarButtonSystemItemCamera
-* kMBMLBarButtonSystemItemTrash (&quot;trash&quot;) = UIBarButtonSystemItemTrash
-* kMBMLBarButtonSystemItemPlay (&quot;play&quot;) = UIBarButtonSystemItemPlay
-* kMBMLBarButtonSystemItemPause (&quot;pause&quot;) = UIBarButtonSystemItemPause
-* kMBMLBarButtonSystemItemRewind (&quot;rewind&quot;) = UIBarButtonSystemItemRewind
-* kMBMLBarButtonSystemItemFastForward (&quot;fastForward&quot;) = UIBarButtonSystemItemFastForward
-* kMBMLBarButtonSystemItemUndo (&quot;undo&quot;) = UIBarButtonSystemItemUndo
-* kMBMLBarButtonSystemItemRedo (&quot;redo&quot;) = UIBarButtonSystemItemRedo
-* kMBMLBarButtonSystemItemPageCurl (&quot;pageCurl&quot;) = UIBarButtonSystemItemPageCurl</Abstract>
+			<Abstract type="html">Attempts to interpret a string as a UIBarButtonSystemItem value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
 			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str</Declaration>

@@ -740,7 +740,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    If `val` can be interpreted as a number, the return value is an
             `NSDecimalNumber` containing that number. If `val` cannot be 
             interpreted as a number, or if the resulting number is equal to
-            [`<code>NSNumber notANumber</code>`]`, `nil` will be returned.
+            `[`<code>NSNumber notANumber</code>`]`, `nil` will be returned.
  */
 + (NSDecimalNumber*) numberFromValue:(id)val;
 

@@ -565,14 +565,13 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>An implementation of a generic class representing a data model. Each data
-model instance contains attributes and related objects that are typically
-populated from XML.</p>
+						<p>An implementation of a generic class representing a node in a data model.
+Each data model instance contains attributes and related objects that are
+typically populated from XML.</p>
 
-<p>When populated from an XML element, a data model may contain <em>attributes</em>
-and <em>related objects</em>. The data model&rsquo;s attributes are populated from the
-element&rsquo;s attributes, and the model will contain related objects for any
-child XML elements.</p>
+<p>When populated from an XML element, an <code>MBDataModel</code> instance&rsquo;s attributes
+are populated from the XML element&rsquo;s attributes. Related objects may also
+be added based on whether the element contains any child XML elements.</p>
 
 <p>Data models support validation, wherein their attributes and related objects
 are inspected to see whether they contain the expected values. Subclasses
@@ -1387,7 +1386,7 @@ validation is performed to notify MBML developers of any errors in their code.</
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The owning data model relative (if any) of the receiver. Will be set if
+		<p>The containing data model relative (if any) of the receiver. Will be set if
 the receiver was added as a relative to another data model instance.</p>
 	</div>		
 	
@@ -1426,7 +1425,7 @@ the receiver was added as a relative to another data model instance.</p>
 	<div class="method-subsection brief-description">
 		<p>Represents the content of this data model object. When the data model is
 populated from an XML element containing text content, this property will
-contain that text.</p>
+contain an <code>NSString</code> with that text.</p>
 	</div>		
 	
     
@@ -1500,7 +1499,7 @@ objects.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns <code>YES</code> if the value of the <a href="#//api/name/content"><code>content</code></a> property is a string, and if
+		<p>Returns <code>YES</code> if the value of the <a href="#//api/name/content"><code>content</code></a> property is an <code>NSString</code>, and if
 that string contains at least one non-whitespace character.</p>
 	</div>		
 	
@@ -1559,7 +1558,7 @@ populated from XML in the first place.</p>
 		<div class="note"><p><strong>Note:</strong> The XML output is simulated and may not be a byte-for-byte
             representation of the originating XML (if any). Non-significant
             whitespace and attribute order may differ, and if any attributes
-            were applied from an MBStyledDataModel, they will be represented
+            were applied from an <code>MBStyledDataModel</code>, they will be represented
             in the simulated XML as well.</p></div>
 	</div>
 	
@@ -1773,9 +1772,7 @@ superclass or subclass).</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>The default implementation returns <code>nil</code>, indicating that no
-            attributes are explicitly required. Subclasses must provide their
-            own implementation if they require specific attributes to be present
-            in order to pass validation.</p>
+            attributes are explicitly required.</p>
 	</div>
 	
 	
@@ -1784,8 +1781,12 @@ superclass or subclass).</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>A data model object that is missing one or more of the required attributes
-will not pass validation.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
+		<p>Implementing this method allows a class to declare that it requires one or
+more attributes.</p>
+
+<p>During validation, an error will be logged to the console for each required
+<code>MBDataModel</code> attribute that is not present in the receiver. Further,
+validation will fail if any required attribute is missing.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
 	</div>
 	
 	
@@ -1824,9 +1825,7 @@ superclass or subclass).</p>
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
 		<p>The default implementation returns <code>nil</code>, indicating that no
-            attributes are explicitly supported. Subclasses must provide their
-            own implementation if they will report specific attributes as
-            unsupported when performing validation.</p>
+            attributes are explicitly supported.</p>
 	</div>
 	
 	
@@ -1835,9 +1834,16 @@ superclass or subclass).</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>During validation, a data model object will issue a warning if it contains
-one or more attributes not appearing in the set of supported attributes.</p><div class="note"><p><strong>Note:</strong> Implementations do not need to report an attribute as supported
-            if it is also reported as required.</p></div><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
+		<p>Implementing this method allows a class to declare that it supports one or
+more attributes.</p>
+
+<p>During validation, a warning will be logged to the console for each
+<code>MBDataModel</code> attribute present in the receiver that does not appear in
+the set of supported attributes. However, the presence of unsupported
+attributes will not cause validation to fail.</p>
+
+<p><strong>Note:</strong> Implementations do not need to report an attribute as supported
+if it is also reported as required.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
 	</div>
 	
 	
@@ -1861,8 +1867,8 @@ one or more attributes not appearing in the set of supported attributes.</p><div
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the set of attributes supported that are supported by one of the
-receiving class&rsquo;s superclasses that are unsupported by the receiving class.</p>
+		<p>Returns the set of attributes that are supported by one of the receiving
+class&rsquo;s superclasses but are unsupported by the receiving class.</p>
 	</div>		
 	
     
@@ -1885,11 +1891,13 @@ receiving class&rsquo;s superclasses that are unsupported by the receiving class
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This mechanism allows a class to declare that it does not support one or
-more attributes supported by a superclass.</p>
+		<p>Implementing this method allows a class to declare that it does not support
+one or more attributes supported by a superclass.</p>
 
-<p>A data model object will issue warnings for each unsupported attribute
-present during validation.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
+<p>During validation, a warning will be logged to the console for each
+<code>MBDataModel</code> attribute present in the receiver that is declared as
+unsupported. However, the presence of unsupported attributes will not
+cause validation to fail.</p><div class="warning"><p><strong>Warning:</strong> Subclasses overriding this method <strong>must never</strong> call <code>super</code>.</p></div>
 	</div>
 	
 	
@@ -2036,9 +2044,7 @@ present during validation.</p><div class="warning"><p><strong>Warning:</strong> 
 	
 	<div class="method-subsection brief-description">
 		<p>For each key/value pair contained in the passed-in dictionary, a corresponding
-attribute will be set on the receiver. If the receiver contains attributes
-also present on the XML element, the receiver&rsquo;s attributes are replaced, while
-new attributes are added.</p>
+attribute will be set on the receiver.</p>
 	</div>		
 	
     
@@ -2063,6 +2069,12 @@ new attributes are added.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.</p>
+	</div>
+	
 	
 	
 	
@@ -2084,10 +2096,8 @@ new attributes are added.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>For each attribute value on the passed-in XML element, a corresponding
-attribute will be set on the receiver. If the receiver contains attributes
-also present on the XML element, the receiver&rsquo;s attributes are replaced, while
-new attributes are added.</p>
+		<p>For each attribute value of the passed-in XML element, a corresponding
+attribute will be set on the receiver.</p>
 	</div>		
 	
     
@@ -2111,6 +2121,12 @@ new attributes are added.</p>
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element,
+the receiver&rsquo;s attributes are replaced, while new attributes are added.</p>
+	</div>
 	
 	
 	
@@ -2315,7 +2331,7 @@ as a relative using the default relation type.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>If <code>container</code> has no children with the tag <code>tagName</code>, no action is taken.</p>
+		<p>If <code>container</code> has no children, no action is taken.</p>
 	</div>
 	
 	
@@ -2379,6 +2395,11 @@ relation type.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <code>container</code> has no child element with the tag <code>tagName</code>, no action is taken.</p>
+	</div>
+	
 	
 	
 	
@@ -2400,7 +2421,7 @@ relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates a data model object of the given class based on the specified XML
+		<p>Creates a data model object of the given class from the specified XML
 element, and adds it to the receiver as a relative using the XML tag name
 of the element as the relation type.</p>
 	</div>		
@@ -2454,7 +2475,7 @@ of the element as the relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates a data model object of the given class based on the first child
+		<p>Creates a data model object of the given class from the first child
 element of the passed-in XML having the given XML tag, and adds it to the
 receiver as a relative using <code>tagName</code> as the relation type.</p>
 	</div>		
@@ -2560,6 +2581,11 @@ as a relative using the specified relation type.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <code>container</code> has no children, no action is taken.</p>
+	</div>
+	
 	
 	
 	
@@ -2628,6 +2654,11 @@ relation type.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If <code>container</code> has no child element with the tag <code>tagName</code>, no action is taken.</p>
+	</div>
+	
 	
 	
 	
@@ -2649,7 +2680,7 @@ relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates a data model object of the given class based on the specified XML
+		<p>Creates a data model object of the given class from the specified XML
 element, and adds it to the receiver as a relative using the specified
 relation type.</p>
 	</div>		
@@ -2710,7 +2741,7 @@ relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates a data model object of the given class based on the first child
+		<p>Creates a data model object of the given class from the first child
 element of the passed-in XML having the given XML tag, and adds it to the
 receiver as a relative using <code>relation</code> as the relation type.</p>
 	</div>		
@@ -2783,8 +2814,8 @@ receiver as a relative using <code>relation</code> as the relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Relates each data model object returned by the passed-in enumeration
-to the receiver using the default relation type.</p>
+		<p>Each <code>MBDataModel</code> returned by the enumeration is added to the receiver as
+a relative using the default relation type.</p>
 	</div>		
 	
     
@@ -2798,8 +2829,8 @@ to the receiver using the default relation type.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>relatives</em></dt>
-			<dd><p>An enumeration of relatives to add as relatives to the
-            receiver.</p></dd>
+			<dd><p>An enumeration of <code>MBDataModel</code> instances to add as
+            relatives to the receiver.</p></dd>
 		</dl>
 		
 	</div>
@@ -2831,8 +2862,8 @@ to the receiver using the default relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Relates each data model object returned by the passed-in enumeration
-to the receiver using the specified relation type.</p>
+		<p>Each <code>MBDataModel</code> returned by the enumeration is added to the receiver as
+a relative using the specified relation type.</p>
 	</div>		
 	
     
@@ -2846,8 +2877,8 @@ to the receiver using the specified relation type.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>relatives</em></dt>
-			<dd><p>An enumeration of relatives to add as relatives to the
-            receiver.</p></dd>
+			<dd><p>An enumeration of <code>MBDataModel</code> instances to add as
+            relatives to the receiver.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -2885,8 +2916,8 @@ to the receiver using the specified relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an array containing all objects related to the receiver regardless
-of relation type.</p>
+		<p>Returns all <code>MBDataModel</code> objects related to the receiver regardless of
+relation type.</p>
 	</div>		
 	
     
@@ -2896,6 +2927,12 @@ of relation type.</p>
     
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing the relatives. If there are no relatives,
+            an empty array—not <code>nil</code>—will be returned.</p>
+	</div>
 	
 	
 	
@@ -2923,11 +2960,7 @@ of relation type.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Amends the data model by overlaying attributes and potentially adding
-relatives to the receiver based on the contents of the passed-in XML.
-If the receiver contains attributes also present on the XML element,
-the receiver&rsquo;s attributes are replaced, while new attributes are added.
-If the XML element contains child elements, they are added to the receiver
-as related objects.</p>
+relatives to the receiver based on the contents of the passed-in XML.</p>
 	</div>		
 	
     
@@ -2952,6 +2985,14 @@ as related objects.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element, the
+receiver&rsquo;s attributes are replaced, while new attributes are added. If the
+XML element contains child elements, they may be added to the receiver as
+related objects.</p>
+	</div>
+	
 	
 	
 	
@@ -2974,11 +3015,7 @@ as related objects.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Amends the data model by overlaying attributes and potentially adding
-relatives to the receiver based on the contents of the passed-in XML.
-If the receiver contains attributes also present on the XML element,
-the receiver&rsquo;s attributes are replaced, while new attributes are added.
-If the XML element contains child elements, they are added to the receiver
-as related objects.</p>
+relatives to the receiver based on the contents of the passed-in XML.</p>
 	</div>		
 	
     
@@ -3008,6 +3045,14 @@ as related objects.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element, the
+receiver&rsquo;s attributes are replaced, while new attributes are added. If the
+XML element contains child elements, they may be added to the receiver as
+related objects.</p>
+	</div>
+	
 	
 	
 	
@@ -3030,11 +3075,7 @@ as related objects.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Amends the data model by overlaying attributes and potentially adding
-relatives to the receiver based on the contents of the passed-in XML.
-If the receiver contains attributes also present on the XML element,
-the receiver&rsquo;s attributes are replaced, while new attributes are added.
-If the XML element contains child elements, they are added to the receiver
-as related objects.</p>
+relatives to the receiver based on the contents of the passed-in XML.</p>
 	</div>		
 	
     
@@ -3070,6 +3111,14 @@ as related objects.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element, the
+receiver&rsquo;s attributes are replaced, while new attributes are added. If the
+XML element contains child elements, they may be added to the receiver as
+related objects.</p>
+	</div>
+	
 	
 	
 	
@@ -3092,11 +3141,7 @@ as related objects.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Amends the data model by overlaying attributes and potentially adding
-relatives to the receiver based on the contents of the passed-in XML.
-If the receiver contains attributes also present on the XML element,
-the receiver&rsquo;s attributes are replaced, while new attributes are added.
-If the XML element contains child elements, they are added to the receiver
-as related objects.</p>
+relatives to the receiver based on the contents of the passed-in XML.</p>
 	</div>		
 	
     
@@ -3126,6 +3171,14 @@ as related objects.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element, the
+receiver&rsquo;s attributes are replaced, while new attributes are added. If the
+XML element contains child elements, they may be added to the receiver as
+related objects.</p>
+	</div>
+	
 	
 	
 	
@@ -3148,11 +3201,7 @@ as related objects.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Amends the data model by overlaying attributes and potentially adding
-relatives to the receiver based on the contents of the passed-in XML.
-If the receiver contains attributes also present on the XML element,
-the receiver&rsquo;s attributes are replaced, while new attributes are added.
-If the XML element contains child elements, they are added to the receiver
-as related objects.</p>
+relatives to the receiver based on the contents of the passed-in XML.</p>
 	</div>		
 	
     
@@ -3188,6 +3237,14 @@ as related objects.</p>
 	
 	
 	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the receiver contains attributes also present on the XML element, the
+receiver&rsquo;s attributes are replaced, while new attributes are added. If the
+XML element contains child elements, they may be added to the receiver as
+related objects.</p>
+	</div>
+	
 	
 	
 	
@@ -3209,8 +3266,8 @@ as related objects.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an array containing the names of the attributes that currently
-have values set on the receiver.</p>
+		<p>Returns an array of <code>NSString</code>s containing the names of the attributes
+that currently have values set on the receiver.</p>
 	</div>		
 	
     
@@ -3246,9 +3303,7 @@ have values set on the receiver.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the value of the attribute with the specified name as a boolean,
-making a reasonable attempt to convert the attribute value&rsquo;s type if
-necessary.</p>
+		<p>Returns the boolean value of the attribute with the specified name.</p>
 	</div>		
 	
     
@@ -3269,9 +3324,20 @@ necessary.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute <code>attrName</code> as a <code>BOOL</code>.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not boolean, the value will be coerced into
+a boolean using <a href="../Classes/MBExpression.html#//api/name/booleanFromValue:"><code>[MBExpression booleanFromValue:]</code></a>.</p>
+	</div>
 	
 	
 	
@@ -3448,7 +3514,8 @@ mutable, this method simply calls <a href="#//api/name/mutableCopyWithZone:">mut
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the number of attributes currently set on the receiver.</p>
+		<p>Returns the number of attributes that currently have values set on the
+receiver.</p>
 	</div>		
 	
     
@@ -3605,9 +3672,8 @@ have the specified relation type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an array containing the names of each relation type for which
-there is currently at least one related object. The order of the elements
-in the returned array is nondeterministic and has no significance.</p>
+		<p>Returns an array of <code>NSString</code>s containing the names of each relation type
+for which there is currently at least one related object.</p>
 	</div>		
 	
     
@@ -3621,6 +3687,12 @@ in the returned array is nondeterministic and has no significance.</p>
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The order of the elements in the returned array is nondeterministic and has
+no significance.</p>
+	</div>
 	
 	
 	
@@ -3840,8 +3912,7 @@ of the given file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns <code>YES</code> if the receiver needs data model validation, <code>NO</code> otherwise.
-Whenever the data model changes, it will be marked as needing validation.</p>
+		<p>Returns <code>YES</code> if the receiver needs data model validation, <code>NO</code> otherwise.</p>
 	</div>		
 	
     
@@ -3858,7 +3929,7 @@ Whenever the data model changes, it will be marked as needing validation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> At instantiation time, a data model is considered invalid and is
+		<p>Whenever the data model changes, it will be marked as needing validation.</p><div class="note"><p><strong>Note:</strong> At instantiation time, a data model is considered invalid and is
             marked as needing validation. After a call to <a href="#//api/name/validateDataModel">validateDataModel</a>
             returns, the receiver is marked as no longer needing validation,
             even if validation fails.</p></div>
@@ -3885,9 +3956,7 @@ Whenever the data model changes, it will be marked as needing validation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the value of the attribute with the specified name as a double,
-making a reasonable attempt to convert the attribute value&rsquo;s type if
-necessary.</p>
+		<p>Returns the <code>double</code> value of the attribute with the specified name.</p>
 	</div>		
 	
     
@@ -3908,9 +3977,21 @@ necessary.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute <code>attrName</code> as a <code>double</code>.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSNumber</code>, the value will be coerced
+into a number using <a href="../Classes/MBExpression.html#//api/name/numberFromValue:"><code>[MBExpression numberFromValue:]</code></a> and the resulting
+instance&rsquo;s <code>doubleValue</code> will be returned.</p>
+	</div>
 	
 	
 	
@@ -3933,8 +4014,9 @@ necessary.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the boolean result of evaluating the string value of the specified
-attribute as an MBML boolean expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+boolean context.</p>
 	</div>		
 	
     
@@ -3948,16 +4030,29 @@ attribute as an MBML boolean expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -3980,8 +4075,9 @@ attribute as an MBML boolean expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the boolean result of evaluating the string value of the specified
-attribute as an MBML boolean expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+boolean context.</p>
 	</div>		
 	
     
@@ -3995,7 +4091,8 @@ attribute as an MBML boolean expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -4008,9 +4105,22 @@ attribute as an MBML boolean expression.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression,
+            or <code>def</code> if evaluation failed.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4033,8 +4143,9 @@ attribute as an MBML boolean expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the numeric result of evaluating the string value of the specified
-attribute as an MBML number expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+numeric context.</p>
 	</div>		
 	
     
@@ -4048,16 +4159,29 @@ attribute as an MBML number expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4080,8 +4204,9 @@ attribute as an MBML number expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the numeric result of evaluating the string value of the specified
-attribute as an MBML number expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+numeric context.</p>
 	</div>		
 	
     
@@ -4095,7 +4220,8 @@ attribute as an MBML number expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -4108,9 +4234,22 @@ attribute as an MBML number expression.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression,
+            or <code>def</code> if evaluation failed.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4133,8 +4272,9 @@ attribute as an MBML number expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the object result of evaluating the string value of the specified
-attribute as an MBML object expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+object context.</p>
 	</div>		
 	
     
@@ -4148,16 +4288,29 @@ attribute as an MBML object expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4180,8 +4333,9 @@ attribute as an MBML object expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the object result of evaluating the string value of the specified
-attribute as an MBML object expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+object context.</p>
 	</div>		
 	
     
@@ -4195,7 +4349,8 @@ attribute as an MBML object expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -4208,9 +4363,22 @@ attribute as an MBML object expression.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression,
+            or <code>def</code> if evaluation failed.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4233,8 +4401,9 @@ attribute as an MBML object expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the string result of evaluating the string value of the specified
-attribute as an MBML string expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+string context.</p>
 	</div>		
 	
     
@@ -4248,16 +4417,29 @@ attribute as an MBML string expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4280,8 +4462,9 @@ attribute as an MBML string expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the string result of evaluating the string value of the specified
-attribute as an MBML string expression.</p>
+		<p>Interprets the value of the given attribute as an <code>NSString</code> containing an
+expression, and returns the result of evaluating that expression in the
+string context.</p>
 	</div>		
 	
     
@@ -4295,7 +4478,8 @@ attribute as an MBML string expression.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>attrName</em></dt>
-			<dd><p>The name of the attribute whose value will be evaluated.</p></dd>
+			<dd><p>The name of the attribute whose value will be evaluated
+            as an expression.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -4308,9 +4492,22 @@ attribute as an MBML string expression.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of evaluating the value of <code>attrName</code> as an expression,
+            or <code>def</code> if evaluation failed.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method before being
+evaluated as an expression.</p>
+	</div>
 	
 	
 	
@@ -4333,8 +4530,8 @@ attribute as an MBML string expression.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the first object related to the receiver by the default relation
-type.</p>
+		<p>Returns the first <code>MBDataModel</code> related to the receiver by the default
+relation type.</p>
 	</div>		
 	
     
@@ -4344,6 +4541,11 @@ type.</p>
     
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The first relative, or <code>nil</code> if there isn&rsquo;t one.</p>
+	</div>
 	
 	
 	
@@ -4370,8 +4572,8 @@ type.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the first object related to the receiver by the specified relation
-type.</p>
+		<p>Returns the first <code>MBDataModel</code> related to the receiver by the specified
+relation type.</p>
 	</div>		
 	
     
@@ -4392,6 +4594,11 @@ type.</p>
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The first relative, or <code>nil</code> if there isn&rsquo;t one.</p>
+	</div>
 	
 	
 	
@@ -4622,7 +4829,7 @@ for instances of related objects that are created automatically from XML by the
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
 
     
 	
@@ -4659,7 +4866,7 @@ corresponding attribute name and value will be set on the receiver.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithAttributes:(NSDictionary *)<em>attrs</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithAttributes:(NSDictionary *)<em>attrs</em></code></div>
 
     
 	
@@ -4709,7 +4916,7 @@ the children of the element.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)initWithXML:(RXMLElement *)<em>xml</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithXML:(RXMLElement *)<em>xml</em></code></div>
 
     
 	
@@ -4750,9 +4957,7 @@ the children of the element.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the value of the attribute with the specified name as an integer,
-making a reasonable attempt to convert the attribute value&rsquo;s type if
-necessary.</p>
+		<p>Returns the <code>NSInteger</code> value of the attribute with the specified name.</p>
 	</div>		
 	
     
@@ -4773,9 +4978,21 @@ necessary.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute <code>attrName</code> as an <code>NSInteger</code>.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSNumber</code>, the value will be coerced
+into a number using <a href="../Classes/MBExpression.html#//api/name/numberFromValue:"><code>[MBExpression numberFromValue:]</code></a> and the resulting
+instance&rsquo;s <code>integerValue</code> will be returned.</p>
+	</div>
 	
 	
 	
@@ -4955,9 +5172,7 @@ and if the receiver is not marked as needing validation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the value of the attribute with the specified name as a string,
-making a reasonable attempt to convert the attribute value&rsquo;s type if
-necessary.</p>
+		<p>Returns the numeric value of the attribute with the specified name.</p>
 	</div>		
 	
     
@@ -4978,9 +5193,20 @@ necessary.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute <code>attrName</code> as an <code>NSNumber</code>.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSNumber</code>, the value will be coerced
+into a number using <a href="../Classes/MBExpression.html#//api/name/numberFromValue:"><code>[MBExpression numberFromValue:]</code></a>.</p>
+	</div>
 	
 	
 	
@@ -5039,7 +5265,7 @@ necessary.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Allows accessing data model attributes using the Objective-C keyed
+		<p>Provides access to data model attribute values using the Objective-C keyed
 subscripting notation.</p>
 	</div>		
 	
@@ -5072,12 +5298,15 @@ subscripting notation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Assuming a data model object <code>node</code>, the following expression:</p>
+		<p>In the following Objective-C code:</p>
 
-<pre><code>node[@"title"]
+<pre><code>MBDataModel* node = // declared elsewhere
+
+id nodeTitle = node[@"title"];
 </code></pre>
 
-<p>would yield <code>node</code>&rsquo;s value of the attribute named <code>title</code>.</p>
+<p>The <code>nodeTitle</code> variable would contain the value of <code>node</code>&rsquo;s attribute named
+&ldquo;<code>title</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -5237,9 +5466,9 @@ the exact same attributes and relatives as the receiver.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This is useful in cases where you need to instantiate generic data models
-from XML before doing the work of deciding what each node should be. Allows
-for faster loading of data models from XML.</p>
+		<p>This is useful in cases where you might want to instantiate generic data
+models from XML before doing the work of deciding what <code>Class</code> each node
+should be. Allows for faster loading of data models from XML.</p>
 	</div>
 	
 	
@@ -5325,7 +5554,8 @@ receiver&rsquo;s class.</p><div class="note"><p><strong>Note:</strong> This meth
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns all objects related to the receiver by the default relation type.</p>
+		<p>Returns all <code>MBDataModel</code> objects related to the receiver by the default
+relation type.</p>
 	</div>		
 	
     
@@ -5335,6 +5565,12 @@ receiver&rsquo;s class.</p><div class="note"><p><strong>Note:</strong> This meth
     
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing the relatives. If there are no relatives,
+            an empty array—not <code>nil</code>—will be returned.</p>
+	</div>
 	
 	
 	
@@ -5361,8 +5597,8 @@ receiver&rsquo;s class.</p><div class="note"><p><strong>Note:</strong> This meth
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns all objects related to the receiver by the specified relation
-type.</p>
+		<p>Returns all <code>MBDataModel</code> objects related to the receiver by the specified
+relation type.</p>
 	</div>		
 	
     
@@ -5383,6 +5619,12 @@ type.</p>
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An <code>NSArray</code> containing the relatives. If there are no relatives,
+            an empty array—not <code>nil</code>—will be returned.</p>
+	</div>
 	
 	
 	
@@ -5848,7 +6090,7 @@ order to pass validation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Allows setting data model attributes using the Objective-C keyed
+		<p>Allows setting data model attribute values using the Objective-C keyed
 subscripting notation.</p>
 	</div>		
 	
@@ -5881,12 +6123,14 @@ subscripting notation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Assuming a data model object <code>node</code>. the following expression:</p>
+		<p>In the following Objective-C code:</p>
 
-<pre><code>node[@"title"] = @"Mockingbird";
+<pre><code>MBDataModel* node = // declared elsewhere
+
+node[@"title"] = @"Mockingbird";
 </code></pre>
 
-<p>would set <code>node</code>&rsquo;s attribute named <code>title</code> to the string &ldquo;<code>Mockingbird</code>&rdquo;.</p>
+<p><code>node</code>&rsquo;s attribute named &ldquo;<code>title</code>&rdquo; is set to the string &ldquo;<code>Mockingbird</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -5979,9 +6223,7 @@ related objects of a given type.</p><div class="note"><p><strong>Note:</strong> 
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the value of the attribute with the specified name as a string,
-making a reasonable attempt to convert the attribute value&rsquo;s type if
-necessary.</p>
+		<p>Returns the string value of the attribute with the specified name.</p>
 	</div>		
 	
     
@@ -6002,9 +6244,20 @@ necessary.</p>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute <code>attrName</code> as an <code>NSString</code>.</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If the value&rsquo;s underlying type is not <code>NSString</code>, the value will be coerced
+into a string using the <code>NSObject</code>&rsquo;s <code>description</code> method.</p>
+	</div>
 	
 	
 	
@@ -6027,7 +6280,7 @@ necessary.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called by <a href="#//api/name/validateDataModel">validateDataModel</a> to attempt to validate a member of a larger data
+		<p>Called by <a href="#//api/name/validateDataModel"><code>validateDataModel</code></a> to attempt to validate a member of a larger data
 model.</p>
 	</div>		
 	
@@ -6062,7 +6315,7 @@ model.</p>
 			<dd><p>If the receiver is being validated as a relative of another
             data model object, this parameter will contain the root node of the
             data model (in other words, the original receiver of the call to
-            <a href="#//api/name/validateDataModel">validateDataModel</a>). If the receiver is the root node of the data
+            <a href="#//api/name/validateDataModel"><code>validateDataModel</code></a>). If the receiver is the root node of the data
             model being validated, this parameter will equal <code>self</code>.</p></dd>
 		</dl>
 		
@@ -6083,11 +6336,11 @@ model.</p>
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Subclasses that need to hook into the data model validation process may
 override this method. However, if subclasses only need to perform attribute
-validation, they should override the simpler <a href="#//api/name/validateAttributes">validateAttributes</a> method.</p>
+validation, they should override the simpler <a href="#//api/name/validateAttributes"><code>validateAttributes</code></a> method.</p>
 
 <p>If a subclass implementation detects no problem with the data model, it
 should return the value returned by calling the superclass&rsquo;s
-validateAsRelativeOf:relatedBy:dataModelRoot: method.</p>
+<code>validateAsRelativeOf:relatedBy:dataModelRoot:</code> method.</p>
 
 <p>At the first sign of an invalid data model, subclass implementations
 should return <code>NO</code>.</p><div class="warning"><p><strong>Warning:</strong> This method should not be called directly, except by subclasses
@@ -6142,7 +6395,8 @@ objects).</p>
 attributes are present.</p>
 
 <p>Subclasses that need to hook into the attribute validation process may
-override this method, but should call the superclass implementation.</p><div class="note"><p><strong>Note:</strong> For each unsupported attribute encountered during attribute
+override this method, but should be sure to call the superclass
+implementation.</p><div class="note"><p><strong>Note:</strong> For each unsupported attribute encountered during attribute
             validation, a warning will be logged to the console. However,
             the presence of unsupported attributes will not cause the data
             model to be considered invalid.</p></div>
@@ -6192,7 +6446,8 @@ override this method, but should call the superclass implementation.</p><div cla
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Validation will occur even if the receiver is not marked as needing validation.
-Use <a href="#//api/name/validateDataModelIfNeeded">validateDataModelIfNeeded</a> to ensure validation occurs only when necessary.</p><div class="warning"><p><strong>Warning:</strong> Subclasses shouldn&rsquo;t override this method. Instead, to hook into the
+Use <a href="#//api/name/validateDataModelIfNeeded"><code>validateDataModelIfNeeded</code></a> to ensure validation occurs only when
+necessary.</p><div class="warning"><p><strong>Warning:</strong> Subclasses shouldn&rsquo;t override this method. Instead, to hook into the
             validation process, subclasses should override <a href="#//api/name/validateAttributes"><code>validateAttributes</code></a>
             or <a href="#//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:"><code>validateAsRelativeOf:relatedBy:dataModelRoot:</code></a>.</p></div>
 	</div>
@@ -6219,8 +6474,8 @@ Use <a href="#//api/name/validateDataModelIfNeeded">validateDataModelIfNeeded</a
 	
 	<div class="method-subsection brief-description">
 		<p>If the data model is marked as needing validation, this method returns the
-result of calling <a href="#//api/name/validateDataModel">validateDataModel</a>; otherwise, this method returns the
-result of calling <a href="#//api/name/isDataModelValid">isDataModelValid</a>.</p>
+result of calling <a href="#//api/name/validateDataModel"><code>validateDataModel</code></a>; otherwise, this method returns the
+result of calling <a href="#//api/name/isDataModelValid"><code>isDataModelValid</code></a>.</p>
 	</div>		
 	
     
@@ -6289,6 +6544,11 @@ result of calling <a href="#//api/name/isDataModelValid">isDataModelValid</a>.</
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The value of the attribute <code>attrName</code>.</p>
+	</div>
+	
 	
 	
 	
@@ -6322,7 +6582,7 @@ result of calling <a href="#//api/name/isDataModelValid">isDataModelValid</a>.</
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-22)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

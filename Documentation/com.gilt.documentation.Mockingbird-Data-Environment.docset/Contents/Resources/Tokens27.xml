@@ -20,8 +20,8 @@ NSBundle resources.</Abstract>
 			
 			<Declaration>+ (id)directoryForMainBundle</Declaration>
 			
-			<ReturnValue><Abstract type="html">The path of the filesystem directory containing the main bundle&apos;s
-            resource files, or nil if it couldn&apos;t be found.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The directory containing the main bundle&apos;s resource files, or
+            nil if it couldn&apos;t be found.</Abstract></ReturnValue>
 			<Anchor>//api/name/directoryForMainBundle</Anchor>
             <NodeRef refid="27"/>
 		</Token>
@@ -29,7 +29,7 @@ NSBundle resources.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForBundleWithIdentifier:</TokenIdentifier>
 			<Abstract type="html">Determines the directory containing the resources for the NSBundle with the
-specified name.</Abstract>
+specified bundle identifier.</Abstract>
 			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForBundleWithIdentifier:(NSString *)bundleID</Declaration>

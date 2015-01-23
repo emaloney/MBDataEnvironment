@@ -164,8 +164,7 @@ default value if there is no available variable value.</Abstract>
 			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/popVariable:</TokenIdentifier>
 			<Abstract type="html">Pops the current value from the stack for the variable with the given name.
 (The value of the variable prior to the previous call to pushVariable:value:
-will be restored.) If there are no stack values for the variable, an error
-will be logged to the console.</Abstract>
+will be restored.)</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
 			<Declaration>- (id)popVariable:(NSString *)varName</Declaration>
@@ -265,7 +264,7 @@ the variable stack will not be affected.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBVariableSpace/name:withSuffix:</TokenIdentifier>
-			<Abstract type="html">Constructs a string for an variable-related name with the given suffix.</Abstract>
+			<Abstract type="html">Constructs a string for a variable-related name with the given suffix.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
 			<Declaration>+ (NSString *)name:(NSString *)name withSuffix:(NSString *)suffix</Declaration>
@@ -281,7 +280,7 @@ the variable stack will not be affected.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">If name and suffix are both non-nil, the concatenation of
-            name, : and suffix is returned. Otherwise, the value of the
+            name, &quot;:&quot; and suffix is returned. Otherwise, the value of the
             name parameter is returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/name:withSuffix:</Anchor>
             <NodeRef refid="35"/>
@@ -317,9 +316,7 @@ the variable stack will not be affected.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">YES if the variable represented by declaration was successfully
-            declared; NO if there was already a variable with the same name
-            declared or if an error occured while attempting to retrieve the
-            variable&apos;s initial value.</Abstract></ReturnValue>
+            declared; NO if an error occured.</Abstract></ReturnValue>
 			<Anchor>//api/name/declareVariable:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
@@ -355,8 +352,8 @@ the variable stack will not be affected.</Abstract>
             implementation.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">YES if function was successfully declared; NO if there was
-            already a function with the same name or if an error occurred.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">YES if function was successfully declared; NO if an error
+            occurred.</Abstract></ReturnValue>
 			<Anchor>//api/name/declareFunction:</Anchor>
             <NodeRef refid="35"/>
 		</Token>

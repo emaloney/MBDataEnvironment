@@ -101,20 +101,21 @@ result in an array.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForUserHome</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSHomeDirectory.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForHome</TokenIdentifier>
+			<Abstract type="html">Returns the filesystem path of the NSHomeDirectory. On iOS, this is the
+filesystem path of the application&apos;s home.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)directoryForUserHome</Declaration>
+			<Declaration>+ (id)directoryForHome</Declaration>
 			
 			<ReturnValue><Abstract type="html">The filesystem path of the directory.</Abstract></ReturnValue>
-			<Anchor>//api/name/directoryForUserHome</Anchor>
+			<Anchor>//api/name/directoryForHome</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForTempFiles</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSTemporaryDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSTemporaryDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForTempFiles</Declaration>
@@ -126,7 +127,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForCaches</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSCachesDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSCachesDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForCaches</Declaration>
@@ -138,7 +139,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForDocuments</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSDocumentDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSDocumentDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForDocuments</Declaration>
@@ -150,7 +151,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForDownloads</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSDownloadsDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSDownloadsDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForDownloads</Declaration>
@@ -162,7 +163,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForApplicationSupport</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSApplicationSupportDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSApplicationSupportDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForApplicationSupport</Declaration>
@@ -174,7 +175,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForMovies</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSMoviesDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSMoviesDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForMovies</Declaration>
@@ -186,7 +187,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForMusic</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSMusicDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSMusicDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForMusic</Declaration>
@@ -198,7 +199,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForPictures</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSPicturesDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSPicturesDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForPictures</Declaration>
@@ -210,7 +211,7 @@ result in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFileFunctions/directoryForPublicFiles</TokenIdentifier>
-			<Abstract type="html">Returns the filesystem path of the user&apos;s NSSharedPublicDirectory.</Abstract>
+			<Abstract type="html">Returns the filesystem path of the NSSharedPublicDirectory.</Abstract>
 			<DeclaredIn>MBMLFileFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)directoryForPublicFiles</Declaration>

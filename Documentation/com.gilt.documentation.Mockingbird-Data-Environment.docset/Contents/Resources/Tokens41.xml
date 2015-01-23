@@ -4,7 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cat/NSString(MBNumericPrimitiveAccessors)</TokenIdentifier>
-			<Abstract type="html">Our NSString class category used to add support for the
+			<Abstract type="html">Our NSString class category is used to add support for the
 MBNumericPrimitiveAccessors protocol.</Abstract>
 			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
             

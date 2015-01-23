@@ -37,15 +37,14 @@ extern NSString* const kMBDataModelDefaultRelation;
 /******************************************************************************/
 
 /*!
- An implementation of a generic class representing a data model. Each data
- model instance contains attributes and related objects that are typically
- populated from XML.
- 
- When populated from an XML element, a data model may contain _attributes_ 
- and _related objects_. The data model's attributes are populated from the
- element's attributes, and the model will contain related objects for any
- child XML elements.
- 
+ An implementation of a generic class representing a node in a data model. 
+ Each data model instance contains attributes and related objects that are
+ typically populated from XML.
+
+ When populated from an XML element, an `MBDataModel` instance's attributes
+ are populated from the XML element's attributes. Related objects may also
+ be added based on whether the element contains any child XML elements.
+
  Data models support validation, wherein their attributes and related objects
  are inspected to see whether they contain the expected values. Subclasses
  may implement any of the following methods to participate in validation:
@@ -80,7 +79,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Default initializer; returns an empty data model instance.
  */
-- (id) init;
+- (instancetype) init;
 
 /*!
  Populates the receiver with the data model inherent in the provided
@@ -90,7 +89,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     xml The XML to use for populating the data model
  */
-- (id) initWithXML:(RXMLElement*)xml;
+- (instancetype) initWithXML:(RXMLElement*)xml;
 
 /*!
  For each key/value pair contained in the passed-in dictionary, a
@@ -100,7 +99,7 @@ extern NSString* const kMBDataModelDefaultRelation;
             and values to use for initializing the data model object.
                 
  */
-- (id) initWithAttributes:(NSDictionary*)attrs;
+- (instancetype) initWithAttributes:(NSDictionary*)attrs;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark NSCopying support
@@ -159,9 +158,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  Returns a new data model instance of the specified class that contains
  the exact same attributes and relatives as the receiver.
 
- This is useful in cases where you need to instantiate generic data models
- from XML before doing the work of deciding what each node should be. Allows
- for faster loading of data models from XML.
+ This is useful in cases where you might want to instantiate generic data
+ models from XML before doing the work of deciding what `Class` each node
+ should be. Allows for faster loading of data models from XML.
 
  @param     cls The class to pose as.
  
@@ -208,11 +207,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Amends the data model by overlaying attributes and potentially adding
  relatives to the receiver based on the contents of the passed-in XML.
- If the receiver contains attributes also present on the XML element, 
- the receiver's attributes are replaced, while new attributes are added.
- If the XML element contains child elements, they are added to the receiver
- as related objects.
- 
+
+ If the receiver contains attributes also present on the XML element, the
+ receiver's attributes are replaced, while new attributes are added. If the
+ XML element contains child elements, they may be added to the receiver as
+ related objects.
+
  @param     xml The XML element to use for amending the data model.
  */
 - (void) amendDataModelWithXML:(RXMLElement*)xml;
@@ -220,10 +220,11 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Amends the data model by overlaying attributes and potentially adding
  relatives to the receiver based on the contents of the passed-in XML.
- If the receiver contains attributes also present on the XML element, 
- the receiver's attributes are replaced, while new attributes are added.
- If the XML element contains child elements, they are added to the receiver
- as related objects.
+
+ If the receiver contains attributes also present on the XML element, the
+ receiver's attributes are replaced, while new attributes are added. If the
+ XML element contains child elements, they may be added to the receiver as
+ related objects.
 
  @param     filePath The path of the file containing the XML to process.
  
@@ -234,11 +235,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Amends the data model by overlaying attributes and potentially adding
  relatives to the receiver based on the contents of the passed-in XML.
- If the receiver contains attributes also present on the XML element, 
- the receiver's attributes are replaced, while new attributes are added.
- If the XML element contains child elements, they are added to the receiver
- as related objects.
- 
+
+ If the receiver contains attributes also present on the XML element, the
+ receiver's attributes are replaced, while new attributes are added. If the
+ XML element contains child elements, they may be added to the receiver as
+ related objects.
+
  @param     filePath The path of the file containing the XML to process.
 
  @param     errPtr If non-`nil` and an error occurs, this pointer will be
@@ -251,11 +253,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Amends the data model by overlaying attributes and potentially adding
  relatives to the receiver based on the contents of the passed-in XML.
- If the receiver contains attributes also present on the XML element, 
- the receiver's attributes are replaced, while new attributes are added.
- If the XML element contains child elements, they are added to the receiver
- as related objects.
- 
+
+ If the receiver contains attributes also present on the XML element, the
+ receiver's attributes are replaced, while new attributes are added. If the
+ XML element contains child elements, they may be added to the receiver as
+ related objects.
+
  @param     xmlData An `NSData` instance containing the XML to process.
  
  @return    `YES` if the XML data was processed successfully; `NO` otherwise.
@@ -265,11 +268,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Amends the data model by overlaying attributes and potentially adding
  relatives to the receiver based on the contents of the passed-in XML.
- If the receiver contains attributes also present on the XML element, 
- the receiver's attributes are replaced, while new attributes are added.
- If the XML element contains child elements, they are added to the receiver
- as related objects.
- 
+
+ If the receiver contains attributes also present on the XML element, the
+ receiver's attributes are replaced, while new attributes are added. If the
+ XML element contains child elements, they may be added to the receiver as
+ related objects.
+
  @param     xmlData An `NSData` instance containing the XML to process.
  
  @param     errPtr If non-`nil` and an error occurs, this pointer will be
@@ -280,10 +284,11 @@ extern NSString* const kMBDataModelDefaultRelation;
 - (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(NSError**)errPtr;
 
 /*!
- For each attribute value on the passed-in XML element, a corresponding
- attribute will be set on the receiver. If the receiver contains attributes
- also present on the XML element, the receiver's attributes are replaced, while
- new attributes are added.
+ For each attribute value of the passed-in XML element, a corresponding
+ attribute will be set on the receiver.
+ 
+ If the receiver contains attributes also present on the XML element, 
+ the receiver's attributes are replaced, while new attributes are added.
  
  @param     el The XML element to process.
  */
@@ -291,10 +296,11 @@ extern NSString* const kMBDataModelDefaultRelation;
 
 /*!
  For each key/value pair contained in the passed-in dictionary, a corresponding
- attribute will be set on the receiver. If the receiver contains attributes
- also present on the XML element, the receiver's attributes are replaced, while
- new attributes are added.
+ attribute will be set on the receiver.
  
+ If the receiver contains attributes also present on the XML element, 
+ the receiver's attributes are replaced, while new attributes are added.
+
  @param     dict The dictionary containing the attributes values to be set.
 */
 - (void) addAttributesFromDictionary:(NSDictionary*)dict;
@@ -368,7 +374,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @note      The XML output is simulated and may not be a byte-for-byte
             representation of the originating XML (if any). Non-significant
             whitespace and attribute order may differ, and if any attributes
-            were applied from an MBStyledDataModel, they will be represented
+            were applied from an `MBStyledDataModel`, they will be represented
             in the simulated XML as well.
  */
 @property(nonatomic, readonly) NSString* simulatedXML;
@@ -388,15 +394,17 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Returns the set of attributes required by the receiving class (and not any
  superclass or subclass).
+
+ Implementing this method allows a class to declare that it requires one or
+ more attributes.
  
- A data model object that is missing one or more of the required attributes 
- will not pass validation.
- 
+ During validation, an error will be logged to the console for each required
+ `MBDataModel` attribute that is not present in the receiver. Further, 
+ validation will fail if any required attribute is missing.
+
  @return    The default implementation returns `nil`, indicating that no
-            attributes are explicitly required. Subclasses must provide their
-            own implementation if they require specific attributes to be present
-            in order to pass validation.
- 
+            attributes are explicitly required.
+
  @warning   Subclasses overriding this method **must never** call `super`.
  */
 + (NSSet*) requiredAttributes;
@@ -404,32 +412,37 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Returns the set of attributes supported by the receiving class (and not any
  superclass or subclass).
- 
- During validation, a data model object will issue a warning if it contains 
- one or more attributes not appearing in the set of supported attributes.
- 
- @note      Implementations do not need to report an attribute as supported
-            if it is also reported as required. 
+
+ Implementing this method allows a class to declare that it supports one or
+ more attributes.
+
+ During validation, a warning will be logged to the console for each
+ `MBDataModel` attribute present in the receiver that does not appear in
+ the set of supported attributes. However, the presence of unsupported 
+ attributes will not cause validation to fail.
+
+ **Note:** Implementations do not need to report an attribute as supported
+ if it is also reported as required.
 
  @return    The default implementation returns `nil`, indicating that no
-            attributes are explicitly supported. Subclasses must provide their
-            own implementation if they will report specific attributes as
-            unsupported when performing validation.
+            attributes are explicitly supported. 
 
  @warning   Subclasses overriding this method **must never** call `super`.
  */
 + (NSSet*) supportedAttributes;
 
 /*!
- Returns the set of attributes supported that are supported by one of the
- receiving class's superclasses that are unsupported by the receiving class.
- 
- This mechanism allows a class to declare that it does not support one or
- more attributes supported by a superclass.
- 
- A data model object will issue warnings for each unsupported attribute
- present during validation.
- 
+ Returns the set of attributes that are supported by one of the receiving
+ class's superclasses but are unsupported by the receiving class.
+
+ Implementing this method allows a class to declare that it does not support
+ one or more attributes supported by a superclass.
+
+ During validation, a warning will be logged to the console for each
+ `MBDataModel` attribute present in the receiver that is declared as
+ unsupported. However, the presence of unsupported attributes will not
+ cause validation to fail.
+
  @return    The default implementation returns `nil`, indicating that no
             attributes are explicitly unsupported.
 
@@ -488,7 +501,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  Attempts to validate the data model using the receiver as the root node.
 
  Validation will occur even if the receiver is not marked as needing validation.
- Use validateDataModelIfNeeded to ensure validation occurs only when necessary.
+ Use `validateDataModelIfNeeded` to ensure validation occurs only when
+ necessary.
 
  @return    `YES` if the receiver's data model is valid; `NO` otherwise. 
  
@@ -500,8 +514,8 @@ extern NSString* const kMBDataModelDefaultRelation;
 
 /*!
  If the data model is marked as needing validation, this method returns the
- result of calling validateDataModel; otherwise, this method returns the
- result of calling isDataModelValid.
+ result of calling `validateDataModel`; otherwise, this method returns the
+ result of calling `isDataModelValid`.
  
  @return    `YES` if the receiver's data model is valid; `NO` otherwise. 
 
@@ -519,7 +533,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  attributes are present.
  
  Subclasses that need to hook into the attribute validation process may 
- override this method, but should call the superclass implementation.
+ override this method, but should be sure to call the superclass
+ implementation.
  
  @note      For each unsupported attribute encountered during attribute 
             validation, a warning will be logged to the console. However,
@@ -531,16 +546,16 @@ extern NSString* const kMBDataModelDefaultRelation;
 - (BOOL) validateAttributes;
 
 /*!
- Called by validateDataModel to attempt to validate a member of a larger data
+ Called by `validateDataModel` to attempt to validate a member of a larger data
  model.
  
  Subclasses that need to hook into the data model validation process may 
  override this method. However, if subclasses only need to perform attribute 
- validation, they should override the simpler validateAttributes method.
+ validation, they should override the simpler `validateAttributes` method.
  
  If a subclass implementation detects no problem with the data model, it
  should return the value returned by calling the superclass's 
- validateAsRelativeOf:relatedBy:dataModelRoot: method.
+ `validateAsRelativeOf:relatedBy:dataModelRoot:` method.
  
  At the first sign of an invalid data model, subclass implementations
  should return `NO`.
@@ -559,7 +574,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     root If the receiver is being validated as a relative of another
             data model object, this parameter will contain the root node of the
             data model (in other words, the original receiver of the call to
-            validateDataModel). If the receiver is the root node of the data
+            `validateDataModel`). If the receiver is the root node of the data
             model being validated, this parameter will equal `self`.
  
  @return    `YES` if the receiver's data model is valid; `NO` otherwise.
@@ -578,6 +593,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
 /*!
  Returns `YES` if the receiver needs data model validation, `NO` otherwise. 
+
  Whenever the data model changes, it will be marked as needing validation.
  
  @note      At instantiation time, a data model is considered invalid and is 
@@ -624,24 +640,25 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Represents the content of this data model object. When the data model is
  populated from an XML element containing text content, this property will
- contain that text.
+ contain an `NSString` with that text.
  */
 @property(nonatomic, strong) id content;
 
 /*!
- Returns `YES` if the value of the `content` property is a string, and if
+ Returns `YES` if the value of the `content` property is an `NSString`, and if
  that string contains at least one non-whitespace character.
  */
 @property(nonatomic, assign) BOOL hasStringContent;
 
 /*!
- Returns the number of attributes currently set on the receiver.
+ Returns the number of attributes that currently have values set on the
+ receiver.
  */
 - (NSUInteger) countAttributes;
 
 /*!
- Returns an array containing the names of the attributes that currently
- have values set on the receiver.
+ Returns an array of `NSString`s containing the names of the attributes
+ that currently have values set on the receiver.
  */
 - (NSArray*) attributeNames;
 
@@ -657,51 +674,70 @@ extern NSString* const kMBDataModelDefaultRelation;
  Returns the value of the attribute with the specified name.
  
  @param     attrName The name of the attribute whose value is to be retrieved.
+ 
+ @return    The value of the attribute `attrName`.
  */
 - (id) valueOfAttribute:(NSString*)attrName;
 
 /*!
- Returns the value of the attribute with the specified name as a string,
- making a reasonable attempt to convert the attribute value's type if
- necessary.
+ Returns the string value of the attribute with the specified name.
  
+ If the value's underlying type is not `NSString`, the value will be coerced
+ into a string using the `NSObject`'s `description` method.
+
  @param     attrName The name of the attribute whose value is to be retrieved.
+
+ @return    The value of the attribute `attrName` as an `NSString`.
  */
 - (NSString*) stringValueOfAttribute:(NSString*)attrName;
 
 /*!
- Returns the value of the attribute with the specified name as a string,
- making a reasonable attempt to convert the attribute value's type if
- necessary.
- 
+ Returns the numeric value of the attribute with the specified name.
+
+ If the value's underlying type is not `NSNumber`, the value will be coerced
+ into a number using `+[MBExpression numberFromValue:]`.
+
  @param     attrName The name of the attribute whose value is to be retrieved.
+
+ @return    The value of the attribute `attrName` as an `NSNumber`.
  */
 - (NSDecimalNumber*) numberValueOfAttribute:(NSString*)attrName;
 
 /*!
- Returns the value of the attribute with the specified name as a boolean,
- making a reasonable attempt to convert the attribute value's type if
- necessary.
+ Returns the boolean value of the attribute with the specified name.
  
+ If the value's underlying type is not boolean, the value will be coerced into
+ a boolean using `+[MBExpression booleanFromValue:]`.
+
  @param     attrName The name of the attribute whose value is to be retrieved.
+ 
+ @return    The value of the attribute `attrName` as a `BOOL`.
  */
 - (BOOL) booleanValueOfAttribute:(NSString*)attrName;
 
 /*!
- Returns the value of the attribute with the specified name as an integer,
- making a reasonable attempt to convert the attribute value's type if
- necessary.
+ Returns the `NSInteger` value of the attribute with the specified name.
+ 
+ If the value's underlying type is not `NSNumber`, the value will be coerced
+ into a number using `+[MBExpression numberFromValue:]` and the resulting
+ instance's `integerValue` will be returned.
  
  @param     attrName The name of the attribute whose value is to be retrieved.
+ 
+ @return    The value of the attribute `attrName` as an `NSInteger`.
  */
 - (NSInteger) integerValueOfAttribute:(NSString*)attrName;
 
 /*!
- Returns the value of the attribute with the specified name as a double,
- making a reasonable attempt to convert the attribute value's type if
- necessary.
+ Returns the `double` value of the attribute with the specified name.
+ 
+ If the value's underlying type is not `NSNumber`, the value will be coerced
+ into a number using `+[MBExpression numberFromValue:]` and the resulting
+ instance's `doubleValue` will be returned.
 
  @param     attrName The name of the attribute whose value is to be retrieved.
+ 
+ @return    The value of the attribute `attrName` as a `double`.
  */
 - (double) doubleValueOfAttribute:(NSString*)attrName;
 
@@ -711,14 +747,17 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*----------------------------------------------------------------------------*/
 
 /*!
- Allows accessing data model attributes using the Objective-C keyed 
+ Provides access to data model attribute values using the Objective-C keyed
  subscripting notation.
  
- Assuming a data model object `node`, the following expression:
+ In the following Objective-C code:
  
-    node[@"title"]
+    MBDataModel* node = // declared elsewhere
+    
+    id nodeTitle = node[@"title"];
  
- would yield `node`'s value of the attribute named `title`.
+ The `nodeTitle` variable would contain the value of `node`'s attribute named
+ "`title`".
 
  @param     attrName The name of the attribute whose value is to be retrieved.
  
@@ -727,14 +766,16 @@ extern NSString* const kMBDataModelDefaultRelation;
 - (id) objectForKeyedSubscript:(NSString*)attrName;
 
 /*!
- Allows setting data model attributes using the Objective-C keyed
+ Allows setting data model attribute values using the Objective-C keyed
  subscripting notation.
 
- Assuming a data model object `node`. the following expression:
+ In the following Objective-C code:
  
+    MBDataModel* node = // declared elsewhere
+    
     node[@"title"] = @"Mockingbird";
- 
- would set `node`'s attribute named `title` to the string "`Mockingbird`".
+
+ `node`'s attribute named "`title`" is set to the string "`Mockingbird`".
 
  @param     obj The new value for the attribute.
 
@@ -748,78 +789,146 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns the object result of evaluating the string value of the specified 
- attribute as an MBML object expression.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ object context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
- @param     attrName The name of the attribute whose value will be evaluated.
+ @return    The result of evaluating the value of `attrName` as an expression.
  */
 - (id) evaluateAsObject:(NSString*)attrName;
 
 /*!
- Returns the object result of evaluating the string value of the specified 
- attribute as an MBML object expression.
- 
- @param     attrName The name of the attribute whose value will be evaluated.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ object context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
  @param     def The value to return if the receiver has no attribute named
             `attrName`, or if expression evaluation failed for some reason.
+ 
+ @return    The result of evaluating the value of `attrName` as an expression,
+            or `def` if evaluation failed.
  */
 - (id) evaluateAsObject:(NSString*)attrName defaultValue:(id)def;
 
 /*!
- Returns the string result of evaluating the string value of the specified 
- attribute as an MBML string expression.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ string context.
 
- @param     attrName The name of the attribute whose value will be evaluated.
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
+ 
+ @return    The result of evaluating the value of `attrName` as an expression.
  */
 - (NSString*) evaluateAsString:(NSString*)attrName;
 
 /*!
- Returns the string result of evaluating the string value of the specified 
- attribute as an MBML string expression.
- 
- @param     attrName The name of the attribute whose value will be evaluated.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ string context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
  @param     def The value to return if the receiver has no attribute named
             `attrName`, or if expression evaluation failed for some reason.
+ 
+ @return    The result of evaluating the value of `attrName` as an expression,
+            or `def` if evaluation failed.
  */
 - (NSString*) evaluateAsString:(NSString*)attrName defaultValue:(NSString*)def;
 
 /*!
- Returns the numeric result of evaluating the string value of the specified 
- attribute as an MBML number expression.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ numeric context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
- @param     attrName The name of the attribute whose value will be evaluated.
+ @return    The result of evaluating the value of `attrName` as an expression.
  */
 - (NSDecimalNumber*) evaluateAsNumber:(NSString*)attrName;
 
 /*!
- Returns the numeric result of evaluating the string value of the specified 
- attribute as an MBML number expression.
- 
- @param     attrName The name of the attribute whose value will be evaluated.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ numeric context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
  @param     def The value to return if the receiver has no attribute named
             `attrName`, or if expression evaluation failed for some reason.
+ 
+ @return    The result of evaluating the value of `attrName` as an expression,
+            or `def` if evaluation failed.
  */
 - (NSDecimalNumber*) evaluateAsNumber:(NSString*)attrName defaultValue:(NSDecimalNumber*)def;
 
 /*!
- Returns the boolean result of evaluating the string value of the specified 
- attribute as an MBML boolean expression.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ boolean context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
- @param     attrName The name of the attribute whose value will be evaluated.
+ @return    The result of evaluating the value of `attrName` as an expression.
  */
 - (BOOL) evaluateAsBoolean:(NSString*)attrName;
 
 /*!
- Returns the boolean result of evaluating the string value of the specified 
- attribute as an MBML boolean expression.
- 
- @param     attrName The name of the attribute whose value will be evaluated.
+ Interprets the value of the given attribute as an `NSString` containing an
+ expression, and returns the result of evaluating that expression in the
+ boolean context.
+
+ If the value's underlying type is not `NSString`, the value will be coerced 
+ into a string using the `NSObject`'s `description` method before being
+ evaluated as an expression.
+
+ @param     attrName The name of the attribute whose value will be evaluated
+            as an expression.
  
  @param     def The value to return if the receiver has no attribute named
             `attrName`, or if expression evaluation failed for some reason.
+ 
+ @return    The result of evaluating the value of `attrName` as an expression,
+            or `def` if evaluation failed.
  */
 - (BOOL) evaluateAsBoolean:(NSString*)attrName defaultValue:(BOOL)def;
 
@@ -897,9 +1006,11 @@ extern NSString* const kMBDataModelDefaultRelation;
 + (NSString*) defaultRelationType;
 
 /*!
- Returns an array containing the names of each relation type for which
- there is currently at least one related object. The order of the elements
- in the returned array is nondeterministic and has no significance.
+ Returns an array of `NSString`s containing the names of each relation type
+ for which there is currently at least one related object.
+ 
+ The order of the elements in the returned array is nondeterministic and has
+ no significance.
  */
 - (NSArray*) currentRelationTypes;
 
@@ -934,43 +1045,57 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*----------------------------------------------------------------------------*/
 
 /*!
- The owning data model relative (if any) of the receiver. Will be set if
+ The containing data model relative (if any) of the receiver. Will be set if
  the receiver was added as a relative to another data model instance.
  */
 @property(nonatomic, weak) MBDataModel* containingRelative;
 
 /*!
- Returns an array containing all objects related to the receiver regardless
- of relation type.
+ Returns all `MBDataModel` objects related to the receiver regardless of
+ relation type.
+ 
+ @return    An `NSArray` containing the relatives. If there are no relatives,
+            an empty array—not `nil`—will be returned.
  */
 - (NSArray*) allRelatives;
 
 /*!
- Returns all objects related to the receiver by the specified relation
- type.
+ Returns all `MBDataModel` objects related to the receiver by the specified
+ relation type.
  
  @param     relation The name of the relation type for which the related objects
             will be returned.
+ 
+ @return    An `NSArray` containing the relatives. If there are no relatives,
+            an empty array—not `nil`—will be returned.
  */
 - (NSArray*) relativesWithRelationType:(NSString*)relation;
 
 /*!
- Returns all objects related to the receiver by the default relation type.
+ Returns all `MBDataModel` objects related to the receiver by the default
+ relation type.
+ 
+ @return    An `NSArray` containing the relatives. If there are no relatives,
+            an empty array—not `nil`—will be returned.
  */
 - (NSArray*) relativesWithDefaultRelation;
 
 /*!
- Returns the first object related to the receiver by the default relation 
- type.
+ Returns the first `MBDataModel` related to the receiver by the default
+ relation type.
+ 
+ @return    The first relative, or `nil` if there isn't one.
  */
 - (MBDataModel*) firstRelativeWithDefaultRelation;
 
 /*!
- Returns the first object related to the receiver by the specified relation
- type.
- 
+ Returns the first `MBDataModel` related to the receiver by the specified
+ relation type.
+
  @param     relation The name of the relation type for which the first related
             object will be returned.
+ 
+ @return    The first relative, or `nil` if there isn't one.
  */
 - (MBDataModel*) firstRelativeWithRelationType:(NSString*)relation;
 
@@ -999,20 +1124,20 @@ extern NSString* const kMBDataModelDefaultRelation;
 - (void) addRelative:(MBDataModel*)relative withRelationType:(NSString*)relation;
 
 /*!
- Relates each data model object returned by the passed-in enumeration
- to the receiver using the default relation type.
+ Each `MBDataModel` returned by the enumeration is added to the receiver as
+ a relative using the default relation type.
  
- @param     relatives An enumeration of relatives to add as relatives to the
-            receiver.
+ @param     relatives An enumeration of `MBDataModel` instances to add as
+            relatives to the receiver.
  */
 - (void) addRelatives:(NSObject<NSFastEnumeration>*)relatives;
 
 /*!
- Relates each data model object returned by the passed-in enumeration
- to the receiver using the specified relation type.
- 
- @param     relatives An enumeration of relatives to add as relatives to the
-            receiver.
+ Each `MBDataModel` returned by the enumeration is added to the receiver as
+ a relative using the specified relation type.
+
+ @param     relatives An enumeration of `MBDataModel` instances to add as
+            relatives to the receiver.
 
  @param     relation The name of the relation type by which the relatives will
             be added to the receiver.
@@ -1025,7 +1150,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*----------------------------------------------------------------------------*/
 
 /*!
- Creates a data model object of the given class based on the specified XML
+ Creates a data model object of the given class from the specified XML
  element, and adds it to the receiver as a relative using the XML tag name
  of the element as the relation type.
  
@@ -1038,7 +1163,7 @@ extern NSString* const kMBDataModelDefaultRelation;
                  forElement:(RXMLElement*)element;
 
 /*!
- Creates a data model object of the given class based on the specified XML
+ Creates a data model object of the given class from the specified XML
  element, and adds it to the receiver as a relative using the specified
  relation type.
  
@@ -1056,7 +1181,7 @@ extern NSString* const kMBDataModelDefaultRelation;
                  forElement:(RXMLElement*)element;
 
 /*!
- Creates a data model object of the given class based on the first child 
+ Creates a data model object of the given class from the first child 
  element of the passed-in XML having the given XML tag, and adds it to the
  receiver as a relative using `tagName` as the relation type.
 
@@ -1076,7 +1201,7 @@ extern NSString* const kMBDataModelDefaultRelation;
                   havingTag:(NSString*)tagName;
 
 /*!
- Creates a data model object of the given class based on the first child 
+ Creates a data model object of the given class from the first child 
  element of the passed-in XML having the given XML tag, and adds it to the
  receiver as a relative using `relation` as the relation type.
 
@@ -1105,7 +1230,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  the passed-in XML. Each data model object instantiated is added to the receiver
  as a relative using the default relation type.
 
- If `container` has no children with the tag `tagName`, no action is taken.
+ If `container` has no children, no action is taken.
 
  @param     relCls The class of `MBDataModel` to create.
 
@@ -1119,6 +1244,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  Constructs a data model object of the given class for each child element of
  the passed-in XML. Each data model object instantiated is added to the receiver
  as a relative using the specified relation type.
+
+ If `container` has no children, no action is taken.
 
  @param     relCls The class of `MBDataModel` to create.
  
@@ -1139,6 +1266,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  instantiated is added to the receiver as a relative using `tagName` as the
  relation type.
 
+ If `container` has no child element with the tag `tagName`, no action is taken.
+
  @param     relCls The class of `MBDataModel` to create.
  
  @param     container The XML element whose child elements will be used to
@@ -1157,6 +1286,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  instantiated is added to the receiver as a relative using `relation` as the
  relation type.
  
+ If `container` has no child element with the tag `tagName`, no action is taken.
+
  @param     relCls The class of `MBDataModel` to create.
  
  @param     relation The relation type to use for adding the newly-created

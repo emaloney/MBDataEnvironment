@@ -16,7 +16,7 @@ using values contained in an NSDictionary.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsObject:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as an object expression.</Abstract>
+evaluate that value as an object expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (id)evaluateAsObject:(NSString *)key</Declaration>
@@ -36,7 +36,7 @@ evaluate the value as an object expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsObject:defaultValue:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as an object expression.</Abstract>
+evaluate that value as an object expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (id)evaluateAsObject:(NSString *)key defaultValue:(id)def</Declaration>
@@ -60,7 +60,7 @@ evaluate the value as an object expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsString:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as a string expression.</Abstract>
+evaluate that value as a string expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (NSString *)evaluateAsString:(NSString *)key</Declaration>
@@ -80,7 +80,7 @@ evaluate the value as a string expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsString:defaultValue:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as a string expression.</Abstract>
+evaluate that value as a string expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (NSString *)evaluateAsString:(NSString *)key defaultValue:(NSString *)def</Declaration>
@@ -104,7 +104,7 @@ evaluate the value as a string expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsNumber:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as a numeric expression.</Abstract>
+evaluate that value as a numeric expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)key</Declaration>
@@ -124,7 +124,7 @@ evaluate the value as a numeric expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsNumber:defaultValue:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as a numeric expression.</Abstract>
+evaluate that value as a numeric expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)key defaultValue:(NSDecimalNumber *)def</Declaration>
@@ -148,7 +148,7 @@ evaluate the value as a numeric expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsBoolean:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as a boolean expression.</Abstract>
+evaluate that value as a boolean expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)key</Declaration>
@@ -168,7 +168,7 @@ evaluate the value as a boolean expression.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsBoolean:defaultValue:</TokenIdentifier>
 			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
-evaluate the value as a boolean expression.</Abstract>
+evaluate that value as a boolean expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
 			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)key defaultValue:(BOOL)def</Declaration>

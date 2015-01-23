@@ -260,7 +260,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  Attempts to interpret a string as a `CGPoint` value.
 
  The input will be parsed as a comma-separating string in the format
- "*`x`*,*`y`*" where *`x`* and *`y`* are interpreted as
+ "*`x`*`,`*`y`*" where *`x`* and *`y`* are interpreted as
  floating-point numbers and used to populate the respective fields of the
  returned `CGPoint`.
 
@@ -276,7 +276,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  Attempts to interpret a string as a `CGPoint` value.
 
  The input will be parsed as a comma-separating string in the format
- "*`x`*,*`y`*" where *`x`* and *`y`* are interpreted as
+ "*`x`*`,`*`y`*" where *`x`* and *`y`* are interpreted as
  floating-point numbers and used to populate the respective fields of the
  returned `CGPoint`.
 
@@ -344,7 +344,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  Attempts to interpret a string as a `CGSize` value.
 
  The input will be parsed as a comma-separating string in the format
- "*`width`*,*`height`*" where *`width`* and *`height`* are interpreted as
+ "*`width`*`,`*`height`*" where *`width`* and *`height`* are interpreted as
  floating-point numbers and used to populate the respective fields of the
  returned `CGSize`.
 
@@ -360,7 +360,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  Attempts to interpret a string as a `CGSize` value.
 
  The input will be parsed as a comma-separating string in the format
- "*`width`*,*`height`*" where *`width`* and *`height`* are interpreted as
+ "*`width`*`,`*`height`*" where *`width`* and *`height`* are interpreted as
  floating-point numbers and used to populate the respective fields of the
  returned `CGSize`.
 
@@ -428,9 +428,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  Attempts to interpret a string as a `CGRect` value.
 
  The input will be parsed as a comma-separating string in the format
- "*`x`*,*`y`*,*`width`*,*`height`*" where *`x`*, *`y`*, *`width`* and *`height`*
- are interpreted as floating-point numbers and used to populate the respective
- fields of the returned `CGRect`.
+ "*`x`*`,`*`y`*`,`*`width`*`,`*`height`*" where *`x`*, *`y`*, *`width`* and
+ *`height`* are interpreted as floating-point numbers and used to populate
+ the respective fields of the returned `CGRect`.
 
  @param     str The string to interpret.
 
@@ -444,9 +444,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  Attempts to interpret a string as a `CGRect` value.
 
  The input will be parsed as a comma-separating string in the format
- "*`x`*,*`y`*,*`width`*,*`height`*" where *`x`*, *`y`*, *`width`* and *`height`*
- are interpreted as floating-point numbers and used to populate the respective
- fields of the returned `CGRect`.
+ "*`x`*`,`*`y`*`,`*`width`*`,`*`height`*" where *`x`*, *`y`*, *`width`* and 
+ *`height`* are interpreted as floating-point numbers and used to populate 
+ the respective fields of the returned `CGRect`.
 
  @param     str The string to interpret.
 
@@ -509,39 +509,33 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*----------------------------------------------------------------------------*/
 
 /*!
- Evaluates an expression as a dimension value, resulting in a `CGFloat`
- representing that value.
+ Evaluates an expression as a size dimension value.
  
  Used to convert expressions into values for `width` and `height` dimensions.
- Since these dimensions may be specified as wildcards (meaning that their
- values are derived programmatically during layout), this method may return
- `UIViewNoIntrinsicMetric` to indicate that the passed-in expression evaluated
- to the wildcard ('`*`') character.
  
- @param     expr An expression specifying a numeric value, or the wildcard
-            string ("`*`").
- 
- @return    A numerical representation of `expr`. Will be
-            `UIViewNoIntrinsicMetric` if `str` evaluates to the wildcard string.
+ The wildcard character ('`*`') can be used to specify the value
+ `UIViewNoIntrinsicMetric`.
+
+ @param     expr The size dimension expression. This expression is expected to
+            yield either a numeric value or a string containing only the 
+            wildcard character.
+
+ @return    The value of the size dimension yielded by the expression `expr`.
  */
 + (CGFloat) sizeDimensionFromExpression:(NSString*)expr;
 
 /*!
- Parses a string-based dimension value into a `CGFloat` representing that
- value.
+ Parses a string into a size dimension value.
 
  Used to convert strings into values for the `width` and `height` dimensions.
- Since these dimensions may be specified as wildcards (meaning that their
- values are derived programmatically during layout), this method may return
- `UIViewNoIntrinsicMetric` to indicate that the passed-in string contained only
- the wildcard ('`*`') character.
 
- @param     str Contains a string specifying a numeric value, or the wildcard
-            string ("`*`").
+ The wildcard character ('`*`') can be used to specify the value
+ `UIViewNoIntrinsicMetric`.
 
- @return    A numerical representation of `str`. Will be
-            `UIViewNoIntrinsicMetric` if `str` was the wildcard
-            string.
+ @param     str The size dimension, as a string. This string is expected to
+            contain either a numeric value or the wildcard character.
+
+ @return    The value of the size dimension specified by `str`.
  */
 + (CGFloat) sizeDimensionFromString:(NSString*)str;
 
@@ -554,7 +548,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  is specified as the value for a given dimension, that dimension is set to
  `UIViewNoIntrinsicMetric`.
 
- @param     sizeStr A string following the format "*width*,*height*" where
+ @param     sizeStr A string following the format "*`width`*`,`*`height`*" where
             each dimension is specified as a number or a wildcard character.
 
  @param     sizePtr If the string to be parsed is in the expected format,
@@ -579,10 +573,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  dimension is set to `UIViewNoIntrinsicMetric`.
 
  @param     rectStr A string following the format
-            "*originX*,*originY*,*width*,*height*". The *originX* and *originY*
-            values must be specified numerically. The *width* and *height*
-            dimensions can either be specified as a number or a wildcard
-            character.
+            "*`originX`*`,`*`originY`*`,`*`width`*`,`*`height`*". 
+            The *`originX`* and *`originY`* values must be specified 
+            numerically. The *`width`* and *`height`* dimensions can 
+            either be specified as a number or a wildcard character.
 
  @param     rectPtr If the string to be parsed is in the expected format,
             on exit, the `CGRect` at the memory address `rectPtr` will be
@@ -716,7 +710,8 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  
  The input object is interpreted as follows:
  
- * If it is an `NSString`, handling will be passed to `offsetFromString:error:`
+ * If it is an `NSString`, handling will be passed to 
+   `edgeInsetsFromString:error:`
  * If it is an `NSValue` containing a `UIEdgeInsets`, the underlying value is
    returned
  * All other cases are considered errors
@@ -759,12 +754,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  ##### Named colors
 
  Named colors utilize the `UIColor` convention of providing a class method
- with a selector following the format: *`name`*`Color`. The value returned by any
- `UIColor` class method named in this way can be referenced simply as *`name`*.
+ with a selector following the format: *`name`*`Color`. The value returned by 
+ any `UIColor` class method named in this way can be referenced simply as
+ *`name`*.
 
- In other words, passing the input string "white" will return
- `[`<code>UIColor whiteColor</code>`]`, "clear" will return
- `[`<code>UIColor clearColor</code>`]`, and "darkGray" will return
+ In other words, passing the input string "`white`" will return
+ `[`<code>UIColor whiteColor</code>`]`, "`clear`" will return
+ `[`<code>UIColor clearColor</code>`]`, and "`darkGray`" will return
  `[`<code>UIColor darkGrayColor</code>`]`.
  
  This applies to all `UIColor` class methods following that naming convention,
@@ -804,14 +800,15 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  ##### Named colors
 
  Named colors utilize the `UIColor` convention of providing a class method
- with a selector following the format: *`name`*`Color`. The value returned by any
- `UIColor` class method named in this way can be referenced simply as *`name`*.
+ with a selector following the format: *`name`*`Color`. The value returned by
+ any `UIColor` class method named in this way can be referenced simply as
+ *`name`*.
 
- In other words, passing the input string "white" will return
- `[`<code>UIColor whiteColor</code>`]`, "clear" will return
- `[`<code>UIColor clearColor</code>`]`, and "darkGray" will return
+ In other words, passing the input string "`white`" will return
+ `[`<code>UIColor whiteColor</code>`]`, "`clear`" will return
+ `[`<code>UIColor clearColor</code>`]`, and "`darkGray`" will return
  `[`<code>UIColor darkGrayColor</code>`]`.
- 
+
  This applies to all `UIColor` class methods following that naming convention,
  including ones added through class categories. This means you can introduce
  your own custom named colors simply by creating a `UIColor` category that
@@ -863,17 +860,17 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*----------------------------------------------------------------------------*/
 
 /*!
- Attempts to interpret a string as a `NSLineBreakMode` value.
+ Attempts to interpret a string as an `NSLineBreakMode` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLLineBreakByWordWrapping` ("wordWrap") = `NSLineBreakByWordWrapping`
- * `kMBMLLineBreakByCharWrapping` ("charWrap") = `NSLineBreakByCharWrapping`
- * `kMBMLLineBreakByClipping` ("clip") = `NSLineBreakByClipping`
- * `kMBMLLineBreakByTruncatingHead` ("headTruncation") = `NSLineBreakByTruncatingHead`
- * `kMBMLLineBreakByTruncatingTail` ("tailTruncation") = `NSLineBreakByTruncatingTail`
- * `kMBMLLineBreakByTruncatingMiddle` ("middleTruncation") = `NSLineBreakByTruncatingMiddle`
+ * `kMBMLLineBreakByWordWrapping` ("**`wordWrap`**") → `NSLineBreakByWordWrapping`
+ * `kMBMLLineBreakByCharWrapping` ("**`charWrap`**") → `NSLineBreakByCharWrapping`
+ * `kMBMLLineBreakByClipping` ("**`clip`**") → `NSLineBreakByClipping`
+ * `kMBMLLineBreakByTruncatingHead` ("**`headTruncation`**") → `NSLineBreakByTruncatingHead`
+ * `kMBMLLineBreakByTruncatingTail` ("**`tailTruncation`**") → `NSLineBreakByTruncatingTail`
+ * `kMBMLLineBreakByTruncatingMiddle` ("**`middleTruncation`**") → `NSLineBreakByTruncatingMiddle`
 
  @param     str The string to interpret.
 
@@ -884,17 +881,17 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 + (NSLineBreakMode) lineBreakModeFromString:(NSString*)str;
 
 /*!
- Attempts to interpret a string as a `NSLineBreakMode` value.
+ Attempts to interpret a string as an `NSLineBreakMode` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLLineBreakByWordWrapping` ("wordWrap") = `NSLineBreakByWordWrapping`
- * `kMBMLLineBreakByCharWrapping` ("charWrap") = `NSLineBreakByCharWrapping`
- * `kMBMLLineBreakByClipping` ("clip") = `NSLineBreakByClipping`
- * `kMBMLLineBreakByTruncatingHead` ("headTruncation") = `NSLineBreakByTruncatingHead`
- * `kMBMLLineBreakByTruncatingTail` ("tailTruncation") = `NSLineBreakByTruncatingTail`
- * `kMBMLLineBreakByTruncatingMiddle` ("middleTruncation") = `NSLineBreakByTruncatingMiddle`
+ * `kMBMLLineBreakByWordWrapping` ("**`wordWrap`**") → `NSLineBreakByWordWrapping`
+ * `kMBMLLineBreakByCharWrapping` ("**`charWrap`**") → `NSLineBreakByCharWrapping`
+ * `kMBMLLineBreakByClipping` ("**`clip`**") → `NSLineBreakByClipping`
+ * `kMBMLLineBreakByTruncatingHead` ("**`headTruncation`**") → `NSLineBreakByTruncatingHead`
+ * `kMBMLLineBreakByTruncatingTail` ("**`tailTruncation`**") → `NSLineBreakByTruncatingTail`
+ * `kMBMLLineBreakByTruncatingMiddle` ("**`middleTruncation`**") → `NSLineBreakByTruncatingMiddle`
 
  @param     str The string to interpret.
 
@@ -909,8 +906,8 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 + (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(NSError**)errPtr;
 
 /*!
- Evaluates a string expression and attempts to interpret the result as a
- `NSLineBreakMode` value using the `textAlignmentFromExpression:` method.
+ Evaluates a string expression and attempts to interpret the result as an
+ `NSLineBreakMode` value using the `lineBreakModeFromString:` method.
 
  @param     expr The expression whose result will be interpreted.
 
@@ -927,14 +924,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*----------------------------------------------------------------------------*/
 
 /*!
- Attempts to interpret a string as a `NSTextAlignment` value.
+ Attempts to interpret a string as an `NSTextAlignment` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTextAlignmentLeft` ("left") = `NSTextAlignmentLeft`
- * `kMBMLTextAlignmentCenter` ("center") = `NSTextAlignmentCenter`
- * `kMBMLTextAlignmentRight` ("right") = `NSTextAlignmentRight`
+ * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
+ * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
+ * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
 
  @param     str The string to interpret.
 
@@ -945,14 +942,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 + (NSTextAlignment) textAlignmentFromString:(NSString*)str;
 
 /*!
- Attempts to interpret a string as a `NSTextAlignment` value.
+ Attempts to interpret a string as an `NSTextAlignment` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTextAlignmentLeft` ("left") = `NSTextAlignmentLeft`
- * `kMBMLTextAlignmentCenter` ("center") = `NSTextAlignmentCenter`
- * `kMBMLTextAlignmentRight` ("right") = `NSTextAlignmentRight`
+ * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
+ * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
+ * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
 
  @param     str The string to interpret.
 
@@ -967,8 +964,8 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 + (NSTextAlignment) textAlignmentFromString:(NSString*)str error:(NSError**)errPtr;
 
 /*!
- Evaluates a string expression and attempts to interpret the result as a
- `NSTextAlignment` value using the `textAlignmentFromExpression:` method.
+ Evaluates a string expression and attempts to interpret the result as an
+ `NSTextAlignment` value using the `textAlignmentFromString:` method.
 
  @param     expr The expression whose result will be interpreted.
 
@@ -990,9 +987,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLScrollViewIndicatorStyleDefault` ("default") = `UIScrollViewIndicatorStyleDefault`
- * `kMBMLScrollViewIndicatorStyleBlack` ("black") = `UIScrollViewIndicatorStyleBlack`
- * `kMBMLScrollViewIndicatorStyleWhite` ("white") = `UIScrollViewIndicatorStyleWhite`
+ * `kMBMLScrollViewIndicatorStyleDefault` ("**`default`**") → `UIScrollViewIndicatorStyleDefault`
+ * `kMBMLScrollViewIndicatorStyleBlack` ("**`black`**") → `UIScrollViewIndicatorStyleBlack`
+ * `kMBMLScrollViewIndicatorStyleWhite` ("**`white`**") → `UIScrollViewIndicatorStyleWhite`
 
  @param     str The string to interpret.
 
@@ -1008,9 +1005,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLScrollViewIndicatorStyleDefault` ("default") = `UIScrollViewIndicatorStyleDefault`
- * `kMBMLScrollViewIndicatorStyleBlack` ("black") = `UIScrollViewIndicatorStyleBlack`
- * `kMBMLScrollViewIndicatorStyleWhite` ("white") = `UIScrollViewIndicatorStyleWhite`
+ * `kMBMLScrollViewIndicatorStyleDefault` ("**`default`**") → `UIScrollViewIndicatorStyleDefault`
+ * `kMBMLScrollViewIndicatorStyleBlack` ("**`black`**") → `UIScrollViewIndicatorStyleBlack`
+ * `kMBMLScrollViewIndicatorStyleWhite` ("**`white`**") → `UIScrollViewIndicatorStyleWhite`
 
  @param     str The string to interpret.
 
@@ -1049,9 +1046,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("whiteLarge") = `UIActivityIndicatorViewStyleWhiteLarge`
- * `kMBMLActivityIndicatorViewStyleWhite` ("white") = `UIActivityIndicatorViewStyleWhite`
- * `kMBMLActivityIndicatorViewStyleGray` ("gray") = `UIActivityIndicatorViewStyleGray`
+ * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("**``whiteLarge``**") → `UIActivityIndicatorViewStyleWhiteLarge`
+ * `kMBMLActivityIndicatorViewStyleWhite` ("**``white``**") → `UIActivityIndicatorViewStyleWhite`
+ * `kMBMLActivityIndicatorViewStyleGray` ("**`gray`**") → `UIActivityIndicatorViewStyleGray`
 
  @param     str The string to interpret.
 
@@ -1067,9 +1064,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("whiteLarge") = `UIActivityIndicatorViewStyleWhiteLarge`
- * `kMBMLActivityIndicatorViewStyleWhite` ("white") = `UIActivityIndicatorViewStyleWhite`
- * `kMBMLActivityIndicatorViewStyleGray` ("gray") = `UIActivityIndicatorViewStyleGray`
+ * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("**`whiteLarge`**") → `UIActivityIndicatorViewStyleWhiteLarge`
+ * `kMBMLActivityIndicatorViewStyleWhite` ("**`white`**") → `UIActivityIndicatorViewStyleWhite`
+ * `kMBMLActivityIndicatorViewStyleGray` ("**`gray`**") → `UIActivityIndicatorViewStyleGray`
 
  @param     str The string to interpret.
 
@@ -1108,12 +1105,12 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLButtonTypeCustom` ("custom") = `UIButtonTypeCustom`
- * `kMBMLButtonTypeRoundedRect` ("rounded") = `UIButtonTypeRoundedRect`
- * `kMBMLButtonTypeDetailDisclosure` ("detailDisclosure") = `UIButtonTypeDetailDisclosure`
- * `kMBMLButtonTypeInfoLight` ("infoLight") = `UIButtonTypeInfoLight`
- * `kMBMLButtonTypeInfoDark` ("infoDark") = `UIButtonTypeInfoDark`
- * `kMBMLButtonTypeContactAdd` ("contactAdd") = `UIButtonTypeContactAdd`
+ * `kMBMLButtonTypeCustom` ("**`custom`**") → `UIButtonTypeCustom`
+ * `kMBMLButtonTypeRoundedRect` ("**`rounded`**") → `UIButtonTypeRoundedRect`
+ * `kMBMLButtonTypeDetailDisclosure` ("**`detailDisclosure`**") → `UIButtonTypeDetailDisclosure`
+ * `kMBMLButtonTypeInfoLight` ("**`infoLight`**") → `UIButtonTypeInfoLight`
+ * `kMBMLButtonTypeInfoDark` ("**`infoDark`**") → `UIButtonTypeInfoDark`
+ * `kMBMLButtonTypeContactAdd` ("**`contactAdd`**") → `UIButtonTypeContactAdd`
 
  @param     str The string to interpret.
 
@@ -1129,12 +1126,12 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLButtonTypeCustom` ("custom") = `UIButtonTypeCustom`
- * `kMBMLButtonTypeRoundedRect` ("rounded") = `UIButtonTypeRoundedRect`
- * `kMBMLButtonTypeDetailDisclosure` ("detailDisclosure") = `UIButtonTypeDetailDisclosure`
- * `kMBMLButtonTypeInfoLight` ("infoLight") = `UIButtonTypeInfoLight`
- * `kMBMLButtonTypeInfoDark` ("infoDark") = `UIButtonTypeInfoDark`
- * `kMBMLButtonTypeContactAdd` ("contactAdd") = `UIButtonTypeContactAdd`
+ * `kMBMLButtonTypeCustom` ("**`custom`**") → `UIButtonTypeCustom`
+ * `kMBMLButtonTypeRoundedRect` ("**`rounded`**") → `UIButtonTypeRoundedRect`
+ * `kMBMLButtonTypeDetailDisclosure` ("**`detailDisclosure`**") → `UIButtonTypeDetailDisclosure`
+ * `kMBMLButtonTypeInfoLight` ("**`infoLight`**") → `UIButtonTypeInfoLight`
+ * `kMBMLButtonTypeInfoDark` ("**`infoDark`**") → `UIButtonTypeInfoDark`
+ * `kMBMLButtonTypeContactAdd` ("**`contactAdd`**") → `UIButtonTypeContactAdd`
 
  @param     str The string to interpret.
 
@@ -1168,16 +1165,16 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*----------------------------------------------------------------------------*/
 
 /*!
- Attempts to interpret a string as a `NSDateFormatterStyle` value.
+ Attempts to interpret a string as an `NSDateFormatterStyle` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLDateFormatterNoStyle` ("none") = `NSDateFormatterNoStyle`
- * `kMBMLDateFormatterShortStyle` ("short") = `NSDateFormatterShortStyle`
- * `kMBMLDateFormatterMediumStyle` ("medium") = `NSDateFormatterMediumStyle`
- * `kMBMLDateFormatterLongStyle` ("long") = `NSDateFormatterLongStyle`
- * `kMBMLDateFormatterFullStyle` ("full") = `NSDateFormatterFullStyle`
+ * `kMBMLDateFormatterNoStyle` ("**`none`**") → `NSDateFormatterNoStyle`
+ * `kMBMLDateFormatterShortStyle` ("**`short`**") → `NSDateFormatterShortStyle`
+ * `kMBMLDateFormatterMediumStyle` ("**`medium`**") → `NSDateFormatterMediumStyle`
+ * `kMBMLDateFormatterLongStyle` ("**`long`**") → `NSDateFormatterLongStyle`
+ * `kMBMLDateFormatterFullStyle` ("**`full`**") → `NSDateFormatterFullStyle`
 
  @param     str The string to interpret.
 
@@ -1188,16 +1185,16 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 + (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str;
 
 /*!
- Attempts to interpret a string as a `NSDateFormatterStyle` value.
+ Attempts to interpret a string as an `NSDateFormatterStyle` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLDateFormatterNoStyle` ("none") = `NSDateFormatterNoStyle`
- * `kMBMLDateFormatterShortStyle` ("short") = `NSDateFormatterShortStyle`
- * `kMBMLDateFormatterMediumStyle` ("medium") = `NSDateFormatterMediumStyle`
- * `kMBMLDateFormatterLongStyle` ("long") = `NSDateFormatterLongStyle`
- * `kMBMLDateFormatterFullStyle` ("full") = `NSDateFormatterFullStyle`
+ * `kMBMLDateFormatterNoStyle` ("**`none`**") → `NSDateFormatterNoStyle`
+ * `kMBMLDateFormatterShortStyle` ("**`short`**") → `NSDateFormatterShortStyle`
+ * `kMBMLDateFormatterMediumStyle` ("**`medium`**") → `NSDateFormatterMediumStyle`
+ * `kMBMLDateFormatterLongStyle` ("**`long`**") → `NSDateFormatterLongStyle`
+ * `kMBMLDateFormatterFullStyle` ("**`full`**") → `NSDateFormatterFullStyle`
 
  @param     str The string to interpret.
 
@@ -1212,7 +1209,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 + (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(NSError**)errPtr;
 
 /*!
- Evaluates a string expression and attempts to interpret the result as a
+ Evaluates a string expression and attempts to interpret the result as an
  `NSDateFormatterStyle` value using the `dateFormatterStyleFromString:`
  method.
 
@@ -1236,10 +1233,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTextBorderStyleNone` ("none") = `UITextBorderStyleNone`
- * `kMBMLTextBorderStyleLine` ("line") = `UITextBorderStyleNone`
- * `kMBMLTextBorderStyleBezel` ("bezel") = `UITextBorderStyleBezel`
- * `kMBMLTextBorderStyleRoundedRect` ("rounded") = `UITextBorderStyleRoundedRect`
+ * `kMBMLTextBorderStyleNone` ("**`none`**") → `UITextBorderStyleNone`
+ * `kMBMLTextBorderStyleLine` ("**`line`**") → `UITextBorderStyleNone`
+ * `kMBMLTextBorderStyleBezel` ("**`bezel`**") → `UITextBorderStyleBezel`
+ * `kMBMLTextBorderStyleRoundedRect` ("**`rounded`**") → `UITextBorderStyleRoundedRect`
 
  @param     str The string to interpret.
 
@@ -1255,10 +1252,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTextBorderStyleNone` ("none") = `UITextBorderStyleNone`
- * `kMBMLTextBorderStyleLine` ("line") = `UITextBorderStyleNone`
- * `kMBMLTextBorderStyleBezel` ("bezel") = `UITextBorderStyleBezel`
- * `kMBMLTextBorderStyleRoundedRect` ("rounded") = `UITextBorderStyleRoundedRect`
+ * `kMBMLTextBorderStyleNone` ("**`none`**") → `UITextBorderStyleNone`
+ * `kMBMLTextBorderStyleLine` ("**`line`**") → `UITextBorderStyleNone`
+ * `kMBMLTextBorderStyleBezel` ("**`bezel`**") → `UITextBorderStyleBezel`
+ * `kMBMLTextBorderStyleRoundedRect` ("**`rounded`**") → `UITextBorderStyleRoundedRect`
 
  @param     str The string to interpret.
 
@@ -1297,8 +1294,8 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewStylePlain` ("plain") = `UITableViewStylePlain`
- * `kMBMLTableViewStyleGrouped` ("grouped") = `UITableViewStyleGrouped`
+ * `kMBMLTableViewStylePlain` ("**`plain`**") → `UITableViewStylePlain`
+ * `kMBMLTableViewStyleGrouped` ("**`grouped`**") → `UITableViewStyleGrouped`
 
  @param     str The string to interpret.
 
@@ -1314,8 +1311,8 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewStylePlain` ("plain") = `UITableViewStylePlain`
- * `kMBMLTableViewStyleGrouped` ("grouped") = `UITableViewStyleGrouped`
+ * `kMBMLTableViewStylePlain` ("**`plain`**") → `UITableViewStylePlain`
+ * `kMBMLTableViewStyleGrouped` ("**`grouped`**") → `UITableViewStyleGrouped`
 
  @param     str The string to interpret.
 
@@ -1354,10 +1351,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewCellStyleDefault` ("default") = `UITableViewCellStyleDefault`
- * `kMBMLTableViewCellStyleValue1` ("value1") = `UITableViewCellStyleValue1`
- * `kMBMLTableViewCellStyleValue2` ("value2") = `UITableViewCellStyleValue2`
- * `kMBMLTableViewCellStyleSubtitle` ("subtitle") = `UITableViewCellStyleSubtitle`
+ * `kMBMLTableViewCellStyleDefault` ("**`default`**") → `UITableViewCellStyleDefault`
+ * `kMBMLTableViewCellStyleValue1` ("**`value1`**") → `UITableViewCellStyleValue1`
+ * `kMBMLTableViewCellStyleValue2` ("**`value2`**") → `UITableViewCellStyleValue2`
+ * `kMBMLTableViewCellStyleSubtitle` ("**`subtitle`**") → `UITableViewCellStyleSubtitle`
 
  @param     str The string to interpret.
 
@@ -1373,10 +1370,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewCellStyleDefault` ("default") = `UITableViewCellStyleDefault`
- * `kMBMLTableViewCellStyleValue1` ("value1") = `UITableViewCellStyleValue1`
- * `kMBMLTableViewCellStyleValue2` ("value2") = `UITableViewCellStyleValue2`
- * `kMBMLTableViewCellStyleSubtitle` ("subtitle") = `UITableViewCellStyleSubtitle`
+ * `kMBMLTableViewCellStyleDefault` ("**`default`**") → `UITableViewCellStyleDefault`
+ * `kMBMLTableViewCellStyleValue1` ("**`value1`**") → `UITableViewCellStyleValue1`
+ * `kMBMLTableViewCellStyleValue2` ("**`value2`**") → `UITableViewCellStyleValue2`
+ * `kMBMLTableViewCellStyleSubtitle` ("**`subtitle`**") → `UITableViewCellStyleSubtitle`
 
  @param     str The string to interpret.
 
@@ -1413,10 +1410,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewCellSelectionStyleNone` ("none") = `UITableViewCellSelectionStyleNone`
- * `kMBMLTableViewCellSelectionStyleBlue` ("blue") = `UITableViewCellSelectionStyleBlue`
- * `kMBMLTableViewCellSelectionStyleGray` ("gray") = `UITableViewCellSelectionStyleGray`
- * `kMBMLTableViewCellSelectionStyleGradient` ("gradient") = `MBTableViewCellSelectionStyleGradient`
+ * `kMBMLTableViewCellSelectionStyleNone` ("**`none`**") → `UITableViewCellSelectionStyleNone`
+ * `kMBMLTableViewCellSelectionStyleBlue` ("**`blue`**") → `UITableViewCellSelectionStyleBlue`
+ * `kMBMLTableViewCellSelectionStyleGray` ("**`gray`**") → `UITableViewCellSelectionStyleGray`
+ * `kMBMLTableViewCellSelectionStyleGradient` ("**`gradient`**") → `MBTableViewCellSelectionStyleGradient`
 
  @param     str The string to interpret.
 
@@ -1436,10 +1433,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewCellSelectionStyleNone` ("none") = `UITableViewCellSelectionStyleNone`
- * `kMBMLTableViewCellSelectionStyleBlue` ("blue") = `UITableViewCellSelectionStyleBlue`
- * `kMBMLTableViewCellSelectionStyleGray` ("gray") = `UITableViewCellSelectionStyleGray`
- * `kMBMLTableViewCellSelectionStyleGradient` ("gradient") = `MBTableViewCellSelectionStyleGradient`
+ * `kMBMLTableViewCellSelectionStyleNone` ("**`none`**") → `UITableViewCellSelectionStyleNone`
+ * `kMBMLTableViewCellSelectionStyleBlue` ("**`blue`**") → `UITableViewCellSelectionStyleBlue`
+ * `kMBMLTableViewCellSelectionStyleGray` ("**`gray`**") → `UITableViewCellSelectionStyleGray`
+ * `kMBMLTableViewCellSelectionStyleGradient` ("**`gradient`**") → `MBTableViewCellSelectionStyleGradient`
 
  @param     str The string to interpret.
 
@@ -1452,7 +1449,6 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             recognized.
  */
 + (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(NSError**)errPtr;
-
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1468,24 +1464,16 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  */
 + (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromExpression:(NSString*)expr;
 
-
-
-
-
-
-
-
-
 /*!
  Attempts to interpret a string as a `UITableViewCellAccessoryType` value.
 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewCellAccessoryNone` ("none") = `UITableViewCellAccessoryNone`
- * `kMBMLTableViewCellAccessoryDisclosureIndicator` ("disclosureIndicator") = `UITableViewCellAccessoryDisclosureIndicator`
- * `kMBMLTableViewCellAccessoryDetailDisclosureButton` ("detailDisclosureButton") = `UITableViewCellAccessoryDetailDisclosureButton`
- * `kMBMLTableViewCellAccessoryCheckmark` ("checkmark") = `UITableViewCellAccessoryCheckmark`
+ * `kMBMLTableViewCellAccessoryNone` ("**`none`**") → `UITableViewCellAccessoryNone`
+ * `kMBMLTableViewCellAccessoryDisclosureIndicator` ("**`disclosureIndicator`**") → `UITableViewCellAccessoryDisclosureIndicator`
+ * `kMBMLTableViewCellAccessoryDetailDisclosureButton` ("**`detailDisclosureButton`**") → `UITableViewCellAccessoryDetailDisclosureButton`
+ * `kMBMLTableViewCellAccessoryCheckmark` ("**`checkmark`**") → `UITableViewCellAccessoryCheckmark`
 
  @param     str The string to interpret.
 
@@ -1501,10 +1489,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewCellAccessoryNone` ("none") = `UITableViewCellAccessoryNone`
- * `kMBMLTableViewCellAccessoryDisclosureIndicator` ("disclosureIndicator") = `UITableViewCellAccessoryDisclosureIndicator`
- * `kMBMLTableViewCellAccessoryDetailDisclosureButton` ("detailDisclosureButton") = `UITableViewCellAccessoryDetailDisclosureButton`
- * `kMBMLTableViewCellAccessoryCheckmark` ("checkmark") = `UITableViewCellAccessoryCheckmark`
+ * `kMBMLTableViewCellAccessoryNone` ("**`none`**") → `UITableViewCellAccessoryNone`
+ * `kMBMLTableViewCellAccessoryDisclosureIndicator` ("**`disclosureIndicator`**") → `UITableViewCellAccessoryDisclosureIndicator`
+ * `kMBMLTableViewCellAccessoryDetailDisclosureButton` ("**`detailDisclosureButton`**") → `UITableViewCellAccessoryDetailDisclosureButton`
+ * `kMBMLTableViewCellAccessoryCheckmark` ("**`checkmark`**") → `UITableViewCellAccessoryCheckmark`
 
  @param     str The string to interpret.
 
@@ -1543,13 +1531,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewRowAnimationNone` ("none") = `UITableViewRowAnimationNone`
- * `kMBMLTableViewRowAnimationFade` ("fade") = `UITableViewRowAnimationFade`
- * `kMBMLTableViewRowAnimationRight` ("right") = `UITableViewRowAnimationRight`
- * `kMBMLTableViewRowAnimationLeft` ("left") = `UITableViewRowAnimationLeft`
- * `kMBMLTableViewRowAnimationTop` ("top") = `UITableViewRowAnimationTop`
- * `kMBMLTableViewRowAnimationBottom` ("bottom") = `UITableViewRowAnimationBottom`
- * `kMBMLTableViewRowAnimationMiddle` ("middle") = `UITableViewRowAnimationMiddle`
+ * `kMBMLTableViewRowAnimationNone` ("**`none`**") → `UITableViewRowAnimationNone`
+ * `kMBMLTableViewRowAnimationFade` ("**`fade`**") → `UITableViewRowAnimationFade`
+ * `kMBMLTableViewRowAnimationRight` ("**`right`**") → `UITableViewRowAnimationRight`
+ * `kMBMLTableViewRowAnimationLeft` ("**`left`**") → `UITableViewRowAnimationLeft`
+ * `kMBMLTableViewRowAnimationTop` ("**`top`**") → `UITableViewRowAnimationTop`
+ * `kMBMLTableViewRowAnimationBottom` ("**`bottom`**") → `UITableViewRowAnimationBottom`
+ * `kMBMLTableViewRowAnimationMiddle` ("**`middle`**") → `UITableViewRowAnimationMiddle`
 
  @param     str The string to interpret.
 
@@ -1565,13 +1553,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLTableViewRowAnimationNone` ("none") = `UITableViewRowAnimationNone`
- * `kMBMLTableViewRowAnimationFade` ("fade") = `UITableViewRowAnimationFade`
- * `kMBMLTableViewRowAnimationRight` ("right") = `UITableViewRowAnimationRight`
- * `kMBMLTableViewRowAnimationLeft` ("left") = `UITableViewRowAnimationLeft`
- * `kMBMLTableViewRowAnimationTop` ("top") = `UITableViewRowAnimationTop`
- * `kMBMLTableViewRowAnimationBottom` ("bottom") = `UITableViewRowAnimationBottom`
- * `kMBMLTableViewRowAnimationMiddle` ("middle") = `UITableViewRowAnimationMiddle`
+ * `kMBMLTableViewRowAnimationNone` ("**`none`**") → `UITableViewRowAnimationNone`
+ * `kMBMLTableViewRowAnimationFade` ("**`fade`**") → `UITableViewRowAnimationFade`
+ * `kMBMLTableViewRowAnimationRight` ("**`right`**") → `UITableViewRowAnimationRight`
+ * `kMBMLTableViewRowAnimationLeft` ("**`left`**") → `UITableViewRowAnimationLeft`
+ * `kMBMLTableViewRowAnimationTop` ("**`top`**") → `UITableViewRowAnimationTop`
+ * `kMBMLTableViewRowAnimationBottom` ("**`bottom`**") → `UITableViewRowAnimationBottom`
+ * `kMBMLTableViewRowAnimationMiddle` ("**`middle`**") → `UITableViewRowAnimationMiddle`
 
  @param     str The string to interpret.
 
@@ -1610,10 +1598,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLControlStateNormal` ("normal") = `UIControlStateNormal`
- * `kMBMLControlStateHighlighted` ("highlighted") = `UIControlStateHighlighted`
- * `kMBMLControlStateDisabled` ("disabled") = `UIControlStateDisabled`
- * `kMBMLControlStateSelected` ("selected") = `UIControlStateSelected`
+ * `kMBMLControlStateNormal` ("**`normal`**") → `UIControlStateNormal`
+ * `kMBMLControlStateHighlighted` ("**`highlighted`**") → `UIControlStateHighlighted`
+ * `kMBMLControlStateDisabled` ("**`disabled`**") → `UIControlStateDisabled`
+ * `kMBMLControlStateSelected` ("**`selected`**") → `UIControlStateSelected`
 
  @param     str The string to interpret.
 
@@ -1629,10 +1617,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLControlStateNormal` ("normal") = `UIControlStateNormal`
- * `kMBMLControlStateHighlighted` ("highlighted") = `UIControlStateHighlighted`
- * `kMBMLControlStateDisabled` ("disabled") = `UIControlStateDisabled`
- * `kMBMLControlStateSelected` ("selected") = `UIControlStateSelected`
+ * `kMBMLControlStateNormal` ("**`normal`**") → `UIControlStateNormal`
+ * `kMBMLControlStateHighlighted` ("**`highlighted`**") → `UIControlStateHighlighted`
+ * `kMBMLControlStateDisabled` ("**`disabled`**") → `UIControlStateDisabled`
+ * `kMBMLControlStateSelected` ("**`selected`**") → `UIControlStateSelected`
 
  @param     str The string to interpret.
 
@@ -1677,34 +1665,33 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted flags, along with their
  corresponding values:
 
- * `kMBMLViewAnimationOptionLayoutSubviews` ("layoutSubviews") = `UIViewAnimationOptionLayoutSubviews`
- * `kMBMLViewAnimationOptionAllowUserInteraction` ("allowUserInteraction") = `UIViewAnimationOptionAllowUserInteraction`
- * `kMBMLViewAnimationOptionBeginFromCurrentState` ("beginFromCurrentState") = `UIViewAnimationOptionBeginFromCurrentState`
- * `kMBMLViewAnimationOptionRepeat` ("repeat") = `UIViewAnimationOptionRepeat`
- * `kMBMLViewAnimationOptionAutoreverse` ("autoreverse") = `UIViewAnimationOptionAutoreverse`
- * `kMBMLViewAnimationOptionOverrideInheritedDuration` ("overrideInheritedDuration") = `UIViewAnimationOptionOverrideInheritedDuration`
- * `kMBMLViewAnimationOptionOverrideInheritedCurve` ("overrideInheritedCurve") = `UIViewAnimationOptionOverrideInheritedCurve`
- * `kMBMLViewAnimationOptionAllowAnimatedContent` ("allowAnimatedContent") = `UIViewAnimationOptionAllowAnimatedContent`
- * `kMBMLViewAnimationOptionShowHideTransitionViews` ("showHideTransitionViews") = `UIViewAnimationOptionShowHideTransitionViews`
- * `kMBMLViewAnimationOptionCurveEaseInOut` ("curveEaseInOut") = `UIViewAnimationOptionCurveEaseInOut`
- * `kMBMLViewAnimationOptionCurveEaseIn` ("curveEaseIn") = `UIViewAnimationOptionCurveEaseIn`
- * `kMBMLViewAnimationOptionCurveEaseOut` ("curveEaseOut") = `UIViewAnimationOptionCurveEaseOut`
- * `kMBMLViewAnimationOptionCurveLinear` ("curveLinear") = `UIViewAnimationOptionCurveLinear`
- * `kMBMLViewAnimationOptionTransitionNone` ("transitionNone") = `UIViewAnimationOptionTransitionNone`
- * `kMBMLViewAnimationOptionTransitionFlipFromLeft` ("transitionFlipFromLeft") = `UIViewAnimationOptionTransitionFlipFromLeft`
- * `kMBMLViewAnimationOptionTransitionFlipFromRight` ("transitionFlipFromRight") = `UIViewAnimationOptionTransitionFlipFromRight`
- * `kMBMLViewAnimationOptionTransitionCurlUp` ("transitionCurlUp") = `UIViewAnimationOptionTransitionCurlUp`
- * `kMBMLViewAnimationOptionTransitionCurlDown` ("transitionCurlDown") = `UIViewAnimationOptionTransitionCurlDown`
- * `kMBMLViewAnimationOptionTransitionCrossDissolve` ("transitionCrossDissolve") = `UIViewAnimationOptionTransitionCrossDissolve`
- * `kMBMLViewAnimationOptionTransitionFlipFromTop` ("transitionFlipFromTop") = `UIViewAnimationOptionTransitionFlipFromTop`
- * `kMBMLViewAnimationOptionTransitionFlipFromBottom` ("transitionFlipFromBottom") = `UIViewAnimationOptionTransitionFlipFromBottom`
+ * `kMBMLViewAnimationOptionLayoutSubviews` ("**`layoutSubviews`**") → `UIViewAnimationOptionLayoutSubviews`
+ * `kMBMLViewAnimationOptionAllowUserInteraction` ("**`allowUserInteraction`**") → `UIViewAnimationOptionAllowUserInteraction`
+ * `kMBMLViewAnimationOptionBeginFromCurrentState` ("**`beginFromCurrentState`**") → `UIViewAnimationOptionBeginFromCurrentState`
+ * `kMBMLViewAnimationOptionRepeat` ("**`repeat`**") → `UIViewAnimationOptionRepeat`
+ * `kMBMLViewAnimationOptionAutoreverse` ("**`autoreverse`**") → `UIViewAnimationOptionAutoreverse`
+ * `kMBMLViewAnimationOptionOverrideInheritedDuration` ("**`overrideInheritedDuration`**") → `UIViewAnimationOptionOverrideInheritedDuration`
+ * `kMBMLViewAnimationOptionOverrideInheritedCurve` ("**`overrideInheritedCurve`**") → `UIViewAnimationOptionOverrideInheritedCurve`
+ * `kMBMLViewAnimationOptionAllowAnimatedContent` ("**`allowAnimatedContent`**") → `UIViewAnimationOptionAllowAnimatedContent`
+ * `kMBMLViewAnimationOptionShowHideTransitionViews` ("**`showHideTransitionViews`**") → `UIViewAnimationOptionShowHideTransitionViews`
+ * `kMBMLViewAnimationOptionCurveEaseInOut` ("**`curveEaseInOut`**") → `UIViewAnimationOptionCurveEaseInOut`
+ * `kMBMLViewAnimationOptionCurveEaseIn` ("**`curveEaseIn`**") → `UIViewAnimationOptionCurveEaseIn`
+ * `kMBMLViewAnimationOptionCurveEaseOut` ("**`curveEaseOut`**") → `UIViewAnimationOptionCurveEaseOut`
+ * `kMBMLViewAnimationOptionCurveLinear` ("**`curveLinear`**") → `UIViewAnimationOptionCurveLinear`
+ * `kMBMLViewAnimationOptionTransitionNone` ("**`transitionNone`**") → `UIViewAnimationOptionTransitionNone`
+ * `kMBMLViewAnimationOptionTransitionFlipFromLeft` ("**`transitionFlipFromLeft`**") → `UIViewAnimationOptionTransitionFlipFromLeft`
+ * `kMBMLViewAnimationOptionTransitionFlipFromRight` ("**`transitionFlipFromRight`**") → `UIViewAnimationOptionTransitionFlipFromRight`
+ * `kMBMLViewAnimationOptionTransitionCurlUp` ("**`transitionCurlUp`**") → `UIViewAnimationOptionTransitionCurlUp`
+ * `kMBMLViewAnimationOptionTransitionCurlDown` ("**`transitionCurlDown`**") → `UIViewAnimationOptionTransitionCurlDown`
+ * `kMBMLViewAnimationOptionTransitionCrossDissolve` ("**`transitionCrossDissolve`**") → `UIViewAnimationOptionTransitionCrossDissolve`
+ * `kMBMLViewAnimationOptionTransitionFlipFromTop` ("**`transitionFlipFromTop`**") → `UIViewAnimationOptionTransitionFlipFromTop`
+ * `kMBMLViewAnimationOptionTransitionFlipFromBottom` ("**`transitionFlipFromBottom`**") → `UIViewAnimationOptionTransitionFlipFromBottom`
 
  @param     str The string to interpret.
 
- @return    The `UIViewAnimationOptions` value that corresponds with the
-            result of evaluating `expr` as a string. Returns 
-            `0` and logs an error to the console if the expression result
-            couldn't be interpreted.
+ @return    The `UIViewAnimationOptions` value that corresponds with `str`.
+            Returns `0` and logs an error to the console if `str` isn't
+            recognized.
  */
 + (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str;
 
@@ -1720,27 +1707,27 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted flags, along with their
  corresponding values:
 
- * `kMBMLViewAnimationOptionLayoutSubviews` ("layoutSubviews") = `UIViewAnimationOptionLayoutSubviews`
- * `kMBMLViewAnimationOptionAllowUserInteraction` ("allowUserInteraction") = `UIViewAnimationOptionAllowUserInteraction`
- * `kMBMLViewAnimationOptionBeginFromCurrentState` ("beginFromCurrentState") = `UIViewAnimationOptionBeginFromCurrentState`
- * `kMBMLViewAnimationOptionRepeat` ("repeat") = `UIViewAnimationOptionRepeat`
- * `kMBMLViewAnimationOptionAutoreverse` ("autoreverse") = `UIViewAnimationOptionAutoreverse`
- * `kMBMLViewAnimationOptionOverrideInheritedDuration` ("overrideInheritedDuration") = `UIViewAnimationOptionOverrideInheritedDuration`
- * `kMBMLViewAnimationOptionOverrideInheritedCurve` ("overrideInheritedCurve") = `UIViewAnimationOptionOverrideInheritedCurve`
- * `kMBMLViewAnimationOptionAllowAnimatedContent` ("allowAnimatedContent") = `UIViewAnimationOptionAllowAnimatedContent`
- * `kMBMLViewAnimationOptionShowHideTransitionViews` ("showHideTransitionViews") = `UIViewAnimationOptionShowHideTransitionViews`
- * `kMBMLViewAnimationOptionCurveEaseInOut` ("curveEaseInOut") = `UIViewAnimationOptionCurveEaseInOut`
- * `kMBMLViewAnimationOptionCurveEaseIn` ("curveEaseIn") = `UIViewAnimationOptionCurveEaseIn`
- * `kMBMLViewAnimationOptionCurveEaseOut` ("curveEaseOut") = `UIViewAnimationOptionCurveEaseOut`
- * `kMBMLViewAnimationOptionCurveLinear` ("curveLinear") = `UIViewAnimationOptionCurveLinear`
- * `kMBMLViewAnimationOptionTransitionNone` ("transitionNone") = `UIViewAnimationOptionTransitionNone`
- * `kMBMLViewAnimationOptionTransitionFlipFromLeft` ("transitionFlipFromLeft") = `UIViewAnimationOptionTransitionFlipFromLeft`
- * `kMBMLViewAnimationOptionTransitionFlipFromRight` ("transitionFlipFromRight") = `UIViewAnimationOptionTransitionFlipFromRight`
- * `kMBMLViewAnimationOptionTransitionCurlUp` ("transitionCurlUp") = `UIViewAnimationOptionTransitionCurlUp`
- * `kMBMLViewAnimationOptionTransitionCurlDown` ("transitionCurlDown") = `UIViewAnimationOptionTransitionCurlDown`
- * `kMBMLViewAnimationOptionTransitionCrossDissolve` ("transitionCrossDissolve") = `UIViewAnimationOptionTransitionCrossDissolve`
- * `kMBMLViewAnimationOptionTransitionFlipFromTop` ("transitionFlipFromTop") = `UIViewAnimationOptionTransitionFlipFromTop`
- * `kMBMLViewAnimationOptionTransitionFlipFromBottom` ("transitionFlipFromBottom") = `UIViewAnimationOptionTransitionFlipFromBottom`
+ * `kMBMLViewAnimationOptionLayoutSubviews` ("**`layoutSubviews`**") → `UIViewAnimationOptionLayoutSubviews`
+ * `kMBMLViewAnimationOptionAllowUserInteraction` ("**`allowUserInteraction`**") → `UIViewAnimationOptionAllowUserInteraction`
+ * `kMBMLViewAnimationOptionBeginFromCurrentState` ("**`beginFromCurrentState`**") → `UIViewAnimationOptionBeginFromCurrentState`
+ * `kMBMLViewAnimationOptionRepeat` ("**`repeat`**") → `UIViewAnimationOptionRepeat`
+ * `kMBMLViewAnimationOptionAutoreverse` ("**`autoreverse`**") → `UIViewAnimationOptionAutoreverse`
+ * `kMBMLViewAnimationOptionOverrideInheritedDuration` ("**`overrideInheritedDuration`**") → `UIViewAnimationOptionOverrideInheritedDuration`
+ * `kMBMLViewAnimationOptionOverrideInheritedCurve` ("**`overrideInheritedCurve`**") → `UIViewAnimationOptionOverrideInheritedCurve`
+ * `kMBMLViewAnimationOptionAllowAnimatedContent` ("**`allowAnimatedContent`**") → `UIViewAnimationOptionAllowAnimatedContent`
+ * `kMBMLViewAnimationOptionShowHideTransitionViews` ("**`showHideTransitionViews`**") → `UIViewAnimationOptionShowHideTransitionViews`
+ * `kMBMLViewAnimationOptionCurveEaseInOut` ("**`curveEaseInOut`**") → `UIViewAnimationOptionCurveEaseInOut`
+ * `kMBMLViewAnimationOptionCurveEaseIn` ("**`curveEaseIn`**") → `UIViewAnimationOptionCurveEaseIn`
+ * `kMBMLViewAnimationOptionCurveEaseOut` ("**`curveEaseOut`**") → `UIViewAnimationOptionCurveEaseOut`
+ * `kMBMLViewAnimationOptionCurveLinear` ("**`curveLinear`**") → `UIViewAnimationOptionCurveLinear`
+ * `kMBMLViewAnimationOptionTransitionNone` ("**`transitionNone`**") → `UIViewAnimationOptionTransitionNone`
+ * `kMBMLViewAnimationOptionTransitionFlipFromLeft` ("**`transitionFlipFromLeft`**") → `UIViewAnimationOptionTransitionFlipFromLeft`
+ * `kMBMLViewAnimationOptionTransitionFlipFromRight` ("**`transitionFlipFromRight`**") → `UIViewAnimationOptionTransitionFlipFromRight`
+ * `kMBMLViewAnimationOptionTransitionCurlUp` ("**`transitionCurlUp`**") → `UIViewAnimationOptionTransitionCurlUp`
+ * `kMBMLViewAnimationOptionTransitionCurlDown` ("**`transitionCurlDown`**") → `UIViewAnimationOptionTransitionCurlDown`
+ * `kMBMLViewAnimationOptionTransitionCrossDissolve` ("**`transitionCrossDissolve`**") → `UIViewAnimationOptionTransitionCrossDissolve`
+ * `kMBMLViewAnimationOptionTransitionFlipFromTop` ("**`transitionFlipFromTop`**") → `UIViewAnimationOptionTransitionFlipFromTop`
+ * `kMBMLViewAnimationOptionTransitionFlipFromBottom` ("**`transitionFlipFromBottom`**") → `UIViewAnimationOptionTransitionFlipFromBottom`
 
  @param     str The string to interpret.
 
@@ -1748,9 +1735,8 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `NSError` instance in the event of a problem interpreting `str`.
             May be `nil`.
 
- @return    The `UIViewAnimationOptions` value that corresponds with the
-            result of evaluating `expr` as a string. Returns `0` if the
-            expression result couldn't be interpreted.
+ @return    The `UIViewAnimationOptions` value that corresponds with `str`.
+            Returns `0` if `str` isn't recognized.
  */
 + (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(NSError**)errPtr;
 
@@ -1779,10 +1765,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLModalTransitionStyleCoverVertical` ("coverVertical") = `UIModalTransitionStyleCoverVertical`
- * `kMBMLModalTransitionStyleFlipHorizontal` ("flipHorizontal") = `UIModalTransitionStyleFlipHorizontal`
- * `kMBMLModalTransitionStyleCrossDissolve` ("crossDissolve") = `UIModalTransitionStyleCrossDissolve`
- * `kMBMLModalTransitionStylePartialCurl` ("partialCurl") = `UIModalTransitionStylePartialCurl`
+ * `kMBMLModalTransitionStyleCoverVertical` ("**`coverVertical`**") → `UIModalTransitionStyleCoverVertical`
+ * `kMBMLModalTransitionStyleFlipHorizontal` ("**`flipHorizontal`**") → `UIModalTransitionStyleFlipHorizontal`
+ * `kMBMLModalTransitionStyleCrossDissolve` ("**`crossDissolve`**") → `UIModalTransitionStyleCrossDissolve`
+ * `kMBMLModalTransitionStylePartialCurl` ("**`partialCurl`**") → `UIModalTransitionStylePartialCurl`
 
  @param     str The string to interpret.
 
@@ -1798,10 +1784,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLModalTransitionStyleCoverVertical` ("coverVertical") = `UIModalTransitionStyleCoverVertical`
- * `kMBMLModalTransitionStyleFlipHorizontal` ("flipHorizontal") = `UIModalTransitionStyleFlipHorizontal`
- * `kMBMLModalTransitionStyleCrossDissolve` ("crossDissolve") = `UIModalTransitionStyleCrossDissolve`
- * `kMBMLModalTransitionStylePartialCurl` ("partialCurl") = `UIModalTransitionStylePartialCurl`
+ * `kMBMLModalTransitionStyleCoverVertical` ("**`coverVertical`**") → `UIModalTransitionStyleCoverVertical`
+ * `kMBMLModalTransitionStyleFlipHorizontal` ("**`flipHorizontal`**") → `UIModalTransitionStyleFlipHorizontal`
+ * `kMBMLModalTransitionStyleCrossDissolve` ("**`crossDissolve`**") → `UIModalTransitionStyleCrossDissolve`
+ * `kMBMLModalTransitionStylePartialCurl` ("**`partialCurl`**") → `UIModalTransitionStylePartialCurl`
 
  @param     str The string to interpret.
 
@@ -1840,19 +1826,19 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLViewContentModeScaleToFill` ("scaleToFill") = `UIViewContentModeScaleToFill`
- * `kMBMLViewContentModeScaleAspectFit` ("aspectFit") = `UIViewContentModeScaleAspectFit`
- * `kMBMLViewContentModeScaleAspectFill` ("aspectFill") = `UIViewContentModeScaleAspectFill`
- * `kMBMLViewContentModeRedraw` ("redraw") = `UIViewContentModeRedraw`
- * `kMBMLViewContentModeCenter` ("center") = `UIViewContentModeCenter`
- * `kMBMLViewContentModeTop` ("top") = `UIViewContentModeTop`
- * `kMBMLViewContentModeBottom` ("bottom") = `UIViewContentModeBottom`
- * `kMBMLViewContentModeLeft` ("left") = `UIViewContentModeLeft`
- * `kMBMLViewContentModeRight` ("right") = `UIViewContentModeRight`
- * `kMBMLViewContentModeTopLeft` ("topLeft") = `UIViewContentModeTopLeft`
- * `kMBMLViewContentModeTopRight` ("topRight") = `UIViewContentModeTopRight`
- * `kMBMLViewContentModeBottomLeft` ("bottomLeft") = `UIViewContentModeBottomLeft`
- * `kMBMLViewContentModeBottomRight` ("bottomRight") = `UIViewContentModeBottomRight`
+ * `kMBMLViewContentModeScaleToFill` ("**`scaleToFill`**") → `UIViewContentModeScaleToFill`
+ * `kMBMLViewContentModeScaleAspectFit` ("**`aspectFit`**") → `UIViewContentModeScaleAspectFit`
+ * `kMBMLViewContentModeScaleAspectFill` ("**`aspectFill`**") → `UIViewContentModeScaleAspectFill`
+ * `kMBMLViewContentModeRedraw` ("**`redraw`**") → `UIViewContentModeRedraw`
+ * `kMBMLViewContentModeCenter` ("**`center`**") → `UIViewContentModeCenter`
+ * `kMBMLViewContentModeTop` ("**`top`**") → `UIViewContentModeTop`
+ * `kMBMLViewContentModeBottom` ("**`bottom`**") → `UIViewContentModeBottom`
+ * `kMBMLViewContentModeLeft` ("**`left`**") → `UIViewContentModeLeft`
+ * `kMBMLViewContentModeRight` ("**`right`**") → `UIViewContentModeRight`
+ * `kMBMLViewContentModeTopLeft` ("**`topLeft`**") → `UIViewContentModeTopLeft`
+ * `kMBMLViewContentModeTopRight` ("**`topRight`**") → `UIViewContentModeTopRight`
+ * `kMBMLViewContentModeBottomLeft` ("**`bottomLeft`**") → `UIViewContentModeBottomLeft`
+ * `kMBMLViewContentModeBottomRight` ("**`bottomRight`**") → `UIViewContentModeBottomRight`
 
  @param     str The string to interpret.
 
@@ -1868,19 +1854,19 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLViewContentModeScaleToFill` ("scaleToFill") = `UIViewContentModeScaleToFill`
- * `kMBMLViewContentModeScaleAspectFit` ("aspectFit") = `UIViewContentModeScaleAspectFit`
- * `kMBMLViewContentModeScaleAspectFill` ("aspectFill") = `UIViewContentModeScaleAspectFill`
- * `kMBMLViewContentModeRedraw` ("redraw") = `UIViewContentModeRedraw`
- * `kMBMLViewContentModeCenter` ("center") = `UIViewContentModeCenter`
- * `kMBMLViewContentModeTop` ("top") = `UIViewContentModeTop`
- * `kMBMLViewContentModeBottom` ("bottom") = `UIViewContentModeBottom`
- * `kMBMLViewContentModeLeft` ("left") = `UIViewContentModeLeft`
- * `kMBMLViewContentModeRight` ("right") = `UIViewContentModeRight`
- * `kMBMLViewContentModeTopLeft` ("topLeft") = `UIViewContentModeTopLeft`
- * `kMBMLViewContentModeTopRight` ("topRight") = `UIViewContentModeTopRight`
- * `kMBMLViewContentModeBottomLeft` ("bottomLeft") = `UIViewContentModeBottomLeft`
- * `kMBMLViewContentModeBottomRight` ("bottomRight") = `UIViewContentModeBottomRight`
+ * `kMBMLViewContentModeScaleToFill` ("**`scaleToFill`**") → `UIViewContentModeScaleToFill`
+ * `kMBMLViewContentModeScaleAspectFit` ("**`aspectFit`**") → `UIViewContentModeScaleAspectFit`
+ * `kMBMLViewContentModeScaleAspectFill` ("**`aspectFill`**") → `UIViewContentModeScaleAspectFill`
+ * `kMBMLViewContentModeRedraw` ("**`redraw`**") → `UIViewContentModeRedraw`
+ * `kMBMLViewContentModeCenter` ("**`center`**") → `UIViewContentModeCenter`
+ * `kMBMLViewContentModeTop` ("**`top`**") → `UIViewContentModeTop`
+ * `kMBMLViewContentModeBottom` ("**`bottom`**") → `UIViewContentModeBottom`
+ * `kMBMLViewContentModeLeft` ("**`left`**") → `UIViewContentModeLeft`
+ * `kMBMLViewContentModeRight` ("**`right`**") → `UIViewContentModeRight`
+ * `kMBMLViewContentModeTopLeft` ("**`topLeft`**") → `UIViewContentModeTopLeft`
+ * `kMBMLViewContentModeTopRight` ("**`topRight`**") → `UIViewContentModeTopRight`
+ * `kMBMLViewContentModeBottomLeft` ("**`bottomLeft`**") → `UIViewContentModeBottomLeft`
+ * `kMBMLViewContentModeBottomRight` ("**`bottomRight`**") → `UIViewContentModeBottomRight`
 
  @param     str The string to interpret.
 
@@ -1918,10 +1904,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLBarStyleDefault` ("default") = `UIBarStyleDefault`
- * `kMBMLBarStyleBlack` ("black") = `UIBarStyleBlack`
- * `kMBMLBarStyleBlackOpaque` ("blackOpaque") = `UIBarStyleBlackOpaque`
- * `kMBMLBarStyleBlackTranslucent` ("blackTranslucent") = `UIBarStyleBlackTranslucent`
+ * `kMBMLBarStyleDefault` ("**`default`**") → `UIBarStyleDefault`
+ * `kMBMLBarStyleBlack` ("**`black`**") → `UIBarStyleBlack`
+ * `kMBMLBarStyleBlackOpaque` ("**`blackOpaque`**") → `UIBarStyleBlackOpaque`
+ * `kMBMLBarStyleBlackTranslucent` ("**`blackTranslucent`**") → `UIBarStyleBlackTranslucent`
 
  @param     str The string to interpret.
 
@@ -1937,10 +1923,10 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLBarStyleDefault` ("default") = `UIBarStyleDefault`
- * `kMBMLBarStyleBlack` ("black") = `UIBarStyleBlack`
- * `kMBMLBarStyleBlackOpaque` ("blackOpaque") = `UIBarStyleBlackOpaque`
- * `kMBMLBarStyleBlackTranslucent` ("blackTranslucent") = `UIBarStyleBlackTranslucent`
+ * `kMBMLBarStyleDefault` ("**`default`**") → `UIBarStyleDefault`
+ * `kMBMLBarStyleBlack` ("**`black`**") → `UIBarStyleBlack`
+ * `kMBMLBarStyleBlackOpaque` ("**`blackOpaque`**") → `UIBarStyleBlackOpaque`
+ * `kMBMLBarStyleBlackTranslucent` ("**`blackTranslucent`**") → `UIBarStyleBlackTranslucent`
 
  @param     str The string to interpret.
 
@@ -1973,30 +1959,35 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 /*----------------------------------------------------------------------------*/
 
 /*!
- * `kMBMLBarButtonSystemItemDone` ("done") = `UIBarButtonSystemItemDone`
- * `kMBMLBarButtonSystemItemCancel` ("cancel") = `UIBarButtonSystemItemCancel`
- * `kMBMLBarButtonSystemItemEdit` ("edit") = `UIBarButtonSystemItemEdit`
- * `kMBMLBarButtonSystemItemSave` ("save") = `UIBarButtonSystemItemSave`
- * `kMBMLBarButtonSystemItemAdd` ("add") = `UIBarButtonSystemItemAdd`
- * `kMBMLBarButtonSystemItemFlexibleSpace` ("flexibleSpace") = `UIBarButtonSystemItemFlexibleSpace`
- * `kMBMLBarButtonSystemItemFixedSpace` ("fixedSpace") = `UIBarButtonSystemItemFixedSpace`
- * `kMBMLBarButtonSystemItemCompose` ("compose") = `UIBarButtonSystemItemCompose`
- * `kMBMLBarButtonSystemItemReply` ("reply") = `UIBarButtonSystemItemReply`
- * `kMBMLBarButtonSystemItemAction` ("action") = `UIBarButtonSystemItemAction`
- * `kMBMLBarButtonSystemItemOrganize` ("organize") = `UIBarButtonSystemItemOrganize`
- * `kMBMLBarButtonSystemItemBookmarks` ("bookmarks") = `UIBarButtonSystemItemBookmarks`
- * `kMBMLBarButtonSystemItemSearch` ("search") = `UIBarButtonSystemItemSearch`
- * `kMBMLBarButtonSystemItemRefresh` ("refresh") = `UIBarButtonSystemItemRefresh`
- * `kMBMLBarButtonSystemItemStop` ("stop") = `UIBarButtonSystemItemStop`
- * `kMBMLBarButtonSystemItemCamera` ("camera") = `UIBarButtonSystemItemCamera`
- * `kMBMLBarButtonSystemItemTrash` ("trash") = `UIBarButtonSystemItemTrash`
- * `kMBMLBarButtonSystemItemPlay` ("play") = `UIBarButtonSystemItemPlay`
- * `kMBMLBarButtonSystemItemPause` ("pause") = `UIBarButtonSystemItemPause`
- * `kMBMLBarButtonSystemItemRewind` ("rewind") = `UIBarButtonSystemItemRewind`
- * `kMBMLBarButtonSystemItemFastForward` ("fastForward") = `UIBarButtonSystemItemFastForward`
- * `kMBMLBarButtonSystemItemUndo` ("undo") = `UIBarButtonSystemItemUndo`
- * `kMBMLBarButtonSystemItemRedo` ("redo") = `UIBarButtonSystemItemRedo`
- * `kMBMLBarButtonSystemItemPageCurl` ("pageCurl") = `UIBarButtonSystemItemPageCurl`
+ Attempts to interpret a string as a `UIBarButtonSystemItem` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLBarButtonSystemItemDone` ("**`done`**") → `UIBarButtonSystemItemDone`
+ * `kMBMLBarButtonSystemItemCancel` ("**`cancel`**") → `UIBarButtonSystemItemCancel`
+ * `kMBMLBarButtonSystemItemEdit` ("**`edit`**") → `UIBarButtonSystemItemEdit`
+ * `kMBMLBarButtonSystemItemSave` ("**`save`**") → `UIBarButtonSystemItemSave`
+ * `kMBMLBarButtonSystemItemAdd` ("**`add`**") → `UIBarButtonSystemItemAdd`
+ * `kMBMLBarButtonSystemItemFlexibleSpace` ("**`flexibleSpace`**") → `UIBarButtonSystemItemFlexibleSpace`
+ * `kMBMLBarButtonSystemItemFixedSpace` ("**`fixedSpace`**") → `UIBarButtonSystemItemFixedSpace`
+ * `kMBMLBarButtonSystemItemCompose` ("**`compose`**") → `UIBarButtonSystemItemCompose`
+ * `kMBMLBarButtonSystemItemReply` ("**`reply`**") → `UIBarButtonSystemItemReply`
+ * `kMBMLBarButtonSystemItemAction` ("**`action`**") → `UIBarButtonSystemItemAction`
+ * `kMBMLBarButtonSystemItemOrganize` ("**`organize`**") → `UIBarButtonSystemItemOrganize`
+ * `kMBMLBarButtonSystemItemBookmarks` ("**`bookmarks`**") → `UIBarButtonSystemItemBookmarks`
+ * `kMBMLBarButtonSystemItemSearch` ("**`search`**") → `UIBarButtonSystemItemSearch`
+ * `kMBMLBarButtonSystemItemRefresh` ("**`refresh`**") → `UIBarButtonSystemItemRefresh`
+ * `kMBMLBarButtonSystemItemStop` ("**`stop`**") → `UIBarButtonSystemItemStop`
+ * `kMBMLBarButtonSystemItemCamera` ("**`camera`**") → `UIBarButtonSystemItemCamera`
+ * `kMBMLBarButtonSystemItemTrash` ("**`trash`**") → `UIBarButtonSystemItemTrash`
+ * `kMBMLBarButtonSystemItemPlay` ("**`play`**") → `UIBarButtonSystemItemPlay`
+ * `kMBMLBarButtonSystemItemPause` ("**`pause`**") → `UIBarButtonSystemItemPause`
+ * `kMBMLBarButtonSystemItemRewind` ("**`rewind`**") → `UIBarButtonSystemItemRewind`
+ * `kMBMLBarButtonSystemItemFastForward` ("**`fastForward`**") → `UIBarButtonSystemItemFastForward`
+ * `kMBMLBarButtonSystemItemUndo` ("**`undo`**") → `UIBarButtonSystemItemUndo`
+ * `kMBMLBarButtonSystemItemRedo` ("**`redo`**") → `UIBarButtonSystemItemRedo`
+ * `kMBMLBarButtonSystemItemPageCurl` ("**`pageCurl`**") → `UIBarButtonSystemItemPageCurl`
 
  @param     str The string to interpret.
 
@@ -2012,30 +2003,30 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLBarButtonSystemItemDone` ("done") = `UIBarButtonSystemItemDone`
- * `kMBMLBarButtonSystemItemCancel` ("cancel") = `UIBarButtonSystemItemCancel`
- * `kMBMLBarButtonSystemItemEdit` ("edit") = `UIBarButtonSystemItemEdit`
- * `kMBMLBarButtonSystemItemSave` ("save") = `UIBarButtonSystemItemSave`
- * `kMBMLBarButtonSystemItemAdd` ("add") = `UIBarButtonSystemItemAdd`
- * `kMBMLBarButtonSystemItemFlexibleSpace` ("flexibleSpace") = `UIBarButtonSystemItemFlexibleSpace`
- * `kMBMLBarButtonSystemItemFixedSpace` ("fixedSpace") = `UIBarButtonSystemItemFixedSpace`
- * `kMBMLBarButtonSystemItemCompose` ("compose") = `UIBarButtonSystemItemCompose`
- * `kMBMLBarButtonSystemItemReply` ("reply") = `UIBarButtonSystemItemReply`
- * `kMBMLBarButtonSystemItemAction` ("action") = `UIBarButtonSystemItemAction`
- * `kMBMLBarButtonSystemItemOrganize` ("organize") = `UIBarButtonSystemItemOrganize`
- * `kMBMLBarButtonSystemItemBookmarks` ("bookmarks") = `UIBarButtonSystemItemBookmarks`
- * `kMBMLBarButtonSystemItemSearch` ("search") = `UIBarButtonSystemItemSearch`
- * `kMBMLBarButtonSystemItemRefresh` ("refresh") = `UIBarButtonSystemItemRefresh`
- * `kMBMLBarButtonSystemItemStop` ("stop") = `UIBarButtonSystemItemStop`
- * `kMBMLBarButtonSystemItemCamera` ("camera") = `UIBarButtonSystemItemCamera`
- * `kMBMLBarButtonSystemItemTrash` ("trash") = `UIBarButtonSystemItemTrash`
- * `kMBMLBarButtonSystemItemPlay` ("play") = `UIBarButtonSystemItemPlay`
- * `kMBMLBarButtonSystemItemPause` ("pause") = `UIBarButtonSystemItemPause`
- * `kMBMLBarButtonSystemItemRewind` ("rewind") = `UIBarButtonSystemItemRewind`
- * `kMBMLBarButtonSystemItemFastForward` ("fastForward") = `UIBarButtonSystemItemFastForward`
- * `kMBMLBarButtonSystemItemUndo` ("undo") = `UIBarButtonSystemItemUndo`
- * `kMBMLBarButtonSystemItemRedo` ("redo") = `UIBarButtonSystemItemRedo`
- * `kMBMLBarButtonSystemItemPageCurl` ("pageCurl") = `UIBarButtonSystemItemPageCurl`
+ * `kMBMLBarButtonSystemItemDone` ("**`done`**") → `UIBarButtonSystemItemDone`
+ * `kMBMLBarButtonSystemItemCancel` ("**`cancel`**") → `UIBarButtonSystemItemCancel`
+ * `kMBMLBarButtonSystemItemEdit` ("**`edit`**") → `UIBarButtonSystemItemEdit`
+ * `kMBMLBarButtonSystemItemSave` ("**`save`**") → `UIBarButtonSystemItemSave`
+ * `kMBMLBarButtonSystemItemAdd` ("**`add`**") → `UIBarButtonSystemItemAdd`
+ * `kMBMLBarButtonSystemItemFlexibleSpace` ("**`flexibleSpace`**") → `UIBarButtonSystemItemFlexibleSpace`
+ * `kMBMLBarButtonSystemItemFixedSpace` ("**`fixedSpace`**") → `UIBarButtonSystemItemFixedSpace`
+ * `kMBMLBarButtonSystemItemCompose` ("**`compose`**") → `UIBarButtonSystemItemCompose`
+ * `kMBMLBarButtonSystemItemReply` ("**`reply`**") → `UIBarButtonSystemItemReply`
+ * `kMBMLBarButtonSystemItemAction` ("**`action`**") → `UIBarButtonSystemItemAction`
+ * `kMBMLBarButtonSystemItemOrganize` ("**`organize`**") → `UIBarButtonSystemItemOrganize`
+ * `kMBMLBarButtonSystemItemBookmarks` ("**`bookmarks`**") → `UIBarButtonSystemItemBookmarks`
+ * `kMBMLBarButtonSystemItemSearch` ("**`search`**") → `UIBarButtonSystemItemSearch`
+ * `kMBMLBarButtonSystemItemRefresh` ("**`refresh`**") → `UIBarButtonSystemItemRefresh`
+ * `kMBMLBarButtonSystemItemStop` ("**`stop`**") → `UIBarButtonSystemItemStop`
+ * `kMBMLBarButtonSystemItemCamera` ("**`camera`**") → `UIBarButtonSystemItemCamera`
+ * `kMBMLBarButtonSystemItemTrash` ("**`trash`**") → `UIBarButtonSystemItemTrash`
+ * `kMBMLBarButtonSystemItemPlay` ("**`play`**") → `UIBarButtonSystemItemPlay`
+ * `kMBMLBarButtonSystemItemPause` ("**`pause`**") → `UIBarButtonSystemItemPause`
+ * `kMBMLBarButtonSystemItemRewind` ("**`rewind`**") → `UIBarButtonSystemItemRewind`
+ * `kMBMLBarButtonSystemItemFastForward` ("**`fastForward`**") → `UIBarButtonSystemItemFastForward`
+ * `kMBMLBarButtonSystemItemUndo` ("**`undo`**") → `UIBarButtonSystemItemUndo`
+ * `kMBMLBarButtonSystemItemRedo` ("**`redo`**") → `UIBarButtonSystemItemRedo`
+ * `kMBMLBarButtonSystemItemPageCurl` ("**`pageCurl`**") → `UIBarButtonSystemItemPageCurl`
 
  @param     str The string to interpret.
 
@@ -2073,9 +2064,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLBarButtonItemStylePlain` ("plain") = `UIBarButtonItemStylePlain`
- * **Deprecated:** `kMBMLBarButtonItemStyleBordered` ("bordered") = `UIBarButtonItemStyleBordered`
- * `kMBMLBarButtonItemStyleDone` ("done") = `UIBarButtonItemStyleDone`
+ * `kMBMLBarButtonItemStylePlain` ("**`plain`**") → `UIBarButtonItemStylePlain`
+ * **Deprecated:** `kMBMLBarButtonItemStyleBordered` ("**`bordered`**") → `UIBarButtonItemStyleBordered`
+ * `kMBMLBarButtonItemStyleDone` ("**`done`**") → `UIBarButtonItemStyleDone`
 
  @param     str The string to interpret.
 
@@ -2091,9 +2082,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLBarButtonItemStylePlain` ("plain") = `UIBarButtonItemStylePlain`
- * **Deprecated:** `kMBMLBarButtonItemStyleBordered` ("bordered") = `UIBarButtonItemStyleBordered`
- * `kMBMLBarButtonItemStyleDone` ("done") = `UIBarButtonItemStyleDone`
+ * `kMBMLBarButtonItemStylePlain` ("**`plain`**") → `UIBarButtonItemStylePlain`
+ * **Deprecated:** `kMBMLBarButtonItemStyleBordered` ("**`bordered`**") → `UIBarButtonItemStyleBordered`
+ * `kMBMLBarButtonItemStyleDone` ("**`done`**") → `UIBarButtonItemStyleDone`
 
  @param     str The string to interpret.
 
@@ -2131,9 +2122,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLStatusBarAnimationNone` ("none") = `UIStatusBarAnimationNone`
- * `kMBMLStatusBarAnimationFade` ("fade") = `UIStatusBarAnimationFade`
- * `kMBMLStatusBarAnimationSlide` ("slide") = `UIStatusBarAnimationSlide`
+ * `kMBMLStatusBarAnimationNone` ("**`none`**") → `UIStatusBarAnimationNone`
+ * `kMBMLStatusBarAnimationFade` ("**`fade`**") → `UIStatusBarAnimationFade`
+ * `kMBMLStatusBarAnimationSlide` ("**`slide`**") → `UIStatusBarAnimationSlide`
 
  @param     str The string to interpret.
  
@@ -2149,9 +2140,9 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLStatusBarAnimationNone` ("none") = `UIStatusBarAnimationNone`
- * `kMBMLStatusBarAnimationFade` ("fade") = `UIStatusBarAnimationFade`
- * `kMBMLStatusBarAnimationSlide` ("slide") = `UIStatusBarAnimationSlide`
+ * `kMBMLStatusBarAnimationNone` ("**`none`**") → `UIStatusBarAnimationNone`
+ * `kMBMLStatusBarAnimationFade` ("**`fade`**") → `UIStatusBarAnimationFade`
+ * `kMBMLStatusBarAnimationSlide` ("**`slide`**") → `UIStatusBarAnimationSlide`
 
  @param     str The string to interpret.
 
@@ -2189,11 +2180,11 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
  
- * `kMBMLPopoverArrowDirectionUp` ("up") = `UIPopoverArrowDirectionUp`
- * `kMBMLPopoverArrowDirectionDown` ("down") = `UIPopoverArrowDirectionDown`
- * `kMBMLPopoverArrowDirectionLeft` ("left") = `UIPopoverArrowDirectionLeft`
- * `kMBMLPopoverArrowDirectionRight` ("right") = `UIPopoverArrowDirectionRight`
- * `kMBMLPopoverArrowDirectionAny` ("any") = `UIPopoverArrowDirectionAny`
+ * `kMBMLPopoverArrowDirectionUp` ("**`up`**") → `UIPopoverArrowDirectionUp`
+ * `kMBMLPopoverArrowDirectionDown` ("**`down`**") → `UIPopoverArrowDirectionDown`
+ * `kMBMLPopoverArrowDirectionLeft` ("**`left`**") → `UIPopoverArrowDirectionLeft`
+ * `kMBMLPopoverArrowDirectionRight` ("**`right`**") → `UIPopoverArrowDirectionRight`
+ * `kMBMLPopoverArrowDirectionAny` ("**`any`**") → `UIPopoverArrowDirectionAny`
 
  @param     str The string to interpret.
  
@@ -2209,11 +2200,11 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLPopoverArrowDirectionUp` ("up") = `UIPopoverArrowDirectionUp`
- * `kMBMLPopoverArrowDirectionDown` ("down") = `UIPopoverArrowDirectionDown`
- * `kMBMLPopoverArrowDirectionLeft` ("left") = `UIPopoverArrowDirectionLeft`
- * `kMBMLPopoverArrowDirectionRight` ("right") = `UIPopoverArrowDirectionRight`
- * `kMBMLPopoverArrowDirectionAny` ("any") = `UIPopoverArrowDirectionAny`
+ * `kMBMLPopoverArrowDirectionUp` ("**`up`**") → `UIPopoverArrowDirectionUp`
+ * `kMBMLPopoverArrowDirectionDown` ("**`down`**") → `UIPopoverArrowDirectionDown`
+ * `kMBMLPopoverArrowDirectionLeft` ("**`left`**") → `UIPopoverArrowDirectionLeft`
+ * `kMBMLPopoverArrowDirectionRight` ("**`right`**") → `UIPopoverArrowDirectionRight`
+ * `kMBMLPopoverArrowDirectionAny` ("**`any`**") → `UIPopoverArrowDirectionAny`
 
  @param     str The string to interpret.
 

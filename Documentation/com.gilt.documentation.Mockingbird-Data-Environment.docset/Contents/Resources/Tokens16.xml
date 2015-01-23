@@ -215,7 +215,8 @@ and logging the resulting time to the console.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/deprecateVariableInFavorOf:</TokenIdentifier>
-			<Abstract type="html">Issues a deprecation warning to the console for the given MBML variable name.</Abstract>
+			<Abstract type="html">Issues a deprecation warning to the console for the MBML variable with the
+given name.</Abstract>
 			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)deprecateVariableInFavorOf:(NSArray *)params</Declaration>

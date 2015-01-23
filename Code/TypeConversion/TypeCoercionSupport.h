@@ -139,7 +139,7 @@
 /******************************************************************************/
 
 /*!
- Our `NSString` class category used to add support for the
+ Our `NSString` class category is used to add support for the
  `MBNumericPrimitiveAccessors` protocol.
  */
 @interface NSString (MBNumericPrimitiveAccessors) < MBNumericPrimitiveAccessors >
@@ -151,7 +151,7 @@
 /******************************************************************************/
 
 /*!
- Our `NSNull` class category used to add support for the
+ Our `NSNull` class category is used to add support for the
  `MBNumericPrimitiveAccessors` protocol.
  */
 @interface NSNull (MBNumericPrimitiveAccessors) < MBNumericPrimitiveAccessors >
@@ -171,7 +171,7 @@
 /******************************************************************************/
 
 /*!
- Our `NSNull` class category used to add support for the
+ Our `NSNull` class category is used to add support for the
  `NSFastEnumeration` protocol.
  */
 @interface NSNull (NSFastEnumeration) < NSFastEnumeration >

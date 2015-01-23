@@ -31,7 +31,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  variables across the lifetime of the application.
  
  Each `MBEnvironment` will have an associated `MBVariableSpace` that will be 
- consulted when Mockingbird expressions are evaluated. When that environment
+ consulted when Mockingbird expressions are evaluated. When a given environment
  is active, its `MBVariableSpace` will provide the values when variables are
  referenced.
  */
@@ -146,8 +146,10 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 /*!
  Pops the current value from the stack for the variable with the given name.
  (The value of the variable prior to the previous call to `pushVariable:value:`
- will be restored.) If there are no stack values for the variable, an error
- will be logged to the console.
+ will be restored.)
+ 
+ If there are no stack values for the variable, an error will be logged to
+ the console.
  
  @param     varName The name of the variable whose value is to be set.
             If the name represents a read-only variable, the call will be
@@ -210,7 +212,10 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 /*----------------------------------------------------------------------------*/
 
 /*!
- Constructs a string for an variable-related name with the given suffix.
+ Constructs a string for a variable-related name with the given suffix.
+
+ Calling this method with the name "`Foo`" and the suffix "`willBar`" would
+ return the string "`Foo:willBar`".
 
  @param     name The name to use for the root of the returned string. If
             `nil`, this method returns `nil`.
@@ -219,7 +224,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             method returns `name`.
 
  @return    If `name` and `suffix` are both non-`nil`, the concatenation of
-            `name`, `:` and `suffix` is returned. Otherwise, the value of the
+            `name`, "`:`" and `suffix` is returned. Otherwise, the value of the
             `name` parameter is returned.
  */
 + (NSString*) name:(NSString*)name withSuffix:(NSString*)suffix;
@@ -239,15 +244,21 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  `MBSingletonVariableDeclaration` and `MBDynamicVariableDeclaration`—are always
  read-only.
  
- `MBConcreteVariableDeclaration`s may be declared with a `mutable="F"` MBML
- attribute to be marked as read-only. Otherwise, variables are not considered
- read-only.
+ `MBConcreteVariableDeclaration`s declared in MBML with a `mutable="F"` 
+ attribute are read-only.
+ 
+ Otherwise, variables are not considered read-only.
  
  Note that the read-only concept only applies to whether or not the
  `MBVariableSpace` will allow you to change the value through its interface.
+
  In this way, even immutable objects such as `NSArray` may be considered 
  read/write as far as the Mockingbird Data Environment goes.
- 
+
+ Conversely, a `NSMutableDictionary`, for example, may be declared as a
+ read-only Mockingbird variable, but the dictionary can still be mutated
+ directly.
+
  @param     varName The name of the variable.
  
  @return    `YES` if the variable named `varName` is read-only; `NO` otherwise.
@@ -265,9 +276,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @param     declaration An `MBVariableDeclaration` representing the variable.
  
  @return    `YES` if the variable represented by `declaration` was successfully
-            declared; `NO` if there was already a variable with the same name
-            declared or if an error occured while attempting to retrieve the
-            variable's initial value.
+            declared; `NO` if an error occured.
  */
 - (BOOL) declareVariable:(MBVariableDeclaration*)declaration;
 
@@ -298,8 +307,8 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @param     function An `MBMLFunction` representing the function and its
             implementation.
 
- @return    `YES` if `function` was successfully declared; `NO` if there was
-            already a function with the same name or if an error occurred.
+ @return    `YES` if `function` was successfully declared; `NO` if an error
+            occurred.
  */
 - (BOOL) declareFunction:(MBMLFunction*)function;
 

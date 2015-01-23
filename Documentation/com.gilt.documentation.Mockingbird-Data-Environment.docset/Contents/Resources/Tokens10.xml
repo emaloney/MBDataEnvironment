@@ -536,7 +536,7 @@ object values into numbers.</Abstract>
 			<ReturnValue><Abstract type="html">If val can be interpreted as a number, the return value is an
             NSDecimalNumber containing that number. If val cannot be 
             interpreted as a number, or if the resulting number is equal to
-            [&lt;code&gt;NSNumber notANumber&lt;/code&gt;], nil` will be returned.</Abstract></ReturnValue>
+            [&lt;code&gt;NSNumber notANumber&lt;/code&gt;], nil will be returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/numberFromValue:</Anchor>
             <NodeRef refid="10"/>
 		</Token>

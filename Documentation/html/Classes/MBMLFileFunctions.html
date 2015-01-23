@@ -51,6 +51,8 @@
 	
 	<option value="//api/name/directoryForDownloads">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForDownloads</option>
 	
+	<option value="//api/name/directoryForHome">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForHome</option>
+	
 	<option value="//api/name/directoryForMovies">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForMovies</option>
 	
 	<option value="//api/name/directoryForMusic">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForMusic</option>
@@ -60,8 +62,6 @@
 	<option value="//api/name/directoryForPublicFiles">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForPublicFiles</option>
 	
 	<option value="//api/name/directoryForTempFiles">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForTempFiles</option>
-	
-	<option value="//api/name/directoryForUserHome">&nbsp;&nbsp;&nbsp;&nbsp;+ directoryForUserHome</option>
 	
 	<option value="//api/name/fileContents:">&nbsp;&nbsp;&nbsp;&nbsp;+ fileContents:</option>
 	
@@ -141,6 +141,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForDownloads">directoryForDownloads</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForHome">directoryForHome</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForMovies">directoryForMovies</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForMusic">directoryForMusic</a></span></li>
@@ -150,8 +152,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForPublicFiles">directoryForPublicFiles</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForTempFiles">directoryForTempFiles</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/directoryForUserHome">directoryForUserHome</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileContents:">fileContents:</a></span></li>
 	
@@ -282,7 +282,7 @@ file.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/directoryForUserHome">+&nbsp;directoryForUserHome</a></code>
+		<code><a href="#//api/name/directoryForHome">+&nbsp;directoryForHome</a></code>
 	</span>
 	
 	
@@ -521,7 +521,7 @@ yielding the filesystem path.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSApplicationSupportDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSApplicationSupportDirectory</code>.</p>
 	</div>		
 	
     
@@ -550,9 +550,8 @@ yielding the filesystem path.</p>
 <pre><code>^directoryForApplicationSupport()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSApplicationSupportDirectory</code>. This will be unique for each user within each
-application.</p>
+<p>The expression above returns the filesystem path of the
+<code>NSApplicationSupportDirectory</code>.</p>
 	</div>
 	
 	
@@ -576,7 +575,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSCachesDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSCachesDirectory</code>.</p>
 	</div>		
 	
     
@@ -605,8 +604,7 @@ application.</p>
 <pre><code>^directoryForCaches()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSCachesDirectory</code>. This will be unique for each user within each application.</p>
+<p>The expression above returns the filesystem path of the <code>NSCachesDirectory</code>.</p>
 	</div>
 	
 	
@@ -630,7 +628,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSDocumentDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSDocumentDirectory</code>.</p>
 	</div>		
 	
     
@@ -659,9 +657,7 @@ application.</p>
 <pre><code>^directoryForDocuments()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSDocumentDirectory</code>. This will be unique for each user within each
-application.</p>
+<p>The expression above returns the filesystem path of the <code>NSDocumentDirectory</code>.</p>
 	</div>
 	
 	
@@ -685,7 +681,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSDownloadsDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSDownloadsDirectory</code>.</p>
 	</div>		
 	
     
@@ -714,8 +710,61 @@ application.</p>
 <pre><code>^directoryForDownloads()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSDownloadsDirectory</code>. This will be unique for each user within each application.</p>
+<p>The expression above returns the filesystem path of the <code>NSDownloadsDirectory</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/directoryForHome" title="directoryForHome"></a>
+	<h3 class="subsubtitle method-title">directoryForHome</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the filesystem path of the <code>NSHomeDirectory</code>. On iOS, this is the
+filesystem path of the <em>application&rsquo;s</em> home.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)directoryForHome</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The filesystem path of the directory.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^directoryForHome()
+</code></pre>
+
+<p>The expression above returns the filesystem path of the <code>NSHomeDirectory</code>.</p>
 	</div>
 	
 	
@@ -739,7 +788,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSMoviesDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSMoviesDirectory</code>.</p>
 	</div>		
 	
     
@@ -768,8 +817,7 @@ application.</p>
 <pre><code>^directoryForMovies()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSMoviesDirectory</code>. This will be unique for each user within each application.</p>
+<p>The expression above returns the filesystem path of the <code>NSMoviesDirectory</code>.</p>
 	</div>
 	
 	
@@ -793,7 +841,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSMusicDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSMusicDirectory</code>.</p>
 	</div>		
 	
     
@@ -822,8 +870,7 @@ application.</p>
 <pre><code>^directoryForMusic()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSMusicDirectory</code>. This will be unique for each user within each application.</p>
+<p>The expression above returns the filesystem path of the <code>NSMusicDirectory</code>.</p>
 	</div>
 	
 	
@@ -847,7 +894,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSPicturesDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSPicturesDirectory</code>.</p>
 	</div>		
 	
     
@@ -876,9 +923,7 @@ application.</p>
 <pre><code>^directoryForPictures()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSPicturesDirectory</code>. This will be unique for each user within each
-application.</p>
+<p>The expression above returns the filesystem path of the <code>NSPicturesDirectory</code>.</p>
 	</div>
 	
 	
@@ -902,7 +947,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSSharedPublicDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSSharedPublicDirectory</code>.</p>
 	</div>		
 	
     
@@ -931,9 +976,8 @@ application.</p>
 <pre><code>^directoryForPublicFiles()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSSharedPublicDirectory</code>. This will be unique for each user within each
-application.</p>
+<p>The expression above returns the filesystem path of the
+<code>NSSharedPublicDirectory</code>.</p>
 	</div>
 	
 	
@@ -957,7 +1001,7 @@ application.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSTemporaryDirectory</code>.</p>
+		<p>Returns the filesystem path of the <code>NSTemporaryDirectory</code>.</p>
 	</div>		
 	
     
@@ -986,63 +1030,7 @@ application.</p>
 <pre><code>^directoryForTempFiles()
 </code></pre>
 
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSTemporaryDirectory</code>. This will be unique for each user within each
-application.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLFileFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/directoryForUserHome" title="directoryForUserHome"></a>
-	<h3 class="subsubtitle method-title">directoryForUserHome</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the filesystem path of the user&rsquo;s <code>NSHomeDirectory</code>.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)directoryForUserHome</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The filesystem path of the directory.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts no parameters.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^directoryForUserHome()
-</code></pre>
-
-<p>The expression above returns the filesystem path of the user&rsquo;s
-<code>NSHomeDirectory</code>. This will be unique for each user within each application.</p>
+<p>The expression above returns the filesystem path of the <code>NSTemporaryDirectory</code>.</p>
 	</div>
 	
 	
@@ -1111,6 +1099,8 @@ yielding the filesystem path.</p>
 </code></pre>
 
 <p>returns the content of <code>~/Documents/README.txt</code> as an <code>NSString</code> instance.</p>
+
+<p>If the file doesn&rsquo;t exist or couldn&rsquo;t be read, <code>nil</code> will be returned.</p>
 	</div>
 	
 	
@@ -1180,6 +1170,8 @@ yielding the filesystem path.</p>
 
 <p>returns the content of <code>~/Caches/com.gilt.ios/Images/superhero.jpg</code> as an
 <code>NSData</code> instance.</p>
+
+<p>If the file doesn&rsquo;t exist or couldn&rsquo;t be read, <code>nil</code> will be returned.</p>
 	</div>
 	
 	
@@ -1565,10 +1557,7 @@ yielding a filesystem path.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume the variable <code>$file</code> contains the string
-&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
-
-<pre><code>^lastPathComponent($file)
+<pre><code>^lastPathComponent(~/Library/Preferences/com.apple.Safari.plist)
 </code></pre>
 
 <p>The expression above would return the string &ldquo;<code>com.apple.Safari.plist</code>&rdquo;</p>
@@ -1633,11 +1622,11 @@ yielding the filesystem path of the directory whose contents are sought.</p>
 
 <h4>Expression usage</h4>
 
-<pre><code>^listDirectory(~/Documents)
+<pre><code>^listDirectory(^directoryForHome())
 </code></pre>
 
 <p>The expression above returns an array containing the names of the files
-within the user&rsquo;s Documents directory.</p>
+within <code>NSHomeDirectory</code>.</p>
 	</div>
 	
 	
@@ -1699,14 +1688,11 @@ yielding a filesystem path.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume the variable <code>$file</code> contains the string
-&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
-
-<pre><code>^stripLastPathComponent($file)
+<pre><code>^pathComponents(~/Library/Preferences/com.apple.Safari.plist)
 </code></pre>
 
-<p>The expression above would return the string
-&ldquo;<code>~/Library/Preferences/com.apple.Safari</code>&rdquo;</p>
+<p>The expression returns an array of strings containing: [&ldquo;<code>~</code>&rdquo;, &ldquo;<code>Library</code>&rdquo;,
+&ldquo;<code>Preferences</code>&rdquo;, &ldquo;<code>com.apple.Safari.plist</code>&rdquo; ].</p>
 	</div>
 	
 	
@@ -1767,10 +1753,7 @@ yielding a filesystem path.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume the variable <code>$file</code> contains the string
-&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
-
-<pre><code>^pathExtension($file)
+<pre><code>^pathExtension(~/Library/Preferences/com.apple.Safari.plist)
 </code></pre>
 
 <p>The expression above would return the string &ldquo;<code>plist</code>&rdquo;</p>
@@ -1902,10 +1885,7 @@ yielding a filesystem path.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume the variable <code>$file</code> contains the string
-&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
-
-<pre><code>^stripLastPathComponent($file)
+<pre><code>^stripLastPathComponent(~/Library/Preferences/com.apple.Safari.plist)
 </code></pre>
 
 <p>The expression above would return the string &ldquo;<code>~/Library/Preferences</code>&rdquo;</p>
@@ -1970,10 +1950,7 @@ yielding a filesystem path.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume the variable <code>$file</code> contains the string
-&ldquo;<code>~/Library/Preferences/com.apple.Safari.plist</code>&rdquo;:</p>
-
-<pre><code>^stripLastPathComponent($file)
+<pre><code>^stripPathExtension(~/Library/Preferences/com.apple.Safari.plist)
 </code></pre>
 
 <p>The expression above would return the string
@@ -2011,7 +1988,7 @@ yielding a filesystem path.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-22)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

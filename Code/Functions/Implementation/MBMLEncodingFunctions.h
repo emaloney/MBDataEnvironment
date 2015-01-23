@@ -84,8 +84,8 @@
 /*!
  Computes an SHA-1 hash from an input string.
 
- This function accepts a single expression parameter that is expected to yield
- the input string.
+ This Mockingbird function accepts a single expression parameter that is 
+ expected to yield the input string.
  
  #### Expression usage
  
@@ -159,8 +159,8 @@
  Decodes a Base-64 string representation of data, and returns the resulting
  `NSData` instance.
 
- This function accepts a single expression parameter that is expected to yield
- the input string.
+ This Mockingbird function accepts a single expression parameter that is
+ expected to yield the input string.
 
  #### Expression usage
 
@@ -207,8 +207,8 @@
  Decodes a hexadecimal string representation of data, and returns the resulting
  `NSData` instance.
 
- This function accepts a single expression parameter that is expected to yield
- the input string.
+ This Mockingbird function accepts a single expression parameter that is 
+ expected to yield the input string.
 
  #### Expression usage
 
