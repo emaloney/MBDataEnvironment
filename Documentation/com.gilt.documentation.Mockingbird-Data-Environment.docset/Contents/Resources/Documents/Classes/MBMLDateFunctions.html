@@ -555,8 +555,8 @@ file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an <code>NSDate</code> instance representing the given date plus the specified
-number of seconds.</p>
+		<p>Returns an <code>NSDate</code> representing the given date plus the specified number
+of seconds.</p>
 	</div>		
 	
     
@@ -579,7 +579,7 @@ number of seconds.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSDate</code> plus the interval in seconds.</p>
+		<p>The adjusted date.</p>
 	</div>
 	
 	
@@ -591,8 +591,10 @@ number of seconds.</p>
 		<p>This Mockingbird function accepts two expressions as input parameters:</p>
 
 <ul>
-<li><p>an <em>interval seconds</em>, specifying the interval in seconds to add</p></li>
-<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
+<li><p><em>seconds</em>, a numeric expression specifying the number of seconds add
+  to the <em>input date</em></p></li>
+<li><p>the <em>input date</em>, an object expression yielding an <code>NSDate</code> or date-formatted
+ <code>NSString</code> containing the date to which <em>seconds</em> will be added</p></li>
 </ul>
 
 
@@ -603,7 +605,7 @@ number of seconds.</p>
 <pre><code>^addSecondsToDate(30|^currentTime())
 </code></pre>
 
-<p>would result in an <code>NSDate</code> 30 seconds from now.</p>
+<p>would result in an <code>NSDate</code> 30 seconds from the present time.</p>
 	</div>
 	
 	
@@ -627,7 +629,7 @@ number of seconds.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an <code>NSDate</code> instance representing the current date and time.</p>
+		<p>Returns an <code>NSDate</code> representing the current date and time.</p>
 	</div>		
 	
     
@@ -640,7 +642,7 @@ number of seconds.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSDate</code> instance representing the current date and time.</p>
+		<p>An <code>NSDate</code> instance representing the present time.</p>
 	</div>
 	
 	
@@ -649,7 +651,7 @@ number of seconds.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts no input.</p>
+		<p>This Mockingbird function accepts no input parameters.</p>
 
 <h4>Expression usage</h4>
 
@@ -682,7 +684,7 @@ number of seconds.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a UNIX timestamp representation of a given <code>NSDate</code>.</p>
+		<p>Returns the UNIX timestamp representation of a given <code>NSDate</code>.</p>
 	</div>		
 	
     
@@ -705,7 +707,7 @@ number of seconds.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSNumber</code> instance containing the unix timestamp
+		<p>An <code>NSNumber</code> instance containing the UNIX timestamp
             representation of the input date.</p>
 	</div>
 	
@@ -722,15 +724,24 @@ expression yielding an <code>NSDate</code> instance.</p>
 
 <p>The expression:</p>
 
-<pre><code>^dateToUnixTimestamp($referenceDate)
+<pre><code>^dateToUnixTimestamp(^currentTime())
 </code></pre>
 
-<p>would return the unix timestamp representation of <code>$referenceDate</code>.</p>
+<p>would return the UNIX timestamp representation of the present time.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/unixTimestampToDate:">+ unixTimestampToDate:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -749,10 +760,7 @@ expression yielding an <code>NSDate</code> instance.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the date parsing format used by default. First, the MBML expression
-<code>$MBMLDateFunctions:dateParsingFormat</code> is checked for a value; if a value is
-present, it is returned. Otherwise, the value of the constant
-<code>kRFC1123DateStringFormat</code> is returned.</p>
+		<p>Returns the date parsing format used by default.</p>
 	</div>		
 	
     
@@ -774,7 +782,10 @@ present, it is returned. Otherwise, the value of the constant
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+		<p>First, the string expression <code>$MBMLDateFunctions:dateParsingFormat</code> is checked
+for a value; if a value is present, it is returned.</p>
+
+<p>Otherwise, the value of the constant <code>kRFC1123DateStringFormat</code> is returned.</p><div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
             an MBML function.</p></div>
 	</div>
 	
@@ -799,10 +810,7 @@ present, it is returned. Otherwise, the value of the constant
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the date parsing locale used by default. First, the MBML expression
-<code>$MBMLDateFunctions:dateParsingLocale</code> is checked for a value; if a value is
-present, it is used as the locale identifier. Otherwise, the value of the
-constant <code>kMBDateParsingLocaleVariableName</code> is used to construct the locale.</p>
+		<p>Returns the date parsing locale used by default.</p>
 	</div>		
 	
     
@@ -824,7 +832,13 @@ constant <code>kMBDateParsingLocaleVariableName</code> is used to construct the 
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>If all else fails, the device&rsquo;s current locale is used.</p><div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
+		<p>First, the string expression <code>$MBMLDateFunctions:dateParsingLocale</code> is checked
+for a value; if a value is present, it is used as the locale identifier.</p>
+
+<p>Otherwise, the value of the constant <code>kMBDateParsingLocaleVariableName</code> is
+used to construct the locale.</p>
+
+<p>If all else fails, the device&rsquo;s current locale is used.</p><div class="note"><p><strong>Note:</strong> This method is not exposed to the Mockingbird environment as a
             an MBML function.</p></div>
 	</div>
 	
@@ -885,9 +899,9 @@ date in the specified format.</p>
 		<p>This Mockingbird function accepts two expressions as input parameters:</p>
 
 <ul>
-<li><p>the <em>input date</em>, an <code>NSDate</code> or <code>NSString</code> that contains the date to format</p></li>
-<li><p>an <em>output format</em>, specifying the date format to be used for creating the
-returned date string</p></li>
+<li><p>the <em>input date</em>, an <code>NSDate</code> or date-formatted <code>NSString</code></p></li>
+<li><p>the <em>output format</em> specifying the date format used to create the returned
+ date string</p></li>
 </ul>
 
 
@@ -1160,9 +1174,9 @@ timezone is used)</p></li>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1230,9 +1244,9 @@ Daylight Time</code>&rdquo;.</p><div class="note"><p><strong>Note:</strong> The 
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1374,9 +1388,9 @@ timezone is used)</p></li>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1443,9 +1457,9 @@ format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1587,9 +1601,9 @@ timezone is used)</p></li>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1656,9 +1670,9 @@ format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1800,9 +1814,9 @@ timezone is used)</p></li>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1869,9 +1883,9 @@ format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -1939,9 +1953,9 @@ simple string sorting.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression as input, an object
-expression yielding either an <code>NSDate</code> or <code>NSString</code> containing the date to
-format.</p>
+		<p>This Mockingbird function accepts a single input parameter, an object
+expression yielding either an <code>NSDate</code> or a date-formatted <code>NSString</code>
+containing the date to format.</p>
 
 <h4>Expression usage</h4>
 
@@ -2059,8 +2073,7 @@ format.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSString</code> instance containing the time until
-            the input date.</p>
+		<p>An <code>NSString</code> instance containing the time until the input date.</p>
 	</div>
 	
 	
@@ -2069,17 +2082,18 @@ format.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+		<p>This Mockingbird function accepts a single parameter: an object expression
 expected to yield an <code>NSDate</code> instance.</p>
 
 <h4>Expression usage</h4>
 
 <p>The expression:</p>
 
-<pre><code>^formatTimeUntil($referenceDate)
+<pre><code>^formatTimeUntil(^addSecondsToDate(300|^currentTime()))
 </code></pre>
 
-<p>would return the time until <code>$referenceDate</code>.</p>
+<p>would return the string &ldquo;<code>5:00</code>&rdquo;, indicating that there are 5 minutes until
+the time that&rsquo;s 300 seconds in the future.</p>
 	</div>
 	
 	
@@ -2351,10 +2365,10 @@ another format.</p>
 input parameters:</p>
 
 <ul>
-<li><p>the <em>input date</em>, a date-formatted string to be parsed,</p></li>
+<li><p>the <em>input date</em>, a date-formatted string to be parsed</p></li>
 <li><p>an optional <em>input format</em>, specifying the date format used by the
 <em>input date</em> parameter (if this parameter is omitted, the default format
-used is the one specified by the <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a> method), and</p></li>
+used is the one specified by the <a href="#//api/name/defaultDateParsingFormat"><code>defaultDateParsingFormat</code></a> method)</p></li>
 <li><p>an <em>output format</em>, specifying the date format to be used for creating the
 returned date string</p></li>
 </ul>
@@ -2373,6 +2387,15 @@ returned date string</p></li>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/reformatDateWithLocale:">+ reformatDateWithLocale:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -2428,12 +2451,12 @@ that input string—and converts the input into a date string of another format.
 input parameters:</p>
 
 <ul>
-<li><p>the <em>input date</em>, a date-formatted string to be parsed,</p></li>
+<li><p>the <em>input date</em>, a date-formatted string to be parsed</p></li>
 <li><p>the <em>input date locale</em>, a string specifying the locale identifier of the
-<em>input date</em>&rsquo;s locale,</p></li>
+<em>input date</em>&rsquo;s locale</p></li>
 <li><p>an optional <em>input format</em>, specifying the date format used by the
 <em>input date</em> parameter (if this parameter is omitted, the default format
-used is the one specified by the <code>defaultDateParsingFormat</code> method), and</p></li>
+used is the one specified by the <code>defaultDateParsingFormat</code> method)</p></li>
 <li><p>an <em>output format</em>, specifying the date format to be used for creating the
 returned date string</p></li>
 </ul>
@@ -2453,6 +2476,15 @@ returned date string</p></li>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/reformatDate:">+ reformatDate:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -2470,7 +2502,7 @@ returned date string</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the number of seconds that have elapsed since the given date in
+		<p>Returns the number of seconds that have elapsed since the given time in
 the past.</p>
 	</div>		
 	
@@ -2522,6 +2554,15 @@ yielding an <code>NSDate</code> instance.</p>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/secondsUntil:">+ secondsUntil:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -2539,7 +2580,8 @@ yielding an <code>NSDate</code> instance.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns the number of seconds between now and the given date in the future.</p>
+		<p>Returns the number of seconds between the present time and the given time
+in the future.</p>
 	</div>		
 	
     
@@ -2573,7 +2615,7 @@ yielding an <code>NSDate</code> instance.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+		<p>This Mockingbird function accepts a single parameter: an object expression
 expected to yield an <code>NSDate</code> instance.</p>
 
 <h4>Expression usage</h4>
@@ -2589,6 +2631,15 @@ expected to yield an <code>NSDate</code> instance.</p>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/secondsSince:">+ secondsSince:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -2703,15 +2754,24 @@ parameter: the UNIX timestamp.</p>
 
 <p>The expression:</p>
 
-<pre><code>^unixTimestampToDate($timestamp)
+<pre><code>^unixTimestampToDate(1355283900)
 </code></pre>
 
-<p>would return the <code>NSDate</code> representation of <code>$timestamp</code>.</p>
+<p>would return an <code>NSDate</code> representing 10:45PM ET on December 11, 2012.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/dateToUnixTimestamp:">+ dateToUnixTimestamp:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -2740,7 +2800,7 @@ parameter: the UNIX timestamp.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-23)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-24)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

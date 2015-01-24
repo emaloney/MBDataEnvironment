@@ -41,10 +41,12 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns the date parsing format used by default. First, the MBML expression
- `$MBMLDateFunctions:dateParsingFormat` is checked for a value; if a value is
- present, it is returned. Otherwise, the value of the constant 
- `kRFC1123DateStringFormat` is returned.
+ Returns the date parsing format used by default.
+ 
+ First, the string expression `$MBMLDateFunctions:dateParsingFormat` is checked
+ for a value; if a value is present, it is returned.
+ 
+ Otherwise, the value of the constant `kRFC1123DateStringFormat` is returned.
   
  @return    The default date parsing format string.
  
@@ -54,10 +56,13 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 + (NSString*) defaultDateParsingFormat;
 
 /*!
- Returns the date parsing locale used by default. First, the MBML expression
- `$MBMLDateFunctions:dateParsingLocale` is checked for a value; if a value is
- present, it is used as the locale identifier. Otherwise, the value of the
- constant `kMBDateParsingLocaleVariableName` is used to construct the locale.
+ Returns the date parsing locale used by default.
+ 
+ First, the string expression `$MBMLDateFunctions:dateParsingLocale` is checked
+ for a value; if a value is present, it is used as the locale identifier.
+ 
+ Otherwise, the value of the constant `kMBDateParsingLocaleVariableName` is
+ used to construct the locale.
 
  If all else fails, the device's current locale is used.
   
@@ -156,9 +161,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns an `NSDate` instance representing the current date and time.
+ Returns an `NSDate` representing the current date and time.
  
- This Mockingbird function accepts no input.
+ This Mockingbird function accepts no input parameters.
  
  #### Expression usage
  
@@ -168,7 +173,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  returns an `NSDate` containing the current date and time.
  
- @return    An `NSDate` instance representing the current date and time.
+ @return    An `NSDate` instance representing the present time.
  */
 + (NSDate*) currentTime;
 
@@ -178,7 +183,7 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns the number of seconds that have elapsed since the given date in
+ Returns the number of seconds that have elapsed since the given time in
  the past.
  
  This Mockingbird function accepts a single object expression parameter
@@ -197,15 +202,18 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @return    An `NSNumber` instance containing the number of seconds since
             the input date; if the input date is in the future, the return
             value will be negative.
+
+ @see       secondsUntil:
  */
 + (id) secondsSince:(NSDate*)date;
 
 /*!
- Returns the number of seconds between now and the given date in the future.
+ Returns the number of seconds between the present time and the given time
+ in the future.
  
- This Mockingbird function accepts a single expression parameter that is 
+ This Mockingbird function accepts a single parameter: an object expression
  expected to yield an `NSDate` instance.
- 
+
  #### Expression usage
  
  The expression:
@@ -219,6 +227,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @return    An `NSNumber` instance containing the number of seconds until
             the input date; if the input date is in the past, the return
             value will be negative.
+
+ @see       secondsSince:
  */
 + (id) secondsUntil:(NSDate*)date;
 
@@ -237,19 +247,21 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The expression:
  
-    ^unixTimestampToDate($timestamp)
- 
- would return the `NSDate` representation of `$timestamp`.
- 
+    ^unixTimestampToDate(1355283900)
+
+ would return an `NSDate` representing 10:45PM ET on December 11, 2012.
+
  @param     timestamp The function's input parameter.
  
  @return    An `NSDate` instance containing the date representation of given 
             timestamp.
+ 
+ @see       dateToUnixTimestamp:
  */
 + (id) unixTimestampToDate:(id)timestamp;
 
 /*!
- Returns a UNIX timestamp representation of a given `NSDate`.
+ Returns the UNIX timestamp representation of a given `NSDate`.
  
  This Mockingbird function accepts a single input parameter: an object
  expression yielding an `NSDate` instance.
@@ -258,14 +270,16 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The expression:
  
-    ^dateToUnixTimestamp($referenceDate)
+    ^dateToUnixTimestamp(^currentTime())
  
- would return the unix timestamp representation of `$referenceDate`.
+ would return the UNIX timestamp representation of the present time.
  
  @param     date The function's input parameter.
  
- @return    An `NSNumber` instance containing the unix timestamp
+ @return    An `NSNumber` instance containing the UNIX timestamp
             representation of the input date.
+ 
+ @see       unixTimestampToDate:
  */
 + (id) dateToUnixTimestamp:(NSDate*)date;
 
@@ -275,14 +289,16 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns an `NSDate` instance representing the given date plus the specified
- number of seconds.
+ Returns an `NSDate` representing the given date plus the specified number
+ of seconds.
 
  This Mockingbird function accepts two expressions as input parameters:
 
- * an *interval seconds*, specifying the interval in seconds to add
+ * *seconds*, a numeric expression specifying the number of seconds add
+    to the *input date*
 
- * the *input date*, an `NSDate` or `NSString` that contains the date to format
+ * the *input date*, an object expression yielding an `NSDate` or date-formatted
+   `NSString` containing the date to which *seconds* will be added
 
  #### Expression usage
 
@@ -290,11 +306,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
     ^addSecondsToDate(30|^currentTime())
 
- would result in an `NSDate` 30 seconds from now.
+ would result in an `NSDate` 30 seconds from the present time.
 
  @param     params The function's input parameters.
 
- @return    An `NSDate` plus the interval in seconds.
+ @return    The adjusted date.
   */
 + (id) addSecondsToDate:(NSArray*)params;
 
@@ -306,21 +322,21 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 /*!
  Returns a string representation of the time remaining until the given date.
 
- This Mockingbird function accepts a single expression parameter that is
+ This Mockingbird function accepts a single parameter: an object expression
  expected to yield an `NSDate` instance.
 
  #### Expression usage
 
  The expression:
 
-    ^formatTimeUntil($referenceDate)
+    ^formatTimeUntil(^addSecondsToDate(300|^currentTime()))
 
- would return the time until `$referenceDate`.
+ would return the string "`5:00`", indicating that there are 5 minutes until
+ the time that's 300 seconds in the future.
 
  @param     date The function's input parameter.
 
- @return    An `NSString` instance containing the time until
-            the input date.
+ @return    An `NSString` instance containing the time until the input date.
  */
 + (id) formatTimeUntil:(NSDate*)date;
 
@@ -330,10 +346,10 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  This Mockingbird function accepts two expressions as input parameters:
 
- * the *input date*, an `NSDate` or `NSString` that contains the date to format
+ * the *input date*, an `NSDate` or date-formatted `NSString`
 
- * an *output format*, specifying the date format to be used for creating the
- returned date string
+ * the *output format* specifying the date format used to create the returned
+   date string
 
  #### Expression usage
 
@@ -354,9 +370,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  "`YYYY-MM-dd HH:mm:ss`". This format ensures allows dates to be sorted using
  simple string sorting.
 
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
 
@@ -494,9 +510,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterShortStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -519,9 +535,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterMediumStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -544,9 +560,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterLongStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -569,9 +585,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterFullStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -594,9 +610,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterShortStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -619,9 +635,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterMediumStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -644,9 +660,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterLongStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -669,9 +685,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  Accepts a date and returns a date string formatted using the
  `NSDateFormatterLongStyle` format.
  
- This Mockingbird function accepts a single expression as input, an object
- expression yielding either an `NSDate` or `NSString` containing the date to 
- format.
+ This Mockingbird function accepts a single input parameter, an object
+ expression yielding either an `NSDate` or a date-formatted `NSString`
+ containing the date to format.
 
  #### Expression usage
  
@@ -703,11 +719,11 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This Mockingbird function accepts two or three pipe-separated expressions as
  input parameters:
  
- * the *input date*, a date-formatted string to be parsed,
+ * the *input date*, a date-formatted string to be parsed
  
  * an optional *input format*, specifying the date format used by the
  *input date* parameter (if this parameter is omitted, the default format
- used is the one specified by the `defaultDateParsingFormat` method), and
+ used is the one specified by the `defaultDateParsingFormat` method)
  
  * an *output format*, specifying the date format to be used for creating the
  returned date string
@@ -723,6 +739,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @param     params The function's input parameters.
  
  @return    A date-formatted string.
+ 
+ @see       reformatDateWithLocale:
  */
 + (id) reformatDate:(NSArray*)params;
 
@@ -733,14 +751,14 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  This Mockingbird function accepts three or four pipe-separated expressions as
  input parameters:
  
- * the *input date*, a date-formatted string to be parsed,
+ * the *input date*, a date-formatted string to be parsed
  
  * the *input date locale*, a string specifying the locale identifier of the
- *input date*'s locale,
+ *input date*'s locale
 
  * an optional *input format*, specifying the date format used by the
  *input date* parameter (if this parameter is omitted, the default format
- used is the one specified by the `defaultDateParsingFormat` method), and
+ used is the one specified by the `defaultDateParsingFormat` method)
  
  * an *output format*, specifying the date format to be used for creating the
  returned date string
@@ -756,6 +774,8 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  @param     params The function's input parameters.
  
  @return    A date-formatted string.
+
+ @see       reformatDate:
  */
 + (id) reformatDateWithLocale:(NSArray*)params;
 

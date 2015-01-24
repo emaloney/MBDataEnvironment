@@ -205,7 +205,6 @@
     XCTAssertEqualObjects(removeLast, testRemoveLast,  @"Test of ^removeLastObject() failed");
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testCollectionFunctionFailures
 {
     consoleTrace();
@@ -355,7 +354,6 @@
     XCTAssertNotNil(err, @"Expected to get error for calling ^dictionary() with an odd number of parameters");
     logExpectedError(err);
 }
-#endif
 
 /******************************************************************************/
 #pragma mark MBMLDateFunctions tests
@@ -536,7 +534,6 @@
     logExpectedError(err);
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testDateFunctionFailures
 {
     //
@@ -639,7 +636,6 @@
     //
     [self _performDateFormatFailureTest:@"formatFullDateTime"];
 }
-#endif
 
 /******************************************************************************/
 #pragma mark MBMLLogicFunctions tests
@@ -679,7 +675,6 @@
     XCTAssertEqualObjects(result, @"false", @"expected result of ^if(F|true|false) to be the string \"false\"");
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testLogicFunctionFailures
 {
     //
@@ -695,7 +690,6 @@
     XCTAssertNotNil(err, @"Expected to get error for calling ^if() with four parameters");
     logExpectedError(err);
 }
-#endif
 
 /******************************************************************************/
 #pragma mark MBMLMathFunctions tests
@@ -796,7 +790,6 @@
     
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testMathFunctionFailures
 {
     //
@@ -828,7 +821,6 @@
     logExpectedError(err);
 
 }
-#endif
 
 - (void) testMathFunctionPercent
 {
@@ -850,7 +842,6 @@
     }
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testMathFunctionPercentFailures
 {
     //
@@ -881,7 +872,6 @@
     XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with an expected numeric parameter provided as a string");
     logExpectedError(err);
 }
-#endif 
 
 /******************************************************************************/
 #pragma mark MBMLRegexFunctions tests
@@ -941,7 +931,6 @@
     XCTAssertTrue([boolResult boolValue], @"unexpected result from ^matchesRegex()");
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testRegexFunctionFailures
 {
     //
@@ -1024,7 +1013,6 @@
     XCTAssertNotNil(err, @"Expected to get error for calling ^matchesRegex() with three empty parameters");
     logExpectedError(err);
 }
-#endif
 
 /******************************************************************************/
 #pragma mark MBMLStringFunctions tests
@@ -1235,7 +1223,6 @@
     XCTAssertEqualObjects(range, expected, @"unexpected result for ^rangeOfString()");
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testStringFunctionFailures
 {
     // note: not every string function reports errors;
@@ -1359,7 +1346,6 @@
     XCTAssertNotNil(err, @"Expected to get error for calling ^rangeOfString() with nil 2nd parameter");
     logExpectedError(err);
 }
-#endif
 
 /******************************************************************************/
 #pragma mark MBMLDataProcessingFunctions tests
@@ -1501,12 +1487,10 @@
     XCTAssertEqualObjects([NSNumber numberWithInt:4], reduced, @"expected the result to be the sum of the lengths of the strings");
 }
 
-#if TEST_EXPECTED_FAILURES
 - (void) testDataProcessingFunctionFailures
 {
     
 }
-#endif
 
 /******************************************************************************/
 #pragma mark Regression tests

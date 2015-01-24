@@ -32,8 +32,8 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Determines whether a given object instance is a collection, that is, of type
- `NSSet`, `NSArray` or `NSDictionary`.
+ Determines whether a given object is considered a *collection*; that is, an
+ instance of `NSSet`, `NSArray` or `NSDictionary`.
  
  This Mockingbird function accepts a single parameter: an object expression
  yielding the instance to be tested.
@@ -48,7 +48,9 @@
  
  @param     param The function's input parameter.
  
- @return    A boolean result, contained in an `NSNumber`.
+ @return    `@YES` if `param` represents a collection object, `@NO` otherwise.
+ 
+ @see       isSet:, isArray:, isDictionary:
  */
 + (NSNumber*) isCollection:(id)param;
 
@@ -64,11 +66,13 @@
  
     ^isSet($cities)
 
- would return the value `@YES`.
+ would return the value `@NO`.
 
  @param     param The function's input parameter.
  
- @return    A boolean result, contained in an `NSNumber`.
+ @return    `@YES` if `param` represents an `NSSet`, `@NO` otherwise.
+ 
+ @see       isCollection:, isArray:, isDictionary:
  */
 + (NSNumber*) isSet:(id)param;
 
@@ -88,7 +92,9 @@
 
  @param     param The function's input parameter.
  
- @return    A boolean result, contained in an `NSNumber`.
+ @return    `@YES` if `param` represents an `NSDictionary`, `@NO` otherwise.
+ 
+ @see       isCollection:, isArray:, isSet:
  */
 + (NSNumber*) isDictionary:(id)param;
 
@@ -108,7 +114,9 @@
 
  @param     param The function's input parameter.
  
- @return    A boolean result, contained in an `NSNumber`.
+ @return    `@YES` if `param` represents an `NSArray`, `@NO` otherwise.
+
+ @see       isCollection:, isSet:, isDictionary:
  */
 + (NSNumber*) isArray:(id)param;
 
@@ -150,11 +158,10 @@
  This Mockingbird function accepts two or more pipe-separated expressions 
  as parameters:
  
- * The *array* expression, which should evaluate to an `NSArray` instance,
- and
+ * The *array* expression, which should evaluate to an `NSArray` instance
  
- * One or more *object* expressions, which should evaluate to the object(s)
- to be removed from the array.
+ * One or more *items to be removed*, object expressions yielding the item(s)
+   to be removed from the array
  
  #### Expression usage
  
@@ -169,6 +176,8 @@
  
  @return    An array containing the items in the input array, with the
             specified items removed.
+
+ @see       removeObjectAtIndex:, removeLastObject:
  */
 + (id) removeObject:(NSArray*)params;
 
@@ -179,11 +188,10 @@
  This Mockingbird function accepts two pipe-separated expressions as
  parameters:
 
- * The *array* expression, which should evaluate to an `NSArray` instance,
- and
- 
- * An *index* expression, which should evaluate to a number specifying the
- array index of the object to remove.
+ * The *array* expression, which should evaluate to an `NSArray` instance
+
+ * The *index*, a numeric expression that specifies the array index of the
+   object to remove
  
  #### Expression usage
  
@@ -198,22 +206,23 @@
  
  @return    An array containing the items in the input array, with the
             specified item removed.
+
+ @see       removeObject:, removeLastObject:
  */
 + (id) removeObjectAtIndex:(NSArray*)params;
 
 /*!
- Creates and returns a new `NSArray` instance by adding one or more items to
- the end of the input array.
+ Creates and returns a new `NSArray` by adding one or more items to the end of
+ an input array.
  
  This Mockingbird function accepts two or more pipe-separated expressions
  as parameters:
 
- * The *array* expression, which should evaluate to an `NSArray` instance,
- and
- 
- * One or more *object* expressions, which yield the object(s) to append to
- the array.
- 
+ * The *array* expression, which should evaluate to an `NSArray` instance
+
+ * One or more *items to be added*, object expressions yielding the item(s)
+   to be appended to the array
+
  #### Expression usage
  
  Assume `$cities` is an array containing the values "`New York`", "`London`",
@@ -228,30 +237,32 @@
  
  @return    An array containing the items in the input array, with the
             specified item(s) appended.
+ 
+ @see       insertObjectAtIndex:
  */
 + (id) appendObject:(NSArray*)params;
 
 /*!
- Creates and returns a new `NSArray` instance by inserting an item into the
+ Creates and returns a new `NSArray` instance by inserting an item into an
  input array.
  
  This Mockingbird function accepts three pipe-separated expressions as
  parameters:
 
- * The *array* expression, which should evaluate to an `NSArray` instance,
+ * The *array*, an object expression expected to yield an `NSArray` instance
  
- * An *object* expression, which yields the object to be inserted into the
- array, and
+ * The *insert item*, an expression that yields the object to be inserted into 
+   the array
  
  * The *index* expression, which should evaluate to a numeric value specifying
- the array index into which the object should be inserted.
+   the array index into which the object should be inserted
   
  #### Expression usage
  
  Assume `$cities` is an array containing the values "`New York`", "`London`",
  and "`Boston`". The expression:
 
-    ^insertObject($cities|Chicago|1)
+    ^insertObjectAtIndex($cities|Chicago|1)
  
  would return an array containing the values "`New York`", "`Chicago`", 
  "`London`", and "`Boston`".
@@ -263,6 +274,8 @@
 
  @warning   An error will be logged to the console if the index is out-of-range
             for the given array.
+ 
+ @see       appendObject:
  */
 + (id) insertObjectAtIndex:(NSArray*)params;
 
@@ -272,7 +285,8 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns an `NSArray` containing the result of each input parameter expression.
+ Returns an `NSArray` containing the result of evaluating each input parameter
+ as an object expression.
 
  This Mockingbird function accepts zero or more pipe-separated expressions as 
  parameters. If zero parameters are provided, an empty array is returned.
@@ -288,11 +302,14 @@
  @param     params The function's input parameters.
  
  @return    An array containing the value of each input parameter expression.
+
+ @see       dictionary:, set:
  */
 + (id) array:(NSArray*)params;
 
 /*!
- Returns an `NSSet` containing the result of each input parameter expression.
+ Returns an `NSSet` containing the result of evaluating each input parameter
+ as an object expression.
 
  This Mockingbird function accepts zero or more pipe-separated expressions as
  parameters. If zero parameters are provided, an empty set is returned.
@@ -308,6 +325,8 @@
  @param     params The function's input parameters.
  
  @return    A set containing the value of each input parameter expression.
+
+ @see       dictionary:, array:
  */
 + (id) set:(NSArray*)params;
 
@@ -315,15 +334,15 @@
  Creates a new `NSDictionary` instance containing the items provided as 
  keys and values.
  
- This Mockingbird function accepts zero or more pipe-separated expressions as
- parameters:
+ This Mockingbird function accepts zero or more pipe-separated object 
+ expressions as parameters:
  
  * If zero parameters are provided, an empty dictionary is returned.
  
  * If more than zero parameters are provided, the function will expect an even
- number of parameters, where the first item in each pair of parameters is an
- expression representing dictionary *key*, followed by an expression 
- representing the corresponding *value* for that key.
+ number of parameters representing key/value pairs. The first item in each pair
+ is an expression yielding the dictionary *key*, and the second item is an
+ expression yielding the corresponding *value* for that key.
  
  #### Expression usage
 
@@ -331,12 +350,16 @@
  
     ^dictionary(firstKey|The first item|secondKey|item 2)
  
- would return an `NSDictionary` containing the key "`firstKey`" having the
- value "`The first item`" and "`secondKey`" having the value "`item 2`".
+ would return an `NSDictionary` containing two key/value pairs:
+ 
+ * The key "`firstKey`" has the value "`The first item`"
+ * The key "`secondKey`" has the value "`item 2`"
  
  @param     params The function's input parameters.
  
  @return    A dictionary containing the specified key/value pairs.
+ 
+ @see       set:, array:
  */
 + (id) dictionary:(NSArray*)params;
 
@@ -389,8 +412,9 @@
 + (id) values:(NSDictionary*)dict;
 
 /*!
- Removes the last object in an array and returns the resulting array.
- 
+ Creates and returns a new `NSArray` instance by removing the last object
+ from the input array.
+
  This Mockingbird function accepts a single parameter: an object expression
  yielding an `NSArray` instance.
 
@@ -409,6 +433,8 @@
             be an array.
  
  @return    A copy of the input array, with the last item removed.
+
+ @see       removeObject:, removeObjectAtIndex:
  */
 + (id) removeLastObject:(id)array;
 
@@ -440,16 +466,16 @@
  Returns the index of a specified value within an array, or `-1` if the
  value is not found.
  
- This Mockingbird function accepts two pipe-separated expressions as parameters:
+ This Mockingbird function accepts two pipe-separated object expressions
+ as parameters:
  
- * An *array* expression, which should evaluate to an `NSArray` instance
+ * The *array*, expected to yield an `NSArray` instance
  
- * The *value*, an expression yielding a value that will be searched for in the
- array
+ * The *value*, the object whose array index is sought
  
  #### Expression usage
 
- Assume that the object expression `$colors` yields an array containing the
+ Assume that the expression `$colors` yields an array containing the
  values "`red`", "`yellow`", "`green`", and "`blue`" in that order.
 
  The expression:
@@ -467,10 +493,13 @@
 + (id) indexOf:(NSArray*)params;
 
 /*!
- Returns an immutable copy of an object adopting the `NSCopying` protocol.
+ Returns a copy of an object adopting the `NSCopying` protocol.
  
- This Mockingbird function accepts a single object expression parameter
- yielding the object instance to be copied.
+ If the input object is mutable and is subsequently modified, the copy would be
+ unaffected.
+
+ This Mockingbird function accepts a single parameter: an expression yielding
+ the object instance to be copied.
  
  #### Expression usage
  
@@ -479,22 +508,26 @@
 
     ^copy($array)
 
- Assuming the object expression `$array` yields an `NSArray`, the expression
- above would return an `NSArray` containing the same contents as the original
- array. If the original array is subsequently modified, the copy would be
- unaffected.
+ Assuming `$array` yields an `NSArray`, the expression above would return a
+ new `NSArray` containing the same items as `$array`.
+
+ @param     param The function's input parameter.
  
- @param     param The function's input parameters.
- 
- @return    A copy of the object yielded by the input parameter expression.
+ @return    A copy of the object yielded by the input expression.
+
+ @see       mutableCopyOf:
  */
 + (id) copyOf:(id)param;
 
 /*!
  Returns a mutable copy of an object adopting the `NSMutableCopying` protocol.
 
- This Mockingbird function accepts a single object expression parameter
- yielding the object instance to be copied.
+ If the input object is mutable and is subsequently modified, the copy would be
+ unaffected. Similarly, if the copy is modified, the input object would be
+ unaffected.
+
+ This Mockingbird function accepts a single parameter: an expression yielding
+ the object instance to be copied.
 
  #### Expression usage
 
@@ -503,31 +536,31 @@
 
     ^mutableCopy($array)
 
- Assuming that the object expression `$array` yields an `NSArray`, the
- expression above would return an `NSMutableArray` containing the same contents
- as the original array. If the original array is subsequently modified, the
- copy would be unaffected. Similarly, if the copy is modified, the original
- array would be unaffected.
+ Assuming `$array` yields an `NSArray`, the expression above would return a
+ new `NSMutableArray` containing the same items as `$array`.
+
+ @param     param The function's input parameter.
  
- @param     param The function's input parameters.
- 
- @return    A mutable copy of the object yielded by the input parameter
-            expression.
+ @return    A mutable copy of the object yielded by the input expression.
+
+ @see       copyOf:
  */
 + (id) mutableCopyOf:(id)param;
 
 /*!
- Retrieves a value from an object using key-value coding (KVC).
- 
+ Uses key-value coding (KVC) to retrieve the *value* for a given *key* from
+ a *target object*.
+
  This Mockingbird function accepts two or three pipe-separated expressions as
  parameters:
  
- * An *object* expression, which yields the object whose key will be queried,
+ * The *target*, an object expression yielding the object whose key will be
+   queried
+
+ * The *key*, a string expression
  
- * A *key* expression, which should evaluate to a string representing a key, and
- 
- * An optional *default value* expression, which will be returned if the
- object does not possess a value for the specified key.
+ * An optional *default value*, an object expression whose result will be
+   returned if *target* does not possess a value for *key*
  
  #### Expression usage
 

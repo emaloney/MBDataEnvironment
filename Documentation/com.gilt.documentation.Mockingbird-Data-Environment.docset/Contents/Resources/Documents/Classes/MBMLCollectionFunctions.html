@@ -386,8 +386,8 @@ file.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates and returns a new <code>NSArray</code> instance by adding one or more items to
-the end of the input array.</p>
+		<p>Creates and returns a new <code>NSArray</code> by adding one or more items to the end of
+an input array.</p>
 	</div>		
 	
     
@@ -424,10 +424,9 @@ the end of the input array.</p>
 as parameters:</p>
 
 <ul>
-<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,
-and</p></li>
-<li><p>One or more <em>object</em> expressions, which yield the object(s) to append to
-the array.</p></li>
+<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance</p></li>
+<li><p>One or more <em>items to be added</em>, object expressions yielding the item(s)
+ to be appended to the array</p></li>
 </ul>
 
 
@@ -447,6 +446,15 @@ and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/insertObjectAtIndex:">+ insertObjectAtIndex:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -464,7 +472,8 @@ and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an <code>NSArray</code> containing the result of each input parameter expression.</p>
+		<p>Returns an <code>NSArray</code> containing the result of evaluating each input parameter
+as an object expression.</p>
 	</div>		
 	
     
@@ -513,6 +522,15 @@ parameters. If zero parameters are provided, an empty array is returned.</p>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/dictionary:">+ dictionary:</a>, <a href="#//api/name/set:">+ set:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -530,7 +548,7 @@ parameters. If zero parameters are provided, an empty array is returned.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an immutable copy of an object adopting the <code>NSCopying</code> protocol.</p>
+		<p>Returns a copy of an object adopting the <code>NSCopying</code> protocol.</p>
 	</div>		
 	
     
@@ -544,7 +562,7 @@ parameters. If zero parameters are provided, an empty array is returned.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>param</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
 		</dl>
 		
 	</div>
@@ -553,7 +571,7 @@ parameters. If zero parameters are provided, an empty array is returned.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A copy of the object yielded by the input parameter expression.</p>
+		<p>A copy of the object yielded by the input expression.</p>
 	</div>
 	
 	
@@ -562,8 +580,11 @@ parameters. If zero parameters are provided, an empty array is returned.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single object expression parameter
-yielding the object instance to be copied.</p>
+		<p>If the input object is mutable and is subsequently modified, the copy would be
+unaffected.</p>
+
+<p>This Mockingbird function accepts a single parameter: an expression yielding
+the object instance to be copied.</p>
 
 <h4>Expression usage</h4>
 
@@ -573,15 +594,22 @@ name that differs from that of its implementing method:</p>
 <pre><code>^copy($array)
 </code></pre>
 
-<p>Assuming the object expression <code>$array</code> yields an <code>NSArray</code>, the expression
-above would return an <code>NSArray</code> containing the same contents as the original
-array. If the original array is subsequently modified, the copy would be
-unaffected.</p>
+<p>Assuming <code>$array</code> yields an <code>NSArray</code>, the expression above would return a
+new <code>NSArray</code> containing the same items as <code>$array</code>.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/mutableCopyOf:">+ mutableCopyOf:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -700,15 +728,15 @@ keys and values.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts zero or more pipe-separated expressions as
-parameters:</p>
+		<p>This Mockingbird function accepts zero or more pipe-separated object
+expressions as parameters:</p>
 
 <ul>
 <li><p>If zero parameters are provided, an empty dictionary is returned.</p></li>
 <li><p>If more than zero parameters are provided, the function will expect an even
-number of parameters, where the first item in each pair of parameters is an
-expression representing dictionary <em>key</em>, followed by an expression
-representing the corresponding <em>value</em> for that key.</p></li>
+number of parameters representing key/value pairs. The first item in each pair
+is an expression yielding the dictionary <em>key</em>, and the second item is an
+expression yielding the corresponding <em>value</em> for that key.</p></li>
 </ul>
 
 
@@ -719,13 +747,27 @@ representing the corresponding <em>value</em> for that key.</p></li>
 <pre><code>^dictionary(firstKey|The first item|secondKey|item 2)
 </code></pre>
 
-<p>would return an <code>NSDictionary</code> containing the key &ldquo;<code>firstKey</code>&rdquo; having the
-value &ldquo;<code>The first item</code>&rdquo; and &ldquo;<code>secondKey</code>&rdquo; having the value &ldquo;<code>item 2</code>&rdquo;.</p>
+<p>would return an <code>NSDictionary</code> containing two key/value pairs:</p>
+
+<ul>
+<li>The key &ldquo;<code>firstKey</code>&rdquo; has the value &ldquo;<code>The first item</code>&rdquo;</li>
+<li>The key &ldquo;<code>secondKey</code>&rdquo; has the value &ldquo;<code>item 2</code>&rdquo;</li>
+</ul>
+
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/set:">+ set:</a>, <a href="#//api/name/array:">+ array:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -744,7 +786,8 @@ value &ldquo;<code>The first item</code>&rdquo; and &ldquo;<code>secondKey</code
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Retrieves a value from an object using key-value coding (KVC).</p>
+		<p>Uses key-value coding (KVC) to retrieve the <em>value</em> for a given <em>key</em> from
+a <em>target object</em>.</p>
 	</div>		
 	
     
@@ -782,10 +825,11 @@ value &ldquo;<code>The first item</code>&rdquo; and &ldquo;<code>secondKey</code
 parameters:</p>
 
 <ul>
-<li><p>An <em>object</em> expression, which yields the object whose key will be queried,</p></li>
-<li><p>A <em>key</em> expression, which should evaluate to a string representing a key, and</p></li>
-<li><p>An optional <em>default value</em> expression, which will be returned if the
-object does not possess a value for the specified key.</p></li>
+<li><p>The <em>target</em>, an object expression yielding the object whose key will be
+ queried</p></li>
+<li><p>The <em>key</em>, a string expression</p></li>
+<li><p>An optional <em>default value</em>, an object expression whose result will be
+ returned if <em>target</em> does not possess a value for <em>key</em></p></li>
 </ul>
 
 
@@ -860,18 +904,18 @@ value is not found.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two pipe-separated expressions as parameters:</p>
+		<p>This Mockingbird function accepts two pipe-separated object expressions
+as parameters:</p>
 
 <ul>
-<li><p>An <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance</p></li>
-<li><p>The <em>value</em>, an expression yielding a value that will be searched for in the
-array</p></li>
+<li><p>The <em>array</em>, expected to yield an <code>NSArray</code> instance</p></li>
+<li><p>The <em>value</em>, the object whose array index is sought</p></li>
 </ul>
 
 
 <h4>Expression usage</h4>
 
-<p>Assume that the object expression <code>$colors</code> yields an array containing the
+<p>Assume that the expression <code>$colors</code> yields an array containing the
 values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo;<code>green</code>&rdquo;, and &ldquo;<code>blue</code>&rdquo; in that order.</p>
 
 <p>The expression:</p>
@@ -904,7 +948,7 @@ in <code>$colors</code> at array index <code>1</code>.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates and returns a new <code>NSArray</code> instance by inserting an item into the
+		<p>Creates and returns a new <code>NSArray</code> instance by inserting an item into an
 input array.</p>
 	</div>		
 	
@@ -942,11 +986,11 @@ input array.</p>
 parameters:</p>
 
 <ul>
-<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,</p></li>
-<li><p>An <em>object</em> expression, which yields the object to be inserted into the
-array, and</p></li>
+<li><p>The <em>array</em>, an object expression expected to yield an <code>NSArray</code> instance</p></li>
+<li><p>The <em>insert item</em>, an expression that yields the object to be inserted into
+ the array</p></li>
 <li><p>The <em>index</em> expression, which should evaluate to a numeric value specifying
-the array index into which the object should be inserted.</p></li>
+ the array index into which the object should be inserted</p></li>
 </ul>
 
 
@@ -955,7 +999,7 @@ the array index into which the object should be inserted.</p></li>
 <p>Assume <code>$cities</code> is an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>London</code>&rdquo;,
 and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 
-<pre><code>^insertObject($cities|Chicago|1)
+<pre><code>^insertObjectAtIndex($cities|Chicago|1)
 </code></pre>
 
 <p>would return an array containing the values &ldquo;<code>New York</code>&rdquo;, &ldquo;<code>Chicago</code>&rdquo;,
@@ -966,6 +1010,15 @@ and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/appendObject:">+ appendObject:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1007,7 +1060,7 @@ and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A boolean result, contained in an <code>NSNumber</code>.</p>
+		<p><code>@YES</code> if <code>param</code> represents an <code>NSArray</code>, <code>@NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -1033,6 +1086,15 @@ yielding the instance to be tested.</p>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/isCollection:">+ isCollection:</a>, <a href="#//api/name/isSet:">+ isSet:</a>, <a href="#//api/name/isDictionary:">+ isDictionary:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -1050,8 +1112,8 @@ yielding the instance to be tested.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Determines whether a given object instance is a collection, that is, of type
-<code>NSSet</code>, <code>NSArray</code> or <code>NSDictionary</code>.</p>
+		<p>Determines whether a given object is considered a <em>collection</em>; that is, an
+instance of <code>NSSet</code>, <code>NSArray</code> or <code>NSDictionary</code>.</p>
 	</div>		
 	
     
@@ -1074,7 +1136,7 @@ yielding the instance to be tested.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A boolean result, contained in an <code>NSNumber</code>.</p>
+		<p><code>@YES</code> if <code>param</code> represents a collection object, <code>@NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -1099,6 +1161,15 @@ yielding the instance to be tested.</p>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/isSet:">+ isSet:</a>, <a href="#//api/name/isArray:">+ isArray:</a>, <a href="#//api/name/isDictionary:">+ isDictionary:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1140,7 +1211,7 @@ yielding the instance to be tested.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A boolean result, contained in an <code>NSNumber</code>.</p>
+		<p><code>@YES</code> if <code>param</code> represents an <code>NSDictionary</code>, <code>@NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -1165,6 +1236,15 @@ yielding the instance to be tested.</p>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/isCollection:">+ isCollection:</a>, <a href="#//api/name/isArray:">+ isArray:</a>, <a href="#//api/name/isSet:">+ isSet:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1206,7 +1286,7 @@ yielding the instance to be tested.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A boolean result, contained in an <code>NSNumber</code>.</p>
+		<p><code>@YES</code> if <code>param</code> represents an <code>NSSet</code>, <code>@NO</code> otherwise.</p>
 	</div>
 	
 	
@@ -1225,12 +1305,21 @@ yielding the instance to be tested.</p>
 <pre><code>^isSet($cities)
 </code></pre>
 
-<p>would return the value <code>@YES</code>.</p>
+<p>would return the value <code>@NO</code>.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/isCollection:">+ isCollection:</a>, <a href="#//api/name/isArray:">+ isArray:</a>, <a href="#//api/name/isDictionary:">+ isDictionary:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1410,7 +1499,7 @@ values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>param</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
 		</dl>
 		
 	</div>
@@ -1419,8 +1508,7 @@ values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A mutable copy of the object yielded by the input parameter
-            expression.</p>
+		<p>A mutable copy of the object yielded by the input expression.</p>
 	</div>
 	
 	
@@ -1429,8 +1517,12 @@ values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single object expression parameter
-yielding the object instance to be copied.</p>
+		<p>If the input object is mutable and is subsequently modified, the copy would be
+unaffected. Similarly, if the copy is modified, the input object would be
+unaffected.</p>
+
+<p>This Mockingbird function accepts a single parameter: an expression yielding
+the object instance to be copied.</p>
 
 <h4>Expression usage</h4>
 
@@ -1440,16 +1532,22 @@ name that differs from that of its implementing method:</p>
 <pre><code>^mutableCopy($array)
 </code></pre>
 
-<p>Assuming that the object expression <code>$array</code> yields an <code>NSArray</code>, the
-expression above would return an <code>NSMutableArray</code> containing the same contents
-as the original array. If the original array is subsequently modified, the
-copy would be unaffected. Similarly, if the copy is modified, the original
-array would be unaffected.</p>
+<p>Assuming <code>$array</code> yields an <code>NSArray</code>, the expression above would return a
+new <code>NSMutableArray</code> containing the same items as <code>$array</code>.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/copyOf:">+ copyOf:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1468,7 +1566,8 @@ array would be unaffected.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Removes the last object in an array and returns the resulting array.</p>
+		<p>Creates and returns a new <code>NSArray</code> instance by removing the last object
+from the input array.</p>
 	</div>		
 	
     
@@ -1520,6 +1619,15 @@ values &ldquo;<code>red</code>&rdquo;, &ldquo;<code>yellow</code>&rdquo;, &ldquo
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/removeObject:">+ removeObject:</a>, <a href="#//api/name/removeObjectAtIndex:">+ removeObjectAtIndex:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1576,10 +1684,9 @@ one or more objects from an input array.</p>
 as parameters:</p>
 
 <ul>
-<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,
-and</p></li>
-<li><p>One or more <em>object</em> expressions, which should evaluate to the object(s)
-to be removed from the array.</p></li>
+<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance</p></li>
+<li><p>One or more <em>items to be removed</em>, object expressions yielding the item(s)
+ to be removed from the array</p></li>
 </ul>
 
 
@@ -1597,6 +1704,15 @@ to be removed from the array.</p></li>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/removeObjectAtIndex:">+ removeObjectAtIndex:</a>, <a href="#//api/name/removeLastObject:">+ removeLastObject:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1653,10 +1769,9 @@ given index from the input array.</p>
 parameters:</p>
 
 <ul>
-<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance,
-and</p></li>
-<li><p>An <em>index</em> expression, which should evaluate to a number specifying the
-array index of the object to remove.</p></li>
+<li><p>The <em>array</em> expression, which should evaluate to an <code>NSArray</code> instance</p></li>
+<li><p>The <em>index</em>, a numeric expression that specifies the array index of the
+ object to remove</p></li>
 </ul>
 
 
@@ -1675,6 +1790,15 @@ and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/removeObject:">+ removeObject:</a>, <a href="#//api/name/removeLastObject:">+ removeLastObject:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -1692,7 +1816,8 @@ and &ldquo;<code>Boston</code>&rdquo;. The expression:</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns an <code>NSSet</code> containing the result of each input parameter expression.</p>
+		<p>Returns an <code>NSSet</code> containing the result of evaluating each input parameter
+as an object expression.</p>
 	</div>		
 	
     
@@ -1740,6 +1865,15 @@ parameters. If zero parameters are provided, an empty set is returned.</p>
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/dictionary:">+ dictionary:</a>, <a href="#//api/name/array:">+ array:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -1845,7 +1979,7 @@ mapping of people&rsquo;s names (keys) to their ages (values). The expression:</
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-23)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-24)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

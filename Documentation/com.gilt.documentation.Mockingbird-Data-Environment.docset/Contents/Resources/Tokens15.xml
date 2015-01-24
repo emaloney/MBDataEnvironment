@@ -15,11 +15,7 @@ date manipulation tools.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/defaultDateParsingFormat</TokenIdentifier>
-			<Abstract type="html">Returns the date parsing format used by default. First, the MBML expression
-$MBMLDateFunctions:dateParsingFormat is checked for a value; if a value is
-present, it is returned. Otherwise, the value of the constant
-kRFC1123DateStringFormat is returned.
-  </Abstract>
+			<Abstract type="html">Returns the date parsing format used by default.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSString *)defaultDateParsingFormat</Declaration>
@@ -31,10 +27,7 @@ kRFC1123DateStringFormat is returned.
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/defaultDateParsingLocale</TokenIdentifier>
-			<Abstract type="html">Returns the date parsing locale used by default. First, the MBML expression
-$MBMLDateFunctions:dateParsingLocale is checked for a value; if a value is
-present, it is used as the locale identifier. Otherwise, the value of the
-constant kMBDateParsingLocaleVariableName is used to construct the locale.</Abstract>
+			<Abstract type="html">Returns the date parsing locale used by default.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSLocale *)defaultDateParsingLocale</Declaration>
@@ -155,22 +148,27 @@ method defaultDateParsingFormat.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/currentTime</TokenIdentifier>
-			<Abstract type="html">Returns an NSDate instance representing the current date and time.</Abstract>
+			<Abstract type="html">Returns an NSDate representing the current date and time.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (NSDate *)currentTime</Declaration>
 			
-			<ReturnValue><Abstract type="html">An NSDate instance representing the current date and time.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An NSDate instance representing the present time.</Abstract></ReturnValue>
 			<Anchor>//api/name/currentTime</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsSince:</TokenIdentifier>
-			<Abstract type="html">Returns the number of seconds that have elapsed since the given date in
+			<Abstract type="html">Returns the number of seconds that have elapsed since the given time in
 the past.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsUntil:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)secondsSince:(NSDate *)date</Declaration>
 			<Parameters>
 				<Parameter>
@@ -187,9 +185,15 @@ the past.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsUntil:</TokenIdentifier>
-			<Abstract type="html">Returns the number of seconds between now and the given date in the future.</Abstract>
+			<Abstract type="html">Returns the number of seconds between the present time and the given time
+in the future.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsSince:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)secondsUntil:(NSDate *)date</Declaration>
 			<Parameters>
 				<Parameter>
@@ -209,6 +213,11 @@ the past.</Abstract>
 			<Abstract type="html">Converts a UNIX timestamp into an NSDate.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/dateToUnixTimestamp:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)unixTimestampToDate:(id)timestamp</Declaration>
 			<Parameters>
 				<Parameter>
@@ -224,9 +233,14 @@ the past.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/dateToUnixTimestamp:</TokenIdentifier>
-			<Abstract type="html">Returns a UNIX timestamp representation of a given NSDate.</Abstract>
+			<Abstract type="html">Returns the UNIX timestamp representation of a given NSDate.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/unixTimestampToDate:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)dateToUnixTimestamp:(NSDate *)date</Declaration>
 			<Parameters>
 				<Parameter>
@@ -234,7 +248,7 @@ the past.</Abstract>
 					<Abstract type="html">The function&apos;s input parameter.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber instance containing the unix timestamp
+			<ReturnValue><Abstract type="html">An NSNumber instance containing the UNIX timestamp
             representation of the input date.</Abstract></ReturnValue>
 			<Anchor>//api/name/dateToUnixTimestamp:</Anchor>
             <NodeRef refid="15"/>
@@ -242,8 +256,8 @@ the past.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/addSecondsToDate:</TokenIdentifier>
-			<Abstract type="html">Returns an NSDate instance representing the given date plus the specified
-number of seconds.</Abstract>
+			<Abstract type="html">Returns an NSDate representing the given date plus the specified number
+of seconds.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)addSecondsToDate:(NSArray *)params</Declaration>
@@ -253,7 +267,7 @@ number of seconds.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSDate plus the interval in seconds.
+			<ReturnValue><Abstract type="html">The adjusted date.
   </Abstract></ReturnValue>
 			<Anchor>//api/name/addSecondsToDate:</Anchor>
             <NodeRef refid="15"/>
@@ -271,8 +285,7 @@ number of seconds.</Abstract>
 					<Abstract type="html">The function&apos;s input parameter.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSString instance containing the time until
-            the input date.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An NSString instance containing the time until the input date.</Abstract></ReturnValue>
 			<Anchor>//api/name/formatTimeUntil:</Anchor>
             <NodeRef refid="15"/>
 		</Token>
@@ -536,6 +549,11 @@ NSDateFormatterLongStyle format.</Abstract>
 another format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDateWithLocale:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)reformatDate:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -554,6 +572,11 @@ another format.</Abstract>
 that input string—and converts the input into a date string of another format.</Abstract>
 			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDate:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)reformatDateWithLocale:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
