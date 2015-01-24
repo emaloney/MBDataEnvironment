@@ -392,7 +392,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  
  @param     value The new value for the MBML variable.
  
- @param     variableName The name of the attribute whose value is to be set.
+ @param     variableName The name of the variable whose value is to be set.
  */
 - (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
 
