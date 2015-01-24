@@ -158,4 +158,18 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
     }
 }
 
+/******************************************************************************/
+#pragma mark Keyed subscripting support
+/******************************************************************************/
+
+- (id) objectForKeyedSubscript:(NSString*)variableName
+{
+    return self.variableSpace[variableName];
+}
+
+- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName
+{
+    [self setScopedVariable:variableName value:value];
+}
+
 @end

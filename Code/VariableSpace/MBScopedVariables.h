@@ -6,10 +6,9 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-@class MBVariableSpace;
-@class MBScopedVariables;
-
 #import <MBToolbox/MBFormattedDescriptionObject.h>
+
+@class MBVariableSpace;
 
 /******************************************************************************/
 #pragma mark -
@@ -167,5 +166,45 @@
  `unsetScopedVariables` method is called.
  */
 - (void) reapplyScopedVariables;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Keyed subscripting support
+/*!    @name Keyed subscripting support                                       */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Allows accessing scoped variable values using the Objective-C keyed
+ subscripting notation.
+
+ For example, the following expression:
+
+ [MBScopedVariables currentVariableScope][@"tempVar"]
+
+ would yield the in-scope value of the MBML variable named `tempVar`.
+
+ @param     variableName The name of the scoped variable whose value is to be
+            retrieved.
+
+ @return    The in-scope value of the MBML variable named `variableName`.
+ */
+- (id) objectForKeyedSubscript:(NSString*)variableName;
+
+/*!
+ Allows setting a scoped variable value using the Objective-C keyed
+ subscripting notation.
+
+ For example, the following expression:
+
+ [MBScopedVariables currentVariableScope][@"tempVar"] = @"will go away"
+
+ would set the in-scope value of the MBML variable named `tempVar` to the
+ string "`will go away`".
+
+ @param     value The new value for the MBML variable.
+
+ @param     variableName The name of the scoped variable whose value is to be
+            set.
+ */
+- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
 
 @end
