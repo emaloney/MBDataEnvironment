@@ -467,7 +467,7 @@ notation.</Abstract>
 					<Abstract type="html">The new value for the MBML variable.</Abstract>
 				</Parameter><Parameter>
 					<Name>variableName</Name>
-					<Abstract type="html">The name of the attribute whose value is to be set.</Abstract>
+					<Abstract type="html">The name of the variable whose value is to be set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
