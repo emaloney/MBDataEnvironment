@@ -1,6 +1,6 @@
 //
 //  MockingbirdTestSuite.m
-//  MockingbirdTests
+//  Mockingbird Data Environment Unit Tests
 //
 //  Created by Evan Coyne Maloney on 1/25/12.
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
@@ -30,6 +30,19 @@
 
     [MBEnvironment loadFromManifestFile:@"test-app-data.xml"
                     withSearchDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
+
+    MBVariableSpace* vars = [MBVariableSpace instance];
+    CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
+    NSValue* rectVal = [NSValue valueWithCGRect:rect];
+    [vars setVariable:@"rect:val" value:rectVal];
+
+    CGPoint origin = [MBStringConversions pointFromExpression:@"$rect:origin"];
+    NSValue* originVal = [NSValue valueWithCGPoint:origin];
+    [vars setVariable:@"rect:origin:val" value:originVal];
+
+    CGSize size = [MBStringConversions sizeFromExpression:@"$rect:size"];
+    NSValue* sizeVal = [NSValue valueWithCGSize:size];
+    [vars setVariable:@"rect:size:val" value:sizeVal];
 }
 
 // note: a number of tests will rely on the sanity of this data; if this
@@ -63,6 +76,10 @@
     NSArray* testList = [MBExpression asObject:@"$nameList"];
     XCTAssertTrue([testList isKindOfClass:[NSArray class]], @"expected result of $nameList to be an NSArray");
     XCTAssertTrue([testList count] == 6, @"Number of values in $nameList not correct");
+
+    CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
+    XCTAssertTrue(!CGRectEqualToRect(rect, CGRectZero));
+    XCTAssertTrue(CGRectEqualToRect(rect, CGRectMake(10, 50, 300, 200)));
 }
 
 - (void) setUp
@@ -70,7 +87,7 @@
     debugTrace();
 
     [super setUp];
-    [self fixBundle];
+
     [self setUpAppData];
 }
 
@@ -79,22 +96,6 @@
     debugTrace();
 
     [super tearDown];
-}
-
-- (void) fixBundle
-{
-    // [NSBundle mainBundle] doesn't return the XCTest bundle.
-    // So we replace the mainBundle class method of NSBundle, with our testBundle method implementation.
-
-    Method mainBundle = class_getClassMethod(NSBundle.class, @selector(mainBundle));
-    Method testBundle = class_getInstanceMethod(self.class, @selector(testBundle));
-    IMP testBundleIMP = method_getImplementation(testBundle);
-    method_setImplementation(mainBundle, testBundleIMP);
-}
-
-- (NSBundle *) testBundle
-{
-    return [NSBundle bundleForClass:MockingbirdTestSuite.class];
 }
 
 @end

@@ -1,6 +1,6 @@
 //
 //  MBMLFontFunctionTests.m
-//  MockingbirdTests
+//  Mockingbird Data Environment Unit Tests
 //
 //  Created by Evan Coyne Maloney on 1/23/15.
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.

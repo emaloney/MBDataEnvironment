@@ -1,6 +1,6 @@
 //
 //  MBMLFunctionTests.m
-//  MockingbirdTests
+//  Mockingbird Data Environment Unit Tests
 //
 //  Created by Evan Coyne Maloney on 1/25/12.
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.

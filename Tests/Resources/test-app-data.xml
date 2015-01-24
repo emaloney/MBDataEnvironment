@@ -140,4 +140,14 @@
     <Var name="eight"           value="^parseInteger(8)"/>
     <Var name="nine"            value="^parseInteger(9)"/>
 
+    <Var name="rect:origin:x"       literal="10"/>
+    <Var name="rect:origin:y"       literal="50"/>
+    <Var name="rect:origin"         value="$rect:origin:x,$rect:origin:y"/>
+
+    <Var name="rect:size:width"     literal="300"/>
+    <Var name="rect:size:height"    literal="200"/>
+    <Var name="rect:size"           value="$rect:size:width,$rect:size:height"/>
+
+    <Var name="rect"                value="$rect:origin,$rect:size"/>
+
 </MBML>

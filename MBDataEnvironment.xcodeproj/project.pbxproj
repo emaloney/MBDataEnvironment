@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */; };
 		3B82312C1A72FC2700C3A18F /* MBMLFontFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */; };
+		3B82312E1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */; };
 		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLFunctionTests.m */; };
@@ -185,6 +186,7 @@
 		38E3065063027DCB078CF78A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpressionCache+Internal.h"; sourceTree = "<group>"; };
 		3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLFontFunctionTests.m; path = Tests/MBMLFontFunctionTests.m; sourceTree = SOURCE_ROOT; };
+		3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLGeometryFunctionTests.m; path = Tests/MBMLGeometryFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAttributeValidator.h; sourceTree = "<group>"; };
 		3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAttributeValidator.m; sourceTree = "<group>"; };
 		3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataModel.h; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 			children = (
 				3BD23C8E1A65FBBB001F7869 /* Resources */,
 				3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */,
+				3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */,
 				3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */,
 				3BD23C861A65FBA9001F7869 /* MBMLFunctionTests.m */,
 				3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */,
@@ -991,6 +994,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */,
+				3B82312E1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m in Sources */,
 				3BD23C8D1A65FBA9001F7869 /* VariableExpansionTest.m in Sources */,
 				3B82312C1A72FC2700C3A18F /* MBMLFontFunctionTests.m in Sources */,
 				3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */,
