@@ -680,13 +680,17 @@ typedef enum {
     return retVal;
 }
 
-+ (id) unique:(NSObject<NSFastEnumeration>*)enumerator
++ (id) unique:(id)param
 {
     debugTrace();
-    
+
+    if ([param conformsToProtocol:@protocol(NSFastEnumeration)]) {
+        return [MBMLFunctionError errorWithFormat:@"Expecting the input parameter to conform to the NSFastEnumeration; got a %@ instance instead", [param class];
+    }
+
     NSMutableArray* retVal = [NSMutableArray array];
     NSMutableSet* found = [NSMutableSet new];           // optimization to avoid having to scan large arrays
-    for (id val in enumerator) {
+    for (id val in (NSObject<NSFastEnumeration>*)param) {
         if (![found containsObject:val]) {
             [found addObject:val];
             [retVal addObject:val];

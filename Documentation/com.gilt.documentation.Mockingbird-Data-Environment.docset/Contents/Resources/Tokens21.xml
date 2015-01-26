@@ -16,7 +16,7 @@ as an MBML function.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/setName:</TokenIdentifier>
 			<Abstract type="html">Returns the name of the function. A function&apos;s name determines how it is
-invoked from within MBML. For example, the expression:</Abstract>
+invoked from within an MBML expression.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -29,7 +29,7 @@ invoked from within MBML. For example, the expression:</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/name</TokenIdentifier>
 			<Abstract type="html">Returns the name of the function. A function&apos;s name determines how it is
-invoked from within MBML. For example, the expression:</Abstract>
+invoked from within an MBML expression.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
@@ -42,7 +42,7 @@ invoked from within MBML. For example, the expression:</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBMLFunction/name</TokenIdentifier>
 			<Abstract type="html">Returns the name of the function. A function&apos;s name determines how it is
-invoked from within MBML. For example, the expression:</Abstract>
+invoked from within an MBML expression.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>

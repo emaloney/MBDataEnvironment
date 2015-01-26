@@ -14,10 +14,14 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/containsValue:</TokenIdentifier>
-			<Abstract type="html">Determines whether any of the values contained within one or more container
-objects equals a specified value.</Abstract>
+			<Abstract type="html">Determines whether one or more collections contains a specified value.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/setContains:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)containsValue:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -25,18 +29,22 @@ objects equals a specified value.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber instance containing either the boolean
-            value YES if any of the input parameters contains the specified
-            element, or NO otherwise.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if any of the input collections contains the test value;
+            @NO otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/containsValue:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/setContains:</TokenIdentifier>
-			<Abstract type="html">Determines whether a set contains a given object.</Abstract>
+			<Abstract type="html">Determines whether an NSSet contains a given object.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/containsValue:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)setContains:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -44,18 +52,24 @@ objects equals a specified value.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber containing a boolean value indicating the result
-            of the function.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if the input set contains the test value; @NO
+            otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/setContains:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/collectionPassesTest:</TokenIdentifier>
-			<Abstract type="html">Applies a boolean expression test to each member of the passed collection
-and returns whether or not all members passed the test.</Abstract>
+			<Abstract type="html">Applies a boolean expression test to each member of a collection and
+returns @YES if and only if the expression test evaluates to true
+for every item in the collection.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesPassingTest:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)collectionPassesTest:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -63,19 +77,24 @@ and returns whether or not all members passed the test.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An NSNumber instance containing either the boolean
-            value YES if all of the input collections pass the 
-            specified Mockingbird expression, or NO otherwise.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if every item in the collection passes the test; NO
+            otherwise.</Abstract></ReturnValue>
 			<Anchor>//api/name/collectionPassesTest:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesPassingTest:</TokenIdentifier>
-			<Abstract type="html">Tests a boolean expression against the values in one or more container objects,
-and returns an array of values for which the test expression is true.</Abstract>
+			<Abstract type="html">Evaluates a boolean test expression against each value in one or more
+collections, and returns an array containing the collection values
+for which test evaluates to true.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/collectionPassesTest:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)valuesPassingTest:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -83,15 +102,15 @@ and returns an array of values for which the test expression is true.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An array containing the values in the container objects
-            for which the test expression evaluates to true</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array containing the values in the collections for which the
+            test expression evaluates to true.</Abstract></ReturnValue>
 			<Anchor>//api/name/valuesPassingTest:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesIntersect:</TokenIdentifier>
-			<Abstract type="html">Tests whether two container objects share at least one value in common.</Abstract>
+			<Abstract type="html">Tests whether two collections share at least one value in common.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)valuesIntersect:(NSArray *)params</Declaration>
@@ -101,19 +120,24 @@ and returns an array of values for which the test expression is true.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">@YES if the two container objects share at least one common value,
-            @NO if they do not.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">@YES if the two collection objects share at least one common
+            value, @NO if they do not.</Abstract></ReturnValue>
 			<Anchor>//api/name/valuesIntersect:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/join:</TokenIdentifier>
-			<Abstract type="html">Creates a string by concatenating the string values of the elements
-in one or more container objects, using the specified separator
-string between each value in the returned string.</Abstract>
+			<Abstract type="html">Creates a string by concatenating the string values of the elements in one or
+more collections, using the specified separator string between each value in
+the returned string.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/splitLines:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)join:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -122,8 +146,7 @@ string between each value in the returned string.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A string containing the string values of the items in the
-            container objects, separated by the string specified
-            as the separator string</Abstract></ReturnValue>
+            collections, separated by the string specified as the separator.</Abstract></ReturnValue>
 			<Anchor>//api/name/join:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -133,6 +156,11 @@ string between each value in the returned string.</Abstract>
 			<Abstract type="html">Creates an array by splitting a string on a given delimeter.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/splitLines:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)split:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -150,6 +178,11 @@ string between each value in the returned string.</Abstract>
 			<Abstract type="html">Creates an array by splitting a string at newlines.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/join:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)splitLines:(NSString *)stringToSplit</Declaration>
 			<Parameters>
 				<Parameter>
@@ -183,10 +216,8 @@ in the input parameters.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/flattenArrays:</TokenIdentifier>
-			<Abstract type="html">Returns a single array containing all the elements of the array(s) specified
-in the parameters, wherein any element that is an array will be flattened
-such that the returned array contains no nested arrays. This does a
-depth-first traversal of the input parameters.</Abstract>
+			<Abstract type="html">Accepts one or more input arrays and returns a single array containing a
+flattened version of the contents of the input arrays.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)flattenArrays:(NSArray *)params</Declaration>
@@ -203,7 +234,8 @@ depth-first traversal of the input parameters.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/mergeDictionaries:</TokenIdentifier>
-			<Abstract type="html">Merges a set of dictionaries into a single dictionary.</Abstract>
+			<Abstract type="html">Merges the keys and values contained in multiple dictionaries into a single
+dictionary.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)mergeDictionaries:(NSArray *)params</Declaration>
@@ -220,10 +252,16 @@ depth-first traversal of the input parameters.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/pruneMatchingLeaves:</TokenIdentifier>
-			<Abstract type="html">Traverses an array-based tree structure, removing any leaves whose values
-match a given test expression. The resulting pruned tree is then returned.</Abstract>
+			<Abstract type="html">Traverses an array-based tree structure, removing any leaves (non-arrays)
+whose values match a given test expression. The resulting pruned tree is then
+returned in an array.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/pruneNonmatchingLeaves:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)pruneMatchingLeaves:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -238,11 +276,16 @@ match a given test expression. The resulting pruned tree is then returned.</Abst
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/pruneNonmatchingLeaves:</TokenIdentifier>
-			<Abstract type="html">Traverses an array-based tree structure, removing any leaves whose values
-do not match a given test expression. The resulting pruned tree is then
-returned.</Abstract>
+			<Abstract type="html">Traverses an array-based tree structure, removing any leaves (non-arrays)
+whose values do not match a given test expression. The resulting pruned tree
+is then returned in an array.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/pruneMatchingLeaves:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)pruneNonmatchingLeaves:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -257,10 +300,8 @@ returned.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/filter:</TokenIdentifier>
-			<Abstract type="html">Filters a collection object by applying a test expression to the contents
-of each object in the collection. Each top-level object in the collection
-where the test expression evaluates to true according to the rules of
-the filter behavior is returned.</Abstract>
+			<Abstract type="html">Filters a collection by applying a test expression against each item in the
+collection.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)filter:(NSArray *)params</Declaration>
@@ -270,19 +311,19 @@ the filter behavior is returned.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An array or dictionary containing the filtered items. The type of
-            the object returned will match the data model input
-            parameter.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array or dictionary containing the filtered items. If the *data
+            model* collection is a dictionary, the returned value will be a
+            dictionary. Otherwise, an array will be returned.</Abstract></ReturnValue>
 			<Anchor>//api/name/filter:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/list:</TokenIdentifier>
-			<Abstract type="html">Iterates over (and potentially recurses into) the items in a container object,
-and returns a list of values. The values in the returned list will reflect the
-ordering of any arrays iterated, however iterating dictionaries will result in
-non-deterministic ordering.</Abstract>
+			<Abstract type="html">Iterates over (and potentially recurses into) the items in a collection object,
+and returns an NSArray containing a list of values. The values in the
+returned array will reflect the ordering of any arrays iterated; however,
+iterating dictionaries will result in non-deterministic ordering.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)list:(NSArray *)params</Declaration>
@@ -300,9 +341,9 @@ non-deterministic ordering.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associate:</TokenIdentifier>
 			<Abstract type="html">Associates a set of keys with values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.
-The keys and values of the returned dictionary are constructed based
-on expressions passed to the function.</Abstract>
+recursing into) a collection object holding an arbitrary data model. If the
+association would result in more than one value for a given key, the multiple
+values will be placed into an array.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
@@ -325,7 +366,10 @@ on expressions passed to the function.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associateWithSingleValue:</TokenIdentifier>
 			<Abstract type="html">Associates a set of keys with values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.</Abstract>
+recursing into) a collection object holding an arbitrary data model. If the
+association would result in more than one value for a given key, additional
+values are ignored and only one value will be returned. Assume
+non-deterministic behavior for multiple values.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
@@ -348,7 +392,9 @@ recursing into) a container object holding an arbitrary data model.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/associateWithArray:</TokenIdentifier>
 			<Abstract type="html">Associates a set of keys with values by iterating over (and potentially
-recursing into) a container object holding an arbitrary data model.</Abstract>
+recursing into) a collection object holding an arbitrary data model. The
+value of each key will always be an array, even if the key only maps to a
+single value.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
@@ -370,7 +416,7 @@ recursing into) a container object holding an arbitrary data model.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/sort:</TokenIdentifier>
-			<Abstract type="html">Returns an array containing the sorted values of a container object.</Abstract>
+			<Abstract type="html">Returns an array containing the sorted values of a collection object.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)sort:(NSArray *)params</Declaration>
@@ -391,14 +437,14 @@ recursing into) a container object holding an arbitrary data model.</Abstract>
 array containing the unique values encountered.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (id)unique:(NSObject&lt;NSFastEnumeration&gt; *)enumerator</Declaration>
+			<Declaration>+ (id)unique:(id)param</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>enumerator</Name>
+					<Name>param</Name>
 					<Abstract type="html">The function&apos;s input parameter.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">a set containing the unique values in the input parameter.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array containing the unique values in the input collection.</Abstract></ReturnValue>
 			<Anchor>//api/name/unique:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -422,9 +468,15 @@ array containing the unique values encountered.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/distributeArrayElements:</TokenIdentifier>
-			<Abstract type="html">Distributes the elements in a single array across multiple arrays.</Abstract>
+			<Abstract type="html">Distributes the elements contained in a single input array across multiple
+arrays.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/groupArrayElements:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)distributeArrayElements:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -432,8 +484,8 @@ array containing the unique values encountered.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An array containing returned array count arrays, each
-            containing the distributed elements from source array.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array containing returned array count arrays containing the
+            elements distributed from source array.</Abstract></ReturnValue>
 			<Anchor>//api/name/distributeArrayElements:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
@@ -443,6 +495,11 @@ array containing the unique values encountered.</Abstract>
 			<Abstract type="html">Groups the elements in a single array into multiple arrays.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/distributeArrayElements:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)groupArrayElements:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -450,7 +507,7 @@ array containing the unique values encountered.</Abstract>
 					<Abstract type="html">The function&apos;s input parameters.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">an array containing one or more group arrays.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An array containing one or more group arrays.</Abstract></ReturnValue>
 			<Anchor>//api/name/groupArrayElements:</Anchor>
             <NodeRef refid="14"/>
 		</Token>

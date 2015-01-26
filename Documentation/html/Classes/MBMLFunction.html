@@ -732,7 +732,7 @@ format of the parameters (if any) expected by the function.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Returns the name of the function. A function&rsquo;s name determines how it is
-invoked from within MBML. For example, the expression:</p>
+invoked from within an MBML expression.</p>
 	</div>		
 	
     
@@ -746,15 +746,6 @@ invoked from within MBML. For example, the expression:</p>
 	
 	
 	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code>^functionName(param1|param2)
-</code></pre>
-
-<p>would invoke the function named <code>functionName</code> and pass it two parameters:
-<code>param1</code> and <code>param2</code>.</p>
-	</div>
 	
 	
 	
@@ -875,8 +866,8 @@ specified array index yields a numeric value when evaluated.</p>
 of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -953,8 +944,8 @@ specified array index yields an <code>NSArray</code> when evaluated.</p>
 of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1031,8 +1022,8 @@ specified array index yields an <code>NSDictionary</code> when evaluated.</p>
 of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1109,8 +1100,8 @@ specified array index yields an <code>NSString</code> when evaluated.</p>
 of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1186,8 +1177,8 @@ specified index is not a numeric value.</p>
 		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1613,8 +1604,8 @@ specified index is not an <code>NSArray</code> instance.</p>
 		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1690,8 +1681,8 @@ specified index is not an <code>NSDictionary</code> instance.</p>
 		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1905,8 +1896,8 @@ specified index is not an <code>NSString</code> instance.</p>
 		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -1987,8 +1978,8 @@ parameter at that array index is not a kind of the expected class.</p>
 		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	
@@ -2072,8 +2063,8 @@ classes.</p>
 		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
-            problems, you should always validate array indexes prior to calling
-            this method.</p></div>
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.</p></div>
 	</div>
 	
 	

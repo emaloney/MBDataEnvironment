@@ -18,9 +18,9 @@
 
  ### Terminology
  
- **Container objects:** Where parameters are referred to as *container
- objects*, the function will accept `NSDictionary`, `NSArray` or `NSSet`
- instances.
+ **Collection objects:** Where objects are referred to as *collections*, any
+ object implementing `NSFastEnumeration` may be used. Typically, collections
+ are `NSDictionary`, `NSArray` or `NSSet` instances.
 
  ### About function declarations
 
@@ -33,57 +33,55 @@
 @interface MBMLDataProcessingFunctions : NSObject
 
 /*----------------------------------------------------------------------------*/
-#pragma mark Testing containers
-/*!    @name Testing containers                                               */
+#pragma mark Testing collections
+/*!    @name Testing collections                                              */
 /*----------------------------------------------------------------------------*/
 
 /*!
- Determines whether any of the values contained within one or more container
- objects equals a specified value.
- 
- **Note:** This method tests equality through the MBExpression class, not the
- `isEqual:` method. As a result, implicit type conversions occur, allowing
- an `NSNumber` instance containing the integer `5` to equal an `NSString`
- containing the text "`5`". Be forewarned, however: Do not expect normal
- `NSObject` equality test behavior!
- 
+ Determines whether one or more *collections* contains a specified *value*.
+
  This Mockingbird function accepts two or more pipe-separated expressions as 
  parameters:
  
- * One or more *container objects*, expressions that evaluate to array
- or dictionary values
+ * One or more *collections*, object expressions yielding collection instances.
  
- * The *test value*, an expression whose value will be used to test
- equality with the values in the passed-in container(s)
+ * The *test value*, an object expression yielding the value be used to test
+ equality with the values in the passed-in *collections*.
  
+ **Note:** This method tests equality using `[MBExpression value:isEqualTo:]`,
+ not the standard `isEqual:` method. This allows implicit type conversions to
+ occur, so that an `NSNumber` containing the integer `5` is considered equal
+ to an `NSString` containing the text "`5`".
+
  #### Expression usage
  
     ^containsValue($colorsOne|$colorsTwo|yellow)
  
- The expression above would return a boolean true value if either `$colorsOne`
- or `$colorsTwo` contained an item whose value is the string "`yellow`".
+ The expression above will evaluate to `true` if either `$colorsOne` or
+ `$colorsTwo` contains an item whose value is the string "`yellow`".
  
  @param     params The function's input parameters.
 
- @return    An `NSNumber` instance containing either the boolean
-            value `YES` if any of the input parameters contains the specified
-            element, or `NO` otherwise.
+ @return    `@YES` if any of the input *collections* contains the *test value*;
+            `@NO` otherwise.
+ 
+ @see       setContains:
  */
 + (id) containsValue:(NSArray*)params;
 
 /*!
- Determines whether a set contains a given object.
+ Determines whether an `NSSet` contains a given object.
  
  Because this function is optimized to work with `NSSet` instances, it is
  more efficient than using `^containsValue()` for the same purpose.
 
  This function accepts two pipe-separated expressions as parameters:
  
- * A *set* expression, which should yield an `NSSet` instance, and
+ * The *set*, an object expression yielding an `NSSet` instance.
  
- * An *object* expression, which yields the object whose presence in the
- set is to be tested.
- 
+ * The *test value*, an object expression yielding the value whose presence
+ within *set* is to be detected.
+
  #### Expression usage
  
  Assume that the MBML variable `$colors` is a set containing the values "`red`",
@@ -91,101 +89,100 @@
  
     ^setContains($colors|orange)
  
- The expression above would return a boolean `NO`, because `$colors` does
- not contain the value "`orange`".
+ The expression above would evaluate to `false` because `$colors` does not 
+ contain the value "`orange`".
  
  @param     params The function's input parameters.
  
- @return    An `NSNumber` containing a boolean value indicating the result
-            of the function.
+ @return    `@YES` if the input *set* contains the *test value*; `@NO`
+            otherwise.
+ 
+ @see       containsValue:
  */
 + (id) setContains:(NSArray*)params;
 
 /*!
- Applies a boolean expression test to each member of the passed collection
- and returns whether or not all members passed the test.
- 
- **Note:** This method tests equality through the MBExpression class, not the
- `isEqual:` method. As a result, implicit type conversions occur, allowing
- an `NSNumber` instance containing the integer `5` to equal an `NSString`
- containing the text "`5`". Be forewarned, however: Do not expect normal
- `NSObject` equality test behavior!
+ Applies a boolean expression *test* to each member of a *collection* and
+ returns `@YES` if and only if the expression *test* evaluates to `true`
+ for every item in the collection.
 
  This Mockingbird function accepts two pipe-separated expressions as parameters:
  
- * One *container object*
+ * The *collection*, an object expression yielding a collection instance.
  
- * The *test value*, an expression whose value will be used to test
- against the values in the passed-in container(s)
- 
+ * The *test*, a boolean expression that will be used to test each value in the
+ passed-in collection.
+
+ **Note:** This method tests equality using `[MBExpression value:isEqualTo:]`,
+ not the standard `isEqual:` method. This allows implicit type conversions to
+ occur, so that an `NSNumber` containing the integer `5` is considered equal
+ to an `NSString` containing the text "`5`".
+
  #### Expression usage
  
     ^collectionPassesTest($collection|$item.length -GT 0)
  
- The expression above would return a boolean true value if all 
- the members of `$collection` pass the Mockingbird expression 
- `$item.length -GT 0`
+ The expression above would evaluate to `true` if all the members of
+ `$collection` have a length greater than `0`.
  
  @param     params The function's input parameters.
 
- @return    An `NSNumber` instance containing either the boolean
-            value `YES` if all of the input collections pass the 
-            specified Mockingbird expression, or `NO` otherwise.
+ @return    `@YES` if every item in the collection passes the *test*; `NO`
+            otherwise.
+ 
+ @see       valuesPassingTest:
  */
 + (id) collectionPassesTest:(NSArray*)params;
 
 /*!
- Tests a boolean expression against the values in one or more container objects,
- and returns an array of values for which the test expression is true.
+ Evaluates a boolean *test* expression against each value in one or more
+ *collections*, and returns an array containing the collection values
+ for which *test* evaluates to `true`.
  
  This Mockingbird function accepts two or more pipe-separated expressions
  yielding:
 
- * One or more *container objects*
+ * One or more *data models*, object expressions yielding collection instances.
 
  * The *test expression*, an expression that will be evaluated for each
- value in each container object in the input parameters
+ value in each passed-in data model.
 
  The test expression can refer to the following pre-defined variables:
  
- * `$item` refers to the value in a container object that's 
- currently being tested
+ * `$item` refers to the value in a collection object that's currently being
+ tested.
  
- * When the container object being tested is a dictionary, `$key` 
- can be used to access the key associated with the current `$item`
- 
- * `$root` contains the value of the current item being iterated
- at the top level of the data model
+ * When the collection being tested is a dictionary, `$key` can be used to
+ access the key associated with the current `$item`.
 
  #### Expression usage
 
- Assume that `$articles` and `$videos`
- are containers whose values each have a `displayOrder` attribute:
+ Assume that `$articles` and `$videos` are collections whose values each have
+ a `displayOrder` attribute:
  
     ^valuesPassingTest($articles|$videos|$item.displayOrder -EQ 1)
  
  The expression above would iterate over all the values in the
- `$articles` and then the `$videos` container objects, and 
+ `$articles` and then the `$videos` collection objects, and
  for each value, it would perform a `$item.displayOrder -EQ 1` boolean
  test. Each value in `$articles` and `$videos` for which
- the expression `$item.displayOrder -EQ 1` evaluates to true will be
+ the expression `$item.displayOrder -EQ 1` evaluates to `true` will be
  placed into the array returned by the function.
  
  @param     params The function's input parameters.
  
- @return    An array containing the values in the container objects
-            for which the test expression evaluates to true
+ @return    An array containing the values in the collections for which the
+            test expression evaluates to `true`.
+ 
+ @see       collectionPassesTest:
  */
 + (id) valuesPassingTest:(NSArray*)params;
 
 /*!
- Tests whether two container objects share at least one value in common.
+ Tests whether two collections share at least one value in common.
  
  This Mockingbird function accepts two pipe-separated object expressions
- yielding the container objects to test.
- 
- The function returns `@YES` if the two container objects share at least
- one common value, `@NO` if they do not.
+ yielding the collection objects to test.
 
  #### Expression usage
 
@@ -195,13 +192,13 @@
 
     ^valuesIntersect($boys|$girls)
 
- The expression above would return `@YES` because both `$boys` and `$girls`
+ The expression above would evaluate to `true` because both `$boys` and `$girls`
  share a common value: the string "`Pat`".
  
  @param     params The function's input parameters.
  
- @return    `@YES` if the two container objects share at least one common value,
-            `@NO` if they do not.
+ @return    `@YES` if the two collection objects share at least one common 
+            value, `@NO` if they do not.
  */
 + (id) valuesIntersect:(NSArray*)params;
 
@@ -211,18 +208,18 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Creates a string by concatenating the string values of the elements
- in one or more container objects, using the specified separator
- string between each value in the returned string. 
+ Creates a string by concatenating the string values of the elements in one or
+ more collections, using the specified separator string between each value in
+ the returned string.
  
  This Mockingbird function accepts two or more pipe-separated expressions as 
  parameters:
  
- * One or more *container objects*, expressions that evaluate to arrays
- or dictionaries
+ * One or more *collections*, object expressions that evaluate to collection
+ instances.
  
- * The *separator string*, which is placed between each value in the
- returned string
+ * The *separator*, a string expression yielding the separator to be used
+ between each value in the returned string.
  
  #### Expression usage
 
@@ -236,21 +233,21 @@
  @param     params The function's input parameters.
  
  @return    A string containing the string values of the items in the
-            *container objects*, separated by the string specified
-            as the *separator string*
+            *collections*, separated by the string specified as the *separator*.
+ 
+ @see       split:, splitLines:
  */
 + (id) join:(NSArray*)params;
 
 /*!
  Creates an array by splitting a string on a given delimeter.
  
- This Mockingbird function accepts two pipe-separated expressions as parameters:
+ This Mockingbird function accepts two pipe-separated string expressions as
+ parameters:
  
- * An expression specifying the *delimiter*, which specifies where
- the *input string* will be split
+ * The *delimiter*, which specifies where the *input string* will be split.
 
- * An expression specifying the *input string*, which is the
- string to be split 
+ * The *input string*, which is the string to be split.
  
  #### Expression usage:
  
@@ -262,15 +259,17 @@
  @param     params The function's input parameters.
  
  @return    An array containing the components of the split string.
+ 
+ @see       join:, splitLines:
  */
 + (id) split:(NSArray*)params;
 
 /*!
  Creates an array by splitting a string at newlines.
  
- This function accepts a single Mockingbird expression, the *input string*
- that will be split on newlines.
- 
+ This function accepts a single Mockingbird expression, an expression yielding
+ the string to be split.
+
  #### Expression usage
 
  Assume that `$lines` is a string containing newlines:
@@ -284,6 +283,8 @@
  @param     stringToSplit The string being split.
  
  @return    An `NSArray` containing the individual lines of `stringToSplit`.
+ 
+ @see       split:, join:
  */
 + (id) splitLines:(NSString*)stringToSplit;
 
@@ -318,14 +319,19 @@
 + (id) appendArrays:(NSArray*)params;
 
 /*!
- Returns a single array containing all the elements of the array(s) specified
- in the parameters, wherein any element that is an array will be flattened
- such that the returned array contains no nested arrays. This does a 
- depth-first traversal of the input parameters.
+ Accepts one or more input arrays and returns a single array containing a
+ flattened version of the contents of the input arrays.
+ 
+ Flattening involves removing nested arrays such that all non-arrays contained
+ at any level of nesting in the input arrays will become elements in the
+ returned array. The returned array will contain no elements that are themselves
+ `NSArray` instances.
+ 
+ Flattening is performed with a depth-first traversal of the input arrays.
  
  This Mockingbird function accepts one or more pipe-separated object expressions
  as parameters, where each expression yields an `NSArray` instance.
- 
+
  #### Expression usage
 
  Assume that `$nestedArrays` refers to an array wherein each element is 
@@ -348,16 +354,17 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Merges a set of dictionaries into a single dictionary.
+ Merges the keys and values contained in multiple dictionaries into a single
+ dictionary.
 
  This Mockingbird function accepts at least two pipe-separated object 
- expressions as input parameters:
+ expressions yielding `NSDictionary` instances as input parameters:
  
- * The *first input dictionary*, an `NSDictionary` instance
+ * The *first input dictionary*
 
- * The *second input dictionary*, an `NSDictionary` instance
+ * The *second input dictionary*
 
- * Zero or more *additional input dictionaries*, each an `NSDictionary` instance
+ * Zero or more *additional input dictionaries*
  
  The return value will be the result of overlaying the values of each input
  dictionary parameter with the dictionary parameter that preceded it. The
@@ -371,6 +378,8 @@
  
  #### Expression usage
 
+ For example, in the expression:
+
     ^mergeDictionaries($localUsers|$remoteUsers|$automatedUsers)
  
  The dictionaries yielded by the expressions `$localUsers`, `$remoteUsers` and 
@@ -382,10 +391,6 @@
  * For each key in `$remoteUsers` not present in `$automatedUsers`, the 
    key/value in `$remoteUsers` will be present in the returned dictionary
  
-
- * For each key in `$remoteUsers` not present in `$automatedUsers`, the
-   key/value in `$remoteUsers` will be present in the returned dictionary
-
  * For each key in `$localUsers` not present in `$remoteUsers` or
    `$automatedUsers`, the key/value in `$localUsers` will be present in the
    returned dictionary
@@ -402,20 +407,20 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Traverses an array-based tree structure, removing any leaves whose values
- match a given test expression. The resulting pruned tree is then returned.
+ Traverses an array-based tree structure, removing any leaves (non-arrays) 
+ whose values match a given test expression. The resulting pruned tree is then
+ returned in an array.
  
  This Mockingbird function accepts two pipe-separated expressions as parameters:
  
- * The *input array* representing the root of the tree; this expression
- must evaluate to an `NSArray` instance
+ * The *input array*, an object expression yielding an `NSArray` representing 
+ the root of the tree.
  
- * The *test expression*, which will be evaluated once for each 
- non-array element found while traversing the tree
- 
- The function will return an tree structure similar to the input
- structure, but containing only those non-array elements for which the
- *test expression* evaluates to `NO`.
+ * The *test*, a boolean expression that will be evaluated once for each 
+ non-array element found while traversing the tree.
+
+ The function will return a tree structure similar to the input structure, but
+ where all leaf elements for which *test* evaluates to `true` have been removed.
 
  #### Expression usage
 
@@ -432,26 +437,28 @@
  @param     params The function's input parameters.
  
  @return    The function result.
- */
+
+ @see       pruneNonmatchingLeaves:
+*/
 + (id) pruneMatchingLeaves:(NSArray*)params;
 
 /*!
- Traverses an array-based tree structure, removing any leaves whose values
- do not match a given test expression. The resulting pruned tree is then 
- returned.
+ Traverses an array-based tree structure, removing any leaves (non-arrays) 
+ whose values do not match a given test expression. The resulting pruned tree 
+ is then returned in an array.
  
  This Mockingbird function accepts two pipe-separated expressions as parameters:
  
- * The *input array* representing the root of the tree; this expression
- must evaluate to an `NSArray` instance
- 
- * The *test expression*, which will be evaluated once for each 
- non-array element found while traversing the tree
- 
- The function will return an tree structure similar to the input
- structure, but containing only those non-array elements for which the
- *test expression* evaluates to `YES`.
- 
+ * The *input array*, an object expression yielding an `NSArray` representing 
+ the root of the tree.
+
+ * The *test*, a boolean expression that will be evaluated once for each 
+ non-array element found while traversing the tree.
+
+ The function will return a tree structure similar to the input structure, but
+ where all leaf elements for which *test* evaluates to `false` have been
+ removed.
+
  #### Expression usage
 
  Assume that `$input` is an array containing two inner arrays. The first inner
@@ -466,6 +473,8 @@
  @param     params The function's input parameters.
  
  @return    The function result.
+
+ @see       pruneMatchingLeaves:
  */
 + (id) pruneNonmatchingLeaves:(NSArray*)params;
 
@@ -475,34 +484,30 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Filters a collection object by applying a test expression to the contents
- of each object in the collection. Each top-level object in the collection
- where the test expression evaluates to true according to the rules of
- the filter behavior is returned.
+ Filters a collection by applying a test expression against each item in the
+ collection.
+
+ This Mockingbird function accepts two or more pipe-separated expressions as 
+ parameters:
+ 
+ * The *data model*, an object expression yielding the collection instance to
+ be filtered.
+
+ * Zero or more *intermediate expressions*, which are used to recurse into
+ portions of the data model.
+ 
+ * The *test*, a boolean expression used to determine which values pass through
+ the filter.
+ 
+ * Finally, an optional *filter behavior*, which can be either
+ `matchAtLeastOnce` or `matchAll`. Note that **only** these string literals are
+ acceptable values if this parameter is provided; this parameter is not
+ evaluated as an expression. If this parameter is omitted, `matchAtLeastOnce` 
+ filtering behavior will be used.
 
  Because you can recurse into portions of the data model where more than
  one element may exist, the filter may iterate over multiple items for each
  top-level object, and the test expression will get applied multiple times.
- You can specify whether the filter will return items that match at least
- once, or whether all of the existing items must match.
- 
- This Mockingbird function accepts two or more pipe-separated expressions as 
- parameters:
- 
- * The *data model*, an expression whose value is a container object
- (either an array or dictionary) that will be used as the source for the
- filtering
- 
- * Zero or more *intermediate expressions*, which are used to recurse
- into portions of the data model
- 
- * A *test expression*, which will be used for the basis of the 
- filtering.
- 
- * Finally, an optional *filter behavior*, which can be either 
- `matchAtLeastOnce` or `matchAll` (note that these string
- literals must be used; this parameter is not evaluated). If the parameter is 
- omitted `matchAtLeastOnce` behavior will be used.
 
  #### Expression usage
 
@@ -510,56 +515,57 @@
  
     ^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)
  
- The expression above would return all the objects contained in 
- `$people` where every aunt of every child of the person has
- the first name Jill. The `matchAll` parameter can be omitted
- to return every person with at least one child who has at least one aunt
- with the first name Jill.
+ The expression above would return all the objects contained in `$people`
+ where every aunt of every child of the person has the first name "`Jill`". The
+ `matchAll` parameter can be omitted to return every person with at least one
+ child who has at least one aunt with the first name "`Jill`".
  
  @param     params The function's input parameters.
  
- @return    An array or dictionary containing the filtered items. The type of
-            the object returned will match the *data model* input
-            parameter.
+ @return    An array or dictionary containing the filtered items. If the *data
+            model* collection is a dictionary, the returned value will be a
+            dictionary. Otherwise, an array will be returned.
  */
 + (id) filter:(NSArray*)params;
 
 /*!
- Iterates over (and potentially recurses into) the items in a container object,
- and returns a list of values. The values in the returned list will reflect the
- ordering of any arrays iterated, however iterating dictionaries will result in 
- non-deterministic ordering.
+ Iterates over (and potentially recurses into) the items in a collection object,
+ and returns an `NSArray` containing a list of values. The values in the
+ returned array will reflect the ordering of any arrays iterated; however,
+ iterating dictionaries will result in non-deterministic ordering.
  
  This Mockingbird function accepts two or more pipe-separated expressions as 
  parameters:
  
- * The *data model*, an expression whose value is a container object
- (either an array or dictionary) that will be iterated
- 
+ * The *data model*, an object expression yielding collection instance to be
+ iterated.
+
  * Zero or more *intermediate expressions*, which are used to recurse
- into portions of the data model
+ into portions of the data model.
  
- * A *value expression*, which will be evaluated once for each item 
- encountered while iterating the data model and recursing into any
- intermediate expressions.
+ * A *value expression*, which will be evaluated once for each item encountered
+ while iterating the data model and recursing into any intermediate expressions.
  
  The function will return an array containing the result of evaluating the
- *value expression* once for each item encountered in the data
+ *value expression* once for each item encountered while traversing the data
  model.
 
  #### Expression usage
 
- Assume that `$states` is a map where each item in the map represents a state.
- The key for each item is the two-letter postal code for the state, and the
- value associated with each key is another dictionary containing additional 
- information about the state.
+ Assume that `$states` is a dictionary where each item in the dictionary 
+ represents a state. The key for each item is the two-letter postal code for the
+ state, and the value associated with each key is another dictionary containing 
+ additional information about the state.
  
-    ^list($states|$item.citiesBySize|$item.name, <span>$</span>root:key - $item.population residents)
+    ^list($states
+         |$item.citiesBySize
+         |$item.name, $root:key - $item.population residents)
  
- The expression above would iterate over all the elements in the
- `$states` dictionary, and for each state, it would then iterate over
- the elements contained in the states's `cityBySize` property, which
- in this case is an ordered array of cities in the state sorted by population.
+ The expression above would iterate over all the elements in the `$states`
+ dictionary, and for each state, it would then iterate over the elements 
+ contained in the states's `cityBySize` property, which in this case is an
+ ordered array of cities in the state sorted by population.
+
  For each city in each state's `cityBySize`, the returned array would
  contain a string with values such as:
  
@@ -573,52 +579,46 @@
 
 /*!
  Associates a set of keys with values by iterating over (and potentially
- recursing into) a container object holding an arbitrary data model.
- The keys and values of the returned dictionary are constructed based
- on expressions passed to the function.
- 
- **Note:** If the association would result in more than one value for a given
- key, the multiple values will be placed into an array, and that array will be
- the value of the key.
+ recursing into) a collection object holding an arbitrary data model. If the
+ association would result in more than one value for a given key, the multiple 
+ values will be placed into an array.
 
  This Mockingbird function accepts three or more pipe-separated expressions as
  parameters:
  
- * The *data model*, an expression whose value is a container object
- (either an array or dictionary) that will be used as the source for the
- returned dictionary
- 
+ * The *data model*, an object expression yielding a *collection* to be
+ used as the source for the keys and values in the returned dictionary.
+
  * Zero or more *intermediate expressions*, which are used to recurse
- into portions of the data model
+ into portions of the data model.
  
  * The second-to-last expression in the input parameters is the *key
- expression*, which is used to construct the keys in the map
+ expression*, which yields the keys contained in the returned dictionary.
  
- * The last expression is the *value expression*, which is used to
- construct the values contained in the map
- 
+ * The last expression is the *value expression*, which yields the values
+ contained in the returned dictionary.
+
  The intermediate, key and value expressions can refer to portions of the
  data model using several pre-defined variables:
  
  * `$item` refers to the value of the current item in the innermost
- scope being iterated/recursed
+ scope being iterated/recursed.
  
  * When iterating the values of a dictionary, the `$key` variable
- can be used to access the key associated with the current `$item`
+ can be used to access the key associated with the current `$item`.
  
  * `$root` contains the value of the current item being iterated
- at the top level of the data model
+ at the top level of the data model.
  
- * When the data model expression refers to a dictionary, `$rootKey`
- will contain the key associated with the current `$root` value.
+ * When the data model collection is a dictionary, `$rootKey` will contain the
+ key associated with the current `$root` value.
  
  * In addition, when intermediate expressions are used to recurse into the
  data model, you can refer to items and keys contained in the outer scopes
- using the prefix `outer:` in the variable name, such as
- `$``outer:key` or `$outer:item`. This prefix 
- can also be compounded (eg.: `$outer:outer:key`) to reach different
- levels of scope.
- 
+ using the prefix `outer:` in the variable name, such as `$outer:key` or
+ `$outer:item`. This prefix can also be compounded (eg.: `$outer:outer:key`)
+ to reach different levels of scope.
+
  #### Expression usage
 
  Assume that `$people` is an array of data objects representing people:
@@ -648,51 +648,47 @@
 
 /*!
  Associates a set of keys with values by iterating over (and potentially
- recursing into) a container object holding an arbitrary data model.
-
- The keys and values of the returned dictionary are constructed based
- on expressions passed to the function.
- 
- **Note:** If the association would result in more than one value for a given
- key, additional values are ignored and only one value will be returned. Assume
+ recursing into) a collection object holding an arbitrary data model. If the
+ association would result in more than one value for a given key, additional 
+ values are ignored and only one value will be returned. Assume 
  non-deterministic behavior for multiple values.
+
+ This Mockingbird function accepts three or more pipe-separated expressions as
+ parameters:
  
- This Mockingbird function accepts three or more pipe-separated expressions as parameters:
- 
- * The *data model*, an expression whose value is a container object
- (either an array or dictionary) that will be used as the source for the
- returned dictionary
- 
+ * The *data model*, an object expression yielding a *collection* to be
+ used as the source for the keys and values in the returned dictionary.
+
  * Zero or more *intermediate expressions*, which are used to recurse
- into portions of the data model
+ into portions of the data model.
  
  * The second-to-last expression in the input parameters is the *key
- expression*, which is used to construct the keys in the map
+ expression*, which yields the keys contained in the returned dictionary.
  
- * The last expression is the *value expression*, which is used to
- construct the values contained in the map
- 
+ * The last expression is the *value expression*, which yields the values
+ contained in the returned dictionary.
+
  The intermediate, key and value expressions can refer to portions of the
  data model using several pre-defined variables:
  
  * `$item` refers to the value of the current item in the innermost
- scope being iterated/recursed
+ scope being iterated/recursed.
  
  * When iterating the values of a dictionary, the `$key` variable
- can be used to access the key associated with the current `$item`
+ can be used to access the key associated with the current `$item`.
  
  * `$root` contains the value of the current item being iterated
- at the top level of the data model
+ at the top level of the data model.
  
- * When the data model expression refers to a dictionary, `$rootKey`
- will contain the key associated with the current `$root` value.
+ * When the data model collection is a dictionary, `$rootKey` will contain the
+ key associated with the current `$root` value.
  
  * In addition, when intermediate expressions are used to recurse into the
  data model, you can refer to items and keys contained in the outer scopes
- using the prefix `outer:` in the variable name, such as `$outer:key` or 
+ using the prefix `outer:` in the variable name, such as `$outer:key` or
  `$outer:item`. This prefix can also be compounded (eg.: `$outer:outer:key`)
  to reach different levels of scope.
- 
+
  #### Expression usage
 
  Assume that `$people` is an array of data objects representing people:
@@ -723,51 +719,46 @@
 
 /*!
  Associates a set of keys with values by iterating over (and potentially
- recursing into) a container object holding an arbitrary data model.
+ recursing into) a collection object holding an arbitrary data model. The
+ value of each key will always be an array, even if the key only maps to a
+ single value.
 
- The keys and values of the returned dictionary are constructed based
- on expressions passed to the function.
- 
- **Note:** The value of each key will always be an array, even if the key
- only maps to a single value.
- 
- This Mockingbird function accepts three or more pipe-separated expressions as 
+ This Mockingbird function accepts three or more pipe-separated expressions as
  parameters:
  
- * The *data model*, an expression whose value is a container object
- (either an array or dictionary) that will be used as the source for the
- returned dictionary
- 
+ * The *data model*, an object expression yielding a *collection* to be
+ used as the source for the keys and values in the returned dictionary.
+
  * Zero or more *intermediate expressions*, which are used to recurse
- into portions of the data model
+ into portions of the data model.
  
  * The second-to-last expression in the input parameters is the *key
- expression*, which is used to construct the keys in the map
+ expression*, which yields the keys contained in the returned dictionary.
  
- * The last expression is the *value expression*, which is used to
- construct the values contained in the map
- 
+ * The last expression is the *value expression*, which yields the values
+ contained in the returned dictionary.
+
  The intermediate, key and value expressions can refer to portions of the
  data model using several pre-defined variables:
  
  * `$item` refers to the value of the current item in the innermost
- scope being iterated/recursed
+ scope being iterated/recursed.
  
  * When iterating the values of a dictionary, the `$key` variable
- can be used to access the key associated with the current `$item`
+ can be used to access the key associated with the current `$item`.
  
  * `$root` contains the value of the current item being iterated
- at the top level of the data model
+ at the top level of the data model.
  
- * When the data model expression refers to a dictionary, `$rootKey`
- will contain the key associated with the current `$root` value.
+ * When the data model collection is a dictionary, `$rootKey` will contain the
+ key associated with the current `$root` value.
  
  * In addition, when intermediate expressions are used to recurse into the
  data model, you can refer to items and keys contained in the outer scopes
  using the prefix `outer:` in the variable name, such as `$outer:key` or
  `$outer:item`. This prefix can also be compounded (eg.: `$outer:outer:key`)
  to reach different levels of scope.
- 
+
  #### Expression usage
 
  Assume that `$people` is an array of data objects representing people:
@@ -801,13 +792,13 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns an array containing the sorted values of a container object.
+ Returns an array containing the sorted values of a collection object.
  
  This Mockingbird function accepts between one and three expressions as
  input parameters:
  
- * The *data model*, the container object whose sorted values are to be 
-   returned
+ * The *data model*, an object expression yielding the collection object whose
+   sorted values are to be returned.
 
  * An optional *sort key*, an expression indicating the value within *data
    model* that should be used for the basis of sorting. If omitted, the
@@ -820,6 +811,11 @@
    the value "`desc`", sorting will occur in descending order. If this 
    parameter is omitted or if the value is anything else, sorting will occur
    in the default ascending order.
+
+ Note that this method sorts using MBML logical comparators, the behavior
+ of which differs from that of the `compare:` method due to Mockingbird's
+ use of implicit type conversions. The comparison mechanism used is exposed
+ via the `[MBExpression compareLeftValue:againstRightValue:]` method.
 
  #### Expression usage
 
@@ -851,11 +847,12 @@
  Iterates over the values supplied by the passed-in enumerator, and returns an
  array containing the unique values encountered.
  
- This function accepts a single Mockingbird expression, which it expects to
- evaluate to an object that implements the `NSFastEnumeration`
- protocol (such as an `NSArray` or `NSSet`). The values
- in the returned array will be in the same order that they were supplied by 
- the enumerator.
+ This function accepts a single Mockingbird expression, an *input collection*
+ that is expected to yield an object conforming to the `NSFastEnumeration` 
+ protocol.
+
+ The values in the returned array will be in the same order that they were
+ supplied by the enumeration.
  
  #### Expression usage
 
@@ -867,11 +864,11 @@
  The expression above would return an array containing two strings: "`Duck`"
  and "`Goose`", in that order.
  
- @param     enumerator The function's input parameter.
+ @param     param The function's input parameter.
  
- @return    a set containing the unique values in the input parameter.
+ @return    An array containing the unique values in the input collection.
  */
-+ (id) unique:(NSObject<NSFastEnumeration>*)enumerator;
++ (id) unique:(id)param;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Reducing an array of items
@@ -920,25 +917,23 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Distributes the elements in a single array across multiple arrays.
+ Distributes the elements contained in a single input array across multiple
+ arrays.
  
  This Mockingbird function accepts two pipe-separated expressions as parameters:
 
- * The *source array*, an expression that is expected to evaluate
- as an array value.
+ * The *source array*, an object expression yielding an array.
 
- * The *returned array count*, which specifies the number of arrays
- across which to distribute the source array's elements. This expression
- will be interpreted as integer value, and must be `1` or 
- greater.
+ * The *returned array count*, a numeric expression specifying the number of
+ arrays across which to distribute the elements in *source array*. This 
+ expression will be interpreted as integer, and must be `1` or greater.
  
- The source array is iterated, and each item in it is distributed across
+ The *source array* is iterated, and each item it contains is distributed across
  *returned array count* arrays in sequence.
  
- The function will always return the number of arrays specified by
- *returned array count*. If the source array contains fewer elements
- than *returned array count*, one or more of the returned arrays
- will be empty.
+ The function will always return the number of arrays specified by *returned 
+ array count*. If *source array* contains fewer elements than *returned array
+ count*, one or more of the returned arrays will be empty.
  
  #### Expression usage
 
@@ -954,8 +949,10 @@
  
  @param     params The function's input parameters.
  
- @return    An array containing *returned array count* arrays, each
-            containing the distributed elements from *source array*.
+ @return    An array containing *returned array count* arrays containing the
+            elements distributed from *source array*.
+ 
+ @see       groupArrayElements:
  */
 + (id) distributeArrayElements:(NSArray*)params;
 
@@ -964,17 +961,17 @@
  
  This Mockingbird function accepts two pipe-separated expressions as parameters:
  
- * The *source array*, an expression that is expected to evaluate
- as an array value.
+ * The *source array*, an object expression yielding an `NSArray`.
+
+ * The *group size*, a numeric expression specifying the maximum number of items
+ to allow in a single group. This expression will be interpreted as integer 
+ value, and must be `1` or greater.
  
- * A *group size*, which specifies the maximum number of items to allow
- in a single group. This expression will be interpreted as integer value, and
- must be `1` or greater.
- 
- The source array is iterated, and for each *group size* number of
- items encountered, a new *group array* is created containing just those
- items. The return value is an array containing one or more group arrays
- created while iterating the source array.
+ The source array is iterated, and for each *group size* number of items
+ encountered, a new *group array* is created containing just those items. 
+
+ The return value is an array containing one or more group arrays created while 
+ iterating the source array.
  
  Unless *source array* contains an exact multiple of *group size* number of
  items, the last group array will contain fewer than *group size* number of
@@ -995,7 +992,9 @@
  
  @param     params The function's input parameters.
  
- @return    an array containing one or more *group arrays*.
+ @return    An array containing one or more *group arrays*.
+ 
+ @see       distributeArrayElements:
  */
 + (id) groupArrayElements:(NSArray*)params;
 
