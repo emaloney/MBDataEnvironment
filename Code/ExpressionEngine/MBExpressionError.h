@@ -16,8 +16,7 @@
 /******************************************************************************/
 
 /*!
- Used internally by the MBExpression engine to represent errors
- during expression parsing and evaluation.
+ Represents errors that can occur during `MBExpression` parsing and evaluation.
  */
 @interface MBExpressionError : NSObject
 
@@ -29,12 +28,12 @@
 /*! Returns a message explaining the error. */
 @property(nonatomic, readonly) NSString* message;
 
-/*! If the receiver was caused by an underlying error, this property will
+/*! If the receiver was caused by an underlying `NSError`, this property will
     contain the original error. Otherwise, `nil`. */
 @property(nonatomic, readonly) NSError* causedByError;
 
-/*! If the receiver was caused by an underlying exception, this property will
-    contain the original exception. Otherwise, `nil`. */
+/*! If the receiver was caused by an underlying `NSException`, this property 
+    will contain the original exception. Otherwise, `nil`. */
 @property(nonatomic, readonly) NSException* causedByException;
 
 /*! Returns an array of `MBExpressionError`s related to the receiver. May
@@ -44,11 +43,13 @@
 /*! Stores an arbitrary value related to the error. */
 @property(nonatomic, strong) id value;
 
-/*! Stores a reference to the `MBMLParseToken` involved in the error. */
-@property(nonatomic, strong) MBMLParseToken* offendingToken;
-
-/*! Stores a reference to the MBML expression that caused the error. */
+/*! Stores a reference to the MBML expression in which the error occurred. */
 @property(nonatomic, strong) NSString* offendingExpression;
+
+/*! Stores a reference to an `MBMLParseToken` involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    `offendingExpression`. */
+@property(nonatomic, strong) MBMLParseToken* offendingToken;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Creating instances
@@ -152,7 +153,7 @@
  * If `reportTo` is `nil`, the receiver will be logged to the console using
    the `log` method.
  
- * If `reportTo` is a non-`nil` but `*reportTo` is `nil`, the memory location
+ * If `reportTo` is non-`nil` but `*reportTo` is `nil`, the memory location
    pointed to by `*reportTo` will be updated to contain the receiver.
  
  * If `reportTo` is a non-`nil` pointer to an `MBExpressionError` instance
@@ -170,7 +171,7 @@
  * If `reportTo` is `nil` and `suppressLog` is `NO`, the receiver will be logged
    to the console using the `log` method.
  
- * If `reportTo` is a non-`nil` but `*reportTo` is `nil`, the memory location
+ * If `reportTo` is non-`nil` but `*reportTo` is `nil`, the memory location
    pointed to by `*reportTo` will be updated to contain the receiver.
  
  * If `reportTo` is a non-`nil` pointer to an `MBExpressionError` instance

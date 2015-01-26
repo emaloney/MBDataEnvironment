@@ -51,7 +51,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setCausedByError:</TokenIdentifier>
-			<Abstract type="html">If the receiver was caused by an underlying error, this property will
+			<Abstract type="html">If the receiver was caused by an underlying NSError, this property will
     contain the original error. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
@@ -64,7 +64,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/causedByError</TokenIdentifier>
-			<Abstract type="html">If the receiver was caused by an underlying error, this property will
+			<Abstract type="html">If the receiver was caused by an underlying NSError, this property will
     contain the original error. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
@@ -77,7 +77,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/causedByError</TokenIdentifier>
-			<Abstract type="html">If the receiver was caused by an underlying error, this property will
+			<Abstract type="html">If the receiver was caused by an underlying NSError, this property will
     contain the original error. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
@@ -90,8 +90,8 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setCausedByException:</TokenIdentifier>
-			<Abstract type="html">If the receiver was caused by an underlying exception, this property will
-    contain the original exception. Otherwise, nil. </Abstract>
+			<Abstract type="html">If the receiver was caused by an underlying NSException, this property
+    will contain the original exception. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSException *causedByException</Declaration>
@@ -103,8 +103,8 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/causedByException</TokenIdentifier>
-			<Abstract type="html">If the receiver was caused by an underlying exception, this property will
-    contain the original exception. Otherwise, nil. </Abstract>
+			<Abstract type="html">If the receiver was caused by an underlying NSException, this property
+    will contain the original exception. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSException *causedByException</Declaration>
@@ -116,8 +116,8 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/causedByException</TokenIdentifier>
-			<Abstract type="html">If the receiver was caused by an underlying exception, this property will
-    contain the original exception. Otherwise, nil. </Abstract>
+			<Abstract type="html">If the receiver was caused by an underlying NSException, this property
+    will contain the original exception. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSException *causedByException</Declaration>
@@ -203,44 +203,8 @@ during expression parsing and evaluation.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingToken:</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error.</Abstract>
-			<DeclaredIn>MBExpressionError.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
-			
-			
-			<Anchor>//api/name/offendingToken</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingToken</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error.</Abstract>
-			<DeclaredIn>MBExpressionError.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
-			
-			
-			<Anchor>//api/name/offendingToken</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingToken</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error.</Abstract>
-			<DeclaredIn>MBExpressionError.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
-			
-			
-			<Anchor>//api/name/offendingToken</Anchor>
-            <NodeRef refid="12"/>
-		</Token>
-		
-		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingExpression:</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBML expression that caused the error.</Abstract>
+			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
@@ -252,7 +216,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingExpression</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBML expression that caused the error.</Abstract>
+			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
@@ -264,13 +228,55 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingExpression</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBML expression that caused the error.</Abstract>
+			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
 			
 			
 			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingToken:</TokenIdentifier>
+			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    offendingExpression. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingToken</TokenIdentifier>
+			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    offendingExpression. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="12"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingToken</TokenIdentifier>
+			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    offendingExpression. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
             <NodeRef refid="12"/>
 		</Token>
 		

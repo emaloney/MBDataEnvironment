@@ -261,13 +261,13 @@ during expression parsing and evaluation.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/offendingToken">&nbsp;&nbsp;offendingToken</a></code>
+		<code><a href="#//api/name/offendingExpression">&nbsp;&nbsp;offendingExpression</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/offendingExpression">&nbsp;&nbsp;offendingExpression</a></code>
+		<code><a href="#//api/name/offendingToken">&nbsp;&nbsp;offendingToken</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -438,7 +438,7 @@ during expression parsing and evaluation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>If the receiver was caused by an underlying error, this property will
+		<p>If the receiver was caused by an underlying <code>NSError</code>, this property will
     contain the original error. Otherwise, <code>nil</code>.</p>
 	</div>		
 	
@@ -475,8 +475,8 @@ during expression parsing and evaluation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>If the receiver was caused by an underlying exception, this property will
-    contain the original exception. Otherwise, <code>nil</code>.</p>
+		<p>If the receiver was caused by an underlying <code>NSException</code>, this property
+    will contain the original exception. Otherwise, <code>nil</code>.</p>
 	</div>		
 	
     
@@ -548,7 +548,7 @@ during expression parsing and evaluation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Stores a reference to the MBML expression that caused the error.</p>
+		<p>Stores a reference to the MBML expression in which the error occurred.</p>
 	</div>		
 	
     
@@ -584,7 +584,9 @@ during expression parsing and evaluation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Stores a reference to the <code>MBMLParseToken</code> involved in the error.</p>
+		<p>Stores a reference to the <code>MBMLParseToken</code> involved in the error, which
+    is useful for pinpointing the problematic portion of the
+    <a href="#//api/name/offendingExpression"><code>offendingExpression</code></a>.</p>
 	</div>		
 	
     
@@ -1242,7 +1244,7 @@ of the <code>reportTo</code> parameter:</p>
 		<ul>
 <li><p>If <code>reportTo</code> is <code>nil</code>, the receiver will be logged to the console using
  the <code>log</code> method.</p></li>
-<li><p>If <code>reportTo</code> is a non-<code>nil</code> but <code>*reportTo</code> is <code>nil</code>, the memory location
+<li><p>If <code>reportTo</code> is non-<code>nil</code> but <code>*reportTo</code> is <code>nil</code>, the memory location
  pointed to by <code>*reportTo</code> will be updated to contain the receiver.</p></li>
 <li><p>If <code>reportTo</code> is a non-<code>nil</code> pointer to an <code>MBExpressionError</code> instance
  the receiver will be reported to that error, meaning the receiver becomes
@@ -1309,7 +1311,7 @@ of the <code>reportTo</code> parameter:</p>
 		<ul>
 <li><p>If <code>reportTo</code> is <code>nil</code> and <code>suppressLog</code> is <code>NO</code>, the receiver will be logged
  to the console using the <code>log</code> method.</p></li>
-<li><p>If <code>reportTo</code> is a non-<code>nil</code> but <code>*reportTo</code> is <code>nil</code>, the memory location
+<li><p>If <code>reportTo</code> is non-<code>nil</code> but <code>*reportTo</code> is <code>nil</code>, the memory location
  pointed to by <code>*reportTo</code> will be updated to contain the receiver.</p></li>
 <li><p>If <code>reportTo</code> is a non-<code>nil</code> pointer to an <code>MBExpressionError</code> instance
  the receiver will be reported to that error, meaning the receiver becomes
