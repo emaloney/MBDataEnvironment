@@ -713,10 +713,8 @@ Validation will fail if the parameter is not an NSDictionary instance.</Abstract
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:isStringAtIndex:error:</TokenIdentifier>
-			<Abstract type="html">Validates an expression parameter (i.e., a parameter of a function whose
-&lt;Function&gt; is declared as type=&quot;pipedExpressions&quot;) to ensure that the
-expression at the specified array index yields an NSString when evaluated.
-  </Abstract>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields an NSString when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>+ (NSString *)validateExpression:(NSArray *)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
@@ -745,10 +743,8 @@ expression at the specified array index yields an NSString when evaluated.
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:containsNumberAtIndex:error:</TokenIdentifier>
-			<Abstract type="html">Validates an expression parameter (i.e., a parameter of a function whose
-&lt;Function&gt; is declared as type=&quot;pipedExpressions&quot;) to ensure that the
-expression at the specified array index yields a numeric value when evaluated.
-  </Abstract>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields a numeric value when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>+ (NSDecimalNumber *)validateExpression:(NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
@@ -777,10 +773,8 @@ expression at the specified array index yields a numeric value when evaluated.
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:isArrayAtIndex:error:</TokenIdentifier>
-			<Abstract type="html">Validates an expression parameter (i.e., a parameter of a function whose
-&lt;Function&gt; is declared as type=&quot;pipedExpressions&quot;) to ensure that the
-expression at the specified array index yields an NSArray when evaluated.
-  </Abstract>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields an NSArray when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>+ (NSArray *)validateExpression:(NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
@@ -809,11 +803,8 @@ expression at the specified array index yields an NSArray when evaluated.
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:isDictionaryAtIndex:error:</TokenIdentifier>
-			<Abstract type="html">Validates an expression parameter (i.e., a parameter of a function whose
-&lt;Function&gt; is declared as type=&quot;pipedExpressions&quot;) to ensure that the
-expression at the specified array index yields an NSDictionary when
-evaluated.
-  </Abstract>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields an NSDictionary when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>+ (NSDictionary *)validateExpression:(NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
@@ -842,7 +833,7 @@ evaluated.
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/executeWithInput:error:</TokenIdentifier>
-			<Abstract type="html">Called to execute the function.</Abstract>
+			<Abstract type="html">Called by the expression engine to execute the function.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
 			<Declaration>- (id)executeWithInput:(id)input error:(MBExpressionError **)errPtr</Declaration>

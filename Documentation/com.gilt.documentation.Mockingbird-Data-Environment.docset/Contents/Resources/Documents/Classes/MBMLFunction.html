@@ -125,9 +125,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating instances">Creating instances</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function parameter validation (high-level)">Function parameter validation (high-level)</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Validating parameter lists">Validating parameter lists</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function parameter validation (mid-level)">Function parameter validation (mid-level)</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Validating individual parameters">Validating individual parameters</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Validating parameters for functions taking piped expressions">Validating parameters for functions taking piped expressions</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function execution">Function execution</a></span></li>
 	
@@ -252,7 +254,9 @@ as an MBML function.</p>
 <p>MBML functions allow native Objective-C code to be called from within
 Mockingbird expressions. When an expression containing a function call is
 evaluated, the implementing method of the function is executed, and the
-value returned by the method (if any) is yielded by the function.</p>
+value returned by the method (if any) is yielded by the function. Values
+returned by function implementations can then be manipulated further within
+an expression.</p>
 
 <p>Functions can take zero or more input parameters, and they may return an
 object instance as a result.</p>
@@ -291,14 +295,23 @@ input type, as discussed below.</p>
 <p>The class method that implements an MBML function typically returns an
 <code>id</code> type. Functions that fail to execute to completion due to an error
 will signal that error by returning an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a> instance. The
-<code>MBMLFunction</code> class inspects the return value to determine whether an error
-occurred, and if it did not, the method&rsquo;s return value becomes the value
-yielded by the MBML function.</p>
+<code>MBMLFunction</code> class inspects the value returned by the function implementation
+to determine whether an error occurred.</p>
+
+<p>When a function returns an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>, it causes the entire expression
+to fail evaluatation, and the error will bubble up to the caller (if the caller
+opted to handle errors directly) or will be logged to the console.</p>
+
+<p>Under normal conditions, the value returned by the function implementation
+becomes the value yielded by the function call within the expression.</p>
 
 <h3>Declaring Functions</h3>
 
 <p>A standard set of MBML functions is included in the Mockingbird Data
-Environment by default, declared in <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>.</p>
+Environment by default, declared in <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>.
+You can inspect this file to see how functions are declared in MBML, and to
+find the implementing class methods for examples of how functions are
+written.</p>
 
 <p>You can also expose your own function implementations, either through an
 MBML file, or programmatically by creating an <code>MBMLFunction</code> instance and
@@ -320,10 +333,10 @@ passing it to <a href="../Classes/MBVariableSpace.html#//api/name/declareFunctio
 a function with the <a href="#//api/name/name">name</a> &ldquo;<code>foo</code>&rdquo; taking no parameters is called as &ldquo;<code>^foo()</code>&rdquo;.</p></li>
 <li><p><code>class</code> - Specifies the <a href="#//api/name/name">name</a> of the Objective-C class that implements the
 function.</p></li>
-<li><p><code>method</code> - The implementing method. This attribute is optional if the <a href="#//api/name/name">name</a>
-of the method is the same as the function <a href="#//api/name/name">name</a>. Unlike with Objective-C
-selectors, colons are <em>not</em> considered part of the <a href="#//api/name/name">name</a> and therefore should
-not be included in the declaration.</p></li>
+<li><p><code>method</code> - The implementing method, which must be a class method. This
+attribute is optional if the <a href="#//api/name/name">name</a> of the method is the same as the function
+<a href="#//api/name/name">name</a>. Unlike with Objective-C selectors, colons are <em>not</em> considered part of
+the <a href="#//api/name/name">name</a> and therefore should not be included in the declaration.</p></li>
 <li><p><code>input</code> - Specifies the type of input the function expects, as described
 below. The <code>MBMLFunction</code> class will marshal input parameters accordingly.</p></li>
 <li><p><code>output</code> - Specifies the type of output returned by the function.</p></li>
@@ -342,18 +355,18 @@ method should take no parameters.</p></li>
 implementing method should take an <code>NSString</code> parameter.</p></li>
 <li><p><code>string</code> - The function accepts as input an expression yielding a string.
 Prior to executing the implementing method, the <code>MBMLFunction</code> will evaluate
-the input parameter as a string expression, and the result is passed to the
+the input parameter as a string expression, and will pass the result to the
 implementing method. The implementing method should take an <code>NSString</code>
 parameter.</p></li>
 <li><p><code>object</code> - The function accepts as input an expression yielding an object.
 Prior to executing the implementing method, the <code>MBMLFunction</code> will evaluate
-the input parameter as an object expression, and the result is passed to the
+the input parameter as an object expression, and will pass the result to the
 implementing method. The implementing method should take an <code>NSObject</code> or
 <code>id</code> parameter.</p></li>
 <li><p><code>math</code> - The function accepts as input a math expression yielding a numeric
 value. Prior to executing the implementing method, the <code>MBMLFunction</code> will
-the input parameter as a numeric expression, and the result is passed to the
-implementing method. The implementing method should take an <code>NSNumber</code>
+evaluate the input parameter as a numeric expression, and will pass the result
+to the implementing method. The implementing method should take an <code>NSNumber</code>
 parameter.</p></li>
 <li><p><code>pipedExpressions</code> - The function accepts zero or more expressions as input.
 Prior to executing the implementing method, the <code>MBMLFunction</code> will split
@@ -386,12 +399,12 @@ following values:</p>
 <ul>
 <li><p><code>object</code> - The function returns an Objective-C object.</p></li>
 <li><p><code>none</code> - The function returns no output. This is only needed for functions
-that have a side-effect but do not yield meaningful output.</p></li>
+that produce a side-effect but otherwise do not yield meaningful output.</p></li>
 </ul>
 
 
 <p>Typically, a function&rsquo;s implementing method is declared to return the type
-<code>id</code> rather than a specific type. This is to allow the method to return a
+<code>id</code> rather than a specific type. This is to allow the method to return an
 <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a> instance to signal an error.</p>
 
 <p>Even if a function is declared with an output type of <code>none</code>, the
@@ -411,14 +424,25 @@ that evaluates to an <code>NSString</code> instance:</p>
 
 <pre><code>+ (id) hypotheticalFunction:(NSArray*)params
 {
-     MBMLFunctionError* err = nil;
-     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&amp;err];
-     NSString* key = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&amp;err];
-     if (err) return err;
+    MBMLFunctionError* err = nil;
+    NSUInteger paramCnt = [MBMLFunction validateParameter:params 
+                                        countIsAtLeast:2
+                                             andAtMost:3
+                                                 error:&amp;err];
+    NSString* key = [MBMLFunction validateParameter:params
+                                 isStringAtIndex:1
+                                           error:&amp;err];
+    if (err) return err;
 
-    ... function implementation here...
+    //    ...function implementation follows...
+    // it is safe to use 'paramCnt' and 'key' here
 }
 </code></pre>
+
+<p>The parameter validation methods are designed so that you don&rsquo;t need to
+check the value of <code>err</code> after each call. You will only need to check
+<code>err</code> before using any of the values returned by the the validation
+methods.</p>
 					</div>
 					
 					
@@ -470,8 +494,8 @@ that evaluates to an <code>NSString</code> instance:</p>
 						</ul>
 						
 						
-						<a title="Function parameter validation (high-level)" name="task_Function parameter validation (high-level)"></a>
-						<h3 class="subsubtitle task-title">Function parameter validation (high-level)</h3>
+						<a title="Validating parameter lists" name="task_Validating parameter lists"></a>
+						<h3 class="subsubtitle task-title">Validating parameter lists</h3>
 
 						<ul class="task-list">
 							<li>
@@ -540,7 +564,15 @@ that evaluates to an <code>NSString</code> instance:</p>
 	</span>
 	
 	
-</li><li>
+</li>
+						</ul>
+						
+						
+						<a title="Validating individual parameters" name="task_Validating individual parameters"></a>
+						<h3 class="subsubtitle task-title">Validating individual parameters</h3>
+
+						<ul class="task-list">
+							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/validateParameter:isKindOfClass:error:">+&nbsp;validateParameter:isKindOfClass:error:</a></code>
 	</span>
@@ -586,8 +618,8 @@ that evaluates to an <code>NSString</code> instance:</p>
 						</ul>
 						
 						
-						<a title="Function parameter validation (mid-level)" name="task_Function parameter validation (mid-level)"></a>
-						<h3 class="subsubtitle task-title">Function parameter validation (mid-level)</h3>
+						<a title="Validating parameters for functions taking piped expressions" name="task_Validating parameters for functions taking piped expressions"></a>
+						<h3 class="subsubtitle task-title">Validating parameters for functions taking piped expressions</h3>
 
 						<ul class="task-list">
 							<li>
@@ -790,9 +822,8 @@ or no output.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Validates an expression parameter (i.e., a parameter of a function whose
-<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
-expression at the specified array index yields a numeric value when evaluated.</p>
+		<p>Validates an expression parameter list to ensure that the expression at the
+specified array index yields a numeric value when evaluated.</p>
 	</div>		
 	
     
@@ -840,7 +871,8 @@ expression at the specified array index yields a numeric value when evaluated.</
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+		<p>This method is intended to be used by functions declared with an <a href="#//api/name/inputType"><code>inputType</code></a>
+of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
             problems, you should always validate array indexes prior to calling
@@ -868,9 +900,8 @@ expression at the specified array index yields a numeric value when evaluated.</
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Validates an expression parameter (i.e., a parameter of a function whose
-<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
-expression at the specified array index yields an <code>NSArray</code> when evaluated.</p>
+		<p>Validates an expression parameter list to ensure that the expression at the
+specified array index yields an <code>NSArray</code> when evaluated.</p>
 	</div>		
 	
     
@@ -918,7 +949,8 @@ expression at the specified array index yields an <code>NSArray</code> when eval
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+		<p>This method is intended to be used by functions declared with an <a href="#//api/name/inputType"><code>inputType</code></a>
+of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
             problems, you should always validate array indexes prior to calling
@@ -946,10 +978,8 @@ expression at the specified array index yields an <code>NSArray</code> when eval
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Validates an expression parameter (i.e., a parameter of a function whose
-<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
-expression at the specified array index yields an <code>NSDictionary</code> when
-evaluated.</p>
+		<p>Validates an expression parameter list to ensure that the expression at the
+specified array index yields an <code>NSDictionary</code> when evaluated.</p>
 	</div>		
 	
     
@@ -997,7 +1027,8 @@ evaluated.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+		<p>This method is intended to be used by functions declared with an <a href="#//api/name/inputType"><code>inputType</code></a>
+of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
             problems, you should always validate array indexes prior to calling
@@ -1025,9 +1056,8 @@ evaluated.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Validates an expression parameter (i.e., a parameter of a function whose
-<code>&lt;Function&gt;</code> is declared as <code>type="pipedExpressions"</code>) to ensure that the
-expression at the specified array index yields an <code>NSString</code> when evaluated.</p>
+		<p>Validates an expression parameter list to ensure that the expression at the
+specified array index yields an <code>NSString</code> when evaluated.</p>
 	</div>		
 	
     
@@ -1075,7 +1105,8 @@ expression at the specified array index yields an <code>NSString</code> when eva
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
+		<p>This method is intended to be used by functions declared with an <a href="#//api/name/inputType"><code>inputType</code></a>
+of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><strong>Warning:</strong> For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid
             problems, you should always validate array indexes prior to calling
@@ -2390,7 +2421,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called to execute the function.</p>
+		<p>Called by the expression engine to execute the function.</p>
 	</div>		
 	
     
@@ -2563,7 +2594,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-25)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

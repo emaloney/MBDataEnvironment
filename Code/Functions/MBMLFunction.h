@@ -123,7 +123,9 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  MBML functions allow native Objective-C code to be called from within
  Mockingbird expressions. When an expression containing a function call is
  evaluated, the implementing method of the function is executed, and the
- value returned by the method (if any) is yielded by the function.
+ value returned by the method (if any) is yielded by the function. Values
+ returned by function implementations can then be manipulated further within
+ an expression.
  
  Functions can take zero or more input parameters, and they may return an
  object instance as a result.
@@ -160,14 +162,23 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  The class method that implements an MBML function typically returns an
  `id` type. Functions that fail to execute to completion due to an error
  will signal that error by returning an `MBMLFunctionError` instance. The 
- `MBMLFunction` class inspects the return value to determine whether an error
- occurred, and if it did not, the method's return value becomes the value
- yielded by the MBML function.
+ `MBMLFunction` class inspects the value returned by the function implementation
+ to determine whether an error occurred.
+ 
+ When a function returns an `MBMLFunctionError`, it causes the entire expression
+ to fail evaluatation, and the error will bubble up to the caller (if the caller
+ opted to handle errors directly) or will be logged to the console.
+ 
+ Under normal conditions, the value returned by the function implementation
+ becomes the value yielded by the function call within the expression.
 
  ### Declaring Functions
 
  A standard set of MBML functions is included in the Mockingbird Data 
  Environment by default, declared in <code>MBDataEnvironmentModule.xml</code>.
+ You can inspect this file to see how functions are declared in MBML, and to
+ find the implementing class methods for examples of how functions are
+ written.
 
  You can also expose your own function implementations, either through an
  MBML file, or programmatically by creating an `MBMLFunction` instance and
@@ -189,10 +200,10 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  * `class` - Specifies the name of the Objective-C class that implements the
  function.
  
- * `method` - The implementing method. This attribute is optional if the name
- of the method is the same as the function name. Unlike with Objective-C
- selectors, colons are *not* considered part of the name and therefore should
- not be included in the declaration.
+ * `method` - The implementing method, which must be a class method. This 
+ attribute is optional if the name of the method is the same as the function
+ name. Unlike with Objective-C selectors, colons are *not* considered part of
+ the name and therefore should not be included in the declaration.
  
  * `input` - Specifies the type of input the function expects, as described
  below. The `MBMLFunction` class will marshal input parameters accordingly.
@@ -212,20 +223,20 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  
  * `string` - The function accepts as input an expression yielding a string.
  Prior to executing the implementing method, the `MBMLFunction` will evaluate
- the input parameter as a string expression, and the result is passed to the
+ the input parameter as a string expression, and will pass the result to the
  implementing method. The implementing method should take an `NSString`
  parameter.
  
  * `object` - The function accepts as input an expression yielding an object.
  Prior to executing the implementing method, the `MBMLFunction` will evaluate
- the input parameter as an object expression, and the result is passed to the
+ the input parameter as an object expression, and will pass the result to the
  implementing method. The implementing method should take an `NSObject` or
  `id` parameter.
  
  * `math` - The function accepts as input a math expression yielding a numeric
  value. Prior to executing the implementing method, the `MBMLFunction` will 
- the input parameter as a numeric expression, and the result is passed to the
- implementing method. The implementing method should take an `NSNumber`
+ evaluate the input parameter as a numeric expression, and will pass the result
+ to the implementing method. The implementing method should take an `NSNumber`
  parameter.
 
  * `pipedExpressions` - The function accepts zero or more expressions as input.
@@ -260,10 +271,10 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  * `object` - The function returns an Objective-C object.
  
  * `none` - The function returns no output. This is only needed for functions
- that have a side-effect but do not yield meaningful output.
+ that produce a side-effect but otherwise do not yield meaningful output.
  
  Typically, a function's implementing method is declared to return the type
- `id` rather than a specific type. This is to allow the method to return a
+ `id` rather than a specific type. This is to allow the method to return an
  `MBMLFunctionError` instance to signal an error.
  
  Even if a function is declared with an output type of `none`, the
@@ -283,13 +294,24 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  
     + (id) hypotheticalFunction:(NSArray*)params
     {
-         MBMLFunctionError* err = nil;
-         NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
-         NSString* key = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&err];
-         if (err) return err;
- 
-        ... function implementation here...
+        MBMLFunctionError* err = nil;
+        NSUInteger paramCnt = [MBMLFunction validateParameter:params 
+                                            countIsAtLeast:2
+                                                 andAtMost:3
+                                                     error:&err];
+        NSString* key = [MBMLFunction validateParameter:params
+                                     isStringAtIndex:1
+                                               error:&err];
+        if (err) return err;
+
+        //    ...function implementation follows...
+        // it is safe to use 'paramCnt' and 'key' here
     }
+
+ The parameter validation methods are designed so that you don't need to
+ check the value of `err` after each call. You will only need to check 
+ `err` before using any of the values returned by the the validation
+ methods.
  */
 @interface MBMLFunction : MBDataModel
 
@@ -300,12 +322,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
 
 /*!
  Returns the name of the function. A function's name determines how it is
- invoked from within MBML. For example, the expression:
- 
-    ^functionName(param1|param2)
- 
- would invoke the function named `functionName` and pass it two parameters:
- `param1` and `param2`.
+ invoked from within an MBML expression.
  */
 @property(nonatomic, readonly) NSString* name;
 
@@ -348,8 +365,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
                methodSelector:(SEL)selector;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark Function parameter validation (high-level)
-/*!    @name Function parameter validation (high-level)                       */
+#pragma mark Validating parameter lists
+/*!    @name Validating parameter lists                                       */
 /*----------------------------------------------------------------------------*/
 
 /*!
@@ -482,8 +499,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
  */
 + (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(MBMLFunctionError**)errPtr;
 
@@ -513,8 +530,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
 */
 + (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(MBMLFunctionError**)errPtr;
 
@@ -539,8 +556,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
 */
 + (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
@@ -565,8 +582,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
 */
 + (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
@@ -591,8 +608,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
 */
 + (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
@@ -617,10 +634,15 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
 */
 + (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Validating individual parameters
+/*!    @name Validating individual parameters                                 */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Validates a function's input parameter to ensure that the object is an instance
@@ -753,15 +775,17 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
 + (NSDictionary*) validateParameterIsDictionary:(id)param error:(MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark Function parameter validation (mid-level)
-/*!    @name Function parameter validation (mid-level)                        */
+#pragma mark Validating parameters for functions taking piped expressions
+/*!    @name Validating parameters for functions taking piped expressions     */
 /*----------------------------------------------------------------------------*/
 
 /*!
- Validates an expression parameter (i.e., a parameter of a function whose
- `<Function>` is declared as `type="pipedExpressions"`) to ensure that the
- expression at the specified array index yields an `NSString` when evaluated.
-  
+ Validates an expression parameter list to ensure that the expression at the
+ specified array index yields an `NSString` when evaluated.
+ 
+ This method is intended to be used by functions declared with an `inputType`
+ of `MBMLFunctionInputPipedExpressions`.
+
  @param     params An array containing the function's input parameters.
  
  @param     idx The array index of the parameter being validated.
@@ -779,16 +803,18 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
  */
 + (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
 /*!
- Validates an expression parameter (i.e., a parameter of a function whose
- `<Function>` is declared as `type="pipedExpressions"`) to ensure that the
- expression at the specified array index yields a numeric value when evaluated.
-  
+ Validates an expression parameter list to ensure that the expression at the
+ specified array index yields a numeric value when evaluated.
+ 
+ This method is intended to be used by functions declared with an `inputType`
+ of `MBMLFunctionInputPipedExpressions`.
+
  @param     params An array containing the function's input parameters.
  
  @param     idx The array index of the parameter being validated.
@@ -806,16 +832,18 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
  */
 + (NSDecimalNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
 /*!
- Validates an expression parameter (i.e., a parameter of a function whose
- `<Function>` is declared as `type="pipedExpressions"`) to ensure that the
- expression at the specified array index yields an `NSArray` when evaluated.
-  
+ Validates an expression parameter list to ensure that the expression at the
+ specified array index yields an `NSArray` when evaluated.
+
+ This method is intended to be used by functions declared with an `inputType`
+ of `MBMLFunctionInputPipedExpressions`.
+
  @param     params An array containing the function's input parameters.
  
  @param     idx The array index of the parameter being validated.
@@ -833,16 +861,17 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
  */
 + (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
 /*!
- Validates an expression parameter (i.e., a parameter of a function whose
- `<Function>` is declared as `type="pipedExpressions"`) to ensure that the
- expression at the specified array index yields an `NSDictionary` when
- evaluated.
+ Validates an expression parameter list to ensure that the expression at the
+ specified array index yields an `NSDictionary` when evaluated.
+ 
+ This method is intended to be used by functions declared with an `inputType`
+ of `MBMLFunctionInputPipedExpressions`.
   
  @param     params An array containing the function's input parameters.
  
@@ -861,8 +890,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @warning   For performance reasons, this method does not attempt to validate
             the provided array index, and an exception will occur if the index
             is out-of-range for the parameter array. Therefore, to avoid 
-            problems, you should always validate array indexes prior to calling
-            this method.
+            problems, you should always validate the parameter count of the
+            array prior to calling this method.
  */
 + (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
 
@@ -872,7 +901,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
 /*----------------------------------------------------------------------------*/
 
 /*!
- Called to execute the function.
+ Called by the expression engine to execute the function.
  
  @param     input The input parameter(s) for the function.
  
