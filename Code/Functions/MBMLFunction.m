@@ -47,6 +47,29 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     NSString* _deprecated;
     NSString* _deprecatedInFavorOf;
     NSString* _deprecationMessage;
+    BOOL _createdProgrammatically;
+}
+
+/******************************************************************************/
+#pragma mark Object lifecycle
+/******************************************************************************/
+
+- (instancetype) initWithName:(NSString*)name
+                    inputType:(MBMLFunctionInputType)inputType
+                   outputType:(MBMLFunctionOutputType)outputType
+            implementingClass:(Class)cls
+               methodSelector:(SEL)selector
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _functionClass = cls;
+        _functionSelector = selector;
+        _inputType = inputType;
+        _outputType = outputType;
+        _createdProgrammatically = YES;
+    }
+    return self;
 }
 
 /******************************************************************************/
@@ -68,6 +91,11 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 - (BOOL) validateAttributes
 {
+    // bypass validation for programmatically-created instances
+    if (_createdProgrammatically) {
+        return YES;
+    }
+
     if (![super validateAttributes]) {
         return NO;
     }
@@ -87,10 +115,12 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
         errorLog(@"Couldn't find implementing class for %@ specified in: %@", [self class], self.simulatedXML);
         return NO;
     }
-    
-    _functionSelector = [[self class] _selectorFromMethodName:(_methodName ? _methodName : _name)
-                                                 forInputType:_inputType];
-    
+
+    if (!_functionSelector) {
+        _functionSelector = [[self class] _selectorFromMethodName:(_methodName ? _methodName : _name)
+                                                     forInputType:_inputType];
+    }
+
     if (![_functionClass respondsToSelector:_functionSelector]) {
         errorLog(@"%@ class %@ does not implement %@ specified in: %@", [self class], NSStringFromClass(_functionClass), NSStringFromSelector(_functionSelector), self.simulatedXML);
         return NO;

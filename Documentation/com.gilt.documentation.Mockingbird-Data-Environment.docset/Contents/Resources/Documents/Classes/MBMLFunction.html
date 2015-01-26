@@ -103,6 +103,8 @@
 	
 	<option value="//api/name/functionDescription">&nbsp;&nbsp;&nbsp;&nbsp;- functionDescription</option>
 	
+	<option value="//api/name/initWithName:inputType:outputType:implementingClass:methodSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithName:inputType:outputType:implementingClass:methodSelector:</option>
+	
 	
 	
 </select>
@@ -120,6 +122,8 @@
 <li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Properties">Properties</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Creating instances">Creating instances</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Function parameter validation (high-level)">Function parameter validation (high-level)</a></span></li>
 	
@@ -203,6 +207,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/functionDescription">functionDescription</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithName:inputType:outputType:implementingClass:methodSelector:">initWithName:inputType:outputType:implementingClass:methodSelector:</a></span></li>
+	
 </ul></li>
 
 
@@ -243,55 +249,64 @@
 						<p>Represents an Objective-C method that is exposed to the Mockingbird environment
 as an MBML function.</p>
 
-<p>Functions allow native Objective-C code to be called from MBML. When an MBML
-expression containing a function call is evaluated, the implementing method
-of the function is executed, and the value returned by the method (if any) is
-passed back to MBML.</p>
+<p>MBML functions allow native Objective-C code to be called from within
+Mockingbird expressions. When an expression containing a function call is
+evaluated, the implementing method of the function is executed, and the
+value returned by the method (if any) is yielded by the function.</p>
 
-<p>Functions may take zero or more input parameters, and they may return an
-optional result.</p>
+<p>Functions can take zero or more input parameters, and they may return an
+object instance as a result.</p>
 
-<p><strong> Calling Functions </strong></p>
+<h3>Calling Functions</h3>
 
-<p>In MBML, a function call can be embedded within an MBML expression. Function
-calls start with a caret character (&ldquo;<code>^</code>&rdquo;), followed by the <a href="#//api/name/name">name</a> of the
-function, and end in a list of zero or pipe-separated parameters contained in
-parentheses.</p>
+<p>Function calls begin with a caret character (&lsquo;<code>^</code>&rsquo;), followed by the <a href="#//api/name/name">name</a> of
+the function, and end in a list of zero or more pipe-separated parameters
+surrounded by parentheses.</p>
 
 <p>For example, to call a function that creates an array, you could write:</p>
 
 <pre><code>^array(pizza|pasta|sushi|lobster)
 </code></pre>
 
-<p>The function above would return an <code>NSArray</code> instance containing four items:
-the strings &ldquo;pizza&rdquo;, &ldquo;pasta&rdquo;, &ldquo;sushi&rdquo; and &ldquo;lobster&rdquo;.</p>
+<p>The function above returns an <code>NSArray</code> containing four items: the strings
+&ldquo;<code>pizza</code>&rdquo;, &ldquo;<code>pasta</code>&rdquo;, &ldquo;<code>sushi</code>&rdquo; and &ldquo;<code>lobster</code>&rdquo;.</p>
 
-<p>Because this particular expression returns an object, we can access values in
+<p>Because this particular expression yields an object, we can access values in
 the returned object as if it were a regular MBML object reference. To access
-the fourth element in the (zero-based-indexed) array, you would write:</p>
+the fourth element in the (zero-indexed) array, you would write:</p>
 
 <pre><code>^array(pizza|pasta|sushi|lobster)[3]
 </code></pre>
 
-<p>This expression return the value &ldquo;lobster&rdquo;.</p>
+<p>This expression yields the value &ldquo;<code>lobster</code>&rdquo;.</p>
 
-<p><strong> Implementing MBML Functions </strong></p>
+<h3>Implementing Functions</h3>
 
 <p>MBML functions are implemented as Objective-C class methods. MBML functions
 that accept multiple parameters will receive those values in an array. The
 <code>MBMLFunction</code> class handles the marshalling of parameters to the function
-implementation. Precisely how this is done depends on how the function is
-declared within MBML:</p>
+implementation. Precisely how parameters are handled depends on the function&rsquo;s
+input type, as discussed below.</p>
 
-<p><strong> Declaring Functions </strong></p>
+<p>The class method that implements an MBML function typically returns an
+<code>id</code> type. Functions that fail to execute to completion due to an error
+will signal that error by returning an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a> instance. The
+<code>MBMLFunction</code> class inspects the return value to determine whether an error
+occurred, and if it did not, the method&rsquo;s return value becomes the value
+yielded by the MBML function.</p>
 
-<p>A standard set of MBML functions is declared in Mockingbird, and it is included
-by default. You can also add your own function implementations, which must be
-explicitly declared in order to expose them to the MBML environment.</p>
+<h3>Declaring Functions</h3>
 
-<p>A function declaration looks like:</p>
+<p>A standard set of MBML functions is included in the Mockingbird Data
+Environment by default, declared in <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>.</p>
 
-<pre><code>&lt;Function name="functionName" 
+<p>You can also expose your own function implementations, either through an
+MBML file, or programmatically by creating an <code>MBMLFunction</code> instance and
+passing it to <a href="../Classes/MBVariableSpace.html#//api/name/declareFunction:"><code>[MBVariableSpace declareFunction:]</code></a>.</p>
+
+<p>In an MBML file, a function declaration looks like:</p>
+
+<pre><code>&lt;Function name="functionName"
           class="ImplementingClass" 
           method="methodName" 
           input="inputType"
@@ -301,22 +316,21 @@ explicitly declared in order to expose them to the MBML environment.</p>
 <p>The <code>&lt;Function&gt;</code> tag accepts the following attributes:</p>
 
 <ul>
-<li><p><code>name</code> - The <a href="#//api/name/name">name</a> of the function as it will be invoked in MBML (eg., a
-function with the <a href="#//api/name/name">name</a> <code>foo</code> and taking no parameters is called from within
-MBML as &ldquo;<code>^foo()</code>&rdquo;.)</p></li>
+<li><p><code>name</code> - The <a href="#//api/name/name">name</a> of the function as it will be invoked in an expresion;
+a function with the <a href="#//api/name/name">name</a> &ldquo;<code>foo</code>&rdquo; taking no parameters is called as &ldquo;<code>^foo()</code>&rdquo;.</p></li>
 <li><p><code>class</code> - Specifies the <a href="#//api/name/name">name</a> of the Objective-C class that implements the
 function.</p></li>
-<li><p><code>method</code> - The implementing method. This attribute is optional if the
-method is the same as the function <a href="#//api/name/name">name</a>. Unlike with Objective-C selectors,
-colons are <em>not</em> considered part of the method and therefore should not be
-included in the declaration.</p></li>
-<li><p><code>input</code> - Specifies the type of input the function expects. The
-<code>MBMLFunction</code> class will marshal input parameters accordingly.</p></li>
+<li><p><code>method</code> - The implementing method. This attribute is optional if the <a href="#//api/name/name">name</a>
+of the method is the same as the function <a href="#//api/name/name">name</a>. Unlike with Objective-C
+selectors, colons are <em>not</em> considered part of the <a href="#//api/name/name">name</a> and therefore should
+not be included in the declaration.</p></li>
+<li><p><code>input</code> - Specifies the type of input the function expects, as described
+below. The <code>MBMLFunction</code> class will marshal input parameters accordingly.</p></li>
 <li><p><code>output</code> - Specifies the type of output returned by the function.</p></li>
 </ul>
 
 
-<p><strong> Function Input </strong></p>
+<h4>Function Input Type</h4>
 
 <p>The <code>input</code> attribute of the <code>&lt;Function&gt;</code> declaration in MBML accepts the
 following values:</p>
@@ -326,57 +340,70 @@ following values:</p>
 method should take no parameters.</p></li>
 <li><p><code>raw</code> - The function accepts a single uninterpreted string as input. The
 implementing method should take an <code>NSString</code> parameter.</p></li>
-<li><p><code>string</code> - The function accepts as input an MBML expression yielding a
-string. Prior to executing the implementing method, the <code>MBMLFunction</code> will
-evaluate the input parameter as a string expression. The implementing method
-should take an <code>NSString</code> parameter.</p></li>
-<li><p><code>object</code> - The function accepts as input an MBML expression yielding an
-object. Prior to executing the implementing method, the <code>MBMLFunction</code> will
-evaluate the input parameter as an object expression. The implementing method
-should take an <code>NSObject</code> or <code>id</code> parameter.</p></li>
-<li><p><code>math</code> - The function accepts as input an MBML math expression yielding
-a numeric value. Prior to executing the implementing method, the <code>MBMLFunction</code>
-will evaluate the input parameter as a math expression. The implementing method
-should take an <code>NSNumber</code> parameter.</p></li>
-<li><p><code>pipedExpressions</code> - The function accepts zero or more MBML expressions as
-input. Prior to executing the implementing method, the <code>MBMLFunction</code> will
-split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) resulting in an <code>NSArray</code>,
-which is then passed to the implementing method.</p></li>
-<li><p><code>pipedStrings</code> - The function accepts zero or more MBML expressions
-yielding strings as input. Prior to executing the implementing method, the
+<li><p><code>string</code> - The function accepts as input an expression yielding a string.
+Prior to executing the implementing method, the <code>MBMLFunction</code> will evaluate
+the input parameter as a string expression, and the result is passed to the
+implementing method. The implementing method should take an <code>NSString</code>
+parameter.</p></li>
+<li><p><code>object</code> - The function accepts as input an expression yielding an object.
+Prior to executing the implementing method, the <code>MBMLFunction</code> will evaluate
+the input parameter as an object expression, and the result is passed to the
+implementing method. The implementing method should take an <code>NSObject</code> or
+<code>id</code> parameter.</p></li>
+<li><p><code>math</code> - The function accepts as input a math expression yielding a numeric
+value. Prior to executing the implementing method, the <code>MBMLFunction</code> will
+the input parameter as a numeric expression, and the result is passed to the
+implementing method. The implementing method should take an <code>NSNumber</code>
+parameter.</p></li>
+<li><p><code>pipedExpressions</code> - The function accepts zero or more expressions as input.
+Prior to executing the implementing method, the <code>MBMLFunction</code> will split
+the input at the pipe character (&ldquo;<code>|</code>&rdquo;) resulting in an <code>NSArray</code>, which is
+then passed to the implementing method. Note that it is the responsibility
+of the implementing method to evaluate the passed-in expressions.</p></li>
+<li><p><code>pipedStrings</code> - The function accepts zero or more expressions yielding
+strings as input. Prior to executing the implementing method, the
 <code>MBMLFunction</code> will split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) and then
-evaluate each resulting expression as a string expression. The results are
+evaluate each resulting expression in the string context. The results are
 placed into an <code>NSArray</code> which is then passed to the implementing method.</p></li>
-<li><p><code>pipedObjects</code> - The function accepts zero or more MBML expressions
-yielding objects as input. Prior to executing the implementing method, the
+<li><p><code>pipedObjects</code> - The function accepts zero or more expressions yielding
+objects as input. Prior to executing the implementing method, the
 <code>MBMLFunction</code> will split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) and then
-evaluate each resulting expression as an object expression. The results are
+evaluate each resulting expression in the object context. The results are
 placed into an <code>NSArray</code> which is then passed to the implementing method.</p></li>
-<li><p><code>pipedMath</code> - The function accepts zero or more MBML math expressions
-yielding numbers as input. Prior to executing the implementing method, the
+<li><p><code>pipedMath</code> - The function accepts zero or more math expressions yielding
+numbers as input. Prior to executing the implementing method, the
 <code>MBMLFunction</code> will split the input at the pipe character (&ldquo;<code>|</code>&rdquo;) and then
-evaluate each resulting expression as a math expression. The results are
+evaluate each resulting expression in the numeric context. The results are
 placed into an <code>NSArray</code> which is then passed to the implementing method.</p></li>
 </ul>
 
 
-<p><strong> Function Output </strong></p>
+<h4>Function Output Type</h4>
 
 <p>The <code>output</code> attribute of the <code>&lt;Function&gt;</code> declaration in MBML accepts the
 following values:</p>
 
 <ul>
-<li><p><code>none</code> - The function returns no output.</p></li>
-<li><p><code>object</code> - The function returns an arbitrary Objective-C object.</p></li>
+<li><p><code>object</code> - The function returns an Objective-C object.</p></li>
+<li><p><code>none</code> - The function returns no output. This is only needed for functions
+that have a side-effect but do not yield meaningful output.</p></li>
 </ul>
 
 
-<p><strong> Parameter Validation </strong></p>
+<p>Typically, a function&rsquo;s implementing method is declared to return the type
+<code>id</code> rather than a specific type. This is to allow the method to return a
+<a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a> instance to signal an error.</p>
+
+<p>Even if a function is declared with an output type of <code>none</code>, the
+implementing method may return <code>id</code> in case it needs to signal an error.</p>
+
+<h4>Parameter Validation</h4>
 
 <p><code>MBMLFunction</code> declares a number of parmater validation methods to simplify
 error reporting on behalf of function implementations. When a function
 is passed input it isn&rsquo;t expecting, the validation methods provide a mechanism
-to report descriptive errors in a standardized way.</p>
+to report descriptive errors in a standardized way, while allowing you to
+minimize boilerplate validation code.</p>
 
 <p>Here&rsquo;s an example of the validation code for a hypothetical function that
 takes 2 or 3 parameters and expects the second parameter to be an expression
@@ -392,10 +419,6 @@ that evaluates to an <code>NSString</code> instance:</p>
     ... function implementation here...
 }
 </code></pre>
-
-<p>As you can see, MBML functions return <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a> instances when an
-error occurs. The function execution infrastructure handles this automatically
-to report errors to the console to simplify debugging.</p>
 					</div>
 					
 					
@@ -428,6 +451,20 @@ to report errors to the console to simplify debugging.</p>
 		<code><a href="#//api/name/outputType">&nbsp;&nbsp;outputType</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+						
+						<a title="Creating instances" name="task_Creating instances"></a>
+						<h3 class="subsubtitle task-title">Creating instances</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithName:inputType:outputType:implementingClass:methodSelector:">&ndash;&nbsp;initWithName:inputType:outputType:implementingClass:methodSelector:</a></code>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -2440,6 +2477,77 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/initWithName:inputType:outputType:implementingClass:methodSelector:" title="initWithName:inputType:outputType:implementingClass:methodSelector:"></a>
+	<h3 class="subsubtitle method-title">initWithName:inputType:outputType:implementingClass:methodSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a new <code>MBMLFunction</code> instance.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> inputType:(MBMLFunctionInputType)<em>inputType</em> outputType:(MBMLFunctionOutputType)<em>outputType</em> implementingClass:(Class)<em>cls</em> methodSelector:(SEL)<em>selector</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The <a href="#//api/name/name">name</a> of the function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>inputType</em></dt>
+			<dd><p>The function&rsquo;s input type.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>outputType</em></dt>
+			<dd><p>The function&rsquo;s output type.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cls</em></dt>
+			<dd><p>The implementing class of the function.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selector</em></dt>
+			<dd><p>The selector of the implementing method.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>self</code></p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLFunction.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -2455,7 +2563,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-24)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-25)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

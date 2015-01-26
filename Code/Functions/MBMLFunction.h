@@ -120,53 +120,62 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  Represents an Objective-C method that is exposed to the Mockingbird environment
  as an MBML function.
  
- Functions allow native Objective-C code to be called from MBML. When an MBML
- expression containing a function call is evaluated, the implementing method
- of the function is executed, and the value returned by the method (if any) is
- passed back to MBML.
+ MBML functions allow native Objective-C code to be called from within
+ Mockingbird expressions. When an expression containing a function call is
+ evaluated, the implementing method of the function is executed, and the
+ value returned by the method (if any) is yielded by the function.
  
- Functions may take zero or more input parameters, and they may return an
- optional result.
+ Functions can take zero or more input parameters, and they may return an
+ object instance as a result.
  
- ** Calling Functions **
- 
- In MBML, a function call can be embedded within an MBML expression. Function
- calls start with a caret character ("`^`"), followed by the name of the 
- function, and end in a list of zero or pipe-separated parameters contained in 
- parentheses.
+ ### Calling Functions
+
+ Function calls begin with a caret character ('`^`'), followed by the name of
+ the function, and end in a list of zero or more pipe-separated parameters 
+ surrounded by parentheses.
  
  For example, to call a function that creates an array, you could write:
  
     ^array(pizza|pasta|sushi|lobster)
  
- The function above would return an `NSArray` instance containing four items:
- the strings "pizza", "pasta", "sushi" and "lobster".
+ The function above returns an `NSArray` containing four items: the strings
+ "`pizza`", "`pasta`", "`sushi`" and "`lobster`".
  
- Because this particular expression returns an object, we can access values in
+ Because this particular expression yields an object, we can access values in
  the returned object as if it were a regular MBML object reference. To access
- the fourth element in the (zero-based-indexed) array, you would write:
+ the fourth element in the (zero-indexed) array, you would write:
  
     ^array(pizza|pasta|sushi|lobster)[3]
  
- This expression return the value "lobster".
+ This expression yields the value "`lobster`".
  
- ** Implementing MBML Functions **
- 
- MBML functions are implemented as Objective-C class methods. MBML functions 
+ ### Implementing Functions
+
+ MBML functions are implemented as Objective-C class methods. MBML functions
  that accept multiple parameters will receive those values in an array. The
  `MBMLFunction` class handles the marshalling of parameters to the function
- implementation. Precisely how this is done depends on how the function is
- declared within MBML:
+ implementation. Precisely how parameters are handled depends on the function's
+ input type, as discussed below.
  
- ** Declaring Functions **
+ The class method that implements an MBML function typically returns an
+ `id` type. Functions that fail to execute to completion due to an error
+ will signal that error by returning an `MBMLFunctionError` instance. The 
+ `MBMLFunction` class inspects the return value to determine whether an error
+ occurred, and if it did not, the method's return value becomes the value
+ yielded by the MBML function.
 
- A standard set of MBML functions is declared in Mockingbird, and it is included
- by default. You can also add your own function implementations, which must be
- explicitly declared in order to expose them to the MBML environment.
+ ### Declaring Functions
+
+ A standard set of MBML functions is included in the Mockingbird Data 
+ Environment by default, declared in <code>MBDataEnvironmentModule.xml</code>.
+
+ You can also expose your own function implementations, either through an
+ MBML file, or programmatically by creating an `MBMLFunction` instance and
+ passing it to `[MBVariableSpace declareFunction:]`.
+
+ In an MBML file, a function declaration looks like:
  
- A function declaration looks like:
- 
-    <Function name="functionName" 
+    <Function name="functionName"
               class="ImplementingClass" 
               method="methodName" 
               input="inputType"
@@ -174,25 +183,24 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
 
  The `<Function>` tag accepts the following attributes:
  
- * `name` - The name of the function as it will be invoked in MBML (eg., a
- function with the name `foo` and taking no parameters is called from within
- MBML as "`^foo()`".)
+ * `name` - The name of the function as it will be invoked in an expresion;
+ a function with the name "`foo`" taking no parameters is called as "`^foo()`".
  
  * `class` - Specifies the name of the Objective-C class that implements the
  function.
  
- * `method` - The implementing method. This attribute is optional if the
- method is the same as the function name. Unlike with Objective-C selectors, 
- colons are *not* considered part of the method and therefore should not be
- included in the declaration.
+ * `method` - The implementing method. This attribute is optional if the name
+ of the method is the same as the function name. Unlike with Objective-C
+ selectors, colons are *not* considered part of the name and therefore should
+ not be included in the declaration.
  
- * `input` - Specifies the type of input the function expects. The
- `MBMLFunction` class will marshal input parameters accordingly.
+ * `input` - Specifies the type of input the function expects, as described
+ below. The `MBMLFunction` class will marshal input parameters accordingly.
  
  * `output` - Specifies the type of output returned by the function.
  
- ** Function Input **
- 
+ #### Function Input Type
+
  The `input` attribute of the `<Function>` declaration in MBML accepts the
  following values:
  
@@ -202,59 +210,72 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  * `raw` - The function accepts a single uninterpreted string as input. The
  implementing method should take an `NSString` parameter.
  
- * `string` - The function accepts as input an MBML expression yielding a
- string. Prior to executing the implementing method, the `MBMLFunction` will
- evaluate the input parameter as a string expression. The implementing method
- should take an `NSString` parameter.
+ * `string` - The function accepts as input an expression yielding a string.
+ Prior to executing the implementing method, the `MBMLFunction` will evaluate
+ the input parameter as a string expression, and the result is passed to the
+ implementing method. The implementing method should take an `NSString`
+ parameter.
  
- * `object` - The function accepts as input an MBML expression yielding an
- object. Prior to executing the implementing method, the `MBMLFunction` will
- evaluate the input parameter as an object expression. The implementing method
- should take an `NSObject` or `id` parameter.
+ * `object` - The function accepts as input an expression yielding an object.
+ Prior to executing the implementing method, the `MBMLFunction` will evaluate
+ the input parameter as an object expression, and the result is passed to the
+ implementing method. The implementing method should take an `NSObject` or
+ `id` parameter.
  
- * `math` - The function accepts as input an MBML math expression yielding
- a numeric value. Prior to executing the implementing method, the `MBMLFunction` 
- will evaluate the input parameter as a math expression. The implementing method
- should take an `NSNumber` parameter.
+ * `math` - The function accepts as input a math expression yielding a numeric
+ value. Prior to executing the implementing method, the `MBMLFunction` will 
+ the input parameter as a numeric expression, and the result is passed to the
+ implementing method. The implementing method should take an `NSNumber`
+ parameter.
+
+ * `pipedExpressions` - The function accepts zero or more expressions as input.
+ Prior to executing the implementing method, the `MBMLFunction` will split
+ the input at the pipe character ("`|`") resulting in an `NSArray`, which is
+ then passed to the implementing method. Note that it is the responsibility
+ of the implementing method to evaluate the passed-in expressions.
  
- * `pipedExpressions` - The function accepts zero or more MBML expressions as
- input. Prior to executing the implementing method, the `MBMLFunction` will
- split the input at the pipe character ("`|`") resulting in an `NSArray`,
- which is then passed to the implementing method.
- 
- * `pipedStrings` - The function accepts zero or more MBML expressions 
- yielding strings as input. Prior to executing the implementing method, the
+ * `pipedStrings` - The function accepts zero or more expressions yielding
+ strings as input. Prior to executing the implementing method, the
  `MBMLFunction` will split the input at the pipe character ("`|`") and then
- evaluate each resulting expression as a string expression. The results are
+ evaluate each resulting expression in the string context. The results are
  placed into an `NSArray` which is then passed to the implementing method.
  
- * `pipedObjects` - The function accepts zero or more MBML expressions 
- yielding objects as input. Prior to executing the implementing method, the
+ * `pipedObjects` - The function accepts zero or more expressions yielding
+ objects as input. Prior to executing the implementing method, the
  `MBMLFunction` will split the input at the pipe character ("`|`") and then
- evaluate each resulting expression as an object expression. The results are
+ evaluate each resulting expression in the object context. The results are
  placed into an `NSArray` which is then passed to the implementing method.
  
- * `pipedMath` - The function accepts zero or more MBML math expressions 
- yielding numbers as input. Prior to executing the implementing method, the
+ * `pipedMath` - The function accepts zero or more math expressions yielding
+ numbers as input. Prior to executing the implementing method, the
  `MBMLFunction` will split the input at the pipe character ("`|`") and then
- evaluate each resulting expression as a math expression. The results are
+ evaluate each resulting expression in the numeric context. The results are
  placed into an `NSArray` which is then passed to the implementing method.
  
- ** Function Output **
+ #### Function Output Type
 
  The `output` attribute of the `<Function>` declaration in MBML accepts the
  following values:
 
- * `none` - The function returns no output.
+ * `object` - The function returns an Objective-C object.
  
- * `object` - The function returns an arbitrary Objective-C object.
+ * `none` - The function returns no output. This is only needed for functions
+ that have a side-effect but do not yield meaningful output.
  
- ** Parameter Validation **
+ Typically, a function's implementing method is declared to return the type
+ `id` rather than a specific type. This is to allow the method to return a
+ `MBMLFunctionError` instance to signal an error.
  
+ Even if a function is declared with an output type of `none`, the
+ implementing method may return `id` in case it needs to signal an error.
+
+ #### Parameter Validation
+
  `MBMLFunction` declares a number of parmater validation methods to simplify
  error reporting on behalf of function implementations. When a function
  is passed input it isn't expecting, the validation methods provide a mechanism
- to report descriptive errors in a standardized way.
+ to report descriptive errors in a standardized way, while allowing you to
+ minimize boilerplate validation code.
  
  Here's an example of the validation code for a hypothetical function that
  takes 2 or 3 parameters and expects the second parameter to be an expression
@@ -269,10 +290,6 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  
         ... function implementation here...
     }
-
- As you can see, MBML functions return `MBMLFunctionError` instances when an
- error occurs. The function execution infrastructure handles this automatically
- to report errors to the console to simplify debugging.
  */
 @interface MBMLFunction : MBDataModel
 
@@ -303,6 +320,32 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  or no output.
  */
 @property(nonatomic, readonly) MBMLFunctionOutputType outputType;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Creating instances
+/*!    @name Creating instances                                               */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Initializes a new `MBMLFunction` instance.
+
+ @param     name The name of the function.
+ 
+ @param     inputType The function's input type.
+ 
+ @param     outputType The function's output type.
+ 
+ @param     cls The implementing class of the function.
+ 
+ @param     selector The selector of the implementing method.
+ 
+ @return    `self`
+ */
+- (instancetype) initWithName:(NSString*)name
+                    inputType:(MBMLFunctionInputType)inputType
+                   outputType:(MBMLFunctionOutputType)outputType
+            implementingClass:(Class)cls
+               methodSelector:(SEL)selector;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Function parameter validation (high-level)
