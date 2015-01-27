@@ -31,7 +31,7 @@
 
 + (BOOL) isValidObjectReferenceCharacter:(unichar)ch atPosition:(NSUInteger)pos;
 
-- (id) valueForKey:(NSString*)key valueContext:(id)ctxt error:(MBExpressionError**)errPtr;
-- (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(MBExpressionError**)errPtr;
+- (id) valueForKey:(NSString*)key valueContext:(id)ctxt error:(out MBExpressionError**)errPtr;
+- (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(out MBExpressionError**)errPtr;
 
 @end

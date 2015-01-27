@@ -45,14 +45,16 @@
  @param     space The `MBVariableSpace` where the tokenized expression will
             be used.
 
- @param     errPtr A memory location into which an `MBExpressionError` pointer
-            will be written if an error occurs during tokenization.
- 
+ @param     errPtr An optional pointer to a memory location for storing an
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during evaluation, `*errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
+
  @return    An array of `MBMLParseToken`s representing a grammar tree for the
             passed-in expression, or `nil` if there was an error.
  */
 - (NSArray*) tokenize:(NSString*)expr
       inVariableSpace:(MBVariableSpace*)space
-                error:(MBExpressionError**)errPtr;
+                error:(out MBExpressionError**)errPtr;
 
 @end

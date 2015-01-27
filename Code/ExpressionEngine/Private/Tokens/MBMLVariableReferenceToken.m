@@ -209,7 +209,7 @@
 }
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
-                                                  error:(MBExpressionError**)errPtr
+                                                  error:(out MBExpressionError**)errPtr
 {
     debugTrace();
 

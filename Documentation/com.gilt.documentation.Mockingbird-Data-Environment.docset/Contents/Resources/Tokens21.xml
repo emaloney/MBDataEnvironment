@@ -166,7 +166,7 @@ expected number of parameters. Validation will fail if the parameter list
 doesn&apos;t contain the exact number of parameters expected.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIs:(NSUInteger)expectedCnt error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIs:(NSUInteger)expectedCnt error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -179,7 +179,7 @@ doesn&apos;t contain the exact number of parameters expected.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -196,7 +196,7 @@ expected number of parameters. Validation will fail if the parameter list
 contains fewer than the expected number of parameters.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIsAtLeast:(NSUInteger)expectedCnt error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIsAtLeast:(NSUInteger)expectedCnt error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -210,7 +210,7 @@ contains fewer than the expected number of parameters.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -227,7 +227,7 @@ expected number of parameters. Validation will fail if the parameter list
 contains more than the expected number of parameters.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIsAtMost:(NSUInteger)expectedCnt error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIsAtMost:(NSUInteger)expectedCnt error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -241,7 +241,7 @@ contains more than the expected number of parameters.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -258,7 +258,7 @@ expected number of parameters. Validation will fail if the parameter list
 contains fewer than or more than the expected number of parameters.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -276,7 +276,7 @@ contains fewer than or more than the expected number of parameters.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -293,7 +293,7 @@ within range for the array. Validation will fail if the array index is
 greater than the last index in the array.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params indexIsInRange:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSUInteger)validateParameter:(NSArray *)params indexIsInRange:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -307,7 +307,7 @@ greater than the last index in the array.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -324,7 +324,7 @@ given array index is of an expected class. Validation will fail if the
 parameter at that array index is not a kind of the expected class.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (id)validateParameter:(NSArray *)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (id)validateParameter:(NSArray *)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -340,7 +340,7 @@ parameter at that array index is not a kind of the expected class.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -358,7 +358,7 @@ if the parameter at the specified index is not a kind of one of the expected
 classes.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (Class)validateParameter:(NSArray *)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray *)classes error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (Class)validateParameter:(NSArray *)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray *)classes error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -376,7 +376,7 @@ classes.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -394,7 +394,7 @@ given array index is a string. Validation will fail if the parameter at the
 specified index is not an NSString instance.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)validateParameter:(NSArray *)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)validateParameter:(NSArray *)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -408,7 +408,7 @@ specified index is not an NSString instance.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -426,7 +426,7 @@ given array index is a number. Validation will fail if the parameter at the
 specified index is not a numeric value.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)validateParameter:(NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)validateParameter:(NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -440,7 +440,7 @@ specified index is not a numeric value.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -458,7 +458,7 @@ given array index is an array. Validation will fail if the parameter at the
 specified index is not an NSArray instance.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)validateParameter:(NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSArray *)validateParameter:(NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -472,7 +472,7 @@ specified index is not an NSArray instance.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -490,7 +490,7 @@ given array index is a dictionary. Validation will fail if the parameter at the
 specified index is not an NSDictionary instance.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSDictionary *)validateParameter:(NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSDictionary *)validateParameter:(NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -504,7 +504,7 @@ specified index is not an NSDictionary instance.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -522,7 +522,7 @@ of an expected class. Validation will fail if the parameter is not a kind of
 the expected class.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (id)validateParameter:(id)param isKindOfClass:(Class)cls error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (id)validateParameter:(id)param isKindOfClass:(Class)cls error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -535,7 +535,7 @@ the expected class.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -552,7 +552,7 @@ among a list of expected classes. Validation will fail if the is not a kind
 of one of the expected classes.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (Class)validateParameter:(id)param isOneKindOfClass:(NSArray *)classes error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (Class)validateParameter:(id)param isOneKindOfClass:(NSArray *)classes error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -567,7 +567,7 @@ of one of the expected classes.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -584,7 +584,7 @@ to the provided selector. Validation will fail if the object does not
 respond to that selector.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (id&lt;NSObject&gt;)validateParameter:(id&lt;NSObject&gt;)param respondsToSelector:(SEL)selector error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (id&lt;NSObject&gt;)validateParameter:(id&lt;NSObject&gt;)param respondsToSelector:(SEL)selector error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -597,7 +597,7 @@ respond to that selector.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -613,7 +613,7 @@ respond to that selector.</Abstract>
 Validation will fail if the parameter is not an NSString instance.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)validateParameterIsString:(id)param error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)validateParameterIsString:(id)param error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -623,7 +623,7 @@ Validation will fail if the parameter is not an NSString instance.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -639,7 +639,7 @@ Validation will fail if the parameter is not an NSString instance.</Abstract>
 Validation will fail if the parameter is not a number.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)validateParameterContainsNumber:(id)param error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)validateParameterContainsNumber:(id)param error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -649,7 +649,7 @@ Validation will fail if the parameter is not a number.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -665,7 +665,7 @@ Validation will fail if the parameter is not a number.</Abstract>
 Validation will fail if the parameter is not an NSArray instance.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)validateParameterIsArray:(id)param error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSArray *)validateParameterIsArray:(id)param error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -675,7 +675,7 @@ Validation will fail if the parameter is not an NSArray instance.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -691,7 +691,7 @@ Validation will fail if the parameter is not an NSArray instance.</Abstract>
 Validation will fail if the parameter is not an NSDictionary instance.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSDictionary *)validateParameterIsDictionary:(id)param error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSDictionary *)validateParameterIsDictionary:(id)param error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>param</Name>
@@ -701,7 +701,7 @@ Validation will fail if the parameter is not an NSDictionary instance.</Abstract
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -717,7 +717,7 @@ Validation will fail if the parameter is not an NSDictionary instance.</Abstract
 specified array index yields an NSString when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)validateExpression:(NSArray *)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)validateExpression:(NSArray *)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -730,7 +730,7 @@ specified array index yields an NSString when evaluated.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -747,7 +747,7 @@ specified array index yields an NSString when evaluated.</Abstract>
 specified array index yields a numeric value when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)validateExpression:(NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)validateExpression:(NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -760,7 +760,7 @@ specified array index yields a numeric value when evaluated.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -777,7 +777,7 @@ specified array index yields a numeric value when evaluated.</Abstract>
 specified array index yields an NSArray when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)validateExpression:(NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSArray *)validateExpression:(NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -790,7 +790,7 @@ specified array index yields an NSArray when evaluated.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -807,7 +807,7 @@ specified array index yields an NSArray when evaluated.</Abstract>
 specified array index yields an NSDictionary when evaluated.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>+ (NSDictionary *)validateExpression:(NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (NSDictionary *)validateExpression:(NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>params</Name>
@@ -820,7 +820,7 @@ specified array index yields an NSDictionary when evaluated.</Abstract>
 					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
             instance will be placed if parameter validation fails. Note that
             this must not be a nil value. If a previous validation error
-            occurred and errPtr already contains an error object, further
+            occurred and *errPtr already contains an error object, further
             parameter validation will not be performed.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -836,7 +836,7 @@ specified array index yields an NSDictionary when evaluated.</Abstract>
 			<Abstract type="html">Called by the expression engine to execute the function.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>- (id)executeWithInput:(id)input error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>- (id)executeWithInput:(id)input error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>input</Name>

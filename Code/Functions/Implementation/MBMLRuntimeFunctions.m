@@ -26,7 +26,7 @@
 #pragma mark Helper for ensuring we've got Class
 /******************************************************************************/
 
-+ (Class) resolveClass:(id)resolveCls error:(MBMLFunctionError**)errPtr
++ (Class) resolveClass:(id)resolveCls error:(out MBMLFunctionError**)errPtr
 {
     if ([resolveCls isKindOfClass:[NSString class]]) {
         Class cls = NSClassFromString(resolveCls);

@@ -26,7 +26,7 @@
  @param     grammar The grammar used to tokenize the expression.
 
  @return    An array of the cached tokens for the passed-in expression, or
- `nil` if there are no cached tokens for the given expression.
+            `nil` if there are no cached tokens for the given expression.
  */
 - (NSArray*) cachedTokensForExpression:(NSString*)expr
                           usingGrammar:(MBExpressionGrammar*)grammar;
@@ -42,21 +42,21 @@
  @param     expr The expression to tokenize.
 
  @param     space The variable space that will be used to look up values for
- any variable references contained in the expression.
+            any variable references contained in the expression.
 
  @param     grammar The grammar to be used for tokenizing the expression.
 
  @param     errPtr An optional pointer to a memory location for storing an
- `MBExpressionError` instance. If this parameter is non-`nil`
- and an error occurs during tokenization, `errPtr` will be updated
- to point to an `MBExpressionError` instance describing the error.
+            `MBExpressionError` instance. If this parameter is non-`nil`
+            and an error occurs during tokenization, `*errPtr` will be updated
+            to point to an `MBExpressionError` instance describing the error.
 
  @return    An array of tokens representing the passed-in expression. Will be
- `nil` if an error occurs.
+            `nil` if an error occurs.
  */
 - (NSArray*) tokensForExpression:(NSString*)expr
                  inVariableSpace:(MBVariableSpace*)space
                     usingGrammar:(MBExpressionGrammar*)grammar
-                           error:(MBExpressionError**)errPtr;
+                           error:(out MBExpressionError**)errPtr;
 
 @end

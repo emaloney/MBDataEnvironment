@@ -38,9 +38,9 @@
  
  @param     resolveCls A `Class` object or an `NSString` instance containing
             the name of a class.
- 
- @param     errPtr If non-`nil` and an error occurs, this pointer will be
-            set to an `NSError` instance indicating the error.
+
+ @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
+            set to an `MBMLFunctionError` instance indicating the error.
  
  @return    A `Class` object representing the specified class, or `nil` if
             the specified class was not recognized by the Objective-C runtime.
@@ -48,7 +48,7 @@
  @note      This method is not exposed to the Mockingbird environment as a
             an MBML function.
  */
-+ (Class) resolveClass:(id)resolveCls error:(MBMLFunctionError**)errPtr;
++ (Class) resolveClass:(id)resolveCls error:(out MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Looking up Classes

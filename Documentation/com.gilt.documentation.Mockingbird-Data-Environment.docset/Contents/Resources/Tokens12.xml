@@ -4,8 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/MBExpressionError</TokenIdentifier>
-			<Abstract type="html">Used internally by the MBExpression engine to represent errors
-during expression parsing and evaluation.</Abstract>
+			<Abstract type="html">Represents errors that can occur during MBExpression parsing and evaluation.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
             
 			
@@ -240,7 +239,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingToken:</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error, which
+			<Abstract type="html">Stores a reference to an MBMLParseToken involved in the error, which
     is useful for pinpointing the problematic portion of the 
     offendingExpression. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
@@ -254,7 +253,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingToken</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error, which
+			<Abstract type="html">Stores a reference to an MBMLParseToken involved in the error, which
     is useful for pinpointing the problematic portion of the 
     offendingExpression. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
@@ -268,7 +267,7 @@ during expression parsing and evaluation.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingToken</TokenIdentifier>
-			<Abstract type="html">Stores a reference to the MBMLParseToken involved in the error, which
+			<Abstract type="html">Stores a reference to an MBMLParseToken involved in the error, which
     is useful for pinpointing the problematic portion of the 
     offendingExpression. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>

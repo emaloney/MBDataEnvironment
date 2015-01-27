@@ -180,24 +180,24 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     filePath The path of the XML file to be processed.
  
- @param     errPtr If non-`nil` and an error occurs, this pointer will be
+ @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
             set to an `NSError` instance indicating the error.
  
  @return    An object representing the top-level element of the XML.
  */
-+ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(NSError**)errPtr;
++ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(out NSError**)errPtr;
 
 /*!
  A convenience method for parsing an XML document from an `NSData` instance.
  
  @param     xmlData The XML data to be processed.
  
- @param     errPtr If non-`nil` and an error occurs, this pointer will be
+ @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
             set to an `NSError` instance indicating the error.
  
  @return    An object representing the top-level element of the XML.
  */
-+ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(NSError**)errPtr;
++ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(out NSError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Populating the data model
@@ -243,12 +243,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     filePath The path of the file containing the XML to process.
 
- @param     errPtr If non-`nil` and an error occurs, this pointer will be
+ @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
             set to an `NSError` instance indicating the error.
  
  @return    `YES` if the XML file was processed successfully; `NO` otherwise.
 */
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(NSError**)errPtr;
+- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(out NSError**)errPtr;
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -276,12 +276,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     xmlData An `NSData` instance containing the XML to process.
  
- @param     errPtr If non-`nil` and an error occurs, this pointer will be
+ @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
             set to an `NSError` instance indicating the error.
  
  @return    `YES` if the XML data was processed successfully; `NO` otherwise.
  */
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(NSError**)errPtr;
+- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(out NSError**)errPtr;
 
 /*!
  For each attribute value of the passed-in XML element, a corresponding

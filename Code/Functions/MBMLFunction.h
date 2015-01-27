@@ -381,13 +381,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIs:(NSUInteger)expectedCnt error:(MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIs:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that it contains the
@@ -402,13 +402,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
 
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)expectedCnt error:(MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that it contains the
@@ -423,13 +423,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtMost:(NSUInteger)expectedCnt error:(MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtMost:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that it contains the
@@ -447,13 +447,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that a given index is
@@ -468,13 +468,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params indexIsInRange:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params indexIsInRange:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -490,7 +490,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter at the given array index is
@@ -502,7 +502,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(MBMLFunctionError**)errPtr;
++ (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -521,7 +521,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter at the given array index is
@@ -533,7 +533,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(MBMLFunctionError**)errPtr;
++ (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -547,7 +547,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the string at the given array index is
@@ -559,7 +559,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -573,7 +573,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the number at the given array index is
@@ -585,7 +585,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -599,7 +599,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the array at the given array index is
@@ -611,7 +611,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -625,7 +625,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the dictionary at the given array index is
@@ -637,7 +637,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Validating individual parameters
@@ -656,13 +656,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter object is returned. If 
             validation fails, `nil` is returned.
  */
-+ (id) validateParameter:(id)param isKindOfClass:(Class)cls error:(MBMLFunctionError**)errPtr;
++ (id) validateParameter:(id)param isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure that the object's class is
@@ -678,13 +678,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter object is returned. If 
             validation fails, `nil` is returned.
  */
-+ (Class) validateParameter:(id)param isOneKindOfClass:(NSArray*)classes error:(MBMLFunctionError**)errPtr;
++ (Class) validateParameter:(id)param isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure that the object responds
@@ -698,13 +698,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter object is returned. If 
             validation fails, `nil` is returned.
  */
-+ (id<NSObject>) validateParameter:(id<NSObject>)param respondsToSelector:(SEL)selector error:(MBMLFunctionError**)errPtr;
++ (id<NSObject>) validateParameter:(id<NSObject>)param respondsToSelector:(SEL)selector error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure that it is a string. 
@@ -715,13 +715,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter string is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSString*) validateParameterIsString:(id)param error:(MBMLFunctionError**)errPtr;
++ (NSString*) validateParameterIsString:(id)param error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure it contains a numeric value. 
@@ -732,13 +732,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter number is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSDecimalNumber*) validateParameterContainsNumber:(id)param error:(MBMLFunctionError**)errPtr;
++ (NSDecimalNumber*) validateParameterContainsNumber:(id)param error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure it is an array. 
@@ -749,13 +749,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter array is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSArray*) validateParameterIsArray:(id)param error:(MBMLFunctionError**)errPtr;
++ (NSArray*) validateParameterIsArray:(id)param error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure it is a dictionary. 
@@ -766,13 +766,13 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the parameter dictionary is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSDictionary*) validateParameterIsDictionary:(id)param error:(MBMLFunctionError**)errPtr;
++ (NSDictionary*) validateParameterIsDictionary:(id)param error:(out MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Validating parameters for functions taking piped expressions
@@ -793,7 +793,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the string resulting from evaluating the
@@ -806,7 +806,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates an expression parameter list to ensure that the expression at the
@@ -822,7 +822,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the number resulting from evaluating the
@@ -835,7 +835,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSDecimalNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSDecimalNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates an expression parameter list to ensure that the expression at the
@@ -851,7 +851,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the array resulting from evaluating the
@@ -864,7 +864,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*!
  Validates an expression parameter list to ensure that the expression at the
@@ -880,7 +880,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @param     errPtr A memory location where a pointer to an `MBMLFunctionError`
             instance will be placed if parameter validation fails. Note that
             this must not be a `nil` value. If a previous validation error
-            occurred and `errPtr` already contains an error object, further
+            occurred and `*errPtr` already contains an error object, further
             parameter validation will **not** be performed.
  
  @return    If validation succeeds, the dictionary resulting from evaluating 
@@ -893,7 +893,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionError**)errPtr;
++ (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Function execution
@@ -911,7 +911,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The function's return value. `nil` is returned if an error occurred
             while executing the function.
  */
-- (id) executeWithInput:(id)input error:(MBExpressionError**)errPtr;
+- (id) executeWithInput:(id)input error:(out MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Debugging output

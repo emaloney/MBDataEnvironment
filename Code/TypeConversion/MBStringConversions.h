@@ -284,12 +284,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `CGPoint` value that corresponds with `str`.
             Returns `CGPointZero` if `str` couldn't be interpreted.
  */
-+ (CGPoint) pointFromString:(NSString*)str error:(NSError**)errPtr;
++ (CGPoint) pointFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGPoint`.
@@ -305,12 +306,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `CGPoint` value that corresponds with `obj`. Returns
             `CGPointZero` if `obj` couldn't be interpreted.
  */
-+ (CGPoint) pointFromObject:(id)obj error:(NSError**)errPtr;
++ (CGPoint) pointFromObject:(id)obj error:(out NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -368,12 +370,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `CGSize` value that corresponds with `str`.
             Returns `CGPointZero` if `str` couldn't be interpreted.
  */
-+ (CGSize) sizeFromString:(NSString*)str error:(NSError**)errPtr;
++ (CGSize) sizeFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGSize`.
@@ -389,12 +392,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `CGSize` value that corresponds with `obj`. Returns
             `CGSizeZero` if `obj` couldn't be interpreted.
  */
-+ (CGSize) sizeFromObject:(id)obj error:(NSError**)errPtr;
++ (CGSize) sizeFromObject:(id)obj error:(out NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -452,12 +456,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `CGRect` value that corresponds with `str`.
             Returns `CGRectZero` if `str` couldn't be interpreted.
  */
-+ (CGRect) rectFromString:(NSString*)str error:(NSError**)errPtr;
++ (CGRect) rectFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGRect`.
@@ -473,12 +478,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `CGRect` value that corresponds with `obj`. Returns
             `CGRectZero` if `obj` couldn't be interpreted.
  */
-+ (CGRect) rectFromObject:(id)obj error:(NSError**)errPtr;
++ (CGRect) rectFromObject:(id)obj error:(out NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -622,12 +628,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIOffset` value that corresponds with `str`.
             Returns `UIOffsetZero` if `str` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIOffset) offsetFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `UIOffset`.
@@ -643,12 +650,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIOffset` value that corresponds with `obj`. Returns
             `UIOffsetZero` if `obj` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromObject:(id)obj error:(NSError**)errPtr;
++ (UIOffset) offsetFromObject:(id)obj error:(out NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -698,12 +706,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIEdgeInsets` value that corresponds with `str`.
             Returns `UIEdgeInsetsZero` if `str` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `UIEdgeInsets`.
@@ -720,12 +729,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIEdgeInsets` value that corresponds with `obj`. Returns
             `UIEdgeInsetsZero` if `obj` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(NSError**)errPtr;
++ (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(out NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -832,14 +842,15 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIColor` value that corresponds with the
             result of evaluating `expr` as a string. Returns
             `[`<code>UIColor yellowColor</code>`]` if the expression result 
             couldn't be interpreted.
  */
-+ (UIColor*) colorFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIColor*) colorFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -897,13 +908,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `NSLineBreakMode` value that corresponds with `str`.
             Returns `NSLineBreakByWordWrapping` if `str` isn't
             recognized.
  */
-+ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(NSError**)errPtr;
++ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -955,13 +967,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `NSTextAlignment` value that corresponds with `str`.
             Returns `NSTextAlignmentLeft` if `str` isn't
             recognized.
  */
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)str error:(NSError**)errPtr;
++ (NSTextAlignment) textAlignmentFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1013,13 +1026,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIScrollViewIndicatorStyle` value that corresponds with `str`.
             Returns `UIScrollViewIndicatorStyleDefault` if `str` isn't
             recognized.
  */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1072,13 +1086,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIActivityIndicatorViewStyle` value that corresponds with
             `str`. Returns `UIActivityIndicatorViewStyleWhite` if `str` isn't
             recognized.
  */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1137,13 +1152,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIButtonType` value that corresponds with `str`.
             Returns `UIButtonTypeCustom` if `str` isn't
             recognized.
  */
-+ (UIButtonType) buttonTypeFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIButtonType) buttonTypeFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1200,13 +1216,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `NSDateFormatterStyle` value that corresponds with `str`.
             Returns `NSDateFormatterNoStyle` if `str` isn't
             recognized.
  */
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1261,13 +1278,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UITextBorderStyle` value that corresponds with `str`.
             Returns `UITextBorderStyleNone` if `str` isn't
             recognized.
  */
-+ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1318,13 +1336,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UITableViewStyle` value that corresponds with `str`.
             Returns `UITableViewStylePlain` if `str` isn't
             recognized.
  */
-+ (UITableViewStyle) tableViewStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UITableViewStyle) tableViewStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1379,13 +1398,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UITableViewCellStyle` value that corresponds with `str`.
             Returns `UITableViewCellStyleDefault` if `str` isn't
             recognized.
  */
-+ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1442,13 +1462,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `MBTableViewCellSelectionStyle` value that corresponds with
             `str`. Returns `UITableViewCellSelectionStyleBlue` if `str` isn't
             recognized.
  */
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1498,13 +1519,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UITableViewCellAccessoryType` value that corresponds with 
             `str`. Returns `UITableViewCellAccessoryNone` if `str` isn't
             recognized.
  */
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str error:(NSError**)errPtr;
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1565,13 +1587,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UITableViewRowAnimation` value that corresponds with `str`.
             Returns `UITableViewRowAnimationNone` if `str` isn't
             recognized.
  */
-+ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str error:(NSError**)errPtr;
++ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1626,13 +1649,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIControlState` value that corresponds with `str`.
             Returns `UIControlStateNormal` if `str` isn't
             recognized.
  */
-+ (UIControlState) controlStateFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIControlState) controlStateFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1733,12 +1757,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIViewAnimationOptions` value that corresponds with `str`.
             Returns `0` if `str` isn't recognized.
  */
-+ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1793,13 +1818,14 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIModalTransitionStyle` value that corresponds with `str`.
             Returns `UIModalTransitionStyleCoverVertical` if `str` isn't
             recognized.
  */
-+ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1872,12 +1898,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIViewContentMode` value that corresponds with `str`.
             Returns `UIViewContentModeScaleToFill` if `str` isn't recognized.
  */
-+ (UIViewContentMode) viewContentModeFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIViewContentMode) viewContentModeFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1932,12 +1959,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIBarStyle` value that corresponds with `str`.
             Returns `UIBarStyleDefault` if `str` isn't recognized.
  */
-+ (UIBarStyle) barStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIBarStyle) barStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2032,12 +2060,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIBarButtonSystemItem` value that corresponds with `str`.
             Returns `UIBarButtonSystemItemDone` if `str` isn't recognized.
  */
-+ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2090,12 +2119,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIBarButtonItemStyle` value that corresponds with `str`.
             Returns `UIBarButtonItemStylePlain` if `str` isn't recognized.
  */
-+ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2148,12 +2178,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIStatusBarAnimation` value that corresponds with `str`.
             Returns `UIStatusBarAnimationNone` if `str` isn't recognized.
  */
-+ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2210,12 +2241,13 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @param     errPtr An optional pointer to a memory location for storing an
             `NSError` instance in the event of a problem interpreting `str`.
-            May be `nil`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
 
  @return    The `UIPopoverArrowDirection` value that corresponds with `str`.
             Returns `UIPopoverArrowDirectionAny` if `str` isn't recognized.
  */
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str error:(NSError**)errPtr;
++ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str error:(out NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a

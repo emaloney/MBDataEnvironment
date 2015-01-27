@@ -29,86 +29,84 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 /*!
  This class is responsible for evaluating Mockingbird expressions.
  
- Mockingbird expressions are string-based expressions that, when evaluated, can 
+ Mockingbird expressions are strings that can contain:
+ 
+ - string literals
+ - numeric literals
+ - references to variables, which can be of any Objective-C type
+ - simple mathematical expressions
+ - logical
+
+ are string-based expressions that, when evaluated, can
  result in one of the following types:
  
- - arbitrary Objective-C objects (via the `asObject:` method variants),
- - strings (via the `asString:` method variants),
- - numbers (via the `asNumber:` method variants),
+ - arbitrary Objective-C objects (via the `asObject:` method variants)
+ - strings (via the `asString:` method variants)
+ - numbers (via the `asNumber:` method variants)
  - boolean values (via the `asBoolean:` method variants), and
- - arrays (via the `asArray:` method variants).
+ - arrays of Objective-C objects (via the `asArray:` method variants)
  
- This class provides an Objective-C interface for evaluating MBML
- expressions, typically, expressions are used to perform string replacement
- within attributes of MBML tags. For example, in this tag:
+ One use of a Mockingbird expression might be to perform string replacement 
+ when populating user interface views, such as `UILabel`s.
  
-    <Label text="Hello, $userName" ... />
+ For example:
  
- the `text` attribute contains an MBML expression. This particular expression 
- consists of two parts: a string literal ("`Hello, `") followed by a reference
- to an MBML variable called `userName`.
-  
- When this label is displayed onscreen, the `text` attribute is evaluated as
- an MBML expression, and the text "`$userName`" is replaced by the value of
- the `userName` MBML variable. If the value of `userName` is "Cooper", then the
- label would display the text "Hello, Cooper".
- 
- **MBML Expression Evaluation Contexts**
- 
- Depending on where an expression appears within MBML, it may be evaluated in a
- different context. The context determines how the expression is evaluated and
- what type of value will be returned.
- 
- There are three evaluation contexts supported:
- 
- - _object context_ — An Objective-C object is returned as a result of
- evaluating the expression. For expressions that occur within MBML
- attributes that end up displayed onscreen, objects are converted to strings
- prior to display.
- 
- - _boolean context_ — A boolean value is returned as the result of evaluating
- the expression.
- 
- - _numeric context_ — An `NSNumber` is returned as a result of evaluating the
- expression.
- 
- Most expression evaluations occur within the object context. However,
- expressions found within the MBML `if=""` attribute are evaluated in a
- boolean context.
- 
- **MBML Functions**
- 
- In addition to referencing variables, MBML expressions can also cause native
- Objective-C code to be executed. (See the class `MBMLFunction` for more
- information.) A variety of MBML functions ship with Mockingbird, which can be
- embedded within expressions. In this example:
+    UILabel* greeting = // created elsewhere
+    greeting.text = [MBExpression asString:@"Hello, $userName!"];
 
-    <Label text="The time now is ^currentTime()" ... />
+ In the code above, the `text` property of the `greeting` label will be set
+ to the result of the expression "`Hello, $userName!`".
 
- the text "`The time now is `" is a string literal, and "`^currentTime()`"
- is a call to an MBML function. When this expression is evaluated, the
- MBML function named `currentTime` is executed, and the text
- "`^currentTime()`" is replaced with the result of calling that function.
+ This particular expression consists of three parts: a string literal 
+ ("`Hello, `") followed by a reference to a Mockingbird variable called 
+ `userName`, followed by another string literal ("`!`").
+
+ When the expression is evaluated, the "`$userName`" portion of the expression
+ is replaced by the value of the `userName` *variable*.
  
+ If the value of `userName` is "`Cooper`", then the label would display the
+ text "`Hello, Cooper!`".
+ 
+ Notice that the portions of the expression that consist of literals are not
+ evaluated; they are included in the result in the same form that they
+ appear in the original expression.
+
+ ### MBML Functions
+ 
+ In addition to referencing variables, expressions can also cause native
+ Objective-C code to be executed.
+ 
+ For example:
+ 
+    UILabel* time = // created elsewhere
+    time.text = [MBExpression asString:@"The time now is ^currentTime()"];
+
+ In the expression shown above, the `text` property of the `time` label
+ is set using a string literal and the value yielded by the *MBML function* 
+ called `^currentTime()`.
+
  When placed onscreen, such a label might look like:
  
-    The time now is 2013-07-22 19:26:54 +0000
- 
+    The time now is 2015-01-26 21:45:40 +0000
+
  Many functions take one or more parameters; when multiple parameters are
  passed to a function, the pipe character ("`|`") is used as the parameter
  separator.
  
  Parameters may consist of literals, variable references, or other function
- calls. For example, the label:
+ calls. For example, if the label's `text` were set using the expression:
  
-    <Label text="The time now is ^formatMediumDateTime(^currentTime())" ... />
+    The time now is ^formatMediumDateTime(^currentTime())
 
- would display:
- 
-    The time now is Jul 22, 2013, 3:26:54 PM
- 
+ The label's content might look like:
+
+    The time now is Jan 26, 2015, 4:45:40 PM
+
  (The exact output of the example above depends on the user's locale settings
  and, of course, the actual date and time.)
+ 
+ For more information on MBML functions, see the documentation for the
+ `MBMLFunction` class.
  
  **MBML Identifiers**
  
@@ -328,12 +326,12 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as a string.
  */
-+ (NSString*) asString:(NSString*)expr error:(MBExpressionError**)errPtr;
++ (NSString*) asString:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *string context*.
@@ -362,12 +360,12 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as a string.
  */
-+ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(MBExpressionError**)errPtr;
++ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(out MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as objects with string interpolation
@@ -423,13 +421,13 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as an object
             with string interpolation.
  */
-+ (id) asObject:(NSString*)expr error:(MBExpressionError**)errPtr;
++ (id) asObject:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *object context* with string
@@ -491,13 +489,13 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as an object
             with string interpolation.
  */
-+ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(MBExpressionError**)errPtr;
++ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(out MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as objects without string interpolation
@@ -506,43 +504,56 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
 /*!
  Evaluates the given expression in the *object context* without using string
- interpolation.
+ interpolation. Discrete values within the expression are returned as items in
+ an array.
 
- The individual values encountered during the evaluation of the expression are
- returned in an array.
+ An expression may contain zero or more literal values and inner expressions;
+ this method gathers any individual literals and inner expression values
+ encountered while evaluating the passed-in expression, and returns an 
+ `NSArray` containing the results.
 
  @param     expr The expression to evaluate.
 
  @return    The result of evaluating the expression `expr` as an array of
             objects.
+ 
+ @see       asObject:
  */
 + (NSArray*) asArray:(NSString*)expr;
 
 /*!
  Evaluates the given expression in the *object context* without using string
- interpolation.
+ interpolation. Discrete values within the expression are returned as items in
+ an array.
 
- The individual values encountered as a result of evaluating the expression
- are returned in an array.
+ An expression may contain zero or more literal values and inner expressions;
+ this method gathers any individual literals and inner expression values
+ encountered while evaluating the passed-in expression, and returns an
+ `NSArray` containing the results.
 
  @param     expr The expression to evaluate.
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as an array of
             objects.
+ 
+ @see       asObject:error:
  */
-+ (NSArray*) asArray:(NSString*)expr error:(MBExpressionError**)errPtr;
++ (NSArray*) asArray:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *object context* without using string
- interpolation.
+ interpolation. Discrete values within the expression are returned as items in
+ an array.
 
- The individual values encountered as a result of evaluating the expression
- are returned in an array.
+ An expression may contain zero or more literal values and inner expressions;
+ this method gathers any individual literals and inner expression values
+ encountered while evaluating the passed-in expression, and returns an
+ `NSArray` containing the results.
 
  @param     expr The expression to evaluate.
  
@@ -553,13 +564,15 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as an array of
             objects.
+
+ @see       asObject:inVariableSpace:error:
  */
-+ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(MBExpressionError**)errPtr;
++ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as numeric values
@@ -589,13 +602,13 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as a numeric
             expression.
  */
-+ (NSDecimalNumber*) asNumber:(NSString*)expr error:(MBExpressionError**)errPtr;
++ (NSDecimalNumber*) asNumber:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *numeric context*, coercing the result
@@ -631,13 +644,13 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as a numeric
             expression.
  */
-+ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(MBExpressionError**)errPtr;
++ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(out MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as boolean values
@@ -661,13 +674,13 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as a boolean 
             expression.
  */
-+ (BOOL) asBoolean:(NSString*)expr error:(MBExpressionError**)errPtr;
++ (BOOL) asBoolean:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *boolean context*.
@@ -697,13 +710,13 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`
-            and an error occurs during evaluation, `errPtr` will be updated
+            and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
  @return    The result of evaluating the expression `expr` as a boolean 
             expression.
  */
-+ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(MBExpressionError**)errPtr;
++ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(out MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Value type coercion

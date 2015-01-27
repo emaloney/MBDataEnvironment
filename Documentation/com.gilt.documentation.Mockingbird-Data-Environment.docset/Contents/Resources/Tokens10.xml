@@ -34,7 +34,7 @@
 			<Abstract type="html">Evaluates the given expression in the string context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)asString:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)asString:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -43,7 +43,7 @@
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -78,7 +78,7 @@
 			<Abstract type="html">Evaluates the given expression in the string context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)asString:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSString *)def error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)asString:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSString *)def error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -97,7 +97,7 @@
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -131,7 +131,7 @@ interpolation.</Abstract>
 interpolation.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (id)asObject:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (id)asObject:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -140,7 +140,7 @@ interpolation.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -179,7 +179,7 @@ interpolation.</Abstract>
 interpolation.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (id)asObject:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (id)asObject:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -198,7 +198,7 @@ interpolation.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -211,9 +211,15 @@ interpolation.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asArray:</TokenIdentifier>
 			<Abstract type="html">Evaluates the given expression in the object context without using string
-interpolation.</Abstract>
+interpolation. Discrete values within the expression are returned as items in
+an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (NSArray *)asArray:(NSString *)expr</Declaration>
 			<Parameters>
 				<Parameter>
@@ -230,10 +236,16 @@ interpolation.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asArray:error:</TokenIdentifier>
 			<Abstract type="html">Evaluates the given expression in the object context without using string
-interpolation.</Abstract>
+interpolation. Discrete values within the expression are returned as items in
+an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)asArray:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:error:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -242,7 +254,7 @@ interpolation.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -255,10 +267,11 @@ interpolation.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asArray:inVariableSpace:error:</TokenIdentifier>
 			<Abstract type="html">Evaluates the given expression in the object context without using string
-interpolation.</Abstract>
+interpolation. Discrete values within the expression are returned as items in
+an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)asArray:(NSString *)expr inVariableSpace:(MBVariableSpace *)space error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr inVariableSpace:(MBVariableSpace *)space error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -273,7 +286,7 @@ interpolation.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -308,7 +321,7 @@ into a number if necessary (and possible).</Abstract>
 into a number if necessary (and possible).</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -317,7 +330,7 @@ into a number if necessary (and possible).</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -356,7 +369,7 @@ into a number if necessary (and possible).</Abstract>
 into a number if necessary (and possible).</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSDecimalNumber *)def error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSDecimalNumber *)def error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -375,7 +388,7 @@ into a number if necessary (and possible).</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -408,7 +421,7 @@ into a number if necessary (and possible).</Abstract>
 			<Abstract type="html">Evaluates the given expression in the boolean context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)asBoolean:(NSString *)expr error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -417,7 +430,7 @@ into a number if necessary (and possible).</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -454,7 +467,7 @@ into a number if necessary (and possible).</Abstract>
 			<Abstract type="html">Evaluates the given expression in the boolean context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)asBoolean:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(BOOL)def error:(MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(BOOL)def error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -473,7 +486,7 @@ into a number if necessary (and possible).</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             MBExpressionError instance. If this parameter is non-nil
-            and an error occurs during evaluation, errPtr will be updated
+            and an error occurs during evaluation, *errPtr will be updated
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>

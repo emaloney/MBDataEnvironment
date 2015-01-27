@@ -19,7 +19,7 @@ provide access to Objective-C runtime information.</Abstract>
 method returns a Class object.</Abstract>
 			<DeclaredIn>MBMLRuntimeFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (Class)resolveClass:(id)resolveCls error:(MBMLFunctionError **)errPtr</Declaration>
+			<Declaration>+ (Class)resolveClass:(id)resolveCls error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>resolveCls</Name>
@@ -27,8 +27,8 @@ method returns a Class object.</Abstract>
             the name of a class.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
-					<Abstract type="html">If non-nil and an error occurs, this pointer will be
-            set to an NSError instance indicating the error.</Abstract>
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
+            set to an MBMLFunctionError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A Class object representing the specified class, or nil if

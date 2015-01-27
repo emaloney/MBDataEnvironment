@@ -195,14 +195,14 @@ the exact same attributes and relatives as the receiver.</Abstract>
 			<Abstract type="html">A convenience method for parsing an XML document from a file.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (RXMLElement *)xmlFromFile:(NSString *)filePath error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (RXMLElement *)xmlFromFile:(NSString *)filePath error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
 					<Abstract type="html">The path of the XML file to be processed.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
-					<Abstract type="html">If non-nil and an error occurs, this pointer will be
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
             set to an NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -216,14 +216,14 @@ the exact same attributes and relatives as the receiver.</Abstract>
 			<Abstract type="html">A convenience method for parsing an XML document from an NSData instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (RXMLElement *)xmlFromData:(NSData *)xmlData error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (RXMLElement *)xmlFromData:(NSData *)xmlData error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>
 					<Abstract type="html">The XML data to be processed.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
-					<Abstract type="html">If non-nil and an error occurs, this pointer will be
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
             set to an NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -274,14 +274,14 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)filePath error:(NSError **)errPtr</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)filePath error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
 					<Abstract type="html">The path of the file containing the XML to process.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
-					<Abstract type="html">If non-nil and an error occurs, this pointer will be
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
             set to an NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -314,14 +314,14 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(NSData *)xmlData error:(NSError **)errPtr</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(NSData *)xmlData error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>
 					<Abstract type="html">An NSData instance containing the XML to process.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
-					<Abstract type="html">If non-nil and an error occurs, this pointer will be
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
             set to an NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>

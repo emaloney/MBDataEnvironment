@@ -631,7 +631,7 @@ MBImplementSingleton();
 - (NSArray*) tokensForExpression:(NSString*)expr
                  inVariableSpace:(MBVariableSpace*)space
                     usingGrammar:(MBExpressionGrammar*)grammar
-                           error:(MBExpressionError**)errPtr
+                           error:(out MBExpressionError**)errPtr
 {
     if (!expr || !grammar || !space) return nil;
     

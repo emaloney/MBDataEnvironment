@@ -220,76 +220,73 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>This class is responsible for evaluating Mockingbird expressions.</p>
 
-<p>Mockingbird expressions are string-based expressions that, when evaluated, can
+<p>Mockingbird expressions are strings that can contain:</p>
+
+<ul>
+<li>string literals</li>
+<li>numeric literals</li>
+<li>references to variables, which can be of any Objective-C type</li>
+<li>simple mathematical expressions</li>
+<li>logical</li>
+</ul>
+
+
+<p>are string-based expressions that, when evaluated, can
 result in one of the following types:</p>
 
 <ul>
-<li>arbitrary Objective-C objects (via the <a href="#//api/name/asObject:"><code>asObject:</code></a> method variants),</li>
-<li>strings (via the <a href="#//api/name/asString:"><code>asString:</code></a> method variants),</li>
-<li>numbers (via the <a href="#//api/name/asNumber:"><code>asNumber:</code></a> method variants),</li>
+<li>arbitrary Objective-C objects (via the <a href="#//api/name/asObject:"><code>asObject:</code></a> method variants)</li>
+<li>strings (via the <a href="#//api/name/asString:"><code>asString:</code></a> method variants)</li>
+<li>numbers (via the <a href="#//api/name/asNumber:"><code>asNumber:</code></a> method variants)</li>
 <li>boolean values (via the <a href="#//api/name/asBoolean:"><code>asBoolean:</code></a> method variants), and</li>
-<li>arrays (via the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants).</li>
+<li>arrays of Objective-C objects (via the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants)</li>
 </ul>
 
 
-<p>This class provides an Objective-C interface for evaluating MBML
-expressions, typically, expressions are used to perform string replacement
-within attributes of MBML tags. For example, in this tag:</p>
+<p>One use of a Mockingbird expression might be to perform string replacement
+when populating user interface views, such as <code>UILabel</code>s.</p>
 
-<pre><code>&lt;Label text="Hello, $userName" ... /&gt;
+<p>For example:</p>
+
+<pre><code>UILabel* greeting = // created elsewhere
+greeting.text = [MBExpression asString:@"Hello, $userName!"];
 </code></pre>
 
-<p>the <code>text</code> attribute contains an MBML expression. This particular expression
-consists of two parts: a string literal (&ldquo;<code>Hello,</code>&rdquo;) followed by a reference
-to an MBML variable called <code>userName</code>.</p>
+<p>In the code above, the <code>text</code> property of the <code>greeting</code> label will be set
+to the result of the expression &ldquo;<code>Hello, $userName!</code>&rdquo;.</p>
 
-<p>When this label is displayed onscreen, the <code>text</code> attribute is evaluated as
-an MBML expression, and the text &ldquo;<code>$userName</code>&rdquo; is replaced by the value of
-the <code>userName</code> MBML variable. If the value of <code>userName</code> is &ldquo;Cooper&rdquo;, then the
-label would display the text &ldquo;Hello, Cooper&rdquo;.</p>
+<p>This particular expression consists of three parts: a string literal
+(&ldquo;<code>Hello,</code>&rdquo;) followed by a reference to a Mockingbird variable called
+<code>userName</code>, followed by another string literal (&ldquo;<code>!</code>&rdquo;).</p>
 
-<p><strong>MBML Expression Evaluation Contexts</strong></p>
+<p>When the expression is evaluated, the &ldquo;<code>$userName</code>&rdquo; portion of the expression
+is replaced by the value of the <code>userName</code> <em>variable</em>.</p>
 
-<p>Depending on where an expression appears within MBML, it may be evaluated in a
-different context. The context determines how the expression is evaluated and
-what type of value will be returned.</p>
+<p>If the value of <code>userName</code> is &ldquo;<code>Cooper</code>&rdquo;, then the label would display the
+text &ldquo;<code>Hello, Cooper!</code>&rdquo;.</p>
 
-<p>There are three evaluation contexts supported:</p>
+<p>Notice that the portions of the expression that consist of literals are not
+evaluated; they are included in the result in the same form that they
+appear in the original expression.</p>
 
-<ul>
-<li><p><em>object context</em> — An Objective-C object is returned as a result of
-evaluating the expression. For expressions that occur within MBML
-attributes that end up displayed onscreen, objects are converted to strings
-prior to display.</p></li>
-<li><p><em>boolean context</em> — A boolean value is returned as the result of evaluating
-the expression.</p></li>
-<li><p><em>numeric context</em> — An <code>NSNumber</code> is returned as a result of evaluating the
-expression.</p></li>
-</ul>
+<h3>MBML Functions</h3>
 
+<p>In addition to referencing variables, expressions can also cause native
+Objective-C code to be executed.</p>
 
-<p>Most expression evaluations occur within the object context. However,
-expressions found within the MBML <code>if=""</code> attribute are evaluated in a
-boolean context.</p>
+<p>For example:</p>
 
-<p><strong>MBML Functions</strong></p>
-
-<p>In addition to referencing variables, MBML expressions can also cause native
-Objective-C code to be executed. (See the class <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> for more
-information.) A variety of MBML functions ship with Mockingbird, which can be
-embedded within expressions. In this example:</p>
-
-<pre><code>&lt;Label text="The time now is ^currentTime()" ... /&gt;
+<pre><code>UILabel* time = // created elsewhere
+time.text = [MBExpression asString:@"The time now is ^currentTime()"];
 </code></pre>
 
-<p>the text &ldquo;<code>The time now is</code>&rdquo; is a string literal, and &ldquo;<code>^currentTime()</code>&rdquo;
-is a call to an MBML function. When this expression is evaluated, the
-MBML function named <code>currentTime</code> is executed, and the text
-&ldquo;<code>^currentTime()</code>&rdquo; is replaced with the result of calling that function.</p>
+<p>In the expression shown above, the <code>text</code> property of the <code>time</code> label
+is set using a string literal and the value yielded by the <em>MBML function</em>
+called <code>^currentTime()</code>.</p>
 
 <p>When placed onscreen, such a label might look like:</p>
 
-<pre><code>The time now is 2013-07-22 19:26:54 +0000
+<pre><code>The time now is 2015-01-26 21:45:40 +0000
 </code></pre>
 
 <p>Many functions take one or more parameters; when multiple parameters are
@@ -297,18 +294,21 @@ passed to a function, the pipe character (&ldquo;<code>|</code>&rdquo;) is used 
 separator.</p>
 
 <p>Parameters may consist of literals, variable references, or other function
-calls. For example, the label:</p>
+calls. For example, if the label&rsquo;s <code>text</code> were set using the expression:</p>
 
-<pre><code>&lt;Label text="The time now is ^formatMediumDateTime(^currentTime())" ... /&gt;
+<pre><code>The time now is ^formatMediumDateTime(^currentTime())
 </code></pre>
 
-<p>would display:</p>
+<p>The label&rsquo;s content might look like:</p>
 
-<pre><code>The time now is Jul 22, 2013, 3:26:54 PM
+<pre><code>The time now is Jan 26, 2015, 4:45:40 PM
 </code></pre>
 
 <p>(The exact output of the example above depends on the user&rsquo;s locale settings
 and, of course, the actual date and time.)</p>
+
+<p>For more information on MBML functions, see the documentation for the
+<a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
 
 <p><strong>MBML Identifiers</strong></p>
 
@@ -746,7 +746,8 @@ whitespace.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Evaluates the given expression in the <em>object context</em> without using string
-interpolation.</p>
+interpolation. Discrete values within the expression are returned as items in
+an array.</p>
 	</div>		
 	
     
@@ -779,13 +780,24 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The individual values encountered during the evaluation of the expression are
-returned in an array.</p>
+		<p>An expression may contain zero or more literal values and inner expressions;
+this method gathers any individual literals and inner expression values
+encountered while evaluating the passed-in expression, and returns an
+<code>NSArray</code> containing the results.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/asObject:">+ asObject:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -805,12 +817,13 @@ returned in an array.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Evaluates the given expression in the <em>object context</em> without using string
-interpolation.</p>
+interpolation. Discrete values within the expression are returned as items in
+an array.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -826,7 +839,7 @@ interpolation.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -846,13 +859,24 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The individual values encountered as a result of evaluating the expression
-are returned in an array.</p>
+		<p>An expression may contain zero or more literal values and inner expressions;
+this method gathers any individual literals and inner expression values
+encountered while evaluating the passed-in expression, and returns an
+<code>NSArray</code> containing the results.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/asObject:error:">+ asObject:error:</a></p></code></li>
+			
+		</ul>
+	</div>
 	
 	
 	
@@ -872,12 +896,13 @@ are returned in an array.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Evaluates the given expression in the <em>object context</em> without using string
-interpolation.</p>
+interpolation. Discrete values within the expression are returned as items in
+an array.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -901,7 +926,7 @@ interpolation.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -921,8 +946,10 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The individual values encountered as a result of evaluating the expression
-are returned in an array.</p>
+		<p>An expression may contain zero or more literal values and inner expressions;
+this method gathers any individual literals and inner expression values
+encountered while evaluating the passed-in expression, and returns an
+<code>NSArray</code> containing the results.</p>
 	</div>
 	
 	
@@ -1061,7 +1088,7 @@ are returned in an array.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1077,7 +1104,7 @@ are returned in an array.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1121,7 +1148,7 @@ are returned in an array.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1151,7 +1178,7 @@ are returned in an array.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1318,7 +1345,7 @@ into a number if necessary (and possible).</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1334,7 +1361,7 @@ into a number if necessary (and possible).</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1384,7 +1411,7 @@ into a number if necessary (and possible).</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1414,7 +1441,7 @@ into a number if necessary (and possible).</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1612,7 +1639,7 @@ interpolation.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1628,7 +1655,7 @@ interpolation.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1691,7 +1718,7 @@ interpolation.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1721,7 +1748,7 @@ interpolation.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1891,7 +1918,7 @@ values individually without them being coerced into a single string.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1907,7 +1934,7 @@ values individually without them being coerced into a single string.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -1950,7 +1977,7 @@ values individually without them being coerced into a single string.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1980,7 +2007,7 @@ values individually without them being coerced into a single string.</p>
 			<dt><em>errPtr</em></dt>
 			<dd><p>An optional pointer to a memory location for storing an
             <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
-            and an error occurs during evaluation, <code>errPtr</code> will be updated
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
             to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></dd>
 		</dl>
 		
@@ -2306,7 +2333,7 @@ objects have equal values.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

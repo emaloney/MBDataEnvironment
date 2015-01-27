@@ -37,7 +37,7 @@ results, and values of other types, such as:</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a CGPoint value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGPoint)pointFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (CGPoint)pointFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -46,7 +46,8 @@ results, and values of other types, such as:</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The CGPoint value that corresponds with str.
@@ -60,7 +61,7 @@ results, and values of other types, such as:</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGPoint.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGPoint)pointFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (CGPoint)pointFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -69,7 +70,8 @@ results, and values of other types, such as:</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The CGPoint value that corresponds with obj. Returns
@@ -141,7 +143,7 @@ pointFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a CGSize value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -150,7 +152,8 @@ pointFromString:.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The CGSize value that corresponds with str.
@@ -164,7 +167,7 @@ pointFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGSize.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -173,7 +176,8 @@ pointFromString:.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The CGSize value that corresponds with obj. Returns
@@ -245,7 +249,7 @@ sizeFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a CGRect value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -254,7 +258,8 @@ sizeFromString:.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The CGRect value that corresponds with str.
@@ -268,7 +273,7 @@ sizeFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGRect.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -277,7 +282,8 @@ sizeFromString:.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The CGRect value that corresponds with obj. Returns
@@ -444,7 +450,7 @@ and height dimensions of the rectangle.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIOffset value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -453,7 +459,8 @@ and height dimensions of the rectangle.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIOffset value that corresponds with str.
@@ -467,7 +474,7 @@ and height dimensions of the rectangle.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a UIOffset.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIOffset)offsetFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIOffset)offsetFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -476,7 +483,8 @@ and height dimensions of the rectangle.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIOffset value that corresponds with obj. Returns
@@ -530,7 +538,7 @@ UIOffset value using the offsetFromObject:error: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIEdgeInsets value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -539,7 +547,8 @@ UIOffset value using the offsetFromObject:error: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIEdgeInsets value that corresponds with str.
@@ -553,7 +562,7 @@ UIOffset value using the offsetFromObject:error: method.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a UIEdgeInsets.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIEdgeInsets)edgeInsetsFromObject:(id)obj error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -562,7 +571,8 @@ UIOffset value using the offsetFromObject:error: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIEdgeInsets value that corresponds with obj. Returns
@@ -617,7 +627,7 @@ UIEdgeInsets value using the edgeInsetsFromObject:error: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIColor value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIColor *)colorFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIColor *)colorFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -626,7 +636,8 @@ UIEdgeInsets value using the edgeInsetsFromObject:error: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIColor value that corresponds with the
@@ -682,7 +693,7 @@ UIColor value using the colorFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as an NSLineBreakMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -691,7 +702,8 @@ UIColor value using the colorFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The NSLineBreakMode value that corresponds with str.
@@ -746,7 +758,7 @@ NSLineBreakMode value using the lineBreakModeFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as an NSTextAlignment value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -755,7 +767,8 @@ NSLineBreakMode value using the lineBreakModeFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The NSTextAlignment value that corresponds with str.
@@ -810,7 +823,7 @@ NSTextAlignment value using the textAlignmentFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIScrollViewIndicatorStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -819,7 +832,8 @@ NSTextAlignment value using the textAlignmentFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIScrollViewIndicatorStyle value that corresponds with str.
@@ -875,7 +889,7 @@ scrollViewIndicatorStyleFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIActivityIndicatorViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -884,7 +898,8 @@ scrollViewIndicatorStyleFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIActivityIndicatorViewStyle value that corresponds with
@@ -940,7 +955,7 @@ activityIndicatorViewStyleFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIButtonType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -949,7 +964,8 @@ activityIndicatorViewStyleFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIButtonType value that corresponds with str.
@@ -1005,7 +1021,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as an NSDateFormatterStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1014,7 +1030,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The NSDateFormatterStyle value that corresponds with str.
@@ -1070,7 +1087,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITextBorderStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1079,7 +1096,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UITextBorderStyle value that corresponds with str.
@@ -1135,7 +1153,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1144,7 +1162,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UITableViewStyle value that corresponds with str.
@@ -1200,7 +1219,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewCellStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1209,7 +1228,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UITableViewCellStyle value that corresponds with str.
@@ -1272,7 +1292,7 @@ but adds the value MBTableViewCellSelectionStyleGradient to represent a
 custom cell selection style using a gradient.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1281,7 +1301,8 @@ custom cell selection style using a gradient.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The MBTableViewCellSelectionStyle value that corresponds with
@@ -1337,7 +1358,7 @@ tableViewCellSelectionStyleFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewCellAccessoryType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1346,7 +1367,8 @@ tableViewCellSelectionStyleFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UITableViewCellAccessoryType value that corresponds with
@@ -1402,7 +1424,7 @@ tableViewCellAccessoryTypeFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewRowAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1411,7 +1433,8 @@ tableViewCellAccessoryTypeFromString: method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UITableViewRowAnimation value that corresponds with str.
@@ -1467,7 +1490,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIControlState value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1476,7 +1499,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIControlState value that corresponds with str.
@@ -1532,7 +1556,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIViewAnimationOptions value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1541,7 +1565,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIViewAnimationOptions value that corresponds with str.
@@ -1596,7 +1621,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIModalTransitionStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1605,7 +1630,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIModalTransitionStyle value that corresponds with str.
@@ -1661,7 +1687,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIViewContentMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1670,7 +1696,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIViewContentMode value that corresponds with str.
@@ -1725,7 +1752,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIBarStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1734,7 +1761,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIBarStyle value that corresponds with str.
@@ -1789,7 +1817,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIBarButtonSystemItem value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1798,7 +1826,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIBarButtonSystemItem value that corresponds with str.
@@ -1853,7 +1882,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIBarButtonItemStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1862,7 +1891,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIBarButtonItemStyle value that corresponds with str.
@@ -1917,7 +1947,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIStatusBarAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1926,7 +1956,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIStatusBarAnimation value that corresponds with str.
@@ -1981,7 +2012,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIPopoverArrowDirection value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str error:(NSError **)errPtr</Declaration>
+			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1990,7 +2021,8 @@ method.</Abstract>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
             NSError instance in the event of a problem interpreting str.
-            May be nil.</Abstract>
+            If non-nil and an error occurs, *errPtr will be set to an
+            NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The UIPopoverArrowDirection value that corresponds with str.

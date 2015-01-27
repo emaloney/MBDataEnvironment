@@ -42,7 +42,7 @@
 
 + (UIFont*) _fontWithNameAndSizeFromParameters:(NSArray*)params
                                startingAtIndex:(NSUInteger)index
-                                         error:(MBMLFunctionError**)errPtr
+                                         error:(out MBMLFunctionError**)errPtr
 {
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIsAtLeast:(index + 2) error:&err];

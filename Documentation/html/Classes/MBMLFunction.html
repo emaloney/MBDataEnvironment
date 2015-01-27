@@ -819,7 +819,7 @@ specified array index yields a numeric value when evaluated.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateExpression:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateExpression:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -841,7 +841,7 @@ specified array index yields a numeric value when evaluated.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -897,7 +897,7 @@ specified array index yields an <code>NSArray</code> when evaluated.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateExpression:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateExpression:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -919,7 +919,7 @@ specified array index yields an <code>NSArray</code> when evaluated.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -975,7 +975,7 @@ specified array index yields an <code>NSDictionary</code> when evaluated.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateExpression:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateExpression:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -997,7 +997,7 @@ specified array index yields an <code>NSDictionary</code> when evaluated.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1053,7 +1053,7 @@ specified array index yields an <code>NSString</code> when evaluated.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)validateExpression:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)validateExpression:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1075,7 +1075,7 @@ specified array index yields an <code>NSString</code> when evaluated.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1132,7 +1132,7 @@ specified index is not a numeric value.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameter:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameter:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1154,7 +1154,7 @@ specified index is not a numeric value.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1209,7 +1209,7 @@ doesn&rsquo;t contain the exact number of parameters expected.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIs:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIs:(NSUInteger)<em>expectedCnt</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1231,7 +1231,7 @@ doesn&rsquo;t contain the exact number of parameters expected.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1277,7 +1277,7 @@ contains fewer than or more than the expected number of parameters.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>minCnt</em> andAtMost:(NSUInteger)<em>maxCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>minCnt</em> andAtMost:(NSUInteger)<em>maxCnt</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1306,7 +1306,7 @@ contains fewer than or more than the expected number of parameters.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1352,7 +1352,7 @@ contains fewer than the expected number of parameters.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>expectedCnt</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1375,7 +1375,7 @@ contains fewer than the expected number of parameters.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1421,7 +1421,7 @@ contains more than the expected number of parameters.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtMost:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtMost:(NSUInteger)<em>expectedCnt</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1444,7 +1444,7 @@ contains more than the expected number of parameters.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1490,7 +1490,7 @@ greater than the last index in the array.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> indexIsInRange:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> indexIsInRange:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1513,7 +1513,7 @@ greater than the last index in the array.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1559,7 +1559,7 @@ specified index is not an <code>NSArray</code> instance.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameter:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameter:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1581,7 +1581,7 @@ specified index is not an <code>NSArray</code> instance.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1636,7 +1636,7 @@ specified index is not an <code>NSDictionary</code> instance.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameter:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameter:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1658,7 +1658,7 @@ specified index is not an <code>NSDictionary</code> instance.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1713,7 +1713,7 @@ the expected class.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(id)<em>param</em> isKindOfClass:(Class)<em>cls</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(id)<em>param</em> isKindOfClass:(Class)<em>cls</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1735,7 +1735,7 @@ the expected class.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1781,7 +1781,7 @@ of one of the expected classes.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(id)<em>param</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(id)<em>param</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1805,7 +1805,7 @@ of one of the expected classes.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1851,7 +1851,7 @@ specified index is not an <code>NSString</code> instance.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameter:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameter:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1873,7 +1873,7 @@ specified index is not an <code>NSString</code> instance.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -1928,7 +1928,7 @@ parameter at that array index is not a kind of the expected class.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isKindOfClass:(Class)<em>cls</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isKindOfClass:(Class)<em>cls</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1955,7 +1955,7 @@ parameter at that array index is not a kind of the expected class.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2011,7 +2011,7 @@ classes.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2040,7 +2040,7 @@ classes.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2095,7 +2095,7 @@ respond to that selector.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id&lt;NSObject&gt;)validateParameter:(id&lt;NSObject&gt;)<em>param</em> respondsToSelector:(SEL)<em>selector</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id&lt;NSObject&gt;)validateParameter:(id&lt;NSObject&gt;)<em>param</em> respondsToSelector:(SEL)<em>selector</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2117,7 +2117,7 @@ respond to that selector.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2162,7 +2162,7 @@ Validation will fail if the parameter is not a number.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameterContainsNumber:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameterContainsNumber:(id)<em>param</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2179,7 +2179,7 @@ Validation will fail if the parameter is not a number.</p>
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2224,7 +2224,7 @@ Validation will fail if the parameter is not an <code>NSArray</code> instance.</
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameterIsArray:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameterIsArray:(id)<em>param</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2241,7 +2241,7 @@ Validation will fail if the parameter is not an <code>NSArray</code> instance.</
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2286,7 +2286,7 @@ Validation will fail if the parameter is not an <code>NSDictionary</code> instan
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameterIsDictionary:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameterIsDictionary:(id)<em>param</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2303,7 +2303,7 @@ Validation will fail if the parameter is not an <code>NSDictionary</code> instan
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2348,7 +2348,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameterIsString:(id)<em>param</em> error:(MBMLFunctionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameterIsString:(id)<em>param</em> error:(out MBMLFunctionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2365,7 +2365,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 			<dd><p>A memory location where a pointer to an <a href="../Classes/MBMLFunctionError.html"><code>MBMLFunctionError</code></a>
             instance will be placed if parameter validation fails. Note that
             this must not be a <code>nil</code> value. If a previous validation error
-            occurred and <code>errPtr</code> already contains an error object, further
+            occurred and <code>*errPtr</code> already contains an error object, further
             parameter validation will <strong>not</strong> be performed.</p></dd>
 		</dl>
 		
@@ -2417,7 +2417,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (id)executeWithInput:(id)<em>input</em> error:(MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)executeWithInput:(id)<em>input</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2585,7 +2585,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-26)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-27)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

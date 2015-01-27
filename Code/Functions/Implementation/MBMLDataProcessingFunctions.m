@@ -443,7 +443,7 @@ typedef enum {
                      atIndex:(NSUInteger)intermediateIndex
              usingExpression:(NSString*)matchExpression
                    matchType:(FilterMatchType)matchType
-                       error:(MBExpressionError**)errPtr
+                       error:(out MBExpressionError**)errPtr
 {
     NSString* intermediateExpr = intermediates[intermediateIndex];
     id container = [MBExpression asObject:intermediateExpr];
@@ -529,7 +529,7 @@ typedef enum {
            usingExpression:(NSString*)matchExpression
              intermediates:(NSArray*)intermediates
                  matchType:(FilterMatchType)matchType
-                     error:(MBExpressionError**)errPtr
+                     error:(out MBExpressionError**)errPtr
 {
     MBExpressionError* currentErr = nil;
     MBVariableSpace* vars = [MBVariableSpace instance];
@@ -574,7 +574,7 @@ typedef enum {
       usingExpression:(NSString*)matchExpression
         intermediates:(NSArray*)intermediates
             matchType:(FilterMatchType)matchType
-                error:(MBExpressionError**)errPtr
+                error:(out MBExpressionError**)errPtr
 {
     MBExpressionError* currentErr = nil;
     MBVariableSpace* vars = [MBVariableSpace instance];
@@ -707,7 +707,7 @@ typedef enum {
           into:(NSMutableArray*)collection 
 keyExpressions:(NSArray*)keyExprs 
   keyExprIndex:(NSUInteger)keyExprIdx
-         error:(MBExpressionError**)errPtr
+         error:(out MBExpressionError**)errPtr
 {
     if (!collectFrom) {
         return;
@@ -793,7 +793,7 @@ keyExpressions:(NSArray*)keyExprs
     valueHandling:(AssociationValueHandling)valueHandling
    keyExpressions:(NSArray*)keyExprs
          keyIndex:(NSUInteger)keyExprIdx
-            error:(MBExpressionError**)errPtr
+            error:(out MBExpressionError**)errPtr
 {
     NSUInteger exprCount = keyExprs.count;
     

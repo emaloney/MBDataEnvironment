@@ -137,7 +137,7 @@
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">If non-nil and an error occurs during retrival of the
-            variable value, this value will be set to an MBExpressionError
+            variable value, *errPtr will be set to an MBExpressionError
             object describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -160,7 +160,7 @@
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">If non-nil and an error occurs during retrival of the
-            variable value, this value will be set to an MBExpressionError
+            variable value, *errPtr will be set to an MBExpressionError
             object describing the error.</Abstract>
 				</Parameter>
 			</Parameters>

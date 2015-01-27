@@ -81,7 +81,7 @@
     MBErrorNotImplementedReturn(NSDecimalNumber*);
 }
 
-- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(MBExpressionError**)errPtr
+- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
 {
     debugTrace();
 

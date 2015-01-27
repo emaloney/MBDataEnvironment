@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             retrieved.
  
  @param     errPtr If non-`nil` and an error occurs during retrival of the
-            variable value, this value will be set to an `MBExpressionError`
+            variable value, `*errPtr` will be set to an `MBExpressionError`
             object describing the error.
 
  @note      This method should not be called for variables whose
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             retrieved.
 
  @param     errPtr If non-`nil` and an error occurs during retrival of the
-            variable value, this value will be set to an `MBExpressionError`
+            variable value, `*errPtr` will be set to an `MBExpressionError`
             object describing the error.
  */
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space

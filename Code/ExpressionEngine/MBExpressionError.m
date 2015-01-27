@@ -135,12 +135,12 @@
     }
 }
 
-- (void) reportErrorTo:(MBExpressionError**)reportTo
+- (void) reportErrorTo:(out MBExpressionError**)reportTo
 {
     [self reportErrorTo:reportTo suppressLog:NO];
 }
 
-- (void) reportErrorTo:(MBExpressionError**)reportTo suppressLog:(BOOL)suppress
+- (void) reportErrorTo:(out MBExpressionError**)reportTo suppressLog:(BOOL)suppress
 {
     if (!reportTo && !suppress) {
         [self log];

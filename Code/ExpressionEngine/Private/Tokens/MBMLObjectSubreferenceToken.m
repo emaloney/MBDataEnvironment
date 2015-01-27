@@ -115,7 +115,7 @@
 }
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
-                                                  error:(MBExpressionError**)errPtr
+                                                  error:(out MBExpressionError**)errPtr
 {
     MBExpressionError* err = nil;
     NSArray* containedTokens = [super tokenizeContainedExpressionInVariableSpace:space
