@@ -36,6 +36,56 @@ Just use the Mockingbird Data Environment to decouple your native code from your
 
 > This technique was discussed in more detail at the [iOSoho Developer's Symposium](http://www.meetup.com/iOSoho/events/181963632/) meetup on August 11th, 2014. ([Slides available at the Gilt Tech blog](http://tech.gilt.com/post/94663143169/handling-changes-to-your-server-side-data-model).)
 
+## Integrating with the Mockingbird Data Environment
+
+Currently, we only support using CocoaPods to integrate the Mockingbird Data Environment into your project.
+
+If you aren't already using CocoaPods, you'll find [documentation on the CocoaPods website](http://guides.cocoapods.org/using/index.html) to help you get started.
+
+Once you've got CocoaPods up and running, you can add the Mockingbird Data Environment to your project just by adding this line to your `Podfile`:
+
+```ruby
+pod 'MBDataEnvironment'
+```
+
+After you've added `MBDataEnvironment` to your `Podfile`, you can then install the CocoaPod from the command line. From within your project directory, issue the command:
+
+```bash
+pod install
+```
+
+**Important:** Take note of the output of the `pod install` command. If you were not previously using an Xcode workspace for your project, CocoaPods will create one for you that includes your project and any installed CocoaPods. Going forward, you will need to use that workspace for development instead of your old project file.
+
+Once you've run the `pod install` command, you will be to reference the Mockingbird Data Environment from within your project.
+
+You should reference header files using the “library header” import notation. For added convenience, you can reference the umbrella header, which ensures that you'll have access to the entire public API of the Mockingbird Data Environment:
+
+```objc
+#import <MBDataEnvironment/MBDataEnvironment.h>
+```
+
+In the future, we may issue binary releases of the Mockingbird Data Environment as iOS frameworks; using the notation above will allow you to seamlessly transition to using a framework.
+
+## Initializing the Mockingbird Data Environment
+
+Before making use of the Mockingbird Data Environment, your application first loads an `MBEnvironment` instance.
+
+The simplest way to do this is to load the *default environment*:
+
+```objc
+[MBEnvironment loadDefaultEnvironment];
+```
+
+The default environment contains everything you need to get started using the Mockingbird Data Environment.
+
+You can also provide your own *manifest file* that contains additional declarations allowing you to customize the initial state of the environment. If your application provides a `manifest.xml` file in its resources, you can load the environment using:
+
+```objc
+[MBEnvironment loadFromManifest];
+```
+
+Once an environment is loaded, you can start using *expressions* to interact with the Mockingbird Data Environment.
+
 ## A Brief Introduction to Mockingbird Expressions
 
 Mockingbird expressions are strings containing zero or more *literals* or *expression tokens*.
