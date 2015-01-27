@@ -389,7 +389,103 @@ Which is also the logical equivalent of:
 Note that the entire *false result* clause is optional. If the *false result* clause and the `|` (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
 
 ```objc
-[MBExpression asObject:@"^if(false|hello)"];
+[MBExpression asObject:@"^if(F|hello)"];
 ```
 
-The expression above will always return `nil`.
+The expression above will always return `nil` because in a boolean context, the uppercase letter '`F`' represents the boolean constant `false`. (In all other contexts, '`F`' is simply a string literal with no special meaning.)
+
+##### Quoting
+
+In some cases, an expression may contain characters that you don't want to be recognized as part of an expression. 
+
+For example, consider this string expression:
+
+```
+It will cost $total for your $quantity tickets to the Ke$ha concert
+```
+
+The `$` character signals the beginning of a variable reference, so while `$total` and `$quantity` are correctly recognized as variables, the text "`$ha`" in the name "`Ke$ha`" will be incorrectly interpreted as a variable reference.
+
+Assuming there is no value for `$ha`, the expression will yield a string that ends in "`Ke concert`" instead of the intended "`Ke$ha concert`".
+
+To avoid this problem, you can use *quoting* to ensure that portions of your expression are not evaluated. You can think of quoting as representing a *raw context* wherein values are passed through as-is during expression evaluation.
+
+To quote a range of text within an expression, you would precede the text you want to quote with "`^q(`" and close it with "`)`". The text that appears within the parentheses is returned as-is when the expression containing the quote is evaluated.
+
+A quoted form of the expression above is:
+
+```
+It will cost $total for your $quantity tickets to the ^q(Ke$ha) concert
+```
+
+When this expression is evaluated, the string returned will correctly contain the text "`Ke$ha`" instead of just "`Ke`".
+
+##### Escape Sequences
+
+A technique similar to quoting is to use *escape sequences* to represent a character that can't be represented by itself.
+
+For example, the string "`$$`" is an escape sequence representing the dollar-sign character '`$`'. Just as quoting was used to ensure that "`Ke$ha`" was handled correctly, this escape sequence could also be used:
+
+```
+It will cost $total for your $quantity tickets to the Ke$$ha concert
+```
+
+**Note:** The expression engine is able to interpret escape sequences more efficiently than quoting, so if it is possible to represent what you need without using quoting, you should strive to do so.
+
+The following escape sequences are supported:
+
+Escape sequence|represents
+---------------|----------
+`$$`|'`$`'
+`##`|'`#`'
+`^^`|'`^`'
+`\n`|Newline character
+`\t`|Tab character
+
+#### MBML Functions
+
+MBML functions allow native Objective-C code to be called from within Mockingbird expressions. Functions can take zero or more input parameters, and they may return an object instance as a result.
+
+When an expression containing a function call is evaluated, the implementing method of the function is executed, and the value returned by the method (if any) is yielded by the function. Values returned by function implementations can then be manipulated further within an expression.
+
+Function calls begin with a caret character ('`^`'), followed by the name of the function, and end in a list of zero or more pipe-separated parameters surrounded by parentheses.
+
+For example, to call a function that creates an array, you could write:
+
+```
+^array(pizza|pasta|sushi|lobster)
+```
+
+If this notation looks familiar, it's because you've already encountered two functions—`^if()` and `^q()`—in the documentation above.
+
+In this example, the `^array()` function returns an `NSArray` containing four items: the strings "`pizza`", "`pasta`", "`sushi`" and "`lobster`".
+
+Because this particular expression yields an object, we can access values in the returned object as if it were a regular Mockingbird object reference. To access the fourth element in the (zero-indexed) array, you would write:
+
+```
+^array(pizza|pasta|sushi|lobster)[3]
+```
+
+This expression yields the value "`lobster`".
+
+The Mockingbird Data Environment ships with nearly 200 functions built in, and you can add more through `MBModule`s or by implementing them yourelf.
+
+The list of included functions can be seen in the <code>MBDataEnvironmentModule.xml</code> file; they are declared using the `<Function ... />` tag.
+
+The documentation for the functions themselves can be found alongside that of their implementing methods:
+
+- [MBMLCollectionFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLCollectionFunctions.html)
+- [MBMLDataProcessingFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDataProcessingFunctions.html)
+- [MBMLDateFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDateFunctions.html)
+- [MBMLDebugFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDebugFunctions.html)
+- [MBMLEncodingFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEncodingFunctions.html)
+- [MBMLEnvironmentFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEnvironmentFunctions.html)
+- [MBMLFileFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFileFunctions.html)
+- [MBMLFontFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFontFunctions.html)
+- [MBMLGeometryFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLGeometryFunctions.html)
+- [MBMLLogicFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLLogicFunctions.html)
+- [MBMLMathFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLMathFunctions.html)
+- [MBMLRegexFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRegexFunctions.html)
+- [MBMLResourceFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLResourceFunctions.html)
+- [MBMLRuntimeFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRuntimeFunctions.html)
+- [MBMLStringFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLStringFunctions.html)
