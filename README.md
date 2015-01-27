@@ -38,9 +38,52 @@ Just use the Mockingbird Data Environment to decouple your native code from your
 
 ## A Brief Introduction to Mockingbird Expressions
 
+Mockingbird expressions are strings containing zero or more *literals* or *expression tokens*.
+
+Depending on the context, Mockingbird expressions can contain:
+ 
+ - string literals
+ - numeric literals
+ - references to variables of any Objective-C type
+ - simple mathematical expressions
+ - boolean logic expressions
+ - function calls
+
+The process of resolving an expression down to the specific value(s) it references is called _evaluation_. During evaluation, literals are passed through untouched, but any expression tokens encountered are replaced by the values they represent.
+
+The primary interface for evaluating expressions is through several `MBExpression` class methods:
+
+Expressions yielding|are evaluating using
+--------------------|--------------------
+`NSString`|`asString:`
+`NSNumber`|`asNumber:`
+`BOOL`|`asBoolean:`
+`id` or `NSObject`|`asObject:`
+
+#### An example
+
+One use of a Mockingbird expression is to perform string replacement when populating user interface views, such as a `UILabel`:
+ 
+```objc
+	UILabel* greeting = // created elsewhere
+	greeting.text = [MBExpression asString:@"Hello, $userName!"];
+```
+
+In the code above, the `text` property of the `greeting` label will be set to the result of evaluating the *string expression* "`Hello, $userName!`".
+
+This particular expression consists of three parts: a string literal ("`Hello, `") followed by a reference to a Mockingbird variable called `userName`, followed by another string literal ("`!`").
+
+When the expression is evaluated, the "`$userName`" portion of the expression is replaced by the value of the `userName` variable in the current *variable space*.
+
+If the value of `userName` is "`Cooper`", then the label would display the text "`Hello, Cooper!`".
+
+#### The Variable Space
+
+The *variable space* is where Mockingbird variable values are stored.
+
 Any native runtime object instance can be stored in the Mockingbird variable space. When an object is stored in the variable space, it is associated with a *variable name* and is then considered a *variable value*.
 
-Variable values can be exposed to the variable space through several means, including through Objective-C code:
+Variable values can be exposed to the variable space via Objective-C:
 
 ```objc
 [[MBVariableSpace instance] setVariable:@"cats"
@@ -49,7 +92,21 @@ Variable values can be exposed to the variable space through several means, incl
 
 The code above associates the variable name "`cats`" with an `NSArray` instance containing three items (the strings "`Barrett`", "`Duncan`" and "`Gabby`").
 
-This array can be accessed through the Mockingbird expression:
+The variable space can also be pre-populated with values when the Mockingbird environment loads, using an *MBML manifest file* that can be included in your application's resources.
+
+MBML, which stands for **M**ocking**b**ird **M**arkup **L**anguage, is an XML-based language that can be used to customize and configure the Mockingbird environment.
+
+An equivalent MBML declaration for the "`cats`" variable above is:
+
+```xml
+<Var name="cats" type="list">
+    <Var literal="Barrett"/>
+    <Var literal="Duncan"/>
+    <Var literal="Gabby"/>
+</Var>
+```
+
+Regardless of how the value was introduced to the variable space, the array associated with the Mockingbird variable named "`cats`" can be accessed using the expression:
 
 ```
 $cats
