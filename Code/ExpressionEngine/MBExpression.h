@@ -373,49 +373,58 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 /*----------------------------------------------------------------------------*/
 
 /*!
- Evaluates the given expression in the *object context* with string
- interpolation.
-
- String interpolation only applies when an expression references more than one
- value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+ Evaluates the given expression in the *object context*. String interpolation
+ may be used if the expression references more than one value.
 
  If an expression contains a reference to only a single value (and does not
  also contain any text literals), the return value will be whatever `NSObject`
  instance is referenced by the expression.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime.`"
 
  With string interpolation, if an expression contains references to multiple
  discrete values or if it contains one or more text literals, those values are
  coerced into strings and concatenated before being returned as a single
  `NSString` instance.
 
+ If you know you'll be using an object expression that will result in string
+ interpolation being used, consider using the `asString:` method variants
+ instead.
+
  You can also use one of the `asArray:` method variants to retrieve multiple
- values individually without them being coerced into a single string.
+ values from within an expression without them being concatenated into a
+ single string.
 
  @param     expr The expression to evaluate.
 
- @return    The result of evaluating the expression `expr` as an object
-            with string interpolation.
+ @return    The result of evaluating the expression `expr` as an object.
  */
 + (id) asObject:(NSString*)expr;
 
 /*!
- Evaluates the given expression in the *object context* with string
- interpolation.
+ Evaluates the given expression in the *object context*. String interpolation
+ may be used if the expression references more than one value.
 
- String interpolation only applies when an expression references more than one
- value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
- 
  If an expression contains a reference to only a single value (and does not
  also contain any text literals), the return value will be whatever `NSObject`
  instance is referenced by the expression.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime.`"
 
  With string interpolation, if an expression contains references to multiple
  discrete values or if it contains one or more text literals, those values are
  coerced into strings and concatenated before being returned as a single
  `NSString` instance.
  
+ If you know you'll be using an object expression that will result in string
+ interpolation being used, consider using the `asString:` method variants
+ instead.
+
  You can also use one of the `asArray:` method variants to retrieve multiple
- values individually without them being coerced into a single string.
+ values from within an expression without them being concatenated into a
+ single string.
 
  @param     expr The expression to evaluate.
 
@@ -424,58 +433,66 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
             and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
- @return    The result of evaluating the expression `expr` as an object
-            with string interpolation.
+ @return    The result of evaluating the expression `expr` as an object.
  */
 + (id) asObject:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
 /*!
- Evaluates the given expression in the *object context* with string
- interpolation.
-
- String interpolation only applies when an expression references more than one
- value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+ Evaluates the given expression in the *object context*. String interpolation
+ may be used if the expression references more than one value.
 
  If an expression contains a reference to only a single value (and does not
  also contain any text literals), the return value will be whatever `NSObject`
  instance is referenced by the expression.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime.`"
 
  With string interpolation, if an expression contains references to multiple
  discrete values or if it contains one or more text literals, those values are
  coerced into strings and concatenated before being returned as a single
  `NSString` instance.
 
+ If you know you'll be using an object expression that will result in string
+ interpolation being used, consider using the `asString:` method variants
+ instead.
+
  You can also use one of the `asArray:` method variants to retrieve multiple
- values individually without them being coerced into a single string.
+ values from within an expression without them being concatenated into a
+ single string.
 
  @param     expr The expression to evaluate.
 
  @param     def A default return value to use if the method would
             otherwise return `nil`.
 
- @return    The result of evaluating the expression `expr` as an object
-            with string interpolation.
+ @return    The result of evaluating the expression `expr` as an object.
  */
 + (id) asObject:(NSString*)expr defaultValue:(id)def;
 
 /*!
- Evaluates the given expression in the *object context* with string
- interpolation.
-
- String interpolation only applies when an expression references more than one
- value, eg. "`Hello $firstName! I haven't seen you since $lastTime`".
+ Evaluates the given expression in the *object context*. String interpolation
+ may be used if the expression references more than one value.
 
  If an expression contains a reference to only a single value (and does not
  also contain any text literals), the return value will be whatever `NSObject`
  instance is referenced by the expression.
+
+ String interpolation only applies when an expression references more than one
+ value, eg. "`Hello $firstName! I haven't seen you since $lastTime.`"
 
  With string interpolation, if an expression contains references to multiple
  discrete values or if it contains one or more text literals, those values are
  coerced into strings and concatenated before being returned as a single
  `NSString` instance.
 
+ If you know you'll be using an object expression that will result in string
+ interpolation being used, consider using the `asString:` method variants
+ instead.
+
  You can also use one of the `asArray:` method variants to retrieve multiple
- values individually without them being coerced into a single string.
+ values from within an expression without them being concatenated into a
+ single string.
 
  @param     expr The expression to evaluate.
  
@@ -492,8 +509,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
             and an error occurs during evaluation, `*errPtr` will be updated
             to point to an `MBExpressionError` instance describing the error.
 
- @return    The result of evaluating the expression `expr` as an object
-            with string interpolation.
+ @return    The result of evaluating the expression `expr` as an object.
  */
 + (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(out MBExpressionError**)errPtr;
 
@@ -516,8 +532,6 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as an array of
             objects.
- 
- @see       asObject:
  */
 + (NSArray*) asArray:(NSString*)expr;
 
@@ -540,8 +554,6 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as an array of
             objects.
- 
- @see       asObject:error:
  */
 + (NSArray*) asArray:(NSString*)expr error:(out MBExpressionError**)errPtr;
 
@@ -569,8 +581,6 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as an array of
             objects.
-
- @see       asObject:inVariableSpace:error:
  */
 + (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr;
 
@@ -687,8 +697,8 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @param     expr The expression to evaluate.
 
- @param     def A default return value to use if the method would
-            otherwise return `nil`.
+ @param     def A default return value to use if there was a problem evaluating
+            `expr`.
 
  @return    The result of evaluating the expression `expr` as a boolean 
             expression.
@@ -705,8 +715,8 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
             the instance associated with the active `MBEnvironment`. Must not
             be `nil`.
 
- @param     def A default return value to use if the method would
-            otherwise return `nil`.
+ @param     def A default return value to use if there was a problem evaluating
+            `expr`.
 
  @param     errPtr An optional pointer to a memory location for storing an
             `MBExpressionError` instance. If this parameter is non-`nil`

@@ -428,7 +428,7 @@ if log were to be called.</Abstract>
 of the reportTo parameter:</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>- (void)reportErrorTo:(MBExpressionError **)reportTo</Declaration>
+			<Declaration>- (void)reportErrorTo:(out MBExpressionError **)reportTo</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>reportTo</Name>
@@ -446,7 +446,7 @@ of the reportTo parameter:</Abstract>
 of the reportTo parameter:</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>- (void)reportErrorTo:(MBExpressionError **)reportTo suppressLog:(BOOL)suppressLog</Declaration>
+			<Declaration>- (void)reportErrorTo:(out MBExpressionError **)reportTo suppressLog:(BOOL)suppressLog</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>reportTo</Name>

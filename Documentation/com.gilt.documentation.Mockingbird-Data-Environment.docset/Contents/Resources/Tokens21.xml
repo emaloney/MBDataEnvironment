@@ -836,7 +836,7 @@ specified array index yields an NSDictionary when evaluated.</Abstract>
 			<Abstract type="html">Called by the expression engine to execute the function.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
 			
-			<Declaration>- (id)executeWithInput:(id)input error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>- (id)executeWithInput:(id)input error:(out MBMLFunctionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>input</Name>

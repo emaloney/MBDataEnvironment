@@ -790,15 +790,6 @@ encountered while evaluating the passed-in expression, and returns an
 	
 	
 	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/asObject:">+ asObject:</a></p></code></li>
-			
-		</ul>
-	</div>
-	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -868,15 +859,6 @@ encountered while evaluating the passed-in expression, and returns an
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/asObject:error:">+ asObject:error:</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
@@ -1044,8 +1026,8 @@ encountered while evaluating the passed-in expression, and returns an
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>def</em></dt>
-			<dd><p>A default return value to use if the method would
-            otherwise return <code>nil</code>.</p></dd>
+			<dd><p>A default return value to use if there was a problem evaluating
+            <code>expr</code>.</p></dd>
 		</dl>
 		
 	</div>
@@ -1170,8 +1152,8 @@ encountered while evaluating the passed-in expression, and returns an
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>def</em></dt>
-			<dd><p>A default return value to use if the method would
-            otherwise return <code>nil</code>.</p></dd>
+			<dd><p>A default return value to use if there was a problem evaluating
+            <code>expr</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -1485,8 +1467,8 @@ into a number if necessary (and possible).</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Evaluates the given expression in the <em>object context</em> with string
-interpolation.</p>
+		<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
 	</div>		
 	
     
@@ -1509,8 +1491,7 @@ interpolation.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating the expression <code>expr</code> as an object
-            with string interpolation.</p>
+		<p>The result of evaluating the expression <code>expr</code> as an object.</p>
 	</div>
 	
 	
@@ -1519,20 +1500,25 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>String interpolation only applies when an expression references more than one
-value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
-
-<p>If an expression contains a reference to only a single value (and does not
+		<p>If an expression contains a reference to only a single value (and does not
 also contain any text literals), the return value will be whatever <code>NSObject</code>
 instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
 
 <p>With string interpolation, if an expression contains references to multiple
 discrete values or if it contains one or more text literals, those values are
 coerced into strings and concatenated before being returned as a single
 <code>NSString</code> instance.</p>
 
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
 <p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
-values individually without them being coerced into a single string.</p>
+values from within an expression without them being concatenated into a
+single string.</p>
 	</div>
 	
 	
@@ -1556,8 +1542,8 @@ values individually without them being coerced into a single string.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Evaluates the given expression in the <em>object context</em> with string
-interpolation.</p>
+		<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
 	</div>		
 	
     
@@ -1586,8 +1572,7 @@ interpolation.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating the expression <code>expr</code> as an object
-            with string interpolation.</p>
+		<p>The result of evaluating the expression <code>expr</code> as an object.</p>
 	</div>
 	
 	
@@ -1596,20 +1581,25 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>String interpolation only applies when an expression references more than one
-value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
-
-<p>If an expression contains a reference to only a single value (and does not
+		<p>If an expression contains a reference to only a single value (and does not
 also contain any text literals), the return value will be whatever <code>NSObject</code>
 instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
 
 <p>With string interpolation, if an expression contains references to multiple
 discrete values or if it contains one or more text literals, those values are
 coerced into strings and concatenated before being returned as a single
 <code>NSString</code> instance.</p>
 
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
 <p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
-values individually without them being coerced into a single string.</p>
+values from within an expression without them being concatenated into a
+single string.</p>
 	</div>
 	
 	
@@ -1633,8 +1623,8 @@ values individually without them being coerced into a single string.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Evaluates the given expression in the <em>object context</em> with string
-interpolation.</p>
+		<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
 	</div>		
 	
     
@@ -1665,8 +1655,7 @@ interpolation.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating the expression <code>expr</code> as an object
-            with string interpolation.</p>
+		<p>The result of evaluating the expression <code>expr</code> as an object.</p>
 	</div>
 	
 	
@@ -1675,20 +1664,25 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>String interpolation only applies when an expression references more than one
-value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
-
-<p>If an expression contains a reference to only a single value (and does not
+		<p>If an expression contains a reference to only a single value (and does not
 also contain any text literals), the return value will be whatever <code>NSObject</code>
 instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
 
 <p>With string interpolation, if an expression contains references to multiple
 discrete values or if it contains one or more text literals, those values are
 coerced into strings and concatenated before being returned as a single
 <code>NSString</code> instance.</p>
 
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
 <p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
-values individually without them being coerced into a single string.</p>
+values from within an expression without them being concatenated into a
+single string.</p>
 	</div>
 	
 	
@@ -1712,8 +1706,8 @@ values individually without them being coerced into a single string.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Evaluates the given expression in the <em>object context</em> with string
-interpolation.</p>
+		<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
 	</div>		
 	
     
@@ -1758,8 +1752,7 @@ interpolation.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating the expression <code>expr</code> as an object
-            with string interpolation.</p>
+		<p>The result of evaluating the expression <code>expr</code> as an object.</p>
 	</div>
 	
 	
@@ -1768,20 +1761,25 @@ interpolation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>String interpolation only applies when an expression references more than one
-value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime</code>&rdquo;.</p>
-
-<p>If an expression contains a reference to only a single value (and does not
+		<p>If an expression contains a reference to only a single value (and does not
 also contain any text literals), the return value will be whatever <code>NSObject</code>
 instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
 
 <p>With string interpolation, if an expression contains references to multiple
 discrete values or if it contains one or more text literals, those values are
 coerced into strings and concatenated before being returned as a single
 <code>NSString</code> instance.</p>
 
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
 <p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
-values individually without them being coerced into a single string.</p>
+values from within an expression without them being concatenated into a
+single string.</p>
 	</div>
 	
 	

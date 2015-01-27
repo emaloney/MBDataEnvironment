@@ -108,8 +108,8 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:</TokenIdentifier>
-			<Abstract type="html">Evaluates the given expression in the object context with string
-interpolation.</Abstract>
+			<Abstract type="html">Evaluates the given expression in the object context. String interpolation
+may be used if the expression references more than one value.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
 			<Declaration>+ (id)asObject:(NSString *)expr</Declaration>
@@ -119,16 +119,15 @@ interpolation.</Abstract>
 					<Abstract type="html">The expression to evaluate.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object
-            with string interpolation.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object.</Abstract></ReturnValue>
 			<Anchor>//api/name/asObject:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:error:</TokenIdentifier>
-			<Abstract type="html">Evaluates the given expression in the object context with string
-interpolation.</Abstract>
+			<Abstract type="html">Evaluates the given expression in the object context. String interpolation
+may be used if the expression references more than one value.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
 			<Declaration>+ (id)asObject:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
@@ -144,16 +143,15 @@ interpolation.</Abstract>
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object
-            with string interpolation.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object.</Abstract></ReturnValue>
 			<Anchor>//api/name/asObject:error:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:defaultValue:</TokenIdentifier>
-			<Abstract type="html">Evaluates the given expression in the object context with string
-interpolation.</Abstract>
+			<Abstract type="html">Evaluates the given expression in the object context. String interpolation
+may be used if the expression references more than one value.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
 			<Declaration>+ (id)asObject:(NSString *)expr defaultValue:(id)def</Declaration>
@@ -167,16 +165,15 @@ interpolation.</Abstract>
             otherwise return nil.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object
-            with string interpolation.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object.</Abstract></ReturnValue>
 			<Anchor>//api/name/asObject:defaultValue:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:inVariableSpace:defaultValue:error:</TokenIdentifier>
-			<Abstract type="html">Evaluates the given expression in the object context with string
-interpolation.</Abstract>
+			<Abstract type="html">Evaluates the given expression in the object context. String interpolation
+may be used if the expression references more than one value.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
 			<Declaration>+ (id)asObject:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(out MBExpressionError **)errPtr</Declaration>
@@ -202,8 +199,7 @@ interpolation.</Abstract>
             to point to an MBExpressionError instance describing the error.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object
-            with string interpolation.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as an object.</Abstract></ReturnValue>
 			<Anchor>//api/name/asObject:inVariableSpace:defaultValue:error:</Anchor>
             <NodeRef refid="10"/>
 		</Token>
@@ -215,11 +211,6 @@ interpolation. Discrete values within the expression are returned as items in
 an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<Declaration>+ (NSArray *)asArray:(NSString *)expr</Declaration>
 			<Parameters>
 				<Parameter>
@@ -240,11 +231,6 @@ interpolation. Discrete values within the expression are returned as items in
 an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBExpression/asObject:error:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
 			<Declaration>+ (NSArray *)asArray:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
@@ -452,8 +438,8 @@ into a number if necessary (and possible).</Abstract>
 					<Abstract type="html">The expression to evaluate.</Abstract>
 				</Parameter><Parameter>
 					<Name>def</Name>
-					<Abstract type="html">A default return value to use if the method would
-            otherwise return nil.</Abstract>
+					<Abstract type="html">A default return value to use if there was a problem evaluating
+            expr.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The result of evaluating the expression expr as a boolean
@@ -480,8 +466,8 @@ into a number if necessary (and possible).</Abstract>
             be nil.</Abstract>
 				</Parameter><Parameter>
 					<Name>def</Name>
-					<Abstract type="html">A default return value to use if the method would
-            otherwise return nil.</Abstract>
+					<Abstract type="html">A default return value to use if there was a problem evaluating
+            expr.</Abstract>
 				</Parameter><Parameter>
 					<Name>errPtr</Name>
 					<Abstract type="html">An optional pointer to a memory location for storing an
