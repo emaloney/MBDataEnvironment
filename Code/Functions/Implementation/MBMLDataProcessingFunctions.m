@@ -253,14 +253,14 @@ typedef enum {
     debugTrace();
     
     MBMLFunctionError* err = nil;
-    NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
+    [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
     
     BOOL collectionPasses = NO;
     
     MBVariableSpace* vars = [MBVariableSpace instance];
         
-    NSString* testExpression = params[paramCnt-1];
+    NSString* testExpression = params[1];
         
     id objectsToTest = [MBExpression asObject:params[0]];
     
