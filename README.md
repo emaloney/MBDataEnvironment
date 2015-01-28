@@ -579,6 +579,15 @@ Because subreferences are not allowed by the parentheses notation, any text that
 
 So while `$[total $].length` will yield the return value of the `length` property of the variable named `total $`, `$(total $).length` will yield the value of the variable `total $` followed by the text literal "`.length`".
 
+#### Variable Notation Summary
+
+Notation|Variable Name|Example|Example With Subreference|Follow-on Subreferences|
+--------|---------------|-------|-----------------|-----------------------|
+simple|must be an identifier|`$variableName`|`$string.length`|allowed|
+curly-brace|must be an identifier|`${variableName}`|`${string.length}`|not recognized|
+bracket|can contain any character except `[` or `]`|`$[variable name]`|`$[a string].length`|allowed|
+parentheses|can contain any character except `(` or `)`|`$(variable name)`|not possible|not recognized|
+
 #### MBML Functions
 
 MBML functions allow native Objective-C code to be called from within Mockingbird expressions. Functions can take zero or more input parameters, and they may return an object instance as a result.
