@@ -36,13 +36,15 @@ Just use the Mockingbird Data Environment to decouple your native code from your
 
 > This technique was discussed in more detail at the [iOSoho Developer's Symposium](http://www.meetup.com/iOSoho/events/181963632/) meetup on August 11th, 2014. ([Slides available at the Gilt Tech blog](http://tech.gilt.com/post/94663143169/handling-changes-to-your-server-side-data-model).)
 
-## Integrating with the Mockingbird Data Environment
+## Integrating with your project
 
-Currently, we only support using CocoaPods to integrate the Mockingbird Data Environment into your project.
+Currently, the only officially supported method to integrate the Mockingbird Data Environment into your project is using CocoaPods.
+
+(An experimental—but unsupported—`MBDataEnvironment.framework` can be built for iOS 8 within `MBDataEnvironment.xcworkspace`.)
 
 If you aren't already using CocoaPods, you'll find [documentation on the CocoaPods website](http://guides.cocoapods.org/using/index.html) to help you get started.
 
-Once you've got CocoaPods up and running, you can add the Mockingbird Data Environment to your project just by adding this line to your `Podfile`:
+Once you've got CocoaPods up and running, you can add the Mockingbird Data Environment to your project simply by adding this line to your `Podfile`:
 
 ```ruby
 pod 'MBDataEnvironment'
@@ -78,7 +80,11 @@ The simplest way to do this is to load the *default environment*:
 
 The default environment contains everything you need to get started using the Mockingbird Data Environment.
 
-You can also provide your own *manifest file* that contains additional declarations allowing you to customize the initial state of the environment. If your application provides a `manifest.xml` file in its resources, you can load the environment using:
+You can also provide your own *manifest file* that contains additional declarations allowing you to customize the initial state of the environment when it is loaded. 
+
+The manifest is an XML file (typically named `manifest.xml`) that contains MBML markup for customizing and configuring the Mockingbird environment. (MBML is an XML derivative that stands for **M**ocking**b**ird **M**arkup **L**anguage.)
+
+If your application provides a `manifest.xml` file in its resources, instead of calling `loadDefaultEnvironment`, you could load the environment using:
 
 ```objc
 [MBEnvironment loadFromManifest];
@@ -86,13 +92,13 @@ You can also provide your own *manifest file* that contains additional declarati
 
 Once an environment is loaded, you can start using *expressions* to interact with the Mockingbird Data Environment.
 
-## A Brief Introduction to Mockingbird Expressions
+## An Introduction to Mockingbird Expressions
 
 Mockingbird expressions are strings containing zero or more *literals* or *expression tokens*.
 
 Depending on the context, Mockingbird expressions can contain:
  
- - string literals
+ - text literals
  - numeric literals
  - references to variables of any Objective-C type
  - simple mathematical expressions
@@ -121,7 +127,7 @@ One use of a Mockingbird expression is to perform string replacement when popula
 
 In the code above, the `text` property of the `greeting` label will be set to the result of evaluating the *string expression* "`Hello, $userName!`".
 
-This particular expression consists of three parts: a string literal ("`Hello, `") followed by a reference to a Mockingbird variable called `userName`, followed by another string literal ("`!`").
+This particular expression consists of three parts: a text literal ("`Hello, `") followed by a reference to a Mockingbird variable called `userName`, followed by another text literal ("`!`").
 
 When the expression is evaluated, the "`$userName`" portion of the expression is replaced by the value of the `userName` variable in the current *variable space*.
 
@@ -142,19 +148,21 @@ Variable values can be exposed to the variable space via Objective-C:
 
 The code above associates the variable name "`cats`" with an `NSArray` instance containing three items (the strings "`Barrett`", "`Duncan`" and "`Gabby`").
 
-The variable space can also be pre-populated with values when the Mockingbird environment loads, using an *MBML manifest file* that can be included in your application's resources.
+Using an MBML manifest file to load the Mockingbird environment allows the variable space to be pre-populated with values.
 
-MBML, which stands for **M**ocking**b**ird **M**arkup **L**anguage, is an XML-based language that can be used to customize and configure the Mockingbird environment.
-
-An equivalent MBML declaration for the "`cats`" variable above is:
+You could ensure that the Mockingbird environment always has the same values for the variable "`cats`", for example, using an MBML *variable declaration* in the manifest:
 
 ```xml
-<Var name="cats" type="list">
+<Var name="cats" type="list" mutable="F">
     <Var literal="Barrett"/>
     <Var literal="Duncan"/>
     <Var literal="Gabby"/>
 </Var>
 ```
+
+Using a manifest file allows you to avoid needing to programmatically populate the variable space with common values every time your application is launched.
+
+#### Variable References
 
 Regardless of how the value was introduced to the variable space, the array associated with the Mockingbird variable named "`cats`" can be accessed using the expression:
 
@@ -442,7 +450,7 @@ Note that the entire *false result* clause is optional. If the *false result* cl
 [MBExpression asObject:@"^if(F|hello)"];
 ```
 
-The expression above will always return `nil` because in a boolean context, the uppercase letter '`F`' represents the boolean constant `false`. (In all other contexts, '`F`' is simply a string literal with no special meaning.)
+The expression above will always return `nil` because in a boolean context, the uppercase letter '`F`' represents the boolean constant `false`. (In all other contexts, '`F`' is simply a text literal with no special meaning.)
 
 ##### Quoting
 
@@ -492,6 +500,85 @@ Escape sequence|represents
 `\n`|Newline character
 `\t`|Tab character
 
+#### Additional Variable Reference Notations
+
+So far, we've seen one form of variable reference notation: `$` followed by the name of a variable. This is called the *simple variable reference notation*.
+
+This notation can be used when the variable name is considered an *identifier*. Identifiers are names that are constructed as follows:
+
+- The first character can be an uppercase or lowercase alphabetic character or an underscore ('`_`').
+
+- Subsequent characters can be uppercase or lowercase alphabetic characters, numeric digits, underscores ('`_`'), hyphens ('`-`'), or colons ('`:`').
+
+In some cases, the simple notation can't be used to reference a given variable because the name of the variable is not a valid identifier.
+
+In other cases, you may want to ensure that the parser recognizes a boundary between a variable name and a literal or another expression.
+
+There are additional variable reference notations that you can use to ensure your expression is interpreted as you intend.
+
+##### Curly-Brace Notation
+
+The curly-brace variable reference notation can be used to prevent the expression engine from interpreting characters following a variable reference as being part of the reference itself. The notation is used by surrounding the variable name with curly braces.
+
+The curly-brace notation is similar to the simple notation in that it only accepts variable names that are also valid identifiers. The expressions `$userName` and `${userName}` both refer to the same variable, but they cause the expression evaluator to treat the characters following the variable name differently.
+
+Let's say you have a variable called `lastName` that contains a person's surname, and you want to construct a message such as "How are the Butterfields doing?" that refers to the surname in the plural form.
+
+You couldn't use the unquoted notation (eg., "`How are the $lastNames doing?`") because the '`s`' at the end of `$lastName` would be interpreted as part of the variable name. Instead of referencing the variable `lastName` followed by the character literal '`s`', the expression actually references an entirely different variable called `lastNames`.
+
+One way to ensure the variable reference is handled correctly would be to quote the '`s`', such as:
+
+```
+How are the $lastName^q(s) doing?
+```
+
+This works, but it involves a function call and the overhead of marshaling the parameters and processing the return value.
+
+The curly-brace notation provides a better solution that allows you to separate the variable reference from any surrounding text that should be considered a literal. Using this notation, the expression can instad be written as:
+
+```
+How are the ${lastName}s doing?
+```
+
+This expression will be interpreted as the text literal "`How are the `" followed by a reference to the Mockingbird variable `lastName`, followed by another text literal, "`s doing?`".
+
+##### Bracket Notation
+
+The bracket variable reference notation can be used to access Mockingbird variables whose names aren't valid identifiers.
+
+For example, the space character and the dollar sign ('`$`') are not valid identifier characters. Normally, when a space is encountered while interpreting a variable name, the expression engine assumes that the space signals the end of the variable name. When a dollar sign is encountered within an expression, the expression engine assumes it signals the beginning of a variable reference.
+
+Because Mockingbird variable names don't *have* to be identifiers, the bracket notation exists to allow access to variables whose names aren't identifiers.
+
+Let's say your application connects to a backend system that introduces a Mockingbird variable named "`total $`". You could reference the value of this variable with the expression:
+
+```
+$[total $]
+```
+
+Using the bracket notation allows subreferences after the closing bracket. Assuming the variable `total $` is a string, the following expression would yield the length of the string:
+
+```
+$[total $].length
+```
+
+##### Parentheses Notation
+
+As with the bracket notation, the parentheses variable reference notation can be used to access Mockingbird variables whose names aren't valid identifiers. And like the curly-brace notation, the parentheses notation prevents the expression engine from misconstruing adjacent characters as being part of the variable reference.
+
+For example, consider these two expressions:
+
+```
+$[total $].length
+$(total $).length
+```
+
+The top expression uses the bracket notation, which allows subreferences after the closing bracket. The bottom expression uses the parentheses notation, which does not allow subreferences.
+
+Because subreferences are not allowed by the parentheses notation, any text that appears after the closing parenthesis will be considered the start of a new statement. In this case, since "`.length`" is not a valid variable reference, function call, or math expression, it is interpreted as a text literal.
+
+So while `$[total $].length` will yield the return value of the `length` property of the variable named `total $`, `$(total $).length` will yield the value of the variable `total $` followed by the text literal "`.length`".
+
 #### MBML Functions
 
 MBML functions allow native Objective-C code to be called from within Mockingbird expressions. Functions can take zero or more input parameters, and they may return an object instance as a result.
@@ -524,18 +611,20 @@ The list of included functions can be seen in the <code>MBDataEnvironmentModule.
 
 The documentation for the functions themselves can be found alongside that of their implementing methods:
 
-- [MBMLCollectionFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLCollectionFunctions.html)
-- [MBMLDataProcessingFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDataProcessingFunctions.html)
-- [MBMLDateFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDateFunctions.html)
-- [MBMLDebugFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDebugFunctions.html)
-- [MBMLEncodingFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEncodingFunctions.html)
-- [MBMLEnvironmentFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEnvironmentFunctions.html)
-- [MBMLFileFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFileFunctions.html)
-- [MBMLFontFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFontFunctions.html)
-- [MBMLGeometryFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLGeometryFunctions.html)
-- [MBMLLogicFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLLogicFunctions.html)
-- [MBMLMathFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLMathFunctions.html)
-- [MBMLRegexFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRegexFunctions.html)
-- [MBMLResourceFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLResourceFunctions.html)
-- [MBMLRuntimeFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRuntimeFunctions.html)
-- [MBMLStringFunctions](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLStringFunctions.html)
+- [`MBMLCollectionFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLCollectionFunctions.html)
+- [`MBMLDataProcessingFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDataProcessingFunctions.html)
+- [`MBMLDateFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDateFunctions.html)
+- [`MBMLDebugFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDebugFunctions.html)
+- [`MBMLEncodingFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEncodingFunctions.html)
+- [`MBMLEnvironmentFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEnvironmentFunctions.html)
+- [`MBMLFileFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFileFunctions.html)
+- [`MBMLFontFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFontFunctions.html)
+- [`MBMLGeometryFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLGeometryFunctions.html)
+- [`MBMLLogicFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLLogicFunctions.html)
+- [`MBMLMathFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLMathFunctions.html)
+- [`MBMLRegexFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRegexFunctions.html)
+- [`MBMLResourceFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLResourceFunctions.html)
+- [`MBMLRuntimeFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRuntimeFunctions.html)
+- [`MBMLStringFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLStringFunctions.html)
+
+To learn how MBML functions are implemented, see [the `MBMLFunction` class documentation](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html)
