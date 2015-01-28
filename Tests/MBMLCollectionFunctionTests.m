@@ -30,6 +30,8 @@
     <Function class="MBMLCollectionFunctions" name="insertObjectAtIndex" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="array" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="dictionary" input="pipedExpressions"/>
+    <Function class="MBMLCollectionFunctions" name="set" input="pipedExpressions"/>
+    <Function class="MBMLCollectionFunctions" name="setWithArray" input="object"/>
     <Function class="MBMLCollectionFunctions" name="removeObject" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="removeObjectAtIndex" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="removeLastObject" input="object"/>
@@ -40,20 +42,16 @@
     <Function class="MBMLCollectionFunctions" name="valueForKey" method="getValueForKey" input="pipedObjects"/>
 */
 
-- (void) testCollectionFunctions
+- (void) testIsCollection
 {
     consoleTrace();
-    
-    NSDictionary* testMap = [MBExpression asObject:@"$testMap"];
-    NSArray* testKeys = [testMap allKeys];
-    NSArray* testValues = [testMap allValues];
 
     //
-    // test of ^isCollection(), ^isSet(), ^isDictionary(), and ^isArray()
+    // test successes
     //
-    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
-    scope[@"testSet"] = [NSSet setWithArray:testValues];
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
     XCTAssertTrue( [MBExpression asBoolean:@"^isCollection($testSet)"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isCollection($testMap)"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isCollection($testValues)"]);
@@ -62,7 +60,18 @@
     XCTAssertTrue( [MBExpression asBoolean:@"^isCollection(^dictionary())"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isCollection(^array())"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isCollection(^set())"]);
+}
 
+- (void) testIsSet
+{
+    consoleTrace();
+
+    //
+    // test successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
     XCTAssertTrue( [MBExpression asBoolean:@"^isSet($testSet)"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isSet($testMap)"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isSet($testValues)"]);
@@ -71,7 +80,18 @@
     XCTAssertFalse([MBExpression asBoolean:@"^isSet(^dictionary())"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isSet(^array())"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isSet(^set())"]);
+}
 
+- (void) testIsDictionary
+{
+    consoleTrace();
+
+    //
+    // test successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
     XCTAssertFalse([MBExpression asBoolean:@"^isDictionary($testSet)"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isDictionary($testMap)"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isDictionary($testValues)"]);
@@ -80,7 +100,18 @@
     XCTAssertTrue( [MBExpression asBoolean:@"^isDictionary(^dictionary())"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isDictionary(^array())"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isDictionary(^set())"]);
+}
 
+- (void) testIsArray
+{
+    consoleTrace();
+
+    //
+    // test successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
     XCTAssertFalse([MBExpression asBoolean:@"^isArray($testSet)"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isArray($testMap)"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isArray($testValues)"]);
@@ -89,314 +120,545 @@
     XCTAssertFalse([MBExpression asBoolean:@"^isArray(^dictionary())"]);
     XCTAssertTrue( [MBExpression asBoolean:@"^isArray(^array())"]);
     XCTAssertFalse([MBExpression asBoolean:@"^isArray(^set())"]);
+}
 
-    [MBScopedVariables exitVariableScope];
+- (void) testCount
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSArray* testMap = [MBExpression asObject:@"$testMap"];
+    NSArray* testSet = [MBExpression asObject:@"$testSet"];
+    NSArray* testArray = [MBExpression asObject:@"$testValues"];
 
-    //
-    // test of ^count()
-    //
     NSUInteger count = [[MBExpression asNumber:@"^count($testMap)"] unsignedIntegerValue];
-    XCTAssertEqual(count, testMap.count, @"Test of ^count() MBML function failed");
-    
-    //
-    // test of ^keys()
-    //
-    NSArray* extractedKeys = [MBExpression asObject:@"^keys($testMap)"];
-    XCTAssertEqualObjects(extractedKeys, testKeys, @"Test of ^keys() MBML function failed");
-    
-    //
-    // test of ^values()
-    //
-    NSArray* extractedValues = [MBExpression asObject:@"^values($testMap)"];
-    XCTAssertEqualObjects(extractedValues, testValues, @"Test of ^values() MBML function failed");
-  
-    //
-    // test of ^appendObject()
-    //
-    testValues = [MBExpression asObject:@"$testValues"];
+    XCTAssertEqual(count, testMap.count);
 
+    count = [[MBExpression asNumber:@"^count($testSet)"] unsignedIntegerValue];
+    XCTAssertEqual(count, testSet.count);
+
+    count = [[MBExpression asNumber:@"^count($testValues)"] unsignedIntegerValue];
+    XCTAssertEqual(count, testArray.count);
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"^count(string)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^count()" error:&err];
+    expectError(err);
+}
+
+- (void) testKeys
+{
+    consoleTrace();
+
+    //
+    // test successes
+    //
+    NSArray* testKeys = [MBExpression asObject:@"$testKeys"];
+    NSArray* extractedKeys = [MBExpression asObject:@"^keys($testMap)"];
+    XCTAssertEqualObjects([NSSet setWithArray:extractedKeys], [NSSet setWithArray:testKeys]);       // convert to set since array order is nondeterministic with ^keys()
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^keys($testValues)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^keys(I have no keys)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^keys()" error:&err];
+    expectError(err);
+}
+
+- (void) testValues
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSArray* testValues = [MBExpression asObject:@"$testValues"];
+    NSArray* extractedValues = [MBExpression asObject:@"^values($testMap)"];
+    XCTAssertEqualObjects([NSSet setWithArray:extractedValues], [NSSet setWithArray:testValues]);   // convert to set since array order is nondeterministic with ^values()
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^values($testValues)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^values(I have no values)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^values()" error:&err];
+    expectError(err);
+}
+
+- (void) testAppendObject
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSArray* testValues = [MBExpression asObject:@"$testValues"];
     NSArray* testList1 = [MBExpression asObject:@"^appendObject(^appendObject(^appendObject(^appendObject($emptyList|$testValues[0])|$testValues[1])|$testValues[2])|$testValues[3])"];
-    XCTAssertEqualObjects(testValues, testList1, @"Nested parameter test of ^appendObject() MBML function failed");
+    XCTAssertEqualObjects(testValues, testList1);
 
     NSArray* testList2 = [MBExpression asObject:@"^appendObject($emptyList|$testValues[0]|$testValues[1]|$testValues[2]|$testValues[3])"];
-    XCTAssertEqualObjects(testValues, testList2, @"Parameter list test of ^appendObject() MBML function failed");
-
-    //
-    // test of ^insertObjectAtIndex() 
-    //
-    [[MBVariableSpace instance] setVariable:@"testInsertArray" value:testList1];
-    NSMutableArray* testInsertAgainst = [NSMutableArray arrayWithObjects:@"One", @"1.5", @"Two", @"2.5", @"Three", @"3.5", @"Four", nil];
-    NSArray* testInsert = [MBExpression asObject:@"^insertObjectAtIndex(^insertObjectAtIndex(^insertObjectAtIndex($testInsertArray|1.5|1)|2.5|3)|3.5|5)"];
-    XCTAssertEqualObjects(testInsert, testInsertAgainst, @"Test of ^insertObjectAtIndex() MBML function failed");
-
-    //
-    // test of ^removeObjectAtIndex() 
-    //
-    [[MBVariableSpace instance] setVariable:@"testRemoveArray" value:testInsertAgainst];
-    NSMutableArray* testRemoveAgainst = [NSMutableArray arrayWithObjects:@"1.5", @"2.5", @"3.5", nil];
-    NSArray* testRemoveAtIndex = [MBExpression asObject:@"^removeObjectAtIndex(^removeObjectAtIndex(^removeObjectAtIndex(^removeObjectAtIndex($testRemoveArray|6)|4)|2)|0)"];
-    XCTAssertEqualObjects(testRemoveAtIndex, testRemoveAgainst, @"Test of ^removeObjectAtIndex() MBML function failed");
-
-    //
-    // test of ^removeObject()
-    //
-    NSArray* testRemoveObject = [MBExpression asObject:@"^removeObject(^removeObject(^removeObject(^removeObject($testRemoveArray|One)|Two)|Three)|Four)"];
-    XCTAssertEqualObjects(testRemoveObject, testRemoveAgainst, @"Test of ^removeObject() MBML function failed");
-    testRemoveObject = [MBExpression asObject:@"^removeObject($testRemoveArray|One|Two|Three|Four)"];
-    XCTAssertEqualObjects(testRemoveObject, testRemoveAgainst, @"Test of ^removeObject() MBML function failed");
+    XCTAssertEqualObjects(testValues, testList2);
     
     //
-    // test of ^array()
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^appendObject(hello|this should not work)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^appendObject()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^appendObject($emptyList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^appendObject(|)" error:&err];
+    expectError(err);
+}
+
+- (void) testInsertObjectAtIndex
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSMutableArray* testInsertAgainst = [NSMutableArray arrayWithObjects:@"One", @"1.5", @"Two", @"2.5", @"Three", @"3.5", @"Four", nil];
+    NSArray* testInsert = [MBExpression asObject:@"^insertObjectAtIndex(^insertObjectAtIndex(^insertObjectAtIndex($testValues|1.5|1)|2.5|3)|3.5|5)"];
+    XCTAssertEqualObjects(testInsert, testInsertAgainst);
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex(not an array|insert this object|0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex($emptyList|added|3)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex($emptyList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex($emptyList|insert)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex($emptyList|insert|0|extra!)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex(|)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^insertObjectAtIndex(||)" error:&err];
+    expectError(err);
+}
+
+- (void) testArray
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
     NSArray* emptyArray = [MBExpression asObject:@"^array()"];
-    XCTAssertTrue([emptyArray isKindOfClass:[NSArray class]], @"expected ^array() to return an NSArray instance");
-    XCTAssertTrue(emptyArray.count == 0, @"expected a zero-count array from ^array()");
-    
+    XCTAssertTrue([emptyArray isKindOfClass:[NSArray class]]);
+    XCTAssertTrue(emptyArray.count == 0);
+
     NSArray* otherArray = [MBExpression asObject:@"^array(1|2|3)"];
-    XCTAssertTrue([otherArray isKindOfClass:[NSArray class]], @"expected ^array() to return an NSArray instance");
-    XCTAssertTrue(otherArray.count == 3, @"expected three items in the array from ^array(1|2|3)");
-    XCTAssertEqualObjects([otherArray objectAtIndex:0], @"1", @"unexpected item in return value from ^array()");
-    XCTAssertEqualObjects([otherArray objectAtIndex:1], @"2", @"unexpected item in return value from ^array()");
-    XCTAssertEqualObjects([otherArray objectAtIndex:2], @"3", @"unexpected item in return value from ^array()");
-    
+    XCTAssertTrue([otherArray isKindOfClass:[NSArray class]]);
+    XCTAssertTrue(otherArray.count == 3);
+    XCTAssertEqualObjects(otherArray[0], @"1");
+    XCTAssertEqualObjects(otherArray[1], @"2");
+    XCTAssertEqualObjects(otherArray[2], @"3");
+
     [[MBVariableSpace instance] setVariable:@"one" value:[NSNumber numberWithInteger:1]];
     [[MBVariableSpace instance] setVariable:@"two" value:@"2"];
     [[MBVariableSpace instance] setVariable:@"free" value:@"three"];
     [[MBVariableSpace instance] setVariable:@"four" value:@"fore"];
     otherArray = [MBExpression asObject:@"^array($one|$two|$free|$four)"];
-    XCTAssertTrue([otherArray isKindOfClass:[NSArray class]], @"expected ^array() to return an NSArray instance");
-    XCTAssertTrue(otherArray.count == 4, @"expected four items in the array from ^array($one|$two|$free|$four)");
-    XCTAssertEqualObjects([otherArray objectAtIndex:0], [NSNumber numberWithInteger:1], @"unexpected item in return value from ^array()");
-    XCTAssertEqualObjects([otherArray objectAtIndex:1], @"2", @"unexpected item in return value from ^array()");
-    XCTAssertEqualObjects([otherArray objectAtIndex:2], @"three", @"unexpected item in return value from ^array()");
-    XCTAssertEqualObjects([otherArray objectAtIndex:3], @"fore", @"unexpected item in return value from ^array()");
+    XCTAssertTrue([otherArray isKindOfClass:[NSArray class]]);
+    XCTAssertTrue(otherArray.count == 4);
+    XCTAssertEqualObjects(otherArray[0], [NSNumber numberWithInteger:1]);
+    XCTAssertEqualObjects(otherArray[1], @"2");
+    XCTAssertEqualObjects(otherArray[2], @"three");
+    XCTAssertEqualObjects(otherArray[3], @"fore");
+}
+
+- (void) testDictionary
+{
+    consoleTrace();
     
     //
-    // test of ^indexOf()
-    //
-    [[MBVariableSpace instance] setVariable:@"testArray" value:otherArray];
-    NSInteger index = [[MBExpression asNumber:@"^indexOf($testArray|fore)"] integerValue];
-    XCTAssertEqual(index, (NSInteger)3, @"Test of ^indexOf() MBML function failed");
-    
-    //
-    // test of ^dictionary()
+    // test successes
     //
     NSDictionary* emptyDict = [MBExpression asObject:@"^dictionary()"];
-    XCTAssertTrue([emptyDict isKindOfClass:[NSDictionary class]], @"expected ^dictionary() to return an NSDictionary instance");
-    XCTAssertTrue(emptyDict.count == 0, @"expected a zero-count dictionary from ^dictionary()");
-    
+    XCTAssertTrue([emptyDict isKindOfClass:[NSDictionary class]]);
+    XCTAssertTrue(emptyDict.count == 0);
+
     NSDictionary* otherDict = [MBExpression asObject:@"^dictionary(one|1|two|2)"];
-    XCTAssertTrue([otherDict isKindOfClass:[NSDictionary class]], @"expected ^dictionary() to return an NSDictionary instance");
-    XCTAssertTrue(otherDict.count == 2, @"expected two key/value pairs in the dictionary from dictionary(one|1|two|2)");
-    XCTAssertEqualObjects([otherDict objectForKey:@"one"], @"1", @"unexpected item in return value from ^dictionary()");
-    XCTAssertEqualObjects([otherDict objectForKey:@"two"], @"2", @"unexpected item in return value from ^dictionary()");
-    
-    //
-    // test of ^copy()
-    //
-    NSArray* emptyList = [MBExpression asObject:@"$emptyList"];
-    NSArray* copyEmptyList = [MBExpression asObject:@"^copy($emptyList)"];
-    XCTAssertEqualObjects(copyEmptyList, emptyList, @"expected copy to be the same as the original");
-    
-    NSDictionary* emptyMap = [MBExpression asObject:@"$emptyMap"];
-    NSDictionary* copyEmptyMap = [MBExpression asObject:@"^copy($emptyMap)"];
-    XCTAssertEqualObjects(copyEmptyMap, emptyMap, @"expected copy to be the same as the original");
-    
-    NSArray* namesList = [MBExpression asObject:@"$namesList"];
-    NSArray* copyNamesList = [MBExpression asObject:@"^copy($namesList)"];
-    XCTAssertEqualObjects(copyNamesList, namesList, @"expected copy to be the same as the original");
-    
-    NSDictionary* testMapAgain = [MBExpression asObject:@"$testMap"];
-    NSDictionary* copyTestMapAgain = [MBExpression asObject:@"^copy($testMap)"];
-    XCTAssertEqualObjects(copyTestMapAgain, testMapAgain, @"expected copy to be the same as the original");
-    
-    //
-    // test of ^mutableCopy()
-    //
-    copyEmptyList = [MBExpression asObject:@"^mutableCopy($emptyList)"];
-    XCTAssertEqualObjects(copyEmptyList, emptyList, @"expected copy to be the same as the original");
-    XCTAssertTrue([copyEmptyList isKindOfClass:[NSMutableArray class]], @"expected mutable array");
-    
-    copyEmptyMap = [MBExpression asObject:@"^mutableCopy($emptyMap)"];
-    XCTAssertEqualObjects(copyEmptyMap, emptyMap, @"expected copy to be the same as the original");
-    XCTAssertTrue([copyEmptyMap isKindOfClass:[NSMutableDictionary class]], @"expected mutable dictionary");
-
-    testMapAgain = [MBExpression asObject:@"$testMap"];
-    copyTestMapAgain = [MBExpression asObject:@"^mutableCopy($testMap)"];
-    XCTAssertEqualObjects(copyTestMapAgain, testMapAgain, @"expected copy to be the same as the original");
-    XCTAssertTrue([copyTestMapAgain isKindOfClass:[NSMutableDictionary class]], @"expected mutable dictionary");
+    XCTAssertTrue([otherDict isKindOfClass:[NSDictionary class]]);
+    XCTAssertTrue(otherDict.count == 2);
+    XCTAssertEqualObjects([otherDict objectForKey:@"one"], @"1");
+    XCTAssertEqualObjects([otherDict objectForKey:@"two"], @"2");
 
     //
-    // test of ^valueForKey()
+    // test failures
     //
-    NSString* item3 = [MBExpression asObject:@"^valueForKey($testMap|Key 3)"];
-    XCTAssertEqualObjects(item3, @"Three",  @"Test of ^valueForKey() failed");
-    NSUInteger len = [[MBExpression asNumber:@"^valueForKey(myString|length)"] unsignedIntegerValue];
-    XCTAssertTrue(len == 8, @"Test of ^valueForKey() failed");
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^dictionary(one)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^dictionary(one|1|two)" error:&err];
+    expectError(err);
+}
+
+- (void) testSet
+{
+    consoleTrace();
     
     //
-    // test of ^lastObject()
+    // test successes
     //
-    NSString* fore = [MBExpression asObject:@"^lastObject($testArray)"];
-    XCTAssertEqualObjects(fore, @"fore",  @"Test of ^lastObject() failed");
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
+    NSSet* emptySet = [MBExpression asObject:@"^set()"];
+    XCTAssertTrue([emptySet isKindOfClass:[NSSet class]]);
+    XCTAssertTrue(emptySet.count == 0);
+
+    NSSet* set1 = [MBExpression asObject:@"^set(one|two|three)"];
+    XCTAssertTrue([set1 isKindOfClass:[NSSet class]]);
+    XCTAssertTrue(set1.count == 3);
+    XCTAssertTrue([set1 containsObject:@"one"]);
+    XCTAssertTrue([set1 containsObject:@"two"]);
+    XCTAssertTrue([set1 containsObject:@"three"]);
+}
+
+- (void) testSetWithArray
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSArray* valuesArray = [MBExpression asObject:@"$testValues"];
+    NSSet* valuesSet = [NSSet setWithArray:valuesArray];
+    NSSet* testSet = [MBExpression asObject:@"^setWithArray($testValues)"];
+    XCTAssertEqualObjects(valuesSet, testSet);
 
     //
-    // test of ^removeLastObject()
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^setWithArray($testMap)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^setWithArray()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^setWithArray($NULL)" error:&err];
+    expectError(err);
+}
+
+- (void) testRemoveObject
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSArray* testAgainst = @[@"1.5", @"2.5", @"3.5"];
+    NSArray* testRemoveObject = [MBExpression asObject:@"^removeObject(^removeObject(^removeObject(^removeObject($testInsertRemove|One)|Two)|Three)|Four)"];
+    XCTAssertEqualObjects(testRemoveObject, testAgainst);
+    testRemoveObject = [MBExpression asObject:@"^removeObject($testInsertRemove|One|Two|Three|Four)"];
+    XCTAssertEqualObjects(testRemoveObject, testAgainst);
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^removeObject($testMap|theObject)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObject()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObject($emptyList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObject(|)" error:&err];
+    expectError(err);
+}
+
+- (void) testRemoveObjectAtIndex
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSArray* testAgainst = @[@"1.5", @"2.5", @"3.5"];
+    NSArray* testRemoveAtIndex = [MBExpression asObject:@"^removeObjectAtIndex(^removeObjectAtIndex(^removeObjectAtIndex(^removeObjectAtIndex($testInsertRemove|6)|4)|2)|0)"];
+    XCTAssertEqualObjects(testRemoveAtIndex, testAgainst);
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^removeObjectAtIndex(not an array|0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObjectAtIndex($emptyList|5)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObjectAtIndex()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObjectAtIndex($emptyList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObjectAtIndex($emptyList|0|what?)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeObjectAtIndex(|)" error:&err];
+    expectError(err);
+}
+
+- (void) testRemoveLastObject
+{
+    consoleTrace();
+    
+    //
+    // test successes
     //
     NSMutableArray* removeLast = [[MBExpression asObject:@"$testArray"] mutableCopy];
     [removeLast removeLastObject];
     NSArray* testRemoveLast = [MBExpression asObject:@"^removeLastObject($testArray)"];
-    XCTAssertEqualObjects(removeLast, testRemoveLast,  @"Test of ^removeLastObject() failed");
-}
+    XCTAssertEqualObjects(removeLast, testRemoveLast);
 
-- (void) testCollectionFunctionFailures
-{
-    consoleTrace();
-        
+    NSArray* emptyArray = [MBExpression asObject:@"$emptyList"];
+    NSArray* testRemoveFromEmpty = [MBExpression asObject:@"^removeLastObject($emptyList)"];
+    XCTAssertEqualObjects(testRemoveFromEmpty, emptyArray);
+
     //
-    // test of ^keys()
+    // test failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asObject:@"^keys($testArray)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to get ^keys() for something that isn't a map");
-    logExpectedError(err);
+    [MBExpression asObject:@"^removeLastObject(not an array)" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^keys()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^keys() with no parameters");
-    logExpectedError(err);
+    [MBExpression asObject:@"^removeLastObject($NULL)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^removeLastObject()" error:&err];
+    expectError(err);
+}
+
+- (void) testLastObject
+{
+    consoleTrace();
     
     //
-    // test of ^values()
+    // test successes
     //
-    err = nil;
-    [MBExpression asObject:@"^values(I have no values)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to get ^values() for something that isn't a map");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^values()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^values() with no parameters");
-    logExpectedError(err);
-    
-    //
-    // test of ^appendObject()
-    //
-    err = nil;
-    [MBExpression asObject:@"^appendObject(hello|this should not work)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to ^appendObject() to something that isn't an array");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^appendObject()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^appendObject() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^appendObject($emptyList)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^appendObject($emptyList) with one parameter");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^appendObject(|)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^appendObject() with two empty parameters");
-    logExpectedError(err);
+    NSString* four = [MBExpression asObject:@"^lastObject(^array(one|two|free|four))"];
+    XCTAssertEqualObjects(four, @"four");
 
     //
-    // test of ^insertObjectAtIndex() 
+    // test failures
     //
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"^lastObject()" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex(not an array|insert this object|0)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to ^insertObjectAtIndex() to something that isn't an array");
-    logExpectedError(err);
+    [MBExpression asNumber:@"^lastObject($NULL)" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex($emptyList|added|3)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to ^insertObjectAtIndex() using an index larger than the array allows");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^insertObjectAtIndex() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex($emptyList)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^insertObjectAtIndex() with one parameter");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex($emptyList|insert)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^insertObjectAtIndex() with two parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex($emptyList|insert|0|extra!)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^insertObjectAtIndex() with four parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex(|)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^insertObjectAtIndex() with two empty parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^insertObjectAtIndex(||)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^insertObjectAtIndex() with three empty parameters");
-    logExpectedError(err);
+    [MBExpression asNumber:@"^lastObject(notAnArray)" error:&err];
+    expectError(err);
+}
+
+- (void) testIndexOf
+{
+    consoleTrace();
+    
+    //
+    // test successes
+    //
+    NSInteger index = [[MBExpression asNumber:@"^indexOf(^array(one|two|free|four)|free)"] integerValue];
+    XCTAssertEqual(index, (NSInteger)2);
 
     //
-    // test of ^removeObjectAtIndex() 
+    // test failures
     //
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"^indexOf($NULL|foo)" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex(not an array|0)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to ^removeObjectAtIndex() from something that isn't an array");
-    logExpectedError(err);
+    [MBExpression asObject:@"^indexOf()" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex($emptyList|5)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to ^removeObjectAtIndex() using an index larger than the array allows");
-    logExpectedError(err);
+    [MBExpression asObject:@"^indexOf(^array(one|two|free|four))" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObjectAtIndex() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex($emptyList)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObjectAtIndex() with one parameter");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex($emptyList|0|what?)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObjectAtIndex() with three parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex(|)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObjectAtIndex() with two empty parameters");
-    logExpectedError(err);
+    [MBExpression asObject:@"^indexOf(^array(one|two|free|four)|free|foo)" error:&err];
+    expectError(err);
+}
+
+- (void) testCopy
+{
+    consoleTrace();
     
     //
-    // test of ^removeObject()
+    // test successes
     //
+    NSArray* emptyList = [MBExpression asObject:@"$emptyList"];
+    NSArray* copyEmptyList = [MBExpression asObject:@"^copy($emptyList)"];
+    XCTAssertEqualObjects(copyEmptyList, emptyList);
+
+    NSDictionary* emptyMap = [MBExpression asObject:@"$emptyMap"];
+    NSDictionary* copyEmptyMap = [MBExpression asObject:@"^copy($emptyMap)"];
+    XCTAssertEqualObjects(copyEmptyMap, emptyMap);
+
+    NSArray* namesList = [MBExpression asObject:@"$namesList"];
+    NSArray* copyNamesList = [MBExpression asObject:@"^copy($namesList)"];
+    XCTAssertEqualObjects(copyNamesList, namesList);
+
+    NSDictionary* testMapAgain = [MBExpression asObject:@"$testMap"];
+    NSDictionary* copyTestMapAgain = [MBExpression asObject:@"^copy($testMap)"];
+    XCTAssertEqualObjects(copyTestMapAgain, testMapAgain);
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^copy($UIDevice)" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^removeObject($testMap|theObject)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for trying to ^removeObject() from something that isn't an array");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^removeObject()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObject() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^removeObject($emptyList)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObject() with one parameter");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^removeObjectAtIndex(|)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^removeObjectAtIndex() with two empty parameters");
-    logExpectedError(err);
+    [MBExpression asObject:@"^copy()" error:&err];
+    expectError(err);
+}
+
+- (void) testMutableCopy
+{
+    consoleTrace();
     
     //
-    // note: ^array() has no failure conditions, since it accepts all input;
-    //       therefore, we are not testing it here
+    // test successes
     //
+    NSMutableArray* emptyList = [MBExpression asObject:@"$emptyList"];
+    NSMutableArray* copyEmptyList = [MBExpression asObject:@"^mutableCopy($emptyList)"];
+    XCTAssertTrue([copyEmptyList isKindOfClass:[NSMutableArray class]]);
+    XCTAssertEqualObjects(copyEmptyList, emptyList);
+
+    NSMutableDictionary* emptyMap = [MBExpression asObject:@"$emptyMap"];
+    NSMutableDictionary* copyEmptyMap = [MBExpression asObject:@"^mutableCopy($emptyMap)"];
+    XCTAssertTrue([copyEmptyMap isKindOfClass:[NSMutableDictionary class]]);
+    XCTAssertEqualObjects(copyEmptyMap, emptyMap);
+
+    NSMutableDictionary* testMap = [MBExpression asObject:@"$testMap"];
+    NSMutableDictionary* copyTestMap = [MBExpression asObject:@"^mutableCopy($testMap)"];
+    XCTAssertTrue([copyTestMap isKindOfClass:[NSMutableDictionary class]]);
+    XCTAssertEqualObjects(testMap, copyTestMap);
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^mutableCopy($UIDevice)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^mutableCopy()" error:&err];
+    expectError(err);
+}
+
+- (void) testValueForKey
+{
+    consoleTrace();
     
     //
-    // test of ^dictionary()
+    // test successes
     //
+    NSString* item3 = [MBExpression asObject:@"^valueForKey($testMap|Key 3)"];
+    XCTAssertEqualObjects(item3, @"Three");
+    NSUInteger len = [[MBExpression asNumber:@"^valueForKey(myString|length)"] unsignedIntegerValue];
+    XCTAssertTrue(len == 8);
+    NSString* def = [MBExpression asString:@"^valueForKey(myString|apple|default)"];
+    XCTAssertEqualObjects(def, @"default");
+
+    //
+    // test failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^valueForKey()" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^dictionary(one)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^dictionary() with an odd number of parameters");
-    logExpectedError(err);
+    [MBExpression asObject:@"^valueForKey($UIDevice)" error:&err];
+    expectError(err);
+
     err = nil;
-    [MBExpression asObject:@"^dictionary(one|1|two)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^dictionary() with an odd number of parameters");
-    logExpectedError(err);
+    [MBExpression asObject:@"^valueForKey($UIDevice|systemName|foo|bar)" error:&err];
+    expectError(err);
 }
 
 @end
