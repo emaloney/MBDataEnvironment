@@ -290,7 +290,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGPoint` value that corresponds with `str`.
             Returns `CGPointZero` if `str` couldn't be interpreted.
  */
-+ (CGPoint) pointFromString:(NSString*)str error:(out NSError**)errPtr;
++ (CGPoint) pointFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGPoint`.
@@ -312,7 +312,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGPoint` value that corresponds with `obj`. Returns
             `CGPointZero` if `obj` couldn't be interpreted.
  */
-+ (CGPoint) pointFromObject:(id)obj error:(out NSError**)errPtr;
++ (CGPoint) pointFromObject:(id)obj error:(inout NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -376,7 +376,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGSize` value that corresponds with `str`.
             Returns `CGPointZero` if `str` couldn't be interpreted.
  */
-+ (CGSize) sizeFromString:(NSString*)str error:(out NSError**)errPtr;
++ (CGSize) sizeFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGSize`.
@@ -398,7 +398,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGSize` value that corresponds with `obj`. Returns
             `CGSizeZero` if `obj` couldn't be interpreted.
  */
-+ (CGSize) sizeFromObject:(id)obj error:(out NSError**)errPtr;
++ (CGSize) sizeFromObject:(id)obj error:(inout NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -462,7 +462,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGRect` value that corresponds with `str`.
             Returns `CGRectZero` if `str` couldn't be interpreted.
  */
-+ (CGRect) rectFromString:(NSString*)str error:(out NSError**)errPtr;
++ (CGRect) rectFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGRect`.
@@ -484,7 +484,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGRect` value that corresponds with `obj`. Returns
             `CGRectZero` if `obj` couldn't be interpreted.
  */
-+ (CGRect) rectFromObject:(id)obj error:(out NSError**)errPtr;
++ (CGRect) rectFromObject:(id)obj error:(inout NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -634,7 +634,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIOffset` value that corresponds with `str`.
             Returns `UIOffsetZero` if `str` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIOffset) offsetFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `UIOffset`.
@@ -656,7 +656,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIOffset` value that corresponds with `obj`. Returns
             `UIOffsetZero` if `obj` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromObject:(id)obj error:(out NSError**)errPtr;
++ (UIOffset) offsetFromObject:(id)obj error:(inout NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -712,7 +712,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIEdgeInsets` value that corresponds with `str`.
             Returns `UIEdgeInsetsZero` if `str` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `UIEdgeInsets`.
@@ -735,7 +735,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIEdgeInsets` value that corresponds with `obj`. Returns
             `UIEdgeInsetsZero` if `obj` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(out NSError**)errPtr;
++ (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(inout NSError**)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -850,7 +850,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `[`<code>UIColor yellowColor</code>`]` if the expression result 
             couldn't be interpreted.
  */
-+ (UIColor*) colorFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIColor*) colorFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -915,7 +915,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSLineBreakByWordWrapping` if `str` isn't
             recognized.
  */
-+ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(out NSError**)errPtr;
++ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -974,7 +974,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSTextAlignmentLeft` if `str` isn't
             recognized.
  */
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)str error:(out NSError**)errPtr;
++ (NSTextAlignment) textAlignmentFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1033,7 +1033,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIScrollViewIndicatorStyleDefault` if `str` isn't
             recognized.
  */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1093,7 +1093,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UIActivityIndicatorViewStyleWhite` if `str` isn't
             recognized.
  */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1159,7 +1159,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIButtonTypeCustom` if `str` isn't
             recognized.
  */
-+ (UIButtonType) buttonTypeFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIButtonType) buttonTypeFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1223,7 +1223,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSDateFormatterNoStyle` if `str` isn't
             recognized.
  */
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1285,7 +1285,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITextBorderStyleNone` if `str` isn't
             recognized.
  */
-+ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1343,7 +1343,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewStylePlain` if `str` isn't
             recognized.
  */
-+ (UITableViewStyle) tableViewStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UITableViewStyle) tableViewStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1405,7 +1405,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewCellStyleDefault` if `str` isn't
             recognized.
  */
-+ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1469,7 +1469,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UITableViewCellSelectionStyleBlue` if `str` isn't
             recognized.
  */
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1526,7 +1526,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UITableViewCellAccessoryNone` if `str` isn't
             recognized.
  */
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1594,7 +1594,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewRowAnimationNone` if `str` isn't
             recognized.
  */
-+ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1656,7 +1656,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIControlStateNormal` if `str` isn't
             recognized.
  */
-+ (UIControlState) controlStateFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIControlState) controlStateFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1763,7 +1763,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIViewAnimationOptions` value that corresponds with `str`.
             Returns `0` if `str` isn't recognized.
  */
-+ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1825,7 +1825,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIModalTransitionStyleCoverVertical` if `str` isn't
             recognized.
  */
-+ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1904,7 +1904,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIViewContentMode` value that corresponds with `str`.
             Returns `UIViewContentModeScaleToFill` if `str` isn't recognized.
  */
-+ (UIViewContentMode) viewContentModeFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIViewContentMode) viewContentModeFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1965,7 +1965,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIBarStyle` value that corresponds with `str`.
             Returns `UIBarStyleDefault` if `str` isn't recognized.
  */
-+ (UIBarStyle) barStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIBarStyle) barStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2066,7 +2066,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIBarButtonSystemItem` value that corresponds with `str`.
             Returns `UIBarButtonSystemItemDone` if `str` isn't recognized.
  */
-+ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2125,7 +2125,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIBarButtonItemStyle` value that corresponds with `str`.
             Returns `UIBarButtonItemStylePlain` if `str` isn't recognized.
  */
-+ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2184,7 +2184,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIStatusBarAnimation` value that corresponds with `str`.
             Returns `UIStatusBarAnimationNone` if `str` isn't recognized.
  */
-+ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2247,7 +2247,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIPopoverArrowDirection` value that corresponds with `str`.
             Returns `UIPopoverArrowDirectionAny` if `str` isn't recognized.
  */
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str error:(out NSError**)errPtr;
++ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str error:(inout NSError**)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a

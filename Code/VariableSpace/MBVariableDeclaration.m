@@ -105,13 +105,13 @@ NSString* const kMBMLVariableTypeList       = @"list";
 /******************************************************************************/
 
 - (id) initialValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr;
+                             error:(inout MBExpressionError**)errPtr;
 {
     MBErrorNotImplementedReturn(id);
 }
 
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr;
+                             error:(inout MBExpressionError**)errPtr;
 {
     MBErrorNotImplementedReturn(id);
 }
@@ -364,7 +364,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 /******************************************************************************/
 
 - (id) _initialValueForSimpleVariableInSpace:(MBVariableSpace*)space
-                                       error:(out MBExpressionError**)errPtr
+                                       error:(inout MBExpressionError**)errPtr
 {
     if (_isLiteralValue) {
         // literal value; we don't evaluate the expression
@@ -388,7 +388,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 - (id) _initialValueForMapVariableInSpace:(MBVariableSpace*)space
-                                    error:(out MBExpressionError**)errPtr
+                                    error:(inout MBExpressionError**)errPtr
 {
     NSArray* relatives = [self relativesWithDefaultRelation];
     NSMutableDictionary* map = [NSMutableDictionary dictionaryWithCapacity:relatives.count];
@@ -407,7 +407,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 - (id) _initialValueForListVariableInSpace:(MBVariableSpace*)space
-                                     error:(out MBExpressionError**)errPtr
+                                     error:(inout MBExpressionError**)errPtr
 {
     NSArray* relatives = [self relativesWithDefaultRelation];
     NSMutableArray* list = [NSMutableArray arrayWithCapacity:relatives.count];
@@ -426,7 +426,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 - (instancetype) initialValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr
+                             error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -458,7 +458,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr
+                             error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -541,7 +541,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 /******************************************************************************/
 
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr
+                             error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -588,7 +588,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 /******************************************************************************/
 
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr
+                             error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 

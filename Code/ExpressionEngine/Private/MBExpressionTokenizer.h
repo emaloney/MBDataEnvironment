@@ -55,6 +55,6 @@
  */
 - (NSArray*) tokenize:(NSString*)expr
       inVariableSpace:(MBVariableSpace*)space
-                error:(out MBExpressionError**)errPtr;
+                error:(inout MBExpressionError**)errPtr;
 
 @end

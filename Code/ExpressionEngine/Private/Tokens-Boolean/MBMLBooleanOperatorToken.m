@@ -21,7 +21,7 @@
 
 @implementation MBMLBooleanOperatorToken
 
-- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     return @([self evaluateBooleanInVariableSpace:space error:errPtr]);
 }
@@ -50,7 +50,7 @@
     return [_childTokens firstObject];
 }
 
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     return [[self operand] evaluateBooleanInVariableSpace:space error:errPtr];
 }
@@ -91,7 +91,7 @@
     return nil;
 }
 
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     // subclasses must implement
     MBErrorNotImplementedReturn(BOOL);
@@ -116,7 +116,7 @@
     MBErrorNotImplementedReturn(BOOL);
 }
 
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     MBExpressionError* err = nil;
     id lVal = [[self leftOperand] evaluateInVariableSpace:space error:&err];

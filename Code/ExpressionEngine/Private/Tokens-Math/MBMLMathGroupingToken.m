@@ -35,7 +35,7 @@
 }
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
-                                                  error:(out MBExpressionError**)errPtr
+                                                  error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -51,7 +51,7 @@
     return @[self];
 }
 
-- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 

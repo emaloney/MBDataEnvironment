@@ -37,7 +37,7 @@
 - (id) _resolveObjectFromTokens:(NSArray*)tokens
                 inVariableSpace:(MBVariableSpace*)space
                    defaultValue:(id)defaultVal
-                          error:(out MBExpressionError**)errPtr
+                          error:(inout MBExpressionError**)errPtr
 {
     MBExpressionError* err = nil;
     NSString* retVal = [MBExpression objectFromTokens:tokens
@@ -57,7 +57,7 @@
 - (id) _resolveNumberFromTokens:(NSArray*)tokens
                 inVariableSpace:(MBVariableSpace*)space
                    defaultValue:(id)defaultVal
-                          error:(out MBExpressionError**)errPtr
+                          error:(inout MBExpressionError**)errPtr
 {
     MBExpressionError* err = nil;
     NSString* retVal = [MBExpression objectFromTokens:tokens
@@ -77,7 +77,7 @@
 - (NSString*) _resolveStringFromTokens:(NSArray*)tokens
                        inVariableSpace:(MBVariableSpace*)space
                           defaultValue:(NSString*)defaultVal
-                                 error:(out MBExpressionError**)errPtr
+                                 error:(inout MBExpressionError**)errPtr
 {
     MBExpressionError* err = nil;
     NSString* retVal = [MBExpression stringFromTokens:tokens
@@ -96,7 +96,7 @@
 
 - (id) resolveParametersForFunction:(MBMLFunction*)func
                     inVariableSpace:(MBVariableSpace*)space
-                              error:(out MBExpressionError**)errPtr
+                              error:(inout MBExpressionError**)errPtr
 {
     if (_childTokens.count < 1) {
         return nil;
@@ -289,7 +289,7 @@
 }
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
-                                                  error:(out MBExpressionError**)errPtr
+                                                  error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -372,7 +372,7 @@
     return @[self];
 }
 
-- (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(out MBExpressionError**)errPtr
+- (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 

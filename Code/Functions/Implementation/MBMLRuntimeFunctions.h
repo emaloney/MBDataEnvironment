@@ -48,7 +48,7 @@
  @note      This method is not exposed to the Mockingbird environment as a
             an MBML function.
  */
-+ (Class) resolveClass:(id)resolveCls error:(out MBMLFunctionError**)errPtr;
++ (Class) resolveClass:(id)resolveCls error:(inout MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Looking up Classes

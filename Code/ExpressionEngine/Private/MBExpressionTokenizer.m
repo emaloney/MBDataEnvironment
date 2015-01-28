@@ -141,7 +141,7 @@
 #pragma mark Tokenizing
 /******************************************************************************/
 
-- (NSArray*) tokenize:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (NSArray*) tokenize:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     

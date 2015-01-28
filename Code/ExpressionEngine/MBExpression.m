@@ -165,14 +165,14 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                    error:nil];
 }
 
-+ (NSArray*) asArray:(NSString*)expr error:(out MBExpressionError**)errPtr
++ (NSArray*) asArray:(NSString*)expr error:(inout MBExpressionError**)errPtr
 {
     return [self asArray:expr
          inVariableSpace:[MBVariableSpace instance]
                    error:errPtr];
 }
 
-+ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
++ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -215,7 +215,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (id) asObject:(NSString*)expr error:(out MBExpressionError**)errPtr
++ (id) asObject:(NSString*)expr error:(inout MBExpressionError**)errPtr
 {
     return [self asObject:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -231,7 +231,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(out MBExpressionError**)errPtr
++ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -280,7 +280,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSString*) asString:(NSString*)expr error:(out MBExpressionError**)errPtr
++ (NSString*) asString:(NSString*)expr error:(inout MBExpressionError**)errPtr
 {
     return [self asString:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -296,7 +296,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(out MBExpressionError**)errPtr
++ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -345,7 +345,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSDecimalNumber*) asNumber:(NSString*)expr error:(out MBExpressionError**)errPtr
++ (NSDecimalNumber*) asNumber:(NSString*)expr error:(inout MBExpressionError**)errPtr
 {
     return [self asNumber:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -361,7 +361,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(out MBExpressionError**)errPtr
++ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -423,7 +423,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                      error:nil];
 }
 
-+ (BOOL) asBoolean:(NSString*)expr error:(out MBExpressionError**)errPtr
++ (BOOL) asBoolean:(NSString*)expr error:(inout MBExpressionError**)errPtr
 {
     return [self asBoolean:expr
            inVariableSpace:[MBVariableSpace instance]
@@ -439,7 +439,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                      error:nil];
 }
 
-+ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(out MBExpressionError**)errPtr
++ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -480,7 +480,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark Mid-level token evaluation API
 /******************************************************************************/
 
-+ (id) objectFromTokens:(NSArray*)tokens error:(out MBExpressionError**)errPtr
++ (id) objectFromTokens:(NSArray*)tokens error:(inout MBExpressionError**)errPtr
 {
     return [self objectFromTokens:tokens
                   inVariableSpace:[MBVariableSpace instance]
@@ -488,7 +488,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                             error:errPtr];
 }
 
-+ (id) objectFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(out MBExpressionError**)errPtr
++ (id) objectFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -517,7 +517,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
     return buffer;
 }
 
-+ (NSString*) stringFromTokens:(NSArray*)tokens error:(out MBExpressionError**)errPtr
++ (NSString*) stringFromTokens:(NSArray*)tokens error:(inout MBExpressionError**)errPtr
 {
     return [self stringFromTokens:tokens
                   inVariableSpace:[MBVariableSpace instance]
@@ -525,7 +525,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                             error:errPtr];
 }
 
-+ (NSString*) stringFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(out MBExpressionError**)errPtr
++ (NSString*) stringFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -546,7 +546,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
     return strVal;
 }
 
-+ (BOOL) booleanFromTokens:(NSArray*)tokens error:(out MBExpressionError**)errPtr
++ (BOOL) booleanFromTokens:(NSArray*)tokens error:(inout MBExpressionError**)errPtr
 {
     return [self booleanFromTokens:tokens
                    inVariableSpace:[MBVariableSpace instance]
@@ -557,7 +557,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 + (BOOL) booleanFromTokens:(NSArray*)tokens
            inVariableSpace:(MBVariableSpace*)space
               defaultValue:(BOOL)def
-                     error:(out MBExpressionError**)errPtr
+                     error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -583,14 +583,14 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark Low-level token evaluation API
 /******************************************************************************/
 
-+ (NSArray*) evaluateTokens:(NSArray*)origTokens error:(out MBExpressionError**)errPtr
++ (NSArray*) evaluateTokens:(NSArray*)origTokens error:(inout MBExpressionError**)errPtr
 {
     return [self evaluateTokens:origTokens
                 inVariableSpace:[MBVariableSpace instance]
                           error:errPtr];
 }
 
-+ (NSArray*) evaluateTokens:(NSArray*)origTokens inVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
++ (NSArray*) evaluateTokens:(NSArray*)origTokens inVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     NSInteger tokCount = origTokens.count;
     if (tokCount < 1) {

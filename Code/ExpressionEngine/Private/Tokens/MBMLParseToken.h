@@ -112,14 +112,14 @@ typedef enum
 - (BOOL) isFrozen;
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
-                                                  error:(out MBExpressionError**)errPtr;
+                                                  error:(inout MBExpressionError**)errPtr;
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                            usingGrammar:(MBExpressionGrammar*)grammar
-                                                  error:(out MBExpressionError**)errPtr;
+                                                  error:(inout MBExpressionError**)errPtr;
 
-- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr;
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr;
+- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr;
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr;
 
 @end
 

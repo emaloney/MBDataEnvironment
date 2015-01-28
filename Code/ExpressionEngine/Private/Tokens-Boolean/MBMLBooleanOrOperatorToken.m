@@ -29,7 +29,7 @@
     return self;
 }
 
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)err
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)err
 {
     debugTrace();
     

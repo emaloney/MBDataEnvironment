@@ -60,7 +60,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as a string.
  */
-+ (NSString*) asString:(NSString*)expr error:(out MBExpressionError**)errPtr;
++ (NSString*) asString:(NSString*)expr error:(inout MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *string context*.
@@ -94,7 +94,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as a string.
  */
-+ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(out MBExpressionError**)errPtr;
++ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(inout MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as objects with string interpolation
@@ -164,7 +164,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as an object.
  */
-+ (id) asObject:(NSString*)expr error:(out MBExpressionError**)errPtr;
++ (id) asObject:(NSString*)expr error:(inout MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *object context*. String interpolation
@@ -240,7 +240,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
 
  @return    The result of evaluating the expression `expr` as an object.
  */
-+ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(out MBExpressionError**)errPtr;
++ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(inout MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as objects without string interpolation
@@ -284,7 +284,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    The result of evaluating the expression `expr` as an array of
             objects.
  */
-+ (NSArray*) asArray:(NSString*)expr error:(out MBExpressionError**)errPtr;
++ (NSArray*) asArray:(NSString*)expr error:(inout MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *object context* without using string
@@ -311,7 +311,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    The result of evaluating the expression `expr` as an array of
             objects.
  */
-+ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr;
++ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as numeric values
@@ -347,7 +347,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    The result of evaluating the expression `expr` as a numeric
             expression.
  */
-+ (NSDecimalNumber*) asNumber:(NSString*)expr error:(out MBExpressionError**)errPtr;
++ (NSDecimalNumber*) asNumber:(NSString*)expr error:(inout MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *numeric context*, coercing the result
@@ -389,7 +389,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    The result of evaluating the expression `expr` as a numeric
             expression.
  */
-+ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(out MBExpressionError**)errPtr;
++ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(inout MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Evaluating expressions as boolean values
@@ -419,7 +419,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    The result of evaluating the expression `expr` as a boolean 
             expression.
  */
-+ (BOOL) asBoolean:(NSString*)expr error:(out MBExpressionError**)errPtr;
++ (BOOL) asBoolean:(NSString*)expr error:(inout MBExpressionError**)errPtr;
 
 /*!
  Evaluates the given expression in the *boolean context*.
@@ -455,7 +455,7 @@ extern NSString* const kMBMLBooleanStringFalse;  //!< "F", the string used to re
  @return    The result of evaluating the expression `expr` as a boolean 
             expression.
  */
-+ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(out MBExpressionError**)errPtr;
++ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(inout MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Value type coercion

@@ -48,7 +48,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 + (NSArray*) _flattenNumbersFromParameters:(NSArray*)params
                            startingAtIndex:(NSUInteger)startIdx
                          endingBeforeIndex:(NSUInteger)endingBefore
-                                     error:(out MBMLFunctionError**)errPtr
+                                     error:(inout MBMLFunctionError**)errPtr
 {
     MBMLFunctionError* err = nil;
 

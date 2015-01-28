@@ -387,7 +387,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIs:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIs:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that it contains the
@@ -408,7 +408,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that it contains the
@@ -429,7 +429,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtMost:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtMost:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that it contains the
@@ -453,7 +453,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(out MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that a given index is
@@ -474,7 +474,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The number of parameters contained in the array, or `0` if
             parameter validation fails.
  */
-+ (NSUInteger) validateParameter:(NSArray*)params indexIsInRange:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSUInteger) validateParameter:(NSArray*)params indexIsInRange:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -502,7 +502,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr;
++ (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -533,7 +533,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr;
++ (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -559,7 +559,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -585,7 +585,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -611,7 +611,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's parameter list array to ensure that an object at a
@@ -637,7 +637,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
 */
-+ (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Validating individual parameters
@@ -662,7 +662,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter object is returned. If 
             validation fails, `nil` is returned.
  */
-+ (id) validateParameter:(id)param isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr;
++ (id) validateParameter:(id)param isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure that the object's class is
@@ -684,7 +684,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter object is returned. If 
             validation fails, `nil` is returned.
  */
-+ (Class) validateParameter:(id)param isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr;
++ (Class) validateParameter:(id)param isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure that the object responds
@@ -704,7 +704,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter object is returned. If 
             validation fails, `nil` is returned.
  */
-+ (id<NSObject>) validateParameter:(id<NSObject>)param respondsToSelector:(SEL)selector error:(out MBMLFunctionError**)errPtr;
++ (id<NSObject>) validateParameter:(id<NSObject>)param respondsToSelector:(SEL)selector error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure that it is a string. 
@@ -721,7 +721,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter string is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSString*) validateParameterIsString:(id)param error:(out MBMLFunctionError**)errPtr;
++ (NSString*) validateParameterIsString:(id)param error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure it contains a numeric value. 
@@ -738,7 +738,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter number is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSDecimalNumber*) validateParameterContainsNumber:(id)param error:(out MBMLFunctionError**)errPtr;
++ (NSDecimalNumber*) validateParameterContainsNumber:(id)param error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure it is an array. 
@@ -755,7 +755,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter array is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSArray*) validateParameterIsArray:(id)param error:(out MBMLFunctionError**)errPtr;
++ (NSArray*) validateParameterIsArray:(id)param error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates a function's input parameter to ensure it is a dictionary. 
@@ -772,7 +772,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    If validation succeeds, the parameter dictionary is returned. If 
             validation fails, `nil` is returned.
  */
-+ (NSDictionary*) validateParameterIsDictionary:(id)param error:(out MBMLFunctionError**)errPtr;
++ (NSDictionary*) validateParameterIsDictionary:(id)param error:(inout MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Validating parameters for functions taking piped expressions
@@ -806,7 +806,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates an expression parameter list to ensure that the expression at the
@@ -835,7 +835,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSDecimalNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSDecimalNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates an expression parameter list to ensure that the expression at the
@@ -864,7 +864,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*!
  Validates an expression parameter list to ensure that the expression at the
@@ -893,7 +893,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
             problems, you should always validate the parameter count of the
             array prior to calling this method.
  */
-+ (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr;
++ (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Function execution
@@ -911,7 +911,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  @return    The function's return value. `nil` is returned if an error occurred
             while executing the function.
  */
-- (id) executeWithInput:(id)input error:(out MBMLFunctionError**)errPtr;
+- (id) executeWithInput:(id)input error:(inout MBMLFunctionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Debugging output

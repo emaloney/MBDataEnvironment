@@ -92,7 +92,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             cases, an exception is raised.
  */
 - (id) initialValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr;
+                             error:(inout MBExpressionError**)errPtr;
 
 /*!
  Returns the current value of the variable in the given variable space.
@@ -105,7 +105,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             object describing the error.
  */
 - (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(out MBExpressionError**)errPtr;
+                             error:(inout MBExpressionError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Variable value change hook

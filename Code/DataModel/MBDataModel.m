@@ -211,7 +211,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark XML convenience
 /******************************************************************************/
 
-+ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(out NSError**)errPtr
++ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(inout NSError**)errPtr
 {
     NSError* err = nil;
     @try {
@@ -242,7 +242,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return nil;
 }
 
-+ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(out NSError**)errPtr
++ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(inout NSError**)errPtr
 {
     NSError* err = nil;
     @try {
@@ -659,7 +659,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return [self amendDataModelWithXMLFromFile:filePath error:nil];
 }
 
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(out NSError**)errPtr
+- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(inout NSError**)errPtr
 {
     debugTrace();
     
@@ -677,7 +677,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return [self amendDataModelWithXMLFromData:xmlData error:nil];
 }
 
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(out NSError**)errPtr
+- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(inout NSError**)errPtr
 {
     debugTrace();
     

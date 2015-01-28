@@ -57,6 +57,6 @@
 - (NSArray*) tokensForExpression:(NSString*)expr
                  inVariableSpace:(MBVariableSpace*)space
                     usingGrammar:(MBExpressionGrammar*)grammar
-                           error:(out MBExpressionError**)errPtr;
+                           error:(inout MBExpressionError**)errPtr;
 
 @end

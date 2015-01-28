@@ -162,7 +162,7 @@
  
  @param     reportTo Determines where the receiver will be reported.
  */
-- (void) reportErrorTo:(out MBExpressionError**)reportTo;
+- (void) reportErrorTo:(inout MBExpressionError**)reportTo;
 
 /*!
  Reports the receiving error. The behavior of reporting depends on the contents
@@ -183,7 +183,7 @@
  @param     suppressLog If `YES`, calling this method will not result in a
             message being logged to the console.
  */
-- (void) reportErrorTo:(out MBExpressionError**)reportTo suppressLog:(BOOL)suppressLog;
+- (void) reportErrorTo:(inout MBExpressionError**)reportTo suppressLog:(BOOL)suppressLog;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Checking for additional errors

@@ -28,7 +28,7 @@
 
 + (CGRect) _validateParameter:(NSArray*)params
                 isRectAtIndex:(NSUInteger)index
-                        error:(out MBMLFunctionError**)errPtr
+                        error:(inout MBMLFunctionError**)errPtr
 {
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:params[index] error:&err];

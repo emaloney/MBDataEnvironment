@@ -27,7 +27,7 @@
 
 - (void) arrangeGrammarTree:(NSMutableArray*)tokens
             inVariableSpace:(MBVariableSpace*)space
-                      error:(out MBExpressionError**)errPtr;
+                      error:(inout MBExpressionError**)errPtr;
 
 /*!
  As a performance optimization to avoid tokenization and evaluation, an
@@ -91,7 +91,7 @@
 
 - (void) arrangeParameterGroup:(NSMutableArray*)tokens
                inVariableSpace:(MBVariableSpace*)space
-                         error:(out MBExpressionError**)errPtr;
+                         error:(inout MBExpressionError**)errPtr;
 
 @end
 

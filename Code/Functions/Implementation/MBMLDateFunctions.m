@@ -281,7 +281,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 #pragma mark Formatting dates and date strings
 /******************************************************************************/
 
-+ (NSDate*) _dateFromObject:(id)obj error:(out MBMLFunctionError**)errPtr
++ (NSDate*) _dateFromObject:(id)obj error:(inout MBMLFunctionError**)errPtr
 {
     if (![MBMLFunction validateParameter:obj
                         isOneKindOfClass:@[(id)[NSString class], (id)[NSDate class]]

@@ -240,7 +240,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Transformer parameter validation (high-level)
 /******************************************************************************/
 
-+ (BOOL) _validateParameter:(id)param plural:(BOOL)isPlural error:(out MBMLFunctionError**)errPtr
++ (BOOL) _validateParameter:(id)param plural:(BOOL)isPlural error:(inout MBMLFunctionError**)errPtr
 {
     if (!param) {
         [[MBMLFunctionError errorWithFormat:@"expected %@%s, but got none", kMBMLFunctionInputParameterName, (isPlural ? "s" : "")] reportErrorTo:errPtr];
@@ -257,7 +257,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return YES;
 }
 
-+ (NSUInteger) validateParameter:(NSArray*)params countIs:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateParameter:(NSArray*)params countIs:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -268,7 +268,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return 0;
 }
 
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -279,7 +279,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return 0;
 }
 
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtMost:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtMost:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -290,7 +290,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return 0;
 }
 
-+ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateParameter:(NSArray*)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -302,7 +302,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return 0;
 }
 
-+ (NSUInteger) validateParameter:(NSArray*)params indexIsInRange:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateParameter:(NSArray*)params indexIsInRange:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -313,7 +313,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return 0;
 }
 
-+ (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr
++ (id) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -325,7 +325,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr
++ (Class) validateParameter:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -337,7 +337,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSString*) validateParameter:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -348,7 +348,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSDecimalNumber*) validateParameter:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -359,7 +359,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSArray*) validateParameter:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -370,7 +370,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSDictionary*) validateParameter:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -381,7 +381,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (id) validateParameter:(id)param isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr
++ (id) validateParameter:(id)param isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -392,7 +392,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (Class) validateParameter:(id)param isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr
++ (Class) validateParameter:(id)param isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -403,7 +403,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (id<NSObject>) validateParameter:(id<NSObject>)param respondsToSelector:(SEL)selector error:(out MBMLFunctionError**)errPtr
++ (id<NSObject>) validateParameter:(id<NSObject>)param respondsToSelector:(SEL)selector error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName 
@@ -414,7 +414,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSString*) validateParameterIsString:(id)param error:(out MBMLFunctionError**)errPtr
++ (NSString*) validateParameterIsString:(id)param error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -424,7 +424,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSNumber*) validateParameterContainsNumber:(id)param error:(out MBMLFunctionError**)errPtr;
++ (NSNumber*) validateParameterContainsNumber:(id)param error:(inout MBMLFunctionError**)errPtr;
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -434,7 +434,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSArray*) validateParameterIsArray:(id)param error:(out MBMLFunctionError**)errPtr
++ (NSArray*) validateParameterIsArray:(id)param error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -444,7 +444,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSDictionary*) validateParameterIsDictionary:(id)param error:(out MBMLFunctionError**)errPtr
++ (NSDictionary*) validateParameterIsDictionary:(id)param error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:param plural:NO error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -458,7 +458,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Transformer expression validation (mid-level)
 /******************************************************************************/
 
-+ (id) validateExpression:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr
++ (id) validateExpression:(NSArray*)params objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -470,7 +470,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (Class) validateExpression:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr
++ (Class) validateExpression:(NSArray*)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -482,7 +482,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSString*) validateExpression:(NSArray*)params isStringAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -493,7 +493,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSNumber*) validateExpression:(NSArray*)params containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -504,7 +504,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSArray*) validateExpression:(NSArray*)params isArrayAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -515,7 +515,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSDictionary*) validateExpression:(NSArray*)params isDictionaryAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     if ([self _validateParameter:params plural:YES error:errPtr]) {
         return [self validateObjectNamed:kMBMLFunctionInputParameterName
@@ -530,7 +530,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Transformer input validation (low-level)
 /******************************************************************************/
 
-+ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIs:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIs:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -546,7 +546,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return actualCnt;
 }
 
-+ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtLeast:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtLeast:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -562,7 +562,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return actualCnt;
 }
 
-+ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtMost:(NSUInteger)expectedCnt error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtMost:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -578,7 +578,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return actualCnt;
 }
 
-+ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(out MBMLFunctionError**)errPtr;
++ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(inout MBMLFunctionError**)errPtr;
 {
     verboseDebugTrace();
     
@@ -594,7 +594,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return actualCnt;
 }
 
-+ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array indexIsInRange:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array indexIsInRange:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -610,7 +610,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return actualCnt;
 }
 
-+ (id) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr
++ (id) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -626,7 +626,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return objToTest;
 }
 
-+ (Class) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr
++ (Class) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -642,12 +642,12 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSString*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)validate isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSString*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)validate isStringAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     return (NSString*)[self validateObjectNamed:objName inArray:validate objectAtIndex:idx isKindOfClass:[NSString class] error:errPtr];
 }
 
-+ (NSDecimalNumber*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSDecimalNumber*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -663,17 +663,17 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return number;
 }
 
-+ (NSArray*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSArray*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array isArrayAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     return (NSArray*)[self validateObjectNamed:objName inArray:array objectAtIndex:idx isKindOfClass:[NSArray class] error:errPtr];
 }
 
-+ (NSDictionary*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSDictionary*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array isDictionaryAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     return (NSDictionary*)[self validateObjectNamed:objName inArray:array objectAtIndex:idx isKindOfClass:[NSDictionary class] error:errPtr];
 }
 
-+ (id) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr
++ (id) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -690,7 +690,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return objToTest;
 }
 
-+ (Class) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr
++ (Class) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -707,12 +707,12 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (NSString*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array isStringAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSString*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array isStringAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     return (NSString*)[self validateObjectNamed:objName expressionInArray:array objectAtIndex:idx isKindOfClass:[NSString class] error:errPtr];
 }
 
-+ (NSNumber*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array containsNumberAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSNumber*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -730,17 +730,17 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return number;
 }
 
-+ (NSArray*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array isArrayAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSArray*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array isArrayAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     return (NSArray*)[self validateObjectNamed:objName expressionInArray:array objectAtIndex:idx isKindOfClass:[NSArray class] error:errPtr];
 }
 
-+ (NSDictionary*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array isDictionaryAtIndex:(NSUInteger)idx error:(out MBMLFunctionError**)errPtr
++ (NSDictionary*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array isDictionaryAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
     return (NSDictionary*)[self validateObjectNamed:objName expressionInArray:array objectAtIndex:idx isKindOfClass:[NSDictionary class] error:errPtr];
 }
 
-+ (id) validateObjectNamed:(NSString*)objName object:(id)validate isKindOfClass:(Class)cls error:(out MBMLFunctionError**)errPtr
++ (id) validateObjectNamed:(NSString*)objName object:(id)validate isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -755,7 +755,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return validate;
 }
 
-+ (Class) validateObjectNamed:(NSString*)objName object:(id)validate isOneKindOfClass:(NSArray*)classes error:(out MBMLFunctionError**)errPtr
++ (Class) validateObjectNamed:(NSString*)objName object:(id)validate isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -770,7 +770,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return nil;
 }
 
-+ (id<NSObject>) validateObjectNamed:(NSString*)objName object:(id<NSObject>)validate respondsToSelector:(SEL)selector error:(out MBMLFunctionError**)errPtr
++ (id<NSObject>) validateObjectNamed:(NSString*)objName object:(id<NSObject>)validate respondsToSelector:(SEL)selector error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -787,12 +787,12 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return validate;
 }
 
-+ (NSString*) validateObjectNamed:(NSString*)objName isString:(id)validate error:(out MBMLFunctionError**)errPtr
++ (NSString*) validateObjectNamed:(NSString*)objName isString:(id)validate error:(inout MBMLFunctionError**)errPtr
 {
     return (NSString*)[self validateObjectNamed:objName object:validate isKindOfClass:[NSString class] error:errPtr];
 }
 
-+ (NSNumber*) validateObjectNamed:(NSString*)objName containsNumber:(id)validate error:(out MBMLFunctionError**)errPtr
++ (NSNumber*) validateObjectNamed:(NSString*)objName containsNumber:(id)validate error:(inout MBMLFunctionError**)errPtr
 {
     verboseDebugTrace();
     
@@ -807,12 +807,12 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     return number;
 }
 
-+ (NSArray*) validateObjectNamed:(NSString*)objName isArray:(id)validate error:(out MBMLFunctionError**)errPtr
++ (NSArray*) validateObjectNamed:(NSString*)objName isArray:(id)validate error:(inout MBMLFunctionError**)errPtr
 {
     return (NSArray*)[self validateObjectNamed:objName object:validate isKindOfClass:[NSArray class] error:errPtr];
 }
 
-+ (NSDictionary*) validateObjectNamed:(NSString*)objName isDictionary:(id)validate error:(out MBMLFunctionError**)errPtr
++ (NSDictionary*) validateObjectNamed:(NSString*)objName isDictionary:(id)validate error:(inout MBMLFunctionError**)errPtr
 {
     return (NSDictionary*)[self validateObjectNamed:objName object:validate isKindOfClass:[NSDictionary class] error:errPtr];
 }
@@ -821,7 +821,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Execution
 /******************************************************************************/
 
-- (id) executeWithInput:(id)input error:(out MBMLFunctionError**)errPtr
+- (id) executeWithInput:(id)input error:(inout MBMLFunctionError**)errPtr
 {
     @try {
         if (_deprecationMessage && !_deprecatedInFavorOf) {

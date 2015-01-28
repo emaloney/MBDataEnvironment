@@ -130,7 +130,7 @@
 
 - (void) arrangeGrammarTree:(NSMutableArray*)tokens
             inVariableSpace:(MBVariableSpace*)space
-                      error:(out MBExpressionError**)errPtr
+                      error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -194,7 +194,7 @@
 - (BOOL) setLeftOperand:(MBMLParseToken<MBMLOperandToken>*)lVal
            rightOperand:(MBMLParseToken<MBMLOperandToken>*)rVal
      forBinaryOperation:(MBMLParseToken<MBMLBinaryOperatorToken>*)op
-                  error:(out MBExpressionError**)errPtr
+                  error:(inout MBExpressionError**)errPtr
 {
     if (![lVal conformsToProtocol:@protocol(MBMLOperandToken)]) {
         MBExpressionError* err = [MBExpressionError errorWithFormat:@"Invalid left operand: \"%@\"", [lVal expression]];
@@ -217,7 +217,7 @@
 
 - (BOOL) setOperand:(MBMLParseToken<MBMLOperandToken>*)val
   forUnaryOperation:(MBMLParseToken<MBMLUnaryOperatorToken>*)op
-              error:(out MBExpressionError**)errPtr
+              error:(inout MBExpressionError**)errPtr
 {
     if (![val conformsToProtocol:@protocol(MBMLOperandToken)]) {
         MBExpressionError* err = [MBExpressionError errorWithFormat:@"Invalid operand: \"%@\"", [val expression]];
@@ -427,7 +427,7 @@ MBImplementSingleton();
 
 - (void) arrangeGrammarTree:(NSMutableArray*)tokens
             inVariableSpace:(MBVariableSpace*)space
-                      error:(out MBExpressionError**)errPtr
+                      error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -553,7 +553,7 @@ MBImplementSingleton();
 
 - (void) arrangeGrammarTree:(NSMutableArray*)tokens
             inVariableSpace:(MBVariableSpace*)space
-                      error:(out MBExpressionError**)errPtr
+                      error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -642,7 +642,7 @@ MBImplementSingleton();
 
 - (void) arrangeGrammarTree:(NSMutableArray*)tokens
             inVariableSpace:(MBVariableSpace*)space
-                      error:(out MBExpressionError**)errPtr
+                      error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -685,7 +685,7 @@ MBImplementSingleton();
 
 - (void) arrangeParameterGroup:(NSMutableArray*)tokens
                inVariableSpace:(MBVariableSpace*)space
-                         error:(out MBExpressionError**)errPtr
+                         error:(inout MBExpressionError**)errPtr
 {
     [[MBMLObjectExpressionGrammar instance] arrangeGrammarTree:tokens inVariableSpace:space error:errPtr];
 }
@@ -714,7 +714,7 @@ MBImplementSingleton();
 
 - (void) arrangeParameterGroup:(NSMutableArray*)tokens
                inVariableSpace:(MBVariableSpace*)space
-                         error:(out MBExpressionError**)errPtr
+                         error:(inout MBExpressionError**)errPtr
 {
     [[MBMLMathExpressionGrammar instance] arrangeGrammarTree:tokens inVariableSpace:space error:errPtr];
 }

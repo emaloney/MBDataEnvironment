@@ -185,7 +185,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    An object representing the top-level element of the XML.
  */
-+ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(out NSError**)errPtr;
++ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(inout NSError**)errPtr;
 
 /*!
  A convenience method for parsing an XML document from an `NSData` instance.
@@ -197,7 +197,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    An object representing the top-level element of the XML.
  */
-+ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(out NSError**)errPtr;
++ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(inout NSError**)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Populating the data model
@@ -248,7 +248,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    `YES` if the XML file was processed successfully; `NO` otherwise.
 */
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(out NSError**)errPtr;
+- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(inout NSError**)errPtr;
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -281,7 +281,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    `YES` if the XML data was processed successfully; `NO` otherwise.
  */
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(out NSError**)errPtr;
+- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(inout NSError**)errPtr;
 
 /*!
  For each attribute value of the passed-in XML element, a corresponding

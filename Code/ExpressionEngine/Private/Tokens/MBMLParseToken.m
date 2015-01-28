@@ -486,7 +486,7 @@
 }
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
-                                                  error:(out MBExpressionError**)errPtr
+                                                  error:(inout MBExpressionError**)errPtr
 {
     return [self tokenizeContainedExpressionInVariableSpace:space
                                                usingGrammar:_grammar
@@ -495,7 +495,7 @@
 
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                            usingGrammar:(MBExpressionGrammar*)grammar
-                                                  error:(out MBExpressionError**)errPtr
+                                                  error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -532,7 +532,7 @@
 #pragma mark Token evaluation
 /******************************************************************************/
 
-- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -540,7 +540,7 @@
     return [self value];
 }
 
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     return [MBExpression booleanFromValue:[self evaluateInVariableSpace:space error:errPtr]];
 }

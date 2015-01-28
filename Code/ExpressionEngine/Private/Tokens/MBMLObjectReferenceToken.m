@@ -128,7 +128,7 @@ static Class s_objSubrefTokenCls = nil;
 #pragma mark Token evaluation
 /******************************************************************************/
 
-- (id) valueForKey:(NSString*)key valueContext:(id)ctxt error:(out MBExpressionError**)errPtr
+- (id) valueForKey:(NSString*)key valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     
@@ -171,7 +171,7 @@ static Class s_objSubrefTokenCls = nil;
     return nil;
 }
 
-- (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(out MBExpressionError**)errPtr
+- (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
 
@@ -207,7 +207,7 @@ static Class s_objSubrefTokenCls = nil;
     return nil;
 }
 
-- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(out MBExpressionError**)errPtr
+- (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
  
