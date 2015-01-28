@@ -15,6 +15,7 @@
 
 #define LOG_EXPECTED_ERRORS         1
 #define logExpectedError(x)         if (LOG_EXPECTED_ERRORS && (x)) consoleLog(@"Received expected error (this is safe to ignore): %@", [(MBExpressionError*)x logOutput])
+#define expectError(x)              { XCTAssertNotNil(x); logExpectedError(x); }
 
 /******************************************************************************/
 #pragma mark -
