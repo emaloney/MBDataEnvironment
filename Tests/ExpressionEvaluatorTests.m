@@ -540,8 +540,8 @@ static int shortCircuitHitCounter = 0;
 
     NSArray* testArray = [MBExpression asArray:@"$(Barrett Test).species"];
     XCTAssertTrue(testArray.count == 2, @"unexpected array result of $(Barrett Test).species to contain 2 elements");
-    XCTAssertEqualObjects([testArray objectAtIndex:0], barrett, @"unexpected result for array evaluation of $(Barrett Test).species");
-    XCTAssertTrue([[testArray objectAtIndex:1] isEqualToString:@".species"], @"unexpected result for array evaluation of $(Barrett Test).species");
+    XCTAssertEqualObjects(testArray[0], barrett, @"unexpected result for array evaluation of $(Barrett Test).species");
+    XCTAssertTrue([testArray[1] isEqualToString:@".species"], @"unexpected result for array evaluation of $(Barrett Test).species");
 
     //
     // test curly brace-quoted notation (treats contents of curly braces as a
@@ -552,7 +552,7 @@ static int shortCircuitHitCounter = 0;
     NSNumber* testListCntNum = [MBExpression asObject:@"${nameList.count}"];
     XCTAssertTrue([testListCntNum isKindOfClass:[NSNumber class]], @"expected object result of ${nameList.count} to be a number");
     XCTAssertTrue([testListCntNum integerValue] == nameList.count, @"expected numeric result of ${nameList.count} to be 6");
-    NSDictionary* lauren = [nameList objectAtIndex:3];
+    NSDictionary* lauren = nameList[3];
     NSString* laurenFirstName = [MBExpression asObject:@"${nameList[3].firstName}"];
     XCTAssertTrue([laurenFirstName isKindOfClass:[NSString class]], @"expected object result of ${nameList[3].firstName} to be a string");
     XCTAssertTrue([laurenFirstName isEqualToString:[lauren objectForKey:@"firstName"]], @"unexpected object result of ${nameList[3].firstName}");
@@ -562,8 +562,8 @@ static int shortCircuitHitCounter = 0;
     XCTAssertTrue([test hasSuffix:@".firstName"], @"expected object result of $(Barrett Test).species to end in .species");
     testArray = [MBExpression asArray:@"${nameList[3]}.firstName"];
     XCTAssertTrue(testArray.count == 2, @"unexpected array result of ${nameList[3]}.firstName to contain 2 elements");
-    XCTAssertEqualObjects([testArray objectAtIndex:0], lauren, @"unexpected result for array evaluation of ${nameList[3]}.firstName");
-    XCTAssertTrue([[testArray objectAtIndex:1] isEqualToString:@".firstName"], @"unexpected result for array evaluation of ${nameList[3]}.firstName");
+    XCTAssertEqualObjects(testArray[0], lauren, @"unexpected result for array evaluation of ${nameList[3]}.firstName");
+    XCTAssertTrue([testArray[1] isEqualToString:@".firstName"], @"unexpected result for array evaluation of ${nameList[3]}.firstName");
 }
 
 - (void) testComplexVariableReferenceFailures
