@@ -173,6 +173,17 @@
     }
 }
 
++ (id) setWithArray:(id)param
+{
+    debugTrace();
+
+    MBMLFunctionError* err = nil;
+    NSArray* array = [MBMLFunction validateParameterIsArray:param error:&err];
+    if (err) return err;
+
+    return [NSMutableSet setWithArray:array];
+}
+
 + (id) dictionary:(NSArray*)params
 {
     debugTrace();

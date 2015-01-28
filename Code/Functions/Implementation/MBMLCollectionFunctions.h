@@ -326,9 +326,31 @@
  
  @return    A set containing the value of each input parameter expression.
 
- @see       dictionary:, array:
+ @see       dictionary:, array:, setWithArray:
  */
 + (id) set:(NSArray*)params;
+
+/*!
+ Returns an `NSSet` containing the same elements as the passed-in array.
+
+ This Mockingbird function accepts as input an object expression that yields
+ an `NSArray` instance.
+
+ #### Expression usage
+ 
+ The expression:
+ 
+    ^setWithArray(^array(One|2|III))
+ 
+ would return an `NSSet` containing the strings "`One`", "`2`", and "`III`".
+
+ @param     param The function's input parameter.
+ 
+ @return    A set containing the values of the passed-in array.
+
+ @see       dictionary:, array:, set:
+ */
++ (id) setWithArray:(id)array;
 
 /*!
  Creates a new `NSDictionary` instance containing the items provided as 
