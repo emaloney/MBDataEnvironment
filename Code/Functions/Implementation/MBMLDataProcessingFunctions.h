@@ -65,7 +65,8 @@
  @return    `@YES` if any of the input *collections* contains the *test value*;
             `@NO` otherwise.
  
- @see       setContains:
+ @see       setContains:, collectionPassesTest:, valuesPassingTest:,
+            valuesIntersect:
  */
 + (id) containsValue:(NSArray*)params;
 
@@ -97,7 +98,8 @@
  @return    `@YES` if the input *set* contains the *test value*; `@NO`
             otherwise.
  
- @see       containsValue:
+ @see       containsValue:, collectionPassesTest:, valuesPassingTest:,
+            valuesIntersect:
  */
 + (id) setContains:(NSArray*)params;
 
@@ -130,7 +132,8 @@
  @return    `@YES` if every item in the collection passes the *test*; `NO`
             otherwise.
  
- @see       valuesPassingTest:
+ @see       valuesPassingTest:, containsValue:, setContains:,   
+            valuesIntersect:
  */
 + (id) collectionPassesTest:(NSArray*)params;
 
@@ -174,7 +177,8 @@
  @return    An array containing the values in the collections for which the
             test expression evaluates to `true`.
  
- @see       collectionPassesTest:
+ @see       collectionPassesTest:, containsValue:, setContains:, 
+            valuesIntersect:
  */
 + (id) valuesPassingTest:(NSArray*)params;
 
@@ -199,6 +203,9 @@
  
  @return    `@YES` if the two collection objects share at least one common 
             value, `@NO` if they do not.
+ 
+ @see       collectionPassesTest:, containsValue:, setContains:,
+            valuesPassingTest:
  */
 + (id) valuesIntersect:(NSArray*)params;
 
