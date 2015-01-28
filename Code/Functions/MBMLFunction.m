@@ -242,6 +242,9 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (BOOL) _validateParameter:(id)param plural:(BOOL)isPlural error:(inout MBMLFunctionError**)errPtr
 {
+    // don't continue validating if an error was already reported
+    if (*errPtr) return NO;
+
     if (!param) {
         [[MBMLFunctionError errorWithFormat:@"expected %@%s, but got none", kMBMLFunctionInputParameterName, (isPlural ? "s" : "")] reportErrorTo:errPtr];
         return NO;
