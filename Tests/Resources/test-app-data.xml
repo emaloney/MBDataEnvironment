@@ -24,10 +24,35 @@
         <Var literal="Four"/>
     </Var>
 
+    <Var name="testValues" type="list" mutable="F">
+        <Var literal="One"/>
+        <Var literal="Two"/>
+        <Var literal="Three"/>
+        <Var literal="Four"/>
+    </Var>
+
+    <Var name="testInsertRemove" type="list" mutable="F">
+        <Var literal="One"/>
+        <Var literal="1.5"/>
+        <Var literal="Two"/>
+        <Var literal="2.5"/>
+        <Var literal="Three"/>
+        <Var literal="3.5"/>
+        <Var literal="Four"/>
+    </Var>
+
     <Var name="emptyList" type="list"/>
     <Var name="emptyMap" type="map"/>
     
     <!-- test data for data processing functions -->
+    <Var name="newYorkTeams" type="list" mutable="F">
+        <Var literal="Yankees"/>
+        <Var literal="Mets"/>
+        <Var literal="Knicks"/>
+        <Var literal="Rangers"/>
+        <Var literal="Islanders"/>
+    </Var>
+
     <Var name="Daisy Test" type="map" mutable="F">
         <Var name="firstName" literal="Daisy"/>
         <Var name="lastName" literal="Test"/>
@@ -103,7 +128,9 @@
         <Var value="$(Daisy Test)"/>
         <Var value="$(Barrett Test)"/>
     </Var>
-    
+
+    <Var name="testSet" value="^setWithArray($nameList)"/>
+
     <Var name="testOrderNumber" literal="102772" mutable="F"/>
     
     <Var name="testData" type="map" mutable="F">
