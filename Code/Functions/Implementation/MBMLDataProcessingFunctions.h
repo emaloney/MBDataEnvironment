@@ -500,7 +500,7 @@
  the filter.
  
  * Finally, an optional *filter behavior*, which can be either
- `matchAtLeastOnce` or `matchAll`. Note that **only** these string literals are
+ `matchAtLeastOnce` or `matchAll`. Note that **only** these text literals are
  acceptable values if this parameter is provided; this parameter is not
  evaluated as an expression. If this parameter is omitted, `matchAtLeastOnce` 
  filtering behavior will be used.

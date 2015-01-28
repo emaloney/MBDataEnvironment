@@ -144,8 +144,8 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  "`pizza`", "`pasta`", "`sushi`" and "`lobster`".
  
  Because this particular expression yields an object, we can access values in
- the returned object as if it were a regular MBML object reference. To access
- the fourth element in the (zero-indexed) array, you would write:
+ the returned object as if it were a regular Mockingbird object reference. To
+ access the fourth element in the (zero-indexed) array, you would write:
  
     ^array(pizza|pasta|sushi|lobster)[3]
  

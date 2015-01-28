@@ -32,8 +32,8 @@
  is left untouched by the expression evaluator.
 
  This is required, for example, to preserve space characters at the beginning 
- or end of a string literal. (Normally, the expression evaluator ignores
- whitespace at the beginning or end of string literals.)
+ or end of a text literal. (Normally, the expression evaluator ignores
+ whitespace at the beginning or end of text literals.)
 
  This Mockingbird function accepts one parameter, the string to be quoted.
  
