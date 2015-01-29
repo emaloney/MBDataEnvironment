@@ -898,6 +898,34 @@
 + (id) unique:(id)param;
 
 /*----------------------------------------------------------------------------*/
+#pragma mark Reversing the contents of an array
+/*!    @name Reversing the contents of an array                               */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Returns a new `NSArray` by reversing the order of the items in the passed-in
+ array.
+
+ This function accepts as a parameter a single Mockingbird object expression,
+ the *input array*, which is expected to yield an `NSArray` instance.
+
+ #### Expression usage
+
+ Assume that `$animals` is an array with three elements: the strings "`Duck`",
+ "`Duck`" and "`Goose`".
+
+    ^reverse($animals)
+
+ The expression above would return an array containing the strings "`Goose`", 
+ "`Duck`" and "`Duck`" in that order.
+
+ @param     param The function's input parameter.
+
+ @return    An array containing the reversed values of the input array.
+ */
++ (id) reverse:(id)param;
+
+/*----------------------------------------------------------------------------*/
 #pragma mark Reducing an array of items
 /*!    @name Reducing an array of items                                       */
 /*----------------------------------------------------------------------------*/

@@ -59,6 +59,7 @@
     <Function class="MBMLDataProcessingFunctions" name="associateWithArray" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="sort" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="mergeDictionaries" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="reverse" input="object"/>
     <Function class="MBMLDataProcessingFunctions" name="unique" input="object"/>
     <Function class="MBMLDataProcessingFunctions" name="distributeArrayElements" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="groupArrayElements" input="pipedObjects"/>

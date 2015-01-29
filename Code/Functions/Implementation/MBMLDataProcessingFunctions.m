@@ -1031,6 +1031,21 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
     return expressionSort(left, right, (__bridge MBExpressionSortContext*)ctxt, NSOrderedDescending, NSOrderedAscending);
 }
 
++ (id) reverse:(id)param
+{
+    debugTrace();
+
+    MBMLFunctionError* err = nil;
+    NSArray* toReverse = [MBMLFunction validateParameterIsArray:param error:&err];
+    if (err) return err;
+
+    NSMutableArray* reversed = [NSMutableArray arrayWithCapacity:toReverse.count];
+    for (id obj in toReverse.reverseObjectEnumerator) {
+        [reversed addObject:obj];
+    }
+    return reversed;
+}
+
 + (id) sort:(NSArray*)params
 {
     debugTrace();
@@ -1244,7 +1259,8 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
     return retVal;
 }
 
-+ (id) reduce:(NSArray*)params {
++ (id) reduce:(NSArray*)params
+{
     debugTrace();
     
     MBMLFunctionError* err = nil;
