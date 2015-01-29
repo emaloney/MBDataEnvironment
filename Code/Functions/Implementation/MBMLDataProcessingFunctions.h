@@ -491,7 +491,7 @@
 /*----------------------------------------------------------------------------*/
 
 /*!
- Filters a collection by applying a test expression against each item in the
+ Filters a data model by applying a test expression against each item in the
  collection.
 
  This Mockingbird function accepts two or more pipe-separated expressions as 
@@ -512,9 +512,28 @@
  evaluated as an expression. If this parameter is omitted, `matchAtLeastOnce` 
  filtering behavior will be used.
 
- Because you can recurse into portions of the data model where more than
- one element may exist, the filter may iterate over multiple items for each
- top-level object, and the test expression will get applied multiple times.
+ #### Filter behaviors
+
+ Intermediate expressions make it possible to recurse into the data model
+ to apply the test expression to values below the top level of the data model.
+ 
+ As a result, when intermediate expressions are used, for any given top-level
+ object, the test expression may be applied multiple times.
+ 
+ The filter behavior determines when the top-level object will pass through
+ the filter:
+ 
+ * `matchAtLeastOnce`: If *test* is evaluated multiple times for a given
+ top-level object, that object will pass through the filter if *test* evaluates 
+ to `true` at least once.
+ 
+ * `matchAll`:  If *test* is evaluated multiple times for a given
+ top-level object, that object will pass through the filter **only** if *test*
+ evaluates to `true` every time.
+
+ If no intermediate expressions are used, *test* will only be evaluated once for
+ a given top-level object, so there is no effective difference between the
+ behavior of these two options.
 
  #### Expression usage
 
@@ -522,10 +541,11 @@
  
     ^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)
  
- The expression above would return all the objects contained in `$people`
- where every aunt of every child of the person has the first name "`Jill`". The
- `matchAll` parameter can be omitted to return every person with at least one
- child who has at least one aunt with the first name "`Jill`".
+ The expression above would return all *persons* contained in `$people` where
+ every aunt of every child of the *person* has the first name "`Jill`".
+ 
+ The `matchAll` parameter can be omitted to return every *person* with at least
+ one child who has at least one aunt with the first name "`Jill`".
  
  @param     params The function's input parameters.
  
