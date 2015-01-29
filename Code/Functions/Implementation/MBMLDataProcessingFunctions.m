@@ -715,8 +715,8 @@ typedef enum {
 {
     debugTrace();
 
-    if ([param conformsToProtocol:@protocol(NSFastEnumeration)]) {
-        return [MBMLFunctionError errorWithFormat:@"Expecting the input parameter to conform to the NSFastEnumeration; got a %@ instance instead", [param class]];
+    if (![param conformsToProtocol:@protocol(NSFastEnumeration)]) {
+        return [MBMLFunctionError errorWithFormat:@"Expecting the input parameter to conform to NSFastEnumeration; got a %@ instance instead", [param class]];
     }
 
     NSMutableArray* retVal = [NSMutableArray array];
