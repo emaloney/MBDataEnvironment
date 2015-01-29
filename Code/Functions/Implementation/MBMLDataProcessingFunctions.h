@@ -556,15 +556,16 @@
 + (id) filter:(NSArray*)params;
 
 /*!
- Iterates over (and potentially recurses into) the items in a collection object,
- and returns an `NSArray` containing a list of values. The values in the
- returned array will reflect the ordering of any arrays iterated; however,
- iterating dictionaries will result in non-deterministic ordering.
+ Iterates over (and potentially recurses into) the items in a collection object 
+ holding an arbitrary data model, and returns an `NSArray` containing a list of
+ values. The values in the returned array will reflect the ordering of any
+ arrays iterated; however, iterating dictionaries or sets will result in 
+ non-deterministic ordering.
  
  This Mockingbird function accepts two or more pipe-separated expressions as 
  parameters:
  
- * The *data model*, an object expression yielding collection instance to be
+ * The *data model*, an object expression yielding the collection object to be
  iterated.
 
  * Zero or more *intermediate expressions*, which are used to recurse
