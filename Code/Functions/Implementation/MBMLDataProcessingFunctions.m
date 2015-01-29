@@ -52,6 +52,16 @@ typedef enum {
     FilterMatchAll                          // filter will only return top-level items where the filter expression matches every time
 } FilterMatchType;
 
+@protocol MBObjectReceptacle <NSObject>
+- (void) addObject:(id)obj;
+@end
+
+@interface NSMutableArray () <MBObjectReceptacle>
+@end
+
+@interface NSMutableSet () <MBObjectReceptacle>
+@end
+
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBExpressionSortContext private class
@@ -397,7 +407,11 @@ typedef enum {
 + (id) appendArrays:(NSArray*)params
 {
     debugTrace();
-    
+
+    MBMLFunctionError *err = nil;
+    [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
+    if (err) return err;
+
     NSMutableArray* retVal = [NSMutableArray array];
     for (NSUInteger i=0; i<params.count; i++) {
         NSArray* array = params[i];
@@ -428,7 +442,13 @@ typedef enum {
 + (id) flattenArrays:(NSArray*)params
 {
     debugTrace();
-    
+
+    MBMLFunctionError* err = nil;
+    for (NSUInteger i=0; i<params.count; i++) {
+        [MBMLFunction validateParameter:params[i] isArrayAtIndex:i error:&err];
+        if (err) return err;
+    }
+
     NSMutableArray* retVal = [NSMutableArray array];
     [self _flatten:params into:retVal depth:0];
     return retVal;
@@ -568,12 +588,12 @@ typedef enum {
     }
 }
 
-+ (void) _filterArray:(NSArray*)dataModel
-                 into:(NSMutableArray*)retVal
-      usingExpression:(NSString*)matchExpression
-        intermediates:(NSArray*)intermediates
-            matchType:(FilterMatchType)matchType
-                error:(inout MBExpressionError**)errPtr
++ (void) _filterList:(NSObject<NSFastEnumeration>*)dataModel
+                into:(NSObject<MBObjectReceptacle>*)retVal
+     usingExpression:(NSString*)matchExpression
+       intermediates:(NSArray*)intermediates
+           matchType:(FilterMatchType)matchType
+               error:(inout MBExpressionError**)errPtr
 {
     MBExpressionError* currentErr = nil;
     MBVariableSpace* vars = [MBVariableSpace instance];
@@ -647,7 +667,7 @@ typedef enum {
     NSString* dataModelExpr = params[0];
     id dataModel = [MBExpression asObject:dataModelExpr];
     if ([dataModel isKindOfClass:[NSDictionary class]]) {
-        NSMutableDictionary* dict = [NSMutableDictionary dictionary];
+        NSMutableDictionary* dict = [NSMutableDictionary new];
         
         [self _filterDictionary:dataModel 
                            into:dict
@@ -659,19 +679,31 @@ typedef enum {
         retVal = dict;
     }
     else if ([dataModel isKindOfClass:[NSArray class]]) {
-        NSMutableArray* array = [NSMutableArray array];
-        
-        [self _filterArray:dataModel
-                      into:array
-           usingExpression:matchExpression
-             intermediates:intermediates
-                 matchType:matchType
-                     error:&currentErr];
-        
+        NSMutableArray* array = [NSMutableArray new];
+
+        [self _filterList:dataModel
+                     into:array
+          usingExpression:matchExpression
+            intermediates:intermediates
+                matchType:matchType
+                    error:&currentErr];
+
         retVal = array;
     }
+    else if ([dataModel isKindOfClass:[NSSet class]]) {
+        NSMutableSet* set = [NSMutableSet new];
+
+        [self _filterList:dataModel
+                     into:set
+          usingExpression:matchExpression
+            intermediates:intermediates
+                matchType:matchType
+                    error:&currentErr];
+
+        retVal = set;
+    }
     else {
-        currentErr = [MBMLFunctionError errorWithFormat:@"Expecting a filterable data model object (array or dictionary); instead got %@ from expression \"%@\"", [dataModel class], dataModelExpr];
+        currentErr = [MBMLFunctionError errorWithFormat:@"Expecting a filterable data model object (array, dictionary or set); instead got %@ from expression \"%@\"", [dataModel class], dataModelExpr];
     }
     if (currentErr) {
         return currentErr;
