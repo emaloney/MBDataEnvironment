@@ -42,7 +42,7 @@
 
     <Function class="MBMLDataProcessingFunctions" name="collectionPassesTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="containsValue" input="pipedObjects"/>
-    <Function class="MBMLDataProcessingFunctions" name="setContains" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="setContains" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesPassingTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesIntersect" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="join" input="pipedObjects"/>
