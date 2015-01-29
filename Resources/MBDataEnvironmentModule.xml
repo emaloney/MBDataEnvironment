@@ -29,7 +29,7 @@
     <Function class="MBMLCollectionFunctions" name="insertObjectAtIndex" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="array" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="dictionary" input="pipedExpressions"/>
-    <Function class="MBMLCollectionFunctions" name="set" input="pipedExpressions"/>
+    <Function class="MBMLCollectionFunctions" name="set" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="setWithArray" input="object"/>
     <Function class="MBMLCollectionFunctions" name="removeObject" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="removeObjectAtIndex" input="pipedObjects"/>
