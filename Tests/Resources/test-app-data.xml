@@ -24,6 +24,8 @@
         <Var literal="Four"/>
     </Var>
 
+    <Var name="splitLines" value="One\nTwo\nThree\nFour"/>
+
     <Var name="testInsertRemove" type="list" mutable="F">
         <Var literal="One"/>
         <Var literal="1.5"/>
@@ -122,6 +124,15 @@
         <Var value="$(Barrett Test)"/>
     </Var>
 
+    <Var name="nameMap" type="map" mutable="F">
+        <Var name="Jill" value="$(Jill Test)"/>
+        <Var name="Evan" value="$(Evan Test)"/>
+        <Var name="Debbie" value="$(Debbie Test)"/>
+        <Var name="Lauren" value="$(Lauren Test)"/>
+        <Var name="Daisy" value="$(Daisy Test)"/>
+        <Var name="Barrett" value="$(Barrett Test)"/>
+    </Var>
+
     <Var name="testSet" value="^setWithArray($nameList)"/>
 
     <Var name="testOrderNumber" literal="102772" mutable="F"/>
@@ -134,7 +145,19 @@
             <Var name="number" value="$testOrderNumber"/>
         </Var>
     </Var>
-    
+
+    <Var name="toFlatten" type="list">
+        <Var type="list">
+            <Var value="$testKeys"/>
+        </Var>
+        <Var type="list">
+            <Var type="list">
+                <Var value="$testValues"/>
+            </Var>
+        </Var>
+        <Var value="$newYorkTeams"/>
+    </Var>
+
     <Var name="backendDomain" literal="m.gilt.com"/>
     <Var name="backendPath" literal="test/path/"/>
     <Var name="backendQueryString" literal="h=value&amp;v=text&amp;q=hello"/>
