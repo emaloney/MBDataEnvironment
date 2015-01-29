@@ -335,10 +335,9 @@ typedef enum {
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
+    NSString* separator = [MBMLFunction validateParameter:params isStringAtIndex:paramCnt - 1 error:&err];
     if (err) return err;
-    
-    NSString* separator = [params[paramCnt - 1] description];
-    
+
     BOOL useSeparator = NO;
     NSMutableString* retVal = [NSMutableString string];
     for (NSUInteger i=0; i<paramCnt-1; i++) {
