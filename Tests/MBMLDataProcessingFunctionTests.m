@@ -225,7 +225,6 @@
     joined = [MBExpression asString:@"^join($testKeys|$testValues|, )"];
     XCTAssertNotNil(joined);
     XCTAssertEqualObjects(joined, @"Key 1, Key 2, Key 3, Key 4, One, Two, Three, Four");
-    consoleObj(joined);
 
     //
     // test expected failures
@@ -302,7 +301,6 @@
     NSArray* testValues = [MBExpression asObject:@"$testValues"];
     NSArray* newYorkTeams = [MBExpression asObject:@"$newYorkTeams"];
     NSArray* testArray = [testKeys arrayByAddingObjectsFromArray:[testValues arrayByAddingObjectsFromArray:newYorkTeams]];
-    consoleObj(testArray);
 
     NSArray* array = [MBExpression asObject:@"^appendArrays($testKeys|$testValues|$newYorkTeams)"];
     XCTAssertTrue([array isKindOfClass:[NSArray class]]);
@@ -362,7 +360,6 @@
 - (void) testFilter
 {
     consoleTrace();
-
 
     //
     // test expected successes
@@ -436,16 +433,29 @@
     //
     // test expected successes
     //
+    NSArray* testList1 = @[@"Twenty-One", @"Twenty-Two", @"Twenty-Three", @"Twenty-Four"];
+    NSArray* list1 = [MBExpression asObject:@"^list($testValues|Twenty-$item)"];
+    XCTAssertTrue([list1 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(list1, testList1);
+
+    NSArray* testList2 = @[@"Jill Test", @"Debbie Test"];
+    NSArray* list2 = [MBExpression asObject:@"^list($nameMap|$item[aunts]|$item)"];
+    XCTAssertTrue([list2 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(list2, testList2);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^list()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^list($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    consoleObj([MBExpression asObject:@"^list($NULL)" error:&err]);
     expectError(err);
 }
 
@@ -456,16 +466,33 @@
     //
     // test expected successes
     //
+    NSArray* testPruned1 = @[@"Key 1", @"Key 2", @"Key 3"];
+    NSArray* pruned1 = [MBExpression asObject:@"^pruneMatchingLeaves($testKeys|^hasSuffix($item|4))"];
+    XCTAssertTrue([pruned1 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(pruned1, testPruned1);
+
+    NSArray* testPruned2 = [MBExpression asObject:@"^array($(Jill Test)|$(Evan Test)|$(Debbie Test)|$(Lauren Test))"];
+    NSArray* pruned2 = [MBExpression asObject:@"^pruneMatchingLeaves($nameList|$item[species] != human)"];
+    XCTAssertTrue([pruned2 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(pruned2, testPruned2);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^pruneMatchingLeaves($testKeys)" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^pruneMatchingLeaves(notAnArray|$item)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^pruneMatchingLeaves($NULL|$item)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^pruneMatchingLeaves($testKeys|$item|foo)" error:&err];
     expectError(err);
 }
 
@@ -476,16 +503,33 @@
     //
     // test expected successes
     //
+    NSArray* testPruned1 = @[@"Key 4"];
+    NSArray* pruned1 = [MBExpression asObject:@"^pruneNonmatchingLeaves($testKeys|^hasSuffix($item|4))"];
+    XCTAssertTrue([pruned1 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(pruned1, testPruned1);
+
+    NSArray* testPruned2 = [MBExpression asObject:@"^array($(Jill Test)|$(Evan Test)|$(Debbie Test)|$(Lauren Test))"];
+    NSArray* pruned2 = [MBExpression asObject:@"^pruneNonmatchingLeaves($nameList|$item[species] == human)"];
+    XCTAssertTrue([pruned2 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(pruned2, testPruned2);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^pruneNonmatchingLeaves()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^pruneNonmatchingLeaves($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^pruneNonmatchingLeaves($NULL|$item)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^pruneNonmatchingLeaves($testKeys|$item|foo)" error:&err];
     expectError(err);
 }
 
@@ -496,16 +540,46 @@
     //
     // test expected successes
     //
+    NSDictionary* testAssoc1 = @{@"Jill": @"human", @"Evan": @"human", @"Debbie": @"human", @"Lauren": @"human", @"Daisy": @"dog", @"Barrett": @"cat"};
+    NSDictionary* assoc1 = [MBExpression asObject:@"^associate($nameMap|$key|$item[species])"];
+    XCTAssertTrue([assoc1 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(assoc1, testAssoc1);
+
+    NSDictionary* testAssoc2 = @{@"female": @[@"Jill", @"Debbie", @"Lauren", @"Daisy", @"Barrett"], @"male": @"Evan"};
+    NSDictionary* assoc2 = [MBExpression asObject:@"^associate($nameMap|$item[gender]|$key)"];
+    XCTAssertTrue([assoc2 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(assoc2[@"male"], @"Evan");
+    XCTAssertTrue([assoc2[@"female"] isKindOfClass:[NSArray class]]);
+    NSSet* namesSet = [NSSet setWithArray:assoc2[@"female"]];
+    NSSet* testNamesSet = [NSSet setWithArray:testAssoc2[@"female"]];
+    XCTAssertEqualObjects(namesSet, testNamesSet);
+
+    NSDictionary* assoc3 = [MBExpression asObject:@"^associate($nameMap|$item[species]|$item[firstName])"];
+    XCTAssertTrue([assoc3 isKindOfClass:[NSDictionary class]]);
+    XCTAssertTrue(assoc3.count == 3);
+    XCTAssertEqualObjects(assoc3[@"cat"], @"Barrett");
+    XCTAssertEqualObjects(assoc3[@"dog"], @"Daisy");
+    NSSet* testHumanSet = [NSSet setWithArray:@[@"Jill", @"Evan", @"Debbie", @"Lauren"]];
+    NSSet* humanSet = [NSSet setWithArray:assoc3[@"human"]];
+    XCTAssertEqualObjects(humanSet, testHumanSet);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^associate()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^associate($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^associate($nameMap|$item)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^associate(not an array|$key|$item)" error:&err];
     expectError(err);
 }
 
@@ -516,16 +590,45 @@
     //
     // test expected successes
     //
+    NSDictionary* testAssoc1 = @{@"Jill": @"human", @"Evan": @"human", @"Debbie": @"human", @"Lauren": @"human", @"Daisy": @"dog", @"Barrett": @"cat"};
+    NSDictionary* assoc1 = [MBExpression asObject:@"^associateWithSingleValue($nameMap|$key|$item[species])"];
+    XCTAssertTrue([assoc1 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(assoc1, testAssoc1);
+
+    NSDictionary* testAssoc2 = @{@"female": @[@"Jill", @"Debbie", @"Lauren", @"Daisy", @"Barrett"], @"male": @"Evan"};
+    NSDictionary* assoc2 = [MBExpression asObject:@"^associateWithSingleValue($nameMap|$item[gender]|$key)"];
+    XCTAssertTrue([assoc2 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(assoc2[@"male"], @"Evan");
+    XCTAssertTrue([assoc2[@"female"] isKindOfClass:[NSString class]]);
+    NSSet* testNamesSet = [NSSet setWithArray:testAssoc2[@"female"]];
+    XCTAssertTrue([testNamesSet containsObject:assoc2[@"female"]]);
+
+    NSDictionary* assoc3 = [MBExpression asObject:@"^associateWithSingleValue($nameMap|$item[species]|$item[firstName])"];
+    XCTAssertTrue([assoc3 isKindOfClass:[NSDictionary class]]);
+    XCTAssertTrue(assoc3.count == 3);
+    XCTAssertEqualObjects(assoc3[@"cat"], @"Barrett");
+    XCTAssertEqualObjects(assoc3[@"dog"], @"Daisy");
+    NSSet* testHumanSet = [NSSet setWithArray:@[@"Jill", @"Evan", @"Debbie", @"Lauren"]];
+    XCTAssertTrue([assoc3[@"human"] isKindOfClass:[NSString class]]);
+    XCTAssertTrue([testHumanSet containsObject:assoc3[@"human"]]);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^associateWithSingleValue()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^associateWithSingleValue($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^associateWithSingleValue($nameMap|$item)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^associateWithSingleValue(not an array|$key|$item)" error:&err];
     expectError(err);
 }
 
@@ -536,16 +639,70 @@
     //
     // test expected successes
     //
+    NSDictionary* testAssoc1 = @{@"Jill": @[@"human"], @"Evan": @[@"human"], @"Debbie": @[@"human"], @"Lauren": @[@"human"], @"Daisy": @[@"dog"], @"Barrett": @[@"cat"]};
+    NSDictionary* assoc1 = [MBExpression asObject:@"^associateWithArray($nameMap|$key|$item[species])"];
+    XCTAssertTrue([assoc1 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(assoc1, testAssoc1);
+
+    NSDictionary* testAssoc2 = @{@"Jill": @[@"female"], @"Evan": @[@"male"], @"Debbie": @[@"female"], @"Lauren": @[@"female"], @"Daisy": @[@"female"], @"Barrett": @[@"female"]};
+    NSDictionary* assoc2 = [MBExpression asObject:@"^associateWithArray($nameMap|$key|$item[gender])"];
+    XCTAssertTrue([assoc2 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(assoc2, testAssoc2);
+
+    NSDictionary* assoc3 = [MBExpression asObject:@"^associateWithArray($nameMap|$item[species]|$item[firstName])"];
+    XCTAssertTrue([assoc3 isKindOfClass:[NSDictionary class]]);
+    XCTAssertTrue(assoc3.count == 3);
+    XCTAssertEqualObjects(assoc3[@"cat"], @[@"Barrett"]);
+    XCTAssertEqualObjects(assoc3[@"dog"], @[@"Daisy"]);
+    NSSet* testHumanSet = [NSSet setWithArray:@[@"Jill", @"Evan", @"Debbie", @"Lauren"]];
+    NSSet* humanSet = [NSSet setWithArray:assoc3[@"human"]];
+    XCTAssertEqualObjects(humanSet, testHumanSet);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^associateWithArray()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^associateWithArray($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^associateWithArray($nameMap|$item)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^associateWithArray(not an array|$key|$item)" error:&err];
+    expectError(err);
+}
+
+- (void) testReverse
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSArray* testReversed = @[@"Four", @"Three", @"Two", @"One"];
+    NSArray* reversed = [MBExpression asObject:@"^reverse($testValues)"];
+    XCTAssertTrue([reversed isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(reversed, testReversed);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^reverse()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reverse(notAnArray)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reverse($NULL)" error:&err];
     expectError(err);
 }
 
@@ -556,16 +713,25 @@
     //
     // test expected successes
     //
+    NSArray* testKeys = [@"$testKeys" evaluateAsObject];
+    NSArray* sortedKeys = [MBExpression asObject:@"^sort(^array(Key 4|Key 3|Key 2|Key 1))"];
+    XCTAssertTrue([sortedKeys isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(sortedKeys, testKeys);
+
+    NSArray* testValues = @[@"Four", @"One", @"Three", @"Two"];
+    NSArray* sortedValues = [MBExpression asObject:@"^sort($testValues)"];
+    XCTAssertTrue([sortedValues isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(sortedValues, testValues);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^sort()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^sort(not an array)" error:&err];
     expectError(err);
 }
 
@@ -576,16 +742,44 @@
     //
     // test expected successes
     //
+    NSDictionary* testMap = [@"$testMap" evaluateAsObject];
+    NSDictionary* testData = [@"$testData" evaluateAsObject];
+    NSMutableDictionary* testMerged1 = [NSMutableDictionary new];
+    [testMerged1 addEntriesFromDictionary:testMap];
+    [testMerged1 addEntriesFromDictionary:testData];
+    NSDictionary* merged1 = [MBExpression asObject:@"^mergeDictionaries($testMap|$testData)"];
+    XCTAssertTrue([merged1 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(merged1, testMerged1);
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+
+    NSDictionary* duplicateKeys = @{@"Key 3": @"III",
+                                   @"orderNumer": @(121112) };
+    scope[@"duplicateKeys"] = duplicateKeys;
+
+    NSMutableDictionary* testMerged2 = [NSMutableDictionary new];
+    [testMerged2 addEntriesFromDictionary:testMap];
+    [testMerged2 addEntriesFromDictionary:testData];
+    [testMerged2 addEntriesFromDictionary:duplicateKeys];
+    NSDictionary* merged2 = [MBExpression asObject:@"^mergeDictionaries($testMap|$testData|$duplicateKeys)"];
+    XCTAssertTrue([merged2 isKindOfClass:[NSDictionary class]]);
+    XCTAssertEqualObjects(merged2, testMerged2);
+
+    [MBScopedVariables exitVariableScope];
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^mergeDictionaries()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^mergeDictionaries($testMap)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^mergeDictionaries($testMap|$nameList)" error:&err];
     expectError(err);
 }
 
@@ -596,16 +790,20 @@
     //
     // test expected successes
     //
+    NSArray* testUnique = [MBExpression asObject:@"^appendArrays($testKeys|$testValues)"];
+    NSArray* unique = [MBExpression asObject:@"^unique(^appendArrays($testKeys|$testValues|$testKeys|$testValues|$testKeys|$testValues))"];
+    XCTAssertTrue([unique isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(unique, testUnique);
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^unique()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^unique(notAnIterable)" error:&err];
     expectError(err);
 }
 
@@ -628,11 +826,15 @@
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^distributeArrayElements()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^distributeArrayElements($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^distributeArrayElements($nameList|2|3)" error:&err];
     expectError(err);
 }
 
@@ -657,11 +859,15 @@
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^groupArrayElements()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^groupArrayElements($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^groupArrayElements($nameList|2|3)" error:&err];
     expectError(err);
 }
 
@@ -688,11 +894,23 @@
     // test expected failures
     //
     MBExpressionError* err = nil;
-//    [MBExpression asBoolean:@"^containsValue()" error:&err];
+    [MBExpression asObject:@"^reduce()" error:&err];
     expectError(err);
 
     err = nil;
-//    [MBExpression asBoolean:@"^containsValue($nameList)" error:&err];
+    [MBExpression asObject:@"^reduce($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reduce($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reduce($NULL|0|#($currentValue + $item.length))" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reduce(notAnArray|0|#($currentValue + $item.length))" error:&err];
     expectError(err);
 }
 
