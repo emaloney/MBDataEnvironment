@@ -25,12 +25,16 @@
 
 + (id) eval:(NSString*)evalStr
 {
-    return [evalStr evaluateAsObject];
+    MBExpressionError* err = nil;
+    id result = [MBExpression asObject:evalStr error:&err];
+    return err ?: result;
 }
 
 + (id) evalBool:(NSString*)evalStr
 {
-    return [NSNumber numberWithBool:[evalStr evaluateAsBoolean]];
+    MBExpressionError* err = nil;
+    BOOL result = [MBExpression asBoolean:evalStr error:&err];
+    return err ?: @(result);
 }
 
 + (id) stripQueryString:(NSString*)toTransform
