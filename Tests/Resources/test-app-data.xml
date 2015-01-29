@@ -1,4 +1,4 @@
-<MBML version="9999012501" variant="unit-test">
+<MBML>
         
     <!-- for testing boolean short-circuiting -->
     <Function class="ExpressionEvaluatorTests" name="dataTransformerWithSideEffect" input="none"/>
