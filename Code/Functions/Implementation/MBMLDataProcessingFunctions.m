@@ -376,7 +376,7 @@ typedef enum {
     debugTrace();
     
     MBMLFunctionError *err = nil;
-    [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
+    [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
     
     NSString* delimiter = [MBExpression asString:params[0]];
