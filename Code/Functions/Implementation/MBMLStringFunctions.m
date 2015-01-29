@@ -307,9 +307,7 @@
     
     MBMLFunctionError *err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
-    if (err) return err;
     NSString *string = [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
-    if (err) return err;
     NSString *substring = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&err];
     if (err) return err;
     
@@ -337,9 +335,7 @@
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
-    if (err) return err;
     NSString* string = [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
-    if (err) return err;
     NSString* prefix = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&err];
     if (err) return err;
 
@@ -352,9 +348,7 @@
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
-    if (err) return err;
     NSString* string = [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
-    if (err) return err;
     NSString* suffix = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&err];
     if (err) return err;
     
@@ -367,9 +361,7 @@
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
-    if (err) return err;
     NSString* string = [MBMLFunction validateParameter:params isStringAtIndex:0 error:&err];
-    if (err) return err;
     NSString* contains = [MBMLFunction validateParameter:params isStringAtIndex:1 error:&err];
     if (err) return err;
     
