@@ -24,13 +24,6 @@
         <Var literal="Four"/>
     </Var>
 
-    <Var name="testValues" type="list" mutable="F">
-        <Var literal="One"/>
-        <Var literal="Two"/>
-        <Var literal="Three"/>
-        <Var literal="Four"/>
-    </Var>
-
     <Var name="testInsertRemove" type="list" mutable="F">
         <Var literal="One"/>
         <Var literal="1.5"/>
