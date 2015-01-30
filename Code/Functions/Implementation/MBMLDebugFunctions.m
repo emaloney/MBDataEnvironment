@@ -182,11 +182,11 @@
 {
     MBExpressionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:(MBMLFunctionError**)&err];
+    NSInteger repeat = [[MBMLFunction validateExpression:params containsNumberAtIndex:0 error:&err] integerValue];
     if (err) return err;
     
     id retVal = nil;
-    NSInteger repeat = [[params[0] description] integerValue];
-    NSString* expr = [params[1] description];
+    NSString* expr = params[1];
     for (NSInteger i=0; i<repeat; i++) {
         retVal = [MBExpression asObject:expr error:&err];
         if (err) {
@@ -202,11 +202,11 @@
 {
     MBExpressionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:(MBMLFunctionError**)&err];
+    NSInteger repeat = [[MBMLFunction validateExpression:params containsNumberAtIndex:0 error:&err] integerValue];
     if (err) return err;
     
     BOOL retVal = NO;
-    NSInteger repeat = [[params[0] description] integerValue];
-    NSString* expr = [params[1] description];
+    NSString* expr = params[1];
     for (NSInteger i=0; i<repeat; i++) {
         retVal = [MBExpression asBoolean:expr error:&err];
         if (err) {
