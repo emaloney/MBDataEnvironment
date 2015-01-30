@@ -114,7 +114,14 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
 
-    return @([params[0] integerValue] % [params[1] integerValue]);
+    NSInteger dividend = [params[0] integerValue];
+    NSInteger divisor = [params[1] integerValue];
+
+    if (divisor == 0) {
+        return [MBMLFunctionError errorWithMessage:@"It is mathematically irresponsible to perform the modulo operation using a divisor whose value is zero"];
+    }
+
+    return @(dividend % divisor);
 }
 
 + (id) modFloat:(NSArray*)params
@@ -125,7 +132,14 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
     [MBMLFunction validateParameter:params countIs:2 error:&err];
     if (err) return err;
 
-    return @(fmod([params[0] doubleValue], [params[1] doubleValue]));
+    double dividend = [params[0] doubleValue];
+    double divisor = [params[1] doubleValue];
+
+    if (divisor == 0) {
+        return [MBMLFunctionError errorWithMessage:@"It is mathematically irresponsible to perform the modulo operation using a divisor whose value is zero"];
+    }
+
+    return @(fmod(dividend, divisor));
 }
 
 + (id) ceil:(id)number
