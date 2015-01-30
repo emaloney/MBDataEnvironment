@@ -43,6 +43,7 @@
     <Function class="MBMLDataProcessingFunctions" name="collectionPassesTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="containsValue" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="setContains" input="pipedObjects"/>
+    <Function class="MBMLDataProcessingFunctions" name="selectFirstValue" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesPassingTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesIntersect" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="join" input="pipedObjects"/>
@@ -170,7 +171,6 @@
     <Function class="MBMLGeometryFunctions" name="pointY" input="object"/>
 
     <Function class="MBMLLogicFunctions" name="if" method="ifOperator" input="pipedExpressions"/>
-    <Function class="MBMLLogicFunctions" name="selectFirstValue" input="pipedExpressions"/>
 
     <Function class="MBMLMathFunctions" name="mod" input="pipedMath"/>
     <Function class="MBMLMathFunctions" name="modFloat" input="pipedMath"/>

@@ -42,20 +42,4 @@
     return nil;
 }
 
-+ (id) selectFirstValue:(NSArray*)params
-{
-    MBMLFunctionError* err = nil;
-    NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
-    if (err) return err;
-    
-    NSNull* null = [NSNull null];
-    for (NSUInteger i=0; i<paramCnt; i++) {
-        id value = [MBExpression asObject:params[i]];
-        if (value && value != null) {
-            return value;
-        }
-    }
-    return nil;
-}
-
 @end

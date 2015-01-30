@@ -138,6 +138,27 @@
 + (id) collectionPassesTest:(NSArray*)params;
 
 /*!
+ Selects the first non-`nil` (and non-`NSNull`) value from among two or
+ more parameters.
+
+ This Mockingbird function accepts two or more object expressions as input
+ parameters and returns the result of the first expression returning a valid 
+ value.
+
+ #### Expression usage
+
+     ^selectFirstValue($dataSource|^array())
+
+ The expression above would return the value of `$dataSource`
+ if it a non-`nil`/non-`NSNull` value; otherwise, an empty array is returned.
+ 
+ @param     params an array containing the input parameters for the function
+ 
+ @return    The result of performing the evaluations described above.
+ */
++ (id) selectFirstValue:(NSArray*)params;
+
+/*!
  Evaluates a boolean *test* expression against each value in one or more
  *collections*, and returns an array containing the collection values
  for which *test* evaluates to `true`.
