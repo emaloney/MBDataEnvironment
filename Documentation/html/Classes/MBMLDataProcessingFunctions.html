@@ -73,6 +73,10 @@
 	
 	<option value="//api/name/reduce:">&nbsp;&nbsp;&nbsp;&nbsp;+ reduce:</option>
 	
+	<option value="//api/name/reverse:">&nbsp;&nbsp;&nbsp;&nbsp;+ reverse:</option>
+	
+	<option value="//api/name/selectFirstValue:">&nbsp;&nbsp;&nbsp;&nbsp;+ selectFirstValue:</option>
+	
 	<option value="//api/name/setContains:">&nbsp;&nbsp;&nbsp;&nbsp;+ setContains:</option>
 	
 	<option value="//api/name/sort:">&nbsp;&nbsp;&nbsp;&nbsp;+ sort:</option>
@@ -121,6 +125,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Removing duplicate values">Removing duplicate values</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Reversing the contents of an array">Reversing the contents of an array</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Reducing an array of items">Reducing an array of items</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Distributing values">Distributing values</a></span></li>
@@ -166,6 +172,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneNonmatchingLeaves:">pruneNonmatchingLeaves:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reduce:">reduce:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reverse:">reverse:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectFirstValue:">selectFirstValue:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setContains:">setContains:</a></span></li>
 	
@@ -265,6 +275,12 @@ file.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/collectionPassesTest:">+&nbsp;collectionPassesTest:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectFirstValue:">+&nbsp;selectFirstValue:</a></code>
 	</span>
 	
 	
@@ -423,6 +439,20 @@ file.</p>
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/unique:">+&nbsp;unique:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Reversing the contents of an array" name="task_Reversing the contents of an array"></a>
+						<h3 class="subsubtitle task-title">Reversing the contents of an array</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reverse:">+&nbsp;reverse:</a></code>
 	</span>
 	
 	
@@ -984,7 +1014,8 @@ to an <code>NSString</code> containing the text &ldquo;<code>5</code>&rdquo;.</p
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/valuesPassingTest:">+ valuesPassingTest:</a></p></code></li>
+			<li><code><p><a href="#//api/name/valuesPassingTest:">+ valuesPassingTest:</a>, <a href="#//api/name/containsValue:">+ containsValue:</a>, <a href="#//api/name/setContains:">+ setContains:</a>,
+            <a href="#//api/name/valuesIntersect:">+ valuesIntersect:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1071,7 +1102,8 @@ to an <code>NSString</code> containing the text &ldquo;<code>5</code>&rdquo;.</p
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/setContains:">+ setContains:</a></p></code></li>
+			<li><code><p><a href="#//api/name/setContains:">+ setContains:</a>, <a href="#//api/name/collectionPassesTest:">+ collectionPassesTest:</a>, <a href="#//api/name/valuesPassingTest:">+ valuesPassingTest:</a>,
+            <a href="#//api/name/valuesIntersect:">+ valuesIntersect:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -1188,7 +1220,7 @@ the second array contains two (&ldquo;<code>Mets</code>&rdquo; and &ldquo;<code>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Filters a collection by applying a test expression against each item in the
+		<p>Filters a data model by applying a test expression against each item in the
 collection.</p>
 	</div>		
 	
@@ -1234,16 +1266,37 @@ portions of the data model.</p></li>
 <li><p>The <em>test</em>, a boolean expression used to determine which values pass through
 the filter.</p></li>
 <li><p>Finally, an optional <em>filter behavior</em>, which can be either
-<code>matchAtLeastOnce</code> or <code>matchAll</code>. Note that <strong>only</strong> these string literals are
+<code>matchAtLeastOnce</code> or <code>matchAll</code>. Note that <strong>only</strong> these text literals are
 acceptable values if this parameter is provided; this parameter is not
 evaluated as an expression. If this parameter is omitted, <code>matchAtLeastOnce</code>
 filtering behavior will be used.</p></li>
 </ul>
 
 
-<p>Because you can recurse into portions of the data model where more than
-one element may exist, the filter may iterate over multiple items for each
-top-level object, and the test expression will get applied multiple times.</p>
+<h4>Filter behaviors</h4>
+
+<p>Intermediate expressions make it possible to recurse into the data model
+to apply the test expression to values below the top level of the data model.</p>
+
+<p>As a result, when intermediate expressions are used, for any given top-level
+object, the test expression may be applied multiple times.</p>
+
+<p>The filter behavior determines when the top-level object will pass through
+the filter:</p>
+
+<ul>
+<li><p><code>matchAtLeastOnce</code>: If <em>test</em> is evaluated multiple times for a given
+top-level object, that object will pass through the filter if <em>test</em> evaluates
+to <code>true</code> at least once.</p></li>
+<li><p><code>matchAll</code>:  If <em>test</em> is evaluated multiple times for a given
+top-level object, that object will pass through the filter <strong>only</strong> if <em>test</em>
+evaluates to <code>true</code> every time.</p></li>
+</ul>
+
+
+<p>If no intermediate expressions are used, <em>test</em> will only be evaluated once for
+a given top-level object, so there is no effective difference between the
+behavior of these two options.</p>
 
 <h4>Expression usage</h4>
 
@@ -1252,10 +1305,11 @@ top-level object, and the test expression will get applied multiple times.</p>
 <pre><code>^filter($people|$item.children|$item.aunt|$item.firstName -EQ Jill|matchAll)
 </code></pre>
 
-<p>The expression above would return all the objects contained in <code>$people</code>
-where every aunt of every child of the person has the first name &ldquo;<code>Jill</code>&rdquo;. The
-<code>matchAll</code> parameter can be omitted to return every person with at least one
-child who has at least one aunt with the first name &ldquo;<code>Jill</code>&rdquo;.</p>
+<p>The expression above would return all <em>persons</em> contained in <code>$people</code> where
+every aunt of every child of the <em>person</em> has the first name &ldquo;<code>Jill</code>&rdquo;.</p>
+
+<p>The <code>matchAll</code> parameter can be omitted to return every <em>person</em> with at least
+one child who has at least one aunt with the first name &ldquo;<code>Jill</code>&rdquo;.</p>
 	</div>
 	
 	
@@ -1539,10 +1593,11 @@ between each value in the returned string.</p></li>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Iterates over (and potentially recurses into) the items in a collection object,
-and returns an <code>NSArray</code> containing a list of values. The values in the
-returned array will reflect the ordering of any arrays iterated; however,
-iterating dictionaries will result in non-deterministic ordering.</p>
+		<p>Iterates over (and potentially recurses into) the items in a collection object
+holding an arbitrary data model, and returns an <code>NSArray</code> containing a list of
+values. The values in the returned array will reflect the ordering of any
+arrays iterated; however, iterating dictionaries or sets will result in
+non-deterministic ordering.</p>
 	</div>		
 	
     
@@ -1578,7 +1633,7 @@ iterating dictionaries will result in non-deterministic ordering.</p>
 parameters:</p>
 
 <ul>
-<li><p>The <em>data model</em>, an object expression yielding collection instance to be
+<li><p>The <em>data model</em>, an object expression yielding the collection object to be
 iterated.</p></li>
 <li><p>Zero or more <em>intermediate expressions</em>, which are used to recurse
 into portions of the data model.</p></li>
@@ -1991,6 +2046,142 @@ initial value is used as <code>$currentValue</code>.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/reverse:" title="reverse:"></a>
+	<h3 class="subsubtitle method-title">reverse:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new <code>NSArray</code> by reversing the order of the items in the passed-in
+array.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)reverse:(id)<em>param</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>param</em></dt>
+			<dd><p>The function&rsquo;s input parameter.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>An array containing the reversed values of the input array.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This function accepts as a parameter a single Mockingbird object expression,
+the <em>input array</em>, which is expected to yield an <code>NSArray</code> instance.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume that <code>$animals</code> is an array with three elements: the strings &ldquo;<code>Duck</code>&rdquo;,
+&ldquo;<code>Duck</code>&rdquo; and &ldquo;<code>Goose</code>&rdquo;.</p>
+
+<pre><code>^reverse($animals)
+</code></pre>
+
+<p>The expression above would return an array containing the strings &ldquo;<code>Goose</code>&rdquo;,
+&ldquo;<code>Duck</code>&rdquo; and &ldquo;<code>Duck</code>&rdquo; in that order.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectFirstValue:" title="selectFirstValue:"></a>
+	<h3 class="subsubtitle method-title">selectFirstValue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Selects the first non-<code>nil</code> (and non-<code>NSNull</code>) value from among two or
+more parameters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (id)selectFirstValue:(NSArray *)<em>params</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>params</em></dt>
+			<dd><p>an array containing the input parameters for the function</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The result of performing the evaluations described above.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This Mockingbird function accepts two or more object expressions as input
+parameters and returns the result of the first expression returning a valid
+value.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code> ^selectFirstValue($dataSource|^array())
+</code></pre>
+
+<p>The expression above would return the value of <code>$dataSource</code>
+if it a non-<code>nil</code>/non-<code>NSNull</code> value; otherwise, an empty array is returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">MBMLDataProcessingFunctions.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/setContains:" title="setContains:"></a>
 	<h3 class="subsubtitle method-title">setContains:</h3>
 	
@@ -2062,7 +2253,8 @@ contain the value &ldquo;<code>orange</code>&rdquo;.</p>
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/containsValue:">+ containsValue:</a></p></code></li>
+			<li><code><p><a href="#//api/name/containsValue:">+ containsValue:</a>, <a href="#//api/name/collectionPassesTest:">+ collectionPassesTest:</a>, <a href="#//api/name/valuesPassingTest:">+ valuesPassingTest:</a>,
+            <a href="#//api/name/valuesIntersect:">+ valuesIntersect:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -2462,6 +2654,16 @@ share a common value: the string &ldquo;<code>Pat</code>&rdquo;.</p>
 	
 	
 	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/collectionPassesTest:">+ collectionPassesTest:</a>, <a href="#//api/name/containsValue:">+ containsValue:</a>, <a href="#//api/name/setContains:">+ setContains:</a>,
+            <a href="#//api/name/valuesPassingTest:">+ valuesPassingTest:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
 	
 	
 	<div class="method-subsection declared-in-section">
@@ -2558,7 +2760,8 @@ placed into the array returned by the function.</p>
 		<h4 class="method-subtitle">See Also</h4>
 		<ul>
 			
-			<li><code><p><a href="#//api/name/collectionPassesTest:">+ collectionPassesTest:</a></p></code></li>
+			<li><code><p><a href="#//api/name/collectionPassesTest:">+ collectionPassesTest:</a>, <a href="#//api/name/containsValue:">+ containsValue:</a>, <a href="#//api/name/setContains:">+ setContains:</a>,
+            <a href="#//api/name/valuesIntersect:">+ valuesIntersect:</a></p></code></li>
 			
 		</ul>
 	</div>
@@ -2590,7 +2793,7 @@ placed into the array returned by the function.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

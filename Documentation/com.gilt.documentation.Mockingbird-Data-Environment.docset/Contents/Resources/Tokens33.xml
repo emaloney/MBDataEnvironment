@@ -37,7 +37,7 @@ results, and values of other types, such as:</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a CGPoint value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGPoint)pointFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (CGPoint)pointFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -61,7 +61,7 @@ results, and values of other types, such as:</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGPoint.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGPoint)pointFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (CGPoint)pointFromObject:(id)obj error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -143,7 +143,7 @@ pointFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a CGSize value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (CGSize)sizeFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -167,7 +167,7 @@ pointFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGSize.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (CGSize)sizeFromObject:(id)obj error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -249,7 +249,7 @@ sizeFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a CGRect value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (CGRect)rectFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -273,7 +273,7 @@ sizeFromString:.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a CGRect.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (CGRect)rectFromObject:(id)obj error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -450,7 +450,7 @@ and height dimensions of the rectangle.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIOffset value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIOffset)offsetFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -474,7 +474,7 @@ and height dimensions of the rectangle.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a UIOffset.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIOffset)offsetFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIOffset)offsetFromObject:(id)obj error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -538,7 +538,7 @@ UIOffset value using the offsetFromObject:error: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIEdgeInsets value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -562,7 +562,7 @@ UIOffset value using the offsetFromObject:error: method.</Abstract>
 			<Abstract type="html">Attempts to interpret an arbitrary object value as a UIEdgeInsets.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIEdgeInsets)edgeInsetsFromObject:(id)obj error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIEdgeInsets)edgeInsetsFromObject:(id)obj error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -627,7 +627,7 @@ UIEdgeInsets value using the edgeInsetsFromObject:error: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIColor value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIColor *)colorFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIColor *)colorFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -693,7 +693,7 @@ UIColor value using the colorFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as an NSLineBreakMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (NSLineBreakMode)lineBreakModeFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -758,7 +758,7 @@ NSLineBreakMode value using the lineBreakModeFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as an NSTextAlignment value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (NSTextAlignment)textAlignmentFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -823,7 +823,7 @@ NSTextAlignment value using the textAlignmentFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIScrollViewIndicatorStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIScrollViewIndicatorStyle)scrollViewIndicatorStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -889,7 +889,7 @@ scrollViewIndicatorStyleFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIActivityIndicatorViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIActivityIndicatorViewStyle)activityIndicatorViewStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -955,7 +955,7 @@ activityIndicatorViewStyleFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIButtonType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIButtonType)buttonTypeFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1021,7 +1021,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as an NSDateFormatterStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (NSDateFormatterStyle)dateFormatterStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1087,7 +1087,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITextBorderStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UITextBorderStyle)textBorderStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1153,7 +1153,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewStyle)tableViewStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1219,7 +1219,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewCellStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewCellStyle)tableViewCellStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1292,7 +1292,7 @@ but adds the value MBTableViewCellSelectionStyleGradient to represent a
 custom cell selection style using a gradient.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (MBTableViewCellSelectionStyle)tableViewCellSelectionStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1358,7 +1358,7 @@ tableViewCellSelectionStyleFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewCellAccessoryType value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewCellAccessoryType)tableViewCellAccessoryTypeFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1424,7 +1424,7 @@ tableViewCellAccessoryTypeFromString: method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UITableViewRowAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UITableViewRowAnimation)tableViewRowAnimationFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1490,7 +1490,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIControlState value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIControlState)controlStateFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1556,7 +1556,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIViewAnimationOptions value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIViewAnimationOptions)viewAnimationOptionsFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1621,7 +1621,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIModalTransitionStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIModalTransitionStyle)modalTransitionStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1687,7 +1687,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIViewContentMode value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIViewContentMode)viewContentModeFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1752,7 +1752,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIBarStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIBarStyle)barStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1817,7 +1817,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIBarButtonSystemItem value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIBarButtonSystemItem)barButtonSystemItemFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1882,7 +1882,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIBarButtonItemStyle value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIBarButtonItemStyle)barButtonItemStyleFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -1947,7 +1947,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIStatusBarAnimation value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIStatusBarAnimation)statusBarAnimationFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>
@@ -2012,7 +2012,7 @@ method.</Abstract>
 			<Abstract type="html">Attempts to interpret a string as a UIPopoverArrowDirection value.</Abstract>
 			<DeclaredIn>MBStringConversions.h</DeclaredIn>
 			
-			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (UIPopoverArrowDirection)popoverArrowDirectionFromString:(NSString *)str error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>str</Name>

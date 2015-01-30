@@ -18,7 +18,7 @@
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/setContains:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesIntersect:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
@@ -41,7 +41,7 @@
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/containsValue:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesIntersect:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
@@ -66,7 +66,7 @@ for every item in the collection.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesPassingTest:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesIntersect:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
@@ -84,6 +84,24 @@ for every item in the collection.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/selectFirstValue:</TokenIdentifier>
+			<Abstract type="html">Selects the first non-nil (and non-NSNull) value from among two or
+more parameters.</Abstract>
+			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)selectFirstValue:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">an array containing the input parameters for the function</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of performing the evaluations described above.</Abstract></ReturnValue>
+			<Anchor>//api/name/selectFirstValue:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesPassingTest:</TokenIdentifier>
 			<Abstract type="html">Evaluates a boolean test expression against each value in one or more
 collections, and returns an array containing the collection values
@@ -91,7 +109,7 @@ for which test evaluates to true.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/collectionPassesTest:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesIntersect:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
@@ -113,6 +131,11 @@ for which test evaluates to true.</Abstract>
 			<Abstract type="html">Tests whether two collections share at least one value in common.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/valuesPassingTest:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<Declaration>+ (id)valuesIntersect:(NSArray *)params</Declaration>
 			<Parameters>
 				<Parameter>
@@ -300,7 +323,7 @@ is then returned in an array.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/filter:</TokenIdentifier>
-			<Abstract type="html">Filters a collection by applying a test expression against each item in the
+			<Abstract type="html">Filters a data model by applying a test expression against each item in the
 collection.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
@@ -320,10 +343,11 @@ collection.</Abstract>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/list:</TokenIdentifier>
-			<Abstract type="html">Iterates over (and potentially recurses into) the items in a collection object,
-and returns an NSArray containing a list of values. The values in the
-returned array will reflect the ordering of any arrays iterated; however,
-iterating dictionaries will result in non-deterministic ordering.</Abstract>
+			<Abstract type="html">Iterates over (and potentially recurses into) the items in a collection object
+holding an arbitrary data model, and returns an NSArray containing a list of
+values. The values in the returned array will reflect the ordering of any
+arrays iterated; however, iterating dictionaries or sets will result in
+non-deterministic ordering.</Abstract>
 			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
 			
 			<Declaration>+ (id)list:(NSArray *)params</Declaration>
@@ -446,6 +470,24 @@ array containing the unique values encountered.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">An array containing the unique values in the input collection.</Abstract></ReturnValue>
 			<Anchor>//api/name/unique:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDataProcessingFunctions/reverse:</TokenIdentifier>
+			<Abstract type="html">Returns a new NSArray by reversing the order of the items in the passed-in
+array.</Abstract>
+			<DeclaredIn>MBMLDataProcessingFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)reverse:(id)param</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array containing the reversed values of the input array.</Abstract></ReturnValue>
+			<Anchor>//api/name/reverse:</Anchor>
             <NodeRef refid="14"/>
 		</Token>
 		

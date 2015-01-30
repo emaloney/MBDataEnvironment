@@ -29,24 +29,6 @@
             <NodeRef refid="24"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/MBMLLogicFunctions/selectFirstValue:</TokenIdentifier>
-			<Abstract type="html">Selects the first non-nil (and non-NSNull) value from among two or
-more parameters.</Abstract>
-			<DeclaredIn>MBMLLogicFunctions.h</DeclaredIn>
-			
-			<Declaration>+ (id)selectFirstValue:(NSArray *)params</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>params</Name>
-					<Abstract type="html">an array containing the input parameters for the function</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The result of performing the evaluations described above.</Abstract></ReturnValue>
-			<Anchor>//api/name/selectFirstValue:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
         
 	</File>
 </Tokens>

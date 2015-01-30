@@ -37,7 +37,7 @@ to the console, and then returns the result.</Abstract>
 to the console, and then returns the result.</Abstract>
 			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSNumber *)test:(NSString *)expr</Declaration>
+			<Declaration>+ (id)test:(NSString *)expr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -56,7 +56,7 @@ to the console, and then returns the result.</Abstract>
 to the console, and then returns the string description of the result.</Abstract>
 			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)dump:(NSString *)expr</Declaration>
+			<Declaration>+ (id)dump:(NSString *)expr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>

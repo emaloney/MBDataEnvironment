@@ -195,7 +195,7 @@ the exact same attributes and relatives as the receiver.</Abstract>
 			<Abstract type="html">A convenience method for parsing an XML document from a file.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (RXMLElement *)xmlFromFile:(NSString *)filePath error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (RXMLElement *)xmlFromFile:(NSString *)filePath error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -216,7 +216,7 @@ the exact same attributes and relatives as the receiver.</Abstract>
 			<Abstract type="html">A convenience method for parsing an XML document from an NSData instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (RXMLElement *)xmlFromData:(NSData *)xmlData error:(out NSError **)errPtr</Declaration>
+			<Declaration>+ (RXMLElement *)xmlFromData:(NSData *)xmlData error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>
@@ -274,7 +274,7 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)filePath error:(out NSError **)errPtr</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)filePath error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -314,7 +314,7 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(NSData *)xmlData error:(out NSError **)errPtr</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(NSData *)xmlData error:(inout NSError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>

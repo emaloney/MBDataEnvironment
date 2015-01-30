@@ -246,7 +246,7 @@ as an object expression.</Abstract>
 			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
 			
 	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/array:</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/setWithArray:</TokenIdentifier>
 		
 	</RelatedTokens>
 	
@@ -259,6 +259,28 @@ as an object expression.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A set containing the value of each input parameter expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/set:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/setWithArray:</TokenIdentifier>
+			<Abstract type="html">Returns an NSSet containing the same elements as the passed-in array.</Abstract>
+			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/set:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)setWithArray:(id)array</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>array</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A set containing the values of the passed-in array.</Abstract></ReturnValue>
+			<Anchor>//api/name/setWithArray:</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

@@ -220,302 +220,8 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>This class is responsible for evaluating Mockingbird expressions.</p>
 
-<p>Mockingbird expressions are strings that can contain:</p>
-
-<ul>
-<li>string literals</li>
-<li>numeric literals</li>
-<li>references to variables, which can be of any Objective-C type</li>
-<li>simple mathematical expressions</li>
-<li>logical</li>
-</ul>
-
-
-<p>are string-based expressions that, when evaluated, can
-result in one of the following types:</p>
-
-<ul>
-<li>arbitrary Objective-C objects (via the <a href="#//api/name/asObject:"><code>asObject:</code></a> method variants)</li>
-<li>strings (via the <a href="#//api/name/asString:"><code>asString:</code></a> method variants)</li>
-<li>numbers (via the <a href="#//api/name/asNumber:"><code>asNumber:</code></a> method variants)</li>
-<li>boolean values (via the <a href="#//api/name/asBoolean:"><code>asBoolean:</code></a> method variants), and</li>
-<li>arrays of Objective-C objects (via the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants)</li>
-</ul>
-
-
-<p>One use of a Mockingbird expression might be to perform string replacement
-when populating user interface views, such as <code>UILabel</code>s.</p>
-
-<p>For example:</p>
-
-<pre><code>UILabel* greeting = // created elsewhere
-greeting.text = [MBExpression asString:@"Hello, $userName!"];
-</code></pre>
-
-<p>In the code above, the <code>text</code> property of the <code>greeting</code> label will be set
-to the result of the expression &ldquo;<code>Hello, $userName!</code>&rdquo;.</p>
-
-<p>This particular expression consists of three parts: a string literal
-(&ldquo;<code>Hello,</code>&rdquo;) followed by a reference to a Mockingbird variable called
-<code>userName</code>, followed by another string literal (&ldquo;<code>!</code>&rdquo;).</p>
-
-<p>When the expression is evaluated, the &ldquo;<code>$userName</code>&rdquo; portion of the expression
-is replaced by the value of the <code>userName</code> <em>variable</em>.</p>
-
-<p>If the value of <code>userName</code> is &ldquo;<code>Cooper</code>&rdquo;, then the label would display the
-text &ldquo;<code>Hello, Cooper!</code>&rdquo;.</p>
-
-<p>Notice that the portions of the expression that consist of literals are not
-evaluated; they are included in the result in the same form that they
-appear in the original expression.</p>
-
-<h3>MBML Functions</h3>
-
-<p>In addition to referencing variables, expressions can also cause native
-Objective-C code to be executed.</p>
-
-<p>For example:</p>
-
-<pre><code>UILabel* time = // created elsewhere
-time.text = [MBExpression asString:@"The time now is ^currentTime()"];
-</code></pre>
-
-<p>In the expression shown above, the <code>text</code> property of the <code>time</code> label
-is set using a string literal and the value yielded by the <em>MBML function</em>
-called <code>^currentTime()</code>.</p>
-
-<p>When placed onscreen, such a label might look like:</p>
-
-<pre><code>The time now is 2015-01-26 21:45:40 +0000
-</code></pre>
-
-<p>Many functions take one or more parameters; when multiple parameters are
-passed to a function, the pipe character (&ldquo;<code>|</code>&rdquo;) is used as the parameter
-separator.</p>
-
-<p>Parameters may consist of literals, variable references, or other function
-calls. For example, if the label&rsquo;s <code>text</code> were set using the expression:</p>
-
-<pre><code>The time now is ^formatMediumDateTime(^currentTime())
-</code></pre>
-
-<p>The label&rsquo;s content might look like:</p>
-
-<pre><code>The time now is Jan 26, 2015, 4:45:40 PM
-</code></pre>
-
-<p>(The exact output of the example above depends on the user&rsquo;s locale settings
-and, of course, the actual date and time.)</p>
-
-<p>For more information on MBML functions, see the documentation for the
-<a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
-
-<p><strong>MBML Identifiers</strong></p>
-
-<p>When parsing a string of text, the expression evaluator looks for certain
-text patterns to identify variable references and function calls.</p>
-
-<p>MBML identifiers are names that begin with either an alphabetical character
-or an underscore (&ldquo;<code>_</code>&rdquo;), followed by zero or more characters that may also
-include digits and colons. Alphabetical identifier characters may be either
-uppercase or lowercase. Identifiers may contain a mix of cases.</p>
-
-<p>Variable references always start with a dollar sign (&ldquo;<code>$</code>&rdquo;) and must
-include an MBML variable name. Usually—but not always—MBML variable
-names adhere to the MBML identifier format. (The quoting mechanisms listed
-below allow access to variables whose names don&rsquo;t adhere to the MBML
-identifier format.)</p>
-
-<p>Function calls always start with a caret (&ldquo;<code>^</code>&rdquo;), followed by an MBML
-identifier, followed by an open parenthesis (&ldquo;<code>(</code>&rdquo;), a list of zero or more
-parameters separated by the pipe character (&ldquo;<code>|</code>&rdquo;), followed by a close
-parenthesis (&ldquo;<code>)</code>&rdquo;).</p>
-
-<p><strong>Escaping Special Characters</strong></p>
-
-<p>Within an expression, you may sometimes want to use characters within a
-string literal that would otherwise be interpreted as part of an expression.</p>
-
-<p>The following escape sequences can be used:</p>
-
-<ul>
-<li><code>$$</code> — Yields a single dollar sign</li>
-<li><code>^^</code> — Yields a single caret</li>
-<li><code>##</code> — Yields a single hash mark (aka pound sign)</li>
-<li><code>\n</code> — Yields a newline</li>
-</ul>
-
-
-<p><strong>Variable Reference Syntax</strong></p>
-
-<p>MBML variable names can be arbitrary strings, although using the simplest
-variable reference notation requires the variable name to be a valid
-MBML identifier.</p>
-
-<p>Variable references may also contain <em>subreferences</em>. A subreference is
-a reference to a value within a container object. Typical containers include
-arrays and dictionaries, but subreferences can also be used to access
-properties of any Objective-C object through key value coding.</p>
-
-<p>For example, if an MBML variable exists called <code>daysOfWeek</code>, and that
-variable is an array containing the names of the days of the week starting
-with Monday, the following expression would yield the value &ldquo;Wednesday&rdquo;:</p>
-
-<pre><code>$daysOfWeek[2]
-</code></pre>
-
-<p>Similarly, if an MBML variable exists called <code>monthNamesToNumbers</code>, and that
-variable is a dictionary containing a mapping of month names to the
-corresponding number of the month, the following expression would result
-in the number <code>10</code>:</p>
-
-<pre><code>$monthNamesToNumbers[October]
-</code></pre>
-
-<p>Lastly, any Objective-C property value can be accessed using the dot
-notation:</p>
-
-<pre><code>$userName.length
-</code></pre>
-
-<p>would result in the length of the string contained in the MBML variable
-<code>userName</code>.</p>
-
-<p>Bracket subreferences can be used for accessing values within an array or
-dictionary. Dot subreferences can be used to access values stored within a
-dictionary or made available through Objective-C properties and key value
-coding.</p>
-
-<p><strong>Variable Reference Quoting</strong></p>
-
-<p>The <code>$userName</code> variable reference shown above is an example of the most basic
-notation, called the <em>unquoted variable notation</em>, wherein <code>userName</code> is
-an MBML identifier.</p>
-
-<p>Alternate <em>quoted</em> forms of variable references make use of delimiters
-surrounding the variable name to provide different behavior. There are three
-quoted variable notations:</p>
-
-<ul>
-<li><p><em>curly-brace quoted</em>, which prevents characters after the closing curly
-brace from being interpreted as part of the variable reference</p></li>
-<li><p><em>bracket quoted</em>, which allows the use of variable names that aren&rsquo;t
-valid MBML identifiers</p></li>
-<li><p><em>parentheses quoted</em>, which is similar to bracket-quoted in that it allows
-the use of variable names that aren&rsquo;t valid MBML identifiers, but that like
-the curly-brace quoted notation, prevents characters after the closing
-delimiter from being interpreted as part of the variable reference</p></li>
-</ul>
-
-
-<p><strong>Curly-Brace Quoted Variable References</strong></p>
-
-<p>The expressions <code>$userName</code> and <code>${userName}</code> are equivalent, but they can
-behave differently if embedded within string literals.</p>
-
-<p>Let&rsquo;s say you have an MBML variable called <code>lastName</code> that contained a person&rsquo;s
-surname, and you want to construct a message such as &ldquo;How are the Maloneys
-doing?&rdquo; that refers to the surname in the plural form.</p>
-
-<p>You couldn&rsquo;t use the unquoted notation (eg., &ldquo;<code>How are the $lastNames doing?</code>&rdquo;)
-because the &ldquo;<code>s</code>&rdquo; at the end of <code>$lastName</code> would be interpreted as part of
-the variable name. Instead of referencing the variable <code>lastName</code> followed by
-the text character &ldquo;<code>s</code>&rdquo;, you&rsquo;re actually referencing an entirely different
-variable called <code>lastNames</code>, which is not what you want.</p>
-
-<p>Using the curly-brace notation allows you to separate the variable reference
-from any surrounding text that you want to remain a literal string. So, the
-expression:</p>
-
-<pre><code>How are the ${lastName}s doing?
-</code></pre>
-
-<p>is interpreted as the text literal &ldquo;<code>How are the</code>&rdquo; followed by a reference
-to the MBML variable <code>lastName</code>, followed by another text literal,
-&ldquo;<code>s doing?</code>&rdquo;.</p>
-
-<p>Note that the variable name contained within the curly-brace quoted notation
-must be a valid MBML identifier.</p>
-
-<p><strong>Bracket Quoted Variable References</strong></p>
-
-<p>Bracket quoted variable references allow you to access MBML variables whose
-names are not valid MBML identifiers.</p>
-
-<p>For example, spaces are not valid MBML identifier characters. When the
-expression evaluator encounters a space while interpreting a variable name,
-it assumes that the space signals the end of the variable name.</p>
-
-<p>But because MBML variables can be set programmatically within Objective-C or
-can be introduced by external backend systems that don&rsquo;t conform to MBML
-variable naming syntax, the bracket quoted notation provides a mechanism for
-accessing these variables.</p>
-
-<p>When evaluated, the expression:</p>
-
-<pre><code>$[total$]
-</code></pre>
-
-<p>would yield the current value of an MBML variable named <code>total$</code>.</p>
-
-<p>Using the bracket notation allows subreferences after the closing bracket.
-Assuming the MBML variable <code>total$</code> is a string, the following expression
-would yield the length of the string:</p>
-
-<pre><code>$[total$].length
-</code></pre>
-
-<p><strong>Parentheses Quoted Variable References</strong></p>
-
-<p>As with bracket quoted references, parentheses quoted references allow
-access to MBML variables whose names are not valid MBML identifiers. And
-like curly-brace quoted references, parentheses quoted references allow
-variable references to be embedded within text literals that would otherwise
-be interpreted as part of the variable reference.</p>
-
-<p>For example, consider these two expressions:</p>
-
-<pre><code>$[total$].length
-$(total$).length
-</code></pre>
-
-<p>The top expression uses the bracket quoted notation, which allows
-subreferences after the closing bracket. The bottom expression uses
-the parentheses quoted notation, which does not allow subreferences.</p>
-
-<p>Because subreferences are not allowed by the parentheses notation, any
-text that appears after the closing parenthesis will be considered the
-start of a new statement. In this case, since &ldquo;<code>.length</code>&rdquo; is not a valid
-variable reference, function call, or math expression, it is interpreted
-as a text literal by the expression evaluator.</p>
-
-<p>So while <code>$[total$].length</code> will return the length of the MBML
-variable called <code>total$</code>, <code>$(total$).length</code> will return
-the value of the MBML variable <code>total$</code> followed by the string
-literal &ldquo;<code>.length</code>&rdquo;.</p>
-
-<p><strong>Math Notation</strong></p>
-
-<p>MBML allows a simple math expressions. The addition (&ldquo;<code>+</code>&rdquo;), subtraction
-(&ldquo;<code>-</code>&rdquo;), multiplication (&ldquo;<code>*</code>&rdquo;) and division (&ldquo;<code>/</code>&rdquo;) operators are supported.
-In addition, the MBML math notation allows parenthetical grouping within
-expressions. Unless parentheses are used to change the order of evaluation
-of math operators, C language operator precedence is used.</p>
-
-<p>Math expressions can be embedded in a string or object evaluation context
-by placing the expression within <code>#(</code> &hellip; <code>)</code>. In a numeric context, the
-opening <code>#(</code> and closing <code>)</code> can be omitted.</p>
-
-<p>For example, suppose the MBML variable <code>states</code> is an array containing the
-name of each state in the United States. The label:</p>
-
-<pre><code>&lt;Label text="There are #($states.count * 2) U.S. Senators" ... /&gt;
-</code></pre>
-
-<p>would output &ldquo;There are 100 U.S. Senators&rdquo;.</p>
-
-<p><strong>Important:</strong> Within math expressions, operators <strong>must</strong> be surrounded by
-whitespace.</p>
+<p>See the documentation for the Mockingbird Data Environment for information
+on how to construct valid expressions.</p>
 					</div>
 					
 					
@@ -814,7 +520,7 @@ an array.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -884,7 +590,7 @@ an array.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1070,7 +776,7 @@ encountered while evaluating the passed-in expression, and returns an
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1130,7 +836,7 @@ encountered while evaluating the passed-in expression, and returns an
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1327,7 +1033,7 @@ into a number if necessary (and possible).</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1393,7 +1099,7 @@ into a number if necessary (and possible).</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1629,7 +1335,7 @@ may be used if the expression references more than one value.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1712,7 +1418,7 @@ may be used if the expression references more than one value.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1916,7 +1622,7 @@ single string.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -1975,7 +1681,7 @@ single string.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(out MBExpressionError **)<em>errPtr</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
 
     
 	
@@ -2331,7 +2037,7 @@ objects have equal values.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-27)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-30)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

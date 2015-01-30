@@ -34,7 +34,7 @@
 			<Abstract type="html">Evaluates the given expression in the string context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)asString:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)asString:(NSString *)expr error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -78,7 +78,7 @@
 			<Abstract type="html">Evaluates the given expression in the string context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)asString:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSString *)def error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSString *)asString:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSString *)def error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -130,7 +130,7 @@ may be used if the expression references more than one value.</Abstract>
 may be used if the expression references more than one value.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (id)asObject:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (id)asObject:(NSString *)expr error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -176,7 +176,7 @@ may be used if the expression references more than one value.</Abstract>
 may be used if the expression references more than one value.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (id)asObject:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (id)asObject:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(id)def error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -231,7 +231,7 @@ interpolation. Discrete values within the expression are returned as items in
 an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)asArray:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -257,7 +257,7 @@ interpolation. Discrete values within the expression are returned as items in
 an array.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)asArray:(NSString *)expr inVariableSpace:(MBVariableSpace *)space error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSArray *)asArray:(NSString *)expr inVariableSpace:(MBVariableSpace *)space error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -307,7 +307,7 @@ into a number if necessary (and possible).</Abstract>
 into a number if necessary (and possible).</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -355,7 +355,7 @@ into a number if necessary (and possible).</Abstract>
 into a number if necessary (and possible).</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSDecimalNumber *)def error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (NSDecimalNumber *)asNumber:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(NSDecimalNumber *)def error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -407,7 +407,7 @@ into a number if necessary (and possible).</Abstract>
 			<Abstract type="html">Evaluates the given expression in the boolean context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)asBoolean:(NSString *)expr error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>
@@ -453,7 +453,7 @@ into a number if necessary (and possible).</Abstract>
 			<Abstract type="html">Evaluates the given expression in the boolean context.</Abstract>
 			<DeclaredIn>MBExpression.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)asBoolean:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(BOOL)def error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>+ (BOOL)asBoolean:(NSString *)expr inVariableSpace:(MBVariableSpace *)space defaultValue:(BOOL)def error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>expr</Name>

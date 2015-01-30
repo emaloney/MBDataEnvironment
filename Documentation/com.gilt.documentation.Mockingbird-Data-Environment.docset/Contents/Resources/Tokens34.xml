@@ -128,7 +128,7 @@
 			<Abstract type="html">Returns the initial value of the variable in the given variable space.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>- (id)initialValueInVariableSpace:(MBVariableSpace *)space error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>- (id)initialValueInVariableSpace:(MBVariableSpace *)space error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>space</Name>
@@ -151,7 +151,7 @@
 			<Abstract type="html">Returns the current value of the variable in the given variable space.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>- (id)currentValueInVariableSpace:(MBVariableSpace *)space error:(out MBExpressionError **)errPtr</Declaration>
+			<Declaration>- (id)currentValueInVariableSpace:(MBVariableSpace *)space error:(inout MBExpressionError **)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>space</Name>

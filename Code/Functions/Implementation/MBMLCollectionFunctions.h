@@ -344,7 +344,7 @@
  
  would return an `NSSet` containing the strings "`One`", "`2`", and "`III`".
 
- @param     param The function's input parameter.
+ @param     array The function's input parameter.
  
  @return    A set containing the values of the passed-in array.
 
