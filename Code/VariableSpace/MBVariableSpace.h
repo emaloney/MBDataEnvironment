@@ -64,7 +64,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             variable with the given name or if there was an error retrieving
             the variable's value.
  */
-- (id) variableForName:(NSString*)varName;
+- (id) variableForName:(NSString*)varName __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for retrieving MBVariableSpace values")));
 
 /*!
  Returns the current value for the variable with the given name, or a 
@@ -79,7 +79,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             the given name or if there was an error retrieving the variable's 
             value.
  */
-- (id) variableForName:(NSString*)varName defaultValue:(id)def;
+- (id) variableForName:(NSString*)varName defaultValue:(id)def __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for retrieving MBVariableSpace values")));
 
 /*!
  Returns the current string value of the variable with the given name.
@@ -130,7 +130,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @param     val The value to set for the variable named `varName`. If this
             is `nil`, the variable `varName` will be unset.
  */
-- (void) setVariable:(NSString*)varName value:(id)val;
+- (void) setVariable:(NSString*)varName value:(id)val __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for setting MBVariableSpace values")));
 
 /*!
  Pushes a new value onto the stack for the variable with the given name.
@@ -369,7 +369,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  
  For example, the following expression:
  
-    [MBVariableSpace instance][@"email"]
+    [MBVariableSpace instance][@"email"];
  
  would yield the value of the MBML variable named `email`.
  
@@ -386,7 +386,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  
  For example, the following expression:
  
-    [MBVariableSpace instance][@"title"] = @"MBML"
+    [MBVariableSpace instance][@"title"] = @"MBML";
 
  would set the MBML variable named `title` to the string "`MBML`".
  

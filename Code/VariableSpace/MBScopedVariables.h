@@ -147,7 +147,7 @@
  
  @param     val The variable value.
  */
-- (void) setScopedVariable:(NSString*)varName value:(id)val;
+- (void) setScopedVariable:(NSString*)varName value:(id)val  __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for setting scoped variable values")));
 
 /*!
  Removes from the receiver's `variableSpace` all variables set using the scope.
@@ -178,7 +178,7 @@
 
  For example, the following expression:
 
- [MBScopedVariables currentVariableScope][@"tempVar"]
+ [MBScopedVariables currentVariableScope][@"tempVar"];
 
  would yield the in-scope value of the MBML variable named `tempVar`.
 
@@ -195,7 +195,7 @@
 
  For example, the following expression:
 
- [MBScopedVariables currentVariableScope][@"tempVar"] = @"will go away"
+ [MBScopedVariables currentVariableScope][@"tempVar"] = @"will go away";
 
  would set the in-scope value of the MBML variable named `tempVar` to the
  string "`will go away`".
