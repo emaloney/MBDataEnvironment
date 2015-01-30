@@ -306,16 +306,28 @@
     //
     // test expected successes
     //
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    for (NSUInteger i=0; i<paths.count; i++) {
+        scope[@"testDirectory"] = [paths[i] stringByDeletingLastPathComponent];
+        NSArray* dirList = [MBExpression asObject:@"^listDirectory($testDirectory)"];
+        XCTAssertTrue([dirList isKindOfClass:[NSArray class]]);
+        XCTAssertTrue(dirList.count >= 1);
+        XCTAssertTrue([dirList containsObject:[paths[i] lastPathComponent]]);
+    }
+    [MBScopedVariables exitVariableScope];
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
+    [MBExpression asBoolean:@"^listDirectory()" error:&err];
     expectError(err);
 
     err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
+    [MBExpression asBoolean:@"^listDirectory($NULL)" error:&err];
     expectError(err);
 }
 
@@ -326,17 +338,23 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"testFilePaths"] = paths;
+    BOOL exists = [MBExpression asBoolean:@"^fileExists($testFilePaths[0])"];
+    XCTAssertTrue(exists);
+    exists = [MBExpression asBoolean:@"^fileExists($testFilePaths[1])"];
+    XCTAssertTrue(exists);
+    exists = [MBExpression asBoolean:@"^fileExists(/tmp/foo/should-not-exist.txt)"];
+    XCTAssertFalse(exists);
+    exists = [MBExpression asBoolean:@"^fileExists()"];
+    XCTAssertFalse(exists);
+    [MBScopedVariables exitVariableScope];
 }
 
 - (void) testFileIsReadable
@@ -346,17 +364,23 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"testFilePaths"] = paths;
+    BOOL readable = [MBExpression asBoolean:@"^fileIsReadable($testFilePaths[0])"];
+    XCTAssertTrue(readable);
+    readable = [MBExpression asBoolean:@"^fileIsReadable($testFilePaths[1])"];
+    XCTAssertTrue(readable);
+    readable = [MBExpression asBoolean:@"^fileIsReadable(/tmp/foo/should-not-exist.txt)"];
+    XCTAssertFalse(readable);
+    readable = [MBExpression asBoolean:@"^fileIsReadable()"];
+    XCTAssertFalse(readable);
+    [MBScopedVariables exitVariableScope];
 }
 
 - (void) testFileIsWritable
@@ -366,17 +390,23 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"testFilePaths"] = paths;
+    BOOL writable = [MBExpression asBoolean:@"^fileIsWritable($testFilePaths[0])"];
+    XCTAssertTrue(writable);
+    writable = [MBExpression asBoolean:@"^fileIsWritable($testFilePaths[1])"];
+    XCTAssertTrue(writable);
+    writable = [MBExpression asBoolean:@"^fileIsWritable(/tmp/foo/should-not-exist.txt)"];
+    XCTAssertFalse(writable);
+    writable = [MBExpression asBoolean:@"^fileIsWritable()"];
+    XCTAssertFalse(writable);
+    [MBScopedVariables exitVariableScope];
 }
 
 - (void) testFileIsDeletable
@@ -386,17 +416,21 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"testFilePaths"] = paths;
+    BOOL deletable = [MBExpression asBoolean:@"^fileIsDeletable($testFilePaths[0])"];
+    XCTAssertTrue(deletable);
+    deletable = [MBExpression asBoolean:@"^fileIsDeletable($testFilePaths[1])"];
+    XCTAssertTrue(deletable);
+    deletable = [MBExpression asBoolean:@"^fileIsDeletable(/)"];
+    XCTAssertFalse(deletable);
+    [MBScopedVariables exitVariableScope];
 }
 
 - (void) testIsDirectoryAtPath
@@ -406,17 +440,25 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"testFilePaths"] = paths;
+    BOOL isDir = [MBExpression asBoolean:@"^isDirectoryAtPath($testFilePaths[0])"];
+    XCTAssertFalse(isDir);
+    isDir = [MBExpression asBoolean:@"^isDirectoryAtPath($testFilePaths[1])"];
+    XCTAssertFalse(isDir);
+    isDir = [MBExpression asBoolean:@"^isDirectoryAtPath(/)"];
+    XCTAssertTrue(isDir);
+    isDir = [MBExpression asBoolean:@"^isDirectoryAtPath(^stripLastPathComponent($testFilePaths[0]))"];
+    XCTAssertTrue(isDir);
+    isDir = [MBExpression asBoolean:@"^isDirectoryAtPath(^stripLastPathComponent($testFilePaths[1]))"];
+    XCTAssertTrue(isDir);
+    [MBScopedVariables exitVariableScope];
 }
 
 - (void) testSizeOfFile
@@ -426,16 +468,42 @@
     //
     // test expected successes
     //
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    for (NSUInteger i=0; i<paths.count; i++) {
+        scope[@"testFile"] = paths[i];
+        NSNumber* sizeNum = [MBExpression asNumber:@"^sizeOfFile($testFile)"];
+        XCTAssertTrue([sizeNum isKindOfClass:[NSNumber class]]);
+        unsigned long long size = [sizeNum unsignedLongLongValue];
+        XCTAssertTrue(size > 0);
+        if ([[paths[i] lastPathComponent] isEqualToString:@"test-app-data.xml"]) {
+            XCTAssertEqual(size, 7117);     // unit test will fail if file size changes; will need to keep this up-to-date
+        }
+        else if ([[paths[i] lastPathComponent] isEqualToString:@"MBDataEnvironmentModule.xml"]) {
+            XCTAssertEqual(size, 17009);    // unit test will fail if file size changes; will need to keep this up-to-date
+        }
+    }
+    [MBScopedVariables exitVariableScope];
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
+    [MBExpression asNumber:@"^sizeOfFile()" error:&err];
     expectError(err);
 
     err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
+    [MBExpression asNumber:@"^sizeOfFile($nameList)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"^sizeOfFile($NULL)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"^sizeOfFile(/tmp/foo/nonexistent-file.xml)" error:&err];
     expectError(err);
 }
 
@@ -446,16 +514,39 @@
     //
     // test expected successes
     //
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    for (NSUInteger i=0; i<paths.count; i++) {
+        scope[@"testFile"] = paths[i];
+        NSData* data = [MBExpression asObject:@"^fileData($testFile)"];
+        XCTAssertTrue([data isKindOfClass:[NSData class]]);
+        XCTAssertTrue(data.length > 0);
+
+        NSData* testData = [NSData dataWithContentsOfFile:paths[i]];
+        XCTAssertEqualObjects(data, testData);
+
+    }
+    [MBScopedVariables exitVariableScope];
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
+    [MBExpression asObject:@"^fileData()" error:&err];
     expectError(err);
 
     err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
+    [MBExpression asObject:@"^fileData($NULL)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^fileData(/////)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^fileData(/tmp/foo/nonexistent-file.xml)" error:&err];
     expectError(err);
 }
 
@@ -466,16 +557,38 @@
     //
     // test expected successes
     //
+    NSArray* paths = [[MBEnvironment instance] mbmlPathsLoaded];
+    XCTAssertTrue(paths.count == 2);
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    for (NSUInteger i=0; i<paths.count; i++) {
+        scope[@"testFile"] = paths[i];
+        NSString* contents = [MBExpression asObject:@"^fileContents($testFile)"];
+        XCTAssertTrue([contents isKindOfClass:[NSString class]]);
+        XCTAssertTrue(contents.length > 0);
+
+        NSString* testContents = [NSString stringWithContentsOfFile:paths[i] encoding:NSUTF8StringEncoding error:nil];
+        XCTAssertEqualObjects(contents, testContents);
+    }
+    [MBScopedVariables exitVariableScope];
 
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
+    [MBExpression asObject:@"^fileContents()" error:&err];
     expectError(err);
 
     err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
+    [MBExpression asObject:@"^fileContents($NULL)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^fileContents(/////)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^fileContents(/tmp/foo/nonexistent-file.xml)" error:&err];
     expectError(err);
 }
 
@@ -486,16 +599,49 @@
     //
     // test expected successes
     //
-    
+    NSString* fileContent = @"This is my file.\nThere are many like it but this one is mine.";
+    NSString* tempDir = [@"^directoryForTempFiles()" evaluateAsString];
+    NSString* random = [@"^random(100000|999999)" evaluateAsString];
+    NSString* tempFileName = [NSString stringWithFormat:@"%@-delete-file-unit-test-%@.txt", [self class], random];
+    NSString* tempFile = [tempDir stringByAppendingPathComponent:tempFileName];
+
+    NSError* nsErr = nil;
+    BOOL success = [fileContent writeToFile:tempFile atomically:YES encoding:NSUTF8StringEncoding error:&nsErr];
+    XCTAssertTrue(success);
+    XCTAssertNil(nsErr);
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"fileToDelete"] = tempFile;
+
+    NSString* testFileContent = [MBExpression asString:@"^fileContents($fileToDelete)"];
+    XCTAssertEqualObjects(fileContent, testFileContent);
+
+    BOOL exists = [MBExpression asBoolean:@"^fileExists($fileToDelete)"];
+    XCTAssertTrue(exists);
+    BOOL readable = [MBExpression asBoolean:@"^fileIsReadable($fileToDelete)"];
+    XCTAssertTrue(readable);
+    BOOL deletable = [MBExpression asBoolean:@"^fileIsDeletable($fileToDelete)"];
+    XCTAssertTrue(deletable);
+
+    BOOL deleted = [MBExpression asBoolean:@"^deleteFile($fileToDelete)"];
+    XCTAssertTrue(deleted);
+
+    exists = [MBExpression asBoolean:@"^fileExists($fileToDelete)"];
+    XCTAssertFalse(exists);
+    readable = [MBExpression asBoolean:@"^fileIsReadable($fileToDelete)"];
+    XCTAssertFalse(readable);
+
+    [MBScopedVariables exitVariableScope];
+
     //
     // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
+    [MBExpression asObject:@"^deleteFile($NULL)" error:&err];
     expectError(err);
-    
+
     err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
+    [MBExpression asObject:@"^deleteFile(^directoryForTempFiles()/foo/nonexistent-file.xml)" error:&err];
     expectError(err);
 }
 

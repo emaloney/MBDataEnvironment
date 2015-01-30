@@ -36,17 +36,20 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSArray* paths = [MBExpression asObject:@"^mbmlLoadedPaths()"];
+    XCTAssertTrue([paths isKindOfClass:[NSArray class]]);
+    XCTAssertTrue(paths.count == 2);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    NSBundle* testBundle = [NSBundle bundleForClass:[self class]];
+    NSString* testAppDataPath = [[testBundle resourcePath] stringByAppendingPathComponent:@"test-app-data.xml"];
+    XCTAssertTrue([paths containsObject:testAppDataPath]);
+
+    NSBundle* mbBundle = [NSBundle bundleForClass:[MBEnvironment class]];
+    NSString* mbXmlPath = [[mbBundle resourcePath] stringByAppendingPathComponent:@"MBDataEnvironmentModule.xml"];
+    XCTAssertTrue([paths containsObject:mbXmlPath]);
 }
 
 - (void) testMbmlLoadedFiles
@@ -56,17 +59,14 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
-
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    NSArray* files = [MBExpression asObject:@"^mbmlLoadedFiles()"];
+    XCTAssertTrue([files isKindOfClass:[NSArray class]]);
+    XCTAssertTrue(files.count == 2);
+    XCTAssertTrue([files containsObject:@"test-app-data.xml"]);
+    XCTAssertTrue([files containsObject:@"MBDataEnvironmentModule.xml"]);
 }
 
 - (void) testMbmlPathIsLoaded
@@ -76,17 +76,26 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    NSBundle* testBundle = [NSBundle bundleForClass:[self class]];
+    NSString* testAppDataPath = [[testBundle resourcePath] stringByAppendingPathComponent:@"test-app-data.xml"];
+    NSBundle* mbBundle = [NSBundle bundleForClass:[MBEnvironment class]];
+    NSString* mbXmlPath = [[mbBundle resourcePath] stringByAppendingPathComponent:@"MBDataEnvironmentModule.xml"];
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    scope[@"testAppDataPath"] = testAppDataPath;
+    scope[@"testDataEnvironmentPath"] = mbXmlPath;
+
+    BOOL isLoaded = [MBExpression asBoolean:@"^mbmlPathIsLoaded($testAppDataPath)"];
+    XCTAssertTrue(isLoaded);
+    isLoaded = [MBExpression asBoolean:@"^mbmlPathIsLoaded($testDataEnvironmentPath)"];
+    XCTAssertTrue(isLoaded);
+    isLoaded = [MBExpression asBoolean:@"^mbmlPathIsLoaded(/tmp/foo.xml)"];
+    XCTAssertFalse(isLoaded);
+
+    [MBScopedVariables exitVariableScope];
 }
 
 - (void) testMbmlFileIsLoaded
@@ -96,17 +105,17 @@
     //
     // test expected successes
     //
-
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
     //
-    // test expected failures
-    //
-    MBExpressionError* err = nil;
-    [MBExpression asBoolean:@"^q()" error:&err];
-    expectError(err);
+    BOOL isLoaded = [MBExpression asBoolean:@"^mbmlFileIsLoaded(test-app-data.xml)"];
+    XCTAssertTrue(isLoaded);
+    isLoaded = [MBExpression asBoolean:@"^mbmlFileIsLoaded(MBDataEnvironmentModule.xml)"];
+    XCTAssertTrue(isLoaded);
+    isLoaded = [MBExpression asBoolean:@"^mbmlFileIsLoaded(foo.xml)"];
+    XCTAssertFalse(isLoaded);
 
-    err = nil;
-    [MBExpression asBoolean:@"^q($nameList)" error:&err];
-    expectError(err);
+    [MBScopedVariables exitVariableScope];
 }
 
 @end
