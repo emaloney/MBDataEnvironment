@@ -69,7 +69,11 @@
 + (id) dataFromBase64:(NSString*)base64
 {
     debugTrace();
-    
+
+    MBMLFunctionError* err = nil;
+    [MBMLFunction validateParameterIsString:base64 error:&err];
+    if (err) return err;
+
     return [[NSData alloc] initWithBase64EncodedString:base64 options:0];
 }
 
@@ -87,7 +91,11 @@
 + (id) dataFromHexString:(NSString*)hexString
 {
     debugTrace();
-    
+
+    MBMLFunctionError* err = nil;
+    [MBMLFunction validateParameterIsString:hexString error:&err];
+    if (err) return err;
+
     return [NSData dataWithHexString:hexString];
 }
 
