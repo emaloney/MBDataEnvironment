@@ -84,7 +84,7 @@
  
  @return    The result of evaluating `expr`.
  */
-+ (NSNumber*) test:(NSString*)expr;
++ (id) test:(NSString*)expr;
 
 /*!
  Evaluates the passed-in expression in the object context, logs the result
@@ -108,7 +108,7 @@
 
  @return    The result of evaluating `expr.
  */
-+ (NSString*) dump:(NSString*)expr;
++ (id) dump:(NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Triggering a debug breakpoint

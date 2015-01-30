@@ -48,23 +48,36 @@
 #pragma mark Public API
 /******************************************************************************/
 
-+ (NSString*) log:(NSString*)expr
++ (id) log:(NSString*)expr
 {
-    id obj = [MBExpression asObject:expr];
+    MBExpressionError* err = nil;
+    id obj = [MBExpression asObject:expr error:&err];
+    if (err) {
+        return err;
+    }
     [self logObject:obj forExpression:expr];
     return obj;
 }
 
-+ (NSNumber*) test:(NSString*)expr
++ (id) test:(NSString*)expr
 {
-    BOOL result = [MBExpression asBoolean:expr];
+    MBExpressionError* err = nil;
+    BOOL result = [MBExpression asBoolean:expr error:&err];
+    if (err) {
+        return err;
+    }
     NSLog(@"--> Expression \"%@\" evaluates to %s", expr, (result ? "TRUE" : "FALSE"));
     return @(result);
 }
 
-+ (NSString*) dump:(NSString*)expr
++ (id) dump:(NSString*)expr
 {
-    id obj = [MBExpression asObject:expr];
+    MBExpressionError* err = nil;
+    id obj = [MBExpression asObject:expr error:&err];
+    if (err) {
+        return err;
+    }
+
     [self logObject:obj forExpression:expr];
 #if DEBUG
 #pragma clang diagnostic push
