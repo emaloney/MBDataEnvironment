@@ -8,8 +8,6 @@
 
 #import "MockingbirdTestSuite.h"
 
-
-
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLGeometryFunctionTests class
