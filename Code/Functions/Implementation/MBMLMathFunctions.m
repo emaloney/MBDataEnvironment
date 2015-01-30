@@ -288,20 +288,18 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
-    if (err) return err;
-
     NSNumber* startNum = [MBMLFunction validateParameter:params containsNumberAtIndex:0 error:&err];
-    if (err) return err;
-    NSInteger start = [startNum integerValue];
-
     NSNumber* countNum = [MBMLFunction validateParameter:params containsNumberAtIndex:1 error:&err];
     if (err) return err;
+
+    NSInteger start = [startNum integerValue];
     NSInteger count = [countNum integerValue];
 
     NSInteger step = 1;
     if (paramCnt > 2) {
-        NSNumber* stepNum = [MBMLFunction validateParameter:params containsNumberAtIndex:3 error:&err];
+        NSNumber* stepNum = [MBMLFunction validateParameter:params containsNumberAtIndex:2 error:&err];
         if (err) return err;
+        
         step = [stepNum integerValue];
     }
 
