@@ -22,13 +22,16 @@
     <Function class="MBMLLogicFunctions" name="if" method="ifOperator" input="pipedExpressions"/>
 */
 
-- (void) testLogicFunctions
+- (void) testIf
 {
+    consoleTrace();
+
     //
-    // test of ^if()
+    // test expected successes
     //
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     NSNumber* testNum = [NSNumber numberWithInteger:102772];
-    [[MBVariableSpace instance] setVariable:@"ifTestNumber" value:testNum];
+    scope[@"ifTestNumber"] = testNum;
     id result = [MBExpression asObject:@"^if($ifTestNumber)"];
     XCTAssertTrue([result isKindOfClass:[NSNumber class]], @"expected result of ^if($ifTestNumber) to return a number");
     XCTAssertEqualObjects(result, [NSNumber numberWithInteger:102772], @"expected result of ^if($ifTestNumber) to be the number 102772");
@@ -50,12 +53,10 @@
     result = [MBExpression asObject:@"^if(F|true|false)"];
     XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected result of ^if(F|true|false) to return an NSString");
     XCTAssertEqualObjects(result, @"false", @"expected result of ^if(F|true|false) to be the string \"false\"");
-}
+    [MBScopedVariables exitVariableScope];
 
-- (void) testLogicFunctionFailures
-{
     //
-    // test of ^if()
+    // test expected failures
     //
     MBExpressionError* err = nil;
     [MBExpression asString:@"^if()" error:&err];

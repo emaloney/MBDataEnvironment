@@ -22,6 +22,7 @@
     <Function class="MBMLDataProcessingFunctions" name="collectionPassesTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="containsValue" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="setContains" input="pipedExpressions"/>
+    <Function class="MBMLDataProcessingFunctions" name="selectFirstValue" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesPassingTest" input="pipedExpressions"/>
     <Function class="MBMLDataProcessingFunctions" name="valuesIntersect" input="pipedObjects"/>
     <Function class="MBMLDataProcessingFunctions" name="join" input="pipedObjects"/>
@@ -134,6 +135,33 @@
 
     err = nil;
     [MBExpression asBoolean:@"^setContains($testSet|$(Jill Test)|$(Barrett Test))" error:&err];
+    expectError(err);
+}
+
+- (void) testSelectFirstValue
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSString* foo = [MBExpression asObject:@"^selectFirstValue($NULL|foo)"];
+    XCTAssertTrue([foo isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects(foo, @"foo");
+
+    foo = [MBExpression asObject:@"^selectFirstValue($NULL|$null|$NULL|$null|$NULL|$null|foo)"];
+    XCTAssertTrue([foo isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects(foo, @"foo");
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^selectFirstValue(foo)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^selectFirstValue()" error:&err];
     expectError(err);
 }
 
