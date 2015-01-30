@@ -27,7 +27,7 @@
 		3B2D737E1A7B53B800F16154 /* MBMLResourceFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737D1A7B53B800F16154 /* MBMLResourceFunctionTests.m */; };
 		3B2D73801A7B546900F16154 /* MBMLRuntimeFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */; };
 		3B2D73821A7B54FF00F16154 /* MBMLDebugFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73811A7B54FF00F16154 /* MBMLDebugFunctionTests.m */; };
-		3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */; };
+		3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3B82312C1A72FC2700C3A18F /* MBMLFontFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */; };
 		3B82312E1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */; };
 		3B8231301A7421B000C3A18F /* MBMLCollectionFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312F1A7421B000C3A18F /* MBMLCollectionFunctionTests.m */; };
@@ -36,6 +36,10 @@
 		3B8231361A74293E00C3A18F /* MBMLMathFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231351A74293E00C3A18F /* MBMLMathFunctionTests.m */; };
 		3B8231381A742A9900C3A18F /* MBMLRegexFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231371A742A9900C3A18F /* MBMLRegexFunctionTests.m */; };
 		3B82313A1A742B1300C3A18F /* MBMLStringFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231391A742B1300C3A18F /* MBMLStringFunctionTests.m */; };
+		3BA8B2A21A7C2DDF00B00241 /* MBMLModuloOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA8B2A01A7C2DDF00B00241 /* MBMLModuloOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3BA8B2A31A7C2DDF00B00241 /* MBMLModuloOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A11A7C2DDF00B00241 /* MBMLModuloOperatorToken.m */; };
+		3BA8B2A61A7C340200B00241 /* PredefinedVariableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */; };
+		3BA8B2A91A7C371E00B00241 /* MBMLFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A71A7C361300B00241 /* MBMLFunctionTests.m */; };
 		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
@@ -179,7 +183,7 @@
 		3BD23D171A65FD07001F7869 /* MBVariableDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BD19D9FBEB00996B9F /* MBVariableDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D191A65FDA4001F7869 /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */; };
-		3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */; };
+		3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		9DEB82F2E6E86B7507960F7C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748C53F01464830A2605981 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -347,6 +351,10 @@
 		3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableDeclaration.m; sourceTree = "<group>"; };
 		3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableSpace.h; sourceTree = "<group>"; };
 		3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableSpace.m; sourceTree = "<group>"; };
+		3BA8B2A01A7C2DDF00B00241 /* MBMLModuloOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLModuloOperatorToken.h; sourceTree = "<group>"; };
+		3BA8B2A11A7C2DDF00B00241 /* MBMLModuloOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLModuloOperatorToken.m; sourceTree = "<group>"; };
+		3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredefinedVariableTests.m; path = Tests/PredefinedVariableTests.m; sourceTree = SOURCE_ROOT; };
+		3BA8B2A71A7C361300B00241 /* MBMLFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLFunctionTests.m; path = Tests/MBMLFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MBDataEnvironmentModule.xml; sourceTree = "<group>"; };
 		3BCB5ED71A6065A1007D06FC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3BCB5ED91A6065AA007D06FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -589,6 +597,8 @@
 				3B8BA78619D9FBEB00996B9F /* MBMLMathGroupingToken.m */,
 				3B8BA78719D9FBEB00996B9F /* MBMLMathOperatorToken.h */,
 				3B8BA78819D9FBEB00996B9F /* MBMLMathOperatorToken.m */,
+				3BA8B2A01A7C2DDF00B00241 /* MBMLModuloOperatorToken.h */,
+				3BA8B2A11A7C2DDF00B00241 /* MBMLModuloOperatorToken.m */,
 				3B8BA78919D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.h */,
 				3B8BA78A19D9FBEB00996B9F /* MBMLMultiplicationOperatorToken.m */,
 				3B8BA78B19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.h */,
@@ -700,6 +710,7 @@
 				3B2D73791A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m */,
 				3B2D737B1A7B528300F16154 /* MBMLFileFunctionTests.m */,
 				3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */,
+				3BA8B2A71A7C361300B00241 /* MBMLFunctionTests.m */,
 				3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */,
 				3B8231331A74288C00C3A18F /* MBMLLogicFunctionTests.m */,
 				3B8231351A74293E00C3A18F /* MBMLMathFunctionTests.m */,
@@ -709,6 +720,7 @@
 				3B8231391A742B1300C3A18F /* MBMLStringFunctionTests.m */,
 				3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */,
 				3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */,
+				3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */,
 				3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */,
 			);
 			name = Tests;
@@ -763,7 +775,6 @@
 				3BD23D141A65FD07001F7869 /* MBStringConversions.h in Headers */,
 				3BD23D151A65FD07001F7869 /* TypeCoercionSupport.h in Headers */,
 				3BD23D161A65FD07001F7869 /* MBScopedVariables.h in Headers */,
-				3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */,
 				3BD23D171A65FD07001F7869 /* MBVariableDeclaration.h in Headers */,
 				3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */,
 				3BD23CDE1A65FCEA001F7869 /* MBExpressionGrammar.h in Headers */,
@@ -787,7 +798,6 @@
 				3BD23CF01A65FCEA001F7869 /* MBMLBooleanAndOperatorToken.h in Headers */,
 				3BD23CF11A65FCEA001F7869 /* MBMLBooleanGroupingToken.h in Headers */,
 				3BD23CF21A65FCEA001F7869 /* MBMLBooleanNegationToken.h in Headers */,
-				3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */,
 				3BD23CF31A65FCEA001F7869 /* MBMLBooleanOperatorToken.h in Headers */,
 				3BD23CF41A65FCEA001F7869 /* MBMLBooleanOrOperatorToken.h in Headers */,
 				3BD23CF51A65FCEA001F7869 /* MBMLEqualityTestToken.h in Headers */,
@@ -799,6 +809,9 @@
 				3BD23CFB1A65FCEA001F7869 /* MBMLAdditionOperatorToken.h in Headers */,
 				3BD23CFC1A65FCEA001F7869 /* MBMLDivisionOperatorToken.h in Headers */,
 				3BD23CFD1A65FCEA001F7869 /* MBMLMathGroupingToken.h in Headers */,
+				3BA8B2A21A7C2DDF00B00241 /* MBMLModuloOperatorToken.h in Headers */,
+				3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */,
+				3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */,
 				3BD23CFE1A65FCEA001F7869 /* MBMLMathOperatorToken.h in Headers */,
 				3BD23CFF1A65FCEB001F7869 /* MBMLMultiplicationOperatorToken.h in Headers */,
 				3BD23D001A65FCEB001F7869 /* MBMLSubtractionOperatorToken.h in Headers */,
@@ -1020,6 +1033,7 @@
 				3BD23CCF1A65FC54001F7869 /* MBStringConversions.m in Sources */,
 				3BD23CD01A65FC54001F7869 /* TypeCoercionSupport.m in Sources */,
 				3BD23CD11A65FC54001F7869 /* MBScopedVariables.m in Sources */,
+				3BA8B2A31A7C2DDF00B00241 /* MBMLModuloOperatorToken.m in Sources */,
 				3BD23CD21A65FC54001F7869 /* MBVariableDeclaration.m in Sources */,
 				3BD23CD31A65FC54001F7869 /* MBVariableSpace.m in Sources */,
 			);
@@ -1032,6 +1046,7 @@
 				3B2D73781A7B510800F16154 /* MBMLEncodingFunctionTests.m in Sources */,
 				3B8231301A7421B000C3A18F /* MBMLCollectionFunctionTests.m in Sources */,
 				3B8231321A74226000C3A18F /* MBMLDateFunctionTests.m in Sources */,
+				3BA8B2A91A7C371E00B00241 /* MBMLFunctionTests.m in Sources */,
 				3B2D737C1A7B528300F16154 /* MBMLFileFunctionTests.m in Sources */,
 				3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */,
 				3B2D737A1A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m in Sources */,
@@ -1044,6 +1059,7 @@
 				3B8231341A74288C00C3A18F /* MBMLLogicFunctionTests.m in Sources */,
 				3B82313A1A742B1300C3A18F /* MBMLStringFunctionTests.m in Sources */,
 				3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */,
+				3BA8B2A61A7C340200B00241 /* PredefinedVariableTests.m in Sources */,
 				3B8231381A742A9900C3A18F /* MBMLRegexFunctionTests.m in Sources */,
 				3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */,
 				3B2D737E1A7B53B800F16154 /* MBMLResourceFunctionTests.m in Sources */,

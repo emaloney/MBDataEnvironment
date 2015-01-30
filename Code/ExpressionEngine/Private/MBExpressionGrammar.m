@@ -15,6 +15,7 @@
 #import "MBMLBooleanNegationToken.h"
 #import "MBMLBooleanOrOperatorToken.h"
 #import "MBMLDivisionOperatorToken.h"
+#import "MBMLModuloOperatorToken.h"
 #import "MBMLEqualityTestToken.h"
 #import "MBMLEscapeSequenceToken.h"
 #import "MBMLFunctionCallToken.h"
@@ -567,6 +568,7 @@ MBImplementSingleton();
     [grammar addTokenClassForInitialState:[MBMLSubtractionOperatorToken class]];
     [grammar addTokenClassForInitialState:[MBMLMultiplicationOperatorToken class]];
     [grammar addTokenClassForInitialState:[MBMLDivisionOperatorToken class]];
+    [grammar addTokenClassForInitialState:[MBMLModuloOperatorToken class]];
     [grammar addTokenClassForInitialState:[MBMLLiteralToken class]];
     [grammar addTokenClassForInitialState:[MBMLMathGroupingToken class]];
     [grammar addTokenClassForInitialState:[MBMLMathExpressionToken class]];
