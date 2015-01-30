@@ -294,11 +294,12 @@ five = [MBExpression asNumber:@"8 - 3"];
 five = [MBExpression asNumber:@"10 / 2"];
 five = [MBExpression asNumber:@"2.5 * 2"];
 five = [MBExpression asNumber:@"((5 * 2) - 5)"];
+five = [MBExpression asNumber:@"25 % 10"];
 ```
 
 All of the expressions above yield an `NSNumber` containing the value `5`.
 
-As you can see, numeric expressions can contain simple math expressions. The `+`, `-`, `*` and `/` operators are supported. (Operators must be separated from surrounding tokens with a space.)
+As you can see, numeric expressions can contain simple math expressions. The `+`, `-`, `*`, `/` and `%` operators are supported. (Operators must be separated from surrounding tokens with a space.)
 
 > By default, C language order is used when evaluating math operators. Parenthetical groupings can be used to ensure specific evaluation order.
 
