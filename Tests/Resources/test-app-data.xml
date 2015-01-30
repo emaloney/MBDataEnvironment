@@ -135,7 +135,7 @@
 
     <Var name="testSet" value="^setWithArray($nameList)"/>
 
-    <Var name="testOrderNumber" literal="102772" mutable="F"/>
+    <Var name="testOrderNumber" literal="102686" mutable="F"/>
     
     <Var name="testData" type="map" mutable="F">
         <Var name="orderNumber" value="$testOrderNumber"/>

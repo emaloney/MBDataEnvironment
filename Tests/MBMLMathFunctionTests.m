@@ -19,7 +19,6 @@
 @implementation MBMLMathFunctionTests
 
 /*
- FULL LIST:
     <Function class="MBMLMathFunctions" name="mod" input="pipedMath"/>
     <Function class="MBMLMathFunctions" name="modFloat" input="pipedMath"/>
     <Function class="MBMLMathFunctions" name="percent" input="pipedExpressions"/>

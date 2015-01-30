@@ -378,9 +378,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
 
  The following expression:
 
-    ^formatSortableDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatSortableDate(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
 
- would result in the string "`1972-10-27 10:53:42`".
+ would result in the string "`1986-10-26 00:02:00`".
 
  @param     input The function's input parameter.
 
@@ -406,9 +406,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatShortDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatShortDate(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
 
- would result in the string "`10/27/72`".
+ would result in the string "`10/26/86`".
  
  @param     input The function's input parameter.
  
@@ -435,9 +435,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatMediumDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatMediumDate(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
 
- would result in the string "`Oct 27, 1972`".
+ would result in the string "`Oct 26, 1986`".
  
  @param     input The function's input parameter.
  
@@ -464,9 +464,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatLongDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatLongDate(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
 
- would result in the string "`October 27, 1972`".
+ would result in the string "`October 26, 1986`".
  
  @param     input The function's input parameter.
  
@@ -493,9 +493,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatFullDate(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatFullDate(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
 
- would result in the string "`Friday, October 27, 1972`".
+ would result in the string "`Sunday, October 26, 1986`".
  
  @param     input The function's input parameter.
  
@@ -518,9 +518,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatShortTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatShortTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`10:53 AM`".
+ would result in the string "`12:02 AM`".
  
  @param     input The function's input parameter.
  
@@ -543,9 +543,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatMediumTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatMediumTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`10:53:42 AM`".
+ would result in the string "`12:02:00 AM`".
  
  @param     input The function's input parameter.
  
@@ -568,9 +568,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatLongTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatLongTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`10:53:42 AM EDT`".
+ would result in the string "`12:02:00 AM EDT`".
  
  @param     input The function's input parameter.
  
@@ -593,9 +593,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatFullTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatFullTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`10:53:42 AM Eastern Daylight Time`".
+ would result in the string "`12:02:00 AM Eastern Daylight Time`".
  
  @param     input The function's input parameter.
  
@@ -618,9 +618,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatShortDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatShortDateTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`10/27/72, 10:53 AM`".
+ would result in the string "`10/26/86, 12:02 AM`".
  
  @param     input The function's input parameter.
  
@@ -643,9 +643,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatMediumDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatMediumDateTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`Oct 27, 1972, 10:53:42 AM`".
+ would result in the string "`Oct 26, 1986, 12:02:00 AM`".
  
  @param     input The function's input parameter.
  
@@ -668,9 +668,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatLongDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatLongDateTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`October 27, 1972, 10:53:42 AM EDT`".
+ would result in the string "`October 26, 1986 at 12:02:00 AM EDT`".
  
  @param     input The function's input parameter.
  
@@ -693,9 +693,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^formatFullDateTime(^parseDate(Fri, 27 Oct 1972 10:53:42 EDT))
+    ^formatFullDateTime(^parseDate(Sun, 26 Oct 1986 00:02:00 EDT))
  
- would result in the string "`Friday, October 27, 1972, 10:53:42 AM Eastern
+ would result in the string "`Sunday, October 26, 1986 at 12:02:00 AM Eastern 
  Daylight Time`".
  
  @param     input The function's input parameter.
@@ -732,9 +732,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^reformatDate(27 Oct 1972|dd MMM yyyy|MM/dd/yy)
+    ^reformatDate(26 Oct 1986|dd MMM yyyy|MM/dd/yy)
 
- would result in the string "`10/27/72`".
+ would result in the string "`10/26/86`".
  
  @param     params The function's input parameters.
  
@@ -767,9 +767,9 @@ extern NSString* const kMBDateDefaultParsingLocale;         // @"en_US_POSIX"
  
  The following expression:
  
-    ^reformatDateWithLocale(27 Oct 1972|en_US|dd MMM yyyy|MM/dd/yy)
+    ^reformatDateWithLocale(26 Oct 1986|en_US|dd MMM yyyy|MM/dd/yy)
 
- would result in the string "`10/27/72`".
+ would result in the string "`10/26/86`".
  
  @param     params The function's input parameters.
  

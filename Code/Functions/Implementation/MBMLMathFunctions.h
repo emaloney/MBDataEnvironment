@@ -113,9 +113,9 @@
 
  The expression above yields the string "`41%`".
 
-    ^percent(%.2f percent|27|72)
+    ^percent(%.2f percent|13|38)
 
- The expression above yields the string "`37.50 percent`".
+ The expression above yields the string "`34.21 percent`".
 
  @param     params The function's input parameters.
 
@@ -138,11 +138,11 @@
  
  #### Expression usage
 
-    ^ceil(10.27)
+    ^ceil(10.26)
 
  The expression above yields the value `11`.
 
-    ^ceil(-10.27)
+    ^ceil(-10.26)
  
  The expression above yields the value `-10`.
 
@@ -162,11 +162,11 @@
  
  #### Expression usage
 
-    ^floor(10.27)
+    ^floor(10.26)
 
  The expression above yields the value `10`.
  
-    ^floor(-10.27)
+    ^floor(-10.26)
  
  The expression above yields the value `-11`.
 
@@ -185,7 +185,7 @@
  
  #### Expression usage
 
-    ^round(10.27)
+    ^round(10.26)
 
  The expression above yields the value `10`.
 
@@ -197,7 +197,7 @@
 
  The expression above yields the value `11`.
 
-    ^round(-10.27)
+    ^round(-10.26)
 
  The expression above yields the value `-10`.
 

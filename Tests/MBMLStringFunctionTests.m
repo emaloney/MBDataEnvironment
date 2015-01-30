@@ -19,7 +19,6 @@
 @implementation MBMLStringFunctionTests
 
 /*
- FULL LIST:
     <Function class="MBMLStringFunctions" name="q" input="raw"/>
     <Function class="MBMLStringFunctions" name="eval" input="string"/>
     <Function class="MBMLStringFunctions" name="evalBool" input="string"/>

@@ -16,22 +16,15 @@
 @interface MBMLDateFunctionTests : MockingbirdTestSuite
 @end
 
+//
+// IMPORTANT NOTE: These tests may fail if run on a system
+// with different localization settings. These tests should
+// succeed on a system with US English in the Eastern timezone.
+//
+
 @implementation MBMLDateFunctionTests
 
 /*
- NEED TO ADD:
-    <Function class="MBMLDateFunctions" name="timeZoneOffset" input="none"/>
-    <Function class="MBMLDateFunctions" name="unixTimestampToDate"/>
-    <Function class="MBMLDateFunctions" name="dateToUnixTimestamp"/>
-    <Function class="MBMLDateFunctions" name="addSecondsToDate" input="pipedObjects"/>
-    <Function class="MBMLDateFunctions" name="formatTimeUntil"/>
-    <Function class="MBMLDateFunctions" name="formatDate" input="pipedObjects"/>
-    <Function class="MBMLDateFunctions" name="formatSortableDate" input="object"/>
-    <Function class="MBMLDateFunctions" name="reformatDate" input="pipedStrings"/>
-    <Function class="MBMLDateFunctions" name="reformatDateWithLocale" input="pipedStrings"/>
-
- 
- FULL LIST:
     <Function class="MBMLDateFunctions" name="currentTime" input="none"/>
     <Function class="MBMLDateFunctions" name="timeZoneOffset" input="none"/>
     <Function class="MBMLDateFunctions" name="secondsSince"/>
@@ -59,6 +52,35 @@
     <Function class="MBMLDateFunctions" name="parseDate" method="mbmlParseDate" input="pipedStrings"/>
  */
 
+/******************************************************************************/
+#pragma mark Setup / Teardown
+/******************************************************************************/
+
+- (void) setUpAppData
+{
+    consoleTrace();
+
+    [super setUpAppData];
+
+    MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
+    NSDate* date = [MBExpression asObject:@"^parseDate(Sun, 26 Oct 1986 00:02:00 EDT)"];
+    scope[@"testDate"] = date;
+    scope[@"testTimestamp"] = @([date timeIntervalSince1970]);
+}
+
+- (void) tearDown
+{
+    consoleTrace();
+
+    [MBScopedVariables exitVariableScope];
+
+    [super tearDown];
+}
+
+/******************************************************************************/
+#pragma mark Helper methods
+/******************************************************************************/
+
 - (void) _performDateFormatTest:(NSString*)functionName
                           input:(NSString*)input
                       expecting:(NSString*)expectedResult
@@ -68,254 +90,544 @@
     XCTAssertEqualObjects(dateStr, expectedResult, @"Test of %@ failed (note, date tests may only work in US locale in EST timezone)", expr);
 }
 
-- (void) testDateFunctions
-{
-    //
-    // test of ^currentTime()
-    //
-    NSDate* date = [MBExpression asObject:@"^currentTime()"];
-    XCTAssertTrue([date isKindOfClass:[NSDate class]], @"expected ^currentTime() to return an NSDate");
-    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:date];
-    XCTAssertTrue(interval < 1, @"wasn't expecting ^currentTime() to return such a stale date");
-    
-    //
-    // test of ^parseDate()
-    //
-    date = [MBExpression asObject:@"^parseDate(Thu, 26 Jan 2012 15:58:19 UTC)"];
-    XCTAssertTrue([date isKindOfClass:[NSDate class]], @"expected ^parseDate(Thu, 26 Jan 2012 15:58:19 UTC) to return an NSDate");
-    NSDate* testDate = [NSDate dateWithTimeIntervalSince1970:1327593499];
-    XCTAssertEqualObjects(date, testDate, @"expected ^parseDate(Thu, 26 Jan 2012 15:58:19 UTC) to return an NSDate equal to %@", testDate);
-    date = [MBExpression asObject:@"^parseDate(Fri, Jan 20, 2012 01:00PM EST|EEE, MMM d, yyyy hh:mma z)"];
-    testDate = [NSDate dateWithTimeIntervalSince1970:1327082400];
-    XCTAssertEqualObjects(date, testDate, @"expected ^parseDate(Fri, Jan 20, 2012 01:00PM EST|EEE, MMM d, yyyy hh:mma z) to return an NSDate equal to %@", testDate);
-
-    //
-    // test of ^secondsSince()
-    //
-    date = [MBExpression asObject:@"^parseDate(Fri, 27 Oct 1972 10:52:00 EST)"];
-    [[MBVariableSpace instance] setVariable:@"testDate" value:date];
-    NSTimeInterval secondsSince = [[NSDate date] timeIntervalSinceDate:date];
-    NSTimeInterval testSecondsSince = [[MBExpression asString:@"^secondsSince($testDate)"] doubleValue];
-    NSTimeInterval diff = secondsSince - testSecondsSince;
-    XCTAssertTrue(diff < 1, @"test of ^secondsSince() failed; time shift unexpectedly large");
-
-    //
-    // test of ^secondsUntil()
-    //
-    date = [MBExpression asObject:@"^parseDate(Thu, 27 Oct 2022 10:52:00 EST)"];
-    [[MBVariableSpace instance] setVariable:@"testDate" value:date];
-    NSTimeInterval secondsUntil = [date timeIntervalSinceNow];
-    NSTimeInterval testSecondsUntil = [[MBExpression asString:@"^secondsUntil($testDate)"] doubleValue];
-    diff = secondsUntil - testSecondsUntil;
-    XCTAssertTrue(diff < 1, @"test of ^secondsUntil() failed; time shift unexpectedly large");
-
-    //
-    // IMPORTANT NOTE: These tests may fail if run on a system
-    // with different localization settings. These tests should
-    // succeed on a system with US English in the Eastern timezone.
-    //
-    
-    //
-    // test of ^formatShortDate()
-    //
-    [self _performDateFormatTest:@"formatShortDate"
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
-                       expecting:@"1/26/12"];
-    
-    //
-    // test of ^formatMediumDate()
-    //
-    [self _performDateFormatTest:@"formatMediumDate"    
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
-                       expecting:@"Jan 26, 2012"];
-
-    //
-    // test of ^formatLongDate()
-    //
-    [self _performDateFormatTest:@"formatLongDate"      
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"January 26, 2012"];
-    
-    //
-    // test of ^formatFullDate()
-    //
-    [self _performDateFormatTest:@"formatFullDate"          
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"Thursday, January 26, 2012"];
-    
-    //
-    // test of ^formatShortTime()
-    //
-    [self _performDateFormatTest:@"formatShortTime"         
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
-                       expecting:@"10:58 AM"];
-    
-    //
-    // test of ^formatMediumTime()
-    //
-    [self _performDateFormatTest:@"formatMediumTime"        
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"10:58:19 AM"];
-
-    //
-    // test of ^formatLongTime()
-    //
-    [self _performDateFormatTest:@"formatLongTime"          
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"10:58:19 AM EST"];
-    
-    //
-    // test of ^formatFullTime()
-    //
-    [self _performDateFormatTest:@"formatFullTime"          
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"10:58:19 AM Eastern Standard Time"];
-    
-    //
-    // test of ^formatShortDateTime()
-    //
-    [self _performDateFormatTest:@"formatShortDateTime"     
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"1/26/12, 10:58 AM"];
-    
-    //
-    // test of ^formatMediumDateTime()
-    //
-    [self _performDateFormatTest:@"formatMediumDateTime"    
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"Jan 26, 2012, 10:58:19 AM"];
-
-    //
-    // test of ^formatLongDateTime()
-    //
-    [self _performDateFormatTest:@"formatLongDateTime"      
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"January 26, 2012 at 10:58:19 AM EST"];
-    
-    //
-    // test of ^formatFullDateTime()
-    //
-    [self _performDateFormatTest:@"formatFullDateTime"      
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"  
-                       expecting:@"Thursday, January 26, 2012 at 10:58:19 AM Eastern Standard Time"];
-}
-
-- (void) _performDateFormatFailureTest:(NSString*)functionName 
+- (void) _performDateFormatFailureTest:(NSString*)functionName
 {
     MBExpressionError* err = nil;
     NSString* expr = [NSString stringWithFormat:@"^%@()", functionName];
     [MBExpression asString:expr error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^%@() with no parameters", functionName);
-    logExpectedError(err);
+    expectError(err);
 
     err = nil;
     expr = [NSString stringWithFormat:@"^%@(this should not parse)", functionName];
     [MBExpression asString:expr error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^%@() with with an unparseable string", functionName);
-    logExpectedError(err);
+    expectError(err);
 }
 
-- (void) testDateFunctionFailures
+/******************************************************************************/
+#pragma mark Tests
+/******************************************************************************/
+
+- (void) testCurrentTime
 {
+    consoleTrace();
+
     //
-    // test of ^parseDate()
+    // test expected successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
+    NSDate* date = [MBExpression asObject:@"^currentTime()"];
+    XCTAssertTrue([date isKindOfClass:[NSDate class]]);
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:date];
+    XCTAssertTrue(interval < 1);
+}
+
+- (void) testTimeZoneOffset
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
+    NSNumber* testOffset = @([[NSTimeZone localTimeZone] secondsFromGMT] / 60);
+    NSNumber* offset = [MBExpression asNumber:@"^timeZoneOffset()"];
+    XCTAssertTrue([offset isKindOfClass:[NSNumber class]]);
+    XCTAssertEqualObjects(offset, testOffset);
+}
+
+- (void) testSecondsSince
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSDate* date = [@"$testDate" evaluateAsObject];
+    NSTimeInterval secondsSince = [[NSDate date] timeIntervalSinceDate:date];
+    NSTimeInterval testSecondsSince = [[MBExpression asString:@"^secondsSince($testDate)"] doubleValue];
+    NSTimeInterval diff = secondsSince - testSecondsSince;
+    XCTAssertTrue(diff < 1);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^secondsSince()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^secondsSince(this is not my beautiful house)" error:&err];
+    expectError(err);
+}
+
+- (void) testSecondsUntil
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSDate* date = [@"$testDate" evaluateAsObject];
+    NSTimeInterval secondsUntil = [date timeIntervalSinceNow];
+    NSTimeInterval testSecondsUntil = [[MBExpression asString:@"^secondsUntil($testDate)"] doubleValue];
+    NSTimeInterval diff = secondsUntil - testSecondsUntil;
+    XCTAssertTrue(diff < 1);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^secondsUntil()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^secondsUntil($NULL)" error:&err];
+    expectError(err);
+}
+
+- (void) testUnixTimestampToDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSNumber* unixTimestampNum = [@"$testTimestamp" evaluateAsNumber];
+    NSDate* date = [MBExpression asObject:@"^unixTimestampToDate($testTimestamp)"];
+    NSTimeInterval testUnixTimestamp = [date timeIntervalSince1970];
+    XCTAssertEqual([unixTimestampNum doubleValue], testUnixTimestamp);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^unixTimestampToDate()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^unixTimestampToDate($NULL)" error:&err];
+    expectError(err);
+}
+
+- (void) testDateToUnixTimestamp
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSDate* date = [@"$testDate" evaluateAsObject];
+    NSNumber* unixTimestampNum = [MBExpression asNumber:@"^dateToUnixTimestamp($testDate)"];
+    NSTimeInterval testUnixTimestamp = [date timeIntervalSince1970];
+    XCTAssertEqual([unixTimestampNum doubleValue], testUnixTimestamp);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^dateToUnixTimestamp()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^dateToUnixTimestamp($NULL)" error:&err];
+    expectError(err);
+}
+
+- (void) testAddSecondsToDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSDate* date = [@"$testDate" evaluateAsObject];
+    NSDate* testInTheFutureBy5mins = [date dateByAddingTimeInterval:300];
+    NSDate* inTheFutureBy5mins = [MBExpression asObject:@"^addSecondsToDate(300|$testDate)"];
+    XCTAssertEqualObjects(inTheFutureBy5mins, testInTheFutureBy5mins);
+    
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^addSecondsToDate()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^addSecondsToDate($testDate)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^addSecondsToDate(300|$testDate|5)" error:&err];
+    expectError(err);
+}
+
+- (void) testFormatTimeUntil
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSString* time = [MBExpression asString:@"^formatTimeUntil(^addSecondsToDate(300|^currentTime()))"];
+    XCTAssertEqualObjects(time, @"5:00");
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^formatTimeUntil()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^formatTimeUntil($NULL)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^formatTimeUntil(string)" error:&err];
+    expectError(err);
+}
+
+- (void) testFormatDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSString* dateStr = [MBExpression asString:@"^formatDate($testDate|MM/dd/yy)"];
+    XCTAssertEqualObjects(dateStr, @"10/26/86");
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^formatDate()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^formatDate($testDate)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^formatDate($testDate|MM/dd/yy|huh?)" error:&err];
+    expectError(err);
+}
+
+- (void) testFormatSortableDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSString* sortable = [MBExpression asString:@"^formatSortableDate($testDate)"];
+    XCTAssertEqualObjects(sortable, @"1986-10-26 00:02:00");
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^formatSortableDate()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^formatSortableDate($NULL)" error:&err];
+    expectError(err);
+}
+
+- (void) testFormatShortDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatShortDate"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"1/26/12"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatShortDate"];
+}
+
+- (void) testFormatMediumDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatMediumDate"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"Jan 26, 2012"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatMediumDate"];
+}
+
+- (void) testFormatLongDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatLongDate"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"January 26, 2012"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatLongDate"];
+}
+
+- (void) testFormatFullDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatFullDate"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"Thursday, January 26, 2012"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatFullDate"];
+}
+
+- (void) testFormatShortTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatShortTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"10:58 AM"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatShortTime"];
+}
+
+- (void) testFormatMediumTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatMediumTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"10:58:19 AM"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatMediumTime"];
+}
+
+- (void) testFormatLongTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatLongTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"10:58:19 AM EST"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatLongTime"];
+}
+
+- (void) testFormatFullTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatFullTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"10:58:19 AM Eastern Standard Time"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatFullTime"];
+}
+
+- (void) testFormatShortDateTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatShortDateTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"1/26/12, 10:58 AM"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatShortDateTime"];
+}
+
+- (void) testFormatMediumDateTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatMediumDateTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"Jan 26, 2012, 10:58:19 AM"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatMediumDateTime"];
+}
+
+- (void) testFormatLongDateTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatLongDateTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"January 26, 2012 at 10:58:19 AM EST"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatLongDateTime"];
+}
+
+- (void) testFormatFullDateTime
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    [self _performDateFormatTest:@"formatFullDateTime"
+                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
+                       expecting:@"Thursday, January 26, 2012 at 10:58:19 AM Eastern Standard Time"];
+
+    //
+    // test expected failures
+    //
+    [self _performDateFormatFailureTest:@"formatFullDateTime"];
+}
+
+- (void) testReformatDate
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSString* dateStr = [MBExpression asString:@"^reformatDate(26 Oct 1986|dd MMM yyyy|MM/dd/yy)"];
+    XCTAssertEqualObjects(dateStr, @"10/26/86");
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^reformatDate()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reformatDate($testDate)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reformatDate($testDate|MM/dd/yy|huh?|who?)" error:&err];
+    expectError(err);
+}
+
+- (void) testReformatDateWithLocale
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSString* dateStr = [MBExpression asString:@"^reformatDateWithLocale(26 Oct 1986|en_US|dd MMM yyyy|MM/dd/yy)"];
+    XCTAssertEqualObjects(dateStr, @"10/26/86");
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^reformatDateWithLocale()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reformatDateWithLocale($testDate|MM/dd/yy)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reformatDateWithLocale($testDate|MM/dd/yy|huh?|who?)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^reformatDateWithLocale($testDate|MM/dd/yy|huh?|who?|hey?)" error:&err];
+    expectError(err);
+}
+
+- (void) testParseDate
+{
+    consoleTrace();
+    
+    //
+    // test expected successes
+    //
+    NSDate* date = [MBExpression asObject:@"^parseDate(Thu, 26 Jan 2012 15:58:19 UTC)"];
+    XCTAssertTrue([date isKindOfClass:[NSDate class]]);
+    NSDate* testDate = [NSDate dateWithTimeIntervalSince1970:1327593499];
+    XCTAssertEqualObjects(date, testDate);
+    date = [MBExpression asObject:@"^parseDate(Fri, Jan 20, 2012 01:00PM EST|EEE, MMM d, yyyy hh:mma z)"];
+    testDate = [NSDate dateWithTimeIntervalSince1970:1327082400];
+    XCTAssertEqualObjects(date, testDate);
+
+    //
+    // test expected failures
     //
     MBExpressionError* err = nil;
     [MBExpression asString:@"^parseDate()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^parseDate() with no parameters");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^parseDate(Thu, 26 Jan 2012 15:58:19 UTC|EEE, MMM d, yyyy hh:mma z|why is this here?)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^parseDate() with three parameters");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^parseDate(this will not parse as a date, will it? of course not!)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^parseDate() with an unparseable date");
-    logExpectedError(err);
-    
-    //
-    // test of ^secondsSince()
-    //
-    err = nil;
-    [MBExpression asObject:@"^secondsSince()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^secondsSince() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^secondsSince(this is not my beautiful house)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^secondsSince() with a parameter that isn't an NSDate");
-    logExpectedError(err);
-    
-    //
-    // test of ^secondsUntil()
-    //
-    err = nil;
-    [MBExpression asObject:@"^secondsUntil()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^secondsUntil() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asObject:@"^secondsUntil($NULL)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^secondsUntil() with a parameter that isn't an NSDate");
-    logExpectedError(err);
-    
-    //
-    // test of ^formatShortDate()
-    //
-    [self _performDateFormatFailureTest:@"formatShortDate"];
-    
-    //
-    // test of ^formatMediumDate()
-    //
-    [self _performDateFormatFailureTest:@"formatMediumDate"];
-    
-    //
-    // test of ^formatLongDate()
-    //
-    [self _performDateFormatFailureTest:@"formatLongDate"];
-    
-    //
-    // test of ^formatFullDate()
-    //
-    [self _performDateFormatFailureTest:@"formatFullDate"];
-    
-    //
-    // test of ^formatShortTime()
-    //
-    [self _performDateFormatFailureTest:@"formatShortTime"];
-    
-    //
-    // test of ^formatMediumTime()
-    //
-    [self _performDateFormatFailureTest:@"formatMediumTime"];
-    
-    //
-    // test of ^formatLongTime()
-    //
-    [self _performDateFormatFailureTest:@"formatLongTime"];
-    
-    //
-    // test of ^formatFullTime()
-    //
-    [self _performDateFormatFailureTest:@"formatFullTime"];
-    
-    //
-    // test of ^formatShortDateTime()
-    //
-    [self _performDateFormatFailureTest:@"formatShortDateTime"];
-    
-    //
-    // test of ^formatMediumDateTime()
-    //
-    [self _performDateFormatFailureTest:@"formatMediumDateTime"];
-    
-    //
-    // test of ^formatLongDateTime()
-    //
-    [self _performDateFormatFailureTest:@"formatLongDateTime"];
-    
-    //
-    // test of ^formatFullDateTime()
-    //
-    [self _performDateFormatFailureTest:@"formatFullDateTime"];
+    expectError(err);
 }
 
 @end

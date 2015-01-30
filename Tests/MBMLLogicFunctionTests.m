@@ -30,29 +30,29 @@
     // test expected successes
     //
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
-    NSNumber* testNum = [NSNumber numberWithInteger:102772];
+    NSNumber* testNum = [NSNumber numberWithInteger:102686];
     scope[@"ifTestNumber"] = testNum;
     id result = [MBExpression asObject:@"^if($ifTestNumber)"];
-    XCTAssertTrue([result isKindOfClass:[NSNumber class]], @"expected result of ^if($ifTestNumber) to return a number");
-    XCTAssertEqualObjects(result, [NSNumber numberWithInteger:102772], @"expected result of ^if($ifTestNumber) to be the number 102772");
+    XCTAssertTrue([result isKindOfClass:[NSNumber class]]);
+    XCTAssertEqualObjects(result, [NSNumber numberWithInteger:102686]);
     
     result = [MBExpression asObject:@"^if($thisVariableDoesNotExist)"];
-    XCTAssertNil(result, @"expected result of ^if($thisVariableDoesNotExist) to be nil");
+    XCTAssertNil(result);
 
     result = [MBExpression asObject:@"^if(T|true)"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected result of ^if(T|true) to return an NSString");
-    XCTAssertEqualObjects(result, @"true", @"expected result of ^if(T|true) to be the string \"true\"");
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects(result, @"true");
     
     result = [MBExpression asObject:@"^if(F|true)"];
-    XCTAssertTrue(result == nil, @"expected result of ^if(F|true) to return nil");
+    XCTAssertTrue(result == nil);
     
     result = [MBExpression asObject:@"^if(T|true|false)"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected result of ^if(T|true|false) to return an NSString");
-    XCTAssertEqualObjects(result, @"true", @"expected result of ^if(T|true|false) to be the string \"true\"");
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects(result, @"true");
 
     result = [MBExpression asObject:@"^if(F|true|false)"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected result of ^if(F|true|false) to return an NSString");
-    XCTAssertEqualObjects(result, @"false", @"expected result of ^if(F|true|false) to be the string \"false\"");
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertEqualObjects(result, @"false");
     [MBScopedVariables exitVariableScope];
 
     //
@@ -60,12 +60,12 @@
     //
     MBExpressionError* err = nil;
     [MBExpression asString:@"^if()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^if() with no parameters");
+    XCTAssertNotNil(err);
     logExpectedError(err);
 
     err = nil;
     [MBExpression asString:@"^if(T|true|false|quantum superposition)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^if() with four parameters");
+    XCTAssertNotNil(err);
     logExpectedError(err);
 }
 
