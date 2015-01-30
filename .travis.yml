@@ -1,0 +1,12 @@
+language: objective-c
+
+before_script:
+  - pod install
+
+script: xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme "MBDataEnvironment Framework" -sdk iphonesimulator clean build test
+
+notifications:
+  email:
+  - scm-mobile@gilt.com
+
+
