@@ -34,15 +34,15 @@
     MBVariableSpace* vars = [MBVariableSpace instance];
     CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
     NSValue* rectVal = [NSValue valueWithCGRect:rect];
-    [vars setVariable:@"rect:val" value:rectVal];
+    vars[@"rect:val"] = rectVal;
 
     CGPoint origin = [MBStringConversions pointFromExpression:@"$rect:origin"];
     NSValue* originVal = [NSValue valueWithCGPoint:origin];
-    [vars setVariable:@"rect:origin:val" value:originVal];
+    vars[@"rect:origin:val"] = originVal;
 
     CGSize size = [MBStringConversions sizeFromExpression:@"$rect:size"];
     NSValue* sizeVal = [NSValue valueWithCGSize:size];
-    [vars setVariable:@"rect:size:val" value:sizeVal];
+    vars[@"rect:size:val"] = sizeVal;
 }
 
 // note: a number of tests will rely on the sanity of this data; if this
