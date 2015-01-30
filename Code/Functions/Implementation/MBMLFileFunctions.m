@@ -145,7 +145,7 @@
         return files;
     }
 
-    return [MBMLFunctionError errorWithMessage:[err localizedDescription]];
+    return [MBMLFunctionError errorWithError:err];
 }
 
 + (id) fileExists:(NSString*)filePath
@@ -214,7 +214,7 @@
     
     NSError* err = nil;
     NSData* data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&err];
-    if (err) return [MBMLFunctionError errorWithMessage:[err localizedDescription]];
+    if (err) return [MBMLFunctionError errorWithError:err];
     
     return data;
 }
@@ -225,7 +225,7 @@
     
     NSError* err = nil;
     NSString* contents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
-    if (err) return [MBMLFunctionError errorWithMessage:[err localizedDescription]];
+    if (err) return [MBMLFunctionError errorWithError:err];
     
     return contents;
 }
@@ -238,7 +238,7 @@
     
     NSError* err = nil;
     if (![fileMgr removeItemAtPath:filePath error:&err]) {
-        return [MBMLFunctionError errorWithMessage:[err localizedDescription]];
+        return [MBMLFunctionError errorWithError:err];
     }
     return @YES;
 }
