@@ -123,10 +123,10 @@
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
 
     NSString* edgeInsetStr = @"-5,-5,15,15";
-    [scope setScopedVariable:@"edgeInsets" value:edgeInsetStr];
+    scope[@"edgeInsets"] = edgeInsetStr;
 
     UIEdgeInsets edgeInsets = [MBStringConversions edgeInsetsFromString:edgeInsetStr];
-    [scope setScopedVariable:@"edgeInsets:val" value:[NSValue valueWithUIEdgeInsets:edgeInsets]];
+    scope[@"edgeInsets:val"] = [NSValue valueWithUIEdgeInsets:edgeInsets];
 
     CGRect srcRect = [MBStringConversions rectFromExpression:@"$rect:val"];
     UIEdgeInsets insets = [MBStringConversions edgeInsetsFromExpression:@"$edgeInsets:val"];

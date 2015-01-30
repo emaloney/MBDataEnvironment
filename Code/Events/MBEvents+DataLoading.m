@@ -70,7 +70,7 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
         NSString* pendingVar = [self name:name withSuffix:kMBMLVariableSuffixRequestPending];
         NSString* failedVar = [self name:name withSuffix:kMBMLVariableSuffixLastRequestFailed];
 
-        [vars setVariable:pendingVar value:@(YES)];
+        vars[pendingVar] = @(YES);
         [vars unsetVariable:failedVar];
         
         [self postEvent:[self willRequestDataEventName:name] withObject:eventObj];
@@ -94,7 +94,7 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
         NSString* failedVar = [self name:name withSuffix:kMBMLVariableSuffixLastRequestFailed];
 
         [vars unsetVariable:pendingVar];
-        [vars setVariable:failedVar value:@(YES)];
+        vars[failedVar] = @(YES);
         
         [self postEvent:[self dataLoadFailedEventName:name] withObject:eventObj];
     }

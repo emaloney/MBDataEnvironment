@@ -514,7 +514,7 @@ static int shortCircuitHitCounter = 0;
     // a top-level MBML variable, prevents tokenization of subreferences following
     // the closing bracket)
     //
-    NSDictionary* barrett = [[MBVariableSpace instance] variableForName:@"Barrett Test"];
+    NSDictionary* barrett = [MBVariableSpace instance][@"Barrett Test"];
     test = [MBExpression asObject:@"$(Barrett Test).species"];
     XCTAssertTrue([test isKindOfClass:[NSString class]]);
     XCTAssertTrue([test hasPrefix:[barrett description]]);
@@ -530,7 +530,7 @@ static int shortCircuitHitCounter = 0;
     // variable reference, prevents tokenization of subreferences
     // following the closing curly brace)
     //
-    NSArray* nameList = [[MBVariableSpace instance] variableForName:@"nameList"];
+    NSArray* nameList = [MBVariableSpace instance][@"nameList"];
     NSNumber* testListCntNum = [MBExpression asObject:@"${nameList.count}"];
     XCTAssertTrue([testListCntNum isKindOfClass:[NSNumber class]]);
     XCTAssertTrue([testListCntNum integerValue] == nameList.count);

@@ -310,10 +310,10 @@
     XCTAssertEqualObjects(otherArray[1], @"2");
     XCTAssertEqualObjects(otherArray[2], @"3");
 
-    [[MBVariableSpace instance] setVariable:@"one" value:[NSNumber numberWithInteger:1]];
-    [[MBVariableSpace instance] setVariable:@"two" value:@"2"];
-    [[MBVariableSpace instance] setVariable:@"free" value:@"three"];
-    [[MBVariableSpace instance] setVariable:@"four" value:@"fore"];
+    [MBVariableSpace instance][@"one"] = [NSNumber numberWithInteger:1];
+    [MBVariableSpace instance][@"two"] = @"2";
+    [MBVariableSpace instance][@"free"] = @"three";
+    [MBVariableSpace instance][@"four"] = @"fore";
     otherArray = [MBExpression asObject:@"^array($one|$two|$free|$four)"];
     XCTAssertTrue([otherArray isKindOfClass:[NSArray class]]);
     XCTAssertTrue(otherArray.count == 4);

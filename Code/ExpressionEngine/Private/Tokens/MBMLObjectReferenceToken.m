@@ -136,7 +136,7 @@ static Class s_objSubrefTokenCls = nil;
         BOOL isKeyString = [key isKindOfClass:s_stringCls];
         if ([ctxt isKindOfClass:[MBVariableSpace class]]) {
             NSString* varName = (isKeyString ? key : [key description]);
-            return [(MBVariableSpace*)ctxt variableForName:varName];
+            return ((MBVariableSpace*)ctxt)[varName];
         }
         else if ([ctxt respondsToSelector:@selector(objectForKey:)]) {
             // note: shouldn't use modern Obj-C subscripting notation here

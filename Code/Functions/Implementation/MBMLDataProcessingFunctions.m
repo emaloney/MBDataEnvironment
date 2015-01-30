@@ -109,14 +109,14 @@ typedef enum {
         NSString* thisKeyVarName = [self _outerVariable:kMBMLVariableKey forDepth:i-1];
         NSString* thisItemVarName = [self _outerVariable:kMBMLVariableItem forDepth:i-1];
         
-        id moveKey = [vars variableForName:thisKeyVarName];
-        id moveItem = [vars variableForName:thisItemVarName];
+        id moveKey = vars[thisKeyVarName];
+        id moveItem = vars[thisItemVarName];
         
 //        [vars pushVariable:nextKeyVarName value:moveKey];
 //        [vars pushVariable:nextItemVarName value:moveItem];
         
-        [vars setVariable:nextKeyVarName value:moveKey];
-        [vars setVariable:nextItemVarName value:moveItem];
+        vars[nextKeyVarName] = moveKey;
+        vars[nextItemVarName] = moveItem;
         
         nextKeyVarName = thisKeyVarName;
         nextItemVarName = thisItemVarName;
