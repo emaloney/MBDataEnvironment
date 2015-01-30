@@ -80,7 +80,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
     return @((NSInteger)[date timeIntervalSinceNow]);
 }
 
-+ (id)unixTimestampToDate:(id)timestamp
++ (id) unixTimestampToDate:(id)timestamp
 {
     debugTrace();
     
@@ -92,7 +92,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
     return [NSDate dateWithTimeIntervalSince1970:[timestampNumber doubleValue]];
 }
 
-+ (id)dateToUnixTimestamp:(NSDate *)date
++ (id) dateToUnixTimestamp:(NSDate *)date
 {
     debugTrace();
     

@@ -36,5 +36,6 @@
 // must be implemented by subclasses
 - (NSUInteger) precedence;
 - (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue
-                                   rightValue:(NSDecimalNumber*)rValue;
+                                   rightValue:(NSDecimalNumber*)rValue
+                                        error:(inout MBExpressionError**)errPtr;
 @end

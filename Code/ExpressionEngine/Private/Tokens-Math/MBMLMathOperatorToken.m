@@ -76,7 +76,31 @@
     return nil;
 }
 
-- (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue rightValue:(NSDecimalNumber*)rValue;
+- (BOOL) validateSyntax:(inout MBExpressionError**)errPtr
+{
+    id left = [self leftOperand];
+    id right = [self rightOperand];
+
+    MBExpressionError* err = nil;
+    if (!left && !right) {
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires both left and right operands", [self expression]];
+    }
+    else if (!left) {
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a left operand", [self expression]];
+    }
+    else if (!right) {
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a right operand", [self expression]];
+    }
+    if (err) {
+        [err reportErrorTo:errPtr];
+        return NO;
+    }
+    return YES;
+}
+
+- (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue
+                                   rightValue:(NSDecimalNumber*)rValue
+                                        error:(inout MBExpressionError**)errPtr
 {
     MBErrorNotImplementedReturn(NSDecimalNumber*);
 }
@@ -92,7 +116,7 @@
         return nil;
     }
     if (!lValObj) {
-        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a valid left operand", [self expression]];
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a valid left operand value", [self expression]];
         err.offendingToken = [self leftOperand];
         [err reportErrorTo:errPtr];
         return nil;
@@ -104,7 +128,7 @@
         return nil;
     }
     if (!rValObj) {
-        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a valid right operand", [self expression]];
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a valid right operand value", [self expression]];
         err.offendingToken = [self rightOperand];
         [err reportErrorTo:errPtr];
         return nil;
@@ -112,7 +136,7 @@
     
     NSDecimalNumber* lVal = [MBExpression numberFromValue:lValObj];
     if (!lVal) {
-        err = [MBExpressionError errorWithFormat:@"Invalid left operand value: \"%@\"", [[self leftOperand] expression]];
+        err = [MBExpressionError errorWithFormat:@"Left operand couldn't be interpreted as a number: \"%@\"", [[self leftOperand] expression]];
         err.offendingToken = self;
         [err reportErrorTo:errPtr];
         return nil;
@@ -120,13 +144,13 @@
     
     NSDecimalNumber* rVal = [MBExpression numberFromValue:rValObj];
     if (!rVal) {
-        err = [MBExpressionError errorWithFormat:@"Invalid right operand value: \"%@\"", [[self rightOperand] expression]];
+        err = [MBExpressionError errorWithFormat:@"Right operand couldn't be interpreted as a number: \"%@\"", [[self rightOperand] expression]];
         err.offendingToken = self;
         [err reportErrorTo:errPtr];
         return nil;
     }
     
-    return [self numericValueForLeftValue:lVal rightValue:rVal];
+    return [self numericValueForLeftValue:lVal rightValue:rVal error:errPtr];
 }
 
 @end

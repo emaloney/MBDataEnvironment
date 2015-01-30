@@ -50,6 +50,16 @@
     return [_childTokens firstObject];
 }
 
+- (BOOL) validateSyntax:(inout MBExpressionError**)errPtr
+{
+    id operand = [self operand];
+    if (!operand) {
+        [[MBExpressionError errorWithFormat:@"The operator \"%@\" requires an operand", [self expression]] reportErrorTo:errPtr];
+        return NO;
+    }
+    return YES;
+}
+
 - (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     return [[self operand] evaluateBooleanInVariableSpace:space error:errPtr];
@@ -89,6 +99,28 @@
         return _childTokens[1];
     }
     return nil;
+}
+
+- (BOOL) validateSyntax:(inout MBExpressionError**)errPtr
+{
+    id left = [self leftOperand];
+    id right = [self rightOperand];
+
+    MBExpressionError* err = nil;
+    if (!left && !right) {
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires both left and right operands", [self expression]];
+    }
+    else if (!left) {
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a left operand", [self expression]];
+    }
+    else if (!right) {
+        err = [MBExpressionError errorWithFormat:@"The operator \"%@\" requires a right operand", [self expression]];
+    }
+    if (err) {
+        [err reportErrorTo:errPtr];
+        return NO;
+    }
+    return YES;
 }
 
 - (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr

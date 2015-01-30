@@ -48,6 +48,8 @@
  */
 - (BOOL) canOptimizeAsConstantExpression:(NSString*)expr;
 
+- (void) validateSyntax:(NSArray*)tokens error:(inout MBExpressionError**)errPtr;
+
 @end
 
 /******************************************************************************/

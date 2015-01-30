@@ -331,6 +331,33 @@
     return nil;
 }
 
+/******************************************************************************/
+#pragma mark Syntax validation
+/******************************************************************************/
+
+- (BOOL) validateToken:(MBMLParseToken*)tok error:(inout MBExpressionError**)errPtr
+{
+    if (![tok validateSyntax:errPtr]) {
+        return NO;
+    }
+
+    for (MBMLParseToken* child in tok.childTokens) {
+        if (![self validateToken:child error:errPtr]) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void) validateSyntax:(NSArray*)tokens error:(inout MBExpressionError**)errPtr
+{
+    for (MBMLParseToken* tok in tokens) {
+        if (![self validateToken:tok error:errPtr]) {
+            return;
+        }
+    }
+}
+
 @end
 
 /******************************************************************************/

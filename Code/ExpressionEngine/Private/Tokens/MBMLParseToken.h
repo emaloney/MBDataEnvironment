@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBExpressionError.h"
 
 @class MBVariableSpace;
 @class MBExpressionGrammar;
-@class MBExpressionError;
 
 /******************************************************************************/
 #pragma mark MBMLTokenMatchStatus typedef
@@ -117,6 +117,8 @@ typedef enum
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                            usingGrammar:(MBExpressionGrammar*)grammar
                                                   error:(inout MBExpressionError**)errPtr;
+
+- (BOOL) validateSyntax:(inout MBExpressionError**)errPtr;
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr;
 - (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr;

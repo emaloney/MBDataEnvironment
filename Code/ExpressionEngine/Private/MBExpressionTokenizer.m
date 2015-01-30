@@ -230,6 +230,12 @@
         return nil;
     }
 
+    [_grammar validateSyntax:tokens error:&err];
+    if (err) {
+        [err reportErrorTo:errPtr];
+        return nil;
+    }
+
     //
     // finally, freeze all the tokens in the match stack;
     // this effectively marks them as no longer changing

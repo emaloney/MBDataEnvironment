@@ -29,7 +29,9 @@
     return 2;
 }
 
-- (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue rightValue:(NSDecimalNumber*)rValue
+- (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue
+                                   rightValue:(NSDecimalNumber*)rValue
+                                        error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
     

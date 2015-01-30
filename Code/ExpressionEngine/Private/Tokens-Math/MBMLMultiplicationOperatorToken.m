@@ -27,7 +27,9 @@
     return 1;
 }
 
-- (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue rightValue:(NSDecimalNumber*)rValue
+- (NSDecimalNumber*) numericValueForLeftValue:(NSDecimalNumber*)lValue
+                                   rightValue:(NSDecimalNumber*)rValue
+                                        error:(inout MBExpressionError**)errPtr
 {
     return [lValue decimalNumberByMultiplyingBy:rValue];
 }

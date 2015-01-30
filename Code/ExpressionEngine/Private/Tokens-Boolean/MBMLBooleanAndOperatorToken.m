@@ -29,14 +29,14 @@
     return self;
 }
 
-- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)err
+- (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
     debugTrace();
-    
-    if (![[self leftOperand] evaluateBooleanInVariableSpace:space error:err]) {
+
+    if (![[self leftOperand] evaluateBooleanInVariableSpace:space error:errPtr]) {
         return NO;
     }
-    return [[self rightOperand] evaluateBooleanInVariableSpace:space error:err];
+    return [[self rightOperand] evaluateBooleanInVariableSpace:space error:errPtr];
 }
 
 @end
