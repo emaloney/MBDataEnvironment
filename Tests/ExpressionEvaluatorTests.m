@@ -21,24 +21,6 @@
 
 @implementation ExpressionEvaluatorTests
 
-/*
- -^formatCurrencyAmount($tableData[$currentDataSection].local_currency_order_credit|$currencyCode)
- !$user -AND $selectedPackageOption.status != ForSale
- !$user -AND $selectedPackageOption.status == ForSale
- $%.0f
- $%0.2f
- $Build.region != jp
- $Build.region == jp
- $Build.region == us
- $Gilt:storesVisited[$Store:identifier]
- $GiltCity:categoryNamesToIDs[$GiltCity:selectedCategory]
- $GiltCity:categoryNamesToIDs[$item]
- $GiltCity:cityList[0].id
- $GiltCity:offersByID[$GiltCity:offerIDsByGeoloc[$item]].name
- $GiltCity:offersByID[$GiltCity:offerIDsByGeoloc[$item]].status != ForSale
- $GiltCity:offersByID[$GiltCity:offerIDsByGeoloc[$item]].tag_line_short
- */
-
 /******************************************************************************/
 #pragma mark Expression tests - variables
 /******************************************************************************/
@@ -46,7 +28,7 @@
 - (void) _testExpressionWithEscapeSequence:(NSString*)str
 {
     NSString* result = [MBExpression asString:str];
-    XCTAssertNotEqualObjects(str, result, @"looks like the escape sequence was not interpreted correctly: %@", str);
+    XCTAssertNotEqualObjects(str, result);
 }
 
 // this test is for IOS-339
@@ -59,29 +41,29 @@
 - (void) testSimpleBooleanLiteralExpressions
 {
     BOOL result = [MBExpression asBoolean:@"T" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"F" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"0" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"0\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"1" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"1\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"2" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"2\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"3" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"3\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"-1" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"-1\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"-2" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"-2\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"-3" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"-3\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"-0" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"-0\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"Y" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"Y\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"N" defaultValue:YES];
-    XCTAssertTrue(result, @"expected boolean result of \"N\" to be YES");  // see: IOS-32
+    XCTAssertTrue(result);  // see: IOS-32
 }
 
 - (void) _testBooleanFromValue:(id)val expecting:(BOOL)expecting
@@ -110,25 +92,25 @@
 - (void) testBooleanNegationOperator
 {
     BOOL result = [MBExpression asBoolean:@"!T" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!T\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!F" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"!F\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"!0" defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"!0\" to be YES");
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:@"!1" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!1\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!2" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!2\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!3" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!3\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!-1" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!-1\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!-2" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!-2\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!-3" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!-3\" to be NO");
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:@"!-0" defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"!-0\" to be NO");
+    XCTAssertTrue(!result);
 }
 
 - (void) _testBooleanAndWithOperator:(NSString*)op
@@ -137,29 +119,29 @@
     // these tests should all pass when 'op' is a valid "and" operator string (-AND or &&)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ T", op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ T\" to be YES", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ F", op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"T %@ F\" to be NO", op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ F", op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ F\" to be NO", op);
+    XCTAssertTrue(!result);
     
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ T %@ T", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ T %@ T\" to be YES", op, op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ T %@ T", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ T %@ T\" to be NO", op, op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ F %@ T", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"T %@ F %@ T\" to be NO", op, op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ T %@ F", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"T %@ T %@ F\" to be NO", op, op);
+    XCTAssertTrue(!result);
     
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ F %@ F", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ F %@ T\" to be NO", op, op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ T %@ F", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ T %@ F\" to be NO", op, op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ F %@ F", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"T %@ F %@ F\" to be NO", op, op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ F %@ T", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ F %@ T\" to be NO", op, op);
+    XCTAssertTrue(!result);
 }
 
 - (void) testBooleanAndOperator
@@ -177,29 +159,29 @@
     // these tests should all pass when 'op' is a valid "or" operator string (-OR or ||)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ T", op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ T\" to be YES", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ F", op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ F\" to be YES", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ F", op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ F\" to be NO", op);
+    XCTAssertTrue(!result);
     
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ T %@ T", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ T %@ T\" to be YES", op, op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ T %@ T", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"F %@ T %@ T\" to be YES", op, op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ F %@ T", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ F %@ T\" to be YES", op, op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ T %@ F", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ T %@ F\" to be YES", op, op);
+    XCTAssertTrue(result);
     
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ F %@ F", op, op] defaultValue:YES];
-    XCTAssertTrue(!result, @"expected boolean result of \"F %@ F %@ F\" to be NO", op, op);
+    XCTAssertTrue(!result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ T %@ F", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"F %@ T %@ F\" to be YES", op, op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"T %@ F %@ F", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"T %@ F %@ F\" to be YES", op, op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"F %@ F %@ T", op, op] defaultValue:NO];
-    XCTAssertTrue(result, @"expected boolean result of \"F %@ F %@ T\" to be YES", op, op);
+    XCTAssertTrue(result);
 }
 
 - (void) testBooleanOrOperator
@@ -217,27 +199,27 @@
     // these tests should all pass when 'op' is a valid "equals" operator string (-EQ or ==)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"$one %@ ^parseInteger(1)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(1) %@ ^parseInteger(1)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$two %@ ^parseInteger(2)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(3) %@ $three", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-5) %@ $negativeFive", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeEight %@ -8", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$six %@ $six", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$backendDomain %@ m.gilt.com", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"m.gilt.com %@ $backendDomain", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^dictionary($one|$one|$two|$two) %@ ^dictionary($two|$two|$one|$one)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^array($one|$two) %@ ^array($one|$two)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
 }
 
 - (void) testBooleanEqualsOperator
@@ -255,23 +237,23 @@
     // these tests should all pass when 'op' is a valid "not equals" operator string (-NE or !=)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"$one %@ $two", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(1) %@ ^parseInteger(2)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$two %@ $negativeTwo", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(4) %@ $five", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(5) %@ $negativeFive", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$backendDomain %@ yahoo.com", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$six %@ $seven", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^dictionary($one|$one|$two|$one) %@ ^dictionary($one|$one|$two|$two)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^array($one|$two) %@ ^array($two|$one)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
 }
 
 - (void) testBooleanNotEqualsOperator
@@ -289,23 +271,23 @@
     // these tests should all pass when 'op' is a valid "less than" operator string (-LT or <)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"$one %@ $two", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(1) %@ ^parseInteger(2)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeTwo %@ $two", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-4) %@ $five", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeSix %@ $negativeFive", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"A %@ B", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(6) %@ ^parseInteger(7)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-6) %@ ^parseInteger(7)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-8) %@ ^parseInteger(-7)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
 }
 
 - (void) testBooleanLessThanOperator
@@ -323,23 +305,23 @@
     // these tests should all pass when 'op' is a valid "greater than" operator string (-GT or >)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"$two %@ $one", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(2) %@ ^parseInteger(1)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$two %@ $negativeTwo", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$five %@ ^parseInteger(-6)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeFive %@ $negativeSix", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"B %@ A", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(7) %@ ^parseInteger(6)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-6) %@ ^parseInteger(-7)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-8) %@ ^parseInteger(-100)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
 }
 
 - (void) testBooleanGreaterThanOperator
@@ -357,23 +339,23 @@
     // these tests should all pass when 'op' is a valid "less than or equal to" operator string (-LTE or <= or =<)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"$one %@ $two", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"1 %@ ^parseInteger(2)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeTwo %@ $two", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-4) %@ $five", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeSix %@ $negativeFive", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"A %@ A", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"6 %@ 7", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-6) %@ 7", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-8) %@ -7", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
 }
 
 - (void) testBooleanLessThanEqualsOperator
@@ -392,29 +374,29 @@
     // these tests should all pass when 'op' is a valid "greater than or equal to" operator string (-GTE or >= or =>)
     //
     BOOL result = [MBExpression asBoolean:[NSString stringWithFormat:@"$two %@ $one", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(2) %@ ^parseInteger(1)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$two %@ ^parseInteger(2)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$five %@ ^parseInteger(-6)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"$negativeFive %@ $negativeSix", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"A %@ A", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"B %@ A", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"C %@ A", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);
+    XCTAssertTrue(result);
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(7) %@ 6", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(6) %@ 6", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-7) %@ -7", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:[NSString stringWithFormat:@"^parseInteger(-8) %@ ^parseInteger(-100)", op] defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for %@ operator", op);   
+    XCTAssertTrue(result);   
 }
 
 - (void) testBooleanGreaterThanEqualsOperator
@@ -433,28 +415,28 @@
     // test string/number comparisons
     //
     BOOL result = [MBExpression asBoolean:@"1 == $one" defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for string and number comparison");   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:@"$one == 1" defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for string and number comparison");   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:@"$negativeOne == -1" defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for string and number comparison");   
+    XCTAssertTrue(result);   
     result = [MBExpression asBoolean:@"-1 == $negativeOne" defaultValue:NO];
-    XCTAssertTrue(result, @"unexpected boolean result for string and number comparison");   
+    XCTAssertTrue(result);   
 }
 
 static int shortCircuitHitCounter = 0;
 
-+ (id) dataTransformerWithSideEffect
++ (id) functionWithSideEffect
 {
     return [NSNumber numberWithInt:shortCircuitHitCounter++];
 }
 
 - (void) testBooleanShortCircuiting
 {
-    BOOL result = [MBExpression asBoolean:@"T -OR ^dataTransformerWithSideEffect()"];
-    XCTAssertTrue(shortCircuitHitCounter == 0, @"test of boolean short-circuiting failed");
-    result = [MBExpression asBoolean:@"F -AND ^dataTransformerWithSideEffect()"];
-    XCTAssertTrue(shortCircuitHitCounter == 0, @"test of boolean short-circuiting failed");
+    BOOL result = [MBExpression asBoolean:@"T -OR ^functionWithSideEffect()"];
+    XCTAssertTrue(shortCircuitHitCounter == 0);
+    result = [MBExpression asBoolean:@"F -AND ^functionWithSideEffect()"];
+    XCTAssertTrue(shortCircuitHitCounter == 0);
 }
 
 - (void) testSimpleBooleanVariableExpressions
@@ -475,46 +457,46 @@ static int shortCircuitHitCounter = 0;
     //
     NSString* expected = [NSString stringWithFormat:@"[Order #%@]", orderNum];
     NSString* result = [MBExpression asObject:@"[Order #${testOrderNumber}]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #$testOrderNumber]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #${testData.orderNumber}]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #${testData.order_number}]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #${testData.order:number}]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #${testData.order.number}]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #$[testData].order.number]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #$[testData][order].number]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"[Order #$[testData][order][number]]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
 
     expected = [[MBVariableSpace instance] variableAsString:@"backendURL"]; 
     result = [MBExpression asObject:@"http://$backendDomain/$backendPath?$backendQueryString"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"http://${backendDomain}/${backendPath}?${backendQueryString}"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"http://$[backendDomain]/$[backendPath]?$[backendQueryString]"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
     result = [MBExpression asObject:@"http://$(backendDomain)/$(backendPath)?$(backendQueryString)"];
-    XCTAssertTrue([result isKindOfClass:[NSString class]], @"expected object result to be a string");
-    XCTAssertTrue([result isEqualToString:expected], @"unexpected test result: %@", result);
+    XCTAssertTrue([result isKindOfClass:[NSString class]]);
+    XCTAssertTrue([result isEqualToString:expected]);
 }
 
 - (void) testComplexVariableReferences
@@ -525,7 +507,7 @@ static int shortCircuitHitCounter = 0;
     // the closing bracket)
     //
     NSString* test = [MBExpression asString:@"$[Barrett Test].species"];
-    XCTAssertTrue([test isEqualToString:@"cat"], @"expected string result of $[Barrett Test].species to be the string \"cat\"");
+    XCTAssertTrue([test isEqualToString:@"cat"]);
     
     //
     // test parentheses-quoted notation (treats contents of parens as a literal name for
@@ -534,14 +516,14 @@ static int shortCircuitHitCounter = 0;
     //
     NSDictionary* barrett = [[MBVariableSpace instance] variableForName:@"Barrett Test"];
     test = [MBExpression asObject:@"$(Barrett Test).species"];
-    XCTAssertTrue([test isKindOfClass:[NSString class]], @"expected object result of $(Barrett Test).species to be a string");
-    XCTAssertTrue([test hasPrefix:[barrett description]], @"expected object result of $(Barrett Test).species to begin with [barrett description]");
-    XCTAssertTrue([test hasSuffix:@".species"], @"expected object result of $(Barrett Test).species to end in .species");
+    XCTAssertTrue([test isKindOfClass:[NSString class]]);
+    XCTAssertTrue([test hasPrefix:[barrett description]]);
+    XCTAssertTrue([test hasSuffix:@".species"]);
 
     NSArray* testArray = [MBExpression asArray:@"$(Barrett Test).species"];
-    XCTAssertTrue(testArray.count == 2, @"unexpected array result of $(Barrett Test).species to contain 2 elements");
-    XCTAssertEqualObjects(testArray[0], barrett, @"unexpected result for array evaluation of $(Barrett Test).species");
-    XCTAssertTrue([testArray[1] isEqualToString:@".species"], @"unexpected result for array evaluation of $(Barrett Test).species");
+    XCTAssertTrue(testArray.count == 2);
+    XCTAssertEqualObjects(testArray[0], barrett);
+    XCTAssertTrue([testArray[1] isEqualToString:@".species"]);
 
     //
     // test curly brace-quoted notation (treats contents of curly braces as a
@@ -550,20 +532,20 @@ static int shortCircuitHitCounter = 0;
     //
     NSArray* nameList = [[MBVariableSpace instance] variableForName:@"nameList"];
     NSNumber* testListCntNum = [MBExpression asObject:@"${nameList.count}"];
-    XCTAssertTrue([testListCntNum isKindOfClass:[NSNumber class]], @"expected object result of ${nameList.count} to be a number");
-    XCTAssertTrue([testListCntNum integerValue] == nameList.count, @"expected numeric result of ${nameList.count} to be 6");
+    XCTAssertTrue([testListCntNum isKindOfClass:[NSNumber class]]);
+    XCTAssertTrue([testListCntNum integerValue] == nameList.count);
     NSDictionary* lauren = nameList[3];
     NSString* laurenFirstName = [MBExpression asObject:@"${nameList[3].firstName}"];
-    XCTAssertTrue([laurenFirstName isKindOfClass:[NSString class]], @"expected object result of ${nameList[3].firstName} to be a string");
-    XCTAssertTrue([laurenFirstName isEqualToString:[lauren objectForKey:@"firstName"]], @"unexpected object result of ${nameList[3].firstName}");
+    XCTAssertTrue([laurenFirstName isKindOfClass:[NSString class]]);
+    XCTAssertTrue([laurenFirstName isEqualToString:[lauren objectForKey:@"firstName"]]);
     test = [MBExpression asObject:@"${nameList[3]}.firstName"];
-    XCTAssertTrue([test isKindOfClass:[NSString class]], @"expected object result of ${nameList[3]}.firstName to be a string");
-    XCTAssertTrue([test hasPrefix:[lauren description]], @"expected object result of ${nameList[3]}.firstName to begin with [lauren description]");
-    XCTAssertTrue([test hasSuffix:@".firstName"], @"expected object result of $(Barrett Test).species to end in .species");
+    XCTAssertTrue([test isKindOfClass:[NSString class]]);
+    XCTAssertTrue([test hasPrefix:[lauren description]]);
+    XCTAssertTrue([test hasSuffix:@".firstName"]);
     testArray = [MBExpression asArray:@"${nameList[3]}.firstName"];
-    XCTAssertTrue(testArray.count == 2, @"unexpected array result of ${nameList[3]}.firstName to contain 2 elements");
-    XCTAssertEqualObjects(testArray[0], lauren, @"unexpected result for array evaluation of ${nameList[3]}.firstName");
-    XCTAssertTrue([testArray[1] isEqualToString:@".firstName"], @"unexpected result for array evaluation of ${nameList[3]}.firstName");
+    XCTAssertTrue(testArray.count == 2);
+    XCTAssertEqualObjects(testArray[0], lauren);
+    XCTAssertTrue([testArray[1] isEqualToString:@".firstName"]);
 }
 
 - (void) testComplexVariableReferenceFailures
@@ -575,154 +557,200 @@ static int shortCircuitHitCounter = 0;
     //
     MBExpressionError* err = nil;
     [MBExpression asObject:@"${this will fail}" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid variable reference");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asObject:@"${this } fail}" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid variable reference");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asObject:@"${this / fail}" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid variable reference");
-    logExpectedError(err);
 }
-
-/*
- <Debug math="#(5 - 2)"/>
- <Debug math="#(.5 + 0.25)"/>
- <Debug math="#(5 * -1)"/>
- <Debug math="#(5 * - 1)"/>
- <Debug math="#(+9 / +3)"/>
- <Debug math="#($application.networkTimeout / 2)"/>
- <Debug math="#(^count($application) * -1)"/>
- <Debug math="#(4 + 2 * 3)"/>
- <Debug math="#((4 + 2) * 3)"/>
- <Debug math="#(4 + (2 * 3))"/>
- <Debug math="#(4 + (T * 3))"/>
- <Debug math="#(4 + (..3 * 3))"/>
- <Debug math="#(4 + (.3.0 * 3))"/>
- <Debug math="#(4 + (.3-0 * 3))"/>
- <Debug math="#(+4)"/>
- <Debug math="#(+4 - - 1)"/>
- 
- 
- <Listener name="Gilt:AppStarted" event="AppStarted">
- <PostEvent name="MathBench" afterDelay="10.0"/>
- </Listener>
- 
- <Listener name="MathBench">
- <Debug log="Starting MathBench"/>
- <SetVar name="small" literal="5"/>
- <SetVar name="large" literal="50"/>
- 
- <!--
- <Debug math="^bench(^repeat(1000|#(2 + 2)))"/>
- <Debug math="^bench(^repeat(1000|^add(2|2)))"/>
- 
- <Debug math="^bench(^repeat(1000|#(100 - 50)))"/>
- <Debug math="^bench(^repeat(1000|^subtract(100|50)))"/>
- 
- <Debug math="^bench(^repeat(1000|#(2 * 2)))"/>
- <Debug math="^bench(^repeat(1000|^multiply(2|2)))"/>
- 
- <Debug math="^bench(^repeat(1000|#(100 / 50)))"/>
- <Debug math="^bench(^repeat(1000|^divide(100|50)))"/>
- -->
- 
- <!--
- <Debug math="^bench(^repeat(1000|#($small + $small)))"/>
- <Debug math="^bench(^repeat(1000|^add($small|$small)))"/>
- 
- <Debug math="^bench(^repeat(1000|#($large - $small)))"/>
- <Debug math="^bench(^repeat(1000|^subtract($large|$small)))"/>
- 
- <Debug math="^bench(^repeat(1000|#($small * $small)))"/>
- <Debug math="^bench(^repeat(1000|^multiply($small|$small)))"/>
- 
- <Debug math="^bench(^repeat(1000|#($large / $small)))"/>
- <Debug math="^bench(^repeat(1000|^divide($large|$small)))"/>
- -->
- 
- <Debug math="^bench(^repeat(1000|#((($small * 10) + $small) / $large)))"/>
- <Debug math="^bench(^repeat(1000|^divide(^add(^multiply($small|10)|$small)|$large)))"/>
- 
- <Debug math="^bench(^repeat(1000|#(((($small * 10) + $small) / $large) + 0.0001)))"/>
- <Debug math="^bench(^repeat(1000|^add(^divide(^add(^multiply($small|10)|$small)|$large)|0.0001)))"/>
- 
- <Debug math="^bench(^repeat(1000|#((((($small * 10) + $small) / $large) + 0.0001) - 0.0001)))"/>
- <Debug math="^bench(^repeat(1000|^subtract(^add(^divide(^add(^multiply($small|10)|$small)|$large)|0.0001)|0.0001)))"/>
- 
- <Debug math="^bench(^repeat(1000|#((((($small * 10) + $small) / ($large / 10)) + 0.0001) - 0.0001)))"/>
- <Debug math="^bench(^repeat(1000|^subtract(^add(^divide(^add(^multiply($small|10)|$small)|^divide($large|10))|0.0001)|0.0001)))"/>
- 
- </Listener>
- 
- <!-- ======================================================================= -->
-
- */
 
 - (void) testMathNotationAddition
 {
-    XCTAssertEqual([[@"#(1 + 1 + 1)" evaluateAsNumber] integerValue], (NSInteger)3, @"Expected 1 + 1 + 1 to equal 3");
-    XCTAssertEqual([[@"#(1 + 1 + (1))" evaluateAsNumber] integerValue], (NSInteger)3, @"Expected 1 + 1 + (1) to equal 3");
-    XCTAssertEqual([[@"#(1 + 1 + 1 + 1)" evaluateAsNumber] integerValue], (NSInteger)4, @"Expected 1 + 1 + 1 + 1 to equal 4");
-    XCTAssertEqual([[@"#((1 + 1) + (1 + 1))" evaluateAsNumber] integerValue], (NSInteger)4, @"Expected (1 + 1) + (1 + 1) to equal 4");
-    XCTAssertEqual([[@"#(2 + 2)" evaluateAsNumber] integerValue], (NSInteger)4, @"Expected 2 + 2 to equal 4");
-    XCTAssertEqual([[@"#(2.0 + 2.0)" evaluateAsNumber] integerValue], (NSInteger)4, @"Expected 2 + 2 to equal 4");
-    XCTAssertEqual([[@"#(+2 + +2)" evaluateAsNumber] integerValue], (NSInteger)4, @"Expected 2 + 2 to equal 4");
-    XCTAssertEqualWithAccuracy((double)[[@"#(2.0001 + 2.0001)" evaluateAsNumber] doubleValue], (double)4.0002, 0.0001, @"Expected (slightly more than) 2 + (slightly more than) 2 to equal (slightly more than) 4");
+    XCTAssertEqual([[@"#(1 + 1 + 1)" evaluateAsNumber] integerValue], (NSInteger)3);
+    XCTAssertEqual([[@"#(1 + 1 + (1))" evaluateAsNumber] integerValue], (NSInteger)3);
+    XCTAssertEqual([[@"#(1 + 1 + 1 + 1)" evaluateAsNumber] integerValue], (NSInteger)4);
+    XCTAssertEqual([[@"#((1 + 1) + (1 + 1))" evaluateAsNumber] integerValue], (NSInteger)4);
+    XCTAssertEqual([[@"#(2 + 2)" evaluateAsNumber] integerValue], (NSInteger)4);
+    XCTAssertEqual([[@"#(2.0 + 2.0)" evaluateAsNumber] integerValue], (NSInteger)4);
+    XCTAssertEqual([[@"#(+2 + +2)" evaluateAsNumber] integerValue], (NSInteger)4);
+    XCTAssertEqualWithAccuracy((double)[[@"#(2.0001 + 2.0001)" evaluateAsNumber] doubleValue], (double)4.0002, 0.0001);
 }
 
 - (void) testMathNotationAdditionFailures
 {
     MBExpressionError* err = nil;
     [MBExpression asNumber:@"#(1 +)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asNumber:@"#(1 1)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asNumber:@"#(1 + T)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asNumber:@"#(1 + 1 +)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asNumber:@"#(+1 ++ 1)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asNumber:@"#(+1 ++ +1)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asNumber:@"#(+1 +1)" error:&err];
-    XCTAssertNotNil(err, @"Expected error for an invalid math notation");
-    logExpectedError(err);
+    expectError(err);
+}
+
+- (void) testMathNotationSubtraction
+{
+    XCTAssertEqual([[@"#(1 - 1 - 1)" evaluateAsNumber] integerValue], (NSInteger)-1);
+    XCTAssertEqual([[@"#(1 - 1 - (1))" evaluateAsNumber] integerValue], (NSInteger)-1);
+    XCTAssertEqual([[@"#(1 - 1 - 1 - 1)" evaluateAsNumber] integerValue], (NSInteger)-2);
+    XCTAssertEqual([[@"#((1 - 1) - (1 - 1))" evaluateAsNumber] integerValue], (NSInteger)0);
+    XCTAssertEqual([[@"#(2 - 1)" evaluateAsNumber] integerValue], (NSInteger)1);
+    XCTAssertEqual([[@"#(2000 - 1499.50)" evaluateAsNumber] doubleValue], (double)500.5);
+    XCTAssertEqual([[@"#(-2 - -2)" evaluateAsNumber] integerValue], (NSInteger)0);
 }
 
 - (void) testMathNotationSubtractionFailures
 {
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"#(1 -)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 -1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 - T)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 - 1 -)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 -- 1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(-1 -- -1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(-1 -1)" error:&err];
+    expectError(err);
 }
 
 - (void) testMathNotationMultiplication
 {
+    XCTAssertEqual([[@"#(2 * 2)" evaluateAsNumber] integerValue], (NSInteger)4);
+    XCTAssertEqual([[@"#(100 * 2.5)" evaluateAsNumber] integerValue], (NSInteger)250);
+    XCTAssertEqual([[@"#(3.234 * 1.225)" evaluateAsNumber] doubleValue], (double)3.96165);
 }
 
 - (void) testMathNotationMultiplicationFailures
 {
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"#(0 ** 0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 * T)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 * 1 *)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 ** 1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 ** +1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(*1 *1)" error:&err];
+    expectError(err);
 }
 
 - (void) testMathNotationDivision
 {
+    XCTAssertEqual([[@"#(21 / 3)" evaluateAsNumber] integerValue], (NSInteger)7);
+    XCTAssertEqual([[@"#(0 / 10)" evaluateAsNumber] integerValue], (NSInteger)0);
 }
 
 - (void) testMathNotationDivisionFailures
 {
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"#(0 / 0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 / T)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 / 1 /)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 // 1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 // +1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(/1 /1)" error:&err];
+    expectError(err);
+}
+
+- (void) testMathNotationModulo
+{
+    XCTAssertEqual([[@"#(21 % 2)" evaluateAsNumber] integerValue], (NSInteger)1);
+    XCTAssertEqual([[@"#(0 % 10)" evaluateAsNumber] integerValue], (NSInteger)0);
+    XCTAssertEqual([[@"#(25 % 10)" evaluateAsNumber] integerValue], (NSInteger)5);
+}
+
+- (void) testMathNotationModuloFailures
+{
+    MBExpressionError* err = nil;
+    [MBExpression asNumber:@"#(0 % 0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 % T)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(1 % 1 %)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 %% 1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(+1 %% +1)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(%1 %1)" error:&err];
+    expectError(err);
 }
 
 @end
