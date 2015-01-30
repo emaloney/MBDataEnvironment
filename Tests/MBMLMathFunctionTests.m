@@ -19,15 +19,6 @@
 @implementation MBMLMathFunctionTests
 
 /*
- NEED TO BE ADDED:
-    <Function class="MBMLMathFunctions" name="mod" input="pipedMath"/>
-    <Function class="MBMLMathFunctions" name="modFloat" input="pipedMath"/>
-    <Function class="MBMLMathFunctions" name="round" input="math"/>
-    <Function class="MBMLMathFunctions" name="randomPercent" input="none"/>
-    <Function class="MBMLMathFunctions" name="random" input="pipedMath"/>
-    <Function class="MBMLMathFunctions" name="arrayFilledWithIntegers" input="pipedMath"/>
-
- 
  FULL LIST:
     <Function class="MBMLMathFunctions" name="mod" input="pipedMath"/>
     <Function class="MBMLMathFunctions" name="modFloat" input="pipedMath"/>
@@ -42,124 +33,91 @@
     <Function class="MBMLMathFunctions" name="arrayFilledWithIntegers" input="pipedMath"/>
  */
 
-- (void) _setupMathVariableWithPrefix:(NSString*)prefix
-                               value1:(NSNumber*)num1
-                               value2:(NSNumber*)num2
-{
-    NSDecimalNumber* dec1 = [NSDecimalNumber decimalNumberWithDecimal:[num1 decimalValue]];
-    NSDecimalNumber* dec2 = [NSDecimalNumber decimalNumberWithDecimal:[num2 decimalValue]];
-    
-    MBVariableSpace* vars = [MBVariableSpace instance];
-    [vars setVariable:[NSString stringWithFormat:@"%@%@", prefix, @"Value1"] value:dec1];
-    [vars setVariable:[NSString stringWithFormat:@"%@%@", prefix, @"Value2"] value:dec2];
-    [vars setVariable:[NSString stringWithFormat:@"%@%@", prefix, @"Sum"] value:[dec1 decimalNumberByAdding:dec2]];
-    [vars setVariable:[NSString stringWithFormat:@"%@%@", prefix, @"Mult"] value:[dec1 decimalNumberByMultiplyingBy:dec2]];
-    [vars setVariable:[NSString stringWithFormat:@"%@%@", prefix, @"Div"] value:[dec1 decimalNumberByDividingBy:dec2]];
-    [vars setVariable:[NSString stringWithFormat:@"%@%@", prefix, @"Subt"] value:[dec1 decimalNumberBySubtracting:dec2]];
-}
+/******************************************************************************/
+#pragma mark Tests
+/******************************************************************************/
 
-- (void) _setupMathVariables
+- (void) testMod
 {
-    [self _setupMathVariableWithPrefix:@"short" 
-                                value1:[NSNumber numberWithShort:32] 
-                                value2:[NSNumber numberWithShort:64]];
-    
-    [self _setupMathVariableWithPrefix:@"int" 
-                                value1:[NSNumber numberWithInteger:-32000] 
-                                value2:[NSNumber numberWithInteger:64000]];
-    
-    [self _setupMathVariableWithPrefix:@"long" 
-                                value1:[NSNumber numberWithLong:-32000] 
-                                value2:[NSNumber numberWithLong:64000]];
-    
-    [self _setupMathVariableWithPrefix:@"longLong" 
-                                value1:[NSNumber numberWithLongLong:-320000000000] 
-                                value2:[NSNumber numberWithLongLong:640000000000]];
-    
-    [self _setupMathVariableWithPrefix:@"float" 
-                                value1:[NSNumber numberWithFloat:-32.001] 
-                                value2:[NSNumber numberWithFloat:64.999]];
-    
-    [self _setupMathVariableWithPrefix:@"double" 
-                                value1:[NSNumber numberWithFloat:-3200000.00001] 
-                                value2:[NSNumber numberWithFloat:6400000.99999]];
-}
+    consoleTrace();
 
-- (void) testMathFunctions
-{
-    [self _setupMathVariables];
-    
-    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^ceil(1.0)"], @"expected ^ceil(1.0) == 1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.1)"], @"expected ^ceil(1.1) == 2");
-    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.5)"], @"expected ^ceil(1.5) == 2");
-    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.9)"], @"expected ^ceil(1.9) == 2");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.0)"], @"expected ^ceil(-1.0) == -1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.1)"], @"expected ^ceil(-1.1) == -1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.5)"], @"expected ^ceil(-1.5) == -1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.9)"], @"expected ^ceil(-1.9) == -1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-2.9 + 1.0)"], @"expected ^ceil(-2.9 + 1.0) == -1");
-    
-    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.0)"], @"expected ^floor(1.0) == 1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.1)"], @"expected ^floor(1.1) == 1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.5)"], @"expected ^floor(1.5) == 1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.9)"], @"expected ^floor(1.9) == 1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^floor(-1.0)"], @"expected ^floor(-1.0) == -1");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-1.1)"], @"expected ^floor(-1.1) == -2");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-1.5)"], @"expected ^floor(-1.5) == -2");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-1.9)"], @"expected ^floor(-1.9) == -2");
-    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-2.9 + 1.0)"], @"expected ^floor(-2.9 + 1.0) == -2");
-
-    //test ^min(a,b)
-    XCTAssertEqualObjects(@0, [MBExpression asObject:@"^min(0|1)"], @"expected ^min(0|1) == 0");
-    XCTAssertEqualObjects(@0.0, [MBExpression asObject:@"^min(0.0|1.0)"], @"expected ^min(0.0|1.0) == 0.0");
-    XCTAssertEqualObjects(@0.001, [MBExpression asObject:@"^min(0.001|0.002)"], @"expected ^min(0.001|0.002) == 0.001");
-    XCTAssertEqualObjects(@(-1), [MBExpression asObject:@"^min(-1|0)"], @"expected ^min(-1|0) == -1");
-    XCTAssertEqualObjects(@(-2), [MBExpression asObject:@"^min(-1|-2)"], @"expected ^min(-1|-2) == -2");
-    XCTAssertEqualObjects(@(-2), [MBExpression asObject:@"^min(-1 + 1|-2)"], @"expected ^min(-1 + 0|-2) == -2");
-    
-    //test ^max(a,b)
-    XCTAssertEqualObjects(@1, [MBExpression asObject:@"^max(0|1)"], @"expected ^max(0|1) == 1");
-    XCTAssertEqualObjects(@1.0, [MBExpression asObject:@"^max(0.0|1.0)"], @"expected ^max(0.0|1.0) == 1.0");
-    XCTAssertEqualObjects(@0.002, [MBExpression asObject:@"^max(0.001|0.002)"], @"expected ^max(0.001|0.002) == 0.002");
-    XCTAssertEqualObjects(@0, [MBExpression asObject:@"^max(-1|0)"], @"expected ^max(-1|0) == 0");
-    XCTAssertEqualObjects(@0, [MBExpression asObject:@"^max(-1 + 1|-2)"], @"expected ^max(-1 + 1|-2) == 0");
-    
-}
-
-- (void) testMathFunctionFailures
-{
     //
-    // test of ^sum()
+    // test expected successes
+    //
+    NSNumber* modTest1 = [MBExpression asNumber:@"^mod(21|5)"];
+    XCTAssertEqual([modTest1 integerValue], 1);
+    NSNumber* modTest2 = [MBExpression asNumber:@"^mod(21|4)"];
+    XCTAssertEqual([modTest2 integerValue], 1);
+    NSNumber* modTest3 = [MBExpression asNumber:@"^mod(21|7)"];
+    XCTAssertEqual([modTest3 integerValue], 0);
+
+    //
+    // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asString:@"^sum()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^sum() with no parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asString:@"^sum(|)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^sum() with two empty parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asString:@"^sum(||)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^sum() with three empty parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asString:@"^sum(2.5)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^sum() with one parameter");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asString:@"^sum(this|that)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^sum() with non-numeric parameters");
-    logExpectedError(err);
-    err = nil;
-    [MBExpression asString:@"^sum(2.5|five)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^sum() with one non-numeric parameter");
-    logExpectedError(err);
+    [MBExpression asObject:@"^mod()" error:&err];
+    expectError(err);
 
+    err = nil;
+    [MBExpression asObject:@"^mod(21)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^mod(21|7|0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^mod(21|0)" error:&err];
+    expectError(err);
 }
 
-- (void) testMathFunctionPercent
+- (void) testModFloat
 {
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    NSNumber* modTest1 = [MBExpression asNumber:@"^modFloat(21|5)"];
+    XCTAssertEqual([modTest1 doubleValue], 1.0);
+    NSNumber* modTest2 = [MBExpression asNumber:@"^modFloat(21|4)"];
+    XCTAssertEqual([modTest2 doubleValue], 1.0);
+    NSNumber* modTest3 = [MBExpression asNumber:@"^modFloat(21|7)"];
+    XCTAssertEqual([modTest3 doubleValue], 0.0);
+    NSNumber* modTest4 = [MBExpression asNumber:@"^modFloat(10.75|.5)"];
+    XCTAssertEqual([modTest4 doubleValue], 0.25);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^modFloat()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^modFloat(21)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^modFloat(21|7|0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asNumber:@"#(21 / 0)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^modFloat(21|0)" error:&err];
+    expectError(err);
+}
+
+- (void) testPercent
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
     for (NSUInteger i=0; i<=10; i++) {
         NSString* expr = [NSString stringWithFormat:@"^percent(%f|1.0)", (i/10.0)];
         NSString* pctStr = [NSString stringWithFormat:@"%u%%", (unsigned int)(i * 10)];
@@ -176,51 +134,280 @@
         XCTAssertTrue([pct isKindOfClass:[NSString class]], @"expected result of %@ to be an NSString", expr);
         XCTAssertEqualObjects(pct, pctStr, @"expected result of %@ to equal %@", expr, pctStr);
     }
-}
 
-- (void) testMathFunctionPercentFailures
-{
     //
-    // test of ^percent()
+    // test expected failures
     //
     MBExpressionError* err = nil;
     [MBExpression asString:@"^percent()" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with no parameters");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^percent(%3.1f%%)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with a format string and no numeric parameters");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^percent(1.0)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with one parameter");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^percent(|)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with two empty parameters");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^percent(||)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with three empty parameters");
-    logExpectedError(err);
+    expectError(err);
+
     err = nil;
     [MBExpression asString:@"^percent(1.0|string)" error:&err];
-    XCTAssertNotNil(err, @"Expected to get error for calling ^percent() with an expected numeric parameter provided as a string");
-    logExpectedError(err);
+    expectError(err);
 }
 
-/******************************************************************************/
-#pragma mark Regression tests
-/******************************************************************************/
-
-- (void) testMathExpressionParameters
+- (void) testCeil
 {
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^ceil(1.0)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.1)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.5)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^ceil(1.9)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.0)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.1)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.5)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-1.9)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^ceil(-2.9 + 1.0)"]);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^ceil()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^ceil(string)" error:&err];
+    expectError(err);
+}
+
+- (void) testFloor
+{
+    //
+    // test expected successes
+    //
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.0)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.1)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.5)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^floor(1.9)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^floor(-1.0)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-1.1)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-1.5)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-1.9)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^floor(-2.9 + 1.0)"]);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^floor()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^floor(string)" error:&err];
+    expectError(err);
+}
+
+- (void) testRound
+{
+    //
+    // test expected successes
+    //
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^round(1.0)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^round(1.1)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:1], [MBExpression asObject:@"^round(1.49)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^round(1.5)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^round(1.51)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:2], [MBExpression asObject:@"^round(1.9)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^round(-1.0)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^round(-1.1)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-1], [MBExpression asObject:@"^round(-1.49)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^round(-1.5)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^round(-1.51)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^round(-1.9)"]);
+    XCTAssertEqualObjects([NSNumber numberWithInt:-2], [MBExpression asObject:@"^round(-2.9 + 1.0)"]);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^round()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^round(string)" error:&err];
+    expectError(err);
+}
+
+- (void) testMin
+{
+    //
+    // test expected successes
+    //
+    XCTAssertEqualObjects(@0, [MBExpression asObject:@"^min(0|1)"]);
+    XCTAssertEqualObjects(@0.0, [MBExpression asObject:@"^min(0.0|1.0)"]);
+    XCTAssertEqualObjects(@0.001, [MBExpression asObject:@"^min(0.001|0.002)"]);
+    XCTAssertEqualObjects(@(-1), [MBExpression asObject:@"^min(-1|0)"]);
+    XCTAssertEqualObjects(@(-2), [MBExpression asObject:@"^min(-1|-2)"]);
+    XCTAssertEqualObjects(@(-2), [MBExpression asObject:@"^min(-1 + 1|-2)"]);
+
     NSUInteger testResult1 = [[MBExpression asNumber:@"^min(100 | (20 * 10))"] unsignedIntegerValue];
-    XCTAssertEqual((NSUInteger)100, testResult1, @"Math expression parameter test 1 failed");
+    XCTAssertEqual((NSUInteger)100, testResult1);
     NSUInteger testResult2 = [[MBExpression asNumber:@"^min(100 | #(20 * 10))"] unsignedIntegerValue];
-    XCTAssertEqual((NSUInteger)100, testResult2, @"Math expression parameter test 2 failed");
+    XCTAssertEqual((NSUInteger)100, testResult2);
     NSUInteger testResult3 = [[MBExpression asNumber:@"^min(#(50 + 50) | #(20 * 10))"] unsignedIntegerValue];
-    XCTAssertEqual((NSUInteger)100, testResult3, @"Math expression parameter test 3 failed");
+    XCTAssertEqual((NSUInteger)100, testResult3);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^min()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^min(50)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^min(50|string)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^min(50|100|200)" error:&err];
+    expectError(err);
+}
+
+- (void) testMax
+{
+    //
+    // test expected successes
+    //
+    XCTAssertEqualObjects(@1, [MBExpression asObject:@"^max(0|1)"]);
+    XCTAssertEqualObjects(@1.0, [MBExpression asObject:@"^max(0.0|1.0)"]);
+    XCTAssertEqualObjects(@0.002, [MBExpression asObject:@"^max(0.001|0.002)"]);
+    XCTAssertEqualObjects(@0, [MBExpression asObject:@"^max(-1|0)"]);
+    XCTAssertEqualObjects(@0, [MBExpression asObject:@"^max(-1 + 1|-2)"]);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^max()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^max(50)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^max(50|string)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^max(50|100|200)" error:&err];
+    expectError(err);
+}
+
+- (void) testRandomPercent
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    // (note: failures are not tested because this function doesn't
+    //        have any error conditions; it won't return MBMLFunctionError)
+    //
+    for (NSUInteger i=0; i<1000; i++) {
+        NSNumber* random = [MBExpression asNumber:@"^randomPercent()"];
+        XCTAssertGreaterThanOrEqual([random doubleValue], 0.0);
+        XCTAssertLessThanOrEqual([random doubleValue], 1.0);
+    }
+}
+
+- (void) testRandom
+{
+    consoleTrace();
+
+    //
+    // test expected successes
+    //
+    for (NSUInteger i=0; i<100; i++) {
+        NSNumber* random = [MBExpression asNumber:@"^random(10)"];
+        XCTAssertGreaterThanOrEqual([random integerValue], 0);
+        XCTAssertLessThanOrEqual([random integerValue], 10);
+    }
+    for (NSUInteger i=0; i<100; i++) {
+        NSNumber* random = [MBExpression asNumber:@"^random(90|100)"];
+        XCTAssertGreaterThanOrEqual([random integerValue], 90);
+        XCTAssertLessThanOrEqual([random integerValue], 100);
+    }
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^random()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^random(num)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^random(num|ber)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^random(0|1|2)" error:&err];
+    expectError(err);
+}
+
+- (void) testArrayFilledWithIntegers
+{
+    //
+    // test expected successes
+    //
+    NSArray* testIntegers1 = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7), @(8), @(9), @(10)];
+    NSArray* integers1 = [MBExpression asObject:@"^arrayFilledWithIntegers(1|10)"];
+    XCTAssertTrue([integers1 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(integers1, testIntegers1);
+
+    NSArray* testIntegers2 = @[@(0), @(2), @(4), @(6), @(8), @(10)];
+    NSArray* integers2 = [MBExpression asObject:@"^arrayFilledWithIntegers(0|10|2)"];
+    XCTAssertTrue([integers2 isKindOfClass:[NSArray class]]);
+    XCTAssertEqualObjects(integers2, testIntegers2);
+
+    //
+    // test expected failures
+    //
+    MBExpressionError* err = nil;
+    [MBExpression asObject:@"^arrayFilledWithIntegers()" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^arrayFilledWithIntegers(10)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^arrayFilledWithIntegers(0|10|2|4)" error:&err];
+    expectError(err);
+
+    err = nil;
+    [MBExpression asObject:@"^arrayFilledWithIntegers(string|10)" error:&err];
+    expectError(err);
 }
 
 @end
