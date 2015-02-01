@@ -44,7 +44,6 @@
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
 		3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */; };
-		3BD23C8D1A65FBA9001F7869 /* VariableExpansionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */; };
 		3BD23C901A65FBBB001F7869 /* test-app-data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */; };
 		3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
 		3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
@@ -364,7 +363,6 @@
 		3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLDataProcessingFunctionTests.m; path = Tests/MBMLDataProcessingFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockingbirdTestSuite.h; path = Tests/MockingbirdTestSuite.h; sourceTree = SOURCE_ROOT; };
 		3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockingbirdTestSuite.m; path = Tests/MockingbirdTestSuite.m; sourceTree = SOURCE_ROOT; };
-		3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VariableExpansionTest.m; path = Tests/VariableExpansionTest.m; sourceTree = SOURCE_ROOT; };
 		3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-app-data.xml"; sourceTree = "<group>"; };
 		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -721,7 +719,6 @@
 				3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */,
 				3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */,
 				3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */,
-				3BD23C891A65FBA9001F7869 /* VariableExpansionTest.m */,
 			);
 			name = Tests;
 			path = MBDataEnvironmentTests;
@@ -1051,7 +1048,6 @@
 				3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */,
 				3B2D737A1A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m in Sources */,
 				3B82312E1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m in Sources */,
-				3BD23C8D1A65FBA9001F7869 /* VariableExpansionTest.m in Sources */,
 				3B8231361A74293E00C3A18F /* MBMLMathFunctionTests.m in Sources */,
 				3B2D73821A7B54FF00F16154 /* MBMLDebugFunctionTests.m in Sources */,
 				3B2D73801A7B546900F16154 /* MBMLRuntimeFunctionTests.m in Sources */,
