@@ -3,7 +3,11 @@ language: objective-c
 before_script:
   - pod install
 
-script: xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme "MBDataEnvironment Framework" -sdk iphonesimulator8.1 -destination platform='iOS Simulator',name='iPhone 6' clean build test
+# Xcode is crashing when running the unit tests on Travis, so 
+# we won't run them on Travis for now -- if you want to run unit
+# tests, they should work fine locally in Xcode or from the cmd line
+#script: xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme "MBDataEnvironment Framework" -sdk iphonesimulator8.1 -destination platform='iOS Simulator',name='iPhone 6' clean build test
+script: xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme "MBDataEnvironment Framework" -sdk iphonesimulator8.1 -destination platform='iOS Simulator',name='iPhone 6' clean build
 
 notifications:
   email:
