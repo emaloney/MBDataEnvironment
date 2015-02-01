@@ -461,7 +461,7 @@ typedef enum {
 
     MBMLFunctionError* err = nil;
     for (NSUInteger i=0; i<params.count; i++) {
-        [MBMLFunction validateParameter:params[i] isArrayAtIndex:i error:&err];
+        [MBMLFunction validateParameter:params isArrayAtIndex:i error:&err];
         if (err) return err;
     }
 
