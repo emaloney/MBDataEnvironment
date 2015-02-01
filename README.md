@@ -142,8 +142,7 @@ Any native runtime object instance can be stored in the Mockingbird variable spa
 Variable values can be exposed to the variable space via Objective-C:
 
 ```objc
-[[MBVariableSpace instance] setVariable:@"cats"
-								  value:@[@"Barrett", @"Duncan", @"Gabby"]];
+[MBVariableSpace instance][@"cats"] = @[@"Barrett", @"Duncan", @"Gabby"]];
 ```
 
 The code above associates the variable name "`cats`" with an `NSArray` instance containing three items (the strings "`Barrett`", "`Duncan`" and "`Gabby`").
@@ -215,10 +214,9 @@ Values contained in dictionaries can also be retrieved using the bracket accesso
 Let's assume a new Mockingbird variable:
 
 ```objc
-[[MBVariableSpace instance] setVariable:@"catGenders"
-								  value:@{@"Barrett": @"female",
-										  @"Duncan":  @"male",
-										  @"Gabby":   @"female"}];
+[MBVariableSpace instance][@"catGenders"] = @{@"Barrett": @"female",
+                                              @"Duncan":  @"male",
+                                              @"Gabby":   @"female"}];
 ```
 
 In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with the Mockingbird variable name "`catGenders`".
@@ -279,7 +277,7 @@ If, say, you have an `NSArray` or an `NSDictionary` in the variable space (as is
 NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
 ```
 
-The `genders` variable now contains the `NSDictionary` instance that was previously bound to the Mockingbird variable name "`catGenders`" via the `setVariable:value:` method of `MBVariableSpace`.
+The `genders` variable now contains the `NSDictionary` instance that was previously bound to the Mockingbird variable name "`catGenders`" via keyed subscripting using the `MBVariableSpace` instance.
 
 > **Note:** Because the `asObject:` method returns the generic object type `id`, it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.
 
@@ -306,18 +304,18 @@ As you can see, numeric expressions can contain simple math expressions. The `+`
 Evaluating an expression as a number also handles converting Mockingbird variable values to numbers:
 
 ```objc
-[[MBVariableSpace instance] setVariable:@"five" value:@(5)];
+[MBVariableSpace instance][@"five"] = @(5);
 NSNumber* val = [MBExpression asNumber:@"$five"];
 ```
 
 The variable `val` will contain the integer value `5`.
 
-In the code above, the `@(5)` notation in the `setVariable:value:` method call ensures that the Mockingbird variable is set to an `NSNumber` instance. However, the object instance that underlies a Mockingbird variable doesn't need to be an `NSNumber` in order for an expression to be evaluated numerically.
+In the code above, the `@(5)` notation ensures that the Mockingbird variable is set to an `NSNumber` instance. However, the object instance that underlies a Mockingbird variable doesn't need to be an `NSNumber` in order for an expression to be evaluated numerically.
 
 In the code below, we're setting the Mockingbird variable named "`five`" to an `NSString` containing the text "`5`":
 
 ```objc
-[[MBVariableSpace instance] setVariable:@"five" value:@"5"];
+[MBVariableSpace instance][@"five"] = @"5";
 NSNumber* val = [MBExpression asNumber:@"$five"];
 ```
 
@@ -389,8 +387,7 @@ The variable `tValue` will be `YES`, and `fValue` will be `NO`.
 This allows you to store a boolean value in a string, and have it evaluate as the intended boolean value:
 
 ```objc
-[[MBVariableSpace instance] setVariable:@"featureFlag"
-								  value:@"T"];
+[MBVariableSpace instance][@"featureFlag"] = @"T";
 
 // somewhere later on...
 
