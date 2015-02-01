@@ -63,8 +63,6 @@
 	
 	<option value="//api/name/setObject:forKeyedSubscript:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject:forKeyedSubscript:</option>
 	
-	<option value="//api/name/setScopedVariable:value:">&nbsp;&nbsp;&nbsp;&nbsp;- setScopedVariable:value:</option>
-	
 	<option value="//api/name/unsetScopedVariables">&nbsp;&nbsp;&nbsp;&nbsp;- unsetScopedVariables</option>
 	
 	
@@ -85,9 +83,9 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Thread-local scoped variables">Thread-local scoped variables</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Setting &amp; unsetting scoped variable values">Setting &amp; unsetting scoped variable values</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Getting &amp; setting scoped variable values">Getting &amp; setting scoped variable values</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Keyed subscripting support">Keyed subscripting support</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Unsetting &amp; reapplying the variable scope">Unsetting &amp; reapplying the variable scope</a></span></li>
 	
 </ul></li>
 
@@ -122,8 +120,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/reapplyScopedVariables">reapplyScopedVariables</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject:forKeyedSubscript:">setObject:forKeyedSubscript:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setScopedVariable:value:">setScopedVariable:value:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsetScopedVariables">unsetScopedVariables</a></span></li>
 	
@@ -202,11 +198,11 @@ that masks any existing scope, you would call:</p>
 <pre><code>MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
 </code></pre>
 
-<p>Once you&rsquo;ve got a scope instance, you can use it to set a scoped
-variable:</p>
+<p>Once you&rsquo;ve got a scope instance, you can use the keyed subscripting notation
+to set a scoped variable:</p>
 
 <pre><code>NSString* userName = ... // a string set elsewhere
-[scope setScopedVariable:@"user" value:userName];
+scope[@"user"] = userName;
 </code></pre>
 
 <p>The value <code>userName</code> is then <em>pushed</em> onto the Mockingbird variable stack
@@ -286,34 +282,8 @@ to all threads until your scope is exited.</p>
 						</ul>
 						
 						
-						<a title="Setting &amp; unsetting scoped variable values" name="task_Setting &amp; unsetting scoped variable values"></a>
-						<h3 class="subsubtitle task-title">Setting &amp; unsetting scoped variable values</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setScopedVariable:value:">&ndash;&nbsp;setScopedVariable:value:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/unsetScopedVariables">&ndash;&nbsp;unsetScopedVariables</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/reapplyScopedVariables">&ndash;&nbsp;reapplyScopedVariables</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Keyed subscripting support" name="task_Keyed subscripting support"></a>
-						<h3 class="subsubtitle task-title">Keyed subscripting support</h3>
+						<a title="Getting &amp; setting scoped variable values" name="task_Getting &amp; setting scoped variable values"></a>
+						<h3 class="subsubtitle task-title">Getting &amp; setting scoped variable values</h3>
 
 						<ul class="task-list">
 							<li>
@@ -325,6 +295,26 @@ to all threads until your scope is exited.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Unsetting &amp; reapplying the variable scope" name="task_Unsetting &amp; reapplying the variable scope"></a>
+						<h3 class="subsubtitle task-title">Unsetting &amp; reapplying the variable scope</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unsetScopedVariables">&ndash;&nbsp;unsetScopedVariables</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/reapplyScopedVariables">&ndash;&nbsp;reapplyScopedVariables</a></code>
 	</span>
 	
 	
@@ -544,8 +534,7 @@ return to what they were prior to entering the scope.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Allows accessing scoped variable values using the Objective-C keyed
-subscripting notation.</p>
+		<p>Allows accessing scoped variable values using the keyed subscripting notation.</p>
 	</div>		
 	
     
@@ -578,11 +567,12 @@ subscripting notation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>For example, the following expression:</p>
+		<p>For example, the following Objective-C code:</p>
 
-<p><a href="#//api/name/currentVariableScope">[MBScopedVariables currentVariableScope]</a>[@&ldquo;tempVar&rdquo;];</p>
+<pre><code>[MBScopedVariables currentVariableScope][@"tempVar"];
+</code></pre>
 
-<p>would yield the in-scope value of the MBML variable named <code>tempVar</code>.</p>
+<p>would yield the in-scope value of the Mockingbird variable named <code>tempVar</code>.</p>
 	</div>
 	
 	
@@ -607,8 +597,7 @@ subscripting notation.</p>
 	
 	<div class="method-subsection brief-description">
 		<p>Reapplies any scoped variables that were previously unset using
-<a href="#//api/name/unsetScopedVariables"><code>unsetScopedVariables</code></a> (and have not been set again since then using
-<a href="#//api/name/setScopedVariable:value:"><code>setScopedVariable:value:</code></a>).</p>
+<a href="#//api/name/unsetScopedVariables"><code>unsetScopedVariables</code></a> (and have not been set again since).</p>
 	</div>		
 	
     
@@ -651,8 +640,7 @@ subscripting notation.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Allows setting a scoped variable value using the Objective-C keyed
-subscripting notation.</p>
+		<p>Allows setting a scoped variable value using the keyed subscripting notation.</p>
 	</div>		
 	
     
@@ -685,65 +673,15 @@ subscripting notation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>For example, the following expression:</p>
+		<p>For example, the following Objective-C code:</p>
 
-<p><a href="#//api/name/currentVariableScope">[MBScopedVariables currentVariableScope]</a>[@&ldquo;tempVar&rdquo;] = @&ldquo;will go away&rdquo;;</p>
+<pre><code>[MBScopedVariables currentVariableScope][@"tempVar"] = @"will go away";
+</code></pre>
 
 <p>would set the in-scope value of the MBML variable named <code>tempVar</code> to the
-string &ldquo;<code>will go away</code>&rdquo;.</p>
+string &ldquo;<code>will go away</code>&rdquo;.</p><div class="warning"><p><strong>Warning:</strong> An <code>NSInvalidArgumentException</code> is raised if <code>variableName</code>
+            is <code>nil</code> or is not an <code>NSString</code>.</p></div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBScopedVariables.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setScopedVariable:value:" title="setScopedVariable:value:"></a>
-	<h3 class="subsubtitle method-title">setScopedVariable:value:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Sets the value of a scoped variable. This variable value will be reflected
-in the receiver&rsquo;s <a href="#//api/name/variableSpace"><code>variableSpace</code></a>.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)setScopedVariable:(NSString *)<em>varName</em> value:(id)<em>val</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>varName</em></dt>
-			<dd><p>The name of the variable whose value is being set.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>val</em></dt>
-			<dd><p>The variable value.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -812,7 +750,7 @@ scope becoming active.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-30)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-02-01)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

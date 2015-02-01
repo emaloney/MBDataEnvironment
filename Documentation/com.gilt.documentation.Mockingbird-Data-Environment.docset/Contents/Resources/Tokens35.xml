@@ -28,45 +28,23 @@ MBEnvironment.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableForName:</TokenIdentifier>
-			<Abstract type="html">Returns the current value for the variable with the given name.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/objectForKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Returns the current value for the variable with the given name using
+the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (id)variableForName:(NSString *)varName</Declaration>
+			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>varName</Name>
-					<Abstract type="html">The name of the variable whose value is being retrieved.</Abstract>
+					<Name>variableName</Name>
+					<Abstract type="html">The name of the MBML variable whose value is to be
+            retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">The current variable value. Will return nil if there is no
             variable with the given name or if there was an error retrieving
             the variable&apos;s value.</Abstract></ReturnValue>
-			<Anchor>//api/name/variableForName:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableForName:defaultValue:</TokenIdentifier>
-			<Abstract type="html">Returns the current value for the variable with the given name, or a
-default value if there is no available variable value.</Abstract>
-			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
-			
-			<Declaration>- (id)variableForName:(NSString *)varName defaultValue:(id)def</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>varName</Name>
-					<Abstract type="html">The name of the variable whose value is being retrieved.</Abstract>
-				</Parameter><Parameter>
-					<Name>def</Name>
-					<Abstract type="html">A default value to return in cases where the method would
-            otherwise return nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The current variable value, or def if there is no variable with
-            the given name or if there was an error retrieving the variable&apos;s 
-            value.</Abstract></ReturnValue>
-			<Anchor>//api/name/variableForName:defaultValue:</Anchor>
+			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
@@ -116,25 +94,24 @@ default value if there is no available variable value.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setVariable:value:</TokenIdentifier>
-			<Abstract type="html">Sets a variable to the given value.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setObject:forKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Sets a variable to the given value using the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)setVariable:(NSString *)varName value:(id)val</Declaration>
+			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>varName</Name>
+					<Name>value</Name>
+					<Abstract type="html">The value to set for the variable named variableName.</Abstract>
+				</Parameter><Parameter>
+					<Name>variableName</Name>
 					<Abstract type="html">The name of the variable whose value is to be set.
             If the name represents a read-only variable, the call will be
             ignored and an error will be logged to the console.</Abstract>
-				</Parameter><Parameter>
-					<Name>val</Name>
-					<Abstract type="html">The value to set for the variable named varName. If this
-            is nil, the variable varName will be unset.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setVariable:value:</Anchor>
+			<Anchor>//api/name/setObject:forKeyedSubscript:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		
@@ -143,16 +120,16 @@ default value if there is no available variable value.</Abstract>
 			<Abstract type="html">Pushes a new value onto the stack for the variable with the given name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)pushVariable:(NSString *)varName value:(id)val</Declaration>
+			<Declaration>- (void)pushVariable:(NSString *)variableName value:(id)value</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>varName</Name>
+					<Name>variableName</Name>
 					<Abstract type="html">The name of the variable whose value is to be set.
             If the name represents a read-only variable, the call will be
             ignored and an error will be logged to the console.</Abstract>
 				</Parameter><Parameter>
-					<Name>val</Name>
-					<Abstract type="html">The value to set for the variable named varName.</Abstract>
+					<Name>value</Name>
+					<Abstract type="html">The value to set for the variable named variableName.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -432,46 +409,6 @@ Mockingbird variable with the given NSUserDefaults key name.</Abstract>
 			</Parameters>
 			
 			<Anchor>//api/name/removeObserver:forUserDefault:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/objectForKeyedSubscript:</TokenIdentifier>
-			<Abstract type="html">Allows accessing MBML variable values using the Objective-C keyed subscripting
-notation.</Abstract>
-			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
-			
-			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The name of the MBML variable whose value is to be
-            retrieved.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The value of the MBML variable named variableName.</Abstract></ReturnValue>
-			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
-            <NodeRef refid="35"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setObject:forKeyedSubscript:</TokenIdentifier>
-			<Abstract type="html">Allows setting an MBML variable value using the Objective-C keyed subscripting
-notation.</Abstract>
-			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
-			
-			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The new value for the MBML variable.</Abstract>
-				</Parameter><Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The name of the variable whose value is to be set.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setObject:forKeyedSubscript:</Anchor>
             <NodeRef refid="35"/>
 		</Token>
 		

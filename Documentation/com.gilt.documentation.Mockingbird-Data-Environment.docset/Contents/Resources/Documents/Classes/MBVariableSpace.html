@@ -78,17 +78,11 @@
 	
 	<option value="//api/name/setObject:forKeyedSubscript:">&nbsp;&nbsp;&nbsp;&nbsp;- setObject:forKeyedSubscript:</option>
 	
-	<option value="//api/name/setVariable:value:">&nbsp;&nbsp;&nbsp;&nbsp;- setVariable:value:</option>
-	
 	<option value="//api/name/unsetVariable:">&nbsp;&nbsp;&nbsp;&nbsp;- unsetVariable:</option>
 	
 	<option value="//api/name/variableAsString:">&nbsp;&nbsp;&nbsp;&nbsp;- variableAsString:</option>
 	
 	<option value="//api/name/variableAsString:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- variableAsString:defaultValue:</option>
-	
-	<option value="//api/name/variableForName:">&nbsp;&nbsp;&nbsp;&nbsp;- variableForName:</option>
-	
-	<option value="//api/name/variableForName:defaultValue:">&nbsp;&nbsp;&nbsp;&nbsp;- variableForName:defaultValue:</option>
 	
 	
 	
@@ -121,8 +115,6 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing MBML functions">Accessing MBML functions</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Observing changes to variables bound to `NSUserDefaults`">Observing changes to variables bound to `NSUserDefaults`</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Keyed subscripting support">Keyed subscripting support</a></span></li>
 	
 </ul></li>
 
@@ -172,17 +164,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setObject:forKeyedSubscript:">setObject:forKeyedSubscript:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVariable:value:">setVariable:value:</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unsetVariable:">unsetVariable:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableAsString:">variableAsString:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableAsString:defaultValue:">variableAsString:defaultValue:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableForName:">variableForName:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/variableForName:defaultValue:">variableForName:defaultValue:</a></span></li>
 	
 </ul></li>
 
@@ -263,13 +249,7 @@ referenced.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/variableForName:">&ndash;&nbsp;variableForName:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/variableForName:defaultValue:">&ndash;&nbsp;variableForName:defaultValue:</a></code>
+		<code><a href="#//api/name/objectForKeyedSubscript:">&ndash;&nbsp;objectForKeyedSubscript:</a></code>
 	</span>
 	
 	
@@ -295,7 +275,7 @@ referenced.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/setVariable:value:">&ndash;&nbsp;setVariable:value:</a></code>
+		<code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
 	</span>
 	
 	
@@ -420,26 +400,6 @@ referenced.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeObserver:forUserDefault:">&ndash;&nbsp;removeObserver:forUserDefault:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Keyed subscripting support" name="task_Keyed subscripting support"></a>
-						<h3 class="subsubtitle task-title">Keyed subscripting support</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/objectForKeyedSubscript:">&ndash;&nbsp;objectForKeyedSubscript:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setObject:forKeyedSubscript:">&ndash;&nbsp;setObject:forKeyedSubscript:</a></code>
 	</span>
 	
 	
@@ -675,8 +635,8 @@ variable with the given <code>NSUserDefaults</code> key name.</p>
 		<p>Note that not all variables will have explicit declarations; only variables
 declared in MBML or created programmatically using <a href="#//api/name/declareVariable:"><code>declareVariable:</code></a> will
 have an associated <a href="../Classes/MBVariableDeclaration.html"><code>MBVariableDeclaration</code></a>. Undeclared variables can be
-created implicitly through calls to <a href="#//api/name/setVariable:value:"><code>setVariable:value:</code></a> and similar
-methods.</p>
+created implicitly by being set directly using keyed subscripting and
+other methods.</p>
 	</div>
 	
 	
@@ -974,8 +934,8 @@ directly.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Allows accessing MBML variable values using the Objective-C keyed subscripting
-notation.</p>
+		<p>Returns the current value for the variable with the given name using
+the keyed subscripting notation.</p>
 	</div>		
 	
     
@@ -999,7 +959,9 @@ notation.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The value of the MBML variable named <code>variableName</code>.</p>
+		<p>The current variable value. Will return <code>nil</code> if there is no
+            variable with the given name or if there was an error retrieving
+            the variable&rsquo;s value.</p>
 	</div>
 	
 	
@@ -1008,12 +970,13 @@ notation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>For example, the following expression:</p>
+		<p>For example, the following Objective-C code:</p>
 
-<pre><code>[MBVariableSpace instance][@"email"];
+<pre><code>NSString* addr = [MBVariableSpace instance][@"email"];
 </code></pre>
 
-<p>would yield the value of the MBML variable named <code>email</code>.</p>
+<p>would set the value of the Objective-C string <code>addr</code> to the value of the MBML
+variable named <code>email</code>.</p>
 	</div>
 	
 	
@@ -1105,7 +1068,7 @@ the console.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)pushVariable:(NSString *)<em>varName</em> value:(id)<em>val</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)pushVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
 
     
 	
@@ -1113,15 +1076,15 @@ the console.</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>varName</em></dt>
+			<dt><em>variableName</em></dt>
 			<dd><p>The name of the variable whose value is to be set.
             If the name represents a read-only variable, the call will be
             ignored and an error will be logged to the console.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>val</em></dt>
-			<dd><p>The value to set for the variable named <code>varName</code>.</p></dd>
+			<dt><em>value</em></dt>
+			<dd><p>The value to set for the variable named <code>variableName</code>.</p></dd>
 		</dl>
 		
 	</div>
@@ -1331,8 +1294,7 @@ name. (This method will also operate on any variable whose value is of type
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Allows setting an MBML variable value using the Objective-C keyed subscripting
-notation.</p>
+		<p>Sets a variable to the given value using the keyed subscripting notation.</p>
 	</div>		
 	
     
@@ -1346,12 +1308,14 @@ notation.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>value</em></dt>
-			<dd><p>The new value for the MBML variable.</p></dd>
+			<dd><p>The value to set for the variable named <code>variableName</code>.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>variableName</em></dt>
-			<dd><p>The name of the variable whose value is to be set.</p></dd>
+			<dd><p>The name of the variable whose value is to be set.
+            If the name represents a read-only variable, the call will be
+            ignored and an error will be logged to the console.</p></dd>
 		</dl>
 		
 	</div>
@@ -1364,67 +1328,14 @@ notation.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>For example, the following expression:</p>
+		<p>For example, the following Objective-C code:</p>
 
 <pre><code>[MBVariableSpace instance][@"title"] = @"MBML";
 </code></pre>
 
-<p>would set the MBML variable named <code>title</code> to the string &ldquo;<code>MBML</code>&rdquo;.</p>
+<p>would set the MBML variable named <code>title</code> to the string &ldquo;<code>MBML</code>&rdquo;.</p><div class="warning"><p><strong>Warning:</strong> An <code>NSInvalidArgumentException</code> is raised if <code>variableName</code>
+            is <code>nil</code> or is not an <code>NSString</code>.</p></div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBVariableSpace.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/setVariable:value:" title="setVariable:value:"></a>
-	<h3 class="subsubtitle method-title">setVariable:value:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Sets a variable to the given value.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)setVariable:(NSString *)<em>varName</em> value:(id)<em>val</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>varName</em></dt>
-			<dd><p>The name of the variable whose value is to be set.
-            If the name represents a read-only variable, the call will be
-            ignored and an error will be logged to the console.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>val</em></dt>
-			<dd><p>The value to set for the variable named <code>varName</code>. If this
-            is <code>nil</code>, the variable <code>varName</code> will be unset.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -1616,119 +1527,6 @@ default value if there is no available variable value.</p>
 	
 </div>
 						
-						<div class="section-method">
-	<a name="//api/name/variableForName:" title="variableForName:"></a>
-	<h3 class="subsubtitle method-title">variableForName:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the current value for the variable with the given name.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)variableForName:(NSString *)<em>varName</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>varName</em></dt>
-			<dd><p>The name of the variable whose value is being retrieved.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The current variable value. Will return <code>nil</code> if there is no
-            variable with the given name or if there was an error retrieving
-            the variable&rsquo;s value.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBVariableSpace.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/variableForName:defaultValue:" title="variableForName:defaultValue:"></a>
-	<h3 class="subsubtitle method-title">variableForName:defaultValue:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the current value for the variable with the given name, or a
-default value if there is no available variable value.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (id)variableForName:(NSString *)<em>varName</em> defaultValue:(id)<em>def</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>varName</em></dt>
-			<dd><p>The name of the variable whose value is being retrieved.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>def</em></dt>
-			<dd><p>A default value to return in cases where the method would
-            otherwise return <code>nil</code>.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The current variable value, or <code>def</code> if there is no variable with
-            the given name or if there was an error retrieving the variable&rsquo;s
-            value.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBVariableSpace.h</code><br />
-	</div>				
-	
-	
-</div>
-						
 					</div>
 					
 					
@@ -1744,7 +1542,7 @@ default value if there is no available variable value.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-01-30)</span><br />
+						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-02-01)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

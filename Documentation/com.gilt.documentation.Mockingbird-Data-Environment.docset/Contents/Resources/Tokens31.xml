@@ -99,23 +99,41 @@ return to what they were prior to entering the scope.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setScopedVariable:value:</TokenIdentifier>
-			<Abstract type="html">Sets the value of a scoped variable. This variable value will be reflected
-in the receiver&apos;s variableSpace.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/objectForKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Allows accessing scoped variable values using the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>- (void)setScopedVariable:(NSString *)varName value:(id)val</Declaration>
+			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>varName</Name>
-					<Abstract type="html">The name of the variable whose value is being set.</Abstract>
+					<Name>variableName</Name>
+					<Abstract type="html">The name of the scoped variable whose value is to be
+            retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The in-scope value of the MBML variable named variableName.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
+            <NodeRef refid="31"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setObject:forKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Allows setting a scoped variable value using the keyed subscripting notation.</Abstract>
+			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
+			
+			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>value</Name>
+					<Abstract type="html">The new value for the MBML variable.</Abstract>
 				</Parameter><Parameter>
-					<Name>val</Name>
-					<Abstract type="html">The variable value.</Abstract>
+					<Name>variableName</Name>
+					<Abstract type="html">The name of the scoped variable whose value is to be
+            set.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setScopedVariable:value:</Anchor>
+			<Anchor>//api/name/setObject:forKeyedSubscript:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
@@ -136,55 +154,13 @@ scope becoming active.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/reapplyScopedVariables</TokenIdentifier>
 			<Abstract type="html">Reapplies any scoped variables that were previously unset using
-unsetScopedVariables (and have not been set again since then using
-setScopedVariable:value:.</Abstract>
+unsetScopedVariables (and have not been set again since).</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
 			<Declaration>- (void)reapplyScopedVariables</Declaration>
 			
 			
 			<Anchor>//api/name/reapplyScopedVariables</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/objectForKeyedSubscript:</TokenIdentifier>
-			<Abstract type="html">Allows accessing scoped variable values using the Objective-C keyed
-subscripting notation.</Abstract>
-			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
-			
-			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The name of the scoped variable whose value is to be
-            retrieved.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The in-scope value of the MBML variable named variableName.</Abstract></ReturnValue>
-			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
-            <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/MBScopedVariables/setObject:forKeyedSubscript:</TokenIdentifier>
-			<Abstract type="html">Allows setting a scoped variable value using the Objective-C keyed
-subscripting notation.</Abstract>
-			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
-			
-			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">The new value for the MBML variable.</Abstract>
-				</Parameter><Parameter>
-					<Name>variableName</Name>
-					<Abstract type="html">The name of the scoped variable whose value is to be
-            set.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setObject:forKeyedSubscript:</Anchor>
             <NodeRef refid="31"/>
 		</Token>
 		
