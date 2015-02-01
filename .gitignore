@@ -2,6 +2,6 @@
 xcuserdata
 *.xccheckout
 Products/
+build/
 Pods/
-Podfile.lock
 
