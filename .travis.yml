@@ -3,7 +3,7 @@ language: objective-c
 before_script:
   - pod install
 
-script: xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme "MBDataEnvironment Framework" -sdk iphonesimulator clean build test
+script: xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme "MBDataEnvironment Framework" -sdk iphonesimulator8.1 -destination platform='iOS Simulator',name='iPhone 6' clean build test
 
 notifications:
   email:
