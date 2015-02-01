@@ -128,32 +128,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 }
 
 /******************************************************************************/
-#pragma mark Keyed subscripting support
-/******************************************************************************/
-
-- (id) objectForKeyedSubscript:(NSString*)key
-{
-    if ([key isKindOfClass:[NSString class]]) {
-        return [self variableForName:key];
-    }
-    else {
-        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [key class], key);
-    }
-    return nil;
-}
-
-- (void) setObject:(id)obj forKeyedSubscript:(NSString*)key
-{
-    if ([key isKindOfClass:[NSString class]]) {
-        [self setVariable:key value:obj];
-    }
-    else {
-        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [key class], key);
-    }
-}
-
-/******************************************************************************/
-#pragma mark Accessing variables
+#pragma mark Managing variable declarations
 /******************************************************************************/
 
 - (BOOL) declareVariable:(MBVariableDeclaration*)decl
@@ -204,34 +179,27 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     return NO;
 }
 
-- (id) variableForName:(NSString*)varName
+/******************************************************************************/
+#pragma mark Getting variable values
+/******************************************************************************/
+
+- (id) objectForKeyedSubscript:(NSString*)varName
 {
-    return [self variableForName:varName defaultValue:nil];
-}
-
-- (id) variableForName:(NSString*)varName defaultValue:(id)def
-{
-    verboseDebugTrace();
-
-    if (!varName)
-        return nil;
-
-    MBVariableDeclaration* decl = _namesToDeclarations[varName];
-    if (decl && decl.disallowsValueCaching) {
-        MBExpressionError* err = nil;
-        id retVal = [decl currentValueInVariableSpace:self error:&err];
-        if (err) {
-            [err log];
-            return def;
+    if (varName) {
+        MBVariableDeclaration* decl = _namesToDeclarations[varName];
+        if (decl && decl.disallowsValueCaching) {
+            MBExpressionError* err = nil;
+            id retVal = [decl currentValueInVariableSpace:self error:&err];
+            if (err) {
+                [err log];
+            }
+            return retVal;
         }
-        return retVal;
+        else {
+            return _variables[varName];
+        }
     }
-
-    id value = _variables[varName];
-    if (!value) {
-        return def;
-    }
-    return value;
+    return nil;
 }
 
 - (NSString*) variableAsString:(NSString*)varName
@@ -243,7 +211,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 {
     verboseDebugTrace();
 
-    id value = [self variableForName:varName defaultValue:def];
+    id value = self[varName];
     if (!value) {
         return def;
     }
@@ -256,6 +224,21 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 /******************************************************************************/
 #pragma mark Setting variable values
 /******************************************************************************/
+
+- (void) setObject:(id)obj forKeyedSubscript:(NSString*)varName
+{
+    if (!varName || ![varName isKindOfClass:[NSString class]]) {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"%@ requires keyed subscripts to be %@ instances (got %@ instead)", [self class], [NSString class], [varName class]];
+    }
+
+    if ([self isReadOnlyVariable:varName]) {
+        errorLog(@"Attempted to change value of read-only variable named %@", varName);
+    }
+    else {
+        [self _setVariable:varName value:obj];
+    }
+}
 
 - (void) setMapVariable:(NSString*)varName mapKey:(NSString*)key value:(id)val
 {
@@ -348,23 +331,11 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     }
 }
 
-- (void) setVariable:(NSString*)varName value:(id)val
-{
-    verboseDebugTrace();
-
-    if ([self isReadOnlyVariable:varName]) {
-        errorLog(@"Attempted to change value of read-only variable named %@", varName);
-    }
-    else {
-        [self _setVariable:varName value:val];
-    }
-}
-
 - (void) unsetVariable:(NSString*)varName
 {
     verboseDebugTrace();
 
-    [self setVariable:varName value:nil];
+    self[varName] = nil;
 }
 
 /******************************************************************************/

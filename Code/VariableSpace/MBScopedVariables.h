@@ -49,11 +49,11 @@
  
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
 
- Once you've got a scope instance, you can use it to set a scoped
- variable:
+ Once you've got a scope instance, you can use the keyed subscripting notation
+ to set a scoped variable:
  
     NSString* userName = ... // a string set elsewhere
-    [scope setScopedVariable:@"user" value:userName];
+    scope[@"user"] = userName;
  
  The value `userName` is then *pushed* onto the Mockingbird variable stack
  for the name "`user`". If there is a pre-existing value for the "`user`"
@@ -135,19 +135,50 @@
 + (instancetype) exitVariableScope;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark Setting & unsetting scoped variable values
-/*!    @name Setting & unsetting scoped variable values                       */
+#pragma mark Getting & setting scoped variable values
+/*!    @name Getting & setting scoped variable values                         */
 /*----------------------------------------------------------------------------*/
 
 /*!
- Sets the value of a scoped variable. This variable value will be reflected
- in the receiver's `variableSpace`.
+ Allows accessing scoped variable values using the keyed subscripting notation.
 
- @param     varName The name of the variable whose value is being set.
- 
- @param     val The variable value.
+ For example, the following Objective-C code:
+
+    [MBScopedVariables currentVariableScope][@"tempVar"];
+
+ would yield the in-scope value of the Mockingbird variable named `tempVar`.
+
+ @param     variableName The name of the scoped variable whose value is to be
+            retrieved.
+
+ @return    The in-scope value of the MBML variable named `variableName`.
  */
-- (void) setScopedVariable:(NSString*)varName value:(id)val  __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for setting scoped variable values")));
+- (id) objectForKeyedSubscript:(NSString*)variableName;
+
+/*!
+ Allows setting a scoped variable value using the keyed subscripting notation.
+
+ For example, the following Objective-C code:
+
+    [MBScopedVariables currentVariableScope][@"tempVar"] = @"will go away";
+
+ would set the in-scope value of the MBML variable named `tempVar` to the
+ string "`will go away`".
+
+ @param     value The new value for the MBML variable.
+
+ @param     variableName The name of the scoped variable whose value is to be
+            set.
+ 
+ @warning   An `NSInvalidArgumentException` is raised if `variableName`
+            is `nil` or is not an `NSString`.
+ */
+- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark Unsetting & reapplying the variable scope
+/*!    @name Unsetting & reapplying the variable scope                        */
+/*----------------------------------------------------------------------------*/
 
 /*!
  Removes from the receiver's `variableSpace` all variables set using the scope.
@@ -158,53 +189,12 @@
 
 /*!
  Reapplies any scoped variables that were previously unset using 
- `unsetScopedVariables` (and have not been set again since then using
- `setScopedVariable:value:`).
+ `unsetScopedVariables` (and have not been set again since).
  
  The reapplied variable values will be reflected in the receiver's 
  `variableSpace` until the scope is exited or the receiver's
  `unsetScopedVariables` method is called.
  */
 - (void) reapplyScopedVariables;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark Keyed subscripting support
-/*!    @name Keyed subscripting support                                       */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Allows accessing scoped variable values using the Objective-C keyed
- subscripting notation.
-
- For example, the following expression:
-
- [MBScopedVariables currentVariableScope][@"tempVar"];
-
- would yield the in-scope value of the MBML variable named `tempVar`.
-
- @param     variableName The name of the scoped variable whose value is to be
-            retrieved.
-
- @return    The in-scope value of the MBML variable named `variableName`.
- */
-- (id) objectForKeyedSubscript:(NSString*)variableName;
-
-/*!
- Allows setting a scoped variable value using the Objective-C keyed
- subscripting notation.
-
- For example, the following expression:
-
- [MBScopedVariables currentVariableScope][@"tempVar"] = @"will go away";
-
- would set the in-scope value of the MBML variable named `tempVar` to the
- string "`will go away`".
-
- @param     value The new value for the MBML variable.
-
- @param     variableName The name of the scoped variable whose value is to be
-            set.
- */
-- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
 
 @end

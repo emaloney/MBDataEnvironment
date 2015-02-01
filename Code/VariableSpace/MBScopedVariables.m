@@ -114,23 +114,36 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 }
 
 /******************************************************************************/
-#pragma mark Setting & removing scoped variable values
+#pragma mark Getting & setting scoped variable values
 /******************************************************************************/
 
-- (void) setScopedVariable:(NSString*)varName value:(id)val
+- (id) objectForKeyedSubscript:(NSString*)variableName
 {
-    verboseDebugTrace();
-
-    assert(varName);
-
-    if ([_pushedToVariableSpace containsObject:varName]) {
-        [_variableSpace popVariable:varName];
-    } else {
-        [_pushedToVariableSpace addObject:varName];
+    if (variableName) {
+        return _namesToValues[variableName];
     }
-    _namesToValues[varName] = (val ?: kFakeNilValue);
-    [_variableSpace pushVariable:varName value:val];
+    return nil;
 }
+
+- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName
+{
+    if (!variableName || ![variableName isKindOfClass:[NSString class]]) {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"%@ requires keyed subscripts to be %@ instances", [self class], [NSString class]];
+    }
+
+    if ([_pushedToVariableSpace containsObject:variableName]) {
+        [_variableSpace popVariable:variableName];
+    } else {
+        [_pushedToVariableSpace addObject:variableName];
+    }
+    _namesToValues[variableName] = (value ?: kFakeNilValue);
+    [_variableSpace pushVariable:variableName value:value];
+}
+
+/******************************************************************************/
+#pragma mark Unsetting & reapplying the variable scope
+/******************************************************************************/
 
 - (void) unsetScopedVariables
 {
@@ -156,20 +169,6 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
             [_variableSpace pushVariable:varName value:val];
         }
     }
-}
-
-/******************************************************************************/
-#pragma mark Keyed subscripting support
-/******************************************************************************/
-
-- (id) objectForKeyedSubscript:(NSString*)variableName
-{
-    return self.variableSpace[variableName];
-}
-
-- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName
-{
-    [self setScopedVariable:variableName value:value];
 }
 
 @end

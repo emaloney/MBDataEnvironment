@@ -56,30 +56,24 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 /*----------------------------------------------------------------------------*/
 
 /*!
- Returns the current value for the variable with the given name.
- 
- @param     varName The name of the variable whose value is being retrieved.
- 
+ Returns the current value for the variable with the given name using
+ the keyed subscripting notation.
+
+ For example, the following Objective-C code:
+
+    NSString* addr = [MBVariableSpace instance][@"email"];
+
+ would set the value of the Objective-C string `addr` to the value of the MBML
+ variable named `email`.
+
+ @param     variableName The name of the MBML variable whose value is to be
+            retrieved.
+
  @return    The current variable value. Will return `nil` if there is no
             variable with the given name or if there was an error retrieving
             the variable's value.
  */
-- (id) variableForName:(NSString*)varName __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for retrieving MBVariableSpace values")));
-
-/*!
- Returns the current value for the variable with the given name, or a 
- default value if there is no available variable value.
-
- @param     varName The name of the variable whose value is being retrieved.
- 
- @param     def A default value to return in cases where the method would
-            otherwise return `nil`.
-
- @return    The current variable value, or `def` if there is no variable with
-            the given name or if there was an error retrieving the variable's 
-            value.
- */
-- (id) variableForName:(NSString*)varName defaultValue:(id)def __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for retrieving MBVariableSpace values")));
+- (id) objectForKeyedSubscript:(NSString*)variableName;
 
 /*!
  Returns the current string value of the variable with the given name.
@@ -121,27 +115,35 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 /*----------------------------------------------------------------------------*/
 
 /*!
- Sets a variable to the given value.
- 
- @param     varName The name of the variable whose value is to be set.
+ Sets a variable to the given value using the keyed subscripting notation.
+
+ For example, the following Objective-C code:
+
+    [MBVariableSpace instance][@"title"] = @"MBML";
+
+ would set the MBML variable named `title` to the string "`MBML`".
+
+ @param     value The value to set for the variable named `variableName`.
+
+ @param     variableName The name of the variable whose value is to be set.
             If the name represents a read-only variable, the call will be
             ignored and an error will be logged to the console.
- 
- @param     val The value to set for the variable named `varName`. If this
-            is `nil`, the variable `varName` will be unset.
+
+ @warning   An `NSInvalidArgumentException` is raised if `variableName`
+            is `nil` or is not an `NSString`.
  */
-- (void) setVariable:(NSString*)varName value:(id)val __attribute__((deprecated("Keyed subscripting is now the preferred mechanism for setting MBVariableSpace values")));
+- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
 
 /*!
  Pushes a new value onto the stack for the variable with the given name.
  
- @param     varName The name of the variable whose value is to be set.
+ @param     variableName The name of the variable whose value is to be set.
             If the name represents a read-only variable, the call will be
             ignored and an error will be logged to the console.
 
- @param     val The value to set for the variable named `varName`.
+ @param     value The value to set for the variable named `variableName`.
  */
-- (void) pushVariable:(NSString*)varName value:(id)val;
+- (void) pushVariable:(NSString*)variableName value:(id)value;
 
 /*!
  Pops the current value from the stack for the variable with the given name.
@@ -286,9 +288,9 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  Note that not all variables will have explicit declarations; only variables
  declared in MBML or created programmatically using `declareVariable:` will
  have an associated `MBVariableDeclaration`. Undeclared variables can be 
- created implicitly through calls to `setVariable:value:` and similar
- methods.
- 
+ created implicitly by being set directly using keyed subscripting and
+ other methods.
+
  @param     varName The name of the variable whose declaration is being
             retrieved.
  
@@ -357,43 +359,5 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             observing.
  */
 - (void) removeObserver:(id)observer forUserDefault:(NSString*)userDefaultsName;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark Keyed subscripting support
-/*!    @name Keyed subscripting support                                       */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Allows accessing MBML variable values using the Objective-C keyed subscripting
- notation.
- 
- For example, the following expression:
- 
-    [MBVariableSpace instance][@"email"];
- 
- would yield the value of the MBML variable named `email`.
- 
- @param     variableName The name of the MBML variable whose value is to be
-            retrieved.
- 
- @return    The value of the MBML variable named `variableName`.
- */
-- (id) objectForKeyedSubscript:(NSString*)variableName;
-
-/*!
- Allows setting an MBML variable value using the Objective-C keyed subscripting
- notation.
- 
- For example, the following expression:
- 
-    [MBVariableSpace instance][@"title"] = @"MBML";
-
- would set the MBML variable named `title` to the string "`MBML`".
- 
- @param     value The new value for the MBML variable.
- 
- @param     variableName The name of the variable whose value is to be set.
- */
-- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
 
 @end

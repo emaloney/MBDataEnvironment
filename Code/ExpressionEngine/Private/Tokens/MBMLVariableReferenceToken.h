@@ -22,8 +22,8 @@
  Given the name of an MBML variable, returns a string containing a variable
  expression referencing that variable.
  
- @param     varName The name of the variable as it would be retrieved via
-            the `MBVariableSpace` method `variableForName:`.
+ @param     varName The name of the variable as it would be retrieved from
+            the `MBVariableSpace`.
  
  @return    A string containing an expression referencing the MBML variable
             `varName`.
