@@ -344,7 +344,7 @@ static NSMutableArray* s_resourceBundles = nil;
             NSString* val = [xml attribute:attrName];
             if ([attrName isEqualToString:kMBMLAttributeModules]) {
                 if (depth == 0) {
-                    // the extensions attribute can be a comma-separated list
+                    // the modules attribute can be a comma-separated list
                     NSArray* modules = [val componentsSeparatedByString:@","];
                     for (__strong NSString* moduleClassName in modules) {
                         moduleClassName = MBTrimString(moduleClassName);

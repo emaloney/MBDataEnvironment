@@ -163,6 +163,8 @@ You could ensure that the Mockingbird environment always has the same values for
 </Var>
 ```
 
+**Note:** The `mutable="F"` attribute ensures that the `cats` variable can't be overwritten with another value during runtime. It does not guarantee the immutability of the underlying object instance, however.
+
 Using a manifest file allows you to avoid needing to programmatically populate the variable space with common values every time your application is launched.
 
 #### Variable References
@@ -639,3 +641,156 @@ The documentation for the functions themselves can be found alongside that of th
 - [`MBMLStringFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLStringFunctions.html)
 
 To learn how MBML functions are implemented, see [the `MBMLFunction` class documentation](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html)
+
+## An Introduction to MBML Files
+
+The state of the `MBEnvironment` can be modified through the use of MBML files.
+
+MBML is an XML-based language that provides a mechanism for declaring new variable values, functions, and other state. If there are certain variables or functions that you always want present in the environment, you can use MBML to do it.
+
+### The Manifest File
+
+If you include a `manifest.xml` file in your application's main resource bundle, you can use it to configure the initial state of the environment. You would simply issue this call:
+
+```objc
+[MBEnvironment loadFromManifest];
+```
+
+Additional `loadFromManifest...` method variants exist to allow you to store your manifest file elsewhere or name it something other than `manifest.xml`.
+
+### The Structure of an MBML File
+
+The outermost XML tag in an MBML document is the `<MBML>` tag. Within this tag are *declarations* of various types. The structure of the document is:
+
+```xml
+<MBML modules="...">
+
+	<!-- declarations -->
+
+</MBML>
+```
+
+The `modules` attribute is optional. If present, the attribute's value may be a comma-separated list of classes conforming to [the `MBModule` protocol](https://rawgit.com/emaloney/MBToolbox/master/Documentation/html/Protocols/MBModule.html). These classes represent *modules* providing additional functionality to Mockingbird that will be loaded along with the environment.
+
+Modules can hook into the MBML parsing process, allowing new tags to be introduced to the language. For example, [the MBEventHandling project](https://github.com/emaloney/MBEventHandling) adds the ability to listen for `NSNotification` events and perform actions in response. The *listeners* and *actions* are declared through MBML tags that have been added by the `MBEventHandlingModule`.
+
+To include this module, you would need to ensure that the `MBEventHandling` code was linked to your application, typically by ensuring that it is included in your `Podfile`. Once you've got the module linked to your code, you can specify the module in your opening `<MBML>` tag:
+
+```xml
+<MBML modules="MBEventHandlingModule">
+```
+
+### Types of MBML declarations
+
+While any included modules may introduce additional MBML declarations, the Mockingbird Data Environment includes the ability to declare:
+
+* *Includes* — The manifest file is so named because in a larger application, it's a best practice to break discrete parts of the application into separate MBML files that are *included* from the manifest.
+
+* *Variables* — Initial values for Mockingbird variables can be set in MBML.
+
+* *Functions* — The capabilities of Mockingbird expressions can be extended by introducing new MBML functions.
+
+#### Includes
+
+An MBML file can *include* another file. When a file is included, any declarations contained within that file are processed as though they were declared within the including file at the point where the inclusion occurred.
+
+For example:
+
+```xml
+<MBML>
+
+	<Include file="onboarding.xml" if="$isFirstLaunch"/>
+	<Include file="landing.xml"/>
+```
+
+The `<Include>` tag requires a value for the `file` attribute, while the `if` is optional:
+
+* The `file` attribute must specify the name of the MBML file being included.
+
+* If present, the value of the `if` attribute will be evaluated as a boolean expression, and the file will be included only if the expression evaluates to `true`.
+
+In the example above, the `onboarding.xml` file will be included only if the value of the `$isFirstLaunch` variable evaluates to `true` in a boolean context, while the `landing.xml` file is included unconditionally.
+
+#### Variables
+
+The `<Var>` tag can be used to declare values for Mockingbird variables.
+
+Three types of variable declarations are possible:
+
+* *Concrete* — A *variable name* is associated with an Objective-C object instance, which represents the concrete variable's *value*. A concrete variable's value is set when it is declared.
+
+* *Singleton* — A *variable name* is associated with a class method that returns a singleton object instance. The object returned by that method represents the singleton variable's *value*.
+
+* *Dynamic* — A *variable name* is associated with a Mockingbird expression. Whenever the variable is referenced, the associated expression is evaluated, and the value it yields represents the dynamic variable's *value*.
+
+##### Concrete Variables
+
+The `<Var>` tag provides support for specifying explicit values for types such as `NSString`s, `NSNumber`s, `NSArray`s, `NSDictionary`s and `BOOL`s.
+
+Additional types can also be created using MBML functions, and values from other sources can be referenced through Mockingbird expressions.
+
+A literal string can be specified using the `literal` attribute. Within a literal string, expressions are not evaluated, so there's no need to perform any escaping. For example:
+
+```xml
+<Var name="currency" literal="$USD"/>
+```
+
+The declaration above sets the value of the Mockingbird variable named `price` to an `NSString` instance containing the text "`$USD`".
+
+If literals won't suffice, you can instead use the `value` attribute along with expressions to set a specific value when the variable is declared:
+
+```xml
+<Var name="price" value="#(99.99)"/>
+<Var name="priceLabel" value="${currency}${price}"/>
+<Var name="time" value="^currentTime()"/>
+```
+
+Because the value in the first line above is wrapped within the **`#(`** ... **`)`** notation, it is evaluated as a numeric expression. As a result, the `price` variable is set to an `NSNumber` containing the value `99.99`.
+
+In the second line, the `value` attribute contains an expression referencing two values: `${currency}` and `${price}`. Whenever more than one value is referenced at the top level of an expression, string interpolation is used, so the resulting value is guaranteed to be an `NSString`. The underlying value will be the string "`$USD99.99`".
+
+The third line shows the `time` variable being set to the value yielded by the `^currentTime()` MBML function, which will be an `NSDate`.
+
+Variables can be declared with boolean values using the `boolean` attribute:
+
+```xml
+<Var name="useLargerImageSizes" boolean="$Network.isWifiConnected -AND $Device.isRetina"/>
+```
+
+The `boolean` attribute's value is evaluated as a boolean expression, and the result is used as the variable's value.
+
+In the example above, the `useLargerImageSizes` variable would be set to `true` if and only if `$Network.isWifiConnected` and `$Device.isRetina` both evaluate to `true`.
+
+Arrays can be declared using the `type="list"` attribute. One such use might be to declare a list of U.S. states:
+
+```xml
+<Var name="states" type="list" mutable="F">
+	<Var literal="Alabama"/>
+	<Var literal="Alaska"/>
+	<Var literal="Arizona"/>
+	...
+</Var>
+```
+
+The declaration above results in an `NSArray` containing the string literals specified. Notice that the inner `<Var>` tags do not take a `name` attribute, because an array is simply a list of unnamed values.
+
+Mappings—which are `NSDictionary` instances—can be declared similarly, using the `type="map"` attribute. This sample declaration shows a mapping between state names and their corresponding postal codes:
+
+```xml
+<Var name="statesToPostalCodes" type="map" mutable="F">
+	<Var name="Alabama" literal="AL"/>
+	<Var name="Alaska"  literal="AK"/>
+	<Var name="Arizona" literal="AZ"/>
+	...
+</Var>
+```
+
+In the resulting `NSDictionary`, the value of the `name` attribute specifies the *dictionary key* while the value of the `literal` attribute specifies the associated *dictionary value*.
+
+**Note:** Although shown above with only `literal` attributes, the nested `<Var>`s within a list or map can also take either a `boolean` or a `value` attribute instead of the `literal`.
+
+##### Singleton Variables
+
+##### Dynamic Variables
+
+#### Functions
