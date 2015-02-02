@@ -72,6 +72,22 @@ static Class s_objSubrefTokenCls = nil;
     }
 }
 
++ (BOOL) isValidObjectReference:(NSString*)ref
+{
+    if (!ref || ref.length < 1) {
+        return NO;
+    }
+
+    for (NSUInteger i=0; i<ref.length; i++) {
+        if (![self isValidObjectReferenceCharacter:[ref characterAtIndex:i]
+                                        atPosition:i])
+        {
+            return NO;
+        }
+    }
+    return YES;
+}
+
 /******************************************************************************/
 #pragma mark Object subreferences
 /******************************************************************************/

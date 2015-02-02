@@ -29,6 +29,8 @@
 
 - (NSString*) subreferenceExpression;
 
++ (BOOL) isValidObjectReference:(NSString*)ref;
+
 + (BOOL) isValidObjectReferenceCharacter:(unichar)ch atPosition:(NSUInteger)pos;
 
 - (id) valueForKey:(NSString*)key valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr;
