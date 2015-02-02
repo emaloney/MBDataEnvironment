@@ -1,234 +1,146 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>MBMLStringFunctions Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
-				<a id="developerHome" href="../index.html">Gilt Groupe</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBMLStringFunctions Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
 			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">MBMLStringFunctions Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
+			<h1 id="library-title">
+				<a href="../index.html">Mockingbird Data Environment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-	
+
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
+
 	
 	
+
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/concatenateFields:">+ concatenateFields:</option>
+		
+		<option value="//api/name/containsString:">+ containsString:</option>
+		
+		<option value="//api/name/eval:">+ eval:</option>
+		
+		<option value="//api/name/evalBool:">+ evalBool:</option>
+		
+		<option value="//api/name/firstNonemptyString:">+ firstNonemptyString:</option>
+		
+		<option value="//api/name/firstNonemptyTrimmedString:">+ firstNonemptyTrimmedString:</option>
+		
+		<option value="//api/name/formatInteger:">+ formatInteger:</option>
+		
+		<option value="//api/name/hasPrefix:">+ hasPrefix:</option>
+		
+		<option value="//api/name/hasSuffix:">+ hasSuffix:</option>
+		
+		<option value="//api/name/indentLines:">+ indentLines:</option>
+		
+		<option value="//api/name/indentLinesToDepth:">+ indentLinesToDepth:</option>
+		
+		<option value="//api/name/lowercase:">+ lowercase:</option>
+		
+		<option value="//api/name/parseDouble:">+ parseDouble:</option>
+		
+		<option value="//api/name/parseInteger:">+ parseInteger:</option>
+		
+		<option value="//api/name/parseNumber:">+ parseNumber:</option>
+		
+		<option value="//api/name/pluralize:">+ pluralize:</option>
+		
+		<option value="//api/name/prefixLinesWith:">+ prefixLinesWith:</option>
+		
+		<option value="//api/name/q:">+ q:</option>
+		
+		<option value="//api/name/rangeOfString:">+ rangeOfString:</option>
+		
+		<option value="//api/name/stripQueryString:">+ stripQueryString:</option>
+		
+		<option value="//api/name/stripSpaces:">+ stripSpaces:</option>
+		
+		<option value="//api/name/titleCase:">+ titleCase:</option>
+		
+		<option value="//api/name/titleCaseIfAllCaps:">+ titleCaseIfAllCaps:</option>
+		
+		<option value="//api/name/trimSpaces:">+ trimSpaces:</option>
+		
+		<option value="//api/name/truncate:">+ truncate:</option>
+		
+		<option value="//api/name/uppercase:">+ uppercase:</option>
+		
+	</optgroup>
 	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/concatenateFields:">&nbsp;&nbsp;&nbsp;&nbsp;+ concatenateFields:</option>
-	
-	<option value="//api/name/containsString:">&nbsp;&nbsp;&nbsp;&nbsp;+ containsString:</option>
-	
-	<option value="//api/name/eval:">&nbsp;&nbsp;&nbsp;&nbsp;+ eval:</option>
-	
-	<option value="//api/name/evalBool:">&nbsp;&nbsp;&nbsp;&nbsp;+ evalBool:</option>
-	
-	<option value="//api/name/firstNonemptyString:">&nbsp;&nbsp;&nbsp;&nbsp;+ firstNonemptyString:</option>
-	
-	<option value="//api/name/firstNonemptyTrimmedString:">&nbsp;&nbsp;&nbsp;&nbsp;+ firstNonemptyTrimmedString:</option>
-	
-	<option value="//api/name/formatInteger:">&nbsp;&nbsp;&nbsp;&nbsp;+ formatInteger:</option>
-	
-	<option value="//api/name/hasPrefix:">&nbsp;&nbsp;&nbsp;&nbsp;+ hasPrefix:</option>
-	
-	<option value="//api/name/hasSuffix:">&nbsp;&nbsp;&nbsp;&nbsp;+ hasSuffix:</option>
-	
-	<option value="//api/name/indentLines:">&nbsp;&nbsp;&nbsp;&nbsp;+ indentLines:</option>
-	
-	<option value="//api/name/indentLinesToDepth:">&nbsp;&nbsp;&nbsp;&nbsp;+ indentLinesToDepth:</option>
-	
-	<option value="//api/name/lowercase:">&nbsp;&nbsp;&nbsp;&nbsp;+ lowercase:</option>
-	
-	<option value="//api/name/parseDouble:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseDouble:</option>
-	
-	<option value="//api/name/parseInteger:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseInteger:</option>
-	
-	<option value="//api/name/parseNumber:">&nbsp;&nbsp;&nbsp;&nbsp;+ parseNumber:</option>
-	
-	<option value="//api/name/pluralize:">&nbsp;&nbsp;&nbsp;&nbsp;+ pluralize:</option>
-	
-	<option value="//api/name/prefixLinesWith:">&nbsp;&nbsp;&nbsp;&nbsp;+ prefixLinesWith:</option>
-	
-	<option value="//api/name/q:">&nbsp;&nbsp;&nbsp;&nbsp;+ q:</option>
-	
-	<option value="//api/name/rangeOfString:">&nbsp;&nbsp;&nbsp;&nbsp;+ rangeOfString:</option>
-	
-	<option value="//api/name/stripQueryString:">&nbsp;&nbsp;&nbsp;&nbsp;+ stripQueryString:</option>
-	
-	<option value="//api/name/stripSpaces:">&nbsp;&nbsp;&nbsp;&nbsp;+ stripSpaces:</option>
-	
-	<option value="//api/name/titleCase:">&nbsp;&nbsp;&nbsp;&nbsp;+ titleCase:</option>
-	
-	<option value="//api/name/titleCaseIfAllCaps:">&nbsp;&nbsp;&nbsp;&nbsp;+ titleCaseIfAllCaps:</option>
-	
-	<option value="//api/name/trimSpaces:">&nbsp;&nbsp;&nbsp;&nbsp;+ trimSpaces:</option>
-	
-	<option value="//api/name/truncate:">&nbsp;&nbsp;&nbsp;&nbsp;+ truncate:</option>
-	
-	<option value="//api/name/uppercase:">&nbsp;&nbsp;&nbsp;&nbsp;+ uppercase:</option>
-	
-	
-	
+
 	
 	
 </select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBMLStringFunctions Class Reference</h1>
 
-
-
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_String quoting">String quoting</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Expression evaluation">Expression evaluation</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_String stripping &amp; trimming">String stripping &amp; trimming</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_String indentation &amp; prefixing">String indentation &amp; prefixing</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Pluralizing terms">Pluralizing terms</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Manipulating the case of characters in a string">Manipulating the case of characters in a string</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Combining multiple field label/value pairs into a single string">Combining multiple field label/value pairs into a single string</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_String stripping &amp; trimming">String stripping &amp; trimming</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_String truncation">String truncation</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Handling numbers">Handling numbers</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Finding substrings">Finding substrings</a></span></li>
-	
-</ul></li>
-
-
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/concatenateFields:">concatenateFields:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsString:">containsString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/eval:">eval:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/evalBool:">evalBool:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstNonemptyString:">firstNonemptyString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstNonemptyTrimmedString:">firstNonemptyTrimmedString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/formatInteger:">formatInteger:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasPrefix:">hasPrefix:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hasSuffix:">hasSuffix:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indentLines:">indentLines:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/indentLinesToDepth:">indentLinesToDepth:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lowercase:">lowercase:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseDouble:">parseDouble:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseInteger:">parseInteger:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/parseNumber:">parseNumber:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pluralize:">pluralize:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/prefixLinesWith:">prefixLinesWith:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/q:">q:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rangeOfString:">rangeOfString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stripQueryString:">stripQueryString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stripSpaces:">stripSpaces:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/titleCase:">titleCase:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/titleCaseIfAllCaps:">titleCaseIfAllCaps:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/trimSpaces:">trimSpaces:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/truncate:">truncate:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/uppercase:">uppercase:</a></span></li>
-	
-</ul></li>
-
-
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MBMLStringFunctions Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">MBMLStringFunctions Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MBMLStringFunctions.h</td>
+	<th>Declared in</th>
+	<td>MBMLStringFunctions.h</td>
 </tr>
 						</tbody></table></div>
 					
-                    
+
                     
 					
 					<div class="section section-overview">
@@ -244,473 +156,167 @@ file.</p>
 					</div>
 					
 					
-					
+
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
-						
+
 						<a title="String quoting" name="task_String quoting"></a>
-						<h3 class="subsubtitle task-title">String quoting</h3>
+						<h2 class="task-title">String quoting</h2>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/q:">+&nbsp;q:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/q:" title="q:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/q:">+&nbsp;q:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Quotes a string, ensuring that it is not interpreted by the Mockingbird
+expression evaluator.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)q:(NSString *)<em>toQuote</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toQuote</code></th>
+						<td><p>The string being quoted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The quoted string.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This function can be used to ensure that some or all of an expression
+is left untouched by the expression evaluator.</p>
+
+<p>This is required, for example, to preserve space characters at the beginning
+or end of a text literal. (Normally, the expression evaluator ignores
+whitespace at the beginning or end of text literals.)</p>
+
+<p>This Mockingbird function accepts one parameter, the string to be quoted.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^q(   -- Please leave spaces intact --   )
+</code></pre>
+
+<p>The Mockingbird expression above quotes the string so that the spaces at
+the beginning and end of the string are preserved. The return value is:
+&ldquo;&nbsp;&nbsp;&nbsp;<code>-- Please leave spaces intact --</code>&nbsp;&nbsp;&nbsp;&rdquo;.</p>
+
+<pre><code>^q(Ke$ha)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>Ke$ha</code>&rdquo;.</p>
+
+<p>Normally, the expression evaluator interprets a dollar sign (<code>$</code>) as the
+beginning of a variable reference. By itself, the string &ldquo;<code>Ke$ha</code>&rdquo; would
+be recognized as: <em>the text literal &ldquo;<code>Ke</code>&rdquo; followed by a reference to the
+Mockingbird variable &ldquo;<code>ha</code>&rdquo;</em>. Assuming there is no value for &ldquo;<code>$ha</code>&rdquo;, without
+quoting, the expression &ldquo;<code>Ke$ha</code>&rdquo; would actually result in the string &ldquo;<code>Ke</code>&rdquo;,
+which is probably not the desired result.</p>
+
+<p>Quoting the string ensures that it is left intact and not misinterpreted as
+containing a variable reference.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
 						
-						
+
 						<a title="Expression evaluation" name="task_Expression evaluation"></a>
-						<h3 class="subsubtitle task-title">Expression evaluation</h3>
+						<h2 class="task-title">Expression evaluation</h2>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/eval:">+&nbsp;eval:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/evalBool:">+&nbsp;evalBool:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="String stripping &amp; trimming" name="task_String stripping &amp; trimming"></a>
-						<h3 class="subsubtitle task-title">String stripping &amp; trimming</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/trimSpaces:">+&nbsp;trimSpaces:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/stripSpaces:">+&nbsp;stripSpaces:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/stripQueryString:">+&nbsp;stripQueryString:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="String indentation &amp; prefixing" name="task_String indentation &amp; prefixing"></a>
-						<h3 class="subsubtitle task-title">String indentation &amp; prefixing</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/indentLines:">+&nbsp;indentLines:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/indentLinesToDepth:">+&nbsp;indentLinesToDepth:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/prefixLinesWith:">+&nbsp;prefixLinesWith:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Pluralizing terms" name="task_Pluralizing terms"></a>
-						<h3 class="subsubtitle task-title">Pluralizing terms</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/pluralize:">+&nbsp;pluralize:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Manipulating the case of characters in a string" name="task_Manipulating the case of characters in a string"></a>
-						<h3 class="subsubtitle task-title">Manipulating the case of characters in a string</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/lowercase:">+&nbsp;lowercase:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/uppercase:">+&nbsp;uppercase:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/titleCase:">+&nbsp;titleCase:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/titleCaseIfAllCaps:">+&nbsp;titleCaseIfAllCaps:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Combining multiple field label/value pairs into a single string" name="task_Combining multiple field label/value pairs into a single string"></a>
-						<h3 class="subsubtitle task-title">Combining multiple field label/value pairs into a single string</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/concatenateFields:">+&nbsp;concatenateFields:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="String stripping &amp; trimming" name="task_String stripping &amp; trimming"></a>
-						<h3 class="subsubtitle task-title">String stripping &amp; trimming</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/firstNonemptyString:">+&nbsp;firstNonemptyString:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/firstNonemptyTrimmedString:">+&nbsp;firstNonemptyTrimmedString:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="String truncation" name="task_String truncation"></a>
-						<h3 class="subsubtitle task-title">String truncation</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/truncate:">+&nbsp;truncate:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Handling numbers" name="task_Handling numbers"></a>
-						<h3 class="subsubtitle task-title">Handling numbers</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/parseNumber:">+&nbsp;parseNumber:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/parseInteger:">+&nbsp;parseInteger:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/parseDouble:">+&nbsp;parseDouble:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/formatInteger:">+&nbsp;formatInteger:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Finding substrings" name="task_Finding substrings"></a>
-						<h3 class="subsubtitle task-title">Finding substrings</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/hasPrefix:">+&nbsp;hasPrefix:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/hasSuffix:">+&nbsp;hasSuffix:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/containsString:">+&nbsp;containsString:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/rangeOfString:">+&nbsp;rangeOfString:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/concatenateFields:" title="concatenateFields:"></a>
-	<h3 class="subsubtitle method-title">concatenateFields:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Constructs a string by concatenating an arbitrary set of <em>fields</em> using
-a <em>field separator</em>.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)concatenateFields:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The function result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Each <em>field</em> is comprised of two components: a <em>field label</em> and a <em>field
-value</em>.</p>
-
-<p>For each field with a non-<code>nil</code> value, the <em>field label</em> is added to the
-string, followed by the <em>field value</em>. If multiple fields are provided,
-the <em>field separator</em> is included between each <em>field label/field value</em> pair.</p>
-
-<p>This Mockingbird function accepts two or more pipe-separated input parameters:</p>
-
-<ul>
-<li><p>An optional <em>field separator</em>, a string expression specifying the separator
- to be used between each label/value pair added to the output string. If the
- field separator parameter is not explicitly specified, the separator string
- &ldquo;<code>;</code>&rdquo; (a semicolon followed by a space) is used.</p></li>
-<li><p>A <em>field label</em>, a string expression</p></li>
-<li><p>A <em>field value</em>, a string expression</p></li>
-<li><p>An optional set of additional label/value pairs.</p></li>
-</ul>
-
-
-<p>Note that if the field separator parameter is specified, the function will
-always expect an odd number of parameters, whereas if the field separator
-is omitted, the function will always expect an even number of parameters.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume that <code>$item.size</code> yields the string &ldquo;<code>42R</code>&rdquo; and <code>$item.color</code> yields
-&ldquo;<code>navy blue</code>&rdquo;</p>
-
-<pre><code>^concatenateFields(Size: |$item.size|Color: |^titleCase($item.size))
-</code></pre>
-
-<p>The expression above would return the string &ldquo;<code>Size: 42R; Color: Navy Blue</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/containsString:" title="containsString:"></a>
-	<h3 class="subsubtitle method-title">containsString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Determines if a string contains a given substring.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)containsString:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>NSNumber</code> containing the boolean result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two input parameters:</p>
-
-<ul>
-<li><p>The <em>string to test</em>, a string expression that will be tested to see if it
- contains the substring.</p></li>
-<li><p>The <em>substring</em>, a string expression yielding the substring to be found
- within <em>string to test</em>.</p></li>
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<pre><code>^containsString($dayOfWeek|ues)
-</code></pre>
-
-<p>The Mockingbird expression above returns <code>YES</code> if the string value of the
-expression <code>$dayOfWeek</code> contains the string &ldquo;<code>ues</code>&rdquo;.</p>
-
-<p>If <code>$dayOfWeek</code> yields the string &ldquo;<code>Tuesday</code>&rdquo;, the expression will return
-<code>YES</code>. For any other day of the week, the expression returns <code>NO</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/eval:" title="eval:"></a>
-	<h3 class="subsubtitle method-title">eval:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the result of evaluating the given string as an object expression.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/eval:">+&nbsp;eval:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)eval:(NSString *)<em>evalStr</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>evalStr</em></dt>
-			<dd><p>The string containing the expression to evaluate.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating <code>evalStr</code> in the object context.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single parameter, a string containing the
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the result of evaluating the given string as an object expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)eval:(NSString *)<em>evalStr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>evalStr</code></th>
+						<td><p>The string containing the expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating <code>evalStr</code> in the object context.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, a string containing the
 expression to be evaluated.</p>
 
 <h4>Expression usage</h4>
@@ -722,62 +328,69 @@ expression to be evaluated.</p>
 
 <p>The expression above would return the object referenced by the variable
 <code>$user</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/evalBool:" title="evalBool:"></a>
-	<h3 class="subsubtitle method-title">evalBool:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the result of evaluating the given string as a boolean expression.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/evalBool:">+&nbsp;evalBool:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)evalBool:(NSString *)<em>evalStr</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>evalStr</em></dt>
-			<dd><p>The string containing the expression to evaluate.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating <code>evalStr</code> in the boolean context.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single parameter, a string containing the
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the result of evaluating the given string as a boolean expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)evalBool:(NSString *)<em>evalStr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>evalStr</code></th>
+						<td><p>The string containing the expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating <code>evalStr</code> in the boolean context.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, a string containing the
 expression to be evaluated.</p>
 
 <h4>Expression usage</h4>
@@ -787,419 +400,303 @@ expression to be evaluated.</p>
 
 <p>The expression above returns an <code>NSNumber</code> instance containing the
 boolean value <code>YES</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
-	<a name="//api/name/firstNonemptyString:" title="firstNonemptyString:"></a>
-	<h3 class="subsubtitle method-title">firstNonemptyString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Given a set of expressions, returns the value of the first expression
-that returns a non-<code>nil</code>, non-empty string.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>+ (id)firstNonemptyString:(NSArray *)<em>params</em></code></div>
+						<a title="String stripping &amp; trimming" name="task_String stripping &amp; trimming"></a>
+						<h2 class="task-title">String stripping &amp; trimming</h2>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The function result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts an arbitrary list of pipe-separated
-parameters, where each parameter is an expression that will be evaluated
-in the string context.</p>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/trimSpaces:" title="trimSpaces:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/trimSpaces:">+&nbsp;trimSpaces:</a></code>
+</h3>
 
-<p>The function will return the value of the first expression that yields a
-non-empty string. If there are no such values, <code>nil</code> is returned.</p>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes any leading and trailing whitespace from the given string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)trimSpaces:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the string being
+            trimmed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The trimmed string.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an expression
+representing the string to be trimmed.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume <code>$firstName</code> is &ldquo;<code>Lon</code>&rdquo; and <code>$nickname</code> has no value:</p>
-
-<pre><code>^firstNonemptyString($nickname|$firstName|Valued Customer)
+<pre><code>^trimSpaces(  Hi, how are you? )
 </code></pre>
 
-<p>The expression above would yield the string &ldquo;<code>Lon</code>&rdquo;.</p>
+<p>The expression above would result in the value &ldquo;<code>Hi, how are you?</code>&rdquo;.</p>
+			</div>
+			
 
-<p>If <code>$firstName</code> were undefined, the return value would be &ldquo;<code>Valued Customer</code>&rdquo;.</p>
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/firstNonemptyTrimmedString:" title="firstNonemptyTrimmedString:"></a>
-	<h3 class="subsubtitle method-title">firstNonemptyTrimmedString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Given a set of expressions, returns a trimmed version of the value of the
-first expression that returns a non-<code>nil</code>, non-empty string. Leading and
-trailing whitespace is removed from the result before it is returned.</p>
-	</div>		
-	
-    
+</div><div class="section-method">
+	<a name="//api/name/stripSpaces:" title="stripSpaces:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stripSpaces:">+&nbsp;stripSpaces:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)firstNonemptyTrimmedString:(NSArray *)<em>params</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The function result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts an arbitrary list of pipe-separated
-parameters, where each parameter is an expression that will be evaluated
-in the string context.</p>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes all space characters from the given string.</p>
+			</div>
+			
+		    
 
-<p>The function will return the value of the first expression that yields a
-non-empty string <em>after</em> whitespace trimming. If there are no such values,
-<code>nil</code> is returned.</p>
+			<div class="method-subsection method-declaration"><code>+ (id)stripSpaces:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the string being
+            stripped.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The string, stripped of spaces.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Note that this removes only space characters, not all whitespace.</p>
+
+<p>This Mockingbird function accepts a single parameter, an expression
+representing the string to be stripped.</p>
 
 <h4>Expression usage</h4>
 
-<p>Assume that the expression <code>$user.salutation</code> yields <code>nil</code>:</p>
-
-<pre><code>^firstNonemptyTrimmedString($user.salutation|Dear )
+<pre><code>^stripSpaces(  Hi, how are you? )
 </code></pre>
 
-<p>The expression above would yield the string &ldquo;<code>Dear</code>&rdquo; (with no trailing space)
-even though the second parameter consists of a string (&ldquo;<code>Dear</code>&nbsp;&rdquo;)
-containing a trailing space.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/formatInteger:" title="formatInteger:"></a>
-	<h3 class="subsubtitle method-title">formatInteger:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Formats a number as an integer string using a <code>NSNumberFormatter</code> with a
-<code>numberStyle</code> of <code>NSNumberFormatterDecimalStyle</code>.</p>
-	</div>		
-	
-    
+<p>The expression above would result in the value &ldquo;<code>Hi,howareyou?</code>&rdquo;.</p>
+			</div>
+			
 
-	<div class="method-subsection method-declaration"><code>+ (id)formatInteger:(NSNumber *)<em>toFormat</em></code></div>
+			
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toFormat</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the number being formatted.</p></dd>
-		</dl>
-		
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of formatting the input parameter.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: a numeric
-expression yielding the number to format as an integer string.</p>
+</div><div class="section-method">
+	<a name="//api/name/stripQueryString:" title="stripQueryString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stripQueryString:">+&nbsp;stripQueryString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes the query string from a string containing a URL.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)stripQueryString:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the URL string from
+            which the query string will be stripped.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The URL with the query string removed.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, a string expression
+yielding the URL string from which the query string should be removed.</p>
 
 <h4>Expression usage</h4>
 
-<pre><code>^formatInteger(11 / 2)
+<pre><code>^stripQueryString(http://www.gilt.com/?utm_campaign=claris)
 </code></pre>
 
-<p>The expression above yields an <code>NSString</code> containing the value &ldquo;<code>5</code>&rdquo;.</p>
+<p>The expression above would return the string &ldquo;<a href="http://www.gilt.com/"><code>http://www.gilt.com/</code></a>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
-	<a name="//api/name/hasPrefix:" title="hasPrefix:"></a>
-	<h3 class="subsubtitle method-title">hasPrefix:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Determines if a string has a given prefix.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>+ (id)hasPrefix:(NSArray *)<em>params</em></code></div>
+						<a title="String indentation &amp; prefixing" name="task_String indentation &amp; prefixing"></a>
+						<h2 class="task-title">String indentation &amp; prefixing</h2>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>@YES</code> if <em>string to test</em> has the given <em>prefix</em>; <code>@NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two parameters:</p>
-
-<ul>
-<li><p>The <em>string to test</em>, a string expression that will be tested to see if it
- has the given prefix.</p></li>
-<li><p>The <em>prefix</em>, a string expression yielding the prefix to test against
- <em>string to test</em>.</p></li>
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<pre><code>^hasPrefix($name|Coop)
-</code></pre>
-
-<p>The expression above evaluates to <code>true</code> if string value of the expression
-<code>$name</code> begins with &ldquo;<code>Coop</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/hasSuffix:" title="hasSuffix:"></a>
-	<h3 class="subsubtitle method-title">hasSuffix:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Determines if a string has a given suffix.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)hasSuffix:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>@YES</code> if <em>string to test</em> has the given <em>suffix</em>; <code>@NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two input parameters:</p>
-
-<ul>
-<li><p>The <em>string to test</em>, a string expression that will be tested to see if it
- has the given suffix.</p></li>
-<li><p>The <em>suffix</em>, a string expression yielding the suffix to test against
- <em>string to test</em>.</p></li>
-</ul>
-
-
-<h4>Expression usage</h4>
-
-<pre><code>^hasSuffix($dayOfWeek|day)
-</code></pre>
-
-<p>The expression above evaluates to <code>true</code> if string value of the expression
-<code>$dayOfWeek</code> ends with &ldquo;<code>day</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/indentLines:" title="indentLines:"></a>
-	<h3 class="subsubtitle method-title">indentLines:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Indents each line in a given string with a tab character.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/indentLines:">+&nbsp;indentLines:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)indentLines:(NSString *)<em>toIndent</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toIndent</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string being indented.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of performing the indentation.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression that
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indents each line in a given string with a tab character.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)indentLines:(NSString *)<em>toIndent</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toIndent</code></th>
+						<td><p>The function&rsquo;s input parameter, the string being indented.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of performing the indentation.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression that
 will be evaluated as a string.</p>
 
 <h4>Expression usage</h4>
@@ -1212,62 +709,69 @@ a string, and will then prefix each line of the result with a tab character.</p>
 
 <p>The implementation attempts to be platform-agnostic with respect to the
 exact sequence of characters that signal line endings.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/indentLinesToDepth:" title="indentLinesToDepth:"></a>
-	<h3 class="subsubtitle method-title">indentLinesToDepth:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Indents each line in a given string with a specific number of tab characters.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/indentLinesToDepth:">+&nbsp;indentLinesToDepth:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)indentLinesToDepth:(NSArray *)<em>params</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of performing the indentation.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two pipe-separated input parameters:</p>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Indents each line in a given string with a specific number of tab characters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)indentLinesToDepth:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of performing the indentation.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated input parameters:</p>
 
 <ul>
 <li><p>The <em>string to indent</em>, a string expression representing the string whose
@@ -1287,332 +791,160 @@ a string, and will then prefix each line of the result with two tab characters.<
 
 <p>The implementation attempts to be platform-agnostic with respect to the
 exact sequence of characters that signal line endings.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/lowercase:" title="lowercase:"></a>
-	<h3 class="subsubtitle method-title">lowercase:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a version of the input string that contains only lowercase
-characters.</p>
-	</div>		
-	
-    
+			</div>
+			
 
-	<div class="method-subsection method-declaration"><code>+ (id)lowercase:(NSString *)<em>toTransform</em></code></div>
+			
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string whose
-            case is to be changed.</p></dd>
-		</dl>
-		
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of changing the input parameter&rsquo;s case.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string whose case is to be changed.</p>
+</div><div class="section-method">
+	<a name="//api/name/prefixLinesWith:" title="prefixLinesWith:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/prefixLinesWith:">+&nbsp;prefixLinesWith:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Prefixes each line in a given string with another string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)prefixLinesWith:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of performing the prefixing.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated input parameters:</p>
+
+<ul>
+<li><p>The <em>string to indent</em>, a string expression representing the string being
+ indented</p></li>
+<li><p>The <em>number of tabs</em>, a numeric expression indicating the number of tabs
+ that should be used to indent <em>string to indent</em></p></li>
+</ul>
+
 
 <h4>Expression usage</h4>
 
-<pre><code>^lowercase(STOP SHOUTING! start whispering.)
+<pre><code>^prefixLinesWith($emailBody|&gt; )
 </code></pre>
 
-<p>The expression above returns the string &ldquo;<code>stop shouting! start whispering.</code>&rdquo;.</p>
+<p>The expression above will interpret the <code>emailBody</code> Mockingbird variable as
+a string, and will then prefix each line of the result with the text
+&ldquo;<code>&gt;</code>&nbsp;&rdquo;.</p>
+
+<p>The implementation attempts to be platform-agnostic with respect to the
+exact sequence of characters that signal line endings.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
-	<a name="//api/name/parseDouble:" title="parseDouble:"></a>
-	<h3 class="subsubtitle method-title">parseDouble:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Attempts to parse a string into an <code>NSNumber</code> instance containing a
-<code>double</code> value.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>+ (id)parseDouble:(NSString *)<em>toParse</em></code></div>
+						<a title="Pluralizing terms" name="task_Pluralizing terms"></a>
+						<h2 class="task-title">Pluralizing terms</h2>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toParse</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string being parsed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of parsing the input parameter.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string to be parsed as a <code>double</code>.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>5</code>&rdquo; and the variable
-<code>$bar</code> contains the string &ldquo;<code>25</code>&rdquo;, the following expression:</p>
-
-<pre><code>^parseDouble(-${foo}.${bar})
-</code></pre>
-
-<p>returns an <code>NSNumber</code> containing the value <code>-5.25</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/parseInteger:" title="parseInteger:"></a>
-	<h3 class="subsubtitle method-title">parseInteger:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Attempts to parse a string into an <code>NSNumber</code> instance containing an
-<code>NSInteger</code> value.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)parseInteger:(NSString *)<em>toParse</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toParse</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string being parsed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of parsing the input parameter.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string to be parsed as an integer.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>5</code>&rdquo; and the variable
-<code>$bar</code> contains the string &ldquo;<code>25</code>&rdquo;, the following expression:</p>
-
-<pre><code>^parseInteger(-${foo}.${bar})
-</code></pre>
-
-<p>returns an <code>NSNumber</code> containing the value <code>-5</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/parseNumber:" title="parseNumber:"></a>
-	<h3 class="subsubtitle method-title">parseNumber:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Attempts to parse a string into an <code>NSNumber</code> instance containing an
-arbitrary numeric value.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)parseNumber:(NSString *)<em>toParse</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toParse</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string being parsed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of parsing the input parameter.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string to be parsed as a number.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>5</code>&rdquo; and the variable
-<code>$bar</code> contains the string &ldquo;<code>25</code>&rdquo;, the following expression:</p>
-
-<pre><code>^parseNumber(${foo}.${bar})
-</code></pre>
-
-<p>returns an <code>NSNumber</code> containing the floating-point value <code>5.25</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/pluralize:" title="pluralize:"></a>
-	<h3 class="subsubtitle method-title">pluralize:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Selects a properly pluralized form of a term based on a count of items.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/pluralize:">+&nbsp;pluralize:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)pluralize:(NSArray *)<em>params</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The appropriate pluralization, based on the value of <em>count</em>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Pluralization allows multiple variants of a <em>term</em> to be supplied, and based
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Selects a properly pluralized form of a term based on a count of items.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)pluralize:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The appropriate pluralization, based on the value of <em>count</em>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Pluralization allows multiple variants of a <em>term</em> to be supplied, and based
 on a <em>count</em>, the grammatically-correct form of <em>term</em> will be returned.</p>
 
 <p>For example, if you are displaying a message to a user and you want to
@@ -1687,226 +1019,1301 @@ three pipe-separated input parameters:</p>
 <p>When <code>$launchCount</code> is <code>1</code>, the expression above yields &ldquo;<code>Welcome to our
 application!</code>&rdquo; For any other value, &ldquo;<code>We're glad to have you back!</code>&rdquo; is
 returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
-	<a name="//api/name/prefixLinesWith:" title="prefixLinesWith:"></a>
-	<h3 class="subsubtitle method-title">prefixLinesWith:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Prefixes each line in a given string with another string.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>+ (id)prefixLinesWith:(NSArray *)<em>params</em></code></div>
+						<a title="Manipulating the case of characters in a string" name="task_Manipulating the case of characters in a string"></a>
+						<h2 class="task-title">Manipulating the case of characters in a string</h2>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/lowercase:" title="lowercase:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lowercase:">+&nbsp;lowercase:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a version of the input string that contains only lowercase
+characters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)lowercase:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the string whose
+            case is to be changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of changing the input parameter&rsquo;s case.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string whose case is to be changed.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^lowercase(STOP SHOUTING! start whispering.)
+</code></pre>
+
+<p>The expression above returns the string &ldquo;<code>stop shouting! start whispering.</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of performing the prefixing.</p>
+</div><div class="section-method">
+	<a name="//api/name/uppercase:" title="uppercase:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uppercase:">+&nbsp;uppercase:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a version of the input string that contains only uppercase
+characters.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)uppercase:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the string whose
+            case is to be changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of changing the input parameter&rsquo;s case.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string whose case is to be changed.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^uppercase(stop whispering. START SHOUTING!)
+</code></pre>
+
+<p>The expression above returns the string &ldquo;<code>STOP WHISPERING. START SHOUTING!</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two pipe-separated input parameters:</p>
+</div><div class="section-method">
+	<a name="//api/name/titleCase:" title="titleCase:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/titleCase:">+&nbsp;titleCase:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a title-case version of the input string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)titleCase:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the string whose
+            case is to be changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of changing the input parameter&rsquo;s case.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string whose case is to be changed.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^titleCase(e. e. cummings)
+</code></pre>
+
+<p>The expression above returns the string &ldquo;<code>E. E. Cummings</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/titleCaseIfAllCaps:" title="titleCaseIfAllCaps:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/titleCaseIfAllCaps:">+&nbsp;titleCaseIfAllCaps:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a title-case version of the input string if the letters in the input
+string are all capitals. If the input string contains any lowercase
+characters, the input string will be returned unchanged.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)titleCaseIfAllCaps:(NSString *)<em>toTransform</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toTransform</code></th>
+						<td><p>The function&rsquo;s input parameter, the string whose
+            case is to be changed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of changing the input parameter&rsquo;s case.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string whose case is to be changed.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^titleCaseIfAllCaps(e. e. cummings)
+</code></pre>
+
+<p>The expression above returns the string &ldquo;<code>e. e. cummings</code>&rdquo;.</p>
+
+<pre><code>^titleCaseIfAllCaps(E. E. CUMMINGS)
+</code></pre>
+
+<p>The expression above returns the string &ldquo;<code>E. E. Cummings</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Combining multiple field label/value pairs into a single string" name="task_Combining multiple field label/value pairs into a single string"></a>
+						<h2 class="task-title">Combining multiple field label/value pairs into a single string</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/concatenateFields:" title="concatenateFields:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/concatenateFields:">+&nbsp;concatenateFields:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Constructs a string by concatenating an arbitrary set of <em>fields</em> using
+a <em>field separator</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)concatenateFields:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Each <em>field</em> is comprised of two components: a <em>field label</em> and a <em>field
+value</em>.</p>
+
+<p>For each field with a non-<code>nil</code> value, the <em>field label</em> is added to the
+string, followed by the <em>field value</em>. If multiple fields are provided,
+the <em>field separator</em> is included between each <em>field label/field value</em> pair.</p>
+
+<p>This Mockingbird function accepts two or more pipe-separated input parameters:</p>
 
 <ul>
-<li><p>The <em>string to indent</em>, a string expression representing the string being
- indented</p></li>
-<li><p>The <em>number of tabs</em>, a numeric expression indicating the number of tabs
- that should be used to indent <em>string to indent</em></p></li>
+<li><p>An optional <em>field separator</em>, a string expression specifying the separator
+ to be used between each label/value pair added to the output string. If the
+ field separator parameter is not explicitly specified, the separator string
+ &ldquo;<code>;</code>&rdquo; (a semicolon followed by a space) is used.</p></li>
+<li><p>A <em>field label</em>, a string expression</p></li>
+<li><p>A <em>field value</em>, a string expression</p></li>
+<li><p>An optional set of additional label/value pairs.</p></li>
+</ul>
+
+
+<p>Note that if the field separator parameter is specified, the function will
+always expect an odd number of parameters, whereas if the field separator
+is omitted, the function will always expect an even number of parameters.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume that <code>$item.size</code> yields the string &ldquo;<code>42R</code>&rdquo; and <code>$item.color</code> yields
+&ldquo;<code>navy blue</code>&rdquo;</p>
+
+<pre><code>^concatenateFields(Size: |$item.size|Color: |^titleCase($item.size))
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>Size: 42R; Color: Navy Blue</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="String stripping &amp; trimming" name="task_String stripping &amp; trimming"></a>
+						<h2 class="task-title">String stripping &amp; trimming</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/firstNonemptyString:" title="firstNonemptyString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstNonemptyString:">+&nbsp;firstNonemptyString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Given a set of expressions, returns the value of the first expression
+that returns a non-<code>nil</code>, non-empty string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)firstNonemptyString:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts an arbitrary list of pipe-separated
+parameters, where each parameter is an expression that will be evaluated
+in the string context.</p>
+
+<p>The function will return the value of the first expression that yields a
+non-empty string. If there are no such values, <code>nil</code> is returned.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume <code>$firstName</code> is &ldquo;<code>Lon</code>&rdquo; and <code>$nickname</code> has no value:</p>
+
+<pre><code>^firstNonemptyString($nickname|$firstName|Valued Customer)
+</code></pre>
+
+<p>The expression above would yield the string &ldquo;<code>Lon</code>&rdquo;.</p>
+
+<p>If <code>$firstName</code> were undefined, the return value would be &ldquo;<code>Valued Customer</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/firstNonemptyTrimmedString:" title="firstNonemptyTrimmedString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/firstNonemptyTrimmedString:">+&nbsp;firstNonemptyTrimmedString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Given a set of expressions, returns a trimmed version of the value of the
+first expression that returns a non-<code>nil</code>, non-empty string. Leading and
+trailing whitespace is removed from the result before it is returned.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)firstNonemptyTrimmedString:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts an arbitrary list of pipe-separated
+parameters, where each parameter is an expression that will be evaluated
+in the string context.</p>
+
+<p>The function will return the value of the first expression that yields a
+non-empty string <em>after</em> whitespace trimming. If there are no such values,
+<code>nil</code> is returned.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume that the expression <code>$user.salutation</code> yields <code>nil</code>:</p>
+
+<pre><code>^firstNonemptyTrimmedString($user.salutation|Dear )
+</code></pre>
+
+<p>The expression above would yield the string &ldquo;<code>Dear</code>&rdquo; (with no trailing space)
+even though the second parameter consists of a string (&ldquo;<code>Dear</code>&nbsp;&rdquo;)
+containing a trailing space.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="String truncation" name="task_String truncation"></a>
+						<h2 class="task-title">String truncation</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/truncate:" title="truncate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/truncate:">+&nbsp;truncate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Truncates a string if it is longer than a given length, and appends a
+<em>truncation marker</em> if truncation has occurred.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)truncate:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts 2 or 3 pipe-separated input parameters:</p>
+
+<ul>
+<li><p>The <em>truncation length</em>, a numeric expression. If <em>input string</em>&rsquo;s length
+ is greater than <em>truncation length</em>, <em>input string</em> will be shortened to exactly
+ <em>truncation length</em>, and then the <em>truncation marker</em> will be appended.</p></li>
+<li><p>An optional <em>truncation marker</em>, a string expression representing the
+ string to append to the end of <em>input string</em> after truncation occurs.
+ If this parameter is omitted, the ellipses character (<code>…</code>) will be used as
+ the truncation string.</p></li>
+<li><p>The <em>input string</em>, an expression yielding the string to be truncated.</p></li>
+</ul>
+
+
+<p>Note that the truncation marker is appended <em>after</em> the input string is
+truncated. As a result, the string returned by this function may be as
+long as <em>truncation length</em> plus the length of <em>truncation marker</em>.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^truncate(10|This is your chance!)
+</code></pre>
+
+<p>The expression above yields the string &ldquo;<code>This is yo…</code>&rdquo;.</p>
+
+<pre><code>^truncate(5|!|Hello, Newman.)
+</code></pre>
+
+<p>The expression above results in &ldquo;<code>Hello!</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Handling numbers" name="task_Handling numbers"></a>
+						<h2 class="task-title">Handling numbers</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/parseNumber:" title="parseNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseNumber:">+&nbsp;parseNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempts to parse a string into an <code>NSNumber</code> instance containing an
+arbitrary numeric value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)parseNumber:(NSString *)<em>toParse</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toParse</code></th>
+						<td><p>The function&rsquo;s input parameter, the string being parsed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of parsing the input parameter.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string to be parsed as a number.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>5</code>&rdquo; and the variable
+<code>$bar</code> contains the string &ldquo;<code>25</code>&rdquo;, the following expression:</p>
+
+<pre><code>^parseNumber(${foo}.${bar})
+</code></pre>
+
+<p>returns an <code>NSNumber</code> containing the floating-point value <code>5.25</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseInteger:" title="parseInteger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseInteger:">+&nbsp;parseInteger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempts to parse a string into an <code>NSNumber</code> instance containing an
+<code>NSInteger</code> value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)parseInteger:(NSString *)<em>toParse</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toParse</code></th>
+						<td><p>The function&rsquo;s input parameter, the string being parsed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of parsing the input parameter.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string to be parsed as an integer.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>5</code>&rdquo; and the variable
+<code>$bar</code> contains the string &ldquo;<code>25</code>&rdquo;, the following expression:</p>
+
+<pre><code>^parseInteger(-${foo}.${bar})
+</code></pre>
+
+<p>returns an <code>NSNumber</code> containing the value <code>-5</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/parseDouble:" title="parseDouble:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/parseDouble:">+&nbsp;parseDouble:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempts to parse a string into an <code>NSNumber</code> instance containing a
+<code>double</code> value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)parseDouble:(NSString *)<em>toParse</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toParse</code></th>
+						<td><p>The function&rsquo;s input parameter, the string being parsed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of parsing the input parameter.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: an expression
+yielding the string to be parsed as a <code>double</code>.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>5</code>&rdquo; and the variable
+<code>$bar</code> contains the string &ldquo;<code>25</code>&rdquo;, the following expression:</p>
+
+<pre><code>^parseDouble(-${foo}.${bar})
+</code></pre>
+
+<p>returns an <code>NSNumber</code> containing the value <code>-5.25</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/formatInteger:" title="formatInteger:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/formatInteger:">+&nbsp;formatInteger:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Formats a number as an integer string using a <code>NSNumberFormatter</code> with a
+<code>numberStyle</code> of <code>NSNumberFormatterDecimalStyle</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)formatInteger:(NSNumber *)<em>toFormat</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>toFormat</code></th>
+						<td><p>The function&rsquo;s input parameter, the number being formatted.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of formatting the input parameter.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single input parameter: a numeric
+expression yielding the number to format as an integer string.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^formatInteger(11 / 2)
+</code></pre>
+
+<p>The expression above yields an <code>NSString</code> containing the value &ldquo;<code>5</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Finding substrings" name="task_Finding substrings"></a>
+						<h2 class="task-title">Finding substrings</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/hasPrefix:" title="hasPrefix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasPrefix:">+&nbsp;hasPrefix:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines if a string has a given prefix.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)hasPrefix:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>@YES</code> if <em>string to test</em> has the given <em>prefix</em>; <code>@NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two parameters:</p>
+
+<ul>
+<li><p>The <em>string to test</em>, a string expression that will be tested to see if it
+ has the given prefix.</p></li>
+<li><p>The <em>prefix</em>, a string expression yielding the prefix to test against
+ <em>string to test</em>.</p></li>
 </ul>
 
 
 <h4>Expression usage</h4>
 
-<pre><code>^prefixLinesWith($emailBody|&gt; )
+<pre><code>^hasPrefix($name|Coop)
 </code></pre>
 
-<p>The expression above will interpret the <code>emailBody</code> Mockingbird variable as
-a string, and will then prefix each line of the result with the text
-&ldquo;<code>&gt;</code>&nbsp;&rdquo;.</p>
+<p>The expression above evaluates to <code>true</code> if string value of the expression
+<code>$name</code> begins with &ldquo;<code>Coop</code>&rdquo;.</p>
+			</div>
+			
 
-<p>The implementation attempts to be platform-agnostic with respect to the
-exact sequence of characters that signal line endings.</p>
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/q:" title="q:"></a>
-	<h3 class="subsubtitle method-title">q:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Quotes a string, ensuring that it is not interpreted by the Mockingbird
-expression evaluator.</p>
-	</div>		
-	
-    
+</div><div class="section-method">
+	<a name="//api/name/hasSuffix:" title="hasSuffix:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasSuffix:">+&nbsp;hasSuffix:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)q:(NSString *)<em>toQuote</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toQuote</em></dt>
-			<dd><p>The string being quoted.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The quoted string.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This function can be used to ensure that some or all of an expression
-is left untouched by the expression evaluator.</p>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines if a string has a given suffix.</p>
+			</div>
+			
+		    
 
-<p>This is required, for example, to preserve space characters at the beginning
-or end of a text literal. (Normally, the expression evaluator ignores
-whitespace at the beginning or end of text literals.)</p>
+			<div class="method-subsection method-declaration"><code>+ (id)hasSuffix:(NSArray *)<em>params</em></code></div>
 
-<p>This Mockingbird function accepts one parameter, the string to be quoted.</p>
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>@YES</code> if <em>string to test</em> has the given <em>suffix</em>; <code>@NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two input parameters:</p>
+
+<ul>
+<li><p>The <em>string to test</em>, a string expression that will be tested to see if it
+ has the given suffix.</p></li>
+<li><p>The <em>suffix</em>, a string expression yielding the suffix to test against
+ <em>string to test</em>.</p></li>
+</ul>
+
 
 <h4>Expression usage</h4>
 
-<pre><code>^q(   -- Please leave spaces intact --   )
+<pre><code>^hasSuffix($dayOfWeek|day)
 </code></pre>
 
-<p>The Mockingbird expression above quotes the string so that the spaces at
-the beginning and end of the string are preserved. The return value is:
-&ldquo;&nbsp;&nbsp;&nbsp;<code>-- Please leave spaces intact --</code>&nbsp;&nbsp;&nbsp;&rdquo;.</p>
+<p>The expression above evaluates to <code>true</code> if string value of the expression
+<code>$dayOfWeek</code> ends with &ldquo;<code>day</code>&rdquo;.</p>
+			</div>
+			
 
-<pre><code>^q(Ke$ha)
-</code></pre>
+			
 
-<p>The expression above would return the string &ldquo;<code>Ke$ha</code>&rdquo;.</p>
+			
 
-<p>Normally, the expression evaluator interprets a dollar sign (<code>$</code>) as the
-beginning of a variable reference. By itself, the string &ldquo;<code>Ke$ha</code>&rdquo; would
-be recognized as: <em>the text literal &ldquo;<code>Ke</code>&rdquo; followed by a reference to the
-Mockingbird variable &ldquo;<code>ha</code>&rdquo;</em>. Assuming there is no value for &ldquo;<code>$ha</code>&rdquo;, without
-quoting, the expression &ldquo;<code>Ke$ha</code>&rdquo; would actually result in the string &ldquo;<code>Ke</code>&rdquo;,
-which is probably not the desired result.</p>
-
-<p>Quoting the string ensures that it is left intact and not misinterpreted as
-containing a variable reference.</p>
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
+	<a name="//api/name/containsString:" title="containsString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/containsString:">+&nbsp;containsString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines if a string contains a given substring.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)containsString:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <code>NSNumber</code> containing the boolean result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two input parameters:</p>
+
+<ul>
+<li><p>The <em>string to test</em>, a string expression that will be tested to see if it
+ contains the substring.</p></li>
+<li><p>The <em>substring</em>, a string expression yielding the substring to be found
+ within <em>string to test</em>.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code>^containsString($dayOfWeek|ues)
+</code></pre>
+
+<p>The Mockingbird expression above returns <code>YES</code> if the string value of the
+expression <code>$dayOfWeek</code> contains the string &ldquo;<code>ues</code>&rdquo;.</p>
+
+<p>If <code>$dayOfWeek</code> yields the string &ldquo;<code>Tuesday</code>&rdquo;, the expression will return
+<code>YES</code>. For any other day of the week, the expression returns <code>NO</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/rangeOfString:" title="rangeOfString:"></a>
-	<h3 class="subsubtitle method-title">rangeOfString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Attempts to locate the first instance of a substring within another string.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/rangeOfString:">+&nbsp;rangeOfString:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)rangeOfString:(NSArray *)<em>params</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The range of <em>substring</em> within <em>string to test</em>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two input parameters:</p>
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Attempts to locate the first instance of a substring within another string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rangeOfString:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The range of <em>substring</em> within <em>string to test</em>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two input parameters:</p>
 
 <ul>
 <li><p>The <em>string to test</em>, a string expression that will be tested to see if it
@@ -1936,622 +2343,46 @@ value will be <code>0</code>.</p>
 </code></pre>
 
 <p>The expression above would return the array [<code>9</code>, <code>3</code>].</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/stripQueryString:" title="stripQueryString:"></a>
-	<h3 class="subsubtitle method-title">stripQueryString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes the query string from a string containing a URL.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)stripQueryString:(NSString *)<em>toTransform</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the URL string from
-            which the query string will be stripped.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The URL with the query string removed.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single parameter, a string expression
-yielding the URL string from which the query string should be removed.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^stripQueryString(http://www.gilt.com/?utm_campaign=claris)
-</code></pre>
-
-<p>The expression above would return the string &ldquo;<a href="http://www.gilt.com/"><code>http://www.gilt.com/</code></a>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/stripSpaces:" title="stripSpaces:"></a>
-	<h3 class="subsubtitle method-title">stripSpaces:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes all space characters from the given string.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)stripSpaces:(NSString *)<em>toTransform</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string being
-            stripped.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The string, stripped of spaces.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Note that this removes only space characters, not all whitespace.</p>
-
-<p>This Mockingbird function accepts a single parameter, an expression
-representing the string to be stripped.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^stripSpaces(  Hi, how are you? )
-</code></pre>
-
-<p>The expression above would result in the value &ldquo;<code>Hi,howareyou?</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/titleCase:" title="titleCase:"></a>
-	<h3 class="subsubtitle method-title">titleCase:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a title-case version of the input string.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)titleCase:(NSString *)<em>toTransform</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string whose
-            case is to be changed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of changing the input parameter&rsquo;s case.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string whose case is to be changed.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^titleCase(e. e. cummings)
-</code></pre>
-
-<p>The expression above returns the string &ldquo;<code>E. E. Cummings</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/titleCaseIfAllCaps:" title="titleCaseIfAllCaps:"></a>
-	<h3 class="subsubtitle method-title">titleCaseIfAllCaps:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a title-case version of the input string if the letters in the input
-string are all capitals. If the input string contains any lowercase
-characters, the input string will be returned unchanged.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)titleCaseIfAllCaps:(NSString *)<em>toTransform</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string whose
-            case is to be changed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of changing the input parameter&rsquo;s case.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string whose case is to be changed.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^titleCaseIfAllCaps(e. e. cummings)
-</code></pre>
-
-<p>The expression above returns the string &ldquo;<code>e. e. cummings</code>&rdquo;.</p>
-
-<pre><code>^titleCaseIfAllCaps(E. E. CUMMINGS)
-</code></pre>
-
-<p>The expression above returns the string &ldquo;<code>E. E. Cummings</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/trimSpaces:" title="trimSpaces:"></a>
-	<h3 class="subsubtitle method-title">trimSpaces:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes any leading and trailing whitespace from the given string.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)trimSpaces:(NSString *)<em>toTransform</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string being
-            trimmed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The trimmed string.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single parameter, an expression
-representing the string to be trimmed.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^trimSpaces(  Hi, how are you? )
-</code></pre>
-
-<p>The expression above would result in the value &ldquo;<code>Hi, how are you?</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/truncate:" title="truncate:"></a>
-	<h3 class="subsubtitle method-title">truncate:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Truncates a string if it is longer than a given length, and appends a
-<em>truncation marker</em> if truncation has occurred.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)truncate:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The function result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts 2 or 3 pipe-separated input parameters:</p>
-
-<ul>
-<li><p>The <em>truncation length</em>, a numeric expression. If <em>input string</em>&rsquo;s length
- is greater than <em>truncation length</em>, <em>input string</em> will be shortened to exactly
- <em>truncation length</em>, and then the <em>truncation marker</em> will be appended.</p></li>
-<li><p>An optional <em>truncation marker</em>, a string expression representing the
- string to append to the end of <em>input string</em> after truncation occurs.
- If this parameter is omitted, the ellipses character (<code>…</code>) will be used as
- the truncation string.</p></li>
-<li><p>The <em>input string</em>, an expression yielding the string to be truncated.</p></li>
-</ul>
-
-
-<p>Note that the truncation marker is appended <em>after</em> the input string is
-truncated. As a result, the string returned by this function may be as
-long as <em>truncation length</em> plus the length of <em>truncation marker</em>.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^truncate(10|This is your chance!)
-</code></pre>
-
-<p>The expression above yields the string &ldquo;<code>This is yo…</code>&rdquo;.</p>
-
-<pre><code>^truncate(5|!|Hello, Newman.)
-</code></pre>
-
-<p>The expression above results in &ldquo;<code>Hello!</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/uppercase:" title="uppercase:"></a>
-	<h3 class="subsubtitle method-title">uppercase:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a version of the input string that contains only uppercase
-characters.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)uppercase:(NSString *)<em>toTransform</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>toTransform</em></dt>
-			<dd><p>The function&rsquo;s input parameter, the string whose
-            case is to be changed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of changing the input parameter&rsquo;s case.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single input parameter: an expression
-yielding the string whose case is to be changed.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^uppercase(stop whispering. START SHOUTING!)
-</code></pre>
-
-<p>The expression above returns the string &ldquo;<code>STOP WHISPERING. START SHOUTING!</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLStringFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-02-01)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
 			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
 			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
-				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLStringFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
 					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-02</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
 </html>

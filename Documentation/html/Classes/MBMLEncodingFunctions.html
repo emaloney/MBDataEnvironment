@@ -1,148 +1,110 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>MBMLEncodingFunctions Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
-				<a id="developerHome" href="../index.html">Gilt Groupe</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBMLEncodingFunctions Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
 			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">MBMLEncodingFunctions Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
+			<h1 id="library-title">
+				<a href="../index.html">Mockingbird Data Environment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-	
+
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
+
 	
 	
+
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/MD5FromData:">+ MD5FromData:</option>
+		
+		<option value="//api/name/MD5FromString:">+ MD5FromString:</option>
+		
+		<option value="//api/name/SHA1FromData:">+ SHA1FromData:</option>
+		
+		<option value="//api/name/SHA1FromString:">+ SHA1FromString:</option>
+		
+		<option value="//api/name/base64FromData:">+ base64FromData:</option>
+		
+		<option value="//api/name/dataFromBase64:">+ dataFromBase64:</option>
+		
+		<option value="//api/name/dataFromHexString:">+ dataFromHexString:</option>
+		
+		<option value="//api/name/hexStringFromData:">+ hexStringFromData:</option>
+		
+	</optgroup>
 	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/MD5FromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ MD5FromData:</option>
-	
-	<option value="//api/name/MD5FromString:">&nbsp;&nbsp;&nbsp;&nbsp;+ MD5FromString:</option>
-	
-	<option value="//api/name/SHA1FromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ SHA1FromData:</option>
-	
-	<option value="//api/name/SHA1FromString:">&nbsp;&nbsp;&nbsp;&nbsp;+ SHA1FromString:</option>
-	
-	<option value="//api/name/base64FromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ base64FromData:</option>
-	
-	<option value="//api/name/dataFromBase64:">&nbsp;&nbsp;&nbsp;&nbsp;+ dataFromBase64:</option>
-	
-	<option value="//api/name/dataFromHexString:">&nbsp;&nbsp;&nbsp;&nbsp;+ dataFromHexString:</option>
-	
-	<option value="//api/name/hexStringFromData:">&nbsp;&nbsp;&nbsp;&nbsp;+ hexStringFromData:</option>
-	
-	
-	
+
 	
 	
 </select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBMLEncodingFunctions Class Reference</h1>
 
-
-
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_MD5 encoding">MD5 encoding</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_SHA-1 encoding">SHA-1 encoding</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Base-64 encoding &amp; decoding">Base-64 encoding &amp; decoding</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Hexadecimal string encoding &amp; decoding">Hexadecimal string encoding &amp; decoding</a></span></li>
-	
-</ul></li>
-
-
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/MD5FromData:">MD5FromData:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/MD5FromString:">MD5FromString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA1FromData:">SHA1FromData:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SHA1FromString:">SHA1FromString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/base64FromData:">base64FromData:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataFromBase64:">dataFromBase64:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dataFromHexString:">dataFromHexString:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hexStringFromData:">hexStringFromData:</a></span></li>
-	
-</ul></li>
-
-
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MBMLEncodingFunctions Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">MBMLEncodingFunctions Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MBMLEncodingFunctions.h</td>
+	<th>Declared in</th>
+	<td>MBMLEncodingFunctions.h</td>
 </tr>
 						</tbody></table></div>
 					
-                    
+
                     
 					
 					<div class="section section-overview">
@@ -158,214 +120,65 @@ file.</p>
 					</div>
 					
 					
-					
+
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
-						
+
 						<a title="MD5 encoding" name="task_MD5 encoding"></a>
-						<h3 class="subsubtitle task-title">MD5 encoding</h3>
+						<h2 class="task-title">MD5 encoding</h2>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/MD5FromString:">+&nbsp;MD5FromString:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/MD5FromData:">+&nbsp;MD5FromData:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="SHA-1 encoding" name="task_SHA-1 encoding"></a>
-						<h3 class="subsubtitle task-title">SHA-1 encoding</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/SHA1FromString:">+&nbsp;SHA1FromString:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/SHA1FromData:">+&nbsp;SHA1FromData:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Base-64 encoding &amp; decoding" name="task_Base-64 encoding &amp; decoding"></a>
-						<h3 class="subsubtitle task-title">Base-64 encoding &amp; decoding</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/base64FromData:">+&nbsp;base64FromData:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/dataFromBase64:">+&nbsp;dataFromBase64:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Hexadecimal string encoding &amp; decoding" name="task_Hexadecimal string encoding &amp; decoding"></a>
-						<h3 class="subsubtitle task-title">Hexadecimal string encoding &amp; decoding</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/hexStringFromData:">+&nbsp;hexStringFromData:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/dataFromHexString:">+&nbsp;dataFromHexString:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/MD5FromData:" title="MD5FromData:"></a>
-	<h3 class="subsubtitle method-title">MD5FromData:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Computes an MD5 hash from an <code>NSData</code> instance.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)MD5FromData:(NSData *)<em>data</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>data</em></dt>
-			<dd><p>The function&rsquo;s input data.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An MD5 hash computed from the input data. The hash is returned
-            as a hexadecimal string.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
-expected to yield an <code>NSData</code> instance.</p>
-
-<h4>Expression usage</h4>
-
-<p>The expression:</p>
-
-<pre><code>^MD5FromData($myData)
-</code></pre>
-
-<p>would return a hexadecimal string representation of the MD5 hash of the bytes
-contained in the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/MD5FromString:" title="MD5FromString:"></a>
-	<h3 class="subsubtitle method-title">MD5FromString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Computes an MD5 hash from an input string.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/MD5FromString:">+&nbsp;MD5FromString:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)MD5FromString:(NSString *)<em>string</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>string</em></dt>
-			<dd><p>The function&rsquo;s input string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An MD5 hash computed from the input string. The hash is returned
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Computes an MD5 hash from an input string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)MD5FromString:(NSString *)<em>string</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>string</code></th>
+						<td><p>The function&rsquo;s input string.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An MD5 hash computed from the input string. The hash is returned
             as a hexadecimal string.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
 expected to yield the input string.</p>
 
 <h4>Expression usage</h4>
@@ -380,131 +193,153 @@ representation of the MD5 hash of the string &ldquo;<code>12 Galaxies</code>&rdq
 
 <p><strong>Note:</strong> This function is also exposed to the Mockingbird environment with
 the alias <code>^MD5()</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/SHA1FromData:" title="SHA1FromData:"></a>
-	<h3 class="subsubtitle method-title">SHA1FromData:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Computes an SHA-1 hash from an <code>NSData</code> instance.</p>
-	</div>		
-	
-    
+			</div>
+			
 
-	<div class="method-subsection method-declaration"><code>+ (id)SHA1FromData:(NSData *)<em>data</em></code></div>
+			
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>data</em></dt>
-			<dd><p>The function&rsquo;s input data.</p></dd>
-		</dl>
-		
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An SHA-1 hash computed from the input data.The hash is returned
+</div><div class="section-method">
+	<a name="//api/name/MD5FromData:" title="MD5FromData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/MD5FromData:">+&nbsp;MD5FromData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Computes an MD5 hash from an <code>NSData</code> instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)MD5FromData:(NSData *)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The function&rsquo;s input data.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An MD5 hash computed from the input data. The hash is returned
             as a hexadecimal string.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
 expected to yield an <code>NSData</code> instance.</p>
 
 <h4>Expression usage</h4>
 
 <p>The expression:</p>
 
-<pre><code>^SHA1FromData($myData)
+<pre><code>^MD5FromData($myData)
 </code></pre>
 
-<p>would return a hexadecimal string representation of the SHA-1 hash of the bytes
+<p>would return a hexadecimal string representation of the MD5 hash of the bytes
 contained in the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
+
+						<a title="SHA-1 encoding" name="task_SHA-1 encoding"></a>
+						<h2 class="task-title">SHA-1 encoding</h2>
+
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/SHA1FromString:" title="SHA1FromString:"></a>
-	<h3 class="subsubtitle method-title">SHA1FromString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Computes an SHA-1 hash from an input string.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/SHA1FromString:">+&nbsp;SHA1FromString:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>+ (id)SHA1FromString:(NSString *)<em>string</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>string</em></dt>
-			<dd><p>The function&rsquo;s input string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An SHA-1 hash computed from the input string.The hash is returned
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Computes an SHA-1 hash from an input string.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)SHA1FromString:(NSString *)<em>string</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>string</code></th>
+						<td><p>The function&rsquo;s input string.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An SHA-1 hash computed from the input string.The hash is returned
             as a hexadecimal string.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
 expected to yield the input string.</p>
 
 <h4>Expression usage</h4>
@@ -519,63 +354,153 @@ hexadecimal representation of the SHA1 hash of the string &ldquo;<code>12 Galaxi
 
 <p><strong>Note:</strong> This function is also exposed to the Mockingbird environment with
 the alias <code>^SHA1()</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
+</div><div class="section-method">
+	<a name="//api/name/SHA1FromData:" title="SHA1FromData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/SHA1FromData:">+&nbsp;SHA1FromData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Computes an SHA-1 hash from an <code>NSData</code> instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)SHA1FromData:(NSData *)<em>data</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The function&rsquo;s input data.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An SHA-1 hash computed from the input data.The hash is returned
+            as a hexadecimal string.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield an <code>NSData</code> instance.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^SHA1FromData($myData)
+</code></pre>
+
+<p>would return a hexadecimal string representation of the SHA-1 hash of the bytes
+contained in the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
+						</div>
 						
-						<div class="section-method">
+
+						<a title="Base-64 encoding &amp; decoding" name="task_Base-64 encoding &amp; decoding"></a>
+						<h2 class="task-title">Base-64 encoding &amp; decoding</h2>
+
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/base64FromData:" title="base64FromData:"></a>
-	<h3 class="subsubtitle method-title">base64FromData:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Computes a Base-64 representation of a given <code>NSData</code> instance, and returns
+	<h3 class="method-title"><code><a href="#//api/name/base64FromData:">+&nbsp;base64FromData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Computes a Base-64 representation of a given <code>NSData</code> instance, and returns
 the resulting string.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>+ (id)base64FromData:(NSData *)<em>data</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (id)base64FromData:(NSData *)<em>data</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>data</em></dt>
-			<dd><p>The function&rsquo;s input data.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The base-64 representation of the input data.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The function&rsquo;s input data.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The base-64 representation of the input data.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
 expected to yield an <code>NSData</code> instance.</p>
 
 <h4>Expression usage</h4>
@@ -587,64 +512,71 @@ expected to yield an <code>NSData</code> instance.</p>
 
 <p>would return a string that contains the Base-64 encoding of the bytes within
 the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/dataFromBase64:" title="dataFromBase64:"></a>
-	<h3 class="subsubtitle method-title">dataFromBase64:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Decodes a Base-64 string representation of data, and returns the resulting
+	<h3 class="method-title"><code><a href="#//api/name/dataFromBase64:">+&nbsp;dataFromBase64:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decodes a Base-64 string representation of data, and returns the resulting
 <code>NSData</code> instance.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>+ (id)dataFromBase64:(NSString *)<em>base64</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (id)dataFromBase64:(NSString *)<em>base64</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>base64</em></dt>
-			<dd><p>The function&rsquo;s input data, a Base-64-encoded string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The Base-64-decoded form of <code>base64</code>, contained in an
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>base64</code></th>
+						<td><p>The function&rsquo;s input data, a Base-64-encoded string.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The Base-64-decoded form of <code>base64</code>, contained in an
             <code>NSData</code> instance.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
 expected to yield the input string.</p>
 
 <h4>Expression usage</h4>
@@ -654,130 +586,78 @@ expected to yield the input string.</p>
 
 <p>The expression above returns an <code>NSData</code> instance containing the bytes
 representing the UTF-8 encoded string, &ldquo;<a href="http://tech.gilt.com/"><code>http://tech.gilt.com/</code></a>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
-	<a name="//api/name/dataFromHexString:" title="dataFromHexString:"></a>
-	<h3 class="subsubtitle method-title">dataFromHexString:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Decodes a hexadecimal string representation of data, and returns the resulting
-<code>NSData</code> instance.</p>
-	</div>		
-	
-    
 
-	<div class="method-subsection method-declaration"><code>+ (id)dataFromHexString:(NSString *)<em>hexString</em></code></div>
+						<a title="Hexadecimal string encoding &amp; decoding" name="task_Hexadecimal string encoding &amp; decoding"></a>
+						<h2 class="task-title">Hexadecimal string encoding &amp; decoding</h2>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>hexString</em></dt>
-			<dd><p>The function&rsquo;s input data, a hexadecimal-encoded string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The hexadecimal-decoded form of <code>hexString</code>, contained in an
-            <code>NSData</code> instance.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
-expected to yield the input string.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^dataFromHexString(687474703a2f2f746563682e67696c742e636f6d2f)
-</code></pre>
-
-<p>The expression above returns an <code>NSData</code> instance containing the bytes
-representing the UTF-8 encoded string, &ldquo;<a href="http://tech.gilt.com/"><code>http://tech.gilt.com/</code></a>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/hexStringFromData:" title="hexStringFromData:"></a>
-	<h3 class="subsubtitle method-title">hexStringFromData:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Converts an <code>NSData</code> instance into a hexadecimal string representing its
+	<h3 class="method-title"><code><a href="#//api/name/hexStringFromData:">+&nbsp;hexStringFromData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Converts an <code>NSData</code> instance into a hexadecimal string representing its
 byte content.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>+ (id)hexStringFromData:(NSData *)<em>data</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (id)hexStringFromData:(NSData *)<em>data</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>data</em></dt>
-			<dd><p>The function&rsquo;s input data.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The hexadecimal representation of the input data.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single expression parameter that is
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>data</code></th>
+						<td><p>The function&rsquo;s input data.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The hexadecimal representation of the input data.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
 expected to yield an <code>NSData</code> instance.</p>
 
 <h4>Expression usage</h4>
@@ -789,137 +669,120 @@ expected to yield an <code>NSData</code> instance.</p>
 
 <p>would return a string that contains the hexadecimal representation of the bytes
 within the <code>NSData</code> instance yielded by the MBML expression &ldquo;<code>$myData</code>&rdquo;.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLEncodingFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-02-01)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
 			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
 			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dataFromHexString:" title="dataFromHexString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dataFromHexString:">+&nbsp;dataFromHexString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Decodes a hexadecimal string representation of data, and returns the resulting
+<code>NSData</code> instance.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)dataFromHexString:(NSString *)<em>hexString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
 				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
+					<tr>
+						<th scope="row" class="argument-name"><code>hexString</code></th>
+						<td><p>The function&rsquo;s input data, a hexadecimal-encoded string.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The hexadecimal-decoded form of <code>hexString</code>, contained in an
+            <code>NSData</code> instance.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single expression parameter that is
+expected to yield the input string.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^dataFromHexString(687474703a2f2f746563682e67696c742e636f6d2f)
+</code></pre>
+
+<p>The expression above returns an <code>NSData</code> instance containing the bytes
+representing the UTF-8 encoded string, &ldquo;<a href="http://tech.gilt.com/"><code>http://tech.gilt.com/</code></a>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEncodingFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
 					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-02</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
 </html>

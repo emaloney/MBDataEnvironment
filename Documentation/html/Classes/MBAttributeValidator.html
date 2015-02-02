@@ -1,154 +1,118 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>MBAttributeValidator Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
-				<a id="developerHome" href="../index.html">Gilt Groupe</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBAttributeValidator Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
 			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">MBAttributeValidator Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
+			<h1 id="library-title">
+				<a href="../index.html">Mockingbird Data Environment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-	
+
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
+
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/model">model</option>
+		
+		<option value="//api/name/validationErrorMessages">validationErrorMessages</option>
+		
+	</optgroup>
 	
-	<option value="properties">Properties</option>
+
 	
-	<option value="//api/name/model">&nbsp;&nbsp;&nbsp;&nbsp;model</option>
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/validatorForDataModel:">+ validatorForDataModel:</option>
+		
+	</optgroup>
 	
-	<option value="//api/name/validationErrorMessages">&nbsp;&nbsp;&nbsp;&nbsp;validationErrorMessages</option>
+
 	
-	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/validatorForDataModel:">&nbsp;&nbsp;&nbsp;&nbsp;+ validatorForDataModel:</option>
-	
-	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/require:or:">&nbsp;&nbsp;&nbsp;&nbsp;- require:or:</option>
-	
-	<option value="//api/name/require:or:butNotBoth:">&nbsp;&nbsp;&nbsp;&nbsp;- require:or:butNotBoth:</option>
-	
-	<option value="//api/name/requireAtLeastOneOf:">&nbsp;&nbsp;&nbsp;&nbsp;- requireAtLeastOneOf:</option>
-	
-	<option value="//api/name/requireExactlyOneOf:">&nbsp;&nbsp;&nbsp;&nbsp;- requireExactlyOneOf:</option>
-	
-	<option value="//api/name/validate">&nbsp;&nbsp;&nbsp;&nbsp;- validate</option>
-	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/require:or:">- require:or:</option>
+		
+		<option value="//api/name/require:or:butNotBoth:">- require:or:butNotBoth:</option>
+		
+		<option value="//api/name/requireAtLeastOneOf:">- requireAtLeastOneOf:</option>
+		
+		<option value="//api/name/requireExactlyOneOf:">- requireExactlyOneOf:</option>
+		
+		<option value="//api/name/validate">- validate</option>
+		
+	</optgroup>
 	
 	
 </select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBAttributeValidator Class Reference</h1>
 
-
-
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-</ul></li>
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/model">model</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validationErrorMessages">validationErrorMessages</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validatorForDataModel:">validatorForDataModel:</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/require:or:">require:or:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/require:or:butNotBoth:">require:or:butNotBoth:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireAtLeastOneOf:">requireAtLeastOneOf:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requireExactlyOneOf:">requireExactlyOneOf:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validate">validate</a></span></li>
-	
-</ul></li>
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MBAttributeValidator Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">MBAttributeValidator Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MBAttributeValidator.h</td>
+	<th>Declared in</th>
+	<td>MBAttributeValidator.h</td>
 </tr>
 						</tbody></table></div>
 					
-                    
+
                     
 					
 					<div class="section section-overview">
@@ -159,609 +123,492 @@
 					</div>
 					
 					
-					
+
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
-						
+
 						
 						
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/validatorForDataModel:">+&nbsp;validatorForDataModel:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/model">&nbsp;&nbsp;model</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/validationErrorMessages">&nbsp;&nbsp;validationErrorMessages</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/require:or:">&ndash;&nbsp;require:or:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/require:or:butNotBoth:">&ndash;&nbsp;require:or:butNotBoth:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requireAtLeastOneOf:">&ndash;&nbsp;requireAtLeastOneOf:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/requireExactlyOneOf:">&ndash;&nbsp;requireExactlyOneOf:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/validate">&ndash;&nbsp;validate</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/validatorForDataModel:" title="validatorForDataModel:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validatorForDataModel:">+&nbsp;validatorForDataModel:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns a new <code>MBAttributeValidator</code> to be used for validating the specified
+<a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)validatorForDataModel:(MBDataModel *)<em>model</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>model</code></th>
+						<td><p>The <a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> to be validated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An <code>MBAttributeValidator</code> that can be used to <a href="#//api/name/validate">validate</a> <a href="#//api/name/model"><code>model</code></a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/model" title="model"></a>
-	<h3 class="subsubtitle method-title">model</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns the <a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> that the receiver was constructed to <a href="#//api/name/validate">validate</a>.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/model">&nbsp;&nbsp;model</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBDataModel *model</code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the <a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> that the receiver was constructed to <a href="#//api/name/validate">validate</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MBDataModel *model</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/validationErrorMessages" title="validationErrorMessages"></a>
-	<h3 class="subsubtitle method-title">validationErrorMessages</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns an array of <code>NSString</code>s containing error messages for any problems
+	<h3 class="method-title"><code><a href="#//api/name/validationErrorMessages">&nbsp;&nbsp;validationErrorMessages</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of <code>NSString</code>s containing error messages for any problems
     encountered during validation. Will be <code>nil</code> if no validation errors
     have occurred.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *validationErrorMessages</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *validationErrorMessages</code></div>
 
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/validatorForDataModel:" title="validatorForDataModel:"></a>
-	<h3 class="subsubtitle method-title">validatorForDataModel:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a new <code>MBAttributeValidator</code> to be used for validating the specified
-<a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a>.</p>
-	</div>		
-	
-    
+		    
+			
 
-	<div class="method-subsection method-declaration"><code>+ (instancetype)validatorForDataModel:(MBDataModel *)<em>model</em></code></div>
+			
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>model</em></dt>
-			<dd><p>The <a href="../Classes/MBDataModel.html"><code>MBDataModel</code></a> to be validated.</p></dd>
-		</dl>
-		
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An <code>MBAttributeValidator</code> that can be used to <a href="#//api/name/validate">validate</a> <a href="#//api/name/model"><code>model</code></a>.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/require:or:" title="require:or:"></a>
-	<h3 class="subsubtitle method-title">require:or:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Requires that the data <a href="#//api/name/model">model</a> contain either <code>attr1</code> or <code>attr2</code> but not
+	<h3 class="method-title"><code><a href="#//api/name/require:or:">&ndash;&nbsp;require:or:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Requires that the data <a href="#//api/name/model">model</a> contain either <code>attr1</code> or <code>attr2</code> but not
 both.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)require:(NSString *)<em>attr1</em> or:(NSString *)<em>attr2</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)require:(NSString *)<em>attr1</em> or:(NSString *)<em>attr2</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>attr1</em></dt>
-			<dd><p>The name of the first attribute.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>attr2</em></dt>
-			<dd><p>The name of the second attribute.</p></dd>
-		</dl>
-		
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attr1</code></th>
+						<td><p>The name of the first attribute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attr2</code></th>
+						<td><p>The name of the second attribute.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/require:or:butNotBoth:" title="require:or:butNotBoth:"></a>
-	<h3 class="subsubtitle method-title">require:or:butNotBoth:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Requires that the data <a href="#//api/name/model">model</a> contain either <code>attr1</code> or <code>attr2</code>.</p>
-	</div>		
-	
-    
+	<h3 class="method-title"><code><a href="#//api/name/require:or:butNotBoth:">&ndash;&nbsp;require:or:butNotBoth:</a></code>
+</h3>
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)require:(NSString *)<em>attr1</em> or:(NSString *)<em>attr2</em> butNotBoth:(BOOL)<em>onlyAllowOne</em></code></div>
+	<div class="method-info">
+		<div class="pointy-thing"></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>attr1</em></dt>
-			<dd><p>The name of the first attribute.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>attr2</em></dt>
-			<dd><p>The name of the second attribute.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>onlyAllowOne</em></dt>
-			<dd><p>If <code>YES</code>, the requirement will be satisfied only
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Requires that the data <a href="#//api/name/model">model</a> contain either <code>attr1</code> or <code>attr2</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)require:(NSString *)<em>attr1</em> or:(NSString *)<em>attr2</em> butNotBoth:(BOOL)<em>onlyAllowOne</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attr1</code></th>
+						<td><p>The name of the first attribute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attr2</code></th>
+						<td><p>The name of the second attribute.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>onlyAllowOne</code></th>
+						<td><p>If <code>YES</code>, the requirement will be satisfied only
             if <code>attr1</code> or <code>attr2</code> exists but not both. If <code>NO</code>, the requirement
             will be satisfied if either <code>attr1</code> or <code>attr2</code> is present <em>or</em>
-            if both are present.</p></dd>
-		</dl>
-		
+            if both are present.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/requireAtLeastOneOf:" title="requireAtLeastOneOf:"></a>
-	<h3 class="subsubtitle method-title">requireAtLeastOneOf:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Requires at least one of a set of attribute names to be present in the data
+	<h3 class="method-title"><code><a href="#//api/name/requireAtLeastOneOf:">&ndash;&nbsp;requireAtLeastOneOf:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Requires at least one of a set of attribute names to be present in the data
 <a href="#//api/name/model">model</a>. Validation will fail if none of the specified attributes are present.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)requireAtLeastOneOf:(NSObject&lt;NSFastEnumeration&gt; *)<em>attrs</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)requireAtLeastOneOf:(NSObject&lt;NSFastEnumeration&gt; *)<em>attrs</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>attrs</em></dt>
-			<dd><p>An enumeration of <code>NSString</code>s representing the attribute names
-            to <a href="#//api/name/validate">validate</a>.</p></dd>
-		</dl>
-		
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>attrs</code></th>
+						<td><p>An enumeration of <code>NSString</code>s representing the attribute names
+            to <a href="#//api/name/validate">validate</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+</div><div class="section-method">
 	<a name="//api/name/requireExactlyOneOf:" title="requireExactlyOneOf:"></a>
-	<h3 class="subsubtitle method-title">requireExactlyOneOf:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Requires exactly one of a set of attribute names to be present in the data
+	<h3 class="method-title"><code><a href="#//api/name/requireExactlyOneOf:">&ndash;&nbsp;requireExactlyOneOf:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Requires exactly one of a set of attribute names to be present in the data
 <a href="#//api/name/model">model</a>. Validation will fail if none of the specified attributes are present,
 or if more than one is present.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)requireExactlyOneOf:(NSObject&lt;NSFastEnumeration&gt; *)<em>attrs</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>attrs</em></dt>
-			<dd><p>An enumeration of <code>NSString</code>s representing the attribute names
-            to <a href="#//api/name/validate">validate</a>.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/validate" title="validate"></a>
-	<h3 class="subsubtitle method-title">validate</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns <code>YES</code> if all validation requirements were satisfied.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (BOOL)validate</code></div>
-
-    
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p><code>YES</code> if validation succeeded; <code>NO</code> otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>If validation did not succeed, the error messages contained in
-<a href="#//api/name/validationErrorMessages"><code>validationErrorMessages</code></a> will be logged to the console.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBAttributeValidator.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-02-01)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
 			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
 			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)requireExactlyOneOf:(NSObject&lt;NSFastEnumeration&gt; *)<em>attrs</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
 				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
+					<tr>
+						<th scope="row" class="argument-name"><code>attrs</code></th>
+						<td><p>An enumeration of <code>NSString</code>s representing the attribute names
+            to <a href="#//api/name/validate">validate</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if the validation requirement was satisfied; <code>NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/validate" title="validate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/validate">&ndash;&nbsp;validate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns <code>YES</code> if all validation requirements were satisfied.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)validate</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if validation succeeded; <code>NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If validation did not succeed, the error messages contained in
+<a href="#//api/name/validationErrorMessages"><code>validationErrorMessages</code></a> will be logged to the console.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBAttributeValidator.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
 					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-02</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
 </html>

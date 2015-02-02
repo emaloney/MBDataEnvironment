@@ -1,166 +1,118 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>MBMLDebugFunctions Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">Mockingbird Data Environment </a></h1>
-				<a id="developerHome" href="../index.html">Gilt Groupe</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBMLDebugFunctions Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
 			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">MBMLDebugFunctions Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
+			<h1 id="library-title">
+				<a href="../index.html">Mockingbird Data Environment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-	
+
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
+
 	
 	
+
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/bench:">+ bench:</option>
+		
+		<option value="//api/name/benchBool:">+ benchBool:</option>
+		
+		<option value="//api/name/debugBreak:">+ debugBreak:</option>
+		
+		<option value="//api/name/deprecateVariableInFavorOf:">+ deprecateVariableInFavorOf:</option>
+		
+		<option value="//api/name/dump:">+ dump:</option>
+		
+		<option value="//api/name/log:">+ log:</option>
+		
+		<option value="//api/name/repeat:">+ repeat:</option>
+		
+		<option value="//api/name/repeatBool:">+ repeatBool:</option>
+		
+		<option value="//api/name/test:">+ test:</option>
+		
+		<option value="//api/name/tokenize:">+ tokenize:</option>
+		
+		<option value="//api/name/tokenizeBoolean:">+ tokenizeBoolean:</option>
+		
+		<option value="//api/name/tokenizeMath:">+ tokenizeMath:</option>
+		
+	</optgroup>
 	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/bench:">&nbsp;&nbsp;&nbsp;&nbsp;+ bench:</option>
-	
-	<option value="//api/name/benchBool:">&nbsp;&nbsp;&nbsp;&nbsp;+ benchBool:</option>
-	
-	<option value="//api/name/debugBreak:">&nbsp;&nbsp;&nbsp;&nbsp;+ debugBreak:</option>
-	
-	<option value="//api/name/deprecateVariableInFavorOf:">&nbsp;&nbsp;&nbsp;&nbsp;+ deprecateVariableInFavorOf:</option>
-	
-	<option value="//api/name/dump:">&nbsp;&nbsp;&nbsp;&nbsp;+ dump:</option>
-	
-	<option value="//api/name/log:">&nbsp;&nbsp;&nbsp;&nbsp;+ log:</option>
-	
-	<option value="//api/name/repeat:">&nbsp;&nbsp;&nbsp;&nbsp;+ repeat:</option>
-	
-	<option value="//api/name/repeatBool:">&nbsp;&nbsp;&nbsp;&nbsp;+ repeatBool:</option>
-	
-	<option value="//api/name/test:">&nbsp;&nbsp;&nbsp;&nbsp;+ test:</option>
-	
-	<option value="//api/name/tokenize:">&nbsp;&nbsp;&nbsp;&nbsp;+ tokenize:</option>
-	
-	<option value="//api/name/tokenizeBoolean:">&nbsp;&nbsp;&nbsp;&nbsp;+ tokenizeBoolean:</option>
-	
-	<option value="//api/name/tokenizeMath:">&nbsp;&nbsp;&nbsp;&nbsp;+ tokenizeMath:</option>
-	
-	
-	
+
 	
 	
 </select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
 
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBMLDebugFunctions Class Reference</h1>
 
-
-
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Inspecting values within expressions">Inspecting values within expressions</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Triggering a debug breakpoint">Triggering a debug breakpoint</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Inspecting expression tokenization">Inspecting expression tokenization</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Benchmarking">Benchmarking</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Deprecation">Deprecation</a></span></li>
-	
-</ul></li>
-
-
-
-
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/bench:">bench:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/benchBool:">benchBool:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/debugBreak:">debugBreak:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deprecateVariableInFavorOf:">deprecateVariableInFavorOf:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dump:">dump:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/log:">log:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/repeat:">repeat:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/repeatBool:">repeatBool:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/test:">test:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokenize:">tokenize:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokenizeBoolean:">tokenizeBoolean:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokenizeMath:">tokenizeMath:</a></span></li>
-	
-</ul></li>
-
-
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="MBMLDebugFunctions Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">MBMLDebugFunctions Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<th>Inherits from</th>
+	<td>NSObject</td>
 </tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">MBMLDebugFunctions.h</td>
+	<th>Declared in</th>
+	<td>MBMLDebugFunctions.h</td>
 </tr>
 						</tbody></table></div>
 					
-                    
+
                     
 					
 					<div class="section section-overview">
@@ -176,323 +128,316 @@ file.</p>
 					</div>
 					
 					
-					
+
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
 						
-						
+
 						<a title="Inspecting values within expressions" name="task_Inspecting values within expressions"></a>
-						<h3 class="subsubtitle task-title">Inspecting values within expressions</h3>
+						<h2 class="task-title">Inspecting values within expressions</h2>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/log:">+&nbsp;log:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/test:">+&nbsp;test:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/dump:">+&nbsp;dump:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/log:" title="log:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/log:">+&nbsp;log:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the passed-in expression in the object context, logs the result
+to the console, and then returns the result.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)log:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to be evaluated. Both <code>expr</code> and the result of
+            evaluating <code>expr</code> will be logged to the console.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You can use this to inspect object expressions (or portions thereof) to see
+what values are being returned within them. This can be handy when debugging
+a complex expression that isn&rsquo;t returning the result you expect.</p>
+
+<p>This Mockingbird function accepts one parameter, the expression to evaluate.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$cart</code> is an array containing five items:</p>
+
+<pre><code>You have ^log($cart).count items in your cart.
+</code></pre>
+
+<p>The expression &ldquo;<code>$cart</code>&rdquo; would be logged to the console, along with the
+result of calling the <code>description</code> method on underlying the <code>NSArray</code>.
+The array would then be returned by the function.</p>
+
+<p>The expression as a whole would yield the string &ldquo;<code>You have 5 items in your
+cart.</code>&rdquo;</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/test:" title="test:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/test:">+&nbsp;test:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the passed-in expression in the boolean context, logs the result
+to the console, and then returns the result.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)test:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to be evaluated. Both <code>expr</code> and the result of
+            evaluating <code>expr</code> will be logged to the console.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You can use this to inspect boolean expressions (or portions thereof) to see
+what values are being returned within them. This can be handy when debugging
+a complex expression that isn&rsquo;t returning the result you expect.</p>
+
+<p>This Mockingbird function accepts one parameter, the expression to evaluate.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>cromulent</code>&rdquo;:</p>
+
+<pre><code>^test($foo.length -GT 5)
+</code></pre>
+
+<p>The expression &ldquo;<code>$foo.length -GT 5</code>&rdquo; would be logged to the console,
+along with the boolean result, which is <code>YES</code>. The result <code>YES</code> would then
+be returned by the function.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dump:" title="dump:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dump:">+&nbsp;dump:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the passed-in expression in the object context, logs the result
+to the console, and then returns the string description of the result.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)dump:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to be evaluated. Both <code>expr</code> and the result of
+            evaluating <code>expr</code> will be logged to the console.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating `expr.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts one parameter, the expression to evaluate.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume the variable <code>$Window</code> contains a reference to the application&rsquo;s
+<code>UIWindow</code>:</p>
+
+<pre><code>^dump($Window)
+</code></pre>
+
+<p>The expression above might result in a value such as:</p>
+
+<pre><code>&lt;UIWindow: 0x7f811c3036e0; frame = (0 0; 375 667); layer = &lt;UIWindowLayer: 0x7f811c300ed0&gt;&gt;
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
 						
-						
+
 						<a title="Triggering a debug breakpoint" name="task_Triggering a debug breakpoint"></a>
-						<h3 class="subsubtitle task-title">Triggering a debug breakpoint</h3>
+						<h2 class="task-title">Triggering a debug breakpoint</h2>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/debugBreak:">+&nbsp;debugBreak:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Inspecting expression tokenization" name="task_Inspecting expression tokenization"></a>
-						<h3 class="subsubtitle task-title">Inspecting expression tokenization</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tokenize:">+&nbsp;tokenize:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tokenizeBoolean:">+&nbsp;tokenizeBoolean:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/tokenizeMath:">+&nbsp;tokenizeMath:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Benchmarking" name="task_Benchmarking"></a>
-						<h3 class="subsubtitle task-title">Benchmarking</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/bench:">+&nbsp;bench:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/benchBool:">+&nbsp;benchBool:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/repeat:">+&nbsp;repeat:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/repeatBool:">+&nbsp;repeatBool:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						<a title="Deprecation" name="task_Deprecation"></a>
-						<h3 class="subsubtitle task-title">Deprecation</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/deprecateVariableInFavorOf:">+&nbsp;deprecateVariableInFavorOf:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/bench:" title="bench:"></a>
-	<h3 class="subsubtitle method-title">bench:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Benchmarks an object expression by measuring the time it takes to evaluate
-and logging the resulting time to the console.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)bench:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to benchmark.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The expression <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single parameter, the expression being
-benchmarked. The input expression is also returned by the function, allowing
-it to be used as a pass-through.</p>
-
-<h4>Expression usage</h4>
-
-<p>In this example, the MBML function <code>^currentTime()</code> is benchmarked:</p>
-
-<pre><code>^bench(^currentTime())
-</code></pre>
-
-<p>One run of this benchmark resulted in the console output:</p>
-
-<pre><code>--&gt; Evaluated variable expansion expression "^currentTime()" in 1.90139e-05 seconds
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/benchBool:" title="benchBool:"></a>
-	<h3 class="subsubtitle method-title">benchBool:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Benchmarks a boolean expression by measuring the time it takes to evaluate
-and logging the resulting time to the console.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)benchBool:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to benchmark.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The expression <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts a single parameter, the expression being
-benchmarked. The input expression is also returned by the function, allowing
-it to be used as a pass-through.</p>
-
-<h4>Expression usage</h4>
-
-<p>In this example, a boolean expression involving the MBML function
-<code>^randomPercent()</code> is benchmarked:</p>
-
-<pre><code>^benchBool(^randomPercent() -GTE 0.5)
-</code></pre>
-
-<p>One run of this benchmark resulted in the console output:</p>
-
-<pre><code>--&gt; Evaluated boolean expression "^randomPercent() -GTE 0.5" in 4.09484e-05 seconds
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/debugBreak:" title="debugBreak:"></a>
-	<h3 class="subsubtitle method-title">debugBreak:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Triggers a debug breakpoint when called in a debug build. This allows the
+	<h3 class="method-title"><code><a href="#//api/name/debugBreak:">+&nbsp;debugBreak:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Triggers a debug breakpoint when called in a debug build. This allows the
 developer to trap execution at a specific point during expression
 evaluation.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>+ (NSString *)debugBreak:(NSString *)<em>input</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSString *)debugBreak:(NSString *)<em>input</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>input</em></dt>
-			<dd><p>An arbitrary expression to be logged to the console before
-            the breakpoint is triggered.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The <code>input</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p><strong>Note:</strong> This function does nothing unless the <code>DEBUG</code> preprocessor macro is
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>input</code></th>
+						<td><p>An arbitrary expression to be logged to the console before
+            the breakpoint is triggered.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <code>input</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p><strong>Note:</strong> This function does nothing unless the <code>DEBUG</code> preprocessor macro is
 defined.</p>
 
 <p>This Mockingbird function accepts one parameter as input, an expression that
@@ -509,63 +454,687 @@ to be used as a pass-through.</p>
 in the Xcode debugger.</p>
 
 <p>In non-debug builds, nothing happens.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
 </div>
+						</div>
 						
-						<div class="section-method">
+
+						<a title="Inspecting expression tokenization" name="task_Inspecting expression tokenization"></a>
+						<h2 class="task-title">Inspecting expression tokenization</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/tokenize:" title="tokenize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenize:">+&nbsp;tokenize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tokenizes an object expression and logs the resulting parse tokens to
+the console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)tokenize:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to tokenize.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The expression <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When experiencing trouble with a complex expression giving unexpected results,
+seeing the parse tokens lets you understand how the expression evaluator is
+interpreting your expression.</p>
+
+<p>This Mockingbird function accepts a single parameter, the expression to
+tokenize. The input expression is returned, allowing the function to be
+used as a pass-through.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^tokenize(This $aint.no ^party())
+</code></pre>
+
+<p>The expression above would result in console output similar to the following:</p>
+
+<pre><code>--&gt; Tokens for object expression "This $aint.no ^party()":
+&lt;MBMLLiteralToken@0x7f8ac03aaea0: "This " {0, 5}&gt;
+&lt;MBMLVariableReferenceToken@0x7f8abce042a0: "$aint" {5, 5}&gt; containing 1 token:
+    0: &lt;MBMLObjectSubreferenceToken@0x7f8ac0670a00: ".no" {10, 3}&gt;
+&lt;MBMLLiteralToken@0x7f8ac036f4a0: " " {13, 1}&gt;
+&lt;MBMLFunctionCallToken@0x7f8ac0645bb0: "^party()" {14, 8}&gt;
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenizeBoolean:" title="tokenizeBoolean:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenizeBoolean:">+&nbsp;tokenizeBoolean:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tokenizes a boolean expression and logs the resulting parse tokens to
+the console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)tokenizeBoolean:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to tokenize.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The expression <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When experiencing trouble with a complex expression giving unexpected results,
+seeing the parse tokens lets you understand how the expression evaluator is
+interpreting your expression.</p>
+
+<p>This Mockingbird function accepts a single parameter, the expression to
+tokenize. The input expression is returned, allowing the function to be
+used as a pass-through.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^tokenizeBoolean(This != ^party())
+</code></pre>
+
+<p>The expression above would result in console output similar to the following:</p>
+
+<pre><code>--&gt; Tokens for boolean expression "This != ^party()":
+&lt;MBMLInequalityTestToken@0x7fa93fb5fbe0: "!=" {5, 2}&gt; containing 2 tokens:
+    0: &lt;MBMLLiteralToken@0x7fa93fb45970: "This" {0, 4}&gt;
+    1: &lt;MBMLFunctionCallToken@0x7fa93fb4af80: "^party()" {8, 8}&gt;
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tokenizeMath:" title="tokenizeMath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tokenizeMath:">+&nbsp;tokenizeMath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tokenizes a math expression and logs the resulting parse tokens to
+the console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *)tokenizeMath:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to tokenize.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The expression <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When experiencing trouble with a complex expression giving unexpected results,
+seeing the parse tokens lets you understand how the expression evaluator is
+interpreting your expression.</p>
+
+<p>This Mockingbird function accepts a single parameter, the expression to
+tokenize. The input expression is returned, allowing the function to be
+used as a pass-through.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code>^tokenizeMath(($user.firstName.length + $user.lastName.length) + 1)
+</code></pre>
+
+<p>The expression above would result in console output similar to the following:</p>
+
+<pre><code>--&gt; Tokens for math expression "($user.firstName.length + $user.lastName.length) + 1":
+&lt;MBMLAdditionOperatorToken@0x7fa940048b70: "+" {49, 1}&gt; containing 2 tokens:
+    0: &lt;MBMLMathGroupingToken@0x7fa9400a87d0: "($user.firstName.length + $user.lastName.length)" {0, 48}&gt; containing 1 token:
+        0: &lt;MBMLAdditionOperatorToken@0x7fa93ae86fd0: "+" {23, 1}&gt; containing 2 tokens:
+            0: &lt;MBMLVariableReferenceToken@0x7fa93faf9400: "$user" {0, 5}&gt; containing 2 tokens:
+                0: &lt;MBMLObjectSubreferenceToken@0x7fa940049ac0: ".firstName" {5, 10}&gt;
+                1: &lt;MBMLObjectSubreferenceToken@0x7fa93fae4340: ".length" {15, 7}&gt;
+            1: &lt;MBMLVariableReferenceToken@0x7fa93aeb8f70: "$user" {25, 5}&gt; containing 2 tokens:
+                0: &lt;MBMLObjectSubreferenceToken@0x7fa93aea8d90: ".lastName" {30, 9}&gt;
+                1: &lt;MBMLObjectSubreferenceToken@0x7fa93fa52f60: ".length" {39, 7}&gt;
+    1: &lt;MBMLNumericLiteralToken@0x7fa94007d100: "1" {51, 1}&gt;
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Benchmarking" name="task_Benchmarking"></a>
+						<h2 class="task-title">Benchmarking</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/bench:" title="bench:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/bench:">+&nbsp;bench:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Benchmarks an object expression by measuring the time it takes to evaluate
+and logging the resulting time to the console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)bench:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to benchmark.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The expression <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, the expression being
+benchmarked. The input expression is also returned by the function, allowing
+it to be used as a pass-through.</p>
+
+<h4>Expression usage</h4>
+
+<p>In this example, the MBML function <code>^currentTime()</code> is benchmarked:</p>
+
+<pre><code>^bench(^currentTime())
+</code></pre>
+
+<p>One run of this benchmark resulted in the console output:</p>
+
+<pre><code>--&gt; Evaluated variable expansion expression "^currentTime()" in 1.90139e-05 seconds
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/benchBool:" title="benchBool:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/benchBool:">+&nbsp;benchBool:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Benchmarks a boolean expression by measuring the time it takes to evaluate
+and logging the resulting time to the console.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)benchBool:(NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to benchmark.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The expression <code>expr</code>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, the expression being
+benchmarked. The input expression is also returned by the function, allowing
+it to be used as a pass-through.</p>
+
+<h4>Expression usage</h4>
+
+<p>In this example, a boolean expression involving the MBML function
+<code>^randomPercent()</code> is benchmarked:</p>
+
+<pre><code>^benchBool(^randomPercent() -GTE 0.5)
+</code></pre>
+
+<p>One run of this benchmark resulted in the console output:</p>
+
+<pre><code>--&gt; Evaluated boolean expression "^randomPercent() -GTE 0.5" in 4.09484e-05 seconds
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/repeat:" title="repeat:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/repeat:">+&nbsp;repeat:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Repeatedly evaluates an object expression a given number of times.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)repeat:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated parameters:</p>
+
+<ul>
+<li><p>The <em>number of repetitions</em> to perform, a numeric expression indicating
+ how many times <em>expression</em> will be evaluated</p></li>
+<li><p>The <em>expression</em> to evaluate</p></li>
+</ul>
+
+
+<p>The function returns the result of the final evaluation of <em>expression</em>.</p>
+
+<h4>Expression usage</h4>
+
+<p>When combined with benchmarking, this function is useful for evaluating the
+performance of MBML function implementations and other types of expressions.</p>
+
+<pre><code> ^bench(^repeat(1000|^currentTime()))
+</code></pre>
+
+<p>The expression above calls the <code>^currentTime()</code> function 1,000 times and then
+logs the result to the console.</p>
+
+<p>One run of this benchmark resulted in the console output:</p>
+
+<pre><code>--&gt; Successfully repeated object expression "^currentTime()" 1000 times
+--&gt; Evaluated object expression "^repeat(1000|^currentTime())" in 0.010256 seconds
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/repeatBool:" title="repeatBool:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/repeatBool:">+&nbsp;repeatBool:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Repeatedly evaluates a boolean expression a given number of times.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)repeatBool:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated parameters:</p>
+
+<ul>
+<li><p>The <em>number of repetitions</em> to perform, a numeric expression indicating
+ how many times <em>expression</em> will be evaluated</p></li>
+<li><p>The <em>expression</em> to evaluate</p></li>
+</ul>
+
+
+<p>The function returns the result of the final evaluation of <em>expression</em>.</p>
+
+<h4>Expression usage</h4>
+
+<p>When combined with benchmarking, this function is useful for evaluating the
+performance of MBML expressions.</p>
+
+<pre><code> ^benchBool(^repeatBool(10000|^randomPercent() -GTE 0.5))
+</code></pre>
+
+<p>In the example above, the boolean expression <code>^randomPercent() -GTE 0.5</code> is
+evaluated 10,000 times.</p>
+
+<p>One run of this benchmark resulted in the console output:</p>
+
+<pre><code>--&gt; Successfully repeated boolean expression "^randomPercent() -GTE 0.5" 1000 times
+--&gt; Evaluated boolean expression "^repeatBool(10000|^randomPercent() -GTE 0.5)" in 0.013923 seconds
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Deprecation" name="task_Deprecation"></a>
+						<h2 class="task-title">Deprecation</h2>
+
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/deprecateVariableInFavorOf:" title="deprecateVariableInFavorOf:"></a>
-	<h3 class="subsubtitle method-title">deprecateVariableInFavorOf:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Issues a deprecation warning to the console for the MBML variable with the
+	<h3 class="method-title"><code><a href="#//api/name/deprecateVariableInFavorOf:">+&nbsp;deprecateVariableInFavorOf:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Issues a deprecation warning to the console for the MBML variable with the
 given name.</p>
-	</div>		
-	
-    
+			</div>
+			
+		    
 
-	<div class="method-subsection method-declaration"><code>+ (id)deprecateVariableInFavorOf:(NSArray *)<em>params</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (id)deprecateVariableInFavorOf:(NSArray *)<em>params</em></code></div>
 
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The <em>preferred variable name</em>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two or three pipe-separated parameters:</p>
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The <em>preferred variable name</em>.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two or three pipe-separated parameters:</p>
 
 <ul>
 <li><p>The <em>deprecated variable name</em>, a string expression yielding the name of
@@ -596,758 +1165,46 @@ MBGeolocation module for Mockingbird:
     The MBML variable "place" has been deprecated; please update your code
     to use "location" instead
 </code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/dump:" title="dump:"></a>
-	<h3 class="subsubtitle method-title">dump:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Evaluates the passed-in expression in the object context, logs the result
-to the console, and then returns the string description of the result.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)dump:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to be evaluated. Both <code>expr</code> and the result of
-            evaluating <code>expr</code> will be logged to the console.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating `expr.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts one parameter, the expression to evaluate.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume the variable <code>$Window</code> contains a reference to the application&rsquo;s
-<code>UIWindow</code>:</p>
-
-<pre><code>^dump($Window)
-</code></pre>
-
-<p>The expression above might result in a value such as:</p>
-
-<pre><code>&lt;UIWindow: 0x7f811c3036e0; frame = (0 0; 375 667); layer = &lt;UIWindowLayer: 0x7f811c300ed0&gt;&gt;
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/log:" title="log:"></a>
-	<h3 class="subsubtitle method-title">log:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Evaluates the passed-in expression in the object context, logs the result
-to the console, and then returns the result.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)log:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to be evaluated. Both <code>expr</code> and the result of
-            evaluating <code>expr</code> will be logged to the console.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>You can use this to inspect object expressions (or portions thereof) to see
-what values are being returned within them. This can be handy when debugging
-a complex expression that isn&rsquo;t returning the result you expect.</p>
-
-<p>This Mockingbird function accepts one parameter, the expression to evaluate.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume the variable <code>$cart</code> is an array containing five items:</p>
-
-<pre><code>You have ^log($cart).count items in your cart.
-</code></pre>
-
-<p>The expression &ldquo;<code>$cart</code>&rdquo; would be logged to the console, along with the
-result of calling the <code>description</code> method on underlying the <code>NSArray</code>.
-The array would then be returned by the function.</p>
-
-<p>The expression as a whole would yield the string &ldquo;<code>You have 5 items in your
-cart.</code>&rdquo;</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/repeat:" title="repeat:"></a>
-	<h3 class="subsubtitle method-title">repeat:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Repeatedly evaluates an object expression a given number of times.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)repeat:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The function result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
-
-<ul>
-<li><p>The <em>number of repetitions</em> to perform, a numeric expression indicating
- how many times <em>expression</em> will be evaluated</p></li>
-<li><p>The <em>expression</em> to evaluate</p></li>
-</ul>
-
-
-<p>The function returns the result of the final evaluation of <em>expression</em>.</p>
-
-<h4>Expression usage</h4>
-
-<p>When combined with benchmarking, this function is useful for evaluating the
-performance of MBML function implementations and other types of expressions.</p>
-
-<pre><code> ^bench(^repeat(1000|^currentTime()))
-</code></pre>
-
-<p>The expression above calls the <code>^currentTime()</code> function 1,000 times and then
-logs the result to the console.</p>
-
-<p>One run of this benchmark resulted in the console output:</p>
-
-<pre><code>--&gt; Successfully repeated object expression "^currentTime()" 1000 times
---&gt; Evaluated object expression "^repeat(1000|^currentTime())" in 0.010256 seconds
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/repeatBool:" title="repeatBool:"></a>
-	<h3 class="subsubtitle method-title">repeatBool:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Repeatedly evaluates a boolean expression a given number of times.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)repeatBool:(NSArray *)<em>params</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>params</em></dt>
-			<dd><p>The function&rsquo;s input parameters.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The function result.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>This Mockingbird function accepts two pipe-separated parameters:</p>
-
-<ul>
-<li><p>The <em>number of repetitions</em> to perform, a numeric expression indicating
- how many times <em>expression</em> will be evaluated</p></li>
-<li><p>The <em>expression</em> to evaluate</p></li>
-</ul>
-
-
-<p>The function returns the result of the final evaluation of <em>expression</em>.</p>
-
-<h4>Expression usage</h4>
-
-<p>When combined with benchmarking, this function is useful for evaluating the
-performance of MBML expressions.</p>
-
-<pre><code> ^benchBool(^repeatBool(10000|^randomPercent() -GTE 0.5))
-</code></pre>
-
-<p>In the example above, the boolean expression <code>^randomPercent() -GTE 0.5</code> is
-evaluated 10,000 times.</p>
-
-<p>One run of this benchmark resulted in the console output:</p>
-
-<pre><code>--&gt; Successfully repeated boolean expression "^randomPercent() -GTE 0.5" 1000 times
---&gt; Evaluated boolean expression "^repeatBool(10000|^randomPercent() -GTE 0.5)" in 0.013923 seconds
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/test:" title="test:"></a>
-	<h3 class="subsubtitle method-title">test:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Evaluates the passed-in expression in the boolean context, logs the result
-to the console, and then returns the result.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (id)test:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to be evaluated. Both <code>expr</code> and the result of
-            evaluating <code>expr</code> will be logged to the console.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The result of evaluating <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>You can use this to inspect boolean expressions (or portions thereof) to see
-what values are being returned within them. This can be handy when debugging
-a complex expression that isn&rsquo;t returning the result you expect.</p>
-
-<p>This Mockingbird function accepts one parameter, the expression to evaluate.</p>
-
-<h4>Expression usage</h4>
-
-<p>Assume the variable <code>$foo</code> contains the string &ldquo;<code>cromulent</code>&rdquo;:</p>
-
-<pre><code>^test($foo.length -GT 5)
-</code></pre>
-
-<p>The expression &ldquo;<code>$foo.length -GT 5</code>&rdquo; would be logged to the console,
-along with the boolean result, which is <code>YES</code>. The result <code>YES</code> would then
-be returned by the function.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tokenize:" title="tokenize:"></a>
-	<h3 class="subsubtitle method-title">tokenize:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tokenizes an object expression and logs the resulting parse tokens to
-the console.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)tokenize:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to tokenize.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The expression <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>When experiencing trouble with a complex expression giving unexpected results,
-seeing the parse tokens lets you understand how the expression evaluator is
-interpreting your expression.</p>
-
-<p>This Mockingbird function accepts a single parameter, the expression to
-tokenize. The input expression is returned, allowing the function to be
-used as a pass-through.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^tokenize(This $aint.no ^party())
-</code></pre>
-
-<p>The expression above would result in console output similar to the following:</p>
-
-<pre><code>--&gt; Tokens for object expression "This $aint.no ^party()":
-&lt;MBMLLiteralToken@0x7f8ac03aaea0: "This " {0, 5}&gt;
-&lt;MBMLVariableReferenceToken@0x7f8abce042a0: "$aint" {5, 5}&gt; containing 1 token:
-    0: &lt;MBMLObjectSubreferenceToken@0x7f8ac0670a00: ".no" {10, 3}&gt;
-&lt;MBMLLiteralToken@0x7f8ac036f4a0: " " {13, 1}&gt;
-&lt;MBMLFunctionCallToken@0x7f8ac0645bb0: "^party()" {14, 8}&gt;
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tokenizeBoolean:" title="tokenizeBoolean:"></a>
-	<h3 class="subsubtitle method-title">tokenizeBoolean:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tokenizes a boolean expression and logs the resulting parse tokens to
-the console.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)tokenizeBoolean:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to tokenize.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The expression <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>When experiencing trouble with a complex expression giving unexpected results,
-seeing the parse tokens lets you understand how the expression evaluator is
-interpreting your expression.</p>
-
-<p>This Mockingbird function accepts a single parameter, the expression to
-tokenize. The input expression is returned, allowing the function to be
-used as a pass-through.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^tokenizeBoolean(This != ^party())
-</code></pre>
-
-<p>The expression above would result in console output similar to the following:</p>
-
-<pre><code>--&gt; Tokens for boolean expression "This != ^party()":
-&lt;MBMLInequalityTestToken@0x7fa93fb5fbe0: "!=" {5, 2}&gt; containing 2 tokens:
-    0: &lt;MBMLLiteralToken@0x7fa93fb45970: "This" {0, 4}&gt;
-    1: &lt;MBMLFunctionCallToken@0x7fa93fb4af80: "^party()" {8, 8}&gt;
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/tokenizeMath:" title="tokenizeMath:"></a>
-	<h3 class="subsubtitle method-title">tokenizeMath:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Tokenizes a math expression and logs the resulting parse tokens to
-the console.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)tokenizeMath:(NSString *)<em>expr</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>expr</em></dt>
-			<dd><p>The expression to tokenize.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>The expression <code>expr</code>.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>When experiencing trouble with a complex expression giving unexpected results,
-seeing the parse tokens lets you understand how the expression evaluator is
-interpreting your expression.</p>
-
-<p>This Mockingbird function accepts a single parameter, the expression to
-tokenize. The input expression is returned, allowing the function to be
-used as a pass-through.</p>
-
-<h4>Expression usage</h4>
-
-<pre><code>^tokenizeMath(($user.firstName.length + $user.lastName.length) + 1)
-</code></pre>
-
-<p>The expression above would result in console output similar to the following:</p>
-
-<pre><code>--&gt; Tokens for math expression "($user.firstName.length + $user.lastName.length) + 1":
-&lt;MBMLAdditionOperatorToken@0x7fa940048b70: "+" {49, 1}&gt; containing 2 tokens:
-    0: &lt;MBMLMathGroupingToken@0x7fa9400a87d0: "($user.firstName.length + $user.lastName.length)" {0, 48}&gt; containing 1 token:
-        0: &lt;MBMLAdditionOperatorToken@0x7fa93ae86fd0: "+" {23, 1}&gt; containing 2 tokens:
-            0: &lt;MBMLVariableReferenceToken@0x7fa93faf9400: "$user" {0, 5}&gt; containing 2 tokens:
-                0: &lt;MBMLObjectSubreferenceToken@0x7fa940049ac0: ".firstName" {5, 10}&gt;
-                1: &lt;MBMLObjectSubreferenceToken@0x7fa93fae4340: ".length" {15, 7}&gt;
-            1: &lt;MBMLVariableReferenceToken@0x7fa93aeb8f70: "$user" {25, 5}&gt; containing 2 tokens:
-                0: &lt;MBMLObjectSubreferenceToken@0x7fa93aea8d90: ".lastName" {30, 9}&gt;
-                1: &lt;MBMLObjectSubreferenceToken@0x7fa93fa52f60: ".length" {39, 7}&gt;
-    1: &lt;MBMLNumericLiteralToken@0x7fa94007d100: "1" {51, 1}&gt;
-</code></pre>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">MBMLDebugFunctions.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Gilt Groupe. All rights reserved. (Last updated: 2015-02-01)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
 			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
 			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
-				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLDebugFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
 					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-02</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
 </html>
