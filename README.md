@@ -1,6 +1,6 @@
 ![Gilt Tech logo](Documentation/images/gilt-tech-logo.png)
 
-# MBDataEnvironment
+# Mockingbird Data Environment
 
 This repository hosts the Mockingbird Data Environment, an open-source project from Gilt Groupe that builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) project to provide a dynamic data processing engine for iOS applications.
 
@@ -842,7 +842,7 @@ The `now` variable works differently: the expression contained in the `value` at
 
 #### Functions
 
-MBML functions are declared using the `<Function>` tag. Here are some example function declarations from the `MBDataEnvironmentModule.xml` file:
+MBML functions are declared using the `<Function>` tag. Here are some examples taken from the `MBDataEnvironmentModule.xml` file:
 
 ```xml
 <Function class="MBMLCollectionFunctions" name="mutableCopy" method="mutableCopyOf" input="object"/>
