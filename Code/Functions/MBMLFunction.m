@@ -8,6 +8,7 @@
 
 #import "MBMLFunction.h"
 #import "MBDataEnvironmentModule.h"
+#import "MBMLObjectReferenceToken.h"
 
 #define DEBUG_LOCAL                 0       // turns on tracing of function calls
 #define DEBUG_VERBOSE               0       // turns on tracing of function parameter validation
@@ -62,6 +63,11 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 {
     self = [super init];
     if (self) {
+        if (![MBMLObjectReferenceToken isValidObjectReference:name]) {
+            errorLog(@"Function names must be identifiers, so \"%@\" is not a valid function name", name);
+            return nil;
+        }
+
         _name = name;
         _functionClass = cls;
         _functionSelector = selector;
@@ -102,6 +108,10 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     
     if (!_name) {
         errorLog(@"No name specified for %@ in: %@", [self class], self.simulatedXML);
+        return NO;
+    }
+    if (![MBMLObjectReferenceToken isValidObjectReference:_name]) {
+        errorLog(@"Function names must be identifiers, so \"%@\" is not a valid function name in: %@", _name, self.simulatedXML);
         return NO;
     }
     if (_inputType == MBMLFunctionInputUnset) {
