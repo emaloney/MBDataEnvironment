@@ -4,6 +4,10 @@
 
 This repository hosts the Mockingbird Data Environment, an open-source project from Gilt Groupe that builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) project to provide a dynamic data processing engine for iOS applications.
 
+**Master branch status:**
+
+[![Build Status](https://travis-ci.org/emaloney/MBDataEnvironment.svg?branch=master)](https://travis-ci.org/emaloney/MBDataEnvironment)
+
 ## About the Mockingbird Data Environment
 
 The Mockingbird Data Environment provides a *variable space* through which named variables can be accessed using *expressions*.
