@@ -697,10 +697,8 @@ An MBML file can *include* another file. When a file is included, any declaratio
 For example:
 
 ```xml
-<MBML>
-
-	<Include file="onboarding.xml" if="$isFirstLaunch"/>
-	<Include file="landing.xml"/>
+<Include file="onboarding.xml" if="$isFirstLaunch"/>
+<Include file="landing.xml"/>
 ```
 
 The `<Include>` tag requires a value for the `file` attribute, while the `if` is optional:
@@ -717,9 +715,9 @@ The `<Var>` tag can be used to declare values for Mockingbird variables.
 
 Three types of variable declarations are possible:
 
-* *Concrete* — A *variable name* is associated with an Objective-C object instance, which represents the concrete variable's *value*. A concrete variable's value is set when it is declared.
+* *Concrete* — A *variable name* is associated with an Objective-C object instance, which represents the concrete variable's *value*. A concrete variable's value is set when its declaration is processed.
 
-* *Singleton* — A *variable name* is associated with a class method that returns a singleton object instance. The object returned by that method represents the singleton variable's *value*.
+* *Singleton* — A *variable name* is associated with a class method that returns a singleton object instance. The object returned by that method represents the singleton variable's *value*. A singleton variable's value is set when its declaration is processed.
 
 * *Dynamic* — A *variable name* is associated with a Mockingbird expression. Whenever the variable is referenced, the associated expression is evaluated, and the value it yields represents the dynamic variable's *value*.
 
@@ -729,7 +727,9 @@ The `<Var>` tag provides support for specifying explicit values for types such a
 
 Additional types can also be created using MBML functions, and values from other sources can be referenced through Mockingbird expressions.
 
-A literal string can be specified using the `literal` attribute. Within a literal string, expressions are not evaluated, so there's no need to perform any escaping. For example:
+**Note:** Concrete variable values are set immediately when the `<Var>` tag is encountered as an MBML file is processed. This means that any values referenced by `<Var>` tag expressions must already be present in the environment. Because files MBML is processed from the top down, a `<Var>` tag can reference any value declared above it (or declared in any file included above it).
+
+Concrete literal string values can be specified using the `literal` attribute. Within a literal string, expressions are not evaluated, so there's no need to perform any escaping. For example:
 
 ```xml
 <Var name="currency" literal="$USD"/>
@@ -742,14 +742,14 @@ If literals won't suffice, you can instead use the `value` attribute along with 
 ```xml
 <Var name="price" value="#(99.99)"/>
 <Var name="priceLabel" value="${currency}${price}"/>
-<Var name="time" value="^currentTime()"/>
+<Var name="appLaunchTime" value="^currentTime()"/>
 ```
 
 Because the value in the first line above is wrapped within the **`#(`** ... **`)`** notation, it is evaluated as a numeric expression. As a result, the `price` variable is set to an `NSNumber` containing the value `99.99`.
 
 In the second line, the `value` attribute contains an expression referencing two values: `${currency}` and `${price}`. Whenever more than one value is referenced at the top level of an expression, string interpolation is used, so the resulting value is guaranteed to be an `NSString`. The underlying value will be the string "`$USD99.99`".
 
-The third line shows the `time` variable being set to the value yielded by the `^currentTime()` MBML function, which will be an `NSDate`.
+The third line shows the `appLaunchTime` variable being set to the value yielded by the `^currentTime()` MBML function, which will be an `NSDate`.
 
 Variables can be declared with boolean values using the `boolean` attribute:
 
@@ -760,6 +760,8 @@ Variables can be declared with boolean values using the `boolean` attribute:
 The `boolean` attribute's value is evaluated as a boolean expression, and the result is used as the variable's value.
 
 In the example above, the `useLargerImageSizes` variable would be set to `true` if and only if `$Network.isWifiConnected` and `$Device.isRetina` both evaluate to `true`.
+
+**Note:** In an actual application, the `useLargerImageSizes` variable should be declared as a *dynamic variable*, not a *concrete variable*. That's because concrete variable values are set when the `<Var>` tag is processed. However, the state of the `$Network.isWifiConnected` value may change while the application is running. Those changes won't be reflected in the value of `$useLargerImageSizes`, because that value is be set once when the MBML is loaded. See the **Dynamic Variables** section below for an example of how to declare `useLargerImageSizes` as a dynamic variable.
 
 Arrays can be declared using the `type="list"` attribute. One such use might be to declare a list of U.S. states:
 
@@ -772,7 +774,7 @@ Arrays can be declared using the `type="list"` attribute. One such use might be 
 </Var>
 ```
 
-The declaration above results in an `NSArray` containing the string literals specified. Notice that the inner `<Var>` tags do not take a `name` attribute, because an array is simply a list of unnamed values.
+The declaration above results in an `NSArray` containing the text literals specified. Notice that the inner `<Var>` tags do not take a `name` attribute, because an array is simply a list of unnamed values.
 
 Mappings—which are `NSDictionary` instances—can be declared similarly, using the `type="map"` attribute. This sample declaration shows a mapping between state names and their corresponding postal codes:
 
@@ -791,6 +793,82 @@ In the resulting `NSDictionary`, the value of the `name` attribute specifies the
 
 ##### Singleton Variables
 
+You can use `<Var>` declaration with a `type="singleton"` attribute to expose singleton object instances to the Mockingbird Data Environment:
+
+```xml
+<Var name="UIApplication" type="singleton" class="UIApplication" method="sharedApplication"/>
+```
+
+The singleton declaration requires a `class` attribute to specify the name of the class that vends the singleton instance, and a `method` attribute that specifies the name of a no-argument class method that returns the singleton instance.
+
+The declaration above, which can be found in the `MBDataEnvironmentModule.xml` MBML file, exposes the value returned by the `[UIApplication sharedApplication]` class method through the Mockingbird variable named `UIApplication`. This allows you to reference the `UIApplication` singleton object through the Mockingbird expression "`$UIApplication`".
+
+Because the value of the singleton variable is set when the `<Var>` tag is processed, this type of variable declaration should only be used for true singletons, which must behave as follows:
+
+* The singleton instance is expected to exist for the lifetime of the running application.
+
+* The value returned by the singleton accessor method must never change throughout the lifetime of the application.
+
 ##### Dynamic Variables
 
+Dynamic variables associate an *expression* with a variable name rather than a specific *value*. When a dynamic variable is referenced, Mockingbird evaluates the associated expression, and the value yielded by that expression becomes the value yielded by the dynamic variable.
+
+In the **Concrete Variables** section above, we saw the following declaration for the `useLargerImageSizes` variable:
+
+```xml
+<Var name="useLargerImageSizes" boolean="$Network.isWifiConnected -AND $Device.isRetina"/>
+```
+
+Because this declaration is not dynamic, the value of the `useLargerImageSizes` variable is set once, when the `<Var>` tag is processed. The value of `useLargerImageSizes` will reflect the value yielded by the `$Network.isWifiConnected` expression when the MBML was loaded.
+
+What we really want is for `$useLargerImageSizes` to reflect the *current value* of `$Network.isWifiConnected` whenever `$useLargerImageSizes` is referenced. To do that, we would simply declare `useLargerImageSizes` as a *dynamic variable* using the `type="dynamic"` attribute:
+
+```xml
+<Var name="useLargerImageSizes" type="dynamic" boolean="$Network.isWifiConnected -AND $Device.isRetina"/>
+```
+
+To understand the difference between concrete variables and dynamic variables, consider these two declarations:
+
+```xml
+<Var name="past" value="^currentTime()"/>
+<Var name="now" type="dynamic" value="^currentTime()"/>
+```
+
+These two declarations associate a variable with the `NSDate` returned by the `^currentTime()` MBML function.
+
+However, the concrete declaration of `past` ensures that the expression contained in the `value` attribute is evaluated just once, when the variable is declared. Any time `$past` is referenced, the value will be the same.
+
+The `now` variable works differently: the expression contained in the `value` attribute is evaluated whenever the `$now` is referenced. So the value of `$now` will always yield an `NSDate` that was just fetched from a call to the `^currentTime()` function.
+
 #### Functions
+
+MBML functions are declared using the `<Function>` tag. Here are some example function declarations from the `MBDataEnvironmentModule.xml` file:
+
+```xml
+<Function class="MBMLCollectionFunctions" name="mutableCopy" method="mutableCopyOf" input="object"/>
+<Function class="MBMLDataProcessingFunctions" name="filter" input="pipedExpressions"/>
+<Function class="MBMLDateFunctions" name="currentTime" input="none"/>
+<Function class="MBMLStringFunctions" name="q" input="raw"/>
+```
+
+Declaring and implementing MBML functions is beyond the scope of this document. For details on the `<Function>` declaration and how it can be used, see the documentation for [the `MBMLFunction` class](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html).
+
+## About Mockingbird Library
+
+The Mockingbird Data Environment is part of Gilt Groupe's Mockingbird Library open-source project for iOS.
+
+Over the years, Gilt Groupe has used and refined Mockingbird Library as the base platform for its various iOS projects.
+
+![Mockingbird Library Module Layers](Documentation/images/mockingbird-module-layers.png)
+
+Mockingbird began life as AppFramework, originally created by Jesse Boyes.
+
+AppFramework found a home at Gilt Groupe and eventually became Mockingbird Library.
+
+In recent years, Mockingbird Library has been developed and maintained by Evan Coyne Maloney, Gilt Groupe’s principal iOS engineer.
+
+### Copyright & License
+
+Mockingbird Library and Mockingbird Data Environment © Copyright 2009-2015, Gilt Groupe.
+
+Licensed under [the MIT license](LICENSE).

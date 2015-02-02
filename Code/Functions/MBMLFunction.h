@@ -196,6 +196,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  
  * `name` - The name of the function as it will be invoked in an expresion;
  a function with the name "`foo`" taking no parameters is called as "`^foo()`".
+ The function's name must be a valid Mockingbird *identifier*.
  
  * `class` - Specifies the name of the Objective-C class that implements the
  function.
