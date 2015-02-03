@@ -14,43 +14,45 @@ The Mockingbird Data Environment allows arbitrary data models and object graphs 
 
 The Mockingbird Data Environment is particularly suited for building applications that can adapt to changes in server-side data models.
 
-It is a common scenario for iOS developers to have customers running old application versions. Some customers simply don't update their apps, while others are running hardware that can't run the latest operating systems.
+It is a common scenario for iOS developers to have users running old application versions. Some users simply don't update their apps, while others are running hardware that can't run the latest operating systems and application versions.
 
 For some types of apps, this isn't a big problem. But for apps that must communicate with network-based services, having lots of old versions out in the wild makes it difficult evolve your services.
 
-Over time, you will eventually face this tradeoff:
+Eventually, you will be faced with accepting one of these three less-than-ideal decisions:
 
-* Do you drop support for old versions, knowing that there's a risk of severing valuable relationships with users?
+* Do you drop support for old versions, knowing that there's a risk of severing valuable relationships with some of your users?
 
-* Or do you accept the expense and difficulty of maintaining a growing number of backend service versions over time?
+* Do you take on the expense and difficulty of maintaining and operating a growing number of legacy backend services over time?
 
-The goal of the Mockingbird Data Environment is to allow you to avoid having to choose one at the expense of the other.
+* Or do you resign yourself to never evolving your backend systems?
+
+The purpose of the Mockingbird Data Environment is to allow you to avoid having to choose one of these goals at the expense of the others.
 
 #### The Root of the Problem
 
 The way iOS applications are typically architected, the server defines the canonical data model and native client code is used to implement the logic required to extract meaningful information from that data.
 
-The problem with this architecture is that *both* the client *and* the server require detailed knowledge of a service's data structure.
+The problem with this architecture is that *both* the client *and* the server require intimate knowledge of the data schema.
 
-Some have attempted to address this with solutions that automatically generate client code from data schemas. While this is undoubtedly convenient and time-saving, the original problem remains: the knowledge is *compiled in* to the client and, once it is, it can't be changed. You're still going to end up with users running very old versions.
+Some have attempted to address this with solutions that automatically generate client code from data schemas. While this is undoubtedly convenient and time-saving, the original problem remains: the knowledge of the data format is *compiled in* to the client application and can't be changed. You're still going to end up with some users running very old versions that will want to communicate with your services.
 
-Ideally, there would be only *one* place where knowledge of a data model would need to live. And since we've seen one big reason for that knowledge *not* to live on the client, it stands to reason that we should look to a server-based solution.
+Ideally, there would be only *one* place where knowledge of a data model would need to live. The long tail of legacy applications gives us one big reason for that knowledge *not* to be hard-coded into the client, so it stands to reason that we should look to a server-driven solution. After all, the server *must* maintain knowledge of the data structure anyway—it is responsible for creating that data structure in the first place.
 
-By definition, the server *must* maintain knowledge of the data structure—after all, the server is responsible for creating that data structure in the first place.
+But if you think about what a client application really cares about, it's not the details of a data structure, it's specific bits of information embedded in that data structure. The data structure is merely a byproduct of the application's need to communicate with the server.
 
-But if you think about what a client application really cares about, it's not the details of a data structure, it's specific bits of information embedded in that data structure.
-
-An app might be interested in a *product list*, for example, but the fact that the product list can be assembled from information three levels deep into a JSON structure is merely incidental.
+An app might be interested in a product list, for example, but the fact that the product list is assembled from data three levels down in a particular JSON structure is incidental.
 
 #### The Solution
 
 The Mockingbird Data Environment allows you to build apps where the server can host the logic required to navigate the data structures it returns. Services can return a data model and also a set of expressions needed to extract meaningful information from that data model.
 
-Because everything is hosted on the server—both the data model and the knowledge of that data model—every installed copy of your app can automatically adapt to new data models whenever you choose to deploy them.
+Because everything is hosted on the server—both the data model and the knowledge of how to interpret that data model—every installed copy of your app can automatically adapt to new data models whenever you choose to deploy them.
 
-You can change the way your services return data any time you want. You won't need to resubmit your app for review, and you don't need to run multiple versions of your backend for legacy versions of your app.
+You won't need to resubmit your app for review every time you choose to change how your services communicate, and you don't need to run multiple versions of your backend to support legacy versions of your app.
 
-Just use the Mockingbird Data Environment to decouple your native code from your server-side data.
+You will be able to evolve your services on your own schedule, and when you do, long-forgotten versions of your app will just keep working. 
+
+Let the Mockingbird Data Environment decouple your native code from the details of your server-side data.
 
 > This technique was discussed in more detail at the [iOSoho Developer's Symposium](http://www.meetup.com/iOSoho/events/181963632/) meetup on August 11th, 2014. ([Slides available at the Gilt Tech blog](http://tech.gilt.com/post/94663143169/handling-changes-to-your-server-side-data-model).)
 
@@ -90,7 +92,7 @@ In the future, we may issue binary releases of the Mockingbird Data Environment 
 
 Before making use of the Mockingbird Data Environment, your application first loads an `MBEnvironment` instance.
 
-The simplest way to do this is to load the *default environment*:
+The easiest way to do this is to load the *default environment*:
 
 ```objc
 [MBEnvironment loadDefaultEnvironment];
@@ -100,7 +102,9 @@ The default environment contains everything you need to get started using the Mo
 
 You can also provide your own *manifest file* that contains additional declarations allowing you to customize the initial state of the environment when it is loaded. 
 
-The manifest is an XML file (typically named `manifest.xml`) that contains MBML markup for customizing and configuring the Mockingbird environment. (MBML is an XML derivative that stands for **M**ocking**b**ird **M**arkup **L**anguage.)
+The manifest is an XML file (typically named `manifest.xml`) that contains MBML markup for customizing and configuring the Mockingbird environment.
+
+MBML is an XML document format whose name stands for **M**ocking**b**ird **M**arkup **L**anguage. The format is described in the section **[An Introduction to MBML Files](#an-introduction-to-mbml-files)** below.
 
 If your application provides a `manifest.xml` file in its resources, instead of calling `loadDefaultEnvironment`, you could load the environment using:
 
@@ -123,7 +127,7 @@ Depending on the context, Mockingbird expressions can contain:
  - boolean logic expressions
  - function calls
 
-The process of resolving an expression down to the specific value(s) it references is called _evaluation_. During evaluation, literals are passed through untouched, but any expression tokens encountered are replaced with the values they represent.
+The process of resolving an expression to yield the specific value(s) it references is called _evaluation_. During evaluation, literals are passed through untouched, but any expression tokens encountered are replaced with the values they represent at that time.
 
 The primary interface for evaluating expressions is through several `MBExpression` class methods:
 
@@ -136,7 +140,7 @@ Expressions yielding|are evaluating using
 
 #### An example
 
-One use of a Mockingbird expression is to perform string replacement when populating user interface views, such as a `UILabel`:
+One possible use of a Mockingbird expression is to perform string replacement when populating user interface views, such as `UILabel`s:
  
 ```objc
 	UILabel* greeting = // created elsewhere
@@ -147,9 +151,11 @@ In the code above, the `text` property of the `greeting` label will be set to th
 
 This particular expression consists of three parts: a text literal ("`Hello, `") followed by a reference to a Mockingbird variable called `userName`, followed by another text literal ("`!`").
 
-When the expression is evaluated, the "`$userName`" portion of the expression is replaced by the value of the `userName` variable in the current *variable space*.
+When the expression is evaluated, the "`$userName`" portion of the expression is replaced by the value of the `userName` variable in the active *variable space*.
 
 If the value of `userName` is "`Cooper`", then the label would display the text "`Hello, Cooper!`".
+
+> In this documentation, the notation `$variableName` can be read as either "the variable named *variableName* in the active variable space" or "*a reference to the value of* the variable named *variableName* in the active variable space", depending on the context.
 
 #### The Variable Space
 
@@ -157,17 +163,17 @@ The *variable space* is where Mockingbird variable values are stored.
 
 Any native runtime object instance can be stored in the Mockingbird variable space. When an object is stored in the variable space, it is associated with a *variable name* and is then considered a *variable value*.
 
-Variable values can be exposed to the variable space via Objective-C:
+In Objective-C, variable values can be exposed to the variable space using the keyed subscripting notation:
 
 ```objc
 [MBVariableSpace instance][@"cats"] = @[@"Barrett", @"Duncan", @"Gabby"];
 ```
 
-The code above associates the variable name `cats` with an `NSArray` instance containing three items (the strings "`Barrett`", "`Duncan`" and "`Gabby`").
+The code above associates `$cats` with an `NSArray` containing three items (the strings "`Barrett`", "`Duncan`" and "`Gabby`").
 
-Using an MBML manifest file to load the Mockingbird environment allows the variable space to be pre-populated with values.
+You can also use an MBML manifest file to pre-populate the variable space when the environment is loaded.
 
-You could ensure that the Mockingbird environment always has the same values for the variable `cats`, for example, using an MBML *variable declaration* in the manifest:
+To ensure that the Mockingbird environment always has the same values for `$cats`, for example, you could add this *variable declaration* in the manifest:
 
 ```xml
 <Var name="cats" type="list" mutable="F">
@@ -177,21 +183,21 @@ You could ensure that the Mockingbird environment always has the same values for
 </Var>
 ```
 
-> **Note:** The `mutable="F"` attribute ensures that the `cats` variable can't be overwritten with another value during runtime. It does not guarantee the immutability of the underlying object instance, however.
+> The `mutable="F"` attribute ensures that `$cats` can't be overwritten with another value during runtime. It does not guarantee the immutability of the underlying object instance, however.
 
 Using a manifest file allows you to avoid needing to programmatically populate the variable space with common values every time your application is launched.
 
+See **[The Manifest File](#the-manifest-file)** below for more information on manifest files.
+
 #### Variable References
 
-Regardless of how the value was introduced to the variable space, the array associated with the Mockingbird variable named `cats` can be accessed using the expression:
+The most basic non-literal expression form is a *simple variable reference*, where the variable name is prefixed with a dollar sign:
 
 ```
 $cats
 ```
 
-This shows the most basic expression form: a simple *variable reference*, where the variable name is prefixed with a dollar sign.
-
-When an object is made available through the variable space, not only does the object instance itself become accessible using an expression, so do its properties, KVC values, and—if it's an array or dictionary—its contents.
+When an object is made available through the variable space, not only does the object instance itself become accessible using an expression, so do its properties, any values addressable using key-value coding (KVC), and—if it's an array or dictionary—its contents.
 
 You can access these sub-values through *variable subreferences*, which can take one of two forms: dot accessors and bracket accessors.
 
@@ -201,11 +207,9 @@ You can use the *dot accessor* to access the value of an object property or KVC 
 $cats.count
 ```
 
-When that expression is evaluated, the Mockingbird expression engine accesses the `count` property of the `NSArray` instance associated with the variable named `cats`, and returns that value.
+When that expression is evaluated, the Mockingbird expression engine accesses the `count` property of the underlying `NSArray` value of `$cats`, and returns that value. In this example, the value of `$cats.count` would be an `NSNumber` containing the integer value `3`.
 
-In this example, the value of the expression `$cats.count` would be an `NSNumber` containing the integer value `3`.
-
-> **Note:** The Mockingbird expression engine doesn't handle *primitives* (non-objects) directly. As a result, primitive types are wrapped in their equivalent Cocoa class. `NSUInteger` and `BOOL`, for example, are wrapped in `NSNumber` instances.
+> The Mockingbird expression engine doesn't handle *primitives* (non-objects) directly. As a result, primitive types are wrapped in their equivalent Cocoa class. `NSUInteger` and `BOOL`, for example, are wrapped in `NSNumber` instances.
 
 > That's why even though the `NSArray` class's `count` property is declared to return an `NSUInteger`, when a Mockingbird expression is evaluated referencing that property, the value yielded is contained in an `NSNumber`.
 
@@ -215,23 +219,23 @@ To access items within an array, you use the *bracket accessor*:
 $cats[1]
 ```
 
-The expression above would yield the object at index `1` of the `NSArray` associated with the variable named `cats`. Because array indexes are zero-based, this is actually the second item in the array: the string "`Duncan`".
+The expression above would yield the object at index `1` of the `NSArray` associated with `$cats`. Because array indexes are zero-based, this is actually the second item in the array: the string "`Duncan`".
 
-Subreferences in Mockingbird expressions can also be chained together:
+> An expression referencing an out-of-bounds array index will yield the value `nil`.
+
+Subreferences can also be chained together:
 
 ```
 $cats[1].length
 ```
 
-This expression yields the value of the `length` property of the object at index `1` of the `NSArray` associated with the variable named `cats`.
+This expression yields the value of the `length` property of the object at index `1` of the `NSArray` associated with `$cats`.
 
 In this example, the value yielded would be the number `6`, which is the length of the string "`Duncan`".
 
-> Expression subreferences can be chained to an arbitrary depth, allowing you to extract values from arbitrarily complex object graphs.
-
 Values contained in dictionaries can also be retrieved using the bracket accessor notation.
 
-Let's assume a new Mockingbird variable:
+For example:
 
 ```objc
 [MBVariableSpace instance][@"catGenders"] = @{@"Barrett": @"female",
@@ -239,7 +243,7 @@ Let's assume a new Mockingbird variable:
                                               @"Gabby":   @"female"}];
 ```
 
-In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with the Mockingbird variable name `catGenders`.
+In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with `$catGenders`.
 
 To access the gender of any specific cat, we could use the bracket notation to yield the value associated with the given dictionary key:
 
@@ -251,9 +255,7 @@ This expression yields the string "`female`".
 
 ### Evaluating Expressions
 
-Once you've got a variable space populated with some values, and a set of expressions you'd like to use to extract data from the values in the variable space, you can use the `MBExpression` class for evaluating expressions.
-
-Depending on the data you have and how you want to use it, you would evaluate a given expression according to one of the following *expression types*:
+Depending on the data you have and how you want to use it, the `MBExpression` class provides several methods to evaluate expressions according to one of the following *expression types*:
 
 #### String Expressions
 
@@ -263,11 +265,11 @@ If you're evaluating an expression that you expect to yield a string, you should
 NSString* gender = [MBExpression asString:@"$catGenders[Barrett]"];
 ```
 
-This evaluates the expression `$catGenders[Barrett]` as a string, meaning that the return value will either be `nil` or an `NSString` instance.
+This evaluates the expression `$catGenders[Barrett]` as a string, ensuring that the return value will either be an `NSString` or `nil`.
 
 In this particular case, the `NSString` variable `gender` would contain the string value "`female`".
 
-> **Note:** If the underlying object isn't an `NSString` instance, a reasonable attempt will be made to coerce the value into a string.
+> If the underlying object isn't an `NSString` instance, a reasonable attempt will be made to coerce the value into a string.
 
 ##### String Interpolation
 
@@ -283,25 +285,25 @@ NSString* barrett = [MBExpression asString:@"Barrett is a $catGenders[Barrett] c
 
 Here, the strings "`Barrett is a `" and "` cat.`" are text literals, while "`$catGenders[Barrett]`" is a variable reference.
 
-Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, that's the string "`female`". Everything else in the expression is a text literal, so it is returned as-is.
+Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, that's the string "`female`".
 
-The value of the `barrett` variable is the string "`Barrett is a female cat.`"
+The resulting value of the `NSString` variable `barrett` is "`Barrett is a female cat.`"
 
 #### Object Expressions
 
-If, say, you have an `NSArray` or an `NSDictionary` in the variable space (as is the case with the `catGenders` variable), you can retrieve the underlying object by evaluating an expression referencing it *as an object expression*:
+If you have, say, an `NSArray` or an `NSDictionary` in the variable space (as is the case with `$catGenders`), you can retrieve the underlying object value by evaluating an expression referencing it *as an object expression*:
 
 ```objc
 NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
 ```
 
-The `genders` variable now contains the `NSDictionary` instance that was previously bound to the Mockingbird variable name `catGenders`.
+The `NSDictionary` variable `genders` now references the same value as `$catGenders`.
 
-> **Note:** Because the `asObject:` method returns the generic object type `id`, it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.
+> Because the `asObject:` method returns the generic object type `id`, it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.
 
 #### Numeric Expressions
 
-To retrieve the value of a numeric variable, or to perform a simple mathematical calculation, you can evaluate an expression *as a number*:
+To retrieve the value of a numeric variable, or to perform a mathematical calculation, you can evaluate an expression *as a number*:
 
 ```objc
 NSNumber* five = [MBExpression asNumber:@"5"];
@@ -315,18 +317,16 @@ five = [MBExpression asNumber:@"25 % 10"];
 
 All of the expressions above yield an `NSNumber` containing the value `5`.
 
-As you can see, numeric expressions can contain simple math expressions. The `+`, `-`, `*`, `/` and `%` operators are supported. (Operators must be separated from surrounding tokens with at least one space character.)
+As you can see, numeric expressions can contain basic math expressions. The `+`, `-`, `*`, `/` and `%` operators are supported. (Operators must be separated from surrounding tokens with at least one space character.)
 
 > By default, C language order is used when evaluating math operators. Parenthetical groupings can be used to ensure specific evaluation order.
 
-Evaluating an expression as a number also handles converting Mockingbird variable values to numbers:
+Evaluating an expression as a number also handles converting Mockingbird variable values to numbers. Here, the `NSNumber` variable `val` will contain the integer value `5`:
 
 ```objc
 [MBVariableSpace instance][@"five"] = @(5);
 NSNumber* val = [MBExpression asNumber:@"$five"];
 ```
-
-The variable `val` will contain the integer value `5`.
 
 In the code above, the `@(5)` notation ensures that the Mockingbird variable is set to an `NSNumber` instance. However, the object instance that underlies a Mockingbird variable doesn't need to be an `NSNumber` in order for an expression to be evaluated numerically.
 
@@ -345,8 +345,8 @@ When an expression is evaluated in a boolean context, the Mockingbird expression
 
 Boolean operator|Purpose
 ----------------|-------
-*lVal* `-AND` *rVal* **or** *lVal* `&&` *rVal* | The **logical and** operator; evaluates *lVal* as a boolean expression and, if it is `true`, evaluates *rVal* as a boolean expression. The operator evaluates to `true` if and only if both *lVal* and *rVal* are `true`.
-*lVal* `-OR` *rVal* **or** *lVal* `||` *rVal* | The **logical or** operator; evaluates *lVal* and *rVal* as boolean expressions. The operator evaluates to `true` if either *lVal* or *rVal* are `true`.
+*lVal* `-AND` *rVal* **or** *lVal* `&&` *rVal* | The **logical and** operator; evaluates *lVal* as a boolean expression and, if it is `true`, evaluates *rVal* as a boolean expression. The operator evaluates to `true` if and only if both *lVal* and *rVal* are `true`.
+*lVal* `-OR` *rVal* **or** *lVal* `||` *rVal* | The **logical or** operator; evaluates *lVal* and *rVal* as boolean expressions. The operator evaluates to `true` if either *lVal* or *rVal* are `true`.
 `!`*rVal* | The **logical not** operator; evaluates *rVal* as a boolean expression and negates that value. The operator evaluates to `true` when *rVal* evaluates to `false` and vice-versa.
 
 Boolean operators can be combined into compound forms:
@@ -357,9 +357,9 @@ vars[@"catName"] = @"Barrett";
 BOOL isFemale = [MBExpression asBoolean:@"$catName -AND $catGenders[$catName] -AND $catGenders[$catName] == female"];
 ```
 
-In this example, `isFemale` would be `YES`.
+In this example, the `BOOL` variable `isFemale` would hold the value `YES`.
 
-> **Note:** Parenthetical grouping can also be used within boolean expressions to ensure specific evaluation logic.
+> Parenthetical grouping can also be used within boolean expressions to ensure specific evaluation logic.
 
 In addition to the expected boolean operators, a number of boolean comparators are supported as well.
 
@@ -367,12 +367,12 @@ Comparators rely on the standard `isEqual:` and `compare:` methods for their wor
 
 Boolean comparator|Purpose
 ----------------|-------
-*lVal* `-EQ` *rVal* **or** *lVal* `==` *rVal* | The **equal to** comparator. The operator evaluates to `true` when *lVal* and *rVal* are considered equivalent.
-*lVal* `-NE` *rVal* **or** *lVal* `!=` *rVal* | The **not equal to** comparator. The operator evaluates to `true` when *lVal* and *rVal* are not considered equivalent.
-*lVal* `-LT` *rVal* **or** *lVal* `<` *rVal* | The **less than** comparator. Evaluates to `true` when *lVal* is considered less than *rVal*.
-*lVal* `-LTE` *rVal* **or** *lVal* `<=` *rVal* **or** *lVal* `=<` *rVal* | The **less than or equal to** comparator. Evaluates to `true` when *lVal* is considered less than or equal to *rVal*.
-*lVal* `-GT` *rVal* **or** *lVal* `>` *rVal* | The **greater than** comparator. Evaluates to `true` when *lVal* is considered greater than *rVal*.
-*lVal* `-GTE` *rVal* **or** *lVal* `>=` *rVal* **or** *lVal* `=>` *rVal* | The **greater than or equal to** comparator. Evaluates to `true` when *lVal* is considered greater than or equal to *rVal*.
+*lVal* `-EQ` *rVal* **or** *lVal* `==` *rVal* | The **equal to** comparator. The operator evaluates to `true` when *lVal* and *rVal* are considered equivalent.
+*lVal* `-NE` *rVal* **or** *lVal* `!=` *rVal* | The **not equal to** comparator. The operator evaluates to `true` when *lVal* and *rVal* are not considered equivalent.
+*lVal* `-LT` *rVal* **or** *lVal* `<` *rVal* | The **less than** comparator. Evaluates to `true` when *lVal* is considered less than *rVal*.
+*lVal* `-LTE` *rVal* **or** *lVal* `<=` *rVal* **or** *lVal* `=<` *rVal* | The **less than or equal to** comparator. Evaluates to `true` when *lVal* is considered less than or equal to *rVal*.
+*lVal* `-GT` *rVal* **or** *lVal* `>` *rVal* | The **greater than** comparator. Evaluates to `true` when *lVal* is considered greater than *rVal*.
+*lVal* `-GTE` *rVal* **or** *lVal* `>=` *rVal* **or** *lVal* `=>` *rVal* | The **greater than or equal to** comparator. Evaluates to `true` when *lVal* is considered greater than or equal to *rVal*.
 
 For example:
 
@@ -416,13 +416,13 @@ if ([MBExpression asBoolean:@"$featureFlag"]) {
 
 The four expression types—*string*, *object*, *numeric* and *boolean*—all handle their input and output differently. Therefore, an expression evaluated in a *string context* may yield a different result from the same expression evaluated in an *boolean context*. Likewise, an expression that's valid in a *numeric context* might not be valid in any other context.
 
-For example, tokens like `-EQ`, `-LTE`, `-GT`, etc. are only valid in a boolean expression context. When encountered outside of a boolean context, the expression engine will treat those values as simple text literals. If you've got an expression that's not behaving as you expect, double-check that the expression context is what you assume it is.
+For example, tokens like `-EQ`, `-LTE`, `-GT`, etc. are only valid in a boolean expression context. When encountered outside of a boolean context, the expression engine will treat those values as text literals. If you've got an expression that's not behaving as you expect, double-check that the expression context is what you assume it is.
 
 Sometimes, you might want to mix contexts. For example, you might want to display a string in a `UILabel` that includes a mathematical calculation. Or you might want to display a message that contains some conditional text within it.
 
 ##### Forcing a Numeric Context
 
-You can embed a numeric expression within any other expression context using the notation: **`#(`** *numeric expression* **`)`**.
+You can embed a numeric expression within any other expression context using the notation: **`#(`** *numeric expression* **`)`**.
 
 For example:
 
@@ -444,7 +444,7 @@ When this notation is encountered, *boolean expression* is evaluated in the bool
 [MBExpression asString:@"You ^if($user.isAdmin|have|do not have) admin privileges"];
 ```
 
-The result of evaluating the expression above depends on the boolean value of the `$user.isAdmin` expression. If it evaluates to `true`, the return value will be "`You have admin privileges`"; otherwise, it will be "`You do not have admin privileges`".
+The result of evaluating the expression above depends on the boolean value of `$user.isAdmin`. If it evaluates to `true`, the return value will be "`You have admin privileges`"; otherwise, it will be "`You do not have admin privileges`".
 
 Because either *true result* or *false result* can be empty strings, the expression above could be rewritten slightly more succinctly while achieving the same result:
 
@@ -458,7 +458,7 @@ Which is also the logical equivalent of:
 [MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have admin privileges"];
 ```
 
-Note that the entire *false result* clause is optional. If the *false result* clause and the `|` (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
+Note that the entire *false result* clause is optional. If the *false result* clause and the '`|`' (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
 
 ```objc
 [MBExpression asObject:@"^if(F|hello)"];
@@ -476,15 +476,15 @@ For example, consider this string expression:
 It will cost $total for your $quantity tickets to the Ke$ha concert
 ```
 
-The `$` character signals the beginning of a variable reference, so while `$total` and `$quantity` are correctly recognized as variables, the text "`$ha`" in the name "`Ke$ha`" will be incorrectly interpreted as a variable reference.
+The '`$`' character signals the beginning of a variable reference, so while `$total` and `$quantity` are correctly recognized as variables, the text "`$ha`" in the name "`Ke$ha`" will be incorrectly interpreted as a variable reference.
 
 Assuming there is no value for `$ha`, the expression will yield a string that ends in "`Ke concert`" instead of the intended "`Ke$ha concert`".
 
 To avoid this problem, you can use *quoting* to ensure that portions of your expression are not evaluated.
 
-To quote a range of text within an expression, you would precede the text you want to quote with "`^q(`" and close it with "`)`". The text that appears within the parentheses is treated as a text literal and returned as-is when the expression containing the quote is evaluated.
+To quote a range of text within an expression, use the notation **`^q(`** *text to quote* **`)`**. The text that appears within the parentheses is treated as a text literal and returned as-is when the expression containing the quote is evaluated.
 
-A quoted form of the expression above is:
+A quoted form of the problematic expression above is:
 
 ```
 It will cost $total for your $quantity tickets to the ^q(Ke$ha) concert
@@ -502,7 +502,7 @@ For example, the string "`$$`" is an escape sequence representing the dollar-sig
 It will cost $total for your $quantity tickets to the Ke$$ha concert
 ```
 
-> **Note:** The expression engine is able to interpret escape sequences more efficiently than quoting, so if it is possible to represent what you need without using quoting, you should strive to do so.
+> The expression engine is able to interpret escape sequences more efficiently than quoting, so if it is possible to represent what you need without using quoting, you should strive to do so.
 
 The following escape sequences are supported:
 
@@ -511,22 +511,22 @@ Escape sequence|represents
 `$$`|`$`
 `##`|`#`
 `^^`|`^`
-`\n`|Newline character
-`\t`|Tab character
+`\n`|newline character
+`\t`|tab character
 
 #### Additional Variable Reference Notations
 
-So far, we've seen one form of variable reference notation: `$` followed by the name of a variable. This is called the *simple variable reference notation*.
+So far, we've seen one form of variable reference, the *simple variable reference*. This notation can be used only when the variable name is considered an *identifier*. Identifiers are names that are constructed as follows:
 
-This notation can be used when the variable name is considered an *identifier*. Identifiers are names that are constructed as follows:
+- The first character can be an uppercase or lowercase alphabet character or an underscore ('`_`').
 
-- The first character can be an uppercase or lowercase alphabetic character or an underscore ('`_`').
-
-- Subsequent characters can be uppercase or lowercase alphabetic characters, numeric digits, underscores ('`_`'), hyphens ('`-`'), or colons ('`:`').
+- Subsequent characters can be uppercase or lowercase alphabet characters, numeric digits, underscores ('`_`'), hyphens ('`-`'), or colons ('`:`').
 
 In some cases, the simple notation can't be used to reference a given variable because the name of the variable is not a valid identifier.
 
 In other cases, you may want to ensure that the parser recognizes a boundary between a variable name and a literal or another expression.
+
+Additional variable reference notations are provided for these situations.
 
 ##### Curly-Brace Notation
 
@@ -534,9 +534,9 @@ The curly-brace variable reference notation can be used to prevent the expressio
 
 The curly-brace notation is similar to the simple notation in that it only accepts variable names that are also valid identifiers. The expressions `$userName` and `${userName}` both refer to the same variable, but they cause the expression evaluator to treat the characters following the variable name differently.
 
-Let's say you have a variable called `lastName` that contains a person's surname, and you want to construct a message such as "How are the Butterfields doing?" that refers to the surname in the plural form.
+Let's say you have a variable `$lastName` that contains a person's surname, and you want to construct a message such as "How are the Butterfields doing?" that refers to the surname in the plural form.
 
-You couldn't use the unquoted notation (eg., "`How are the $lastNames doing?`") because the '`s`' at the end of `$lastName` would be interpreted as part of the variable name. Instead of referencing the variable `lastName` followed by the character literal '`s`', the expression actually references an entirely different variable called `lastNames`.
+You couldn't use the unquoted notation (eg., "`How are the $lastNames doing?`") because the '`s`' that follows `$lastName` would be interpreted as part of the variable name. Instead of referencing the variable `$lastName` followed by the character literal '`s`', the expression actually references an entirely different variable: `$lastNames`.
 
 The curly-brace notation allows you to separate the variable reference from any surrounding text that should be considered a literal. Using this notation, the expression can be written as:
 
@@ -544,7 +544,7 @@ The curly-brace notation allows you to separate the variable reference from any 
 How are the ${lastName}s doing?
 ```
 
-This expression will be interpreted as the text literal "`How are the `" followed by a reference to the Mockingbird variable `lastName`, followed by another text literal, "`s doing?`".
+This expression will be interpreted as the text literal "`How are the `" followed by the value of `$lastName`, followed by another text literal, "`s doing?`".
 
 ##### Bracket Notation
 
@@ -598,7 +598,7 @@ MBML functions allow native Objective-C code to be called from within Mockingbir
 
 When an expression containing a function call is evaluated, the implementing method of the function is executed, and the value returned by the method (if any) is yielded by the function. Values returned by function implementations can then be manipulated further within an expression.
 
-Function calls begin with a caret character ('`^`'), followed by the name of the function, and end in a list of zero or more pipe-separated parameters surrounded by parentheses. Function names must be valid Mockingbird *identifiers*.
+Function calls begin with a caret character ('`^`'), followed by the name of the function, and end in a list of zero or more pipe-separated parameters surrounded by parentheses.
 
 For example, to call a function that creates an array, you could write:
 
@@ -622,7 +622,7 @@ The Mockingbird Data Environment ships with nearly 200 functions built in, and y
 
 The list of included functions can be seen in [the `MBDataEnvironmentModule.xml` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml); they are declared using the `<Function ... />` tag.
 
-The documentation for the functions themselves can be found alongside that of their implementing methods in the following classes:
+The functions are documented within their implementing classes:
 
 - [`MBMLCollectionFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLCollectionFunctions.html)
 - [`MBMLDataProcessingFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDataProcessingFunctions.html)
@@ -646,7 +646,7 @@ To learn how MBML functions are implemented, see [the `MBMLFunction` class docum
 
 The state of the `MBEnvironment` can be modified through the use of MBML files.
 
-MBML is an XML-based language that provides a mechanism for declaring new variable values, functions, and other state. If there are certain variables or functions that you always want present in the environment, you can use MBML to do it.
+MBML is an XML-based document format that provides a mechanism for declaring new variable values, functions, and other state. If there are certain variables or functions that you always want present in the environment, you can declare them in MBML.
 
 ### The Manifest File
 
@@ -670,11 +670,11 @@ The outermost XML tag in an MBML document is the `<MBML>` tag. Within this tag a
 </MBML>
 ```
 
-The `modules` attribute is optional. If present, the attribute's value may be a comma-separated list of classes conforming to [the `MBModule` protocol](https://rawgit.com/emaloney/MBToolbox/master/Documentation/html/Protocols/MBModule.html). These classes represent *modules* providing additional functionality to Mockingbird that will be loaded along with the environment.
+The `modules` attribute is optional. If present, the attribute's value may be a comma-separated list of classes conforming to [the `MBModule` protocol](https://rawgit.com/emaloney/MBToolbox/master/Documentation/html/Protocols/MBModule.html). Modules provide additional functionality to the Mockingbird Data Environment and are loaded loaded along with the environment.
 
 Modules can hook into the MBML parsing process, allowing new tags to be introduced to the language. For example, [the MBEventHandling project](https://github.com/emaloney/MBEventHandling) adds the ability to listen for `NSNotification` events and perform actions in response. The *listeners* and *actions* are declared through MBML tags that have been added by the `MBEventHandlingModule`.
 
-To include this module, you would need to ensure that the `MBEventHandling` code was linked to your application, typically by ensuring that it is included in your `Podfile`. Once you've got the module linked to your code, you can specify the module in your opening `<MBML>` tag:
+To include this module, the `MBEventHandling` code would need to be linked to your application, typically by including it in your `Podfile`. Then, you can specify the module in the manifest file's opening `<MBML>` tag:
 
 ```xml
 <MBML modules="MBEventHandlingModule">
@@ -684,7 +684,7 @@ To include this module, you would need to ensure that the `MBEventHandling` code
 
 While any included modules may introduce additional MBML declarations, by itself, the Mockingbird Data Environment includes the ability to declare:
 
-* *Includes* — The manifest file is so named because in a larger application, it's a best practice to break discrete parts of the application into separate MBML files that are *included* from the manifest.
+* *Includes* — The manifest file is so named because in a larger application, it's a best practice to break discrete parts of the application into separate MBML files that are *included* from the manifest. Include declarations specify the MBML files that should be included when the environment is loaded.
 
 * *Variables* — Values for Mockingbird variables can be set in MBML.
 
@@ -692,7 +692,13 @@ While any included modules may introduce additional MBML declarations, by itself
 
 #### Includes
 
-An MBML file can *include* another file. When a file is included, any declarations contained within that file are processed as though they were declared within the including file at the point where the inclusion occurred.
+An MBML file can *include* another file. When a file is included, any declarations contained within that file are processed as though they were declared within the including file at the point where the `<Include>` tag was encountered.
+
+The `<Include>` tag requires the `file` attribute and accepts an optional `if` attribute:
+
+* The `file` attribute specifies the name of the MBML file being included.
+
+* If present, the value of the `if` attribute will be evaluated as a boolean expression, and the specified file will be included only if the expression evaluates to `true`.
 
 For example:
 
@@ -701,23 +707,17 @@ For example:
 <Include file="landing.xml"/>
 ```
 
-The `<Include>` tag requires a value for the `file` attribute, while the `if` is optional:
-
-* The `file` attribute must specify the name of the MBML file being included.
-
-* If present, the value of the `if` attribute will be evaluated as a boolean expression, and the file will be included only if the expression evaluates to `true`.
-
-In the example above, the `onboarding.xml` file will be included only if the value of the `$isFirstLaunch` variable evaluates to `true` in a boolean context, while the `landing.xml` file is included unconditionally. And if `onboarding.xml` *is* included, any declarations contained within will be processed before any declarations from `landing.xml`.
+According to the declarations above, the `onboarding.xml` file will be included only if the value of `$isFirstLaunch` evaluates to `true` in a boolean context, while the `landing.xml` file is included unconditionally. And if `onboarding.xml` *is* included, any declarations contained within will be processed before any declarations from `landing.xml`.
 
 #### Variables
 
-The `<Var>` tag can be used to declare values for Mockingbird variables.
+The `<Var>` tag is used to declare values for Mockingbird variables.
 
 Three types of variable declarations are possible:
 
-* *Concrete* — A *variable name* is associated with an Objective-C object instance, which represents the concrete variable's *value*. A concrete variable's value is set when its declaration is processed.
+* *Concrete* — A *variable name* is associated with an Objective-C object instance, which represents the concrete variable's *value*. A concrete variable's initial value is set when its declaration is processed.
 
-* *Singleton* — A *variable name* is associated with a class method that returns a singleton object instance. The object returned by that method represents the singleton variable's *value*. A singleton variable's value is set when its declaration is processed.
+* *Singleton* — A *variable name* is associated with a class method that returns a singleton object instance. The object returned by that method represents the singleton variable's *value*. A singleton variable's value is set once, when its declaration is processed.
 
 * *Dynamic* — A *variable name* is associated with a Mockingbird expression. Whenever the variable is referenced, the associated expression is evaluated, and the value it yields represents the dynamic variable's *value*.
 
@@ -727,17 +727,15 @@ The `<Var>` tag provides support for specifying explicit values for types such a
 
 Additional types can also be created using MBML functions, and values from other sources can be referenced through Mockingbird expressions.
 
-> **Note:** Concrete variable values are set immediately when the `<Var>` tag is encountered as an MBML file is processed. This means that any values referenced by `<Var>` tag expressions must already be present in the environment. Because MBML is processed from the top of the document down, a `<Var>` tag can reference any value declared above it (or declared in any file included above it).
-
 Concrete literal string values can be specified using the `literal` attribute. Within a literal string, expressions are not evaluated, so there's no need to perform any escaping. For example:
 
 ```xml
 <Var name="currency" literal="$USD"/>
 ```
 
-The declaration above sets the value of the Mockingbird variable named `price` to an `NSString` containing the text "`$USD`".
+The declaration above sets `$currency` to an `NSString` containing "`$USD`".
 
-If literals won't suffice, you can instead use the `value` attribute along with expressions to set a specific value when the variable is declared:
+If literals won't suffice, you can use the `value` attribute along with an expression that sets a specific value when the variable is declared:
 
 ```xml
 <Var name="price" value="#(99.99)"/>
@@ -745,11 +743,13 @@ If literals won't suffice, you can instead use the `value` attribute along with 
 <Var name="appLaunchTime" value="^currentTime()"/>
 ```
 
-Because the value in the first line above is wrapped within the **`#(`** ... **`)`** notation, it is evaluated as a numeric expression. As a result, the `price` variable is set to an `NSNumber` containing the value `99.99`.
+Because the value in the first line above is wrapped within the `#(` ... `)` notation, it is evaluated as a numeric expression. As a result, `$price` is set to an `NSNumber` containing the value `99.99`.
 
 In the second line, the `value` attribute contains an expression referencing two values: `${currency}` and `${price}`. Whenever more than one value is referenced at the top level of an expression, string interpolation is used, so the resulting value is guaranteed to be an `NSString`. The underlying value will be the string "`$USD99.99`".
 
-The third line shows the `appLaunchTime` variable being set to the value yielded by the `^currentTime()` function, which will be an `NSDate`.
+The third line shows `$appLaunchTime` being set to the value yielded by the `^currentTime()` function, which will be an `NSDate`.
+
+> MBML is processed from the top of the document down. As a result, a `<Var>` declaration can reference any value declared above it (or in an already-included file). However, attempts to reference variables whose declarations haven't yet been processed will fail.
 
 Variables can be declared with boolean values using the `boolean` attribute:
 
@@ -759,9 +759,9 @@ Variables can be declared with boolean values using the `boolean` attribute:
 
 The `boolean` attribute's value is evaluated as a boolean expression, and the result is used as the variable's value.
 
-In the example above, the `useLargeImageSizes` variable would be set to `true` if and only if `$Network.isWifiConnected` and `$Device.isRetina` both evaluate to `true`.
+In the example above, `$useLargeImageSizes` would be set to `true` if and only if `$Network.isWifiConnected` and `$Device.isRetina` both evaluate to `true`.
 
-> **Note:** In an actual application, the `useLargeImageSizes` variable should be declared as a *dynamic variable*, not a *concrete variable*. That's because concrete variable values are set when the `<Var>` tag is processed. However, the state of the `$Network.isWifiConnected` value may change while the application is running. Those changes won't be reflected in the value of `$useLargeImageSizes` as it is declared above, because that value is be set once when the MBML is loaded. See the **Dynamic Variables** section below for an example of how to declare `useLargeImageSizes` as a dynamic variable.
+> In an actual application, `$useLargeImageSizes` should be declared as a *dynamic variable*, not a *concrete variable*. See the [**Dynamic Variables**](#dynamic-variables) section below for an explanation why.
 
 Arrays can be declared using the `type="list"` attribute. One such use might be to declare a list of U.S. states:
 
@@ -789,19 +789,19 @@ Mappings—which are `NSDictionary` instances—can be declared similarly, using
 
 In the resulting `NSDictionary`, the value of the `name` attribute specifies the *dictionary key* while the value of the `literal` attribute specifies the associated *dictionary value*.
 
-> **Note:** Although shown above with only `literal` attributes, the nested `<Var>`s within a list or map can also take either a `boolean` or a `value` attribute instead of the `literal`.
+> Although shown above with only `literal` attributes, the nested `<Var>`s within a list or map can also take either a `boolean` or a `value` attribute instead.
 
 ##### Singleton Variables
 
-You can use `<Var>` declaration with a `type="singleton"` attribute to expose singleton object instances to the Mockingbird Data Environment:
+You can use `<Var>` declaration with a `type="singleton"` attribute to expose singleton object instances to the Mockingbird Data Environment.
+
+The singleton declaration requires a `class` attribute that specifies the name of the class vending the singleton instance, and a `method` attribute that specifies the name of a no-argument class method that returns the singleton instance.
 
 ```xml
 <Var name="UIApplication" type="singleton" class="UIApplication" method="sharedApplication"/>
 ```
 
-The singleton declaration requires a `class` attribute to specify the name of the class that vends the singleton instance, and a `method` attribute that specifies the name of a no-argument class method that returns the singleton instance.
-
-The declaration above, which can be found in [the `MBDataEnvironmentModule.xml` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml), exposes the value returned by the `[UIApplication sharedApplication]` class method through the Mockingbird variable named `UIApplication`. This allows you to reference the `UIApplication` singleton object using the Mockingbird expression `$UIApplication`.
+The declaration above, which can be found in [the `MBDataEnvironmentModule.xml` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml), exposes the value returned by  `[UIApplication sharedApplication]` through the variable `$UIApplication`.
 
 Because the value of the singleton variable is set when the `<Var>` tag is processed, this type of variable declaration should only be used for true singletons, which must behave as follows:
 
@@ -813,15 +813,15 @@ Because the value of the singleton variable is set when the `<Var>` tag is proce
 
 Dynamic variables associate an *expression* with a variable name rather than a specific *value*. When a dynamic variable is referenced, Mockingbird evaluates the associated expression, and the value yielded by that expression becomes the value yielded by the dynamic variable.
 
-In the **Concrete Variables** section above, we saw the following declaration for the `useLargeImageSizes` variable:
+In the [**Concrete Variables**](#concrete-variables) section above, we saw the following declaration for `$useLargeImageSizes`:
 
 ```xml
 <Var name="useLargeImageSizes" boolean="$Network.isWifiConnected -AND $Device.isRetina"/>
 ```
 
-Because this declaration is not dynamic, the value of the `useLargeImageSizes` variable is set once, when the `<Var>` tag is processed. The value of `useLargeImageSizes` will therefore always reflect the value yielded by the `$Network.isWifiConnected` expression when the MBML was first loaded.
+Because this declaration is not dynamic, `$useLargeImageSizes` is set when the `<Var>` tag is processed. The value of `$useLargeImageSizes` will therefore always reflect whatever the value of `$Network.isWifiConnected` was when the MBML was first loaded.
 
-What we really want is for `$useLargeImageSizes` to reflect the *current value* of `$Network.isWifiConnected` whenever `$useLargeImageSizes` is referenced. To do that, we would simply declare `useLargeImageSizes` as a *dynamic variable* using the `type="dynamic"` attribute:
+What we want is for `$useLargeImageSizes` to always reflect the *current* value of `$Network.isWifiConnected`. To do that, we would simply declare `$useLargeImageSizes` as a *dynamic variable*:
 
 ```xml
 <Var name="useLargeImageSizes" type="dynamic" boolean="$Network.isWifiConnected -AND $Device.isRetina"/>
@@ -834,11 +834,11 @@ To understand the difference between concrete variables and dynamic variables, c
 <Var name="alwaysNow" type="dynamic" value="^currentTime()"/>
 ```
 
-These two declarations associate a variable with the `NSDate` returned by the `^currentTime()` MBML function.
+These two declarations both associate a variable with the `NSDate` returned by the `^currentTime()` function.
 
-However, the concrete declaration of `inThePast` ensures that the expression contained in the `value` attribute is evaluated just once, when the variable is declared. Any time `$inThePast` is referenced, the value will be the same.
+However, the concrete declaration of `$inThePast` ensures that the expression contained in the `value` attribute is evaluated just once, when the variable is declared. Unless the underlying value is explicitly changed, any time `$inThePast` is referenced, the value will be the same as it was when the declaration was originally processed.
 
-The `alwaysNow` variable works differently: the expression contained in the `value` attribute is evaluated whenever the `$alwaysNow` is referenced. So the value of `$alwaysNow` will always yield an `NSDate` that was just fetched from a call to the `^currentTime()` function.
+The `$alwaysNow` variable works differently: the expression contained in the `value` attribute is evaluated whenever `$alwaysNow` is referenced. So the value of `$alwaysNow` will always yield an `NSDate` that was freshly fetched from a call to the `^currentTime()` function.
 
 #### Functions
 
