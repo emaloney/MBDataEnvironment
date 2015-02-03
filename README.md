@@ -4,57 +4,96 @@
 
 This repository hosts the Mockingbird Data Environment, an open-source project from Gilt Groupe that builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) project to provide a dynamic data processing engine for iOS applications.
 
+The Mockingbird Data Environment allows arbitrary data models and object graphs to be assigned *names* and stored in a *variable space* from which values can be extracted using *expressions*.
+
+The Mockingbird Data Environment is particularly suited for building applications that can adapt to changes in server-side data models.
+
 **Master branch status:**
 
 [![Build Status](https://travis-ci.org/emaloney/MBDataEnvironment.svg?branch=master)](https://travis-ci.org/emaloney/MBDataEnvironment)
 
 ## About the Mockingbird Data Environment
 
-The Mockingbird Data Environment allows arbitrary data models and object graphs to be assigned *names* and stored in a *variable space* from which values can be extracted using *expressions*.
+It is a common scenario for iOS developers to have a population of users running old application versions. In some cases, users are stuck on old versions because their hardware can't run the latest operating systems and applications, and they're not going to be upgrading any time soon.
 
-The Mockingbird Data Environment is particularly suited for building applications that can adapt to changes in server-side data models.
+For some types of apps, this isn't a big problem. But for apps that must communicate with network-based services, having a wide variety of old versions out in the wild makes it difficult evolve your services.
 
-It is a common scenario for iOS developers to have users running old application versions. Some users simply don't update their apps, while others are running hardware that can't run the latest operating systems and application versions.
-
-For some types of apps, this isn't a big problem. But for apps that must communicate with network-based services, having lots of old versions out in the wild makes it difficult evolve your services.
-
-Eventually, you will be faced with accepting one of these three less-than-ideal decisions:
+Eventually, you will be faced with accepting one of these tradeoffs:
 
 * Do you drop support for old versions, knowing that there's a risk of severing valuable relationships with some of your users?
 
 * Do you take on the expense and difficulty of maintaining and operating a growing number of legacy backend services over time?
 
-* Or do you resign yourself to never evolving your backend systems?
+* Or do you resign yourself to never evolving your backend systems—or doing it much more slowly than you'd like?
 
-The purpose of the Mockingbird Data Environment is to allow you to avoid having to choose one of these goals at the expense of the others.
+The purpose of the Mockingbird Data Environment is to free you from having to choose one of these goals at the expense of the others.
 
 #### The Root of the Problem
 
-The way iOS applications are typically architected, the server defines the canonical data model and native client code is used to implement the logic required to extract meaningful information from that data.
+The way iOS applications are typically architected, the server defines the canonical data model and native client code is written to implement the logic required to extract meaningful information from that data.
 
 The problem with this architecture is that *both* the client *and* the server require intimate knowledge of the data schema.
 
-Some have attempted to address this with solutions that automatically generate client code from data schemas. While this is undoubtedly convenient and time-saving, the original problem remains: the knowledge of the data format is *compiled in* to the client application and can't be changed. You're still going to end up with some users running very old versions that will want to communicate with your services.
+Some have attempted to address this with solutions that automatically generate client code from data schemas. While this is undoubtedly convenient and time-saving, the original problem remains: the knowledge of the data format must be *compiled in* to the client application and therefore can't be changed. You're still going to end up with some users running very old versions that will want to communicate with your services.
 
-Ideally, there would be only *one* place where knowledge of a data model would need to live. The long tail of legacy applications gives us one big reason for that knowledge *not* to be hard-coded into the client, so it stands to reason that we should look to a server-driven solution. After all, the server *must* maintain knowledge of the data structure anyway—it is responsible for creating that data structure in the first place.
+Ideally, there would be only *one* place where knowledge of a data model would need to live. The long tail of legacy applications gives us a compelling reason to avoid having that knowledge hard-coded into the client, so it stands to reason that we should look to a server-driven solution. After all, the server *must always* maintain knowledge of the data structure anyway—it is responsible for generating that structure in the first place.
 
-But if you think about what a client application really cares about, it's not the details of a data structure, it's specific bits of information embedded in that data structure. The data structure is merely a byproduct of the application's need to communicate with the server.
+But if you think about what a client application really needs to know, it's not the details of a data structure, it's specific bits of information embedded within that data structure. The data structure is merely a byproduct of the application's need to communicate with the server.
 
 An app might be interested in a product list, for example, but the fact that the product list is assembled from data three levels down in a particular JSON structure is incidental.
 
 #### The Solution
 
-The Mockingbird Data Environment allows you to build apps where the server can host the logic required to navigate the data structures it returns. Services can return a data model and also a set of expressions needed to extract meaningful information from that data model.
+The Mockingbird Data Environment allows you to build apps where the server can host the logic required to navigate the data structures it returns. Services can return a data model and also a set of *expressions* used to extract meaningful information from that data model.
+
+Essentially, the server's response tells the client application, "Here's a data structure containing the information you need, and here's how you pick out the parts that are relevant to you."
 
 Because everything is hosted on the server—both the data model and the knowledge of how to interpret that data model—every installed copy of your app can automatically adapt to new data models whenever you choose to deploy them.
 
 You won't need to resubmit your app for review every time you choose to change how your services communicate, and you don't need to run multiple versions of your backend to support legacy versions of your app.
 
-You will be able to evolve your services on your own schedule, and when you do, long-forgotten versions of your app will just keep working. 
-
-Let the Mockingbird Data Environment decouple your native code from the details of your server-side data.
+Let the Mockingbird Data Environment decouple your native code from the details of your server-side data, and you will be able to evolve your services on your own schedule while long-forgotten versions of your app will just keep on working.
 
 > This technique was discussed in more detail at the [iOSoho Developer's Symposium](http://www.meetup.com/iOSoho/events/181963632/) meetup on August 11th, 2014. ([Slides available at the Gilt Tech blog](http://tech.gilt.com/post/94663143169/handling-changes-to-your-server-side-data-model).)
+
+## Table of Contents
+
+1. [Integrating with your project](#integrating-with-your-project)
+2. [Initializing the Mockingbird Data Environment](#initializing-the-mockingbird-data-environment)
+3. [An Introduction to Mockingbird Expressions](#an-introduction-to-mockingbird-expressions)
+  1. [Evaluating Expressions](#evaluating-expressions)
+    1. [String Expressions](#string-expressions)
+    2. [Object Expressions](#object-expressions)
+    3. [Numeric Expressions](#numeric-expressions)
+    4. [Boolean Expressions](#boolean-expressions)
+    5. [Expression Contexts](#expression-contexts)
+      1. [Forcing a Numeric Context](#forcing-a-numeric-context)
+      2. [Forcing a Boolean Context](#forcing-a-boolean-context)
+      3. [Quoting](#quoting)
+      4. [Escape Sequences](#escape-sequences)
+    6. [Additional Variable Reference Notations](#additional-variable-reference-notations)
+      1. [Curly-Brace Notation](#curly-brace-notation)
+      2. [Bracket Notation](#bracket-notation)
+      3. [Parentheses Notation](#parentheses-notation)
+    7. [Variable Notation Summary](#variable-notation-summary)
+  2. [MBML Functions](#mbml-functions)
+    1. [Debugging Expressions](#debugging-expressions)
+    2. [MBML Functions for Debugging](#mbml-functions-for-debugging)
+    3. [Evaluating Expressions in the Xcode Debugger](#evaluating-expressions-in-the-xcode-debugger)
+4. [An Introduction to MBML Files](#an-introduction-to-mbml-files)
+  1. [The Manifest File](#the-manifest-file)
+  2. [The Structure of an MBML File](#the-structure-of-an-mbml-file)
+  3. [Types of MBML declarations](#types-of-mbml-declarations)
+    1. [Includes](#includes)
+    2. [Variables](#variables)
+      1. [Concrete Variables](#concrete-variables)
+      2. [Singleton Variables](#singleton-variables)
+      3. [dynamic variables](#dynamic-variables)
+    3. [Functions](#functions)
+5. [Further Reading](#further-reading)
+6. [About Mockingbird Library](#about-mockingbird-library)
+  1. [Acknowledgements](#acknowledgements)
+  2. [Copyright & License](#copyright--license)
 
 ## Integrating with your project
 
@@ -70,7 +109,7 @@ Once you've got CocoaPods up and running, you can add the Mockingbird Data Envir
 pod 'MBDataEnvironment'
 ```
 
-After you've added `MBDataEnvironment` to your `Podfile`, you can then install the CocoaPod from the command line. From within your project directory, issue the command:
+You can then install the CocoaPod by issuing the following command from within your project directory:
 
 ```bash
 pod install
@@ -127,9 +166,9 @@ Depending on the context, Mockingbird expressions can contain:
  - boolean logic expressions
  - function calls
 
-The process of resolving an expression to yield the specific value(s) it references is called _evaluation_. During evaluation, literals are passed through untouched, but any expression tokens encountered are replaced with the values they represent at that time.
+The process of resolving an expression to yield the specific value(s) it references is called _evaluation_. During evaluation, literals are passed through untouched, but any expression tokens encountered are replaced with the values they represent at evaluation time.
 
-The primary interface for evaluating expressions is through several `MBExpression` class methods:
+The primary API for evaluating expressions is through several [`MBExpression` class methods](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBExpression.html):
 
 Expressions yielding|are evaluating using
 --------------------|--------------------
@@ -149,13 +188,13 @@ One possible use of a Mockingbird expression is to perform string replacement wh
 
 In the code above, the `text` property of the `greeting` label will be set to the result of evaluating the *string expression* `Hello, $userName!`.
 
-This particular expression consists of three parts: a text literal ("`Hello, `") followed by a reference to a Mockingbird variable called `userName`, followed by another text literal ("`!`").
+This particular expression consists of three parts: a text literal ("`Hello, `") followed by a reference to the Mockingbird variable `userName`, followed by another text literal ("`!`").
 
 When the expression is evaluated, the "`$userName`" portion of the expression is replaced by the value of the `userName` variable in the active *variable space*.
 
 If the value of `userName` is "`Cooper`", then the label would display the text "`Hello, Cooper!`".
 
-> In this documentation, the notation `$variableName` can be read as either "the variable named *variableName* in the active variable space" or "*a reference to the value of* the variable named *variableName* in the active variable space", depending on the context.
+> In this documentation, the notation `$variableName` can be read as either "the variable named *variableName* in the active variable space," or "a reference to the value of the variable named *variableName* in the active variable space," depending on the context.
 
 #### The Variable Space
 
@@ -197,7 +236,7 @@ The most basic non-literal expression form is a *simple variable reference*, whe
 $cats
 ```
 
-When an object is made available through the variable space, not only does the object instance itself become accessible using an expression, so do its properties, any values addressable using key-value coding (KVC), and—if it's an array or dictionary—its contents.
+When an object is made available through the variable space, not only does the object instance itself become accessible using an expression, so do its properties, any values addressable using key-value coding (KVC), and—if the object in question is an array or dictionary—its contents.
 
 You can access these sub-values through *variable subreferences*, which can take one of two forms: dot accessors and bracket accessors.
 
@@ -243,7 +282,7 @@ For example:
                                               @"Gabby":   @"female"}];
 ```
 
-In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with `$catGenders`.
+In the code above, we've created a dictionary containing a mapping of cat names to genders, and we've associated it with the variable `$catGenders`.
 
 To access the gender of any specific cat, we could use the bracket notation to yield the value associated with the given dictionary key:
 
@@ -267,7 +306,7 @@ NSString* gender = [MBExpression asString:@"$catGenders[Barrett]"];
 
 This evaluates the expression `$catGenders[Barrett]` as a string, ensuring that the return value will either be an `NSString` or `nil`.
 
-In this particular case, the `NSString` variable `gender` would contain the string value "`female`".
+In this particular case, the `NSString` variable `gender` would contain the value "`female`".
 
 > If the underlying object isn't an `NSString` instance, a reasonable attempt will be made to coerce the value into a string.
 
@@ -285,13 +324,13 @@ NSString* barrett = [MBExpression asString:@"Barrett is a $catGenders[Barrett] c
 
 Here, the strings "`Barrett is a `" and "` cat.`" are text literals, while "`$catGenders[Barrett]`" is a variable reference.
 
-Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, that's the string "`female`".
+Because the string "`$catGenders[Barrett]`" represents a variable reference, it gets replaced with its underlying value; in this case, the string "`female`".
 
 The resulting value of the `NSString` variable `barrett` is "`Barrett is a female cat.`"
 
 #### Object Expressions
 
-If you have, say, an `NSArray` or an `NSDictionary` in the variable space (as is the case with `$catGenders`), you can retrieve the underlying object value by evaluating an expression referencing it *as an object expression*:
+If you have, say, an `NSArray` or an `NSDictionary` in the variable space (as is the case with `$catGenders`), you can retrieve the underlying object value using an *object expression*:
 
 ```objc
 NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
@@ -341,7 +380,7 @@ Because the Mockingbird expression engine will attempt to convert the value of a
 
 #### Boolean Expressions
 
-When an expression is evaluated in a boolean context, the Mockingbird expression engine recognizes an additional set of operators and comparators to make boolean logic possible:
+When an expression is evaluated in a *boolean context*, the Mockingbird expression engine recognizes an additional set of operators and comparators to make boolean logic possible:
 
 Boolean operator|Purpose
 ----------------|-------
@@ -416,7 +455,9 @@ if ([MBExpression asBoolean:@"$featureFlag"]) {
 
 The four expression types—*string*, *object*, *numeric* and *boolean*—all handle their input and output differently. Therefore, an expression evaluated in a *string context* may yield a different result from the same expression evaluated in an *boolean context*. Likewise, an expression that's valid in a *numeric context* might not be valid in any other context.
 
-For example, tokens like `-EQ`, `-LTE`, `-GT`, etc. are only valid in a boolean expression context. When encountered outside of a boolean context, the expression engine will treat those values as text literals. If you've got an expression that's not behaving as you expect, double-check that the expression context is what you assume it is.
+For example, tokens like `-EQ`, `-LTE`, `-GT`, etc. are only valid in a boolean expression context. When encountered outside of a boolean context, the expression engine will treat those values as text literals. 
+
+> If you've got an expression that's not behaving as you expect, double-check that the expression context is what you assume it is. See [**Debugging Expressions**](#debugging-expressions) below for tips on diagnosing problematic expressions.
 
 Sometimes, you might want to mix contexts. For example, you might want to display a string in a `UILabel` that includes a mathematical calculation. Or you might want to display a message that contains some conditional text within it.
 
@@ -430,21 +471,21 @@ For example:
 [MBExpression asString:@"There are #(10 - 3) days in the week."];
 ```
 
-In this example, the expression consists of three components: the text literal "`There are `", then the numeric expression `#(10 - 3)`, followed by another text literal: "` days in the week.`".
+This expression consists of three components: the text literal "`There are `", then the numeric expression `#(10 - 3)`, followed by another text literal: "` days in the week.`".
 
-As usual, the text literals are returned as-is, but the numeric expression is evaluated as such, resulting in the value `7`. So, the expression above would return the value `"There are 7 days in the week."`
+As usual, the text literals are returned as-is, but the numeric expression is evaluated as such, resulting in the value `7`. So, the expression above would return the string `"There are 7 days in the week."`
 
 ##### Forcing a Boolean Context
 
 You can evaluate a boolean expression within a non-boolean context using the notation: **`^if(`** *boolean expression* **`|`** *true result* [ **`|`** *false result* ] **`)`**. 
 
-When this notation is encountered, *boolean expression* is evaluated in the boolean context, and based on the resulting value, either *true result* or *false result* is returned.
+When this notation is encountered, *boolean expression* is evaluated in the boolean context, and based on the result, either *true result* or *false result* is returned.
 
 ```objc
 [MBExpression asString:@"You ^if($user.isAdmin|have|do not have) admin privileges"];
 ```
 
-The result of evaluating the expression above depends on the boolean value of `$user.isAdmin`. If it evaluates to `true`, the return value will be "`You have admin privileges`"; otherwise, it will be "`You do not have admin privileges`".
+The value yielded by the expression above depends on the *boolean context value* of `$user.isAdmin`. If it evaluates to `true`, the return value will be "`You have admin privileges`"; otherwise, it will be "`You do not have admin privileges`".
 
 Because either *true result* or *false result* can be empty strings, the expression above could be rewritten slightly more succinctly while achieving the same result:
 
@@ -458,13 +499,13 @@ Which is also the logical equivalent of:
 [MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have admin privileges"];
 ```
 
-Note that the entire *false result* clause is optional. If the *false result* clause and the '`|`' (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
+Note that the entire *false result* clause is optional. If the *false result* clause and the `|` (pipe character) that precedes it are omitted, `nil` is returned when the *boolean expression* evaluates to `false`:
 
 ```objc
 [MBExpression asObject:@"^if(F|hello)"];
 ```
 
-The expression above will always return `nil` because in a boolean context, the uppercase letter '`F`' represents the boolean constant `false`. (In all other contexts, '`F`' is simply a text literal with no special meaning.)
+The expression above will always return `nil` because in a boolean context, the uppercase letter `F` represents the boolean constant `false`. (In all other contexts, `F` is simply a text literal with no special meaning.)
 
 ##### Quoting
 
@@ -476,7 +517,7 @@ For example, consider this string expression:
 It will cost $total for your $quantity tickets to the Ke$ha concert
 ```
 
-The '`$`' character signals the beginning of a variable reference, so while `$total` and `$quantity` are correctly recognized as variables, the text "`$ha`" in the name "`Ke$ha`" will be incorrectly interpreted as a variable reference.
+The `$` character signals the beginning of a variable reference, so while `$total` and `$quantity` are correctly recognized as variables, the text "`$ha`" in the name "`Ke$ha`" will be incorrectly interpreted as a variable reference.
 
 Assuming there is no value for `$ha`, the expression will yield a string that ends in "`Ke concert`" instead of the intended "`Ke$ha concert`".
 
@@ -484,8 +525,7 @@ To avoid this problem, you can use *quoting* to ensure that portions of your exp
 
 To quote a range of text within an expression, use the notation **`^q(`** *text to quote* **`)`**. The text that appears within the parentheses is treated as a text literal and returned as-is when the expression containing the quote is evaluated.
 
-A quoted form of the problematic expression above is:
-
+Here's how quoting can be used to fix the expression above:
 ```
 It will cost $total for your $quantity tickets to the ^q(Ke$ha) concert
 ```
@@ -496,13 +536,11 @@ When this expression is evaluated, the string returned will correctly contain th
 
 A technique similar to quoting is to use *escape sequences* to represent a character that can't be represented by itself.
 
-For example, the string "`$$`" is an escape sequence representing the dollar-sign character '`$`'. Just as quoting was used to ensure that "`Ke$ha`" was handled correctly, this escape sequence could also be used:
+For example, the string "`$$`" is an escape sequence representing the dollar-sign character `$`. Just as quoting was used to ensure that "`Ke$ha`" was handled correctly, this escape sequence could also be used:
 
 ```
 It will cost $total for your $quantity tickets to the Ke$$ha concert
 ```
-
-> The expression engine is able to interpret escape sequences more efficiently than quoting, so if it is possible to represent what you need without using quoting, you should strive to do so.
 
 The following escape sequences are supported:
 
@@ -518,9 +556,9 @@ Escape sequence|represents
 
 So far, we've seen one form of variable reference, the *simple variable reference*. This notation can be used only when the variable name is considered an *identifier*. Identifiers are names that are constructed as follows:
 
-- The first character can be an uppercase or lowercase alphabet character or an underscore ('`_`').
+- The first character can be an uppercase (`A-Z`) or lowercase (`a-z`) alphabet character or an underscore (`_`).
 
-- Subsequent characters can be uppercase or lowercase alphabet characters, numeric digits, underscores ('`_`'), hyphens ('`-`'), or colons ('`:`').
+- Subsequent characters can be uppercase (`A-Z`) or lowercase (`a-z`) alphabet characters, numeric (`0-9`) digits, underscores (`_`), hyphens (`-`), or colons (`:`).
 
 In some cases, the simple notation can't be used to reference a given variable because the name of the variable is not a valid identifier.
 
@@ -532,11 +570,11 @@ Additional variable reference notations are provided for these situations.
 
 The curly-brace variable reference notation can be used to prevent the expression engine from interpreting characters following a variable reference as being part of the reference itself. The notation is used by surrounding the variable name with curly braces.
 
-The curly-brace notation is similar to the simple notation in that it only accepts variable names that are also valid identifiers. The expressions `$userName` and `${userName}` both refer to the same variable, but they cause the expression evaluator to treat the characters following the variable name differently.
+The curly-brace notation is similar to the simple notation in that it only accepts variable names that are also valid identifiers. The expressions `$userName` and `${userName}` both refer to the same variable, but they cause the expression evaluator to treat the characters following the variable reference differently.
 
 Let's say you have a variable `$lastName` that contains a person's surname, and you want to construct a message such as "How are the Butterfields doing?" that refers to the surname in the plural form.
 
-You couldn't use the unquoted notation (eg., "`How are the $lastNames doing?`") because the '`s`' that follows `$lastName` would be interpreted as part of the variable name. Instead of referencing the variable `$lastName` followed by the character literal '`s`', the expression actually references an entirely different variable: `$lastNames`.
+You couldn't use the unquoted notation (eg., "`How are the $lastNames doing?`") because the `s` that follows `$lastName` would be interpreted as part of the variable name. Instead of referencing the variable `$lastName` followed by the character literal `s`, the expression actually references an entirely different variable: `$lastNames`.
 
 The curly-brace notation allows you to separate the variable reference from any surrounding text that should be considered a literal. Using this notation, the expression can be written as:
 
@@ -550,7 +588,7 @@ This expression will be interpreted as the text literal "`How are the `" followe
 
 The bracket variable reference notation can be used to access Mockingbird variables whose names aren't valid identifiers.
 
-For example, the space character and the dollar sign ('`$`') are not valid identifier characters. Normally, when a space is encountered while interpreting a variable name, the expression engine assumes that the space signals the end of the variable name. When a dollar sign is encountered within an expression, the expression engine assumes it signals the beginning of a variable reference.
+For example, the space character and the dollar sign (`$`) are not valid identifier characters. Normally, when a space is encountered while interpreting a variable name, the expression engine assumes that the space signals the end of the variable name. When a dollar sign is encountered within an expression, the expression engine assumes it signals the beginning of a variable reference.
 
 Because Mockingbird variable names don't *have* to be identifiers, the bracket notation exists to allow access to variables whose names aren't identifiers.
 
@@ -596,9 +634,9 @@ parentheses|can contain any character except `(` or `)`|`$(variable name)`|not 
 
 MBML functions allow native Objective-C code to be called from within Mockingbird expressions. Functions can take zero or more input parameters, and they may return an object instance as a result.
 
-When an expression containing a function call is evaluated, the implementing method of the function is executed, and the value returned by the method (if any) is yielded by the function. Values returned by function implementations can then be manipulated further within an expression.
+When an expression containing a function call is evaluated, the method that implements the function is executed, and the value returned by that method (if any) is yielded by the function. Values returned by function implementations can then be manipulated further within an expression.
 
-Function calls begin with a caret character ('`^`'), followed by the name of the function, and end in a list of zero or more pipe-separated parameters surrounded by parentheses.
+Function calls begin with a caret character (`^`), followed by the name of the function, and end in a list of zero or more pipe-separated parameters surrounded by parentheses.
 
 For example, to call a function that creates an array, you could write:
 
@@ -622,7 +660,7 @@ The Mockingbird Data Environment ships with nearly 200 functions built in, and y
 
 The list of included functions can be seen in [the `MBDataEnvironmentModule.xml` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml); they are declared using the `<Function ... />` tag.
 
-The functions are documented within their implementing classes:
+The functions themselves are documented within their implementing classes:
 
 - [`MBMLCollectionFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLCollectionFunctions.html)
 - [`MBMLDataProcessingFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDataProcessingFunctions.html)
@@ -641,6 +679,151 @@ The functions are documented within their implementing classes:
 - [`MBMLStringFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLStringFunctions.html)
 
 To learn how MBML functions are implemented, see [the `MBMLFunction` class documentation](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html)
+
+### Debugging Expressions
+
+When faced with an expression that isn't behaving as you expect, first check your application's console log. When unhandled expression errors occur, information will be written to the console that will help pinpoint the problem.
+
+If that doesn't help, you may need to delve further. The Mockingbird Data Environment comes with several tools to help you debug.
+
+#### MBML Functions for Debugging
+
+The [`MBMLDebugFunctions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDebugFunctions.html) class provides MBML functions useful when debugging an expression.
+
+Some of these functions allow you to wrap an expression (or a portion thereof) in a function call that writes debugging information to the console. Functions that work in this way return the value their input parameter, so they can be inserted at variable reference or subreference boundaries without affecting the expression's result.
+
+For example, consider the following complex expression:
+
+```
+$dictionary[$key].propertyValue.anotherValue[$arrayIndex]
+```
+
+If this expression were not returning the expected result, there are a number of possible reasons why. Perhaps `$dictionary`, `$key` or `$index` has an unexpected value. Or maybe the `.propertyValue` or `.anotherValue` subreferences are returning `nil`.
+
+##### ^log()
+
+To inspect the innards of an expression, you could wrap some or all of it in one or more calls to `^log()`.
+
+The `^log()` function accepts an object expression as a parameter. When invoked, the function writes some debugging information to the console, including the expression being logged and the value it yields. The function then returns the value yielded by its input parameter expression.
+
+Here, four portions of the expression above are wrapped in calls to `^log()`:
+
+```
+^log(^log($dictionary)[^log($key)]).propertyValue.anotherValue[^log($arrayIndex)]
+```
+
+When this expression is evaluated, each call to `^log()` will result in debugging information being written to the console:
+
+* First, `^log($dictionary)` will print the value of `$dictionary`.
+
+* `^log($key)` will then print debugging information for `$key`.
+
+* Next, `^log(^log($dictionary)[^log($key)])` will print information for  `$dictionary[$key]` to the console (the contained `^log()` calls can be ignored).
+
+* Finally, `^log($arrayIndex)` will print the value of `$arrayIndex`.
+
+##### ^test()
+
+The `^test()` function is similar to `^log()` except that it accepts a boolean expression and returns the result of evaluating that expression in the boolean context.
+
+This function is ideal for testing portions of boolean expressions. It can be used as follows:
+
+```
+^test($Network.isWifiConnected) -AND ^test($Device.isRetina)
+```
+
+##### ^debugBreak()
+
+When `MBDataEnvironment` is compiled as part of a `DEBUG` build, the `^debugBreak()` function is available.
+
+When evaluating an expression containing a call to `^debugBreak()`, if the code is running within Xcode, a debug breakpoint will be triggered, landing you at the `lldb` command prompt. From there, you can [evaluate expressions by typing commands in the debugger](#evaluating-expressions-in-the-xcode-debugger).
+
+The `^debugBreak()` function takes an input message that is logged to the console before breaking into the debugger.
+
+> **Important:** If `^debugBreak()` is executed when the application is not running in the Xcode debugger, the application will crash.
+
+##### ^tokenize()
+
+The `^tokenize()` function accepts an object expression and returns the result of evaluating that expression. As with `^log()` and `^test()`, this function can be used to wrap some or all of a larger expression.
+
+When `^tokenize()` is invoked, the input expression is tokenized by the expression engine, and the resulting tokens are printed to the console.
+
+Tokenization shows you how your expressions are being interpreted by Mockingbird.
+
+For example:
+
+```
+^tokenize(This $aint.no ^party())
+```
+
+The expression above would result in console output similar to the following:
+
+```
+--> Tokens for object expression "This $aint.no ^party()":
+<MBMLLiteralToken@0x7f8ac03aaea0: "This " {0, 5}>
+<MBMLVariableReferenceToken@0x7f8abce042a0: "$aint" {5, 5}> containing 1 token:
+    0: <MBMLObjectSubreferenceToken@0x7f8ac0670a00: ".no" {10, 3}>
+<MBMLLiteralToken@0x7f8ac036f4a0: " " {13, 1}>
+<MBMLFunctionCallToken@0x7f8ac0645bb0: "^party()" {14, 8}>
+```
+
+##### ^tokenizeBoolean()
+
+The `^tokenizeBoolean()` function is similar to `^tokenize()` but it accepts a boolean expression as an input parameter.
+
+```
+^tokenizeBoolean(This != ^party())
+```
+
+The expression above would result in console output similar to:
+
+```
+--> Tokens for boolean expression "This != ^party()":
+<MBMLInequalityTestToken@0x7fa93fb5fbe0: "!=" {5, 2}> containing 2 tokens:
+    0: <MBMLLiteralToken@0x7fa93fb45970: "This" {0, 4}>
+    1: <MBMLFunctionCallToken@0x7fa93fb4af80: "^party()" {8, 8}>
+```
+
+##### ^tokenizeMath()
+
+The `^tokenizeMath()` function tokenizes math expressions but otherwise works like `^tokenize()` and `^tokenizeBoolean()`.
+
+```
+^tokenizeMath(($user.firstName.length + $user.lastName.length) + 1)
+```
+
+The expression above would result in console output similar to the following:
+
+```
+--> Tokens for math expression "($user.firstName.length + $user.lastName.length) + 1":
+<MBMLAdditionOperatorToken@0x7fa940048b70: "+" {49, 1}> containing 2 tokens:
+    0: <MBMLMathGroupingToken@0x7fa9400a87d0: "($user.firstName.length + $user.lastName.length)" {0, 48}> containing 1 token:
+        0: <MBMLAdditionOperatorToken@0x7fa93ae86fd0: "+" {23, 1}> containing 2 tokens:
+            0: <MBMLVariableReferenceToken@0x7fa93faf9400: "$user" {0, 5}> containing 2 tokens:
+                0: <MBMLObjectSubreferenceToken@0x7fa940049ac0: ".firstName" {5, 10}>
+                1: <MBMLObjectSubreferenceToken@0x7fa93fae4340: ".length" {15, 7}>
+            1: <MBMLVariableReferenceToken@0x7fa93aeb8f70: "$user" {25, 5}> containing 2 tokens:
+                0: <MBMLObjectSubreferenceToken@0x7fa93aea8d90: ".lastName" {30, 9}>
+                1: <MBMLObjectSubreferenceToken@0x7fa93fa52f60: ".length" {39, 7}>
+    1: <MBMLNumericLiteralToken@0x7fa94007d100: "1" {51, 1}>
+```
+
+#### Evaluating Expressions in the Xcode Debugger
+
+The ability to interactively evaluate expressions from within the debugger can be added to Xcode using the `.lldbinit` file provided as part of the Mockingbird Data Environment.
+
+LLDB is the debugger used by Xcode, and it can be extended by adding commands to an `.lldbinit` file in your home directory.
+
+To be able to evaluate expressions in the debugger, copy [the `.lldbinit` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/.lldbinit) that comes with this project into your home directory. (Or, if you already have an `.lldbinit` file, you can add the commands to your `.lldbinit` file.)
+
+Then, restart your application's debugging session, and any time you're at the `lldb` prompt in Xcode, you can use the following commands to evaluate expressions:
+
+Command|Name|Purpose|Example
+-------|----|-------|-------
+`pe`|**p**rint **e**xpression|evaluates an object expression and prints the result|`pe $user`
+`pec`|**p**rint **e**xpression **c**lass|evaluates an object expression and prints the resulting class|`pec $user.guid`
+`pse`|**p**rint **s**tring **e**xpression|evaluates a string expression and prints the result|`pse Hello, $user.lastName!`
+`pne`|**p**rint **n**umeric **e**xpression|evaluates a numeric or math expression and prints the result|`pne (50 % 3)`
 
 ## An Introduction to MBML Files
 
@@ -680,11 +863,13 @@ To include this module, the `MBEventHandling` code would need to be linked to yo
 <MBML modules="MBEventHandlingModule">
 ```
 
+When the manifest containing this declaration is loaded, `MBEventHandling` functionality will be available in the environment.
+
 ### Types of MBML declarations
 
 While any included modules may introduce additional MBML declarations, by itself, the Mockingbird Data Environment includes the ability to declare:
 
-* *Includes* — The manifest file is so named because in a larger application, it's a best practice to break discrete parts of the application into separate MBML files that are *included* from the manifest. Include declarations specify the MBML files that should be included when the environment is loaded.
+* *Includes* — The manifest file is so named because in a larger application, it's a best practice to break discrete parts of the application into separate MBML files that are *included* from the manifest. Include declarations specify the MBML files that should be loaded when the environment itself is loaded.
 
 * *Variables* — Values for Mockingbird variables can be set in MBML.
 
@@ -707,7 +892,9 @@ For example:
 <Include file="landing.xml"/>
 ```
 
-According to the declarations above, the `onboarding.xml` file will be included only if the value of `$isFirstLaunch` evaluates to `true` in a boolean context, while the `landing.xml` file is included unconditionally. And if `onboarding.xml` *is* included, any declarations contained within will be processed before any declarations from `landing.xml`.
+According to the declarations above, the `onboarding.xml` file will be included only if `$isFirstLaunch` evaluates to `true` in a boolean context, while the `landing.xml` file is included unconditionally. Further, if `onboarding.xml` is included, any declarations it contains will be processed before any declarations from `landing.xml`.
+
+> `<Include>` tags are always processed *before* any other declarations in an MBML file.
 
 #### Variables
 
@@ -727,7 +914,7 @@ The `<Var>` tag provides support for specifying explicit values for types such a
 
 Additional types can also be created using MBML functions, and values from other sources can be referenced through Mockingbird expressions.
 
-Concrete literal string values can be specified using the `literal` attribute. Within a literal string, expressions are not evaluated, so there's no need to perform any escaping. For example:
+Concrete literal string values can be specified using the `literal` attribute. Within a literal string, expressions are not evaluated, so there's no need to perform any escaping:
 
 ```xml
 <Var name="currency" literal="$USD"/>
@@ -749,7 +936,7 @@ In the second line, the `value` attribute contains an expression referencing two
 
 The third line shows `$appLaunchTime` being set to the value yielded by the `^currentTime()` function, which will be an `NSDate`.
 
-> MBML is processed from the top of the document down. As a result, a `<Var>` declaration can reference any value declared above it (or in an already-included file). However, attempts to reference variables whose declarations haven't yet been processed will fail.
+> `<Var>` tags are always processed from the top of the document down. As a result, a `<Var>` declaration can *only* reference values declared above it or in any included file (because includes are processed first). Attempts to reference variables whose declarations haven't yet been processed will fail.
 
 Variables can be declared with boolean values using the `boolean` attribute:
 
@@ -801,7 +988,7 @@ The singleton declaration requires a `class` attribute that specifies the name o
 <Var name="UIApplication" type="singleton" class="UIApplication" method="sharedApplication"/>
 ```
 
-The declaration above, which can be found in [the `MBDataEnvironmentModule.xml` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml), exposes the value returned by  `[UIApplication sharedApplication]` through the variable `$UIApplication`.
+The declaration above, which can be found in [the `MBDataEnvironmentModule.xml` file](https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml), exposes the value returned by the method `[UIApplication sharedApplication]` through the variable `$UIApplication`.
 
 Because the value of the singleton variable is set when the `<Var>` tag is processed, this type of variable declaration should only be used for true singletons, which must behave as follows:
 
@@ -834,7 +1021,7 @@ To understand the difference between concrete variables and dynamic variables, c
 <Var name="alwaysNow" type="dynamic" value="^currentTime()"/>
 ```
 
-These two declarations both associate a variable with the `NSDate` returned by the `^currentTime()` function.
+These declarations both associate a variable name with the `NSDate` returned by the `^currentTime()` function.
 
 However, the concrete declaration of `$inThePast` ensures that the expression contained in the `value` attribute is evaluated just once, when the variable is declared. Unless the underlying value is explicitly changed, any time `$inThePast` is referenced, the value will be the same as it was when the declaration was originally processed.
 
@@ -853,6 +1040,20 @@ MBML functions are declared using the `<Function>` tag. Here are some examples t
 
 Declaring and implementing MBML functions is beyond the scope of this document. For details on the `<Function>` declaration and how it can be used, see the documentation for [the `MBMLFunction` class](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html).
 
+## Further Reading
+
+If you'd like to learn more about how the Mockingbird Data Environment works, a good place to start would be the API documentation for the following classes:
+
+* [`MBVariableSpace`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBVariableSpace.html)
+* [`MBEnvironment`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBEnvironment.html)
+* [`MBExpression`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBExpression.html)
+* [`MBDataModel`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBDataModel.html)
+* [`MBMLFunction`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html)
+* [`MBStringConversions`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBStringConversions.html)
+* [`MBScopedVariables`](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBScopedVariables.html)
+
+And, of course, feel free to delve into [the code](https://github.com/emaloney/MBDataEnvironment/tree/master/Code)!
+
 ## About Mockingbird Library
 
 The Mockingbird Data Environment is part of Gilt Groupe's Mockingbird Library open-source project for iOS.
@@ -866,6 +1067,10 @@ Mockingbird began life as AppFramework, originally created by Jesse Boyes.
 AppFramework found a home at Gilt Groupe and eventually became Mockingbird Library.
 
 In recent years, Mockingbird Library has been developed and maintained by Evan Coyne Maloney, Gilt Groupe’s principal iOS engineer.
+
+### Acknowledgements
+
+For XML parsing, the Mockingbird Data Environment uses [a custom fork](https://github.com/emaloney/RaptureXML) of [the RaptureXML project](https://github.com/ZaBlanc/RaptureXML) created by [John Blanco](https://github.com/ZaBlanc).
 
 ### Copyright & License
 
