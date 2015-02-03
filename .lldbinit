@@ -1,0 +1,45 @@
+#
+# This file adds several commands to Xcode's lldb debugger
+# that allow you to evaluate Mockingbird expressions from within
+# the debugger.
+#
+# IMPORTANT: You must copy this file to your home directory, or add
+#            the declarations below to any pre-existing ~/.lldbinit
+#            file you may have.
+#
+
+#
+# pe <expr>
+#
+#	evaluates <expr> in the object context and prints the result
+#
+command regex pe 's/^(.+)$/po [@"%1" evaluateAsObject]/'
+
+#
+# pec <expr>
+#
+#	evaluates <expr> in the object context and prints the name
+#	of the resulting class
+#
+command regex pec 's/^(.+)$/po [[@"%1" evaluateAsObject] class]/'
+
+#
+# pse <expr>
+#
+#	evaluates <expr> in the string context and prints the result
+#
+command regex pse 's/^(.+)$/po [@"%1" evaluateAsString]/'
+
+#
+# pne <expr>
+#
+#	evaluates <expr> in the numeric context and prints the result
+#
+command regex pne 's/^(.+)$/po [@"%1" evaluateAsNumber]/'
+
+#
+# pbe <expr>
+#
+#	evaluates <expr> in the boolean context and prints the result
+#
+command regex pbe 's/^(.+)$/p (BOOL)[@"%1" evaluateAsBoolean]/'
