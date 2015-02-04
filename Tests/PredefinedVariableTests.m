@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.
 //
 
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 #import "MBDevice.h"
 
 /******************************************************************************/
@@ -14,7 +14,7 @@
 #pragma mark PredefinedVariableTests class
 /******************************************************************************/
 
-@interface PredefinedVariableTests : MockingbirdTestSuite
+@interface PredefinedVariableTests : MBDataEnvironmentTestSuite
 @end
 
 @implementation PredefinedVariableTests

@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.
 //
 
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLFileFunctionTests class
 /******************************************************************************/
 
-@interface MBMLFileFunctionTests : MockingbirdTestSuite
+@interface MBMLFileFunctionTests : MBDataEnvironmentTestSuite
 @end
 
 @implementation MBMLFileFunctionTests
@@ -50,11 +50,11 @@
 #pragma mark Setup / Teardown
 /******************************************************************************/
 
-- (void) setUpAppData
+- (void) setUpVariableSpace
 {
     consoleTrace();
 
-    [super setUpAppData];
+    [super setUpVariableSpace];
 
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     scope[@"fileExtension"] = @"txt";

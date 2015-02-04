@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.
 //
 
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLFontFunctionTests class
 /******************************************************************************/
 
-@interface MBMLFontFunctionTests : MockingbirdTestSuite
+@interface MBMLFontFunctionTests : MBDataEnvironmentTestSuite
 @end
 
 @implementation MBMLFontFunctionTests
@@ -145,7 +145,7 @@
     consoleTrace();
 
     [self _testLinesNeededToDrawText:@"This is my argument" withFont:@"Helvetica-Bold" pointSize:18 width:150 expectedLines:2];
-    [self _testLinesNeededToDrawText:@"This is my argument\nThis is my argument\nThis is my argument" withFont:@"Helvetica-Oblique" pointSize:64 width:500 expectedLines:7];
+    [self _testLinesNeededToDrawText:@"This is my argument\nThis is my argument\nThis is my argument\nThis is my argument" withFont:@"Helvetica-Oblique" pointSize:64 width:500 expectedLines:8];
 }
 
 - (void) _testStringWidthForText:(NSString*)text withFont:(NSString*)fontName pointSize:(CGFloat)pointSize expectedWidth:(CGFloat)expectedWidth

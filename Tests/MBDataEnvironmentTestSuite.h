@@ -1,5 +1,5 @@
 //
-//  MockingbirdTestSuite.h
+//  MBDataEnvironmentTestSuite.h
 //  MockingbirdTests
 //
 //  Created by Evan Coyne Maloney on 1/25/12.
@@ -19,11 +19,11 @@
 
 /******************************************************************************/
 #pragma mark -
-#pragma mark MockingbirdTestSuite class
+#pragma mark MBDataEnvironmentTestSuite class
 /******************************************************************************/
 
-@interface MockingbirdTestSuite : XCTestCase
+@interface MBDataEnvironmentTestSuite : XCTestCase
 
-- (void) setUpAppData;
+- (void) setUpVariableSpace;
 
 @end

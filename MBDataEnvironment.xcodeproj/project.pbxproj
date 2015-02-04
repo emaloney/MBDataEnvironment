@@ -43,7 +43,7 @@
 		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
-		3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */; };
+		3BD23C8C1A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */; };
 		3BD23C901A65FBBB001F7869 /* test-app-data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */; };
 		3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
 		3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
@@ -361,8 +361,8 @@
 		3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBDataEnvironmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpressionEvaluatorTests.m; path = Tests/ExpressionEvaluatorTests.m; sourceTree = SOURCE_ROOT; };
 		3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLDataProcessingFunctionTests.m; path = Tests/MBMLDataProcessingFunctionTests.m; sourceTree = SOURCE_ROOT; };
-		3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockingbirdTestSuite.h; path = Tests/MockingbirdTestSuite.h; sourceTree = SOURCE_ROOT; };
-		3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockingbirdTestSuite.m; path = Tests/MockingbirdTestSuite.m; sourceTree = SOURCE_ROOT; };
+		3BD23C871A65FBA9001F7869 /* MBDataEnvironmentTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDataEnvironmentTestSuite.h; path = Tests/MBDataEnvironmentTestSuite.h; sourceTree = SOURCE_ROOT; };
+		3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataEnvironmentTestSuite.m; path = Tests/MBDataEnvironmentTestSuite.m; sourceTree = SOURCE_ROOT; };
 		3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-app-data.xml"; sourceTree = "<group>"; };
 		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -716,8 +716,8 @@
 				3B2D737D1A7B53B800F16154 /* MBMLResourceFunctionTests.m */,
 				3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */,
 				3B8231391A742B1300C3A18F /* MBMLStringFunctionTests.m */,
-				3BD23C871A65FBA9001F7869 /* MockingbirdTestSuite.h */,
-				3BD23C881A65FBA9001F7869 /* MockingbirdTestSuite.m */,
+				3BD23C871A65FBA9001F7869 /* MBDataEnvironmentTestSuite.h */,
+				3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */,
 				3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */,
 			);
 			name = Tests;
@@ -1054,7 +1054,7 @@
 				3B82312C1A72FC2700C3A18F /* MBMLFontFunctionTests.m in Sources */,
 				3B8231341A74288C00C3A18F /* MBMLLogicFunctionTests.m in Sources */,
 				3B82313A1A742B1300C3A18F /* MBMLStringFunctionTests.m in Sources */,
-				3BD23C8C1A65FBA9001F7869 /* MockingbirdTestSuite.m in Sources */,
+				3BD23C8C1A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m in Sources */,
 				3BA8B2A61A7C340200B00241 /* PredefinedVariableTests.m in Sources */,
 				3B8231381A742A9900C3A18F /* MBMLRegexFunctionTests.m in Sources */,
 				3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */,

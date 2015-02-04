@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLStringFunctionTests class
 /******************************************************************************/
 
-@interface MBMLStringFunctionTests : MockingbirdTestSuite
+@interface MBMLStringFunctionTests : MBDataEnvironmentTestSuite
 @end
 
 @implementation MBMLStringFunctionTests

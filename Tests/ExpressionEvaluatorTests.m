@@ -7,7 +7,7 @@
 //
 
 #import <MBToolbox/MBToolbox.h>
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 #import "MBExpression.h"
 #import "MBVariableSpace.h"
 
@@ -16,7 +16,7 @@
 #pragma mark ExpressionEvaluatorTests class
 /******************************************************************************/
 
-@interface ExpressionEvaluatorTests : MockingbirdTestSuite
+@interface ExpressionEvaluatorTests : MBDataEnvironmentTestSuite
 @end
 
 @implementation ExpressionEvaluatorTests

@@ -6,14 +6,14 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLDateFunctionTests class
 /******************************************************************************/
 
-@interface MBMLDateFunctionTests : MockingbirdTestSuite
+@interface MBMLDateFunctionTests : MBDataEnvironmentTestSuite
 @end
 
 //
@@ -56,11 +56,11 @@
 #pragma mark Setup / Teardown
 /******************************************************************************/
 
-- (void) setUpAppData
+- (void) setUpVariableSpace
 {
     consoleTrace();
 
-    [super setUpAppData];
+    [super setUpVariableSpace];
 
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     NSDate* date = [MBExpression asObject:@"^parseDate(Sun, 26 Oct 1986 00:02:00 EDT)"];

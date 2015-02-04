@@ -1,5 +1,5 @@
 //
-//  MockingbirdTestSuite.m
+//  MBDataEnvironmentTestSuite.m
 //  Mockingbird Data Environment Unit Tests
 //
 //  Created by Evan Coyne Maloney on 1/25/12.
@@ -7,7 +7,7 @@
 //
 
 #import <MBToolbox/MBToolbox.h>
-#import "MockingbirdTestSuite.h"
+#import "MBDataEnvironmentTestSuite.h"
 #import "MBEnvironment.h"
 #import <objc/runtime.h>
 
@@ -15,21 +15,18 @@
 
 /******************************************************************************/
 #pragma mark -
-#pragma mark MockingbirdTestSuite class
+#pragma mark MBDataEnvironmentTestSuite class
 /******************************************************************************/
 
-@implementation MockingbirdTestSuite
+@implementation MBDataEnvironmentTestSuite
 
 /******************************************************************************/
 #pragma mark Test setup/teardown
 /******************************************************************************/
 
-- (void) setUpAppData
+- (void) setUpVariableSpace
 {
     debugTrace();
-
-    [MBEnvironment loadFromManifestFile:@"test-app-data.xml"
-                    withSearchDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
 
     MBVariableSpace* vars = [MBVariableSpace instance];
     CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
@@ -88,7 +85,10 @@
 
     [super setUp];
 
-    [self setUpAppData];
+    [MBEnvironment loadFromManifestFile:@"test-app-data.xml"
+                    withSearchDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
+
+    [self setUpVariableSpace];
 }
 
 - (void) tearDown
