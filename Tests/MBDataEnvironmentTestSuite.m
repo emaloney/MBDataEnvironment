@@ -78,11 +78,17 @@
     XCTAssertTrue(CGRectEqualToRect(rect, CGRectMake(10, 50, 300, 200)));
 }
 
+- (void) willLoadEnvironment
+{
+}
+
 - (void) setUp
 {
     debugTrace();
 
     [super setUp];
+
+    [self willLoadEnvironment];
 
     [MBEnvironment loadFromManifestFile:@"test-app-data.xml"
                     withSearchDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
