@@ -29,6 +29,8 @@ Pod::Spec.new do |s|
 	s.public_header_files	= 'Code/**/*.h'
 	s.private_header_files	= 'Code/ExpressionEngine/Private/**/*.h'
 
+	s.preserve_paths 	= 'Tests/**'
+
 	s.resource_bundle	= { 'MBDataEnvironment' => 'Resources/*.xml' }
 
 	s.xcconfig		= { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
