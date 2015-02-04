@@ -713,7 +713,7 @@ When this expression is evaluated, each call to `^log()` will result in debuggin
 
 * If `$dictionary` is non-`nil`, `^log($key)` will then print debugging information for `$key`.
 
-* Next, `^log(^log($dictionary)[^log($key)])` will print information for  `$dictionary[$key]` to the console (the contained `^log()` calls can be ignored).
+* Next, `^log(^log($dictionary)[^log($key)])` will print information for  `$dictionary[$key]` to the console (because the contained `^log()` calls are pass-throughs, they can be ignored).
 
 * Finally, if no intermediate values in the expression are `nil`, `^log($arrayIndex)` will print the value of `$arrayIndex`.
 
@@ -729,7 +729,7 @@ This function is ideal for testing portions of boolean expressions. It can be us
 
 When the expression above is evaluated, debugging information for the boolean expression `$Network.isWifiConnected` will be logged to the console. If `$Network.isWifiConnected` evaluates to `true`, debugging information for `$Device.isRetina` will also be logged.
 
-> Because the `-AND` operator is short-circuiting, the right operand is only evaluated if the left operand evaluates to `true`.
+> Because the boolean `-AND` operator is short-circuiting, the right operand is only evaluated if the left operand evaluates to `true`.
 
 ##### ^debugBreak(...)
 
@@ -739,11 +739,13 @@ When evaluating an expression containing a call to `^debugBreak()`, if the code 
 
 The `^debugBreak()` function takes an input message that is logged to the console before breaking into the debugger.
 
-> **Important:** If `^debugBreak()` is executed when the application is not running in the Xcode debugger, the application will crash.
+> **Important:** If `^debugBreak()` is called in a `DEBUG` build when the application is *not* running in the Xcode debugger, the application will crash.
 
 ##### ^tokenize(...)
 
-The `^tokenize()` function tokenizes the input expression in the object context and prints the resulting token to the console. Tokenization shows you how your expressions are being interpreted by Mockingbird.
+The `^tokenize()` function tokenizes the input expression in the object context and prints the resulting tokens to the console.
+
+Tokenization shows you how your expressions are being interpreted by Mockingbird.
 
 For example:
 
@@ -932,7 +934,7 @@ If literals won't suffice, you can use the `value` attribute along with an objec
 <Var name="appLaunchTime" value="^currentTime()"/>
 ```
 
-The value in the first line above is wrapped within the `#(` ... `)` notation, so it is evaluated as a numeric expression. As a result, `$price` is set to an `NSNumber` containing the value `99.99`.
+The value in the first line above is wrapped in the `#(` ... `)` notation, so it is evaluated as a numeric expression. As a result, `$price` is set to an `NSNumber` containing the value `99.99`.
 
 In the second line, the `value` attribute contains an expression referencing two values: `${currency}` and `${price}`. Whenever more than one value is referenced at the top level of an expression, string interpolation is used, so the resulting value will be an `NSString`. In this case, the value yielded is "`$USD99.99`".
 
@@ -1008,7 +1010,7 @@ Because the value of the singleton variable is set when the `<Var>` tag is proce
 
 Dynamic variables associate an *expression* with a variable name rather than a specific *value*. When a dynamic variable is referenced, Mockingbird evaluates the associated expression, and the value yielded by that expression becomes the value yielded by the dynamic variable.
 
-In [**Boolean Variables**](#boolean-variables) above, we saw the following declaration for `$useLargeImageSizes`:
+In the Concrete Variables section on [**Boolean Values**](#boolean-values) above, we saw the following declaration for `$useLargeImageSizes`:
 
 ```xml
 <Var name="useLargeImageSizes" boolean="$Network.isWifiConnected -AND $Device.isRetina"/>
