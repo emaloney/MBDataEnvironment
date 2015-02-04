@@ -8,6 +8,10 @@ The Mockingbird Data Environment allows arbitrary data models and object graphs 
 
 The Mockingbird Data Environment is particularly suited for building applications that can adapt to changes in server-side data models.
 
+* [Adding the Mockingbird Data Environment to your project](#integrating-with-your-project)
+* [Using the Mockingbird Data Environment](#initializing-the-mockingbird-data-environment)
+* [Table of contents](#table-of-contents)
+
 **Master branch status:**
 
 [![Build Status](https://travis-ci.org/emaloney/MBDataEnvironment.svg?branch=master)](https://travis-ci.org/emaloney/MBDataEnvironment)
