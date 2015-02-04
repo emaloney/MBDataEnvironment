@@ -20,7 +20,7 @@ The Mockingbird Data Environment is particularly suited for building application
 
 It is a common scenario for iOS app publishers to have a population of users running old application versions. Often, users are stuck on old versions because the current version requires a release of iOS more recent than their hardware will support. Such users won't be running your latest app version until they buy a new device, assuming they ever do.
 
-For some types of apps, this isn't a big problem. But for apps that must communicate with network-based services, having a wide variety of old versions out in the wild makes it difficult evolve and maintain your services.
+For some types of apps, this isn't a big problem. But for apps that must communicate with network-based services, having a wide variety of old versions out in the wild makes it difficult to evolve and maintain your services.
 
 Eventually, you will be faced with accepting one of these tradeoffs:
 
@@ -30,7 +30,7 @@ Eventually, you will be faced with accepting one of these tradeoffs:
 
 * Or do you resign yourself to never evolving your backend systems—or doing it much more slowly than you'd like?
 
-The purpose of the Mockingbird Data Environment is to free you from having to choose one of these goals at the expense of the others.
+The purpose of the Mockingbird Data Environment is to free you from having to make these compromises.
 
 #### The Root of the Problem
 
