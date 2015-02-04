@@ -44,7 +44,7 @@
     
     Class cls = NSClassFromString(className);
     if (!cls) {
-        return [MBMLFunctionError errorWithFormat:@"Expecting parameter to be a class name; \"%@\" does not appear to be a valid class name"];
+        return [MBMLFunctionError errorWithFormat:@"Expecting parameter to be a class name; \"%@\" does not appear to be a valid class name", className];
     }
     
     return [[NSBundle bundleForClass:cls] bundlePath];
