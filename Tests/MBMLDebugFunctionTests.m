@@ -62,7 +62,7 @@ static int s_repeatCounter = 0;
                                           implementingClass:[self class]
                                              methodSelector:@selector(functionForTestingRepeat)];
 
-    XCTAssertTrue([[MBVariableSpace instance] declareFunction:func]);
+    XCTAssertTrue([vars declareFunction:func]);
 }
 
 /******************************************************************************/
