@@ -469,7 +469,8 @@
     NSArray* testList2 = @[@"Jill Test", @"Debbie Test"];
     NSArray* list2 = [MBExpression asObject:@"^list($nameMap|$item[aunts]|$item)"];
     XCTAssertTrue([list2 isKindOfClass:[NSArray class]]);
-    XCTAssertEqualObjects(list2, testList2);
+    XCTAssertEqual(list2.count, testList2.count);
+    XCTAssertEqualObjects([NSSet setWithArray:list2], [NSSet setWithArray:testList2]);  // order is nondeterministic when ^list() uses a map as input
 
     //
     // test expected failures
