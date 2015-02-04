@@ -24,11 +24,10 @@
 #pragma mark Test setup/teardown
 /******************************************************************************/
 
-- (void) setUpVariableSpace
+- (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
     debugTrace();
 
-    MBVariableSpace* vars = [MBVariableSpace instance];
     CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
     NSValue* rectVal = [NSValue valueWithCGRect:rect];
     vars[@"rect:val"] = rectVal;
@@ -88,7 +87,7 @@
     [MBEnvironment loadFromManifestFile:@"test-app-data.xml"
                     withSearchDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
 
-    [self setUpVariableSpace];
+    [self setUpVariableSpace:[MBVariableSpace instance]];
 }
 
 - (void) tearDown

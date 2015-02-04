@@ -24,6 +24,6 @@
 
 @interface MBDataEnvironmentTestSuite : XCTestCase
 
-- (void) setUpVariableSpace;
+- (void) setUpVariableSpace:(MBVariableSpace*)vars;
 
 @end

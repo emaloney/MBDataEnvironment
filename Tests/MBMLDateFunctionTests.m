@@ -56,11 +56,11 @@
 #pragma mark Setup / Teardown
 /******************************************************************************/
 
-- (void) setUpVariableSpace
+- (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
     consoleTrace();
 
-    [super setUpVariableSpace];
+    [super setUpVariableSpace:vars];
 
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     NSDate* date = [MBExpression asObject:@"^parseDate(Sun, 26 Oct 1986 00:02:00 EDT)"];

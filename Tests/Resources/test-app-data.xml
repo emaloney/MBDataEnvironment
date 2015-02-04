@@ -1,8 +1,4 @@
 <MBML>
-        
-    <!-- for testing boolean short-circuiting -->
-    <Function class="ExpressionEvaluatorTests" name="functionWithSideEffect" input="none"/>
-    <Function class="MBMLDebugFunctionTests" name="functionForTestingRepeat" input="none"/>
 
     <Var name="testMap" type="map" mutable="F">
         <Var name="Key 1" literal="One"/>

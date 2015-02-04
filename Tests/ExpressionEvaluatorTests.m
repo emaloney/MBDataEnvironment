@@ -10,6 +10,7 @@
 #import "MBDataEnvironmentTestSuite.h"
 #import "MBExpression.h"
 #import "MBVariableSpace.h"
+#import "MBMLFunction.h"
 
 /******************************************************************************/
 #pragma mark -
@@ -433,7 +434,15 @@ static int shortCircuitHitCounter = 0;
 
 - (void) testBooleanShortCircuiting
 {
-    BOOL result = [MBExpression asBoolean:@"T -OR ^functionWithSideEffect()"];
+    MBMLFunction* func = [[MBMLFunction alloc] initWithName:@"functionWithSideEffect"
+                                                  inputType:MBMLFunctionInputNone
+                                                 outputType:MBMLFunctionOutputObject
+                                          implementingClass:[self class]
+                                             methodSelector:@selector(functionWithSideEffect)];
+
+    XCTAssertTrue([[MBVariableSpace instance] declareFunction:func]);
+
+    BOOL result = [MBExpression asBoolean:@"T -OR ^()"];
     XCTAssertTrue(shortCircuitHitCounter == 0);
     result = [MBExpression asBoolean:@"F -AND ^functionWithSideEffect()"];
     XCTAssertTrue(shortCircuitHitCounter == 0);

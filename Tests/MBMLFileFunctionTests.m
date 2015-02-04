@@ -50,11 +50,11 @@
 #pragma mark Setup / Teardown
 /******************************************************************************/
 
-- (void) setUpVariableSpace
+- (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
     consoleTrace();
 
-    [super setUpVariableSpace];
+    [super setUpVariableSpace:vars];
 
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     scope[@"fileExtension"] = @"txt";
@@ -479,7 +479,7 @@
         unsigned long long size = [sizeNum unsignedLongLongValue];
         XCTAssertTrue(size > 0);
         if ([[paths[i] lastPathComponent] isEqualToString:@"test-app-data.xml"]) {
-            XCTAssertEqual(size, 7202);     // unit test will fail if file size changes; will need to keep this up-to-date
+            XCTAssertEqual(size, 6959);     // unit test will fail if file size changes; will need to keep this up-to-date
         }
         else if ([[paths[i] lastPathComponent] isEqualToString:@"MBDataEnvironmentModule.xml"]) {
             XCTAssertEqual(size, 17009);    // unit test will fail if file size changes; will need to keep this up-to-date

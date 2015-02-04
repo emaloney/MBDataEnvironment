@@ -7,6 +7,7 @@
 //
 
 #import "MBDataEnvironmentTestSuite.h"
+#import "MBMLFunction.h"
 
 /******************************************************************************/
 #pragma mark -
@@ -42,6 +43,26 @@ static int s_repeatCounter = 0;
 + (id) functionForTestingRepeat
 {
     return @(++s_repeatCounter);
+}
+
+
+/******************************************************************************/
+#pragma mark Setup
+/******************************************************************************/
+
+- (void) setUpVariableSpace:(MBVariableSpace*)vars
+{
+    consoleTrace();
+
+    [super setUpVariableSpace:vars];
+
+    MBMLFunction* func = [[MBMLFunction alloc] initWithName:@"functionForTestingRepeat"
+                                                  inputType:MBMLFunctionInputNone
+                                                 outputType:MBMLFunctionOutputObject
+                                          implementingClass:[self class]
+                                             methodSelector:@selector(functionForTestingRepeat)];
+
+    XCTAssertTrue([[MBVariableSpace instance] declareFunction:func]);
 }
 
 /******************************************************************************/
