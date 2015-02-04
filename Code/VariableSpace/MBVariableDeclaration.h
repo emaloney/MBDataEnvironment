@@ -217,6 +217,9 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
  Classes that adopt this protocol gain the ability to be stored in the
  `NSUserDefaults` as strings. This allows native objects to be
  stored using the variable's `userDefaultsName` mechanism.
+ 
+ @warning This protocol is deprecated and will be removed from a future
+          version of the Mockingbird Data Environment.
  */
 @protocol MBStringValueCoding <NSObject>
 
@@ -230,7 +233,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
  @return    a new instance of the receiver
  */
 @required
-+ (instancetype) fromStringValue:(NSString*)str;
++ (instancetype) fromStringValue:(NSString*)str __attribute__((deprecated("The MBStringValueCoding protocol is deprecated. Please use another means to store your value in NSUserDefaults.")));
 
 /*!
  Returns a string representation of the object's internal state.
@@ -239,6 +242,6 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             return a new instance that `isEqual:` to this receiver.
  */
 @optional
-- (NSString*) stringValue;
+- (NSString*) stringValue __attribute__((deprecated("The MBStringValueCoding protocol is deprecated. Please use another means to store your value in NSUserDefaults.")));
 
 @end
