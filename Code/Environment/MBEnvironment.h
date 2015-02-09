@@ -146,6 +146,20 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
 /*!
  Loads a new environment by processing the manifest file with the given name
+ found in the application's resources.
+
+ If loading is successful, the newly-loaded environment will become the
+ active environment.
+
+ @param     manifestName The name of the manifest file.
+
+ @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
+            if the environment could not be loaded.
+ */
++ (instancetype) loadFromManifestFile:(NSString*)manifestName;
+
+/*!
+ Loads a new environment by processing the manifest file with the given name
  found in the specified search directory or in the application's resources.
 
  If loading is successful, the newly-loaded environment will become the

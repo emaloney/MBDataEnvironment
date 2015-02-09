@@ -517,10 +517,15 @@ static NSMutableArray* s_resourceBundles = nil;
 }
 
 + (instancetype) loadFromManifestFile:(NSString*)manifestName
+{
+    return [self loadFromManifestFile:manifestName withSearchDirectory:nil];
+}
+
++ (instancetype) loadFromManifestFile:(NSString*)manifestName
                   withSearchDirectory:(NSString*)dirPath
 {
     return [self loadFromManifestFile:manifestName
-                withSearchDirectories:@[dirPath]];
+                withSearchDirectories:dirPath ? @[dirPath] : nil];
 }
 
 + (instancetype) loadFromManifestWithSearchDirectories:(NSArray*)dirPaths
