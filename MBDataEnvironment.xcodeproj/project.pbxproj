@@ -44,7 +44,7 @@
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
 		3BD23C8C1A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */; };
-		3BD23C901A65FBBB001F7869 /* test-app-data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */; };
+		3BD23C901A65FBBB001F7869 /* test-MBDataEnvironment.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */; };
 		3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
 		3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
 		3BD23C931A65FC54001F7869 /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73219D9FBEB00996B9F /* MBDevice.m */; };
@@ -363,7 +363,7 @@
 		3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLDataProcessingFunctionTests.m; path = Tests/MBMLDataProcessingFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3BD23C871A65FBA9001F7869 /* MBDataEnvironmentTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDataEnvironmentTestSuite.h; path = Tests/MBDataEnvironmentTestSuite.h; sourceTree = SOURCE_ROOT; };
 		3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataEnvironmentTestSuite.m; path = Tests/MBDataEnvironmentTestSuite.m; sourceTree = SOURCE_ROOT; };
-		3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-app-data.xml"; sourceTree = "<group>"; };
+		3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-MBDataEnvironment.xml"; sourceTree = "<group>"; };
 		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -727,7 +727,7 @@
 		3BD23C8E1A65FBBB001F7869 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3BD23C8F1A65FBBB001F7869 /* test-app-data.xml */,
+				3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */,
 			);
 			name = Resources;
 			path = Tests/Resources;
@@ -908,7 +908,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BD23C901A65FBBB001F7869 /* test-app-data.xml in Resources */,
+				3BD23C901A65FBBB001F7869 /* test-MBDataEnvironment.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

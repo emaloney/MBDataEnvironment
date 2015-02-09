@@ -24,7 +24,15 @@
 
 @interface MBDataEnvironmentTestSuite : XCTestCase
 
+@property(nonatomic, assign, readonly) BOOL loadTestManifest;
+
 - (void) willLoadEnvironment;
+
+- (void) didLoadEnvironment:(MBEnvironment*)env;
+
+- (NSString*) manifestFileName;
+
+- (NSArray*) mbmlSearchDirectories;
 
 - (void) setUpVariableSpace:(MBVariableSpace*)vars;
 

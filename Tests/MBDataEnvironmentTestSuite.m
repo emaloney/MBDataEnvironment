@@ -11,14 +11,15 @@
 #import "MBEnvironment.h"
 #import <objc/runtime.h>
 
-#define DEBUG_LOCAL     0
-
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBDataEnvironmentTestSuite class
 /******************************************************************************/
 
 @implementation MBDataEnvironmentTestSuite
+{
+    BOOL _environmentLoaded;
+}
 
 /******************************************************************************/
 #pragma mark Test setup/teardown
@@ -26,8 +27,6 @@
 
 - (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
-    debugTrace();
-
     CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
     NSValue* rectVal = [NSValue valueWithCGRect:rect];
     vars[@"rect:val"] = rectVal;
@@ -78,27 +77,61 @@
     XCTAssertTrue(CGRectEqualToRect(rect, CGRectMake(10, 50, 300, 200)));
 }
 
+- (BOOL) loadTestManifest
+{
+    return YES;
+}
+
 - (void) willLoadEnvironment
 {
+    [MBEnvironment addResourceSearchBundle:[NSBundle bundleForClass:[MBDataEnvironmentTestSuite class]]];
+
+    // in case MBDataEnvironmentTestSuite is in a different bundle than the implementing subclass
+    [MBEnvironment addResourceSearchBundle:[NSBundle bundleForClass:[self class]]];
+}
+
+- (void) didLoadEnvironment:(MBEnvironment*)env
+{
+}
+
+- (NSString*) manifestFileName
+{
+    return @"test-MBDataEnvironment.xml";
+}
+
+- (NSArray*) mbmlSearchDirectories
+{
+    return nil;
 }
 
 - (void) setUp
 {
-    debugTrace();
-
     [super setUp];
 
-    [self willLoadEnvironment];
+    if (self.loadTestManifest) {
+        NSString* manifest = [self manifestFileName];
+        if (manifest) {
+            [self willLoadEnvironment];
 
-    [MBEnvironment loadFromManifestFile:@"test-app-data.xml"
-                    withSearchDirectory:[[NSBundle bundleForClass:[self class]] resourcePath]];
+            MBEnvironment* env = [MBEnvironment loadFromManifestFile:[self manifestFileName]
+                                               withSearchDirectories:[self mbmlSearchDirectories]];
 
-    [self setUpVariableSpace:[MBVariableSpace instance]];
+            if (env) {
+                _environmentLoaded = YES;
+
+                [self didLoadEnvironment:env];
+
+                [self setUpVariableSpace:[MBVariableSpace instance]];
+            }
+        }
+    }
 }
 
 - (void) tearDown
 {
-    debugTrace();
+    if (_environmentLoaded && [MBEnvironment peekEnvironment]) {
+        [MBEnvironment popEnvironment];
+    }
 
     [super tearDown];
 }
