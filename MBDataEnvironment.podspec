@@ -49,9 +49,11 @@ Pod::Spec.new do |s|
     #################################################################
 
     s.subspec 'UnitTests' do |ss|
+    	ss.dependency 'MBDataEnvironment/Core'
         ss.source_files            = 'Tests/**/*.{h,m}'
         ss.public_header_files     = 'Tests/**/*.h'
         ss.resource_bundle         = { 'MBDataEnvironmentTests' => 'Tests/Resources/*.xml' }
+        ss.framework               = 'XCTest'
     end
 
     #----------------------------------------------------------------
