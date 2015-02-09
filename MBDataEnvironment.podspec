@@ -9,37 +9,56 @@
 
 Pod::Spec.new do |s|
 
-	s.name                  = "MBDataEnvironment"
-	s.version               = "1.0.4"
-	s.summary               = "Mockingbird Data Environment"
-	s.description           = "Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
-	s.homepage              = "https://github.com/emaloney/MBDataEnvironment"
-	s.license               = { :type => 'MIT', :file => 'LICENSE' }
-	s.author                = { "Evan Coyne Maloney" => "emaloney@gilt.com" }
-	s.platform              = :ios, '8.0'
-	s.ios.deployment_target = '7.0'
-	s.requires_arc          = true
+    s.name                  = "MBDataEnvironment"
+    s.version               = "1.0.5"
+    s.summary               = "Mockingbird Data Environment"
+    s.description           = "Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
+    s.homepage              = "https://github.com/emaloney/MBDataEnvironment"
+    s.license               = { :type => 'MIT', :file => 'LICENSE' }
+    s.author                = { "Evan Coyne Maloney" => "emaloney@gilt.com" }
+    s.platform              = :ios, '8.0'
+    s.ios.deployment_target = '7.0'
+    s.requires_arc          = true
 
-	s.source = {
-		:git => 'https://github.com/emaloney/MBDataEnvironment.git',
-		:tag => s.version.to_s
-	}
+    s.source = {
+        :git => 'https://github.com/emaloney/MBDataEnvironment.git',
+        :tag => s.version.to_s
+    }
 
-	s.source_files          = 'Code/**/*.{h,m}'
-	s.public_header_files   = 'Code/**/*.h'
-	s.private_header_files  = 'Code/ExpressionEngine/Private/**/*.h'
+    s.xcconfig              = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
 
-	s.preserve_paths        = 'Tests/**'
+	s.default_subspec       = 'Core'
 
-	s.resource_bundle       = { 'MBDataEnvironment' => 'Resources/*.xml' }
+    #################################################################
+    #
+    # MOCKINGBIRD DATA ENVIRONMENT CORE
+    #
+    #################################################################
 
-	s.xcconfig              = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+    s.subspec 'Core' do |ss|
+        ss.source_files            = 'Code/**/*.{h,m}'
+        ss.public_header_files     = 'Code/**/*.h'
+        ss.private_header_files    = 'Code/ExpressionEngine/Private/**/*.h'
+        ss.resource_bundle         = { 'MBDataEnvironment' => 'Resources/*.xml' }
+    end
 
-	#----------------------------------------------------------------
-	# Dependencies
-	#----------------------------------------------------------------
+    #################################################################
+    #
+    # UNIT TEST SUBSPEC
+    #
+    #################################################################
 
-	s.dependency 'MBToolbox', '~> 1.0.21'
-	s.dependency 'RaptureXML@Gilt', '~> 1.0.3'
+    s.subspec 'UnitTests' do |ss|
+        ss.source_files            = 'Tests/**/*.{h,m}'
+        ss.public_header_files     = 'Tests/**/*.h'
+        ss.resource_bundle         = { 'MBDataEnvironmentTests' => 'Tests/Resources/*.xml' }
+    end
+
+    #----------------------------------------------------------------
+    # Dependencies
+    #----------------------------------------------------------------
+
+    s.dependency 'MBToolbox', '~> 1.0.21'
+    s.dependency 'RaptureXML@Gilt', '~> 1.0.3'
 
 end

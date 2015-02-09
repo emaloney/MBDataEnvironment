@@ -40,41 +40,43 @@
     vars[@"rect:size:val"] = sizeVal;
 }
 
-// note: a number of tests will rely on the sanity of this data; if this
-//       test fails, a bunch of other tests probably will, too
 - (void) testDataSanity
 {
-    NSDictionary* testMap = [MBExpression asObject:@"$testMap"];
-    NSArray* testKeys = [MBExpression asObject:@"$testKeys"];
-    NSArray* testValues = [MBExpression asObject:@"$testValues"];
-    
-    XCTAssertTrue([testMap isKindOfClass:[NSDictionary class]], @"Expecting $testMap to be a dictionary");
-    XCTAssertTrue([testKeys isKindOfClass:[NSArray class]], @"Expecting $testKeys to be an array");
-    XCTAssertTrue([testValues isKindOfClass:[NSArray class]], @"Expecting $testValues to be an array");
-    
-    XCTAssertTrue([testMap count] == 4, @"Number of values in $testMap not correct");
-    XCTAssertTrue([testKeys count] == 4, @"Number of values in $testKeys not correct");
-    XCTAssertTrue([testValues count] == 4, @"Number of values in $testValues not correct");
-    
-    XCTAssertEqualObjects([NSSet setWithArray:[testMap allKeys]], [NSSet setWithArray:testKeys], @"Keys in $testMap not correct");
-    XCTAssertEqualObjects([NSSet setWithArray:[testMap allValues]], [NSSet setWithArray:testValues], @"Values in $testMap not correct");
-    
-    NSDictionary* emptyMap = [MBExpression asObject:@"$emptyMap"];
-    NSArray* emptyList = [MBExpression asObject:@"$emptyList"];
-    
-    XCTAssertTrue([emptyMap isKindOfClass:[NSDictionary class]], @"Expecting $testMap to be a dictionary");
-    XCTAssertTrue([emptyList isKindOfClass:[NSArray class]], @"Expecting $testKeys to be an array");
-    
-    XCTAssertTrue([emptyMap count] == 0, @"Number of values in $emptyMap not correct");
-    XCTAssertTrue([emptyList count] == 0, @"Number of values in $emptyList not correct");
-    
-    NSArray* testList = [MBExpression asObject:@"$nameList"];
-    XCTAssertTrue([testList isKindOfClass:[NSArray class]], @"expected result of $nameList to be an NSArray");
-    XCTAssertTrue([testList count] == 6, @"Number of values in $nameList not correct");
+    // note: a number of tests will rely on the sanity of this data; if this
+    //       test fails, a bunch of other tests probably will, too.
+    if (self.loadTestManifest) {
+        NSDictionary* testMap = [MBExpression asObject:@"$testMap"];
+        NSArray* testKeys = [MBExpression asObject:@"$testKeys"];
+        NSArray* testValues = [MBExpression asObject:@"$testValues"];
 
-    CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
-    XCTAssertTrue(!CGRectEqualToRect(rect, CGRectZero));
-    XCTAssertTrue(CGRectEqualToRect(rect, CGRectMake(10, 50, 300, 200)));
+        XCTAssertTrue([testMap isKindOfClass:[NSDictionary class]], @"Expecting $testMap to be a dictionary");
+        XCTAssertTrue([testKeys isKindOfClass:[NSArray class]], @"Expecting $testKeys to be an array");
+        XCTAssertTrue([testValues isKindOfClass:[NSArray class]], @"Expecting $testValues to be an array");
+
+        XCTAssertTrue([testMap count] == 4, @"Number of values in $testMap not correct");
+        XCTAssertTrue([testKeys count] == 4, @"Number of values in $testKeys not correct");
+        XCTAssertTrue([testValues count] == 4, @"Number of values in $testValues not correct");
+
+        XCTAssertEqualObjects([NSSet setWithArray:[testMap allKeys]], [NSSet setWithArray:testKeys], @"Keys in $testMap not correct");
+        XCTAssertEqualObjects([NSSet setWithArray:[testMap allValues]], [NSSet setWithArray:testValues], @"Values in $testMap not correct");
+
+        NSDictionary* emptyMap = [MBExpression asObject:@"$emptyMap"];
+        NSArray* emptyList = [MBExpression asObject:@"$emptyList"];
+
+        XCTAssertTrue([emptyMap isKindOfClass:[NSDictionary class]], @"Expecting $testMap to be a dictionary");
+        XCTAssertTrue([emptyList isKindOfClass:[NSArray class]], @"Expecting $testKeys to be an array");
+
+        XCTAssertTrue([emptyMap count] == 0, @"Number of values in $emptyMap not correct");
+        XCTAssertTrue([emptyList count] == 0, @"Number of values in $emptyList not correct");
+
+        NSArray* testList = [MBExpression asObject:@"$nameList"];
+        XCTAssertTrue([testList isKindOfClass:[NSArray class]], @"expected result of $nameList to be an NSArray");
+        XCTAssertTrue([testList count] == 6, @"Number of values in $nameList not correct");
+
+        CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
+        XCTAssertTrue(!CGRectEqualToRect(rect, CGRectZero));
+        XCTAssertTrue(CGRectEqualToRect(rect, CGRectMake(10, 50, 300, 200)));
+    }
 }
 
 - (BOOL) loadTestManifest
@@ -109,20 +111,17 @@
     [super setUp];
 
     if (self.loadTestManifest) {
-        NSString* manifest = [self manifestFileName];
-        if (manifest) {
-            [self willLoadEnvironment];
+        [self willLoadEnvironment];
 
-            MBEnvironment* env = [MBEnvironment loadFromManifestFile:[self manifestFileName]
-                                               withSearchDirectories:[self mbmlSearchDirectories]];
+        MBEnvironment* env = [MBEnvironment loadFromManifestFile:[self manifestFileName]
+                                           withSearchDirectories:[self mbmlSearchDirectories]];
 
-            if (env) {
-                _environmentLoaded = YES;
+        if (env) {
+            _environmentLoaded = YES;
 
-                [self didLoadEnvironment:env];
+            [self didLoadEnvironment:env];
 
-                [self setUpVariableSpace:[MBVariableSpace instance]];
-            }
+            [self setUpVariableSpace:[MBVariableSpace instance]];
         }
     }
 }
