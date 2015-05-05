@@ -28,6 +28,7 @@
     <Function class="MBMLCollectionFunctions" name="appendObject" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="insertObjectAtIndex" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="array" input="pipedObjects"/>
+    <Function class="MBMLCollectionFunctions" name="subarray" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="dictionary" input="pipedExpressions"/>
     <Function class="MBMLCollectionFunctions" name="set" input="pipedObjects"/>
     <Function class="MBMLCollectionFunctions" name="setWithArray" input="object"/>
