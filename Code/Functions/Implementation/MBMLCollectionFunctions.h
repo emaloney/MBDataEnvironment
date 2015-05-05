@@ -308,6 +308,37 @@
 + (id) array:(NSArray*)params;
 
 /*!
+ Returns an `NSArray` containing the receiving array’s elements that fall
+ within the limits specified by a given range.
+ 
+ This Mockingbird function accepts three pipe-separated expressions as
+ parameters:
+ 
+ * The *array* expression, which should evaluate to an `NSArray` instance
+ 
+ * The *start location* in the provided array, which used for range location within the
+ receiving array’s range of elements.
+ 
+ * The *length* for subarray, which used for range length within the
+ receiving array’s range of elements.
+ 
+ #### Expression usage
+ 
+ Assume `$cities` is an array containing the values "`New York`", "`London`",
+ and "`Boston`". The expression:
+ 
+ ^subarray($cities|1|2)
+ 
+ would return an array containing the values "`London`" and "`Boston`".
+ 
+ @param     params The function's input parameters.
+ 
+ @return    An array containing the receiving array’s elements that fall
+ within the limits specified by range.
+ */
++ (id) subarray:(NSArray*)params;
+
+/*!
  Returns an `NSSet` containing the result of evaluating each input parameter
  as an object expression.
 
