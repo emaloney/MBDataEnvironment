@@ -311,13 +311,15 @@
  Returns an `NSArray` containing the receiving array’s elements that fall
  within the limits specified by a given range.
  
- This Mockingbird function accepts two pipe-separated expressions as
+ This Mockingbird function accepts three pipe-separated expressions as
  parameters:
  
  * The *array* expression, which should evaluate to an `NSArray` instance
  
- * A *range array* containing exactly two elements: the *start location* in the
- provided array, followed by the *length*. It evaluates to a range within the
+ * The *start location* in the provided array, which used for range location within the
+ receiving array’s range of elements.
+ 
+ * The *length* for subarray, which used for range length within the
  receiving array’s range of elements.
  
  #### Expression usage
@@ -325,7 +327,7 @@
  Assume `$cities` is an array containing the values "`New York`", "`London`",
  and "`Boston`". The expression:
  
- ^subarray($cities|^array(1|2))
+ ^subarray($cities|1|2)
  
  would return an array containing the values "`London`" and "`Boston`".
  

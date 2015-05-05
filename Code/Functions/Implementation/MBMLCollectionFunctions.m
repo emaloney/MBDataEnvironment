@@ -166,21 +166,15 @@
     debugTrace();
     
     MBMLFunctionError* err = nil;
-    [MBMLFunction validateParameter:params countIs:2 error:&err];
+    [MBMLFunction validateParameter:params countIs:3 error:&err];
     NSArray* operateOn = [MBMLFunction validateParameter:params isArrayAtIndex:0 error:&err];
-    NSArray * rangeArray = [MBMLFunction validateParameter:params isArrayAtIndex:1 error:&err];
-    if (err) return err;
-    [MBMLFunction validateParameter:rangeArray countIs:2 error:&err];
-    if (err) return err;
-    NSNumber * location = [MBMLFunction validateParameter:rangeArray containsNumberAtIndex:0 error:&err];
-    if (err) return err;
-    NSNumber * length = [MBMLFunction validateParameter:rangeArray containsNumberAtIndex:1 error:&err];
+    NSNumber * location = [MBMLFunction validateParameter:params containsNumberAtIndex:1 error:&err];
+    NSNumber * length = [MBMLFunction validateParameter:params containsNumberAtIndex:2 error:&err];
     if (err) return err;
     
     NSRange range = NSMakeRange([location unsignedIntegerValue], [length unsignedIntegerValue]);
     
     [MBMLFunction validateParameter:operateOn indexIsInRange:range.location error:&err];
-    if (err) return err;
     [MBMLFunction validateParameter:operateOn indexIsInRange:(NSMaxRange(range) - 1) error:&err];
     if (err) return err;
     
