@@ -4,7 +4,7 @@ platform :ios, '7.0'
 #
 # include Mockingbird Toolbox
 #
-pod 'MBToolbox', '~> 1.0.21'
+pod 'MBToolbox', '~> 1.1.0'
 
 #
 # include our forked version of Rapture XML
