@@ -12,68 +12,68 @@
 #pragma mark Constants - Mockingbird class prefix
 /******************************************************************************/
 
-extern NSString* const kMBLibraryClassPrefix;
+extern NSString* const __nullable kMBLibraryClassPrefix;
 
 /******************************************************************************/
 #pragma mark Constants - Mockingbird string constants
 /******************************************************************************/
 
-extern NSString* const kMBEmptyString;
-extern NSString* const kMBWildcardString;
+extern NSString* const __nullable kMBEmptyString;
+extern NSString* const __nullable kMBWildcardString;
 
 /******************************************************************************/
 #pragma mark Constants - Interface orientation
 /******************************************************************************/
 
-extern NSString* const kMBInterfaceOrientationPortrait;
-extern NSString* const kMBInterfaceOrientationLandscape;
+extern NSString* const __nullable kMBInterfaceOrientationPortrait;
+extern NSString* const __nullable kMBInterfaceOrientationLandscape;
 
 /******************************************************************************/
 #pragma mark Constants - MBML implicit variables
 /******************************************************************************/
 
-extern NSString* const kMBMLVariableItem;
-extern NSString* const kMBMLVariableKey;
-extern NSString* const kMBMLVariableRoot;
-extern NSString* const kMBMLVariableRootKey;
+extern NSString* const __nullable kMBMLVariableItem;
+extern NSString* const __nullable kMBMLVariableKey;
+extern NSString* const __nullable kMBMLVariableRoot;
+extern NSString* const __nullable kMBMLVariableRootKey;
 
 /******************************************************************************/
 #pragma mark Constants - MBML variable name suffixes
 /******************************************************************************/
 
-extern NSString* const kMBMLVariableSuffixRequestPending;
-extern NSString* const kMBMLVariableSuffixLastRequestFailed;
+extern NSString* const __nullable kMBMLVariableSuffixRequestPending;
+extern NSString* const __nullable kMBMLVariableSuffixLastRequestFailed;
 
 /******************************************************************************/
 #pragma mark Constants - MBML attribute names
 /******************************************************************************/
 
-extern NSString* const kMBMLAttributeName;
-extern NSString* const kMBMLAttributeIf;
-extern NSString* const kMBMLAttributeDataSource;
-extern NSString* const kMBMLAttributeClass;             // consider deprecating in favor of className
-extern NSString* const kMBMLAttributeValue;
-extern NSString* const kMBMLAttributeBoolean;
-extern NSString* const kMBMLAttributeLiteral;
-extern NSString* const kMBMLAttributeVar;
-extern NSString* const kMBMLAttributeMethod;
-extern NSString* const kMBMLAttributeInput;
-extern NSString* const kMBMLAttributeOutput;
-extern NSString* const kMBMLAttributeDeprecated;
-extern NSString* const kMBMLAttributeDeprecatedInFavorOf;
-extern NSString* const kMBMLAttributeDeprecationMessage;
-extern NSString* const kMBMLAttributeType;
-extern NSString* const kMBMLAttributeMutable;
-extern NSString* const kMBMLAttributeUserDefaultsName;
-extern NSString* const kMBMLAttributeFile;
-extern NSString* const kMBMLAttributeExpression;
-extern NSString* const kMBMLAttributeModules;
+extern NSString* const __nullable kMBMLAttributeName;
+extern NSString* const __nullable kMBMLAttributeIf;
+extern NSString* const __nullable kMBMLAttributeDataSource;
+extern NSString* const __nullable kMBMLAttributeClass;             // consider deprecating in favor of className
+extern NSString* const __nullable kMBMLAttributeValue;
+extern NSString* const __nullable kMBMLAttributeBoolean;
+extern NSString* const __nullable kMBMLAttributeLiteral;
+extern NSString* const __nullable kMBMLAttributeVar;
+extern NSString* const __nullable kMBMLAttributeMethod;
+extern NSString* const __nullable kMBMLAttributeInput;
+extern NSString* const __nullable kMBMLAttributeOutput;
+extern NSString* const __nullable kMBMLAttributeDeprecated;
+extern NSString* const __nullable kMBMLAttributeDeprecatedInFavorOf;
+extern NSString* const __nullable kMBMLAttributeDeprecationMessage;
+extern NSString* const __nullable kMBMLAttributeType;
+extern NSString* const __nullable kMBMLAttributeMutable;
+extern NSString* const __nullable kMBMLAttributeUserDefaultsName;
+extern NSString* const __nullable kMBMLAttributeFile;
+extern NSString* const __nullable kMBMLAttributeExpression;
+extern NSString* const __nullable kMBMLAttributeModules;
 
 /******************************************************************************/
 #pragma mark Constants - MBML attribute names used by multiple external modules
 /******************************************************************************/
 
-extern NSString* const kMBMLAttributeURL;
-extern NSString* const kMBMLAttributeMessage;
-extern NSString* const kMBMLAttributeEvent;
-extern NSString* const kMBMLAttributeTarget;
+extern NSString* const __nullable kMBMLAttributeURL;
+extern NSString* const __nullable kMBMLAttributeMessage;
+extern NSString* const __nullable kMBMLAttributeEvent;
+extern NSString* const __nullable kMBMLAttributeTarget;

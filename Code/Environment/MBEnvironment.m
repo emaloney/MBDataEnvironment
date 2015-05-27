@@ -112,7 +112,7 @@ static NSMutableArray* s_resourceBundles = nil;
 #pragma mark Working with external libraries
 /******************************************************************************/
 
-+ (void) addSupportedLibraryClassPrefix:(NSString*)prefix
++ (void) addSupportedLibraryClassPrefix:(nonnull NSString*)prefix
 {
     debugTrace();
 
@@ -124,7 +124,7 @@ static NSMutableArray* s_resourceBundles = nil;
     }];
 }
 
-+ (NSArray*) supportedLibraryClassPrefixes
++ (nonnull NSArray*) supportedLibraryClassPrefixes
 {
     __block NSArray* array = nil;
     [s_readerWriter read:^{
@@ -133,7 +133,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return array;
 }
 
-+ (Class) libraryClassForName:(NSString*)className
++ (nullable Class) libraryClassForName:(nonnull NSString*)className
 {
     Class cls = NSClassFromString(className);
     if (cls)
@@ -154,7 +154,7 @@ static NSMutableArray* s_resourceBundles = nil;
 #pragma mark Code modules
 /******************************************************************************/
 
-+ (BOOL) enableModuleClass:(Class)cls
++ (BOOL) enableModuleClass:(nonnull Class)cls
 {
     if (!cls || ![cls conformsToProtocol:@protocol(MBModule)]) {
         return NO;
@@ -169,7 +169,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return YES;
 }
 
-+ (NSArray*) enabledModuleClasses
++ (nonnull NSArray*) enabledModuleClasses
 {
     __block NSArray* array = nil;
     [s_readerWriter read:^{
@@ -178,7 +178,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return array;
 }
 
-- (NSArray*) enabledModuleClasses
+- (nonnull NSArray*) enabledModuleClasses
 {
     return [_modules copy];
 }
@@ -238,12 +238,12 @@ static NSMutableArray* s_resourceBundles = nil;
     return NO;
 }
 
-- (NSArray*) environmentLoaders
+- (nonnull NSArray*) environmentLoaders
 {
     return [_loaders copy];
 }
 
-- (MBEnvironmentLoader*) environmentLoaderOfClass:(Class)cls
+- (nullable MBEnvironmentLoader*) environmentLoaderOfClass:(nonnull Class)cls
 {
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         if ([loader isKindOfClass:cls]) {
@@ -266,7 +266,7 @@ static NSMutableArray* s_resourceBundles = nil;
 #pragma mark Finding resources
 /******************************************************************************/
 
-+ (void) addResourceSearchBundle:(NSBundle*)bundle
++ (void) addResourceSearchBundle:(nonnull NSBundle*)bundle
 {
     if (bundle) {
         [s_readerWriter enqueueWrite:^{
@@ -277,7 +277,7 @@ static NSMutableArray* s_resourceBundles = nil;
     }
 }
 
-+ (NSArray*) resourceSearchBundles
++ (nonnull NSArray*) resourceSearchBundles
 {
     __block NSArray* array = nil;
     [s_readerWriter read:^{
@@ -504,38 +504,38 @@ static NSMutableArray* s_resourceBundles = nil;
                 withSearchDirectories:nil];
 }
 
-+ (instancetype) loadFromManifest
++ (nullable instancetype) loadFromManifest
 {
     return [self loadFromManifestFile:kMBMLManifestFilename
                 withSearchDirectories:nil];
 }
 
-+ (instancetype) loadFromManifestWithSearchDirectory:(NSString*)dirPath
++ (nullable instancetype) loadFromManifestWithSearchDirectory:(nonnull NSString*)dirPath
 {
     return [self loadFromManifestFile:kMBMLManifestFilename
-                withSearchDirectories:@[dirPath]];
+                withSearchDirectories:dirPath ? @[dirPath] : nil];
 }
 
-+ (instancetype) loadFromManifestFile:(NSString*)manifestName
++ (nullable instancetype) loadFromManifestFile:(nonnull NSString*)manifestName
 {
     return [self loadFromManifestFile:manifestName withSearchDirectory:nil];
 }
 
-+ (instancetype) loadFromManifestFile:(NSString*)manifestName
-                  withSearchDirectory:(NSString*)dirPath
++ (nonnull instancetype) loadFromManifestFile:(nonnull NSString*)manifestName
+                          withSearchDirectory:(nullable NSString*)dirPath
 {
     return [self loadFromManifestFile:manifestName
                 withSearchDirectories:dirPath ? @[dirPath] : nil];
 }
 
-+ (instancetype) loadFromManifestWithSearchDirectories:(NSArray*)dirPaths
++ (nullable instancetype) loadFromManifestWithSearchDirectories:(nullable NSArray*)dirPaths
 {
     return [self loadFromManifestFile:kMBMLManifestFilename
                 withSearchDirectories:dirPaths];
 }
 
-+ (instancetype) loadFromManifestFile:(NSString*)manifestName
-                withSearchDirectories:(NSArray*)dirPaths
++ (nullable instancetype) loadFromManifestFile:(nullable NSString*)manifestName
+                         withSearchDirectories:(nullable NSArray*)dirPaths
 {
     debugTrace();
 
@@ -573,12 +573,12 @@ static NSMutableArray* s_resourceBundles = nil;
 #pragma mark Determining which MBML files have been loaded
 /******************************************************************************/
 
-- (NSArray*) mbmlPathsLoaded
+- (nonnull NSArray*) mbmlPathsLoaded
 {
     return [_loadedFilePaths copy];
 }
 
-- (BOOL) mbmlFileIsLoaded:(NSString*)fileName
+- (BOOL) mbmlFileIsLoaded:(nonnull NSString*)fileName
 {
     verboseDebugTrace();
 
@@ -592,7 +592,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return NO;
 }
 
-- (BOOL) mbmlPathIsLoaded:(NSString*)filePath
+- (BOOL) mbmlPathIsLoaded:(nonnull NSString*)filePath
 {
     verboseDebugTrace();
     
@@ -611,7 +611,7 @@ static NSMutableArray* s_resourceBundles = nil;
 #pragma mark Managing the current environment
 /******************************************************************************/
 
-+ (instancetype) instance
++ (nullable instancetype) instance
 {
     __block MBEnvironment* env = nil;
     [s_readerWriter read:^{
@@ -620,7 +620,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return env;
 }
 
-+ (MBEnvironment*) setEnvironment:(MBEnvironment*)env
++ (nullable instancetype) setEnvironment:(nullable MBEnvironment*)env
 {
     debugTrace();
     
@@ -639,7 +639,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return deactivating;
 }
 
-+ (void) pushEnvironment:(MBEnvironment*)env
++ (void) pushEnvironment:(nonnull MBEnvironment*)env
 {
     debugTrace();
 
@@ -650,7 +650,7 @@ static NSMutableArray* s_resourceBundles = nil;
     }];
 }
 
-+ (instancetype) popEnvironment
++ (nonnull instancetype) popEnvironment
 {
     debugTrace();
 
@@ -668,7 +668,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return popped;
 }
 
-+ (instancetype) peekEnvironment
++ (nullable instancetype) peekEnvironment
 {
     debugTrace();
 
@@ -760,7 +760,7 @@ static NSMutableArray* s_resourceBundles = nil;
     return nil;
 }
 
-- (BOOL) loadMBMLFile:(NSString*)fileName
+- (BOOL) loadMBMLFile:(nonnull NSString*)fileName
 {
     debugTrace();
 

@@ -27,15 +27,15 @@
  
  @return    An `MBAttributeValidator` that can be used to validate `model`.
  */
-+ (instancetype) validatorForDataModel:(MBDataModel*)model;
++ (nonnull instancetype) validatorForDataModel:(nonnull MBDataModel*)model;
 
 /*! Returns the `MBDataModel` that the receiver was constructed to validate. */
-@property(nonatomic, readonly) MBDataModel* model;
+@property(nonnull, nonatomic, readonly) MBDataModel* model;
 
 /*! Returns an array of `NSString`s containing error messages for any problems
     encountered during validation. Will be `nil` if no validation errors
     have occurred. */
-@property(nonatomic, readonly) NSArray* validationErrorMessages;
+@property(nullable, nonatomic, readonly) NSArray* validationErrorMessages;
 
 /*!
  Requires that the data model contain either `attr1` or `attr2` but not
@@ -47,7 +47,7 @@
  
  @return    `YES` if the validation requirement was satisfied; `NO` otherwise.
  */
-- (BOOL) require:(NSString*)attr1 or:(NSString*)attr2;
+- (BOOL) require:(nonnull NSString*)attr1 or:(nonnull NSString*)attr2;
 
 /*!
  Requires that the data model contain either `attr1` or `attr2`.
@@ -63,7 +63,7 @@
  
  @return    `YES` if the validation requirement was satisfied; `NO` otherwise.
  */
-- (BOOL) require:(NSString*)attr1 or:(NSString*)attr2 butNotBoth:(BOOL)onlyAllowOne;
+- (BOOL) require:(nonnull NSString*)attr1 or:(nonnull NSString*)attr2 butNotBoth:(BOOL)onlyAllowOne;
 
 /*!
  Requires at least one of a set of attribute names to be present in the data
@@ -74,7 +74,7 @@
  
  @return    `YES` if the validation requirement was satisfied; `NO` otherwise.
  */
-- (BOOL) requireAtLeastOneOf:(NSObject<NSFastEnumeration>*)attrs;
+- (BOOL) requireAtLeastOneOf:(nonnull NSObject<NSFastEnumeration>*)attrs;
 
 /*!
  Requires exactly one of a set of attribute names to be present in the data
@@ -86,7 +86,7 @@
  
  @return    `YES` if the validation requirement was satisfied; `NO` otherwise.
  */
-- (BOOL) requireExactlyOneOf:(NSObject<NSFastEnumeration>*)attrs;
+- (BOOL) requireExactlyOneOf:(nonnull NSObject<NSFastEnumeration>*)attrs;
 
 /*!
  Returns `YES` if all validation requirements were satisfied.

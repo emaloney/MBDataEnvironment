@@ -16,10 +16,10 @@
 #pragma mark Constants
 /******************************************************************************/
 
-extern NSString* const kMBMLManifestFilename;               // @"manifest.xml"
+extern NSString* const __nonnull kMBMLManifestFilename;               // @"manifest.xml"
 
-extern NSString* const kMBMLRootTagName;                    // @"MBML"
-extern NSString* const kMBMLIncludeTagName;                 // @"Include"
+extern NSString* const __nonnull kMBMLRootTagName;                    // @"MBML"
+extern NSString* const __nonnull kMBMLIncludeTagName;                 // @"Include"
 
 /******************************************************************************/
 #pragma mark -
@@ -51,7 +51,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
  @return    The currently-active environment.
  */
-+ (instancetype) instance;
++ (nullable instancetype) instance;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Managing the current environment
@@ -66,7 +66,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
  @return    The previously-active `MBEnvironment` instance, if any.
  */
-+ (instancetype) setEnvironment:(MBEnvironment*)env;
++ (nullable instancetype) setEnvironment:(nullable MBEnvironment*)env;
 
 /*!
  Sets the active `MBEnvironment` instance by pushing a new environment
@@ -74,7 +74,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  
  @param     env The `MBEnvironment` to set as the active environment.
  */
-+ (void) pushEnvironment:(MBEnvironment*)env;
++ (void) pushEnvironment:(nonnull MBEnvironment*)env;
 
 /*!
  Sets the active `MBEnvironment` instance by popping it from the environment
@@ -84,7 +84,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
  @return    The newly-active environment.
  */
-+ (instancetype) popEnvironment;
++ (nonnull instancetype) popEnvironment;
 
 /*!
  Returns (but does not remove) the `MBEnvironment` instance at the top of the
@@ -94,7 +94,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The environment at the top of the environment stack, or `nil` if
             there is nothing in the stack.
  */
-+ (instancetype) peekEnvironment;
++ (nullable instancetype) peekEnvironment;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Loading the Mockingbird environment
@@ -112,7 +112,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadDefaultEnvironment;
++ (nullable instancetype) loadDefaultEnvironment;
 
 /*!
  Loads a new environment by processing the `manifest.xml` file found in the
@@ -124,7 +124,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadFromManifest;
++ (nullable instancetype) loadFromManifest;
 
 /*!
  Loads a new environment by processing the `manifest.xml` file found in the
@@ -142,7 +142,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadFromManifestWithSearchDirectory:(NSString*)dirPath;
++ (nullable instancetype) loadFromManifestWithSearchDirectory:(nonnull NSString*)dirPath;
 
 /*!
  Loads a new environment by processing the manifest file with the given name
@@ -156,7 +156,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadFromManifestFile:(NSString*)manifestName;
++ (nullable instancetype) loadFromManifestFile:(nonnull NSString*)manifestName;
 
 /*!
  Loads a new environment by processing the manifest file with the given name
@@ -176,8 +176,8 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadFromManifestFile:(NSString*)manifestName
-                  withSearchDirectory:(NSString*)dirPath;
++ (nonnull instancetype) loadFromManifestFile:(nonnull NSString*)manifestName
+                          withSearchDirectory:(nullable NSString*)dirPath;
 
 /*!
  Loads a new environment by processing the `manifest.xml` file found in the
@@ -196,7 +196,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadFromManifestWithSearchDirectories:(NSArray*)dirPaths;
++ (nullable instancetype) loadFromManifestWithSearchDirectories:(nullable NSArray*)dirPaths;
 
 /*!
  Loads a new environment by processing the manifest file with the given name
@@ -217,8 +217,8 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The newly-loaded, now-active `MBEnvironment` instance, or `nil`
             if the environment could not be loaded.
  */
-+ (instancetype) loadFromManifestFile:(NSString*)manifestName
-                withSearchDirectories:(NSArray*)dirPaths;
++ (nullable instancetype) loadFromManifestFile:(nullable NSString*)manifestName
+                         withSearchDirectories:(nullable NSArray*)dirPaths;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark MBML loading
@@ -235,7 +235,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
 
  @return    `YES` if `fileName` was loaded successfully; `NO` otherwise.
  */
-- (BOOL) loadMBMLFile:(NSString*)fileName;
+- (BOOL) loadMBMLFile:(nonnull NSString*)fileName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Controlling where resources are found
@@ -249,7 +249,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @param     bundle An `NSBundle` instance that should be searched when
             attempting to find resources.
  */
-+ (void) addResourceSearchBundle:(NSBundle*)bundle;
++ (void) addResourceSearchBundle:(nonnull NSBundle*)bundle;
 
 /*!
  Returns the `NSBundle` instances that will be consulted whenever an
@@ -257,7 +257,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  
  @return    An array of `NSBundle`s. Will never be `nil`.
  */
-+ (NSArray*) resourceSearchBundles;
++ (nonnull NSArray*) resourceSearchBundles;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Determining the state of the environment
@@ -271,11 +271,11 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
     return the path of the manifest file. If the environment isn't loaded
     or if the environment was loaded without using a manifest file (such as
     through the `loadDefaultEnvironment` method), this value will be `nil`. */
-@property(nonatomic, strong, readonly) NSString* manifestFilePath;
+@property(nullable, nonatomic, strong, readonly) NSString* manifestFilePath;
 
 /*! This property contains the paths of the MBML files that have been loaded
     by the environment thusfar. */
-@property(nonatomic, copy, readonly) NSArray* mbmlPathsLoaded;
+@property(nonnull, nonatomic, copy, readonly) NSArray* mbmlPathsLoaded;
 
 /*!
  Determines if an MBML file with a specific path has been loaded by the
@@ -286,7 +286,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    `YES` if the environment has loaded an MBML file at the path
             `filePath`; `NO` otherwise.
  */
-- (BOOL) mbmlPathIsLoaded:(NSString*)filePath;
+- (BOOL) mbmlPathIsLoaded:(nonnull NSString*)filePath;
 
 /*!
  Determines if an MBML file with a specific name has been loaded by the
@@ -301,7 +301,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    `YES` if the environment has loaded an MBML file with the given
             name; `NO` otherwise.
  */
-- (BOOL) mbmlFileIsLoaded:(NSString*)fileName;
+- (BOOL) mbmlFileIsLoaded:(nonnull NSString*)fileName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Working with external libraries
@@ -315,7 +315,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @param     prefix The class prefix Mockingbird should support for dynamic
             class loading.
  */
-+ (void) addSupportedLibraryClassPrefix:(NSString*)prefix;
++ (void) addSupportedLibraryClassPrefix:(nonnull NSString*)prefix;
 
 /*!
  Returns an array containing the class prefixes that will be searched
@@ -325,7 +325,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
             Will never be `nil` and will always contain at least one value,
             the string "`MB`".
  */
-+ (NSArray*) supportedLibraryClassPrefixes;
++ (nonnull NSArray*) supportedLibraryClassPrefixes;
 
 /*!
  Uses the `supportedClassPrefixes` to find an available `Class` that implements
@@ -346,7 +346,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
             class prefixes, or without any prefix. Returns `nil` if no class
             could be found.
  */
-+ (Class) libraryClassForName:(NSString*)className;
++ (nullable Class) libraryClassForName:(nonnull NSString*)className;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Adding functionality through modules
@@ -363,7 +363,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    `YES` if `cls` represents an `MBModule` that is now enabled. Will
             be `NO` if `cls` does not conform to `MBModule`.
  */
-+ (BOOL) enableModuleClass:(Class)cls;
++ (BOOL) enableModuleClass:(nonnull Class)cls;
 
 /*!
  Returns an array containing the `MBModule` classes that will be enabled for all
@@ -375,7 +375,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
             item, because `MBDataEnvironmentModule` is always enabled.
 
  */
-+ (NSArray*) enabledModuleClasses;
++ (nonnull NSArray*) enabledModuleClasses;
 
 /*!
  Returns an array of `Class`es representing the `MBModule`s enabled in the
@@ -386,7 +386,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
             always enabled. Additional modules may also be enabled through the
             manifest file.
  */
-- (NSArray*) enabledModuleClasses;
+- (nonnull NSArray*) enabledModuleClasses;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Accessing environment loaders
@@ -399,7 +399,7 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  
  @return    The environment loaders used by the receiver. Will never be `nil`.
  */
-- (NSArray*) environmentLoaders;
+- (nonnull NSArray*) environmentLoaders;
 
 /*!
  Returns the first `MBEnvironmentLoader` instance known to the receiver that
@@ -411,6 +411,6 @@ extern NSString* const kMBMLIncludeTagName;                 // @"Include"
  @return    The first `MBEnvironmentLoader` representing an instance of `cls`.
             Will be `nil` if no such environment loader was found.
  */
-- (MBEnvironmentLoader*) environmentLoaderOfClass:(Class)cls;
+- (nullable MBEnvironmentLoader*) environmentLoaderOfClass:(nonnull Class)cls;
 
 @end

@@ -38,17 +38,17 @@ MBImplementSingleton();
     return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
 }
 
-- (NSString*) osType
+- (nonnull NSString*) osType
 {
     return [UIDevice currentDevice].systemName;
 }
 
-- (NSString*) osVersion
+- (nonnull NSString*) osVersion
 {
     return [UIDevice currentDevice].systemVersion;
 }
 
-- (NSArray*) osVersionComponents
+- (nonnull NSArray*) osVersionComponents
 {
     NSMutableArray* compNums = [NSMutableArray new];
     NSArray* comps = [[self osVersion] componentsSeparatedByString:@"."];
@@ -58,22 +58,22 @@ MBImplementSingleton();
     return [compNums copy];
 }
 
-- (NSNumber*) osVersionMajor
+- (nonnull NSNumber*) osVersionMajor
 {
     return [self osVersionComponents][0];
 }
 
-- (NSNumber*) osVersionMinor
+- (nonnull NSNumber*) osVersionMinor
 {
     return [self osVersionComponents][1];
 }
 
-- (NSNumber*) osVersionRevision
+- (nonnull NSNumber*) osVersionRevision
 {
     return [self osVersionComponents][2];
 }
 
-- (NSString*) currentOrientation
+- (nonnull NSString*) currentOrientation
 {
     return ([self isLandscape] ? kMBInterfaceOrientationLandscape : kMBInterfaceOrientationPortrait);
 }
@@ -88,7 +88,7 @@ MBImplementSingleton();
     return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
 }
 
-- (NSNumber*) screenScale
+- (nonnull NSNumber*) screenScale
 {
     return @([[UIScreen mainScreen] scale]);
 }
@@ -108,27 +108,27 @@ MBImplementSingleton();
     }
 }
 
-- (NSNumber*) screenWidth
+- (nonnull NSNumber*) screenWidth
 {
     return @([self _screenSize].width);
 }
 
-- (NSNumber*) screenHeight;
+- (nonnull NSNumber*) screenHeight;
 {
     return @([self _screenSize].height);
 }
 
-- (NSString*) screenSize
+- (nonnull NSString*) screenSize
 {
     return [MBStringConversions stringFromSize:[self _screenSize]];
 }
 
-- (NSString*) screenSizePortrait
+- (nonnull NSString*) screenSizePortrait
 {
     return [MBStringConversions stringFromSize:[UIScreen mainScreen].bounds.size];
 }
 
-- (NSString*) screenSizeLandscape
+- (nonnull NSString*) screenSizeLandscape
 {
     CGSize size = [UIScreen mainScreen].bounds.size;
     return [MBStringConversions stringFromSize:(CGSize){size.height, size.width}];  // flip width & height in landscape

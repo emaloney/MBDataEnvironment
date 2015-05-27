@@ -85,7 +85,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Property handling
 /******************************************************************************/
 
-- (NSString*) name
+- (nullable NSString*) name
 {
     return [self stringValueOfAttribute:kMBMLAttributeName];
 }
@@ -104,14 +104,14 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Accessing variable values
 /******************************************************************************/
 
-- (id) initialValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr;
+- (nullable id) initialValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr
 {
     MBErrorNotImplementedReturn(id);
 }
 
-- (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr;
+- (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr
 {
     MBErrorNotImplementedReturn(id);
 }
@@ -120,7 +120,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Variable value change hook
 /******************************************************************************/
 
-- (void) valueChangedTo:(id)value inVariableSpace:(MBVariableSpace*)space
+- (void) valueChangedTo:(nullable id)value inVariableSpace:(nonnull MBVariableSpace*)space
 {
 }
 
@@ -293,62 +293,16 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 /******************************************************************************/
-#pragma mark MBStringValueCoding support
-/******************************************************************************/
-
-- (id) _stringValueCodingDecode:(NSString*)value
-{
-    if (![value isKindOfClass:[NSString class]]) {
-        return value;
-    }
-    
-    if (value.length < 4 || ![value hasPrefix:@"["] || ![value hasSuffix:@"]"]) {
-        return value;
-    }
-    
-    NSRange delimiter = [value rangeOfString:@":"];
-    if (delimiter.location == NSNotFound || delimiter.location < 2) {
-        return value;
-    }
-    
-    NSString* clsName = [value substringWithRange:NSMakeRange(1, delimiter.location-1)];
-    Class cls = NSClassFromString(clsName);
-    if (!cls) {
-        return value;
-    }
-    
-    if (![cls conformsToProtocol:@protocol(MBStringValueCoding)]) {
-        return value;
-    }
-    
-    NSString* valueSrc = [value substringWithRange:NSMakeRange(delimiter.location + 1, (value.length - delimiter.location) - 2)];
-    id objVal = [cls fromStringValue:valueSrc];
-    
-    return objVal;
-}
-
-- (id) _stringValueCodingEncode:(id)obj
-{
-    if ([obj conformsToProtocol:@protocol(MBStringValueCoding)]) {
-        return [NSString stringWithFormat:@"[%@:%@]", [obj class], [obj stringValue]];
-    }
-    return obj;
-}
-
-/******************************************************************************/
 #pragma mark Variable value change hook
 /******************************************************************************/
 
-- (void) valueChangedTo:(id)val inVariableSpace:(MBVariableSpace*)space
+- (void) valueChangedTo:(nullable id)value inVariableSpace:(nonnull MBVariableSpace*)space
 {
     NSString* defsName = self.userDefaultsName;
     if (defsName) {
         NSUserDefaults* defs = [NSUserDefaults standardUserDefaults];
-        if (val) {
-            val = [self _stringValueCodingEncode:val];
-            if (val) {
-                [defs setObject:val forKey:defsName];
-            }
+        if (value) {
+            [defs setObject:value forKey:defsName];
         }
         else {
             [defs removeObjectForKey:defsName];
@@ -364,7 +318,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 /******************************************************************************/
 
 - (id) _initialValueForSimpleVariableInSpace:(MBVariableSpace*)space
-                                       error:(inout MBExpressionError**)errPtr
+                                       error:(MBExpressionErrorPtrPtr)errPtr
 {
     if (_isLiteralValue) {
         // literal value; we don't evaluate the expression
@@ -388,7 +342,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 - (id) _initialValueForMapVariableInSpace:(MBVariableSpace*)space
-                                    error:(inout MBExpressionError**)errPtr
+                                    error:(MBExpressionErrorPtrPtr)errPtr
 {
     NSArray* relatives = [self relativesWithDefaultRelation];
     NSMutableDictionary* map = [NSMutableDictionary dictionaryWithCapacity:relatives.count];
@@ -407,7 +361,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 }
 
 - (id) _initialValueForListVariableInSpace:(MBVariableSpace*)space
-                                     error:(inout MBExpressionError**)errPtr
+                                     error:(MBExpressionErrorPtrPtr)errPtr
 {
     NSArray* relatives = [self relativesWithDefaultRelation];
     NSMutableArray* list = [NSMutableArray arrayWithCapacity:relatives.count];
@@ -425,8 +379,8 @@ NSString* const kMBMLVariableTypeList       = @"list";
     return list;
 }
 
-- (instancetype) initialValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr
+- (nullable id) initialValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 
@@ -434,9 +388,6 @@ NSString* const kMBMLVariableTypeList       = @"list";
     NSString* defName = self.userDefaultsName;
     if (defName) {
         val = [[NSUserDefaults standardUserDefaults] objectForKey:defName];
-        if (val) {
-            val = [self _stringValueCodingDecode:val];
-        }
     }
     if (!val) {
         switch (self.declaredType) {
@@ -457,8 +408,8 @@ NSString* const kMBMLVariableTypeList       = @"list";
     return val;
 }
 
-- (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr
+- (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -540,8 +491,8 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Accessing variable values
 /******************************************************************************/
 
-- (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr
+- (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -587,8 +538,8 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Accessing variable values
 /******************************************************************************/
 
-- (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr
+- (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 

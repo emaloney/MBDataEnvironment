@@ -18,12 +18,12 @@
 
 @implementation MBDataEnvironmentModule
 
-+ (NSArray*) environmentLoaderClasses
++ (nullable NSArray*) environmentLoaderClasses
 {
     return @[[MBVariableSpace class]];
 }
 
-+ (NSString*) moduleEnvironmentFilename
++ (nullable NSString*) moduleEnvironmentFilename
 {
     return [[self description] stringByAppendingPathExtension:@"xml"];
 }

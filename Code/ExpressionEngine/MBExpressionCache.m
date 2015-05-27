@@ -532,7 +532,7 @@ MBImplementSingleton();
     }
 }
 
-- (NSNumber*) filesystemCacheSize
+- (nullable NSNumber*) filesystemCacheSize
 {
     debugTrace();
 

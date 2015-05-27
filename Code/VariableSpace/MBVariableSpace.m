@@ -48,7 +48,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Instance vendor
 /******************************************************************************/
 
-+ (instancetype) instance
++ (nullable instancetype) instance
 {
     return (MBVariableSpace*)[[MBEnvironment instance] environmentLoaderOfClass:self];
 }
@@ -57,7 +57,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (instancetype) init
+- (nonnull instancetype) init
 {
     self = [super init];
     if (self) {
@@ -73,7 +73,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Managing the expression cache
 /******************************************************************************/
 
-- (void) environmentWillLoad:(MBEnvironment*)env
+- (void) environmentWillLoad:(nonnull MBEnvironment*)env
 {
     debugTrace();
 
@@ -85,7 +85,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     cache.pausePersistence = YES;    // turn off persistence once more to avoid thrashing while loading the environment
 }
 
-- (void) environmentDidLoad:(MBEnvironment*)env
+- (void) environmentDidLoad:(nonnull MBEnvironment*)env
 {
     debugTrace();
 
@@ -97,13 +97,13 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Managing the environment
 /******************************************************************************/
 
-- (NSArray*) acceptedTagNames
+- (nonnull NSArray*) acceptedTagNames
 {
     return @[kMBVariableSpaceXMLTagVar,
              kMBVariableSpaceXMLTagFunction];
 }
 
-- (BOOL) parseElement:(RXMLElement*)mbml forMatch:(NSString*)match
+- (BOOL) parseElement:(nonnull RXMLElement*)mbml forMatch:(nonnull NSString*)match
 {
     verboseDebugTrace();
 
@@ -131,21 +131,21 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Managing variable declarations
 /******************************************************************************/
 
-- (BOOL) declareVariable:(MBVariableDeclaration*)decl
+- (BOOL) declareVariable:(nonnull MBVariableDeclaration*)declaration
 {
     debugTrace();
 
-    if ([decl validateDataModelIfNeeded]) {
-        NSString* varName = decl.name;
+    if ([declaration validateDataModelIfNeeded]) {
+        NSString* varName = declaration.name;
         if (varName) {
             MBVariableDeclaration* curDecl = _namesToDeclarations[varName];
             if (curDecl) {
-                consoleLog(@"WARNING: Variable \"%@\" redeclared from %@ to %@", varName, curDecl.simulatedXML, decl.simulatedXML);
+                consoleLog(@"WARNING: Variable \"%@\" redeclared from %@ to %@", varName, curDecl.simulatedXML, declaration.simulatedXML);
             }
 
-            if (!decl.disallowsValueCaching) {
+            if (!declaration.disallowsValueCaching) {
                 MBExpressionError* err = nil;
-                id val = [decl initialValueInVariableSpace:self error:&err];
+                id val = [declaration initialValueInVariableSpace:self error:&err];
                 if (err) {
                     [err log];
                     return NO;
@@ -155,7 +155,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
                 }
             }
 
-            _namesToDeclarations[varName] = decl;
+            _namesToDeclarations[varName] = declaration;
 
             return YES;
         }
@@ -163,12 +163,12 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     return NO;
 }
 
-- (MBVariableDeclaration*) declarationForVariable:(NSString*)varName
+- (nullable MBVariableDeclaration*) declarationForVariable:(nonnull NSString*)varName
 {
     return _namesToDeclarations[varName];
 }
 
-- (BOOL) isReadOnlyVariable:(NSString*)varName
+- (BOOL) isReadOnlyVariable:(nonnull NSString*)varName
 {
     if (varName) {
         MBVariableDeclaration* decl = _namesToDeclarations[varName];
@@ -207,7 +207,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     return [self variableAsString:varName defaultValue:nil];
 }
 
-- (NSString*) variableAsString:(NSString*)varName defaultValue:(NSString*)def
+- (nullable NSString*) variableAsString:(nonnull NSString*)varName defaultValue:(nullable NSString*)def
 {
     verboseDebugTrace();
 
@@ -225,18 +225,18 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Setting variable values
 /******************************************************************************/
 
-- (void) setObject:(id)obj forKeyedSubscript:(NSString*)varName
+- (void) setObject:(nullable id)value forKeyedSubscript:(nonnull NSString*)variableName
 {
-    if (!varName || ![varName isKindOfClass:[NSString class]]) {
+    if (!variableName || ![variableName isKindOfClass:[NSString class]]) {
         [NSException raise:NSInvalidArgumentException
-                    format:@"%@ requires keyed subscripts to be %@ instances (got %@ instead)", [self class], [NSString class], [varName class]];
+                    format:@"%@ requires keyed subscripts to be %@ instances (got %@ instead)", [self class], [NSString class], [variableName class]];
     }
 
-    if ([self isReadOnlyVariable:varName]) {
-        errorLog(@"Attempted to change value of read-only variable named %@", varName);
+    if ([self isReadOnlyVariable:variableName]) {
+        errorLog(@"Attempted to change value of read-only variable named %@", variableName);
     }
     else {
-        [self _setVariable:varName value:obj];
+        [self _setVariable:variableName value:value];
     }
 }
 
@@ -342,31 +342,31 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Managing the variable stack
 /******************************************************************************/
 
-- (void) pushVariable:(NSString*)varName value:(id)val
+- (void) pushVariable:(nonnull NSString*)variableName value:(nullable id)value
 {
     verboseDebugTrace();
 
-    if ([self isReadOnlyVariable:varName]) {
-        errorLog(@"Attempted to push value for immutable variable named %@", varName);
+    if ([self isReadOnlyVariable:variableName]) {
+        errorLog(@"Attempted to push value for immutable variable named %@", variableName);
         return;
     }
 
-    id curVal = _variables[varName];
+    id curVal = _variables[variableName];
     if (!curVal) {
         curVal = [NSNull null];
     }
 
-    NSMutableArray* stack = _variableStack[varName];
+    NSMutableArray* stack = _variableStack[variableName];
     if (!stack) {
         stack = [NSMutableArray array];
-        _variableStack[varName] = stack;
+        _variableStack[variableName] = stack;
     }
     [stack addObject:curVal];
 
-    [self _setVariable:varName value:val];
+    [self _setVariable:variableName value:value];
 }
 
-- (id) popVariable:(NSString*)varName
+- (nullable id) popVariable:(nonnull NSString*)varName
 {
     verboseDebugTrace();
 
@@ -394,7 +394,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Constructing variable-related names
 /******************************************************************************/
 
-+ (NSString*) name:(NSString*)name withSuffix:(NSString*)suffix
++ (nullable NSString*) name:(nullable NSString*)name withSuffix:(nullable NSString*)suffix
 {
     return [MBEvents name:name withSuffix:suffix];
 }
@@ -403,17 +403,20 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark Observing NSUserDefaults value changes
 /******************************************************************************/
 
-- (void) addObserverForUserDefault:(NSString*)userDefaultsName target:(id)target action:(SEL)action
+- (void) addObserverForUserDefault:(nonnull NSString*)userDefaultsName
+                            target:(nonnull id)observer
+                            action:(nonnull SEL)action
 {
     debugTrace();
 
-    [[NSNotificationCenter defaultCenter] addObserver:target
+    [[NSNotificationCenter defaultCenter] addObserver:observer
                                              selector:action
                                                  name:[NSString stringWithFormat:@"UserDefault:%@:valueChanged", userDefaultsName]
                                                object:nil];
 }
 
-- (void) removeObserver:(id)observer forUserDefault:(NSString*)userDefaultsName
+- (void) removeObserver:(nonnull id)observer
+         forUserDefault:(nonnull NSString*)userDefaultsName
 {
     debugTrace();
 
@@ -426,7 +429,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
 #pragma mark MBML functions
 /******************************************************************************/
 
-- (BOOL) declareFunction:(MBMLFunction*)function
+- (BOOL) declareFunction:(nonnull MBMLFunction*)function
 {
     if ([function validateDataModelIfNeeded]) {
         NSString* funcName = function.name;
@@ -444,14 +447,14 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     return NO;
 }
 
-- (NSArray*) functionNames
+- (nonnull NSArray*) functionNames
 {
     verboseDebugTrace();
 
     return [_mbmlFunctions allKeys];
 }
 
-- (MBMLFunction*) functionWithName:(NSString*)name
+- (nullable MBMLFunction*) functionWithName:(nonnull NSString*)name
 {
     verboseDebugTrace();
     

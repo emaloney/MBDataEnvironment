@@ -18,7 +18,7 @@
 /******************************************************************************/
 
 // posted to NSNotificationCenter when a new function is declared in a variable space
-extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
+extern NSString* const __nonnull kMBVariableSpaceDidDeclareFunctionEvent;
 
 /******************************************************************************/
 #pragma mark -
@@ -48,7 +48,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 
  @return    The current variable space.
  */
-+ (instancetype) instance;
++ (nullable instancetype) instance;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Accessing variable values
@@ -73,7 +73,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             variable with the given name or if there was an error retrieving
             the variable's value.
  */
-- (id) objectForKeyedSubscript:(NSString*)variableName;
+- (nullable id) objectForKeyedSubscript:(nonnull NSString*)variableName;
 
 /*!
  Returns the current string value of the variable with the given name.
@@ -88,7 +88,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             there is no variable with the given name or if there was an error
             retrieving the variable's value.
  */
-- (NSString*) variableAsString:(NSString*)varName;
+- (nullable NSString*) variableAsString:(nonnull NSString*)varName;
 
 /*!
  Returns the current string value for the variable with the given name, or a
@@ -107,7 +107,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             there is no variable with the given name or if there was an error
             retrieving the variable's value.
  */
-- (NSString*) variableAsString:(NSString*)varName defaultValue:(NSString*)def;
+- (nullable NSString*) variableAsString:(nonnull NSString*)varName defaultValue:(nullable NSString*)def;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Modifying variable values
@@ -132,7 +132,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @warning   An `NSInvalidArgumentException` is raised if `variableName`
             is `nil` or is not an `NSString`.
  */
-- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
+- (void) setObject:(nullable id)value forKeyedSubscript:(nonnull NSString*)variableName;
 
 /*!
  Pushes a new value onto the stack for the variable with the given name.
@@ -143,7 +143,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
 
  @param     value The value to set for the variable named `variableName`.
  */
-- (void) pushVariable:(NSString*)variableName value:(id)value;
+- (void) pushVariable:(nonnull NSString*)variableName value:(nullable id)value;
 
 /*!
  Pops the current value from the stack for the variable with the given name.
@@ -161,7 +161,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             If there were no stack values for the variable, `nil` will be
             returned.
  */
-- (id) popVariable:(NSString*)varName;
+- (nullable id) popVariable:(nonnull NSString*)varName;
 
 /*!
  Sets the value of a given key for the `type="map"` variable with the specified
@@ -177,7 +177,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @param     val The new value for the given key. If `nil`, the value for `key`
             will be removed.
  */
-- (void) setMapVariable:(NSString*)varName mapKey:(NSString*)key value:(id)val;
+- (void) setMapVariable:(nonnull NSString*)varName mapKey:(nonnull NSString*)key value:(nullable id)val;
 
 /*!
  Sets the value of a given key for the `type="list"` variable with the specified
@@ -196,7 +196,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @param     val The new value to set at the given index. If `nil`, the value 
             will be set as `NSNull`.
  */
-- (void) setListVariable:(NSString*)varName listIndex:(NSUInteger)idx value:(id)val;
+- (void) setListVariable:(nonnull NSString*)varName listIndex:(NSUInteger)idx value:(nullable id)val;
 
 /*!
  Removes the current value of the variable with the specified name. Values on
@@ -206,7 +206,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             If the name represents a read-only variable, the call will be
             ignored and an error will be logged to the console.
  */
-- (void) unsetVariable:(NSString*)varName;
+- (void) unsetVariable:(nonnull NSString*)varName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Constructing variable-related names
@@ -229,7 +229,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
             `name`, "`:`" and `suffix` is returned. Otherwise, the value of the
             `name` parameter is returned.
  */
-+ (NSString*) name:(NSString*)name withSuffix:(NSString*)suffix;
++ (nullable NSString*) name:(nullable NSString*)name withSuffix:(nullable NSString*)suffix;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Accessing variable information
@@ -265,7 +265,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  
  @return    `YES` if the variable named `varName` is read-only; `NO` otherwise.
  */
-- (BOOL) isReadOnlyVariable:(NSString*)varName;
+- (BOOL) isReadOnlyVariable:(nonnull NSString*)varName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Accessing variable declarations
@@ -280,7 +280,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @return    `YES` if the variable represented by `declaration` was successfully
             declared; `NO` if an error occured.
  */
-- (BOOL) declareVariable:(MBVariableDeclaration*)declaration;
+- (BOOL) declareVariable:(nonnull MBVariableDeclaration*)declaration;
 
 /*!
  Returns the `MBVariableDeclaration` for the variable with the given name.
@@ -296,7 +296,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  
  @return    The declaration for `varName`, or `nil` if no declaration exists.
  */
-- (MBVariableDeclaration*) declarationForVariable:(NSString*)varName;
+- (nullable MBVariableDeclaration*) declarationForVariable:(nonnull NSString*)varName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Accessing MBML functions
@@ -312,14 +312,14 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @return    `YES` if `function` was successfully declared; `NO` if an error
             occurred.
  */
-- (BOOL) declareFunction:(MBMLFunction*)function;
+- (BOOL) declareFunction:(nonnull MBMLFunction*)function;
 
 /*!
  Returns the names of the currently-declared MBML functions.
  
  @return    An `NSArray` containing the names of the declared MBML functions.
  */
-- (NSArray*) functionNames;
+- (nonnull NSArray*) functionNames;
 
 /*!
  Returns the `MBMLFunction` associated with the given name.
@@ -329,7 +329,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @return    The `MBMLFunction`, or `nil` if there is no function declared having
             the given name.
  */
-- (MBMLFunction*) functionWithName:(NSString*)name;
+- (nullable MBMLFunction*) functionWithName:(nonnull NSString*)name;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Observing changes to variables bound to `NSUserDefaults`
@@ -347,7 +347,9 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  
  @param     action The method selector of `observer` to call when notifying.
  */
-- (void) addObserverForUserDefault:(NSString*)userDefaultsName target:(id)observer action:(SEL)action;
+- (void) addObserverForUserDefault:(nonnull NSString*)userDefaultsName
+                            target:(nonnull id)observer
+                            action:(nonnull SEL)action;
 
 /*!
  Stops an observer from being notified of changes to the value of the
@@ -358,6 +360,7 @@ extern NSString* const kMBVariableSpaceDidDeclareFunctionEvent;
  @param     userDefaultsName The `userDefaultsName` of the variable to stop
             observing.
  */
-- (void) removeObserver:(id)observer forUserDefault:(NSString*)userDefaultsName;
+- (void) removeObserver:(nonnull id)observer
+         forUserDefault:(nonnull NSString*)userDefaultsName;
 
 @end

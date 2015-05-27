@@ -29,7 +29,7 @@
 #pragma mark Constants
 /******************************************************************************/
 
-extern NSString* const kMBDataModelDefaultRelation;
+extern NSString* const __nonnull kMBDataModelDefaultRelation;
 
 /******************************************************************************/
 #pragma mark -
@@ -74,12 +74,12 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     xml The XML to use for populating the data model
  */
-+ (instancetype) dataModelFromXML:(RXMLElement*)xml;
++ (nonnull instancetype) dataModelFromXML:(nonnull RXMLElement*)xml;
 
 /*!
  Default initializer; returns an empty data model instance.
  */
-- (instancetype) init;
+- (nonnull instancetype) init;
 
 /*!
  Populates the receiver with the data model inherent in the provided
@@ -89,7 +89,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     xml The XML to use for populating the data model
  */
-- (instancetype) initWithXML:(RXMLElement*)xml;
+- (nonnull instancetype) initWithXML:(nonnull RXMLElement*)xml;
 
 /*!
  For each key/value pair contained in the passed-in dictionary, a
@@ -97,9 +97,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     attrs A dictionary containing the attribute names
             and values to use for initializing the data model object.
-                
  */
-- (instancetype) initWithAttributes:(NSDictionary*)attrs;
+- (nonnull instancetype) initWithAttributes:(nonnull NSDictionary*)attrs;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark NSCopying support
@@ -114,7 +113,7 @@ extern NSString* const kMBDataModelDefaultRelation;
             object instances. If `nil`, the default zone returned by
             `NSDefaultMallocZone()` is used.
  */
-- (id) copyWithZone:(NSZone*)zone;
+- (nonnull id) copyWithZone:(nullable NSZone*)zone;
 
 /*!
  Returns a copy of the receiver.
@@ -123,7 +122,7 @@ extern NSString* const kMBDataModelDefaultRelation;
             object instances. If `nil`, the default zone returned by
             `NSDefaultMallocZone()` is used.
  */
-- (id) mutableCopyWithZone:(NSZone*)zone;
+- (nonnull id) mutableCopyWithZone:(nullable NSZone*)zone;
 
 /*!
  Turns the receiver into a clone of the passed-in data model. Any attributes
@@ -133,7 +132,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     cloneFrom The data model to clone.
  */
-- (void) cloneDataModel:(MBDataModel*)cloneFrom;
+- (void) cloneDataModel:(nonnull MBDataModel*)cloneFrom;
 
 /*!
  Turns the receiver into a clone of the passed-in data model. Any attributes
@@ -147,7 +146,7 @@ extern NSString* const kMBDataModelDefaultRelation;
             as a result of the cloning process. If `nil`, the default zone 
             returned by `NSDefaultMallocZone()` is used.
  */
-- (void) cloneDataModel:(MBDataModel*)cloneFrom withZone:(NSZone*)zone;
+- (void) cloneDataModel:(nonnull MBDataModel*)cloneFrom withZone:(nullable NSZone*)zone;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Class posing
@@ -168,7 +167,7 @@ extern NSString* const kMBDataModelDefaultRelation;
             data model attributes and related objects as the receiver, or
             `nil` if `cls` is not a type of `MBDataModel` class.
  */
-- (id) poseAsClass:(Class)cls;
+- (nullable id) poseAsClass:(nonnull Class)cls;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark XML parsing convenience
@@ -183,9 +182,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
             set to an `NSError` instance indicating the error.
  
- @return    An object representing the top-level element of the XML.
+ @return    An object representing the top-level element of the XML, or `nil`
+            if an error occurred.
  */
-+ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(inout NSError**)errPtr;
++ (nonnull RXMLElement*) xmlFromFile:(nonnull NSString*)filePath error:(NSErrorPtrPtr)errPtr;
 
 /*!
  A convenience method for parsing an XML document from an `NSData` instance.
@@ -195,9 +195,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     errPtr If non-`nil` and an error occurs, `*errPtr` will be
             set to an `NSError` instance indicating the error.
  
- @return    An object representing the top-level element of the XML.
+ @return    An object representing the top-level element of the XML, or `nil`
+            if an error occurred.
  */
-+ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(inout NSError**)errPtr;
++ (nonnull RXMLElement*) xmlFromData:(nonnull NSData*)xmlData error:(NSErrorPtrPtr)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Populating the data model
@@ -215,7 +216,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     xml The XML element to use for amending the data model.
  */
-- (void) amendDataModelWithXML:(RXMLElement*)xml;
+- (void) amendDataModelWithXML:(nonnull RXMLElement*)xml;
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -230,7 +231,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    `YES` if the XML file was processed successfully; `NO` otherwise.
  */
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath;
+- (BOOL) amendDataModelWithXMLFromFile:(nonnull NSString*)filePath;
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -248,7 +249,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    `YES` if the XML file was processed successfully; `NO` otherwise.
 */
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(inout NSError**)errPtr;
+- (BOOL) amendDataModelWithXMLFromFile:(nonnull NSString*)filePath error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -263,7 +264,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    `YES` if the XML data was processed successfully; `NO` otherwise.
 */
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData;
+- (BOOL) amendDataModelWithXMLFromData:(nonnull NSData*)xmlData;
 
 /*!
  Amends the data model by overlaying attributes and potentially adding
@@ -281,7 +282,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    `YES` if the XML data was processed successfully; `NO` otherwise.
  */
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(inout NSError**)errPtr;
+- (BOOL) amendDataModelWithXMLFromData:(nonnull NSData*)xmlData error:(NSErrorPtrPtr)errPtr;
 
 /*!
  For each attribute value of the passed-in XML element, a corresponding
@@ -290,9 +291,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  If the receiver contains attributes also present on the XML element, 
  the receiver's attributes are replaced, while new attributes are added.
  
- @param     el The XML element to process.
+ @param     xml The XML element to process.
  */
-- (void) addAttributesFromXML:(RXMLElement*)el;
+- (void) addAttributesFromXML:(nonnull RXMLElement*)xml;
 
 /*!
  For each key/value pair contained in the passed-in dictionary, a corresponding
@@ -303,7 +304,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     dict The dictionary containing the attributes values to be set.
 */
-- (void) addAttributesFromDictionary:(NSDictionary*)dict;
+- (void) addAttributesFromDictionary:(nonnull NSDictionary*)dict;
 
 /*!
  For each attribute key contained in the passed-in dictionary, the receiver
@@ -314,7 +315,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     dict The dictionary containing the attributes values to overlay.
  */
-- (void) overlayAttributesFromDictionary:(NSDictionary*)dict;
+- (void) overlayAttributesFromDictionary:(nonnull NSDictionary*)dict;
 
 /*!
  Adds related objects, if appropriate, for each XML element contained in
@@ -326,7 +327,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     container The XML element whose child elements will be used
             to populate the receiver.
  */
-- (void) populateDataModelFromXML:(RXMLElement*)container;
+- (void) populateDataModelFromXML:(nonnull RXMLElement*)container;
 
 /*!
  Called to notify the data model that it has been loaded or instantiated.
@@ -343,7 +344,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @note      Subclasses overriding this method must always call `super`.
  */
-- (void) didAmendDataModelWithXMLFromFile:(NSString*)filePath;
+- (void) didAmendDataModelWithXMLFromFile:(nonnull NSString*)filePath;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark XML representation
@@ -355,7 +356,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  for the XML tag in simulated XML output when the `xmlTagName` method would
  return `nil`.
  */
-+ (NSString*) dataEntityName;
++ (nonnull NSString*) dataEntityName;
 
 /*!
  If the receiver was created from an XML element, this method returns the name 
@@ -364,7 +365,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    The XML tag name used to create the receiver, or `nil` if
             the receiver was not created from XML.
  */
-@property(nonatomic, readonly) NSString* xmlTagName;
+@property(nullable, nonatomic, readonly) NSString* xmlTagName;
 
 /*!
  Returns a string containing a simulated XML representation of the receiver's
@@ -377,14 +378,14 @@ extern NSString* const kMBDataModelDefaultRelation;
             were applied from an `MBStyledDataModel`, they will be represented
             in the simulated XML as well.
  */
-@property(nonatomic, readonly) NSString* simulatedXML;
+@property(nonnull, nonatomic, readonly) NSString* simulatedXML;
 
 /*!
  Provides simulated XML output similar to that of the `simulatedXML` property,
  but with XML comments added that describe the relation type of any related
  objects.
 */
-@property(nonatomic, readonly) NSString* debuggingXML;
+@property(nonnull, nonatomic, readonly) NSString* debuggingXML;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Data model enforcement
@@ -407,7 +408,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @warning   Subclasses overriding this method **must never** call `super`.
  */
-+ (NSSet*) requiredAttributes;
++ (nullable NSSet*) requiredAttributes;
 
 /*!
  Returns the set of attributes supported by the receiving class (and not any
@@ -429,7 +430,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @warning   Subclasses overriding this method **must never** call `super`.
  */
-+ (NSSet*) supportedAttributes;
++ (nullable NSSet*) supportedAttributes;
 
 /*!
  Returns the set of attributes that are supported by one of the receiving
@@ -448,7 +449,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @warning   Subclasses overriding this method **must never** call `super`.
 */
-+ (NSSet*) unsupportedAttributes;
++ (nullable NSSet*) unsupportedAttributes;
 
 /*!
  Returns the name of an attribute that specifies an alternate implementing
@@ -459,18 +460,18 @@ extern NSString* const kMBDataModelDefaultRelation;
             receiver will not consult an external class for determining
             which data model attributes are valid.
  */
-- (NSString*) implementingClassAttributeName;
+- (nullable NSString*) implementingClassAttributeName;
 
 /*!
  Returns the names of the attributes that are required by the receiver in
  order to pass validation.
  */
-- (NSSet*) requiredAttributes;
+- (nullable NSSet*) requiredAttributes;
 
 /*!
  Returns the names of the attributes that will ignored by the receiver.
  */
-- (NSSet*) ignoredAttributes;
+- (nullable NSSet*) ignoredAttributes;
 
 /*!
  Marks an attribute as being deprecated in favor of another attribute. This
@@ -490,7 +491,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     newAttribute The name of the attribute to use instead of
             `deprecatedAttribute`.
  */
-- (void) deprecateAttribute:(NSString*)deprecatedAttribute inFavorOf:(NSString*)newAttribute;
+- (void) deprecateAttribute:(nonnull NSString*)deprecatedAttribute inFavorOf:(nonnull NSString*)newAttribute;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Data model validation
@@ -582,9 +583,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  @warning   This method should not be called directly, except by subclasses 
             calling the superclass implementation.
  */
-- (BOOL) validateAsRelativeOf:(MBDataModel*)relative
-                    relatedBy:(NSString*)relationType
-                dataModelRoot:(MBDataModel*)root;
+- (BOOL) validateAsRelativeOf:(nullable MBDataModel*)relative
+                    relatedBy:(nullable NSString*)relationType
+                dataModelRoot:(nonnull MBDataModel*)root;
 
 /*! 
  This method is called to mark the receiver as needing validation.
@@ -622,7 +623,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Returns a copy of the receiver's attribute values.
  */
-- (NSDictionary*) objectAttributes;
+- (nullable NSDictionary*) objectAttributes;
 
 /*!
  Adds the receiver's attributes to the passed-in `NSMutableDictionary`.
@@ -630,7 +631,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     dict The dictionary to which the receiver's attribute names
             and values will be added.
  */
-- (void) addAttributesToDictionary:(NSMutableDictionary*)dict;
+- (void) addAttributesToDictionary:(nonnull NSMutableDictionary*)dict;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Accessing data model values
@@ -642,7 +643,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  populated from an XML element containing text content, this property will
  contain an `NSString` with that text.
  */
-@property(nonatomic, strong) id content;
+@property(nullable, nonatomic, strong) id content;
 
 /*!
  Returns `YES` if the value of the `content` property is an `NSString`, and if
@@ -660,7 +661,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  Returns an array of `NSString`s containing the names of the attributes
  that currently have values set on the receiver.
  */
-- (NSArray*) attributeNames;
+- (nullable NSArray*) attributeNames;
 
 /*!
  Returns `YES` if the receiver has an attribute with the specified name,
@@ -668,16 +669,16 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     attrName The name of the attribute to check.
  */
-- (BOOL) hasAttribute:(NSString*)attrName;
+- (BOOL) hasAttribute:(nonnull NSString*)attrName;
 
 /*!
  Returns the value of the attribute with the specified name.
  
  @param     attrName The name of the attribute whose value is to be retrieved.
  
- @return    The value of the attribute `attrName`.
+ @return    The value of the attribute `attrName`. May be `nil`.
  */
-- (id) valueOfAttribute:(NSString*)attrName;
+- (nullable id) valueOfAttribute:(nonnull NSString*)attrName;
 
 /*!
  Returns the string value of the attribute with the specified name.
@@ -687,9 +688,10 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     attrName The name of the attribute whose value is to be retrieved.
 
- @return    The value of the attribute `attrName` as an `NSString`.
+ @return    The value of the attribute `attrName` as an `NSString`. May be 
+            `nil`.
  */
-- (NSString*) stringValueOfAttribute:(NSString*)attrName;
+- (nullable NSString*) stringValueOfAttribute:(nonnull NSString*)attrName;
 
 /*!
  Returns the numeric value of the attribute with the specified name.
@@ -699,9 +701,10 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     attrName The name of the attribute whose value is to be retrieved.
 
- @return    The value of the attribute `attrName` as an `NSNumber`.
+ @return    The value of the attribute `attrName` as an `NSNumber`. May be 
+            `nil`.
  */
-- (NSDecimalNumber*) numberValueOfAttribute:(NSString*)attrName;
+- (nullable NSDecimalNumber*) numberValueOfAttribute:(nonnull NSString*)attrName;
 
 /*!
  Returns the boolean value of the attribute with the specified name.
@@ -713,7 +716,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The value of the attribute `attrName` as a `BOOL`.
  */
-- (BOOL) booleanValueOfAttribute:(NSString*)attrName;
+- (BOOL) booleanValueOfAttribute:(nonnull NSString*)attrName;
 
 /*!
  Returns the `NSInteger` value of the attribute with the specified name.
@@ -726,7 +729,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The value of the attribute `attrName` as an `NSInteger`.
  */
-- (NSInteger) integerValueOfAttribute:(NSString*)attrName;
+- (NSInteger) integerValueOfAttribute:(nonnull NSString*)attrName;
 
 /*!
  Returns the `double` value of the attribute with the specified name.
@@ -739,7 +742,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The value of the attribute `attrName` as a `double`.
  */
-- (double) doubleValueOfAttribute:(NSString*)attrName;
+- (double) doubleValueOfAttribute:(nonnull NSString*)attrName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Keyed subscripting support
@@ -761,9 +764,9 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     attrName The name of the attribute whose value is to be retrieved.
  
- @return    The value of the attribute with the name `attrName`.
+ @return    The value of the attribute with the name `attrName`. May be `nil`.
  */
-- (id) objectForKeyedSubscript:(NSString*)attrName;
+- (nullable id) objectForKeyedSubscript:(nonnull NSString*)attrName;
 
 /*!
  Allows setting data model attribute values using the Objective-C keyed
@@ -781,7 +784,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 
  @param     attrName The name of the attribute whose value is to be set.
  */
-- (void) setObject:(id)obj forKeyedSubscript:(NSString*)attrName;
+- (void) setObject:(nonnull id)obj forKeyedSubscript:(nonnull NSString*)attrName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Performing expression evaluation on attribute values
@@ -801,8 +804,9 @@ extern NSString* const kMBDataModelDefaultRelation;
             as an expression.
  
  @return    The result of evaluating the value of `attrName` as an expression.
+            May be `nil`.
  */
-- (id) evaluateAsObject:(NSString*)attrName;
+- (nullable id) evaluateAsObject:(nonnull NSString*)attrName;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -822,7 +826,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    The result of evaluating the value of `attrName` as an expression,
             or `def` if evaluation failed.
  */
-- (id) evaluateAsObject:(NSString*)attrName defaultValue:(id)def;
+- (nullable id) evaluateAsObject:(nonnull NSString*)attrName defaultValue:(nullable id)def;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -837,8 +841,9 @@ extern NSString* const kMBDataModelDefaultRelation;
             as an expression.
  
  @return    The result of evaluating the value of `attrName` as an expression.
+            May be `nil`.
  */
-- (NSString*) evaluateAsString:(NSString*)attrName;
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)attrName;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -858,7 +863,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    The result of evaluating the value of `attrName` as an expression,
             or `def` if evaluation failed.
  */
-- (NSString*) evaluateAsString:(NSString*)attrName defaultValue:(NSString*)def;
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)attrName defaultValue:(nullable NSString*)def;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -874,7 +879,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The result of evaluating the value of `attrName` as an expression.
  */
-- (NSDecimalNumber*) evaluateAsNumber:(NSString*)attrName;
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)attrName;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -894,7 +899,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    The result of evaluating the value of `attrName` as an expression,
             or `def` if evaluation failed.
  */
-- (NSDecimalNumber*) evaluateAsNumber:(NSString*)attrName defaultValue:(NSDecimalNumber*)def;
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)attrName defaultValue:(nullable NSDecimalNumber*)def;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -910,7 +915,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The result of evaluating the value of `attrName` as an expression.
  */
-- (BOOL) evaluateAsBoolean:(NSString*)attrName;
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)attrName;
 
 /*!
  Interprets the value of the given attribute as an `NSString` containing an
@@ -930,7 +935,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    The result of evaluating the value of `attrName` as an expression,
             or `def` if evaluation failed.
  */
-- (BOOL) evaluateAsBoolean:(NSString*)attrName defaultValue:(BOOL)def;
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)attrName defaultValue:(BOOL)def;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Setting data model attribute values
@@ -940,11 +945,12 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Sets a data model attribute value.
  
- @param     attrVal The new value of the attribute.
+ @param     attrVal The new value of the attribute. If `nil`, any existing 
+            value for `attrName` will be removed from the receiver.
  
  @param     attrName The name of the attribute whose value is being set.
  */
-- (void) setAttribute:(id)attrVal forName:(NSString*)attrName;
+- (void) setAttribute:(nullable id)attrVal forName:(nonnull NSString*)attrName;
 
 /*!
  Sets a boolean data model attribute value.
@@ -953,7 +959,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     attrName The name of the attribute whose value is being set.
  */
-- (void) setBooleanAttribute:(BOOL)attrVal forName:(NSString*)attrName;
+- (void) setBooleanAttribute:(BOOL)attrVal forName:(nonnull NSString*)attrName;
 
 /*!
  Sets a boolean data model attribute value.
@@ -962,7 +968,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     attrName The name of the attribute whose value is being set.
  */
-- (void) setIntegerAttribute:(NSInteger)attrVal forName:(NSString*)attrName;
+- (void) setIntegerAttribute:(NSInteger)attrVal forName:(nonnull NSString*)attrName;
 
 /*!
  Sets a double data model attribute value.
@@ -971,7 +977,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     attrName The name of the attribute whose value is being set.
 */
-- (void) setDoubleAttribute:(double)attrVal forName:(NSString*)attrName;
+- (void) setDoubleAttribute:(double)attrVal forName:(nonnull NSString*)attrName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Renaming and removing attributes
@@ -986,14 +992,14 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     newName The new name for the attribute currently known as `oldName`.
  */
-- (void) renameAttribute:(NSString*)oldName to:(NSString*)newName;
+- (void) renameAttribute:(nonnull NSString*)oldName to:(nonnull NSString*)newName;
 
 /*!
  Removes the specified attribute from the receiver.
  
  @param     attrName The name of the attribute to remove from the receiver.
  */
-- (void) removeAttribute:(NSString*)attrName;
+- (void) removeAttribute:(nonnull NSString*)attrName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Determining relation types
@@ -1003,7 +1009,7 @@ extern NSString* const kMBDataModelDefaultRelation;
 /*!
  Returns the name of the default relation used by the class.
  */
-+ (NSString*) defaultRelationType;
++ (nonnull NSString*) defaultRelationType;
 
 /*!
  Returns an array of `NSString`s containing the names of each relation type
@@ -1012,7 +1018,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  The order of the elements in the returned array is nondeterministic and has
  no significance.
  */
-- (NSArray*) currentRelationTypes;
+- (nonnull NSArray*) currentRelationTypes;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Counting related objects
@@ -1031,7 +1037,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     relation The relation type whose relatives are to
             be counted.
  */
-- (NSUInteger) countRelativesWithRelationType:(NSString*)relation;
+- (NSUInteger) countRelativesWithRelationType:(nonnull NSString*)relation;
 
 /*!
  Returns the count of the related objects in the data model that
@@ -1048,7 +1054,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  The containing data model relative (if any) of the receiver. Will be set if
  the receiver was added as a relative to another data model instance.
  */
-@property(nonatomic, weak) MBDataModel* containingRelative;
+@property(nullable, nonatomic, weak) MBDataModel* containingRelative;
 
 /*!
  Returns all `MBDataModel` objects related to the receiver regardless of
@@ -1057,7 +1063,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    An `NSArray` containing the relatives. If there are no relatives,
             an empty array—not `nil`—will be returned.
  */
-- (NSArray*) allRelatives;
+- (nonnull NSArray*) allRelatives;
 
 /*!
  Returns all `MBDataModel` objects related to the receiver by the specified
@@ -1069,7 +1075,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    An `NSArray` containing the relatives. If there are no relatives,
             an empty array—not `nil`—will be returned.
  */
-- (NSArray*) relativesWithRelationType:(NSString*)relation;
+- (nonnull NSArray*) relativesWithRelationType:(nonnull NSString*)relation;
 
 /*!
  Returns all `MBDataModel` objects related to the receiver by the default
@@ -1078,7 +1084,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    An `NSArray` containing the relatives. If there are no relatives,
             an empty array—not `nil`—will be returned.
  */
-- (NSArray*) relativesWithDefaultRelation;
+- (nonnull NSArray*) relativesWithDefaultRelation;
 
 /*!
  Returns the first `MBDataModel` related to the receiver by the default
@@ -1086,7 +1092,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The first relative, or `nil` if there isn't one.
  */
-- (MBDataModel*) firstRelativeWithDefaultRelation;
+- (nullable MBDataModel*) firstRelativeWithDefaultRelation;
 
 /*!
  Returns the first `MBDataModel` related to the receiver by the specified
@@ -1097,7 +1103,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @return    The first relative, or `nil` if there isn't one.
  */
-- (MBDataModel*) firstRelativeWithRelationType:(NSString*)relation;
+- (nullable MBDataModel*) firstRelativeWithRelationType:(nonnull NSString*)relation;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Adding related objects to the data model
@@ -1110,7 +1116,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     relative The data model object to add as a relative to the receiver.
  */
-- (void) addRelative:(MBDataModel*)relative;
+- (void) addRelative:(nonnull MBDataModel*)relative;
 
 /*!
  Relates the passed-in data model object to the receiver using the specified
@@ -1121,7 +1127,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     relation The name of the relation type by which `relative` will be
             added to the receiver.
  */
-- (void) addRelative:(MBDataModel*)relative withRelationType:(NSString*)relation;
+- (void) addRelative:(nonnull MBDataModel*)relative withRelationType:(nonnull NSString*)relation;
 
 /*!
  Each `MBDataModel` returned by the enumeration is added to the receiver as
@@ -1130,7 +1136,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     relatives An enumeration of `MBDataModel` instances to add as
             relatives to the receiver.
  */
-- (void) addRelatives:(NSObject<NSFastEnumeration>*)relatives;
+- (void) addRelatives:(nonnull NSObject<NSFastEnumeration>*)relatives;
 
 /*!
  Each `MBDataModel` returned by the enumeration is added to the receiver as
@@ -1142,7 +1148,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     relation The name of the relation type by which the relatives will
             be added to the receiver.
  */
-- (void) addRelatives:(NSObject<NSFastEnumeration>*)relatives withRelationType:(NSString*)relation;
+- (void) addRelatives:(nonnull NSObject<NSFastEnumeration>*)relatives withRelationType:(nonnull NSString*)relation;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Building out the data model from an XML structure
@@ -1159,8 +1165,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     element The XML element that will be used to populate the
             newly-created data model object.
  */
-- (void) addRelativeOfClass:(Class)relCls
-                 forElement:(RXMLElement*)element;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+                 forElement:(nonnull RXMLElement*)element;
 
 /*!
  Creates a data model object of the given class from the specified XML
@@ -1176,9 +1182,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     element The XML element that will be used to populate the
             newly-created data model object.
  */
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-                 forElement:(RXMLElement*)element;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+                 forElement:(nonnull RXMLElement*)element;
 
 /*!
  Creates a data model object of the given class from the first child 
@@ -1196,9 +1202,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     tagName The tag name of the first child element of `container` to
             use for populating the newly-created data model object. 
  */
-- (void) addRelativeOfClass:(Class)relCls
-            forFirstChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+            forFirstChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName;
 
 /*!
  Creates a data model object of the given class from the first child 
@@ -1220,10 +1226,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     tagName The tag name of the first child element of `container` to
             use for populating the newly-created data model object. 
  */
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-            forFirstChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+            forFirstChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName;
 
 /*!
  Constructs a data model object of the given class for each child element of
@@ -1237,8 +1243,8 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     container The XML element whose child elements will be used to
             populate any newly-created data model objects.
  */
-- (void) addRelativeOfClass:(Class)relCls
-             forEachChildOf:(RXMLElement*)container;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+             forEachChildOf:(nonnull RXMLElement*)container;
 
 /*!
  Constructs a data model object of the given class for each child element of
@@ -1256,9 +1262,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     container The XML element whose child elements will be used to
             populate any newly-created data model objects.
  */
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-             forEachChildOf:(RXMLElement*)container;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+             forEachChildOf:(nonnull RXMLElement*)container;
 
 /*! 
  Constructs a data model object of the given class for each child element of
@@ -1276,9 +1282,9 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     tagName The tag name of the child elements of `container` to
             use for populating any newly-created data model objects. 
  */
-- (void) addRelativeOfClass:(Class)relCls
-             forEachChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+             forEachChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName;
 
 /*!
  Constructs a data model object of the given class for each child element of
@@ -1300,10 +1306,10 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     tagName The tag name of the child elements of `container` to
             use for populating any newly-created data model objects. 
  */
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-             forEachChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName;
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+             forEachChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Building out the data model automatically
@@ -1327,7 +1333,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @return    The relation type. Implementations may return `nil` if they do
             not support the specified tag name.
  */
-- (NSString*) relationTypeForTag:(NSString*)tagName;
+- (nullable NSString*) relationTypeForTag:(nonnull NSString*)tagName;
 
 /*!
  Determines whether the receiver should attempt to add an automatically-created
@@ -1350,7 +1356,8 @@ extern NSString* const kMBDataModelDefaultRelation;
             relation type; `NO` otherwise. The default implementation returns
             `YES`.
  */
-- (BOOL) shouldAutomaticallyAddRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName;
+- (BOOL) shouldAutomaticallyAddRelativeOfType:(nonnull NSString*)relationType
+                                      fromTag:(nonnull NSString*)tagName;
 
 /*!
  Called to query the implementation to determine the `Class` that should be used
@@ -1373,7 +1380,8 @@ extern NSString* const kMBDataModelDefaultRelation;
             `MBDataModel`. The default implementation returns 
             `[`<code>MBDataModel class</code>`]`.
  */
-- (Class) implementingClassForRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName;
+- (nullable Class) implementingClassForRelativeOfType:(nonnull NSString*)relationType
+                                              fromTag:(nonnull NSString*)tagName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Removing related objects from the data model
@@ -1386,7 +1394,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  
  @param     relative The data model relative to remove.
  */
-- (void) removeRelative:(MBDataModel*)relative;
+- (void) removeRelative:(nonnull MBDataModel*)relative;
 
 /*!
  Removes from the receiver any instance of the given relative from the
@@ -1397,7 +1405,7 @@ extern NSString* const kMBDataModelDefaultRelation;
  @param     relation The name of the relation type for which `relative` should
             be removed.
 */
-- (void) removeRelative:(MBDataModel*)relative withRelationType:(NSString*)relation;
+- (void) removeRelative:(nonnull MBDataModel*)relative withRelationType:(nonnull NSString*)relation;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Notification of changes to the set of relatives

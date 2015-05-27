@@ -15,7 +15,7 @@
 #pragma mark Constants
 /******************************************************************************/
 
-extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environment:didLoad" (fired when an MBML environment is loaded)
+extern NSString* const __nonnull kMBMLEnvironmentDidLoadNotification;     //!< @"Environment:didLoad" (fired when an MBML environment is loaded)
 
 /******************************************************************************/
 #pragma mark -
@@ -56,7 +56,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 /*!
  Returns the names of the XML tags accepted by the receiver.
  */
-- (NSArray*) acceptedTagNames;
+- (nonnull NSArray*) acceptedTagNames;
 
 /*!
  Asks the receiver to parse MBML represented by the passed-in XML element.
@@ -71,7 +71,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
  @return    YES if the element was recognized and successfully parsed; NO
             otherwise.
  */
-- (BOOL) parseElement:(RXMLElement*)mbml forMatch:(NSString*)match;
+- (BOOL) parseElement:(nonnull RXMLElement*)mbml forMatch:(nonnull NSString*)match;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Environment state changes
@@ -86,7 +86,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 
  @param     env The `MBEnvironment` instance being loaded.
  */
-- (void) environmentWillLoad:(MBEnvironment*)env;
+- (void) environmentWillLoad:(nonnull MBEnvironment*)env;
 
 /*!
  Called to notify the receiver that the environment loading has finished.
@@ -95,7 +95,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 
  @param     env The `MBEnvironment` instance that was loaded.
  */
-- (void) environmentDidLoad:(MBEnvironment*)env;
+- (void) environmentDidLoad:(nonnull MBEnvironment*)env;
 
 /*!
  Called to notify the receiver that the environment loading was stopped due 
@@ -105,7 +105,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 
  @param     env The `MBEnvironment` instance that failed to load.
  */
-- (void) environmentLoadFailed:(MBEnvironment*)env;
+- (void) environmentLoadFailed:(nonnull MBEnvironment*)env;
 
 /*!
  Called to notify the receiver that the environment is about to become active.
@@ -114,7 +114,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 
  @param     env The `MBEnvironment` instance that will activate.
  */
-- (void) environmentWillActivate:(MBEnvironment*)env;
+- (void) environmentWillActivate:(nonnull MBEnvironment*)env;
 
 /*!
  Called to notify the receiver that the environment became active.
@@ -123,7 +123,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 
  @param     env The `MBEnvironment` instance that activated.
  */
-- (void) environmentDidActivate:(MBEnvironment*)env;
+- (void) environmentDidActivate:(nonnull MBEnvironment*)env;
 
 /*!
  Called to notify the receiver that the environment is about to be deactived.
@@ -132,7 +132,7 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
 
  @param     env The `MBEnvironment` instance that will deactivate.
  */
-- (void) environmentWillDeactivate:(MBEnvironment*)env;
+- (void) environmentWillDeactivate:(nonnull MBEnvironment*)env;
 
 /*!
  Called to notify the receiver that the environment was deactived.
@@ -141,6 +141,6 @@ extern NSString* const kMBMLEnvironmentDidLoadNotification;     //!< @"Environme
  
  @param     env The `MBEnvironment` instance that deactivated.
  */
-- (void) environmentDidDeactivate:(MBEnvironment*)env;
+- (void) environmentDidDeactivate:(nonnull MBEnvironment*)env;
 
 @end

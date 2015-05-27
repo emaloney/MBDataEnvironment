@@ -183,7 +183,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark Private - error handling
 /******************************************************************************/
 
-+ (BOOL) _reportErrorWithMessage:(NSString*)msg to:(inout NSError**)errPtr
++ (BOOL) _reportErrorWithMessage:(NSString*)msg to:(NSErrorPtrPtr)errPtr
 {
     if (errPtr) {
         *errPtr = [NSError mockingbirdErrorWithDescription:msg code:kMBErrorParseFailed];
@@ -197,7 +197,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (BOOL) _reportCouldNotParse:(NSString*)badValue
                            as:(NSString*)asType
                     expecting:(NSString*)expected
-                           to:(inout NSError**)errPtr
+                           to:(NSErrorPtrPtr)errPtr
 {
     NSString* errMsg = [NSString stringWithFormat:@"couldn't parse \"%@\" as a %@; expecting %@", badValue, asType, expected];
     return [self _reportErrorWithMessage:errMsg
@@ -207,7 +207,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (BOOL) _reportCouldNotParse:(NSString*)badValue
                            as:(NSString*)asType
            expectingStructure:(NSString*)expected
-                           to:(inout NSError**)errPtr
+                           to:(NSErrorPtrPtr)errPtr
 {
     return [self _reportCouldNotParse:badValue
                                    as:asType
@@ -218,7 +218,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (BOOL) _reportCouldNotParse:(NSString*)badValue
                            as:(NSString*)asType
           expectingValueAmong:(NSArray*)expected
-                           to:(inout NSError**)errPtr
+                           to:(NSErrorPtrPtr)errPtr
 {
     return [self _reportCouldNotParse:badValue
                                    as:asType
@@ -230,7 +230,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                           inValue:(NSString*)value
                                as:(NSString*)asType
               expectingValueAmong:(NSArray*)expected
-                               to:(inout NSError**)errPtr
+                               to:(NSErrorPtrPtr)errPtr
 {
     NSString* errMsg = [NSString stringWithFormat:@"couldn't parse flag \"%@\" in value \"%@\" as a %@ bitwise field; each flag must be one of: \"%@\"", badFlag, value, asType, [expected componentsJoinedByString:@"\", \""]];
     return [self _reportErrorWithMessage:errMsg
@@ -239,7 +239,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (BOOL) _reportCouldNotInterpretValue:(NSValue*)value
                                     as:(NSString*)asType
-                                    to:(inout NSError**)errPtr
+                                    to:(NSErrorPtrPtr)errPtr
 {
     NSString* errMsg = [NSString stringWithFormat:@"couldn't extract the type %@ from the the %@ \"%@\"; the type encodings don't match", asType, [value class], value];
     return [self _reportErrorWithMessage:errMsg
@@ -248,7 +248,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (BOOL) _reportCouldNotInterpretObject:(id)obj
                                      as:(NSString*)asType
-                                     to:(inout NSError**)errPtr
+                                     to:(NSErrorPtrPtr)errPtr
 {
     NSString* errMsg = [NSString stringWithFormat:@"couldn't convert the type %@ into a %@; source type must be %@ or %@", [obj class], asType, [NSString class], [NSValue class]];
     return [self _reportErrorWithMessage:errMsg
@@ -264,12 +264,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark CGPoint conversions
 /******************************************************************************/
 
-+ (CGPoint) pointFromString:(NSString*)str
++ (CGPoint) pointFromString:(nonnull NSString*)str
 {
     return [self pointFromString:str error:nil];
 }
 
-+ (CGPoint) pointFromString:(NSString*)str error:(inout NSError**)errPtr
++ (CGPoint) pointFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -290,7 +290,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return CGPointZero;
 }
 
-+ (CGPoint) pointFromObject:(id)obj error:(inout NSError**)errPtr
++ (CGPoint) pointFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr
 {
     if ([obj isKindOfClass:[NSString class]]) {
         return [self pointFromString:obj error:errPtr];
@@ -314,7 +314,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return CGPointZero;
 }
 
-+ (CGPoint) pointFromExpression:(NSString*)expr
++ (CGPoint) pointFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     CGPoint val = [self pointFromObject:[expr evaluateAsObject] error:&err];
@@ -324,39 +324,39 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
-+ (NSString*) stringFromPoint:(CGPoint)pt
++ (nonnull NSString*) stringFromPoint:(CGPoint)val
 {
-    return [NSString stringWithFormat:@"%g,%g", pt.x, pt.y];
+    return [NSString stringWithFormat:@"%g,%g", val.x, val.y];
 }
 
 /******************************************************************************/
 #pragma mark CGSize conversions
 /******************************************************************************/
 
-+ (CGFloat) sizeDimensionFromExpression:(NSString*)dimensionExpr
++ (CGFloat) sizeDimensionFromExpression:(nonnull NSString*)expr
 {
-    if ([dimensionExpr isEqualToString:kMBWildcardString]) {
+    if ([expr isEqualToString:kMBWildcardString]) {
         return UIViewNoIntrinsicMetric;
     }
     
     MBExpressionError* err = nil;
-    NSNumber* num = [MBExpression asNumber:dimensionExpr error:&err];
+    NSNumber* num = [MBExpression asNumber:expr error:&err];
     if (err) {
-        return [self sizeDimensionFromString:[dimensionExpr evaluateAsString]];
+        return [self sizeDimensionFromString:[expr evaluateAsString]];
     }
     return [num doubleValue];
 }
 
-+ (CGFloat) sizeDimensionFromString:(NSString*)dimensionValue
++ (CGFloat) sizeDimensionFromString:(nonnull NSString*)str
 {
     CGFloat dim = UIViewNoIntrinsicMetric;
-    if (![dimensionValue isEqualToString:kMBWildcardString]) {
-        dim = [dimensionValue doubleValue];
+    if (![str isEqualToString:kMBWildcardString]) {
+        dim = [str doubleValue];
     }
     return dim;
 }
 
-+ (BOOL) parseString:(NSString*)sizeStr asSize:(CGSize*)sizePtr
++ (BOOL) parseString:(nonnull NSString*)sizeStr asSize:(nonnull out CGSize*)sizePtr
 {
     MBArgNonNil(sizePtr);
     
@@ -370,12 +370,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return NO;
 }
 
-+ (CGSize) sizeFromString:(NSString*)str
++ (CGSize) sizeFromString:(nonnull NSString*)str
 {
     return [self sizeFromString:str error:nil];
 }
 
-+ (CGSize) sizeFromString:(NSString*)str error:(inout NSError**)errPtr
++ (CGSize) sizeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -391,7 +391,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return retVal;
 }
 
-+ (CGSize) sizeFromObject:(id)obj error:(inout NSError**)errPtr
++ (CGSize) sizeFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr
 {
     if ([obj isKindOfClass:[NSString class]]) {
         return [self sizeFromString:obj error:errPtr];
@@ -415,7 +415,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return CGSizeZero;
 }
 
-+ (CGSize) sizeFromExpression:(NSString*)expr
++ (CGSize) sizeFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     CGSize val = [self sizeFromObject:[expr evaluateAsObject] error:&err];
@@ -425,7 +425,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
-+ (NSString*) stringFromSize:(CGSize)sz
++ (nonnull NSString*) stringFromSize:(CGSize)sz
 {
     return [NSString stringWithFormat:@"%g,%g", sz.width, sz.height];
 }
@@ -434,7 +434,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark CGRect conversions
 /******************************************************************************/
 
-+ (BOOL) parseString:(NSString*)rectStr asRect:(CGRect*)rectPtr
++ (BOOL) parseString:(nonnull NSString*)rectStr asRect:(nonnull out CGRect*)rectPtr
 {
     MBArgNonNil(rectPtr);
     
@@ -450,12 +450,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return NO;
 }
 
-+ (CGRect) rectFromString:(NSString*)str
++ (CGRect) rectFromString:(nonnull NSString*)str
 {
     return [self rectFromString:str error:nil];
 }
 
-+ (CGRect) rectFromString:(NSString*)str error:(inout NSError**)errPtr
++ (CGRect) rectFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -471,7 +471,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return retVal;
 }
 
-+ (CGRect) rectFromObject:(id)obj error:(inout NSError**)errPtr
++ (CGRect) rectFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr
 {
     if ([obj isKindOfClass:[NSString class]]) {
         return [self rectFromString:obj error:errPtr];
@@ -495,7 +495,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return CGRectZero;
 }
 
-+ (CGRect) rectFromExpression:(NSString*)expr
++ (CGRect) rectFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     CGRect val = [self rectFromObject:[expr evaluateAsObject] error:&err];
@@ -505,7 +505,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
-+ (NSString*) stringFromRect:(CGRect)rect
++ (nonnull NSString*) stringFromRect:(CGRect)rect
 {
     return [NSString stringWithFormat:@"%g,%g,%g,%g", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height];
 }
@@ -514,12 +514,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIOffset conversions
 /******************************************************************************/
 
-+ (UIOffset) offsetFromString:(NSString*)str
++ (UIOffset) offsetFromString:(nonnull NSString*)str
 {
     return [self offsetFromString:str error:nil];
 }
 
-+ (UIOffset) offsetFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIOffset) offsetFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -540,7 +540,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIOffsetZero;
 }
 
-+ (UIOffset) offsetFromObject:(id)obj error:(inout NSError**)errPtr
++ (UIOffset) offsetFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr
 {
     if ([obj isKindOfClass:[NSString class]]) {
         return [self offsetFromString:obj error:errPtr];
@@ -564,7 +564,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIOffsetZero;
 }
 
-+ (UIOffset) offsetFromExpression:(NSString*)expr
++ (UIOffset) offsetFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIOffset val = [self offsetFromObject:[expr evaluateAsObject] error:&err];
@@ -578,12 +578,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIEdgeInsets conversions
 /******************************************************************************/
 
-+ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str
++ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str
 {
     return [self edgeInsetsFromString:str error:nil];
 }
 
-+ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -607,7 +607,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return edgeInsets;
 }
 
-+ (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(inout NSError**)errPtr
++ (UIEdgeInsets) edgeInsetsFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr
 {
     if ([obj isKindOfClass:[NSString class]]) {
         return [self edgeInsetsFromString:obj error:errPtr];
@@ -631,7 +631,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIEdgeInsetsZero;
 }
 
-+ (UIEdgeInsets) edgeInsetsFromExpression:(NSString*)expr
++ (UIEdgeInsets) edgeInsetsFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIEdgeInsets val = [self edgeInsetsFromObject:[expr evaluateAsObject] error:&err];
@@ -645,12 +645,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIColor conversions
 /******************************************************************************/
 
-+ (UIColor*) colorFromString:(NSString*)str
++ (nonnull UIColor*) colorFromString:(nonnull NSString*)str
 {
     return [self colorFromString:str error:nil];
 }
 
-+ (UIColor*) colorFromString:(NSString*)str error:(inout NSError**)errPtr
++ (nonnull UIColor*) colorFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -703,7 +703,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                            alpha:(value & 0xFF) / 255.0];
 }
 
-+ (UIColor*) colorFromExpression:(NSString*)expr
++ (nonnull UIColor*) colorFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIColor* val = [self colorFromString:[expr evaluateAsString] error:&err];
@@ -717,12 +717,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark NSLineBreakMode conversions
 /******************************************************************************/
 
-+ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str
++ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str
 {
     return [self lineBreakModeFromString:str error:nil];
 }
 
-+ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(inout NSError**)errPtr
++ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLLineBreakByWordWrapping]) {
         return NSLineBreakByWordWrapping;
@@ -752,7 +752,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return NSLineBreakByWordWrapping;
 }
 
-+ (NSLineBreakMode) lineBreakModeFromExpression:(NSString*)expr
++ (NSLineBreakMode) lineBreakModeFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     NSLineBreakMode val = [self lineBreakModeFromString:[expr evaluateAsString] error:&err];
@@ -771,7 +771,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return [self textAlignmentFromString:alignStr error:nil];
 }
 
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(inout NSError**)errPtr
++ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -794,7 +794,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return NSTextAlignmentLeft;         // default to left
 }
 
-+ (NSTextAlignment) textAlignmentFromExpression:(NSString*)expr
++ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     NSTextAlignment val = [self textAlignmentFromString:[expr evaluateAsString] error:&err];
@@ -808,12 +808,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIScrollViewIndicatorStyle conversions
 /******************************************************************************/
 
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str
 {
     return [self scrollViewIndicatorStyleFromString:str error:nil];
 }
 
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLScrollViewIndicatorStyleDefault]) {
         return UIScrollViewIndicatorStyleDefault;
@@ -834,7 +834,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIScrollViewIndicatorStyleDefault;
 }
 
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(NSString*)expr
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIScrollViewIndicatorStyle val = [self scrollViewIndicatorStyleFromString:[expr evaluateAsString] error:&err];
@@ -848,12 +848,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIActivityIndicatorViewStyle conversions
 /******************************************************************************/
 
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str
 {
     return [self activityIndicatorViewStyleFromString:str error:nil];
 }
 
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLActivityIndicatorViewStyleWhiteLarge]) {
         return UIActivityIndicatorViewStyleWhiteLarge;
@@ -874,7 +874,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIActivityIndicatorViewStyleWhite;
 }
 
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(NSString*)expr
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIActivityIndicatorViewStyle val = [self activityIndicatorViewStyleFromString:[expr evaluateAsString] error:&err];
@@ -888,12 +888,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIButtonType conversions
 /******************************************************************************/
 
-+ (UIButtonType) buttonTypeFromString:(NSString*)str
++ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str
 {
     return [self buttonTypeFromString:str error:nil];
 }
 
-+ (UIButtonType) buttonTypeFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLButtonTypeCustom]) {
         return UIButtonTypeCustom;
@@ -923,7 +923,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIButtonTypeCustom;      // use custom button type by default
 }
 
-+ (UIButtonType) buttonTypeFromExpression:(NSString*)expr
++ (UIButtonType) buttonTypeFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIButtonType val = [self buttonTypeFromString:[expr evaluateAsString] error:&err];
@@ -937,12 +937,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark NSDateFormatterStyle conversions
 /******************************************************************************/
 
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str
 {
     return [self dateFormatterStyleFromString:str error:nil];
 }
 
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLDateFormatterNoStyle]) {
         return NSDateFormatterNoStyle;
@@ -969,7 +969,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return NSDateFormatterNoStyle;
 }
 
-+ (NSDateFormatterStyle) dateFormatterStyleFromExpression:(NSString*)expr
++ (NSDateFormatterStyle) dateFormatterStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     NSDateFormatterStyle val = [self dateFormatterStyleFromString:[expr evaluateAsString] error:&err];
@@ -983,12 +983,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UITextBorderStyle conversions
 /******************************************************************************/
 
-+ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str
++ (UITextBorderStyle) textBorderStyleFromString:(nonnull NSString*)str
 {
     return [self textBorderStyleFromString:str error:nil];
 }
 
-+ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UITextBorderStyle) textBorderStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLTextBorderStyleNone]) {
         return UITextBorderStyleNone;
@@ -1012,7 +1012,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UITextBorderStyleNone;
 }
 
-+ (UITextBorderStyle) textBorderStyleFromExpression:(NSString*)expr
++ (UITextBorderStyle) textBorderStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UITextBorderStyle val = [self textBorderStyleFromString:[expr evaluateAsString] error:&err];
@@ -1026,12 +1026,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UITableViewStyle conversions
 /******************************************************************************/
 
-+ (UITableViewStyle) tableViewStyleFromString:(NSString*)str
++ (UITableViewStyle) tableViewStyleFromString:(nonnull NSString*)str
 {
     return [self tableViewStyleFromString:str error:nil];
 }
 
-+ (UITableViewStyle) tableViewStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UITableViewStyle) tableViewStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLTableViewStylePlain]) {
         return UITableViewStylePlain;
@@ -1049,7 +1049,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UITableViewStylePlain;
 }
 
-+ (UITableViewStyle) tableViewStyleFromExpression:(NSString*)expr
++ (UITableViewStyle) tableViewStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UITableViewStyle val = [self tableViewStyleFromString:[expr evaluateAsString] error:&err];
@@ -1063,12 +1063,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UITableViewCell-related conversions
 /******************************************************************************/
 
-+ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str
++ (UITableViewCellStyle) tableViewCellStyleFromString:(nonnull NSString*)str
 {
     return [self tableViewCellStyleFromString:str error:nil];
 }
 
-+ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UITableViewCellStyle) tableViewCellStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLTableViewCellStyleDefault]) {
         return UITableViewCellStyleDefault;
@@ -1092,7 +1092,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UITableViewCellStyleDefault;
 }
 
-+ (UITableViewCellStyle) tableViewCellStyleFromExpression:(NSString*)expr
++ (UITableViewCellStyle) tableViewCellStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UITableViewCellStyle val = [self tableViewCellStyleFromString:[expr evaluateAsString] error:&err];
@@ -1102,12 +1102,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(nonnull NSString*)str
 {
     return [self tableViewCellSelectionStyleFromString:str error:nil];
 }
 
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLTableViewCellSelectionStyleNone]) {
         return MBTableViewCellSelectionStyleNone;
@@ -1131,7 +1131,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return MBTableViewCellSelectionStyleBlue;
 }
 
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromExpression:(NSString*)expr
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     MBTableViewCellSelectionStyle val = [self tableViewCellSelectionStyleFromString:[expr evaluateAsString] error:&err];
@@ -1141,12 +1141,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(nonnull NSString*)str
 {
     return [self tableViewCellAccessoryTypeFromString:str error:nil];
 }
 
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLTableViewCellAccessoryNone]) {
         return UITableViewCellAccessoryNone;
@@ -1170,7 +1170,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UITableViewCellAccessoryNone;
 }
 
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromExpression:(NSString*)expr
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UITableViewCellAccessoryType val = [self tableViewCellAccessoryTypeFromString:[expr evaluateAsString] error:&err];
@@ -1184,12 +1184,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UITableViewRowAnimation conversions
 /******************************************************************************/
 
-+ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str
++ (UITableViewRowAnimation) tableViewRowAnimationFromString:(nonnull NSString*)str
 {
     return [self tableViewRowAnimationFromString:str error:nil];
 }
 
-+ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UITableViewRowAnimation) tableViewRowAnimationFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLTableViewRowAnimationNone]) {
         return UITableViewRowAnimationNone;
@@ -1222,7 +1222,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UITableViewRowAnimationNone;
 }
 
-+ (UITableViewRowAnimation) tableViewRowAnimationFromExpression:(NSString*)expr
++ (UITableViewRowAnimation) tableViewRowAnimationFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UITableViewRowAnimation val = [self tableViewRowAnimationFromString:[expr evaluateAsString] error:&err];
@@ -1236,12 +1236,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIControlState conversions
 /******************************************************************************/
 
-+ (UIControlState) controlStateFromString:(NSString*)str
++ (UIControlState) controlStateFromString:(nonnull NSString*)str
 {
     return [self controlStateFromString:str error:nil];
 }
 
-+ (UIControlState) controlStateFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIControlState) controlStateFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLControlStateNormal]) {
         return UIControlStateNormal;
@@ -1265,7 +1265,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIControlStateNormal;
 }
 
-+ (UIControlState) controlStateFromExpression:(NSString*)expr
++ (UIControlState) controlStateFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIControlState val = [self controlStateFromString:[expr evaluateAsString] error:&err];
@@ -1279,12 +1279,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIViewAnimationOptions conversions
 /******************************************************************************/
 
-+ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str
++ (UIViewAnimationOptions) viewAnimationOptionsFromString:(nonnull NSString*)str
 {
     return [self viewAnimationOptionsFromString:str error:nil];
 }
 
-+ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIViewAnimationOptions) viewAnimationOptionsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     UIViewAnimationOptions options = 0;
     NSArray* flags = [str componentsSeparatedByString:@","];
@@ -1366,7 +1366,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return options;
 }
 
-+ (UIViewAnimationOptions) viewAnimationOptionsFromExpression:(NSString*)expr
++ (UIViewAnimationOptions) viewAnimationOptionsFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIViewAnimationOptions val = [self viewAnimationOptionsFromString:[expr evaluateAsString] error:&err];
@@ -1380,12 +1380,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIModalTransitionStyle conversions
 /******************************************************************************/
 
-+ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str
++ (UIModalTransitionStyle) modalTransitionStyleFromString:(nonnull NSString*)str
 {
     return [self modalTransitionStyleFromString:str error:nil];
 }
 
-+ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIModalTransitionStyle) modalTransitionStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLModalTransitionStyleCoverVertical]) {
         return UIModalTransitionStyleCoverVertical;
@@ -1409,7 +1409,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIModalTransitionStyleCoverVertical;
 }
 
-+ (UIModalTransitionStyle) modalTransitionStyleFromExpression:(NSString*)expr
++ (UIModalTransitionStyle) modalTransitionStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIModalTransitionStyle val = [self modalTransitionStyleFromString:[expr evaluateAsString] error:&err];
@@ -1423,12 +1423,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIViewContentMode conversions
 /******************************************************************************/
 
-+ (UIViewContentMode) viewContentModeFromString:(NSString*)str
++ (UIViewContentMode) viewContentModeFromString:(nonnull NSString*)str
 {
     return [self viewContentModeFromString:str error:nil];
 }
 
-+ (UIViewContentMode) viewContentModeFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIViewContentMode) viewContentModeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLViewContentModeScaleToFill]) {
         return UIViewContentModeScaleToFill;
@@ -1479,7 +1479,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIViewContentModeScaleToFill;
 }
 
-+ (UIViewContentMode) viewContentModeFromExpression:(NSString*)expr
++ (UIViewContentMode) viewContentModeFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIViewContentMode val = [self viewContentModeFromString:[expr evaluateAsString] error:&err];
@@ -1493,12 +1493,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIBarStyle conversions
 /******************************************************************************/
 
-+ (UIBarStyle) barStyleFromString:(NSString*)str
++ (UIBarStyle) barStyleFromString:(nonnull NSString*)str
 {
     return [self barStyleFromString:str error:nil];
 }
 
-+ (UIBarStyle) barStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIBarStyle) barStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLBarStyleDefault]) {
         return UIBarStyleDefault;
@@ -1522,7 +1522,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIBarStyleDefault;
 }
 
-+ (UIBarStyle) barStyleFromExpression:(NSString*)expr
++ (UIBarStyle) barStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIBarStyle val = [self barStyleFromString:[expr evaluateAsString] error:&err];
@@ -1536,12 +1536,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIBarButtonSystemItem conversions
 /******************************************************************************/
 
-+ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str
++ (UIBarButtonSystemItem) barButtonSystemItemFromString:(nonnull NSString*)str
 {
     return [self barButtonSystemItemFromString:str error:nil];
 }
 
-+ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIBarButtonSystemItem) barButtonSystemItemFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLBarButtonSystemItemDone]) {
         return UIBarButtonSystemItemDone;
@@ -1625,7 +1625,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIBarButtonSystemItemDone;
 }
 
-+ (UIBarButtonSystemItem) barButtonSystemItemFromExpression:(NSString*)expr
++ (UIBarButtonSystemItem) barButtonSystemItemFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIBarButtonSystemItem val = [self barButtonSystemItemFromString:[expr evaluateAsString] error:&err];
@@ -1639,12 +1639,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIBarButtonItemStyle conversions
 /******************************************************************************/
 
-+ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str
++ (UIBarButtonItemStyle) barButtonItemStyleFromString:(nonnull NSString*)str
 {
     return [self barButtonItemStyleFromString:str error:nil];
 }
 
-+ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIBarButtonItemStyle) barButtonItemStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLBarButtonItemStylePlain]) {
         return UIBarButtonItemStylePlain;
@@ -1666,7 +1666,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIBarButtonItemStylePlain;
 }
 
-+ (UIBarButtonItemStyle) barButtonItemStyleFromExpression:(NSString*)expr
++ (UIBarButtonItemStyle) barButtonItemStyleFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIBarButtonItemStyle val = [self barButtonItemStyleFromString:[expr evaluateAsString] error:&err];
@@ -1680,12 +1680,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIStatusBarAnimation conversions
 /******************************************************************************/
 
-+ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str
++ (UIStatusBarAnimation) statusBarAnimationFromString:(nonnull NSString*)str
 {
     return [self statusBarAnimationFromString:str error:nil];
 }
 
-+ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIStatusBarAnimation) statusBarAnimationFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLStatusBarAnimationNone]) {
         return UIStatusBarAnimationNone;
@@ -1706,7 +1706,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIStatusBarAnimationNone;
 }
 
-+ (UIStatusBarAnimation) statusBarAnimationFromExpression:(NSString*)expr
++ (UIStatusBarAnimation) statusBarAnimationFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIStatusBarAnimation val = [self statusBarAnimationFromString:[expr evaluateAsString] error:&err];
@@ -1720,12 +1720,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark UIPopoverArrowDirection conversions
 /******************************************************************************/
 
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str
++ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(nonnull NSString*)str
 {
     return [self popoverArrowDirectionFromString:str error:nil];
 }
 
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str error:(inout NSError**)errPtr
++ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     if ([str isEqualToString:kMBMLPopoverArrowDirectionUp]) {
         return UIPopoverArrowDirectionUp;
@@ -1752,7 +1752,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return UIPopoverArrowDirectionAny;
 }
 
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromExpression:(NSString*)expr
++ (UIPopoverArrowDirection) popoverArrowDirectionFromExpression:(nonnull NSString*)expr
 {
     NSError* err = nil;
     UIPopoverArrowDirection val = [self popoverArrowDirectionFromString:[expr evaluateAsString] error:&err];

@@ -48,26 +48,26 @@
 
 /*! Returns a human-readable string indicating the operating system type, 
     eg. "`iPhone OS`". */
-@property(nonatomic, readonly) NSString* osType;
+@property(nonnull, nonatomic, readonly) NSString* osType;
 
 /*! Returns the operating system version string, eg. "`8.1.3`" */
-@property(nonatomic, readonly) NSString* osVersion;
+@property(nonnull, nonatomic, readonly) NSString* osVersion;
 
 /*! Returns the individual components of the operating system version as an
     array of `NSNumber`s, eg. [`8`, `1`, `3`]. */
-@property(nonatomic, readonly) NSArray* osVersionComponents;
+@property(nonnull, nonatomic, readonly) NSArray* osVersionComponents;
 
 /*! Returns the major component of the operating system version, eg. the `8`
     in "`8.1.3`". */
-@property(nonatomic, readonly) NSNumber* osVersionMajor;
+@property(nonnull, nonatomic, readonly) NSNumber* osVersionMajor;
 
 /*! Returns the minor component of the operating system version, eg. the `1`
     in "`8.1.3`". */
-@property(nonatomic, readonly) NSNumber* osVersionMinor;
+@property(nonnull, nonatomic, readonly) NSNumber* osVersionMinor;
 
 /*! Returns the revision component of the operating system version, eg. the `3`
     in "`8.1.3`". */
-@property(nonatomic, readonly) NSNumber* osVersionRevision;
+@property(nonnull, nonatomic, readonly) NSNumber* osVersionRevision;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Application state information
@@ -84,7 +84,7 @@
 
 /*! Returns the string "`portrait`" or "`landscape`" depending on the current
     orientation of the device. */
-@property(nonatomic, readonly) NSString* currentOrientation;
+@property(nonnull, nonatomic, readonly) NSString* currentOrientation;
 
 /*! Returns `YES` if the device is currently in portrait orientation. */
 @property(nonatomic, readonly) BOOL isPortrait;
@@ -98,27 +98,27 @@
 /*----------------------------------------------------------------------------*/
 
 /*! Returns the `scale` of the main `UIScreen`. */
-@property(nonatomic, readonly) NSNumber* screenScale;
+@property(nonnull, nonatomic, readonly) NSNumber* screenScale;
 
 /*! Returns `YES` if the main `UIScreen`'s `scale` is `2.0` or greater. */
 @property(nonatomic, readonly) BOOL isRetina;
 
 /*! Returns the width of the main `UIScreen` in the current orientation. */
-@property(nonatomic, readonly) NSNumber* screenWidth;
+@property(nonnull, nonatomic, readonly) NSNumber* screenWidth;
 
 /*! Returns the height of the main `UIScreen` in the current orientation. */
-@property(nonatomic, readonly) NSNumber* screenHeight;
+@property(nonnull, nonatomic, readonly) NSNumber* screenHeight;
 
 /*! Returns a comma-separated string containing the width and height of the
     screen in the current orientation as "*`width`*`,`*`height`*". */
-@property(nonatomic, readonly) NSString* screenSize;
+@property(nonnull, nonatomic, readonly) NSString* screenSize;
 
 /*! Returns a comma-separated string containing the width and height of the
     screen when the device is in portrait orientation. */
-@property(nonatomic, readonly) NSString* screenSizePortrait;
+@property(nonnull, nonatomic, readonly) NSString* screenSizePortrait;
 
 /*! Returns a comma-separated string containing the width and height of the
     screen when the device is in landscape orientation. */
-@property(nonatomic, readonly) NSString* screenSizeLandscape;
+@property(nonnull, nonatomic, readonly) NSString* screenSizeLandscape;
 
 @end

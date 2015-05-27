@@ -35,12 +35,12 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 #pragma mark Thread-local scoped variables
 /******************************************************************************/
 
-+ (instancetype) currentVariableScope
++ (nullable instancetype) currentVariableScope
 {
     return [[MBThreadLocalStorage valueForClass:self] lastObject];
 }
 
-+ (instancetype) enterVariableScope
++ (nonnull instancetype) enterVariableScope
 {
     debugTrace();
 
@@ -52,7 +52,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
     return scope;
 }
 
-+ (instancetype) exitVariableScope
++ (nullable instancetype) exitVariableScope
 {
     debugTrace();
 
@@ -117,7 +117,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 #pragma mark Getting & setting scoped variable values
 /******************************************************************************/
 
-- (id) objectForKeyedSubscript:(NSString*)variableName
+- (nullable id) objectForKeyedSubscript:(nonnull NSString*)variableName
 {
     if (variableName) {
         return _namesToValues[variableName];
@@ -125,7 +125,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
     return nil;
 }
 
-- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName
+- (void) setObject:(nullable id)value forKeyedSubscript:(nonnull NSString*)variableName
 {
     if (!variableName || ![variableName isKindOfClass:[NSString class]]) {
         [NSException raise:NSInvalidArgumentException

@@ -29,17 +29,17 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
 #pragma mark Getting names for parameterized events
 /******************************************************************************/
 
-+ (NSString*) willRequestDataEventName:(NSString*)name
++ (nonnull NSString*) willRequestDataEventName:(nonnull NSString*)name
 {
     return [self name:name withSuffix:kMBEventSuffixWillRequestData];
 }
 
-+ (NSString*) dataLoadedEventName:(NSString*)name 
++ (nonnull NSString*) dataLoadedEventName:(nonnull NSString*)name
 {
     return [self name:name withSuffix:kMBEventSuffixDataLoaded];
 }
 
-+ (NSString*) dataLoadFailedEventName:(NSString*)name
++ (nonnull NSString*) dataLoadFailedEventName:(nonnull NSString*)name
 {
     return [self name:name withSuffix:kMBEventSuffixDataLoadFailed];
 }
@@ -48,22 +48,22 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
 #pragma mark Sending events
 /******************************************************************************/
 
-+ (void) postWillRequestData:(NSString*)name
++ (void) postWillRequestData:(nonnull NSString*)name
 {
     [self postWillRequestData:name withEventObject:nil];
 }
 
-+ (void) postDataLoaded:(NSString*)name
++ (void) postDataLoaded:(nonnull NSString*)name
 {
     [self postDataLoaded:name withEventObject:nil];
 }
 
-+ (void) postDataLoadFailed:(NSString*)name
++ (void) postDataLoadFailed:(nonnull NSString*)name
 {
     [self postDataLoadFailed:name withEventObject:nil];
 }
 
-+ (void) postWillRequestData:(NSString*)name withEventObject:(id)eventObj
++ (void) postWillRequestData:(nonnull NSString*)name withEventObject:(nullable id)eventObj
 {
     if (name) {
         MBVariableSpace* vars = [MBVariableSpace instance];
@@ -77,7 +77,7 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
     }
 }
 
-+ (void) postDataLoaded:(NSString*)name withEventObject:(id)eventObj
++ (void) postDataLoaded:(nonnull NSString*)name withEventObject:(nullable id)eventObj
 {
     if (name) {
         [[MBVariableSpace instance] unsetVariable:[self name:name withSuffix:kMBMLVariableSuffixRequestPending]];
@@ -86,7 +86,7 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
     }
 }
 
-+ (void) postDataLoadFailed:(NSString*)name withEventObject:(id)eventObj
++ (void) postDataLoadFailed:(nonnull NSString*)name withEventObject:(nullable id)eventObj
 {
     if (name) {
         MBVariableSpace* vars = [MBVariableSpace instance];

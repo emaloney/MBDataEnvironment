@@ -39,7 +39,7 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (instancetype) init
+- (nonnull instancetype) init
 {
     self = [super init];
     if (self) {
@@ -48,19 +48,19 @@
     return self;
 }
 
-+ (instancetype) error
++ (nonnull instancetype) error
 {
     return [self new]; 
 }
 
-+ (instancetype) errorWithMessage:(NSString*)msg
++ (nonnull instancetype) errorWithMessage:(nonnull NSString*)msg
 {
     MBExpressionError* err = [self error];
     err.message = msg;
     return err;
 }
 
-+ (instancetype) errorWithMessage:(NSString*)msg error:(NSError*)nsErr
++ (nonnull instancetype) errorWithMessage:(nonnull NSString*)msg error:(nullable NSError*)nsErr
 {
     MBExpressionError* err = [self error];
     err.message = msg;
@@ -68,7 +68,7 @@
     return err;
 }
 
-+ (instancetype) errorWithMessage:(NSString*)msg exception:(NSException*)ex
++ (nonnull instancetype) errorWithMessage:(nonnull NSString*)msg exception:(nullable NSException*)ex
 {
     MBExpressionError* err = [self error];
     err.message = msg;
@@ -76,7 +76,7 @@
     return err;
 }
 
-+ (instancetype) errorWithFormat:(NSString*)format, ...
++ (nonnull instancetype) errorWithFormat:(nonnull NSString*)format, ...
 {
     va_list args;
     va_start(args, format);
@@ -88,14 +88,14 @@
     return error;
 }
 
-+ (instancetype) errorWithError:(NSError*)nsErr
++ (nonnull instancetype) errorWithError:(nonnull NSError*)nsErr
 {
     MBExpressionError* err = [self error];
     err.causedByError = nsErr;
     return err;
 }
 
-+ (instancetype) errorWithException:(NSException*)ex
++ (nonnull instancetype) errorWithException:(nonnull NSException*)ex;
 {
     MBExpressionError* err = [self error];
     err.causedByException = ex;
@@ -135,14 +135,14 @@
     }
 }
 
-- (void) reportErrorTo:(inout MBExpressionError**)reportTo
+- (void) reportErrorTo:(MBExpressionErrorPtrPtr)reportTo
 {
     [self reportErrorTo:reportTo suppressLog:NO];
 }
 
-- (void) reportErrorTo:(inout MBExpressionError**)reportTo suppressLog:(BOOL)suppress
+- (void) reportErrorTo:(MBExpressionErrorPtrPtr)reportTo suppressLog:(BOOL)suppressLog
 {
-    if (!reportTo && !suppress) {
+    if (!reportTo && !suppressLog) {
         [self log];
     }
     else if (reportTo) {
@@ -173,7 +173,7 @@
     return NO;
 }
 
-- (MBExpressionError*) lastErrorReported
+- (nullable MBExpressionError*) lastErrorReported
 {
     if (_additionalErrors && _additionalErrors.count > 0) {
         return [_additionalErrors lastObject];
@@ -208,7 +208,7 @@
     return nil;
 }
 
-- (NSString*) logOutput
+- (nonnull NSString*) logOutput
 {
     NSMutableString* log = [NSMutableString string];
     if (_message) {
@@ -251,7 +251,7 @@
     }
 }
 
-- (NSArray*) additionalErrors
+- (nullable NSArray*) additionalErrors
 {
     return [_additionalErrors copy];
 }
@@ -265,7 +265,7 @@
 
 @implementation MBParseError
 
-- (NSString*) logOutput
+- (nonnull NSString*) logOutput
 {
     return [NSString stringWithFormat:@"Syntax error: %@", [super logOutput]];
 }
@@ -279,7 +279,7 @@
 
 @implementation MBEvaluationError
 
-- (NSString*) logOutput
+- (nonnull NSString*) logOutput
 {
     return [NSString stringWithFormat:@"Evaluation error: %@", [super logOutput]];
 }
@@ -293,7 +293,7 @@
 
 @implementation MBMLFunctionError
 
-- (NSString*) logOutput
+- (nonnull NSString*) logOutput
 {
     MBMLFunction* proxy = nil;
     if ([self.value isKindOfClass:[MBMLFunction class]]) {

@@ -30,39 +30,39 @@ NSString* const kMBMLEnvironmentDidLoadNotification         = @"Environment:didL
 #pragma mark Environment state changes
 /******************************************************************************/
 
-- (void) environmentWillLoad:(MBEnvironment*)env
+- (void) environmentWillLoad:(nonnull MBEnvironment*)env
 {
     debugTrace();
 }
 
-- (void) environmentDidLoad:(MBEnvironment*)env
+- (void) environmentDidLoad:(nonnull MBEnvironment*)env
 {
     debugTrace();
 }
 
-- (void) environmentLoadFailed:(MBEnvironment*)env
+- (void) environmentLoadFailed:(nonnull MBEnvironment*)env
 {
     debugTrace();
 }
 
-- (void) environmentWillActivate:(MBEnvironment*)env
+- (void) environmentWillActivate:(nonnull MBEnvironment*)env
 {
     debugTrace();
 }
 
-- (void) environmentDidActivate:(MBEnvironment*)env
+- (void) environmentDidActivate:(nonnull MBEnvironment*)env
 {
     debugTrace();
 
     _isActive = YES;
 }
 
-- (void) environmentWillDeactivate:(MBEnvironment*)env
+- (void) environmentWillDeactivate:(nonnull MBEnvironment*)env
 {
     debugTrace();
 }
 
-- (void) environmentDidDeactivate:(MBEnvironment*)env
+- (void) environmentDidDeactivate:(nonnull MBEnvironment*)env
 {
     debugTrace();
 
@@ -73,12 +73,12 @@ NSString* const kMBMLEnvironmentDidLoadNotification         = @"Environment:didL
 #pragma mark MBML parsing
 /******************************************************************************/
 
-- (NSArray*) acceptedTagNames
+- (nonnull NSArray*) acceptedTagNames
 {
     MBErrorNotImplementedReturn(NSArray*);
 }
 
-- (BOOL) parseElement:(RXMLElement*)mbml forMatch:(NSString*)match
+- (BOOL) parseElement:(nonnull RXMLElement*)mbml forMatch:(nonnull NSString*)match
 {
     MBErrorNotImplementedReturn(BOOL);
 }

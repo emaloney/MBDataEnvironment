@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MBToolbox/NSError+MBToolbox.h>
 
 /******************************************************************************/
 #pragma mark Types
@@ -37,178 +38,178 @@ typedef NS_ENUM(NSInteger, MBTableViewCellSelectionStyle)
 /******************************************************************************/
 
 // NSTextAlignment
-extern NSString* const kMBMLTextAlignmentLeft;                      // @"left" for NSTextAlignmentLeft
-extern NSString* const kMBMLTextAlignmentCenter;                    // @"center" for NSTextAlignmentCenter
-extern NSString* const kMBMLTextAlignmentRight;                     // @"right" for NSTextAlignmentRight
+extern NSString* const __nonnull kMBMLTextAlignmentLeft;                      // @"left" for NSTextAlignmentLeft
+extern NSString* const __nonnull kMBMLTextAlignmentCenter;                    // @"center" for NSTextAlignmentCenter
+extern NSString* const __nonnull kMBMLTextAlignmentRight;                     // @"right" for NSTextAlignmentRight
 
 // UIScrollViewIndicatorStyle
-extern NSString* const kMBMLScrollViewIndicatorStyleDefault;        // @"default" for UIScrollViewIndicatorStyleDefault
-extern NSString* const kMBMLScrollViewIndicatorStyleBlack;          // @"black" for UIScrollViewIndicatorStyleBlack
-extern NSString* const kMBMLScrollViewIndicatorStyleWhite;          // @"white" for UIScrollViewIndicatorStyleWhite
+extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleDefault;        // @"default" for UIScrollViewIndicatorStyleDefault
+extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleBlack;          // @"black" for UIScrollViewIndicatorStyleBlack
+extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleWhite;          // @"white" for UIScrollViewIndicatorStyleWhite
 
 // NSLineBreakMode
-extern NSString* const kMBMLLineBreakByWordWrapping;                // @"wordWrap" for NSLineBreakByWordWrapping
-extern NSString* const kMBMLLineBreakByCharWrapping;                // @"charWrap" for NSLineBreakByCharWrapping
-extern NSString* const kMBMLLineBreakByClipping;                    // @"clip" for NSLineBreakByClipping
-extern NSString* const kMBMLLineBreakByTruncatingHead;              // @"headTruncation" for NSLineBreakByTruncatingHead
-extern NSString* const kMBMLLineBreakByTruncatingTail;              // @"tailTruncation" for NSLineBreakByTruncatingTail
-extern NSString* const kMBMLLineBreakByTruncatingMiddle;            // @"middleTruncation" for NSLineBreakByTruncatingMiddle
+extern NSString* const __nonnull kMBMLLineBreakByWordWrapping;                // @"wordWrap" for NSLineBreakByWordWrapping
+extern NSString* const __nonnull kMBMLLineBreakByCharWrapping;                // @"charWrap" for NSLineBreakByCharWrapping
+extern NSString* const __nonnull kMBMLLineBreakByClipping;                    // @"clip" for NSLineBreakByClipping
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingHead;              // @"headTruncation" for NSLineBreakByTruncatingHead
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingTail;              // @"tailTruncation" for NSLineBreakByTruncatingTail
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingMiddle;            // @"middleTruncation" for NSLineBreakByTruncatingMiddle
 
 // UIActivityIndicatorViewStyle
-extern NSString* const kMBMLActivityIndicatorViewStyleWhiteLarge;   // @"whiteLarge" for UIActivityIndicatorViewStyleWhiteLarge
-extern NSString* const kMBMLActivityIndicatorViewStyleWhite;        // @"white" for UIActivityIndicatorViewStyleWhite
-extern NSString* const kMBMLActivityIndicatorViewStyleGray;         // @"gray" for UIActivityIndicatorViewStyleGray
+extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhiteLarge;   // @"whiteLarge" for UIActivityIndicatorViewStyleWhiteLarge
+extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhite;        // @"white" for UIActivityIndicatorViewStyleWhite
+extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleGray;         // @"gray" for UIActivityIndicatorViewStyleGray
 
 // UIButtonType
-extern NSString* const kMBMLButtonTypeCustom;                       // @"custom" for UIButtonTypeCustom
-extern NSString* const kMBMLButtonTypeRoundedRect;                  // @"rounded" for UIButtonTypeRoundedRect
-extern NSString* const kMBMLButtonTypeDetailDisclosure;             // @"detailDisclosure" for UIButtonTypeDetailDisclosure
-extern NSString* const kMBMLButtonTypeInfoLight;                    // @"infoLight" for UIButtonTypeInfoLight
-extern NSString* const kMBMLButtonTypeInfoDark;                     // @"infoDark" for UIButtonTypeInfoDark
-extern NSString* const kMBMLButtonTypeContactAdd;                   // @"contactAdd" for UIButtonTypeContactAdd
+extern NSString* const __nonnull kMBMLButtonTypeCustom;                       // @"custom" for UIButtonTypeCustom
+extern NSString* const __nonnull kMBMLButtonTypeRoundedRect;                  // @"rounded" for UIButtonTypeRoundedRect
+extern NSString* const __nonnull kMBMLButtonTypeDetailDisclosure;             // @"detailDisclosure" for UIButtonTypeDetailDisclosure
+extern NSString* const __nonnull kMBMLButtonTypeInfoLight;                    // @"infoLight" for UIButtonTypeInfoLight
+extern NSString* const __nonnull kMBMLButtonTypeInfoDark;                     // @"infoDark" for UIButtonTypeInfoDark
+extern NSString* const __nonnull kMBMLButtonTypeContactAdd;                   // @"contactAdd" for UIButtonTypeContactAdd
 
 // NSDateFormatterStyle
-extern NSString* const kMBMLDateFormatterNoStyle;                   // @"none" for NSDateFormatterNoStyle
-extern NSString* const kMBMLDateFormatterShortStyle;                // @"short" for NSDateFormatterShortStyle
-extern NSString* const kMBMLDateFormatterMediumStyle;               // @"medium" for NSDateFormatterMediumStyle
-extern NSString* const kMBMLDateFormatterLongStyle;                 // @"long" for NSDateFormatterLongStyle
-extern NSString* const kMBMLDateFormatterFullStyle;                 // @"full" for NSDateFormatterFullStyle
+extern NSString* const __nonnull kMBMLDateFormatterNoStyle;                   // @"none" for NSDateFormatterNoStyle
+extern NSString* const __nonnull kMBMLDateFormatterShortStyle;                // @"short" for NSDateFormatterShortStyle
+extern NSString* const __nonnull kMBMLDateFormatterMediumStyle;               // @"medium" for NSDateFormatterMediumStyle
+extern NSString* const __nonnull kMBMLDateFormatterLongStyle;                 // @"long" for NSDateFormatterLongStyle
+extern NSString* const __nonnull kMBMLDateFormatterFullStyle;                 // @"full" for NSDateFormatterFullStyle
 
 // UITextBorderStyle
-extern NSString* const kMBMLTextBorderStyleNone;                    // @"none" for UITextBorderStyleNone
-extern NSString* const kMBMLTextBorderStyleLine;                    // @"line" for UITextBorderStyleNone
-extern NSString* const kMBMLTextBorderStyleBezel;                   // @"bezel" for UITextBorderStyleBezel
-extern NSString* const kMBMLTextBorderStyleRoundedRect;             // @"rounded" for UITextBorderStyleRoundedRect
+extern NSString* const __nonnull kMBMLTextBorderStyleNone;                    // @"none" for UITextBorderStyleNone
+extern NSString* const __nonnull kMBMLTextBorderStyleLine;                    // @"line" for UITextBorderStyleNone
+extern NSString* const __nonnull kMBMLTextBorderStyleBezel;                   // @"bezel" for UITextBorderStyleBezel
+extern NSString* const __nonnull kMBMLTextBorderStyleRoundedRect;             // @"rounded" for UITextBorderStyleRoundedRect
 
 // UITableViewStyle
-extern NSString* const kMBMLTableViewStylePlain;                    // @"plain" for UITableViewStylePlain
-extern NSString* const kMBMLTableViewStyleGrouped;                  // @"grouped" for UITableViewStyleGrouped
+extern NSString* const __nonnull kMBMLTableViewStylePlain;                    // @"plain" for UITableViewStylePlain
+extern NSString* const __nonnull kMBMLTableViewStyleGrouped;                  // @"grouped" for UITableViewStyleGrouped
 
 // UITableViewCellStyle
-extern NSString* const kMBMLTableViewCellStyleDefault;              // @"default" for UITableViewCellStyleDefault
-extern NSString* const kMBMLTableViewCellStyleValue1;               // @"value1" for UITableViewCellStyleValue1
-extern NSString* const kMBMLTableViewCellStyleValue2;               // @"value2" for UITableViewCellStyleValue2
-extern NSString* const kMBMLTableViewCellStyleSubtitle;             // @"subtitle" for UITableViewCellStyleSubtitle
+extern NSString* const __nonnull kMBMLTableViewCellStyleDefault;              // @"default" for UITableViewCellStyleDefault
+extern NSString* const __nonnull kMBMLTableViewCellStyleValue1;               // @"value1" for UITableViewCellStyleValue1
+extern NSString* const __nonnull kMBMLTableViewCellStyleValue2;               // @"value2" for UITableViewCellStyleValue2
+extern NSString* const __nonnull kMBMLTableViewCellStyleSubtitle;             // @"subtitle" for UITableViewCellStyleSubtitle
 
 // UITableViewCellSelectionStyle
-extern NSString* const kMBMLTableViewCellSelectionStyleNone;        // @"none" for UITableViewCellSelectionStyleNone
-extern NSString* const kMBMLTableViewCellSelectionStyleBlue;        // @"blue" for UITableViewCellSelectionStyleBlue
-extern NSString* const kMBMLTableViewCellSelectionStyleGray;        // @"gray" for UITableViewCellSelectionStyleGray
-extern NSString* const kMBMLTableViewCellSelectionStyleGradient;    // @"gradient" for custom gradient (not natively supported as a UITableViewCellSelectionStyle)
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleNone;        // @"none" for UITableViewCellSelectionStyleNone
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleBlue;        // @"blue" for UITableViewCellSelectionStyleBlue
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGray;        // @"gray" for UITableViewCellSelectionStyleGray
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGradient;    // @"gradient" for custom gradient (not natively supported as a UITableViewCellSelectionStyle)
 
 // UITableViewCellAccessoryType
-extern NSString* const kMBMLTableViewCellAccessoryNone;                     // @"none" for UITableViewCellAccessoryNone
-extern NSString* const kMBMLTableViewCellAccessoryDisclosureIndicator;      // @"disclosureIndicator" for UITableViewCellAccessoryDisclosureIndicator
-extern NSString* const kMBMLTableViewCellAccessoryDetailDisclosureButton;   // @"detailDisclosureButton" for UITableViewCellAccessoryDetailDisclosureButton
-extern NSString* const kMBMLTableViewCellAccessoryCheckmark;                // @"checkmark" for UITableViewCellAccessoryCheckmark
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryNone;                     // @"none" for UITableViewCellAccessoryNone
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryDisclosureIndicator;      // @"disclosureIndicator" for UITableViewCellAccessoryDisclosureIndicator
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryDetailDisclosureButton;   // @"detailDisclosureButton" for UITableViewCellAccessoryDetailDisclosureButton
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryCheckmark;                // @"checkmark" for UITableViewCellAccessoryCheckmark
 
 // UITableViewRowAnimation
-extern NSString* const kMBMLTableViewRowAnimationNone;              // @"none" for UITableViewRowAnimationNone
-extern NSString* const kMBMLTableViewRowAnimationFade;              // @"fade" for UITableViewRowAnimationFade
-extern NSString* const kMBMLTableViewRowAnimationRight;             // @"right" for UITableViewRowAnimationRight
-extern NSString* const kMBMLTableViewRowAnimationLeft;              // @"left" for UITableViewRowAnimationLeft
-extern NSString* const kMBMLTableViewRowAnimationTop;               // @"top" for UITableViewRowAnimationTop
-extern NSString* const kMBMLTableViewRowAnimationBottom;            // @"bottom" for UITableViewRowAnimationBottom
-extern NSString* const kMBMLTableViewRowAnimationMiddle;            // @"middle" for UITableViewRowAnimationMiddle
+extern NSString* const __nonnull kMBMLTableViewRowAnimationNone;              // @"none" for UITableViewRowAnimationNone
+extern NSString* const __nonnull kMBMLTableViewRowAnimationFade;              // @"fade" for UITableViewRowAnimationFade
+extern NSString* const __nonnull kMBMLTableViewRowAnimationRight;             // @"right" for UITableViewRowAnimationRight
+extern NSString* const __nonnull kMBMLTableViewRowAnimationLeft;              // @"left" for UITableViewRowAnimationLeft
+extern NSString* const __nonnull kMBMLTableViewRowAnimationTop;               // @"top" for UITableViewRowAnimationTop
+extern NSString* const __nonnull kMBMLTableViewRowAnimationBottom;            // @"bottom" for UITableViewRowAnimationBottom
+extern NSString* const __nonnull kMBMLTableViewRowAnimationMiddle;            // @"middle" for UITableViewRowAnimationMiddle
 
 // UIControlState
-extern NSString* const kMBMLControlStateNormal;                     // @"normal" for UIControlStateNormal
-extern NSString* const kMBMLControlStateHighlighted;                // @"highlighted" for UIControlStateHighlighted
-extern NSString* const kMBMLControlStateDisabled;                   // @"disabled" for UIControlStateDisabled
-extern NSString* const kMBMLControlStateSelected;                   // @"selected" for UIControlStateSelected
+extern NSString* const __nonnull kMBMLControlStateNormal;                     // @"normal" for UIControlStateNormal
+extern NSString* const __nonnull kMBMLControlStateHighlighted;                // @"highlighted" for UIControlStateHighlighted
+extern NSString* const __nonnull kMBMLControlStateDisabled;                   // @"disabled" for UIControlStateDisabled
+extern NSString* const __nonnull kMBMLControlStateSelected;                   // @"selected" for UIControlStateSelected
 
 // UIViewAnimationOptions (bit field; multiple comma-separated values specified and they will be bitwise ORed together)
-extern NSString* const kMBMLViewAnimationOptionLayoutSubviews;              // @"layoutSubviews" for UIViewAnimationOptionLayoutSubviews
-extern NSString* const kMBMLViewAnimationOptionAllowUserInteraction;		// @"allowUserInteraction" for UIViewAnimationOptionAllowUserInteraction
-extern NSString* const kMBMLViewAnimationOptionBeginFromCurrentState;		// @"beginFromCurrentState" for UIViewAnimationOptionBeginFromCurrentState
-extern NSString* const kMBMLViewAnimationOptionRepeat;                      // @"repeat" for UIViewAnimationOptionRepeat
-extern NSString* const kMBMLViewAnimationOptionAutoreverse;                 // @"autoreverse" for UIViewAnimationOptionAutoreverse
-extern NSString* const kMBMLViewAnimationOptionOverrideInheritedDuration;   // @"overrideInheritedDuration" for UIViewAnimationOptionOverrideInheritedDuration
-extern NSString* const kMBMLViewAnimationOptionOverrideInheritedCurve;		// @"overrideInheritedCurve" for UIViewAnimationOptionOverrideInheritedCurve
-extern NSString* const kMBMLViewAnimationOptionAllowAnimatedContent;		// @"allowAnimatedContent" for UIViewAnimationOptionAllowAnimatedContent
-extern NSString* const kMBMLViewAnimationOptionShowHideTransitionViews;		// @"showHideTransitionViews" for UIViewAnimationOptionShowHideTransitionViews
-extern NSString* const kMBMLViewAnimationOptionCurveEaseInOut;              // @"curveEaseInOut" for UIViewAnimationOptionCurveEaseInOut
-extern NSString* const kMBMLViewAnimationOptionCurveEaseIn;                 // @"curveEaseIn" for UIViewAnimationOptionCurveEaseIn
-extern NSString* const kMBMLViewAnimationOptionCurveEaseOut;                // @"curveEaseOut" for UIViewAnimationOptionCurveEaseOut
-extern NSString* const kMBMLViewAnimationOptionCurveLinear;                 // @"curveLinear" for UIViewAnimationOptionCurveLinear
-extern NSString* const kMBMLViewAnimationOptionTransitionNone;              // @"transitionNone" for UIViewAnimationOptionTransitionNone
-extern NSString* const kMBMLViewAnimationOptionTransitionFlipFromLeft;		// @"transitionFlipFromLeft" for UIViewAnimationOptionTransitionFlipFromLeft
-extern NSString* const kMBMLViewAnimationOptionTransitionFlipFromRight;		// @"transitionFlipFromRight" for UIViewAnimationOptionTransitionFlipFromRight
-extern NSString* const kMBMLViewAnimationOptionTransitionCurlUp;            // @"transitionCurlUp" for UIViewAnimationOptionTransitionCurlUp
-extern NSString* const kMBMLViewAnimationOptionTransitionCurlDown;          // @"transitionCurlDown" for UIViewAnimationOptionTransitionCurlDown
-extern NSString* const kMBMLViewAnimationOptionTransitionCrossDissolve;		// @"transitionCrossDissolve" for UIViewAnimationOptionTransitionCrossDissolve
-extern NSString* const kMBMLViewAnimationOptionTransitionFlipFromTop;		// @"transitionFlipFromTop" for UIViewAnimationOptionTransitionFlipFromTop
-extern NSString* const kMBMLViewAnimationOptionTransitionFlipFromBottom;    // @"transitionFlipFromBottom" for UIViewAnimationOptionTransitionFlipFromBottom
+extern NSString* const __nonnull kMBMLViewAnimationOptionLayoutSubviews;              // @"layoutSubviews" for UIViewAnimationOptionLayoutSubviews
+extern NSString* const __nonnull kMBMLViewAnimationOptionAllowUserInteraction;		// @"allowUserInteraction" for UIViewAnimationOptionAllowUserInteraction
+extern NSString* const __nonnull kMBMLViewAnimationOptionBeginFromCurrentState;		// @"beginFromCurrentState" for UIViewAnimationOptionBeginFromCurrentState
+extern NSString* const __nonnull kMBMLViewAnimationOptionRepeat;                      // @"repeat" for UIViewAnimationOptionRepeat
+extern NSString* const __nonnull kMBMLViewAnimationOptionAutoreverse;                 // @"autoreverse" for UIViewAnimationOptionAutoreverse
+extern NSString* const __nonnull kMBMLViewAnimationOptionOverrideInheritedDuration;   // @"overrideInheritedDuration" for UIViewAnimationOptionOverrideInheritedDuration
+extern NSString* const __nonnull kMBMLViewAnimationOptionOverrideInheritedCurve;		// @"overrideInheritedCurve" for UIViewAnimationOptionOverrideInheritedCurve
+extern NSString* const __nonnull kMBMLViewAnimationOptionAllowAnimatedContent;		// @"allowAnimatedContent" for UIViewAnimationOptionAllowAnimatedContent
+extern NSString* const __nonnull kMBMLViewAnimationOptionShowHideTransitionViews;		// @"showHideTransitionViews" for UIViewAnimationOptionShowHideTransitionViews
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseInOut;              // @"curveEaseInOut" for UIViewAnimationOptionCurveEaseInOut
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseIn;                 // @"curveEaseIn" for UIViewAnimationOptionCurveEaseIn
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseOut;                // @"curveEaseOut" for UIViewAnimationOptionCurveEaseOut
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveLinear;                 // @"curveLinear" for UIViewAnimationOptionCurveLinear
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionNone;              // @"transitionNone" for UIViewAnimationOptionTransitionNone
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromLeft;		// @"transitionFlipFromLeft" for UIViewAnimationOptionTransitionFlipFromLeft
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromRight;		// @"transitionFlipFromRight" for UIViewAnimationOptionTransitionFlipFromRight
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCurlUp;            // @"transitionCurlUp" for UIViewAnimationOptionTransitionCurlUp
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCurlDown;          // @"transitionCurlDown" for UIViewAnimationOptionTransitionCurlDown
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCrossDissolve;		// @"transitionCrossDissolve" for UIViewAnimationOptionTransitionCrossDissolve
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromTop;		// @"transitionFlipFromTop" for UIViewAnimationOptionTransitionFlipFromTop
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromBottom;    // @"transitionFlipFromBottom" for UIViewAnimationOptionTransitionFlipFromBottom
 
 // UIModalTransitionStyle 
-extern NSString* const kMBMLModalTransitionStyleCoverVertical;      // @"coverVertical" for UIModalTransitionStyleCoverVertical
-extern NSString* const kMBMLModalTransitionStyleFlipHorizontal;     // @"flipHorizontal" for UIModalTransitionStyleFlipHorizontal
-extern NSString* const kMBMLModalTransitionStyleCrossDissolve;      // @"crossDissolve" for UIModalTransitionStyleCrossDissolve
-extern NSString* const kMBMLModalTransitionStylePartialCurl;        // @"partialCurl" for UIModalTransitionStylePartialCurl
+extern NSString* const __nonnull kMBMLModalTransitionStyleCoverVertical;      // @"coverVertical" for UIModalTransitionStyleCoverVertical
+extern NSString* const __nonnull kMBMLModalTransitionStyleFlipHorizontal;     // @"flipHorizontal" for UIModalTransitionStyleFlipHorizontal
+extern NSString* const __nonnull kMBMLModalTransitionStyleCrossDissolve;      // @"crossDissolve" for UIModalTransitionStyleCrossDissolve
+extern NSString* const __nonnull kMBMLModalTransitionStylePartialCurl;        // @"partialCurl" for UIModalTransitionStylePartialCurl
 
 // UIViewContentMode
-extern NSString* const kMBMLViewContentModeScaleToFill;             // @"scaleToFill" for UIViewContentModeScaleToFill
-extern NSString* const kMBMLViewContentModeScaleAspectFit;          // @"aspectFit" for UIViewContentModeScaleAspectFit
-extern NSString* const kMBMLViewContentModeScaleAspectFill;         // @"aspectFill" for UIViewContentModeScaleAspectFill
-extern NSString* const kMBMLViewContentModeRedraw;                  // @"redraw" for UIViewContentModeRedraw
-extern NSString* const kMBMLViewContentModeCenter;                  // @"center" for UIViewContentModeCenter
-extern NSString* const kMBMLViewContentModeTop;                     // @"top" for UIViewContentModeTop
-extern NSString* const kMBMLViewContentModeBottom;                  // @"bottom" for UIViewContentModeBottom
-extern NSString* const kMBMLViewContentModeLeft;                    // @"left" for UIViewContentModeLeft
-extern NSString* const kMBMLViewContentModeRight;                   // @"right" for UIViewContentModeRight
-extern NSString* const kMBMLViewContentModeTopLeft;                 // @"topLeft" for UIViewContentModeTopLeft
-extern NSString* const kMBMLViewContentModeTopRight;                // @"topRight" for UIViewContentModeTopRight
-extern NSString* const kMBMLViewContentModeBottomLeft;              // @"bottomLeft" for UIViewContentModeBottomLeft
-extern NSString* const kMBMLViewContentModeBottomRight;             // @"bottomRight" for UIViewContentModeBottomRight
+extern NSString* const __nonnull kMBMLViewContentModeScaleToFill;             // @"scaleToFill" for UIViewContentModeScaleToFill
+extern NSString* const __nonnull kMBMLViewContentModeScaleAspectFit;          // @"aspectFit" for UIViewContentModeScaleAspectFit
+extern NSString* const __nonnull kMBMLViewContentModeScaleAspectFill;         // @"aspectFill" for UIViewContentModeScaleAspectFill
+extern NSString* const __nonnull kMBMLViewContentModeRedraw;                  // @"redraw" for UIViewContentModeRedraw
+extern NSString* const __nonnull kMBMLViewContentModeCenter;                  // @"center" for UIViewContentModeCenter
+extern NSString* const __nonnull kMBMLViewContentModeTop;                     // @"top" for UIViewContentModeTop
+extern NSString* const __nonnull kMBMLViewContentModeBottom;                  // @"bottom" for UIViewContentModeBottom
+extern NSString* const __nonnull kMBMLViewContentModeLeft;                    // @"left" for UIViewContentModeLeft
+extern NSString* const __nonnull kMBMLViewContentModeRight;                   // @"right" for UIViewContentModeRight
+extern NSString* const __nonnull kMBMLViewContentModeTopLeft;                 // @"topLeft" for UIViewContentModeTopLeft
+extern NSString* const __nonnull kMBMLViewContentModeTopRight;                // @"topRight" for UIViewContentModeTopRight
+extern NSString* const __nonnull kMBMLViewContentModeBottomLeft;              // @"bottomLeft" for UIViewContentModeBottomLeft
+extern NSString* const __nonnull kMBMLViewContentModeBottomRight;             // @"bottomRight" for UIViewContentModeBottomRight
 
 // UIBarStyle
-extern NSString* const kMBMLBarStyleDefault;                        // @"default" for UIBarStyleDefault
-extern NSString* const kMBMLBarStyleBlack;                          // @"black" for UIBarStyleBlack
-extern NSString* const kMBMLBarStyleBlackOpaque;                    // @"blackOpaque" for UIBarStyleBlackOpaque
-extern NSString* const kMBMLBarStyleBlackTranslucent;				// @"blackTranslucent" for UIBarStyleBlackTranslucent
+extern NSString* const __nonnull kMBMLBarStyleDefault;                        // @"default" for UIBarStyleDefault
+extern NSString* const __nonnull kMBMLBarStyleBlack;                          // @"black" for UIBarStyleBlack
+extern NSString* const __nonnull kMBMLBarStyleBlackOpaque;                    // @"blackOpaque" for UIBarStyleBlackOpaque
+extern NSString* const __nonnull kMBMLBarStyleBlackTranslucent;				// @"blackTranslucent" for UIBarStyleBlackTranslucent
 
 // UIBarButtonSystemItem
-extern NSString* const kMBMLBarButtonSystemItemDone;				// @"done" for UIBarButtonSystemItemDone
-extern NSString* const kMBMLBarButtonSystemItemCancel;				// @"cancel" for UIBarButtonSystemItemCancel
-extern NSString* const kMBMLBarButtonSystemItemEdit;				// @"edit" for UIBarButtonSystemItemEdit
-extern NSString* const kMBMLBarButtonSystemItemSave;				// @"save" for UIBarButtonSystemItemSave
-extern NSString* const kMBMLBarButtonSystemItemAdd;                 // @"add" for UIBarButtonSystemItemAdd
-extern NSString* const kMBMLBarButtonSystemItemFlexibleSpace;		// @"flexibleSpace" for UIBarButtonSystemItemFlexibleSpace
-extern NSString* const kMBMLBarButtonSystemItemFixedSpace;			// @"fixedSpace" for UIBarButtonSystemItemFixedSpace
-extern NSString* const kMBMLBarButtonSystemItemCompose;				// @"compose" for UIBarButtonSystemItemCompose
-extern NSString* const kMBMLBarButtonSystemItemReply;				// @"reply" for UIBarButtonSystemItemReply
-extern NSString* const kMBMLBarButtonSystemItemAction;				// @"action" for UIBarButtonSystemItemAction
-extern NSString* const kMBMLBarButtonSystemItemOrganize;			// @"organize" for UIBarButtonSystemItemOrganize
-extern NSString* const kMBMLBarButtonSystemItemBookmarks;			// @"bookmarks" for UIBarButtonSystemItemBookmarks
-extern NSString* const kMBMLBarButtonSystemItemSearch;				// @"search" for UIBarButtonSystemItemSearch
-extern NSString* const kMBMLBarButtonSystemItemRefresh;				// @"refresh" for UIBarButtonSystemItemRefresh
-extern NSString* const kMBMLBarButtonSystemItemStop;				// @"stop" for UIBarButtonSystemItemStop
-extern NSString* const kMBMLBarButtonSystemItemCamera;				// @"camera" for UIBarButtonSystemItemCamera
-extern NSString* const kMBMLBarButtonSystemItemTrash;				// @"trash" for UIBarButtonSystemItemTrash
-extern NSString* const kMBMLBarButtonSystemItemPlay;				// @"play" for UIBarButtonSystemItemPlay
-extern NSString* const kMBMLBarButtonSystemItemPause;				// @"pause" for UIBarButtonSystemItemPause
-extern NSString* const kMBMLBarButtonSystemItemRewind;				// @"rewind" for UIBarButtonSystemItemRewind
-extern NSString* const kMBMLBarButtonSystemItemFastForward;			// @"fastForward" for UIBarButtonSystemItemFastForward
-extern NSString* const kMBMLBarButtonSystemItemUndo;				// @"undo" for UIBarButtonSystemItemUndo
-extern NSString* const kMBMLBarButtonSystemItemRedo;				// @"redo" for UIBarButtonSystemItemRedo
-extern NSString* const kMBMLBarButtonSystemItemPageCurl;			// @"pageCurl" for UIBarButtonSystemItemPageCurl
+extern NSString* const __nonnull kMBMLBarButtonSystemItemDone;				// @"done" for UIBarButtonSystemItemDone
+extern NSString* const __nonnull kMBMLBarButtonSystemItemCancel;				// @"cancel" for UIBarButtonSystemItemCancel
+extern NSString* const __nonnull kMBMLBarButtonSystemItemEdit;				// @"edit" for UIBarButtonSystemItemEdit
+extern NSString* const __nonnull kMBMLBarButtonSystemItemSave;				// @"save" for UIBarButtonSystemItemSave
+extern NSString* const __nonnull kMBMLBarButtonSystemItemAdd;                 // @"add" for UIBarButtonSystemItemAdd
+extern NSString* const __nonnull kMBMLBarButtonSystemItemFlexibleSpace;		// @"flexibleSpace" for UIBarButtonSystemItemFlexibleSpace
+extern NSString* const __nonnull kMBMLBarButtonSystemItemFixedSpace;			// @"fixedSpace" for UIBarButtonSystemItemFixedSpace
+extern NSString* const __nonnull kMBMLBarButtonSystemItemCompose;				// @"compose" for UIBarButtonSystemItemCompose
+extern NSString* const __nonnull kMBMLBarButtonSystemItemReply;				// @"reply" for UIBarButtonSystemItemReply
+extern NSString* const __nonnull kMBMLBarButtonSystemItemAction;				// @"action" for UIBarButtonSystemItemAction
+extern NSString* const __nonnull kMBMLBarButtonSystemItemOrganize;			// @"organize" for UIBarButtonSystemItemOrganize
+extern NSString* const __nonnull kMBMLBarButtonSystemItemBookmarks;			// @"bookmarks" for UIBarButtonSystemItemBookmarks
+extern NSString* const __nonnull kMBMLBarButtonSystemItemSearch;				// @"search" for UIBarButtonSystemItemSearch
+extern NSString* const __nonnull kMBMLBarButtonSystemItemRefresh;				// @"refresh" for UIBarButtonSystemItemRefresh
+extern NSString* const __nonnull kMBMLBarButtonSystemItemStop;				// @"stop" for UIBarButtonSystemItemStop
+extern NSString* const __nonnull kMBMLBarButtonSystemItemCamera;				// @"camera" for UIBarButtonSystemItemCamera
+extern NSString* const __nonnull kMBMLBarButtonSystemItemTrash;				// @"trash" for UIBarButtonSystemItemTrash
+extern NSString* const __nonnull kMBMLBarButtonSystemItemPlay;				// @"play" for UIBarButtonSystemItemPlay
+extern NSString* const __nonnull kMBMLBarButtonSystemItemPause;				// @"pause" for UIBarButtonSystemItemPause
+extern NSString* const __nonnull kMBMLBarButtonSystemItemRewind;				// @"rewind" for UIBarButtonSystemItemRewind
+extern NSString* const __nonnull kMBMLBarButtonSystemItemFastForward;			// @"fastForward" for UIBarButtonSystemItemFastForward
+extern NSString* const __nonnull kMBMLBarButtonSystemItemUndo;				// @"undo" for UIBarButtonSystemItemUndo
+extern NSString* const __nonnull kMBMLBarButtonSystemItemRedo;				// @"redo" for UIBarButtonSystemItemRedo
+extern NSString* const __nonnull kMBMLBarButtonSystemItemPageCurl;			// @"pageCurl" for UIBarButtonSystemItemPageCurl
 
 // UIBarButtonItemStyle
-extern NSString* const kMBMLBarButtonItemStylePlain;				// @"plain" for UIBarButtonItemStylePlain
-extern NSString* const kMBMLBarButtonItemStyleBordered;				// @"bordered" for UIBarButtonItemStyleBordered
-extern NSString* const kMBMLBarButtonItemStyleDone;                 // @"done" for UIBarButtonItemStyleDone
+extern NSString* const __nonnull kMBMLBarButtonItemStylePlain;				// @"plain" for UIBarButtonItemStylePlain
+extern NSString* const __nonnull kMBMLBarButtonItemStyleBordered;				// @"bordered" for UIBarButtonItemStyleBordered
+extern NSString* const __nonnull kMBMLBarButtonItemStyleDone;                 // @"done" for UIBarButtonItemStyleDone
 
 // UIStatusBarAnimation
-extern NSString* const kMBMLStatusBarAnimationNone;                 // @"none" for UIStatusBarAnimationNone
-extern NSString* const kMBMLStatusBarAnimationFade;                 // @"fade" for UIStatusBarAnimationFade
-extern NSString* const kMBMLStatusBarAnimationSlide;                // @"slide" for UIStatusBarAnimationSlide
+extern NSString* const __nonnull kMBMLStatusBarAnimationNone;                 // @"none" for UIStatusBarAnimationNone
+extern NSString* const __nonnull kMBMLStatusBarAnimationFade;                 // @"fade" for UIStatusBarAnimationFade
+extern NSString* const __nonnull kMBMLStatusBarAnimationSlide;                // @"slide" for UIStatusBarAnimationSlide
 
 // UIPopoverArrowDirection
-extern NSString* const kMBMLPopoverArrowDirectionUp;                // @"up" for UIPopoverArrowDirectionUp
-extern NSString* const kMBMLPopoverArrowDirectionDown;              // @"down" for UIPopoverArrowDirectionDown
-extern NSString* const kMBMLPopoverArrowDirectionLeft;              // @"left" for UIPopoverArrowDirectionLeft
-extern NSString* const kMBMLPopoverArrowDirectionRight;             // @"right" for UIPopoverArrowDirectionRight
-extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" for UIPopoverArrowDirectionAny
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionUp;                // @"up" for UIPopoverArrowDirectionUp
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionDown;              // @"down" for UIPopoverArrowDirectionDown
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionLeft;              // @"left" for UIPopoverArrowDirectionLeft
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionRight;             // @"right" for UIPopoverArrowDirectionRight
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               // @"any" for UIPopoverArrowDirectionAny
 
 /******************************************************************************/
 #pragma mark -
@@ -270,7 +271,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `CGPointZero` and logs an error to the
             console if `str` couldn't be interpreted.
  */
-+ (CGPoint) pointFromString:(NSString*)str;
++ (CGPoint) pointFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `CGPoint` value.
@@ -290,7 +291,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGPoint` value that corresponds with `str`.
             Returns `CGPointZero` if `str` couldn't be interpreted.
  */
-+ (CGPoint) pointFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (CGPoint) pointFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGPoint`.
@@ -312,7 +313,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGPoint` value that corresponds with `obj`. Returns
             `CGPointZero` if `obj` couldn't be interpreted.
  */
-+ (CGPoint) pointFromObject:(id)obj error:(inout NSError**)errPtr;
++ (CGPoint) pointFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -325,7 +326,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `CGPointZero` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (CGPoint) pointFromExpression:(NSString*)expr;
++ (CGPoint) pointFromExpression:(nonnull NSString*)expr;
 
 /*!
  Converts a `CGPoint` value into a string that can be parsed by
@@ -335,7 +336,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  
  @return    A string representation of `val`; never `nil`.
  */
-+ (NSString*) stringFromPoint:(CGPoint)val;
++ (nonnull NSString*) stringFromPoint:(CGPoint)val;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark CGSize conversions
@@ -356,7 +357,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `CGPointZero` and logs an error to the
             console if `str` couldn't be interpreted.
  */
-+ (CGSize) sizeFromString:(NSString*)str;
++ (CGSize) sizeFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `CGSize` value.
@@ -376,7 +377,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGSize` value that corresponds with `str`.
             Returns `CGPointZero` if `str` couldn't be interpreted.
  */
-+ (CGSize) sizeFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (CGSize) sizeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGSize`.
@@ -398,7 +399,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGSize` value that corresponds with `obj`. Returns
             `CGSizeZero` if `obj` couldn't be interpreted.
  */
-+ (CGSize) sizeFromObject:(id)obj error:(inout NSError**)errPtr;
++ (CGSize) sizeFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -411,7 +412,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `CGSizeZero` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (CGSize) sizeFromExpression:(NSString*)expr;
++ (CGSize) sizeFromExpression:(nonnull NSString*)expr;
 
 /*!
  Converts a `CGSize` value into a string that can be parsed by 
@@ -421,7 +422,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  
  @return    A string representation of `val`; never `nil`.
  */
-+ (NSString*) stringFromSize:(CGSize)val;
++ (nonnull NSString*) stringFromSize:(CGSize)val;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark CGRect conversions
@@ -442,7 +443,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `CGRectZero` and logs an error to the
             console if `str` couldn't be interpreted.
  */
-+ (CGRect) rectFromString:(NSString*)str;
++ (CGRect) rectFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `CGRect` value.
@@ -462,7 +463,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGRect` value that corresponds with `str`.
             Returns `CGRectZero` if `str` couldn't be interpreted.
  */
-+ (CGRect) rectFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (CGRect) rectFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `CGRect`.
@@ -484,7 +485,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `CGRect` value that corresponds with `obj`. Returns
             `CGRectZero` if `obj` couldn't be interpreted.
  */
-+ (CGRect) rectFromObject:(id)obj error:(inout NSError**)errPtr;
++ (CGRect) rectFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -497,7 +498,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `CGRectZero` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (CGRect) rectFromExpression:(NSString*)expr;
++ (CGRect) rectFromExpression:(nonnull NSString*)expr;
 
 /*!
  Converts a `CGRect` value into a string that can be parsed by
@@ -507,7 +508,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  
  @return    A string representation of `val`; never `nil`.
  */
-+ (NSString*) stringFromRect:(CGRect)val;
++ (nonnull NSString*) stringFromRect:(CGRect)val;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Parsing strings containing UIViewNoIntrinsicMetric wildcards
@@ -528,7 +529,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @return    The value of the size dimension yielded by the expression `expr`.
  */
-+ (CGFloat) sizeDimensionFromExpression:(NSString*)expr;
++ (CGFloat) sizeDimensionFromExpression:(nonnull NSString*)expr;
 
 /*!
  Parses a string into a size dimension value.
@@ -543,7 +544,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
 
  @return    The value of the size dimension specified by `str`.
  */
-+ (CGFloat) sizeDimensionFromString:(NSString*)str;
++ (CGFloat) sizeDimensionFromString:(nonnull NSString*)str;
 
 /*!
  Parses a `CGSize` from a comma-separated string containing two components:
@@ -566,7 +567,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    `YES` on success; `NO` if the input string is not in the expected
             format.
  */
-+ (BOOL) parseString:(NSString*)sizeStr asSize:(CGSize*)sizePtr;
++ (BOOL) parseString:(nonnull NSString*)sizeStr asSize:(nonnull out CGSize*)sizePtr;
 
 /*!
  Parses a `CGRect` from a comma-separated string containing four components:
@@ -593,7 +594,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    `YES` on success; `NO` if the input string is not in the expected
             format.
  */
-+ (BOOL) parseString:(NSString*)rectStr asRect:(CGRect*)rectPtr;
++ (BOOL) parseString:(nonnull NSString*)rectStr asRect:(nonnull out CGRect*)rectPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIOffset conversions
@@ -614,7 +615,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIOffsetZero` and logs an error to the
             console if `str` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromString:(NSString*)str;
++ (UIOffset) offsetFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIOffset` value.
@@ -634,7 +635,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIOffset` value that corresponds with `str`.
             Returns `UIOffsetZero` if `str` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIOffset) offsetFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `UIOffset`.
@@ -656,7 +657,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIOffset` value that corresponds with `obj`. Returns
             `UIOffsetZero` if `obj` couldn't be interpreted.
  */
-+ (UIOffset) offsetFromObject:(id)obj error:(inout NSError**)errPtr;
++ (UIOffset) offsetFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -669,7 +670,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIOffsetZero` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIOffset) offsetFromExpression:(NSString*)expr;
++ (UIOffset) offsetFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIEdgeInsets conversions
@@ -691,7 +692,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIEdgeInsetsZero` and logs an error to the
             console if `str` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str;
++ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIEdgeInsets` value.
@@ -712,7 +713,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIEdgeInsets` value that corresponds with `str`.
             Returns `UIEdgeInsetsZero` if `str` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Attempts to interpret an arbitrary object value as a `UIEdgeInsets`.
@@ -735,7 +736,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIEdgeInsets` value that corresponds with `obj`. Returns
             `UIEdgeInsetsZero` if `obj` couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromObject:(id)obj error:(inout NSError**)errPtr;
++ (UIEdgeInsets) edgeInsetsFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates an object expression and attempts to interpret the result as a
@@ -748,7 +749,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIEdgeInsetsZero` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIEdgeInsets) edgeInsetsFromExpression:(NSString*)expr;
++ (UIEdgeInsets) edgeInsetsFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIColor conversions
@@ -799,7 +800,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `[`<code>UIColor yellowColor</code>`]` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIColor*) colorFromString:(NSString*)str;
++ (nonnull UIColor*) colorFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIColor` value.
@@ -850,7 +851,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `[`<code>UIColor yellowColor</code>`]` if the expression result 
             couldn't be interpreted.
  */
-+ (UIColor*) colorFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (nonnull UIColor*) colorFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -863,7 +864,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `[`<code>UIColor yellowColor</code>`]` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIColor*) colorFromExpression:(NSString*)expr;
++ (nonnull UIColor*) colorFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark NSLineBreakMode conversions
@@ -889,7 +890,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSLineBreakByWordWrapping` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str;
++ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as an `NSLineBreakMode` value.
@@ -915,7 +916,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSLineBreakByWordWrapping` if `str` isn't
             recognized.
  */
-+ (NSLineBreakMode) lineBreakModeFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -928,7 +929,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `NSLineBreakByWordWrapping` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (NSLineBreakMode) lineBreakModeFromExpression:(NSString*)expr;
++ (NSLineBreakMode) lineBreakModeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark NSTextAlignment conversions
@@ -951,7 +952,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSTextAlignmentLeft` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)str;
++ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as an `NSTextAlignment` value.
@@ -974,7 +975,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSTextAlignmentLeft` if `str` isn't
             recognized.
  */
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -987,7 +988,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `NSTextAlignmentLeft` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (NSTextAlignment) textAlignmentFromExpression:(NSString*)expr;
++ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIScrollViewIndicatorStyle conversions
@@ -1010,7 +1011,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIScrollViewIndicatorStyleDefault` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str;
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIScrollViewIndicatorStyle` value.
@@ -1033,7 +1034,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIScrollViewIndicatorStyleDefault` if `str` isn't
             recognized.
  */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1047,7 +1048,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIScrollViewIndicatorStyleDefault` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(NSString*)expr;
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIActivityIndicatorViewStyle conversions
@@ -1070,7 +1071,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UIActivityIndicatorViewStyleWhite` and logs an error 
             to the console if `str` isn't recognized.
  */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str;
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIActivityIndicatorViewStyle` value.
@@ -1093,7 +1094,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UIActivityIndicatorViewStyleWhite` if `str` isn't
             recognized.
  */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1107,7 +1108,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIActivityIndicatorViewStyleWhite` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(NSString*)expr;
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIButtonType conversions
@@ -1133,7 +1134,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIButtonTypeCustom` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIButtonType) buttonTypeFromString:(NSString*)str;
++ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIButtonType` value.
@@ -1159,7 +1160,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIButtonTypeCustom` if `str` isn't
             recognized.
  */
-+ (UIButtonType) buttonTypeFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1173,7 +1174,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIButtonTypeCustom` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIButtonType) buttonTypeFromExpression:(NSString*)expr;
++ (UIButtonType) buttonTypeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark NSDateFormatterStyle conversions
@@ -1198,7 +1199,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSDateFormatterNoStyle` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str;
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as an `NSDateFormatterStyle` value.
@@ -1223,7 +1224,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `NSDateFormatterNoStyle` if `str` isn't
             recognized.
  */
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1237,7 +1238,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `NSDateFormatterNoStyle` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (NSDateFormatterStyle) dateFormatterStyleFromExpression:(NSString*)expr;
++ (NSDateFormatterStyle) dateFormatterStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UITextBorderStyle conversions
@@ -1261,7 +1262,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITextBorderStyleNone` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str;
++ (UITextBorderStyle) textBorderStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UITextBorderStyle` value.
@@ -1285,7 +1286,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITextBorderStyleNone` if `str` isn't
             recognized.
  */
-+ (UITextBorderStyle) textBorderStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UITextBorderStyle) textBorderStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1299,7 +1300,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITextBorderStyleNone` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UITextBorderStyle) textBorderStyleFromExpression:(NSString*)expr;
++ (UITextBorderStyle) textBorderStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UITableViewStyle conversions
@@ -1321,7 +1322,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewStylePlain` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UITableViewStyle) tableViewStyleFromString:(NSString*)str;
++ (UITableViewStyle) tableViewStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UITableViewStyle` value.
@@ -1343,7 +1344,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewStylePlain` if `str` isn't
             recognized.
  */
-+ (UITableViewStyle) tableViewStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UITableViewStyle) tableViewStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1357,7 +1358,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITableViewStylePlain` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UITableViewStyle) tableViewStyleFromExpression:(NSString*)expr;
++ (UITableViewStyle) tableViewStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UITableViewCell-related conversions
@@ -1381,7 +1382,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewCellStyleDefault` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str;
++ (UITableViewCellStyle) tableViewCellStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UITableViewCellStyle` value.
@@ -1405,7 +1406,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewCellStyleDefault` if `str` isn't
             recognized.
  */
-+ (UITableViewCellStyle) tableViewCellStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UITableViewCellStyle) tableViewCellStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1419,7 +1420,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITableViewCellStyleDefault` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UITableViewCellStyle) tableViewCellStyleFromExpression:(NSString*)expr;
++ (UITableViewCellStyle) tableViewCellStyleFromExpression:(nonnull NSString*)expr;
 
 /*!
  Attempts to interpret a string as an `MBTableViewCellSelectionStyle` value,
@@ -1442,7 +1443,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITableViewCellSelectionStyleBlue` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str;
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as an `MBTableViewCellSelectionStyle` value,
@@ -1469,7 +1470,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UITableViewCellSelectionStyleBlue` if `str` isn't
             recognized.
  */
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as an
@@ -1483,7 +1484,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITableViewCellSelectionStyleBlue` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromExpression:(NSString*)expr;
++ (MBTableViewCellSelectionStyle) tableViewCellSelectionStyleFromExpression:(nonnull NSString*)expr;
 
 /*!
  Attempts to interpret a string as a `UITableViewCellAccessoryType` value.
@@ -1502,7 +1503,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UITableViewCellAccessoryNone` and logs an error to
             the console if `str` isn't recognized.
  */
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str;
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UITableViewCellAccessoryType` value.
@@ -1526,7 +1527,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `str`. Returns `UITableViewCellAccessoryNone` if `str` isn't
             recognized.
  */
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1540,7 +1541,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITableViewCellAccessoryNone` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromExpression:(NSString*)expr;
++ (UITableViewCellAccessoryType) tableViewCellAccessoryTypeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UITableViewRowAnimation conversions
@@ -1567,7 +1568,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewRowAnimationNone` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str;
++ (UITableViewRowAnimation) tableViewRowAnimationFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UITableViewRowAnimation` value.
@@ -1594,7 +1595,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UITableViewRowAnimationNone` if `str` isn't
             recognized.
  */
-+ (UITableViewRowAnimation) tableViewRowAnimationFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UITableViewRowAnimation) tableViewRowAnimationFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1608,7 +1609,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UITableViewRowAnimationNone` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UITableViewRowAnimation) tableViewRowAnimationFromExpression:(NSString*)expr;
++ (UITableViewRowAnimation) tableViewRowAnimationFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIControlState conversions
@@ -1632,7 +1633,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIControlStateNormal` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIControlState) controlStateFromString:(NSString*)str;
++ (UIControlState) controlStateFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIControlState` value.
@@ -1656,7 +1657,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIControlStateNormal` if `str` isn't
             recognized.
  */
-+ (UIControlState) controlStateFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIControlState) controlStateFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1670,7 +1671,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIControlStateNormal` and logs an error to the
             console if the expression result couldn't be interpreted.
  */
-+ (UIControlState) controlStateFromExpression:(NSString*)expr;
++ (UIControlState) controlStateFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIViewAnimationOptions conversions
@@ -1717,7 +1718,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `0` and logs an error to the console if `str` isn't
             recognized.
  */
-+ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str;
++ (UIViewAnimationOptions) viewAnimationOptionsFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIViewAnimationOptions` value.
@@ -1763,7 +1764,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIViewAnimationOptions` value that corresponds with `str`.
             Returns `0` if `str` isn't recognized.
  */
-+ (UIViewAnimationOptions) viewAnimationOptionsFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIViewAnimationOptions) viewAnimationOptionsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1777,7 +1778,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `0` and logs an error to the console if the expression result
             couldn't be interpreted.
  */
-+ (UIViewAnimationOptions) viewAnimationOptionsFromExpression:(NSString*)expr;
++ (UIViewAnimationOptions) viewAnimationOptionsFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIModalTransitionStyle conversions
@@ -1801,7 +1802,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIModalTransitionStyleCoverVertical` and logs an error to
             the console if `str` isn't recognized.
  */
-+ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str;
++ (UIModalTransitionStyle) modalTransitionStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIModalTransitionStyle` value.
@@ -1825,7 +1826,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIModalTransitionStyleCoverVertical` if `str` isn't
             recognized.
  */
-+ (UIModalTransitionStyle) modalTransitionStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIModalTransitionStyle) modalTransitionStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1839,7 +1840,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIModalTransitionStyleCoverVertical` and logs an error to the 
             console if the expression result couldn't be interpreted.
  */
-+ (UIModalTransitionStyle) modalTransitionStyleFromExpression:(NSString*)expr;
++ (UIModalTransitionStyle) modalTransitionStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIViewContentMode conversions
@@ -1872,7 +1873,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIViewContentModeScaleToFill` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIViewContentMode) viewContentModeFromString:(NSString*)str;
++ (UIViewContentMode) viewContentModeFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIViewContentMode` value.
@@ -1904,7 +1905,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIViewContentMode` value that corresponds with `str`.
             Returns `UIViewContentModeScaleToFill` if `str` isn't recognized.
  */
-+ (UIViewContentMode) viewContentModeFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIViewContentMode) viewContentModeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1918,7 +1919,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIViewContentModeScaleToFill` and logs an error to the console
             if the expression result couldn't be interpreted.
  */
-+ (UIViewContentMode) viewContentModeFromExpression:(NSString*)expr;
++ (UIViewContentMode) viewContentModeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIBarStyle conversions
@@ -1942,7 +1943,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIBarStyleDefault` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIBarStyle) barStyleFromString:(NSString*)str;
++ (UIBarStyle) barStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIBarStyle` value.
@@ -1965,7 +1966,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIBarStyle` value that corresponds with `str`.
             Returns `UIBarStyleDefault` if `str` isn't recognized.
  */
-+ (UIBarStyle) barStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIBarStyle) barStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -1979,7 +1980,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIBarStyleDefault` and logs an error to the console
             if the expression result couldn't be interpreted.
  */
-+ (UIBarStyle) barStyleFromExpression:(NSString*)expr;
++ (UIBarStyle) barStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIBarButtonSystemItem conversions
@@ -2023,7 +2024,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIBarButtonSystemItemDone` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str;
++ (UIBarButtonSystemItem) barButtonSystemItemFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIBarButtonSystemItem` value.
@@ -2066,7 +2067,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIBarButtonSystemItem` value that corresponds with `str`.
             Returns `UIBarButtonSystemItemDone` if `str` isn't recognized.
  */
-+ (UIBarButtonSystemItem) barButtonSystemItemFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIBarButtonSystemItem) barButtonSystemItemFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2080,7 +2081,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIBarButtonSystemItemDone` and logs an error to the console
             if the expression result couldn't be interpreted.
  */
-+ (UIBarButtonSystemItem) barButtonSystemItemFromExpression:(NSString*)expr;
++ (UIBarButtonSystemItem) barButtonSystemItemFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIBarButtonItemStyle conversions
@@ -2103,7 +2104,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIBarButtonItemStylePlain` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str;
++ (UIBarButtonItemStyle) barButtonItemStyleFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIBarButtonItemStyle` value.
@@ -2125,7 +2126,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIBarButtonItemStyle` value that corresponds with `str`.
             Returns `UIBarButtonItemStylePlain` if `str` isn't recognized.
  */
-+ (UIBarButtonItemStyle) barButtonItemStyleFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIBarButtonItemStyle) barButtonItemStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2139,7 +2140,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIBarButtonItemStylePlain` and logs an error to the console
             if the expression result couldn't be interpreted.
  */
-+ (UIBarButtonItemStyle) barButtonItemStyleFromExpression:(NSString*)expr;
++ (UIBarButtonItemStyle) barButtonItemStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIStatusBarAnimation conversions
@@ -2162,7 +2163,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIStatusBarAnimationNone` and logs an error to the
             console if `str` isn't recognized.
  */
-+ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str;
++ (UIStatusBarAnimation) statusBarAnimationFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIStatusBarAnimation` value.
@@ -2184,7 +2185,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIStatusBarAnimation` value that corresponds with `str`.
             Returns `UIStatusBarAnimationNone` if `str` isn't recognized.
  */
-+ (UIStatusBarAnimation) statusBarAnimationFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIStatusBarAnimation) statusBarAnimationFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2198,7 +2199,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIStatusBarAnimationNone` and logs an error to the console
             if the expression result couldn't be interpreted.
  */
-+ (UIStatusBarAnimation) statusBarAnimationFromExpression:(NSString*)expr;
++ (UIStatusBarAnimation) statusBarAnimationFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIPopoverArrowDirection conversions
@@ -2223,7 +2224,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             Returns `UIPopoverArrowDirectionAny` logs an error to the console 
             if `str` isn't recognized.
  */
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str;
++ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(nonnull NSString*)str;
 
 /*!
  Attempts to interpret a string as a `UIPopoverArrowDirection` value.
@@ -2247,7 +2248,7 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
  @return    The `UIPopoverArrowDirection` value that corresponds with `str`.
             Returns `UIPopoverArrowDirectionAny` if `str` isn't recognized.
  */
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(NSString*)str error:(inout NSError**)errPtr;
++ (UIPopoverArrowDirection) popoverArrowDirectionFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
 
 /*!
  Evaluates a string expression and attempts to interpret the result as a
@@ -2261,6 +2262,6 @@ extern NSString* const kMBMLPopoverArrowDirectionAny;               // @"any" fo
             `UIPopoverArrowDirectionAny` and logs an error to the console
             if the expression result couldn't be interpreted.
  */
-+ (UIPopoverArrowDirection) popoverArrowDirectionFromExpression:(NSString*)expr;
++ (UIPopoverArrowDirection) popoverArrowDirectionFromExpression:(nonnull NSString*)expr;
 
 @end

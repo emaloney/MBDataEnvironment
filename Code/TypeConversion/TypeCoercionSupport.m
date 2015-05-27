@@ -67,7 +67,7 @@
     return [[NSDecimalNumber decimalNumberWithString:self] unsignedIntegerValue];
 }
 
-- (NSString*) stringValue
+- (nonnull NSString*) stringValue
 {
     return self;
 }
@@ -161,7 +161,7 @@
     return (NSUInteger)0;
 }
 
-- (NSString*) stringValue
+- (nonnull NSString*) stringValue
 {
     return [self description];
 }

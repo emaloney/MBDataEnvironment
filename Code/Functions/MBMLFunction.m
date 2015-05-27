@@ -55,11 +55,11 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-- (instancetype) initWithName:(NSString*)name
-                    inputType:(MBMLFunctionInputType)inputType
-                   outputType:(MBMLFunctionOutputType)outputType
-            implementingClass:(Class)cls
-               methodSelector:(SEL)selector
+- (nullable instancetype) initWithName:(nonnull NSString*)name
+                             inputType:(MBMLFunctionInputType)inputType
+                            outputType:(MBMLFunctionOutputType)outputType
+                     implementingClass:(nonnull Class)cls
+                        methodSelector:(nonnull SEL)selector
 {
     self = [super init];
     if (self) {
@@ -834,7 +834,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Execution
 /******************************************************************************/
 
-- (id) executeWithInput:(id)input error:(inout MBMLFunctionError**)errPtr
+- (nullable id) executeWithInput:(nullable id)input error:(MBMLFunctionErrorPtrPtr)errPtr
 {
     @try {
         if (_deprecationMessage && !_deprecatedInFavorOf) {

@@ -20,21 +20,21 @@
 
 @implementation NSString (MBExpression)
 
-- (id) evaluateAsObject
+- (nullable id) evaluateAsObject
 {
     debugTrace();
     
     return [MBExpression asObject:self];
 }
 
-- (NSString*) evaluateAsString
+- (nullable NSString*) evaluateAsString
 {
     debugTrace();
     
     return [MBExpression asString:self];
 }
 
-- (NSDecimalNumber*) evaluateAsNumber
+- (nullable NSDecimalNumber*) evaluateAsNumber
 {
     debugTrace();
     
@@ -48,7 +48,7 @@
     return [MBExpression asBoolean:self];
 }
 
-- (NSString*) asVariableExpression
+- (nonnull NSString*) asVariableExpression
 {
     return [MBMLVariableReferenceToken expressionForReferencingVariableNamed:self];
 }
@@ -62,12 +62,12 @@
 
 @implementation NSDictionary (MBExpression)
 
-- (id) evaluateAsObject:(NSString*)key
+- (nullable id) evaluateAsObject:(nonnull NSString*)key
 {
     return [self evaluateAsObject:key defaultValue:nil];
 }
 
-- (id) evaluateAsObject:(NSString*)key defaultValue:(id)def
+- (nullable id) evaluateAsObject:(nonnull NSString*)key defaultValue:(nullable id)def
 {
     debugTrace();
     
@@ -81,12 +81,12 @@
     return def;
 }
 
-- (NSString*) evaluateAsString:(NSString*)key
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)key
 {
     return [self evaluateAsString:key defaultValue:nil];
 }
 
-- (NSString*) evaluateAsString:(NSString*)key defaultValue:(NSString*)def
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)key defaultValue:(nullable NSString*)def
 {
     debugTrace();
     
@@ -100,12 +100,12 @@
     return def;
 }
 
-- (NSNumber*) evaluateAsNumber:(NSString*)key
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)key
 {
     return [self evaluateAsNumber:key defaultValue:nil];
 }
 
-- (NSNumber*) evaluateAsNumber:(NSString*)key defaultValue:(NSNumber*)def
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)key defaultValue:(nullable NSDecimalNumber*)def
 {
     if (key) {
         id val = self[key];
@@ -119,12 +119,12 @@
     return def;
 }
 
-- (BOOL) evaluateAsBoolean:(NSString*)key
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)key
 {
     return [self evaluateAsBoolean:key defaultValue:NO];
 }
 
-- (BOOL) evaluateAsBoolean:(NSString*)key defaultValue:(BOOL)def
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)key defaultValue:(BOOL)def
 {
     debugTrace();
     

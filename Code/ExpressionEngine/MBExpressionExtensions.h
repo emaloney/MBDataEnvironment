@@ -29,7 +29,7 @@
  
  @return        The result of evaluating the receiver as an object expression.
  */
-- (id) evaluateAsObject;
+- (nullable id) evaluateAsObject;
 
 /*!
  Evaluates the receiver as an expression returning a string.
@@ -39,7 +39,7 @@
 
  @return        The result of evaluating the receiver as a string expression.
  */
-- (NSString*) evaluateAsString;
+- (nullable NSString*) evaluateAsString;
 
 /*!
  Evaluates the receiver as an expression returning a numeric value.
@@ -49,7 +49,7 @@
 
  @return        The result of evaluating the receiver as a numeric expression.
  */
-- (NSDecimalNumber*) evaluateAsNumber;
+- (nullable NSDecimalNumber*) evaluateAsNumber;
 
 /*!
  Evaluates the receiver as an expression returning a boolean value.
@@ -75,7 +75,7 @@
  @return        A Mockingbird expression usable for referencing the variable 
                 named by the receiver.
  */
-- (NSString*) asVariableExpression;
+- (nonnull NSString*) asVariableExpression;
 
 @end
 
@@ -107,7 +107,7 @@
  @return    The result of evaluating the value associated with `key` as
             an expression.
  */
-- (id) evaluateAsObject:(NSString*)key;
+- (nullable id) evaluateAsObject:(nonnull NSString*)key;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -129,7 +129,7 @@
  @return    The result of evaluating the value associated with `key` as 
             an expression, or `def` if `nil` would otherwise be returned.
  */
-- (id) evaluateAsObject:(NSString*)key defaultValue:(id)def;
+- (nullable id) evaluateAsObject:(nonnull NSString*)key defaultValue:(nullable id)def;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -148,7 +148,7 @@
  @return    The result of evaluating the value associated with `key` as
             an expression.
  */
-- (NSString*) evaluateAsString:(NSString*)key;
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)key;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -170,7 +170,7 @@
  @return    The result of evaluating the value associated with `key` as 
             an expression, or `def` if `nil` would otherwise be returned.
  */
-- (NSString*) evaluateAsString:(NSString*)key defaultValue:(NSString*)def;
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)key defaultValue:(nullable NSString*)def;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -189,7 +189,7 @@
  @return    The result of evaluating the value associated with `key` as
             an expression.
  */
-- (NSDecimalNumber*) evaluateAsNumber:(NSString*)key;
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)key;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -211,7 +211,7 @@
  @return    The result of evaluating the value associated with `key` as 
             an expression, or `def` if `nil` would otherwise be returned.
  */
-- (NSDecimalNumber*) evaluateAsNumber:(NSString*)key defaultValue:(NSDecimalNumber*)def;
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)key defaultValue:(nullable NSDecimalNumber*)def;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -230,7 +230,7 @@
  @return    The result of evaluating the value associated with `key` as
             an expression.
  */
-- (BOOL) evaluateAsBoolean:(NSString*)key;
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)key;
 
 /*!
  Takes the value associated with the receiver's `key` and attempts to
@@ -252,6 +252,6 @@
  @return    The result of evaluating the value associated with `key` as 
             an expression, or `def` if `nil` would otherwise be returned.
  */
-- (BOOL) evaluateAsBoolean:(NSString*)key defaultValue:(BOOL)def;
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)key defaultValue:(BOOL)def;
 
 @end

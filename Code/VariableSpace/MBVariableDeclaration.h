@@ -15,10 +15,10 @@
 #pragma mark Constants
 /******************************************************************************/
 
-extern NSString* const kMBMLVariableTypeSingleton;  //!< @"singleton"
-extern NSString* const kMBMLVariableTypeDynamic;    //!< @"dynamic"
-extern NSString* const kMBMLVariableTypeMap;        //!< @"map"
-extern NSString* const kMBMLVariableTypeList;       //!< @"list"
+extern NSString* const __nonnull kMBMLVariableTypeSingleton;  //!< @"singleton"
+extern NSString* const __nonnull kMBMLVariableTypeDynamic;    //!< @"dynamic"
+extern NSString* const __nonnull kMBMLVariableTypeMap;        //!< @"map"
+extern NSString* const __nonnull kMBMLVariableTypeList;       //!< @"list"
 
 /******************************************************************************/
 #pragma mark Type
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
 /*----------------------------------------------------------------------------*/
 
 /*! Returns the name of the variable. */
-@property(nonatomic, readonly) NSString* name;
+@property(nullable, nonatomic, readonly) NSString* name;
 
 /*! Returns `YES` if the variable contains a read-only value. */
 @property(nonatomic, readonly) BOOL isReadOnly;
@@ -91,8 +91,8 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             `disallowsValueCaching` property returns `YES`; in such
             cases, an exception is raised.
  */
-- (id) initialValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr;
+- (nullable id) initialValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                  error:(MBExpressionErrorPtrPtr)errPtr;
 
 /*!
  Returns the current value of the variable in the given variable space.
@@ -104,8 +104,8 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             variable value, `*errPtr` will be set to an `MBExpressionError`
             object describing the error.
  */
-- (id) currentValueInVariableSpace:(MBVariableSpace*)space
-                             error:(inout MBExpressionError**)errPtr;
+- (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
+                                      error:(MBExpressionErrorPtrPtr)errPtr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Variable value change hook
@@ -119,7 +119,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
  
  @param     space The `MBVariableSpace` instance that owns the receiver.
  */
-- (void) valueChangedTo:(id)value inVariableSpace:(MBVariableSpace*)space;
+- (void) valueChangedTo:(nullable id)value inVariableSpace:(nonnull MBVariableSpace*)space;
 
 @end
 
@@ -143,7 +143,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
 
 /*! Returns the variable value as it was originally declared in MBML. Note
     that this may not necessarily be the same as the current value. */
-@property(nonatomic, readonly) id declaredValue;
+@property(nullable, nonatomic, readonly) id declaredValue;
 
 /*! Indicates whether the receiver represents a *literal value*. Literal values
     are not evaluated as expressions when they are set. In MBML, a literal
@@ -161,7 +161,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
     returns the name of the value (also known as the *key*) within the
     `NSUserDefaults`'s `standardUserDefaults`. Will be `nil` is there is
     no `NSUserDefaults` value associated with the receiver. */
-@property(nonatomic, readonly) NSString* userDefaultsName;
+@property(nullable, nonatomic, readonly) NSString* userDefaultsName;
 
 @end
 
@@ -180,10 +180,10 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
 @interface MBSingletonVariableDeclaration : MBVariableDeclaration
 
 /*! Returns the `Class` that implements the singleton. */
-@property(nonatomic, readonly) Class implementingClass;
+@property(nullable, nonatomic, readonly) Class implementingClass;
 
 /*! Returns the method selector for the singleton's accessor. */
-@property(nonatomic, readonly) SEL singletonAccessor;
+@property(nullable, nonatomic, readonly) SEL singletonAccessor;
 
 @end
 
@@ -204,44 +204,6 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
 
 /*! This property returns the Mockingbird expression that will provide the
     variable's value when it is requested. */
-@property(nonatomic, readonly) NSString* expression;
-
-@end
-
-/******************************************************************************/
-#pragma mark -
-#pragma mark MBStringValueCoding protocol
-/******************************************************************************/
-
-/*!
- Classes that adopt this protocol gain the ability to be stored in the
- `NSUserDefaults` as strings. This allows native objects to be
- stored using the variable's `userDefaultsName` mechanism.
- 
- @warning This protocol is deprecated and will be removed from a future
-          version of the Mockingbird Data Environment.
- */
-@protocol MBStringValueCoding <NSObject>
-
-/*!
- Constructs and returns a new, autoreleased instance of the receiver. The
- returned object's internal state will be set based on the value of the
- passed-in string.
- 
- @param     str the input string
- 
- @return    a new instance of the receiver
- */
-@required
-+ (instancetype) fromStringValue:(NSString*)str __attribute__((deprecated("The MBStringValueCoding protocol is deprecated. Please use another means to store your value in NSUserDefaults.")));
-
-/*!
- Returns a string representation of the object's internal state.
- 
- @return    a string that, if passed to `fromStringValue:`, would
-            return a new instance that `isEqual:` to this receiver.
- */
-@optional
-- (NSString*) stringValue __attribute__((deprecated("The MBStringValueCoding protocol is deprecated. Please use another means to store your value in NSUserDefaults.")));
+@property(nullable, nonatomic, readonly) NSString* expression;
 
 @end

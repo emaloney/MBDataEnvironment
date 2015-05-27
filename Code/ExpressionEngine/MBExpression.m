@@ -34,7 +34,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark Value interpretation & translation
 /******************************************************************************/
 
-+ (BOOL) booleanFromValue:(id)val
++ (BOOL) booleanFromValue:(nullable id)val
 {
     if (!val) {
         return NO;
@@ -76,12 +76,12 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
     return YES;
 }
 
-+ (NSString*) stringFromBoolean:(BOOL)val
++ (nonnull NSString*) stringFromBoolean:(BOOL)val
 {
     return (val ? kMBMLBooleanStringTrue : kMBMLBooleanStringFalse);
 }
 
-+ (NSDecimalNumber*) numberFromValue:(id)val
++ (nullable NSDecimalNumber*) numberFromValue:(nullable id)val
 {
     NSDecimalNumber* retVal = nil;
     if ([val isKindOfClass:[NSDecimalNumber class]]) {
@@ -99,7 +99,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
     return nil;
 }
 
-+ (BOOL) value:(id)lValue isEqualTo:(id)rValue
++ (BOOL) value:(nullable id)lValue isEqualTo:(nullable id)rValue
 {
     BOOL isEqual = NO;
     if (!lValue && !rValue) {
@@ -114,7 +114,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
     return isEqual;
 }
 
-+ (NSComparisonResult) compareLeftValue:(id)lValue againstRightValue:(id)rValue
++ (NSComparisonResult) compareLeftValue:(nullable id)lValue againstRightValue:(nullable id)rValue
 {
     if ((!lValue && !rValue) || lValue == rValue) {
         return NSOrderedSame;
@@ -158,21 +158,21 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark High-level expression evaluation API - multiple objects
 /******************************************************************************/
 
-+ (NSArray*) asArray:(NSString*)expr
++ (nullable NSArray*) asArray:(nonnull NSString*)expr
 {
     return [self asArray:expr
          inVariableSpace:[MBVariableSpace instance]
                    error:nil];
 }
 
-+ (NSArray*) asArray:(NSString*)expr error:(inout MBExpressionError**)errPtr
++ (nullable NSArray*) asArray:(nonnull NSString*)expr error:(MBExpressionErrorPtrPtr)errPtr
 {
     return [self asArray:expr
          inVariableSpace:[MBVariableSpace instance]
                    error:errPtr];
 }
 
-+ (NSArray*) asArray:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
++ (nullable NSArray*) asArray:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 
@@ -207,7 +207,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark High-level expression evaluation API - single objects or string
 /******************************************************************************/
 
-+ (id) asObject:(NSString*)expr
++ (nullable id) asObject:(nonnull NSString*)expr
 {
     return [self asObject:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -215,7 +215,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (id) asObject:(NSString*)expr error:(inout MBExpressionError**)errPtr
++ (nullable id) asObject:(nonnull NSString*)expr error:(MBExpressionErrorPtrPtr)errPtr
 {
     return [self asObject:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -223,7 +223,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:errPtr];
 }
 
-+ (id) asObject:(NSString*)expr defaultValue:(id)def
++ (nullable id) asObject:(nonnull NSString*)expr defaultValue:(nullable id)def
 {
     return [self asObject:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -231,7 +231,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (id) asObject:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(inout MBExpressionError**)errPtr
++ (nullable id) asObject:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(nullable id)def error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 
@@ -272,7 +272,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark High-level expression evaluation API - returning NSString
 /******************************************************************************/
 
-+ (NSString*) asString:(NSString*)expr
++ (nullable NSString*) asString:(nonnull NSString*)expr
 {
     return [self asString:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -280,7 +280,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSString*) asString:(NSString*)expr error:(inout MBExpressionError**)errPtr
++ (nullable NSString*) asString:(nonnull NSString*)expr error:(MBExpressionErrorPtrPtr)errPtr
 {
     return [self asString:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -288,7 +288,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:errPtr];
 }
 
-+ (NSString*) asString:(NSString*)expr defaultValue:(NSString*)def
++ (nullable NSString*) asString:(nonnull NSString*)expr defaultValue:(nullable NSString*)def
 {
     return [self asString:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -296,7 +296,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSString*) asString:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(inout MBExpressionError**)errPtr
++ (nullable NSString*) asString:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(nullable NSString*)def error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 
@@ -337,7 +337,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark High-level expression evaluation API - returning NSDecimalNumber
 /******************************************************************************/
 
-+ (NSDecimalNumber*) asNumber:(NSString*)expr
++ (nullable NSDecimalNumber*) asNumber:(nonnull NSString*)expr
 {
     return [self asNumber:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -345,7 +345,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSDecimalNumber*) asNumber:(NSString*)expr error:(inout MBExpressionError**)errPtr
++ (nullable NSDecimalNumber*) asNumber:(nonnull NSString*)expr error:(MBExpressionErrorPtrPtr)errPtr
 {
     return [self asNumber:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -353,7 +353,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:errPtr];
 }
 
-+ (NSDecimalNumber*) asNumber:(NSString*)expr defaultValue:(NSDecimalNumber*)def
++ (nullable NSDecimalNumber*) asNumber:(nonnull NSString*)expr defaultValue:(nullable NSDecimalNumber*)def
 {
     return [self asNumber:expr
           inVariableSpace:[MBVariableSpace instance]
@@ -361,7 +361,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                     error:nil];
 }
 
-+ (NSDecimalNumber*) asNumber:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(NSDecimalNumber*)def error:(inout MBExpressionError**)errPtr
++ (nullable NSDecimalNumber*) asNumber:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(nullable NSDecimalNumber*)def error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 
@@ -415,7 +415,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 #pragma mark High-level expression evaluation API - returning BOOL
 /******************************************************************************/
 
-+ (BOOL) asBoolean:(NSString*)expr
++ (BOOL) asBoolean:(nullable NSString*)expr
 {
     return [self asBoolean:expr
            inVariableSpace:[MBVariableSpace instance]
@@ -423,7 +423,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                      error:nil];
 }
 
-+ (BOOL) asBoolean:(NSString*)expr error:(inout MBExpressionError**)errPtr
++ (BOOL) asBoolean:(nullable NSString*)expr error:(MBExpressionErrorPtrPtr)errPtr
 {
     return [self asBoolean:expr
            inVariableSpace:[MBVariableSpace instance]
@@ -431,7 +431,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                      error:errPtr];
 }
 
-+ (BOOL) asBoolean:(NSString*)expr defaultValue:(BOOL)def
++ (BOOL) asBoolean:(nullable NSString*)expr defaultValue:(BOOL)def
 {
     return [self asBoolean:expr
            inVariableSpace:[MBVariableSpace instance]
@@ -439,7 +439,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
                      error:nil];
 }
 
-+ (BOOL) asBoolean:(NSString*)expr inVariableSpace:(MBVariableSpace*)space defaultValue:(BOOL)def error:(inout MBExpressionError**)errPtr
++ (BOOL) asBoolean:(nullable NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(BOOL)def error:(MBExpressionErrorPtrPtr)errPtr
 {
     debugTrace();
 

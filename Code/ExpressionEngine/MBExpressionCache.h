@@ -16,7 +16,7 @@
 #pragma mark Constants
 /******************************************************************************/
 
-extern NSString* const kMBExpressionCacheDidSerializeEvent;   // @"MBExpressionCache:didSerialize"
+extern NSString* const __nonnull kMBExpressionCacheDidSerializeEvent;   // @"MBExpressionCache:didSerialize"
 
 /******************************************************************************/
 #pragma mark Types
@@ -224,7 +224,7 @@ typedef NS_ENUM(NSUInteger, MBExpressionCacheSerialization)
  @return    The filesystem cache size (in bytes), or `nil` if there is no
             filesystem cache.
  */
-- (NSNumber*) filesystemCacheSize;
+- (nullable NSNumber*) filesystemCacheSize;
 
 /*!
  Clears the in-memory cache and resets knowledge of data that could affect

@@ -54,12 +54,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-+ (instancetype) dataModelFromXML:(RXMLElement*)xml
++ (nonnull instancetype) dataModelFromXML:(nonnull RXMLElement*)xml
 {
     return [[self alloc] initWithXML:xml];
 }
 
-- (instancetype) init
+- (nonnull instancetype) init
 {
     debugTrace();
     
@@ -71,18 +71,18 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return self;
 }
 
-- (instancetype) initWithXML:(RXMLElement*)el
+- (nonnull instancetype) initWithXML:(nonnull RXMLElement*)xml
 {
     self = [self init];
     if (self) {
-        [self amendDataModelWithXML:el];
+        [self amendDataModelWithXML:xml];
         
         [self dataModelDidLoad];
     }
     return self;
 }
 
-- (instancetype) initWithAttributes:(NSDictionary*)attrs
+- (nonnull instancetype) initWithAttributes:(nonnull NSDictionary*)attrs
 {
     self = [self init];
     if (self) {
@@ -97,28 +97,28 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark NSCopying support
 /******************************************************************************/
 
-- (void) cloneDataModel:(MBDataModel*)copyFrom
+- (void) cloneDataModel:(nonnull MBDataModel*)cloneFrom
 {
-    [self cloneDataModel:copyFrom withZone:nil];
+    [self cloneDataModel:cloneFrom withZone:nil];
 }
 
-- (void) cloneDataModel:(MBDataModel*)copyFrom withZone:(NSZone*)zone
+- (void) cloneDataModel:(nonnull MBDataModel*)cloneFrom withZone:(nullable NSZone*)zone
 {
-    _xmlTagName = copyFrom->_xmlTagName;
-    if ([copyFrom->_content conformsToProtocol:@protocol(NSMutableCopying)]) {
-        self.content = [copyFrom->_content mutableCopyWithZone:zone];
+    _xmlTagName = cloneFrom->_xmlTagName;
+    if ([cloneFrom->_content conformsToProtocol:@protocol(NSMutableCopying)]) {
+        self.content = [cloneFrom->_content mutableCopyWithZone:zone];
     }
-    else if ([copyFrom->_content conformsToProtocol:@protocol(NSCopying)]) {
-        self.content = [copyFrom->_content copyWithZone:zone];
+    else if ([cloneFrom->_content conformsToProtocol:@protocol(NSCopying)]) {
+        self.content = [cloneFrom->_content copyWithZone:zone];
     }
     else {
-        self.content = copyFrom->_content;
+        self.content = cloneFrom->_content;
     }
-    _attributeOrder = [copyFrom->_attributeOrder mutableCopyWithZone:zone];
-    [self addAttributesFromDictionary:copyFrom->_objectAttributes];
+    _attributeOrder = [cloneFrom->_attributeOrder mutableCopyWithZone:zone];
+    [self addAttributesFromDictionary:cloneFrom->_objectAttributes];
     
-    for (NSString* relation in [copyFrom currentRelationTypes]) {
-        for (MBDataModel* relative in [copyFrom relativesWithRelationType:relation]) {
+    for (NSString* relation in [cloneFrom currentRelationTypes]) {
+        for (MBDataModel* relative in [cloneFrom relativesWithRelationType:relation]) {
             MBDataModel* relativeCopy = [relative copyWithZone:zone];
             [self _addRelative:relativeCopy withRelationType:relation];
         }
@@ -127,12 +127,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self dataModelDidLoad];
 }
 
-- (id) copyWithZone:(NSZone*)zone
+- (nonnull id) copyWithZone:(nullable NSZone*)zone
 {
     return [self mutableCopyWithZone:zone];
 }
 
-- (id) mutableCopyWithZone:(NSZone*)zone
+- (nonnull id) mutableCopyWithZone:(nullable NSZone*)zone
 {
     debugTrace();
     
@@ -145,7 +145,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Class posing
 /******************************************************************************/
 
-- (id) poseAsClass:(Class)cls
+- (nullable id) poseAsClass:(nonnull Class)cls
 {
     debugTrace();
     
@@ -211,7 +211,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark XML convenience
 /******************************************************************************/
 
-+ (RXMLElement*) xmlFromFile:(NSString*)filePath error:(inout NSError**)errPtr
++ (nonnull RXMLElement*) xmlFromFile:(nonnull NSString*)filePath error:(NSErrorPtrPtr)errPtr
 {
     NSError* err = nil;
     @try {
@@ -232,7 +232,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         err = [NSError mockingbirdErrorWithException:ex];
     }
     if (err) {
-        err = [err errorByAddingUserInfoKey:kMBErrorUserInfoKeyFilePath value:filePath];
+        err = [err errorByAddingOrRemovingUserInfoKey:kMBErrorUserInfoKeyFilePath value:filePath];
         if (errPtr) {
             *errPtr = err;
         } else {
@@ -242,7 +242,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return nil;
 }
 
-+ (RXMLElement*) xmlFromData:(NSData*)xmlData error:(inout NSError**)errPtr
++ (nonnull RXMLElement*) xmlFromData:(nonnull NSData*)xmlData error:(NSErrorPtrPtr)errPtr
 {
     NSError* err = nil;
     @try {
@@ -270,12 +270,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark XML representation
 /******************************************************************************/
 
-- (NSString*) xmlTagName
+- (nullable NSString*) xmlTagName
 {
     return _xmlTagName ?: [[self class] dataEntityName];
 }
 
-+ (NSString*) dataEntityName
++ (nonnull NSString*) dataEntityName
 {
     NSString* name = [self description];
     NSArray* classPrefixes = [MBEnvironment supportedLibraryClassPrefixes];
@@ -362,22 +362,22 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return desc;
 }
 
-- (NSString*) simulatedXML
+- (nonnull NSString*) simulatedXML
 {
     return [self _simulatedXMLWithRelationTypesShown:NO];
 }
 
-- (NSString*) debuggingXML
+- (nonnull NSString*) debuggingXML
 {
     return [self _simulatedXMLWithRelationTypesShown:YES];
 }
 
-- (NSString*) debugDescriptor
+- (nullable NSString*) debugDescriptor
 {
     return [NSString stringWithFormat:@"<%@>", self.xmlTagName];
 }
 
-- (void) addDescriptionFieldsTo:(MBFieldListFormatter*)fmt
+- (void) addDescriptionFieldsTo:(nonnull MBFieldListFormatter*)fmt
 {
     [super addDescriptionFieldsTo:fmt];
 
@@ -390,28 +390,28 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Data model enforcement
 /******************************************************************************/
 
-+ (NSSet*) requiredAttributes
++ (nullable NSSet*) requiredAttributes
 {
     // no explicitly-required attributes at this level;
     // subclasses may declare them
     return nil;
 }
 
-+ (NSSet*) supportedAttributes
++ (nullable NSSet*) supportedAttributes
 {
     // no explicitly-supported attributes at this level;
     // subclasses may declare them
     return nil;
 }
 
-+ (NSSet*) unsupportedAttributes
++ (nullable NSSet*) unsupportedAttributes
 {
     // no explicitly-unsupported attributes at this level;
     // subclasses may declare them
     return nil;
 }
 
-- (NSString*) implementingClassAttributeName
+- (nullable NSString*) implementingClassAttributeName
 {
     return nil;
 }
@@ -443,7 +443,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (NSSet*) requiredAttributes
+- (nullable NSSet*) requiredAttributes
 {
     debugTrace();
 
@@ -482,7 +482,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (NSSet*) ignoredAttributes
+- (nullable NSSet*) ignoredAttributes
 {
     debugTrace();
 
@@ -522,7 +522,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return rejected;
 }
 
-- (void) deprecateAttribute:(NSString*)deprecatedAttribute inFavorOf:(NSString*)newAttribute
+- (void) deprecateAttribute:(nonnull NSString*)deprecatedAttribute inFavorOf:(nonnull NSString*)newAttribute
 {
     id deprecatedValue = [self valueOfAttribute:deprecatedAttribute];
     if (deprecatedValue) {
@@ -593,9 +593,9 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return YES;
 }
 
-- (BOOL) validateAsRelativeOf:(MBDataModel*)relative
-                    relatedBy:(NSString*)relationType
-                dataModelRoot:(MBDataModel*)root
+- (BOOL) validateAsRelativeOf:(nullable MBDataModel*)relative
+                    relatedBy:(nullable NSString*)relationType
+                dataModelRoot:(nonnull MBDataModel*)root
 {
     debugTrace();
     
@@ -641,7 +641,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Populating the data model
 /******************************************************************************/
 
-- (void) amendDataModelWithXML:(RXMLElement*)xml
+- (void) amendDataModelWithXML:(nonnull RXMLElement*)xml
 {
     debugTrace();
     
@@ -654,12 +654,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self populateDataModelFromXML:xml];
 }
 
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath
+- (BOOL) amendDataModelWithXMLFromFile:(nonnull NSString*)filePath
 {
     return [self amendDataModelWithXMLFromFile:filePath error:nil];
 }
 
-- (BOOL) amendDataModelWithXMLFromFile:(NSString*)filePath error:(inout NSError**)errPtr
+- (BOOL) amendDataModelWithXMLFromFile:(nonnull NSString*)filePath error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -672,12 +672,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return NO;
 }
 
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData
+- (BOOL) amendDataModelWithXMLFromData:(nonnull NSData*)xmlData
 {
     return [self amendDataModelWithXMLFromData:xmlData error:nil];
 }
 
-- (BOOL) amendDataModelWithXMLFromData:(NSData*)xmlData error:(inout NSError**)errPtr
+- (BOOL) amendDataModelWithXMLFromData:(nonnull NSData*)xmlData error:(NSErrorPtrPtr)errPtr
 {
     debugTrace();
     
@@ -689,16 +689,16 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return NO;
 }
 
-- (void) addAttributesFromXML:(RXMLElement*)node
+- (void) addAttributesFromXML:(nonnull RXMLElement*)xml
 {
     debugTrace();
     
-    for (NSString* attrName in [node attributeNames]) {
-        [self setAttribute:[node attribute:attrName] forName:attrName];
+    for (NSString* attrName in [xml attributeNames]) {
+        [self setAttribute:[xml attribute:attrName] forName:attrName];
     }
 }
 
-- (void) addAttributesFromDictionary:(NSDictionary*)dict
+- (void) addAttributesFromDictionary:(nonnull NSDictionary*)dict
 {
     debugTrace();
     
@@ -707,7 +707,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) overlayAttributesFromDictionary:(NSDictionary*)dict
+- (void) overlayAttributesFromDictionary:(nonnull NSDictionary*)dict
 {
     debugTrace();
     
@@ -718,7 +718,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) populateDataModelFromXML:(RXMLElement*)container
+- (void) populateDataModelFromXML:(nonnull RXMLElement*)container
 {
     debugTrace();
     
@@ -748,7 +748,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     debugTrace();
 }
 
-- (void) didAmendDataModelWithXMLFromFile:(NSString*)filePath
+- (void) didAmendDataModelWithXMLFromFile:(nonnull NSString*)filePath
 {
     debugTrace();
 }
@@ -757,14 +757,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Copying data model attributes
 /******************************************************************************/
 
-- (NSDictionary*) objectAttributes
+- (nullable NSDictionary*) objectAttributes
 {
     debugTrace();
 
     return [_objectAttributes copy];
 }
 
-- (void) addAttributesToDictionary:(NSMutableDictionary*)dict
+- (void) addAttributesToDictionary:(nonnull NSMutableDictionary*)dict
 {
     debugTrace();
     
@@ -793,42 +793,42 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return _objectAttributes.count;
 }
 
-- (NSArray*) attributeNames
+- (nullable NSArray*) attributeNames
 {
     return [_attributeOrder copy];
 }
 
-- (BOOL) hasAttribute:(NSString*)attrName
+- (BOOL) hasAttribute:(nonnull NSString*)attrName
 {
     return _objectAttributes[attrName] != nil;
 }
 
-- (id) valueOfAttribute:(NSString*)attrName
+- (nullable id) valueOfAttribute:(nonnull NSString*)attrName
 {
     return _objectAttributes[attrName];
 }
 
-- (NSString*) stringValueOfAttribute:(NSString*)attrName
+- (nullable NSString*) stringValueOfAttribute:(nonnull NSString*)attrName
 {
     return [_objectAttributes[attrName] description];
 }
 
-- (NSDecimalNumber*) numberValueOfAttribute:(NSString*)attrName
+- (nullable NSDecimalNumber*) numberValueOfAttribute:(nonnull NSString*)attrName
 {
     return [MBExpression numberFromValue:_objectAttributes[attrName]];
 }
 
-- (BOOL) booleanValueOfAttribute:(NSString*)attrName
+- (BOOL) booleanValueOfAttribute:(nonnull NSString*)attrName
 {
     return [MBExpression booleanFromValue:_objectAttributes[attrName]];
 }
 
-- (NSInteger) integerValueOfAttribute:(NSString*)attrName
+- (NSInteger) integerValueOfAttribute:(nonnull NSString*)attrName
 {
     return [[self numberValueOfAttribute:attrName] integerValue];
 }
 
-- (double) doubleValueOfAttribute:(NSString*)attrName
+- (double) doubleValueOfAttribute:(nonnull NSString*)attrName
 {
     return [[self numberValueOfAttribute:attrName] doubleValue];
 }
@@ -837,24 +837,24 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Keyed subscripting support
 /******************************************************************************/
 
-- (id) objectForKeyedSubscript:(NSString*)key
+- (nullable id) objectForKeyedSubscript:(nonnull NSString*)attrName
 {
-    if ([key isKindOfClass:[NSString class]]) {
-        return [self valueOfAttribute:key];
+    if ([attrName isKindOfClass:[NSString class]]) {
+        return [self valueOfAttribute:attrName];
     }
     else {
-        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [key class], key);
+        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [attrName class], attrName);
     }
     return nil;
 }
 
-- (void) setObject:(id)obj forKeyedSubscript:(NSString*)key
+- (void) setObject:(nonnull id)obj forKeyedSubscript:(nonnull NSString*)attrName
 {
-    if ([key isKindOfClass:[NSString class]]) {
-        [self setAttribute:obj forName:key];
+    if ([attrName isKindOfClass:[NSString class]]) {
+        [self setAttribute:obj forName:attrName];
     }
     else {
-        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [key class], key);
+        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [attrName class], attrName);
     }
 }
 
@@ -862,7 +862,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Performing expression evaluation on attribute values
 /******************************************************************************/
 
-- (id) evaluateAsObject:(NSString*)attrName
+- (nullable id) evaluateAsObject:(nonnull NSString*)attrName
 {
     verboseDebugTrace();
     
@@ -873,7 +873,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return nil;
 }
 
-- (id) evaluateAsObject:(NSString*)attrName defaultValue:(id)def
+- (nullable id) evaluateAsObject:(nonnull NSString*)attrName defaultValue:(nullable id)def
 {
     verboseDebugTrace();
 
@@ -881,14 +881,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                                         defaultValue:def];
 }
 
-- (NSString*) evaluateAsString:(NSString*)attrName
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)attrName
 {
     verboseDebugTrace();
     
     return [self evaluateAsString:attrName defaultValue:nil];
 }
 
-- (NSString*) evaluateAsString:(NSString*)attrName defaultValue:(NSString*)def
+- (nullable NSString*) evaluateAsString:(nonnull NSString*)attrName defaultValue:(nullable NSString*)def
 {
     verboseDebugTrace();
 
@@ -896,14 +896,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                                         defaultValue:def];
 }
 
-- (NSDecimalNumber*) evaluateAsNumber:(NSString*)attrName;
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)attrName
 {
     verboseDebugTrace();
     
     return [self evaluateAsNumber:attrName defaultValue:nil];
 }
 
-- (NSDecimalNumber*) evaluateAsNumber:(NSString*)attrName defaultValue:(NSDecimalNumber*)def
+- (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)attrName defaultValue:(nullable NSDecimalNumber*)def
 {
     verboseDebugTrace();
 
@@ -911,14 +911,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                                         defaultValue:def];
 }
 
-- (BOOL) evaluateAsBoolean:(NSString*)attrName
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)attrName
 {
     verboseDebugTrace();
     
     return [self evaluateAsBoolean:attrName defaultValue:NO];
 }
 
-- (BOOL) evaluateAsBoolean:(NSString*)attrName defaultValue:(BOOL)def
+- (BOOL) evaluateAsBoolean:(nonnull NSString*)attrName defaultValue:(BOOL)def
 {
     verboseDebugTrace();
 
@@ -945,7 +945,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) setAttribute:(id)attrVal forName:(NSString*)attrName
+- (void) setAttribute:(nullable id)attrVal forName:(nonnull NSString*)attrName
 {
     debugTrace();
     
@@ -970,17 +970,17 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     _needsValidation = YES;
 }
 
-- (void) setBooleanAttribute:(BOOL)attrVal forName:(NSString*)attrName;
+- (void) setBooleanAttribute:(BOOL)attrVal forName:(nonnull NSString*)attrName
 {
     [self setAttribute:@(attrVal) forName:attrName];
 }
 
-- (void) setIntegerAttribute:(NSInteger)attrVal forName:(NSString*)attrName;
+- (void) setIntegerAttribute:(NSInteger)attrVal forName:(nonnull NSString*)attrName
 {
     [self setAttribute:@(attrVal) forName:attrName];
 }
 
-- (void) setDoubleAttribute:(double)attrVal forName:(NSString*)attrName
+- (void) setDoubleAttribute:(double)attrVal forName:(nonnull NSString*)attrName
 {
     [self setAttribute:@(attrVal) forName:attrName];
 }
@@ -989,7 +989,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Renaming and removing attributes
 /******************************************************************************/
 
-- (void) renameAttribute:(NSString*)oldName to:(NSString*)newName
+- (void) renameAttribute:(nonnull NSString*)oldName to:(nonnull NSString*)newName
 {
     id val = [self valueOfAttribute:oldName];
     [self removeAttribute:oldName];
@@ -998,7 +998,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) removeAttribute:(NSString*)attrName
+- (void) removeAttribute:(nonnull NSString*)attrName
 {
     [self setAttribute:nil forName:attrName];
 }
@@ -1007,14 +1007,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Related objects
 /******************************************************************************/
 
-+ (NSString*) defaultRelationType
++ (nonnull NSString*) defaultRelationType
 {
     debugTrace();
     
     return kMBDataModelDefaultRelation;
 }
 
-- (NSArray*) currentRelationTypes
+- (nonnull NSArray*) currentRelationTypes
 {
     verboseDebugTrace();
     
@@ -1033,7 +1033,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return num;
 }
 
-- (NSUInteger) countRelativesWithRelationType:(NSString*)relation
+- (NSUInteger) countRelativesWithRelationType:(nonnull NSString*)relation
 {
     verboseDebugTrace();
 
@@ -1051,7 +1051,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return [_relationTypeToRelatives[[[self class] defaultRelationType]] count];
 }
 
-- (NSArray*) allRelatives
+- (nonnull NSArray*) allRelatives
 {
     debugTrace();
 
@@ -1068,7 +1068,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return relatives;
 }
 
-- (NSArray*) relativesWithRelationType:(NSString*)relation
+- (nonnull NSArray*) relativesWithRelationType:(nonnull NSString*)relation
 {
     debugTrace();
     
@@ -1079,21 +1079,21 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     return [NSArray arrayWithArray:_relationTypeToRelatives[relation]];
 }
 
-- (NSArray*) relativesWithDefaultRelation
+- (nonnull NSArray*) relativesWithDefaultRelation
 {
     debugTrace();
     
     return [NSArray arrayWithArray:_relationTypeToRelatives[[[self class] defaultRelationType]]];
 }
 
-- (MBDataModel*) firstRelativeWithDefaultRelation
+- (nullable MBDataModel*) firstRelativeWithDefaultRelation
 {
     debugTrace();
     
     return [_relationTypeToRelatives[[[self class] defaultRelationType]] firstObject];
 }
 
-- (MBDataModel*) firstRelativeWithRelationType:(NSString*)relation
+- (nullable MBDataModel*) firstRelativeWithRelationType:(nonnull NSString*)relation
 {
     debugTrace();
     
@@ -1126,7 +1126,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     _needsValidation = YES;
 }
 
-- (void) addRelative:(MBDataModel*)relative
+- (void) addRelative:(nonnull MBDataModel*)relative
 {
     debugTrace();
 
@@ -1135,7 +1135,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self dataModelDidAddOrRemoveRelatives];
 }
 
-- (void) addRelative:(MBDataModel*)relative withRelationType:(NSString*)relation
+- (void) addRelative:(nonnull MBDataModel*)relative withRelationType:(nonnull NSString*)relation
 {
     debugTrace();
 
@@ -1144,7 +1144,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self dataModelDidAddOrRemoveRelatives];
 }
 
-- (void) addRelatives:(NSObject<NSFastEnumeration>*)relatives
+- (void) addRelatives:(nonnull NSObject<NSFastEnumeration>*)relatives
 {
     debugTrace();
 
@@ -1155,7 +1155,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self dataModelDidAddOrRemoveRelatives];
 }
 
-- (void) addRelatives:(NSObject<NSFastEnumeration>*)relatives withRelationType:(NSString*)relation
+- (void) addRelatives:(nonnull NSObject<NSFastEnumeration>*)relatives withRelationType:(nonnull NSString*)relation
 {
     debugTrace();
 
@@ -1185,7 +1185,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     _needsValidation = YES;
 }
 
-- (void) removeRelative:(MBDataModel*)relative
+- (void) removeRelative:(nonnull MBDataModel*)relative
 {
     debugTrace();
     
@@ -1196,7 +1196,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self dataModelDidAddOrRemoveRelatives];
 }
 
-- (void) removeRelative:(MBDataModel*)relative withRelationType:(NSString*)relation
+- (void) removeRelative:(nonnull MBDataModel*)relative withRelationType:(nonnull NSString*)relation
 {
     debugTrace();
 
@@ -1205,7 +1205,8 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     [self dataModelDidAddOrRemoveRelatives];
 }
 
-- (void) addRelativeOfClass:(Class)relCls forElement:(RXMLElement*)element
+- (void) addRelativeOfClass:(nonnull Class)relCls
+                 forElement:(nonnull RXMLElement*)element
 {
     debugTrace();
 
@@ -1214,9 +1215,9 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                   forElement:element];
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-                 forElement:(RXMLElement*)element
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+                 forElement:(nonnull RXMLElement*)element
 {
     debugTrace();
     
@@ -1232,9 +1233,9 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-            forFirstChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName
+- (void) addRelativeOfClass:(nonnull Class)relCls
+            forFirstChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName
 {
     [self addRelativeOfClass:relCls
             withRelationType:tagName
@@ -1242,10 +1243,10 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                    havingTag:tagName];
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-            forFirstChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+            forFirstChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName
 {
     debugTrace();
     
@@ -1257,8 +1258,8 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-             forEachChildOf:(RXMLElement*)container
+- (void) addRelativeOfClass:(nonnull Class)relCls
+             forEachChildOf:(nonnull RXMLElement*)container
 {
     debugTrace();
 
@@ -1267,9 +1268,9 @@ NSString* const kMBDataModelDefaultRelation = @"child";
               forEachChildOf:container];
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-             forEachChildOf:(RXMLElement*)container
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+             forEachChildOf:(nonnull RXMLElement*)container
 {
     debugTrace();
     
@@ -1289,9 +1290,9 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     }
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-             forEachChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName
+- (void) addRelativeOfClass:(nonnull Class)relCls
+             forEachChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName
 {
     [self addRelativeOfClass:relCls
             withRelationType:tagName
@@ -1299,10 +1300,10 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                    havingTag:tagName];
 }
 
-- (void) addRelativeOfClass:(Class)relCls
-           withRelationType:(NSString*)relation
-             forEachChildOf:(RXMLElement*)container
-                  havingTag:(NSString*)tagName
+- (void) addRelativeOfClass:(nonnull Class)relCls
+           withRelationType:(nullable NSString*)relation
+             forEachChildOf:(nonnull RXMLElement*)container
+                  havingTag:(nonnull NSString*)tagName
 {
     debugTrace();
 
@@ -1326,17 +1327,19 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 #pragma mark Building out the data model automatically
 /******************************************************************************/
 
-- (NSString*) relationTypeForTag:(NSString*)tagName
+- (nullable NSString*) relationTypeForTag:(nonnull NSString*)tagName
 {
     return [[self class] defaultRelationType];
 }
 
-- (BOOL) shouldAutomaticallyAddRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName
+- (BOOL) shouldAutomaticallyAddRelativeOfType:(nonnull NSString*)relationType
+                                      fromTag:(nonnull NSString*)tagName
 {
     return YES;
 }
 
-- (Class) implementingClassForRelativeOfType:(NSString*)relationType fromTag:(NSString*)tagName
+- (nullable Class) implementingClassForRelativeOfType:(nonnull NSString*)relationType
+                                              fromTag:(nonnull NSString*)tagName
 {
     return [MBDataModel class];
 }

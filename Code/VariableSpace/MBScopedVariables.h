@@ -87,7 +87,7 @@
  Returns the `MBVariableSpace` instance in which the scoped variables will
  be stored.
  */
-@property(nonatomic, readonly) MBVariableSpace* variableSpace;
+@property(nonnull, nonatomic, readonly) MBVariableSpace* variableSpace;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Thread-local scoped variables
@@ -100,7 +100,7 @@
 
  @return    The current scope, or `nil` if there isn't one.
  */
-+ (instancetype) currentVariableScope;
++ (nullable instancetype) currentVariableScope;
 
 /*!
  Enters a new variable scope on the calling thread using the `MBVariableSpace`
@@ -120,7 +120,7 @@
             calling thread will be able to retrieve this scope through
             the `currentVariableScope` method.
  */
-+ (instancetype) enterVariableScope;
++ (nonnull instancetype) enterVariableScope;
 
 /*! 
  Exits the current variable scope--if there is one--associated with the
@@ -132,7 +132,7 @@
             was exited, or `nil` if there was no current scope at the time
             of calling and therefore there was no scope to exit.
  */
-+ (instancetype) exitVariableScope;
++ (nullable instancetype) exitVariableScope;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Getting & setting scoped variable values
@@ -153,7 +153,7 @@
 
  @return    The in-scope value of the MBML variable named `variableName`.
  */
-- (id) objectForKeyedSubscript:(NSString*)variableName;
+- (nullable id) objectForKeyedSubscript:(nonnull NSString*)variableName;
 
 /*!
  Allows setting a scoped variable value using the keyed subscripting notation.
@@ -173,7 +173,7 @@
  @warning   An `NSInvalidArgumentException` is raised if `variableName`
             is `nil` or is not an `NSString`.
  */
-- (void) setObject:(id)value forKeyedSubscript:(NSString*)variableName;
+- (void) setObject:(nullable id)value forKeyedSubscript:(nonnull NSString*)variableName;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Unsetting & reapplying the variable scope

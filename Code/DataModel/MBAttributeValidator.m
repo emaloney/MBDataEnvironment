@@ -35,7 +35,7 @@
 #pragma mark Object lifecycle
 /******************************************************************************/
 
-+ (instancetype) validatorForDataModel:(MBDataModel*)model
++ (nonnull instancetype) validatorForDataModel:(MBDataModel*)model
 {
     MBAttributeValidator* validator = [self new];
     validator.model = model;
@@ -89,12 +89,12 @@
 #pragma mark Performing validation
 /******************************************************************************/
 
-- (BOOL) require:(NSString*)attr1 or:(NSString*)attr2
+- (BOOL) require:(nonnull NSString*)attr1 or:(nonnull NSString*)attr2
 {
     return [self require:attr1 or:attr2 butNotBoth:YES];
 }
 
-- (BOOL) require:(NSString*)attr1 or:(NSString*)attr2 butNotBoth:(BOOL)onlyAllowOne
+- (BOOL) require:(nonnull NSString*)attr1 or:(nonnull NSString*)attr2 butNotBoth:(BOOL)onlyAllowOne
 {
     debugTrace();
 
@@ -110,7 +110,7 @@
     return satisfied;
 }
 
-- (BOOL) requireAtLeastOneOf:(NSObject<NSFastEnumeration>*)attrs
+- (BOOL) requireAtLeastOneOf:(nonnull NSObject<NSFastEnumeration>*)attrs
 {
     debugTrace();
 
@@ -127,7 +127,7 @@
     return hasAtLeastOne;
 }
 
-- (BOOL) requireExactlyOneOf:(NSObject<NSFastEnumeration>*)attrs
+- (BOOL) requireExactlyOneOf:(nonnull NSObject<NSFastEnumeration>*)attrs
 {
     debugTrace();
 

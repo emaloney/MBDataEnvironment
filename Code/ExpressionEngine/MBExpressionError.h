@@ -9,6 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @class MBMLParseToken;
+@class MBExpressionError;
+@class MBParseError;
+@class MBEvaluationError;
+@class MBMLFunctionError;
+
+/******************************************************************************/
+#pragma mark Types
+/******************************************************************************/
+
+typedef MBExpressionError* __autoreleasing  __nullable * __nullable MBExpressionErrorPtrPtr;
+typedef MBParseError* __autoreleasing  __nullable * __nullable MBParseErrorPtrPtr;
+typedef MBEvaluationError* __autoreleasing  __nullable * __nullable MBEvaluationErrorPtrPtr;
+typedef MBMLFunctionError* __autoreleasing  __nullable * __nullable MBMLFunctionErrorPtrPtr;
 
 /******************************************************************************/
 #pragma mark -
@@ -26,30 +39,30 @@
 /*----------------------------------------------------------------------------*/
 
 /*! Returns a message explaining the error. */
-@property(nonatomic, readonly) NSString* message;
+@property(nullable, nonatomic, readonly) NSString* message;
 
 /*! If the receiver was caused by an underlying `NSError`, this property will
     contain the original error. Otherwise, `nil`. */
-@property(nonatomic, readonly) NSError* causedByError;
+@property(nullable, nonatomic, readonly) NSError* causedByError;
 
 /*! If the receiver was caused by an underlying `NSException`, this property 
     will contain the original exception. Otherwise, `nil`. */
-@property(nonatomic, readonly) NSException* causedByException;
+@property(nullable, nonatomic, readonly) NSException* causedByException;
 
 /*! Returns an array of `MBExpressionError`s related to the receiver. May
     be `nil`. */
-@property(nonatomic, readonly) NSArray* additionalErrors;
+@property(nullable, nonatomic, readonly) NSArray* additionalErrors;
 
 /*! Stores an arbitrary value related to the error. */
-@property(nonatomic, strong) id value;
+@property(nullable, nonatomic, strong) id value;
 
 /*! Stores a reference to the MBML expression in which the error occurred. */
-@property(nonatomic, strong) NSString* offendingExpression;
+@property(nullable, nonatomic, strong) NSString* offendingExpression;
 
 /*! Stores a reference to an `MBMLParseToken` involved in the error, which
     is useful for pinpointing the problematic portion of the 
     `offendingExpression`. */
-@property(nonatomic, strong) MBMLParseToken* offendingToken;
+@property(nullable, nonatomic, strong) MBMLParseToken* offendingToken;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Creating instances
@@ -63,7 +76,7 @@
  
  @return    A new `MBExpressionError`.
  */
-+ (instancetype) errorWithMessage:(NSString*)msg;
++ (nonnull instancetype) errorWithMessage:(nonnull NSString*)msg;
 
 /*!
  Creates a new `MBExpressionError` instance to represent an underlying
@@ -75,7 +88,7 @@
 
  @return    A new `MBExpressionError`.
  */
-+ (instancetype) errorWithMessage:(NSString*)msg error:(NSError*)nsErr;
++ (nonnull instancetype) errorWithMessage:(nonnull NSString*)msg error:(nullable NSError*)nsErr;
 
 /*!
  Creates a new `MBExpressionError` instance to represent an underlying
@@ -87,7 +100,7 @@
 
  @return    A new `MBExpressionError`.
  */
-+ (instancetype) errorWithMessage:(NSString*)msg exception:(NSException*)ex;
++ (nonnull instancetype) errorWithMessage:(nonnull NSString*)msg exception:(nullable NSException*)ex;
 
 /*!
  Creates a new `MBExpressionError` instance containing a message constructed
@@ -101,7 +114,7 @@
 
  @return    A new `MBExpressionError`.
  */
-+ (instancetype) errorWithFormat:(NSString*)format, ...;
++ (nonnull instancetype) errorWithFormat:(nonnull NSString*)format, ...;
 
 /*!
  Creates a new `MBExpressionError` instance to represent an underlying
@@ -111,7 +124,7 @@
 
  @return    A new `MBExpressionError`.
  */
-+ (instancetype) errorWithError:(NSError*)nsErr;
++ (nonnull instancetype) errorWithError:(nonnull NSError*)nsErr;
 
 /*!
  Creates a new `MBExpressionError` instance to represent an underlying
@@ -121,7 +134,7 @@
 
  @return    A new `MBExpressionError`.
  */
-+ (instancetype) errorWithException:(NSException*)ex;
++ (nonnull instancetype) errorWithException:(nonnull NSException*)ex;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Error logging
@@ -134,7 +147,7 @@
  
  @return    The log output.
  */
-- (NSString*) logOutput;
+- (nonnull NSString*) logOutput;
 
 /*!
  Logs the error to the console.
@@ -162,7 +175,7 @@
  
  @param     reportTo Determines where the receiver will be reported.
  */
-- (void) reportErrorTo:(inout MBExpressionError**)reportTo;
+- (void) reportErrorTo:(MBExpressionErrorPtrPtr)reportTo;
 
 /*!
  Reports the receiving error. The behavior of reporting depends on the contents
@@ -183,7 +196,7 @@
  @param     suppressLog If `YES`, calling this method will not result in a
             message being logged to the console.
  */
-- (void) reportErrorTo:(inout MBExpressionError**)reportTo suppressLog:(BOOL)suppressLog;
+- (void) reportErrorTo:(MBExpressionErrorPtrPtr)reportTo suppressLog:(BOOL)suppressLog;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Checking for additional errors
@@ -216,7 +229,7 @@
  
  @return    The most recently reported error.
  */
-- (MBExpressionError*) lastErrorReported;
+- (nullable MBExpressionError*) lastErrorReported;
 
 @end
 

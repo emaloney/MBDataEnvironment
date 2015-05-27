@@ -129,7 +129,7 @@
  
  @return    The value of the receiver as an `NSString`.
  */
-- (NSString*) stringValue;
+- (nonnull NSString*) stringValue;
 
 @end
 

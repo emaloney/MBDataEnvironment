@@ -12,9 +12,9 @@
 #pragma mark Constants
 /******************************************************************************/
 
-extern NSString* const kMBEventSuffixWillRequestData;         // @"willRequestData"           // posted when a <FetchData> or ServerOp request is about to be sent
-extern NSString* const kMBEventSuffixDataLoaded;              // @"dataLoaded"
-extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFailed"
+extern NSString* const __nonnull kMBEventSuffixWillRequestData;         // @"willRequestData"           // posted when a <FetchData> or ServerOp request is about to be sent
+extern NSString* const __nonnull kMBEventSuffixDataLoaded;              // @"dataLoaded"
+extern NSString* const __nonnull kMBEventSuffixDataLoadFailed;          // @"dataLoadFailed"
 
 /******************************************************************************/
 #pragma mark -
@@ -41,7 +41,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  @return    The name of the event fired when the data item named `name` is
             about to be requested.
  */
-+ (NSString*) willRequestDataEventName:(NSString*)name;
++ (nonnull NSString*) willRequestDataEventName:(nonnull NSString*)name;
 
 /*!
  Constructs the name of the event that is fired when an asynchronous
@@ -52,7 +52,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  @return    The name of the event fired when the data item named `name` loads
             successfully.
  */
-+ (NSString*) dataLoadedEventName:(NSString*)name;
++ (nonnull NSString*) dataLoadedEventName:(nonnull NSString*)name;
 
 /*!
  Constructs the name of the event that is fired when an asynchronous
@@ -63,7 +63,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  @return    The name of the event fired when the data item named `name` fails
             to load.
  */
-+ (NSString*) dataLoadFailedEventName:(NSString*)name;
++ (nonnull NSString*) dataLoadFailedEventName:(nonnull NSString*)name;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Posting specific events
@@ -84,7 +84,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
 
  @param     name The name of the data item being requested.
  */
-+ (void) postWillRequestData:(NSString*)name;
++ (void) postWillRequestData:(nonnull NSString*)name;
 
 /*!
  Posts an event indicating that an asynchronous data load completed
@@ -98,7 +98,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
 
  @param     name The name of the data item that was loaded.
  */
-+ (void) postDataLoaded:(NSString*)name;
++ (void) postDataLoaded:(nonnull NSString*)name;
 
 /*!
  Posts an event indicating that an asynchronous data load failed.
@@ -113,7 +113,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
 
  @param     name The name of the data item that failed to load.
  */
-+ (void) postDataLoadFailed:(NSString*)name;
++ (void) postDataLoadFailed:(nonnull NSString*)name;
 
 /*!
  Posts an event indicating that an asynchronous data load attempt is about
@@ -132,7 +132,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.
  */
-+ (void) postWillRequestData:(NSString*)name withEventObject:(id)eventObj;
++ (void) postWillRequestData:(nonnull NSString*)name withEventObject:(nullable id)eventObj;
 
 /*!
  Posts an event indicating that an asynchronous data load completed
@@ -149,7 +149,7 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.
  */
-+ (void) postDataLoaded:(NSString*)name withEventObject:(id)eventObj;
++ (void) postDataLoaded:(nonnull NSString*)name withEventObject:(nullable id)eventObj;
 
 /*!
  Posts an event indicating that an asynchronous data load failed.
@@ -167,6 +167,6 @@ extern NSString* const kMBEventSuffixDataLoadFailed;          // @"dataLoadFaile
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.
  */
-+ (void) postDataLoadFailed:(NSString*)name withEventObject:(id)eventObj;
++ (void) postDataLoadFailed:(nonnull NSString*)name withEventObject:(nullable id)eventObj;
 
 @end
