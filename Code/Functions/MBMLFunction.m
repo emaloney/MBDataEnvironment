@@ -82,7 +82,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma mark Data model support
 /******************************************************************************/
 
-+ (NSSet*) supportedAttributes
++ (nullable NSSet*) supportedAttributes
 {
     return [NSSet setWithObjects:kMBMLAttributeName,
             kMBMLAttributeClass,

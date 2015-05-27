@@ -57,7 +57,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Data model support
 /******************************************************************************/
 
-+ (NSSet*) supportedAttributes
++ (nullable NSSet*) supportedAttributes
 {
     return [NSSet setWithObjects:kMBMLAttributeName, kMBMLAttributeType, nil];
 }
@@ -140,7 +140,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Data model support
 /******************************************************************************/
 
-+ (NSSet*) supportedAttributes
++ (nullable NSSet*) supportedAttributes
 {
     return [NSSet setWithObjects:kMBMLAttributeMutable,
             kMBMLAttributeUserDefaultsName,
@@ -429,12 +429,12 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Data model support
 /******************************************************************************/
 
-+ (NSSet*) requiredAttributes
++ (nullable NSSet*) requiredAttributes
 {
     return [NSSet setWithObjects:kMBMLAttributeName, kMBMLAttributeClass, nil];
 }
 
-+ (NSSet*) supportedAttributes
++ (nullable NSSet*) supportedAttributes
 {
     return [NSSet setWithObject:kMBMLAttributeMethod];
 }
@@ -515,7 +515,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 #pragma mark Data model support
 /******************************************************************************/
 
-+ (NSSet*) requiredAttributes
++ (nullable NSSet*) requiredAttributes
 {
     return [NSSet setWithObjects:kMBMLAttributeName, kMBMLAttributeExpression, nil];
 }
