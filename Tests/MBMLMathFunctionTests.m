@@ -38,7 +38,7 @@
 
 - (void) testMod
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -72,7 +72,7 @@
 
 - (void) testModFloat
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -112,7 +112,7 @@
 
 - (void) testPercent
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -164,7 +164,7 @@
 
 - (void) testCeil
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -321,7 +321,7 @@
 
 - (void) testRandomPercent
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -338,7 +338,7 @@
 
 - (void) testRandom
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

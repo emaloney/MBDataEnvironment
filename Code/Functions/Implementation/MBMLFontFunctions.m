@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLFontFunctions.h"
 #import "MBExpressionError.h"
@@ -28,14 +28,14 @@
 
 + (id) fontFamilyNames
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [UIFont familyNames];
 }
 
 + (id) fontNamesForFamilyName:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [UIFont fontNamesForFamilyName:input];
 }
@@ -71,7 +71,7 @@
 
 + (id) fontWithNameAndSize:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -87,7 +87,7 @@
 
 + (id) stringWidth:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError *err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
@@ -113,7 +113,7 @@
 
 + (id) sizeOfTextWithFont:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
@@ -139,7 +139,7 @@
 
 + (id) linesNeededToDrawText:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:3 andAtMost:4 error:&err];

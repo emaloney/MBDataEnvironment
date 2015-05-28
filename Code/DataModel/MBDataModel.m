@@ -61,7 +61,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nonnull instancetype) init
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     self = [super init];
     if (self) {
@@ -134,7 +134,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nonnull id) mutableCopyWithZone:(nullable NSZone*)zone
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBDataModel* copy = [[[self class] allocWithZone:zone] init];
     [copy cloneDataModel:self withZone:zone];
@@ -147,7 +147,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable id) poseAsClass:(nonnull Class)cls
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([cls isSubclassOfClass:[MBDataModel class]]) {
         if ([[self class] isSubclassOfClass:cls]) {
@@ -167,7 +167,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([coder allowsKeyedCoding]) {
         self = [self init];
@@ -192,7 +192,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([coder allowsKeyedCoding]) {
         [coder encodeObject:_xmlTagName forKey:kMBDataModelXMLTagName];
@@ -228,7 +228,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         }
     }
     @catch (NSException* ex) {
-        errorLog(@"%@ caught exception thrown while trying to process XML data: %@", [self class], ex);
+        MBLogError(@"%@ caught exception thrown while trying to process XML data: %@", [self class], ex);
         err = [NSError mockingbirdErrorWithException:ex];
     }
     if (err) {
@@ -236,7 +236,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         if (errPtr) {
             *errPtr = err;
         } else {
-            errorLog(@"%@ failed to parse XML data due to error: %@", [self class], err);
+            MBLogError(@"%@ failed to parse XML data due to error: %@", [self class], err);
         }
     }
     return nil;
@@ -253,14 +253,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         err = [NSError mockingbirdErrorWithDescription:@"Failed to parse XML data" code:kMBErrorParseFailed];
     }
     @catch (NSException* ex) {
-        errorLog(@"%@ caught exception thrown while trying to process XML data: %@", [self class], ex);
+        MBLogError(@"%@ caught exception thrown while trying to process XML data: %@", [self class], ex);
         err = [NSError mockingbirdErrorWithException:ex];
     }
     if (err) {
         if (errPtr) {
             *errPtr = err;
         } else {
-            errorLog(@"%@ failed to parse XML data due to error: %@", [self class], err);
+            MBLogError(@"%@ failed to parse XML data due to error: %@", [self class], err);
         }
     }
     return nil;
@@ -445,7 +445,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable NSSet*) requiredAttributes
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSMutableSet* required = nil;
     [self _addRequiredAttributesForClass:[self class] toSet:&required];
@@ -460,7 +460,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                 [self _addRequiredAttributesForClass:cls toSet:&required];
                 [self _removeUnsupportedAttributesForClass:cls fromSet:required];
             } else {
-                errorLog(@"%@ couldn't find class named \"%@\" specified in the \"%@\" attribute of: %@", [self class], clsName, clsNameAttr, self.simulatedXML);
+                MBLogError(@"%@ couldn't find class named \"%@\" specified in the \"%@\" attribute of: %@", [self class], clsName, clsNameAttr, self.simulatedXML);
                 [self markDataModelInvalid];
             }
         }
@@ -484,7 +484,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable NSSet*) ignoredAttributes
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSMutableSet* supported = nil;
     [self _addRequiredAttributesForClass:[self class] toSet:&supported];
@@ -502,7 +502,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                 [self _removeUnsupportedAttributesForClass:cls fromSet:supported];
             }
             else {
-                errorLog(@"%@ couldn't find class named \"%@\" specified in the \"%@\" attribute of: %@", [self class], clsName, clsNameAttr, self.simulatedXML);
+                MBLogError(@"%@ couldn't find class named \"%@\" specified in the \"%@\" attribute of: %@", [self class], clsName, clsNameAttr, self.simulatedXML);
                 [self markDataModelInvalid];
             }
         }
@@ -543,7 +543,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (BOOL) validateDataModel
 {
-    debugTrace();
+    MBLogDebugTrace();
         
     // validate the data model
     _isValid = [self validateAsRelativeOf:nil relatedBy:nil dataModelRoot:self];
@@ -555,7 +555,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (BOOL) validateDataModelIfNeeded
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_needsValidation) {
         return [self validateDataModel];
@@ -565,7 +565,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (BOOL) validateAttributes
 {
-    debugTrace();
+    MBLogDebugTrace();
  
     // error out on a missing required attribute
     BOOL missingRequired = NO;
@@ -577,7 +577,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         }
         for (NSString* required in missingAttributes) {
             missingRequired = YES;
-            errorLog(@"%@ requires the attribute \"%@\" but it was not found in: %@", [self class], required, self.simulatedXML);
+            MBLogError(@"%@ requires the attribute \"%@\" but it was not found in: %@", [self class], required, self.simulatedXML);
         }
     }
     if (missingRequired) {
@@ -587,7 +587,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
     // warn about ignored attributes
     NSSet* rejectedAttrs = [self ignoredAttributes];
     for (NSString* rejected in rejectedAttrs) {
-        errorLog(@"%@ does not support the attribute \"%@\" found in: %@", [self class], rejected, self.simulatedXML);
+        MBLogError(@"%@ does not support the attribute \"%@\" found in: %@", [self class], rejected, self.simulatedXML);
     }
     
     return YES;
@@ -597,7 +597,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                     relatedBy:(nullable NSString*)relationType
                 dataModelRoot:(nonnull MBDataModel*)root
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (![self validateAttributes]) {
         return NO;
@@ -643,7 +643,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) amendDataModelWithXML:(nonnull RXMLElement*)xml
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!_xmlTagName) {
         _xmlTagName = xml.tag;
@@ -661,7 +661,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (BOOL) amendDataModelWithXMLFromFile:(nonnull NSString*)filePath error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     RXMLElement* xml = [[self class] xmlFromFile:filePath error:errPtr];
     if (xml) {
@@ -679,7 +679,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (BOOL) amendDataModelWithXMLFromData:(nonnull NSData*)xmlData error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     RXMLElement* xml = [[self class] xmlFromData:xmlData error:errPtr];
     if (xml) {
@@ -691,7 +691,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) addAttributesFromXML:(nonnull RXMLElement*)xml
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     for (NSString* attrName in [xml attributeNames]) {
         [self setAttribute:[xml attribute:attrName] forName:attrName];
@@ -700,7 +700,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) addAttributesFromDictionary:(nonnull NSDictionary*)dict
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     for (NSString* attrName in dict) {
         [self setAttribute:dict[attrName] forName:attrName];
@@ -709,7 +709,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) overlayAttributesFromDictionary:(nonnull NSDictionary*)dict
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     for (NSString* attrName in dict) {
         if (![self hasAttribute:attrName]) {
@@ -720,13 +720,13 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) populateDataModelFromXML:(nonnull RXMLElement*)container
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [container iterate:@"*" usingBlock:^(RXMLElement* el) {
         NSString* tag = el.tag;
         NSString* relationType = [self relationTypeForTag:tag];
         if (!relationType) {
-            errorLog(@"The <%@> tag (implemented by the %@ class) does not support containing the <%@> XML tag; this will be ignored: %@", [[self class] dataEntityName], [self class], tag, el.xml);
+            MBLogError(@"The <%@> tag (implemented by the %@ class) does not support containing the <%@> XML tag; this will be ignored: %@", [[self class] dataEntityName], [self class], tag, el.xml);
         }
         else {
             Class relCls = nil;
@@ -737,7 +737,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
                 [self _addRelative:[[relCls alloc] initWithXML:el] withRelationType:relationType];
             }
             else {
-                errorLog(@"The <%@> tag (implemented by the %@ class) doesn't recognize the contained <%@> tag and is ignoring the following XML: %@", [[self class] dataEntityName], [self class], el.tag, el.xml);
+                MBLogError(@"The <%@> tag (implemented by the %@ class) doesn't recognize the contained <%@> tag and is ignoring the following XML: %@", [[self class] dataEntityName], [self class], el.tag, el.xml);
             }
         }
     }];
@@ -745,12 +745,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) dataModelDidLoad
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 - (void) didAmendDataModelWithXMLFromFile:(nonnull NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 /******************************************************************************/
@@ -759,14 +759,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable NSDictionary*) objectAttributes
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [_objectAttributes copy];
 }
 
 - (void) addAttributesToDictionary:(nonnull NSMutableDictionary*)dict
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_objectAttributes) {
         [dict addEntriesFromDictionary:_objectAttributes];
@@ -843,7 +843,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         return [self valueOfAttribute:attrName];
     }
     else {
-        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [attrName class], attrName);
+        MBLogError(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [attrName class], attrName);
     }
     return nil;
 }
@@ -854,7 +854,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         [self setAttribute:obj forName:attrName];
     }
     else {
-        errorLog(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [attrName class], attrName);
+        MBLogError(@"The %@ class only supports keyed subscripting using %@-based keys; instead got a key of type %@ with the value: %@", [self class], [NSString class], [attrName class], attrName);
     }
 }
 
@@ -864,7 +864,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable id) evaluateAsObject:(nonnull NSString*)attrName
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     NSString* expr = [self stringValueOfAttribute:attrName];
     if (expr) {
@@ -875,7 +875,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable id) evaluateAsObject:(nonnull NSString*)attrName defaultValue:(nullable id)def
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     return [MBExpression asObject:[self stringValueOfAttribute:attrName]
                                         defaultValue:def];
@@ -883,14 +883,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable NSString*) evaluateAsString:(nonnull NSString*)attrName
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     return [self evaluateAsString:attrName defaultValue:nil];
 }
 
 - (nullable NSString*) evaluateAsString:(nonnull NSString*)attrName defaultValue:(nullable NSString*)def
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     return [MBExpression asString:[self stringValueOfAttribute:attrName]
                                         defaultValue:def];
@@ -898,14 +898,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)attrName
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     return [self evaluateAsNumber:attrName defaultValue:nil];
 }
 
 - (nullable NSDecimalNumber*) evaluateAsNumber:(nonnull NSString*)attrName defaultValue:(nullable NSDecimalNumber*)def
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     return [MBExpression asNumber:[self stringValueOfAttribute:attrName]
                                         defaultValue:def];
@@ -913,14 +913,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (BOOL) evaluateAsBoolean:(nonnull NSString*)attrName
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     return [self evaluateAsBoolean:attrName defaultValue:NO];
 }
 
 - (BOOL) evaluateAsBoolean:(nonnull NSString*)attrName defaultValue:(BOOL)def
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     return [MBExpression asBoolean:[self stringValueOfAttribute:attrName]
                                          defaultValue:def];
@@ -932,7 +932,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) setValue:(id)val forKey:(NSString*)attrName
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!_inSetValue) {
         _inSetValue = YES;
@@ -947,7 +947,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) setAttribute:(nullable id)attrVal forName:(nonnull NSString*)attrName
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (attrVal) {
         if (!_attributeOrder) {
@@ -1009,21 +1009,21 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 + (nonnull NSString*) defaultRelationType
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return kMBDataModelDefaultRelation;
 }
 
 - (nonnull NSArray*) currentRelationTypes
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     return [_relationTypeToRelatives allKeys];
 }
 
 - (NSUInteger) countRelatives
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     NSUInteger num = 0;
     for (NSString* relations in _relationTypeToRelatives) {
@@ -1035,7 +1035,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (NSUInteger) countRelativesWithRelationType:(nonnull NSString*)relation
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     if (!relation) {
         relation = [[self class] defaultRelationType];
@@ -1046,14 +1046,14 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (NSUInteger) countRelativesWithDefaultRelation
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     return [_relationTypeToRelatives[[[self class] defaultRelationType]] count];
 }
 
 - (nonnull NSArray*) allRelatives
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     // figure out the ideal capacity for the array we'll return
     NSUInteger relativeCnt = 0;
@@ -1070,7 +1070,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nonnull NSArray*) relativesWithRelationType:(nonnull NSString*)relation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!relation) {
         relation = [[self class] defaultRelationType];
@@ -1081,21 +1081,21 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (nonnull NSArray*) relativesWithDefaultRelation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [NSArray arrayWithArray:_relationTypeToRelatives[[[self class] defaultRelationType]]];
 }
 
 - (nullable MBDataModel*) firstRelativeWithDefaultRelation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [_relationTypeToRelatives[[[self class] defaultRelationType]] firstObject];
 }
 
 - (nullable MBDataModel*) firstRelativeWithRelationType:(nonnull NSString*)relation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!relation) {
         relation = [[self class] defaultRelationType];
@@ -1128,7 +1128,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) addRelative:(nonnull MBDataModel*)relative
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     [self _addRelative:relative withRelationType:nil];
     
@@ -1137,7 +1137,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) addRelative:(nonnull MBDataModel*)relative withRelationType:(nonnull NSString*)relation
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     [self _addRelative:relative withRelationType:relation];
     
@@ -1146,7 +1146,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) addRelatives:(nonnull NSObject<NSFastEnumeration>*)relatives
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBDataModel* relative in relatives) {
         [self _addRelative:relative withRelationType:nil];
@@ -1157,7 +1157,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) addRelatives:(nonnull NSObject<NSFastEnumeration>*)relatives withRelationType:(nonnull NSString*)relation
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBDataModel* relative in relatives) {
         [self _addRelative:relative withRelationType:relation];
@@ -1187,7 +1187,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) removeRelative:(nonnull MBDataModel*)relative
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     for (NSString* relation in _relationTypeToRelatives) {
         [self _removeRelative:relative withRelationType:relation];
@@ -1198,7 +1198,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) removeRelative:(nonnull MBDataModel*)relative withRelationType:(nonnull NSString*)relation
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     [self _removeRelative:relative withRelationType:relation];
     
@@ -1208,7 +1208,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 - (void) addRelativeOfClass:(nonnull Class)relCls
                  forElement:(nonnull RXMLElement*)element
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     [self addRelativeOfClass:relCls
             withRelationType:element.tag
@@ -1219,7 +1219,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
            withRelationType:(nullable NSString*)relation
                  forElement:(nonnull RXMLElement*)element
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([relCls instancesRespondToSelector:@selector(initWithXML:)]) {
         if (!relation) {
@@ -1229,7 +1229,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         [self _addRelative:[[relCls alloc] initWithXML:element] withRelationType:relation];
     }
     else {
-        errorLog(@"Instances of class %@ must implement the method initWithXML: in order to be used by %@ in this way", relCls, [self class]);
+        MBLogError(@"Instances of class %@ must implement the method initWithXML: in order to be used by %@ in this way", relCls, [self class]);
     }
 }
 
@@ -1248,7 +1248,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
             forFirstChildOf:(nonnull RXMLElement*)container
                   havingTag:(nonnull NSString*)tagName
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     RXMLElement* child = [container child:tagName];
     if (child) {
@@ -1261,7 +1261,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 - (void) addRelativeOfClass:(nonnull Class)relCls
              forEachChildOf:(nonnull RXMLElement*)container
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     [self addRelativeOfClass:relCls
             withRelationType:nil
@@ -1272,7 +1272,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
            withRelationType:(nullable NSString*)relation
              forEachChildOf:(nonnull RXMLElement*)container
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([relCls instancesRespondToSelector:@selector(initWithXML:)]) {
         if (!relation) {
@@ -1286,7 +1286,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         [self dataModelDidAddOrRemoveRelatives];
     }
     else {
-        errorLog(@"Instances of class %@ must implement the method initWithXML: in order to be used by %@ in this way", relCls, [self class]);
+        MBLogError(@"Instances of class %@ must implement the method initWithXML: in order to be used by %@ in this way", relCls, [self class]);
     }
 }
 
@@ -1305,7 +1305,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
              forEachChildOf:(nonnull RXMLElement*)container
                   havingTag:(nonnull NSString*)tagName
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if ([relCls instancesRespondToSelector:@selector(initWithXML:)]) {
         if (!relation) {
@@ -1319,7 +1319,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
         [self dataModelDidAddOrRemoveRelatives];
     }
     else {
-        errorLog(@"Instances of class %@ must implement the method initWithXML: in order to be used by %@ in this way", relCls, [self class]);
+        MBLogError(@"Instances of class %@ must implement the method initWithXML: in order to be used by %@ in this way", relCls, [self class]);
     }
 }
 
@@ -1350,7 +1350,7 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) dataModelDidAddOrRemoveRelatives
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 /******************************************************************************/
@@ -1359,12 +1359,12 @@ NSString* const kMBDataModelDefaultRelation = @"child";
 
 - (void) setValue:(id)value forUndefinedKey:(NSString*)key
 {
-    debugLog(@"[%@@%p setValue:forKey:] called for undefined key: %@", [self class], self, key);
+    MBLogDebug(@"[%@@%p setValue:forKey:] called for undefined key: %@", [self class], self, key);
 }
 
 - (id) valueForUndefinedKey:(NSString*)key
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [self valueOfAttribute:key];
 }

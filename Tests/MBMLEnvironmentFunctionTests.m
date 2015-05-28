@@ -31,7 +31,7 @@
 
 - (void) testMbmlLoadedPaths
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -54,7 +54,7 @@
 
 - (void) testMbmlLoadedFiles
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -71,7 +71,7 @@
 
 - (void) testMbmlPathIsLoaded
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -100,7 +100,7 @@
 
 - (void) testMbmlFileIsLoaded
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

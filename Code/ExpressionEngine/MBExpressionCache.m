@@ -62,7 +62,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([coder allowsKeyedCoding]) {
         self = [self init];
@@ -90,7 +90,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([coder allowsKeyedCoding]) {
         [coder encodeInteger:kMBExpressionCacheCurrentSerializationVersion forKey:kMBExpressionCacheSerializationVersionKey];
@@ -112,7 +112,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
     NSError* err = nil;
     NSData* data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:&err];
     if (!data) {
-        errorLog(@"%@ failed to read file <%@> due to error: %@", [self class], filePath, err);
+        MBLogError(@"%@ failed to read file <%@> due to error: %@", [self class], filePath, err);
         return nil;
     }
     
@@ -123,12 +123,12 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
     }
     
     if (cache.serializationVersion < kMBExpressionCacheMinimumSerializationVersion) {
-        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is older than the minimum compatible version (%ld)", [self class], filePath, (long)cache.serializationVersion, (long)kMBExpressionCacheMinimumSerializationVersion);
+        MBLogError(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is older than the minimum compatible version (%ld)", [self class], filePath, (long)cache.serializationVersion, (long)kMBExpressionCacheMinimumSerializationVersion);
         return nil;
     }
     
     if (cache.serializationVersion > kMBExpressionCacheCurrentSerializationVersion) {
-        errorLog(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is newer than the one currently supported (%ld)", [self class], filePath, (long)cache.serializationVersion, (long)kMBExpressionCacheMinimumSerializationVersion);
+        MBLogError(@"%@ is ignoring the cache file <%@> because it was written using a version (%ld) that is newer than the one currently supported (%ld)", [self class], filePath, (long)cache.serializationVersion, (long)kMBExpressionCacheMinimumSerializationVersion);
         return nil;
     }
     
@@ -141,7 +141,7 @@ NSString* const kMBExpressionCacheGrammarToTokenCacheKey        = @"grammarToTok
     
     NSError* err = nil;
     if (![data writeToFile:filePath options:NSDataWritingAtomic error:&err]) {
-        errorLog(@"%@ failed to write file <%@> due to error: %@", [self class], filePath, err);
+        MBLogError(@"%@ failed to write file <%@> due to error: %@", [self class], filePath, err);
         return NO;
     }
     [MBEvents postEvent:kMBExpressionCacheDidSerializeEvent fromSender:self];
@@ -214,7 +214,7 @@ MBImplementSingleton();
 
 - (void) _handlePossibleFunctionRedeclaration:(NSNotification*)notif
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     MBMLFunction* func = notif.object;
     NSString* funcName = func.name;
@@ -238,7 +238,7 @@ MBImplementSingleton();
 
 - (BOOL) _isCacheDataCompatible:(MBSerializedExpressionCache*)cacheData
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSDictionary* signatures = cacheData.functionSignatures;
     for (NSString* funcName in signatures) {
@@ -256,7 +256,7 @@ MBImplementSingleton();
 
 - (void) memoryWarning:(id)sender
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [self clearMemoryCache];
 }
@@ -300,7 +300,7 @@ MBImplementSingleton();
 
 - (void) _saveTimerFired:(NSTimer*)timer
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSOperation* saveOp = [[NSInvocationOperation alloc] initWithTarget:self
                                                                selector:@selector(saveCache)
@@ -328,7 +328,7 @@ MBImplementSingleton();
     NSFileManager* mgr = [NSFileManager defaultManager];
     if (![mgr fileExistsAtPath:expandedDir]) {
         if (![mgr createDirectoryAtPath:expandedDir withIntermediateDirectories:YES attributes:nil error:&err]) {
-            errorLog(@"Couldn't create directory <%@> for writing %@ due to error: %@", expandedDir, [self class], err);
+            MBLogError(@"Couldn't create directory <%@> for writing %@ due to error: %@", expandedDir, [self class], err);
             return nil;
         }
     }
@@ -342,16 +342,16 @@ MBImplementSingleton();
         return [MBSerializedExpressionCache loadFromFileAtPath:cacheFile];
     }
     @catch (NSException* ex) {
-        errorLog(@"%@ failed to properly deserialize file <%@> (it may be corrupted); error: %@", [self class], cacheFile, ex);
+        MBLogError(@"%@ failed to properly deserialize file <%@> (it may be corrupted); error: %@", [self class], cacheFile, ex);
         
         // if we're dealing with a regular file and not a compiled-in resource, delete the file that caused exception
         if (!rsrc) {
             NSError* err = nil;
             if (![[NSFileManager defaultManager] removeItemAtPath:cacheFile error:&err]) {
-                errorLog(@"%@ failed to delete (apparently) corrupted file <%@>: %@", [self class], cacheFile, err);
+                MBLogError(@"%@ failed to delete (apparently) corrupted file <%@>: %@", [self class], cacheFile, err);
             }
             else {
-                errorLog(@"%@ deleted (apparently) corrupted file <%@>", [self class], cacheFile);
+                MBLogError(@"%@ deleted (apparently) corrupted file <%@>", [self class], cacheFile);
             }
         }
     }
@@ -394,7 +394,7 @@ MBImplementSingleton();
         if ([fileMgr isReadableFileAtPath:cacheFile]) {
             cacheData = [self _loadCacheFromFile:cacheFile isResource:NO];
             if (cacheData) {
-                if (!self.suppressConsoleLogging) consoleLog(@"%@ loaded from file: %@", [self class], cacheFile);
+                if (!self.suppressConsoleLogging) MBLogInfo(@"%@ loaded from file: %@", [self class], cacheFile);
             }
         }
         
@@ -403,13 +403,13 @@ MBImplementSingleton();
             if ([fileMgr isReadableFileAtPath:cacheFile]) {
                 cacheData = [self _loadCacheFromFile:cacheFile isResource:YES];
                 if (cacheData) {
-                    if (!self.suppressConsoleLogging) consoleLog(@"%@ loaded from resource: %@", [self class], cacheFile);
+                    if (!self.suppressConsoleLogging) MBLogInfo(@"%@ loaded from resource: %@", [self class], cacheFile);
                 }
             }
         }
         
         if (!cacheData) {
-            if (!self.suppressConsoleLogging) consoleLog(@"%@ did not find a cache file named %@", [self class], _cacheFileName);
+            if (!self.suppressConsoleLogging) MBLogInfo(@"%@ did not find a cache file named %@", [self class], _cacheFileName);
         }
     }
     return cacheData;
@@ -417,7 +417,7 @@ MBImplementSingleton();
 
 - (void) loadCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBSerializedExpressionCache* cacheData = [self _cacheDataFromFilesystem];
     if (cacheData) {
@@ -435,7 +435,7 @@ MBImplementSingleton();
 
 - (void) loadAndMergeCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBSerializedExpressionCache* cacheData = [self _cacheDataFromFilesystem];
     if (cacheData) {
@@ -465,11 +465,11 @@ MBImplementSingleton();
                     else {
                         for (NSString* expr in tokensFromFile) {
                             if (!tokensInMemory[expr]) {
-                                debugLog(@"   Adding expression tokens from file to memory for: %@", expr);
+                                MBLogDebug(@"   Adding expression tokens from file to memory for: %@", expr);
                                 tokensInMemory[expr] = tokensFromFile[expr];
                             }
                             else {
-                                debugLog(@"Already in memory cache; won't overwrite tokens for: %@", expr);
+                                MBLogDebug(@"Already in memory cache; won't overwrite tokens for: %@", expr);
                             }
                         }
                     }
@@ -477,7 +477,7 @@ MBImplementSingleton();
             }
         }
         else {
-            errorLog(@"Incompatible cache data in file; not merging %@", [self class]);
+            MBLogError(@"Incompatible cache data in file; not merging %@", [self class]);
         }
         
         [_cacheLock unlock];
@@ -487,7 +487,7 @@ MBImplementSingleton();
 - (BOOL) _saveCache:(MBSerializedExpressionCache*)cacheData toFile:(NSString*)cacheFile suppressLog:(BOOL)suppress
 {
     if ([cacheData saveToFileAtPath:cacheFile]) {
-        if (!suppress) consoleLog(@"%@ written to file: %@", [self class], cacheFile);
+        if (!suppress) MBLogInfo(@"%@ written to file: %@", [self class], cacheFile);
         return YES;
     }
     return NO;
@@ -495,7 +495,7 @@ MBImplementSingleton();
 
 - (void) saveCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([self _shouldPersist]) {
         MBSerializedExpressionCache* cacheData = [MBSerializedExpressionCache new];
@@ -519,7 +519,7 @@ MBImplementSingleton();
 
 - (void) removeFilesystemCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     
@@ -528,13 +528,13 @@ MBImplementSingleton();
     
     if ([fileMgr fileExistsAtPath:cacheFile]) {
         [fileMgr removeItemAtPath:cacheFile error:&err];
-        if (err) errorObj(err);
+        if (err) MBLogErrorObject(err);
     }
 }
 
 - (nullable NSNumber*) filesystemCacheSize
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSFileManager* fileMgr = [NSFileManager defaultManager];
 
@@ -545,26 +545,26 @@ MBImplementSingleton();
         if (!err) {
             return attrs[NSFileSize];
         }
-        errorLog(@"%@ couldn't get file attributes for: %@", [self class], cacheFile);
+        MBLogError(@"%@ couldn't get file attributes for: %@", [self class], cacheFile);
     }
     return nil;
 }
 
 - (void) resetFilesystemCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [self removeFilesystemCache];
     
     NSString* cacheFile = [self _pathForUserCacheFile];
     if ([self _saveCache:[MBSerializedExpressionCache new] toFile:cacheFile suppressLog:YES]) {
-        if (!self.suppressConsoleLogging) consoleLog(@"Reset filesystem cache; empty %@ written to file: %@", [self class], cacheFile);
+        if (!self.suppressConsoleLogging) MBLogInfo(@"Reset filesystem cache; empty %@ written to file: %@", [self class], cacheFile);
     }
 }
 
 - (void) _clearMemoryCacheHoldingLock
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     [_grammarToTokenCache removeAllObjects];
     [self _setCacheDirty:NO];
@@ -572,7 +572,7 @@ MBImplementSingleton();
 
 - (void) clearMemoryCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [_cacheLock lock];
     
@@ -583,7 +583,7 @@ MBImplementSingleton();
 
 - (void) resetMemoryCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [_cacheLock lock];
     
@@ -595,7 +595,7 @@ MBImplementSingleton();
 
 - (void) clearCache
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [self removeFilesystemCache];
     [self clearMemoryCache];

@@ -52,7 +52,7 @@ static int s_repeatCounter = 0;
 
 - (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [super setUpVariableSpace:vars];
 
@@ -71,7 +71,7 @@ static int s_repeatCounter = 0;
 
 - (void) testLog
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -103,7 +103,7 @@ static int s_repeatCounter = 0;
 
 - (void) testTest
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -128,7 +128,7 @@ static int s_repeatCounter = 0;
 
 - (void) testDump
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -154,7 +154,7 @@ static int s_repeatCounter = 0;
 
 - (void) testTokenize
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -175,7 +175,7 @@ static int s_repeatCounter = 0;
 
 - (void) testTokenizeBoolean
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -196,7 +196,7 @@ static int s_repeatCounter = 0;
 
 - (void) testTokenizeMath
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -219,7 +219,7 @@ static int s_repeatCounter = 0;
 
 - (void) testBench
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -251,7 +251,7 @@ static int s_repeatCounter = 0;
 
 - (void) testBenchBool
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -280,7 +280,7 @@ static int s_repeatCounter = 0;
 
 - (void) testRepeat
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -308,7 +308,7 @@ static int s_repeatCounter = 0;
 
 - (void) testRepeatBool
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -343,7 +343,7 @@ static int s_repeatCounter = 0;
 
 - (void) testDeprecateVariableInFavorOf
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

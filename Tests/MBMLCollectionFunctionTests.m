@@ -44,7 +44,7 @@
 
 - (void) testIsCollection
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -64,7 +64,7 @@
 
 - (void) testIsSet
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -84,7 +84,7 @@
 
 - (void) testIsDictionary
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -104,7 +104,7 @@
 
 - (void) testIsArray
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -124,7 +124,7 @@
 
 - (void) testCount
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -156,7 +156,7 @@
 
 - (void) testKeys
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -183,7 +183,7 @@
 
 - (void) testValues
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -210,7 +210,7 @@
 
 - (void) testAppendObject
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -244,7 +244,7 @@
 
 - (void) testInsertObjectAtIndex
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -291,7 +291,7 @@
 
 - (void) testArray
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -325,7 +325,7 @@
 
 - (void) testDictionary
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -354,7 +354,7 @@
 
 - (void) testSet
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -384,7 +384,7 @@
 
 - (void) testSetWithArray
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -412,7 +412,7 @@
 
 - (void) testRemoveObject
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -445,7 +445,7 @@
 
 - (void) testRemoveObjectAtIndex
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -484,7 +484,7 @@
 
 - (void) testRemoveLastObject
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -516,7 +516,7 @@
 
 - (void) testLastObject
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -542,7 +542,7 @@
 
 - (void) testIndexOf
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -572,7 +572,7 @@
 
 - (void) testCopy
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -607,7 +607,7 @@
 
 - (void) testMutableCopy
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -641,7 +641,7 @@
 
 - (void) testValueForKey
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes

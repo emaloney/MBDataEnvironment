@@ -49,7 +49,7 @@
 
 - (void) testQ
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -65,7 +65,7 @@
 
 - (void) testEval
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -85,7 +85,7 @@
 
 - (void) testEvalBool
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -117,7 +117,7 @@
 
 - (void) testStripQueryString
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -132,7 +132,7 @@
 
 - (void) testLowercase
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -147,7 +147,7 @@
 
 - (void) testUppercase
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -162,7 +162,7 @@
 
 - (void) testTitleCase
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -177,7 +177,7 @@
 
 - (void) testTitleCaseIfAllCaps
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -192,7 +192,7 @@
 
 - (void) testPluralize
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -270,7 +270,7 @@
 
 - (void) testConcatenateFields
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -305,7 +305,7 @@
 
 - (void) testFirstNonemptyString
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -329,7 +329,7 @@
 
 - (void) testFirstNonemptyTrimmedString
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -352,7 +352,7 @@
 
 - (void) testTruncate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -395,7 +395,7 @@
 
 - (void) testStripSpaces
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -410,7 +410,7 @@
 
 - (void) testTrimSpaces
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -425,7 +425,7 @@
 
 - (void) testIndentLines
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -448,7 +448,7 @@
 
 - (void) testIndentLinesToDepth
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -483,7 +483,7 @@
 
 - (void) testPrefixLinesWith
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -522,7 +522,7 @@
 
 - (void) testParseInteger
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -549,7 +549,7 @@
 
 - (void) testParseDouble
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -576,7 +576,7 @@
 
 - (void) testParseNumber
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -602,7 +602,7 @@
 
 - (void) testRangeOfString
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -646,7 +646,7 @@
 
 - (void) testFormatInteger
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -672,7 +672,7 @@
 
 - (void) testHasPrefix
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -700,7 +700,7 @@
 
 - (void) testHasSuffix
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -728,7 +728,7 @@
 
 - (void) testContainsString
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes

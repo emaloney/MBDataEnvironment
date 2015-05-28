@@ -30,7 +30,7 @@
 
 - (void) testDirectoryForMainBundle
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -44,7 +44,7 @@
 
 - (void) testDirectoryForBundleWithIdentifier
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -58,7 +58,7 @@
 
 - (void) testDirectoryForClassBundle
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

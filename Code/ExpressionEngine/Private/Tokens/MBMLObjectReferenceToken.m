@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLObjectReferenceToken.h"
 #import "MBMLObjectSubreferenceToken.h"
@@ -63,7 +63,7 @@ static Class s_objSubrefTokenCls = nil;
 
 + (BOOL) isValidObjectReferenceCharacter:(unichar)ch atPosition:(NSUInteger)pos
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (pos == 0) {
         return [s_identifierInitialCharacters characterIsMember:ch];
@@ -123,7 +123,7 @@ static Class s_objSubrefTokenCls = nil;
 
 - (NSString*) normalizedRepresentation
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSString* normal = nil;
     if ([self doesContainExpression]) {
@@ -146,7 +146,7 @@ static Class s_objSubrefTokenCls = nil;
 
 - (id) valueForKey:(NSString*)key valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (key) {
         BOOL isKeyString = [key isKindOfClass:s_stringCls];
@@ -189,7 +189,7 @@ static Class s_objSubrefTokenCls = nil;
 
 - (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (ctxt) {
         id key = nil;
@@ -225,7 +225,7 @@ static Class s_objSubrefTokenCls = nil;
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
  
     id val = [self valueInVariableSpace:space
                            valueContext:space

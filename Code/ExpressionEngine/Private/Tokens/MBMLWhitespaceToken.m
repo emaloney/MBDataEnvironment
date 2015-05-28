@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLWhitespaceToken.h"
 
@@ -21,7 +21,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([[NSCharacterSet whitespaceAndNewlineCharacterSet] characterIsMember:ch]) {
         return MBMLTokenMatchFull;

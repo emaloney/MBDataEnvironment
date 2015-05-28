@@ -35,7 +35,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (accumExpr.length == 0 && _opChar == ch) {
         return MBMLTokenMatchFull;
@@ -52,7 +52,7 @@
 - (void) setLeftOperand:(MBMLParseToken<MBMLOperandToken>*)left
            rightOperand:(MBMLParseToken<MBMLOperandToken>*)right
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [_childTokens removeAllObjects];
     [self addChildToken:left];
@@ -61,14 +61,14 @@
 
 - (MBMLParseToken<MBMLOperandToken>*) leftOperand
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [_childTokens firstObject];
 }
 
 - (MBMLParseToken<MBMLOperandToken>*) rightOperand
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_childTokens.count > 1) {
         return _childTokens[1];
@@ -107,7 +107,7 @@
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBExpressionError* err = nil;
     id lValObj = [[self leftOperand] evaluateInVariableSpace:space error:&err];

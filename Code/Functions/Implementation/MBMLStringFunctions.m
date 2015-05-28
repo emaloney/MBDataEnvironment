@@ -18,7 +18,7 @@
 
 + (id) q:(NSString*)toQuote
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [toQuote description];
 }
@@ -39,7 +39,7 @@
 
 + (id) stripQueryString:(NSString*)toTransform
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (toTransform) {
         NSURL* url = [NSURL URLWithString:toTransform];
@@ -56,28 +56,28 @@
 
 + (id) stripSpaces:(NSString*)toTransform 
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [toTransform stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
 + (id) trimSpaces:(NSString*)toTransform 
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [toTransform stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 + (id) indentLines:(NSString*)toIndent
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [toIndent stringByIndentingEachLineWithTab];
 }
 
 + (id) indentLinesToDepth:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -90,7 +90,7 @@
 
 + (id) prefixLinesWith:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -103,7 +103,7 @@
 
 + (id) pluralize:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:3 andAtMost:4 error:&err];
@@ -135,28 +135,28 @@
 
 + (id) lowercase:(NSString*)toTransform
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [toTransform lowercaseString];
 }
 
 + (id) uppercase:(NSString*)toTransform
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [toTransform uppercaseString];
 }
 
 + (id) titleCase:(NSString*)toTransform
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [toTransform capitalizedString];
 }
 
 + (id) titleCaseIfAllCaps:(NSString*)toTransform
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSCharacterSet* letters = [NSCharacterSet letterCharacterSet];
     NSCharacterSet* uppercase = [NSCharacterSet uppercaseLetterCharacterSet];
@@ -174,7 +174,7 @@
 
 + (id) concatenateFields:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -212,7 +212,7 @@
 
 + (id) firstNonemptyString:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     for (__strong NSString* param in params) {
@@ -228,7 +228,7 @@
 
 + (id) firstNonemptyTrimmedString:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     for (__strong NSString* param in params) {
@@ -247,7 +247,7 @@
 
 + (id) truncate:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
@@ -270,7 +270,7 @@
 
 + (id) parseNumber:(NSString*)toParse
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSNumber* num = [MBMLFunction validateParameterContainsNumber:toParse error:&err];
@@ -281,7 +281,7 @@
 
 + (id) parseInteger:(NSString*)toParse
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSNumber* num = [MBMLFunction validateParameterContainsNumber:toParse error:&err];
@@ -292,7 +292,7 @@
 
 + (id) parseDouble:(NSString*)toParse
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSNumber* num = [MBMLFunction validateParameterContainsNumber:toParse error:&err];
@@ -303,7 +303,7 @@
 
 + (id) rangeOfString:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError *err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -318,7 +318,7 @@
 
 + (id) formatInteger:(NSNumber*)toFormat
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSNumber* num = [MBMLFunction validateParameterContainsNumber:toFormat error:&err];
@@ -331,7 +331,7 @@
 
 + (id) hasPrefix:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -344,7 +344,7 @@
 
 + (id) hasSuffix:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -357,7 +357,7 @@
 
 + (id) containsString:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];

@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLKeywordMatchingToken.h"
 
@@ -43,7 +43,7 @@
 
 - (void) addKeyword:(NSString*)keyword
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [_keywords addObject:keyword];
     
@@ -63,7 +63,7 @@
 
 - (void) freeze
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (![self isFrozen]) {
         _keywords = nil;
@@ -75,7 +75,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSMutableSet* newlyInvalidKeywords = nil;
     NSString* invalidateKeyword = nil;

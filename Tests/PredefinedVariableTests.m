@@ -31,7 +31,7 @@
 
 - (void) testPredefinedVariablesUIKit
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     // note: $UIApplication is nil in unit tests because
     //       [UIApplication sharedApplication] returns nil.
@@ -53,7 +53,7 @@
 
 - (void) testPredefinedVariablesMBDataEnvironment
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     MBDevice* testDevice = [MBDevice instance];
     MBDevice* device = [@"$Device" evaluateAsObject];

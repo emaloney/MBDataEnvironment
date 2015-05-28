@@ -38,7 +38,7 @@
 
 - (void) testRectOrigin
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSString* originStr = [MBExpression asString:@"^rectOrigin($rect)"];
     XCTAssertEqualObjects(originStr, [MBExpression asString:@"$rect:origin"]);
@@ -52,7 +52,7 @@
 
 - (void) testRectSize
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSString* sizeStr = [MBExpression asString:@"^rectSize($rect)"];
     XCTAssertEqualObjects(sizeStr, [MBExpression asString:@"$rect:size"]);
@@ -66,7 +66,7 @@
 
 - (void) testRectX
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* xNum = [MBExpression asNumber:@"^rectX($rect)"];
     XCTAssertEqualObjects(xNum, [MBExpression asNumber:@"$rect:origin:x"]);
@@ -79,7 +79,7 @@
 
 - (void) testRectY
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* yNum = [MBExpression asNumber:@"^rectY($rect)"];
     XCTAssertEqualObjects(yNum, [MBExpression asNumber:@"$rect:origin:y"]);
@@ -92,7 +92,7 @@
 
 - (void) testRectWidth
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* widthNum = [MBExpression asNumber:@"^rectWidth($rect)"];
     XCTAssertEqualObjects(widthNum, [MBExpression asNumber:@"$rect:size:width"]);
@@ -105,7 +105,7 @@
 
 - (void) testRectHeight
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* heightNum = [MBExpression asNumber:@"^rectHeight($rect)"];
     XCTAssertEqualObjects(heightNum, [MBExpression asNumber:@"$rect:size:height"]);
@@ -118,7 +118,7 @@
 
 - (void) testInsetRect
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
 
@@ -151,7 +151,7 @@
 
 - (void) testInsetRectTop
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     CGRect srcRect = [MBStringConversions rectFromExpression:@"$rect:val"];
     UIEdgeInsets insets = UIEdgeInsetsMake(-5, 0, 0, 0);
@@ -168,7 +168,7 @@
 
 - (void) testInsetRectLeft
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     CGRect srcRect = [MBStringConversions rectFromExpression:@"$rect:val"];
     UIEdgeInsets insets = UIEdgeInsetsMake(0, 5, 0, 0);
@@ -185,7 +185,7 @@
 
 - (void) testInsetRectBottom
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     CGRect srcRect = [MBStringConversions rectFromExpression:@"$rect:val"];
     UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, -10, 0);
@@ -202,7 +202,7 @@
 
 - (void) testInsetRectRight
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     CGRect srcRect = [MBStringConversions rectFromExpression:@"$rect:val"];
     UIEdgeInsets insets = UIEdgeInsetsMake(0, 0, 0, 15);
@@ -219,7 +219,7 @@
 
 - (void) testSizeWidth
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* widthNum = [MBExpression asNumber:@"$rect:size:width"];
     XCTAssertNotNil(widthNum);
@@ -236,7 +236,7 @@
 
 - (void) testSizeHeight
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* heightNum = [MBExpression asNumber:@"$rect:size:height"];
     XCTAssertNotNil(heightNum);
@@ -253,7 +253,7 @@
 
 - (void) testPointX
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* xNum = [MBExpression asNumber:@"$rect:origin:x"];
     XCTAssertNotNil(xNum);
@@ -270,7 +270,7 @@
 
 - (void) testPointY
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     NSNumber* yNum = [MBExpression asNumber:@"$rect:origin:y"];
     XCTAssertNotNil(yNum);

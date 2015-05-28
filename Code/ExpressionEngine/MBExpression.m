@@ -174,7 +174,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (nullable NSArray*) asArray:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!expr || expr.length == 0) {
         return nil;
@@ -233,7 +233,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (nullable id) asObject:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(nullable id)def error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!expr || expr.length == 0) {
         return def;
@@ -298,7 +298,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (nullable NSString*) asString:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(nullable NSString*)def error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!expr || expr.length == 0) {
         return def;
@@ -363,7 +363,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (nullable NSDecimalNumber*) asNumber:(nonnull NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(nullable NSDecimalNumber*)def error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!expr || expr.length == 0) {
         return def;
@@ -441,7 +441,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (BOOL) asBoolean:(nullable NSString*)expr inVariableSpace:(nonnull MBVariableSpace*)space defaultValue:(BOOL)def error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!expr || expr.length == 0) {
         return def;
@@ -490,7 +490,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (id) objectFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(id)def error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSArray* values = [self evaluateTokens:tokens inVariableSpace:space error:errPtr];
     if (!values) {
@@ -527,7 +527,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
 
 + (NSString*) stringFromTokens:(NSArray*)tokens inVariableSpace:(MBVariableSpace*)space defaultValue:(NSString*)def error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBExpressionError* currentErr = nil;
     id obj = [self objectFromTokens:tokens inVariableSpace:space defaultValue:def error:&currentErr];
@@ -559,7 +559,7 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
               defaultValue:(BOOL)def
                      error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSArray* values = [self evaluateTokens:tokens inVariableSpace:space error:errPtr];
     if (!values) {

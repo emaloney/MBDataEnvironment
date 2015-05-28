@@ -52,7 +52,7 @@
 
 - (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [super setUpVariableSpace:vars];
 
@@ -66,7 +66,7 @@
 
 - (void) tearDown
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [MBScopedVariables exitVariableScope];
 
@@ -79,7 +79,7 @@
 
 - (void) testLastPathComponent
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -93,7 +93,7 @@
 
 - (void) testStripLastPathComponent
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -107,7 +107,7 @@
 
 - (void) testPathExtension
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -121,7 +121,7 @@
 
 - (void) testStripPathExtension
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -135,7 +135,7 @@
 
 - (void) testPathComponents
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -153,7 +153,7 @@
 
 - (void) testDirectoryForCaches
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -168,7 +168,7 @@
 
 - (void) testDirectoryForDocuments
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -183,7 +183,7 @@
 
 - (void) testDirectoryForDownloads
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -198,7 +198,7 @@
 
 - (void) testDirectoryForApplicationSupport
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -213,7 +213,7 @@
 
 - (void) testDirectoryForHome
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -227,7 +227,7 @@
 
 - (void) testDirectoryForTempFiles
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -241,7 +241,7 @@
 
 - (void) testDirectoryForMovies
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -256,7 +256,7 @@
 
 - (void) testDirectoryForMusic
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -271,7 +271,7 @@
 
 - (void) testDirectoryForPictures
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -286,7 +286,7 @@
 
 - (void) testDirectoryForPublicFiles
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -301,7 +301,7 @@
 
 - (void) testListDirectory
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -333,7 +333,7 @@
 
 - (void) testFileExists
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -359,7 +359,7 @@
 
 - (void) testFileIsReadable
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -385,7 +385,7 @@
 
 - (void) testFileIsWritable
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -411,7 +411,7 @@
 
 - (void) testFileIsDeletable
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -435,7 +435,7 @@
 
 - (void) testIsDirectoryAtPath
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -463,7 +463,7 @@
 
 - (void) testSizeOfFile
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -509,7 +509,7 @@
 
 - (void) testFileData
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -552,7 +552,7 @@
 
 - (void) testFileContents
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -594,7 +594,7 @@
 
 - (void) testDeleteFile
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

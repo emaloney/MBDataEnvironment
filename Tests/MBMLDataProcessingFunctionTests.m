@@ -47,7 +47,7 @@
 
 - (void) testCollectionPassesTest
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -76,7 +76,7 @@
 
 - (void) testContainsValue
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -108,7 +108,7 @@
 
 - (void) testSetContains
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -140,7 +140,7 @@
 
 - (void) testSelectFirstValue
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -167,7 +167,7 @@
 
 - (void) testValuesPassingTest
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -211,7 +211,7 @@
 
 - (void) testValuesIntersect
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -241,7 +241,7 @@
 
 - (void) testJoin
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -276,7 +276,7 @@
 
 - (void) testSplit
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -300,7 +300,7 @@
 
 - (void) testSplitLines
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -320,7 +320,7 @@
 
 - (void) testAppendArrays
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -352,7 +352,7 @@
 
 - (void) testFlattenArrays
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -387,7 +387,7 @@
 
 - (void) testFilter
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -456,7 +456,7 @@
 
 - (void) testList
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -484,13 +484,13 @@
     expectError(err);
 
     err = nil;
-    consoleObj([MBExpression asObject:@"^list($NULL)" error:&err]);
+    MBLogInfoObject([MBExpression asObject:@"^list($NULL)" error:&err]);
     expectError(err);
 }
 
 - (void) testPruneMatchingLeaves
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -527,7 +527,7 @@
 
 - (void) testPruneNonmatchingLeaves
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -564,7 +564,7 @@
 
 - (void) testAssociate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -614,7 +614,7 @@
 
 - (void) testAssociateWithSingleValue
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -663,7 +663,7 @@
 
 - (void) testAssociateWithArray
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -709,7 +709,7 @@
 
 - (void) testReverse
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -737,7 +737,7 @@
 
 - (void) testSort
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -766,7 +766,7 @@
 
 - (void) testMergeDictionaries
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -814,7 +814,7 @@
 
 - (void) testUnique
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -838,7 +838,7 @@
 
 - (void) testDistributeArrayElements
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes
@@ -869,7 +869,7 @@
 
 - (void) testGroupArrayElements
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -902,7 +902,7 @@
 
 - (void) testReduce
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLGroupingToken.h"
 
@@ -28,21 +28,21 @@
 
 - (void) setOpenMarker:(unichar)marker
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     _openMarker = marker;
 }
 
 - (void) setCloseMarker:(unichar)marker
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     _closeMarker = marker;
 }
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSUInteger pos = [accumExpr length];
     if (pos == 0) {

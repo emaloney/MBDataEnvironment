@@ -21,7 +21,7 @@
 
 - (void) testProgrammaticFunctionDeclaration
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     MBMLFunction* func = [[MBMLFunction alloc] initWithName:@"testDeclareFunctionProgrammatically"
                                                   inputType:MBMLFunctionInputString

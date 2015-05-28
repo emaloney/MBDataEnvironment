@@ -51,14 +51,14 @@
 
 + (id) classExists:(NSString*)className
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return (NSClassFromString(className) != nil) ? @YES : @NO;
 }
 
 + (id) getClass:(NSString*)className
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return NSClassFromString(className);
 }
@@ -69,7 +69,7 @@
 
 + (id) singleton:(id)forCls
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     Class cls = [self resolveClass:forCls error:&err];
@@ -93,7 +93,7 @@
 
 + (id) inheritanceHierarchyForClass:(id)forCls
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     Class cls = [self resolveClass:forCls error:&err];
@@ -113,7 +113,7 @@
 
 + (id) objectRespondsToSelector:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -131,7 +131,7 @@
 
 + (id) classRespondsToSelector:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];

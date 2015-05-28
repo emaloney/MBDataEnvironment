@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLDateFunctions.h"
 #import "MBMLFunction.h"
@@ -62,7 +62,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) secondsSince:(NSDate*)date
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = [self _validateIsDate:date];
     if (err) return err;
@@ -72,7 +72,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) secondsUntil:(NSDate*)date
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = [self _validateIsDate:date];
     if (err) return err;
@@ -82,7 +82,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) unixTimestampToDate:(id)timestamp
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSNumber* timestampNumber = [MBMLFunction validateParameterContainsNumber:timestamp error:&err];
@@ -94,7 +94,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) dateToUnixTimestamp:(NSDate *)date
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = [self _validateIsDate:date];
     if (err) return err;
@@ -104,7 +104,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) addSecondsToDate:(NSArray *)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:input countIs:2 error:&err];
@@ -119,7 +119,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatTimeUntil:(NSDate*)date
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = [self _validateIsDate:date];
     if (err) return err;
@@ -206,7 +206,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) mbmlParseDate:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params 
@@ -305,7 +305,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatDate:(NSArray*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:input countIs:2 error:&err];
@@ -322,7 +322,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatSortableDate:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -336,7 +336,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatShortDate:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:input
@@ -354,7 +354,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatMediumDate:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:input
@@ -372,7 +372,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatLongDate:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:input
@@ -390,7 +390,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatFullDate:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:input
@@ -408,7 +408,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatShortTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -419,7 +419,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatMediumTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -430,7 +430,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatLongTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -441,7 +441,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatFullTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -452,7 +452,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatShortDateTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -463,7 +463,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatMediumDateTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -474,7 +474,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatLongDateTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -485,7 +485,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) formatFullDateTime:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSDate* d8 = [self _dateFromObject:input error:&err];
@@ -500,7 +500,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) reformatDate:(NSArray*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:input
@@ -533,7 +533,7 @@ NSString* const kMBDateDefaultParsingLocale         = @"en_US_POSIX";
 
 + (id) reformatDateWithLocale:(NSArray*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:input

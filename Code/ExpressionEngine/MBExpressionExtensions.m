@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBExpressionExtensions.h"
 #import "MBMLVariableReferenceToken.h"
@@ -22,28 +22,28 @@
 
 - (nullable id) evaluateAsObject
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [MBExpression asObject:self];
 }
 
 - (nullable NSString*) evaluateAsString
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [MBExpression asString:self];
 }
 
 - (nullable NSDecimalNumber*) evaluateAsNumber
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [MBExpression asNumber:self];
 }
 
 - (BOOL) evaluateAsBoolean
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [MBExpression asBoolean:self];
 }
@@ -69,7 +69,7 @@
 
 - (nullable id) evaluateAsObject:(nonnull NSString*)key defaultValue:(nullable id)def
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (key) {
         id val = self[key];
@@ -88,7 +88,7 @@
 
 - (nullable NSString*) evaluateAsString:(nonnull NSString*)key defaultValue:(nullable NSString*)def
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (key) {
         id val = self[key];
@@ -126,7 +126,7 @@
 
 - (BOOL) evaluateAsBoolean:(nonnull NSString*)key defaultValue:(BOOL)def
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (key) {
         id val = self[key];

@@ -58,7 +58,7 @@
 
 - (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [super setUpVariableSpace:vars];
 
@@ -70,7 +70,7 @@
 
 - (void) tearDown
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [MBScopedVariables exitVariableScope];
 
@@ -109,7 +109,7 @@
 
 - (void) testCurrentTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -125,7 +125,7 @@
 
 - (void) testTimeZoneOffset
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -141,7 +141,7 @@
 
 - (void) testSecondsSince
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -166,7 +166,7 @@
 
 - (void) testSecondsUntil
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -191,7 +191,7 @@
 
 - (void) testUnixTimestampToDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -215,7 +215,7 @@
 
 - (void) testDateToUnixTimestamp
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -239,7 +239,7 @@
 
 - (void) testAddSecondsToDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -267,7 +267,7 @@
 
 - (void) testFormatTimeUntil
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -293,7 +293,7 @@
 
 - (void) testFormatDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -319,7 +319,7 @@
 
 - (void) testFormatSortableDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -341,7 +341,7 @@
 
 - (void) testFormatShortDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -358,7 +358,7 @@
 
 - (void) testFormatMediumDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -375,7 +375,7 @@
 
 - (void) testFormatLongDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -392,7 +392,7 @@
 
 - (void) testFormatFullDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -409,7 +409,7 @@
 
 - (void) testFormatShortTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -426,7 +426,7 @@
 
 - (void) testFormatMediumTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -443,7 +443,7 @@
 
 - (void) testFormatLongTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -460,7 +460,7 @@
 
 - (void) testFormatFullTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -477,7 +477,7 @@
 
 - (void) testFormatShortDateTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -494,7 +494,7 @@
 
 - (void) testFormatMediumDateTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -511,7 +511,7 @@
 
 - (void) testFormatLongDateTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -528,7 +528,7 @@
 
 - (void) testFormatFullDateTime
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -545,7 +545,7 @@
 
 - (void) testReformatDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -571,7 +571,7 @@
 
 - (void) testReformatDateWithLocale
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -601,7 +601,7 @@
 
 - (void) testParseDate
 {
-    consoleTrace();
+    MBLogInfoTrace();
     
     //
     // test expected successes

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLMathGroupingToken.h"
 #import "MBExpression.h"
@@ -37,7 +37,7 @@
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                                   error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBExpressionTokenizer* tokenizer = [MBExpressionTokenizer tokenizerWithGrammar:[MBMLMathExpressionGrammar instance]];
 
@@ -53,7 +53,7 @@
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBExpressionError* err = nil;
     NSArray* values = [MBExpression evaluateTokens:_childTokens inVariableSpace:space error:&err];

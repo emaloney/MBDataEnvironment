@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLResourceFunctions.h"
 #import "MBMLFunction.h"
@@ -26,21 +26,21 @@
 
 + (id) directoryForMainBundle
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [[NSBundle mainBundle] bundlePath];
 }
 
 + (id) directoryForBundleWithIdentifier:(NSString*)identifier
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [[NSBundle bundleWithIdentifier:identifier] bundlePath];
 }
 
 + (id) directoryForClassBundle:(NSString*)className
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     Class cls = NSClassFromString(className);
     if (!cls) {

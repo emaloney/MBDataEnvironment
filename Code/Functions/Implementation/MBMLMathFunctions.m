@@ -8,7 +8,7 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <stdlib.h>
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLMathFunctions.h"
 #import "MBExpression.h"
@@ -108,7 +108,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) mod:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -126,7 +126,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) modFloat:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -144,7 +144,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) ceil:(id)number
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSDecimalNumber* decimalNumber = [MBMLFunction validateParameterContainsNumber:number error:&err];
@@ -156,7 +156,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) floor:(id)number
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSDecimalNumber* decimalNumber = [MBMLFunction validateParameterContainsNumber:number error:&err];
@@ -168,7 +168,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) round:(id)number
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSDecimalNumber* decimalNumber = [MBMLFunction validateParameterContainsNumber:number error:&err];
@@ -180,7 +180,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) min:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -192,7 +192,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) max:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -208,7 +208,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) percent:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];
@@ -248,7 +248,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) random:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:1 andAtMost:2 error:&err];
@@ -284,7 +284,7 @@ typedef NSDecimalNumber* (^MathTransformationFunctionBlock)(NSDecimalNumber* lVa
 
 + (id) arrayFilledWithIntegers:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];

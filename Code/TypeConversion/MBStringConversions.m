@@ -189,7 +189,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
         *errPtr = [NSError mockingbirdErrorWithDescription:msg code:kMBErrorParseFailed];
     }
     else {
-        errorLog(@"%@ error: %@", [self class], msg);
+        MBLogError(@"%@ error: %@", [self class], msg);
     }
     return NO; // coding conventions require methods accepting NSError** to return boolean
 }
@@ -257,7 +257,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (void) _logError:(NSError*)err fromExpression:(NSString*)expr
 {
-    errorLog(@"%@ error: %@ (offending expression: \"%@\")", [self class], [err localizedDescription], expr);
+    MBLogError(@"%@ error: %@ (offending expression: \"%@\")", [self class], [err localizedDescription], expr);
 }
 
 /******************************************************************************/
@@ -271,7 +271,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (CGPoint) pointFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (str && str.length > 0) {
         NSArray* dims = [str componentsSeparatedByString:@","];
@@ -377,7 +377,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (CGSize) sizeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     CGSize retVal = CGSizeZero;
     if (str && str.length > 0) {
@@ -457,7 +457,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (CGRect) rectFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     CGRect retVal = CGRectZero;
     if (str && str.length > 0) {
@@ -521,7 +521,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (UIOffset) offsetFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (str && str.length > 0) {
         NSArray* dims = [str componentsSeparatedByString:@","];
@@ -585,7 +585,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
     if (str && str.length > 0) {
@@ -652,7 +652,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (nonnull UIColor*) colorFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!str || str.length < 1) {
         [self _reportErrorWithMessage:@"couldn't parse an empty string as a color" to:errPtr];
@@ -773,7 +773,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([kMBMLTextAlignmentLeft isEqualToString:alignStr]) {
         return NSTextAlignmentLeft;

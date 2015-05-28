@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLLiteralToken.h"
 
@@ -57,7 +57,7 @@
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     self = [super initWithCoder:coder];
     if (self) {
@@ -69,7 +69,7 @@
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [super encodeWithCoder:coder];
     
@@ -83,7 +83,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     // we accept characters of all kinds
     return MBMLTokenMatchWildcard;
@@ -101,7 +101,7 @@
 
 - (id) value
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_containsValue) {
         return (_value ? _value : [NSNull null]);

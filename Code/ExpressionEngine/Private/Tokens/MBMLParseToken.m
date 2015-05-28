@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLParseToken.h"
 #import "MBExpression.h"
@@ -66,7 +66,7 @@
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     // we only support keyed coding
     if (![coder allowsKeyedCoding]) {
@@ -83,11 +83,11 @@
                 assert(_grammar);
             }
             else {
-                errorLog(@"Could not properly deserialize %@ because the %@ class named \"%@\" isn't a singleton", [self class], [MBExpressionGrammar class], grammarClassName);
+                MBLogError(@"Could not properly deserialize %@ because the %@ class named \"%@\" isn't a singleton", [self class], [MBExpressionGrammar class], grammarClassName);
             }
         }
         else if (!grammarClass && grammarClassName) {
-            errorLog(@"Could not properly deserialize %@ because the %@ class named \"%@\" wasn't found", [self class], [MBExpressionGrammar class], grammarClassName);
+            MBLogError(@"Could not properly deserialize %@ because the %@ class named \"%@\" wasn't found", [self class], [MBExpressionGrammar class], grammarClassName);
         }
         
         _accumulatedChars = [coder decodeObjectForKey:kCoderKeyAccumulatedChars];
@@ -116,7 +116,7 @@
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     assert([coder allowsKeyedCoding]);              // we only support keyed coding, and we
     assert(_matchStatus == MBMLTokenMatchFrozen);   // only serialize frozen tokens
@@ -225,7 +225,7 @@
 
 - (MBMLTokenMatchStatus) matchNextCharacter:(unichar)ch
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     assert(_matchStatus != MBMLTokenMatchFrozen);
     
@@ -245,7 +245,7 @@
 
 - (MBMLTokenMatchStatus) matchStatus
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return _matchStatus;
 }
@@ -256,14 +256,14 @@
 
 - (BOOL) isMatchCompleted
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return (_matchRange.location != NSNotFound && _matchRange.length > 0);
 }
 
 - (void) setMatchCompleted:(NSRange)matchRange
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     _matchRange = matchRange;
 }
@@ -297,7 +297,7 @@
 
 - (void) addPossibleNextTokenClass:(Class)cls
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSMutableArray* next = [self possibleNextTokenClasses];
     if (![next containsObject:cls]) {
@@ -307,14 +307,14 @@
 
 - (void) removePossibleNextTokenClass:(Class)cls
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [[self possibleNextTokenClasses] removeObject:cls];
 }
 
 - (NSMutableArray*) possibleNextTokens
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSMutableArray* nextTokens = [NSMutableArray array];
     for (Class tokCls in [self possibleNextTokenClasses]) {
@@ -333,7 +333,7 @@
 
 - (void) freeze
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_matchStatus != MBMLTokenMatchFrozen) {
         _possibleNextTokenClasses = nil;
@@ -375,14 +375,14 @@
 
 - (BOOL) hasIdentifier
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return (_identifierStartAtChar >= 0 && _identifierEndBeforeChar > _identifierStartAtChar);
 }
 
 - (NSString*) tokenIdentifier
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([self hasIdentifier]) {
         return [_accumulatedChars substringWithRange:NSMakeRange(_identifierStartAtChar, _identifierEndBeforeChar - _identifierStartAtChar)];
@@ -396,7 +396,7 @@
 
 - (void) addChildToken:(MBMLParseToken*)child
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     assert(_matchStatus != MBMLTokenMatchFrozen);
     
@@ -407,7 +407,7 @@
 
 - (void) addChildTokens:(NSArray*)children
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     assert(_matchStatus != MBMLTokenMatchFrozen);
     
@@ -421,7 +421,7 @@
 
 - (void) addFirstChildToken:(MBMLParseToken*)child
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     assert(_matchStatus != MBMLTokenMatchFrozen);
     
@@ -435,7 +435,7 @@
 
 - (void) addFirstChildTokens:(NSArray*)children
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     assert(_matchStatus != MBMLTokenMatchFrozen);
     
@@ -477,7 +477,7 @@
 
 - (NSString*) containedExpression
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([self doesContainExpression]) {
         return [_accumulatedChars substringWithRange:NSMakeRange(_containedExpressionStartAtChar, _containedExpressionEndBeforeChar - _containedExpressionStartAtChar)];
@@ -497,7 +497,7 @@
                                            usingGrammar:(MBExpressionGrammar*)grammar
                                                   error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [[MBExpressionTokenizer tokenizerWithGrammar:grammar] tokenize:[self containedExpression]
                                                           inVariableSpace:space
@@ -543,7 +543,7 @@
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     // assume tokens are literals unless overriden
     return [self value];
@@ -568,7 +568,7 @@
 
 - (NSString*) normalizedRepresentation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self expression];
 }

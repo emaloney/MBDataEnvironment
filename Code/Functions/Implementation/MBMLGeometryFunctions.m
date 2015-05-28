@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLGeometryFunctions.h"
 #import "MBMLFunction.h"
@@ -44,7 +44,7 @@
 
 + (id) insetRect:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -64,7 +64,7 @@
 
 + (id) insetRectTop:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -80,7 +80,7 @@
 
 + (id) insetRectLeft:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -96,7 +96,7 @@
 
 + (id) insetRectBottom:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -112,7 +112,7 @@
 
 + (id) insetRectRight:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -128,7 +128,7 @@
 
 + (id) rectOrigin:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:param error:&err];
@@ -140,7 +140,7 @@
 
 + (id) rectSize:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:param error:&err];
@@ -153,7 +153,7 @@
 
 + (id) rectX:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:param error:&err];
@@ -166,7 +166,7 @@
 
 + (id) rectY:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:param error:&err];
@@ -179,7 +179,7 @@
 
 + (id) rectWidth:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:param error:&err];
@@ -192,7 +192,7 @@
 
 + (id) rectHeight:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSError* err = nil;
     CGRect rect = [MBStringConversions rectFromObject:param error:&err];
@@ -209,7 +209,7 @@
 
 + (id) sizeWidth:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSError* err = nil;
     CGSize size = [MBStringConversions sizeFromObject:param error:&err];
@@ -222,7 +222,7 @@
 
 + (id) sizeHeight:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSError* err = nil;
     CGSize size = [MBStringConversions sizeFromObject:param error:&err];
@@ -239,7 +239,7 @@
 
 + (id) pointX:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSError* err = nil;
     CGPoint pt = [MBStringConversions pointFromObject:param error:&err];
@@ -252,7 +252,7 @@
 
 + (id) pointY:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSError* err = nil;
     CGPoint pt = [MBStringConversions pointFromObject:param error:&err];

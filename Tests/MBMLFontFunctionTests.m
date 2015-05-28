@@ -28,7 +28,7 @@
  */
 - (void) testFontFamilyNames
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     // although the font families may differ between devices and OS
     // versions, there are a few common ones we can test for
@@ -54,7 +54,7 @@
 
 - (void) testFontNamesForFamilyName
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     // it is possible that some of the fonts for Helvetica may
     // change, but since these are already present, I doubt
@@ -90,7 +90,7 @@
 
 - (void) testFontWithNameAndSize
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     // make sure we can get UIFont instances for a few common things
     [self _testFontWithName:@"Helvetica" pointSize:14];
@@ -142,7 +142,7 @@
 
 - (void) testLinesNeededToDrawText
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [self _testLinesNeededToDrawText:@"This is my argument" withFont:@"Helvetica-Bold" pointSize:18 width:150 expectedLines:2];
     [self _testLinesNeededToDrawText:@"This is my argument\nThis is my argument\nThis is my argument\nThis is my argument" withFont:@"Helvetica-Oblique" pointSize:64 width:500 expectedLines:8];
@@ -170,7 +170,7 @@
 
 - (void) testStringWidth
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     [self _testStringWidthForText:@"What's the deal with airline peanuts?" withFont:@"Helvetica" pointSize:17 expectedWidth:276.349609375];
     [self _testStringWidthForText:@"same as it ever was \n same as it ever was" withFont:@"Helvetica-BoldOblique" pointSize:14 expectedWidth:134.647460938];

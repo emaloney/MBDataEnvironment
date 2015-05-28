@@ -114,7 +114,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (void) addSupportedLibraryClassPrefix:(nonnull NSString*)prefix
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!prefix)
         return;
@@ -193,7 +193,7 @@ static NSMutableArray* s_resourceBundles = nil;
                 NSArray* loaderClasses = [moduleClass environmentLoaderClasses];
                 for (Class loaderClass in loaderClasses) {
                     if (![self addEnvironmentLoaderFromClass:loaderClass]) {
-                        errorLog(@"Invalid loader class \"%@\"; must be a subclass of %@", loaderClass, [MBEnvironmentLoader class]);
+                        MBLogError(@"Invalid loader class \"%@\"; must be a subclass of %@", loaderClass, [MBEnvironmentLoader class]);
                     }
                 }
             }
@@ -207,7 +207,7 @@ static NSMutableArray* s_resourceBundles = nil;
         }
     }
     else {
-        errorLog(@"Invalid module class \"%@\"; must conform to the protocol %@", moduleClass, NSStringFromProtocol(@protocol(MBModule)));
+        MBLogError(@"Invalid module class \"%@\"; must conform to the protocol %@", moduleClass, NSStringFromProtocol(@protocol(MBModule)));
     }
 }
 
@@ -354,13 +354,13 @@ static NSMutableArray* s_resourceBundles = nil;
                                 [self _addModule:moduleClass];
                             }
                             else {
-                                errorLog(@"Couldn't load module class \"%@\"; no implementation found", moduleClassName);
+                                MBLogError(@"Couldn't load module class \"%@\"; no implementation found", moduleClassName);
                             }
                         }
                     }
                 }
                 else {
-                    errorLog(@"Modules can only be specified in the top level environment file; the value for this \"%@\" attribute will be ignored: %@", kMBMLAttributeModules, val);
+                    MBLogError(@"Modules can only be specified in the top level environment file; the value for this \"%@\" attribute will be ignored: %@", kMBMLAttributeModules, val);
                 }
             }
             else {
@@ -414,7 +414,7 @@ static NSMutableArray* s_resourceBundles = nil;
                 }
             }
             else {
-                errorLog(@"Invalid <%@> tag: the \"%@\" attribute is required in: %@", kMBMLIncludeTagName, kMBMLAttributeFile, el.xml);
+                MBLogError(@"Invalid <%@> tag: the \"%@\" attribute is required in: %@", kMBMLIncludeTagName, kMBMLAttributeFile, el.xml);
             }
         }
     }
@@ -422,20 +422,20 @@ static NSMutableArray* s_resourceBundles = nil;
     // process each include
     for (NSString* includeFile in includes) {
         if ([_processedFileNames containsObject:includeFile]) {
-            debugLog(@"Skipping <%@> of file \"%@\"; was previously included", kMBMLIncludeTagName, includeFile);
+            MBLogDebug(@"Skipping <%@> of file \"%@\"; was previously included", kMBMLIncludeTagName, includeFile);
         }
         else {
             NSArray* conditionals = includeConditionals[includeFile];
             BOOL include = NO;
             for (NSString* conditional in conditionals) {
                 if ([conditional evaluateAsBoolean]) {
-                    debugLog(@"Will <%@> file \"%@\"", kMBMLIncludeTagName, includeFile);
+                    MBLogDebug(@"Will <%@> file \"%@\"", kMBMLIncludeTagName, includeFile);
                     include = YES;
                     break;
                 }
             }
             if (!include) {
-                debugLog(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, (unsigned long)conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
+                MBLogDebug(@"Skipping <%@> of file \"%@\"; failed %lu if tests: \"%@\"", kMBMLIncludeTagName, includeFile, (unsigned long)conditionals.count, [conditionals componentsJoinedByString:@"\", \""]);
             }
             else {
                 NSString* includeFilePath = [self _findPathOfFileNamed:includeFile];
@@ -446,12 +446,12 @@ static NSMutableArray* s_resourceBundles = nil;
                     }
                     else {
                         // couldn't load resource; report failure
-                        errorLog(@"Failed to process MBML include file: \"%@\"", includeFilePath);
+                        MBLogError(@"Failed to process MBML include file: \"%@\"", includeFilePath);
                     }
                 }
                 else {
                     // didn't find path for file
-                    errorLog(@"Couldn't find path of MBML file named \"%@\" in known resource bundles and search directories", includeFile);
+                    MBLogError(@"Couldn't find path of MBML file named \"%@\" in known resource bundles and search directories", includeFile);
                 }
             }
         }
@@ -471,10 +471,10 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (BOOL) _loadWithManifest:(NSString*)manifestName additionalSearchDirectories:(NSArray*)dirs
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (_isLoaded) {
-        errorLog(@"Can't load an already-loaded %@", [self class]);
+        MBLogError(@"Can't load an already-loaded %@", [self class]);
         return NO;
     }
 
@@ -487,7 +487,7 @@ static NSMutableArray* s_resourceBundles = nil;
     if (manifestName) {
         NSString* manifestPath = [self _findPathOfFileNamed:manifestName];
         if (!manifestPath) {
-            errorLog(@"Couldn't find path for manifest file named: %@", manifestName);
+            MBLogError(@"Couldn't find path for manifest file named: %@", manifestName);
             return NO;
         }
         _manifestFilePath = manifestPath;
@@ -537,7 +537,7 @@ static NSMutableArray* s_resourceBundles = nil;
 + (nullable instancetype) loadFromManifestFile:(nullable NSString*)manifestName
                          withSearchDirectories:(nullable NSArray*)dirPaths
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBEnvironment* env = [MBEnvironment new];
 
@@ -549,7 +549,7 @@ static NSMutableArray* s_resourceBundles = nil;
         }
     }
     @catch (NSException* ex) {
-        errorLog(@"Exception while attempting to load %@ environment: %@", self, ex);
+        MBLogError(@"Exception while attempting to load %@ environment: %@", self, ex);
     }
 
     [env environmentLoadFailed];
@@ -559,7 +559,7 @@ static NSMutableArray* s_resourceBundles = nil;
     // there's nothing we can do; the app can't load, we'll throw an
     // exception later
     if (revert) {
-        errorLog(@"Failed to load %@ environment; existing state will remain the same", self);
+        MBLogError(@"Failed to load %@ environment; existing state will remain the same", self);
         [MBEnvironment setEnvironment:revert];
     }
     else {
@@ -580,7 +580,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (BOOL) mbmlFileIsLoaded:(nonnull NSString*)fileName
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
 
     NSArray* paths = self.mbmlPathsLoaded;
     for (NSString* path in paths) {
@@ -594,7 +594,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (BOOL) mbmlPathIsLoaded:(nonnull NSString*)filePath
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     NSString* filePathStandard = [filePath stringByStandardizingPath];
     NSArray* paths = self.mbmlPathsLoaded;
@@ -622,7 +622,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (nullable instancetype) setEnvironment:(nullable MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBEnvironment* deactivating = [self instance];
     if (deactivating != env) {
@@ -641,7 +641,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (void) pushEnvironment:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBEnvironment* previous = [self setEnvironment:env];
 
@@ -652,7 +652,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (nonnull instancetype) popEnvironment
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBEnvironment* popped = [self peekEnvironment];
     if (popped) {
@@ -670,7 +670,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 + (nullable instancetype) peekEnvironment
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     __block MBEnvironment* peek = nil;
 
@@ -687,7 +687,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) amendDataModelWithXML:(RXMLElement*)xml
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [xml iterate:@"*" usingBlock:^(RXMLElement* el) {
         @autoreleasepool {
@@ -703,10 +703,10 @@ static NSMutableArray* s_resourceBundles = nil;
                     parsed = [loader parseElement:el forMatch:tag];
                 }
                 if (parsed) {
-                    verboseDebugLog(@"%@ successfully parsed: %@", [loader class], el.xml);
+                    MBLogVerbose(@"%@ successfully parsed: %@", [loader class], el.xml);
                 }
                 else {
-                    errorLog(@"The following XML construct is not valid MBML: %@", el.xml);
+                    MBLogError(@"The following XML construct is not valid MBML: %@", el.xml);
                 }
             }
         }
@@ -719,7 +719,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) didAmendDataModelWithXMLFromFile:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSString* fileName = [filePath lastPathComponent];
     if (![_loadedFilePaths containsObject:filePath]) {
@@ -735,7 +735,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (RXMLElement*) mbmlFromFile:(NSString*)filePath
 {
-    debugLog(@"Attempting to load MBML from file: %@", filePath);
+    MBLogDebug(@"Attempting to load MBML from file: %@", filePath);
     
     NSError* err = nil;
     NSData* data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingUncached error:&err];
@@ -747,22 +747,22 @@ static NSMutableArray* s_resourceBundles = nil;
                 return root;
             }
             else {
-                errorLog(@"Expecting XML root element name to be <%@>; instead got %@ in file: %@", kMBMLRootTagName, rootTag, filePath);
+                MBLogError(@"Expecting XML root element name to be <%@>; instead got %@ in file: %@", kMBMLRootTagName, rootTag, filePath);
             }
         }
         else {
-            errorLog(@"Failed to parse file as valid XML: %@", filePath);
+            MBLogError(@"Failed to parse file as valid XML: %@", filePath);
         }
     }
     else {
-        errorLog(@"Couldn't read file <%@> due to error: %@", filePath, err);
+        MBLogError(@"Couldn't read file <%@> due to error: %@", filePath, err);
     }
     return nil;
 }
 
 - (BOOL) loadMBMLFile:(nonnull NSString*)fileName
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSString* filePath = [self _findPathOfFileNamed:fileName];
     if (filePath) {
@@ -780,7 +780,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentWillLoad
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentWillLoad:self];
@@ -789,7 +789,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentDidLoad
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentDidLoad:self];
@@ -798,7 +798,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentLoadFailed
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentLoadFailed:self];
@@ -807,7 +807,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentWillActivate
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentWillActivate:self];
@@ -816,7 +816,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentDidActivate
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentDidActivate:self];
@@ -825,7 +825,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentWillDeactivate
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentWillDeactivate:self];
@@ -834,7 +834,7 @@ static NSMutableArray* s_resourceBundles = nil;
 
 - (void) environmentDidDeactivate
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (MBEnvironmentLoader* loader in self.environmentLoaders) {
         [loader environmentDidDeactivate:self];

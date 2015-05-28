@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLDebugFunctions.h"
 #import "MBExpression.h"
@@ -97,7 +97,7 @@
 {
 #if DEBUG
     NSString* msg = [NSString stringWithFormat:@"triggered with input: %@", input];
-    triggerDebugBreakMsg(msg);    // this will trigger a debug breakpoint when running in a Debug build
+    MBTriggerDebugBreakMsg(msg);    // this will trigger a debug breakpoint when running in a Debug build
 #endif
 
     return input;

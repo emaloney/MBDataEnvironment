@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLNumericLiteralToken.h"
 #import "MBExpressionError.h"
@@ -37,7 +37,7 @@
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     self = [super initWithCoder:coder];
     if (self) {
@@ -48,7 +48,7 @@
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [super encodeWithCoder:coder];
     
@@ -61,7 +61,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSUInteger pos = [accumExpr length];
     switch (ch) {
@@ -101,7 +101,7 @@
 
 - (void) freeze
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (![self isFrozen]) {
         _frozenValue = [NSDecimalNumber decimalNumberWithString:[self expression]];
@@ -112,7 +112,7 @@
 
 - (id) value
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_frozenValue) {
         return _frozenValue;

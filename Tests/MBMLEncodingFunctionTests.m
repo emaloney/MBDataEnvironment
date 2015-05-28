@@ -38,7 +38,7 @@
 
 - (void) testMD5
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -54,7 +54,7 @@
 
 - (void) testMD5FromData
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -85,7 +85,7 @@
 
 - (void) testSHA1
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -101,7 +101,7 @@
 
 - (void) testSHA1FromData
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -132,7 +132,7 @@
 
 - (void) testBase64FromData
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -142,7 +142,7 @@
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     scope[@"dataForBase64"] = data;
     NSString* base64 = [MBExpression asString:@"^base64FromData($dataForBase64)"];
-    consoleObj(base64);
+    MBLogInfoObject(base64);
     XCTAssertEqualObjects(base64, @"aHR0cDovL3RlY2guZ2lsdC5jb20v");
     [MBScopedVariables exitVariableScope];
 
@@ -164,7 +164,7 @@
 
 - (void) testDataFromBase64
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -182,7 +182,7 @@
 
 - (void) testHexStringFromData
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -192,7 +192,7 @@
     MBScopedVariables* scope = [MBScopedVariables enterVariableScope];
     scope[@"dataForHexString"] = testData;
     NSString* hexString = [MBExpression asString:@"^hexStringFromData($dataForHexString)"];
-    consoleObj(hexString);
+    MBLogInfoObject(hexString);
     XCTAssertEqualObjects(hexString, @"687474703a2f2f746563682e67696c742e636f6d2f");
     [MBScopedVariables exitVariableScope];
 
@@ -214,7 +214,7 @@
 
 - (void) testDataFromHexString
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

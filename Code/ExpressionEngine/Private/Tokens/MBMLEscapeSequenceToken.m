@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLEscapeSequenceToken.h"
 
@@ -54,7 +54,7 @@
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     self = [super initWithCoder:coder];
     if (self) {
@@ -65,7 +65,7 @@
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [super encodeWithCoder:coder];
     
@@ -78,7 +78,7 @@
 
 - (void) setEscapeSequence:(NSString*)seq value:(NSString*)val
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     _sequencesToValues[seq] = val;
     
@@ -91,7 +91,7 @@
 
 - (NSString*) unescapedValue
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_frozenValue) {
         return _frozenValue;
@@ -103,7 +103,7 @@
 
 - (void) freeze
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (![self isFrozen]) {
         _frozenValue = [self unescapedValue];
@@ -116,7 +116,7 @@
 
 - (NSString*) normalizedRepresentation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self unescapedValue];
 }

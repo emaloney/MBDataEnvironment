@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLFileFunctions.h"
 
@@ -25,49 +25,49 @@
 
 + (id) lastPathComponent:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [input lastPathComponent];
 }
 
 + (id) stripLastPathComponent:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [input stringByDeletingLastPathComponent];
 }
 
 + (id) pathExtension:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [input pathExtension];
 }
 
 + (id) stripPathExtension:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [input stringByDeletingPathExtension];
 }
 
 + (id) pathComponents:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [input pathComponents];
 }
 
 + (id) directoryForHome
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return NSHomeDirectory();
 }
 
 + (id) directoryForTempFiles
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return NSTemporaryDirectory();
 }
@@ -79,63 +79,63 @@
 
 + (id) directoryForCaches
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [self _directoryForSearchPath:NSCachesDirectory];
 }
 
 + (id) directoryForDocuments
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSDocumentDirectory];
 }
 
 + (id) directoryForDownloads
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSDownloadsDirectory];
 }
 
 + (id) directoryForApplicationSupport
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSApplicationSupportDirectory];
 }
 
 + (id) directoryForMovies
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSMoviesDirectory];
 }
 
 + (id) directoryForMusic
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSMusicDirectory];
 }
 
 + (id) directoryForPictures
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSPicturesDirectory];
 }
 
 + (id) directoryForPublicFiles
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _directoryForSearchPath:NSSharedPublicDirectory];
 }
 
 + (id) listDirectory:(NSString*)dir
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     
@@ -150,7 +150,7 @@
 
 + (id) fileExists:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     return @([fileMgr fileExistsAtPath:filePath]);
@@ -158,7 +158,7 @@
 
 + (id) fileIsReadable:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     return @([fileMgr isReadableFileAtPath:filePath]);
@@ -166,7 +166,7 @@
 
 + (id) fileIsWritable:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     return @([fileMgr isWritableFileAtPath:filePath]);
@@ -174,7 +174,7 @@
 
 + (id) fileIsDeletable:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     return @([fileMgr isDeletableFileAtPath:filePath]);
@@ -182,7 +182,7 @@
 
 + (id) isDirectoryAtPath:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
 
@@ -195,7 +195,7 @@
 
 + (id) sizeOfFile:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSFileManager* fileMgr = [NSFileManager defaultManager];
 
@@ -210,7 +210,7 @@
 
 + (id) fileData:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSError* err = nil;
     NSData* data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&err];
@@ -221,7 +221,7 @@
 
 + (id) fileContents:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSError* err = nil;
     NSString* contents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&err];
@@ -232,7 +232,7 @@
 
 + (id) deleteFile:(NSString*)filePath
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSFileManager* fileMgr = [NSFileManager defaultManager];
     

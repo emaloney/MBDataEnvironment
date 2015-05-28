@@ -46,7 +46,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
         else if (![varType isEqualToString:kMBMLVariableTypeMap]
                  && ![varType isEqualToString:kMBMLVariableTypeList])
         {
-            errorLog(@"Unknown variable type (\"%@\") specified in: %@", varType, xml.xml);
+            MBLogError(@"Unknown variable type (\"%@\") specified in: %@", varType, xml.xml);
             return nil;
         }
     }
@@ -74,7 +74,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
                  && ![type isEqualToString:kMBMLVariableTypeSingleton]
                  && ![type isEqualToString:kMBMLVariableTypeDynamic]))
     {
-        errorLog(@"%@ got an unexpected value for \"%@\" attribute in: %@", [self class], kMBMLAttributeType, self.simulatedXML);
+        MBLogError(@"%@ got an unexpected value for \"%@\" attribute in: %@", [self class], kMBMLAttributeType, self.simulatedXML);
         return NO;
     }
 
@@ -152,7 +152,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 
 - (void) populateDataModelFromXML:(RXMLElement*)container
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBConcreteVariableType type = self.declaredType;
     if (type == MBConcreteVariableTypeList || type == MBConcreteVariableTypeMap) {
@@ -181,7 +181,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
                     relatedBy:(NSString *)relationType
                 dataModelRoot:(MBDataModel*)root
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (![super validateAsRelativeOf:relative relatedBy:relationType dataModelRoot:root]) {
         return NO;
@@ -189,7 +189,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 
     if (self.declaredType == MBConcreteVariableTypeUnknown) {
         NSString* type = [self stringValueOfAttribute:kMBMLAttributeType];
-        errorLog(@"\"%@\" is not a supported variable declaration type in: %@", type, self.simulatedXML);
+        MBLogError(@"\"%@\" is not a supported variable declaration type in: %@", type, self.simulatedXML);
         return NO;
     }
 
@@ -197,14 +197,14 @@ NSString* const kMBMLVariableTypeList       = @"list";
     BOOL isContained = (relative != nil);
     if (isContained) {
         if (![relative isKindOfClass:[MBConcreteVariableDeclaration class]]) {
-            errorLog(@"Unexpected container class (%@); variable declarations may only be contained by %@ classes. Ignoring: %@", [relative class], [MBConcreteVariableDeclaration class], self.simulatedXML);
+            MBLogError(@"Unexpected container class (%@); variable declarations may only be contained by %@ classes. Ignoring: %@", [relative class], [MBConcreteVariableDeclaration class], self.simulatedXML);
             return NO;
         }
 
         MBConcreteVariableDeclaration* container = (MBConcreteVariableDeclaration*) relative;
         MBConcreteVariableType containerVarType = container.declaredType;
         if (containerVarType != MBConcreteVariableTypeMap && containerVarType != MBConcreteVariableTypeList) {
-            errorLog(@"Unexpected container type (%u); variable declarations may only be contained within other variables declared with %@=\"%@\" or %@=\"%@\". Ignoring: %@", (unsigned int)containerVarType, kMBMLAttributeType, kMBMLVariableTypeList, kMBMLAttributeType, kMBMLVariableTypeMap, self.simulatedXML);
+            MBLogError(@"Unexpected container type (%u); variable declarations may only be contained within other variables declared with %@=\"%@\" or %@=\"%@\". Ignoring: %@", (unsigned int)containerVarType, kMBMLAttributeType, kMBMLVariableTypeList, kMBMLAttributeType, kMBMLVariableTypeMap, self.simulatedXML);
             return NO;
         }
         
@@ -215,12 +215,12 @@ NSString* const kMBMLVariableTypeList       = @"list";
     NSString* name = [self stringValueOfAttribute:kMBMLAttributeName];
     if (shouldHaveName) {
         if (!name || !name.length) {
-            errorLog(@"%@ requires a \"%@\" attribute in: %@", [self class], kMBMLAttributeName, self.simulatedXML);
+            MBLogError(@"%@ requires a \"%@\" attribute in: %@", [self class], kMBMLAttributeName, self.simulatedXML);
             return NO;
         }
     }
     else if (name.length) {
-        errorLog(@"%@ can't take a \"%@\" attribute because it is contained in a list; Ignoring: %@", [self class], kMBMLAttributeName, self.simulatedXML);
+        MBLogError(@"%@ can't take a \"%@\" attribute because it is contained in a list; Ignoring: %@", [self class], kMBMLAttributeName, self.simulatedXML);
         return NO;
     }
     
@@ -229,7 +229,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
     BOOL hasValueAttr = [self hasAttribute:kMBMLAttributeValue];
     NSUInteger valueAttrs = (hasBooleanAttr ? 1 : 0) + (hasLiteralAttr ? 1 : 0) + (hasValueAttr ? 1 : 0);
     if (valueAttrs > 1) {
-        errorLog(@"Variable declarations may contain only one of these attributes: \"%@\"; this declaration will be ignored: %@", [@[kMBMLAttributeValue, kMBMLAttributeBoolean, kMBMLAttributeLiteral] componentsJoinedByString:@"\", \""], self.simulatedXML);
+        MBLogError(@"Variable declarations may contain only one of these attributes: \"%@\"; this declaration will be ignored: %@", [@[kMBMLAttributeValue, kMBMLAttributeBoolean, kMBMLAttributeLiteral] componentsJoinedByString:@"\", \""], self.simulatedXML);
         return NO;
     }
     _isLiteralValue = hasLiteralAttr;
@@ -382,7 +382,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 - (nullable id) initialValueInVariableSpace:(nonnull MBVariableSpace*)space
                                       error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     id val = nil;
     NSString* defName = self.userDefaultsName;
@@ -411,7 +411,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 - (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
                                       error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return space[self.name];
 }
@@ -448,7 +448,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
     NSString* clsName = [self stringValueOfAttribute:kMBMLAttributeClass];
     Class cls = NSClassFromString(clsName);
     if (!cls) {
-        errorLog(@"%@ couldn't resolve a class from the value (\"%@\") of the \"%@\" attribute in: %@", [self class], clsName, kMBMLAttributeClass, self.simulatedXML);
+        MBLogError(@"%@ couldn't resolve a class from the value (\"%@\") of the \"%@\" attribute in: %@", [self class], clsName, kMBMLAttributeClass, self.simulatedXML);
         return NO;
     }
     
@@ -457,13 +457,13 @@ NSString* const kMBMLVariableTypeList       = @"list";
     if (method) {
         accessor = NSSelectorFromString(method);
         if (!accessor) {
-            errorLog(@"\"%@\" does not appear to be a valid singleton accessor method name in: %@", method, self.simulatedXML);
+            MBLogError(@"\"%@\" does not appear to be a valid singleton accessor method name in: %@", method, self.simulatedXML);
             return NO;
         }
     }
 
     if (![cls respondsToSelector:accessor]) {
-        errorLog(@"The class \"%@\" does not respond to the selector \"%@\" specified as the singleton's accessor method in: %@", clsName, method, self.simulatedXML);
+        MBLogError(@"The class \"%@\" does not respond to the selector \"%@\" specified as the singleton's accessor method in: %@", clsName, method, self.simulatedXML);
         return NO;
     }
     
@@ -494,7 +494,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 - (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
                                       error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -541,7 +541,7 @@ NSString* const kMBMLVariableTypeList       = @"list";
 - (nullable id) currentValueInVariableSpace:(nonnull MBVariableSpace*)space
                                       error:(MBExpressionErrorPtrPtr)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [MBExpression asObject:[self stringValueOfAttribute:kMBMLAttributeExpression]
                   inVariableSpace:space

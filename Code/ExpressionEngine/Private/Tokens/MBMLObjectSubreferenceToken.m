@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLObjectSubreferenceToken.h"
 #import "MBExpressionError.h"
@@ -37,7 +37,7 @@
 
 - (void) encodeWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [super encodeWithCoder:coder];
 
@@ -47,7 +47,7 @@
 
 - (instancetype) initWithCoder:(NSCoder*)coder
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     self = [super initWithCoder:coder];
     if (self) {
@@ -63,7 +63,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSUInteger pos = [accumExpr length];
     if (pos == 0) {

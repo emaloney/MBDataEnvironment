@@ -24,7 +24,7 @@
 
 - (void) testIf
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

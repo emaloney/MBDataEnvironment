@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLSubtractionOperatorToken.h"
 
@@ -33,7 +33,7 @@
                                    rightValue:(NSDecimalNumber*)rValue
                                         error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [lValue decimalNumberBySubtracting:rValue];
 }

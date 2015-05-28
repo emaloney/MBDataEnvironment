@@ -22,7 +22,7 @@
 
 + (id) stripRegex:(NSArray*)params 
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -45,7 +45,7 @@
 
 + (id) replaceRegex:(NSArray*)params 
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:3 error:&err];
@@ -70,7 +70,7 @@
 
 + (id) matchesRegex:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];

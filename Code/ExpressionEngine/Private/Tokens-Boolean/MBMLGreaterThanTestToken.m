@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLGreaterThanTestToken.h"
 #import "MBExpression.h"
@@ -32,7 +32,7 @@
 
 - (BOOL) booleanValueForLeftValue:(id)lValue rightValue:(id)rValue {
     
-    debugTrace();
+    MBLogDebugTrace();
     
     NSComparisonResult comparisonResult = [MBExpression compareLeftValue:lValue againstRightValue:rValue];
     return comparisonResult == NSOrderedDescending;

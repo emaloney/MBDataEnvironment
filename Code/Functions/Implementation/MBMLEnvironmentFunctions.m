@@ -23,14 +23,14 @@
 
 + (NSArray*) mbmlLoadedPaths
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [MBEnvironment instance].mbmlPathsLoaded;
 }
 
 + (NSArray*) mbmlLoadedFiles
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSArray* paths = [MBEnvironment instance].mbmlPathsLoaded;
     NSMutableArray* files = [NSMutableArray arrayWithCapacity:paths.count];
@@ -42,14 +42,14 @@
 
 + (NSNumber*) mbmlPathIsLoaded:(NSString*)pathName
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return @([[MBEnvironment instance] mbmlPathIsLoaded:pathName]);
 }
 
 + (NSNumber*) mbmlFileIsLoaded:(NSString*)fileName
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return @([[MBEnvironment instance] mbmlFileIsLoaded:fileName]);
 }

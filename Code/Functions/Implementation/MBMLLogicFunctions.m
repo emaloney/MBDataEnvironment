@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLLogicFunctions.h"
 #import "MBExpression.h"
@@ -23,7 +23,7 @@
 
 + (id) ifOperator:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:1 andAtMost:3 error:&err];

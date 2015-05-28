@@ -144,7 +144,7 @@ typedef enum {
 
 + (id) containsValue:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -203,7 +203,7 @@ typedef enum {
 
 + (id) setContains:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -232,7 +232,7 @@ typedef enum {
 
 + (id) valuesPassingTest:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
         
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -276,7 +276,7 @@ typedef enum {
 
 + (id) collectionPassesTest:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -319,7 +319,7 @@ typedef enum {
 
 + (id) valuesIntersect:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -357,7 +357,7 @@ typedef enum {
 
 + (id) join:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -398,7 +398,7 @@ typedef enum {
 
 + (id) split:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError *err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -411,7 +411,7 @@ typedef enum {
 
 + (id) splitLines:(NSString*)stringToSplit
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [stringToSplit componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
 }
@@ -422,7 +422,7 @@ typedef enum {
 
 + (id) appendArrays:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError *err = nil;
     [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -457,7 +457,7 @@ typedef enum {
 
 + (id) flattenArrays:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     for (NSUInteger i=0; i<params.count; i++) {
@@ -646,7 +646,7 @@ typedef enum {
 
 + (id) filter:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -729,7 +729,7 @@ typedef enum {
 
 + (id) unique:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (![param conformsToProtocol:@protocol(NSFastEnumeration)]) {
         return [MBMLFunctionError errorWithFormat:@"Expecting the input parameter to conform to NSFastEnumeration; got a %@ instance instead", [param class]];
@@ -816,7 +816,7 @@ keyExpressions:(NSArray*)keyExprs
 
 + (id) list:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -973,21 +973,21 @@ keyExpressions:(NSArray*)keyExprs
 
 + (id) associate:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [self _associate:params valueHandling:AssociationAllowsMultipleValues];
 }
 
 + (id) associateWithSingleValue:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [self _associate:params valueHandling:AssociationReturnsSingleValue];
 }
 
 + (id) associateWithArray:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [self _associate:params valueHandling:AssociationAlwaysReturnsArray];
 }
@@ -1049,7 +1049,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) reverse:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSArray* toReverse = [MBMLFunction validateParameterIsArray:param error:&err];
@@ -1064,7 +1064,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) sort:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:1 andAtMost:3 error:&err];
@@ -1126,7 +1126,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) mergeDictionaries:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 error:&err];
@@ -1189,14 +1189,14 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) pruneMatchingLeaves:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
  
     return [self _pruneLeaves:params keepMatches:NO];
 }
 
 + (id) pruneNonmatchingLeaves:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [self _pruneLeaves:params keepMatches:YES];
 }
@@ -1207,7 +1207,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) distributeArrayElements:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -1244,7 +1244,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) groupArrayElements:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -1277,7 +1277,7 @@ NSComparisonResult expressionSortDesc(id left, id right, void* ctxt)
 
 + (id) reduce:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:3 error:&err];

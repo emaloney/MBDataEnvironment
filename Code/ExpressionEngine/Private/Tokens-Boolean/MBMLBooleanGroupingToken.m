@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLBooleanGroupingToken.h"
 #import "MBExpression.h"
@@ -37,7 +37,7 @@
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                                   error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBExpressionTokenizer* tokenizer = [MBExpressionTokenizer tokenizerWithGrammar:[MBMLBooleanExpressionGrammar instance]];
 
@@ -53,14 +53,14 @@
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return @([self evaluateBooleanInVariableSpace:space error:errPtr]);
 }
 
 - (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [MBExpression booleanFromTokens:_childTokens inVariableSpace:space defaultValue:NO error:errPtr];
 }

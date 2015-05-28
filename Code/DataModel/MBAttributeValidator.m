@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Evan Coyne Maloney. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBAttributeValidator.h"
 
@@ -74,7 +74,7 @@
 
 - (NSUInteger) _countAttributesWithValues:(NSObject<NSFastEnumeration>*)attrs
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSUInteger count = 0;
     for (NSString* attr in attrs) {
@@ -96,7 +96,7 @@
 
 - (BOOL) require:(nonnull NSString*)attr1 or:(nonnull NSString*)attr2 butNotBoth:(BOOL)onlyAllowOne
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     BOOL satisfied = YES;
     if (![self.model hasAttribute:attr1] && ![self.model hasAttribute:attr2]) {
@@ -112,7 +112,7 @@
 
 - (BOOL) requireAtLeastOneOf:(nonnull NSObject<NSFastEnumeration>*)attrs
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     BOOL hasAtLeastOne = NO;
     for (NSString* attr in attrs) {
@@ -129,7 +129,7 @@
 
 - (BOOL) requireExactlyOneOf:(nonnull NSObject<NSFastEnumeration>*)attrs
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSUInteger count = [self _countAttributesWithValues:attrs];
     if (count != 1) {
@@ -149,7 +149,7 @@
     }
 
     for (NSString* errorMsg in _errors) {
-        errorLog(@"%@", errorMsg);
+        MBLogError(@"%@", errorMsg);
     }
 
     return NO;

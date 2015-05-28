@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLBooleanAndOperatorToken.h"
 
@@ -31,7 +31,7 @@
 
 - (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (![[self leftOperand] evaluateBooleanInVariableSpace:space error:errPtr]) {
         return NO;

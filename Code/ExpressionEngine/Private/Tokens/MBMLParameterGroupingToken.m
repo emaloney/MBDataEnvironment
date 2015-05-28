@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLParameterGroupingToken.h"
 #import "MBExpression.h"
@@ -49,7 +49,7 @@
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [MBExpression objectFromTokens:_childTokens inVariableSpace:space defaultValue:nil error:errPtr];
 }

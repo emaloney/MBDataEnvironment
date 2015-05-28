@@ -32,39 +32,39 @@ NSString* const kMBMLEnvironmentDidLoadNotification         = @"Environment:didL
 
 - (void) environmentWillLoad:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 - (void) environmentDidLoad:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 - (void) environmentLoadFailed:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 - (void) environmentWillActivate:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 - (void) environmentDidActivate:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     _isActive = YES;
 }
 
 - (void) environmentWillDeactivate:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 }
 
 - (void) environmentDidDeactivate:(nonnull MBEnvironment*)env
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     _isActive = NO;
 }

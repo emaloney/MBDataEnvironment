@@ -244,7 +244,7 @@
 
 - (void) log
 {
-    errorLog(@"%@", [self logOutput]);
+    MBLogError(@"%@", [self logOutput]);
     
     for (MBExpressionError* err in _additionalErrors) {
         [err log];

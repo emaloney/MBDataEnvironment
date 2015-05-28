@@ -64,7 +64,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     self = [super init];
     if (self) {
         if (![MBMLObjectReferenceToken isValidObjectReference:name]) {
-            errorLog(@"Function names must be identifiers, so \"%@\" is not a valid function name", name);
+            MBLogError(@"Function names must be identifiers, so \"%@\" is not a valid function name", name);
             return nil;
         }
 
@@ -107,11 +107,11 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     }
     
     if (!_name) {
-        errorLog(@"No name specified for %@ in: %@", [self class], self.simulatedXML);
+        MBLogError(@"No name specified for %@ in: %@", [self class], self.simulatedXML);
         return NO;
     }
     if (![MBMLObjectReferenceToken isValidObjectReference:_name]) {
-        errorLog(@"Function names must be identifiers, so \"%@\" is not a valid function name in: %@", _name, self.simulatedXML);
+        MBLogError(@"Function names must be identifiers, so \"%@\" is not a valid function name in: %@", _name, self.simulatedXML);
         return NO;
     }
     if (_inputType == MBMLFunctionInputUnset) {
@@ -122,7 +122,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     }
     
     if (!_functionClass) {
-        errorLog(@"Couldn't find implementing class for %@ specified in: %@", [self class], self.simulatedXML);
+        MBLogError(@"Couldn't find implementing class for %@ specified in: %@", [self class], self.simulatedXML);
         return NO;
     }
 
@@ -132,7 +132,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
     }
 
     if (![_functionClass respondsToSelector:_functionSelector]) {
-        errorLog(@"%@ class %@ does not implement %@ specified in: %@", [self class], NSStringFromClass(_functionClass), NSStringFromSelector(_functionSelector), self.simulatedXML);
+        MBLogError(@"%@ class %@ does not implement %@ specified in: %@", [self class], NSStringFromClass(_functionClass), NSStringFromSelector(_functionSelector), self.simulatedXML);
         return NO;
     }
     
@@ -173,14 +173,14 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 - (void) setClass:(NSString*)clsName
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     _functionClass = NSClassFromString(clsName);
 }
 
 - (void) setMethod:(NSString*)methodName
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (methodName != _methodName) {
         _methodName = methodName;
@@ -189,7 +189,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 - (void) setInput:(NSString*)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!input || [input length] < 1) {
         _inputType = MBMLFunctionInputDefault;
@@ -222,14 +222,14 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
         _inputType = MBMLFunctionInputPipedMath;
     }
     else {
-        errorLog(@"Unrecognized value for 'input' attribute of tranformer named %@: %@", _name, input);
+        MBLogError(@"Unrecognized value for 'input' attribute of tranformer named %@: %@", _name, input);
         _inputType = MBMLFunctionInputDefault;
     }
 }
 
 - (void) setOutput:(NSString*)output
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!output || [output length] < 1) {
         _outputType = MBMLFunctionOutputDefault;
@@ -241,7 +241,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
         _outputType = MBMLFunctionOutputObject;
     }
     else {
-        errorLog(@"Unrecognized value for 'output' attribute of tranformer named %@: %@", _name, output);
+        MBLogError(@"Unrecognized value for 'output' attribute of tranformer named %@: %@", _name, output);
         _outputType = MBMLFunctionOutputDefault;
     }
 }
@@ -545,7 +545,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIs:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -561,7 +561,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtLeast:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -577,7 +577,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtMost:(NSUInteger)expectedCnt error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -593,7 +593,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(inout MBMLFunctionError**)errPtr;
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -609,7 +609,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSUInteger) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array indexIsInRange:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -625,7 +625,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (id) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -641,7 +641,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (Class) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -662,7 +662,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSDecimalNumber*) validateObjectNamed:(NSString*)objName inArray:(NSArray*)array containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -688,7 +688,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (id) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -705,7 +705,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (Class) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array objectAtIndex:(NSUInteger)idx isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -727,7 +727,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSNumber*) validateObjectNamed:(NSString*)objName expressionInArray:(NSArray*)array containsNumberAtIndex:(NSUInteger)idx error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -755,7 +755,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (id) validateObjectNamed:(NSString*)objName object:(id)validate isKindOfClass:(Class)cls error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -770,7 +770,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (Class) validateObjectNamed:(NSString*)objName object:(id)validate isOneKindOfClass:(NSArray*)classes error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -785,7 +785,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (id<NSObject>) validateObjectNamed:(NSString*)objName object:(id<NSObject>)validate respondsToSelector:(SEL)selector error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -807,7 +807,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 + (NSNumber*) validateObjectNamed:(NSString*)objName containsNumber:(id)validate error:(inout MBMLFunctionError**)errPtr
 {
-    verboseDebugTrace();
+    MBLogVerboseTrace();
     
     assert(errPtr);             // don't accept 'nil'
     
@@ -854,13 +854,15 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         id output = [_functionClass performSelector:_functionSelector withObject:input];
 #pragma clang diagnostic pop
-        
+
+
+
         if (_outputType == MBMLFunctionOutputNone) {
-            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) consoleLog(@"%@ called with input %@", self, input);
+            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) MBLog(MBModuleLogSeverityDebug, @"%@ called with input %@", self, input);
             return nil;
         }
         else {
-            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) consoleLog(@"%@ called with input %@; returned: %@", self, input, output);
+            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) MBLog(MBModuleLogSeverityDebug, @"%@ called with input %@; returned: %@", self, input, output);
         }
 
         if ([output isKindOfClass:[MBExpressionError class]]) {
@@ -877,7 +879,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
         currentErr.value = self;
         [currentErr reportErrorTo:errPtr];
         
-        if (DEBUG_FLAG(DEBUG_EXCEPTIONS)) consoleLog(@"MBML function exception stack trace: %@", [ex callStackSymbols]);
+        if (DEBUG_FLAG(DEBUG_EXCEPTIONS)) MBLog(MBModuleLogSeverityDebug, @"MBML function exception stack trace: %@", [ex callStackSymbols]);
         
         return nil;
     }

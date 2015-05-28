@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLBooleanNegationToken.h"
 
@@ -21,7 +21,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSUInteger pos = [accumExpr length];
     if (pos == 0) {
@@ -34,7 +34,7 @@
 
 - (BOOL) evaluateBooleanInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)err
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return ![super evaluateBooleanInVariableSpace:space error:err];
 }

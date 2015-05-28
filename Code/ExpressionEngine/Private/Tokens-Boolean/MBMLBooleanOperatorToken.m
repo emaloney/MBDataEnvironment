@@ -37,7 +37,7 @@
 
 - (void) setOperand:(MBMLParseToken<MBMLOperandToken>*)tok
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [_childTokens removeAllObjects];
     [self addChildToken:tok];
@@ -45,7 +45,7 @@
 
 - (MBMLParseToken<MBMLOperandToken>*) operand
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [_childTokens firstObject];
 }
@@ -77,7 +77,7 @@
 - (void) setLeftOperand:(MBMLParseToken<MBMLOperandToken>*)left
            rightOperand:(MBMLParseToken<MBMLOperandToken>*)right
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [_childTokens removeAllObjects];
     [self addChildToken:left];
@@ -86,14 +86,14 @@
 
 - (MBMLParseToken<MBMLOperandToken>*) leftOperand
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     return [_childTokens firstObject];
 }
 
 - (MBMLParseToken<MBMLOperandToken>*) rightOperand
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (_childTokens.count > 1) {
         return _childTokens[1];

@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLVariableReferenceToken.h"
 #import "MBMLObjectSubreferenceToken.h"
@@ -32,7 +32,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSUInteger pos = [accumExpr length];
     if (pos == 0) {
@@ -211,7 +211,7 @@
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                                   error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     // only the curly brace notation results in a contained expression
     // that gets tokenized. the curly brace notation only allows

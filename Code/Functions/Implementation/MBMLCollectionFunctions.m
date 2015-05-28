@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLCollectionFunctions.h"
 #import "MBExpression.h"
@@ -23,7 +23,7 @@
 
 + (NSNumber*) isCollection:(id)param;
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (param) {
         if ([param isKindOfClass:[NSDictionary class]])
@@ -40,28 +40,28 @@
 
 + (NSNumber*) isSet:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return @(param && [param isKindOfClass:[NSSet class]]);
 }
 
 + (NSNumber*) isDictionary:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return @(param && [param isKindOfClass:[NSDictionary class]]);
 }
 
 + (NSNumber*) isArray:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return @(param && [param isKindOfClass:[NSArray class]]);
 }
 
 + (id) count:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (param == [NSNull null]) {
         return @0;
@@ -78,7 +78,7 @@
 
 + (id) removeObject:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -95,7 +95,7 @@
 
 + (id) removeObjectAtIndex:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
         
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -115,7 +115,7 @@
 
 + (id) appendObject:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsArray:params error:&err];
@@ -132,7 +132,7 @@
 
 + (id) insertObjectAtIndex:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:3 error:&err];
@@ -151,7 +151,7 @@
 
 + (id) array:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (params) {
         return [params mutableCopy];
@@ -163,7 +163,7 @@
 
 + (id) subarray:(NSArray *)params
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:3 error:&err];
@@ -183,7 +183,7 @@
 
 + (id) set:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (params) {
         return [NSMutableSet setWithArray:params];
@@ -195,7 +195,7 @@
 
 + (id) setWithArray:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSArray* array = [MBMLFunction validateParameterIsArray:param error:&err];
@@ -206,7 +206,7 @@
 
 + (id) dictionary:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (params) {
         NSUInteger paramCnt = params.count;
@@ -231,7 +231,7 @@
 
 + (id) keys:(NSDictionary*)dict
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsDictionary:dict error:&err];
@@ -242,7 +242,7 @@
 
 + (id) values:(NSDictionary*)dict
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsDictionary:dict error:&err];
@@ -253,7 +253,7 @@
 
 + (id) removeLastObject:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     
@@ -270,7 +270,7 @@
 
 + (id) lastObject:(id)input
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLFunctionError* err = nil;
     
@@ -283,7 +283,7 @@
 
 + (id) indexOf:(NSArray*)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:params countIs:2 error:&err];
@@ -306,7 +306,7 @@
 
 + (id) copyOf:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([param conformsToProtocol:@protocol(NSCopying)]) {
         return [((id<NSCopying>)param) copyWithZone:nil];
@@ -318,7 +318,7 @@
 
 + (id) mutableCopyOf:(id)param
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if ([param conformsToProtocol:@protocol(NSMutableCopying)]) {
         return [((id<NSMutableCopying>)param) mutableCopyWithZone:nil];
@@ -330,7 +330,7 @@
 
 + (id) getValueForKey:(NSArray *)params
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     NSUInteger paramCnt = [MBMLFunction validateParameter:params countIsAtLeast:2 andAtMost:3 error:&err];

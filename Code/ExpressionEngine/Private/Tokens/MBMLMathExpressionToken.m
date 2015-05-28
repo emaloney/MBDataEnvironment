@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLMathExpressionToken.h"
 #import "MBExpressionGrammar.h"
@@ -31,7 +31,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!_gotCloseParen) {
         NSUInteger pos = [accumExpr length];
@@ -73,7 +73,7 @@
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                                   error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBExpressionTokenizer* tokenizer = [MBExpressionTokenizer tokenizerWithGrammar:[MBMLMathExpressionGrammar instance]];
 
@@ -89,7 +89,7 @@
 
 - (id) evaluateInVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBExpressionError* err = nil;
     NSArray* values = [MBExpression evaluateTokens:_childTokens inVariableSpace:space error:&err];

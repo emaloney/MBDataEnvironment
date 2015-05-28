@@ -222,7 +222,7 @@
 
 - (NSString*) normalizedRepresentation
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSString* normal = [self expression];
     NSString* subrefs = [self subreferenceExpression];
@@ -235,7 +235,7 @@
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSUInteger pos = [accumExpr length];
     if (pos == 0) {
@@ -291,7 +291,7 @@
 - (NSArray*) tokenizeContainedExpressionInVariableSpace:(MBVariableSpace*)space
                                                   error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunction* func = [space functionWithName:[self tokenIdentifier]];
 
@@ -364,7 +364,7 @@
                 break;
                 
             default:
-                errorLog(@"Unexpected input type for MBML function: %@", func);
+                MBLogError(@"Unexpected input type for MBML function: %@", func);
                 break;
         }
     }
@@ -374,7 +374,7 @@
 
 - (id) valueInVariableSpace:(MBVariableSpace*)space valueContext:(id)ctxt error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunction* func = [space functionWithName:[self tokenIdentifier]];
     if (!func) {

@@ -71,14 +71,14 @@
 
 - (NSMutableArray*) tokenClassesForInitialState
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [_initialStateTokenClasses mutableCopy];
 }
 
 - (NSMutableArray*) parseTokensForInitialState
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSMutableArray* initialTokens = [NSMutableArray arrayWithCapacity:_initialStateTokenClasses.count];
     for (Class cls in _initialStateTokenClasses) {
@@ -90,7 +90,7 @@
 
 - (NSMutableArray*) tokenClassesForNextStates:(MBMLParseToken*)token
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     if (!token)
         return nil;
@@ -133,7 +133,7 @@
             inVariableSpace:(MBVariableSpace*)space
                       error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     //
     // now that we've collected all our tokens, expand any container tokens,
@@ -238,7 +238,7 @@
 
 - (void) addTokenClassForInitialState:(Class)cls
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!_initialStateTokenClasses) {
         _initialStateTokenClasses = [NSMutableArray new];
@@ -248,7 +248,7 @@
 
 - (void) addNextPossibleTokenClass:(Class)nextCls whenTransitioningFromClass:(Class)fromClass
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     if (!_tokenClassesToNextPossibleClasses) {
         _tokenClassesToNextPossibleClasses = [NSMutableDictionary new];
@@ -335,7 +335,7 @@
 
 + (void) setupStateForGrammar:(MBExpressionGrammar*)grammar
 {
-    debugTrace();
+    MBLogDebugTrace();
         
     [grammar addNextPossibleTokenClass:[MBMLObjectSubreferenceToken class] whenTransitioningFromClass:[MBMLObjectReferenceToken class]];
     [grammar addNextPossibleTokenClasses:grammar->_initialStateTokenClasses whenTransitioningFromClass:[MBMLObjectReferenceToken class]];
@@ -385,7 +385,7 @@ MBImplementSingleton();
 
 + (void) setupStateForGrammar:(MBExpressionGrammar*)grammar
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     // note: the order of the tokens below is significant;
     // tokens that might match smaller strings should appear
@@ -457,7 +457,7 @@ MBImplementSingleton();
             inVariableSpace:(MBVariableSpace*)space
                       error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBExpressionError* err = nil;
     [super arrangeGrammarTree:tokens inVariableSpace:space error:&err];
@@ -584,7 +584,7 @@ MBImplementSingleton();
             inVariableSpace:(MBVariableSpace*)space
                       error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBExpressionError* err = nil;
     [super arrangeGrammarTree:tokens inVariableSpace:space error:&err];
@@ -658,7 +658,7 @@ MBImplementSingleton();
 
 + (void) setupStateForGrammar:(MBExpressionGrammar*)grammar
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     [grammar addTokenClassForInitialState:[MBMLParameterDelimiterToken class]];
     
@@ -673,7 +673,7 @@ MBImplementSingleton();
             inVariableSpace:(MBVariableSpace*)space
                       error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSMutableArray* paramGroups = nil;
     NSMutableArray* curParamGroup = nil;

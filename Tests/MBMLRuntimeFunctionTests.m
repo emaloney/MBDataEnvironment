@@ -33,7 +33,7 @@
 
 - (void) testClassExists
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -51,7 +51,7 @@
 
 - (void) testClass
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -71,7 +71,7 @@
 
 - (void) testSingleton
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -97,7 +97,7 @@
 
 - (void) testInheritanceHierarchyForClass
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -129,7 +129,7 @@
 
 - (void) testRespondsToSelector
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes
@@ -159,7 +159,7 @@
 
 - (void) testInstancesRespondToSelector
 {
-    consoleTrace();
+    MBLogInfoTrace();
 
     //
     // test expected successes

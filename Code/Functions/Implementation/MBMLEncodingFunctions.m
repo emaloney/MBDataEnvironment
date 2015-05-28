@@ -21,14 +21,14 @@
 
 + (id) MD5FromString:(NSString*)string
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [string MD5];
 }
 
 + (id) MD5FromData:(NSData*)data
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:data isKindOfClass:[NSData class] error:&err];
@@ -39,14 +39,14 @@
 
 + (id) SHA1FromString:(NSString*)string
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     return [string SHA1];
 }
 
 + (id) SHA1FromData:(NSData*)data
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:data isKindOfClass:[NSData class] error:&err];
@@ -57,7 +57,7 @@
 
 + (id) base64FromData:(NSData*)data
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:data isKindOfClass:[NSData class] error:&err];
@@ -68,7 +68,7 @@
 
 + (id) dataFromBase64:(NSString*)base64
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsString:base64 error:&err];
@@ -79,7 +79,7 @@
 
 + (id) hexStringFromData:(NSData*)data
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameter:data isKindOfClass:[NSData class] error:&err];
@@ -90,7 +90,7 @@
 
 + (id) dataFromHexString:(NSString*)hexString
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     MBMLFunctionError* err = nil;
     [MBMLFunction validateParameterIsString:hexString error:&err];

@@ -42,7 +42,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 
 + (nonnull instancetype) enterVariableScope
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSMutableArray* scopeStack = [MBThreadLocalStorage cachedValueForClass:self
                                                          usingInstantiator:^{ return [NSMutableArray new]; }];
@@ -54,7 +54,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 
 + (nullable instancetype) exitVariableScope
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     NSMutableArray* scopeStack = [MBThreadLocalStorage valueForClass:self];
     if (scopeStack && scopeStack.count) {
@@ -147,7 +147,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 
 - (void) unsetScopedVariables
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (NSString* varName in _pushedToVariableSpace) {
         [_variableSpace popVariable:varName];
@@ -157,7 +157,7 @@ NSObject* const kFakeNilValue = @"kFakeNilValue";     // used as a stand-in valu
 
 - (void) reapplyScopedVariables
 {
-    debugTrace();
+    MBLogDebugTrace();
 
     for (NSString* varName in _namesToValues) {
         if (![_pushedToVariableSpace containsObject:varName]) {

@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBDebug.h>
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBExpressionTokenizer.h"
 #import "MBMLParseToken.h"
@@ -84,7 +84,7 @@
                       inExpression:(NSString*)expr
                         usingState:(MBTokenizationState*)tokState
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     MBMLTokenMatchStatus startStatus = [token matchStatus];
     
@@ -111,7 +111,7 @@
     if (hadFullMatch) {
         NSRange exprMatch = NSMakeRange(tokState->currentChar, i - tokState->currentChar);
         
-        debugLog(@"Resolved match: %@ (%@)", [token class], [expr substringWithRange:exprMatch]);
+        MBLogDebug(@"Resolved match: %@ (%@)", [token class], [expr substringWithRange:exprMatch]);
         
         [token setMatchCompleted:exprMatch];
         
@@ -143,7 +143,7 @@
 
 - (NSArray*) tokenize:(NSString*)expr inVariableSpace:(MBVariableSpace*)space error:(inout MBExpressionError**)errPtr
 {
-    debugTrace();
+    MBLogDebugTrace();
     
     NSMutableArray* tokens = [NSMutableArray new];
 
