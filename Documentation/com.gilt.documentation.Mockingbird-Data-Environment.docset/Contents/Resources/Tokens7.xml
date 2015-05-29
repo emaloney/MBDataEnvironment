@@ -19,7 +19,7 @@ Environment.</Abstract>
 environment.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)instance</Declaration>
+			<Declaration>+ (nullable instancetype)instance</Declaration>
 			
 			<ReturnValue><Abstract type="html">The currently-active environment.</Abstract></ReturnValue>
 			<Anchor>//api/name/instance</Anchor>
@@ -32,7 +32,7 @@ environment.</Abstract>
 the MBVariableSpace instance used to evaluate expressions by default.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)setEnvironment:(MBEnvironment *)env</Declaration>
+			<Declaration>+ (nullable instancetype)setEnvironment:(nullable MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -50,7 +50,7 @@ the MBVariableSpace instance used to evaluate expressions by default.</Abstract>
 onto the environment stack.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (void)pushEnvironment:(MBEnvironment *)env</Declaration>
+			<Declaration>+ (void)pushEnvironment:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -68,7 +68,7 @@ onto the environment stack.</Abstract>
 stack.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)popEnvironment</Declaration>
+			<Declaration>+ (nonnull instancetype)popEnvironment</Declaration>
 			
 			<ReturnValue><Abstract type="html">The newly-active environment.</Abstract></ReturnValue>
 			<Anchor>//api/name/popEnvironment</Anchor>
@@ -82,7 +82,7 @@ environment stack. This is the environment that would become active if
 popEnvironment were called.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)peekEnvironment</Declaration>
+			<Declaration>+ (nullable instancetype)peekEnvironment</Declaration>
 			
 			<ReturnValue><Abstract type="html">The environment at the top of the environment stack, or nil if
             there is nothing in the stack.</Abstract></ReturnValue>
@@ -97,7 +97,7 @@ exist in the application&apos;s resources. The default environment is the
 environment that exists before any manifest file is processed.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)loadDefaultEnvironment</Declaration>
+			<Declaration>+ (nullable instancetype)loadDefaultEnvironment</Declaration>
 			
 			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
             if the environment could not be loaded.</Abstract></ReturnValue>
@@ -111,7 +111,7 @@ environment that exists before any manifest file is processed.</Abstract>
 application&apos;s resources.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)loadFromManifest</Declaration>
+			<Declaration>+ (nullable instancetype)loadFromManifest</Declaration>
 			
 			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
             if the environment could not be loaded.</Abstract></ReturnValue>
@@ -125,7 +125,7 @@ application&apos;s resources.</Abstract>
 specified search directory or in the application&apos;s resources.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)loadFromManifestWithSearchDirectory:(NSString *)dirPath</Declaration>
+			<Declaration>+ (nullable instancetype)loadFromManifestWithSearchDirectory:(nonnull NSString *)dirPath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>dirPath</Name>
@@ -143,12 +143,31 @@ specified search directory or in the application&apos;s resources.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestFile:</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest file with the given name
+found in the application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadFromManifestFile:(nonnull NSString *)manifestName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestName</Name>
+					<Abstract type="html">The name of the manifest file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifestFile:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestFile:withSearchDirectory:</TokenIdentifier>
 			<Abstract type="html">Loads a new environment by processing the manifest file with the given name
 found in the specified search directory or in the application&apos;s resources.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)loadFromManifestFile:(NSString *)manifestName withSearchDirectory:(NSString *)dirPath</Declaration>
+			<Declaration>+ (nonnull instancetype)loadFromManifestFile:(nonnull NSString *)manifestName withSearchDirectory:(nullable NSString *)dirPath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manifestName</Name>
@@ -174,7 +193,7 @@ found in the specified search directory or in the application&apos;s resources.<
 specified search directories or in the application&apos;s resources.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)loadFromManifestWithSearchDirectories:(NSArray *)dirPaths</Declaration>
+			<Declaration>+ (nullable instancetype)loadFromManifestWithSearchDirectories:(nullable NSArray *)dirPaths</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>dirPaths</Name>
@@ -198,7 +217,7 @@ specified search directories or in the application&apos;s resources.</Abstract>
 found in the specified search directories or in the application&apos;s resources.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)loadFromManifestFile:(NSString *)manifestName withSearchDirectories:(NSArray *)dirPaths</Declaration>
+			<Declaration>+ (nullable instancetype)loadFromManifestFile:(nullable NSString *)manifestName withSearchDirectories:(nullable NSArray *)dirPaths</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manifestName</Name>
@@ -224,7 +243,7 @@ found in the specified search directories or in the application&apos;s resources
 			<Abstract type="html">Attempts to load the specified MBML file.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)loadMBMLFile:(NSString *)fileName</Declaration>
+			<Declaration>- (BOOL)loadMBMLFile:(nonnull NSString *)fileName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>fileName</Name>
@@ -245,7 +264,7 @@ found in the specified search directories or in the application&apos;s resources
 environment attempts to find a resource such as an MBML file.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (void)addResourceSearchBundle:(NSBundle *)bundle</Declaration>
+			<Declaration>+ (void)addResourceSearchBundle:(nonnull NSBundle *)bundle</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>bundle</Name>
@@ -264,7 +283,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
 environment attempts to find a resource such as an MBML file.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)resourceSearchBundles</Declaration>
+			<Declaration>+ (nonnull NSArray *)resourceSearchBundles</Declaration>
 			
 			<ReturnValue><Abstract type="html">An array of NSBundles. Will never be nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/resourceSearchBundles</Anchor>
@@ -315,7 +334,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
     through the loadDefaultEnvironment method), this value will be nil. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
 			
 			
 			<Anchor>//api/name/manifestFilePath</Anchor>
@@ -330,7 +349,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
     through the loadDefaultEnvironment method), this value will be nil. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
 			
 			
 			<Anchor>//api/name/manifestFilePath</Anchor>
@@ -345,7 +364,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
     through the loadDefaultEnvironment method), this value will be nil. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
 			
 			
 			<Anchor>//api/name/manifestFilePath</Anchor>
@@ -358,7 +377,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
     by the environment thusfar. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
 			
 			
 			<Anchor>//api/name/mbmlPathsLoaded</Anchor>
@@ -371,7 +390,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
     by the environment thusfar. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
 			
 			
 			<Anchor>//api/name/mbmlPathsLoaded</Anchor>
@@ -384,7 +403,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
     by the environment thusfar. </Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
 			
 			
 			<Anchor>//api/name/mbmlPathsLoaded</Anchor>
@@ -397,7 +416,7 @@ environment attempts to find a resource such as an MBML file.</Abstract>
 receiver.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)mbmlPathIsLoaded:(NSString *)filePath</Declaration>
+			<Declaration>- (BOOL)mbmlPathIsLoaded:(nonnull NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -416,7 +435,7 @@ receiver.</Abstract>
 receiver.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)mbmlFileIsLoaded:(NSString *)fileName</Declaration>
+			<Declaration>- (BOOL)mbmlFileIsLoaded:(nonnull NSString *)fileName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>fileName</Name>
@@ -435,7 +454,7 @@ receiver.</Abstract>
 begin with the specified prefix.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (void)addSupportedLibraryClassPrefix:(NSString *)prefix</Declaration>
+			<Declaration>+ (void)addSupportedLibraryClassPrefix:(nonnull NSString *)prefix</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>prefix</Name>
@@ -454,7 +473,7 @@ begin with the specified prefix.</Abstract>
 when attempting to load environment classes.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)supportedLibraryClassPrefixes</Declaration>
+			<Declaration>+ (nonnull NSArray *)supportedLibraryClassPrefixes</Declaration>
 			
 			<ReturnValue><Abstract type="html">An array of strings containing the supported class prefixes.
             Will never be nil and will always contain at least one value,
@@ -469,7 +488,7 @@ when attempting to load environment classes.</Abstract>
 the class with the specified name.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (Class)libraryClassForName:(NSString *)className</Declaration>
+			<Declaration>+ (nullable Class)libraryClassForName:(nonnull NSString *)className</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>className</Name>
@@ -490,7 +509,7 @@ MBEnvironment instances are created, they will gain support for the
 features added by the module implementation.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)enableModuleClass:(Class)cls</Declaration>
+			<Declaration>+ (BOOL)enableModuleClass:(nonnull Class)cls</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cls</Name>
@@ -511,7 +530,7 @@ additional modules not included in this array may be enabled through the
 manifest file.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>+ (NSArray *)enabledModuleClasses</Declaration>
+			<Declaration>+ (nonnull NSArray *)enabledModuleClasses</Declaration>
 			
 			<ReturnValue><Abstract type="html">The currently-enabled modules. Will always contain at least one
             item, because MBDataEnvironmentModule is always enabled.</Abstract></ReturnValue>
@@ -525,7 +544,7 @@ manifest file.</Abstract>
 receiver.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)enabledModuleClasses</Declaration>
+			<Declaration>- (nonnull NSArray *)enabledModuleClasses</Declaration>
 			
 			<ReturnValue><Abstract type="html">The modules enabled in the receiving environment. Will always
             contain at least one item, because MBDataEnvironmentModule is
@@ -541,7 +560,7 @@ receiver.</Abstract>
 environment loaders consulted when the receiving environment is loaded.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)environmentLoaders</Declaration>
+			<Declaration>- (nonnull NSArray *)environmentLoaders</Declaration>
 			
 			<ReturnValue><Abstract type="html">The environment loaders used by the receiver. Will never be nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/environmentLoaders</Anchor>
@@ -554,7 +573,7 @@ environment loaders consulted when the receiving environment is loaded.</Abstrac
 is an instance of the given class.</Abstract>
 			<DeclaredIn>MBEnvironment.h</DeclaredIn>
 			
-			<Declaration>- (MBEnvironmentLoader *)environmentLoaderOfClass:(Class)cls</Declaration>
+			<Declaration>- (nullable MBEnvironmentLoader *)environmentLoaderOfClass:(nonnull Class)cls</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cls</Name>

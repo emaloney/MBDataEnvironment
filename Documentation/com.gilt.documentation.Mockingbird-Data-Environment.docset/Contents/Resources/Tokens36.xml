@@ -19,7 +19,7 @@ the asynchronous loading of data.</Abstract>
 load attempt is about to begin.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)willRequestDataEventName:(NSString *)name</Declaration>
+			<Declaration>+ (nonnull NSString *)willRequestDataEventName:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -38,7 +38,7 @@ load attempt is about to begin.</Abstract>
 data load completes successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)dataLoadedEventName:(NSString *)name</Declaration>
+			<Declaration>+ (nonnull NSString *)dataLoadedEventName:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -57,7 +57,7 @@ data load completes successfully.</Abstract>
 data load attempt fails.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)dataLoadFailedEventName:(NSString *)name</Declaration>
+			<Declaration>+ (nonnull NSString *)dataLoadFailedEventName:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -76,7 +76,7 @@ data load attempt fails.</Abstract>
 to begin.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (void)postWillRequestData:(NSString *)name</Declaration>
+			<Declaration>+ (void)postWillRequestData:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -94,7 +94,7 @@ to begin.</Abstract>
 successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (void)postDataLoaded:(NSString *)name</Declaration>
+			<Declaration>+ (void)postDataLoaded:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -111,7 +111,7 @@ successfully.</Abstract>
 			<Abstract type="html">Posts an event indicating that an asynchronous data load failed.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (void)postDataLoadFailed:(NSString *)name</Declaration>
+			<Declaration>+ (void)postDataLoadFailed:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -129,7 +129,7 @@ successfully.</Abstract>
 to begin.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (void)postWillRequestData:(NSString *)name withEventObject:(id)eventObj</Declaration>
+			<Declaration>+ (void)postWillRequestData:(nonnull NSString *)name withEventObject:(nullable id)eventObj</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -151,7 +151,7 @@ to begin.</Abstract>
 successfully.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (void)postDataLoaded:(NSString *)name withEventObject:(id)eventObj</Declaration>
+			<Declaration>+ (void)postDataLoaded:(nonnull NSString *)name withEventObject:(nullable id)eventObj</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -172,7 +172,7 @@ successfully.</Abstract>
 			<Abstract type="html">Posts an event indicating that an asynchronous data load failed.</Abstract>
 			<DeclaredIn>MBEvents+DataLoading.h</DeclaredIn>
 			
-			<Declaration>+ (void)postDataLoadFailed:(NSString *)name withEventObject:(id)eventObj</Declaration>
+			<Declaration>+ (void)postDataLoadFailed:(nonnull NSString *)name withEventObject:(nullable id)eventObj</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>

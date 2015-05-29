@@ -386,7 +386,7 @@ invoked from within an MBML expression.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *name</code></div>
 
 		    
 			
@@ -519,7 +519,7 @@ or no output.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithName:(NSString *)<em>name</em> inputType:(MBMLFunctionInputType)<em>inputType</em> outputType:(MBMLFunctionOutputType)<em>outputType</em> implementingClass:(Class)<em>cls</em> methodSelector:(SEL)<em>selector</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable instancetype)initWithName:(nonnull NSString *)<em>name</em> inputType:(MBMLFunctionInputType)<em>inputType</em> outputType:(MBMLFunctionOutputType)<em>outputType</em> implementingClass:(nonnull Class)<em>cls</em> methodSelector:(nonnull SEL)<em>selector</em></code></div>
 
 		    
 			
@@ -607,7 +607,7 @@ doesn&rsquo;t contain the exact number of parameters expected.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIs:(NSUInteger)<em>expectedCnt</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(nonnull NSArray *)<em>params</em> countIs:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -682,7 +682,7 @@ contains fewer than the expected number of parameters.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>expectedCnt</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(nonnull NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -758,7 +758,7 @@ contains more than the expected number of parameters.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtMost:(NSUInteger)<em>expectedCnt</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(nonnull NSArray *)<em>params</em> countIsAtMost:(NSUInteger)<em>expectedCnt</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -834,7 +834,7 @@ contains fewer than or more than the expected number of parameters.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>minCnt</em> andAtMost:(NSUInteger)<em>maxCnt</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(nonnull NSArray *)<em>params</em> countIsAtLeast:(NSUInteger)<em>minCnt</em> andAtMost:(NSUInteger)<em>maxCnt</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -916,7 +916,7 @@ greater than the last index in the array.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(NSArray *)<em>params</em> indexIsInRange:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSUInteger)validateParameter:(nonnull NSArray *)<em>params</em> indexIsInRange:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -992,7 +992,7 @@ parameter at that array index is not a kind of the expected class.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isKindOfClass:(Class)<em>cls</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id)validateParameter:(nonnull NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isKindOfClass:(nonnull Class)<em>cls</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1082,7 +1082,7 @@ classes.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable Class)validateParameter:(nonnull NSArray *)<em>params</em> objectAtIndex:(NSUInteger)<em>idx</em> isOneKindOfClass:(nonnull NSArray *)<em>classes</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1173,7 +1173,7 @@ specified index is not an <code>NSString</code> instance.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameter:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)validateParameter:(nonnull NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1257,7 +1257,7 @@ specified index is not a numeric value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameter:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)validateParameter:(nonnull NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1341,7 +1341,7 @@ specified index is not an <code>NSArray</code> instance.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameter:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)validateParameter:(nonnull NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1425,7 +1425,7 @@ specified index is not an <code>NSDictionary</code> instance.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameter:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDictionary *)validateParameter:(nonnull NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1517,7 +1517,7 @@ the expected class.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)validateParameter:(id)<em>param</em> isKindOfClass:(Class)<em>cls</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id)validateParameter:(nonnull id)<em>param</em> isKindOfClass:(nonnull Class)<em>cls</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1592,7 +1592,7 @@ of one of the expected classes.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (Class)validateParameter:(id)<em>param</em> isOneKindOfClass:(NSArray *)<em>classes</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable Class)validateParameter:(nonnull id)<em>param</em> isOneKindOfClass:(nonnull NSArray *)<em>classes</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1669,7 +1669,7 @@ respond to that selector.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id&lt;NSObject&gt;)validateParameter:(id&lt;NSObject&gt;)<em>param</em> respondsToSelector:(SEL)<em>selector</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id&lt;NSObject&gt;)validateParameter:(nonnull id&lt;NSObject&gt;)<em>param</em> respondsToSelector:(nonnull SEL)<em>selector</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1743,7 +1743,7 @@ Validation will fail if the parameter is not an <code>NSString</code> instance.<
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)validateParameterIsString:(id)<em>param</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)validateParameterIsString:(nonnull id)<em>param</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1812,7 +1812,7 @@ Validation will fail if the parameter is not a number.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateParameterContainsNumber:(id)<em>param</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)validateParameterContainsNumber:(nonnull id)<em>param</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1881,7 +1881,7 @@ Validation will fail if the parameter is not an <code>NSArray</code> instance.</
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)validateParameterIsArray:(id)<em>param</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)validateParameterIsArray:(nonnull id)<em>param</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1950,7 +1950,7 @@ Validation will fail if the parameter is not an <code>NSDictionary</code> instan
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateParameterIsDictionary:(id)<em>param</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDictionary *)validateParameterIsDictionary:(nonnull id)<em>param</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -2027,7 +2027,7 @@ specified array index yields an <code>NSString</code> when evaluated.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)validateExpression:(NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)validateExpression:(nonnull NSArray *)<em>params</em> isStringAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -2112,7 +2112,7 @@ specified array index yields a numeric value when evaluated.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)validateExpression:(NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)validateExpression:(nonnull NSArray *)<em>params</em> containsNumberAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -2197,7 +2197,7 @@ specified array index yields an <code>NSArray</code> when evaluated.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)validateExpression:(NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)validateExpression:(nonnull NSArray *)<em>params</em> isArrayAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -2282,7 +2282,7 @@ specified array index yields an <code>NSDictionary</code> when evaluated.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDictionary *)validateExpression:(NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDictionary *)validateExpression:(nonnull NSArray *)<em>params</em> isDictionaryAtIndex:(NSUInteger)<em>idx</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -2374,7 +2374,7 @@ of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><s
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)executeWithInput:(id)<em>input</em> error:(inout MBMLFunctionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)executeWithInput:(nullable id)<em>input</em> error:(MBMLFunctionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -2447,7 +2447,7 @@ of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><s
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)functionDescription</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSString *)functionDescription</code></div>
 
 		    
 			
@@ -2484,7 +2484,7 @@ of <code>MBMLFunctionInputPipedExpressions</code>.</p><div class="warning"><p><s
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-04</p>
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-05-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

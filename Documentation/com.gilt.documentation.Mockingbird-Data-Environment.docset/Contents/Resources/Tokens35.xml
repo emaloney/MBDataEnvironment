@@ -20,7 +20,7 @@ variables across the lifetime of the application.</Abstract>
 MBEnvironment.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)instance</Declaration>
+			<Declaration>+ (nullable instancetype)instance</Declaration>
 			
 			<ReturnValue><Abstract type="html">The current variable space.</Abstract></ReturnValue>
 			<Anchor>//api/name/instance</Anchor>
@@ -33,7 +33,7 @@ MBEnvironment.</Abstract>
 the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
+			<Declaration>- (nullable id)objectForKeyedSubscript:(nonnull NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>variableName</Name>
@@ -53,7 +53,7 @@ the keyed subscripting notation.</Abstract>
 			<Abstract type="html">Returns the current string value of the variable with the given name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)variableAsString:(NSString *)varName</Declaration>
+			<Declaration>- (nullable NSString *)variableAsString:(nonnull NSString *)varName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -74,7 +74,7 @@ the keyed subscripting notation.</Abstract>
 default value if there is no available variable value.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)variableAsString:(NSString *)varName defaultValue:(NSString *)def</Declaration>
+			<Declaration>- (nullable NSString *)variableAsString:(nonnull NSString *)varName defaultValue:(nullable NSString *)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -98,7 +98,7 @@ default value if there is no available variable value.</Abstract>
 			<Abstract type="html">Sets a variable to the given value using the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
+			<Declaration>- (void)setObject:(nullable id)value forKeyedSubscript:(nonnull NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>value</Name>
@@ -120,7 +120,7 @@ default value if there is no available variable value.</Abstract>
 			<Abstract type="html">Pushes a new value onto the stack for the variable with the given name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)pushVariable:(NSString *)variableName value:(id)value</Declaration>
+			<Declaration>- (void)pushVariable:(nonnull NSString *)variableName value:(nullable id)value</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>variableName</Name>
@@ -144,7 +144,7 @@ default value if there is no available variable value.</Abstract>
 will be restored.)</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (id)popVariable:(NSString *)varName</Declaration>
+			<Declaration>- (nullable id)popVariable:(nonnull NSString *)varName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -167,7 +167,7 @@ name. (This method will also operate on any variable whose value is of type
 NSDictionary.)</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)setMapVariable:(NSString *)varName mapKey:(NSString *)key value:(id)val</Declaration>
+			<Declaration>- (void)setMapVariable:(nonnull NSString *)varName mapKey:(nonnull NSString *)key value:(nullable id)val</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -195,7 +195,7 @@ name. (This method will also operate on any variable whose value is of type
 NSArray.)</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)setListVariable:(NSString *)varName listIndex:(NSUInteger)idx value:(id)val</Declaration>
+			<Declaration>- (void)setListVariable:(nonnull NSString *)varName listIndex:(NSUInteger)idx value:(nullable id)val</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -225,7 +225,7 @@ NSArray.)</Abstract>
 the variable stack will not be affected.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)unsetVariable:(NSString *)varName</Declaration>
+			<Declaration>- (void)unsetVariable:(nonnull NSString *)varName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -244,7 +244,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Constructs a string for a variable-related name with the given suffix.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)name:(NSString *)name withSuffix:(NSString *)suffix</Declaration>
+			<Declaration>+ (nullable NSString *)name:(nullable NSString *)name withSuffix:(nullable NSString *)suffix</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -268,7 +268,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Determines whether the variable with the given name is a read-only variable.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isReadOnlyVariable:(NSString *)varName</Declaration>
+			<Declaration>- (BOOL)isReadOnlyVariable:(nonnull NSString *)varName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -285,7 +285,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Programmatically declares a variable.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)declareVariable:(MBVariableDeclaration *)declaration</Declaration>
+			<Declaration>- (BOOL)declareVariable:(nonnull MBVariableDeclaration *)declaration</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>declaration</Name>
@@ -303,7 +303,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Returns the MBVariableDeclaration for the variable with the given name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (MBVariableDeclaration *)declarationForVariable:(NSString *)varName</Declaration>
+			<Declaration>- (nullable MBVariableDeclaration *)declarationForVariable:(nonnull NSString *)varName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>varName</Name>
@@ -321,7 +321,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Programmatically declares an MBML function.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)declareFunction:(MBMLFunction *)function</Declaration>
+			<Declaration>- (BOOL)declareFunction:(nonnull MBMLFunction *)function</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>function</Name>
@@ -340,7 +340,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Returns the names of the currently-declared MBML functions.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)functionNames</Declaration>
+			<Declaration>- (nonnull NSArray *)functionNames</Declaration>
 			
 			<ReturnValue><Abstract type="html">An NSArray containing the names of the declared MBML functions.</Abstract></ReturnValue>
 			<Anchor>//api/name/functionNames</Anchor>
@@ -352,7 +352,7 @@ the variable stack will not be affected.</Abstract>
 			<Abstract type="html">Returns the MBMLFunction associated with the given name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (MBMLFunction *)functionWithName:(NSString *)name</Declaration>
+			<Declaration>- (nullable MBMLFunction *)functionWithName:(nonnull NSString *)name</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>name</Name>
@@ -371,7 +371,7 @@ the variable stack will not be affected.</Abstract>
 variable with the given NSUserDefaults key name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)addObserverForUserDefault:(NSString *)userDefaultsName target:(id)observer action:(SEL)action</Declaration>
+			<Declaration>- (void)addObserverForUserDefault:(nonnull NSString *)userDefaultsName target:(nonnull id)observer action:(nonnull SEL)action</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>userDefaultsName</Name>
@@ -396,7 +396,7 @@ variable with the given NSUserDefaults key name.</Abstract>
 Mockingbird variable with the given NSUserDefaults key name.</Abstract>
 			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
 			
-			<Declaration>- (void)removeObserver:(id)observer forUserDefault:(NSString *)userDefaultsName</Declaration>
+			<Declaration>- (void)removeObserver:(nonnull id)observer forUserDefault:(nonnull NSString *)userDefaultsName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>observer</Name>

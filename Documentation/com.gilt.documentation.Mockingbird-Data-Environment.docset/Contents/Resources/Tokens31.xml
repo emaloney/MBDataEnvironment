@@ -19,7 +19,7 @@ context of a particular MBVariableSpace instance.</Abstract>
 be stored.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
 			
 			
 			<Anchor>//api/name/variableSpace</Anchor>
@@ -32,7 +32,7 @@ be stored.</Abstract>
 be stored.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
 			
 			
 			<Anchor>//api/name/variableSpace</Anchor>
@@ -45,7 +45,7 @@ be stored.</Abstract>
 be stored.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) MBVariableSpace *variableSpace</Declaration>
 			
 			
 			<Anchor>//api/name/variableSpace</Anchor>
@@ -58,7 +58,7 @@ be stored.</Abstract>
 variable scope associated with the calling thread.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)currentVariableScope</Declaration>
+			<Declaration>+ (nullable instancetype)currentVariableScope</Declaration>
 			
 			<ReturnValue><Abstract type="html">The current scope, or nil if there isn&apos;t one.</Abstract></ReturnValue>
 			<Anchor>//api/name/currentVariableScope</Anchor>
@@ -71,7 +71,7 @@ variable scope associated with the calling thread.</Abstract>
 associated with the current MBEnvironment.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)enterVariableScope</Declaration>
+			<Declaration>+ (nonnull instancetype)enterVariableScope</Declaration>
 			
 			<ReturnValue><Abstract type="html">A newly-created MBScopedVariables instance representing
             the new scope. Until the scope is exited, code running on the
@@ -89,7 +89,7 @@ removed from that scope&apos;s variableSpace, and the variable values will
 return to what they were prior to entering the scope.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)exitVariableScope</Declaration>
+			<Declaration>+ (nullable instancetype)exitVariableScope</Declaration>
 			
 			<ReturnValue><Abstract type="html">The MBScopedVariables instance representing the scope that
             was exited, or nil if there was no current scope at the time
@@ -103,7 +103,7 @@ return to what they were prior to entering the scope.</Abstract>
 			<Abstract type="html">Allows accessing scoped variable values using the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>- (id)objectForKeyedSubscript:(NSString *)variableName</Declaration>
+			<Declaration>- (nullable id)objectForKeyedSubscript:(nonnull NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>variableName</Name>
@@ -121,7 +121,7 @@ return to what they were prior to entering the scope.</Abstract>
 			<Abstract type="html">Allows setting a scoped variable value using the keyed subscripting notation.</Abstract>
 			<DeclaredIn>MBScopedVariables.h</DeclaredIn>
 			
-			<Declaration>- (void)setObject:(id)value forKeyedSubscript:(NSString *)variableName</Declaration>
+			<Declaration>- (void)setObject:(nullable id)value forKeyedSubscript:(nonnull NSString *)variableName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>value</Name>

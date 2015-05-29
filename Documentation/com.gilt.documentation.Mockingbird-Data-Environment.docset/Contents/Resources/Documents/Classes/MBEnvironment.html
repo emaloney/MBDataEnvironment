@@ -84,6 +84,8 @@
 		
 		<option value="//api/name/loadFromManifest">+ loadFromManifest</option>
 		
+		<option value="//api/name/loadFromManifestFile:">+ loadFromManifestFile:</option>
+		
 		<option value="//api/name/loadFromManifestFile:withSearchDirectories:">+ loadFromManifestFile:withSearchDirectories:</option>
 		
 		<option value="//api/name/loadFromManifestFile:withSearchDirectory:">+ loadFromManifestFile:withSearchDirectory:</option>
@@ -201,7 +203,7 @@ environment.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)instance</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)instance</code></div>
 
 		    
 			
@@ -256,7 +258,7 @@ the <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> <
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)setEnvironment:(MBEnvironment *)<em>env</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)setEnvironment:(nullable MBEnvironment *)<em>env</em></code></div>
 
 		    
 			
@@ -315,7 +317,7 @@ onto the environment stack.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)pushEnvironment:(MBEnvironment *)<em>env</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)pushEnvironment:(nonnull MBEnvironment *)<em>env</em></code></div>
 
 		    
 			
@@ -369,7 +371,7 @@ stack.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)popEnvironment</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)popEnvironment</code></div>
 
 		    
 			
@@ -422,7 +424,7 @@ environment stack. This is the environment that would become active if
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)peekEnvironment</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)peekEnvironment</code></div>
 
 		    
 			
@@ -479,7 +481,7 @@ environment that exists before any manifest file is processed.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)loadDefaultEnvironment</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)loadDefaultEnvironment</code></div>
 
 		    
 			
@@ -533,7 +535,7 @@ application&rsquo;s resources.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifest</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)loadFromManifest</code></div>
 
 		    
 			
@@ -587,7 +589,7 @@ specified search directory or in the application&rsquo;s resources.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestWithSearchDirectory:(NSString *)<em>dirPath</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)loadFromManifestWithSearchDirectory:(nonnull NSString *)<em>dirPath</em></code></div>
 
 		    
 			
@@ -602,6 +604,72 @@ specified search directory or in the application&rsquo;s resources.</p>
             will be the first one searched when MBML files are referenced. If
             a given file doesn&rsquo;t exist in <code>dirPath</code>, the <a href="#//api/name/resourceSearchBundles"><code>resourceSearchBundles</code></a>
             will then be searched.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The newly-loaded, now-active <code>MBEnvironment</code> <a href="#//api/name/instance">instance</a>, or <code>nil</code>
+            if the environment could not be loaded.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If loading is successful, the newly-loaded environment will become the
+active environment.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBEnvironment.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadFromManifestFile:" title="loadFromManifestFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadFromManifestFile:">+&nbsp;loadFromManifestFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Loads a new environment by processing the manifest file with the given name
+found in the application&rsquo;s resources.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)loadFromManifestFile:(nonnull NSString *)<em>manifestName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manifestName</code></th>
+						<td><p>The name of the manifest file.</p></td>
 					</tr>
 				
 				</table>
@@ -657,7 +725,7 @@ found in the specified search directory or in the application&rsquo;s resources.
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestFile:(NSString *)<em>manifestName</em> withSearchDirectory:(NSString *)<em>dirPath</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)loadFromManifestFile:(nonnull NSString *)<em>manifestName</em> withSearchDirectory:(nullable NSString *)<em>dirPath</em></code></div>
 
 		    
 			
@@ -732,7 +800,7 @@ specified search directories or in the application&rsquo;s resources.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestWithSearchDirectories:(NSArray *)<em>dirPaths</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)loadFromManifestWithSearchDirectories:(nullable NSArray *)<em>dirPaths</em></code></div>
 
 		    
 			
@@ -803,7 +871,7 @@ found in the specified search directories or in the application&rsquo;s resource
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)loadFromManifestFile:(NSString *)<em>manifestName</em> withSearchDirectories:(NSArray *)<em>dirPaths</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)loadFromManifestFile:(nullable NSString *)<em>manifestName</em> withSearchDirectories:(nullable NSArray *)<em>dirPaths</em></code></div>
 
 		    
 			
@@ -886,7 +954,7 @@ active environment.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)loadMBMLFile:(NSString *)<em>fileName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)loadMBMLFile:(nonnull NSString *)<em>fileName</em></code></div>
 
 		    
 			
@@ -956,7 +1024,7 @@ environment attempts to find a resource such as an MBML file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)addResourceSearchBundle:(NSBundle *)<em>bundle</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)addResourceSearchBundle:(nonnull NSBundle *)<em>bundle</em></code></div>
 
 		    
 			
@@ -1011,7 +1079,7 @@ environment attempts to find a resource such as an MBML file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)resourceSearchBundles</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSArray *)resourceSearchBundles</code></div>
 
 		    
 			
@@ -1109,7 +1177,7 @@ environment attempts to find a resource such as an MBML file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) NSString *manifestFilePath</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</code></div>
 
 		    
 			
@@ -1151,7 +1219,7 @@ environment attempts to find a resource such as an MBML file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</code></div>
 
 		    
 			
@@ -1193,7 +1261,7 @@ receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)mbmlPathIsLoaded:(NSString *)<em>filePath</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)mbmlPathIsLoaded:(nonnull NSString *)<em>filePath</em></code></div>
 
 		    
 			
@@ -1253,7 +1321,7 @@ receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)mbmlFileIsLoaded:(NSString *)<em>fileName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)mbmlFileIsLoaded:(nonnull NSString *)<em>fileName</em></code></div>
 
 		    
 			
@@ -1328,7 +1396,7 @@ begin with the specified prefix.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)addSupportedLibraryClassPrefix:(NSString *)<em>prefix</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)addSupportedLibraryClassPrefix:(nonnull NSString *)<em>prefix</em></code></div>
 
 		    
 			
@@ -1383,7 +1451,7 @@ when attempting to load environment classes.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)supportedLibraryClassPrefixes</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSArray *)supportedLibraryClassPrefixes</code></div>
 
 		    
 			
@@ -1432,7 +1500,7 @@ the class with the specified name.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (Class)libraryClassForName:(NSString *)<em>className</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable Class)libraryClassForName:(nonnull NSString *)<em>className</em></code></div>
 
 		    
 			
@@ -1514,7 +1582,7 @@ features added by the module implementation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)enableModuleClass:(Class)<em>cls</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)enableModuleClass:(nonnull Class)<em>cls</em></code></div>
 
 		    
 			
@@ -1576,7 +1644,7 @@ manifest file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)enabledModuleClasses</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSArray *)enabledModuleClasses</code></div>
 
 		    
 			
@@ -1624,7 +1692,7 @@ receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)enabledModuleClasses</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)enabledModuleClasses</code></div>
 
 		    
 			
@@ -1682,7 +1750,7 @@ environment loaders consulted when the receiving environment is loaded.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)environmentLoaders</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)environmentLoaders</code></div>
 
 		    
 			
@@ -1729,7 +1797,7 @@ is an <a href="#//api/name/instance">instance</a> of the given class.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (MBEnvironmentLoader *)environmentLoaderOfClass:(Class)<em>cls</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable MBEnvironmentLoader *)environmentLoaderOfClass:(nonnull Class)<em>cls</em></code></div>
 
 		    
 			
@@ -1785,7 +1853,7 @@ is an <a href="#//api/name/instance">instance</a> of the given class.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-04</p>
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-05-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

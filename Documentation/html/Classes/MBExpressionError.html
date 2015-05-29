@@ -174,7 +174,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *message</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *message</code></div>
 
 		    
 			
@@ -216,7 +216,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *causedByError</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSError *causedByError</code></div>
 
 		    
 			
@@ -258,7 +258,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSException *causedByException</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSException *causedByException</code></div>
 
 		    
 			
@@ -300,7 +300,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *additionalErrors</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</code></div>
 
 		    
 			
@@ -341,7 +341,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id value</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) id value</code></div>
 
 		    
 			
@@ -382,7 +382,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSString *offendingExpression</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) NSString *offendingExpression</code></div>
 
 		    
 			
@@ -425,7 +425,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) MBMLParseToken *offendingToken</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</code></div>
 
 		    
 			
@@ -474,7 +474,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithMessage:(NSString *)<em>msg</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)<em>msg</em></code></div>
 
 		    
 			
@@ -533,7 +533,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithMessage:(NSString *)<em>msg</em> error:(NSError *)<em>nsErr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)<em>msg</em> error:(nullable NSError *)<em>nsErr</em></code></div>
 
 		    
 			
@@ -597,7 +597,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithMessage:(NSString *)<em>msg</em> exception:(NSException *)<em>ex</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)<em>msg</em> exception:(nullable NSException *)<em>ex</em></code></div>
 
 		    
 			
@@ -661,7 +661,7 @@ from the specified format string and parameters.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithFormat:(NSString *)<em>format</em>, <em>...</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)errorWithFormat:(nonnull NSString *)<em>format</em>, <em>...</em></code></div>
 
 		    
 			
@@ -727,7 +727,7 @@ from the specified format string and parameters.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithError:(NSError *)<em>nsErr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)errorWithError:(nonnull NSError *)<em>nsErr</em></code></div>
 
 		    
 			
@@ -786,7 +786,7 @@ from the specified format string and parameters.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)errorWithException:(NSException *)<em>ex</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)errorWithException:(nonnull NSException *)<em>ex</em></code></div>
 
 		    
 			
@@ -853,7 +853,7 @@ if <a href="#//api/name/log"><code>log</code></a> were to be called.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)logOutput</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSString *)logOutput</code></div>
 
 		    
 			
@@ -949,7 +949,7 @@ of the <code>reportTo</code> parameter:</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(inout MBExpressionError **)<em>reportTo</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionErrorPtrPtr)<em>reportTo</em></code></div>
 
 		    
 			
@@ -1017,7 +1017,7 @@ of the <code>reportTo</code> parameter:</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(inout MBExpressionError **)<em>reportTo</em> suppressLog:(BOOL)<em>suppressLog</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)reportErrorTo:(MBExpressionErrorPtrPtr)<em>reportTo</em> suppressLog:(BOOL)<em>suppressLog</em></code></div>
 
 		    
 			
@@ -1194,7 +1194,7 @@ method is called.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (MBExpressionError *)lastErrorReported</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable MBExpressionError *)lastErrorReported</code></div>
 
 		    
 			
@@ -1242,7 +1242,7 @@ method is called.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-04</p>
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-05-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

@@ -22,7 +22,7 @@ the XML element, and further object relationships may be established by
 processing the children of the element.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)dataModelFromXML:(RXMLElement *)xml</Declaration>
+			<Declaration>+ (nonnull instancetype)dataModelFromXML:(nonnull RXMLElement *)xml</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xml</Name>
@@ -39,7 +39,7 @@ processing the children of the element.</Abstract>
 			<Abstract type="html">Default initializer; returns an empty data model instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)init</Declaration>
+			<Declaration>- (nonnull instancetype)init</Declaration>
 			
 			
 			<Anchor>//api/name/init</Anchor>
@@ -54,7 +54,7 @@ element, and further object relationships may be established by processing
 the children of the element.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithXML:(RXMLElement *)xml</Declaration>
+			<Declaration>- (nonnull instancetype)initWithXML:(nonnull RXMLElement *)xml</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xml</Name>
@@ -72,13 +72,12 @@ the children of the element.</Abstract>
 corresponding attribute name and value will be set on the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (instancetype)initWithAttributes:(NSDictionary *)attrs</Declaration>
+			<Declaration>- (nonnull instancetype)initWithAttributes:(nonnull NSDictionary *)attrs</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrs</Name>
 					<Abstract type="html">A dictionary containing the attribute names
-            and values to use for initializing the data model object.
-                </Abstract>
+            and values to use for initializing the data model object.</Abstract>
 				</Parameter>
 			</Parameters>
 			
@@ -92,7 +91,7 @@ corresponding attribute name and value will be set on the receiver.</Abstract>
 mutable, this method simply calls mutableCopyWithZone:.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)copyWithZone:(NSZone *)zone</Declaration>
+			<Declaration>- (nonnull id)copyWithZone:(nullable NSZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>zone</Name>
@@ -111,7 +110,7 @@ mutable, this method simply calls mutableCopyWithZone:.</Abstract>
 			<Abstract type="html">Returns a copy of the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)mutableCopyWithZone:(NSZone *)zone</Declaration>
+			<Declaration>- (nonnull id)mutableCopyWithZone:(nullable NSZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>zone</Name>
@@ -133,7 +132,7 @@ is configured to contain all the same attributes and relatives as
 cloneFrom.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)cloneDataModel:(MBDataModel *)cloneFrom</Declaration>
+			<Declaration>- (void)cloneDataModel:(nonnull MBDataModel *)cloneFrom</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cloneFrom</Name>
@@ -153,7 +152,7 @@ is configured to contain all the same attributes and relatives as
 cloneFrom.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)cloneDataModel:(MBDataModel *)cloneFrom withZone:(NSZone *)zone</Declaration>
+			<Declaration>- (void)cloneDataModel:(nonnull MBDataModel *)cloneFrom withZone:(nullable NSZone *)zone</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cloneFrom</Name>
@@ -176,7 +175,7 @@ cloneFrom.</Abstract>
 the exact same attributes and relatives as the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)poseAsClass:(Class)cls</Declaration>
+			<Declaration>- (nullable id)poseAsClass:(nonnull Class)cls</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>cls</Name>
@@ -195,7 +194,7 @@ the exact same attributes and relatives as the receiver.</Abstract>
 			<Abstract type="html">A convenience method for parsing an XML document from a file.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (RXMLElement *)xmlFromFile:(NSString *)filePath error:(inout NSError **)errPtr</Declaration>
+			<Declaration>+ (nonnull RXMLElement *)xmlFromFile:(nonnull NSString *)filePath error:(NSErrorPtrPtr)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -206,7 +205,8 @@ the exact same attributes and relatives as the receiver.</Abstract>
             set to an NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An object representing the top-level element of the XML.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An object representing the top-level element of the XML, or nil
+            if an error occurred.</Abstract></ReturnValue>
 			<Anchor>//api/name/xmlFromFile:error:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -216,7 +216,7 @@ the exact same attributes and relatives as the receiver.</Abstract>
 			<Abstract type="html">A convenience method for parsing an XML document from an NSData instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (RXMLElement *)xmlFromData:(NSData *)xmlData error:(inout NSError **)errPtr</Declaration>
+			<Declaration>+ (nonnull RXMLElement *)xmlFromData:(nonnull NSData *)xmlData error:(NSErrorPtrPtr)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>
@@ -227,7 +227,8 @@ the exact same attributes and relatives as the receiver.</Abstract>
             set to an NSError instance indicating the error.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An object representing the top-level element of the XML.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">An object representing the top-level element of the XML, or nil
+            if an error occurred.</Abstract></ReturnValue>
 			<Anchor>//api/name/xmlFromData:error:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -238,7 +239,7 @@ the exact same attributes and relatives as the receiver.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)amendDataModelWithXML:(RXMLElement *)xml</Declaration>
+			<Declaration>- (void)amendDataModelWithXML:(nonnull RXMLElement *)xml</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xml</Name>
@@ -256,7 +257,7 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)filePath</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(nonnull NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -274,7 +275,7 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)filePath error:(inout NSError **)errPtr</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(nonnull NSString *)filePath error:(NSErrorPtrPtr)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -296,7 +297,7 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(NSData *)xmlData</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(nonnull NSData *)xmlData</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>
@@ -314,7 +315,7 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(NSData *)xmlData error:(inout NSError **)errPtr</Declaration>
+			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(nonnull NSData *)xmlData error:(NSErrorPtrPtr)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>xmlData</Name>
@@ -336,10 +337,10 @@ relatives to the receiver based on the contents of the passed-in XML.</Abstract>
 attribute will be set on the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addAttributesFromXML:(RXMLElement *)el</Declaration>
+			<Declaration>- (void)addAttributesFromXML:(nonnull RXMLElement *)xml</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>el</Name>
+					<Name>xml</Name>
 					<Abstract type="html">The XML element to process.</Abstract>
 				</Parameter>
 			</Parameters>
@@ -354,7 +355,7 @@ attribute will be set on the receiver.</Abstract>
 attribute will be set on the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addAttributesFromDictionary:(NSDictionary *)dict</Declaration>
+			<Declaration>- (void)addAttributesFromDictionary:(nonnull NSDictionary *)dict</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>dict</Name>
@@ -375,7 +376,7 @@ dictionary will be set on the receiver. Existing attributes will not be
 overwritten.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)overlayAttributesFromDictionary:(NSDictionary *)dict</Declaration>
+			<Declaration>- (void)overlayAttributesFromDictionary:(nonnull NSDictionary *)dict</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>dict</Name>
@@ -396,7 +397,7 @@ adds them as related objects to the receiver using the default relation
 type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)populateDataModelFromXML:(RXMLElement *)container</Declaration>
+			<Declaration>- (void)populateDataModelFromXML:(nonnull RXMLElement *)container</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>container</Name>
@@ -427,7 +428,7 @@ type.</Abstract>
 of the given file.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)didAmendDataModelWithXMLFromFile:(NSString *)filePath</Declaration>
+			<Declaration>- (void)didAmendDataModelWithXMLFromFile:(nonnull NSString *)filePath</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>filePath</Name>
@@ -446,7 +447,7 @@ for the XML tag in simulated XML output when the xmlTagName method would
 return nil.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)dataEntityName</Declaration>
+			<Declaration>+ (nonnull NSString *)dataEntityName</Declaration>
 			
 			
 			<Anchor>//api/name/dataEntityName</Anchor>
@@ -459,7 +460,7 @@ return nil.</Abstract>
 of the XML tag from which it originated.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *xmlTagName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *xmlTagName</Declaration>
 			
 			<ReturnValue><Abstract type="html">The XML tag name used to create the receiver, or nil if
             the receiver was not created from XML.</Abstract></ReturnValue>
@@ -473,7 +474,7 @@ of the XML tag from which it originated.</Abstract>
 of the XML tag from which it originated.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *xmlTagName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *xmlTagName</Declaration>
 			
 			<ReturnValue><Abstract type="html">The XML tag name used to create the receiver, or nil if
             the receiver was not created from XML.</Abstract></ReturnValue>
@@ -487,7 +488,7 @@ of the XML tag from which it originated.</Abstract>
 of the XML tag from which it originated.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *xmlTagName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *xmlTagName</Declaration>
 			
 			<ReturnValue><Abstract type="html">The XML tag name used to create the receiver, or nil if
             the receiver was not created from XML.</Abstract></ReturnValue>
@@ -502,7 +503,7 @@ attributes and related objects. This method works even if the receiver was not
 populated from XML in the first place.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *simulatedXML</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</Declaration>
 			
 			
 			<Anchor>//api/name/simulatedXML</Anchor>
@@ -516,7 +517,7 @@ attributes and related objects. This method works even if the receiver was not
 populated from XML in the first place.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *simulatedXML</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</Declaration>
 			
 			
 			<Anchor>//api/name/simulatedXML</Anchor>
@@ -530,7 +531,7 @@ attributes and related objects. This method works even if the receiver was not
 populated from XML in the first place.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *simulatedXML</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</Declaration>
 			
 			
 			<Anchor>//api/name/simulatedXML</Anchor>
@@ -544,7 +545,7 @@ but with XML comments added that describe the relation type of any related
 objects.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *debuggingXML</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</Declaration>
 			
 			
 			<Anchor>//api/name/debuggingXML</Anchor>
@@ -558,7 +559,7 @@ but with XML comments added that describe the relation type of any related
 objects.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *debuggingXML</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</Declaration>
 			
 			
 			<Anchor>//api/name/debuggingXML</Anchor>
@@ -572,7 +573,7 @@ but with XML comments added that describe the relation type of any related
 objects.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *debuggingXML</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</Declaration>
 			
 			
 			<Anchor>//api/name/debuggingXML</Anchor>
@@ -585,7 +586,7 @@ objects.</Abstract>
 superclass or subclass).</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSSet *)requiredAttributes</Declaration>
+			<Declaration>+ (nullable NSSet *)requiredAttributes</Declaration>
 			
 			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that no
             attributes are explicitly required.</Abstract></ReturnValue>
@@ -599,7 +600,7 @@ superclass or subclass).</Abstract>
 superclass or subclass).</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSSet *)supportedAttributes</Declaration>
+			<Declaration>+ (nullable NSSet *)supportedAttributes</Declaration>
 			
 			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that no
             attributes are explicitly supported. </Abstract></ReturnValue>
@@ -613,7 +614,7 @@ superclass or subclass).</Abstract>
 class&apos;s superclasses but are unsupported by the receiving class.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSSet *)unsupportedAttributes</Declaration>
+			<Declaration>+ (nullable NSSet *)unsupportedAttributes</Declaration>
 			
 			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that no
             attributes are explicitly unsupported.</Abstract></ReturnValue>
@@ -628,7 +629,7 @@ class for the data model object, allowing external classes to participate
 in attribute validation.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)implementingClassAttributeName</Declaration>
+			<Declaration>- (nullable NSString *)implementingClassAttributeName</Declaration>
 			
 			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that the
             receiver will not consult an external class for determining
@@ -643,7 +644,7 @@ in attribute validation.</Abstract>
 order to pass validation.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSSet *)requiredAttributes</Declaration>
+			<Declaration>- (nullable NSSet *)requiredAttributes</Declaration>
 			
 			
 			<Anchor>//api/name/requiredAttributes</Anchor>
@@ -655,7 +656,7 @@ order to pass validation.</Abstract>
 			<Abstract type="html">Returns the names of the attributes that will ignored by the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSSet *)ignoredAttributes</Declaration>
+			<Declaration>- (nullable NSSet *)ignoredAttributes</Declaration>
 			
 			
 			<Anchor>//api/name/ignoredAttributes</Anchor>
@@ -669,7 +670,7 @@ mechanism is used to rename an attribute while still maintaining backwards
 compatibility with existing code.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)deprecateAttribute:(NSString *)deprecatedAttribute inFavorOf:(NSString *)newAttribute</Declaration>
+			<Declaration>- (void)deprecateAttribute:(nonnull NSString *)deprecatedAttribute inFavorOf:(nonnull NSString *)newAttribute</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>deprecatedAttribute</Name>
@@ -730,7 +731,7 @@ objects).</Abstract>
 model.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)validateAsRelativeOf:(MBDataModel *)relative relatedBy:(NSString *)relationType dataModelRoot:(MBDataModel *)root</Declaration>
+			<Declaration>- (BOOL)validateAsRelativeOf:(nullable MBDataModel *)relative relatedBy:(nullable NSString *)relationType dataModelRoot:(nonnull MBDataModel *)root</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relative</Name>
@@ -813,7 +814,7 @@ and if the receiver is not marked as needing validation.</Abstract>
 			<Abstract type="html">Returns a copy of the receiver&apos;s attribute values.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSDictionary *)objectAttributes</Declaration>
+			<Declaration>- (nullable NSDictionary *)objectAttributes</Declaration>
 			
 			
 			<Anchor>//api/name/objectAttributes</Anchor>
@@ -825,7 +826,7 @@ and if the receiver is not marked as needing validation.</Abstract>
 			<Abstract type="html">Adds the receiver&apos;s attributes to the passed-in NSMutableDictionary.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addAttributesToDictionary:(NSMutableDictionary *)dict</Declaration>
+			<Declaration>- (void)addAttributesToDictionary:(nonnull NSMutableDictionary *)dict</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>dict</Name>
@@ -845,7 +846,7 @@ populated from an XML element containing text content, this property will
 contain an NSString with that text.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) id content</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) id content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -859,7 +860,7 @@ populated from an XML element containing text content, this property will
 contain an NSString with that text.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) id content</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) id content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -873,7 +874,7 @@ populated from an XML element containing text content, this property will
 contain an NSString with that text.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) id content</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) id content</Declaration>
 			
 			
 			<Anchor>//api/name/content</Anchor>
@@ -938,7 +939,7 @@ receiver.</Abstract>
 that currently have values set on the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)attributeNames</Declaration>
+			<Declaration>- (nullable NSArray *)attributeNames</Declaration>
 			
 			
 			<Anchor>//api/name/attributeNames</Anchor>
@@ -951,7 +952,7 @@ that currently have values set on the receiver.</Abstract>
 NO otherwise.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)hasAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (BOOL)hasAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -968,14 +969,14 @@ NO otherwise.</Abstract>
 			<Abstract type="html">Returns the value of the attribute with the specified name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)valueOfAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable id)valueOfAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
 					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The value of the attribute attrName.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName. May be nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/valueOfAttribute:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -985,14 +986,15 @@ NO otherwise.</Abstract>
 			<Abstract type="html">Returns the string value of the attribute with the specified name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)stringValueOfAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable NSString *)stringValueOfAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
 					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSString.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSString. May be
+            nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/stringValueOfAttribute:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -1002,14 +1004,15 @@ NO otherwise.</Abstract>
 			<Abstract type="html">Returns the numeric value of the attribute with the specified name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSDecimalNumber *)numberValueOfAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable NSDecimalNumber *)numberValueOfAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
 					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSNumber.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSNumber. May be
+            nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/numberValueOfAttribute:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -1019,7 +1022,7 @@ NO otherwise.</Abstract>
 			<Abstract type="html">Returns the boolean value of the attribute with the specified name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)booleanValueOfAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (BOOL)booleanValueOfAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1036,7 +1039,7 @@ NO otherwise.</Abstract>
 			<Abstract type="html">Returns the NSInteger value of the attribute with the specified name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSInteger)integerValueOfAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (NSInteger)integerValueOfAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1053,7 +1056,7 @@ NO otherwise.</Abstract>
 			<Abstract type="html">Returns the double value of the attribute with the specified name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (double)doubleValueOfAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (double)doubleValueOfAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1071,14 +1074,14 @@ NO otherwise.</Abstract>
 subscripting notation.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)objectForKeyedSubscript:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable id)objectForKeyedSubscript:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
 					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The value of the attribute with the name attrName.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The value of the attribute with the name attrName. May be nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -1089,7 +1092,7 @@ subscripting notation.</Abstract>
 subscripting notation.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)setObject:(id)obj forKeyedSubscript:(NSString *)attrName</Declaration>
+			<Declaration>- (void)setObject:(nonnull id)obj forKeyedSubscript:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>obj</Name>
@@ -1111,7 +1114,7 @@ expression, and returns the result of evaluating that expression in the
 object context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)evaluateAsObject:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1119,7 +1122,8 @@ object context.</Abstract>
             as an expression.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.
+            May be nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/evaluateAsObject:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -1131,7 +1135,7 @@ expression, and returns the result of evaluating that expression in the
 object context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (id)evaluateAsObject:(NSString *)attrName defaultValue:(id)def</Declaration>
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)attrName defaultValue:(nullable id)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1156,7 +1160,7 @@ expression, and returns the result of evaluating that expression in the
 string context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)evaluateAsString:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1164,7 +1168,8 @@ string context.</Abstract>
             as an expression.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.
+            May be nil.</Abstract></ReturnValue>
 			<Anchor>//api/name/evaluateAsString:</Anchor>
             <NodeRef refid="4"/>
 		</Token>
@@ -1176,7 +1181,7 @@ expression, and returns the result of evaluating that expression in the
 string context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)evaluateAsString:(NSString *)attrName defaultValue:(NSString *)def</Declaration>
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)attrName defaultValue:(nullable NSString *)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1201,7 +1206,7 @@ expression, and returns the result of evaluating that expression in the
 numeric context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)attrName</Declaration>
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1221,7 +1226,7 @@ expression, and returns the result of evaluating that expression in the
 numeric context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)attrName defaultValue:(NSDecimalNumber *)def</Declaration>
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)attrName defaultValue:(nullable NSDecimalNumber *)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1246,7 +1251,7 @@ expression, and returns the result of evaluating that expression in the
 boolean context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)attrName</Declaration>
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1266,7 +1271,7 @@ expression, and returns the result of evaluating that expression in the
 boolean context.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)attrName defaultValue:(BOOL)def</Declaration>
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)attrName defaultValue:(BOOL)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1289,11 +1294,12 @@ boolean context.</Abstract>
 			<Abstract type="html">Sets a data model attribute value.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)setAttribute:(id)attrVal forName:(NSString *)attrName</Declaration>
+			<Declaration>- (void)setAttribute:(nullable id)attrVal forName:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrVal</Name>
-					<Abstract type="html">The new value of the attribute.</Abstract>
+					<Abstract type="html">The new value of the attribute. If nil, any existing
+            value for attrName will be removed from the receiver.</Abstract>
 				</Parameter><Parameter>
 					<Name>attrName</Name>
 					<Abstract type="html">The name of the attribute whose value is being set.</Abstract>
@@ -1309,7 +1315,7 @@ boolean context.</Abstract>
 			<Abstract type="html">Sets a boolean data model attribute value.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)setBooleanAttribute:(BOOL)attrVal forName:(NSString *)attrName</Declaration>
+			<Declaration>- (void)setBooleanAttribute:(BOOL)attrVal forName:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrVal</Name>
@@ -1329,7 +1335,7 @@ boolean context.</Abstract>
 			<Abstract type="html">Sets a boolean data model attribute value.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)setIntegerAttribute:(NSInteger)attrVal forName:(NSString *)attrName</Declaration>
+			<Declaration>- (void)setIntegerAttribute:(NSInteger)attrVal forName:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrVal</Name>
@@ -1349,7 +1355,7 @@ boolean context.</Abstract>
 			<Abstract type="html">Sets a double data model attribute value.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)setDoubleAttribute:(double)attrVal forName:(NSString *)attrName</Declaration>
+			<Declaration>- (void)setDoubleAttribute:(double)attrVal forName:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrVal</Name>
@@ -1370,7 +1376,7 @@ boolean context.</Abstract>
 new name.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)renameAttribute:(NSString *)oldName to:(NSString *)newName</Declaration>
+			<Declaration>- (void)renameAttribute:(nonnull NSString *)oldName to:(nonnull NSString *)newName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>oldName</Name>
@@ -1390,7 +1396,7 @@ new name.</Abstract>
 			<Abstract type="html">Removes the specified attribute from the receiver.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)removeAttribute:(NSString *)attrName</Declaration>
+			<Declaration>- (void)removeAttribute:(nonnull NSString *)attrName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrName</Name>
@@ -1407,7 +1413,7 @@ new name.</Abstract>
 			<Abstract type="html">Returns the name of the default relation used by the class.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)defaultRelationType</Declaration>
+			<Declaration>+ (nonnull NSString *)defaultRelationType</Declaration>
 			
 			
 			<Anchor>//api/name/defaultRelationType</Anchor>
@@ -1420,7 +1426,7 @@ new name.</Abstract>
 for which there is currently at least one related object.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)currentRelationTypes</Declaration>
+			<Declaration>- (nonnull NSArray *)currentRelationTypes</Declaration>
 			
 			
 			<Anchor>//api/name/currentRelationTypes</Anchor>
@@ -1445,7 +1451,7 @@ for which there is currently at least one related object.</Abstract>
 have the specified relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSUInteger)countRelativesWithRelationType:(NSString *)relation</Declaration>
+			<Declaration>- (NSUInteger)countRelativesWithRelationType:(nonnull NSString *)relation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relation</Name>
@@ -1477,7 +1483,7 @@ have the default relation type.</Abstract>
 the receiver was added as a relative to another data model instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) MBDataModel *containingRelative</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</Declaration>
 			
 			
 			<Anchor>//api/name/containingRelative</Anchor>
@@ -1490,7 +1496,7 @@ the receiver was added as a relative to another data model instance.</Abstract>
 the receiver was added as a relative to another data model instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) MBDataModel *containingRelative</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</Declaration>
 			
 			
 			<Anchor>//api/name/containingRelative</Anchor>
@@ -1503,7 +1509,7 @@ the receiver was added as a relative to another data model instance.</Abstract>
 the receiver was added as a relative to another data model instance.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) MBDataModel *containingRelative</Declaration>
+			<Declaration>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</Declaration>
 			
 			
 			<Anchor>//api/name/containingRelative</Anchor>
@@ -1516,7 +1522,7 @@ the receiver was added as a relative to another data model instance.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)allRelatives</Declaration>
+			<Declaration>- (nonnull NSArray *)allRelatives</Declaration>
 			
 			<ReturnValue><Abstract type="html">An NSArray containing the relatives. If there are no relatives,
             an empty array—not nil—will be returned.</Abstract></ReturnValue>
@@ -1530,7 +1536,7 @@ relation type.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)relativesWithRelationType:(NSString *)relation</Declaration>
+			<Declaration>- (nonnull NSArray *)relativesWithRelationType:(nonnull NSString *)relation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relation</Name>
@@ -1550,7 +1556,7 @@ relation type.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)relativesWithDefaultRelation</Declaration>
+			<Declaration>- (nonnull NSArray *)relativesWithDefaultRelation</Declaration>
 			
 			<ReturnValue><Abstract type="html">An NSArray containing the relatives. If there are no relatives,
             an empty array—not nil—will be returned.</Abstract></ReturnValue>
@@ -1564,7 +1570,7 @@ relation type.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (MBDataModel *)firstRelativeWithDefaultRelation</Declaration>
+			<Declaration>- (nullable MBDataModel *)firstRelativeWithDefaultRelation</Declaration>
 			
 			<ReturnValue><Abstract type="html">The first relative, or nil if there isn&apos;t one.</Abstract></ReturnValue>
 			<Anchor>//api/name/firstRelativeWithDefaultRelation</Anchor>
@@ -1577,7 +1583,7 @@ relation type.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (MBDataModel *)firstRelativeWithRelationType:(NSString *)relation</Declaration>
+			<Declaration>- (nullable MBDataModel *)firstRelativeWithRelationType:(nonnull NSString *)relation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relation</Name>
@@ -1596,7 +1602,7 @@ relation type.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelative:(MBDataModel *)relative</Declaration>
+			<Declaration>- (void)addRelative:(nonnull MBDataModel *)relative</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relative</Name>
@@ -1614,7 +1620,7 @@ relation type.</Abstract>
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelative:(MBDataModel *)relative withRelationType:(NSString *)relation</Declaration>
+			<Declaration>- (void)addRelative:(nonnull MBDataModel *)relative withRelationType:(nonnull NSString *)relation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relative</Name>
@@ -1636,7 +1642,7 @@ relation type.</Abstract>
 a relative using the default relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelatives:(NSObject&lt;NSFastEnumeration&gt; *)relatives</Declaration>
+			<Declaration>- (void)addRelatives:(nonnull NSObject&lt;NSFastEnumeration&gt; *)relatives</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relatives</Name>
@@ -1655,7 +1661,7 @@ a relative using the default relation type.</Abstract>
 a relative using the specified relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelatives:(NSObject&lt;NSFastEnumeration&gt; *)relatives withRelationType:(NSString *)relation</Declaration>
+			<Declaration>- (void)addRelatives:(nonnull NSObject&lt;NSFastEnumeration&gt; *)relatives withRelationType:(nonnull NSString *)relation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relatives</Name>
@@ -1679,7 +1685,7 @@ element, and adds it to the receiver as a relative using the XML tag name
 of the element as the relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls forElement:(RXMLElement *)element</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forElement:(nonnull RXMLElement *)element</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1702,7 +1708,7 @@ element, and adds it to the receiver as a relative using the specified
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls withRelationType:(NSString *)relation forElement:(RXMLElement *)element</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forElement:(nonnull RXMLElement *)element</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1730,7 +1736,7 @@ element of the passed-in XML having the given XML tag, and adds it to the
 receiver as a relative using tagName as the relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls forFirstChildOf:(RXMLElement *)container havingTag:(NSString *)tagName</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forFirstChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1758,7 +1764,7 @@ element of the passed-in XML having the given XML tag, and adds it to the
 receiver as a relative using relation as the relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls withRelationType:(NSString *)relation forFirstChildOf:(RXMLElement *)container havingTag:(NSString *)tagName</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forFirstChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1791,7 +1797,7 @@ the passed-in XML. Each data model object instantiated is added to the receiver
 as a relative using the default relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls forEachChildOf:(RXMLElement *)container</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forEachChildOf:(nonnull RXMLElement *)container</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1814,7 +1820,7 @@ the passed-in XML. Each data model object instantiated is added to the receiver
 as a relative using the specified relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls withRelationType:(NSString *)relation forEachChildOf:(RXMLElement *)container</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forEachChildOf:(nonnull RXMLElement *)container</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1843,7 +1849,7 @@ instantiated is added to the receiver as a relative using tagName as the
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls forEachChildOf:(RXMLElement *)container havingTag:(NSString *)tagName</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forEachChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1871,7 +1877,7 @@ instantiated is added to the receiver as a relative using relation as the
 relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)addRelativeOfClass:(Class)relCls withRelationType:(NSString *)relation forEachChildOf:(RXMLElement *)container havingTag:(NSString *)tagName</Declaration>
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forEachChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relCls</Name>
@@ -1902,7 +1908,7 @@ relation type.</Abstract>
 objects from XML.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)relationTypeForTag:(NSString *)tagName</Declaration>
+			<Declaration>- (nullable NSString *)relationTypeForTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>tagName</Name>
@@ -1921,7 +1927,7 @@ objects from XML.</Abstract>
 related object for the given relation type.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)shouldAutomaticallyAddRelativeOfType:(NSString *)relationType fromTag:(NSString *)tagName</Declaration>
+			<Declaration>- (BOOL)shouldAutomaticallyAddRelativeOfType:(nonnull NSString *)relationType fromTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relationType</Name>
@@ -1946,7 +1952,7 @@ for instances of related objects that are created automatically from XML by the
 MBDataModel superclass.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (Class)implementingClassForRelativeOfType:(NSString *)relationType fromTag:(NSString *)tagName</Declaration>
+			<Declaration>- (nullable Class)implementingClassForRelativeOfType:(nonnull NSString *)relationType fromTag:(nonnull NSString *)tagName</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relationType</Name>
@@ -1972,7 +1978,7 @@ MBDataModel superclass.</Abstract>
 type in which it occurs.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)removeRelative:(MBDataModel *)relative</Declaration>
+			<Declaration>- (void)removeRelative:(nonnull MBDataModel *)relative</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relative</Name>
@@ -1990,7 +1996,7 @@ type in which it occurs.</Abstract>
 specified relation.</Abstract>
 			<DeclaredIn>MBDataModel.h</DeclaredIn>
 			
-			<Declaration>- (void)removeRelative:(MBDataModel *)relative withRelationType:(NSString *)relation</Declaration>
+			<Declaration>- (void)removeRelative:(nonnull MBDataModel *)relative withRelationType:(nonnull NSString *)relation</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>relative</Name>

@@ -198,7 +198,7 @@ extensions to ensure proper KVC type coercion on 64-bit processors.</Abstract>
 			<Abstract type="html">Returns the NSString value equivalent of the receiver.</Abstract>
 			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)stringValue</Declaration>
+			<Declaration>- (nonnull NSString *)stringValue</Declaration>
 			
 			<ReturnValue><Abstract type="html">The value of the receiver as an NSString.</Abstract></ReturnValue>
 			<Anchor>//api/name/stringValue</Anchor>

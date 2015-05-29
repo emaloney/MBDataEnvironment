@@ -65,7 +65,7 @@ MBVariableSpace.</Abstract>
     that this may not necessarily be the same as the current value. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id declaredValue</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) id declaredValue</Declaration>
 			
 			
 			<Anchor>//api/name/declaredValue</Anchor>
@@ -78,7 +78,7 @@ MBVariableSpace.</Abstract>
     that this may not necessarily be the same as the current value. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id declaredValue</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) id declaredValue</Declaration>
 			
 			
 			<Anchor>//api/name/declaredValue</Anchor>
@@ -91,7 +91,7 @@ MBVariableSpace.</Abstract>
     that this may not necessarily be the same as the current value. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) id declaredValue</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) id declaredValue</Declaration>
 			
 			
 			<Anchor>//api/name/declaredValue</Anchor>
@@ -196,7 +196,7 @@ MBVariableSpace.</Abstract>
     no NSUserDefaults value associated with the receiver. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *userDefaultsName</Declaration>
 			
 			
 			<Anchor>//api/name/userDefaultsName</Anchor>
@@ -211,7 +211,7 @@ MBVariableSpace.</Abstract>
     no NSUserDefaults value associated with the receiver. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *userDefaultsName</Declaration>
 			
 			
 			<Anchor>//api/name/userDefaultsName</Anchor>
@@ -226,7 +226,7 @@ MBVariableSpace.</Abstract>
     no NSUserDefaults value associated with the receiver. </Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *userDefaultsName</Declaration>
 			
 			
 			<Anchor>//api/name/userDefaultsName</Anchor>

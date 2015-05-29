@@ -177,7 +177,7 @@ on how to construct valid expressions.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em></code></div>
 
 		    
 			
@@ -235,7 +235,7 @@ on how to construct valid expressions.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -301,7 +301,7 @@ on how to construct valid expressions.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> defaultValue:(NSString *)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em> defaultValue:(nullable NSString *)<em>def</em></code></div>
 
 		    
 			
@@ -365,7 +365,7 @@ on how to construct valid expressions.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)asString:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSString *)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(nullable NSString *)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -454,7 +454,7 @@ may be used if the expression references more than one value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em></code></div>
 
 		    
 			
@@ -536,7 +536,7 @@ may be used if the expression references more than one value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -626,7 +626,7 @@ may be used if the expression references more than one value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> defaultValue:(id)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em> defaultValue:(nullable id)<em>def</em></code></div>
 
 		    
 			
@@ -714,7 +714,7 @@ may be used if the expression references more than one value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (id)asObject:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(id)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(nullable id)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -827,7 +827,7 @@ an array.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)asArray:(nonnull NSString *)<em>expr</em></code></div>
 
 		    
 			
@@ -896,7 +896,7 @@ an array.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)asArray:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -973,7 +973,7 @@ an array.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSArray *)asArray:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)asArray:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1065,7 +1065,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em></code></div>
 
 		    
 			
@@ -1130,7 +1130,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1203,7 +1203,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> defaultValue:(NSDecimalNumber *)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em> defaultValue:(nullable NSDecimalNumber *)<em>def</em></code></div>
 
 		    
 			
@@ -1274,7 +1274,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)asNumber:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(NSDecimalNumber *)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(nullable NSDecimalNumber *)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1368,7 +1368,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em></code></div>
 
 		    
 			
@@ -1427,7 +1427,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1494,7 +1494,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> defaultValue:(BOOL)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em> defaultValue:(BOOL)<em>def</em></code></div>
 
 		    
 			
@@ -1559,7 +1559,7 @@ into a number if necessary (and possible).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(NSString *)<em>expr</em> inVariableSpace:(MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(inout MBExpressionError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1649,7 +1649,7 @@ object values into booleans.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)booleanFromValue:(id)<em>val</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)booleanFromValue:(nullable id)<em>val</em></code></div>
 
 		    
 			
@@ -1708,7 +1708,7 @@ values as strings.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromBoolean:(BOOL)<em>val</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)stringFromBoolean:(BOOL)<em>val</em></code></div>
 
 		    
 			
@@ -1768,7 +1768,7 @@ object values into numbers.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSDecimalNumber *)numberFromValue:(id)<em>val</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)numberFromValue:(nullable id)<em>val</em></code></div>
 
 		    
 			
@@ -1838,7 +1838,7 @@ objects have equal values.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)value:(id)<em>lValue</em> isEqualTo:(id)<em>rValue</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)value:(nullable id)<em>lValue</em> isEqualTo:(nullable id)<em>rValue</em></code></div>
 
 		    
 			
@@ -1904,7 +1904,7 @@ order of two object values.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSComparisonResult)compareLeftValue:(id)<em>lValue</em> againstRightValue:(id)<em>rValue</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (NSComparisonResult)compareLeftValue:(nullable id)<em>lValue</em> againstRightValue:(nullable id)<em>rValue</em></code></div>
 
 		    
 			
@@ -1965,7 +1965,7 @@ order of two object values.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-04</p>
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-05-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

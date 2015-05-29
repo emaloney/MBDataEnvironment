@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/MBMLFunctionInputType.html">
+	<File path="Constants/MBMLFunctionOutputType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/MBMLFunctionInputType</TokenIdentifier>
-			<Abstract type="html">Specifies the type of input an MBMLFunction implementation expects.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/MBMLFunctionOutputType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of output an MBMLFunction implementation returns.</Abstract>
 			<DeclaredIn>MBMLFunction.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputUnset</TokenIdentifier>
-            <Abstract type="html">The function input type hasn&apos;t yet been set. Used as an initial value
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputUnset</TokenIdentifier>
+            <Abstract type="html">The function output type hasn&apos;t yet been set. Used as an initial value
         when processing MBML &lt;Function&gt; declarations. </Abstract>
-            <Declaration>MBMLFunctionInputUnset</Declaration>
+            <Declaration>MBMLFunctionOutputUnset</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
             
@@ -25,10 +25,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputNone</TokenIdentifier>
-            <Abstract type="html">The function accepts no input parameters. The implementing method
-        should take no parameters. </Abstract>
-            <Declaration>MBMLFunctionInputNone</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputNone</TokenIdentifier>
+            <Abstract type="html">The function returns no output. The implementing method should
+        return void; any return value is ignored. </Abstract>
+            <Declaration>MBMLFunctionOutputNone</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
             
@@ -36,10 +36,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputRaw</TokenIdentifier>
-            <Abstract type="html">The function accepts a single uninterpreted string as input. The
-        string is passed as-is to the implementing method. </Abstract>
-            <Declaration>MBMLFunctionInputRaw</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputObject</TokenIdentifier>
+            <Abstract type="html">The function returns an object instance as output.</Abstract>
+            <Declaration>MBMLFunctionOutputObject</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
             
@@ -47,97 +46,9 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputString</TokenIdentifier>
-            <Abstract type="html">The function accepts a Mockingbird string expression as input. The
-        expression will be evaluated and the resulting NSString will be passed
-        to the implementing method. </Abstract>
-            <Declaration>MBMLFunctionInputString</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputObject</TokenIdentifier>
-            <Abstract type="html">The function accepts a Mockingbird object expression as input. The
-        expression will be evaluated and the resulting NSObject will be passed
-        to the implementing method. </Abstract>
-            <Declaration>MBMLFunctionInputObject</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputMath</TokenIdentifier>
-            <Abstract type="html">The function accepts a Mockingbird math expression as input. The
-        expression will be evaluated and the resulting NSNumber will be
-        passed to the implementing method. </Abstract>
-            <Declaration>MBMLFunctionInputMath</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedExpressions</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird
-        expressions as input. Each individual expression is passed to the
-        implementing method as an element in an NSArray The function
-        implementation is responsible for evaluating the expressions. </Abstract>
-            <Declaration>MBMLFunctionInputPipedExpressions</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedStrings</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird string
-        expressions as input. Each individual expression is evaluated and the
-        resulting NSStrings are passed to the implementing method in an
-        NSArray. </Abstract>
-            <Declaration>MBMLFunctionInputPipedStrings</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedObjects</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird object
-        expressions as input. Each individual expression is evaluated and the
-        resulting NSObjects are passed to the implementing method in an
-        NSArray. </Abstract>
-            <Declaration>MBMLFunctionInputPipedObjects</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputPipedMath</TokenIdentifier>
-            <Abstract type="html">The function accepts zero or more pipe-separated Mockingbird math
-        expressions as input. Each individual expression is evaluated and the
-        resulting NSNumbers are passed to the implementing method in an
-        NSArray. </Abstract>
-            <Declaration>MBMLFunctionInputPipedMath</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="46"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionInputDefault</TokenIdentifier>
-            <Abstract type="html">The function input type used by default: MBMLFunctionInputObject.</Abstract>
-            <Declaration>MBMLFunctionInputDefault</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputDefault</TokenIdentifier>
+            <Abstract type="html">The function input type used by default: MBMLFunctionOutputObject.</Abstract>
+            <Declaration>MBMLFunctionOutputDefault</Declaration>
             
             <DeclaredIn>MBMLFunction.h</DeclaredIn>
             

@@ -18,7 +18,7 @@ directly from NSString instances.</Abstract>
 			<Abstract type="html">Evaluates the receiver as an expression returning an object.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (id)evaluateAsObject</Declaration>
+			<Declaration>- (nullable id)evaluateAsObject</Declaration>
 			
 			<ReturnValue><Abstract type="html">The result of evaluating the receiver as an object expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/evaluateAsObject</Anchor>
@@ -30,7 +30,7 @@ directly from NSString instances.</Abstract>
 			<Abstract type="html">Evaluates the receiver as an expression returning a string.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)evaluateAsString</Declaration>
+			<Declaration>- (nullable NSString *)evaluateAsString</Declaration>
 			
 			<ReturnValue><Abstract type="html">The result of evaluating the receiver as a string expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/evaluateAsString</Anchor>
@@ -42,7 +42,7 @@ directly from NSString instances.</Abstract>
 			<Abstract type="html">Evaluates the receiver as an expression returning a numeric value.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSDecimalNumber *)evaluateAsNumber</Declaration>
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber</Declaration>
 			
 			<ReturnValue><Abstract type="html">The result of evaluating the receiver as a numeric expression.</Abstract></ReturnValue>
 			<Anchor>//api/name/evaluateAsNumber</Anchor>
@@ -67,7 +67,7 @@ directly from NSString instances.</Abstract>
 name is contained in the receiver.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)asVariableExpression</Declaration>
+			<Declaration>- (nonnull NSString *)asVariableExpression</Declaration>
 			
 			<ReturnValue><Abstract type="html">A Mockingbird expression usable for referencing the variable
                 named by the receiver.</Abstract></ReturnValue>

@@ -361,7 +361,7 @@ processing the children of the element.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)dataModelFromXML:(RXMLElement *)<em>xml</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)dataModelFromXML:(nonnull RXMLElement *)<em>xml</em></code></div>
 
 		    
 			
@@ -414,7 +414,7 @@ processing the children of the element.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)init</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
 
 		    
 			
@@ -458,7 +458,7 @@ the children of the element.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithXML:(RXMLElement *)<em>xml</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithXML:(nonnull RXMLElement *)<em>xml</em></code></div>
 
 		    
 			
@@ -512,7 +512,7 @@ corresponding attribute name and value will be set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (instancetype)initWithAttributes:(NSDictionary *)<em>attrs</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithAttributes:(nonnull NSDictionary *)<em>attrs</em></code></div>
 
 		    
 			
@@ -575,7 +575,7 @@ mutable, this method simply calls <a href="#//api/name/mutableCopyWithZone:">mut
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)copyWithZone:(NSZone *)<em>zone</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull id)copyWithZone:(nullable NSZone *)<em>zone</em></code></div>
 
 		    
 			
@@ -630,7 +630,7 @@ mutable, this method simply calls <a href="#//api/name/mutableCopyWithZone:">mut
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)mutableCopyWithZone:(NSZone *)<em>zone</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull id)mutableCopyWithZone:(nullable NSZone *)<em>zone</em></code></div>
 
 		    
 			
@@ -688,7 +688,7 @@ is configured to contain all the same attributes and relatives as
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)cloneDataModel:(MBDataModel *)<em>cloneFrom</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)cloneDataModel:(nonnull MBDataModel *)<em>cloneFrom</em></code></div>
 
 		    
 			
@@ -744,7 +744,7 @@ is configured to contain all the same attributes and relatives as
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)cloneDataModel:(MBDataModel *)<em>cloneFrom</em> withZone:(NSZone *)<em>zone</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)cloneDataModel:(nonnull MBDataModel *)<em>cloneFrom</em> withZone:(nullable NSZone *)<em>zone</em></code></div>
 
 		    
 			
@@ -813,7 +813,7 @@ the exact same attributes and relatives as the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)poseAsClass:(Class)<em>cls</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)poseAsClass:(nonnull Class)<em>cls</em></code></div>
 
 		    
 			
@@ -888,7 +888,7 @@ should be. Allows for faster loading of data models from XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (RXMLElement *)xmlFromFile:(NSString *)<em>filePath</em> error:(inout NSError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull RXMLElement *)xmlFromFile:(nonnull NSString *)<em>filePath</em> error:(NSErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -914,7 +914,8 @@ should be. Allows for faster loading of data models from XML.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>An object representing the top-level element of the XML.</p>
+				<p>An object representing the top-level element of the XML, or <code>nil</code>
+            if an error occurred.</p>
 			</div>
 			
 
@@ -952,7 +953,7 @@ should be. Allows for faster loading of data models from XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (RXMLElement *)xmlFromData:(NSData *)<em>xmlData</em> error:(inout NSError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull RXMLElement *)xmlFromData:(nonnull NSData *)<em>xmlData</em> error:(NSErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -978,7 +979,8 @@ should be. Allows for faster loading of data models from XML.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>An object representing the top-level element of the XML.</p>
+				<p>An object representing the top-level element of the XML, or <code>nil</code>
+            if an error occurred.</p>
 			</div>
 			
 
@@ -1025,7 +1027,7 @@ relatives to the receiver based on the contents of the passed-in XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)amendDataModelWithXML:(RXMLElement *)<em>xml</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)amendDataModelWithXML:(nonnull RXMLElement *)<em>xml</em></code></div>
 
 		    
 			
@@ -1087,7 +1089,7 @@ relatives to the receiver based on the contents of the passed-in XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)<em>filePath</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromFile:(nonnull NSString *)<em>filePath</em></code></div>
 
 		    
 			
@@ -1154,7 +1156,7 @@ relatives to the receiver based on the contents of the passed-in XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromFile:(NSString *)<em>filePath</em> error:(inout NSError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromFile:(nonnull NSString *)<em>filePath</em> error:(NSErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1227,7 +1229,7 @@ relatives to the receiver based on the contents of the passed-in XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromData:(NSData *)<em>xmlData</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromData:(nonnull NSData *)<em>xmlData</em></code></div>
 
 		    
 			
@@ -1294,7 +1296,7 @@ relatives to the receiver based on the contents of the passed-in XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromData:(NSData *)<em>xmlData</em> error:(inout NSError **)<em>errPtr</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)amendDataModelWithXMLFromData:(nonnull NSData *)<em>xmlData</em> error:(NSErrorPtrPtr)<em>errPtr</em></code></div>
 
 		    
 			
@@ -1367,7 +1369,7 @@ attribute will be set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addAttributesFromXML:(RXMLElement *)<em>el</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addAttributesFromXML:(nonnull RXMLElement *)<em>xml</em></code></div>
 
 		    
 			
@@ -1376,7 +1378,7 @@ attribute will be set on the receiver.</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>el</code></th>
+						<th scope="row" class="argument-name"><code>xml</code></th>
 						<td><p>The XML element to process.</p></td>
 					</tr>
 				
@@ -1427,7 +1429,7 @@ attribute will be set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addAttributesFromDictionary:(NSDictionary *)<em>dict</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addAttributesFromDictionary:(nonnull NSDictionary *)<em>dict</em></code></div>
 
 		    
 			
@@ -1490,7 +1492,7 @@ overwritten.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)overlayAttributesFromDictionary:(NSDictionary *)<em>dict</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)overlayAttributesFromDictionary:(nonnull NSDictionary *)<em>dict</em></code></div>
 
 		    
 			
@@ -1547,7 +1549,7 @@ type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)populateDataModelFromXML:(RXMLElement *)<em>container</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)populateDataModelFromXML:(nonnull RXMLElement *)<em>container</em></code></div>
 
 		    
 			
@@ -1648,7 +1650,7 @@ of the given file.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)didAmendDataModelWithXMLFromFile:(NSString *)<em>filePath</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)didAmendDataModelWithXMLFromFile:(nonnull NSString *)<em>filePath</em></code></div>
 
 		    
 			
@@ -1716,7 +1718,7 @@ return <code>nil</code>.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)dataEntityName</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)dataEntityName</code></div>
 
 		    
 			
@@ -1758,7 +1760,7 @@ of the XML tag from which it originated.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *xmlTagName</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, readonly) NSString *xmlTagName</code></div>
 
 		    
 			
@@ -1807,7 +1809,7 @@ populated from XML in the first place.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *simulatedXML</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</code></div>
 
 		    
 			
@@ -1859,7 +1861,7 @@ objects.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *debuggingXML</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</code></div>
 
 		    
 			
@@ -1909,7 +1911,7 @@ superclass or subclass).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSSet *)requiredAttributes</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSSet *)requiredAttributes</code></div>
 
 		    
 			
@@ -1967,7 +1969,7 @@ superclass or subclass).</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSSet *)supportedAttributes</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSSet *)supportedAttributes</code></div>
 
 		    
 			
@@ -2029,7 +2031,7 @@ class&rsquo;s superclasses but are unsupported by the receiving class.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSSet *)unsupportedAttributes</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSSet *)unsupportedAttributes</code></div>
 
 		    
 			
@@ -2089,7 +2091,7 @@ in attribute validation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)implementingClassAttributeName</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)implementingClassAttributeName</code></div>
 
 		    
 			
@@ -2138,7 +2140,7 @@ order to pass validation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSSet *)requiredAttributes</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSSet *)requiredAttributes</code></div>
 
 		    
 			
@@ -2179,7 +2181,7 @@ order to pass validation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSSet *)ignoredAttributes</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSSet *)ignoredAttributes</code></div>
 
 		    
 			
@@ -2222,7 +2224,7 @@ compatibility with existing code.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)deprecateAttribute:(NSString *)<em>deprecatedAttribute</em> inFavorOf:(NSString *)<em>newAttribute</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)deprecateAttribute:(nonnull NSString *)<em>deprecatedAttribute</em> inFavorOf:(nonnull NSString *)<em>newAttribute</em></code></div>
 
 		    
 			
@@ -2469,7 +2471,7 @@ model.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)validateAsRelativeOf:(MBDataModel *)<em>relative</em> relatedBy:(NSString *)<em>relationType</em> dataModelRoot:(MBDataModel *)<em>root</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)validateAsRelativeOf:(nullable MBDataModel *)<em>relative</em> relatedBy:(nullable NSString *)<em>relationType</em> dataModelRoot:(nonnull MBDataModel *)<em>root</em></code></div>
 
 		    
 			
@@ -2744,7 +2746,7 @@ and if the receiver is not marked as needing validation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSDictionary *)objectAttributes</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSDictionary *)objectAttributes</code></div>
 
 		    
 			
@@ -2785,7 +2787,7 @@ and if the receiver is not marked as needing validation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addAttributesToDictionary:(NSMutableDictionary *)<em>dict</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addAttributesToDictionary:(nonnull NSMutableDictionary *)<em>dict</em></code></div>
 
 		    
 			
@@ -2849,7 +2851,7 @@ contain an <code>NSString</code> with that text.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) id content</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, strong) id content</code></div>
 
 		    
 			
@@ -2975,7 +2977,7 @@ that currently have values set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)attributeNames</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSArray *)attributeNames</code></div>
 
 		    
 			
@@ -3017,7 +3019,7 @@ that currently have values set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)hasAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)hasAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3070,7 +3072,7 @@ that currently have values set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)valueOfAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)valueOfAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3090,7 +3092,7 @@ that currently have values set on the receiver.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The value of the attribute <code>attrName</code>.</p>
+				<p>The value of the attribute <code>attrName</code>. May be <code>nil</code>.</p>
 			</div>
 			
 
@@ -3128,7 +3130,7 @@ that currently have values set on the receiver.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)stringValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)stringValueOfAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3148,7 +3150,8 @@ that currently have values set on the receiver.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The value of the attribute <code>attrName</code> as an <code>NSString</code>.</p>
+				<p>The value of the attribute <code>attrName</code> as an <code>NSString</code>. May be
+            <code>nil</code>.</p>
 			</div>
 			
 
@@ -3192,7 +3195,7 @@ into a string using the <code>NSObject</code>&rsquo;s <code>description</code> m
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSDecimalNumber *)numberValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSDecimalNumber *)numberValueOfAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3212,7 +3215,8 @@ into a string using the <code>NSObject</code>&rsquo;s <code>description</code> m
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The value of the attribute <code>attrName</code> as an <code>NSNumber</code>.</p>
+				<p>The value of the attribute <code>attrName</code> as an <code>NSNumber</code>. May be
+            <code>nil</code>.</p>
 			</div>
 			
 
@@ -3256,7 +3260,7 @@ into a number using <a href="../Classes/MBExpression.html#//api/name/numberFromV
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)booleanValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)booleanValueOfAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3320,7 +3324,7 @@ a boolean using <a href="../Classes/MBExpression.html#//api/name/booleanFromValu
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSInteger)integerValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSInteger)integerValueOfAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3385,7 +3389,7 @@ instance&rsquo;s <code>integerValue</code> will be returned.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (double)doubleValueOfAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (double)doubleValueOfAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3459,7 +3463,7 @@ subscripting notation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)objectForKeyedSubscript:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)objectForKeyedSubscript:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3479,7 +3483,7 @@ subscripting notation.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The value of the attribute with the name <code>attrName</code>.</p>
+				<p>The value of the attribute with the name <code>attrName</code>. May be <code>nil</code>.</p>
 			</div>
 			
 
@@ -3531,7 +3535,7 @@ subscripting notation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>obj</em> forKeyedSubscript:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(nonnull id)<em>obj</em> forKeyedSubscript:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3611,7 +3615,7 @@ object context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)evaluateAsObject:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)evaluateAsObject:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3632,7 +3636,8 @@ object context.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The result of evaluating the value of <code>attrName</code> as an expression.</p>
+				<p>The result of evaluating the value of <code>attrName</code> as an expression.
+            May be <code>nil</code>.</p>
 			</div>
 			
 
@@ -3679,7 +3684,7 @@ object context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)evaluateAsObject:(NSString *)<em>attrName</em> defaultValue:(id)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)evaluateAsObject:(nonnull NSString *)<em>attrName</em> defaultValue:(nullable id)<em>def</em></code></div>
 
 		    
 			
@@ -3754,7 +3759,7 @@ string context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)evaluateAsString:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)evaluateAsString:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3775,7 +3780,8 @@ string context.</p>
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>The result of evaluating the value of <code>attrName</code> as an expression.</p>
+				<p>The result of evaluating the value of <code>attrName</code> as an expression.
+            May be <code>nil</code>.</p>
 			</div>
 			
 
@@ -3822,7 +3828,7 @@ string context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)evaluateAsString:(NSString *)<em>attrName</em> defaultValue:(NSString *)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)evaluateAsString:(nonnull NSString *)<em>attrName</em> defaultValue:(nullable NSString *)<em>def</em></code></div>
 
 		    
 			
@@ -3897,7 +3903,7 @@ numeric context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -3965,7 +3971,7 @@ numeric context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)<em>attrName</em> defaultValue:(NSDecimalNumber *)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)<em>attrName</em> defaultValue:(nullable NSDecimalNumber *)<em>def</em></code></div>
 
 		    
 			
@@ -4040,7 +4046,7 @@ boolean context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -4108,7 +4114,7 @@ boolean context.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(NSString *)<em>attrName</em> defaultValue:(BOOL)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(nonnull NSString *)<em>attrName</em> defaultValue:(BOOL)<em>def</em></code></div>
 
 		    
 			
@@ -4189,7 +4195,7 @@ evaluated as an expression.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setAttribute:(id)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setAttribute:(nullable id)<em>attrVal</em> forName:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -4199,7 +4205,8 @@ evaluated as an expression.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>attrVal</code></th>
-						<td><p>The new value of the attribute.</p></td>
+						<td><p>The new value of the attribute. If <code>nil</code>, any existing
+            value for <code>attrName</code> will be removed from the receiver.</p></td>
 					</tr>
 				
 					<tr>
@@ -4247,7 +4254,7 @@ evaluated as an expression.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setBooleanAttribute:(BOOL)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setBooleanAttribute:(BOOL)<em>attrVal</em> forName:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -4305,7 +4312,7 @@ evaluated as an expression.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setIntegerAttribute:(NSInteger)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setIntegerAttribute:(NSInteger)<em>attrVal</em> forName:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -4363,7 +4370,7 @@ evaluated as an expression.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setDoubleAttribute:(double)<em>attrVal</em> forName:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setDoubleAttribute:(double)<em>attrVal</em> forName:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -4430,7 +4437,7 @@ new name.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)renameAttribute:(NSString *)<em>oldName</em> to:(NSString *)<em>newName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)renameAttribute:(nonnull NSString *)<em>oldName</em> to:(nonnull NSString *)<em>newName</em></code></div>
 
 		    
 			
@@ -4488,7 +4495,7 @@ new name.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)removeAttribute:(NSString *)<em>attrName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)removeAttribute:(nonnull NSString *)<em>attrName</em></code></div>
 
 		    
 			
@@ -4549,7 +4556,7 @@ new name.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)defaultRelationType</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)defaultRelationType</code></div>
 
 		    
 			
@@ -4591,7 +4598,7 @@ for which there is currently at least one related object.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)currentRelationTypes</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)currentRelationTypes</code></div>
 
 		    
 			
@@ -4688,7 +4695,7 @@ have the specified relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSUInteger)countRelativesWithRelationType:(NSString *)<em>relation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)countRelativesWithRelationType:(nonnull NSString *)<em>relation</em></code></div>
 
 		    
 			
@@ -4793,7 +4800,7 @@ the receiver was added as a relative to another data model instance.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) MBDataModel *containingRelative</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</code></div>
 
 		    
 			
@@ -4835,7 +4842,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)allRelatives</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)allRelatives</code></div>
 
 		    
 			
@@ -4883,7 +4890,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)relativesWithRelationType:(NSString *)<em>relation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)relativesWithRelationType:(nonnull NSString *)<em>relation</em></code></div>
 
 		    
 			
@@ -4944,7 +4951,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)relativesWithDefaultRelation</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)relativesWithDefaultRelation</code></div>
 
 		    
 			
@@ -4992,7 +4999,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (MBDataModel *)firstRelativeWithDefaultRelation</code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable MBDataModel *)firstRelativeWithDefaultRelation</code></div>
 
 		    
 			
@@ -5039,7 +5046,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (MBDataModel *)firstRelativeWithRelationType:(NSString *)<em>relation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable MBDataModel *)firstRelativeWithRelationType:(nonnull NSString *)<em>relation</em></code></div>
 
 		    
 			
@@ -5107,7 +5114,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelative:(MBDataModel *)<em>relative</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelative:(nonnull MBDataModel *)<em>relative</em></code></div>
 
 		    
 			
@@ -5161,7 +5168,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelative:(MBDataModel *)<em>relative</em> withRelationType:(NSString *)<em>relation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelative:(nonnull MBDataModel *)<em>relative</em> withRelationType:(nonnull NSString *)<em>relation</em></code></div>
 
 		    
 			
@@ -5221,7 +5228,7 @@ a relative using the default relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelatives:(NSObject&lt;NSFastEnumeration&gt; *)<em>relatives</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelatives:(nonnull NSObject&lt;NSFastEnumeration&gt; *)<em>relatives</em></code></div>
 
 		    
 			
@@ -5276,7 +5283,7 @@ a relative using the specified relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelatives:(NSObject&lt;NSFastEnumeration&gt; *)<em>relatives</em> withRelationType:(NSString *)<em>relation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelatives:(nonnull NSObject&lt;NSFastEnumeration&gt; *)<em>relatives</em> withRelationType:(nonnull NSString *)<em>relation</em></code></div>
 
 		    
 			
@@ -5346,7 +5353,7 @@ of the element as the relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forElement:(RXMLElement *)<em>element</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> forElement:(nonnull RXMLElement *)<em>element</em></code></div>
 
 		    
 			
@@ -5407,7 +5414,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forElement:(RXMLElement *)<em>element</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> withRelationType:(nullable NSString *)<em>relation</em> forElement:(nonnull RXMLElement *)<em>element</em></code></div>
 
 		    
 			
@@ -5475,7 +5482,7 @@ receiver as a relative using <code>tagName</code> as the relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forFirstChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> forFirstChildOf:(nonnull RXMLElement *)<em>container</em> havingTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -5548,7 +5555,7 @@ receiver as a relative using <code>relation</code> as the relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forFirstChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> withRelationType:(nullable NSString *)<em>relation</em> forFirstChildOf:(nonnull RXMLElement *)<em>container</em> havingTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -5628,7 +5635,7 @@ as a relative using the default relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forEachChildOf:(RXMLElement *)<em>container</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> forEachChildOf:(nonnull RXMLElement *)<em>container</em></code></div>
 
 		    
 			
@@ -5694,7 +5701,7 @@ as a relative using the specified relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forEachChildOf:(RXMLElement *)<em>container</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> withRelationType:(nullable NSString *)<em>relation</em> forEachChildOf:(nonnull RXMLElement *)<em>container</em></code></div>
 
 		    
 			
@@ -5768,7 +5775,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> forEachChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> forEachChildOf:(nonnull RXMLElement *)<em>container</em> havingTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -5841,7 +5848,7 @@ relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(Class)<em>relCls</em> withRelationType:(NSString *)<em>relation</em> forEachChildOf:(RXMLElement *)<em>container</em> havingTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addRelativeOfClass:(nonnull Class)<em>relCls</em> withRelationType:(nullable NSString *)<em>relation</em> forEachChildOf:(nonnull RXMLElement *)<em>container</em> havingTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -5927,7 +5934,7 @@ objects from XML.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)relationTypeForTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)relationTypeForTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -5996,7 +6003,7 @@ related object for the given relation type.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)shouldAutomaticallyAddRelativeOfType:(NSString *)<em>relationType</em> fromTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldAutomaticallyAddRelativeOfType:(nonnull NSString *)<em>relationType</em> fromTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -6073,7 +6080,7 @@ for instances of related objects that are created automatically from XML by the
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (Class)implementingClassForRelativeOfType:(NSString *)<em>relationType</em> fromTag:(NSString *)<em>tagName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable Class)implementingClassForRelativeOfType:(nonnull NSString *)<em>relationType</em> fromTag:(nonnull NSString *)<em>tagName</em></code></div>
 
 		    
 			
@@ -6158,7 +6165,7 @@ type in which it occurs.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)removeRelative:(MBDataModel *)<em>relative</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)removeRelative:(nonnull MBDataModel *)<em>relative</em></code></div>
 
 		    
 			
@@ -6212,7 +6219,7 @@ specified relation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)removeRelative:(MBDataModel *)<em>relative</em> withRelationType:(NSString *)<em>relation</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)removeRelative:(nonnull MBDataModel *)<em>relative</em> withRelationType:(nonnull NSString *)<em>relation</em></code></div>
 
 		    
 			
@@ -6321,7 +6328,7 @@ specified relation.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-04</p>
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-05-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

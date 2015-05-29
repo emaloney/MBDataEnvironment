@@ -240,6 +240,25 @@ as an object expression.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/subarray:</TokenIdentifier>
+			<Abstract type="html">Returns an NSArray containing the receiving array’s elements that fall
+within the limits specified by a given range.</Abstract>
+			<DeclaredIn>MBMLCollectionFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)subarray:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array containing the receiving array’s elements that fall
+within the limits specified by range.</Abstract></ReturnValue>
+			<Anchor>//api/name/subarray:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/MBMLCollectionFunctions/set:</TokenIdentifier>
 			<Abstract type="html">Returns an NSSet containing the result of evaluating each input parameter
 as an object expression.</Abstract>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/MBConcreteVariableType.html">
+	<File path="Constants/MBExpressionCacheSerialization.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/MBConcreteVariableType</TokenIdentifier>
-			<Abstract type="html">Specifies the type of variable declared by an MBConcreteVariableDeclaration.</Abstract>
-			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/MBExpressionCacheSerialization</TokenIdentifier>
+			<Abstract type="html">Specifies the serialization behavior for the MBExpressionCache.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -14,43 +14,38 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeUnknown</TokenIdentifier>
-            <Abstract type="html">The variable type is not yet known.</Abstract>
-            <Declaration>MBConcreteVariableTypeUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBExpressionCacheSerializationNone</TokenIdentifier>
+            <Abstract type="html">The cache will not serialize any changes to the filesystem. This is
+        the default value of the MBExpressionCache&apos;s cacheSerialization 
+        property. </Abstract>
+            <Declaration>MBExpressionCacheSerializationNone</Declaration>
             
-            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
-            
-            <NodeRef refid="44"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeSimple</TokenIdentifier>
-            <Abstract type="html">The variable type is declared as a simple NSObject instance.</Abstract>
-            <Declaration>MBConcreteVariableTypeSimple</Declaration>
-            
-            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            <DeclaredIn>MBExpressionCache.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeMap</TokenIdentifier>
-            <Abstract type="html">The variable type is declared as a map (the underlying type is
-        NSDictionary). </Abstract>
-            <Declaration>MBConcreteVariableTypeMap</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBExpressionCacheSerializationOptimizeForLaunch</TokenIdentifier>
+            <Abstract type="html">The cache will serialize only those changes occurring within a given
+        period of time after application launch. Cache files will be smaller. </Abstract>
+            <Declaration>MBExpressionCacheSerializationOptimizeForLaunch</Declaration>
             
-            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            <DeclaredIn>MBExpressionCache.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeList</TokenIdentifier>
-            <Abstract type="html">The variable type is declared as a list (the underlying type is
-        NSArray). </Abstract>
-            <Declaration>MBConcreteVariableTypeList</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBExpressionCacheSerializationOptimizeForPerformance</TokenIdentifier>
+            <Abstract type="html">The cache will periodically serialize changes to the filesystem.
+        Over time, the cache will grow to encompass all expressions
+        encountered at runtime, making expression evaluation quicker. 
+        Cache files will be larger, however, which can affect application
+        launch times in extreme cases. </Abstract>
+            <Declaration>MBExpressionCacheSerializationOptimizeForPerformance</Declaration>
             
-            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            <DeclaredIn>MBExpressionCache.h</DeclaredIn>
             
             <NodeRef refid="44"/>
         </Token>

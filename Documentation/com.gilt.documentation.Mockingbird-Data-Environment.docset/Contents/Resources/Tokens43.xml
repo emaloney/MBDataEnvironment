@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/MBStringValueCoding.html">
+	<File path="Constants/MBConcreteVariableType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/MBStringValueCoding</TokenIdentifier>
-			<Abstract type="html">Classes that adopt this protocol gain the ability to be stored in the
-NSUserDefaults as strings. This allows native objects to be
-stored using the variable&apos;s userDefaultsName mechanism.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/MBConcreteVariableType</TokenIdentifier>
+			<Abstract type="html">Specifies the type of variable declared by an MBConcreteVariableDeclaration.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
             
 			
@@ -14,38 +12,48 @@ stored using the variable&apos;s userDefaultsName mechanism.</Abstract>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MBStringValueCoding/fromStringValue:</TokenIdentifier>
-			<Abstract type="html">Constructs and returns a new, autoreleased instance of the receiver. The
-returned object&apos;s internal state will be set based on the value of the
-passed-in string.</Abstract>
-			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
-			
-			<Declaration>+ (instancetype)fromStringValue:(NSString *)str</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>str</Name>
-					<Abstract type="html">the input string</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">a new instance of the receiver</Abstract></ReturnValue>
-			<Anchor>//api/name/fromStringValue:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The variable type is not yet known.</Abstract>
+            <Declaration>MBConcreteVariableTypeUnknown</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
             <NodeRef refid="43"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/MBStringValueCoding/stringValue</TokenIdentifier>
-			<Abstract type="html">Returns a string representation of the object&apos;s internal state.</Abstract>
-			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)stringValue</Declaration>
-			
-			<ReturnValue><Abstract type="html">a string that, if passed to fromStringValue:, would
-            return a new instance that isEqual: to this receiver.</Abstract></ReturnValue>
-			<Anchor>//api/name/stringValue</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeSimple</TokenIdentifier>
+            <Abstract type="html">The variable type is declared as a simple NSObject instance.</Abstract>
+            <Declaration>MBConcreteVariableTypeSimple</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
             <NodeRef refid="43"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeMap</TokenIdentifier>
+            <Abstract type="html">The variable type is declared as a map (the underlying type is
+        NSDictionary). </Abstract>
+            <Declaration>MBConcreteVariableTypeMap</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBConcreteVariableTypeList</TokenIdentifier>
+            <Abstract type="html">The variable type is declared as a list (the underlying type is
+        NSArray). </Abstract>
+            <Declaration>MBConcreteVariableTypeList</Declaration>
+            
+            <DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+            <NodeRef refid="43"/>
+        </Token>
         
         
 	</File>

@@ -17,7 +17,7 @@
 			<Abstract type="html">Returns the name of the variable.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Returns the name of the variable.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">Returns the name of the variable.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *name</Declaration>
 			
 			
 			<Anchor>//api/name/name</Anchor>
@@ -128,7 +128,7 @@
 			<Abstract type="html">Returns the initial value of the variable in the given variable space.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>- (id)initialValueInVariableSpace:(MBVariableSpace *)space error:(inout MBExpressionError **)errPtr</Declaration>
+			<Declaration>- (nullable id)initialValueInVariableSpace:(nonnull MBVariableSpace *)space error:(MBExpressionErrorPtrPtr)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>space</Name>
@@ -151,7 +151,7 @@
 			<Abstract type="html">Returns the current value of the variable in the given variable space.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>- (id)currentValueInVariableSpace:(MBVariableSpace *)space error:(inout MBExpressionError **)errPtr</Declaration>
+			<Declaration>- (nullable id)currentValueInVariableSpace:(nonnull MBVariableSpace *)space error:(MBExpressionErrorPtrPtr)errPtr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>space</Name>
@@ -174,7 +174,7 @@
 			<Abstract type="html">Called when a mutable variable value has changed.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>- (void)valueChangedTo:(id)value inVariableSpace:(MBVariableSpace *)space</Declaration>
+			<Declaration>- (void)valueChangedTo:(nullable id)value inVariableSpace:(nonnull MBVariableSpace *)space</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>value</Name>

@@ -71,7 +71,6 @@
 					<Path>index.html</Path>
 					<Subnodes>
 						<NodeRef refid="42"/>
-						<NodeRef refid="43"/>
 						
 					</Subnodes>
 				</Node>
@@ -81,11 +80,11 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
+						<NodeRef refid="43"/>
 						<NodeRef refid="44"/>
 						<NodeRef refid="45"/>
 						<NodeRef refid="46"/>
 						<NodeRef refid="47"/>
-						<NodeRef refid="48"/>
 						
 					</Subnodes>
 				</Node>
@@ -1196,61 +1195,28 @@
             </Subnodes>
             
         </Node>
-		<Node id="43" type="file" documentType="reference">
-            <Name>MBStringValueCoding</Name>
-            <Path>Protocols/MBStringValueCoding.html</Path>
-            
-                <Subnodes>
-                <Node type="section">
-                    <Path>Protocols/MBStringValueCoding.html</Path>
-                    <Name>Overview</Name>
-                    <Anchor>overview</Anchor>
-                </Node>
-                <Node type="section">
-                    <Path>Protocols/MBStringValueCoding.html</Path>
-                    <Name>Tasks</Name>
-                    <Anchor>tasks</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Protocols/MBStringValueCoding.html</Path>
-                    <Name>Class Methods</Name>
-                    <Anchor>class_methods</Anchor>
-                </Node>
-                
-                
-                <Node type="section">
-                    <Path>Protocols/MBStringValueCoding.html</Path>
-                    <Name>Instance Methods</Name>
-                    <Anchor>instance_methods</Anchor>
-                </Node>
-                
-            </Subnodes>
-            
-        </Node>
 		
-        <Node id="44" type="file" documentType="reference">
+        <Node id="43" type="file" documentType="reference">
             <Name>MBConcreteVariableType</Name>
             <Path>Constants/MBConcreteVariableType.html</Path>
             
         </Node>
-		<Node id="45" type="file" documentType="reference">
+		<Node id="44" type="file" documentType="reference">
             <Name>MBExpressionCacheSerialization</Name>
             <Path>Constants/MBExpressionCacheSerialization.html</Path>
             
         </Node>
-		<Node id="46" type="file" documentType="reference">
+		<Node id="45" type="file" documentType="reference">
             <Name>MBMLFunctionInputType</Name>
             <Path>Constants/MBMLFunctionInputType.html</Path>
             
         </Node>
-		<Node id="47" type="file" documentType="reference">
+		<Node id="46" type="file" documentType="reference">
             <Name>MBMLFunctionOutputType</Name>
             <Path>Constants/MBMLFunctionOutputType.html</Path>
             
         </Node>
-		<Node id="48" type="file" documentType="reference">
+		<Node id="47" type="file" documentType="reference">
             <Name>MBTableViewCellSelectionStyle</Name>
             <Path>Constants/MBTableViewCellSelectionStyle.html</Path>
             

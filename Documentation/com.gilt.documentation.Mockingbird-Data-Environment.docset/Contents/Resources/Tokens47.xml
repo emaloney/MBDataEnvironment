@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/MBMLFunctionOutputType.html">
+	<File path="Constants/MBTableViewCellSelectionStyle.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/MBMLFunctionOutputType</TokenIdentifier>
-			<Abstract type="html">Specifies the type of output an MBMLFunction implementation returns.</Abstract>
-			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/MBTableViewCellSelectionStyle</TokenIdentifier>
+			<Abstract type="html">Extends UITableViewCellSelectionStyle by providing a value representing
+a custom gradient cell selection style.</Abstract>
+			<DeclaredIn>MBStringConversions.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -14,43 +15,41 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputUnset</TokenIdentifier>
-            <Abstract type="html">The function output type hasn&apos;t yet been set. Used as an initial value
-        when processing MBML &lt;Function&gt; declarations. </Abstract>
-            <Declaration>MBMLFunctionOutputUnset</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleNone</TokenIdentifier>
+            <Abstract type="html">Equivalent to UITableViewCellSelectionStyleNone.</Abstract>
+            <Declaration>MBTableViewCellSelectionStyleNone</Declaration>
             
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
-            
-            <NodeRef refid="47"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputNone</TokenIdentifier>
-            <Abstract type="html">The function returns no output. The implementing method should
-        return void; any return value is ignored. </Abstract>
-            <Declaration>MBMLFunctionOutputNone</Declaration>
-            
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            <DeclaredIn>MBStringConversions.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputObject</TokenIdentifier>
-            <Abstract type="html">The function returns an object instance as output.</Abstract>
-            <Declaration>MBMLFunctionOutputObject</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleBlue</TokenIdentifier>
+            <Abstract type="html">Equivalent to UITableViewCellSelectionStyleBlue.</Abstract>
+            <Declaration>MBTableViewCellSelectionStyleBlue</Declaration>
             
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            <DeclaredIn>MBStringConversions.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MBMLFunctionOutputDefault</TokenIdentifier>
-            <Abstract type="html">The function input type used by default: MBMLFunctionOutputObject.</Abstract>
-            <Declaration>MBMLFunctionOutputDefault</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleGray</TokenIdentifier>
+            <Abstract type="html">Equivalent to UITableViewCellSelectionStyleGray.</Abstract>
+            <Declaration>MBTableViewCellSelectionStyleGray</Declaration>
             
-            <DeclaredIn>MBMLFunction.h</DeclaredIn>
+            <DeclaredIn>MBStringConversions.h</DeclaredIn>
+            
+            <NodeRef refid="47"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBTableViewCellSelectionStyleGradient</TokenIdentifier>
+            <Abstract type="html">Represents a custom cell selection style using a gradient.</Abstract>
+            <Declaration>MBTableViewCellSelectionStyleGradient</Declaration>
+            
+            <DeclaredIn>MBStringConversions.h</DeclaredIn>
             
             <NodeRef refid="47"/>
         </Token>

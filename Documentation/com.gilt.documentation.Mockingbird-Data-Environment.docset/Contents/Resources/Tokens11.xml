@@ -273,7 +273,7 @@ instead.</Abstract>
 			<Abstract type="html">Returns the size of the serialized filesystem cache, if any.</Abstract>
 			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
 			
-			<Declaration>- (NSNumber *)filesystemCacheSize</Declaration>
+			<Declaration>- (nullable NSNumber *)filesystemCacheSize</Declaration>
 			
 			<ReturnValue><Abstract type="html">The filesystem cache size (in bytes), or nil if there is no
             filesystem cache.</Abstract></ReturnValue>

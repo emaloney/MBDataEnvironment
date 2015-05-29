@@ -19,7 +19,7 @@ MBDataModel contains an expected set of values.</Abstract>
 MBDataModel.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)validatorForDataModel:(MBDataModel *)model</Declaration>
+			<Declaration>+ (nonnull instancetype)validatorForDataModel:(nonnull MBDataModel *)model</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>model</Name>
@@ -36,7 +36,7 @@ MBDataModel.</Abstract>
 			<Abstract type="html">Returns the MBDataModel that the receiver was constructed to validate.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MBDataModel *model</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) MBDataModel *model</Declaration>
 			
 			
 			<Anchor>//api/name/model</Anchor>
@@ -48,7 +48,7 @@ MBDataModel.</Abstract>
 			<Abstract type="html">Returns the MBDataModel that the receiver was constructed to validate.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MBDataModel *model</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) MBDataModel *model</Declaration>
 			
 			
 			<Anchor>//api/name/model</Anchor>
@@ -60,7 +60,7 @@ MBDataModel.</Abstract>
 			<Abstract type="html">Returns the MBDataModel that the receiver was constructed to validate.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) MBDataModel *model</Declaration>
+			<Declaration>@property (nonnull, nonatomic, readonly) MBDataModel *model</Declaration>
 			
 			
 			<Anchor>//api/name/model</Anchor>
@@ -74,7 +74,7 @@ MBDataModel.</Abstract>
     have occurred. </Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *validationErrorMessages</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *validationErrorMessages</Declaration>
 			
 			
 			<Anchor>//api/name/validationErrorMessages</Anchor>
@@ -88,7 +88,7 @@ MBDataModel.</Abstract>
     have occurred. </Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *validationErrorMessages</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *validationErrorMessages</Declaration>
 			
 			
 			<Anchor>//api/name/validationErrorMessages</Anchor>
@@ -102,7 +102,7 @@ MBDataModel.</Abstract>
     have occurred. </Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *validationErrorMessages</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *validationErrorMessages</Declaration>
 			
 			
 			<Anchor>//api/name/validationErrorMessages</Anchor>
@@ -115,7 +115,7 @@ MBDataModel.</Abstract>
 both.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)require:(NSString *)attr1 or:(NSString *)attr2</Declaration>
+			<Declaration>- (BOOL)require:(nonnull NSString *)attr1 or:(nonnull NSString *)attr2</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attr1</Name>
@@ -135,7 +135,7 @@ both.</Abstract>
 			<Abstract type="html">Requires that the data model contain either attr1 or attr2.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)require:(NSString *)attr1 or:(NSString *)attr2 butNotBoth:(BOOL)onlyAllowOne</Declaration>
+			<Declaration>- (BOOL)require:(nonnull NSString *)attr1 or:(nonnull NSString *)attr2 butNotBoth:(BOOL)onlyAllowOne</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attr1</Name>
@@ -162,7 +162,7 @@ both.</Abstract>
 model. Validation will fail if none of the specified attributes are present.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)requireAtLeastOneOf:(NSObject&lt;NSFastEnumeration&gt; *)attrs</Declaration>
+			<Declaration>- (BOOL)requireAtLeastOneOf:(nonnull NSObject&lt;NSFastEnumeration&gt; *)attrs</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrs</Name>
@@ -182,7 +182,7 @@ model. Validation will fail if none of the specified attributes are present,
 or if more than one is present.</Abstract>
 			<DeclaredIn>MBAttributeValidator.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)requireExactlyOneOf:(NSObject&lt;NSFastEnumeration&gt; *)attrs</Declaration>
+			<Declaration>- (BOOL)requireExactlyOneOf:(nonnull NSObject&lt;NSFastEnumeration&gt; *)attrs</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>attrs</Name>

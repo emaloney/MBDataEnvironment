@@ -17,7 +17,7 @@
 			<Abstract type="html">Returns the Class that implements the singleton.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) Class implementingClass</Declaration>
 			
 			
 			<Anchor>//api/name/implementingClass</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Returns the Class that implements the singleton.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) Class implementingClass</Declaration>
 			
 			
 			<Anchor>//api/name/implementingClass</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">Returns the Class that implements the singleton.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) Class implementingClass</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) Class implementingClass</Declaration>
 			
 			
 			<Anchor>//api/name/implementingClass</Anchor>
@@ -53,7 +53,7 @@
 			<Abstract type="html">Returns the method selector for the singleton&apos;s accessor.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) SEL singletonAccessor</Declaration>
 			
 			
 			<Anchor>//api/name/singletonAccessor</Anchor>
@@ -65,7 +65,7 @@
 			<Abstract type="html">Returns the method selector for the singleton&apos;s accessor.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) SEL singletonAccessor</Declaration>
 			
 			
 			<Anchor>//api/name/singletonAccessor</Anchor>
@@ -77,7 +77,7 @@
 			<Abstract type="html">Returns the method selector for the singleton&apos;s accessor.</Abstract>
 			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SEL singletonAccessor</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) SEL singletonAccessor</Declaration>
 			
 			
 			<Anchor>//api/name/singletonAccessor</Anchor>

@@ -19,7 +19,7 @@ using values contained in an NSDictionary.</Abstract>
 evaluate that value as an object expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (id)evaluateAsObject:(NSString *)key</Declaration>
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -39,7 +39,7 @@ evaluate that value as an object expression.</Abstract>
 evaluate that value as an object expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (id)evaluateAsObject:(NSString *)key defaultValue:(id)def</Declaration>
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)key defaultValue:(nullable id)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -63,7 +63,7 @@ evaluate that value as an object expression.</Abstract>
 evaluate that value as a string expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)evaluateAsString:(NSString *)key</Declaration>
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -83,7 +83,7 @@ evaluate that value as a string expression.</Abstract>
 evaluate that value as a string expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)evaluateAsString:(NSString *)key defaultValue:(NSString *)def</Declaration>
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)key defaultValue:(nullable NSString *)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -107,7 +107,7 @@ evaluate that value as a string expression.</Abstract>
 evaluate that value as a numeric expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)key</Declaration>
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -127,7 +127,7 @@ evaluate that value as a numeric expression.</Abstract>
 evaluate that value as a numeric expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (NSDecimalNumber *)evaluateAsNumber:(NSString *)key defaultValue:(NSDecimalNumber *)def</Declaration>
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)key defaultValue:(nullable NSDecimalNumber *)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -151,7 +151,7 @@ evaluate that value as a numeric expression.</Abstract>
 evaluate that value as a boolean expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)key</Declaration>
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)key</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>
@@ -171,7 +171,7 @@ evaluate that value as a boolean expression.</Abstract>
 evaluate that value as a boolean expression.</Abstract>
 			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)evaluateAsBoolean:(NSString *)key defaultValue:(BOOL)def</Declaration>
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)key defaultValue:(BOOL)def</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>key</Name>

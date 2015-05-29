@@ -17,7 +17,7 @@
 			<Abstract type="html">Returns a message explaining the error.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *message</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *message</Declaration>
 			
 			
 			<Anchor>//api/name/message</Anchor>
@@ -29,7 +29,7 @@
 			<Abstract type="html">Returns a message explaining the error.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *message</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *message</Declaration>
 			
 			
 			<Anchor>//api/name/message</Anchor>
@@ -41,7 +41,7 @@
 			<Abstract type="html">Returns a message explaining the error.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *message</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *message</Declaration>
 			
 			
 			<Anchor>//api/name/message</Anchor>
@@ -54,7 +54,7 @@
     contain the original error. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSError *causedByError</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSError *causedByError</Declaration>
 			
 			
 			<Anchor>//api/name/causedByError</Anchor>
@@ -67,7 +67,7 @@
     contain the original error. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSError *causedByError</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSError *causedByError</Declaration>
 			
 			
 			<Anchor>//api/name/causedByError</Anchor>
@@ -80,7 +80,7 @@
     contain the original error. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSError *causedByError</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSError *causedByError</Declaration>
 			
 			
 			<Anchor>//api/name/causedByError</Anchor>
@@ -93,7 +93,7 @@
     will contain the original exception. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSException *causedByException</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSException *causedByException</Declaration>
 			
 			
 			<Anchor>//api/name/causedByException</Anchor>
@@ -106,7 +106,7 @@
     will contain the original exception. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSException *causedByException</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSException *causedByException</Declaration>
 			
 			
 			<Anchor>//api/name/causedByException</Anchor>
@@ -119,7 +119,7 @@
     will contain the original exception. Otherwise, nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSException *causedByException</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSException *causedByException</Declaration>
 			
 			
 			<Anchor>//api/name/causedByException</Anchor>
@@ -132,7 +132,7 @@
     be nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *additionalErrors</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</Declaration>
 			
 			
 			<Anchor>//api/name/additionalErrors</Anchor>
@@ -145,7 +145,7 @@
     be nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *additionalErrors</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</Declaration>
 			
 			
 			<Anchor>//api/name/additionalErrors</Anchor>
@@ -158,7 +158,7 @@
     be nil. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray *additionalErrors</Declaration>
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</Declaration>
 			
 			
 			<Anchor>//api/name/additionalErrors</Anchor>
@@ -170,7 +170,7 @@
 			<Abstract type="html">Stores an arbitrary value related to the error.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) id value</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) id value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -182,7 +182,7 @@
 			<Abstract type="html">Stores an arbitrary value related to the error.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) id value</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) id value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -194,7 +194,7 @@
 			<Abstract type="html">Stores an arbitrary value related to the error.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) id value</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) id value</Declaration>
 			
 			
 			<Anchor>//api/name/value</Anchor>
@@ -206,7 +206,7 @@
 			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *offendingExpression</Declaration>
 			
 			
 			<Anchor>//api/name/offendingExpression</Anchor>
@@ -218,7 +218,7 @@
 			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *offendingExpression</Declaration>
 			
 			
 			<Anchor>//api/name/offendingExpression</Anchor>
@@ -230,7 +230,7 @@
 			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *offendingExpression</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) NSString *offendingExpression</Declaration>
 			
 			
 			<Anchor>//api/name/offendingExpression</Anchor>
@@ -244,7 +244,7 @@
     offendingExpression. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
 			
 			
 			<Anchor>//api/name/offendingToken</Anchor>
@@ -258,7 +258,7 @@
     offendingExpression. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
 			
 			
 			<Anchor>//api/name/offendingToken</Anchor>
@@ -272,7 +272,7 @@
     offendingExpression. </Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			<Declaration>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
 			
 			
 			<Anchor>//api/name/offendingToken</Anchor>
@@ -284,7 +284,7 @@
 			<Abstract type="html">Creates a new MBExpressionError instance containing the specified message.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithMessage:(NSString *)msg</Declaration>
+			<Declaration>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)msg</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>
@@ -302,7 +302,7 @@
 NSError.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithMessage:(NSString *)msg error:(NSError *)nsErr</Declaration>
+			<Declaration>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)msg error:(nullable NSError *)nsErr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>
@@ -323,7 +323,7 @@ NSError.</Abstract>
 NSException.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithMessage:(NSString *)msg exception:(NSException *)ex</Declaration>
+			<Declaration>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)msg exception:(nullable NSException *)ex</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>msg</Name>
@@ -344,7 +344,7 @@ NSException.</Abstract>
 from the specified format string and parameters.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithFormat:(NSString *)format, ...</Declaration>
+			<Declaration>+ (nonnull instancetype)errorWithFormat:(nonnull NSString *)format, ...</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>format</Name>
@@ -367,7 +367,7 @@ from the specified format string and parameters.</Abstract>
 NSError.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithError:(NSError *)nsErr</Declaration>
+			<Declaration>+ (nonnull instancetype)errorWithError:(nonnull NSError *)nsErr</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>nsErr</Name>
@@ -385,7 +385,7 @@ NSError.</Abstract>
 NSException.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithException:(NSException *)ex</Declaration>
+			<Declaration>+ (nonnull instancetype)errorWithException:(nonnull NSException *)ex</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>ex</Name>
@@ -403,7 +403,7 @@ NSException.</Abstract>
 if log were to be called.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)logOutput</Declaration>
+			<Declaration>- (nonnull NSString *)logOutput</Declaration>
 			
 			<ReturnValue><Abstract type="html">The log output.</Abstract></ReturnValue>
 			<Anchor>//api/name/logOutput</Anchor>
@@ -428,7 +428,7 @@ if log were to be called.</Abstract>
 of the reportTo parameter:</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>- (void)reportErrorTo:(inout MBExpressionError **)reportTo</Declaration>
+			<Declaration>- (void)reportErrorTo:(MBExpressionErrorPtrPtr)reportTo</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>reportTo</Name>
@@ -446,7 +446,7 @@ of the reportTo parameter:</Abstract>
 of the reportTo parameter:</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>- (void)reportErrorTo:(inout MBExpressionError **)reportTo suppressLog:(BOOL)suppressLog</Declaration>
+			<Declaration>- (void)reportErrorTo:(MBExpressionErrorPtrPtr)reportTo suppressLog:(BOOL)suppressLog</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>reportTo</Name>
@@ -495,7 +495,7 @@ method is called.</Abstract>
 nil if there isn&apos;t one.</Abstract>
 			<DeclaredIn>MBExpressionError.h</DeclaredIn>
 			
-			<Declaration>- (MBExpressionError *)lastErrorReported</Declaration>
+			<Declaration>- (nullable MBExpressionError *)lastErrorReported</Declaration>
 			
 			<ReturnValue><Abstract type="html">The most recently reported error.</Abstract></ReturnValue>
 			<Anchor>//api/name/lastErrorReported</Anchor>

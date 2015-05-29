@@ -179,7 +179,7 @@ referenced.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (instancetype)instance</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable instancetype)instance</code></div>
 
 		    
 			
@@ -234,7 +234,7 @@ the keyed subscripting notation.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)objectForKeyedSubscript:(NSString *)<em>variableName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)objectForKeyedSubscript:(nonnull NSString *)<em>variableName</em></code></div>
 
 		    
 			
@@ -306,7 +306,7 @@ variable named <code>email</code>.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)variableAsString:(NSString *)<em>varName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)variableAsString:(nonnull NSString *)<em>varName</em></code></div>
 
 		    
 			
@@ -374,7 +374,7 @@ default value if there is no available variable value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)variableAsString:(NSString *)<em>varName</em> defaultValue:(NSString *)<em>def</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)variableAsString:(nonnull NSString *)<em>varName</em> defaultValue:(nullable NSString *)<em>def</em></code></div>
 
 		    
 			
@@ -455,7 +455,7 @@ default value if there is no available variable value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setObject:(id)<em>value</em> forKeyedSubscript:(NSString *)<em>variableName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setObject:(nullable id)<em>value</em> forKeyedSubscript:(nonnull NSString *)<em>variableName</em></code></div>
 
 		    
 			
@@ -526,7 +526,7 @@ default value if there is no available variable value.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)pushVariable:(NSString *)<em>variableName</em> value:(id)<em>value</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)pushVariable:(nonnull NSString *)<em>variableName</em> value:(nullable id)<em>value</em></code></div>
 
 		    
 			
@@ -588,7 +588,7 @@ will be restored.)</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (id)popVariable:(NSString *)<em>varName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable id)popVariable:(nonnull NSString *)<em>varName</em></code></div>
 
 		    
 			
@@ -658,7 +658,7 @@ name. (This method will also operate on any variable whose value is of type
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setMapVariable:(NSString *)<em>varName</em> mapKey:(NSString *)<em>key</em> value:(id)<em>val</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setMapVariable:(nonnull NSString *)<em>varName</em> mapKey:(nonnull NSString *)<em>key</em> value:(nullable id)<em>val</em></code></div>
 
 		    
 			
@@ -726,7 +726,7 @@ name. (This method will also operate on any variable whose value is of type
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setListVariable:(NSString *)<em>varName</em> listIndex:(NSUInteger)<em>idx</em> value:(id)<em>val</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setListVariable:(nonnull NSString *)<em>varName</em> listIndex:(NSUInteger)<em>idx</em> value:(nullable id)<em>val</em></code></div>
 
 		    
 			
@@ -796,7 +796,7 @@ the variable stack will not be affected.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)unsetVariable:(NSString *)<em>varName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)unsetVariable:(nonnull NSString *)<em>varName</em></code></div>
 
 		    
 			
@@ -859,7 +859,7 @@ the variable stack will not be affected.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)name:(NSString *)<em>name</em> withSuffix:(NSString *)<em>suffix</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)name:(nullable NSString *)<em>name</em> withSuffix:(nullable NSString *)<em>suffix</em></code></div>
 
 		    
 			
@@ -940,7 +940,7 @@ return the string &ldquo;<code>Foo:willBar</code>&rdquo;.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)isReadOnlyVariable:(NSString *)<em>varName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)isReadOnlyVariable:(nonnull NSString *)<em>varName</em></code></div>
 
 		    
 			
@@ -1031,7 +1031,7 @@ directly.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)declareVariable:(MBVariableDeclaration *)<em>declaration</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)declareVariable:(nonnull MBVariableDeclaration *)<em>declaration</em></code></div>
 
 		    
 			
@@ -1090,7 +1090,7 @@ directly.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (MBVariableDeclaration *)declarationForVariable:(NSString *)<em>varName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable MBVariableDeclaration *)declarationForVariable:(nonnull NSString *)<em>varName</em></code></div>
 
 		    
 			
@@ -1166,7 +1166,7 @@ other methods.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)declareFunction:(MBMLFunction *)<em>function</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (BOOL)declareFunction:(nonnull MBMLFunction *)<em>function</em></code></div>
 
 		    
 			
@@ -1226,7 +1226,7 @@ other methods.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSArray *)functionNames</code></div>
+			<div class="method-subsection method-declaration"><code>- (nonnull NSArray *)functionNames</code></div>
 
 		    
 			
@@ -1272,7 +1272,7 @@ other methods.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (MBMLFunction *)functionWithName:(NSString *)<em>name</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable MBMLFunction *)functionWithName:(nonnull NSString *)<em>name</em></code></div>
 
 		    
 			
@@ -1340,7 +1340,7 @@ variable with the given <code>NSUserDefaults</code> key name.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)addObserverForUserDefault:(NSString *)<em>userDefaultsName</em> target:(id)<em>observer</em> action:(SEL)<em>action</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)addObserverForUserDefault:(nonnull NSString *)<em>userDefaultsName</em> target:(nonnull id)<em>observer</em> action:(nonnull SEL)<em>action</em></code></div>
 
 		    
 			
@@ -1405,7 +1405,7 @@ Mockingbird variable with the given <code>NSUserDefaults</code> key name.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)removeObserver:(id)<em>observer</em> forUserDefault:(NSString *)<em>userDefaultsName</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)removeObserver:(nonnull id)<em>observer</em> forUserDefault:(nonnull NSString *)<em>userDefaultsName</em></code></div>
 
 		    
 			
@@ -1460,7 +1460,7 @@ Mockingbird variable with the given <code>NSUserDefaults</code> key name.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-02-04</p>
+						<p class="copyright">Copyright &copy; 2015 Gilt Groupe. All rights reserved. Updated: 2015-05-28</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

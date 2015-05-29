@@ -54,7 +54,7 @@ loading an MBEnvironment.</Abstract>
 			<Abstract type="html">Returns the names of the XML tags accepted by the receiver.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)acceptedTagNames</Declaration>
+			<Declaration>- (nonnull NSArray *)acceptedTagNames</Declaration>
 			
 			
 			<Anchor>//api/name/acceptedTagNames</Anchor>
@@ -66,7 +66,7 @@ loading an MBEnvironment.</Abstract>
 			<Abstract type="html">Asks the receiver to parse MBML represented by the passed-in XML element.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)parseElement:(RXMLElement *)mbml forMatch:(NSString *)match</Declaration>
+			<Declaration>- (BOOL)parseElement:(nonnull RXMLElement *)mbml forMatch:(nonnull NSString *)match</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>mbml</Name>
@@ -89,7 +89,7 @@ loading an MBEnvironment.</Abstract>
 about to begin.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentWillLoad:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentWillLoad:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -106,7 +106,7 @@ about to begin.</Abstract>
 			<Abstract type="html">Called to notify the receiver that the environment loading has finished.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentDidLoad:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentDidLoad:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -124,7 +124,7 @@ about to begin.</Abstract>
 to an error.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentLoadFailed:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentLoadFailed:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -141,7 +141,7 @@ to an error.</Abstract>
 			<Abstract type="html">Called to notify the receiver that the environment is about to become active.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentWillActivate:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentWillActivate:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -158,7 +158,7 @@ to an error.</Abstract>
 			<Abstract type="html">Called to notify the receiver that the environment became active.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentDidActivate:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentDidActivate:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -175,7 +175,7 @@ to an error.</Abstract>
 			<Abstract type="html">Called to notify the receiver that the environment is about to be deactived.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentWillDeactivate:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentWillDeactivate:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
@@ -192,7 +192,7 @@ to an error.</Abstract>
 			<Abstract type="html">Called to notify the receiver that the environment was deactived.</Abstract>
 			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
 			
-			<Declaration>- (void)environmentDidDeactivate:(MBEnvironment *)env</Declaration>
+			<Declaration>- (void)environmentDidDeactivate:(nonnull MBEnvironment *)env</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>env</Name>
