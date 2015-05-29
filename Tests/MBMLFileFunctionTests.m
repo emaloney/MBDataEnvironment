@@ -478,11 +478,11 @@
         XCTAssertTrue([sizeNum isKindOfClass:[NSNumber class]]);
         unsigned long long size = [sizeNum unsignedLongLongValue];
         XCTAssertTrue(size > 0);
-        if ([[paths[i] lastPathComponent] isEqualToString:@"test-app-data.xml"]) {
+        if ([[paths[i] lastPathComponent] isEqualToString:@"test-MBDataEnvironment.xml"]) {
             XCTAssertEqual(size, 6959);     // unit test will fail if file size changes; will need to keep this up-to-date
         }
         else if ([[paths[i] lastPathComponent] isEqualToString:@"MBDataEnvironmentModule.xml"]) {
-            XCTAssertEqual(size, 17009);    // unit test will fail if file size changes; will need to keep this up-to-date
+            XCTAssertEqual(size, 17094);    // unit test will fail if file size changes; will need to keep this up-to-date
         }
     }
     [MBScopedVariables exitVariableScope];

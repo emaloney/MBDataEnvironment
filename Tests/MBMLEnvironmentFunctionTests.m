@@ -44,7 +44,7 @@
     XCTAssertTrue(paths.count == 2);
 
     NSBundle* testBundle = [NSBundle bundleForClass:[self class]];
-    NSString* testAppDataPath = [[testBundle resourcePath] stringByAppendingPathComponent:@"test-app-data.xml"];
+    NSString* testAppDataPath = [[testBundle resourcePath] stringByAppendingPathComponent:@"test-MBDataEnvironment.xml"];
     XCTAssertTrue([paths containsObject:testAppDataPath]);
 
     NSBundle* mbBundle = [NSBundle bundleForClass:[MBEnvironment class]];
@@ -65,7 +65,7 @@
     NSArray* files = [MBExpression asObject:@"^mbmlLoadedFiles()"];
     XCTAssertTrue([files isKindOfClass:[NSArray class]]);
     XCTAssertTrue(files.count == 2);
-    XCTAssertTrue([files containsObject:@"test-app-data.xml"]);
+    XCTAssertTrue([files containsObject:@"test-MBDataEnvironment.xml"]);
     XCTAssertTrue([files containsObject:@"MBDataEnvironmentModule.xml"]);
 }
 
@@ -80,7 +80,7 @@
     //        have any error conditions; it won't return MBMLFunctionError)
     //
     NSBundle* testBundle = [NSBundle bundleForClass:[self class]];
-    NSString* testAppDataPath = [[testBundle resourcePath] stringByAppendingPathComponent:@"test-app-data.xml"];
+    NSString* testAppDataPath = [[testBundle resourcePath] stringByAppendingPathComponent:@"test-MBDataEnvironment.xml"];
     NSBundle* mbBundle = [NSBundle bundleForClass:[MBEnvironment class]];
     NSString* mbXmlPath = [[mbBundle resourcePath] stringByAppendingPathComponent:@"MBDataEnvironmentModule.xml"];
 
@@ -108,7 +108,7 @@
     // (note: failures are not tested because this function doesn't
     //        have any error conditions; it won't return MBMLFunctionError)
     //
-    BOOL isLoaded = [MBExpression asBoolean:@"^mbmlFileIsLoaded(test-app-data.xml)"];
+    BOOL isLoaded = [MBExpression asBoolean:@"^mbmlFileIsLoaded(test-MBDataEnvironment.xml)"];
     XCTAssertTrue(isLoaded);
     isLoaded = [MBExpression asBoolean:@"^mbmlFileIsLoaded(MBDataEnvironmentModule.xml)"];
     XCTAssertTrue(isLoaded);
