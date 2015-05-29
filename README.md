@@ -12,10 +12,6 @@ The Mockingbird Data Environment is particularly suited for building application
 * [Using the Mockingbird Data Environment](#initializing-the-mockingbird-data-environment)
 * [Table of contents](#table-of-contents)
 
-**Master branch status:**
-
-[![Build Status](https://travis-ci.org/emaloney/MBDataEnvironment.svg?branch=master)](https://travis-ci.org/emaloney/MBDataEnvironment)
-
 ## About the Mockingbird Data Environment
 
 It is a common scenario for iOS app publishers to have a population of users running old application versions. Often, users are stuck on old versions because the current version requires a release of iOS more recent than their hardware will support. Such users won't be running your latest app version until they buy a new device, assuming they ever do.
