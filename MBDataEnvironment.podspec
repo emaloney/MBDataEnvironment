@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 	s.summary               = "Mockingbird Data Environment"
 	s.description           = "Provides a flexible runtime mechanism for manipulating arbitrary data structures and extracting values therefrom."
 	s.homepage              = "https://github.com/emaloney/MBDataEnvironment"
-	s.documentation_url     = "https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/index.htmlhttps://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/index.html"
+	s.documentation_url     = "https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/index.html"
 	s.license               = { :type => 'MIT', :file => 'LICENSE' }
 	s.author                = { "Evan Coyne Maloney" => "emaloney@gilt.com" }
 	s.platform              = :ios, '8.0'
