@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3B2FCA7E1A605CB80044BEB0"
-               BuildableName = "MBDataEnvironmentDocumentation"
-               BlueprintName = "MBDataEnvironmentDocumentation"
+               BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
+               BuildableName = "MBDataEnvironment.framework"
+               BlueprintName = "MBDataEnvironment OSX"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B2FCA7E1A605CB80044BEB0"
-            BuildableName = "MBDataEnvironmentDocumentation"
-            BlueprintName = "MBDataEnvironmentDocumentation"
+            BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
+            BuildableName = "MBDataEnvironment.framework"
+            BlueprintName = "MBDataEnvironment OSX"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3B2FCA7E1A605CB80044BEB0"
-            BuildableName = "MBDataEnvironmentDocumentation"
-            BlueprintName = "MBDataEnvironmentDocumentation"
+            BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
+            BuildableName = "MBDataEnvironment.framework"
+            BlueprintName = "MBDataEnvironment OSX"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
