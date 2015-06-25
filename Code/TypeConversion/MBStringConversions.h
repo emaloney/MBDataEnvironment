@@ -6,13 +6,23 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "PlatformTypeIndependence.h"
+
+#if MB_BUILD_IOS
 #import <UIKit/UIKit.h>
+#else
+#import <AppKit/AppKit.h>
+#endif
+
+#import <Foundation/Foundation.h>
+
 #import <MBToolbox/NSError+MBToolbox.h>
 
 /******************************************************************************/
 #pragma mark Types
 /******************************************************************************/
+
+#if MB_BUILD_IOS
 
 /*!
  Extends `UITableViewCellSelectionStyle` by providing a value representing
@@ -33,9 +43,28 @@ typedef NS_ENUM(NSInteger, MBTableViewCellSelectionStyle)
     MBTableViewCellSelectionStyleGradient   = NSIntegerMax
 };
 
+#endif
+
 /******************************************************************************/
 #pragma mark Constants
 /******************************************************************************/
+
+// NSLineBreakMode
+extern NSString* const __nonnull kMBMLLineBreakByWordWrapping;                // @"wordWrap" for NSLineBreakByWordWrapping
+extern NSString* const __nonnull kMBMLLineBreakByCharWrapping;                // @"charWrap" for NSLineBreakByCharWrapping
+extern NSString* const __nonnull kMBMLLineBreakByClipping;                    // @"clip" for NSLineBreakByClipping
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingHead;              // @"headTruncation" for NSLineBreakByTruncatingHead
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingTail;              // @"tailTruncation" for NSLineBreakByTruncatingTail
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingMiddle;            // @"middleTruncation" for NSLineBreakByTruncatingMiddle
+
+// NSDateFormatterStyle
+extern NSString* const __nonnull kMBMLDateFormatterNoStyle;                   // @"none" for NSDateFormatterNoStyle
+extern NSString* const __nonnull kMBMLDateFormatterShortStyle;                // @"short" for NSDateFormatterShortStyle
+extern NSString* const __nonnull kMBMLDateFormatterMediumStyle;               // @"medium" for NSDateFormatterMediumStyle
+extern NSString* const __nonnull kMBMLDateFormatterLongStyle;                 // @"long" for NSDateFormatterLongStyle
+extern NSString* const __nonnull kMBMLDateFormatterFullStyle;                 // @"full" for NSDateFormatterFullStyle
+
+#if MB_BUILD_IOS
 
 // NSTextAlignment
 extern NSString* const __nonnull kMBMLTextAlignmentLeft;                      // @"left" for NSTextAlignmentLeft
@@ -46,14 +75,6 @@ extern NSString* const __nonnull kMBMLTextAlignmentRight;                     //
 extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleDefault;        // @"default" for UIScrollViewIndicatorStyleDefault
 extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleBlack;          // @"black" for UIScrollViewIndicatorStyleBlack
 extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleWhite;          // @"white" for UIScrollViewIndicatorStyleWhite
-
-// NSLineBreakMode
-extern NSString* const __nonnull kMBMLLineBreakByWordWrapping;                // @"wordWrap" for NSLineBreakByWordWrapping
-extern NSString* const __nonnull kMBMLLineBreakByCharWrapping;                // @"charWrap" for NSLineBreakByCharWrapping
-extern NSString* const __nonnull kMBMLLineBreakByClipping;                    // @"clip" for NSLineBreakByClipping
-extern NSString* const __nonnull kMBMLLineBreakByTruncatingHead;              // @"headTruncation" for NSLineBreakByTruncatingHead
-extern NSString* const __nonnull kMBMLLineBreakByTruncatingTail;              // @"tailTruncation" for NSLineBreakByTruncatingTail
-extern NSString* const __nonnull kMBMLLineBreakByTruncatingMiddle;            // @"middleTruncation" for NSLineBreakByTruncatingMiddle
 
 // UIActivityIndicatorViewStyle
 extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhiteLarge;   // @"whiteLarge" for UIActivityIndicatorViewStyleWhiteLarge
@@ -67,13 +88,6 @@ extern NSString* const __nonnull kMBMLButtonTypeDetailDisclosure;             //
 extern NSString* const __nonnull kMBMLButtonTypeInfoLight;                    // @"infoLight" for UIButtonTypeInfoLight
 extern NSString* const __nonnull kMBMLButtonTypeInfoDark;                     // @"infoDark" for UIButtonTypeInfoDark
 extern NSString* const __nonnull kMBMLButtonTypeContactAdd;                   // @"contactAdd" for UIButtonTypeContactAdd
-
-// NSDateFormatterStyle
-extern NSString* const __nonnull kMBMLDateFormatterNoStyle;                   // @"none" for NSDateFormatterNoStyle
-extern NSString* const __nonnull kMBMLDateFormatterShortStyle;                // @"short" for NSDateFormatterShortStyle
-extern NSString* const __nonnull kMBMLDateFormatterMediumStyle;               // @"medium" for NSDateFormatterMediumStyle
-extern NSString* const __nonnull kMBMLDateFormatterLongStyle;                 // @"long" for NSDateFormatterLongStyle
-extern NSString* const __nonnull kMBMLDateFormatterFullStyle;                 // @"full" for NSDateFormatterFullStyle
 
 // UITextBorderStyle
 extern NSString* const __nonnull kMBMLTextBorderStyleNone;                    // @"none" for UITextBorderStyleNone
@@ -210,6 +224,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionDown;              //
 extern NSString* const __nonnull kMBMLPopoverArrowDirectionLeft;              // @"left" for UIPopoverArrowDirectionLeft
 extern NSString* const __nonnull kMBMLPopoverArrowDirectionRight;             // @"right" for UIPopoverArrowDirectionRight
 extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               // @"any" for UIPopoverArrowDirectionAny
+
+#endif
 
 /******************************************************************************/
 #pragma mark -
@@ -597,276 +613,6 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
 + (BOOL) parseString:(nonnull NSString*)rectStr asRect:(nonnull out CGRect*)rectPtr;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark UIOffset conversions
-/*!    @name UIOffset conversions                                             */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as a `UIOffset` value.
-
- The input will be parsed as a comma-separating string in the format
- "*`horizontal`*,*`vertical`*" where *`horizontal`* and *`vertical`* are 
- interpreted as floating-point numbers and used to populate the respective 
- fields of the returned `UIOffset`.
-
- @param     str The string to interpret.
-
- @return    The `UIOffset` value that corresponds with `str`.
-            Returns `UIOffsetZero` and logs an error to the
-            console if `str` couldn't be interpreted.
- */
-+ (UIOffset) offsetFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as a `UIOffset` value.
-
- The input will be parsed as a comma-separating string in the format
- "*`horizontal`*,*`vertical`*" where *`horizontal`* and *`vertical`* are
- interpreted as floating-point numbers and used to populate the respective
- fields of the returned `UIOffset`.
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIOffset` value that corresponds with `str`.
-            Returns `UIOffsetZero` if `str` couldn't be interpreted.
- */
-+ (UIOffset) offsetFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Attempts to interpret an arbitrary object value as a `UIOffset`.
- 
- The input object is interpreted as follows:
- 
- * If it is an `NSString`, handling will be passed to `offsetFromString:error:`
- * If it is an `NSValue` containing a `UIOffset`, the underlying value is
-   returned
- * All other cases are considered errors
- 
- @param     obj The object to be interpreted.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIOffset` value that corresponds with `obj`. Returns
-            `UIOffsetZero` if `obj` couldn't be interpreted.
- */
-+ (UIOffset) offsetFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates an object expression and attempts to interpret the result as a
- `UIOffset` value using the `offsetFromObject:error:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `UIOffset` value that corresponds with the
-            result of evaluating `expr` as a string. Returns
-            `UIOffsetZero` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (UIOffset) offsetFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark UIEdgeInsets conversions
-/*!    @name UIEdgeInsets conversions                                         */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as a `UIEdgeInsets` value.
-
- The input will be parsed as a comma-separating string in the format
- "*`top`*,*`left`*,*`bottom`*,*`right`*" where
- *`top`*, *`left`*, *`bottom`* and *`right`* are interpreted as floating-point
- numbers and used to populate the respective fields of the returned
- `UIEdgeInsets`.
-
- @param     str The string to interpret.
-
- @return    The `UIEdgeInsets` value that corresponds with `str`.
-            Returns `UIEdgeInsetsZero` and logs an error to the
-            console if `str` couldn't be interpreted.
- */
-+ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as a `UIEdgeInsets` value.
-
- The input will be parsed as a comma-separating string in the format
- "*`top`*,*`left`*,*`bottom`*,*`right`*" where 
- *`top`*, *`left`*, *`bottom`* and *`right`* are interpreted as floating-point
- numbers and used to populate the respective fields of the returned 
- `UIEdgeInsets`.
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIEdgeInsets` value that corresponds with `str`.
-            Returns `UIEdgeInsetsZero` if `str` couldn't be interpreted.
- */
-+ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Attempts to interpret an arbitrary object value as a `UIEdgeInsets`.
- 
- The input object is interpreted as follows:
- 
- * If it is an `NSString`, handling will be passed to 
-   `edgeInsetsFromString:error:`
- * If it is an `NSValue` containing a `UIEdgeInsets`, the underlying value is
-   returned
- * All other cases are considered errors
- 
- @param     obj The object to be interpreted.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIEdgeInsets` value that corresponds with `obj`. Returns
-            `UIEdgeInsetsZero` if `obj` couldn't be interpreted.
- */
-+ (UIEdgeInsets) edgeInsetsFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates an object expression and attempts to interpret the result as a
- `UIEdgeInsets` value using the `edgeInsetsFromObject:error:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `UIEdgeInsets` value that corresponds with the
-            result of evaluating `expr` as a string. Returns
-            `UIEdgeInsetsZero` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (UIEdgeInsets) edgeInsetsFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark UIColor conversions
-/*!    @name UIColor conversions                                              */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as a `UIColor` value.
-
- This method can accept *named colors* as well as color values specified in 
- hexadecimal notation, commonly referred to as *web colors*.
- 
- ##### Named colors
-
- Named colors utilize the `UIColor` convention of providing a class method
- with a selector following the format: *`name`*`Color`. The value returned by 
- any `UIColor` class method named in this way can be referenced simply as
- *`name`*.
-
- In other words, passing the input string "`white`" will return
- `[`<code>UIColor whiteColor</code>`]`, "`clear`" will return
- `[`<code>UIColor clearColor</code>`]`, and "`darkGray`" will return
- `[`<code>UIColor darkGrayColor</code>`]`.
- 
- This applies to all `UIColor` class methods following that naming convention,
- including ones added through class categories. This means you can introduce
- your own custom named colors simply by creating a `UIColor` category that
- adds an implementation to return the appropriate `UIColor`.
- 
- ##### Web colors
-
- Web colors are specified with a leading *hash sign* (`#`) followed by
- 6 or 8 hexadecimal digits specifying 3 or 4 *color channels*, respectively.
- 
- Each *color channel* is specified with a two-digit case-insensitive
- hexadecimal value between `00` and `FF` in the format `#`*`RRGGBB`* or 
- `#`*`RRGGBBAA`* where:
- 
- * *`RR`* specifies the red component of the color
- * *`GG`* specifies the green component of the color
- * *`BB`* specifies the blue component of the color
- * The optional *`AA`* specifies the color's alpha channel, which determines its opacity
-
- @param     str The string to interpret.
- 
- @return    The `UIColor` value that corresponds with the
-            result of evaluating `expr` as a string. Returns
-            `[`<code>UIColor yellowColor</code>`]` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (nonnull UIColor*) colorFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as a `UIColor` value.
-
- This method can accept *named colors* as well as color values specified in 
- hexadecimal notation, commonly referred to as *web colors*.
- 
- ##### Named colors
-
- Named colors utilize the `UIColor` convention of providing a class method
- with a selector following the format: *`name`*`Color`. The value returned by
- any `UIColor` class method named in this way can be referenced simply as
- *`name`*.
-
- In other words, passing the input string "`white`" will return
- `[`<code>UIColor whiteColor</code>`]`, "`clear`" will return
- `[`<code>UIColor clearColor</code>`]`, and "`darkGray`" will return
- `[`<code>UIColor darkGrayColor</code>`]`.
-
- This applies to all `UIColor` class methods following that naming convention,
- including ones added through class categories. This means you can introduce
- your own custom named colors simply by creating a `UIColor` category that
- adds an implementation to return the appropriate `UIColor`.
- 
- ##### Web colors
-
- Web colors are specified with a leading *hash sign* (`#`) followed by
- 6 or 8 hexadecimal digits specifying 3 or 4 *color channels*, respectively.
- 
- Each *color channel* is specified with a two-digit case-insensitive
- hexadecimal value between `00` and `FF` in the format `#`*`RRGGBB`* or 
- `#`*`RRGGBBAA`* where:
- 
- * *`RR`* specifies the red component of the color
- * *`GG`* specifies the green component of the color
- * *`BB`* specifies the blue component of the color
- * The optional *`AA`* specifies the color's alpha channel, which determines its opacity
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIColor` value that corresponds with the
-            result of evaluating `expr` as a string. Returns
-            `[`<code>UIColor yellowColor</code>`]` if the expression result 
-            couldn't be interpreted.
- */
-+ (nonnull UIColor*) colorFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates a string expression and attempts to interpret the result as a
- `UIColor` value using the `colorFromString:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `UIColor` value that corresponds with the
-            result of evaluating `expr` as a string. Returns
-            `[`<code>UIColor yellowColor</code>`]` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (nonnull UIColor*) colorFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
 #pragma mark NSLineBreakMode conversions
 /*!    @name NSLineBreakMode conversions                                      */
 /*----------------------------------------------------------------------------*/
@@ -932,251 +678,6 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
 + (NSLineBreakMode) lineBreakModeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
-#pragma mark NSTextAlignment conversions
-/*!    @name NSTextAlignment conversions                                      */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as an `NSTextAlignment` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
- * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
- * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
-
- @param     str The string to interpret.
-
- @return    The `NSTextAlignment` value that corresponds with `str`.
-            Returns `NSTextAlignmentLeft` and logs an error to the
-            console if `str` isn't recognized.
- */
-+ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as an `NSTextAlignment` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
- * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
- * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `NSTextAlignment` value that corresponds with `str`.
-            Returns `NSTextAlignmentLeft` if `str` isn't
-            recognized.
- */
-+ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates a string expression and attempts to interpret the result as an
- `NSTextAlignment` value using the `textAlignmentFromString:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `NSTextAlignment` value that corresponds with the
-            result of evaluating `expr` as a string. Returns
-            `NSTextAlignmentLeft` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark UIScrollViewIndicatorStyle conversions
-/*!    @name UIScrollViewIndicatorStyle conversions                           */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as a `UIScrollViewIndicatorStyle` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLScrollViewIndicatorStyleDefault` ("**`default`**") → `UIScrollViewIndicatorStyleDefault`
- * `kMBMLScrollViewIndicatorStyleBlack` ("**`black`**") → `UIScrollViewIndicatorStyleBlack`
- * `kMBMLScrollViewIndicatorStyleWhite` ("**`white`**") → `UIScrollViewIndicatorStyleWhite`
-
- @param     str The string to interpret.
-
- @return    The `UIScrollViewIndicatorStyle` value that corresponds with `str`.
-            Returns `UIScrollViewIndicatorStyleDefault` and logs an error to the
-            console if `str` isn't recognized.
- */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as a `UIScrollViewIndicatorStyle` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLScrollViewIndicatorStyleDefault` ("**`default`**") → `UIScrollViewIndicatorStyleDefault`
- * `kMBMLScrollViewIndicatorStyleBlack` ("**`black`**") → `UIScrollViewIndicatorStyleBlack`
- * `kMBMLScrollViewIndicatorStyleWhite` ("**`white`**") → `UIScrollViewIndicatorStyleWhite`
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIScrollViewIndicatorStyle` value that corresponds with `str`.
-            Returns `UIScrollViewIndicatorStyleDefault` if `str` isn't
-            recognized.
- */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates a string expression and attempts to interpret the result as a
- `UIScrollViewIndicatorStyle` value using the
- `scrollViewIndicatorStyleFromString:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `UIScrollViewIndicatorStyle` value that corresponds with the
-            result of evaluating `expr` as a string. Returns 
-            `UIScrollViewIndicatorStyleDefault` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark UIActivityIndicatorViewStyle conversions
-/*!    @name UIActivityIndicatorViewStyle conversions                         */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as a `UIActivityIndicatorViewStyle` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("**``whiteLarge``**") → `UIActivityIndicatorViewStyleWhiteLarge`
- * `kMBMLActivityIndicatorViewStyleWhite` ("**``white``**") → `UIActivityIndicatorViewStyleWhite`
- * `kMBMLActivityIndicatorViewStyleGray` ("**`gray`**") → `UIActivityIndicatorViewStyleGray`
-
- @param     str The string to interpret.
-
- @return    The `UIActivityIndicatorViewStyle` value that corresponds with 
-            `str`. Returns `UIActivityIndicatorViewStyleWhite` and logs an error 
-            to the console if `str` isn't recognized.
- */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as a `UIActivityIndicatorViewStyle` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("**`whiteLarge`**") → `UIActivityIndicatorViewStyleWhiteLarge`
- * `kMBMLActivityIndicatorViewStyleWhite` ("**`white`**") → `UIActivityIndicatorViewStyleWhite`
- * `kMBMLActivityIndicatorViewStyleGray` ("**`gray`**") → `UIActivityIndicatorViewStyleGray`
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIActivityIndicatorViewStyle` value that corresponds with
-            `str`. Returns `UIActivityIndicatorViewStyleWhite` if `str` isn't
-            recognized.
- */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates a string expression and attempts to interpret the result as a
- `UIActivityIndicatorViewStyle` value using the 
- `activityIndicatorViewStyleFromString:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `UIActivityIndicatorViewStyle` value that corresponds with the
-            result of evaluating `expr` as a string. Returns 
-            `UIActivityIndicatorViewStyleWhite` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
-#pragma mark UIButtonType conversions
-/*!    @name UIButtonType conversions                                         */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as a `UIButtonType` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLButtonTypeCustom` ("**`custom`**") → `UIButtonTypeCustom`
- * `kMBMLButtonTypeRoundedRect` ("**`rounded`**") → `UIButtonTypeRoundedRect`
- * `kMBMLButtonTypeDetailDisclosure` ("**`detailDisclosure`**") → `UIButtonTypeDetailDisclosure`
- * `kMBMLButtonTypeInfoLight` ("**`infoLight`**") → `UIButtonTypeInfoLight`
- * `kMBMLButtonTypeInfoDark` ("**`infoDark`**") → `UIButtonTypeInfoDark`
- * `kMBMLButtonTypeContactAdd` ("**`contactAdd`**") → `UIButtonTypeContactAdd`
-
- @param     str The string to interpret.
-
- @return    The `UIButtonType` value that corresponds with `str`.
-            Returns `UIButtonTypeCustom` and logs an error to the
-            console if `str` isn't recognized.
- */
-+ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as a `UIButtonType` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLButtonTypeCustom` ("**`custom`**") → `UIButtonTypeCustom`
- * `kMBMLButtonTypeRoundedRect` ("**`rounded`**") → `UIButtonTypeRoundedRect`
- * `kMBMLButtonTypeDetailDisclosure` ("**`detailDisclosure`**") → `UIButtonTypeDetailDisclosure`
- * `kMBMLButtonTypeInfoLight` ("**`infoLight`**") → `UIButtonTypeInfoLight`
- * `kMBMLButtonTypeInfoDark` ("**`infoDark`**") → `UIButtonTypeInfoDark`
- * `kMBMLButtonTypeContactAdd` ("**`contactAdd`**") → `UIButtonTypeContactAdd`
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
-            `NSError` instance in the event of a problem interpreting `str`.
-            If non-`nil` and an error occurs, `*errPtr` will be set to an
-            `NSError` instance indicating the error.
-
- @return    The `UIButtonType` value that corresponds with `str`.
-            Returns `UIButtonTypeCustom` if `str` isn't
-            recognized.
- */
-+ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates a string expression and attempts to interpret the result as a
- `UIButtonType` value using the `buttonTypeFromString:`
- method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `UIButtonType` value that corresponds with the
-            result of evaluating `expr` as a string. Returns 
-            `UIButtonTypeCustom` and logs an error to the
-            console if the expression result couldn't be interpreted.
- */
-+ (UIButtonType) buttonTypeFromExpression:(nonnull NSString*)expr;
-
-/*----------------------------------------------------------------------------*/
 #pragma mark NSDateFormatterStyle conversions
 /*!    @name NSDateFormatterStyle conversions                                 */
 /*----------------------------------------------------------------------------*/
@@ -1239,6 +740,523 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
             console if the expression result couldn't be interpreted.
  */
 + (NSDateFormatterStyle) dateFormatterStyleFromExpression:(nonnull NSString*)expr;
+
+#if MB_BUILD_IOS
+
+/*----------------------------------------------------------------------------*/
+#pragma mark NSTextAlignment conversions
+/*!    @name NSTextAlignment conversions                                      */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as an `NSTextAlignment` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
+ * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
+ * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
+
+ @param     str The string to interpret.
+
+ @return    The `NSTextAlignment` value that corresponds with `str`.
+ Returns `NSTextAlignmentLeft` and logs an error to the
+ console if `str` isn't recognized.
+ */
++ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as an `NSTextAlignment` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
+ * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
+ * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `NSTextAlignment` value that corresponds with `str`.
+ Returns `NSTextAlignmentLeft` if `str` isn't
+ recognized.
+ */
++ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as an
+ `NSTextAlignment` value using the `textAlignmentFromString:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `NSTextAlignment` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `NSTextAlignmentLeft` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIOffset conversions
+/*!    @name UIOffset conversions                                             */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIOffset` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`horizontal`*,*`vertical`*" where *`horizontal`* and *`vertical`* are
+ interpreted as floating-point numbers and used to populate the respective
+ fields of the returned `UIOffset`.
+
+ @param     str The string to interpret.
+
+ @return    The `UIOffset` value that corresponds with `str`.
+ Returns `UIOffsetZero` and logs an error to the
+ console if `str` couldn't be interpreted.
+ */
++ (UIOffset) offsetFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIOffset` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`horizontal`*,*`vertical`*" where *`horizontal`* and *`vertical`* are
+ interpreted as floating-point numbers and used to populate the respective
+ fields of the returned `UIOffset`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIOffset` value that corresponds with `str`.
+ Returns `UIOffsetZero` if `str` couldn't be interpreted.
+ */
++ (UIOffset) offsetFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `UIOffset`.
+
+ The input object is interpreted as follows:
+
+ * If it is an `NSString`, handling will be passed to `offsetFromString:error:`
+ * If it is an `NSValue` containing a `UIOffset`, the underlying value is
+ returned
+ * All other cases are considered errors
+
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIOffset` value that corresponds with `obj`. Returns
+ `UIOffsetZero` if `obj` couldn't be interpreted.
+ */
++ (UIOffset) offsetFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `UIOffset` value using the `offsetFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIOffset` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `UIOffsetZero` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (UIOffset) offsetFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIEdgeInsets conversions
+/*!    @name UIEdgeInsets conversions                                         */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIEdgeInsets` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`top`*,*`left`*,*`bottom`*,*`right`*" where
+ *`top`*, *`left`*, *`bottom`* and *`right`* are interpreted as floating-point
+ numbers and used to populate the respective fields of the returned
+ `UIEdgeInsets`.
+
+ @param     str The string to interpret.
+
+ @return    The `UIEdgeInsets` value that corresponds with `str`.
+ Returns `UIEdgeInsetsZero` and logs an error to the
+ console if `str` couldn't be interpreted.
+ */
++ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIEdgeInsets` value.
+
+ The input will be parsed as a comma-separating string in the format
+ "*`top`*,*`left`*,*`bottom`*,*`right`*" where
+ *`top`*, *`left`*, *`bottom`* and *`right`* are interpreted as floating-point
+ numbers and used to populate the respective fields of the returned
+ `UIEdgeInsets`.
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIEdgeInsets` value that corresponds with `str`.
+ Returns `UIEdgeInsetsZero` if `str` couldn't be interpreted.
+ */
++ (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Attempts to interpret an arbitrary object value as a `UIEdgeInsets`.
+
+ The input object is interpreted as follows:
+
+ * If it is an `NSString`, handling will be passed to
+ `edgeInsetsFromString:error:`
+ * If it is an `NSValue` containing a `UIEdgeInsets`, the underlying value is
+ returned
+ * All other cases are considered errors
+
+ @param     obj The object to be interpreted.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIEdgeInsets` value that corresponds with `obj`. Returns
+ `UIEdgeInsetsZero` if `obj` couldn't be interpreted.
+ */
++ (UIEdgeInsets) edgeInsetsFromObject:(nonnull id)obj error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates an object expression and attempts to interpret the result as a
+ `UIEdgeInsets` value using the `edgeInsetsFromObject:error:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIEdgeInsets` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `UIEdgeInsetsZero` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (UIEdgeInsets) edgeInsetsFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIColor conversions
+/*!    @name UIColor conversions                                              */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIColor` value.
+
+ This method can accept *named colors* as well as color values specified in
+ hexadecimal notation, commonly referred to as *web colors*.
+
+ ##### Named colors
+
+ Named colors utilize the `UIColor` convention of providing a class method
+ with a selector following the format: *`name`*`Color`. The value returned by
+ any `UIColor` class method named in this way can be referenced simply as
+ *`name`*.
+
+ In other words, passing the input string "`white`" will return
+ `[`<code>UIColor whiteColor</code>`]`, "`clear`" will return
+ `[`<code>UIColor clearColor</code>`]`, and "`darkGray`" will return
+ `[`<code>UIColor darkGrayColor</code>`]`.
+
+ This applies to all `UIColor` class methods following that naming convention,
+ including ones added through class categories. This means you can introduce
+ your own custom named colors simply by creating a `UIColor` category that
+ adds an implementation to return the appropriate `UIColor`.
+
+ ##### Web colors
+
+ Web colors are specified with a leading *hash sign* (`#`) followed by
+ 6 or 8 hexadecimal digits specifying 3 or 4 *color channels*, respectively.
+
+ Each *color channel* is specified with a two-digit case-insensitive
+ hexadecimal value between `00` and `FF` in the format `#`*`RRGGBB`* or
+ `#`*`RRGGBBAA`* where:
+
+ * *`RR`* specifies the red component of the color
+ * *`GG`* specifies the green component of the color
+ * *`BB`* specifies the blue component of the color
+ * The optional *`AA`* specifies the color's alpha channel, which determines its opacity
+
+ @param     str The string to interpret.
+
+ @return    The `UIColor` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `[`<code>UIColor yellowColor</code>`]` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (nonnull UIColor*) colorFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIColor` value.
+
+ This method can accept *named colors* as well as color values specified in
+ hexadecimal notation, commonly referred to as *web colors*.
+
+ ##### Named colors
+
+ Named colors utilize the `UIColor` convention of providing a class method
+ with a selector following the format: *`name`*`Color`. The value returned by
+ any `UIColor` class method named in this way can be referenced simply as
+ *`name`*.
+
+ In other words, passing the input string "`white`" will return
+ `[`<code>UIColor whiteColor</code>`]`, "`clear`" will return
+ `[`<code>UIColor clearColor</code>`]`, and "`darkGray`" will return
+ `[`<code>UIColor darkGrayColor</code>`]`.
+
+ This applies to all `UIColor` class methods following that naming convention,
+ including ones added through class categories. This means you can introduce
+ your own custom named colors simply by creating a `UIColor` category that
+ adds an implementation to return the appropriate `UIColor`.
+
+ ##### Web colors
+
+ Web colors are specified with a leading *hash sign* (`#`) followed by
+ 6 or 8 hexadecimal digits specifying 3 or 4 *color channels*, respectively.
+
+ Each *color channel* is specified with a two-digit case-insensitive
+ hexadecimal value between `00` and `FF` in the format `#`*`RRGGBB`* or
+ `#`*`RRGGBBAA`* where:
+
+ * *`RR`* specifies the red component of the color
+ * *`GG`* specifies the green component of the color
+ * *`BB`* specifies the blue component of the color
+ * The optional *`AA`* specifies the color's alpha channel, which determines its opacity
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIColor` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `[`<code>UIColor yellowColor</code>`]` if the expression result
+ couldn't be interpreted.
+ */
++ (nonnull UIColor*) colorFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as a
+ `UIColor` value using the `colorFromString:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIColor` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `[`<code>UIColor yellowColor</code>`]` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (nonnull UIColor*) colorFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIScrollViewIndicatorStyle conversions
+/*!    @name UIScrollViewIndicatorStyle conversions                           */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIScrollViewIndicatorStyle` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLScrollViewIndicatorStyleDefault` ("**`default`**") → `UIScrollViewIndicatorStyleDefault`
+ * `kMBMLScrollViewIndicatorStyleBlack` ("**`black`**") → `UIScrollViewIndicatorStyleBlack`
+ * `kMBMLScrollViewIndicatorStyleWhite` ("**`white`**") → `UIScrollViewIndicatorStyleWhite`
+
+ @param     str The string to interpret.
+
+ @return    The `UIScrollViewIndicatorStyle` value that corresponds with `str`.
+ Returns `UIScrollViewIndicatorStyleDefault` and logs an error to the
+ console if `str` isn't recognized.
+ */
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIScrollViewIndicatorStyle` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLScrollViewIndicatorStyleDefault` ("**`default`**") → `UIScrollViewIndicatorStyleDefault`
+ * `kMBMLScrollViewIndicatorStyleBlack` ("**`black`**") → `UIScrollViewIndicatorStyleBlack`
+ * `kMBMLScrollViewIndicatorStyleWhite` ("**`white`**") → `UIScrollViewIndicatorStyleWhite`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIScrollViewIndicatorStyle` value that corresponds with `str`.
+ Returns `UIScrollViewIndicatorStyleDefault` if `str` isn't
+ recognized.
+ */
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as a
+ `UIScrollViewIndicatorStyle` value using the
+ `scrollViewIndicatorStyleFromString:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIScrollViewIndicatorStyle` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `UIScrollViewIndicatorStyleDefault` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIActivityIndicatorViewStyle conversions
+/*!    @name UIActivityIndicatorViewStyle conversions                         */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIActivityIndicatorViewStyle` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("**``whiteLarge``**") → `UIActivityIndicatorViewStyleWhiteLarge`
+ * `kMBMLActivityIndicatorViewStyleWhite` ("**``white``**") → `UIActivityIndicatorViewStyleWhite`
+ * `kMBMLActivityIndicatorViewStyleGray` ("**`gray`**") → `UIActivityIndicatorViewStyleGray`
+
+ @param     str The string to interpret.
+
+ @return    The `UIActivityIndicatorViewStyle` value that corresponds with
+ `str`. Returns `UIActivityIndicatorViewStyleWhite` and logs an error
+ to the console if `str` isn't recognized.
+ */
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIActivityIndicatorViewStyle` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLActivityIndicatorViewStyleWhiteLarge` ("**`whiteLarge`**") → `UIActivityIndicatorViewStyleWhiteLarge`
+ * `kMBMLActivityIndicatorViewStyleWhite` ("**`white`**") → `UIActivityIndicatorViewStyleWhite`
+ * `kMBMLActivityIndicatorViewStyleGray` ("**`gray`**") → `UIActivityIndicatorViewStyleGray`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIActivityIndicatorViewStyle` value that corresponds with
+ `str`. Returns `UIActivityIndicatorViewStyleWhite` if `str` isn't
+ recognized.
+ */
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as a
+ `UIActivityIndicatorViewStyle` value using the
+ `activityIndicatorViewStyleFromString:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIActivityIndicatorViewStyle` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `UIActivityIndicatorViewStyleWhite` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIButtonType conversions
+/*!    @name UIButtonType conversions                                         */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIButtonType` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLButtonTypeCustom` ("**`custom`**") → `UIButtonTypeCustom`
+ * `kMBMLButtonTypeRoundedRect` ("**`rounded`**") → `UIButtonTypeRoundedRect`
+ * `kMBMLButtonTypeDetailDisclosure` ("**`detailDisclosure`**") → `UIButtonTypeDetailDisclosure`
+ * `kMBMLButtonTypeInfoLight` ("**`infoLight`**") → `UIButtonTypeInfoLight`
+ * `kMBMLButtonTypeInfoDark` ("**`infoDark`**") → `UIButtonTypeInfoDark`
+ * `kMBMLButtonTypeContactAdd` ("**`contactAdd`**") → `UIButtonTypeContactAdd`
+
+ @param     str The string to interpret.
+
+ @return    The `UIButtonType` value that corresponds with `str`.
+ Returns `UIButtonTypeCustom` and logs an error to the
+ console if `str` isn't recognized.
+ */
++ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIButtonType` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLButtonTypeCustom` ("**`custom`**") → `UIButtonTypeCustom`
+ * `kMBMLButtonTypeRoundedRect` ("**`rounded`**") → `UIButtonTypeRoundedRect`
+ * `kMBMLButtonTypeDetailDisclosure` ("**`detailDisclosure`**") → `UIButtonTypeDetailDisclosure`
+ * `kMBMLButtonTypeInfoLight` ("**`infoLight`**") → `UIButtonTypeInfoLight`
+ * `kMBMLButtonTypeInfoDark` ("**`infoDark`**") → `UIButtonTypeInfoDark`
+ * `kMBMLButtonTypeContactAdd` ("**`contactAdd`**") → `UIButtonTypeContactAdd`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `UIButtonType` value that corresponds with `str`.
+ Returns `UIButtonTypeCustom` if `str` isn't
+ recognized.
+ */
++ (UIButtonType) buttonTypeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as a
+ `UIButtonType` value using the `buttonTypeFromString:`
+ method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIButtonType` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `UIButtonTypeCustom` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (UIButtonType) buttonTypeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UITextBorderStyle conversions
@@ -2263,5 +2281,7 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
             if the expression result couldn't be interpreted.
  */
 + (UIPopoverArrowDirection) popoverArrowDirectionFromExpression:(nonnull NSString*)expr;
+
+#endif
 
 @end
