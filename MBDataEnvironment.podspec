@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
     s.source_files          = 'Code/**/*.{h,m}'
     s.public_header_files   = 'Code/**/*.h'
     s.private_header_files  = 'Code/ExpressionEngine/Private/**/*.h'
+    s.osx.exclude_files     = 'Code/iOS'
 
     s.preserve_paths        = 'Tests/**'
 

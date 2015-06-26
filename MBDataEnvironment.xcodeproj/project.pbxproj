@@ -21,6 +21,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		20C4FD4A1B3D0850007A6135 /* MBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 20C4FD481B3D0850007A6135 /* MBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20C4FD4B1B3D0850007A6135 /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FD491B3D0850007A6135 /* MBDevice.m */; };
+		20C4FD501B3D0866007A6135 /* MBMLFontFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 20C4FD4C1B3D0866007A6135 /* MBMLFontFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20C4FD511B3D0866007A6135 /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FD4D1B3D0866007A6135 /* MBMLFontFunctions.m */; };
+		20C4FD521B3D0866007A6135 /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 20C4FD4E1B3D0866007A6135 /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20C4FD531B3D0866007A6135 /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FD4F1B3D0866007A6135 /* MBMLGeometryFunctions.m */; };
 		368F1A9EC620009A508C7103 /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 736A0C8729A6621A577C0FE3 /* libPods-osx.a */; };
 		3B2D73781A7B510800F16154 /* MBMLEncodingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73771A7B510800F16154 /* MBMLEncodingFunctionTests.m */; };
 		3B2D737A1A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73791A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m */; };
@@ -183,7 +189,6 @@
 		3BD23C901A65FBBB001F7869 /* test-MBDataEnvironment.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */; };
 		3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
 		3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
-		3BD23C931A65FC54001F7869 /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73219D9FBEB00996B9F /* MBDevice.m */; };
 		3BD23C941A65FC54001F7869 /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */; };
 		3BD23C951A65FC54001F7869 /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */; };
 		3BD23C961A65FC54001F7869 /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */; };
@@ -232,8 +237,6 @@
 		3BD23CC11A65FC54001F7869 /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */; };
 		3BD23CC21A65FC54001F7869 /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */; };
 		3BD23CC31A65FC54001F7869 /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */; };
-		3BD23CC41A65FC54001F7869 /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */; };
-		3BD23CC51A65FC54001F7869 /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */; };
 		3BD23CC61A65FC54001F7869 /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */; };
 		3BD23CC71A65FC54001F7869 /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */; };
 		3BD23CC81A65FC54001F7869 /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */; };
@@ -250,7 +253,6 @@
 		3BD23CD31A65FC54001F7869 /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */; };
 		3BD23CD41A65FCCC001F7869 /* MBAttributeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23CD51A65FCCC001F7869 /* MBDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BD23CD61A65FCCD001F7869 /* MBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73119D9FBEB00996B9F /* MBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23CD71A65FCCD001F7869 /* MBEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73419D9FBEB00996B9F /* MBEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23CD81A65FCCD001F7869 /* MBEnvironmentLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73619D9FBEB00996B9F /* MBEnvironmentLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23CD91A65FCCD001F7869 /* MBEvents+DataLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73919D9FBEB00996B9F /* MBEvents+DataLoading.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -300,8 +302,6 @@
 		3BD23D051A65FD07001F7869 /* MBMLEncodingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79719D9FBEB00996B9F /* MBMLEncodingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D061A65FD07001F7869 /* MBMLEnvironmentFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79919D9FBEB00996B9F /* MBMLEnvironmentFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D071A65FD07001F7869 /* MBMLFileFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BD23D081A65FD07001F7869 /* MBMLFontFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BD23D091A65FD07001F7869 /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D0A1A65FD07001F7869 /* MBMLLogicFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D0B1A65FD07001F7869 /* MBMLMathFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D0C1A65FD07001F7869 /* MBMLRegexFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A519D9FBEB00996B9F /* MBMLRegexFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -334,6 +334,12 @@
 
 /* Begin PBXFileReference section */
 		054A2F6CA8E099EBEC56B58B /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20C4FD481B3D0850007A6135 /* MBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDevice.h; path = Code/iOS/Device/MBDevice.h; sourceTree = SOURCE_ROOT; };
+		20C4FD491B3D0850007A6135 /* MBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDevice.m; path = Code/iOS/Device/MBDevice.m; sourceTree = SOURCE_ROOT; };
+		20C4FD4C1B3D0866007A6135 /* MBMLFontFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMLFontFunctions.h; path = Code/iOS/Functions/MBMLFontFunctions.h; sourceTree = SOURCE_ROOT; };
+		20C4FD4D1B3D0866007A6135 /* MBMLFontFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLFontFunctions.m; path = Code/iOS/Functions/MBMLFontFunctions.m; sourceTree = SOURCE_ROOT; };
+		20C4FD4E1B3D0866007A6135 /* MBMLGeometryFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMLGeometryFunctions.h; path = Code/iOS/Functions/MBMLGeometryFunctions.h; sourceTree = SOURCE_ROOT; };
+		20C4FD4F1B3D0866007A6135 /* MBMLGeometryFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLGeometryFunctions.m; path = Code/iOS/Functions/MBMLGeometryFunctions.m; sourceTree = SOURCE_ROOT; };
 		2A1673EA870D447CF4B521E4 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		2BA0531AEAF2F59D65062A36 /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
 		3748C53F01464830A2605981 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -358,8 +364,6 @@
 		3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAttributeValidator.m; sourceTree = "<group>"; };
 		3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataModel.h; sourceTree = "<group>"; };
 		3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataModel.m; sourceTree = "<group>"; };
-		3B8BA73119D9FBEB00996B9F /* MBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDevice.h; sourceTree = "<group>"; };
-		3B8BA73219D9FBEB00996B9F /* MBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDevice.m; sourceTree = "<group>"; };
 		3B8BA73419D9FBEB00996B9F /* MBEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironment.h; sourceTree = "<group>"; };
 		3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironment.m; sourceTree = "<group>"; };
 		3B8BA73619D9FBEB00996B9F /* MBEnvironmentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironmentLoader.h; sourceTree = "<group>"; };
@@ -457,10 +461,6 @@
 		3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEnvironmentFunctions.m; sourceTree = "<group>"; };
 		3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFileFunctions.h; sourceTree = "<group>"; };
 		3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFileFunctions.m; sourceTree = "<group>"; };
-		3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFontFunctions.h; sourceTree = "<group>"; };
-		3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFontFunctions.m; sourceTree = "<group>"; };
-		3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGeometryFunctions.h; sourceTree = "<group>"; };
-		3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGeometryFunctions.m; sourceTree = "<group>"; };
 		3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLogicFunctions.h; sourceTree = "<group>"; };
 		3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLogicFunctions.m; sourceTree = "<group>"; };
 		3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathFunctions.h; sourceTree = "<group>"; };
@@ -617,8 +617,8 @@
 		3B8BA73019D9FBEB00996B9F /* Device */ = {
 			isa = PBXGroup;
 			children = (
-				3B8BA73119D9FBEB00996B9F /* MBDevice.h */,
-				3B8BA73219D9FBEB00996B9F /* MBDevice.m */,
+				20C4FD481B3D0850007A6135 /* MBDevice.h */,
+				20C4FD491B3D0850007A6135 /* MBDevice.m */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -790,10 +790,10 @@
 				3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */,
 				3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */,
 				3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */,
-				3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */,
-				3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */,
-				3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */,
-				3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */,
+				20C4FD4C1B3D0866007A6135 /* MBMLFontFunctions.h */,
+				20C4FD4D1B3D0866007A6135 /* MBMLFontFunctions.m */,
+				20C4FD4E1B3D0866007A6135 /* MBMLGeometryFunctions.h */,
+				20C4FD4F1B3D0866007A6135 /* MBMLGeometryFunctions.m */,
 				3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */,
 				3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */,
 				3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */,
@@ -976,7 +976,6 @@
 			files = (
 				3BD23CD41A65FCCC001F7869 /* MBAttributeValidator.h in Headers */,
 				3BD23CD51A65FCCC001F7869 /* MBDataModel.h in Headers */,
-				3BD23CD61A65FCCD001F7869 /* MBDevice.h in Headers */,
 				3BD23CD71A65FCCD001F7869 /* MBEnvironment.h in Headers */,
 				3BD23CD81A65FCCD001F7869 /* MBEnvironmentLoader.h in Headers */,
 				3BD23CD91A65FCCD001F7869 /* MBEvents+DataLoading.h in Headers */,
@@ -991,10 +990,9 @@
 				3BD23D051A65FD07001F7869 /* MBMLEncodingFunctions.h in Headers */,
 				3BD23D061A65FD07001F7869 /* MBMLEnvironmentFunctions.h in Headers */,
 				3BD23D071A65FD07001F7869 /* MBMLFileFunctions.h in Headers */,
-				3BD23D081A65FD07001F7869 /* MBMLFontFunctions.h in Headers */,
-				3BD23D091A65FD07001F7869 /* MBMLGeometryFunctions.h in Headers */,
 				3BD23D0A1A65FD07001F7869 /* MBMLLogicFunctions.h in Headers */,
 				3BD23D0B1A65FD07001F7869 /* MBMLMathFunctions.h in Headers */,
+				20C4FD521B3D0866007A6135 /* MBMLGeometryFunctions.h in Headers */,
 				3BD23D0C1A65FD07001F7869 /* MBMLRegexFunctions.h in Headers */,
 				3BD23D0D1A65FD07001F7869 /* MBMLResourceFunctions.h in Headers */,
 				3BD23D0E1A65FD07001F7869 /* MBMLRuntimeFunctions.h in Headers */,
@@ -1021,11 +1019,13 @@
 				3BD23CE81A65FCEA001F7869 /* MBMLObjectReferenceToken.h in Headers */,
 				3BD23CE91A65FCEA001F7869 /* MBMLObjectSubreferenceToken.h in Headers */,
 				3BD23CEA1A65FCEA001F7869 /* MBMLParameterDelimiterToken.h in Headers */,
+				20C4FD501B3D0866007A6135 /* MBMLFontFunctions.h in Headers */,
 				3BD23CEB1A65FCEA001F7869 /* MBMLParameterGroupingToken.h in Headers */,
 				3BD23CEC1A65FCEA001F7869 /* MBMLParseToken.h in Headers */,
 				3BD23CED1A65FCEA001F7869 /* MBMLVariableReferenceToken.h in Headers */,
 				3BD23CEE1A65FCEA001F7869 /* MBMLWhitespaceToken.h in Headers */,
 				3BD23CEF1A65FCEA001F7869 /* OperationTokens.h in Headers */,
+				20C4FD4A1B3D0850007A6135 /* MBDevice.h in Headers */,
 				3BD23CF01A65FCEA001F7869 /* MBMLBooleanAndOperatorToken.h in Headers */,
 				3BD23CF11A65FCEA001F7869 /* MBMLBooleanGroupingToken.h in Headers */,
 				3BD23CF21A65FCEA001F7869 /* MBMLBooleanNegationToken.h in Headers */,
@@ -1332,7 +1332,6 @@
 			files = (
 				3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */,
 				3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */,
-				3BD23C931A65FC54001F7869 /* MBDevice.m in Sources */,
 				3BD23C941A65FC54001F7869 /* MBEnvironment.m in Sources */,
 				3BD23C951A65FC54001F7869 /* MBEnvironmentLoader.m in Sources */,
 				3BD23C961A65FC54001F7869 /* MBEvents+DataLoading.m in Sources */,
@@ -1370,6 +1369,7 @@
 				3BD23CB61A65FC54001F7869 /* MBMLLessThanTestToken.m in Sources */,
 				3BD23CB71A65FC54001F7869 /* MBMLAdditionOperatorToken.m in Sources */,
 				3BD23CB81A65FC54001F7869 /* MBMLDivisionOperatorToken.m in Sources */,
+				20C4FD531B3D0866007A6135 /* MBMLGeometryFunctions.m in Sources */,
 				3BD23CB91A65FC54001F7869 /* MBMLMathGroupingToken.m in Sources */,
 				3BD23CBA1A65FC54001F7869 /* MBMLMathOperatorToken.m in Sources */,
 				3BD23CBB1A65FC54001F7869 /* MBMLMultiplicationOperatorToken.m in Sources */,
@@ -1381,8 +1381,6 @@
 				3BD23CC11A65FC54001F7869 /* MBMLEncodingFunctions.m in Sources */,
 				3BD23CC21A65FC54001F7869 /* MBMLEnvironmentFunctions.m in Sources */,
 				3BD23CC31A65FC54001F7869 /* MBMLFileFunctions.m in Sources */,
-				3BD23CC41A65FC54001F7869 /* MBMLFontFunctions.m in Sources */,
-				3BD23CC51A65FC54001F7869 /* MBMLGeometryFunctions.m in Sources */,
 				3BD23CC61A65FC54001F7869 /* MBMLLogicFunctions.m in Sources */,
 				3BD23CC71A65FC54001F7869 /* MBMLMathFunctions.m in Sources */,
 				3BD23CC81A65FC54001F7869 /* MBMLRegexFunctions.m in Sources */,
@@ -1391,12 +1389,14 @@
 				3BD23CCB1A65FC54001F7869 /* MBMLStringFunctions.m in Sources */,
 				3BD23CCC1A65FC54001F7869 /* MBMLFunction.m in Sources */,
 				3BD23CCD1A65FC54001F7869 /* MBDataEnvironmentModule.m in Sources */,
+				20C4FD511B3D0866007A6135 /* MBMLFontFunctions.m in Sources */,
 				3BD23CCE1A65FC54001F7869 /* MBDataEnvironmentConstants.m in Sources */,
 				3BD23CCF1A65FC54001F7869 /* MBStringConversions.m in Sources */,
 				3BD23CD01A65FC54001F7869 /* TypeCoercionSupport.m in Sources */,
 				3BD23CD11A65FC54001F7869 /* MBScopedVariables.m in Sources */,
 				3BA8B2A31A7C2DDF00B00241 /* MBMLModuloOperatorToken.m in Sources */,
 				3BD23CD21A65FC54001F7869 /* MBVariableDeclaration.m in Sources */,
+				20C4FD4B1B3D0850007A6135 /* MBDevice.m in Sources */,
 				3BD23CD31A65FC54001F7869 /* MBVariableSpace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
