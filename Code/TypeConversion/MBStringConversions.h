@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import "PlatformTypeIndependence.h"
+#import <MBToolbox/MBAvailability.h>
 
 #if MB_BUILD_IOS
 #import <UIKit/UIKit.h>

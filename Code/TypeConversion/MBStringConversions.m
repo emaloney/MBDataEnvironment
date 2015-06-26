@@ -342,7 +342,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (CGFloat) sizeDimensionFromExpression:(nonnull NSString*)expr
 {
     if ([expr isEqualToString:kMBWildcardString]) {
-        return MBViewNoIntrinsicMetric;
+        return -1;
     }
     
     MBExpressionError* err = nil;
@@ -355,7 +355,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (CGFloat) sizeDimensionFromString:(nonnull NSString*)str
 {
-    CGFloat dim = MBViewNoIntrinsicMetric;
+    CGFloat dim = -1;
     if (![str isEqualToString:kMBWildcardString]) {
         dim = [str doubleValue];
     }
