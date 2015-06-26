@@ -184,13 +184,15 @@ MBImplementSingleton();
         _functionSignatures = [NSMutableDictionary new];
         
         NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
-        
+
+#if MB_BUILD_IOS
         // when a memory warning occurs, we clear the cache
         [nc addObserver:self
                selector:@selector(memoryWarning:)
                    name:UIApplicationDidReceiveMemoryWarningNotification
                  object:nil];
-        
+#endif
+
         // because tokenized function parameters are stored in the cache, and
         // because the function's inputType determines the structure of those
         // tokens, we need to take this account when determining whether a cache
@@ -254,12 +256,16 @@ MBImplementSingleton();
 #pragma mark Memory management
 /******************************************************************************/
 
+#if MB_BUILD_IOS
+
 - (void) memoryWarning:(id)sender
 {
     MBLogDebugTrace();
     
     [self clearMemoryCache];
 }
+
+#endif
 
 /******************************************************************************/
 #pragma mark Cache dirty & save timer handling

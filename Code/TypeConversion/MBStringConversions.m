@@ -19,6 +19,21 @@
 #pragma mark Constants
 /******************************************************************************/
 
+NSString* const kMBMLLineBreakByWordWrapping                = @"wordWrap";
+NSString* const kMBMLLineBreakByCharWrapping                = @"charWrap";
+NSString* const kMBMLLineBreakByClipping                    = @"clip";
+NSString* const kMBMLLineBreakByTruncatingHead              = @"headTruncation";
+NSString* const kMBMLLineBreakByTruncatingTail              = @"tailTruncation";
+NSString* const kMBMLLineBreakByTruncatingMiddle            = @"middleTruncation";
+
+NSString* const kMBMLDateFormatterNoStyle                   = @"none";
+NSString* const kMBMLDateFormatterShortStyle                = @"short";
+NSString* const kMBMLDateFormatterMediumStyle               = @"medium";
+NSString* const kMBMLDateFormatterLongStyle                 = @"long";
+NSString* const kMBMLDateFormatterFullStyle                 = @"full";
+
+#if MB_BUILD_IOS
+
 NSString* const kMBMLTextAlignmentLeft                      = @"left";
 NSString* const kMBMLTextAlignmentCenter                    = @"center";
 NSString* const kMBMLTextAlignmentRight                     = @"right";
@@ -26,13 +41,6 @@ NSString* const kMBMLTextAlignmentRight                     = @"right";
 NSString* const kMBMLScrollViewIndicatorStyleDefault        = @"default";
 NSString* const kMBMLScrollViewIndicatorStyleBlack          = @"black";
 NSString* const kMBMLScrollViewIndicatorStyleWhite          = @"white";
-
-NSString* const kMBMLLineBreakByWordWrapping                = @"wordWrap";
-NSString* const kMBMLLineBreakByCharWrapping                = @"charWrap";
-NSString* const kMBMLLineBreakByClipping                    = @"clip";
-NSString* const kMBMLLineBreakByTruncatingHead              = @"headTruncation";
-NSString* const kMBMLLineBreakByTruncatingTail              = @"tailTruncation";
-NSString* const kMBMLLineBreakByTruncatingMiddle            = @"middleTruncation";
 
 NSString* const kMBMLActivityIndicatorViewStyleWhiteLarge   = @"whiteLarge";
 NSString* const kMBMLActivityIndicatorViewStyleWhite        = @"white";
@@ -44,12 +52,6 @@ NSString* const kMBMLButtonTypeDetailDisclosure             = @"detailDisclosure
 NSString* const kMBMLButtonTypeInfoLight                    = @"infoLight";
 NSString* const kMBMLButtonTypeInfoDark                     = @"infoDark";
 NSString* const kMBMLButtonTypeContactAdd                   = @"contactAdd";
-
-NSString* const kMBMLDateFormatterNoStyle                   = @"none";
-NSString* const kMBMLDateFormatterShortStyle                = @"short";
-NSString* const kMBMLDateFormatterMediumStyle               = @"medium";
-NSString* const kMBMLDateFormatterLongStyle                 = @"long";
-NSString* const kMBMLDateFormatterFullStyle                 = @"full";
 
 NSString* const kMBMLTextBorderStyleNone                    = @"none";
 NSString* const kMBMLTextBorderStyleLine                    = @"line";
@@ -171,6 +173,8 @@ NSString* const kMBMLPopoverArrowDirectionDown              = @"down";
 NSString* const kMBMLPopoverArrowDirectionLeft              = @"left";
 NSString* const kMBMLPopoverArrowDirectionRight             = @"right";
 NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
+
+#endif
 
 /******************************************************************************/
 #pragma mark -
@@ -295,6 +299,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([obj isKindOfClass:[NSString class]]) {
         return [self pointFromString:obj error:errPtr];
     }
+#if MB_BUILD_IOS
     else if ([obj isKindOfClass:[NSValue class]]) {
         NSValue* value = (NSValue*)obj;
         if (!strcmp([value objCType], @encode(CGPoint))) {
@@ -306,6 +311,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                                              to:errPtr];
         }
     }
+#endif
     else {
         [self _reportCouldNotInterpretObject:obj
                                           as:MBStringify(CGPoint)
@@ -336,7 +342,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (CGFloat) sizeDimensionFromExpression:(nonnull NSString*)expr
 {
     if ([expr isEqualToString:kMBWildcardString]) {
-        return UIViewNoIntrinsicMetric;
+        return MBViewNoIntrinsicMetric;
     }
     
     MBExpressionError* err = nil;
@@ -349,7 +355,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (CGFloat) sizeDimensionFromString:(nonnull NSString*)str
 {
-    CGFloat dim = UIViewNoIntrinsicMetric;
+    CGFloat dim = MBViewNoIntrinsicMetric;
     if (![str isEqualToString:kMBWildcardString]) {
         dim = [str doubleValue];
     }
@@ -396,6 +402,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([obj isKindOfClass:[NSString class]]) {
         return [self sizeFromString:obj error:errPtr];
     }
+#if MB_BUILD_IOS
     else if ([obj isKindOfClass:[NSValue class]]) {
         NSValue* value = (NSValue*)obj;
         if (!strcmp([value objCType], @encode(CGSize))) {
@@ -407,6 +414,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                                              to:errPtr];
         }
     }
+#endif
     else {
         [self _reportCouldNotInterpretObject:obj
                                           as:MBStringify(CGSize)
@@ -476,6 +484,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([obj isKindOfClass:[NSString class]]) {
         return [self rectFromString:obj error:errPtr];
     }
+#if MB_BUILD_IOS
     else if ([obj isKindOfClass:[NSValue class]]) {
         NSValue* value = (NSValue*)obj;
         if (!strcmp([value objCType], @encode(CGRect))) {
@@ -487,6 +496,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                                              to:errPtr];
         }
     }
+#endif
     else {
         [self _reportCouldNotInterpretObject:obj
                                           as:MBStringify(CGRect)
@@ -511,6 +521,146 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 }
 
 /******************************************************************************/
+#pragma mark NSLineBreakMode conversions
+/******************************************************************************/
+
++ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str
+{
+    return [self lineBreakModeFromString:str error:nil];
+}
+
++ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
+{
+    if ([str isEqualToString:kMBMLLineBreakByWordWrapping]) {
+        return NSLineBreakByWordWrapping;
+    }
+    else if ([str isEqualToString:kMBMLLineBreakByCharWrapping]) {
+        return NSLineBreakByCharWrapping;
+    }
+    else if ([str isEqualToString:kMBMLLineBreakByClipping]) {
+        return NSLineBreakByClipping;
+    }
+    else if ([str isEqualToString:kMBMLLineBreakByTruncatingHead]) {
+        return NSLineBreakByTruncatingHead;
+    }
+    else if ([str isEqualToString:kMBMLLineBreakByTruncatingTail]) {
+        return NSLineBreakByTruncatingTail;
+    }
+    else if ([str isEqualToString:kMBMLLineBreakByTruncatingMiddle]) {
+        return NSLineBreakByTruncatingMiddle;
+    }
+    else {
+        [self _reportCouldNotParse:str
+                                as:MBStringify(NSLineBreakMode)
+               expectingValueAmong:@[kMBMLLineBreakByWordWrapping, kMBMLLineBreakByCharWrapping, kMBMLLineBreakByClipping, kMBMLLineBreakByTruncatingHead, kMBMLLineBreakByTruncatingTail, kMBMLLineBreakByTruncatingMiddle]
+                                to:errPtr];
+    }
+    
+    return NSLineBreakByWordWrapping;
+}
+
++ (NSLineBreakMode) lineBreakModeFromExpression:(nonnull NSString*)expr
+{
+    NSError* err = nil;
+    NSLineBreakMode val = [self lineBreakModeFromString:[expr evaluateAsString] error:&err];
+    if (err) {
+        [self _logError:err fromExpression:expr];
+    }
+    return val;
+}
+
+/******************************************************************************/
+#pragma mark NSDateFormatterStyle conversions
+/******************************************************************************/
+
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str
+{
+    return [self dateFormatterStyleFromString:str error:nil];
+}
+
++ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
+{
+    if ([str isEqualToString:kMBMLDateFormatterNoStyle]) {
+        return NSDateFormatterNoStyle;
+    }
+    else if ([str isEqualToString:kMBMLDateFormatterShortStyle]) {
+        return NSDateFormatterShortStyle;
+    }
+    else if ([str isEqualToString:kMBMLDateFormatterMediumStyle]) {
+        return NSDateFormatterMediumStyle;
+    }
+    else if ([str isEqualToString:kMBMLDateFormatterLongStyle]) {
+        return NSDateFormatterLongStyle;
+    }
+    else if ([str isEqualToString:kMBMLDateFormatterFullStyle]) {
+        return NSDateFormatterFullStyle;
+    }
+    else {
+        [self _reportCouldNotParse:str
+                                as:MBStringify(NSDateFormatterStyle)
+               expectingValueAmong:@[kMBMLDateFormatterNoStyle, kMBMLDateFormatterShortStyle, kMBMLDateFormatterMediumStyle, kMBMLDateFormatterLongStyle, kMBMLDateFormatterFullStyle]
+                                to:errPtr];
+    }
+    
+    return NSDateFormatterNoStyle;
+}
+
++ (NSDateFormatterStyle) dateFormatterStyleFromExpression:(nonnull NSString*)expr
+{
+    NSError* err = nil;
+    NSDateFormatterStyle val = [self dateFormatterStyleFromString:[expr evaluateAsString] error:&err];
+    if (err) {
+        [self _logError:err fromExpression:expr];
+    }
+    return val;
+}
+
+#if MB_BUILD_IOS
+
+
+/******************************************************************************/
+#pragma mark NSTextAlignment conversions
+/******************************************************************************/
+
++ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr
+{
+    return [self textAlignmentFromString:alignStr error:nil];
+}
+
++ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSErrorPtrPtr)errPtr
+{
+    MBLogDebugTrace();
+
+    if ([kMBMLTextAlignmentLeft isEqualToString:alignStr]) {
+        return NSTextAlignmentLeft;
+    }
+    else if ([kMBMLTextAlignmentCenter isEqualToString:alignStr]) {
+        return NSTextAlignmentCenter;
+    }
+    else if ([kMBMLTextAlignmentRight isEqualToString:alignStr]) {
+        return NSTextAlignmentRight;
+    }
+    else {
+        [self _reportCouldNotParse:alignStr
+                                as:MBStringify(NSTextAlignment)
+               expectingValueAmong:@[kMBMLTextAlignmentLeft, kMBMLTextAlignmentCenter, kMBMLTextAlignmentRight]
+                                to:errPtr];
+
+    }
+    return NSTextAlignmentLeft;         // default to left
+}
+
++ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr
+{
+    NSError* err = nil;
+    NSTextAlignment val = [self textAlignmentFromString:[expr evaluateAsString] error:&err];
+    if (err) {
+        [self _logError:err fromExpression:expr];
+    }
+    return val;
+}
+
+/******************************************************************************/
 #pragma mark UIOffset conversions
 /******************************************************************************/
 
@@ -522,7 +672,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (UIOffset) offsetFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     MBLogDebugTrace();
-    
+
     if (str && str.length > 0) {
         NSArray* dims = [str componentsSeparatedByString:@","];
         if (dims.count == 2) {
@@ -586,7 +736,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (UIEdgeInsets) edgeInsetsFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     MBLogDebugTrace();
-    
+
     UIEdgeInsets edgeInsets = UIEdgeInsetsZero;
     if (str && str.length > 0) {
         NSArray* dims = [str componentsSeparatedByString:@","];
@@ -653,12 +803,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 + (nonnull UIColor*) colorFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
     MBLogDebugTrace();
-    
+
     if (!str || str.length < 1) {
         [self _reportErrorWithMessage:@"couldn't parse an empty string as a color" to:errPtr];
         return [UIColor yellowColor];
     }
-    
+
     // see if we're dealing with one of the expected color names
     if ('#' != [str characterAtIndex:0]) {
         NSString* methodName = [NSString stringWithFormat:@"%@Color", str];
@@ -679,10 +829,10 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
         return [UIColor yellowColor];
     }
     NSUInteger value = 0;
-    
+
     for (int idx = 1; idx < str.length; idx++) {
         value <<= 4;
-        
+
         unichar ch = [str characterAtIndex:idx];
         if (ch >= '0' && ch <= '9')
             value += ch - '0';
@@ -691,12 +841,12 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
         else if (ch >= 'A' && ch <= 'F')
             value += 10 + ch - 'A';
     }
-    
+
     if (str.length == 7) { // No alpha
         value <<= 8;
         value |= 0xff;
     }
-    
+
     return [UIColor colorWithRed:((value >> 24) & 0xFF)/255.0
                            green:((value >> 16) & 0xFF)/255.0
                             blue:((value >> 8) & 0xFF) / 255.0
@@ -707,97 +857,6 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 {
     NSError* err = nil;
     UIColor* val = [self colorFromString:[expr evaluateAsString] error:&err];
-    if (err) {
-        [self _logError:err fromExpression:expr];
-    }
-    return val;
-}
-
-/******************************************************************************/
-#pragma mark NSLineBreakMode conversions
-/******************************************************************************/
-
-+ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str
-{
-    return [self lineBreakModeFromString:str error:nil];
-}
-
-+ (NSLineBreakMode) lineBreakModeFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
-{
-    if ([str isEqualToString:kMBMLLineBreakByWordWrapping]) {
-        return NSLineBreakByWordWrapping;
-    }
-    else if ([str isEqualToString:kMBMLLineBreakByCharWrapping]) {
-        return NSLineBreakByCharWrapping;
-    }
-    else if ([str isEqualToString:kMBMLLineBreakByClipping]) {
-        return NSLineBreakByClipping;
-    }
-    else if ([str isEqualToString:kMBMLLineBreakByTruncatingHead]) {
-        return NSLineBreakByTruncatingHead;
-    }
-    else if ([str isEqualToString:kMBMLLineBreakByTruncatingTail]) {
-        return NSLineBreakByTruncatingTail;
-    }
-    else if ([str isEqualToString:kMBMLLineBreakByTruncatingMiddle]) {
-        return NSLineBreakByTruncatingMiddle;
-    }
-    else {
-        [self _reportCouldNotParse:str
-                                as:MBStringify(NSLineBreakMode)
-               expectingValueAmong:@[kMBMLLineBreakByWordWrapping, kMBMLLineBreakByCharWrapping, kMBMLLineBreakByClipping, kMBMLLineBreakByTruncatingHead, kMBMLLineBreakByTruncatingTail, kMBMLLineBreakByTruncatingMiddle]
-                                to:errPtr];
-    }
-    
-    return NSLineBreakByWordWrapping;
-}
-
-+ (NSLineBreakMode) lineBreakModeFromExpression:(nonnull NSString*)expr
-{
-    NSError* err = nil;
-    NSLineBreakMode val = [self lineBreakModeFromString:[expr evaluateAsString] error:&err];
-    if (err) {
-        [self _logError:err fromExpression:expr];
-    }
-    return val;
-}
-
-/******************************************************************************/
-#pragma mark NSTextAlignment conversions
-/******************************************************************************/
-
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr
-{
-    return [self textAlignmentFromString:alignStr error:nil];
-}
-
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSErrorPtrPtr)errPtr
-{
-    MBLogDebugTrace();
-    
-    if ([kMBMLTextAlignmentLeft isEqualToString:alignStr]) {
-        return NSTextAlignmentLeft;
-    }
-    else if ([kMBMLTextAlignmentCenter isEqualToString:alignStr]) {
-        return NSTextAlignmentCenter;
-    }
-    else if ([kMBMLTextAlignmentRight isEqualToString:alignStr]) {
-        return NSTextAlignmentRight;
-    }
-    else {
-        [self _reportCouldNotParse:alignStr
-                                as:MBStringify(NSTextAlignment)
-               expectingValueAmong:@[kMBMLTextAlignmentLeft, kMBMLTextAlignmentCenter, kMBMLTextAlignmentRight]
-                                to:errPtr];
-        
-    }
-    return NSTextAlignmentLeft;         // default to left
-}
-
-+ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr
-{
-    NSError* err = nil;
-    NSTextAlignment val = [self textAlignmentFromString:[expr evaluateAsString] error:&err];
     if (err) {
         [self _logError:err fromExpression:expr];
     }
@@ -830,7 +889,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLScrollViewIndicatorStyleDefault, kMBMLScrollViewIndicatorStyleBlack, kMBMLScrollViewIndicatorStyleWhite]
                                 to:errPtr];
     }
-    
+
     return UIScrollViewIndicatorStyleDefault;
 }
 
@@ -870,7 +929,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLActivityIndicatorViewStyleWhiteLarge, kMBMLActivityIndicatorViewStyleWhite, kMBMLActivityIndicatorViewStyleGray]
                                 to:errPtr];
     }
-    
+
     return UIActivityIndicatorViewStyleWhite;
 }
 
@@ -919,7 +978,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
                expectingValueAmong:@[kMBMLButtonTypeCustom, kMBMLButtonTypeRoundedRect, kMBMLButtonTypeDetailDisclosure, kMBMLButtonTypeInfoLight, kMBMLButtonTypeInfoDark, kMBMLButtonTypeContactAdd]
                                 to:errPtr];
     }
-    
+
     return UIButtonTypeCustom;      // use custom button type by default
 }
 
@@ -927,52 +986,6 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 {
     NSError* err = nil;
     UIButtonType val = [self buttonTypeFromString:[expr evaluateAsString] error:&err];
-    if (err) {
-        [self _logError:err fromExpression:expr];
-    }
-    return val;
-}
-
-/******************************************************************************/
-#pragma mark NSDateFormatterStyle conversions
-/******************************************************************************/
-
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str
-{
-    return [self dateFormatterStyleFromString:str error:nil];
-}
-
-+ (NSDateFormatterStyle) dateFormatterStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
-{
-    if ([str isEqualToString:kMBMLDateFormatterNoStyle]) {
-        return NSDateFormatterNoStyle;
-    }
-    else if ([str isEqualToString:kMBMLDateFormatterShortStyle]) {
-        return NSDateFormatterShortStyle;
-    }
-    else if ([str isEqualToString:kMBMLDateFormatterMediumStyle]) {
-        return NSDateFormatterMediumStyle;
-    }
-    else if ([str isEqualToString:kMBMLDateFormatterLongStyle]) {
-        return NSDateFormatterLongStyle;
-    }
-    else if ([str isEqualToString:kMBMLDateFormatterFullStyle]) {
-        return NSDateFormatterFullStyle;
-    }
-    else {
-        [self _reportCouldNotParse:str
-                                as:MBStringify(NSDateFormatterStyle)
-               expectingValueAmong:@[kMBMLDateFormatterNoStyle, kMBMLDateFormatterShortStyle, kMBMLDateFormatterMediumStyle, kMBMLDateFormatterLongStyle, kMBMLDateFormatterFullStyle]
-                                to:errPtr];
-    }
-    
-    return NSDateFormatterNoStyle;
-}
-
-+ (NSDateFormatterStyle) dateFormatterStyleFromExpression:(nonnull NSString*)expr
-{
-    NSError* err = nil;
-    NSDateFormatterStyle val = [self dateFormatterStyleFromString:[expr evaluateAsString] error:&err];
     if (err) {
         [self _logError:err fromExpression:expr];
     }
@@ -1761,5 +1774,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     }
     return val;
 }
+
+#endif
 
 @end

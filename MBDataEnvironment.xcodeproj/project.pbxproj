@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		368F1A9EC620009A508C7103 /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 736A0C8729A6621A577C0FE3 /* libPods-osx.a */; };
 		3B2D73781A7B510800F16154 /* MBMLEncodingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73771A7B510800F16154 /* MBMLEncodingFunctionTests.m */; };
 		3B2D737A1A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73791A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m */; };
 		3B2D737C1A7B528300F16154 /* MBMLFileFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737B1A7B528300F16154 /* MBMLFileFunctionTests.m */; };
@@ -29,7 +30,6 @@
 		3B2D73821A7B54FF00F16154 /* MBMLDebugFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73811A7B54FF00F16154 /* MBMLDebugFunctionTests.m */; };
 		3B58D5D81B3B515500C27D19 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
 		3B58D5D91B3B515500C27D19 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
-		3B58D5DA1B3B515500C27D19 /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73219D9FBEB00996B9F /* MBDevice.m */; };
 		3B58D5DB1B3B515500C27D19 /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */; };
 		3B58D5DC1B3B515500C27D19 /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73719D9FBEB00996B9F /* MBEnvironmentLoader.m */; };
 		3B58D5DD1B3B515500C27D19 /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73A19D9FBEB00996B9F /* MBEvents+DataLoading.m */; };
@@ -78,8 +78,6 @@
 		3B58D6081B3B515500C27D19 /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79819D9FBEB00996B9F /* MBMLEncodingFunctions.m */; };
 		3B58D6091B3B515500C27D19 /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79A19D9FBEB00996B9F /* MBMLEnvironmentFunctions.m */; };
 		3B58D60A1B3B515500C27D19 /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79C19D9FBEB00996B9F /* MBMLFileFunctions.m */; };
-		3B58D60B1B3B515500C27D19 /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA79E19D9FBEB00996B9F /* MBMLFontFunctions.m */; };
-		3B58D60C1B3B515500C27D19 /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A019D9FBEB00996B9F /* MBMLGeometryFunctions.m */; };
 		3B58D60D1B3B515500C27D19 /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A219D9FBEB00996B9F /* MBMLLogicFunctions.m */; };
 		3B58D60E1B3B515500C27D19 /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A419D9FBEB00996B9F /* MBMLMathFunctions.m */; };
 		3B58D60F1B3B515500C27D19 /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7A619D9FBEB00996B9F /* MBMLRegexFunctions.m */; };
@@ -95,10 +93,8 @@
 		3B58D6191B3B515500C27D19 /* MBMLModuloOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A11A7C2DDF00B00241 /* MBMLModuloOperatorToken.m */; };
 		3B58D61A1B3B515500C27D19 /* MBVariableDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7BE19D9FBEB00996B9F /* MBVariableDeclaration.m */; };
 		3B58D61B1B3B515500C27D19 /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA7C019D9FBEB00996B9F /* MBVariableSpace.m */; };
-		3B58D61D1B3B515500C27D19 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748C53F01464830A2605981 /* libPods.a */; };
 		3B58D61F1B3B515500C27D19 /* MBAttributeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6201B3B515500C27D19 /* MBDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B58D6211B3B515500C27D19 /* MBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73119D9FBEB00996B9F /* MBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6221B3B515500C27D19 /* MBEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73419D9FBEB00996B9F /* MBEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6231B3B515500C27D19 /* MBEnvironmentLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73619D9FBEB00996B9F /* MBEnvironmentLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6241B3B515500C27D19 /* MBEvents+DataLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA73919D9FBEB00996B9F /* MBEvents+DataLoading.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,8 +109,6 @@
 		3B58D62D1B3B515500C27D19 /* MBMLEncodingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79719D9FBEB00996B9F /* MBMLEncodingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D62E1B3B515500C27D19 /* MBMLEnvironmentFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79919D9FBEB00996B9F /* MBMLEnvironmentFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D62F1B3B515500C27D19 /* MBMLFileFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79B19D9FBEB00996B9F /* MBMLFileFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B58D6301B3B515500C27D19 /* MBMLFontFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79D19D9FBEB00996B9F /* MBMLFontFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B58D6311B3B515500C27D19 /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA79F19D9FBEB00996B9F /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6321B3B515500C27D19 /* MBMLLogicFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A119D9FBEB00996B9F /* MBMLLogicFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6331B3B515500C27D19 /* MBMLMathFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A319D9FBEB00996B9F /* MBMLMathFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B58D6341B3B515500C27D19 /* MBMLRegexFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7A519D9FBEB00996B9F /* MBMLRegexFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -325,7 +319,7 @@
 		3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D191A65FDA4001F7869 /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */; };
 		3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		9DEB82F2E6E86B7507960F7C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748C53F01464830A2605981 /* libPods.a */; };
+		4D6177D30A6338DA26B42F19 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 054A2F6CA8E099EBEC56B58B /* libPods-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -339,6 +333,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054A2F6CA8E099EBEC56B58B /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		203709FE1B3BBC980043E14E /* PlatformTypeIndependence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlatformTypeIndependence.h; sourceTree = "<group>"; };
+		2A1673EA870D447CF4B521E4 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		2BA0531AEAF2F59D65062A36 /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
 		3748C53F01464830A2605981 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E3065063027DCB078CF78A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B2D73771A7B510800F16154 /* MBMLEncodingFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLEncodingFunctionTests.m; path = Tests/MBMLEncodingFunctionTests.m; sourceTree = SOURCE_ROOT; };
@@ -508,7 +506,10 @@
 		3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataEnvironmentTestSuite.m; path = Tests/MBDataEnvironmentTestSuite.m; sourceTree = SOURCE_ROOT; };
 		3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-MBDataEnvironment.xml"; sourceTree = "<group>"; };
 		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
+		736A0C8729A6621A577C0FE3 /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C0960869E2C45EE1F4557BCE /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		CCF123E31734990DDDEEFCDD /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,7 +517,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B58D61D1B3B515500C27D19 /* libPods.a in Frameworks */,
+				368F1A9EC620009A508C7103 /* libPods-osx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +525,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DEB82F2E6E86B7507960F7C /* libPods.a in Frameworks */,
+				4D6177D30A6338DA26B42F19 /* libPods-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +545,10 @@
 			children = (
 				38E3065063027DCB078CF78A /* Pods.debug.xcconfig */,
 				A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */,
+				2A1673EA870D447CF4B521E4 /* Pods-ios.debug.xcconfig */,
+				C0960869E2C45EE1F4557BCE /* Pods-ios.release.xcconfig */,
+				CCF123E31734990DDDEEFCDD /* Pods-osx.debug.xcconfig */,
+				2BA0531AEAF2F59D65062A36 /* Pods-osx.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -554,6 +559,8 @@
 				3BCB5ED91A6065AA007D06FC /* libxml2.dylib */,
 				3BCB5ED71A6065A1007D06FC /* libz.dylib */,
 				3748C53F01464830A2605981 /* libPods.a */,
+				054A2F6CA8E099EBEC56B58B /* libPods-ios.a */,
+				736A0C8729A6621A577C0FE3 /* libPods-osx.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -822,6 +829,7 @@
 				3B8BA7B719D9FBEB00996B9F /* MBStringConversions.m */,
 				3B8BA7B819D9FBEB00996B9F /* TypeCoercionSupport.h */,
 				3B8BA7B919D9FBEB00996B9F /* TypeCoercionSupport.m */,
+				203709FE1B3BBC980043E14E /* PlatformTypeIndependence.h */,
 			);
 			path = TypeConversion;
 			sourceTree = "<group>";
@@ -894,7 +902,6 @@
 			files = (
 				3B58D61F1B3B515500C27D19 /* MBAttributeValidator.h in Headers */,
 				3B58D6201B3B515500C27D19 /* MBDataModel.h in Headers */,
-				3B58D6211B3B515500C27D19 /* MBDevice.h in Headers */,
 				3B58D6221B3B515500C27D19 /* MBEnvironment.h in Headers */,
 				3B58D6231B3B515500C27D19 /* MBEnvironmentLoader.h in Headers */,
 				3B58D6241B3B515500C27D19 /* MBEvents+DataLoading.h in Headers */,
@@ -909,8 +916,6 @@
 				3B58D62D1B3B515500C27D19 /* MBMLEncodingFunctions.h in Headers */,
 				3B58D62E1B3B515500C27D19 /* MBMLEnvironmentFunctions.h in Headers */,
 				3B58D62F1B3B515500C27D19 /* MBMLFileFunctions.h in Headers */,
-				3B58D6301B3B515500C27D19 /* MBMLFontFunctions.h in Headers */,
-				3B58D6311B3B515500C27D19 /* MBMLGeometryFunctions.h in Headers */,
 				3B58D6321B3B515500C27D19 /* MBMLLogicFunctions.h in Headers */,
 				3B58D6331B3B515500C27D19 /* MBMLMathFunctions.h in Headers */,
 				3B58D6341B3B515500C27D19 /* MBMLRegexFunctions.h in Headers */,
@@ -1202,7 +1207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B2FCA841A605CF70044BEB0 /* ShellScript */ = {
@@ -1245,7 +1250,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1257,7 +1262,6 @@
 			files = (
 				3B58D5D81B3B515500C27D19 /* MBAttributeValidator.m in Sources */,
 				3B58D5D91B3B515500C27D19 /* MBDataModel.m in Sources */,
-				3B58D5DA1B3B515500C27D19 /* MBDevice.m in Sources */,
 				3B58D5DB1B3B515500C27D19 /* MBEnvironment.m in Sources */,
 				3B58D5DC1B3B515500C27D19 /* MBEnvironmentLoader.m in Sources */,
 				3B58D5DD1B3B515500C27D19 /* MBEvents+DataLoading.m in Sources */,
@@ -1306,8 +1310,6 @@
 				3B58D6081B3B515500C27D19 /* MBMLEncodingFunctions.m in Sources */,
 				3B58D6091B3B515500C27D19 /* MBMLEnvironmentFunctions.m in Sources */,
 				3B58D60A1B3B515500C27D19 /* MBMLFileFunctions.m in Sources */,
-				3B58D60B1B3B515500C27D19 /* MBMLFontFunctions.m in Sources */,
-				3B58D60C1B3B515500C27D19 /* MBMLGeometryFunctions.m in Sources */,
 				3B58D60D1B3B515500C27D19 /* MBMLLogicFunctions.m in Sources */,
 				3B58D60E1B3B515500C27D19 /* MBMLMathFunctions.m in Sources */,
 				3B58D60F1B3B515500C27D19 /* MBMLRegexFunctions.m in Sources */,
@@ -1533,7 +1535,7 @@
 		};
 		3B58D66B1B3B515500C27D19 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38E3065063027DCB078CF78A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = CCF123E31734990DDDEEFCDD /* Pods-osx.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1545,7 +1547,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "MBDataEnvironment copy-Info.plist";
+				INFOPLIST_FILE = "BuildControl/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1561,7 +1563,7 @@
 		};
 		3B58D66C1B3B515500C27D19 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */;
+			baseConfigurationReference = 2BA0531AEAF2F59D65062A36 /* Pods-osx.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1569,7 +1571,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "MBDataEnvironment copy-Info.plist";
+				INFOPLIST_FILE = "BuildControl/Framework-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1585,7 +1587,7 @@
 		};
 		3BD23C801A65ED0F001F7869 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38E3065063027DCB078CF78A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2A1673EA870D447CF4B521E4 /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1610,7 +1612,7 @@
 		};
 		3BD23C811A65ED0F001F7869 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */;
+			baseConfigurationReference = C0960869E2C45EE1F4557BCE /* Pods-ios.release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
