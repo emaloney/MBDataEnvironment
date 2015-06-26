@@ -276,6 +276,8 @@ extern NSString* const __nonnull kMBVariableSpaceDidDeclareFunctionEvent;
  Programmatically declares a variable.
  
  @param     declaration An `MBVariableDeclaration` representing the variable.
+            Note that this method ignores the `shouldDeclare` property of the
+            variable declaration.
  
  @return    `YES` if the variable represented by `declaration` was successfully
             declared; `NO` if an error occured.

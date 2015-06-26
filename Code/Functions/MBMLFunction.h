@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import "MBDataModel.h"
+#import "MBConditionalDeclaration.h"
 #import "MBExpressionError.h"
 
 /******************************************************************************/
@@ -314,7 +314,7 @@ typedef NS_ENUM(NSUInteger, MBMLFunctionOutputType) {
  `err` before using any of the values returned by the the validation
  methods.
  */
-@interface MBMLFunction : MBDataModel
+@interface MBMLFunction : MBConditionalDeclaration
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Properties

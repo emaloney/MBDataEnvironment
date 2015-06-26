@@ -482,7 +482,7 @@
             XCTAssertEqual(size, 6959);     // unit test will fail if file size changes; will need to keep this up-to-date
         }
         else if ([[paths[i] lastPathComponent] isEqualToString:@"MBDataEnvironmentModule.xml"]) {
-            XCTAssertEqual(size, 17094);    // unit test will fail if file size changes; will need to keep this up-to-date
+            XCTAssertEqual(size, 17742);    // unit test will fail if file size changes; will need to keep this up-to-date
         }
     }
     [MBScopedVariables exitVariableScope];

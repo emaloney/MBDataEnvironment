@@ -108,17 +108,21 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     MBLogVerboseTrace();
 
     if ([match isEqualToString:kMBVariableSpaceXMLTagFunction]) {
-        MBMLFunction* function = [MBMLFunction dataModelFromXML:mbml];
-        if (![self declareFunction:function]) {
-            MBLogError(@"The following <%@> did not validate and will be ignored: %@", match, mbml.xml);
-            return NO;
+        MBMLFunction* decl = [MBMLFunction dataModelFromXML:mbml];
+        if (decl.shouldDeclare) {
+            if (![self declareFunction:decl]) {
+                MBLogError(@"The following <%@> did not validate and will be ignored: %@", match, mbml.xml);
+                return NO;
+            }
         }
     }
     else if ([match isEqualToString:kMBVariableSpaceXMLTagVar]) {
         MBVariableDeclaration* decl = [MBVariableDeclaration dataModelFromXML:mbml];
-        if (![self declareVariable:decl]) {
-            MBLogError(@"The following <%@> declaration did not validate and will be ignored: %@", match, mbml.xml);
-            return NO;
+        if (decl.shouldDeclare) {
+            if (![self declareVariable:decl]) {
+                MBLogError(@"The following <%@> declaration did not validate and will be ignored: %@", match, mbml.xml);
+                return NO;
+            }
         }
     }
     else {

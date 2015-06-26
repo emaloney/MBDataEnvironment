@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import "MBDataModel.h"
+#import "MBConditionalDeclaration.h"
 
 @class MBVariableSpace;
 @class MBExpressionError;
@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
  The `MBConcreteVariableDeclaration`, `MBSingletonVariableDeclaration`, and 
  `MBDynamicVariableDeclaration` classes provide specific implementations.
  */
-@interface MBVariableDeclaration : MBDataModel
+@interface MBVariableDeclaration : MBConditionalDeclaration
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Variable information
@@ -92,7 +92,7 @@ typedef NS_ENUM(NSUInteger, MBConcreteVariableType)
             cases, an exception is raised.
  */
 - (nullable id) initialValueInVariableSpace:(nonnull MBVariableSpace*)space
-                                  error:(MBExpressionErrorPtrPtr)errPtr;
+                                      error:(MBExpressionErrorPtrPtr)errPtr;
 
 /*!
  Returns the current value of the variable in the given variable space.

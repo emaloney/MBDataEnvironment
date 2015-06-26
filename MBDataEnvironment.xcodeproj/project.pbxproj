@@ -34,6 +34,10 @@
 		3B2D737E1A7B53B800F16154 /* MBMLResourceFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737D1A7B53B800F16154 /* MBMLResourceFunctionTests.m */; };
 		3B2D73801A7B546900F16154 /* MBMLRuntimeFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */; };
 		3B2D73821A7B54FF00F16154 /* MBMLDebugFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73811A7B54FF00F16154 /* MBMLDebugFunctionTests.m */; };
+		3B485BAB1B3DD9DF0053D766 /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B485BA91B3DD9DF0053D766 /* MBPlatform.h */; };
+		3B485BAC1B3DD9DF0053D766 /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B485BA91B3DD9DF0053D766 /* MBPlatform.h */; };
+		3B485BAD1B3DD9DF0053D766 /* MBPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B485BAA1B3DD9DF0053D766 /* MBPlatform.m */; };
+		3B485BAE1B3DD9DF0053D766 /* MBPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B485BAA1B3DD9DF0053D766 /* MBPlatform.m */; };
 		3B58D5D81B3B515500C27D19 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
 		3B58D5D91B3B515500C27D19 /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */; };
 		3B58D5DB1B3B515500C27D19 /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA73519D9FBEB00996B9F /* MBEnvironment.m */; };
@@ -170,6 +174,10 @@
 		3B58D6661B3B515500C27D19 /* MBMLSubtractionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78B19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3B58D6681B3B515500C27D19 /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */; };
 		3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		3B71226D1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */; };
+		3B71226E1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */; };
+		3B71226F1B3DF5B1006D7EAD /* MBConditionalDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71226C1B3DF5B1006D7EAD /* MBConditionalDeclaration.m */; };
+		3B7122701B3DF5B1006D7EAD /* MBConditionalDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71226C1B3DF5B1006D7EAD /* MBConditionalDeclaration.m */; };
 		3B82312C1A72FC2700C3A18F /* MBMLFontFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */; };
 		3B82312E1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */; };
 		3B8231301A7421B000C3A18F /* MBMLCollectionFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312F1A7421B000C3A18F /* MBMLCollectionFunctionTests.m */; };
@@ -350,8 +358,12 @@
 		3B2D737D1A7B53B800F16154 /* MBMLResourceFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLResourceFunctionTests.m; path = Tests/MBMLResourceFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLRuntimeFunctionTests.m; path = Tests/MBMLRuntimeFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3B2D73811A7B54FF00F16154 /* MBMLDebugFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLDebugFunctionTests.m; path = Tests/MBMLDebugFunctionTests.m; sourceTree = SOURCE_ROOT; };
+		3B485BA91B3DD9DF0053D766 /* MBPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBPlatform.h; path = Code/Platform/MBPlatform.h; sourceTree = SOURCE_ROOT; };
+		3B485BAA1B3DD9DF0053D766 /* MBPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBPlatform.m; path = Code/Platform/MBPlatform.m; sourceTree = SOURCE_ROOT; };
 		3B58D66D1B3B515500C27D19 /* MBDataEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBDataEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpressionCache+Internal.h"; sourceTree = "<group>"; };
+		3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBConditionalDeclaration.h; sourceTree = "<group>"; };
+		3B71226C1B3DF5B1006D7EAD /* MBConditionalDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBConditionalDeclaration.m; sourceTree = "<group>"; };
 		3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLFontFunctionTests.m; path = Tests/MBMLFontFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3B82312D1A7318EE00C3A18F /* MBMLGeometryFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLGeometryFunctionTests.m; path = Tests/MBMLGeometryFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3B82312F1A7421B000C3A18F /* MBMLCollectionFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLCollectionFunctionTests.m; path = Tests/MBMLCollectionFunctionTests.m; sourceTree = SOURCE_ROOT; };
@@ -586,6 +598,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3B485BAF1B3DD9E40053D766 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				3B485BA91B3DD9DF0053D766 /* MBPlatform.h */,
+				3B485BAA1B3DD9DF0053D766 /* MBPlatform.m */,
+			);
+			name = Platform;
+			path = VariableSpace;
+			sourceTree = "<group>";
+		};
 		3B8BA72A19D9FBEB00996B9F /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,6 +619,7 @@
 				3B8BA78D19D9FBEB00996B9F /* Functions */,
 				3B8BA7AF19D9FBEB00996B9F /* MBDataEnvironment.h */,
 				3B8BA7B019D9FBEB00996B9F /* Module */,
+				3B485BAF1B3DD9E40053D766 /* Platform */,
 				3B8BA7B519D9FBEB00996B9F /* TypeConversion */,
 				3B8BA7BA19D9FBEB00996B9F /* VariableSpace */,
 			);
@@ -608,6 +631,8 @@
 			children = (
 				3B8BA72C19D9FBEB00996B9F /* MBAttributeValidator.h */,
 				3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */,
+				3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */,
+				3B71226C1B3DF5B1006D7EAD /* MBConditionalDeclaration.m */,
 				3B8BA72E19D9FBEB00996B9F /* MBDataModel.h */,
 				3B8BA72F19D9FBEB00996B9F /* MBDataModel.m */,
 			);
@@ -931,6 +956,7 @@
 				3B58D6401B3B515500C27D19 /* MBVariableSpace.h in Headers */,
 				3B58D6411B3B515500C27D19 /* MBExpressionGrammar.h in Headers */,
 				3B58D6421B3B515500C27D19 /* MBExpressionTokenizer.h in Headers */,
+				3B71226E1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */,
 				3B58D6431B3B515500C27D19 /* MBMLEscapeSequenceToken.h in Headers */,
 				3B58D6441B3B515500C27D19 /* MBMLFunctionCallToken.h in Headers */,
 				3B58D6451B3B515500C27D19 /* MBMLGroupingToken.h in Headers */,
@@ -942,6 +968,7 @@
 				3B58D64B1B3B515500C27D19 /* MBMLObjectReferenceToken.h in Headers */,
 				3B58D64C1B3B515500C27D19 /* MBMLObjectSubreferenceToken.h in Headers */,
 				3B58D64D1B3B515500C27D19 /* MBMLParameterDelimiterToken.h in Headers */,
+				3B485BAC1B3DD9DF0053D766 /* MBPlatform.h in Headers */,
 				3B58D64E1B3B515500C27D19 /* MBMLParameterGroupingToken.h in Headers */,
 				3B58D64F1B3B515500C27D19 /* MBMLParseToken.h in Headers */,
 				3B58D6501B3B515500C27D19 /* MBMLVariableReferenceToken.h in Headers */,
@@ -995,6 +1022,7 @@
 				20C4FD521B3D0866007A6135 /* MBMLGeometryFunctions.h in Headers */,
 				3BD23D0C1A65FD07001F7869 /* MBMLRegexFunctions.h in Headers */,
 				3BD23D0D1A65FD07001F7869 /* MBMLResourceFunctions.h in Headers */,
+				3B485BAB1B3DD9DF0053D766 /* MBPlatform.h in Headers */,
 				3BD23D0E1A65FD07001F7869 /* MBMLRuntimeFunctions.h in Headers */,
 				3BD23D0F1A65FD07001F7869 /* MBMLStringFunctions.h in Headers */,
 				3BD23D101A65FD07001F7869 /* MBMLFunction.h in Headers */,
@@ -1004,6 +1032,7 @@
 				3BD23D141A65FD07001F7869 /* MBStringConversions.h in Headers */,
 				3BD23D151A65FD07001F7869 /* TypeCoercionSupport.h in Headers */,
 				3BD23D161A65FD07001F7869 /* MBScopedVariables.h in Headers */,
+				3B71226D1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */,
 				3BD23D171A65FD07001F7869 /* MBVariableDeclaration.h in Headers */,
 				3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */,
 				3BD23CDE1A65FCEA001F7869 /* MBExpressionGrammar.h in Headers */,
@@ -1275,6 +1304,7 @@
 				3B58D5E71B3B515500C27D19 /* MBMLIgnorableWhitespaceToken.m in Sources */,
 				3B58D5E81B3B515500C27D19 /* MBMLKeywordMatchingToken.m in Sources */,
 				3B58D5E91B3B515500C27D19 /* MBMLLiteralToken.m in Sources */,
+				3B485BAE1B3DD9DF0053D766 /* MBPlatform.m in Sources */,
 				3B58D5EA1B3B515500C27D19 /* MBMLMathExpressionToken.m in Sources */,
 				3B58D5EB1B3B515500C27D19 /* MBMLNumericLiteralToken.m in Sources */,
 				3B58D5EC1B3B515500C27D19 /* MBMLObjectReferenceToken.m in Sources */,
@@ -1295,6 +1325,7 @@
 				3B58D5FB1B3B515500C27D19 /* MBMLInequalityTestToken.m in Sources */,
 				3B58D5FC1B3B515500C27D19 /* MBMLLessThanEqualsTestToken.m in Sources */,
 				3B58D5FD1B3B515500C27D19 /* MBMLLessThanTestToken.m in Sources */,
+				3B7122701B3DF5B1006D7EAD /* MBConditionalDeclaration.m in Sources */,
 				3B58D5FE1B3B515500C27D19 /* MBMLAdditionOperatorToken.m in Sources */,
 				3B58D5FF1B3B515500C27D19 /* MBMLDivisionOperatorToken.m in Sources */,
 				3B58D6001B3B515500C27D19 /* MBMLMathGroupingToken.m in Sources */,
@@ -1332,6 +1363,7 @@
 			files = (
 				3BD23C911A65FC54001F7869 /* MBAttributeValidator.m in Sources */,
 				3BD23C921A65FC54001F7869 /* MBDataModel.m in Sources */,
+				3B71226F1B3DF5B1006D7EAD /* MBConditionalDeclaration.m in Sources */,
 				3BD23C941A65FC54001F7869 /* MBEnvironment.m in Sources */,
 				3BD23C951A65FC54001F7869 /* MBEnvironmentLoader.m in Sources */,
 				3BD23C961A65FC54001F7869 /* MBEvents+DataLoading.m in Sources */,
@@ -1356,6 +1388,7 @@
 				3BD23CA91A65FC54001F7869 /* MBMLParseToken.m in Sources */,
 				3BD23CAA1A65FC54001F7869 /* MBMLVariableReferenceToken.m in Sources */,
 				3BD23CAB1A65FC54001F7869 /* MBMLWhitespaceToken.m in Sources */,
+				3B485BAD1B3DD9DF0053D766 /* MBPlatform.m in Sources */,
 				3BD23CAC1A65FC54001F7869 /* MBMLBooleanAndOperatorToken.m in Sources */,
 				3BD23CAD1A65FC54001F7869 /* MBMLBooleanGroupingToken.m in Sources */,
 				3BD23CAE1A65FC54001F7869 /* MBMLBooleanNegationToken.m in Sources */,
