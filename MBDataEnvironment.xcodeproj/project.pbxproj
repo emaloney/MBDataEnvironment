@@ -34,8 +34,8 @@
 		3B2D737E1A7B53B800F16154 /* MBMLResourceFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737D1A7B53B800F16154 /* MBMLResourceFunctionTests.m */; };
 		3B2D73801A7B546900F16154 /* MBMLRuntimeFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */; };
 		3B2D73821A7B54FF00F16154 /* MBMLDebugFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73811A7B54FF00F16154 /* MBMLDebugFunctionTests.m */; };
-		3B485BAB1B3DD9DF0053D766 /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B485BA91B3DD9DF0053D766 /* MBPlatform.h */; };
-		3B485BAC1B3DD9DF0053D766 /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B485BA91B3DD9DF0053D766 /* MBPlatform.h */; };
+		3B485BAB1B3DD9DF0053D766 /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B485BA91B3DD9DF0053D766 /* MBPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B485BAC1B3DD9DF0053D766 /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B485BA91B3DD9DF0053D766 /* MBPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B485BAD1B3DD9DF0053D766 /* MBPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B485BAA1B3DD9DF0053D766 /* MBPlatform.m */; };
 		3B485BAE1B3DD9DF0053D766 /* MBPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B485BAA1B3DD9DF0053D766 /* MBPlatform.m */; };
 		3B58D5D81B3B515500C27D19 /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8BA72D19D9FBEB00996B9F /* MBAttributeValidator.m */; };
@@ -174,8 +174,8 @@
 		3B58D6661B3B515500C27D19 /* MBMLSubtractionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA78B19D9FBEB00996B9F /* MBMLSubtractionOperatorToken.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3B58D6681B3B515500C27D19 /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */; };
 		3B6A2DD81A70BAA300A5ED84 /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6A2DD71A70BAA300A5ED84 /* MBExpressionCache+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		3B71226D1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */; };
-		3B71226E1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */; };
+		3B71226D1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B71226E1B3DF5B1006D7EAD /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B71226B1B3DF5B1006D7EAD /* MBConditionalDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B71226F1B3DF5B1006D7EAD /* MBConditionalDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71226C1B3DF5B1006D7EAD /* MBConditionalDeclaration.m */; };
 		3B7122701B3DF5B1006D7EAD /* MBConditionalDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B71226C1B3DF5B1006D7EAD /* MBConditionalDeclaration.m */; };
 		3B82312C1A72FC2700C3A18F /* MBMLFontFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312B1A72FC2700C3A18F /* MBMLFontFunctionTests.m */; };
