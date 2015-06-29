@@ -347,10 +347,15 @@ NSString* const kMBMLVariableTypeList       = @"list";
     NSArray* relatives = [self relativesWithDefaultRelation];
     NSMutableDictionary* map = [NSMutableDictionary dictionaryWithCapacity:relatives.count];
     for (MBVariableDeclaration* decl in relatives) {
-        NSString* name = decl.name;
-        id val = [decl initialValueInVariableSpace:space error:errPtr];
-        if (val) {
-            map[name] = val;
+        if (!decl.disallowsValueCaching) {
+            NSString* name = decl.name;
+            id val = [decl initialValueInVariableSpace:space error:errPtr];
+            if (val) {
+                map[name] = val;
+            }
+        }
+        else {
+            [[MBExpressionError errorWithFormat:@"Variable containers declared as type=\"%@\" can only contain concrete (non-dynamic) values; this declaration will be ignored: %@", [self stringValueOfAttribute:kMBMLAttributeType], self.simulatedXML] reportErrorTo:errPtr];
         }
     }
     
@@ -366,9 +371,14 @@ NSString* const kMBMLVariableTypeList       = @"list";
     NSArray* relatives = [self relativesWithDefaultRelation];
     NSMutableArray* list = [NSMutableArray arrayWithCapacity:relatives.count];
     for (MBVariableDeclaration* decl in [self relativesWithDefaultRelation]) {
-        id val = [decl initialValueInVariableSpace:space error:errPtr];
-        if (val) {
-            [list addObject:val];
+        if (!decl.disallowsValueCaching) {
+            id val = [decl initialValueInVariableSpace:space error:errPtr];
+            if (val) {
+                [list addObject:val];
+            }
+        }
+        else {
+            [[MBExpressionError errorWithFormat:@"Variable containers declared as type=\"%@\" can only contain concrete (non-dynamic) values; this declaration will be ignored: %@", [self stringValueOfAttribute:kMBMLAttributeType], self.simulatedXML] reportErrorTo:errPtr];
         }
     }
 
