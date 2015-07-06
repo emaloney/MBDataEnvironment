@@ -39,6 +39,9 @@ typedef NS_ENUM(NSInteger, MBTableViewCellSelectionStyle)
     /*! Equivalent to `UITableViewCellSelectionStyleGray`. */
     MBTableViewCellSelectionStyleGray       = UITableViewCellSelectionStyleGray,
 
+    /*! Equivalent to `UITableViewCellSelectionStyleDefault`. */
+    MBTableViewCellSelectionStyleDefault    = UITableViewCellSelectionStyleDefault,
+
     /*! Represents a custom cell selection style using a gradient. */
     MBTableViewCellSelectionStyleGradient   = NSIntegerMax
 };
@@ -109,6 +112,7 @@ extern NSString* const __nonnull kMBMLTableViewCellStyleSubtitle;             //
 extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleNone;        // @"none" for UITableViewCellSelectionStyleNone
 extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleBlue;        // @"blue" for UITableViewCellSelectionStyleBlue
 extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGray;        // @"gray" for UITableViewCellSelectionStyleGray
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleDefault;     // @"default" for UITableViewCellSelectionDefault
 extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGradient;    // @"gradient" for custom gradient (not natively supported as a UITableViewCellSelectionStyle)
 
 // UITableViewCellAccessoryType
