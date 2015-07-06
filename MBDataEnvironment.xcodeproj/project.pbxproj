@@ -1569,6 +1569,7 @@
 			baseConfigurationReference = CCF123E31734990DDDEEFCDD /* Pods-osx.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1597,6 +1598,7 @@
 			baseConfigurationReference = 2BA0531AEAF2F59D65062A36 /* Pods-osx.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
