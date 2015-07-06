@@ -287,7 +287,7 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
             contain any commas, the returned array will contain one element:
             `str` itself.
  */
-+ (nonnull NSArray*) commaSeparatedArrayFromString:(nonnull NSString*)str;
++ (nonnull NSArray*) arrayFromCommaSeparatedString:(nonnull NSString*)str;
 
 /*!
  Evaluates an expression and splits the resulting comma-separated string into 
@@ -298,7 +298,7 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
  @return    An `NSArray` containing zero or more elements. If `expr` evaluates
             to `nil`, a zero-element array is returned.
  */
-+ (nonnull NSArray*) commaSeparatedArrayFromExpression:(nonnull NSString*)expr;
++ (nonnull NSArray*) arrayFromCommaSeparatedExpressionResult:(nonnull NSString*)expr;
 
 /*!
  Splits a string at the given *separator*, returning the individual

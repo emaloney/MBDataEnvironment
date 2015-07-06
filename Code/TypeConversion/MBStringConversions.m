@@ -269,18 +269,18 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 #pragma mark NSArray conversions
 /******************************************************************************/
 
-+ (nonnull NSArray*) commaSeparatedArrayFromString:(nonnull NSString*)str
++ (nonnull NSArray*) arrayFromCommaSeparatedString:(nonnull NSString*)str
 {
     return [self arrayFromString:str
                    withSeparator:@","
                       trimResult:YES];
 }
 
-+ (nonnull NSArray*) commaSeparatedArrayFromExpression:(nonnull NSString*)expr
++ (nonnull NSArray*) arrayFromCommaSeparatedExpressionResult:(nonnull NSString*)expr
 {
     NSString* result = [expr evaluateAsString];
     if (result) {
-        return [self commaSeparatedArrayFromString:result];
+        return [self arrayFromCommaSeparatedString:result];
     }
     return [NSArray new];
 }
