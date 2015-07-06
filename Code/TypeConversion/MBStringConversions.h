@@ -273,6 +273,52 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
 @interface MBStringConversions : NSObject
 
 /*----------------------------------------------------------------------------*/
+#pragma mark NSArray conversions
+/*!    @name NSArray conversions                                              */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Splits a comma-separated string into its individual, whitespace-trimmed
+ components.
+ 
+ @param     str The string to split.
+ 
+ @return    An `NSArray` containing one or more elements. If `str` does not
+            contain any commas, the returned array will contain one element:
+            `str` itself.
+ */
++ (nonnull NSArray*) commaSeparatedArrayFromString:(nonnull NSString*)str;
+
+/*!
+ Evaluates an expression and splits the resulting comma-separated string into 
+ its individual, whitespace-trimmed components.
+
+ @param     expr The expression.
+
+ @return    An `NSArray` containing zero or more elements. If `expr` evaluates
+            to `nil`, a zero-element array is returned.
+ */
++ (nonnull NSArray*) commaSeparatedArrayFromExpression:(nonnull NSString*)expr;
+
+/*!
+ Splits a string at the given *separator*, returning the individual
+ components.
+
+ @param     str The string to split.
+
+ @param     separator The separator, indicating where `str` should be split.
+ 
+ @param     trim If `YES`, leading and trailing whitespace will be removed
+            from the individual components before they are returned in the
+            array.
+
+ @return    An `NSArray` containing one or more elements.
+ */
++ (nonnull NSArray*) arrayFromString:(nonnull NSString*)str
+                       withSeparator:(nonnull NSString*)separator
+                          trimResult:(BOOL)trim;
+
+/*----------------------------------------------------------------------------*/
 #pragma mark CGPoint conversions
 /*!    @name CGPoint conversions                                              */
 /*----------------------------------------------------------------------------*/

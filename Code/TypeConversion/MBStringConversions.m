@@ -266,6 +266,38 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 }
 
 /******************************************************************************/
+#pragma mark NSArray conversions
+/******************************************************************************/
+
++ (nonnull NSArray*) commaSeparatedArrayFromString:(nonnull NSString*)str
+{
+    return [self arrayFromString:str
+                   withSeparator:@","
+                      trimResult:YES];
+}
+
++ (nonnull NSArray*) commaSeparatedArrayFromExpression:(nonnull NSString*)expr
+{
+    NSString* result = [expr evaluateAsString];
+    if (result) {
+        return [self commaSeparatedArrayFromString:result];
+    }
+    return [NSArray new];
+}
+
++ (nonnull NSArray*) arrayFromString:(nonnull NSString*)str
+                       withSeparator:(nonnull NSString*)separator
+                          trimResult:(BOOL)trim
+{
+    NSArray* comps = [str componentsSeparatedByString:separator];
+    NSMutableArray* results = [[NSMutableArray alloc] initWithCapacity:comps.count];
+    for (NSString* str in comps) {
+        [results addObject:MBTrimString(str)];
+    }
+    return results;
+}
+
+/******************************************************************************/
 #pragma mark CGPoint conversions
 /******************************************************************************/
 
