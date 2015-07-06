@@ -354,6 +354,9 @@ NSString* const kMBMLVariableTypeList       = @"list";
                 map[name] = val;
             }
         }
+        else {
+            [[MBExpressionError errorWithFormat:@"Variable containers declared as %@=\"%@\" can only contain concrete (non-dynamic) values; this declaration will be ignored: %@", kMBMLAttributeType, [self stringValueOfAttribute:kMBMLAttributeType], decl.simulatedXML] reportErrorTo:errPtr];
+        }
     }
     
     if (_isReadOnly) {
@@ -373,6 +376,9 @@ NSString* const kMBMLVariableTypeList       = @"list";
             if (val) {
                 [list addObject:val];
             }
+        }
+        else {
+            [[MBExpressionError errorWithFormat:@"Variable containers declared as %@=\"%@\" can only contain concrete (non-dynamic) values; this declaration will be ignored: %@", kMBMLAttributeType, [self stringValueOfAttribute:kMBMLAttributeType], decl.simulatedXML] reportErrorTo:errPtr];
         }
     }
 
