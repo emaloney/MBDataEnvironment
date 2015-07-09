@@ -71,6 +71,7 @@ NSString* const kMBMLTableViewCellSelectionStyleBlue        = @"blue";
 NSString* const kMBMLTableViewCellSelectionStyleGray        = @"gray";
 NSString* const kMBMLTableViewCellSelectionStyleDefault     = @"default";
 NSString* const kMBMLTableViewCellSelectionStyleGradient    = @"gradient";
+NSString* const kMBMLTableViewCellSelectionStyleDisabled    = @"disabled";
 
 NSString* const kMBMLTableViewCellAccessoryNone                     = @"none";
 NSString* const kMBMLTableViewCellAccessoryDisclosureIndicator      = @"disclosureIndicator";
@@ -1169,6 +1170,9 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     }
     else if ([str isEqualToString:kMBMLTableViewCellSelectionStyleGradient]) {
         return MBTableViewCellSelectionStyleGradient;
+    }
+    else if ([str isEqualToString:kMBMLTableViewCellSelectionStyleDisabled]) {
+        return MBTableViewCellSelectionStyleDisabled;
     }
     else {
         [self _reportCouldNotParse:str
