@@ -17,8 +17,8 @@
 NSString* const kMBPlatformUnknown  = @"unknown";
 NSString* const kMBPlatformOSX      = @"Mac OS X";
 NSString* const kMBPlatformIOS      = @"iOS";
-NSString* const kMBPlatformAppleTV  = @"Apple TC";
-NSString* const kMBPlatformWatchOS  = @"watchIS";
+NSString* const kMBPlatformAppleTV  = @"Apple TV";
+NSString* const kMBPlatformWatchOS  = @"watchOS";
 
 /******************************************************************************/
 #pragma mark -
@@ -31,12 +31,14 @@ MBImplementSingleton();
 
 - (MBPlatformType) platformType
 {
-#if     MB_BUILD_OSX
+#if MB_BUILD_OSX
     return MBPlatformTypeOSX;
-#elif   MB_BUILD_IOS
+#elif MB_BUILD_WATCH
+    return kMBPlatformWatchOS;
+#elif MB_BUILD_IOS
     return MBPlatformTypeIOS;
 #else
-    // support for MBPlatformTypeWatchOS and MBPlatformTypeAppleTV is pending
+    // support for MBPlatformTypeAppleTV is pending
     return MBPlatformTypeUnknown;
 #endif
 }
