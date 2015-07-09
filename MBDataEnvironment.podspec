@@ -41,7 +41,7 @@ Pod::Spec.new do |s|
     # Dependencies
     #----------------------------------------------------------------
 
-    s.dependency 'MBToolbox', '~> 1.1.5'
+    s.dependency 'MBToolbox', '~> 1.1.6'
     s.dependency 'RaptureXML@Gilt', '~> 1.0.4'
 
 end
