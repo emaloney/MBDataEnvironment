@@ -43,7 +43,11 @@ typedef NS_ENUM(NSInteger, MBTableViewCellSelectionStyle)
     MBTableViewCellSelectionStyleDefault    = UITableViewCellSelectionStyleDefault,
 
     /*! Represents a custom cell selection style using a gradient. */
-    MBTableViewCellSelectionStyleGradient   = NSIntegerMax
+    MBTableViewCellSelectionStyleGradient   = NSIntegerMax,
+    
+    /*! Represents a cell that cannot be selected. */
+    MBTableViewCellSelectionStyleDisabled   = NSIntegerMax - 1
+    
 };
 
 #endif
