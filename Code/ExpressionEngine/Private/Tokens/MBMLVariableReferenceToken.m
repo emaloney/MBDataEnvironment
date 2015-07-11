@@ -11,9 +11,18 @@
 #import "MBMLVariableReferenceToken.h"
 #import "MBMLObjectSubreferenceToken.h"
 #import "MBExpressionError.h"
+#import "MBDataEnvironmentConstants.h"
 #import "MBExpressionGrammar.h"
 
 #define DEBUG_LOCAL         0
+
+/******************************************************************************/
+#pragma mark Constants
+/******************************************************************************/
+
+static NSString* const kCoderKeyIsQuotedReference   = @"isQuoted";
+static NSString* const kCoderKeyOpenQuoteChar       = @"openQuoteChar";
+static NSString* const kCoderKeyCloseQuoteChar      = @"closeQuoteChar";
 
 /******************************************************************************/
 #pragma mark -
@@ -22,13 +31,48 @@
 
 @implementation MBMLVariableReferenceToken
 {
+    // state used during tokenization
     BOOL _gotVariableMarker;
+    NSUInteger _unclosedOpenQuoteCount;
+    BOOL _gotCloseQuoteChar;
+
+    // serializable token state
     BOOL _isQuotedReference;
     unichar _openQuoteChar;
     unichar _closeQuoteChar;
-    NSUInteger _unclosedOpenQuoteCount;
-    BOOL _gotCloseQuoteChar;
 }
+
+/******************************************************************************/
+#pragma mark Object serialization
+/******************************************************************************/
+
+- (instancetype) initWithCoder:(NSCoder*)coder
+{
+    MBLogDebugTrace();
+
+    self = [super initWithCoder:coder];
+    if (self) {
+        _isQuotedReference = [coder decodeBoolForKey:kCoderKeyIsQuotedReference];
+        _openQuoteChar = (unichar)[coder decodeInt32ForKey:kCoderKeyOpenQuoteChar];
+        _closeQuoteChar = (unichar)[coder decodeInt32ForKey:kCoderKeyCloseQuoteChar];
+    }
+    return self;
+}
+
+- (void) encodeWithCoder:(NSCoder*)coder
+{
+    MBLogDebugTrace();
+
+    [super encodeWithCoder:coder];
+
+    [coder encodeBool:_isQuotedReference forKey:kCoderKeyIsQuotedReference];
+    [coder encodeInt32:(int32_t)_openQuoteChar forKey:kCoderKeyOpenQuoteChar];
+    [coder encodeInt32:(int32_t)_closeQuoteChar forKey:kCoderKeyCloseQuoteChar];
+}
+
+/******************************************************************************/
+#pragma mark Token implementation
+/******************************************************************************/
 
 - (MBMLTokenMatchStatus) matchWhenAddingCharacter:(unichar)ch toExpression:(NSString*)accumExpr
 {
@@ -194,7 +238,46 @@
 
 - (NSString*) containedExpression
 {
-    return [NSString stringWithFormat:@"$%@", [super containedExpression]];
+    NSString* contained = [super containedExpression];
+    if (contained) {
+        return [NSString stringWithFormat:@"$%@", [super containedExpression]];
+    }
+    return nil;
+}
+
+- (NSString*) normalizedRepresentation
+{
+    if (_isQuotedReference) {
+        switch (_openQuoteChar) {
+            case '{':
+            {
+                NSString* contained = [super containedExpression];
+                if (!contained) {
+                    NSMutableString* normal = [[self tokenIdentifier] mutableCopy];
+                    for (MBMLParseToken* tok in self.childTokens) {
+                        NSString* childRep = [tok expression];
+                        if (childRep) {
+                            if (!normal) {
+                                normal = [NSMutableString string];
+                            }
+                            [normal appendString:childRep];
+                        }
+                    }
+                    contained = [normal copy];
+                }
+                return [NSString stringWithFormat:@"$%c%@%c", _openQuoteChar, (contained ?: kMBEmptyString), _closeQuoteChar];
+            }
+
+            case '(':
+                return [NSString stringWithFormat:@"$%c%@%c", _openQuoteChar, [self tokenIdentifier], _closeQuoteChar];
+
+            case '[':
+                return [NSString stringWithFormat:@"$%c%@%c", _openQuoteChar, [self tokenIdentifier], _closeQuoteChar];
+
+            default: break;
+        }
+    }
+    return [super normalizedRepresentation];
 }
 
 + (NSString*) expressionForReferencingVariableNamed:(NSString*)varName
@@ -227,14 +310,20 @@
         return nil;
     }
     
-    for (MBMLParseToken* tok in tokens) {
-        if (![tok isKindOfClass:[MBMLObjectReferenceToken class]]) {
-            err = [MBParseError errorWithFormat:@"not expecting a %@ here", [tok class]];
-            err.offendingToken = tok;
-            [err reportErrorTo:errPtr];
-            return nil;
+    if (tokens.count != 1 || ![tokens[0] isKindOfClass:[MBMLVariableReferenceToken class]]) {
+        err = [MBParseError errorWithFormat:@"expecting exactly one %@ here", [self class]];
+        if (tokens.count > 1) {
+            err.offendingToken = tokens[1];
         }
+        [err reportErrorTo:errPtr];
+        return nil;
     }
+
+    MBMLVariableReferenceToken* tok = tokens[0];
+    tok->_openQuoteChar = _openQuoteChar;
+    tok->_closeQuoteChar = _closeQuoteChar;
+    tok->_isQuotedReference = _isQuotedReference;
+
     return tokens;
 }
 
