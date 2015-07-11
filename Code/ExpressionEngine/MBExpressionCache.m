@@ -26,8 +26,8 @@
 
 NSString* const kMBExpressionCacheDidSerializeEvent             = @"MBExpressionCache:didSerialize";
 
-const NSInteger kMBExpressionCacheCurrentSerializationVersion   = 1;    // increment whenever file schema changes
-const NSInteger kMBExpressionCacheMinimumSerializationVersion   = 1;    // update when file schema changes in non-backwards-compatible way
+const NSInteger kMBExpressionCacheCurrentSerializationVersion   = 2;    // increment whenever file schema changes
+const NSInteger kMBExpressionCacheMinimumSerializationVersion   = 2;    // update when file schema changes in non-backwards-compatible way
 
 NSString* const kMBExpressionCacheSerializationVersionKey       = @"serializationVersion";
 NSString* const kMBExpressionCacheFunctionSignaturesKey         = @"functionSignatures";
