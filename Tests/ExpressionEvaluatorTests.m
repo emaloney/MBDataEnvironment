@@ -39,6 +39,15 @@
     [self _testExpressionWithEscapeSequence:@"This\\tis\\ttabtastic!"];
 }
 
+// regression test for issue with ${...} notations in parameter groups;
+// the } was not being interpreted as a hard stop for variable references
+- (void) testWeirdIfBehavior
+{
+    NSString* result = [MBExpression asString:@"^if(T|${nameMap[Jill].species}s|NO)"];
+    XCTAssertFalse(result == nil);
+    XCTAssertEqualObjects(result, @"humans");
+}
+
 - (void) testSimpleBooleanLiteralExpressions
 {
     BOOL result = [MBExpression asBoolean:@"T" defaultValue:NO];
