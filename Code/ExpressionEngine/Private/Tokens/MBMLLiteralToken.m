@@ -16,8 +16,8 @@
 #pragma mark Constants
 /******************************************************************************/
 
-#define kCoderKeyLiteralValue               @"literalValue"
-#define kCoderKeyLiteralValueIsSet          @"valueIsSet"
+static NSString* const kCoderKeyLiteralValue        = @"literalValue";
+static NSString* const kCoderKeyLiteralValueIsSet   = @"valueIsSet";
 
 /******************************************************************************/
 #pragma mark -
