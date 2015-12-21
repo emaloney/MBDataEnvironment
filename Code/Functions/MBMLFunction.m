@@ -852,7 +852,21 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
         
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-        id output = [_functionClass performSelector:_functionSelector withObject:input];
+        id output = nil;
+        
+        NSMethodSignature* methodSig = [_functionClass methodSignatureForSelector:_functionSelector];
+        if(methodSig == nil)
+            return nil;
+        
+        const char* retType = [methodSig methodReturnType];
+        if(strcmp(retType, @encode(id)) == 0) {
+            output = [_functionClass performSelector:_functionSelector withObject:input];
+        } else if(strcmp(retType, @encode(void)) == 0) {
+            [_functionClass performSelector:_functionSelector withObject:input];
+        } else {
+            MBLogError(@"Expected id return type for %@ called with input %@ but got %s instead", self, input, retType);
+            return nil;
+        }
 #pragma clang diagnostic pop
 
 
