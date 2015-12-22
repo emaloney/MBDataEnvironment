@@ -120,14 +120,14 @@ PODS:
     - MBToolbox/Module
   - MBToolbox/ThreadsafeCache (1.1.7):
     - MBToolbox/Module
-  - RaptureXML@Gilt (1.0.4)
+  - RaptureXML@Gilt (1.0.6)
 
 DEPENDENCIES:
   - MBToolbox (~> 1.1.7)
-  - RaptureXML@Gilt (~> 1.0.4)
+  - RaptureXML@Gilt (~> 1.0.6)
 
 SPEC CHECKSUMS:
   MBToolbox: 9b35f5b67ff568b59e0aae6439f5b7b50a7db099
-  RaptureXML@Gilt: cfde4ff1694563d9e45e74640c0cd4f887f500ed
+  RaptureXML@Gilt: 593acfe1442e2393b3a3db447232aaf1b8dda83f
 
 COCOAPODS: 0.39.0
