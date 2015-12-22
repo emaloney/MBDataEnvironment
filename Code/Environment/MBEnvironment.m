@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-#import <RaptureXML@Gilt/RXMLElement.h>
+#import <RaptureXML/RXMLElement.h>
 #import <MBToolbox/MBToolbox.h>
 
 #import "MBEnvironment.h"
