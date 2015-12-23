@@ -27,7 +27,6 @@
 		20C4FD511B3D0866007A6135 /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FD4D1B3D0866007A6135 /* MBMLFontFunctions.m */; };
 		20C4FD521B3D0866007A6135 /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 20C4FD4E1B3D0866007A6135 /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20C4FD531B3D0866007A6135 /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C4FD4F1B3D0866007A6135 /* MBMLGeometryFunctions.m */; };
-		368F1A9EC620009A508C7103 /* libPods-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 736A0C8729A6621A577C0FE3 /* libPods-osx.a */; };
 		3B2D73781A7B510800F16154 /* MBMLEncodingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73771A7B510800F16154 /* MBMLEncodingFunctionTests.m */; };
 		3B2D737A1A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73791A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m */; };
 		3B2D737C1A7B528300F16154 /* MBMLFileFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737B1A7B528300F16154 /* MBMLFileFunctionTests.m */; };
@@ -327,7 +326,8 @@
 		3BD23D181A65FD07001F7869 /* MBVariableSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8BA7BF19D9FBEB00996B9F /* MBVariableSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BD23D191A65FDA4001F7869 /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */; };
 		3BD23D1C1A682F40001F7869 /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4D6177D30A6338DA26B42F19 /* libPods-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 054A2F6CA8E099EBEC56B58B /* libPods-ios.a */; };
+		5832D403D99DB0C57CA5B36D /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAF925D9AAB15CCBCDF1723 /* Pods_ios.framework */; };
+		F2B16BFA9E41A537EB0AC618 /* Pods_osx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F5DC77CBB5B938E571E34F /* Pods_osx.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,7 +341,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		054A2F6CA8E099EBEC56B58B /* libPods-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20C4FD481B3D0850007A6135 /* MBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDevice.h; path = Code/iOS/Device/MBDevice.h; sourceTree = SOURCE_ROOT; };
 		20C4FD491B3D0850007A6135 /* MBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDevice.m; path = Code/iOS/Device/MBDevice.m; sourceTree = SOURCE_ROOT; };
 		20C4FD4C1B3D0866007A6135 /* MBMLFontFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBMLFontFunctions.h; path = Code/iOS/Functions/MBMLFontFunctions.h; sourceTree = SOURCE_ROOT; };
@@ -517,10 +516,11 @@
 		3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataEnvironmentTestSuite.m; path = Tests/MBDataEnvironmentTestSuite.m; sourceTree = SOURCE_ROOT; };
 		3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-MBDataEnvironment.xml"; sourceTree = "<group>"; };
 		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
-		736A0C8729A6621A577C0FE3 /* libPods-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FAF925D9AAB15CCBCDF1723 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C0960869E2C45EE1F4557BCE /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CCF123E31734990DDDEEFCDD /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
+		F9F5DC77CBB5B938E571E34F /* Pods_osx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_osx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,7 +528,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				368F1A9EC620009A508C7103 /* libPods-osx.a in Frameworks */,
+				F2B16BFA9E41A537EB0AC618 /* Pods_osx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +536,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D6177D30A6338DA26B42F19 /* libPods-ios.a in Frameworks */,
+				5832D403D99DB0C57CA5B36D /* Pods_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,8 +570,8 @@
 				3BCB5ED91A6065AA007D06FC /* libxml2.dylib */,
 				3BCB5ED71A6065A1007D06FC /* libz.dylib */,
 				3748C53F01464830A2605981 /* libPods.a */,
-				054A2F6CA8E099EBEC56B58B /* libPods-ios.a */,
-				736A0C8729A6621A577C0FE3 /* libPods-osx.a */,
+				3FAF925D9AAB15CCBCDF1723 /* Pods_ios.framework */,
+				F9F5DC77CBB5B938E571E34F /* Pods_osx.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
