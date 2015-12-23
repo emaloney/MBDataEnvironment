@@ -25,8 +25,8 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 //       included from within code in the Mockingbird Data Environment itself.
 //
 
-// import headers from inherited modules
-#import <MBToolbox/MBToolbox.h>
+// import Mockingbird Toolbox module
+@import MBToolbox;
 
 #if MB_BUILD_IOS
 #import <MBDataEnvironment/MBDevice.h>
