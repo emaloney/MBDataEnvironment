@@ -9,6 +9,7 @@
 #import "MBMLFunction.h"
 #import "MBDataEnvironmentModule.h"
 #import "MBMLObjectReferenceToken.h"
+#import "MBExpression.h"
 
 #define DEBUG_LOCAL                 0       // turns on tracing of function calls
 #define DEBUG_VERBOSE               0       // turns on tracing of function parameter validation

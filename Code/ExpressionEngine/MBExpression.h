@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MBExpressionExtensions.h"
 #import "MBExpressionError.h"
 
 @class MBExpressionGrammar;

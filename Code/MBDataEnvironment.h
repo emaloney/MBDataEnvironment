@@ -43,6 +43,7 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 #import <MBDataEnvironment/MBExpression.h>
 #import <MBDataEnvironment/MBExpressionCache.h>
 #import <MBDataEnvironment/MBExpressionError.h>
+#import <MBDataEnvironment/MBExpressionExtensions.h>
 #import <MBDataEnvironment/MBMLCollectionFunctions.h>
 #import <MBDataEnvironment/MBMLDataProcessingFunctions.h>
 #import <MBDataEnvironment/MBMLDateFunctions.h>

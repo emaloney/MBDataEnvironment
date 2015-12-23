@@ -11,6 +11,7 @@
 
 #import "MBDataModel.h"
 #import "MBExpression.h"
+#import "MBExpressionExtensions.h"
 #import "MBEnvironment.h"
 #import "MBDataEnvironmentModule.h"
 

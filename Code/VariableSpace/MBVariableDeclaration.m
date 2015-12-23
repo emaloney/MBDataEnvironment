@@ -10,6 +10,7 @@
 
 #import "MBVariableDeclaration.h"
 #import "MBVariableSpace.h"
+#import "MBExpression.h"
 
 #define DEBUG_LOCAL         0
 

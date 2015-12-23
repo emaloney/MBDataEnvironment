@@ -7,6 +7,7 @@
 //
 
 #import "MBConditionalDeclaration.h"
+#import "MBExpressionError.h"
 
 @class MBVariableSpace;
 @class MBExpressionError;

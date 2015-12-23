@@ -10,6 +10,7 @@
 
 #import "MBStringConversions.h"
 #import "MBExpression.h"
+#import "MBExpressionExtensions.h"
 #import "MBDataEnvironmentConstants.h"
 #import "MBDataEnvironmentModule.h"
 

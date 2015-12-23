@@ -9,6 +9,7 @@
 #import "MBMLDataProcessingFunctions.h"
 #import "MBMLFunction.h"
 #import "MBVariableSpace.h"
+#import "MBExpression.h"
 
 #define DEBUG_LOCAL     0
 

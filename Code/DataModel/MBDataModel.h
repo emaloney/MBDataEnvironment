@@ -8,7 +8,6 @@
 
 #import <MBToolbox/MBToolbox.h>
 
-#import "MBExpression.h"
 #import "MBDataEnvironmentConstants.h"
 
 @class RXMLElement;

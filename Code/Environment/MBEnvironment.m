@@ -13,6 +13,7 @@
 #import "MBEnvironmentLoader.h"
 #import "MBVariableSpace.h"
 #import "MBExpression.h"
+#import "MBExpressionExtensions.h"
 #import "MBDataEnvironmentModule.h"
 #import "MBDataEnvironmentConstants.h"
 

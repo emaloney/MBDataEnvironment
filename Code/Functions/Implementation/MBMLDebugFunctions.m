@@ -10,6 +10,7 @@
 
 #import "MBMLDebugFunctions.h"
 #import "MBExpression.h"
+#import "MBExpressionExtensions.h"
 #import "MBMLFunction.h"
 #import "MBExpressionGrammar.h"
 #import "MBDataEnvironmentModule.h"
