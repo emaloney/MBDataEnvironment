@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
 def import_pods
     #
@@ -15,7 +16,7 @@ def import_pods
 end
 
 target :ios do
-    platform :ios, '7.0'
+    platform :ios, '8.0'
     link_with 'MBDataEnvironment iOS'
     import_pods
 end
