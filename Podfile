@@ -11,7 +11,7 @@ def import_pods
     #
     # Why did we fork? See: https://github.com/ZaBlanc/RaptureXML/issues/61
     #
-    pod 'RaptureXML@Gilt', '~> 1.0.7'
+    pod 'RaptureXML@Gilt', '~> 1.0.8'
 end
 
 target :ios do
