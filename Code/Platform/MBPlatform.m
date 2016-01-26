@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBAvailability.h>
 
 #import "MBPlatform.h"
 

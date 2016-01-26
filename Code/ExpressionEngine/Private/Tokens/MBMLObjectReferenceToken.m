@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLObjectReferenceToken.h"
 #import "MBMLObjectSubreferenceToken.h"

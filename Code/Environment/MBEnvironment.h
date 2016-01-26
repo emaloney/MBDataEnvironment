@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBSingleton.h>
 
 #import "MBDataModel.h"
 

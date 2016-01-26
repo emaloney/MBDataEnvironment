@@ -6,9 +6,8 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
-
 #import <objc/runtime.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBMLRuntimeFunctions.h"
 #import "MBExpressionError.h"

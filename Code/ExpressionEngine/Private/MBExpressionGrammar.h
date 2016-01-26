@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBSingleton.h>
 
 @class MBVariableSpace;
 @class MBMLParseToken;

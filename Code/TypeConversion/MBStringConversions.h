@@ -6,15 +6,17 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-@import Foundation;
+#import <MBToolbox/MBAvailability.h>
 
 #if MB_BUILD_IOS
-@import UIKit;
+#import <UIKit/UIKit.h>
 #else
-@import AppKit;
+#import <AppKit/AppKit.h>
 #endif
 
-@import MBToolbox;
+#import <Foundation/Foundation.h>
+
+#import <MBToolbox/NSError+MBToolbox.h>
 
 /******************************************************************************/
 #pragma mark Types

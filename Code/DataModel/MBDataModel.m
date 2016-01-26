@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
-@import RaptureXML;
+#import <RaptureXML/RXMLElement.h>
+#import <MBToolbox/MBToolbox.h>
 
 #import "MBDataModel.h"
 #import "MBExpression.h"

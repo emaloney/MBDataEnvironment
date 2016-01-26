@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLBooleanGroupingToken.h"
 #import "MBExpression.h"

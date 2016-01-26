@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBModule.h>
 
 /******************************************************************************/
 #pragma mark -

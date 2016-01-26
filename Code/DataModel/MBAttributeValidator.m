@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Evan Coyne Maloney. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBAttributeValidator.h"
 

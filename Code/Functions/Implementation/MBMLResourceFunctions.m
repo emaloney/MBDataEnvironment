@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
+#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLResourceFunctions.h"
 #import "MBMLFunction.h"
