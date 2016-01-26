@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBToolbox.h>
+@import MBToolbox;
 
 #import "MBMLEncodingFunctions.h"
 

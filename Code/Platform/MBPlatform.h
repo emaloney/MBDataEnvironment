@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBSingleton.h>
+@import MBToolbox;
 
 /******************************************************************************/
 #pragma mark Types

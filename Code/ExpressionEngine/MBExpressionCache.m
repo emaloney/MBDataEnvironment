@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBToolbox.h>
+@import MBToolbox;
 
 #import "MBExpressionCache.h"
 #import "MBExpressionTokenizer.h"

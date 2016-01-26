@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBModuleLogMacros.h>
+@import MBToolbox;
 
 #import "MBMLLessThanEqualsTestToken.h"
 #import "MBExpression.h"

@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBToolbox.h>
+@import MBToolbox;
 
 #import "MBStringConversions.h"
 #import "MBExpression.h"

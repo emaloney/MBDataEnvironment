@@ -6,7 +6,7 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBSingleton.h>
+@import MBToolbox;
 
 @class MBVariableSpace;
 @class MBExpressionGrammar;

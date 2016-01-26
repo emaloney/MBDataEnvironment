@@ -6,9 +6,10 @@
 //  Copyright (c) 2011 Gilt Groupe. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
+@import CoreGraphics;
+@import MBToolbox;
+
 #import <stdlib.h>
-#import <MBToolbox/MBModuleLogMacros.h>
 
 #import "MBMLMathFunctions.h"
 #import "MBExpression.h"

@@ -6,10 +6,11 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBToolbox.h>
-#import "MBDataEnvironmentTestSuite.h"
-#import "MBEnvironment.h"
+@import MBToolbox;
+
 #import <objc/runtime.h>
+
+#import "MBDataEnvironmentTestSuite.h"
 
 /******************************************************************************/
 #pragma mark -

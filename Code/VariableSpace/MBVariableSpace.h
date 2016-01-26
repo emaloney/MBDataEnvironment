@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBSingleton.h>
+@import MBToolbox;
 
 #import "MBEnvironmentLoader.h"
 

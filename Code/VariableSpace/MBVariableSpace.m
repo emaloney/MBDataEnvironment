@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <RaptureXML/RXMLElement.h>
-#import <MBToolbox/MBToolbox.h>
+@import MBToolbox;
+@import RaptureXML;
 
 #import "MBVariableSpace.h"
 #import "MBEnvironment.h"

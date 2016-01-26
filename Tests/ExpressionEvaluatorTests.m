@@ -6,7 +6,8 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBToolbox.h>
+@import MBToolbox;
+
 #import "MBDataEnvironmentTestSuite.h"
 #import "MBExpression.h"
 #import "MBVariableSpace.h"
