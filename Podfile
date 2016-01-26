@@ -5,7 +5,7 @@ def import_pods
     #
     # include Mockingbird Toolbox
     #
-    pod 'MBToolbox', '~> 1.1.7'
+    pod 'MBToolbox', '~> 1.2.0'
 
     #
     # include our forked version of Rapture XML
