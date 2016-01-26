@@ -516,6 +516,9 @@
 		3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBDataEnvironmentTestSuite.m; path = Tests/MBDataEnvironmentTestSuite.m; sourceTree = SOURCE_ROOT; };
 		3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-MBDataEnvironment.xml"; sourceTree = "<group>"; };
 		3BD23D1A1A682F40001F7869 /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
+		3BF39DA01C57CC7C0060D681 /* Pods_ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ios.framework; path = "Pods/../build/Debug-iphoneos/Pods_ios.framework"; sourceTree = "<group>"; };
+		3BF39DA21C57CCA30060D681 /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = "Pods/../build/Debug/Pods-osx/MBToolbox.framework"; sourceTree = "<group>"; };
+		3BF39DA51C57CDC10060D681 /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = "Pods/../build/Debug/Pods-osx/MBToolbox.framework"; sourceTree = "<group>"; };
 		3FAF925D9AAB15CCBCDF1723 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05207EBD318D61DBCA7396F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C0960869E2C45EE1F4557BCE /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -567,6 +570,9 @@
 		3732FC3D8302400A859A2682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BF39DA51C57CDC10060D681 /* MBToolbox.framework */,
+				3BF39DA21C57CCA30060D681 /* MBToolbox.framework */,
+				3BF39DA01C57CC7C0060D681 /* Pods_ios.framework */,
 				3BCB5ED91A6065AA007D06FC /* libxml2.dylib */,
 				3BCB5ED71A6065A1007D06FC /* libz.dylib */,
 				3748C53F01464830A2605981 /* libPods.a */,
@@ -1128,6 +1134,7 @@
 				3BD23C721A65ED0F001F7869 /* Sources */,
 				3BD23C731A65ED0F001F7869 /* Frameworks */,
 				3BD23C741A65ED0F001F7869 /* Resources */,
+				3BF39DA41C57CCB50060D681 /* Copy Cocoapods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1279,6 +1286,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3BF39DA41C57CCB50060D681 /* Copy Cocoapods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Cocoapods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1666,6 +1687,7 @@
 		};
 		3BD23C831A65ED0F001F7869 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1673EA870D447CF4B521E4 /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1687,6 +1709,7 @@
 		};
 		3BD23C841A65ED0F001F7869 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1673EA870D447CF4B521E4 /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
