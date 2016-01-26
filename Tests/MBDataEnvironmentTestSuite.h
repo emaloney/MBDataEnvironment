@@ -7,11 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "MBVariableSpace.h"
-#import "MBExpression.h"
-#import "MBEnvironment.h"
-#import "MBStringConversions.h"
-#import "MBScopedVariables.h"
+#import <MBDataEnvironment/MBVariableSpace.h>
+#import <MBDataEnvironment/MBExpression.h>
+#import <MBDataEnvironment/MBExpressionExtensions.h>
+#import <MBDataEnvironment/MBEnvironment.h>
+#import <MBDataEnvironment/MBStringConversions.h>
+#import <MBDataEnvironment/MBScopedVariables.h>
 
 #define LOG_EXPECTED_ERRORS         1
 #define logExpectedError(x)         if (LOG_EXPECTED_ERRORS && (x)) MBLog(MBModuleLogSeverityVerbose, @"Received expected error (this is safe to ignore): %@", [(MBExpressionError*)x logOutput])
