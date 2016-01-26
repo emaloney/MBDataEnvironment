@@ -26,7 +26,7 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 //
 
 // import headers from inherited modules
-@import MBToolbox;
+#import <MBToolbox/MBToolbox.h>
 
 #if MB_BUILD_IOS
 #import <MBDataEnvironment/MBDevice.h>
