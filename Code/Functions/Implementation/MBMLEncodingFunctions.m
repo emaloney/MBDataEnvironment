@@ -85,7 +85,7 @@
     [MBMLFunction validateParameter:data isKindOfClass:[NSData class] error:&err];
     if (err) return err;
 
-    return [data hexString];
+    return [data toStringHex];
 }
 
 + (id) dataFromHexString:(NSString*)hexString
