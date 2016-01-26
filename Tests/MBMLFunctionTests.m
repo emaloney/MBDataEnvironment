@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Gilt Groupe. All rights reserved.
 //
 
+#import <MBDataEnvironment/MBMLFunction.h>
+
 #import "MBDataEnvironmentTestSuite.h"
-#import "MBMLFunction.h"
 
 /******************************************************************************/
 #pragma mark -
