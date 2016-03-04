@@ -60,6 +60,7 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 #import <MBDataEnvironment/MBMLFunction.h>
 #import <MBDataEnvironment/MBDataEnvironmentConstants.h>
 #import <MBDataEnvironment/MBDataEnvironmentModule.h>
+#import <MBDataEnvironment/MBPlatform.h>
 #import <MBDataEnvironment/MBStringConversions.h>
 #import <MBDataEnvironment/TypeCoercionSupport.h>
 #import <MBDataEnvironment/MBScopedVariables.h>
