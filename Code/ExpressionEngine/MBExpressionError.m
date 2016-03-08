@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
+@import MBToolbox;
+
 #import "MBExpressionError.h"
 #import "MBMLFunction.h"
 #import "MBMLParseToken.h"

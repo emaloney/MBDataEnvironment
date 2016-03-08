@@ -6,11 +6,15 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
-#import <MBToolbox/MBToolbox.h>
+@import Foundation;
+@import MBToolbox.MBFormattedDescriptionObject;
 
 #import "MBDataEnvironmentConstants.h"
 
 @class RXMLElement;
+@class MBFormattedDescriptionObject;
+
+typedef NSError *__autoreleasing  __nullable * __nullable NSErrorPtrPtr;
 
 /******************************************************************************/
 #pragma mark MBML Attribute Marking

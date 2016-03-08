@@ -25,9 +25,6 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 //       included from within code in the Mockingbird Data Environment itself.
 //
 
-// import headers from inherited modules
-#import <MBToolbox/MBToolbox.h>
-
 #if MB_BUILD_IOS
 #import <MBDataEnvironment/MBDevice.h>
 #import <MBDataEnvironment/MBMLFontFunctions.h>
@@ -37,6 +34,7 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 // import the public headers
 #import <MBDataEnvironment/MBAttributeValidator.h>
 #import <MBDataEnvironment/MBDataModel.h>
+#import <MBDataEnvironment/MBDevice.h>
 #import <MBDataEnvironment/MBEnvironment.h>
 #import <MBDataEnvironment/MBEnvironmentLoader.h>
 #import <MBDataEnvironment/MBEvents+DataLoading.h>
@@ -51,6 +49,8 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 #import <MBDataEnvironment/MBMLEncodingFunctions.h>
 #import <MBDataEnvironment/MBMLEnvironmentFunctions.h>
 #import <MBDataEnvironment/MBMLFileFunctions.h>
+#import <MBDataEnvironment/MBMLFontFunctions.h>
+#import <MBDataEnvironment/MBMLGeometryFunctions.h>
 #import <MBDataEnvironment/MBMLLogicFunctions.h>
 #import <MBDataEnvironment/MBMLMathFunctions.h>
 #import <MBDataEnvironment/MBMLRegexFunctions.h>
