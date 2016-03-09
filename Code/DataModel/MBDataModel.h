@@ -7,7 +7,8 @@
 //
 
 @import Foundation;
-@import MBToolbox.MBFormattedDescriptionObject;
+
+#import <MBToolbox/MBFormattedDescriptionObject.h>
 
 #import "MBDataEnvironmentConstants.h"
 

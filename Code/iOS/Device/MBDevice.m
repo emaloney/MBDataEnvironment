@@ -6,8 +6,6 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-@import MBToolbox;
-
 #import "MBDevice.h"
 #import "MBStringConversions.h"
 #import "MBDataEnvironmentConstants.h"
@@ -21,7 +19,7 @@
 
 @implementation MBDevice
 
-MBImplementSingleton();
+MBImplementSingleton()
 
 - (BOOL) isSimulator
 {

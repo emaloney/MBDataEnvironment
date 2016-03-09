@@ -8,7 +8,7 @@
 
 @import Foundation;
 
-@import MBToolbox;
+#import <MBToolbox/MBSingleton.h>
 
 /******************************************************************************/
 #pragma mark -
