@@ -53,181 +53,185 @@ typedef NS_ENUM(NSInteger, MBTableViewCellSelectionStyle)
 /******************************************************************************/
 
 // NSLineBreakMode
-extern NSString* const __nonnull kMBMLLineBreakByWordWrapping;                // @"wordWrap" for NSLineBreakByWordWrapping
-extern NSString* const __nonnull kMBMLLineBreakByCharWrapping;                // @"charWrap" for NSLineBreakByCharWrapping
-extern NSString* const __nonnull kMBMLLineBreakByClipping;                    // @"clip" for NSLineBreakByClipping
-extern NSString* const __nonnull kMBMLLineBreakByTruncatingHead;              // @"headTruncation" for NSLineBreakByTruncatingHead
-extern NSString* const __nonnull kMBMLLineBreakByTruncatingTail;              // @"tailTruncation" for NSLineBreakByTruncatingTail
-extern NSString* const __nonnull kMBMLLineBreakByTruncatingMiddle;            // @"middleTruncation" for NSLineBreakByTruncatingMiddle
+extern NSString* const __nonnull kMBMLLineBreakByWordWrapping;                  // @"wordWrap" for NSLineBreakByWordWrapping
+extern NSString* const __nonnull kMBMLLineBreakByCharWrapping;                  // @"charWrap" for NSLineBreakByCharWrapping
+extern NSString* const __nonnull kMBMLLineBreakByClipping;                      // @"clip" for NSLineBreakByClipping
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingHead;                // @"headTruncation" for NSLineBreakByTruncatingHead
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingTail;                // @"tailTruncation" for NSLineBreakByTruncatingTail
+extern NSString* const __nonnull kMBMLLineBreakByTruncatingMiddle;              // @"middleTruncation" for NSLineBreakByTruncatingMiddle
 
 // NSDateFormatterStyle
-extern NSString* const __nonnull kMBMLDateFormatterNoStyle;                   // @"none" for NSDateFormatterNoStyle
-extern NSString* const __nonnull kMBMLDateFormatterShortStyle;                // @"short" for NSDateFormatterShortStyle
-extern NSString* const __nonnull kMBMLDateFormatterMediumStyle;               // @"medium" for NSDateFormatterMediumStyle
-extern NSString* const __nonnull kMBMLDateFormatterLongStyle;                 // @"long" for NSDateFormatterLongStyle
-extern NSString* const __nonnull kMBMLDateFormatterFullStyle;                 // @"full" for NSDateFormatterFullStyle
+extern NSString* const __nonnull kMBMLDateFormatterNoStyle;                     // @"none" for NSDateFormatterNoStyle
+extern NSString* const __nonnull kMBMLDateFormatterShortStyle;                  // @"short" for NSDateFormatterShortStyle
+extern NSString* const __nonnull kMBMLDateFormatterMediumStyle;                 // @"medium" for NSDateFormatterMediumStyle
+extern NSString* const __nonnull kMBMLDateFormatterLongStyle;                   // @"long" for NSDateFormatterLongStyle
+extern NSString* const __nonnull kMBMLDateFormatterFullStyle;                   // @"full" for NSDateFormatterFullStyle
 
 #if MB_BUILD_IOS
 
 // NSTextAlignment
-extern NSString* const __nonnull kMBMLTextAlignmentLeft;                      // @"left" for NSTextAlignmentLeft
-extern NSString* const __nonnull kMBMLTextAlignmentCenter;                    // @"center" for NSTextAlignmentCenter
-extern NSString* const __nonnull kMBMLTextAlignmentRight;                     // @"right" for NSTextAlignmentRight
+extern NSString* const __nonnull kMBMLTextAlignmentLeft;                        // @"left" for NSTextAlignmentLeft
+extern NSString* const __nonnull kMBMLTextAlignmentCenter;                      // @"center" for NSTextAlignmentCenter
+extern NSString* const __nonnull kMBMLTextAlignmentRight;                       // @"right" for NSTextAlignmentRight
 
 // UIScrollViewIndicatorStyle
-extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleDefault;        // @"default" for UIScrollViewIndicatorStyleDefault
-extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleBlack;          // @"black" for UIScrollViewIndicatorStyleBlack
-extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleWhite;          // @"white" for UIScrollViewIndicatorStyleWhite
+extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleDefault;          // @"default" for UIScrollViewIndicatorStyleDefault
+extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleBlack;            // @"black" for UIScrollViewIndicatorStyleBlack
+extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleWhite;            // @"white" for UIScrollViewIndicatorStyleWhite
 
 // UIActivityIndicatorViewStyle
-extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhiteLarge;   // @"whiteLarge" for UIActivityIndicatorViewStyleWhiteLarge
-extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhite;        // @"white" for UIActivityIndicatorViewStyleWhite
-extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleGray;         // @"gray" for UIActivityIndicatorViewStyleGray
+extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhiteLarge;     // @"whiteLarge" for UIActivityIndicatorViewStyleWhiteLarge
+extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleWhite;          // @"white" for UIActivityIndicatorViewStyleWhite
+extern NSString* const __nonnull kMBMLActivityIndicatorViewStyleGray;           // @"gray" for UIActivityIndicatorViewStyleGray
 
 // UIButtonType
-extern NSString* const __nonnull kMBMLButtonTypeCustom;                       // @"custom" for UIButtonTypeCustom
-extern NSString* const __nonnull kMBMLButtonTypeRoundedRect;                  // @"rounded" for UIButtonTypeRoundedRect
-extern NSString* const __nonnull kMBMLButtonTypeDetailDisclosure;             // @"detailDisclosure" for UIButtonTypeDetailDisclosure
-extern NSString* const __nonnull kMBMLButtonTypeInfoLight;                    // @"infoLight" for UIButtonTypeInfoLight
-extern NSString* const __nonnull kMBMLButtonTypeInfoDark;                     // @"infoDark" for UIButtonTypeInfoDark
-extern NSString* const __nonnull kMBMLButtonTypeContactAdd;                   // @"contactAdd" for UIButtonTypeContactAdd
+extern NSString* const __nonnull kMBMLButtonTypeCustom;                         // @"custom" for UIButtonTypeCustom
+extern NSString* const __nonnull kMBMLButtonTypeRoundedRect;                    // @"rounded" for UIButtonTypeRoundedRect
+extern NSString* const __nonnull kMBMLButtonTypeDetailDisclosure;               // @"detailDisclosure" for UIButtonTypeDetailDisclosure
+extern NSString* const __nonnull kMBMLButtonTypeInfoLight;                      // @"infoLight" for UIButtonTypeInfoLight
+extern NSString* const __nonnull kMBMLButtonTypeInfoDark;                       // @"infoDark" for UIButtonTypeInfoDark
+extern NSString* const __nonnull kMBMLButtonTypeContactAdd;                     // @"contactAdd" for UIButtonTypeContactAdd
 
 // UITextBorderStyle
-extern NSString* const __nonnull kMBMLTextBorderStyleNone;                    // @"none" for UITextBorderStyleNone
-extern NSString* const __nonnull kMBMLTextBorderStyleLine;                    // @"line" for UITextBorderStyleNone
-extern NSString* const __nonnull kMBMLTextBorderStyleBezel;                   // @"bezel" for UITextBorderStyleBezel
-extern NSString* const __nonnull kMBMLTextBorderStyleRoundedRect;             // @"rounded" for UITextBorderStyleRoundedRect
+extern NSString* const __nonnull kMBMLTextBorderStyleNone;                      // @"none" for UITextBorderStyleNone
+extern NSString* const __nonnull kMBMLTextBorderStyleLine;                      // @"line" for UITextBorderStyleNone
+extern NSString* const __nonnull kMBMLTextBorderStyleBezel;                     // @"bezel" for UITextBorderStyleBezel
+extern NSString* const __nonnull kMBMLTextBorderStyleRoundedRect;               // @"rounded" for UITextBorderStyleRoundedRect
 
 // UITableViewStyle
-extern NSString* const __nonnull kMBMLTableViewStylePlain;                    // @"plain" for UITableViewStylePlain
-extern NSString* const __nonnull kMBMLTableViewStyleGrouped;                  // @"grouped" for UITableViewStyleGrouped
+extern NSString* const __nonnull kMBMLTableViewStylePlain;                      // @"plain" for UITableViewStylePlain
+extern NSString* const __nonnull kMBMLTableViewStyleGrouped;                    // @"grouped" for UITableViewStyleGrouped
 
 // UITableViewCellStyle
-extern NSString* const __nonnull kMBMLTableViewCellStyleDefault;              // @"default" for UITableViewCellStyleDefault
-extern NSString* const __nonnull kMBMLTableViewCellStyleValue1;               // @"value1" for UITableViewCellStyleValue1
-extern NSString* const __nonnull kMBMLTableViewCellStyleValue2;               // @"value2" for UITableViewCellStyleValue2
-extern NSString* const __nonnull kMBMLTableViewCellStyleSubtitle;             // @"subtitle" for UITableViewCellStyleSubtitle
+extern NSString* const __nonnull kMBMLTableViewCellStyleDefault;                // @"default" for UITableViewCellStyleDefault
+extern NSString* const __nonnull kMBMLTableViewCellStyleValue1;                 // @"value1" for UITableViewCellStyleValue1
+extern NSString* const __nonnull kMBMLTableViewCellStyleValue2;                 // @"value2" for UITableViewCellStyleValue2
+extern NSString* const __nonnull kMBMLTableViewCellStyleSubtitle;               // @"subtitle" for UITableViewCellStyleSubtitle
 
 // UITableViewCellSelectionStyle
-extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleNone;        // @"none" for UITableViewCellSelectionStyleNone
-extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleBlue;        // @"blue" for UITableViewCellSelectionStyleBlue
-extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGray;        // @"gray" for UITableViewCellSelectionStyleGray
-extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleDefault;     // @"default" for UITableViewCellSelectionDefault
-extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGradient;    // @"gradient" for custom gradient (not natively supported as a UITableViewCellSelectionStyle)
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleNone;          // @"none" for UITableViewCellSelectionStyleNone
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleBlue;          // @"blue" for UITableViewCellSelectionStyleBlue
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGray;          // @"gray" for UITableViewCellSelectionStyleGray
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleDefault;       // @"default" for UITableViewCellSelectionDefault
+extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGradient;      // @"gradient" for custom gradient (not natively supported as a UITableViewCellSelectionStyle)
 
 // UITableViewCellAccessoryType
-extern NSString* const __nonnull kMBMLTableViewCellAccessoryNone;                     // @"none" for UITableViewCellAccessoryNone
-extern NSString* const __nonnull kMBMLTableViewCellAccessoryDisclosureIndicator;      // @"disclosureIndicator" for UITableViewCellAccessoryDisclosureIndicator
-extern NSString* const __nonnull kMBMLTableViewCellAccessoryDetailDisclosureButton;   // @"detailDisclosureButton" for UITableViewCellAccessoryDetailDisclosureButton
-extern NSString* const __nonnull kMBMLTableViewCellAccessoryCheckmark;                // @"checkmark" for UITableViewCellAccessoryCheckmark
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryNone;                       // @"none" for UITableViewCellAccessoryNone
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryDisclosureIndicator;        // @"disclosureIndicator" for UITableViewCellAccessoryDisclosureIndicator
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryDetailDisclosureButton;     // @"detailDisclosureButton" for UITableViewCellAccessoryDetailDisclosureButton
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryCheckmark;                  // @"checkmark" for UITableViewCellAccessoryCheckmark
 
 // UITableViewRowAnimation
-extern NSString* const __nonnull kMBMLTableViewRowAnimationNone;              // @"none" for UITableViewRowAnimationNone
-extern NSString* const __nonnull kMBMLTableViewRowAnimationFade;              // @"fade" for UITableViewRowAnimationFade
-extern NSString* const __nonnull kMBMLTableViewRowAnimationRight;             // @"right" for UITableViewRowAnimationRight
-extern NSString* const __nonnull kMBMLTableViewRowAnimationLeft;              // @"left" for UITableViewRowAnimationLeft
-extern NSString* const __nonnull kMBMLTableViewRowAnimationTop;               // @"top" for UITableViewRowAnimationTop
-extern NSString* const __nonnull kMBMLTableViewRowAnimationBottom;            // @"bottom" for UITableViewRowAnimationBottom
-extern NSString* const __nonnull kMBMLTableViewRowAnimationMiddle;            // @"middle" for UITableViewRowAnimationMiddle
+extern NSString* const __nonnull kMBMLTableViewRowAnimationNone;                // @"none" for UITableViewRowAnimationNone
+extern NSString* const __nonnull kMBMLTableViewRowAnimationFade;                // @"fade" for UITableViewRowAnimationFade
+extern NSString* const __nonnull kMBMLTableViewRowAnimationRight;               // @"right" for UITableViewRowAnimationRight
+extern NSString* const __nonnull kMBMLTableViewRowAnimationLeft;                // @"left" for UITableViewRowAnimationLeft
+extern NSString* const __nonnull kMBMLTableViewRowAnimationTop;                 // @"top" for UITableViewRowAnimationTop
+extern NSString* const __nonnull kMBMLTableViewRowAnimationBottom;              // @"bottom" for UITableViewRowAnimationBottom
+extern NSString* const __nonnull kMBMLTableViewRowAnimationMiddle;              // @"middle" for UITableViewRowAnimationMiddle
 
 // UIControlState
-extern NSString* const __nonnull kMBMLControlStateNormal;                     // @"normal" for UIControlStateNormal
-extern NSString* const __nonnull kMBMLControlStateHighlighted;                // @"highlighted" for UIControlStateHighlighted
-extern NSString* const __nonnull kMBMLControlStateDisabled;                   // @"disabled" for UIControlStateDisabled
-extern NSString* const __nonnull kMBMLControlStateSelected;                   // @"selected" for UIControlStateSelected
+extern NSString* const __nonnull kMBMLControlStateNormal;                       // @"normal" for UIControlStateNormal
+extern NSString* const __nonnull kMBMLControlStateHighlighted;                  // @"highlighted" for UIControlStateHighlighted
+extern NSString* const __nonnull kMBMLControlStateDisabled;                     // @"disabled" for UIControlStateDisabled
+extern NSString* const __nonnull kMBMLControlStateSelected;                     // @"selected" for UIControlStateSelected
 
 // UIViewAnimationOptions (bit field; multiple comma-separated values specified and they will be bitwise ORed together)
-extern NSString* const __nonnull kMBMLViewAnimationOptionLayoutSubviews;              // @"layoutSubviews" for UIViewAnimationOptionLayoutSubviews
-extern NSString* const __nonnull kMBMLViewAnimationOptionAllowUserInteraction;		// @"allowUserInteraction" for UIViewAnimationOptionAllowUserInteraction
-extern NSString* const __nonnull kMBMLViewAnimationOptionBeginFromCurrentState;		// @"beginFromCurrentState" for UIViewAnimationOptionBeginFromCurrentState
-extern NSString* const __nonnull kMBMLViewAnimationOptionRepeat;                      // @"repeat" for UIViewAnimationOptionRepeat
-extern NSString* const __nonnull kMBMLViewAnimationOptionAutoreverse;                 // @"autoreverse" for UIViewAnimationOptionAutoreverse
-extern NSString* const __nonnull kMBMLViewAnimationOptionOverrideInheritedDuration;   // @"overrideInheritedDuration" for UIViewAnimationOptionOverrideInheritedDuration
+extern NSString* const __nonnull kMBMLViewAnimationOptionLayoutSubviews;                // @"layoutSubviews" for UIViewAnimationOptionLayoutSubviews
+extern NSString* const __nonnull kMBMLViewAnimationOptionAllowUserInteraction;          // @"allowUserInteraction" for UIViewAnimationOptionAllowUserInteraction
+extern NSString* const __nonnull kMBMLViewAnimationOptionBeginFromCurrentState;         // @"beginFromCurrentState" for UIViewAnimationOptionBeginFromCurrentState
+extern NSString* const __nonnull kMBMLViewAnimationOptionRepeat;                        // @"repeat" for UIViewAnimationOptionRepeat
+extern NSString* const __nonnull kMBMLViewAnimationOptionAutoreverse;                   // @"autoreverse" for UIViewAnimationOptionAutoreverse
+extern NSString* const __nonnull kMBMLViewAnimationOptionOverrideInheritedDuration;     // @"overrideInheritedDuration" for UIViewAnimationOptionOverrideInheritedDuration
 extern NSString* const __nonnull kMBMLViewAnimationOptionOverrideInheritedCurve;		// @"overrideInheritedCurve" for UIViewAnimationOptionOverrideInheritedCurve
-extern NSString* const __nonnull kMBMLViewAnimationOptionAllowAnimatedContent;		// @"allowAnimatedContent" for UIViewAnimationOptionAllowAnimatedContent
+extern NSString* const __nonnull kMBMLViewAnimationOptionAllowAnimatedContent;          // @"allowAnimatedContent" for UIViewAnimationOptionAllowAnimatedContent
 extern NSString* const __nonnull kMBMLViewAnimationOptionShowHideTransitionViews;		// @"showHideTransitionViews" for UIViewAnimationOptionShowHideTransitionViews
-extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseInOut;              // @"curveEaseInOut" for UIViewAnimationOptionCurveEaseInOut
-extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseIn;                 // @"curveEaseIn" for UIViewAnimationOptionCurveEaseIn
-extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseOut;                // @"curveEaseOut" for UIViewAnimationOptionCurveEaseOut
-extern NSString* const __nonnull kMBMLViewAnimationOptionCurveLinear;                 // @"curveLinear" for UIViewAnimationOptionCurveLinear
-extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionNone;              // @"transitionNone" for UIViewAnimationOptionTransitionNone
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseInOut;                // @"curveEaseInOut" for UIViewAnimationOptionCurveEaseInOut
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseIn;                   // @"curveEaseIn" for UIViewAnimationOptionCurveEaseIn
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveEaseOut;                  // @"curveEaseOut" for UIViewAnimationOptionCurveEaseOut
+extern NSString* const __nonnull kMBMLViewAnimationOptionCurveLinear;                   // @"curveLinear" for UIViewAnimationOptionCurveLinear
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionNone;                // @"transitionNone" for UIViewAnimationOptionTransitionNone
 extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromLeft;		// @"transitionFlipFromLeft" for UIViewAnimationOptionTransitionFlipFromLeft
 extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromRight;		// @"transitionFlipFromRight" for UIViewAnimationOptionTransitionFlipFromRight
-extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCurlUp;            // @"transitionCurlUp" for UIViewAnimationOptionTransitionCurlUp
-extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCurlDown;          // @"transitionCurlDown" for UIViewAnimationOptionTransitionCurlDown
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCurlUp;              // @"transitionCurlUp" for UIViewAnimationOptionTransitionCurlUp
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCurlDown;            // @"transitionCurlDown" for UIViewAnimationOptionTransitionCurlDown
 extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionCrossDissolve;		// @"transitionCrossDissolve" for UIViewAnimationOptionTransitionCrossDissolve
-extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromTop;		// @"transitionFlipFromTop" for UIViewAnimationOptionTransitionFlipFromTop
-extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromBottom;    // @"transitionFlipFromBottom" for UIViewAnimationOptionTransitionFlipFromBottom
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromTop;         // @"transitionFlipFromTop" for UIViewAnimationOptionTransitionFlipFromTop
+extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromBottom;      // @"transitionFlipFromBottom" for UIViewAnimationOptionTransitionFlipFromBottom
 
 // UIModalTransitionStyle 
-extern NSString* const __nonnull kMBMLModalTransitionStyleCoverVertical;      // @"coverVertical" for UIModalTransitionStyleCoverVertical
-extern NSString* const __nonnull kMBMLModalTransitionStyleFlipHorizontal;     // @"flipHorizontal" for UIModalTransitionStyleFlipHorizontal
-extern NSString* const __nonnull kMBMLModalTransitionStyleCrossDissolve;      // @"crossDissolve" for UIModalTransitionStyleCrossDissolve
-extern NSString* const __nonnull kMBMLModalTransitionStylePartialCurl;        // @"partialCurl" for UIModalTransitionStylePartialCurl
+extern NSString* const __nonnull kMBMLModalTransitionStyleCoverVertical;        // @"coverVertical" for UIModalTransitionStyleCoverVertical
+extern NSString* const __nonnull kMBMLModalTransitionStyleFlipHorizontal;       // @"flipHorizontal" for UIModalTransitionStyleFlipHorizontal
+extern NSString* const __nonnull kMBMLModalTransitionStyleCrossDissolve;        // @"crossDissolve" for UIModalTransitionStyleCrossDissolve
+extern NSString* const __nonnull kMBMLModalTransitionStylePartialCurl;          // @"partialCurl" for UIModalTransitionStylePartialCurl
 
 // UIViewContentMode
-extern NSString* const __nonnull kMBMLViewContentModeScaleToFill;             // @"scaleToFill" for UIViewContentModeScaleToFill
-extern NSString* const __nonnull kMBMLViewContentModeScaleAspectFit;          // @"aspectFit" for UIViewContentModeScaleAspectFit
-extern NSString* const __nonnull kMBMLViewContentModeScaleAspectFill;         // @"aspectFill" for UIViewContentModeScaleAspectFill
-extern NSString* const __nonnull kMBMLViewContentModeRedraw;                  // @"redraw" for UIViewContentModeRedraw
-extern NSString* const __nonnull kMBMLViewContentModeCenter;                  // @"center" for UIViewContentModeCenter
-extern NSString* const __nonnull kMBMLViewContentModeTop;                     // @"top" for UIViewContentModeTop
-extern NSString* const __nonnull kMBMLViewContentModeBottom;                  // @"bottom" for UIViewContentModeBottom
-extern NSString* const __nonnull kMBMLViewContentModeLeft;                    // @"left" for UIViewContentModeLeft
-extern NSString* const __nonnull kMBMLViewContentModeRight;                   // @"right" for UIViewContentModeRight
-extern NSString* const __nonnull kMBMLViewContentModeTopLeft;                 // @"topLeft" for UIViewContentModeTopLeft
-extern NSString* const __nonnull kMBMLViewContentModeTopRight;                // @"topRight" for UIViewContentModeTopRight
-extern NSString* const __nonnull kMBMLViewContentModeBottomLeft;              // @"bottomLeft" for UIViewContentModeBottomLeft
-extern NSString* const __nonnull kMBMLViewContentModeBottomRight;             // @"bottomRight" for UIViewContentModeBottomRight
+extern NSString* const __nonnull kMBMLViewContentModeScaleToFill;               // @"scaleToFill" for UIViewContentModeScaleToFill
+extern NSString* const __nonnull kMBMLViewContentModeScaleAspectFit;            // @"aspectFit" for UIViewContentModeScaleAspectFit
+extern NSString* const __nonnull kMBMLViewContentModeScaleAspectFill;           // @"aspectFill" for UIViewContentModeScaleAspectFill
+extern NSString* const __nonnull kMBMLViewContentModeRedraw;                    // @"redraw" for UIViewContentModeRedraw
+extern NSString* const __nonnull kMBMLViewContentModeCenter;                    // @"center" for UIViewContentModeCenter
+extern NSString* const __nonnull kMBMLViewContentModeTop;                       // @"top" for UIViewContentModeTop
+extern NSString* const __nonnull kMBMLViewContentModeBottom;                    // @"bottom" for UIViewContentModeBottom
+extern NSString* const __nonnull kMBMLViewContentModeLeft;                      // @"left" for UIViewContentModeLeft
+extern NSString* const __nonnull kMBMLViewContentModeRight;                     // @"right" for UIViewContentModeRight
+extern NSString* const __nonnull kMBMLViewContentModeTopLeft;                   // @"topLeft" for UIViewContentModeTopLeft
+extern NSString* const __nonnull kMBMLViewContentModeTopRight;                  // @"topRight" for UIViewContentModeTopRight
+extern NSString* const __nonnull kMBMLViewContentModeBottomLeft;                // @"bottomLeft" for UIViewContentModeBottomLeft
+extern NSString* const __nonnull kMBMLViewContentModeBottomRight;               // @"bottomRight" for UIViewContentModeBottomRight
 
 // UIBarStyle
-extern NSString* const __nonnull kMBMLBarStyleDefault;                        // @"default" for UIBarStyleDefault
-extern NSString* const __nonnull kMBMLBarStyleBlack;                          // @"black" for UIBarStyleBlack
-extern NSString* const __nonnull kMBMLBarStyleBlackOpaque;                    // @"blackOpaque" for UIBarStyleBlackOpaque
-extern NSString* const __nonnull kMBMLBarStyleBlackTranslucent;				// @"blackTranslucent" for UIBarStyleBlackTranslucent
+extern NSString* const __nonnull kMBMLBarStyleDefault;                          // @"default" for UIBarStyleDefault
+extern NSString* const __nonnull kMBMLBarStyleBlack;                            // @"black" for UIBarStyleBlack
+extern NSString* const __nonnull kMBMLBarStyleBlackOpaque;                      // @"blackOpaque" for UIBarStyleBlackOpaque
+extern NSString* const __nonnull kMBMLBarStyleBlackTranslucent;                 // @"blackTranslucent" for UIBarStyleBlackTranslucent
 
 // UIBarButtonSystemItem
-extern NSString* const __nonnull kMBMLBarButtonSystemItemDone;				// @"done" for UIBarButtonSystemItemDone
+extern NSString* const __nonnull kMBMLBarButtonSystemItemDone;                  // @"done" for UIBarButtonSystemItemDone
 extern NSString* const __nonnull kMBMLBarButtonSystemItemCancel;				// @"cancel" for UIBarButtonSystemItemCancel
-extern NSString* const __nonnull kMBMLBarButtonSystemItemEdit;				// @"edit" for UIBarButtonSystemItemEdit
-extern NSString* const __nonnull kMBMLBarButtonSystemItemSave;				// @"save" for UIBarButtonSystemItemSave
-extern NSString* const __nonnull kMBMLBarButtonSystemItemAdd;                 // @"add" for UIBarButtonSystemItemAdd
-extern NSString* const __nonnull kMBMLBarButtonSystemItemFlexibleSpace;		// @"flexibleSpace" for UIBarButtonSystemItemFlexibleSpace
+extern NSString* const __nonnull kMBMLBarButtonSystemItemEdit;                  // @"edit" for UIBarButtonSystemItemEdit
+extern NSString* const __nonnull kMBMLBarButtonSystemItemSave;                  // @"save" for UIBarButtonSystemItemSave
+extern NSString* const __nonnull kMBMLBarButtonSystemItemAdd;                   // @"add" for UIBarButtonSystemItemAdd
+extern NSString* const __nonnull kMBMLBarButtonSystemItemFlexibleSpace;         // @"flexibleSpace" for UIBarButtonSystemItemFlexibleSpace
 extern NSString* const __nonnull kMBMLBarButtonSystemItemFixedSpace;			// @"fixedSpace" for UIBarButtonSystemItemFixedSpace
 extern NSString* const __nonnull kMBMLBarButtonSystemItemCompose;				// @"compose" for UIBarButtonSystemItemCompose
-extern NSString* const __nonnull kMBMLBarButtonSystemItemReply;				// @"reply" for UIBarButtonSystemItemReply
+extern NSString* const __nonnull kMBMLBarButtonSystemItemReply;                 // @"reply" for UIBarButtonSystemItemReply
 extern NSString* const __nonnull kMBMLBarButtonSystemItemAction;				// @"action" for UIBarButtonSystemItemAction
-extern NSString* const __nonnull kMBMLBarButtonSystemItemOrganize;			// @"organize" for UIBarButtonSystemItemOrganize
-extern NSString* const __nonnull kMBMLBarButtonSystemItemBookmarks;			// @"bookmarks" for UIBarButtonSystemItemBookmarks
+extern NSString* const __nonnull kMBMLBarButtonSystemItemOrganize;              // @"organize" for UIBarButtonSystemItemOrganize
+extern NSString* const __nonnull kMBMLBarButtonSystemItemBookmarks;             // @"bookmarks" for UIBarButtonSystemItemBookmarks
 extern NSString* const __nonnull kMBMLBarButtonSystemItemSearch;				// @"search" for UIBarButtonSystemItemSearch
 extern NSString* const __nonnull kMBMLBarButtonSystemItemRefresh;				// @"refresh" for UIBarButtonSystemItemRefresh
-extern NSString* const __nonnull kMBMLBarButtonSystemItemStop;				// @"stop" for UIBarButtonSystemItemStop
+extern NSString* const __nonnull kMBMLBarButtonSystemItemStop;                  // @"stop" for UIBarButtonSystemItemStop
 extern NSString* const __nonnull kMBMLBarButtonSystemItemCamera;				// @"camera" for UIBarButtonSystemItemCamera
-extern NSString* const __nonnull kMBMLBarButtonSystemItemTrash;				// @"trash" for UIBarButtonSystemItemTrash
-extern NSString* const __nonnull kMBMLBarButtonSystemItemPlay;				// @"play" for UIBarButtonSystemItemPlay
-extern NSString* const __nonnull kMBMLBarButtonSystemItemPause;				// @"pause" for UIBarButtonSystemItemPause
+extern NSString* const __nonnull kMBMLBarButtonSystemItemTrash;                 // @"trash" for UIBarButtonSystemItemTrash
+extern NSString* const __nonnull kMBMLBarButtonSystemItemPlay;                  // @"play" for UIBarButtonSystemItemPlay
+extern NSString* const __nonnull kMBMLBarButtonSystemItemPause;                 // @"pause" for UIBarButtonSystemItemPause
 extern NSString* const __nonnull kMBMLBarButtonSystemItemRewind;				// @"rewind" for UIBarButtonSystemItemRewind
 extern NSString* const __nonnull kMBMLBarButtonSystemItemFastForward;			// @"fastForward" for UIBarButtonSystemItemFastForward
-extern NSString* const __nonnull kMBMLBarButtonSystemItemUndo;				// @"undo" for UIBarButtonSystemItemUndo
-extern NSString* const __nonnull kMBMLBarButtonSystemItemRedo;				// @"redo" for UIBarButtonSystemItemRedo
-extern NSString* const __nonnull kMBMLBarButtonSystemItemPageCurl;			// @"pageCurl" for UIBarButtonSystemItemPageCurl
+extern NSString* const __nonnull kMBMLBarButtonSystemItemUndo;                  // @"undo" for UIBarButtonSystemItemUndo
+extern NSString* const __nonnull kMBMLBarButtonSystemItemRedo;                  // @"redo" for UIBarButtonSystemItemRedo
+extern NSString* const __nonnull kMBMLBarButtonSystemItemPageCurl;              // @"pageCurl" for UIBarButtonSystemItemPageCurl
 
 // UIBarButtonItemStyle
-extern NSString* const __nonnull kMBMLBarButtonItemStylePlain;				// @"plain" for UIBarButtonItemStylePlain
+extern NSString* const __nonnull kMBMLBarButtonItemStylePlain;                  // @"plain" for UIBarButtonItemStylePlain
 extern NSString* const __nonnull kMBMLBarButtonItemStyleBordered;				// @"bordered" for UIBarButtonItemStyleBordered
-extern NSString* const __nonnull kMBMLBarButtonItemStyleDone;                 // @"done" for UIBarButtonItemStyleDone
+extern NSString* const __nonnull kMBMLBarButtonItemStyleDone;                   // @"done" for UIBarButtonItemStyleDone
+
+// UIStatusBarStyle
+extern NSString* const __nonnull kMBMLStatusBarStyleDark;                       // @"dark" for UIStatusBarStyleDefault
+extern NSString* const __nonnull kMBMLStatusBarStyleLight;                      // @"light" for UIStatusBarStyleLightContent
 
 // UIStatusBarAnimation
-extern NSString* const __nonnull kMBMLStatusBarAnimationNone;                 // @"none" for UIStatusBarAnimationNone
-extern NSString* const __nonnull kMBMLStatusBarAnimationFade;                 // @"fade" for UIStatusBarAnimationFade
-extern NSString* const __nonnull kMBMLStatusBarAnimationSlide;                // @"slide" for UIStatusBarAnimationSlide
+extern NSString* const __nonnull kMBMLStatusBarAnimationNone;                   // @"none" for UIStatusBarAnimationNone
+extern NSString* const __nonnull kMBMLStatusBarAnimationFade;                   // @"fade" for UIStatusBarAnimationFade
+extern NSString* const __nonnull kMBMLStatusBarAnimationSlide;                  // @"slide" for UIStatusBarAnimationSlide
 
 // UIPopoverArrowDirection
-extern NSString* const __nonnull kMBMLPopoverArrowDirectionUp;                // @"up" for UIPopoverArrowDirectionUp
-extern NSString* const __nonnull kMBMLPopoverArrowDirectionDown;              // @"down" for UIPopoverArrowDirectionDown
-extern NSString* const __nonnull kMBMLPopoverArrowDirectionLeft;              // @"left" for UIPopoverArrowDirectionLeft
-extern NSString* const __nonnull kMBMLPopoverArrowDirectionRight;             // @"right" for UIPopoverArrowDirectionRight
-extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               // @"any" for UIPopoverArrowDirectionAny
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionUp;                  // @"up" for UIPopoverArrowDirectionUp
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionDown;                // @"down" for UIPopoverArrowDirectionDown
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionLeft;                // @"left" for UIPopoverArrowDirectionLeft
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionRight;               // @"right" for UIPopoverArrowDirectionRight
+extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 // @"any" for UIPopoverArrowDirectionAny
 
 #endif
 
@@ -259,6 +263,7 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
  * `UIOffset`
  * `UIPopoverArrowDirection`
  * `UIScrollViewIndicatorStyle`
+ * `UIStatusBarStyle`
  * `UIStatusBarAnimation`
  * `UITableViewCellAccessoryType`
  * `UITableViewCellSelectionStyle`
@@ -2209,6 +2214,63 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;               //
             if the expression result couldn't be interpreted.
  */
 + (UIBarButtonItemStyle) barButtonItemStyleFromExpression:(nonnull NSString*)expr;
+
+/*----------------------------------------------------------------------------*/
+#pragma mark UIStatusBarStyle conversions
+/*!    @name UIStatusBarStyle conversions                                     */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as a `UIStatusBarStyle` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLStatusBarStyleDark` ("**`dark`**") → `UIStatusBarStyleDefault`
+ * `kMBMLStatusBarStyleLight` ("**`light`**") → `UIStatusBarStyleLightContent`
+
+ @param     str The string to interpret.
+
+ @return    The `UIStatusBarStyle` value that corresponds with `str`.
+            Returns `UIStatusBarStyleDefault` and logs an error to the
+            console if `str` isn't recognized.
+ */
++ (UIStatusBarStyle) statusBarStyleFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as a `UIStatusBarStyle` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLStatusBarStyleDark` ("**`dark`**") → `UIStatusBarStyleDefault`
+ * `kMBMLStatusBarStyleLight` ("**`light`**") → `UIStatusBarStyleLightContent`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+            `NSError` instance in the event of a problem interpreting `str`.
+            If non-`nil` and an error occurs, `*errPtr` will be set to an
+            `NSError` instance indicating the error.
+
+ @return    The `UIStatusBarStyle` value that corresponds with `str`.
+            Returns `UIStatusBarStyleDefault` if `str` isn't recognized.
+ */
++ (UIStatusBarStyle) statusBarStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as a
+ `UIStatusBarStyle` value using the `statusBarStyleFromString:`
+ method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `UIStatusBarStyle` value that corresponds with the
+            result of evaluating `expr` as a string. Returns
+            `UIStatusBarStyleDefault` and logs an error to the console
+            if the expression result couldn't be interpreted.
+ */
++ (UIStatusBarStyle) statusBarStyleFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIStatusBarAnimation conversions

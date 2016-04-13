@@ -166,6 +166,9 @@ NSString* const kMBMLBarButtonItemStylePlain                = @"plain";
 NSString* const kMBMLBarButtonItemStyleBordered             = @"bordered";
 NSString* const kMBMLBarButtonItemStyleDone                 = @"done";
 
+NSString* const kMBMLStatusBarStyleDark                     = @"dark";
+NSString* const kMBMLStatusBarStyleLight                    = @"light";
+
 NSString* const kMBMLStatusBarAnimationNone                 = @"none";
 NSString* const kMBMLStatusBarAnimationFade                 = @"fade";
 NSString* const kMBMLStatusBarAnimationSlide                = @"slide";
@@ -1720,6 +1723,43 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 {
     NSError* err = nil;
     UIBarButtonItemStyle val = [self barButtonItemStyleFromString:[expr evaluateAsString] error:&err];
+    if (err) {
+        [self _logError:err fromExpression:expr];
+    }
+    return val;
+}
+
+/******************************************************************************/
+#pragma mark UIStatusBarAnimation conversions
+/******************************************************************************/
+
++ (UIStatusBarStyle) statusBarStyleFromString:(nonnull NSString*)str
+{
+    return [self statusBarStyleFromString:str error:nil];
+}
+
++ (UIStatusBarStyle) statusBarStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
+{
+    if ([str isEqualToString:kMBMLStatusBarStyleDark]) {
+        return UIStatusBarStyleDefault;
+    }
+    else if ([str isEqualToString:kMBMLStatusBarStyleLight]) {
+        return UIStatusBarStyleLightContent;
+    }
+    else {
+        [self _reportCouldNotParse:str
+                                as:MBStringify(UIStatusBarStyle)
+               expectingValueAmong:@[kMBMLStatusBarStyleDark, kMBMLStatusBarStyleLight]
+                                to:errPtr];
+    }
+
+    return UIStatusBarStyleDefault;
+}
+
++ (UIStatusBarStyle) statusBarStyleFromExpression:(nonnull NSString*)expr
+{
+    NSError* err = nil;
+    UIStatusBarStyle val = [self statusBarStyleFromString:[expr evaluateAsString] error:&err];
     if (err) {
         [self _logError:err fromExpression:expr];
     }
