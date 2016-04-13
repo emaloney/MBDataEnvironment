@@ -218,8 +218,8 @@ extern NSString* const __nonnull kMBMLBarButtonItemStyleBordered;				// @"border
 extern NSString* const __nonnull kMBMLBarButtonItemStyleDone;                   // @"done" for UIBarButtonItemStyleDone
 
 // UIStatusBarStyle
-extern NSString* const __nonnull kMBMLStatusBarStyleDark;                       // @"dark" for UIStatusBarStyleDefault
-extern NSString* const __nonnull kMBMLStatusBarStyleLight;                      // @"light" for UIStatusBarStyleLightContent
+extern NSString* const __nonnull kMBMLStatusBarStyleDarkText;                   // @"darkText" for UIStatusBarStyleDefault
+extern NSString* const __nonnull kMBMLStatusBarStyleLightText;                  // @"lightText" for UIStatusBarStyleLightContent
 
 // UIStatusBarAnimation
 extern NSString* const __nonnull kMBMLStatusBarAnimationNone;                   // @"none" for UIStatusBarAnimationNone
@@ -2226,8 +2226,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLStatusBarStyleDark` ("**`dark`**") → `UIStatusBarStyleDefault`
- * `kMBMLStatusBarStyleLight` ("**`light`**") → `UIStatusBarStyleLightContent`
+ * `kMBMLStatusBarStyleDarkText` ("**`darkText`**") → `UIStatusBarStyleDefault`
+ * `kMBMLStatusBarStyleLightText` ("**`lightText`**") → `UIStatusBarStyleLightContent`
 
  @param     str The string to interpret.
 
@@ -2243,8 +2243,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  The following string constants show the accepted inputs, along with their
  corresponding values:
 
- * `kMBMLStatusBarStyleDark` ("**`dark`**") → `UIStatusBarStyleDefault`
- * `kMBMLStatusBarStyleLight` ("**`light`**") → `UIStatusBarStyleLightContent`
+ * `kMBMLStatusBarStyleDarkText` ("**`darkText`**") → `UIStatusBarStyleDefault`
+ * `kMBMLStatusBarStyleLightText` ("**`lightText`**") → `UIStatusBarStyleLightContent`
 
  @param     str The string to interpret.
 

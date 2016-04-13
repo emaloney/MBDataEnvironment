@@ -166,8 +166,8 @@ NSString* const kMBMLBarButtonItemStylePlain                = @"plain";
 NSString* const kMBMLBarButtonItemStyleBordered             = @"bordered";
 NSString* const kMBMLBarButtonItemStyleDone                 = @"done";
 
-NSString* const kMBMLStatusBarStyleDark                     = @"dark";
-NSString* const kMBMLStatusBarStyleLight                    = @"light";
+NSString* const kMBMLStatusBarStyleDarkText                 = @"darkText";
+NSString* const kMBMLStatusBarStyleLightText                = @"lightText";
 
 NSString* const kMBMLStatusBarAnimationNone                 = @"none";
 NSString* const kMBMLStatusBarAnimationFade                 = @"fade";
@@ -1740,16 +1740,16 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 
 + (UIStatusBarStyle) statusBarStyleFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr
 {
-    if ([str isEqualToString:kMBMLStatusBarStyleDark]) {
+    if ([str isEqualToString:kMBMLStatusBarStyleDarkText]) {
         return UIStatusBarStyleDefault;
     }
-    else if ([str isEqualToString:kMBMLStatusBarStyleLight]) {
+    else if ([str isEqualToString:kMBMLStatusBarStyleLightText]) {
         return UIStatusBarStyleLightContent;
     }
     else {
         [self _reportCouldNotParse:str
                                 as:MBStringify(UIStatusBarStyle)
-               expectingValueAmong:@[kMBMLStatusBarStyleDark, kMBMLStatusBarStyleLight]
+               expectingValueAmong:@[kMBMLStatusBarStyleDarkText, kMBMLStatusBarStyleLightText]
                                 to:errPtr];
     }
 
