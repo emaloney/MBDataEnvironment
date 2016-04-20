@@ -122,6 +122,11 @@ NSString* const kMBMLBooleanStringFalse  = @"F";
         return NSOrderedSame;
     }
 
+    // if we're dealing entirely with strings, do a locale-appropriate comparison
+    if ([lValue isKindOfClass:[NSString class]] && [rValue isKindOfClass:[NSString class]]) {
+        return [lValue localizedCompare:rValue];
+    }
+
     // use native comparison if the lvalue and rvalue are compatible objects
     if ([lValue respondsToSelector:@selector(compare:)] && ([lValue isKindOfClass:[rValue class]] || [rValue isKindOfClass:[lValue class]])) {
         return [lValue compare:rValue];
