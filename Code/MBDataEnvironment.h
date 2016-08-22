@@ -55,8 +55,6 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 #import <MBDataEnvironment/MBMLEncodingFunctions.h>
 #import <MBDataEnvironment/MBMLEnvironmentFunctions.h>
 #import <MBDataEnvironment/MBMLFileFunctions.h>
-#import <MBDataEnvironment/MBMLFontFunctions.h>
-#import <MBDataEnvironment/MBMLGeometryFunctions.h>
 #import <MBDataEnvironment/MBMLLogicFunctions.h>
 #import <MBDataEnvironment/MBMLMathFunctions.h>
 #import <MBDataEnvironment/MBMLRegexFunctions.h>
