@@ -41,7 +41,6 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 // import the public headers
 #import <MBDataEnvironment/MBAttributeValidator.h>
 #import <MBDataEnvironment/MBDataModel.h>
-#import <MBDataEnvironment/MBDevice.h>
 #import <MBDataEnvironment/MBEnvironment.h>
 #import <MBDataEnvironment/MBEnvironmentLoader.h>
 #import <MBDataEnvironment/MBEvents+DataLoading.h>
