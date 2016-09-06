@@ -3,5 +3,5 @@ xcuserdata
 *.xccheckout
 Products/
 build/
-Pods/
-
+Carthage/
+!Carthage/Checkouts/
