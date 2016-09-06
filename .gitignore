@@ -1,6 +1,7 @@
 .DS_Store
 xcuserdata
 *.xccheckout
+*.xcscmblueprint
 Products/
 build/
 Carthage/Build/

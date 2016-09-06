@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/MBToolbox"]
+	path = Carthage/Checkouts/MBToolbox
+	url = https://github.com/emaloney/MBToolbox.git
+[submodule "Carthage/Checkouts/RaptureXML"]
+	path = Carthage/Checkouts/RaptureXML
+	url = https://github.com/emaloney/RaptureXML.git
