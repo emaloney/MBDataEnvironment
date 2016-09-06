@@ -3,5 +3,4 @@ xcuserdata
 *.xccheckout
 Products/
 build/
-Carthage/
-!Carthage/Checkouts/
+Carthage/Build/
