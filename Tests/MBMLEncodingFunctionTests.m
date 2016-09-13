@@ -7,7 +7,7 @@
 //
 
 #import "MBDataEnvironmentTestSuite.h"
-#import "MBMessageDigest.h"
+#import <MBToolbox/MBMessageDigest.h>
 
 /******************************************************************************/
 #pragma mark -
