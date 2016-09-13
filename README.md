@@ -1,5 +1,21 @@
 ![Gilt Tech logo](Documentation/images/gilt-tech-logo.png)
 
+# IMPORTANT NOTE
+
+### TO-DO: Update to note removal of CocoaPods support
+
+This documentation is out of date with respect to CocoaPods integration below.
+
+Use of CocoaPods for Mockingbird Data Environment is no longer supported.
+
+If you wish to use a dependency manager, [Carthage](https://github.com/Carthage/Carthage) is supported. Just add the following line to your `Cartfile`, then run `carthage update`:
+
+```
+github "emaloney/MBDataEnvironment" ~> 2.0.0  
+```
+
+Otherwise, you may embed `MBDataEnvironment.xcodeproj` (along with the necessary dependencies) within your own project and link against the appropriate frameworks for your target platform.
+
 # Mockingbird Data Environment
 
 This repository hosts the Mockingbird Data Environment, an open-source project from Gilt Groupe that builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) project to provide a dynamic data processing engine for iOS and Mac OS X applications.
