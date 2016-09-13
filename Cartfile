@@ -1,3 +1,2 @@
-github "emaloney/MBToolbox" "carthage"
+github "emaloney/MBToolbox" ~> 2.0.0
 github "emaloney/RaptureXML" "framework"
-
