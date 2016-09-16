@@ -12,6 +12,9 @@ before_install:
 install:
   gem install xcpretty
 
+before_script:
+  sudo systemsetup -settimezone America/New_York
+
 script:
 - set -o pipefail && xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme 'MBDataEnvironment-iOS' -destination 'platform=iOS Simulator,OS=10.0,name=iPhone 7' clean test | xcpretty
 - set -o pipefail && xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme 'MBDataEnvironment-macOS' -destination 'platform=macOS' clean test | xcpretty
