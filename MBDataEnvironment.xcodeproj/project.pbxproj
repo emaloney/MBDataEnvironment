@@ -209,6 +209,8 @@
 		3BB1669C1D8C49C50004A0E9 /* MBMLRuntimeFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */; };
 		3BB1669D1D8C49C50004A0E9 /* MBMLStringFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231391A742B1300C3A18F /* MBMLStringFunctionTests.m */; };
 		3BB1669F1D8C49C50004A0E9 /* MBDataEnvironmentTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */; };
+		3BB166A31D8C6B610004A0E9 /* RaptureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB166A21D8C6B610004A0E9 /* RaptureXML.framework */; };
+		3BB166A51D8C6B670004A0E9 /* RaptureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB166A41D8C6B670004A0E9 /* RaptureXML.framework */; };
 		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
@@ -533,6 +535,8 @@
 		3BB1667C1D8C47580004A0E9 /* MBDataEnvironmentTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBDataEnvironmentTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB166871D8C47A80004A0E9 /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MBDataEnvironment-augqxjzqkoldhmckatrajbkzkzqu/Build/Products/Debug/MBToolbox.framework"; sourceTree = "<group>"; };
 		3BB166891D8C47B60004A0E9 /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = "Carthage/Checkouts/MBToolbox/build/Release-iphoneos/MBToolbox.framework"; sourceTree = "<group>"; };
+		3BB166A21D8C6B610004A0E9 /* RaptureXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RaptureXML.framework; path = "Carthage/Checkouts/RaptureXML/build/Debug-iphoneos/RaptureXML.framework"; sourceTree = "<group>"; };
+		3BB166A41D8C6B670004A0E9 /* RaptureXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RaptureXML.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MBDataEnvironment-augqxjzqkoldhmckatrajbkzkzqu/Build/Products/Debug/RaptureXML.framework"; sourceTree = "<group>"; };
 		3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MBDataEnvironmentModule.xml; sourceTree = "<group>"; };
 		3BCB5ED71A6065A1007D06FC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3BCB5ED91A6065AA007D06FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -564,6 +568,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB166A51D8C6B670004A0E9 /* RaptureXML.framework in Frameworks */,
 				3BB1668B1D8C49960004A0E9 /* MBToolbox.framework in Frameworks */,
 				3BB166811D8C47580004A0E9 /* MBDataEnvironment.framework in Frameworks */,
 			);
@@ -582,6 +587,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB166A31D8C6B610004A0E9 /* RaptureXML.framework in Frameworks */,
 				3BB1668A1D8C47B60004A0E9 /* MBToolbox.framework in Frameworks */,
 				3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */,
 			);
@@ -593,6 +599,8 @@
 		3732FC3D8302400A859A2682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BB166A41D8C6B670004A0E9 /* RaptureXML.framework */,
+				3BB166A21D8C6B610004A0E9 /* RaptureXML.framework */,
 				3BB166891D8C47B60004A0E9 /* MBToolbox.framework */,
 				3BB166871D8C47A80004A0E9 /* MBToolbox.framework */,
 				3BEA9C401D7F6B9B00A87B4C /* MBToolbox.framework */,
@@ -1746,6 +1754,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RaptureXML/build/Debug-iphoneos",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1768,6 +1780,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/RaptureXML/build/Debug-iphoneos",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1819,6 +1835,7 @@
 				3BB166861D8C47580004A0E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment-iOS" */ = {
 			isa = XCConfigurationList;
