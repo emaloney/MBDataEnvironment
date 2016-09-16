@@ -597,7 +597,7 @@
     // test expected failures
     //
     MBExpressionError* err = nil;
-    [MBExpression asObject:@"^copy($UIDevice)" error:&err];
+    [MBExpression asObject:@"^copy($Platform)" error:&err];
     expectError(err);
 
     err = nil;
