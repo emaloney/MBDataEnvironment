@@ -7,6 +7,7 @@
 //
 
 #import <MBToolbox/MBToolbox.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "MBDataEnvironmentTestSuite.h"
 #import "MBEnvironment.h"
 #import <objc/runtime.h>
@@ -28,15 +29,15 @@
 - (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
     CGRect rect = [MBStringConversions rectFromExpression:@"$rect"];
-    NSValue* rectVal = [NSValue valueWithCGRect:rect];
+    NSValue* rectVal = [NSValue valueWithBytes:&rect objCType:@encode(CGRect)];
     vars[@"rect:val"] = rectVal;
 
     CGPoint origin = [MBStringConversions pointFromExpression:@"$rect:origin"];
-    NSValue* originVal = [NSValue valueWithCGPoint:origin];
+    NSValue* originVal = [NSValue valueWithBytes:&origin objCType:@encode(CGPoint)];
     vars[@"rect:origin:val"] = originVal;
 
     CGSize size = [MBStringConversions sizeFromExpression:@"$rect:size"];
-    NSValue* sizeVal = [NSValue valueWithCGSize:size];
+    NSValue* sizeVal = [NSValue valueWithBytes:&size objCType:@encode(CGSize)];
     vars[@"rect:size:val"] = sizeVal;
 }
 
