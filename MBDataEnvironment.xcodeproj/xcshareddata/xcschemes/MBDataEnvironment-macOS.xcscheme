@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
                BuildableName = "MBDataEnvironment.framework"
-               BlueprintName = "MBDataEnvironment OSX"
+               BlueprintName = "MBDataEnvironment-macOS"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3BB1667B1D8C47580004A0E9"
+               BuildableName = "MBDataEnvironmentTests-macOS.xctest"
+               BlueprintName = "MBDataEnvironmentTests-macOS"
+               ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
+            BuildableName = "MBDataEnvironment.framework"
+            BlueprintName = "MBDataEnvironment-macOS"
+            ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -47,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment OSX"
+            BlueprintName = "MBDataEnvironment-macOS"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B58D5D51B3B515500C27D19"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment OSX"
+            BlueprintName = "MBDataEnvironment-macOS"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

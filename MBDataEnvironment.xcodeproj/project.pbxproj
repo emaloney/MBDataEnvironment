@@ -189,6 +189,26 @@
 		3BA8B2A31A7C2DDF00B00241 /* MBMLModuloOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A11A7C2DDF00B00241 /* MBMLModuloOperatorToken.m */; };
 		3BA8B2A61A7C340200B00241 /* PredefinedVariableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */; };
 		3BA8B2A91A7C371E00B00241 /* MBMLFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A71A7C361300B00241 /* MBMLFunctionTests.m */; };
+		3BB166811D8C47580004A0E9 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B58D66D1B3B515500C27D19 /* MBDataEnvironment.framework */; };
+		3BB1668A1D8C47B60004A0E9 /* MBToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB166891D8C47B60004A0E9 /* MBToolbox.framework */; };
+		3BB1668B1D8C49960004A0E9 /* MBToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB166871D8C47A80004A0E9 /* MBToolbox.framework */; };
+		3BB1668C1D8C49B30004A0E9 /* test-MBDataEnvironment.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3BD23C8F1A65FBBB001F7869 /* test-MBDataEnvironment.xml */; };
+		3BB1668D1D8C49C50004A0E9 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
+		3BB1668E1D8C49C50004A0E9 /* MBMLCollectionFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B82312F1A7421B000C3A18F /* MBMLCollectionFunctionTests.m */; };
+		3BB1668F1D8C49C50004A0E9 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
+		3BB166901D8C49C50004A0E9 /* MBMLDateFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231311A74226000C3A18F /* MBMLDateFunctionTests.m */; };
+		3BB166911D8C49C50004A0E9 /* MBMLDebugFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73811A7B54FF00F16154 /* MBMLDebugFunctionTests.m */; };
+		3BB166921D8C49C50004A0E9 /* MBMLEncodingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73771A7B510800F16154 /* MBMLEncodingFunctionTests.m */; };
+		3BB166931D8C49C50004A0E9 /* MBMLEnvironmentFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D73791A7B51DD00F16154 /* MBMLEnvironmentFunctionTests.m */; };
+		3BB166941D8C49C50004A0E9 /* MBMLFileFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737B1A7B528300F16154 /* MBMLFileFunctionTests.m */; };
+		3BB166961D8C49C50004A0E9 /* MBMLFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA8B2A71A7C361300B00241 /* MBMLFunctionTests.m */; };
+		3BB166981D8C49C50004A0E9 /* MBMLLogicFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231331A74288C00C3A18F /* MBMLLogicFunctionTests.m */; };
+		3BB166991D8C49C50004A0E9 /* MBMLMathFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231351A74293E00C3A18F /* MBMLMathFunctionTests.m */; };
+		3BB1669A1D8C49C50004A0E9 /* MBMLRegexFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231371A742A9900C3A18F /* MBMLRegexFunctionTests.m */; };
+		3BB1669B1D8C49C50004A0E9 /* MBMLResourceFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737D1A7B53B800F16154 /* MBMLResourceFunctionTests.m */; };
+		3BB1669C1D8C49C50004A0E9 /* MBMLRuntimeFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D737F1A7B546900F16154 /* MBMLRuntimeFunctionTests.m */; };
+		3BB1669D1D8C49C50004A0E9 /* MBMLStringFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8231391A742B1300C3A18F /* MBMLStringFunctionTests.m */; };
+		3BB1669F1D8C49C50004A0E9 /* MBDataEnvironmentTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C881A65FBA9001F7869 /* MBDataEnvironmentTestSuite.m */; };
 		3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */; };
 		3BD23C8A1A65FBA9001F7869 /* ExpressionEvaluatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */; };
 		3BD23C8B1A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */; };
@@ -333,6 +353,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3BB166821D8C47580004A0E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B0A9D8E19D9E15B002848CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B58D5D51B3B515500C27D19;
+			remoteInfo = "MBDataEnvironment-macOS";
+		};
 		3BD23C781A65ED0F001F7869 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3B0A9D8E19D9E15B002848CD /* Project object */;
@@ -503,11 +530,14 @@
 		3BA8B2A11A7C2DDF00B00241 /* MBMLModuloOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLModuloOperatorToken.m; sourceTree = "<group>"; };
 		3BA8B2A41A7C33FB00B00241 /* PredefinedVariableTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredefinedVariableTests.m; path = Tests/PredefinedVariableTests.m; sourceTree = SOURCE_ROOT; };
 		3BA8B2A71A7C361300B00241 /* MBMLFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLFunctionTests.m; path = Tests/MBMLFunctionTests.m; sourceTree = SOURCE_ROOT; };
+		3BB1667C1D8C47580004A0E9 /* MBDataEnvironmentTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBDataEnvironmentTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BB166871D8C47A80004A0E9 /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MBDataEnvironment-augqxjzqkoldhmckatrajbkzkzqu/Build/Products/Debug/MBToolbox.framework"; sourceTree = "<group>"; };
+		3BB166891D8C47B60004A0E9 /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = "Carthage/Checkouts/MBToolbox/build/Release-iphoneos/MBToolbox.framework"; sourceTree = "<group>"; };
 		3BBE05E319E336B1007C92A2 /* MBDataEnvironmentModule.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MBDataEnvironmentModule.xml; sourceTree = "<group>"; };
 		3BCB5ED71A6065A1007D06FC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		3BCB5ED91A6065AA007D06FC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBDataEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBDataEnvironmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBDataEnvironmentTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD23C851A65FBA9001F7869 /* ExpressionEvaluatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpressionEvaluatorTests.m; path = Tests/ExpressionEvaluatorTests.m; sourceTree = SOURCE_ROOT; };
 		3BD23C861A65FBA9001F7869 /* MBMLDataProcessingFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBMLDataProcessingFunctionTests.m; path = Tests/MBMLDataProcessingFunctionTests.m; sourceTree = SOURCE_ROOT; };
 		3BD23C871A65FBA9001F7869 /* MBDataEnvironmentTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBDataEnvironmentTestSuite.h; path = Tests/MBDataEnvironmentTestSuite.h; sourceTree = SOURCE_ROOT; };
@@ -530,6 +560,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BB166791D8C47580004A0E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BB1668B1D8C49960004A0E9 /* MBToolbox.framework in Frameworks */,
+				3BB166811D8C47580004A0E9 /* MBDataEnvironment.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BD23C681A65ED0E001F7869 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,6 +582,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB1668A1D8C47B60004A0E9 /* MBToolbox.framework in Frameworks */,
 				3BD23C771A65ED0F001F7869 /* MBDataEnvironment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +593,8 @@
 		3732FC3D8302400A859A2682 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BB166891D8C47B60004A0E9 /* MBToolbox.framework */,
+				3BB166871D8C47A80004A0E9 /* MBToolbox.framework */,
 				3BEA9C401D7F6B9B00A87B4C /* MBToolbox.framework */,
 				3BEA9C411D7F6B9B00A87B4C /* RaptureXML.framework */,
 				3BEA9C3C1D7F6B9300A87B4C /* MBToolbox.framework */,
@@ -578,8 +620,9 @@
 			isa = PBXGroup;
 			children = (
 				3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */,
-				3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */,
+				3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests-iOS.xctest */,
 				3B58D66D1B3B515500C27D19 /* MBDataEnvironment.framework */,
+				3BB1667C1D8C47580004A0E9 /* MBDataEnvironmentTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1067,9 +1110,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3B58D5D51B3B515500C27D19 /* MBDataEnvironment OSX */ = {
+		3B58D5D51B3B515500C27D19 /* MBDataEnvironment-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B58D66A1B3B515500C27D19 /* Build configuration list for PBXNativeTarget "MBDataEnvironment OSX" */;
+			buildConfigurationList = 3B58D66A1B3B515500C27D19 /* Build configuration list for PBXNativeTarget "MBDataEnvironment-macOS" */;
 			buildPhases = (
 				3B58D5D71B3B515500C27D19 /* Sources */,
 				3B58D61C1B3B515500C27D19 /* Frameworks */,
@@ -1080,14 +1123,32 @@
 			);
 			dependencies = (
 			);
-			name = "MBDataEnvironment OSX";
+			name = "MBDataEnvironment-macOS";
 			productName = MBDataEnvironment;
 			productReference = 3B58D66D1B3B515500C27D19 /* MBDataEnvironment.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment iOS */ = {
+		3BB1667B1D8C47580004A0E9 /* MBDataEnvironmentTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment iOS" */;
+			buildConfigurationList = 3BB166841D8C47580004A0E9 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests-macOS" */;
+			buildPhases = (
+				3BB166781D8C47580004A0E9 /* Sources */,
+				3BB166791D8C47580004A0E9 /* Frameworks */,
+				3BB1667A1D8C47580004A0E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BB166831D8C47580004A0E9 /* PBXTargetDependency */,
+			);
+			name = "MBDataEnvironmentTests-macOS";
+			productName = "MBDataEnvironmentTests-macOS";
+			productReference = 3BB1667C1D8C47580004A0E9 /* MBDataEnvironmentTests-macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment-iOS" */;
 			buildPhases = (
 				3BD23C671A65ED0E001F7869 /* Sources */,
 				3BD23C681A65ED0E001F7869 /* Frameworks */,
@@ -1098,14 +1159,14 @@
 			);
 			dependencies = (
 			);
-			name = "MBDataEnvironment iOS";
+			name = "MBDataEnvironment-iOS";
 			productName = MBDataEnvironment;
 			productReference = 3BD23C6C1A65ED0E001F7869 /* MBDataEnvironment.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3BD23C751A65ED0F001F7869 /* MBDataEnvironmentTests */ = {
+		3BD23C751A65ED0F001F7869 /* MBDataEnvironmentTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests" */;
+			buildConfigurationList = 3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests-iOS" */;
 			buildPhases = (
 				3BD23C721A65ED0F001F7869 /* Sources */,
 				3BD23C731A65ED0F001F7869 /* Frameworks */,
@@ -1116,9 +1177,9 @@
 			dependencies = (
 				3BD23C791A65ED0F001F7869 /* PBXTargetDependency */,
 			);
-			name = MBDataEnvironmentTests;
+			name = "MBDataEnvironmentTests-iOS";
 			productName = MBDataEnvironmentTests;
-			productReference = 3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests.xctest */;
+			productReference = 3BD23C761A65ED0F001F7869 /* MBDataEnvironmentTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1133,11 +1194,16 @@
 					3B2FCA7E1A605CB80044BEB0 = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					3BB1667B1D8C47580004A0E9 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
 					3BD23C6B1A65ED0E001F7869 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 					3BD23C751A65ED0F001F7869 = {
 						CreatedOnToolsVersion = 6.1.1;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1153,9 +1219,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment iOS */,
-				3B58D5D51B3B515500C27D19 /* MBDataEnvironment OSX */,
-				3BD23C751A65ED0F001F7869 /* MBDataEnvironmentTests */,
+				3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment-iOS */,
+				3B58D5D51B3B515500C27D19 /* MBDataEnvironment-macOS */,
+				3BD23C751A65ED0F001F7869 /* MBDataEnvironmentTests-iOS */,
+				3BB1667B1D8C47580004A0E9 /* MBDataEnvironmentTests-macOS */,
 				3B2FCA7E1A605CB80044BEB0 /* MBDataEnvironmentDocumentation */,
 			);
 		};
@@ -1167,6 +1234,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B58D6681B3B515500C27D19 /* MBDataEnvironmentModule.xml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BB1667A1D8C47580004A0E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BB1668C1D8C49B30004A0E9 /* test-MBDataEnvironment.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1279,6 +1354,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BB166781D8C47580004A0E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BB1668D1D8C49C50004A0E9 /* ExpressionEvaluatorTests.m in Sources */,
+				3BB1668E1D8C49C50004A0E9 /* MBMLCollectionFunctionTests.m in Sources */,
+				3BB1668F1D8C49C50004A0E9 /* MBMLDataProcessingFunctionTests.m in Sources */,
+				3BB166901D8C49C50004A0E9 /* MBMLDateFunctionTests.m in Sources */,
+				3BB166911D8C49C50004A0E9 /* MBMLDebugFunctionTests.m in Sources */,
+				3BB166921D8C49C50004A0E9 /* MBMLEncodingFunctionTests.m in Sources */,
+				3BB166931D8C49C50004A0E9 /* MBMLEnvironmentFunctionTests.m in Sources */,
+				3BB166941D8C49C50004A0E9 /* MBMLFileFunctionTests.m in Sources */,
+				3BB166961D8C49C50004A0E9 /* MBMLFunctionTests.m in Sources */,
+				3BB166981D8C49C50004A0E9 /* MBMLLogicFunctionTests.m in Sources */,
+				3BB166991D8C49C50004A0E9 /* MBMLMathFunctionTests.m in Sources */,
+				3BB1669A1D8C49C50004A0E9 /* MBMLRegexFunctionTests.m in Sources */,
+				3BB1669B1D8C49C50004A0E9 /* MBMLResourceFunctionTests.m in Sources */,
+				3BB1669C1D8C49C50004A0E9 /* MBMLRuntimeFunctionTests.m in Sources */,
+				3BB1669D1D8C49C50004A0E9 /* MBMLStringFunctionTests.m in Sources */,
+				3BB1669F1D8C49C50004A0E9 /* MBDataEnvironmentTestSuite.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BD23C671A65ED0E001F7869 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1385,9 +1483,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3BB166831D8C47580004A0E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B58D5D51B3B515500C27D19 /* MBDataEnvironment-macOS */;
+			targetProxy = 3BB166821D8C47580004A0E9 /* PBXContainerItemProxy */;
+		};
 		3BD23C791A65ED0F001F7869 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment iOS */;
+			target = 3BD23C6B1A65ED0E001F7869 /* MBDataEnvironment-iOS */;
 			targetProxy = 3BD23C781A65ED0F001F7869 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1550,6 +1653,43 @@
 			};
 			name = Release;
 		};
+		3BB166851D8C47580004A0E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "BuildControl/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gilt.MBDataEnvironmentTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3BB166861D8C47580004A0E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = "BuildControl/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gilt.MBDataEnvironmentTests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		3BD23C801A65ED0F001F7869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1605,6 +1745,7 @@
 		3BD23C831A65ED0F001F7869 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1626,6 +1767,7 @@
 		3BD23C841A65ED0F001F7869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -1661,7 +1803,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B58D66A1B3B515500C27D19 /* Build configuration list for PBXNativeTarget "MBDataEnvironment OSX" */ = {
+		3B58D66A1B3B515500C27D19 /* Build configuration list for PBXNativeTarget "MBDataEnvironment-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B58D66B1B3B515500C27D19 /* Debug */,
@@ -1670,7 +1812,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment iOS" */ = {
+		3BB166841D8C47580004A0E9 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BB166851D8C47580004A0E9 /* Debug */,
+				3BB166861D8C47580004A0E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3BD23C7F1A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironment-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BD23C801A65ED0F001F7869 /* Debug */,
@@ -1679,7 +1829,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests" */ = {
+		3BD23C821A65ED0F001F7869 /* Build configuration list for PBXNativeTarget "MBDataEnvironmentTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BD23C831A65ED0F001F7869 /* Debug */,

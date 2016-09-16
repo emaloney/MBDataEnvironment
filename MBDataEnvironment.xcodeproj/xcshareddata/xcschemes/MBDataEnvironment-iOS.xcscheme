@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
                BuildableName = "MBDataEnvironment.framework"
-               BlueprintName = "MBDataEnvironment iOS"
+               BlueprintName = "MBDataEnvironment-iOS"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BD23C751A65ED0F001F7869"
-               BuildableName = "MBDataEnvironmentTests.xctest"
-               BlueprintName = "MBDataEnvironmentTests"
+               BuildableName = "MBDataEnvironmentTests-iOS.xctest"
+               BlueprintName = "MBDataEnvironmentTests-iOS"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BD23C751A65ED0F001F7869"
-               BuildableName = "MBDataEnvironmentTests.xctest"
-               BlueprintName = "MBDataEnvironmentTests"
+               BuildableName = "MBDataEnvironmentTests-iOS.xctest"
+               BlueprintName = "MBDataEnvironmentTests-iOS"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment iOS"
+            BlueprintName = "MBDataEnvironment-iOS"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,7 +80,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment iOS"
+            BlueprintName = "MBDataEnvironment-iOS"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,7 +98,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment iOS"
+            BlueprintName = "MBDataEnvironment-iOS"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
