@@ -64,7 +64,7 @@
     // test expected successes
     //
     NSString* dir = [MBExpression asString:@"^directoryForClassBundle(MBEnvironment)"];
-    XCTAssertEqualObjects(dir, [[NSBundle bundleForClass:[MBEnvironment class]] resourcePath]);
+    XCTAssertEqualObjects(dir, [[NSBundle bundleForClass:[MBEnvironment class]] bundlePath]);
 
     //
     // test expected failures
