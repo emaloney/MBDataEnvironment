@@ -56,6 +56,20 @@
 #pragma mark Setup / Teardown
 /******************************************************************************/
 
+static NSTimeZone* s_previousTimeZone = nil;
+
++ (void) setUp
+{
+    MBLogInfoTrace();
+
+    [super setUp];
+
+    s_previousTimeZone = [NSTimeZone defaultTimeZone];
+
+    // our test dates are in EDT, so our default time zone must be, too...
+    [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"EDT"]];
+}
+
 - (void) setUpVariableSpace:(MBVariableSpace*)vars
 {
     MBLogInfoTrace();
@@ -73,6 +87,8 @@
     MBLogInfoTrace();
 
     [MBScopedVariables exitVariableScope];
+
+    [NSTimeZone setDefaultTimeZone:s_previousTimeZone];
 
     [super tearDown];
 }
