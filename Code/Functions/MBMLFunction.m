@@ -875,11 +875,11 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
 
 
         if (_outputType == MBMLFunctionOutputNone) {
-            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) MBLog(MBModuleLogSeverityDebug, @"%@ called with input %@", self, input);
+            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) MBLog(MBLogSeverityDebug, @"%@ called with input %@", self, input);
             return nil;
         }
         else {
-            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) MBLog(MBModuleLogSeverityDebug, @"%@ called with input %@; returned: %@", self, input, output);
+            if (DEBUG_FLAG(DEBUG_TRANSFORMER_CALLS)) MBLog(MBLogSeverityDebug, @"%@ called with input %@; returned: %@", self, input, output);
         }
 
         if ([output isKindOfClass:[MBExpressionError class]]) {
@@ -896,7 +896,7 @@ NSString* const kMBMLFunctionInputParameterName         = @"input parameter";
         currentErr.value = self;
         [currentErr reportErrorTo:errPtr];
         
-        if (DEBUG_FLAG(DEBUG_EXCEPTIONS)) MBLog(MBModuleLogSeverityDebug, @"MBML function exception stack trace: %@", [ex callStackSymbols]);
+        if (DEBUG_FLAG(DEBUG_EXCEPTIONS)) MBLog(MBLogSeverityDebug, @"MBML function exception stack trace: %@", [ex callStackSymbols]);
         
         return nil;
     }
