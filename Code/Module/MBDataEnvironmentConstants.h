@@ -52,6 +52,7 @@ extern NSString* const __nonnull kMBMLAttributeName;
 extern NSString* const __nonnull kMBMLAttributeIf;
 extern NSString* const __nonnull kMBMLAttributeDataSource;
 extern NSString* const __nonnull kMBMLAttributeClass;             // consider deprecating in favor of className
+extern NSString* const __nonnull kMBMLAttributeObject;
 extern NSString* const __nonnull kMBMLAttributeValue;
 extern NSString* const __nonnull kMBMLAttributeBoolean;
 extern NSString* const __nonnull kMBMLAttributeLiteral;

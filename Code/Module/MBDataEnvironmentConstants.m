@@ -52,6 +52,7 @@ NSString* const kMBMLAttributeName                              = @"name";
 NSString* const kMBMLAttributeIf                                = @"if";
 NSString* const kMBMLAttributeDataSource                        = @"dataSource";
 NSString* const kMBMLAttributeClass                             = @"class";
+NSString* const kMBMLAttributeObject                            = @"object";
 NSString* const kMBMLAttributeValue                             = @"value";
 NSString* const kMBMLAttributeBoolean                           = @"boolean";
 NSString* const kMBMLAttributeLiteral                           = @"literal";
