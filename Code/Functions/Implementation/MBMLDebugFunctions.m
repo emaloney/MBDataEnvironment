@@ -32,15 +32,15 @@
 + (void) logObject:(id)obj forExpression:(NSString*)expr
 {
     if (!obj) {
-        NSLog(@"--> Expression \"%@\" resolves to nil", expr);
+        MBLogInfo(@"--> Expression \"%@\" resolves to nil", expr);
     }
     else {
         NSString* instanceInfo = [NSString stringWithFormat:@"an instance of class %@ at memory address %p", [obj class], obj];
         if ([obj respondsToSelector:@selector(count)]) {
-            NSLog(@"--> Expression \"%@\" resolves to %@ containing %lu items:\n%@", expr, instanceInfo, (unsigned long)[obj count], [obj description]);
+            MBLogInfo(@"--> Expression \"%@\" resolves to %@ containing %lu items:\n%@", expr, instanceInfo, (unsigned long)[obj count], [obj description]);
         }
         else {
-            NSLog(@"--> Expression \"%@\" resolves to %@: %@", expr, instanceInfo, [obj description]);
+            MBLogInfo(@"--> Expression \"%@\" resolves to %@: %@", expr, instanceInfo, [obj description]);
         }
     }
 }
@@ -67,7 +67,7 @@
     if (err) {
         return err;
     }
-    NSLog(@"--> Expression \"%@\" evaluates to %s", expr, (result ? "TRUE" : "FALSE"));
+    MBLogInfo(@"--> Expression \"%@\" evaluates to %s", expr, (result ? "TRUE" : "FALSE"));
     return @(result);
 }
 
@@ -116,14 +116,14 @@
                                                                   error:&err];
 
     if (err) {
-        NSLog(@"--> Failed to tokenize %@ expression \"%@\" due to error: %@", exprType, exprStr, err);
+        MBLogInfo(@"--> Failed to tokenize %@ expression \"%@\" due to error: %@", exprType, exprStr, err);
     }
     else {
         NSMutableString* tokStr = [NSMutableString string];
         for (id t in tokens) {
             [tokStr appendFormat:@"\n%@", [t description]];
         }
-        NSLog(@"--> Tokens for %@ expression \"%@\":%@", exprType, exprStr, tokStr);
+        MBLogInfo(@"--> Tokens for %@ expression \"%@\":%@", exprType, exprStr, tokStr);
     }
     return exprStr;
 }
@@ -156,10 +156,10 @@
     id obj = [MBExpression asObject:expr error:&err];
     CFAbsoluteTime end = CFAbsoluteTimeGetCurrent();
     if (err) {
-        NSLog(@"--> Evaluated object expression \"%@\" with error %@ in %g seconds", expr, err, end - start);
+        MBLogInfo(@"--> Evaluated object expression \"%@\" with error %@ in %g seconds", expr, err, end - start);
         return err;
     } else {
-        NSLog(@"--> Evaluated object expression \"%@\" in %g seconds", expr, end - start);
+        MBLogInfo(@"--> Evaluated object expression \"%@\" in %g seconds", expr, end - start);
         return obj;
     }
 }
@@ -171,10 +171,10 @@
     bool retVal = [MBExpression asBoolean:expr error:&err];
     CFAbsoluteTime end = CFAbsoluteTimeGetCurrent();
     if (err) {
-        NSLog(@"--> Evaluated boolean expression \"%@\" with error %@ in %g seconds", expr, err, end - start);
+        MBLogInfo(@"--> Evaluated boolean expression \"%@\" with error %@ in %g seconds", expr, err, end - start);
         return err;
     } else {
-        NSLog(@"--> Evaluated boolean expression \"%@\" in %g seconds", expr, end - start);
+        MBLogInfo(@"--> Evaluated boolean expression \"%@\" in %g seconds", expr, end - start);
         return @(retVal);
     }
 }
@@ -191,11 +191,11 @@
     for (NSInteger i=0; i<repeat; i++) {
         retVal = [MBExpression asObject:expr error:&err];
         if (err) {
-            NSLog(@"--> Error while attempting to repeat object expression \"%@\" (at run %ld of %ld): %@", expr, (long)i, (long)repeat, err);
+            MBLogInfo(@"--> Error while attempting to repeat object expression \"%@\" (at run %ld of %ld): %@", expr, (long)i, (long)repeat, err);
             return err;
         }
     }
-    NSLog(@"--> Successfully repeated object expression \"%@\" %ld times", expr, (long)repeat);
+    MBLogInfo(@"--> Successfully repeated object expression \"%@\" %ld times", expr, (long)repeat);
     return retVal;
 }
 
@@ -211,11 +211,11 @@
     for (NSInteger i=0; i<repeat; i++) {
         retVal = [MBExpression asBoolean:expr error:&err];
         if (err) {
-            NSLog(@"--> Error while attempting to repeat boolean expression \"%@\" (at run %ld of %ld): %@", expr, (long)i, (long)repeat, err);
+            MBLogInfo(@"--> Error while attempting to repeat boolean expression \"%@\" (at run %ld of %ld): %@", expr, (long)i, (long)repeat, err);
             return err;
         }
     }
-    NSLog(@"--> Successfully repeated boolean expression \"%@\" %ld times", expr, (long)repeat);
+    MBLogInfo(@"--> Successfully repeated boolean expression \"%@\" %ld times", expr, (long)repeat);
     return @(retVal);
 }
 
