@@ -144,7 +144,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
         if (varName) {
             MBVariableDeclaration* curDecl = _namesToDeclarations[varName];
             if (curDecl) {
-                MBLogWarning(@"Variable \"%@\" redeclared from %@ to %@", varName, curDecl.simulatedXML, declaration.simulatedXML);
+                MBLogWarning(@"Variable \"%@\" redeclared from:%@to:%@", varName, curDecl, declaration);
             }
 
             if (!declaration.disallowsValueCaching) {
