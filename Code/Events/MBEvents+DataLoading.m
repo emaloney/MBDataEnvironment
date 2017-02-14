@@ -60,9 +60,9 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
     [self postDataLoaded:name withEventObject:nil];
 }
 
-+ (void) postDataLoadFailed:(nonnull NSString*)name
++ (void) postDataLoadFailed:(nonnull NSString*)name withError:(nonnull NSError*)error
 {
-    [self postDataLoadFailed:name withEventObject:nil];
+    [self postDataLoadFailed:name withError:error eventObject:nil];
 }
 
 + (void) postWillRequestData:(nonnull NSString*)name withEventObject:(nullable id)eventObj
@@ -88,7 +88,7 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
     }
 }
 
-+ (void) postDataLoadFailed:(nonnull NSString*)name withEventObject:(nullable id)eventObj
++ (void) postDataLoadFailed:(nonnull NSString*)name withError:(nonnull NSError*)error eventObject:(nullable id)eventObj
 {
     if (name) {
         MBVariableSpace* vars = [MBVariableSpace instance];
@@ -97,8 +97,10 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
 
         [vars unsetVariable:pendingVar];
         vars[failedVar] = @(YES);
-        
+
+        [vars pushVariable:kMBMLVariableError value:error];
         [self postEvent:[self dataLoadFailedEventName:name] withObject:eventObj];
+        [vars popVariable:kMBMLVariableError];
     }
 }
 

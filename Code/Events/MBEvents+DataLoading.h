@@ -112,8 +112,10 @@ extern NSString* const __nonnull kMBEventSuffixDataLoadFailed;          // @"dat
  be unset.
 
  @param     name The name of the data item that failed to load.
+
+ @param     error An error object representing the nature of the failure.
  */
-+ (void) postDataLoadFailed:(nonnull NSString*)name;
++ (void) postDataLoadFailed:(nonnull NSString*)name withError:(nonnull NSError*)error;
 
 /*!
  Posts an event indicating that an asynchronous data load attempt is about
@@ -164,9 +166,11 @@ extern NSString* const __nonnull kMBEventSuffixDataLoadFailed;          // @"dat
 
  @param     name The name of the data item that failed to load.
  
+ @param     error An error object representing the nature of the failure.
+
  @param     eventObj An object to include as the value of the `NSNotification`'s
             `object` property.
  */
-+ (void) postDataLoadFailed:(nonnull NSString*)name withEventObject:(nullable id)eventObj;
++ (void) postDataLoadFailed:(nonnull NSString*)name withError:(nonnull NSError*)error eventObject:(nullable id)eventObj;
 
 @end

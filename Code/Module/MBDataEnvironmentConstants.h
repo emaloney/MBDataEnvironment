@@ -36,6 +36,7 @@ extern NSString* const __nonnull kMBMLVariableItem;
 extern NSString* const __nonnull kMBMLVariableKey;
 extern NSString* const __nonnull kMBMLVariableRoot;
 extern NSString* const __nonnull kMBMLVariableRootKey;
+extern NSString* const __nonnull kMBMLVariableError;
 
 /******************************************************************************/
 #pragma mark Constants - MBML variable name suffixes
