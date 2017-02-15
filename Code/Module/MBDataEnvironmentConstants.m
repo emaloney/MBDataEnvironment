@@ -36,6 +36,7 @@ NSString* const kMBMLVariableItem                       = @"item";
 NSString* const kMBMLVariableKey                        = @"key";
 NSString* const kMBMLVariableRoot                       = @"root";
 NSString* const kMBMLVariableRootKey                    = @"rootKey";
+NSString* const kMBMLVariableError                      = @"error";
 
 /******************************************************************************/
 #pragma mark Constants - MBML variable name suffixes
