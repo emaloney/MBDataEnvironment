@@ -91,6 +91,8 @@ NSString* const kMBEventSuffixDataLoadFailed            = @"dataLoadFailed";
 + (void) postDataLoadFailed:(nonnull NSString*)name withError:(nonnull NSError*)error eventObject:(nullable id)eventObj
 {
     if (name) {
+        MBLogError(@"Failed to load $%@ due to error: %@", name, error);
+
         MBVariableSpace* vars = [MBVariableSpace instance];
         NSString* pendingVar = [self name:name withSuffix:kMBMLVariableSuffixRequestPending];
         NSString* failedVar = [self name:name withSuffix:kMBMLVariableSuffixLastRequestFailed];
