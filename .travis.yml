@@ -1,22 +1,35 @@
 language: objective-c
 xcode_workspace: MBDataEnvironment.xcworkspace
-osx_image: xcode8.2
+osx_image: xcode8.3
 
 git:
   depth: 1
   submodules: false
 
 before_install:
-  git submodule update --init
+  - git submodule update --init
 
 install:
-  gem install xcpretty
-
-before_script:
-  sudo systemsetup -settimezone America/New_York
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- set -o pipefail && xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme 'MBDataEnvironment-iOS' -destination 'platform=iOS Simulator,OS=10.2,name=iPad Pro (9.7 inch)' -destination-timeout 300 clean build | xcpretty
-- set -o pipefail && xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme 'MBDataEnvironment-iOS' -destination 'platform=iOS Simulator,OS=10.2,name=iPad Pro (9.7 inch)' -destination-timeout 300 test | xcpretty
-- set -o pipefail && xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme 'MBDataEnvironment-macOS' -destination 'platform=macOS' -destination-timeout 300 clean build | xcpretty
-- set -o pipefail && xcodebuild -workspace MBDataEnvironment.xcworkspace -scheme 'MBDataEnvironment-macOS' -destination 'platform=macOS' -destination-timeout 300 test | xcpretty
+  - ./BuildControl/bin/travisBuildHelper.sh build iOS
+  - ./BuildControl/bin/travisBuildHelper.sh test iOS
+  - ./BuildControl/bin/travisBuildHelper.sh build macOS
+  - ./BuildControl/bin/travisBuildHelper.sh test macOS
+  - ./BuildControl/bin/travisBuildHelper.sh build tvOS
+  - ./BuildControl/bin/travisBuildHelper.sh test tvOS
+  - ./BuildControl/bin/travisBuildHelper.sh build watchOS
+
+after_failure:
+  - test -f "MBDataEnvironment-iOS-build.log" && tail -n 2500 "MBDataEnvironment-iOS-build.log"
+  - test -f "MBDataEnvironment-iOS-test.log" && tail -n 2500 "MBDataEnvironment-iOS-test.log"
+  - test -f "MBDataEnvironment-iOS-test.log" && LINE_BEFORE=`cat "MBDataEnvironment-iOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "MBDataEnvironment-iOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "MBDataEnvironment-macOS-build.log" && tail -n 2500 "MBDataEnvironment-macOS-build.log"
+  - test -f "MBDataEnvironment-macOS-test.log" && tail -n 2500 "MBDataEnvironment-macOS-test.log"
+  - test -f "MBDataEnvironment-macOS-test.log" && LINE_BEFORE=`cat "MBDataEnvironment-macOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "MBDataEnvironment-macOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "MBDataEnvironment-tvOS-build.log" && tail -n 2500 "MBDataEnvironment-tvOS-build.log"
+  - test -f "MBDataEnvironment-tvOS-test.log" && tail -n 2500 "MBDataEnvironment-tvOS-test.log"
+  - test -f "MBDataEnvironment-tvOS-test.log" && LINE_BEFORE=`cat "MBDataEnvironment-tvOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "MBDataEnvironment-tvOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "MBDataEnvironment-watchOS-build.log" && tail -n 2500 "MBDataEnvironment-watchOS-build.log"
+

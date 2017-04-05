@@ -463,7 +463,7 @@ fi
 #
 # determine build settings
 #
-PROJECT_SPECIFIER="-project MBDataEnvironment.xcodeproj"
+PROJECT_SPECIFIER="-workspace MBDataEnvironment.xcworkspace"
 COMPILE_PLATFORMS="iOS macOS tvOS watchOS"
 PROJECT_NAME="MBDataEnvironment"
 
