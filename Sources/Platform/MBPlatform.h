@@ -53,27 +53,31 @@ extern NSString* const __nonnull kMBPlatformWatchOS;        // returned by `plat
 /*----------------------------------------------------------------------------*/
 
 /*! Determines whether the code is running on a Mac OS X system; `YES` if it
- is; `NO` otherwise. */
+ is, `NO` otherwise. */
 @property(nonatomic, readonly) MBPlatformType platformType;
 
 /*! Returns a human-readable string containing the name of the platform on
  which the code is running. */
 @property(nonnull, nonatomic, readonly) NSString* platformName;
 
-/*! Determines whether the code is running on a Mac OS X system; `YES` if it
-    is; `NO` otherwise. */
-@property(nonatomic, readonly) BOOL isOSX;
+/*! Determines whether the code is running on a macOS system; `YES` if it
+    is, `NO` otherwise. */
+@property(nonatomic, readonly) BOOL isMacOS;
 
 /*! Determines whether the code is running on an iOS system; `YES` if it
-    is; `NO` otherwise. */
+    is, `NO` otherwise. */
 @property(nonatomic, readonly) BOOL isIOS;
 
-/*! Determines whether the code is running on an Apple TV system; `YES` if it
-    is; `NO` otherwise. */
-@property(nonatomic, readonly) BOOL isAppleTV;
+/*! Determines whether the code is running on an Apple TV (tvOS) system; 
+ `YES` if it is, `NO` otherwise. */
+@property(nonatomic, readonly) BOOL isTVOS;
 
-/*! Determines whether the code is running on an watchOS system; `YES` if it
-    is; `NO` otherwise. */
+/*! Determines whether the code is running on an Apple Watch (watchOS) system;
+ `YES` if it is, `NO` otherwise. */
 @property(nonatomic, readonly) BOOL isWatchOS;
+
+/*! Determines whether the code is running on a UIKit-based system such as
+ an iPhone, iPad or Apple TV; `YES` if it is, `NO` otherwise. */
+@property(nonatomic, readonly) BOOL isUIKit;
 
 @end

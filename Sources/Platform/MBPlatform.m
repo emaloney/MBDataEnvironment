@@ -56,9 +56,14 @@ MBImplementSingleton();
     }
 }
 
-- (BOOL) isOSX
+- (BOOL) isMacOS
 {
     return self.platformType == MBPlatformTypeMacOS;
+}
+
+- (BOOL) isOSX
+{
+    return self.isMacOS;
 }
 
 - (BOOL) isIOS
@@ -66,14 +71,24 @@ MBImplementSingleton();
     return self.platformType == MBPlatformTypeIOS;
 }
 
-- (BOOL) isAppleTV
+- (BOOL) isTVOS
 {
     return self.platformType == MBPlatformTypeTVOS;
+}
+
+- (BOOL) isAppleTV
+{
+    return self.isTVOS;
 }
 
 - (BOOL) isWatchOS
 {
     return self.platformType == MBPlatformTypeWatchOS;
+}
+
+- (BOOL) isUIKit
+{
+    return self.isIOS || self.isTVOS;
 }
 
 @end
