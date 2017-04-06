@@ -38,8 +38,8 @@
     // of these fonts are removed from a future version of iOS
     NSArray* expectedFonts = @[@"Courier New",
                                @"Times New Roman",
-                               @"Georgia",
-                               @"Arial",
+                               @"Copperplate",
+                               @"Symbol",
                                @"Helvetica",
                                @"Courier"];
 

@@ -29,6 +29,8 @@
     <Var name="Network" type="singleton" class="MBNetworkMonitor"/>
 */
 
+#if MB_BUILD_UIKIT
+
 - (void) testPredefinedVariablesUIKit
 {
     MBLogInfoTrace();
@@ -51,14 +53,18 @@
     XCTAssertEqualObjects(screen, testScreen);
 }
 
+#endif
+
 - (void) testPredefinedVariablesMBDataEnvironment
 {
     MBLogInfoTrace();
 
+#if MB_BUILD_UIKIT
     MBDevice* testDevice = [MBDevice instance];
     MBDevice* device = [@"$Device" evaluateAsObject];
     XCTAssertNotNil(device);
     XCTAssertEqualObjects(device, testDevice);
+#endif
 
     MBEnvironment* testEnvironment = [MBEnvironment instance];
     MBEnvironment* environment = [@"$Environment" evaluateAsObject];
