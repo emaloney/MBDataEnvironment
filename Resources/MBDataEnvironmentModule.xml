@@ -10,12 +10,12 @@
     <Var name="Network" type="singleton" class="MBNetworkMonitor"/>
 
 	<!-- iOS-specific Mockingbird variables -->
-    <Var if="$Platform.isIOS" name="Device" type="singleton" class="MBDevice"/>
+    <Var if="$Platform.isUIKit" name="Device" type="singleton" class="MBDevice"/>
 
     <!-- iOS-specific System variables -->
-    <Var if="$Platform.isIOS" name="UIApplication" type="singleton" class="UIApplication" method="sharedApplication"/>
-    <Var if="$Platform.isIOS" name="UIDevice" type="singleton" class="UIDevice" method="currentDevice"/>
-    <Var if="$Platform.isIOS" name="UIScreen" type="singleton" class="UIScreen" method="mainScreen"/>
+    <Var if="$Platform.isUIKit" name="UIApplication" type="singleton" class="UIApplication" method="sharedApplication"/>
+    <Var if="$Platform.isUIKit" name="UIDevice" type="singleton" class="UIDevice" method="currentDevice"/>
+    <Var if="$Platform.isUIKit" name="UIScreen" type="singleton" class="UIScreen" method="mainScreen"/>
 
 
     <!-- ===================== -->
@@ -152,28 +152,28 @@
     <Function class="MBMLFileFunctions" name="fileContents" input="string"/>
     <Function class="MBMLFileFunctions" name="deleteFile" input="string"/>
 
-    <Function if="$Platform.isIOS" class="MBMLFontFunctions" name="fontFamilyNames" input="none"/>
-    <Function if="$Platform.isIOS" class="MBMLFontFunctions" name="fontNamesForFamilyName" input="string"/>
-    <Function if="$Platform.isIOS" class="MBMLFontFunctions" name="fontWithNameAndSize" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLFontFunctions" name="sizeOfTextWithFont" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLFontFunctions" name="linesNeededToDrawText" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLFontFunctions" name="stringWidth" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLFontFunctions" name="fontFamilyNames" input="none"/>
+    <Function if="$Platform.isUIKit" class="MBMLFontFunctions" name="fontNamesForFamilyName" input="string"/>
+    <Function if="$Platform.isUIKit" class="MBMLFontFunctions" name="fontWithNameAndSize" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLFontFunctions" name="sizeOfTextWithFont" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLFontFunctions" name="linesNeededToDrawText" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLFontFunctions" name="stringWidth" input="pipedObjects"/>
 
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="rectOrigin" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="rectSize" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="rectX" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="rectY" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="rectWidth" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="rectHeight" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="insetRect" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="insetRectTop" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="insetRectLeft" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="insetRectBottom" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="insetRectRight" input="pipedObjects"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="sizeWidth" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="sizeHeight" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="pointX" input="object"/>
-    <Function if="$Platform.isIOS" class="MBMLGeometryFunctions" name="pointY" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="rectOrigin" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="rectSize" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="rectX" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="rectY" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="rectWidth" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="rectHeight" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="insetRect" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="insetRectTop" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="insetRectLeft" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="insetRectBottom" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="insetRectRight" input="pipedObjects"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="sizeWidth" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="sizeHeight" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="pointX" input="object"/>
+    <Function if="$Platform.isUIKit" class="MBMLGeometryFunctions" name="pointY" input="object"/>
 
     <Function class="MBMLLogicFunctions" name="if" method="ifOperator" input="pipedExpressions"/>
 
