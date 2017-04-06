@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
+               BlueprintIdentifier = "3B9059021DAECB5200B4EEC0"
                BuildableName = "MBDataEnvironment.framework"
-               BlueprintName = "MBDataEnvironment-iOS"
-               ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3BD23C751A65ED0F001F7869"
-               BuildableName = "MBDataEnvironmentTests-iOS.xctest"
-               BlueprintName = "MBDataEnvironmentTests-iOS"
+               BlueprintName = "MBDataEnvironment"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3BD23C751A65ED0F001F7869"
-               BuildableName = "MBDataEnvironmentTests-iOS.xctest"
-               BlueprintName = "MBDataEnvironmentTests-iOS"
+               BlueprintIdentifier = "3B90590B1DAECB5200B4EEC0"
+               BuildableName = "MBDataEnvironmentUnitTests.xctest"
+               BlueprintName = "MBDataEnvironmentTests"
                ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
+            BlueprintIdentifier = "3B9059021DAECB5200B4EEC0"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment-iOS"
+            BlueprintName = "MBDataEnvironment"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,7 +52,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -78,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
+            BlueprintIdentifier = "3B9059021DAECB5200B4EEC0"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment-iOS"
+            BlueprintName = "MBDataEnvironment"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -96,15 +82,15 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3BD23C6B1A65ED0E001F7869"
+            BlueprintIdentifier = "3B9059021DAECB5200B4EEC0"
             BuildableName = "MBDataEnvironment.framework"
-            BlueprintName = "MBDataEnvironment-iOS"
+            BlueprintName = "MBDataEnvironment"
             ReferencedContainer = "container:MBDataEnvironment.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
