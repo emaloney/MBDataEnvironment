@@ -1,24 +1,6 @@
-![Gilt Tech logo](Documentation/images/gilt-tech-logo.png)
-
-# IMPORTANT NOTE
-
-### TO-DO: Update to note removal of CocoaPods support
-
-This documentation is out of date with respect to CocoaPods integration below.
-
-Use of CocoaPods for Mockingbird Data Environment is no longer supported.
-
-If you wish to use a dependency manager, [Carthage](https://github.com/Carthage/Carthage) is supported. Just add the following line to your `Cartfile`, then run `carthage update`:
-
-```
-github "emaloney/MBDataEnvironment" ~> 2.0.0  
-```
-
-Otherwise, you may embed `MBDataEnvironment.xcodeproj` (along with the necessary dependencies) within your own project and link against the appropriate frameworks for your target platform.
-
 # Mockingbird Data Environment
 
-This repository hosts the Mockingbird Data Environment, an open-source project from Gilt Groupe that builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) project to provide a dynamic data processing engine for iOS and Mac OS X applications.
+The Mockingbird Data Environment builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) to provide a dynamic data processing engine for iOS, macOS, tvOS and watchOS applications.
 
 The Mockingbird Data Environment allows arbitrary data models and object graphs to be assigned *names* and stored in a *variable space* from which values can be extracted using *expressions*.
 
@@ -30,7 +12,7 @@ The Mockingbird Data Environment is particularly suited for building application
 
 ## About the Mockingbird Data Environment
 
-It is a common scenario for iOS app publishers to have a population of users running old application versions. Often, users are stuck on old versions because the current version requires a release of iOS more recent than their hardware will support. Such users won't be running your latest app version until they buy a new device, assuming they ever do.
+It is a common scenario for app publishers to have a population of users running old versions. Sometimes, users are stuck on old versions because the latest requires an operating system newer than their hardware will support. Such users won't be running your latest app until they buy a new machine, if they ever do.
 
 For some types of apps, this isn't a big problem. But for apps that must communicate with network-based services, having a wide variety of old versions out in the wild makes it difficult to evolve and maintain your services.
 
@@ -46,7 +28,7 @@ The purpose of the Mockingbird Data Environment is to free you from having to ma
 
 #### The Root of the Problem
 
-The way iOS applications are typically architected, the client application and the server must both agree in advance on the data schema that will be used to communicate. On the client side, native code is written that implements the logic of extracting meaningful information from the data sent by the server.
+The way applications are typically architected, the client application and the server must both agree in advance on the data schema that will be used to communicate. On the client side, native code is written that implements the logic of extracting meaningful information from the data sent by the server.
 
 The problem with this architecture is that *both* the client *and* the server require intimate knowledge of the data schema.
 
@@ -74,9 +56,8 @@ Let the Mockingbird Data Environment decouple your native code from the details 
 
 ## Table of Contents
 
-1. [Integrating with your project](#integrating-with-your-project)
-2. [Initializing the Mockingbird Data Environment](#initializing-the-mockingbird-data-environment)
-3. [An Introduction to Mockingbird Expressions](#an-introduction-to-mockingbird-expressions)
+1. [Initializing the Mockingbird Data Environment](#initializing-the-mockingbird-data-environment)
+2. [An Introduction to Mockingbird Expressions](#an-introduction-to-mockingbird-expressions)
   1. [Evaluating Expressions](#evaluating-expressions)
     1. [String Expressions](#string-expressions)
     2. [Object Expressions](#object-expressions)
@@ -96,7 +77,7 @@ Let the Mockingbird Data Environment decouple your native code from the details 
   3. [Debugging Expressions](#debugging-expressions)
     1. [MBML Functions for Debugging](#mbml-functions-for-debugging)
     2. [Evaluating Expressions in the Xcode Debugger](#evaluating-expressions-in-the-xcode-debugger)
-4. [An Introduction to MBML Files](#an-introduction-to-mbml-files)
+3. [An Introduction to MBML Files](#an-introduction-to-mbml-files)
   1. [The Manifest File](#the-manifest-file)
   2. [The Structure of an MBML File](#the-structure-of-an-mbml-file)
   3. [Types of MBML declarations](#types-of-mbml-declarations)
@@ -106,42 +87,8 @@ Let the Mockingbird Data Environment decouple your native code from the details 
       2. [Singleton Variables](#singleton-variables)
       3. [Dynamic Variables](#dynamic-variables)
     3. [Functions](#functions)
-5. [Further Reading](#further-reading)
-6. [About Mockingbird Library](#about-mockingbird-library)
-  1. [Acknowledgements](#acknowledgements)
-  2. [Copyright & License](#copyright--license)
-
-## Integrating with your project
-
-Currently, the only officially supported method to integrate the Mockingbird Data Environment into your project is using CocoaPods.
-
-(An experimental—but unsupported—`MBDataEnvironment.framework` can be built for iOS 8 from within `MBDataEnvironment.xcworkspace`.)
-
-If you aren't already using CocoaPods, you'll find [documentation on the CocoaPods website](http://guides.cocoapods.org/using/index.html) to help you get started.
-
-Once you've got CocoaPods up and running, you can add the Mockingbird Data Environment to your project simply by adding this line to your `Podfile`:
-
-```ruby
-pod 'MBDataEnvironment'
-```
-
-You can then install the CocoaPod by issuing the following command from within your project directory:
-
-```bash
-pod install
-```
-
-**Important:** Take note of the output of the `pod install` command. If you were not previously using an Xcode workspace for your project, CocoaPods will create one for you that includes your project and any installed CocoaPods. Going forward, you will need to use that workspace for development instead of your old project file.
-
-Once you've run the `pod install` command, you will be to reference the Mockingbird Data Environment from within your project.
-
-You should reference header files using the “library header” import notation. For added convenience, you can reference the umbrella header, which ensures that you'll have access to the entire public API of the Mockingbird Data Environment:
-
-```objc
-#import <MBDataEnvironment/MBDataEnvironment.h>
-```
-
-In the future, we may issue binary releases of the Mockingbird Data Environment as iOS frameworks; using the notation above will allow you to seamlessly transition to using a framework.
+4. [Further Reading](#further-reading)
+5. [Additional Resources](#additional-resources)
 
 ## Initializing the Mockingbird Data Environment
 
@@ -1080,26 +1027,6 @@ If you'd like to learn more about how the Mockingbird Data Environment works, a 
 
 And, of course, feel free to delve into [the code](https://github.com/emaloney/MBDataEnvironment/tree/master/Code)!
 
-## About Mockingbird Library
-
-The Mockingbird Data Environment is part of Gilt Groupe's Mockingbird Library open-source project for iOS.
-
-Over the years, Gilt Groupe has used and refined Mockingbird Library as the base platform for its various iOS projects.
-
-![Mockingbird Library Module Layers](Documentation/images/mockingbird-module-layers.png)
-
-Mockingbird began life as AppFramework, originally created by Jesse Boyes.
-
-AppFramework found a home at Gilt Groupe and eventually became Mockingbird Library.
-
-In recent years, Mockingbird Library has been developed and maintained by Evan Coyne Maloney, Gilt Groupe’s principal iOS engineer.
-
-### Acknowledgements
+## Additional Resources
 
 For XML parsing, the Mockingbird Data Environment uses [a custom fork](https://github.com/emaloney/RaptureXML) of [the RaptureXML project](https://github.com/ZaBlanc/RaptureXML) created by [John Blanco](https://github.com/ZaBlanc).
-
-### Copyright & License
-
-Mockingbird Library and Mockingbird Data Environment © Copyright 2009-2015, Gilt Groupe.
-
-Licensed under [the MIT license](LICENSE).
