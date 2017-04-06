@@ -30,151 +30,151 @@
 		3B0847FA1E959D0D00790F7B /* MBToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0847F91E959D0D00790F7B /* MBToolbox.framework */; };
 		3B0847FC1E959E2B00790F7B /* RaptureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0847FB1E959E2B00790F7B /* RaptureXML.framework */; };
 		3B0847FF1E959EE500790F7B /* MBDataEnvironmentModule.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3B0847FE1E959EE500790F7B /* MBDataEnvironmentModule.xml */; };
+		3B3B9E351E960045005AB4DE /* MBAttributeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9D951E960045005AB4DE /* MBAttributeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E361E960045005AB4DE /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9D961E960045005AB4DE /* MBAttributeValidator.m */; };
+		3B3B9E371E960045005AB4DE /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9D971E960045005AB4DE /* MBConditionalDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E381E960045005AB4DE /* MBConditionalDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9D981E960045005AB4DE /* MBConditionalDeclaration.m */; };
+		3B3B9E391E960045005AB4DE /* MBDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9D991E960045005AB4DE /* MBDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E3A1E960045005AB4DE /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9D9A1E960045005AB4DE /* MBDataModel.m */; };
+		3B3B9E3B1E960045005AB4DE /* MBEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9D9C1E960045005AB4DE /* MBEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E3C1E960045005AB4DE /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9D9D1E960045005AB4DE /* MBEnvironment.m */; };
+		3B3B9E3D1E960045005AB4DE /* MBEnvironmentLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9D9E1E960045005AB4DE /* MBEnvironmentLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E3E1E960045005AB4DE /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9D9F1E960045005AB4DE /* MBEnvironmentLoader.m */; };
+		3B3B9E3F1E960045005AB4DE /* MBEvents+DataLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DA11E960045005AB4DE /* MBEvents+DataLoading.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E401E960045005AB4DE /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DA21E960045005AB4DE /* MBEvents+DataLoading.m */; };
+		3B3B9E411E960045005AB4DE /* MBExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DA41E960045005AB4DE /* MBExpression.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E421E960045005AB4DE /* MBExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DA51E960045005AB4DE /* MBExpression.m */; };
+		3B3B9E431E960045005AB4DE /* MBExpressionCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DA61E960045005AB4DE /* MBExpressionCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E441E960045005AB4DE /* MBExpressionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DA71E960045005AB4DE /* MBExpressionCache.m */; };
+		3B3B9E451E960045005AB4DE /* MBExpressionError.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DA81E960045005AB4DE /* MBExpressionError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E461E960045005AB4DE /* MBExpressionError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DA91E960045005AB4DE /* MBExpressionError.m */; };
+		3B3B9E471E960045005AB4DE /* MBExpressionExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DAA1E960045005AB4DE /* MBExpressionExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E481E960045005AB4DE /* MBExpressionExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DAB1E960045005AB4DE /* MBExpressionExtensions.m */; };
+		3B3B9E491E960045005AB4DE /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DAD1E960045005AB4DE /* MBExpression+Internal.h */; };
+		3B3B9E4A1E960045005AB4DE /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DAE1E960045005AB4DE /* MBExpressionCache+Internal.h */; };
+		3B3B9E4B1E960045005AB4DE /* MBExpressionGrammar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DAF1E960045005AB4DE /* MBExpressionGrammar.h */; };
+		3B3B9E4C1E960045005AB4DE /* MBExpressionGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DB01E960045005AB4DE /* MBExpressionGrammar.m */; };
+		3B3B9E4D1E960045005AB4DE /* MBExpressionTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DB11E960045005AB4DE /* MBExpressionTokenizer.h */; };
+		3B3B9E4E1E960045005AB4DE /* MBExpressionTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DB21E960045005AB4DE /* MBExpressionTokenizer.m */; };
+		3B3B9E4F1E960045005AB4DE /* MBMLEscapeSequenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DB41E960045005AB4DE /* MBMLEscapeSequenceToken.h */; };
+		3B3B9E501E960045005AB4DE /* MBMLEscapeSequenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DB51E960045005AB4DE /* MBMLEscapeSequenceToken.m */; };
+		3B3B9E511E960045005AB4DE /* MBMLFunctionCallToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DB61E960045005AB4DE /* MBMLFunctionCallToken.h */; };
+		3B3B9E521E960045005AB4DE /* MBMLFunctionCallToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DB71E960045005AB4DE /* MBMLFunctionCallToken.m */; };
+		3B3B9E531E960045005AB4DE /* MBMLGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DB81E960045005AB4DE /* MBMLGroupingToken.h */; };
+		3B3B9E541E960045005AB4DE /* MBMLGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DB91E960045005AB4DE /* MBMLGroupingToken.m */; };
+		3B3B9E551E960045005AB4DE /* MBMLIgnorableWhitespaceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DBA1E960045005AB4DE /* MBMLIgnorableWhitespaceToken.h */; };
+		3B3B9E561E960045005AB4DE /* MBMLIgnorableWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DBB1E960045005AB4DE /* MBMLIgnorableWhitespaceToken.m */; };
+		3B3B9E571E960045005AB4DE /* MBMLKeywordMatchingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DBC1E960045005AB4DE /* MBMLKeywordMatchingToken.h */; };
+		3B3B9E581E960045005AB4DE /* MBMLKeywordMatchingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DBD1E960045005AB4DE /* MBMLKeywordMatchingToken.m */; };
+		3B3B9E591E960045005AB4DE /* MBMLLiteralToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DBE1E960045005AB4DE /* MBMLLiteralToken.h */; };
+		3B3B9E5A1E960045005AB4DE /* MBMLLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DBF1E960045005AB4DE /* MBMLLiteralToken.m */; };
+		3B3B9E5B1E960045005AB4DE /* MBMLMathExpressionToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DC01E960045005AB4DE /* MBMLMathExpressionToken.h */; };
+		3B3B9E5C1E960045005AB4DE /* MBMLMathExpressionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DC11E960045005AB4DE /* MBMLMathExpressionToken.m */; };
+		3B3B9E5D1E960045005AB4DE /* MBMLNumericLiteralToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DC21E960045005AB4DE /* MBMLNumericLiteralToken.h */; };
+		3B3B9E5E1E960045005AB4DE /* MBMLNumericLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DC31E960045005AB4DE /* MBMLNumericLiteralToken.m */; };
+		3B3B9E5F1E960045005AB4DE /* MBMLObjectReferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DC41E960045005AB4DE /* MBMLObjectReferenceToken.h */; };
+		3B3B9E601E960045005AB4DE /* MBMLObjectReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DC51E960045005AB4DE /* MBMLObjectReferenceToken.m */; };
+		3B3B9E611E960045005AB4DE /* MBMLObjectSubreferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DC61E960045005AB4DE /* MBMLObjectSubreferenceToken.h */; };
+		3B3B9E621E960045005AB4DE /* MBMLObjectSubreferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DC71E960045005AB4DE /* MBMLObjectSubreferenceToken.m */; };
+		3B3B9E631E960045005AB4DE /* MBMLParameterDelimiterToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DC81E960045005AB4DE /* MBMLParameterDelimiterToken.h */; };
+		3B3B9E641E960045005AB4DE /* MBMLParameterDelimiterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DC91E960045005AB4DE /* MBMLParameterDelimiterToken.m */; };
+		3B3B9E651E960045005AB4DE /* MBMLParameterGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DCA1E960045005AB4DE /* MBMLParameterGroupingToken.h */; };
+		3B3B9E661E960045005AB4DE /* MBMLParameterGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DCB1E960045005AB4DE /* MBMLParameterGroupingToken.m */; };
+		3B3B9E671E960045005AB4DE /* MBMLParseToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DCC1E960045005AB4DE /* MBMLParseToken.h */; };
+		3B3B9E681E960045005AB4DE /* MBMLParseToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DCD1E960045005AB4DE /* MBMLParseToken.m */; };
+		3B3B9E691E960045005AB4DE /* MBMLVariableReferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DCE1E960045005AB4DE /* MBMLVariableReferenceToken.h */; };
+		3B3B9E6A1E960045005AB4DE /* MBMLVariableReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DCF1E960045005AB4DE /* MBMLVariableReferenceToken.m */; };
+		3B3B9E6B1E960045005AB4DE /* MBMLWhitespaceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DD01E960045005AB4DE /* MBMLWhitespaceToken.h */; };
+		3B3B9E6C1E960045005AB4DE /* MBMLWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DD11E960045005AB4DE /* MBMLWhitespaceToken.m */; };
+		3B3B9E6D1E960045005AB4DE /* OperationTokens.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DD21E960045005AB4DE /* OperationTokens.h */; };
+		3B3B9E6E1E960045005AB4DE /* MBMLBooleanAndOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DD41E960045005AB4DE /* MBMLBooleanAndOperatorToken.h */; };
+		3B3B9E6F1E960045005AB4DE /* MBMLBooleanAndOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DD51E960045005AB4DE /* MBMLBooleanAndOperatorToken.m */; };
+		3B3B9E701E960045005AB4DE /* MBMLBooleanGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DD61E960045005AB4DE /* MBMLBooleanGroupingToken.h */; };
+		3B3B9E711E960045005AB4DE /* MBMLBooleanGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DD71E960045005AB4DE /* MBMLBooleanGroupingToken.m */; };
+		3B3B9E721E960045005AB4DE /* MBMLBooleanNegationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DD81E960045005AB4DE /* MBMLBooleanNegationToken.h */; };
+		3B3B9E731E960045005AB4DE /* MBMLBooleanNegationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DD91E960045005AB4DE /* MBMLBooleanNegationToken.m */; };
+		3B3B9E741E960045005AB4DE /* MBMLBooleanOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DDA1E960045005AB4DE /* MBMLBooleanOperatorToken.h */; };
+		3B3B9E751E960045005AB4DE /* MBMLBooleanOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DDB1E960045005AB4DE /* MBMLBooleanOperatorToken.m */; };
+		3B3B9E761E960045005AB4DE /* MBMLBooleanOrOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DDC1E960045005AB4DE /* MBMLBooleanOrOperatorToken.h */; };
+		3B3B9E771E960045005AB4DE /* MBMLBooleanOrOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DDD1E960045005AB4DE /* MBMLBooleanOrOperatorToken.m */; };
+		3B3B9E781E960045005AB4DE /* MBMLEqualityTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DDE1E960045005AB4DE /* MBMLEqualityTestToken.h */; };
+		3B3B9E791E960045005AB4DE /* MBMLEqualityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DDF1E960045005AB4DE /* MBMLEqualityTestToken.m */; };
+		3B3B9E7A1E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DE01E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.h */; };
+		3B3B9E7B1E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DE11E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.m */; };
+		3B3B9E7C1E960045005AB4DE /* MBMLGreaterThanTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DE21E960045005AB4DE /* MBMLGreaterThanTestToken.h */; };
+		3B3B9E7D1E960045005AB4DE /* MBMLGreaterThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DE31E960045005AB4DE /* MBMLGreaterThanTestToken.m */; };
+		3B3B9E7E1E960045005AB4DE /* MBMLInequalityTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DE41E960045005AB4DE /* MBMLInequalityTestToken.h */; };
+		3B3B9E7F1E960045005AB4DE /* MBMLInequalityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DE51E960045005AB4DE /* MBMLInequalityTestToken.m */; };
+		3B3B9E801E960045005AB4DE /* MBMLLessThanEqualsTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DE61E960045005AB4DE /* MBMLLessThanEqualsTestToken.h */; };
+		3B3B9E811E960045005AB4DE /* MBMLLessThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DE71E960045005AB4DE /* MBMLLessThanEqualsTestToken.m */; };
+		3B3B9E821E960045005AB4DE /* MBMLLessThanTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DE81E960045005AB4DE /* MBMLLessThanTestToken.h */; };
+		3B3B9E831E960045005AB4DE /* MBMLLessThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DE91E960045005AB4DE /* MBMLLessThanTestToken.m */; };
+		3B3B9E841E960045005AB4DE /* MBMLAdditionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DEB1E960045005AB4DE /* MBMLAdditionOperatorToken.h */; };
+		3B3B9E851E960045005AB4DE /* MBMLAdditionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DEC1E960045005AB4DE /* MBMLAdditionOperatorToken.m */; };
+		3B3B9E861E960045005AB4DE /* MBMLDivisionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DED1E960045005AB4DE /* MBMLDivisionOperatorToken.h */; };
+		3B3B9E871E960045005AB4DE /* MBMLDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DEE1E960045005AB4DE /* MBMLDivisionOperatorToken.m */; };
+		3B3B9E881E960045005AB4DE /* MBMLMathGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DEF1E960045005AB4DE /* MBMLMathGroupingToken.h */; };
+		3B3B9E891E960045005AB4DE /* MBMLMathGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DF01E960045005AB4DE /* MBMLMathGroupingToken.m */; };
+		3B3B9E8A1E960045005AB4DE /* MBMLMathOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DF11E960045005AB4DE /* MBMLMathOperatorToken.h */; };
+		3B3B9E8B1E960045005AB4DE /* MBMLMathOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DF21E960045005AB4DE /* MBMLMathOperatorToken.m */; };
+		3B3B9E8C1E960045005AB4DE /* MBMLModuloOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DF31E960045005AB4DE /* MBMLModuloOperatorToken.h */; };
+		3B3B9E8D1E960045005AB4DE /* MBMLModuloOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DF41E960045005AB4DE /* MBMLModuloOperatorToken.m */; };
+		3B3B9E8E1E960045005AB4DE /* MBMLMultiplicationOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DF51E960045005AB4DE /* MBMLMultiplicationOperatorToken.h */; };
+		3B3B9E8F1E960045005AB4DE /* MBMLMultiplicationOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DF61E960045005AB4DE /* MBMLMultiplicationOperatorToken.m */; };
+		3B3B9E901E960045005AB4DE /* MBMLSubtractionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DF71E960045005AB4DE /* MBMLSubtractionOperatorToken.h */; };
+		3B3B9E911E960045005AB4DE /* MBMLSubtractionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DF81E960045005AB4DE /* MBMLSubtractionOperatorToken.m */; };
+		3B3B9E921E960045005AB4DE /* MBMLCollectionFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DFB1E960045005AB4DE /* MBMLCollectionFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E931E960045005AB4DE /* MBMLCollectionFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DFC1E960045005AB4DE /* MBMLCollectionFunctions.m */; };
+		3B3B9E941E960045005AB4DE /* MBMLDataProcessingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DFD1E960045005AB4DE /* MBMLDataProcessingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E951E960045005AB4DE /* MBMLDataProcessingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9DFE1E960045005AB4DE /* MBMLDataProcessingFunctions.m */; };
+		3B3B9E961E960045005AB4DE /* MBMLDateFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9DFF1E960045005AB4DE /* MBMLDateFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E971E960045005AB4DE /* MBMLDateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E001E960045005AB4DE /* MBMLDateFunctions.m */; };
+		3B3B9E981E960045005AB4DE /* MBMLDebugFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E011E960045005AB4DE /* MBMLDebugFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E991E960045005AB4DE /* MBMLDebugFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E021E960045005AB4DE /* MBMLDebugFunctions.m */; };
+		3B3B9E9A1E960045005AB4DE /* MBMLEncodingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E031E960045005AB4DE /* MBMLEncodingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E9B1E960045005AB4DE /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E041E960045005AB4DE /* MBMLEncodingFunctions.m */; };
+		3B3B9E9C1E960045005AB4DE /* MBMLEnvironmentFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E051E960045005AB4DE /* MBMLEnvironmentFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E9D1E960045005AB4DE /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E061E960045005AB4DE /* MBMLEnvironmentFunctions.m */; };
+		3B3B9E9E1E960045005AB4DE /* MBMLFileFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E071E960045005AB4DE /* MBMLFileFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9E9F1E960045005AB4DE /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E081E960045005AB4DE /* MBMLFileFunctions.m */; };
+		3B3B9EA01E960045005AB4DE /* MBMLLogicFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E091E960045005AB4DE /* MBMLLogicFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EA11E960045005AB4DE /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E0A1E960045005AB4DE /* MBMLLogicFunctions.m */; };
+		3B3B9EA21E960045005AB4DE /* MBMLMathFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E0B1E960045005AB4DE /* MBMLMathFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EA31E960045005AB4DE /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E0C1E960045005AB4DE /* MBMLMathFunctions.m */; };
+		3B3B9EA41E960045005AB4DE /* MBMLRegexFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E0D1E960045005AB4DE /* MBMLRegexFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EA51E960045005AB4DE /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E0E1E960045005AB4DE /* MBMLRegexFunctions.m */; };
+		3B3B9EA61E960045005AB4DE /* MBMLResourceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E0F1E960045005AB4DE /* MBMLResourceFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EA71E960045005AB4DE /* MBMLResourceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E101E960045005AB4DE /* MBMLResourceFunctions.m */; };
+		3B3B9EA81E960045005AB4DE /* MBMLRuntimeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E111E960045005AB4DE /* MBMLRuntimeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EA91E960045005AB4DE /* MBMLRuntimeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E121E960045005AB4DE /* MBMLRuntimeFunctions.m */; };
+		3B3B9EAA1E960045005AB4DE /* MBMLStringFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E131E960045005AB4DE /* MBMLStringFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EAB1E960045005AB4DE /* MBMLStringFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E141E960045005AB4DE /* MBMLStringFunctions.m */; };
+		3B3B9EAC1E960045005AB4DE /* MBMLFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E151E960045005AB4DE /* MBMLFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EAD1E960045005AB4DE /* MBMLFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E161E960045005AB4DE /* MBMLFunction.m */; };
+		3B3B9EB41E960045005AB4DE /* MBDataEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E201E960045005AB4DE /* MBDataEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EB51E960045005AB4DE /* MBDataEnvironmentConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E221E960045005AB4DE /* MBDataEnvironmentConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EB61E960045005AB4DE /* MBDataEnvironmentConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E231E960045005AB4DE /* MBDataEnvironmentConstants.m */; };
+		3B3B9EB71E960045005AB4DE /* MBDataEnvironmentModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E241E960045005AB4DE /* MBDataEnvironmentModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EB81E960045005AB4DE /* MBDataEnvironmentModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E251E960045005AB4DE /* MBDataEnvironmentModule.m */; };
+		3B3B9EB91E960045005AB4DE /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E271E960045005AB4DE /* MBPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EBA1E960045005AB4DE /* MBPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E281E960045005AB4DE /* MBPlatform.m */; };
+		3B3B9EBB1E960045005AB4DE /* MBStringConversions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E2A1E960045005AB4DE /* MBStringConversions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EBC1E960045005AB4DE /* MBStringConversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E2B1E960045005AB4DE /* MBStringConversions.m */; };
+		3B3B9EBD1E960045005AB4DE /* TypeCoercionSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E2C1E960045005AB4DE /* TypeCoercionSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EBE1E960045005AB4DE /* TypeCoercionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E2D1E960045005AB4DE /* TypeCoercionSupport.m */; };
+		3B3B9EBF1E960045005AB4DE /* MBScopedVariables.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E2F1E960045005AB4DE /* MBScopedVariables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EC01E960045005AB4DE /* MBScopedVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E301E960045005AB4DE /* MBScopedVariables.m */; };
+		3B3B9EC11E960045005AB4DE /* MBVariableDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E311E960045005AB4DE /* MBVariableDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EC21E960045005AB4DE /* MBVariableDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E321E960045005AB4DE /* MBVariableDeclaration.m */; };
+		3B3B9EC31E960045005AB4DE /* MBVariableSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9E331E960045005AB4DE /* MBVariableSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9EC41E960045005AB4DE /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9E341E960045005AB4DE /* MBVariableSpace.m */; };
+		3B3B9ECE1E960063005AB4DE /* MBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9EC71E960063005AB4DE /* MBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9ECF1E960063005AB4DE /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9EC81E960063005AB4DE /* MBDevice.m */; };
+		3B3B9ED01E960063005AB4DE /* MBMLFontFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9ECA1E960063005AB4DE /* MBMLFontFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9ED11E960063005AB4DE /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9ECB1E960063005AB4DE /* MBMLFontFunctions.m */; };
+		3B3B9ED21E960063005AB4DE /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3B9ECC1E960063005AB4DE /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3B9ED31E960063005AB4DE /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3B9ECD1E960063005AB4DE /* MBMLGeometryFunctions.m */; };
 		3B90590D1DAECB5200B4EEC0 /* MBDataEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9059031DAECB5200B4EEC0 /* MBDataEnvironment.framework */; };
-		3BA518CF1E9533E1008BE58E /* MBAttributeValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5182E1E9533E0008BE58E /* MBAttributeValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518D01E9533E1008BE58E /* MBAttributeValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5182F1E9533E0008BE58E /* MBAttributeValidator.m */; };
-		3BA518D11E9533E1008BE58E /* MBConditionalDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518301E9533E0008BE58E /* MBConditionalDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518D21E9533E1008BE58E /* MBConditionalDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518311E9533E0008BE58E /* MBConditionalDeclaration.m */; };
-		3BA518D31E9533E1008BE58E /* MBDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518321E9533E0008BE58E /* MBDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518D41E9533E1008BE58E /* MBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518331E9533E0008BE58E /* MBDataModel.m */; };
-		3BA518D51E9533E1008BE58E /* MBEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518351E9533E0008BE58E /* MBEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518D61E9533E1008BE58E /* MBEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518361E9533E0008BE58E /* MBEnvironment.m */; };
-		3BA518D71E9533E1008BE58E /* MBEnvironmentLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518371E9533E0008BE58E /* MBEnvironmentLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518D81E9533E1008BE58E /* MBEnvironmentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518381E9533E0008BE58E /* MBEnvironmentLoader.m */; };
-		3BA518D91E9533E1008BE58E /* MBEvents+DataLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5183A1E9533E0008BE58E /* MBEvents+DataLoading.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518DA1E9533E1008BE58E /* MBEvents+DataLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5183B1E9533E0008BE58E /* MBEvents+DataLoading.m */; };
-		3BA518DB1E9533E1008BE58E /* MBExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5183D1E9533E0008BE58E /* MBExpression.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518DC1E9533E1008BE58E /* MBExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5183E1E9533E0008BE58E /* MBExpression.m */; };
-		3BA518DD1E9533E1008BE58E /* MBExpressionCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5183F1E9533E0008BE58E /* MBExpressionCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518DE1E9533E1008BE58E /* MBExpressionCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518401E9533E0008BE58E /* MBExpressionCache.m */; };
-		3BA518DF1E9533E1008BE58E /* MBExpressionError.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518411E9533E0008BE58E /* MBExpressionError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518E01E9533E1008BE58E /* MBExpressionError.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518421E9533E0008BE58E /* MBExpressionError.m */; };
-		3BA518E11E9533E1008BE58E /* MBExpressionExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518431E9533E0008BE58E /* MBExpressionExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA518E21E9533E1008BE58E /* MBExpressionExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518441E9533E0008BE58E /* MBExpressionExtensions.m */; };
-		3BA518E31E9533E1008BE58E /* MBExpression+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518461E9533E0008BE58E /* MBExpression+Internal.h */; };
-		3BA518E41E9533E1008BE58E /* MBExpressionCache+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518471E9533E0008BE58E /* MBExpressionCache+Internal.h */; };
-		3BA518E51E9533E1008BE58E /* MBExpressionGrammar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518481E9533E0008BE58E /* MBExpressionGrammar.h */; };
-		3BA518E61E9533E1008BE58E /* MBExpressionGrammar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518491E9533E0008BE58E /* MBExpressionGrammar.m */; };
-		3BA518E71E9533E1008BE58E /* MBExpressionTokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5184A1E9533E0008BE58E /* MBExpressionTokenizer.h */; };
-		3BA518E81E9533E1008BE58E /* MBExpressionTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5184B1E9533E0008BE58E /* MBExpressionTokenizer.m */; };
-		3BA518E91E9533E1008BE58E /* MBMLEscapeSequenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5184D1E9533E0008BE58E /* MBMLEscapeSequenceToken.h */; };
-		3BA518EA1E9533E1008BE58E /* MBMLEscapeSequenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5184E1E9533E0008BE58E /* MBMLEscapeSequenceToken.m */; };
-		3BA518EB1E9533E1008BE58E /* MBMLFunctionCallToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5184F1E9533E0008BE58E /* MBMLFunctionCallToken.h */; };
-		3BA518EC1E9533E1008BE58E /* MBMLFunctionCallToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518501E9533E0008BE58E /* MBMLFunctionCallToken.m */; };
-		3BA518ED1E9533E1008BE58E /* MBMLGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518511E9533E0008BE58E /* MBMLGroupingToken.h */; };
-		3BA518EE1E9533E1008BE58E /* MBMLGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518521E9533E0008BE58E /* MBMLGroupingToken.m */; };
-		3BA518EF1E9533E1008BE58E /* MBMLIgnorableWhitespaceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518531E9533E0008BE58E /* MBMLIgnorableWhitespaceToken.h */; };
-		3BA518F01E9533E1008BE58E /* MBMLIgnorableWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518541E9533E0008BE58E /* MBMLIgnorableWhitespaceToken.m */; };
-		3BA518F11E9533E1008BE58E /* MBMLKeywordMatchingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518551E9533E0008BE58E /* MBMLKeywordMatchingToken.h */; };
-		3BA518F21E9533E1008BE58E /* MBMLKeywordMatchingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518561E9533E0008BE58E /* MBMLKeywordMatchingToken.m */; };
-		3BA518F31E9533E1008BE58E /* MBMLLiteralToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518571E9533E0008BE58E /* MBMLLiteralToken.h */; };
-		3BA518F41E9533E1008BE58E /* MBMLLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518581E9533E0008BE58E /* MBMLLiteralToken.m */; };
-		3BA518F51E9533E1008BE58E /* MBMLMathExpressionToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518591E9533E0008BE58E /* MBMLMathExpressionToken.h */; };
-		3BA518F61E9533E1008BE58E /* MBMLMathExpressionToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5185A1E9533E0008BE58E /* MBMLMathExpressionToken.m */; };
-		3BA518F71E9533E1008BE58E /* MBMLNumericLiteralToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5185B1E9533E0008BE58E /* MBMLNumericLiteralToken.h */; };
-		3BA518F81E9533E1008BE58E /* MBMLNumericLiteralToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5185C1E9533E0008BE58E /* MBMLNumericLiteralToken.m */; };
-		3BA518F91E9533E1008BE58E /* MBMLObjectReferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5185D1E9533E0008BE58E /* MBMLObjectReferenceToken.h */; };
-		3BA518FA1E9533E1008BE58E /* MBMLObjectReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5185E1E9533E0008BE58E /* MBMLObjectReferenceToken.m */; };
-		3BA518FB1E9533E1008BE58E /* MBMLObjectSubreferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5185F1E9533E0008BE58E /* MBMLObjectSubreferenceToken.h */; };
-		3BA518FC1E9533E1008BE58E /* MBMLObjectSubreferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518601E9533E0008BE58E /* MBMLObjectSubreferenceToken.m */; };
-		3BA518FD1E9533E1008BE58E /* MBMLParameterDelimiterToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518611E9533E0008BE58E /* MBMLParameterDelimiterToken.h */; };
-		3BA518FE1E9533E1008BE58E /* MBMLParameterDelimiterToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518621E9533E0008BE58E /* MBMLParameterDelimiterToken.m */; };
-		3BA518FF1E9533E1008BE58E /* MBMLParameterGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518631E9533E0008BE58E /* MBMLParameterGroupingToken.h */; };
-		3BA519001E9533E1008BE58E /* MBMLParameterGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518641E9533E0008BE58E /* MBMLParameterGroupingToken.m */; };
-		3BA519011E9533E1008BE58E /* MBMLParseToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518651E9533E0008BE58E /* MBMLParseToken.h */; };
-		3BA519021E9533E1008BE58E /* MBMLParseToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518661E9533E0008BE58E /* MBMLParseToken.m */; };
-		3BA519031E9533E1008BE58E /* MBMLVariableReferenceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518671E9533E0008BE58E /* MBMLVariableReferenceToken.h */; };
-		3BA519041E9533E1008BE58E /* MBMLVariableReferenceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518681E9533E0008BE58E /* MBMLVariableReferenceToken.m */; };
-		3BA519051E9533E1008BE58E /* MBMLWhitespaceToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518691E9533E0008BE58E /* MBMLWhitespaceToken.h */; };
-		3BA519061E9533E1008BE58E /* MBMLWhitespaceToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5186A1E9533E0008BE58E /* MBMLWhitespaceToken.m */; };
-		3BA519071E9533E1008BE58E /* OperationTokens.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5186B1E9533E1008BE58E /* OperationTokens.h */; };
-		3BA519081E9533E1008BE58E /* MBMLBooleanAndOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5186D1E9533E1008BE58E /* MBMLBooleanAndOperatorToken.h */; };
-		3BA519091E9533E1008BE58E /* MBMLBooleanAndOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5186E1E9533E1008BE58E /* MBMLBooleanAndOperatorToken.m */; };
-		3BA5190A1E9533E1008BE58E /* MBMLBooleanGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5186F1E9533E1008BE58E /* MBMLBooleanGroupingToken.h */; };
-		3BA5190B1E9533E1008BE58E /* MBMLBooleanGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518701E9533E1008BE58E /* MBMLBooleanGroupingToken.m */; };
-		3BA5190C1E9533E1008BE58E /* MBMLBooleanNegationToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518711E9533E1008BE58E /* MBMLBooleanNegationToken.h */; };
-		3BA5190D1E9533E1008BE58E /* MBMLBooleanNegationToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518721E9533E1008BE58E /* MBMLBooleanNegationToken.m */; };
-		3BA5190E1E9533E1008BE58E /* MBMLBooleanOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518731E9533E1008BE58E /* MBMLBooleanOperatorToken.h */; };
-		3BA5190F1E9533E1008BE58E /* MBMLBooleanOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518741E9533E1008BE58E /* MBMLBooleanOperatorToken.m */; };
-		3BA519101E9533E1008BE58E /* MBMLBooleanOrOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518751E9533E1008BE58E /* MBMLBooleanOrOperatorToken.h */; };
-		3BA519111E9533E1008BE58E /* MBMLBooleanOrOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518761E9533E1008BE58E /* MBMLBooleanOrOperatorToken.m */; };
-		3BA519121E9533E1008BE58E /* MBMLEqualityTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518771E9533E1008BE58E /* MBMLEqualityTestToken.h */; };
-		3BA519131E9533E1008BE58E /* MBMLEqualityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518781E9533E1008BE58E /* MBMLEqualityTestToken.m */; };
-		3BA519141E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518791E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.h */; };
-		3BA519151E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5187A1E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.m */; };
-		3BA519161E9533E1008BE58E /* MBMLGreaterThanTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5187B1E9533E1008BE58E /* MBMLGreaterThanTestToken.h */; };
-		3BA519171E9533E1008BE58E /* MBMLGreaterThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5187C1E9533E1008BE58E /* MBMLGreaterThanTestToken.m */; };
-		3BA519181E9533E1008BE58E /* MBMLInequalityTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5187D1E9533E1008BE58E /* MBMLInequalityTestToken.h */; };
-		3BA519191E9533E1008BE58E /* MBMLInequalityTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5187E1E9533E1008BE58E /* MBMLInequalityTestToken.m */; };
-		3BA5191A1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5187F1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.h */; };
-		3BA5191B1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518801E9533E1008BE58E /* MBMLLessThanEqualsTestToken.m */; };
-		3BA5191C1E9533E1008BE58E /* MBMLLessThanTestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518811E9533E1008BE58E /* MBMLLessThanTestToken.h */; };
-		3BA5191D1E9533E1008BE58E /* MBMLLessThanTestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518821E9533E1008BE58E /* MBMLLessThanTestToken.m */; };
-		3BA5191E1E9533E1008BE58E /* MBMLAdditionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518841E9533E1008BE58E /* MBMLAdditionOperatorToken.h */; };
-		3BA5191F1E9533E1008BE58E /* MBMLAdditionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518851E9533E1008BE58E /* MBMLAdditionOperatorToken.m */; };
-		3BA519201E9533E1008BE58E /* MBMLDivisionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518861E9533E1008BE58E /* MBMLDivisionOperatorToken.h */; };
-		3BA519211E9533E1008BE58E /* MBMLDivisionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518871E9533E1008BE58E /* MBMLDivisionOperatorToken.m */; };
-		3BA519221E9533E1008BE58E /* MBMLMathGroupingToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518881E9533E1008BE58E /* MBMLMathGroupingToken.h */; };
-		3BA519231E9533E1008BE58E /* MBMLMathGroupingToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518891E9533E1008BE58E /* MBMLMathGroupingToken.m */; };
-		3BA519241E9533E1008BE58E /* MBMLMathOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5188A1E9533E1008BE58E /* MBMLMathOperatorToken.h */; };
-		3BA519251E9533E1008BE58E /* MBMLMathOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5188B1E9533E1008BE58E /* MBMLMathOperatorToken.m */; };
-		3BA519261E9533E1008BE58E /* MBMLModuloOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5188C1E9533E1008BE58E /* MBMLModuloOperatorToken.h */; };
-		3BA519271E9533E1008BE58E /* MBMLModuloOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5188D1E9533E1008BE58E /* MBMLModuloOperatorToken.m */; };
-		3BA519281E9533E1008BE58E /* MBMLMultiplicationOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5188E1E9533E1008BE58E /* MBMLMultiplicationOperatorToken.h */; };
-		3BA519291E9533E1008BE58E /* MBMLMultiplicationOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5188F1E9533E1008BE58E /* MBMLMultiplicationOperatorToken.m */; };
-		3BA5192A1E9533E1008BE58E /* MBMLSubtractionOperatorToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518901E9533E1008BE58E /* MBMLSubtractionOperatorToken.h */; };
-		3BA5192B1E9533E1008BE58E /* MBMLSubtractionOperatorToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518911E9533E1008BE58E /* MBMLSubtractionOperatorToken.m */; };
-		3BA5192C1E9533E1008BE58E /* MBMLCollectionFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518941E9533E1008BE58E /* MBMLCollectionFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5192D1E9533E1008BE58E /* MBMLCollectionFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518951E9533E1008BE58E /* MBMLCollectionFunctions.m */; };
-		3BA5192E1E9533E1008BE58E /* MBMLDataProcessingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518961E9533E1008BE58E /* MBMLDataProcessingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5192F1E9533E1008BE58E /* MBMLDataProcessingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518971E9533E1008BE58E /* MBMLDataProcessingFunctions.m */; };
-		3BA519301E9533E1008BE58E /* MBMLDateFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518981E9533E1008BE58E /* MBMLDateFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519311E9533E1008BE58E /* MBMLDateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518991E9533E1008BE58E /* MBMLDateFunctions.m */; };
-		3BA519321E9533E1008BE58E /* MBMLDebugFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5189A1E9533E1008BE58E /* MBMLDebugFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519331E9533E1008BE58E /* MBMLDebugFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5189B1E9533E1008BE58E /* MBMLDebugFunctions.m */; };
-		3BA519341E9533E1008BE58E /* MBMLEncodingFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5189C1E9533E1008BE58E /* MBMLEncodingFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519351E9533E1008BE58E /* MBMLEncodingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5189D1E9533E1008BE58E /* MBMLEncodingFunctions.m */; };
-		3BA519361E9533E1008BE58E /* MBMLEnvironmentFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA5189E1E9533E1008BE58E /* MBMLEnvironmentFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519371E9533E1008BE58E /* MBMLEnvironmentFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5189F1E9533E1008BE58E /* MBMLEnvironmentFunctions.m */; };
-		3BA519381E9533E1008BE58E /* MBMLFileFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518A01E9533E1008BE58E /* MBMLFileFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519391E9533E1008BE58E /* MBMLFileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518A11E9533E1008BE58E /* MBMLFileFunctions.m */; };
-		3BA5193A1E9533E1008BE58E /* MBMLLogicFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518A21E9533E1008BE58E /* MBMLLogicFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5193B1E9533E1008BE58E /* MBMLLogicFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518A31E9533E1008BE58E /* MBMLLogicFunctions.m */; };
-		3BA5193C1E9533E1008BE58E /* MBMLMathFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518A41E9533E1008BE58E /* MBMLMathFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5193D1E9533E1008BE58E /* MBMLMathFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518A51E9533E1008BE58E /* MBMLMathFunctions.m */; };
-		3BA5193E1E9533E1008BE58E /* MBMLRegexFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518A61E9533E1008BE58E /* MBMLRegexFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5193F1E9533E1008BE58E /* MBMLRegexFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518A71E9533E1008BE58E /* MBMLRegexFunctions.m */; };
-		3BA519401E9533E1008BE58E /* MBMLResourceFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518A81E9533E1008BE58E /* MBMLResourceFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519411E9533E1008BE58E /* MBMLResourceFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518A91E9533E1008BE58E /* MBMLResourceFunctions.m */; };
-		3BA519421E9533E1008BE58E /* MBMLRuntimeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518AA1E9533E1008BE58E /* MBMLRuntimeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519431E9533E1008BE58E /* MBMLRuntimeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518AB1E9533E1008BE58E /* MBMLRuntimeFunctions.m */; };
-		3BA519441E9533E1008BE58E /* MBMLStringFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518AC1E9533E1008BE58E /* MBMLStringFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519451E9533E1008BE58E /* MBMLStringFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518AD1E9533E1008BE58E /* MBMLStringFunctions.m */; };
-		3BA519461E9533E1008BE58E /* MBMLFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518AE1E9533E1008BE58E /* MBMLFunction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519471E9533E1008BE58E /* MBMLFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518AF1E9533E1008BE58E /* MBMLFunction.m */; };
-		3BA519481E9533E1008BE58E /* MBDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518B21E9533E1008BE58E /* MBDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519491E9533E1008BE58E /* MBDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518B31E9533E1008BE58E /* MBDevice.m */; };
-		3BA5194A1E9533E1008BE58E /* MBMLFontFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518B51E9533E1008BE58E /* MBMLFontFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5194B1E9533E1008BE58E /* MBMLFontFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518B61E9533E1008BE58E /* MBMLFontFunctions.m */; };
-		3BA5194C1E9533E1008BE58E /* MBMLGeometryFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518B71E9533E1008BE58E /* MBMLGeometryFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5194D1E9533E1008BE58E /* MBMLGeometryFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518B81E9533E1008BE58E /* MBMLGeometryFunctions.m */; };
-		3BA5194E1E9533E1008BE58E /* MBDataEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518B91E9533E1008BE58E /* MBDataEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5194F1E9533E1008BE58E /* MBDataEnvironmentConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518BB1E9533E1008BE58E /* MBDataEnvironmentConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519501E9533E1008BE58E /* MBDataEnvironmentConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518BC1E9533E1008BE58E /* MBDataEnvironmentConstants.m */; };
-		3BA519511E9533E1008BE58E /* MBDataEnvironmentModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518BD1E9533E1008BE58E /* MBDataEnvironmentModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519521E9533E1008BE58E /* MBDataEnvironmentModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518BE1E9533E1008BE58E /* MBDataEnvironmentModule.m */; };
-		3BA519531E9533E1008BE58E /* MBPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518C01E9533E1008BE58E /* MBPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519541E9533E1008BE58E /* MBPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518C11E9533E1008BE58E /* MBPlatform.m */; };
-		3BA519561E9533E1008BE58E /* MBStringConversions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518C41E9533E1008BE58E /* MBStringConversions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519571E9533E1008BE58E /* MBStringConversions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518C51E9533E1008BE58E /* MBStringConversions.m */; };
-		3BA519581E9533E1008BE58E /* TypeCoercionSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518C61E9533E1008BE58E /* TypeCoercionSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA519591E9533E1008BE58E /* TypeCoercionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518C71E9533E1008BE58E /* TypeCoercionSupport.m */; };
-		3BA5195A1E9533E1008BE58E /* MBScopedVariables.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518C91E9533E1008BE58E /* MBScopedVariables.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5195B1E9533E1008BE58E /* MBScopedVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518CA1E9533E1008BE58E /* MBScopedVariables.m */; };
-		3BA5195C1E9533E1008BE58E /* MBVariableDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518CB1E9533E1008BE58E /* MBVariableDeclaration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5195D1E9533E1008BE58E /* MBVariableDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518CC1E9533E1008BE58E /* MBVariableDeclaration.m */; };
-		3BA5195E1E9533E1008BE58E /* MBVariableSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BA518CD1E9533E1008BE58E /* MBVariableSpace.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3BA5195F1E9533E1008BE58E /* MBVariableSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA518CE1E9533E1008BE58E /* MBVariableSpace.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +214,150 @@
 		3B0847F91E959D0D00790F7B /* MBToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBToolbox.framework; path = Carthage/Checkouts/MBToolbox/build/Debug/MBToolbox.framework; sourceTree = "<group>"; };
 		3B0847FB1E959E2B00790F7B /* RaptureXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RaptureXML.framework; path = "Carthage/Checkouts/RaptureXML/build/Debug-iphoneos/RaptureXML.framework"; sourceTree = "<group>"; };
 		3B0847FE1E959EE500790F7B /* MBDataEnvironmentModule.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MBDataEnvironmentModule.xml; sourceTree = "<group>"; };
+		3B3B9D951E960045005AB4DE /* MBAttributeValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAttributeValidator.h; sourceTree = "<group>"; };
+		3B3B9D961E960045005AB4DE /* MBAttributeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAttributeValidator.m; sourceTree = "<group>"; };
+		3B3B9D971E960045005AB4DE /* MBConditionalDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBConditionalDeclaration.h; sourceTree = "<group>"; };
+		3B3B9D981E960045005AB4DE /* MBConditionalDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBConditionalDeclaration.m; sourceTree = "<group>"; };
+		3B3B9D991E960045005AB4DE /* MBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataModel.h; sourceTree = "<group>"; };
+		3B3B9D9A1E960045005AB4DE /* MBDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataModel.m; sourceTree = "<group>"; };
+		3B3B9D9C1E960045005AB4DE /* MBEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironment.h; sourceTree = "<group>"; };
+		3B3B9D9D1E960045005AB4DE /* MBEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironment.m; sourceTree = "<group>"; };
+		3B3B9D9E1E960045005AB4DE /* MBEnvironmentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironmentLoader.h; sourceTree = "<group>"; };
+		3B3B9D9F1E960045005AB4DE /* MBEnvironmentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironmentLoader.m; sourceTree = "<group>"; };
+		3B3B9DA11E960045005AB4DE /* MBEvents+DataLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBEvents+DataLoading.h"; sourceTree = "<group>"; };
+		3B3B9DA21E960045005AB4DE /* MBEvents+DataLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBEvents+DataLoading.m"; sourceTree = "<group>"; };
+		3B3B9DA41E960045005AB4DE /* MBExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpression.h; sourceTree = "<group>"; };
+		3B3B9DA51E960045005AB4DE /* MBExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpression.m; sourceTree = "<group>"; };
+		3B3B9DA61E960045005AB4DE /* MBExpressionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionCache.h; sourceTree = "<group>"; };
+		3B3B9DA71E960045005AB4DE /* MBExpressionCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionCache.m; sourceTree = "<group>"; };
+		3B3B9DA81E960045005AB4DE /* MBExpressionError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionError.h; sourceTree = "<group>"; };
+		3B3B9DA91E960045005AB4DE /* MBExpressionError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionError.m; sourceTree = "<group>"; };
+		3B3B9DAA1E960045005AB4DE /* MBExpressionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionExtensions.h; sourceTree = "<group>"; };
+		3B3B9DAB1E960045005AB4DE /* MBExpressionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionExtensions.m; sourceTree = "<group>"; };
+		3B3B9DAD1E960045005AB4DE /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
+		3B3B9DAE1E960045005AB4DE /* MBExpressionCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpressionCache+Internal.h"; sourceTree = "<group>"; };
+		3B3B9DAF1E960045005AB4DE /* MBExpressionGrammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionGrammar.h; sourceTree = "<group>"; };
+		3B3B9DB01E960045005AB4DE /* MBExpressionGrammar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionGrammar.m; sourceTree = "<group>"; };
+		3B3B9DB11E960045005AB4DE /* MBExpressionTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionTokenizer.h; sourceTree = "<group>"; };
+		3B3B9DB21E960045005AB4DE /* MBExpressionTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionTokenizer.m; sourceTree = "<group>"; };
+		3B3B9DB41E960045005AB4DE /* MBMLEscapeSequenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEscapeSequenceToken.h; sourceTree = "<group>"; };
+		3B3B9DB51E960045005AB4DE /* MBMLEscapeSequenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEscapeSequenceToken.m; sourceTree = "<group>"; };
+		3B3B9DB61E960045005AB4DE /* MBMLFunctionCallToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFunctionCallToken.h; sourceTree = "<group>"; };
+		3B3B9DB71E960045005AB4DE /* MBMLFunctionCallToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFunctionCallToken.m; sourceTree = "<group>"; };
+		3B3B9DB81E960045005AB4DE /* MBMLGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGroupingToken.h; sourceTree = "<group>"; };
+		3B3B9DB91E960045005AB4DE /* MBMLGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGroupingToken.m; sourceTree = "<group>"; };
+		3B3B9DBA1E960045005AB4DE /* MBMLIgnorableWhitespaceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLIgnorableWhitespaceToken.h; sourceTree = "<group>"; };
+		3B3B9DBB1E960045005AB4DE /* MBMLIgnorableWhitespaceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLIgnorableWhitespaceToken.m; sourceTree = "<group>"; };
+		3B3B9DBC1E960045005AB4DE /* MBMLKeywordMatchingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLKeywordMatchingToken.h; sourceTree = "<group>"; };
+		3B3B9DBD1E960045005AB4DE /* MBMLKeywordMatchingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLKeywordMatchingToken.m; sourceTree = "<group>"; };
+		3B3B9DBE1E960045005AB4DE /* MBMLLiteralToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLiteralToken.h; sourceTree = "<group>"; };
+		3B3B9DBF1E960045005AB4DE /* MBMLLiteralToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLiteralToken.m; sourceTree = "<group>"; };
+		3B3B9DC01E960045005AB4DE /* MBMLMathExpressionToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathExpressionToken.h; sourceTree = "<group>"; };
+		3B3B9DC11E960045005AB4DE /* MBMLMathExpressionToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathExpressionToken.m; sourceTree = "<group>"; };
+		3B3B9DC21E960045005AB4DE /* MBMLNumericLiteralToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLNumericLiteralToken.h; sourceTree = "<group>"; };
+		3B3B9DC31E960045005AB4DE /* MBMLNumericLiteralToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLNumericLiteralToken.m; sourceTree = "<group>"; };
+		3B3B9DC41E960045005AB4DE /* MBMLObjectReferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLObjectReferenceToken.h; sourceTree = "<group>"; };
+		3B3B9DC51E960045005AB4DE /* MBMLObjectReferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLObjectReferenceToken.m; sourceTree = "<group>"; };
+		3B3B9DC61E960045005AB4DE /* MBMLObjectSubreferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLObjectSubreferenceToken.h; sourceTree = "<group>"; };
+		3B3B9DC71E960045005AB4DE /* MBMLObjectSubreferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLObjectSubreferenceToken.m; sourceTree = "<group>"; };
+		3B3B9DC81E960045005AB4DE /* MBMLParameterDelimiterToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParameterDelimiterToken.h; sourceTree = "<group>"; };
+		3B3B9DC91E960045005AB4DE /* MBMLParameterDelimiterToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParameterDelimiterToken.m; sourceTree = "<group>"; };
+		3B3B9DCA1E960045005AB4DE /* MBMLParameterGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParameterGroupingToken.h; sourceTree = "<group>"; };
+		3B3B9DCB1E960045005AB4DE /* MBMLParameterGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParameterGroupingToken.m; sourceTree = "<group>"; };
+		3B3B9DCC1E960045005AB4DE /* MBMLParseToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParseToken.h; sourceTree = "<group>"; };
+		3B3B9DCD1E960045005AB4DE /* MBMLParseToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParseToken.m; sourceTree = "<group>"; };
+		3B3B9DCE1E960045005AB4DE /* MBMLVariableReferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLVariableReferenceToken.h; sourceTree = "<group>"; };
+		3B3B9DCF1E960045005AB4DE /* MBMLVariableReferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLVariableReferenceToken.m; sourceTree = "<group>"; };
+		3B3B9DD01E960045005AB4DE /* MBMLWhitespaceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLWhitespaceToken.h; sourceTree = "<group>"; };
+		3B3B9DD11E960045005AB4DE /* MBMLWhitespaceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLWhitespaceToken.m; sourceTree = "<group>"; };
+		3B3B9DD21E960045005AB4DE /* OperationTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTokens.h; sourceTree = "<group>"; };
+		3B3B9DD41E960045005AB4DE /* MBMLBooleanAndOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanAndOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DD51E960045005AB4DE /* MBMLBooleanAndOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanAndOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DD61E960045005AB4DE /* MBMLBooleanGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanGroupingToken.h; sourceTree = "<group>"; };
+		3B3B9DD71E960045005AB4DE /* MBMLBooleanGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanGroupingToken.m; sourceTree = "<group>"; };
+		3B3B9DD81E960045005AB4DE /* MBMLBooleanNegationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanNegationToken.h; sourceTree = "<group>"; };
+		3B3B9DD91E960045005AB4DE /* MBMLBooleanNegationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanNegationToken.m; sourceTree = "<group>"; };
+		3B3B9DDA1E960045005AB4DE /* MBMLBooleanOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DDB1E960045005AB4DE /* MBMLBooleanOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DDC1E960045005AB4DE /* MBMLBooleanOrOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanOrOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DDD1E960045005AB4DE /* MBMLBooleanOrOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanOrOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DDE1E960045005AB4DE /* MBMLEqualityTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEqualityTestToken.h; sourceTree = "<group>"; };
+		3B3B9DDF1E960045005AB4DE /* MBMLEqualityTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEqualityTestToken.m; sourceTree = "<group>"; };
+		3B3B9DE01E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGreaterThanEqualsTestToken.h; sourceTree = "<group>"; };
+		3B3B9DE11E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGreaterThanEqualsTestToken.m; sourceTree = "<group>"; };
+		3B3B9DE21E960045005AB4DE /* MBMLGreaterThanTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGreaterThanTestToken.h; sourceTree = "<group>"; };
+		3B3B9DE31E960045005AB4DE /* MBMLGreaterThanTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGreaterThanTestToken.m; sourceTree = "<group>"; };
+		3B3B9DE41E960045005AB4DE /* MBMLInequalityTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLInequalityTestToken.h; sourceTree = "<group>"; };
+		3B3B9DE51E960045005AB4DE /* MBMLInequalityTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLInequalityTestToken.m; sourceTree = "<group>"; };
+		3B3B9DE61E960045005AB4DE /* MBMLLessThanEqualsTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLessThanEqualsTestToken.h; sourceTree = "<group>"; };
+		3B3B9DE71E960045005AB4DE /* MBMLLessThanEqualsTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLessThanEqualsTestToken.m; sourceTree = "<group>"; };
+		3B3B9DE81E960045005AB4DE /* MBMLLessThanTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLessThanTestToken.h; sourceTree = "<group>"; };
+		3B3B9DE91E960045005AB4DE /* MBMLLessThanTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLessThanTestToken.m; sourceTree = "<group>"; };
+		3B3B9DEB1E960045005AB4DE /* MBMLAdditionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLAdditionOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DEC1E960045005AB4DE /* MBMLAdditionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLAdditionOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DED1E960045005AB4DE /* MBMLDivisionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDivisionOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DEE1E960045005AB4DE /* MBMLDivisionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDivisionOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DEF1E960045005AB4DE /* MBMLMathGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathGroupingToken.h; sourceTree = "<group>"; };
+		3B3B9DF01E960045005AB4DE /* MBMLMathGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathGroupingToken.m; sourceTree = "<group>"; };
+		3B3B9DF11E960045005AB4DE /* MBMLMathOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DF21E960045005AB4DE /* MBMLMathOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DF31E960045005AB4DE /* MBMLModuloOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLModuloOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DF41E960045005AB4DE /* MBMLModuloOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLModuloOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DF51E960045005AB4DE /* MBMLMultiplicationOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMultiplicationOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DF61E960045005AB4DE /* MBMLMultiplicationOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMultiplicationOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DF71E960045005AB4DE /* MBMLSubtractionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLSubtractionOperatorToken.h; sourceTree = "<group>"; };
+		3B3B9DF81E960045005AB4DE /* MBMLSubtractionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLSubtractionOperatorToken.m; sourceTree = "<group>"; };
+		3B3B9DFB1E960045005AB4DE /* MBMLCollectionFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLCollectionFunctions.h; sourceTree = "<group>"; };
+		3B3B9DFC1E960045005AB4DE /* MBMLCollectionFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLCollectionFunctions.m; sourceTree = "<group>"; };
+		3B3B9DFD1E960045005AB4DE /* MBMLDataProcessingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDataProcessingFunctions.h; sourceTree = "<group>"; };
+		3B3B9DFE1E960045005AB4DE /* MBMLDataProcessingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDataProcessingFunctions.m; sourceTree = "<group>"; };
+		3B3B9DFF1E960045005AB4DE /* MBMLDateFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDateFunctions.h; sourceTree = "<group>"; };
+		3B3B9E001E960045005AB4DE /* MBMLDateFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDateFunctions.m; sourceTree = "<group>"; };
+		3B3B9E011E960045005AB4DE /* MBMLDebugFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDebugFunctions.h; sourceTree = "<group>"; };
+		3B3B9E021E960045005AB4DE /* MBMLDebugFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDebugFunctions.m; sourceTree = "<group>"; };
+		3B3B9E031E960045005AB4DE /* MBMLEncodingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEncodingFunctions.h; sourceTree = "<group>"; };
+		3B3B9E041E960045005AB4DE /* MBMLEncodingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEncodingFunctions.m; sourceTree = "<group>"; };
+		3B3B9E051E960045005AB4DE /* MBMLEnvironmentFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEnvironmentFunctions.h; sourceTree = "<group>"; };
+		3B3B9E061E960045005AB4DE /* MBMLEnvironmentFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEnvironmentFunctions.m; sourceTree = "<group>"; };
+		3B3B9E071E960045005AB4DE /* MBMLFileFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFileFunctions.h; sourceTree = "<group>"; };
+		3B3B9E081E960045005AB4DE /* MBMLFileFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFileFunctions.m; sourceTree = "<group>"; };
+		3B3B9E091E960045005AB4DE /* MBMLLogicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLogicFunctions.h; sourceTree = "<group>"; };
+		3B3B9E0A1E960045005AB4DE /* MBMLLogicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLogicFunctions.m; sourceTree = "<group>"; };
+		3B3B9E0B1E960045005AB4DE /* MBMLMathFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathFunctions.h; sourceTree = "<group>"; };
+		3B3B9E0C1E960045005AB4DE /* MBMLMathFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathFunctions.m; sourceTree = "<group>"; };
+		3B3B9E0D1E960045005AB4DE /* MBMLRegexFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLRegexFunctions.h; sourceTree = "<group>"; };
+		3B3B9E0E1E960045005AB4DE /* MBMLRegexFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLRegexFunctions.m; sourceTree = "<group>"; };
+		3B3B9E0F1E960045005AB4DE /* MBMLResourceFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLResourceFunctions.h; sourceTree = "<group>"; };
+		3B3B9E101E960045005AB4DE /* MBMLResourceFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLResourceFunctions.m; sourceTree = "<group>"; };
+		3B3B9E111E960045005AB4DE /* MBMLRuntimeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLRuntimeFunctions.h; sourceTree = "<group>"; };
+		3B3B9E121E960045005AB4DE /* MBMLRuntimeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLRuntimeFunctions.m; sourceTree = "<group>"; };
+		3B3B9E131E960045005AB4DE /* MBMLStringFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLStringFunctions.h; sourceTree = "<group>"; };
+		3B3B9E141E960045005AB4DE /* MBMLStringFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLStringFunctions.m; sourceTree = "<group>"; };
+		3B3B9E151E960045005AB4DE /* MBMLFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFunction.h; sourceTree = "<group>"; };
+		3B3B9E161E960045005AB4DE /* MBMLFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFunction.m; sourceTree = "<group>"; };
+		3B3B9E201E960045005AB4DE /* MBDataEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironment.h; sourceTree = "<group>"; };
+		3B3B9E221E960045005AB4DE /* MBDataEnvironmentConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironmentConstants.h; sourceTree = "<group>"; };
+		3B3B9E231E960045005AB4DE /* MBDataEnvironmentConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataEnvironmentConstants.m; sourceTree = "<group>"; };
+		3B3B9E241E960045005AB4DE /* MBDataEnvironmentModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironmentModule.h; sourceTree = "<group>"; };
+		3B3B9E251E960045005AB4DE /* MBDataEnvironmentModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataEnvironmentModule.m; sourceTree = "<group>"; };
+		3B3B9E271E960045005AB4DE /* MBPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPlatform.h; sourceTree = "<group>"; };
+		3B3B9E281E960045005AB4DE /* MBPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPlatform.m; sourceTree = "<group>"; };
+		3B3B9E2A1E960045005AB4DE /* MBStringConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBStringConversions.h; sourceTree = "<group>"; };
+		3B3B9E2B1E960045005AB4DE /* MBStringConversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBStringConversions.m; sourceTree = "<group>"; };
+		3B3B9E2C1E960045005AB4DE /* TypeCoercionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeCoercionSupport.h; sourceTree = "<group>"; };
+		3B3B9E2D1E960045005AB4DE /* TypeCoercionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeCoercionSupport.m; sourceTree = "<group>"; };
+		3B3B9E2F1E960045005AB4DE /* MBScopedVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBScopedVariables.h; sourceTree = "<group>"; };
+		3B3B9E301E960045005AB4DE /* MBScopedVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBScopedVariables.m; sourceTree = "<group>"; };
+		3B3B9E311E960045005AB4DE /* MBVariableDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableDeclaration.h; sourceTree = "<group>"; };
+		3B3B9E321E960045005AB4DE /* MBVariableDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableDeclaration.m; sourceTree = "<group>"; };
+		3B3B9E331E960045005AB4DE /* MBVariableSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableSpace.h; sourceTree = "<group>"; };
+		3B3B9E341E960045005AB4DE /* MBVariableSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableSpace.m; sourceTree = "<group>"; };
+		3B3B9EC71E960063005AB4DE /* MBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDevice.h; sourceTree = "<group>"; };
+		3B3B9EC81E960063005AB4DE /* MBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDevice.m; sourceTree = "<group>"; };
+		3B3B9ECA1E960063005AB4DE /* MBMLFontFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFontFunctions.h; sourceTree = "<group>"; };
+		3B3B9ECB1E960063005AB4DE /* MBMLFontFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFontFunctions.m; sourceTree = "<group>"; };
+		3B3B9ECC1E960063005AB4DE /* MBMLGeometryFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGeometryFunctions.h; sourceTree = "<group>"; };
+		3B3B9ECD1E960063005AB4DE /* MBMLGeometryFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGeometryFunctions.m; sourceTree = "<group>"; };
 		3B9059031DAECB5200B4EEC0 /* MBDataEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBDataEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B90590C1DAECB5200B4EEC0 /* MBDataEnvironmentUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBDataEnvironmentUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9059251DAECB9E00B4EEC0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -223,150 +367,6 @@
 		3B9059291DAECB9E00B4EEC0 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		3B90592B1DAECD9800B4EEC0 /* Info-Framework.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
 		3B90592C1DAECD9800B4EEC0 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
-		3BA5182E1E9533E0008BE58E /* MBAttributeValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAttributeValidator.h; sourceTree = "<group>"; };
-		3BA5182F1E9533E0008BE58E /* MBAttributeValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAttributeValidator.m; sourceTree = "<group>"; };
-		3BA518301E9533E0008BE58E /* MBConditionalDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBConditionalDeclaration.h; sourceTree = "<group>"; };
-		3BA518311E9533E0008BE58E /* MBConditionalDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBConditionalDeclaration.m; sourceTree = "<group>"; };
-		3BA518321E9533E0008BE58E /* MBDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataModel.h; sourceTree = "<group>"; };
-		3BA518331E9533E0008BE58E /* MBDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataModel.m; sourceTree = "<group>"; };
-		3BA518351E9533E0008BE58E /* MBEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironment.h; sourceTree = "<group>"; };
-		3BA518361E9533E0008BE58E /* MBEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironment.m; sourceTree = "<group>"; };
-		3BA518371E9533E0008BE58E /* MBEnvironmentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBEnvironmentLoader.h; sourceTree = "<group>"; };
-		3BA518381E9533E0008BE58E /* MBEnvironmentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBEnvironmentLoader.m; sourceTree = "<group>"; };
-		3BA5183A1E9533E0008BE58E /* MBEvents+DataLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBEvents+DataLoading.h"; sourceTree = "<group>"; };
-		3BA5183B1E9533E0008BE58E /* MBEvents+DataLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBEvents+DataLoading.m"; sourceTree = "<group>"; };
-		3BA5183D1E9533E0008BE58E /* MBExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpression.h; sourceTree = "<group>"; };
-		3BA5183E1E9533E0008BE58E /* MBExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpression.m; sourceTree = "<group>"; };
-		3BA5183F1E9533E0008BE58E /* MBExpressionCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionCache.h; sourceTree = "<group>"; };
-		3BA518401E9533E0008BE58E /* MBExpressionCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionCache.m; sourceTree = "<group>"; };
-		3BA518411E9533E0008BE58E /* MBExpressionError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionError.h; sourceTree = "<group>"; };
-		3BA518421E9533E0008BE58E /* MBExpressionError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionError.m; sourceTree = "<group>"; };
-		3BA518431E9533E0008BE58E /* MBExpressionExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionExtensions.h; sourceTree = "<group>"; };
-		3BA518441E9533E0008BE58E /* MBExpressionExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionExtensions.m; sourceTree = "<group>"; };
-		3BA518461E9533E0008BE58E /* MBExpression+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpression+Internal.h"; sourceTree = "<group>"; };
-		3BA518471E9533E0008BE58E /* MBExpressionCache+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBExpressionCache+Internal.h"; sourceTree = "<group>"; };
-		3BA518481E9533E0008BE58E /* MBExpressionGrammar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionGrammar.h; sourceTree = "<group>"; };
-		3BA518491E9533E0008BE58E /* MBExpressionGrammar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionGrammar.m; sourceTree = "<group>"; };
-		3BA5184A1E9533E0008BE58E /* MBExpressionTokenizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBExpressionTokenizer.h; sourceTree = "<group>"; };
-		3BA5184B1E9533E0008BE58E /* MBExpressionTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBExpressionTokenizer.m; sourceTree = "<group>"; };
-		3BA5184D1E9533E0008BE58E /* MBMLEscapeSequenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEscapeSequenceToken.h; sourceTree = "<group>"; };
-		3BA5184E1E9533E0008BE58E /* MBMLEscapeSequenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEscapeSequenceToken.m; sourceTree = "<group>"; };
-		3BA5184F1E9533E0008BE58E /* MBMLFunctionCallToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFunctionCallToken.h; sourceTree = "<group>"; };
-		3BA518501E9533E0008BE58E /* MBMLFunctionCallToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFunctionCallToken.m; sourceTree = "<group>"; };
-		3BA518511E9533E0008BE58E /* MBMLGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGroupingToken.h; sourceTree = "<group>"; };
-		3BA518521E9533E0008BE58E /* MBMLGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGroupingToken.m; sourceTree = "<group>"; };
-		3BA518531E9533E0008BE58E /* MBMLIgnorableWhitespaceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLIgnorableWhitespaceToken.h; sourceTree = "<group>"; };
-		3BA518541E9533E0008BE58E /* MBMLIgnorableWhitespaceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLIgnorableWhitespaceToken.m; sourceTree = "<group>"; };
-		3BA518551E9533E0008BE58E /* MBMLKeywordMatchingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLKeywordMatchingToken.h; sourceTree = "<group>"; };
-		3BA518561E9533E0008BE58E /* MBMLKeywordMatchingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLKeywordMatchingToken.m; sourceTree = "<group>"; };
-		3BA518571E9533E0008BE58E /* MBMLLiteralToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLiteralToken.h; sourceTree = "<group>"; };
-		3BA518581E9533E0008BE58E /* MBMLLiteralToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLiteralToken.m; sourceTree = "<group>"; };
-		3BA518591E9533E0008BE58E /* MBMLMathExpressionToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathExpressionToken.h; sourceTree = "<group>"; };
-		3BA5185A1E9533E0008BE58E /* MBMLMathExpressionToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathExpressionToken.m; sourceTree = "<group>"; };
-		3BA5185B1E9533E0008BE58E /* MBMLNumericLiteralToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLNumericLiteralToken.h; sourceTree = "<group>"; };
-		3BA5185C1E9533E0008BE58E /* MBMLNumericLiteralToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLNumericLiteralToken.m; sourceTree = "<group>"; };
-		3BA5185D1E9533E0008BE58E /* MBMLObjectReferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLObjectReferenceToken.h; sourceTree = "<group>"; };
-		3BA5185E1E9533E0008BE58E /* MBMLObjectReferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLObjectReferenceToken.m; sourceTree = "<group>"; };
-		3BA5185F1E9533E0008BE58E /* MBMLObjectSubreferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLObjectSubreferenceToken.h; sourceTree = "<group>"; };
-		3BA518601E9533E0008BE58E /* MBMLObjectSubreferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLObjectSubreferenceToken.m; sourceTree = "<group>"; };
-		3BA518611E9533E0008BE58E /* MBMLParameterDelimiterToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParameterDelimiterToken.h; sourceTree = "<group>"; };
-		3BA518621E9533E0008BE58E /* MBMLParameterDelimiterToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParameterDelimiterToken.m; sourceTree = "<group>"; };
-		3BA518631E9533E0008BE58E /* MBMLParameterGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParameterGroupingToken.h; sourceTree = "<group>"; };
-		3BA518641E9533E0008BE58E /* MBMLParameterGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParameterGroupingToken.m; sourceTree = "<group>"; };
-		3BA518651E9533E0008BE58E /* MBMLParseToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLParseToken.h; sourceTree = "<group>"; };
-		3BA518661E9533E0008BE58E /* MBMLParseToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLParseToken.m; sourceTree = "<group>"; };
-		3BA518671E9533E0008BE58E /* MBMLVariableReferenceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLVariableReferenceToken.h; sourceTree = "<group>"; };
-		3BA518681E9533E0008BE58E /* MBMLVariableReferenceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLVariableReferenceToken.m; sourceTree = "<group>"; };
-		3BA518691E9533E0008BE58E /* MBMLWhitespaceToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLWhitespaceToken.h; sourceTree = "<group>"; };
-		3BA5186A1E9533E0008BE58E /* MBMLWhitespaceToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLWhitespaceToken.m; sourceTree = "<group>"; };
-		3BA5186B1E9533E1008BE58E /* OperationTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTokens.h; sourceTree = "<group>"; };
-		3BA5186D1E9533E1008BE58E /* MBMLBooleanAndOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanAndOperatorToken.h; sourceTree = "<group>"; };
-		3BA5186E1E9533E1008BE58E /* MBMLBooleanAndOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanAndOperatorToken.m; sourceTree = "<group>"; };
-		3BA5186F1E9533E1008BE58E /* MBMLBooleanGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanGroupingToken.h; sourceTree = "<group>"; };
-		3BA518701E9533E1008BE58E /* MBMLBooleanGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanGroupingToken.m; sourceTree = "<group>"; };
-		3BA518711E9533E1008BE58E /* MBMLBooleanNegationToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanNegationToken.h; sourceTree = "<group>"; };
-		3BA518721E9533E1008BE58E /* MBMLBooleanNegationToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanNegationToken.m; sourceTree = "<group>"; };
-		3BA518731E9533E1008BE58E /* MBMLBooleanOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanOperatorToken.h; sourceTree = "<group>"; };
-		3BA518741E9533E1008BE58E /* MBMLBooleanOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanOperatorToken.m; sourceTree = "<group>"; };
-		3BA518751E9533E1008BE58E /* MBMLBooleanOrOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLBooleanOrOperatorToken.h; sourceTree = "<group>"; };
-		3BA518761E9533E1008BE58E /* MBMLBooleanOrOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLBooleanOrOperatorToken.m; sourceTree = "<group>"; };
-		3BA518771E9533E1008BE58E /* MBMLEqualityTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEqualityTestToken.h; sourceTree = "<group>"; };
-		3BA518781E9533E1008BE58E /* MBMLEqualityTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEqualityTestToken.m; sourceTree = "<group>"; };
-		3BA518791E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGreaterThanEqualsTestToken.h; sourceTree = "<group>"; };
-		3BA5187A1E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGreaterThanEqualsTestToken.m; sourceTree = "<group>"; };
-		3BA5187B1E9533E1008BE58E /* MBMLGreaterThanTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGreaterThanTestToken.h; sourceTree = "<group>"; };
-		3BA5187C1E9533E1008BE58E /* MBMLGreaterThanTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGreaterThanTestToken.m; sourceTree = "<group>"; };
-		3BA5187D1E9533E1008BE58E /* MBMLInequalityTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLInequalityTestToken.h; sourceTree = "<group>"; };
-		3BA5187E1E9533E1008BE58E /* MBMLInequalityTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLInequalityTestToken.m; sourceTree = "<group>"; };
-		3BA5187F1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLessThanEqualsTestToken.h; sourceTree = "<group>"; };
-		3BA518801E9533E1008BE58E /* MBMLLessThanEqualsTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLessThanEqualsTestToken.m; sourceTree = "<group>"; };
-		3BA518811E9533E1008BE58E /* MBMLLessThanTestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLessThanTestToken.h; sourceTree = "<group>"; };
-		3BA518821E9533E1008BE58E /* MBMLLessThanTestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLessThanTestToken.m; sourceTree = "<group>"; };
-		3BA518841E9533E1008BE58E /* MBMLAdditionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLAdditionOperatorToken.h; sourceTree = "<group>"; };
-		3BA518851E9533E1008BE58E /* MBMLAdditionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLAdditionOperatorToken.m; sourceTree = "<group>"; };
-		3BA518861E9533E1008BE58E /* MBMLDivisionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDivisionOperatorToken.h; sourceTree = "<group>"; };
-		3BA518871E9533E1008BE58E /* MBMLDivisionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDivisionOperatorToken.m; sourceTree = "<group>"; };
-		3BA518881E9533E1008BE58E /* MBMLMathGroupingToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathGroupingToken.h; sourceTree = "<group>"; };
-		3BA518891E9533E1008BE58E /* MBMLMathGroupingToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathGroupingToken.m; sourceTree = "<group>"; };
-		3BA5188A1E9533E1008BE58E /* MBMLMathOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathOperatorToken.h; sourceTree = "<group>"; };
-		3BA5188B1E9533E1008BE58E /* MBMLMathOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathOperatorToken.m; sourceTree = "<group>"; };
-		3BA5188C1E9533E1008BE58E /* MBMLModuloOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLModuloOperatorToken.h; sourceTree = "<group>"; };
-		3BA5188D1E9533E1008BE58E /* MBMLModuloOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLModuloOperatorToken.m; sourceTree = "<group>"; };
-		3BA5188E1E9533E1008BE58E /* MBMLMultiplicationOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMultiplicationOperatorToken.h; sourceTree = "<group>"; };
-		3BA5188F1E9533E1008BE58E /* MBMLMultiplicationOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMultiplicationOperatorToken.m; sourceTree = "<group>"; };
-		3BA518901E9533E1008BE58E /* MBMLSubtractionOperatorToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLSubtractionOperatorToken.h; sourceTree = "<group>"; };
-		3BA518911E9533E1008BE58E /* MBMLSubtractionOperatorToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLSubtractionOperatorToken.m; sourceTree = "<group>"; };
-		3BA518941E9533E1008BE58E /* MBMLCollectionFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLCollectionFunctions.h; sourceTree = "<group>"; };
-		3BA518951E9533E1008BE58E /* MBMLCollectionFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLCollectionFunctions.m; sourceTree = "<group>"; };
-		3BA518961E9533E1008BE58E /* MBMLDataProcessingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDataProcessingFunctions.h; sourceTree = "<group>"; };
-		3BA518971E9533E1008BE58E /* MBMLDataProcessingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDataProcessingFunctions.m; sourceTree = "<group>"; };
-		3BA518981E9533E1008BE58E /* MBMLDateFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDateFunctions.h; sourceTree = "<group>"; };
-		3BA518991E9533E1008BE58E /* MBMLDateFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDateFunctions.m; sourceTree = "<group>"; };
-		3BA5189A1E9533E1008BE58E /* MBMLDebugFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLDebugFunctions.h; sourceTree = "<group>"; };
-		3BA5189B1E9533E1008BE58E /* MBMLDebugFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLDebugFunctions.m; sourceTree = "<group>"; };
-		3BA5189C1E9533E1008BE58E /* MBMLEncodingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEncodingFunctions.h; sourceTree = "<group>"; };
-		3BA5189D1E9533E1008BE58E /* MBMLEncodingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEncodingFunctions.m; sourceTree = "<group>"; };
-		3BA5189E1E9533E1008BE58E /* MBMLEnvironmentFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLEnvironmentFunctions.h; sourceTree = "<group>"; };
-		3BA5189F1E9533E1008BE58E /* MBMLEnvironmentFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLEnvironmentFunctions.m; sourceTree = "<group>"; };
-		3BA518A01E9533E1008BE58E /* MBMLFileFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFileFunctions.h; sourceTree = "<group>"; };
-		3BA518A11E9533E1008BE58E /* MBMLFileFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFileFunctions.m; sourceTree = "<group>"; };
-		3BA518A21E9533E1008BE58E /* MBMLLogicFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLLogicFunctions.h; sourceTree = "<group>"; };
-		3BA518A31E9533E1008BE58E /* MBMLLogicFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLLogicFunctions.m; sourceTree = "<group>"; };
-		3BA518A41E9533E1008BE58E /* MBMLMathFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLMathFunctions.h; sourceTree = "<group>"; };
-		3BA518A51E9533E1008BE58E /* MBMLMathFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLMathFunctions.m; sourceTree = "<group>"; };
-		3BA518A61E9533E1008BE58E /* MBMLRegexFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLRegexFunctions.h; sourceTree = "<group>"; };
-		3BA518A71E9533E1008BE58E /* MBMLRegexFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLRegexFunctions.m; sourceTree = "<group>"; };
-		3BA518A81E9533E1008BE58E /* MBMLResourceFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLResourceFunctions.h; sourceTree = "<group>"; };
-		3BA518A91E9533E1008BE58E /* MBMLResourceFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLResourceFunctions.m; sourceTree = "<group>"; };
-		3BA518AA1E9533E1008BE58E /* MBMLRuntimeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLRuntimeFunctions.h; sourceTree = "<group>"; };
-		3BA518AB1E9533E1008BE58E /* MBMLRuntimeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLRuntimeFunctions.m; sourceTree = "<group>"; };
-		3BA518AC1E9533E1008BE58E /* MBMLStringFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLStringFunctions.h; sourceTree = "<group>"; };
-		3BA518AD1E9533E1008BE58E /* MBMLStringFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLStringFunctions.m; sourceTree = "<group>"; };
-		3BA518AE1E9533E1008BE58E /* MBMLFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFunction.h; sourceTree = "<group>"; };
-		3BA518AF1E9533E1008BE58E /* MBMLFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFunction.m; sourceTree = "<group>"; };
-		3BA518B21E9533E1008BE58E /* MBDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDevice.h; sourceTree = "<group>"; };
-		3BA518B31E9533E1008BE58E /* MBDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDevice.m; sourceTree = "<group>"; };
-		3BA518B51E9533E1008BE58E /* MBMLFontFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLFontFunctions.h; sourceTree = "<group>"; };
-		3BA518B61E9533E1008BE58E /* MBMLFontFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLFontFunctions.m; sourceTree = "<group>"; };
-		3BA518B71E9533E1008BE58E /* MBMLGeometryFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMLGeometryFunctions.h; sourceTree = "<group>"; };
-		3BA518B81E9533E1008BE58E /* MBMLGeometryFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMLGeometryFunctions.m; sourceTree = "<group>"; };
-		3BA518B91E9533E1008BE58E /* MBDataEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironment.h; sourceTree = "<group>"; };
-		3BA518BB1E9533E1008BE58E /* MBDataEnvironmentConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironmentConstants.h; sourceTree = "<group>"; };
-		3BA518BC1E9533E1008BE58E /* MBDataEnvironmentConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataEnvironmentConstants.m; sourceTree = "<group>"; };
-		3BA518BD1E9533E1008BE58E /* MBDataEnvironmentModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDataEnvironmentModule.h; sourceTree = "<group>"; };
-		3BA518BE1E9533E1008BE58E /* MBDataEnvironmentModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDataEnvironmentModule.m; sourceTree = "<group>"; };
-		3BA518C01E9533E1008BE58E /* MBPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBPlatform.h; sourceTree = "<group>"; };
-		3BA518C11E9533E1008BE58E /* MBPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBPlatform.m; sourceTree = "<group>"; };
-		3BA518C41E9533E1008BE58E /* MBStringConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBStringConversions.h; sourceTree = "<group>"; };
-		3BA518C51E9533E1008BE58E /* MBStringConversions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBStringConversions.m; sourceTree = "<group>"; };
-		3BA518C61E9533E1008BE58E /* TypeCoercionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeCoercionSupport.h; sourceTree = "<group>"; };
-		3BA518C71E9533E1008BE58E /* TypeCoercionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeCoercionSupport.m; sourceTree = "<group>"; };
-		3BA518C91E9533E1008BE58E /* MBScopedVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBScopedVariables.h; sourceTree = "<group>"; };
-		3BA518CA1E9533E1008BE58E /* MBScopedVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBScopedVariables.m; sourceTree = "<group>"; };
-		3BA518CB1E9533E1008BE58E /* MBVariableDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableDeclaration.h; sourceTree = "<group>"; };
-		3BA518CC1E9533E1008BE58E /* MBVariableDeclaration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableDeclaration.m; sourceTree = "<group>"; };
-		3BA518CD1E9533E1008BE58E /* MBVariableSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBVariableSpace.h; sourceTree = "<group>"; };
-		3BA518CE1E9533E1008BE58E /* MBVariableSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBVariableSpace.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,13 +417,300 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		3B3B9D931E960045005AB4DE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9E201E960045005AB4DE /* MBDataEnvironment.h */,
+				3B3B9D941E960045005AB4DE /* DataModel */,
+				3B3B9D9B1E960045005AB4DE /* Environment */,
+				3B3B9DA01E960045005AB4DE /* Events */,
+				3B3B9DA31E960045005AB4DE /* ExpressionEngine */,
+				3B3B9DF91E960045005AB4DE /* Functions */,
+				3B3B9E211E960045005AB4DE /* Module */,
+				3B3B9E261E960045005AB4DE /* Platform */,
+				3B3B9E291E960045005AB4DE /* TypeConversion */,
+				3B3B9EC51E960063005AB4DE /* UIKit */,
+				3B3B9E2E1E960045005AB4DE /* VariableSpace */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3B3B9D941E960045005AB4DE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9D951E960045005AB4DE /* MBAttributeValidator.h */,
+				3B3B9D961E960045005AB4DE /* MBAttributeValidator.m */,
+				3B3B9D971E960045005AB4DE /* MBConditionalDeclaration.h */,
+				3B3B9D981E960045005AB4DE /* MBConditionalDeclaration.m */,
+				3B3B9D991E960045005AB4DE /* MBDataModel.h */,
+				3B3B9D9A1E960045005AB4DE /* MBDataModel.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		3B3B9D9B1E960045005AB4DE /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9D9C1E960045005AB4DE /* MBEnvironment.h */,
+				3B3B9D9D1E960045005AB4DE /* MBEnvironment.m */,
+				3B3B9D9E1E960045005AB4DE /* MBEnvironmentLoader.h */,
+				3B3B9D9F1E960045005AB4DE /* MBEnvironmentLoader.m */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		3B3B9DA01E960045005AB4DE /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DA11E960045005AB4DE /* MBEvents+DataLoading.h */,
+				3B3B9DA21E960045005AB4DE /* MBEvents+DataLoading.m */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		3B3B9DA31E960045005AB4DE /* ExpressionEngine */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DA41E960045005AB4DE /* MBExpression.h */,
+				3B3B9DA51E960045005AB4DE /* MBExpression.m */,
+				3B3B9DA61E960045005AB4DE /* MBExpressionCache.h */,
+				3B3B9DA71E960045005AB4DE /* MBExpressionCache.m */,
+				3B3B9DA81E960045005AB4DE /* MBExpressionError.h */,
+				3B3B9DA91E960045005AB4DE /* MBExpressionError.m */,
+				3B3B9DAA1E960045005AB4DE /* MBExpressionExtensions.h */,
+				3B3B9DAB1E960045005AB4DE /* MBExpressionExtensions.m */,
+				3B3B9DAC1E960045005AB4DE /* Private */,
+			);
+			path = ExpressionEngine;
+			sourceTree = "<group>";
+		};
+		3B3B9DAC1E960045005AB4DE /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DAD1E960045005AB4DE /* MBExpression+Internal.h */,
+				3B3B9DAE1E960045005AB4DE /* MBExpressionCache+Internal.h */,
+				3B3B9DAF1E960045005AB4DE /* MBExpressionGrammar.h */,
+				3B3B9DB01E960045005AB4DE /* MBExpressionGrammar.m */,
+				3B3B9DB11E960045005AB4DE /* MBExpressionTokenizer.h */,
+				3B3B9DB21E960045005AB4DE /* MBExpressionTokenizer.m */,
+				3B3B9DB31E960045005AB4DE /* Tokens */,
+				3B3B9DD31E960045005AB4DE /* Tokens-Boolean */,
+				3B3B9DEA1E960045005AB4DE /* Tokens-Math */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		3B3B9DB31E960045005AB4DE /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DB41E960045005AB4DE /* MBMLEscapeSequenceToken.h */,
+				3B3B9DB51E960045005AB4DE /* MBMLEscapeSequenceToken.m */,
+				3B3B9DB61E960045005AB4DE /* MBMLFunctionCallToken.h */,
+				3B3B9DB71E960045005AB4DE /* MBMLFunctionCallToken.m */,
+				3B3B9DB81E960045005AB4DE /* MBMLGroupingToken.h */,
+				3B3B9DB91E960045005AB4DE /* MBMLGroupingToken.m */,
+				3B3B9DBA1E960045005AB4DE /* MBMLIgnorableWhitespaceToken.h */,
+				3B3B9DBB1E960045005AB4DE /* MBMLIgnorableWhitespaceToken.m */,
+				3B3B9DBC1E960045005AB4DE /* MBMLKeywordMatchingToken.h */,
+				3B3B9DBD1E960045005AB4DE /* MBMLKeywordMatchingToken.m */,
+				3B3B9DBE1E960045005AB4DE /* MBMLLiteralToken.h */,
+				3B3B9DBF1E960045005AB4DE /* MBMLLiteralToken.m */,
+				3B3B9DC01E960045005AB4DE /* MBMLMathExpressionToken.h */,
+				3B3B9DC11E960045005AB4DE /* MBMLMathExpressionToken.m */,
+				3B3B9DC21E960045005AB4DE /* MBMLNumericLiteralToken.h */,
+				3B3B9DC31E960045005AB4DE /* MBMLNumericLiteralToken.m */,
+				3B3B9DC41E960045005AB4DE /* MBMLObjectReferenceToken.h */,
+				3B3B9DC51E960045005AB4DE /* MBMLObjectReferenceToken.m */,
+				3B3B9DC61E960045005AB4DE /* MBMLObjectSubreferenceToken.h */,
+				3B3B9DC71E960045005AB4DE /* MBMLObjectSubreferenceToken.m */,
+				3B3B9DC81E960045005AB4DE /* MBMLParameterDelimiterToken.h */,
+				3B3B9DC91E960045005AB4DE /* MBMLParameterDelimiterToken.m */,
+				3B3B9DCA1E960045005AB4DE /* MBMLParameterGroupingToken.h */,
+				3B3B9DCB1E960045005AB4DE /* MBMLParameterGroupingToken.m */,
+				3B3B9DCC1E960045005AB4DE /* MBMLParseToken.h */,
+				3B3B9DCD1E960045005AB4DE /* MBMLParseToken.m */,
+				3B3B9DCE1E960045005AB4DE /* MBMLVariableReferenceToken.h */,
+				3B3B9DCF1E960045005AB4DE /* MBMLVariableReferenceToken.m */,
+				3B3B9DD01E960045005AB4DE /* MBMLWhitespaceToken.h */,
+				3B3B9DD11E960045005AB4DE /* MBMLWhitespaceToken.m */,
+				3B3B9DD21E960045005AB4DE /* OperationTokens.h */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		3B3B9DD31E960045005AB4DE /* Tokens-Boolean */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DD41E960045005AB4DE /* MBMLBooleanAndOperatorToken.h */,
+				3B3B9DD51E960045005AB4DE /* MBMLBooleanAndOperatorToken.m */,
+				3B3B9DD61E960045005AB4DE /* MBMLBooleanGroupingToken.h */,
+				3B3B9DD71E960045005AB4DE /* MBMLBooleanGroupingToken.m */,
+				3B3B9DD81E960045005AB4DE /* MBMLBooleanNegationToken.h */,
+				3B3B9DD91E960045005AB4DE /* MBMLBooleanNegationToken.m */,
+				3B3B9DDA1E960045005AB4DE /* MBMLBooleanOperatorToken.h */,
+				3B3B9DDB1E960045005AB4DE /* MBMLBooleanOperatorToken.m */,
+				3B3B9DDC1E960045005AB4DE /* MBMLBooleanOrOperatorToken.h */,
+				3B3B9DDD1E960045005AB4DE /* MBMLBooleanOrOperatorToken.m */,
+				3B3B9DDE1E960045005AB4DE /* MBMLEqualityTestToken.h */,
+				3B3B9DDF1E960045005AB4DE /* MBMLEqualityTestToken.m */,
+				3B3B9DE01E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.h */,
+				3B3B9DE11E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.m */,
+				3B3B9DE21E960045005AB4DE /* MBMLGreaterThanTestToken.h */,
+				3B3B9DE31E960045005AB4DE /* MBMLGreaterThanTestToken.m */,
+				3B3B9DE41E960045005AB4DE /* MBMLInequalityTestToken.h */,
+				3B3B9DE51E960045005AB4DE /* MBMLInequalityTestToken.m */,
+				3B3B9DE61E960045005AB4DE /* MBMLLessThanEqualsTestToken.h */,
+				3B3B9DE71E960045005AB4DE /* MBMLLessThanEqualsTestToken.m */,
+				3B3B9DE81E960045005AB4DE /* MBMLLessThanTestToken.h */,
+				3B3B9DE91E960045005AB4DE /* MBMLLessThanTestToken.m */,
+			);
+			path = "Tokens-Boolean";
+			sourceTree = "<group>";
+		};
+		3B3B9DEA1E960045005AB4DE /* Tokens-Math */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DEB1E960045005AB4DE /* MBMLAdditionOperatorToken.h */,
+				3B3B9DEC1E960045005AB4DE /* MBMLAdditionOperatorToken.m */,
+				3B3B9DED1E960045005AB4DE /* MBMLDivisionOperatorToken.h */,
+				3B3B9DEE1E960045005AB4DE /* MBMLDivisionOperatorToken.m */,
+				3B3B9DEF1E960045005AB4DE /* MBMLMathGroupingToken.h */,
+				3B3B9DF01E960045005AB4DE /* MBMLMathGroupingToken.m */,
+				3B3B9DF11E960045005AB4DE /* MBMLMathOperatorToken.h */,
+				3B3B9DF21E960045005AB4DE /* MBMLMathOperatorToken.m */,
+				3B3B9DF31E960045005AB4DE /* MBMLModuloOperatorToken.h */,
+				3B3B9DF41E960045005AB4DE /* MBMLModuloOperatorToken.m */,
+				3B3B9DF51E960045005AB4DE /* MBMLMultiplicationOperatorToken.h */,
+				3B3B9DF61E960045005AB4DE /* MBMLMultiplicationOperatorToken.m */,
+				3B3B9DF71E960045005AB4DE /* MBMLSubtractionOperatorToken.h */,
+				3B3B9DF81E960045005AB4DE /* MBMLSubtractionOperatorToken.m */,
+			);
+			path = "Tokens-Math";
+			sourceTree = "<group>";
+		};
+		3B3B9DF91E960045005AB4DE /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DFA1E960045005AB4DE /* Implementation */,
+				3B3B9E151E960045005AB4DE /* MBMLFunction.h */,
+				3B3B9E161E960045005AB4DE /* MBMLFunction.m */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		3B3B9DFA1E960045005AB4DE /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9DFB1E960045005AB4DE /* MBMLCollectionFunctions.h */,
+				3B3B9DFC1E960045005AB4DE /* MBMLCollectionFunctions.m */,
+				3B3B9DFD1E960045005AB4DE /* MBMLDataProcessingFunctions.h */,
+				3B3B9DFE1E960045005AB4DE /* MBMLDataProcessingFunctions.m */,
+				3B3B9DFF1E960045005AB4DE /* MBMLDateFunctions.h */,
+				3B3B9E001E960045005AB4DE /* MBMLDateFunctions.m */,
+				3B3B9E011E960045005AB4DE /* MBMLDebugFunctions.h */,
+				3B3B9E021E960045005AB4DE /* MBMLDebugFunctions.m */,
+				3B3B9E031E960045005AB4DE /* MBMLEncodingFunctions.h */,
+				3B3B9E041E960045005AB4DE /* MBMLEncodingFunctions.m */,
+				3B3B9E051E960045005AB4DE /* MBMLEnvironmentFunctions.h */,
+				3B3B9E061E960045005AB4DE /* MBMLEnvironmentFunctions.m */,
+				3B3B9E071E960045005AB4DE /* MBMLFileFunctions.h */,
+				3B3B9E081E960045005AB4DE /* MBMLFileFunctions.m */,
+				3B3B9E091E960045005AB4DE /* MBMLLogicFunctions.h */,
+				3B3B9E0A1E960045005AB4DE /* MBMLLogicFunctions.m */,
+				3B3B9E0B1E960045005AB4DE /* MBMLMathFunctions.h */,
+				3B3B9E0C1E960045005AB4DE /* MBMLMathFunctions.m */,
+				3B3B9E0D1E960045005AB4DE /* MBMLRegexFunctions.h */,
+				3B3B9E0E1E960045005AB4DE /* MBMLRegexFunctions.m */,
+				3B3B9E0F1E960045005AB4DE /* MBMLResourceFunctions.h */,
+				3B3B9E101E960045005AB4DE /* MBMLResourceFunctions.m */,
+				3B3B9E111E960045005AB4DE /* MBMLRuntimeFunctions.h */,
+				3B3B9E121E960045005AB4DE /* MBMLRuntimeFunctions.m */,
+				3B3B9E131E960045005AB4DE /* MBMLStringFunctions.h */,
+				3B3B9E141E960045005AB4DE /* MBMLStringFunctions.m */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		3B3B9E211E960045005AB4DE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9E221E960045005AB4DE /* MBDataEnvironmentConstants.h */,
+				3B3B9E231E960045005AB4DE /* MBDataEnvironmentConstants.m */,
+				3B3B9E241E960045005AB4DE /* MBDataEnvironmentModule.h */,
+				3B3B9E251E960045005AB4DE /* MBDataEnvironmentModule.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		3B3B9E261E960045005AB4DE /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9E271E960045005AB4DE /* MBPlatform.h */,
+				3B3B9E281E960045005AB4DE /* MBPlatform.m */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		3B3B9E291E960045005AB4DE /* TypeConversion */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9E2A1E960045005AB4DE /* MBStringConversions.h */,
+				3B3B9E2B1E960045005AB4DE /* MBStringConversions.m */,
+				3B3B9E2C1E960045005AB4DE /* TypeCoercionSupport.h */,
+				3B3B9E2D1E960045005AB4DE /* TypeCoercionSupport.m */,
+			);
+			path = TypeConversion;
+			sourceTree = "<group>";
+		};
+		3B3B9E2E1E960045005AB4DE /* VariableSpace */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9E2F1E960045005AB4DE /* MBScopedVariables.h */,
+				3B3B9E301E960045005AB4DE /* MBScopedVariables.m */,
+				3B3B9E311E960045005AB4DE /* MBVariableDeclaration.h */,
+				3B3B9E321E960045005AB4DE /* MBVariableDeclaration.m */,
+				3B3B9E331E960045005AB4DE /* MBVariableSpace.h */,
+				3B3B9E341E960045005AB4DE /* MBVariableSpace.m */,
+			);
+			path = VariableSpace;
+			sourceTree = "<group>";
+		};
+		3B3B9EC51E960063005AB4DE /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9EC61E960063005AB4DE /* Device */,
+				3B3B9EC91E960063005AB4DE /* Functions */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3B3B9EC61E960063005AB4DE /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9EC71E960063005AB4DE /* MBDevice.h */,
+				3B3B9EC81E960063005AB4DE /* MBDevice.m */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		3B3B9EC91E960063005AB4DE /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				3B3B9ECA1E960063005AB4DE /* MBMLFontFunctions.h */,
+				3B3B9ECB1E960063005AB4DE /* MBMLFontFunctions.m */,
+				3B3B9ECC1E960063005AB4DE /* MBMLGeometryFunctions.h */,
+				3B3B9ECD1E960063005AB4DE /* MBMLGeometryFunctions.m */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		3B9058F91DAECB5200B4EEC0 = {
 			isa = PBXGroup;
 			children = (
-				3BA5182C1E9533E0008BE58E /* Code */,
-				3B90591D1DAECB9E00B4EEC0 /* BuildControl */,
+				3B3B9D931E960045005AB4DE /* Sources */,
 				3B0847FD1E959EE500790F7B /* Resources */,
 				3B9059321DAECF7F00B4EEC0 /* Tests */,
+				3B90591D1DAECB9E00B4EEC0 /* BuildControl */,
 				3B9059041DAECB5200B4EEC0 /* Products */,
 				3B0847CA1E959C7400790F7B /* Frameworks */,
 			);
@@ -488,293 +775,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		3BA5182C1E9533E0008BE58E /* Code */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518B91E9533E1008BE58E /* MBDataEnvironment.h */,
-				3BA5182D1E9533E0008BE58E /* DataModel */,
-				3BA518341E9533E0008BE58E /* Environment */,
-				3BA518391E9533E0008BE58E /* Events */,
-				3BA5183C1E9533E0008BE58E /* ExpressionEngine */,
-				3BA518921E9533E1008BE58E /* Functions */,
-				3BA518B01E9533E1008BE58E /* iOS */,
-				3BA518BA1E9533E1008BE58E /* Module */,
-				3BA518BF1E9533E1008BE58E /* Platform */,
-				3BA518C31E9533E1008BE58E /* TypeConversion */,
-				3BA518C81E9533E1008BE58E /* VariableSpace */,
-			);
-			path = Code;
-			sourceTree = "<group>";
-		};
-		3BA5182D1E9533E0008BE58E /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				3BA5182E1E9533E0008BE58E /* MBAttributeValidator.h */,
-				3BA5182F1E9533E0008BE58E /* MBAttributeValidator.m */,
-				3BA518301E9533E0008BE58E /* MBConditionalDeclaration.h */,
-				3BA518311E9533E0008BE58E /* MBConditionalDeclaration.m */,
-				3BA518321E9533E0008BE58E /* MBDataModel.h */,
-				3BA518331E9533E0008BE58E /* MBDataModel.m */,
-			);
-			path = DataModel;
-			sourceTree = "<group>";
-		};
-		3BA518341E9533E0008BE58E /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518351E9533E0008BE58E /* MBEnvironment.h */,
-				3BA518361E9533E0008BE58E /* MBEnvironment.m */,
-				3BA518371E9533E0008BE58E /* MBEnvironmentLoader.h */,
-				3BA518381E9533E0008BE58E /* MBEnvironmentLoader.m */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		3BA518391E9533E0008BE58E /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				3BA5183A1E9533E0008BE58E /* MBEvents+DataLoading.h */,
-				3BA5183B1E9533E0008BE58E /* MBEvents+DataLoading.m */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		3BA5183C1E9533E0008BE58E /* ExpressionEngine */ = {
-			isa = PBXGroup;
-			children = (
-				3BA5183D1E9533E0008BE58E /* MBExpression.h */,
-				3BA5183E1E9533E0008BE58E /* MBExpression.m */,
-				3BA5183F1E9533E0008BE58E /* MBExpressionCache.h */,
-				3BA518401E9533E0008BE58E /* MBExpressionCache.m */,
-				3BA518411E9533E0008BE58E /* MBExpressionError.h */,
-				3BA518421E9533E0008BE58E /* MBExpressionError.m */,
-				3BA518431E9533E0008BE58E /* MBExpressionExtensions.h */,
-				3BA518441E9533E0008BE58E /* MBExpressionExtensions.m */,
-				3BA518451E9533E0008BE58E /* Private */,
-			);
-			path = ExpressionEngine;
-			sourceTree = "<group>";
-		};
-		3BA518451E9533E0008BE58E /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518461E9533E0008BE58E /* MBExpression+Internal.h */,
-				3BA518471E9533E0008BE58E /* MBExpressionCache+Internal.h */,
-				3BA518481E9533E0008BE58E /* MBExpressionGrammar.h */,
-				3BA518491E9533E0008BE58E /* MBExpressionGrammar.m */,
-				3BA5184A1E9533E0008BE58E /* MBExpressionTokenizer.h */,
-				3BA5184B1E9533E0008BE58E /* MBExpressionTokenizer.m */,
-				3BA5184C1E9533E0008BE58E /* Tokens */,
-				3BA5186C1E9533E1008BE58E /* Tokens-Boolean */,
-				3BA518831E9533E1008BE58E /* Tokens-Math */,
-			);
-			path = Private;
-			sourceTree = "<group>";
-		};
-		3BA5184C1E9533E0008BE58E /* Tokens */ = {
-			isa = PBXGroup;
-			children = (
-				3BA5184D1E9533E0008BE58E /* MBMLEscapeSequenceToken.h */,
-				3BA5184E1E9533E0008BE58E /* MBMLEscapeSequenceToken.m */,
-				3BA5184F1E9533E0008BE58E /* MBMLFunctionCallToken.h */,
-				3BA518501E9533E0008BE58E /* MBMLFunctionCallToken.m */,
-				3BA518511E9533E0008BE58E /* MBMLGroupingToken.h */,
-				3BA518521E9533E0008BE58E /* MBMLGroupingToken.m */,
-				3BA518531E9533E0008BE58E /* MBMLIgnorableWhitespaceToken.h */,
-				3BA518541E9533E0008BE58E /* MBMLIgnorableWhitespaceToken.m */,
-				3BA518551E9533E0008BE58E /* MBMLKeywordMatchingToken.h */,
-				3BA518561E9533E0008BE58E /* MBMLKeywordMatchingToken.m */,
-				3BA518571E9533E0008BE58E /* MBMLLiteralToken.h */,
-				3BA518581E9533E0008BE58E /* MBMLLiteralToken.m */,
-				3BA518591E9533E0008BE58E /* MBMLMathExpressionToken.h */,
-				3BA5185A1E9533E0008BE58E /* MBMLMathExpressionToken.m */,
-				3BA5185B1E9533E0008BE58E /* MBMLNumericLiteralToken.h */,
-				3BA5185C1E9533E0008BE58E /* MBMLNumericLiteralToken.m */,
-				3BA5185D1E9533E0008BE58E /* MBMLObjectReferenceToken.h */,
-				3BA5185E1E9533E0008BE58E /* MBMLObjectReferenceToken.m */,
-				3BA5185F1E9533E0008BE58E /* MBMLObjectSubreferenceToken.h */,
-				3BA518601E9533E0008BE58E /* MBMLObjectSubreferenceToken.m */,
-				3BA518611E9533E0008BE58E /* MBMLParameterDelimiterToken.h */,
-				3BA518621E9533E0008BE58E /* MBMLParameterDelimiterToken.m */,
-				3BA518631E9533E0008BE58E /* MBMLParameterGroupingToken.h */,
-				3BA518641E9533E0008BE58E /* MBMLParameterGroupingToken.m */,
-				3BA518651E9533E0008BE58E /* MBMLParseToken.h */,
-				3BA518661E9533E0008BE58E /* MBMLParseToken.m */,
-				3BA518671E9533E0008BE58E /* MBMLVariableReferenceToken.h */,
-				3BA518681E9533E0008BE58E /* MBMLVariableReferenceToken.m */,
-				3BA518691E9533E0008BE58E /* MBMLWhitespaceToken.h */,
-				3BA5186A1E9533E0008BE58E /* MBMLWhitespaceToken.m */,
-				3BA5186B1E9533E1008BE58E /* OperationTokens.h */,
-			);
-			path = Tokens;
-			sourceTree = "<group>";
-		};
-		3BA5186C1E9533E1008BE58E /* Tokens-Boolean */ = {
-			isa = PBXGroup;
-			children = (
-				3BA5186D1E9533E1008BE58E /* MBMLBooleanAndOperatorToken.h */,
-				3BA5186E1E9533E1008BE58E /* MBMLBooleanAndOperatorToken.m */,
-				3BA5186F1E9533E1008BE58E /* MBMLBooleanGroupingToken.h */,
-				3BA518701E9533E1008BE58E /* MBMLBooleanGroupingToken.m */,
-				3BA518711E9533E1008BE58E /* MBMLBooleanNegationToken.h */,
-				3BA518721E9533E1008BE58E /* MBMLBooleanNegationToken.m */,
-				3BA518731E9533E1008BE58E /* MBMLBooleanOperatorToken.h */,
-				3BA518741E9533E1008BE58E /* MBMLBooleanOperatorToken.m */,
-				3BA518751E9533E1008BE58E /* MBMLBooleanOrOperatorToken.h */,
-				3BA518761E9533E1008BE58E /* MBMLBooleanOrOperatorToken.m */,
-				3BA518771E9533E1008BE58E /* MBMLEqualityTestToken.h */,
-				3BA518781E9533E1008BE58E /* MBMLEqualityTestToken.m */,
-				3BA518791E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.h */,
-				3BA5187A1E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.m */,
-				3BA5187B1E9533E1008BE58E /* MBMLGreaterThanTestToken.h */,
-				3BA5187C1E9533E1008BE58E /* MBMLGreaterThanTestToken.m */,
-				3BA5187D1E9533E1008BE58E /* MBMLInequalityTestToken.h */,
-				3BA5187E1E9533E1008BE58E /* MBMLInequalityTestToken.m */,
-				3BA5187F1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.h */,
-				3BA518801E9533E1008BE58E /* MBMLLessThanEqualsTestToken.m */,
-				3BA518811E9533E1008BE58E /* MBMLLessThanTestToken.h */,
-				3BA518821E9533E1008BE58E /* MBMLLessThanTestToken.m */,
-			);
-			path = "Tokens-Boolean";
-			sourceTree = "<group>";
-		};
-		3BA518831E9533E1008BE58E /* Tokens-Math */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518841E9533E1008BE58E /* MBMLAdditionOperatorToken.h */,
-				3BA518851E9533E1008BE58E /* MBMLAdditionOperatorToken.m */,
-				3BA518861E9533E1008BE58E /* MBMLDivisionOperatorToken.h */,
-				3BA518871E9533E1008BE58E /* MBMLDivisionOperatorToken.m */,
-				3BA518881E9533E1008BE58E /* MBMLMathGroupingToken.h */,
-				3BA518891E9533E1008BE58E /* MBMLMathGroupingToken.m */,
-				3BA5188A1E9533E1008BE58E /* MBMLMathOperatorToken.h */,
-				3BA5188B1E9533E1008BE58E /* MBMLMathOperatorToken.m */,
-				3BA5188C1E9533E1008BE58E /* MBMLModuloOperatorToken.h */,
-				3BA5188D1E9533E1008BE58E /* MBMLModuloOperatorToken.m */,
-				3BA5188E1E9533E1008BE58E /* MBMLMultiplicationOperatorToken.h */,
-				3BA5188F1E9533E1008BE58E /* MBMLMultiplicationOperatorToken.m */,
-				3BA518901E9533E1008BE58E /* MBMLSubtractionOperatorToken.h */,
-				3BA518911E9533E1008BE58E /* MBMLSubtractionOperatorToken.m */,
-			);
-			path = "Tokens-Math";
-			sourceTree = "<group>";
-		};
-		3BA518921E9533E1008BE58E /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518931E9533E1008BE58E /* Implementation */,
-				3BA518AE1E9533E1008BE58E /* MBMLFunction.h */,
-				3BA518AF1E9533E1008BE58E /* MBMLFunction.m */,
-			);
-			path = Functions;
-			sourceTree = "<group>";
-		};
-		3BA518931E9533E1008BE58E /* Implementation */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518941E9533E1008BE58E /* MBMLCollectionFunctions.h */,
-				3BA518951E9533E1008BE58E /* MBMLCollectionFunctions.m */,
-				3BA518961E9533E1008BE58E /* MBMLDataProcessingFunctions.h */,
-				3BA518971E9533E1008BE58E /* MBMLDataProcessingFunctions.m */,
-				3BA518981E9533E1008BE58E /* MBMLDateFunctions.h */,
-				3BA518991E9533E1008BE58E /* MBMLDateFunctions.m */,
-				3BA5189A1E9533E1008BE58E /* MBMLDebugFunctions.h */,
-				3BA5189B1E9533E1008BE58E /* MBMLDebugFunctions.m */,
-				3BA5189C1E9533E1008BE58E /* MBMLEncodingFunctions.h */,
-				3BA5189D1E9533E1008BE58E /* MBMLEncodingFunctions.m */,
-				3BA5189E1E9533E1008BE58E /* MBMLEnvironmentFunctions.h */,
-				3BA5189F1E9533E1008BE58E /* MBMLEnvironmentFunctions.m */,
-				3BA518A01E9533E1008BE58E /* MBMLFileFunctions.h */,
-				3BA518A11E9533E1008BE58E /* MBMLFileFunctions.m */,
-				3BA518A21E9533E1008BE58E /* MBMLLogicFunctions.h */,
-				3BA518A31E9533E1008BE58E /* MBMLLogicFunctions.m */,
-				3BA518A41E9533E1008BE58E /* MBMLMathFunctions.h */,
-				3BA518A51E9533E1008BE58E /* MBMLMathFunctions.m */,
-				3BA518A61E9533E1008BE58E /* MBMLRegexFunctions.h */,
-				3BA518A71E9533E1008BE58E /* MBMLRegexFunctions.m */,
-				3BA518A81E9533E1008BE58E /* MBMLResourceFunctions.h */,
-				3BA518A91E9533E1008BE58E /* MBMLResourceFunctions.m */,
-				3BA518AA1E9533E1008BE58E /* MBMLRuntimeFunctions.h */,
-				3BA518AB1E9533E1008BE58E /* MBMLRuntimeFunctions.m */,
-				3BA518AC1E9533E1008BE58E /* MBMLStringFunctions.h */,
-				3BA518AD1E9533E1008BE58E /* MBMLStringFunctions.m */,
-			);
-			path = Implementation;
-			sourceTree = "<group>";
-		};
-		3BA518B01E9533E1008BE58E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518B11E9533E1008BE58E /* Device */,
-				3BA518B41E9533E1008BE58E /* Functions */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		3BA518B11E9533E1008BE58E /* Device */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518B21E9533E1008BE58E /* MBDevice.h */,
-				3BA518B31E9533E1008BE58E /* MBDevice.m */,
-			);
-			path = Device;
-			sourceTree = "<group>";
-		};
-		3BA518B41E9533E1008BE58E /* Functions */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518B51E9533E1008BE58E /* MBMLFontFunctions.h */,
-				3BA518B61E9533E1008BE58E /* MBMLFontFunctions.m */,
-				3BA518B71E9533E1008BE58E /* MBMLGeometryFunctions.h */,
-				3BA518B81E9533E1008BE58E /* MBMLGeometryFunctions.m */,
-			);
-			path = Functions;
-			sourceTree = "<group>";
-		};
-		3BA518BA1E9533E1008BE58E /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518BB1E9533E1008BE58E /* MBDataEnvironmentConstants.h */,
-				3BA518BC1E9533E1008BE58E /* MBDataEnvironmentConstants.m */,
-				3BA518BD1E9533E1008BE58E /* MBDataEnvironmentModule.h */,
-				3BA518BE1E9533E1008BE58E /* MBDataEnvironmentModule.m */,
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		3BA518BF1E9533E1008BE58E /* Platform */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518C01E9533E1008BE58E /* MBPlatform.h */,
-				3BA518C11E9533E1008BE58E /* MBPlatform.m */,
-			);
-			path = Platform;
-			sourceTree = "<group>";
-		};
-		3BA518C31E9533E1008BE58E /* TypeConversion */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518C41E9533E1008BE58E /* MBStringConversions.h */,
-				3BA518C51E9533E1008BE58E /* MBStringConversions.m */,
-				3BA518C61E9533E1008BE58E /* TypeCoercionSupport.h */,
-				3BA518C71E9533E1008BE58E /* TypeCoercionSupport.m */,
-			);
-			path = TypeConversion;
-			sourceTree = "<group>";
-		};
-		3BA518C81E9533E1008BE58E /* VariableSpace */ = {
-			isa = PBXGroup;
-			children = (
-				3BA518C91E9533E1008BE58E /* MBScopedVariables.h */,
-				3BA518CA1E9533E1008BE58E /* MBScopedVariables.m */,
-				3BA518CB1E9533E1008BE58E /* MBVariableDeclaration.h */,
-				3BA518CC1E9533E1008BE58E /* MBVariableDeclaration.m */,
-				3BA518CD1E9533E1008BE58E /* MBVariableSpace.h */,
-				3BA518CE1E9533E1008BE58E /* MBVariableSpace.m */,
-			);
-			path = VariableSpace;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -782,80 +782,80 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BA5193E1E9533E1008BE58E /* MBMLRegexFunctions.h in Headers */,
-				3BA519421E9533E1008BE58E /* MBMLRuntimeFunctions.h in Headers */,
-				3BA519561E9533E1008BE58E /* MBStringConversions.h in Headers */,
-				3BA519461E9533E1008BE58E /* MBMLFunction.h in Headers */,
-				3BA519441E9533E1008BE58E /* MBMLStringFunctions.h in Headers */,
-				3BA518DF1E9533E1008BE58E /* MBExpressionError.h in Headers */,
-				3BA519381E9533E1008BE58E /* MBMLFileFunctions.h in Headers */,
-				3BA519581E9533E1008BE58E /* TypeCoercionSupport.h in Headers */,
-				3BA5192C1E9533E1008BE58E /* MBMLCollectionFunctions.h in Headers */,
-				3BA518E11E9533E1008BE58E /* MBExpressionExtensions.h in Headers */,
-				3BA518D71E9533E1008BE58E /* MBEnvironmentLoader.h in Headers */,
-				3BA518D91E9533E1008BE58E /* MBEvents+DataLoading.h in Headers */,
-				3BA518DB1E9533E1008BE58E /* MBExpression.h in Headers */,
-				3BA519301E9533E1008BE58E /* MBMLDateFunctions.h in Headers */,
-				3BA5195C1E9533E1008BE58E /* MBVariableDeclaration.h in Headers */,
-				3BA519401E9533E1008BE58E /* MBMLResourceFunctions.h in Headers */,
-				3BA519341E9533E1008BE58E /* MBMLEncodingFunctions.h in Headers */,
-				3BA5194A1E9533E1008BE58E /* MBMLFontFunctions.h in Headers */,
-				3BA519531E9533E1008BE58E /* MBPlatform.h in Headers */,
-				3BA518D31E9533E1008BE58E /* MBDataModel.h in Headers */,
-				3BA5194E1E9533E1008BE58E /* MBDataEnvironment.h in Headers */,
-				3BA518DD1E9533E1008BE58E /* MBExpressionCache.h in Headers */,
-				3BA519511E9533E1008BE58E /* MBDataEnvironmentModule.h in Headers */,
-				3BA5192E1E9533E1008BE58E /* MBMLDataProcessingFunctions.h in Headers */,
-				3BA519361E9533E1008BE58E /* MBMLEnvironmentFunctions.h in Headers */,
-				3BA5194C1E9533E1008BE58E /* MBMLGeometryFunctions.h in Headers */,
-				3BA519481E9533E1008BE58E /* MBDevice.h in Headers */,
-				3BA5193C1E9533E1008BE58E /* MBMLMathFunctions.h in Headers */,
-				3BA518D51E9533E1008BE58E /* MBEnvironment.h in Headers */,
-				3BA5195E1E9533E1008BE58E /* MBVariableSpace.h in Headers */,
-				3BA5193A1E9533E1008BE58E /* MBMLLogicFunctions.h in Headers */,
-				3BA5194F1E9533E1008BE58E /* MBDataEnvironmentConstants.h in Headers */,
-				3BA519321E9533E1008BE58E /* MBMLDebugFunctions.h in Headers */,
-				3BA518CF1E9533E1008BE58E /* MBAttributeValidator.h in Headers */,
-				3BA518D11E9533E1008BE58E /* MBConditionalDeclaration.h in Headers */,
-				3BA5195A1E9533E1008BE58E /* MBScopedVariables.h in Headers */,
-				3BA518F91E9533E1008BE58E /* MBMLObjectReferenceToken.h in Headers */,
-				3BA518E91E9533E1008BE58E /* MBMLEscapeSequenceToken.h in Headers */,
-				3BA519261E9533E1008BE58E /* MBMLModuloOperatorToken.h in Headers */,
-				3BA518F71E9533E1008BE58E /* MBMLNumericLiteralToken.h in Headers */,
-				3BA518FB1E9533E1008BE58E /* MBMLObjectSubreferenceToken.h in Headers */,
-				3BA518EB1E9533E1008BE58E /* MBMLFunctionCallToken.h in Headers */,
-				3BA519101E9533E1008BE58E /* MBMLBooleanOrOperatorToken.h in Headers */,
-				3BA519201E9533E1008BE58E /* MBMLDivisionOperatorToken.h in Headers */,
-				3BA518FD1E9533E1008BE58E /* MBMLParameterDelimiterToken.h in Headers */,
-				3BA518FF1E9533E1008BE58E /* MBMLParameterGroupingToken.h in Headers */,
-				3BA519081E9533E1008BE58E /* MBMLBooleanAndOperatorToken.h in Headers */,
-				3BA519221E9533E1008BE58E /* MBMLMathGroupingToken.h in Headers */,
-				3BA519181E9533E1008BE58E /* MBMLInequalityTestToken.h in Headers */,
-				3BA518E31E9533E1008BE58E /* MBExpression+Internal.h in Headers */,
-				3BA518E41E9533E1008BE58E /* MBExpressionCache+Internal.h in Headers */,
-				3BA518E71E9533E1008BE58E /* MBExpressionTokenizer.h in Headers */,
-				3BA518F11E9533E1008BE58E /* MBMLKeywordMatchingToken.h in Headers */,
-				3BA5192A1E9533E1008BE58E /* MBMLSubtractionOperatorToken.h in Headers */,
-				3BA519011E9533E1008BE58E /* MBMLParseToken.h in Headers */,
-				3BA519161E9533E1008BE58E /* MBMLGreaterThanTestToken.h in Headers */,
-				3BA518F51E9533E1008BE58E /* MBMLMathExpressionToken.h in Headers */,
-				3BA519241E9533E1008BE58E /* MBMLMathOperatorToken.h in Headers */,
-				3BA5190E1E9533E1008BE58E /* MBMLBooleanOperatorToken.h in Headers */,
-				3BA519071E9533E1008BE58E /* OperationTokens.h in Headers */,
-				3BA519121E9533E1008BE58E /* MBMLEqualityTestToken.h in Headers */,
-				3BA5191E1E9533E1008BE58E /* MBMLAdditionOperatorToken.h in Headers */,
-				3BA518ED1E9533E1008BE58E /* MBMLGroupingToken.h in Headers */,
-				3BA518F31E9533E1008BE58E /* MBMLLiteralToken.h in Headers */,
-				3BA518E51E9533E1008BE58E /* MBExpressionGrammar.h in Headers */,
-				3BA519141E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.h in Headers */,
-				3BA5190C1E9533E1008BE58E /* MBMLBooleanNegationToken.h in Headers */,
-				3BA5190A1E9533E1008BE58E /* MBMLBooleanGroupingToken.h in Headers */,
-				3BA5191A1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.h in Headers */,
-				3BA519281E9533E1008BE58E /* MBMLMultiplicationOperatorToken.h in Headers */,
-				3BA519031E9533E1008BE58E /* MBMLVariableReferenceToken.h in Headers */,
-				3BA519051E9533E1008BE58E /* MBMLWhitespaceToken.h in Headers */,
-				3BA518EF1E9533E1008BE58E /* MBMLIgnorableWhitespaceToken.h in Headers */,
-				3BA5191C1E9533E1008BE58E /* MBMLLessThanTestToken.h in Headers */,
+				3B3B9EA41E960045005AB4DE /* MBMLRegexFunctions.h in Headers */,
+				3B3B9EA81E960045005AB4DE /* MBMLRuntimeFunctions.h in Headers */,
+				3B3B9EBB1E960045005AB4DE /* MBStringConversions.h in Headers */,
+				3B3B9EAC1E960045005AB4DE /* MBMLFunction.h in Headers */,
+				3B3B9EAA1E960045005AB4DE /* MBMLStringFunctions.h in Headers */,
+				3B3B9E451E960045005AB4DE /* MBExpressionError.h in Headers */,
+				3B3B9E9E1E960045005AB4DE /* MBMLFileFunctions.h in Headers */,
+				3B3B9E471E960045005AB4DE /* MBExpressionExtensions.h in Headers */,
+				3B3B9E3D1E960045005AB4DE /* MBEnvironmentLoader.h in Headers */,
+				3B3B9E3F1E960045005AB4DE /* MBEvents+DataLoading.h in Headers */,
+				3B3B9E411E960045005AB4DE /* MBExpression.h in Headers */,
+				3B3B9EBD1E960045005AB4DE /* TypeCoercionSupport.h in Headers */,
+				3B3B9E921E960045005AB4DE /* MBMLCollectionFunctions.h in Headers */,
+				3B3B9EB91E960045005AB4DE /* MBPlatform.h in Headers */,
+				3B3B9E391E960045005AB4DE /* MBDataModel.h in Headers */,
+				3B3B9EB41E960045005AB4DE /* MBDataEnvironment.h in Headers */,
+				3B3B9E431E960045005AB4DE /* MBExpressionCache.h in Headers */,
+				3B3B9EB71E960045005AB4DE /* MBDataEnvironmentModule.h in Headers */,
+				3B3B9E941E960045005AB4DE /* MBMLDataProcessingFunctions.h in Headers */,
+				3B3B9E9C1E960045005AB4DE /* MBMLEnvironmentFunctions.h in Headers */,
+				3B3B9EA21E960045005AB4DE /* MBMLMathFunctions.h in Headers */,
+				3B3B9E3B1E960045005AB4DE /* MBEnvironment.h in Headers */,
+				3B3B9EC31E960045005AB4DE /* MBVariableSpace.h in Headers */,
+				3B3B9EA01E960045005AB4DE /* MBMLLogicFunctions.h in Headers */,
+				3B3B9EB51E960045005AB4DE /* MBDataEnvironmentConstants.h in Headers */,
+				3B3B9ED21E960063005AB4DE /* MBMLGeometryFunctions.h in Headers */,
+				3B3B9E981E960045005AB4DE /* MBMLDebugFunctions.h in Headers */,
+				3B3B9E351E960045005AB4DE /* MBAttributeValidator.h in Headers */,
+				3B3B9E371E960045005AB4DE /* MBConditionalDeclaration.h in Headers */,
+				3B3B9EBF1E960045005AB4DE /* MBScopedVariables.h in Headers */,
+				3B3B9E961E960045005AB4DE /* MBMLDateFunctions.h in Headers */,
+				3B3B9EC11E960045005AB4DE /* MBVariableDeclaration.h in Headers */,
+				3B3B9ED01E960063005AB4DE /* MBMLFontFunctions.h in Headers */,
+				3B3B9EA61E960045005AB4DE /* MBMLResourceFunctions.h in Headers */,
+				3B3B9E9A1E960045005AB4DE /* MBMLEncodingFunctions.h in Headers */,
+				3B3B9ECE1E960063005AB4DE /* MBDevice.h in Headers */,
+				3B3B9E781E960045005AB4DE /* MBMLEqualityTestToken.h in Headers */,
+				3B3B9E841E960045005AB4DE /* MBMLAdditionOperatorToken.h in Headers */,
+				3B3B9E531E960045005AB4DE /* MBMLGroupingToken.h in Headers */,
+				3B3B9E591E960045005AB4DE /* MBMLLiteralToken.h in Headers */,
+				3B3B9E4B1E960045005AB4DE /* MBExpressionGrammar.h in Headers */,
+				3B3B9E7A1E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.h in Headers */,
+				3B3B9E721E960045005AB4DE /* MBMLBooleanNegationToken.h in Headers */,
+				3B3B9E701E960045005AB4DE /* MBMLBooleanGroupingToken.h in Headers */,
+				3B3B9E821E960045005AB4DE /* MBMLLessThanTestToken.h in Headers */,
+				3B3B9E801E960045005AB4DE /* MBMLLessThanEqualsTestToken.h in Headers */,
+				3B3B9E8E1E960045005AB4DE /* MBMLMultiplicationOperatorToken.h in Headers */,
+				3B3B9E691E960045005AB4DE /* MBMLVariableReferenceToken.h in Headers */,
+				3B3B9E6B1E960045005AB4DE /* MBMLWhitespaceToken.h in Headers */,
+				3B3B9E551E960045005AB4DE /* MBMLIgnorableWhitespaceToken.h in Headers */,
+				3B3B9E5F1E960045005AB4DE /* MBMLObjectReferenceToken.h in Headers */,
+				3B3B9E4F1E960045005AB4DE /* MBMLEscapeSequenceToken.h in Headers */,
+				3B3B9E8C1E960045005AB4DE /* MBMLModuloOperatorToken.h in Headers */,
+				3B3B9E5D1E960045005AB4DE /* MBMLNumericLiteralToken.h in Headers */,
+				3B3B9E611E960045005AB4DE /* MBMLObjectSubreferenceToken.h in Headers */,
+				3B3B9E511E960045005AB4DE /* MBMLFunctionCallToken.h in Headers */,
+				3B3B9E761E960045005AB4DE /* MBMLBooleanOrOperatorToken.h in Headers */,
+				3B3B9E861E960045005AB4DE /* MBMLDivisionOperatorToken.h in Headers */,
+				3B3B9E631E960045005AB4DE /* MBMLParameterDelimiterToken.h in Headers */,
+				3B3B9E651E960045005AB4DE /* MBMLParameterGroupingToken.h in Headers */,
+				3B3B9E6E1E960045005AB4DE /* MBMLBooleanAndOperatorToken.h in Headers */,
+				3B3B9E881E960045005AB4DE /* MBMLMathGroupingToken.h in Headers */,
+				3B3B9E7E1E960045005AB4DE /* MBMLInequalityTestToken.h in Headers */,
+				3B3B9E491E960045005AB4DE /* MBExpression+Internal.h in Headers */,
+				3B3B9E4A1E960045005AB4DE /* MBExpressionCache+Internal.h in Headers */,
+				3B3B9E4D1E960045005AB4DE /* MBExpressionTokenizer.h in Headers */,
+				3B3B9E571E960045005AB4DE /* MBMLKeywordMatchingToken.h in Headers */,
+				3B3B9E901E960045005AB4DE /* MBMLSubtractionOperatorToken.h in Headers */,
+				3B3B9E671E960045005AB4DE /* MBMLParseToken.h in Headers */,
+				3B3B9E7C1E960045005AB4DE /* MBMLGreaterThanTestToken.h in Headers */,
+				3B3B9E5B1E960045005AB4DE /* MBMLMathExpressionToken.h in Headers */,
+				3B3B9E8A1E960045005AB4DE /* MBMLMathOperatorToken.h in Headers */,
+				3B3B9E741E960045005AB4DE /* MBMLBooleanOperatorToken.h in Headers */,
+				3B3B9E6D1E960045005AB4DE /* OperationTokens.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,76 +964,76 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BA519331E9533E1008BE58E /* MBMLDebugFunctions.m in Sources */,
-				3BA518E61E9533E1008BE58E /* MBExpressionGrammar.m in Sources */,
-				3BA5191D1E9533E1008BE58E /* MBMLLessThanTestToken.m in Sources */,
-				3BA518D81E9533E1008BE58E /* MBEnvironmentLoader.m in Sources */,
-				3BA519541E9533E1008BE58E /* MBPlatform.m in Sources */,
-				3BA519491E9533E1008BE58E /* MBDevice.m in Sources */,
-				3BA518FA1E9533E1008BE58E /* MBMLObjectReferenceToken.m in Sources */,
-				3BA518F01E9533E1008BE58E /* MBMLIgnorableWhitespaceToken.m in Sources */,
-				3BA519001E9533E1008BE58E /* MBMLParameterGroupingToken.m in Sources */,
-				3BA518DE1E9533E1008BE58E /* MBExpressionCache.m in Sources */,
-				3BA518EE1E9533E1008BE58E /* MBMLGroupingToken.m in Sources */,
-				3BA519271E9533E1008BE58E /* MBMLModuloOperatorToken.m in Sources */,
-				3BA5192D1E9533E1008BE58E /* MBMLCollectionFunctions.m in Sources */,
-				3BA519211E9533E1008BE58E /* MBMLDivisionOperatorToken.m in Sources */,
-				3BA5194D1E9533E1008BE58E /* MBMLGeometryFunctions.m in Sources */,
-				3BA5191F1E9533E1008BE58E /* MBMLAdditionOperatorToken.m in Sources */,
-				3BA519061E9533E1008BE58E /* MBMLWhitespaceToken.m in Sources */,
-				3BA518F41E9533E1008BE58E /* MBMLLiteralToken.m in Sources */,
-				3BA518D41E9533E1008BE58E /* MBDataModel.m in Sources */,
-				3BA518F61E9533E1008BE58E /* MBMLMathExpressionToken.m in Sources */,
-				3BA5190D1E9533E1008BE58E /* MBMLBooleanNegationToken.m in Sources */,
-				3BA519171E9533E1008BE58E /* MBMLGreaterThanTestToken.m in Sources */,
-				3BA519151E9533E1008BE58E /* MBMLGreaterThanEqualsTestToken.m in Sources */,
-				3BA5195D1E9533E1008BE58E /* MBVariableDeclaration.m in Sources */,
-				3BA5192F1E9533E1008BE58E /* MBMLDataProcessingFunctions.m in Sources */,
-				3BA518E81E9533E1008BE58E /* MBExpressionTokenizer.m in Sources */,
-				3BA519111E9533E1008BE58E /* MBMLBooleanOrOperatorToken.m in Sources */,
-				3BA518DA1E9533E1008BE58E /* MBEvents+DataLoading.m in Sources */,
-				3BA518FC1E9533E1008BE58E /* MBMLObjectSubreferenceToken.m in Sources */,
-				3BA518D21E9533E1008BE58E /* MBConditionalDeclaration.m in Sources */,
-				3BA519351E9533E1008BE58E /* MBMLEncodingFunctions.m in Sources */,
-				3BA519471E9533E1008BE58E /* MBMLFunction.m in Sources */,
-				3BA518EA1E9533E1008BE58E /* MBMLEscapeSequenceToken.m in Sources */,
-				3BA519251E9533E1008BE58E /* MBMLMathOperatorToken.m in Sources */,
-				3BA519571E9533E1008BE58E /* MBStringConversions.m in Sources */,
-				3BA518D61E9533E1008BE58E /* MBEnvironment.m in Sources */,
-				3BA518E21E9533E1008BE58E /* MBExpressionExtensions.m in Sources */,
-				3BA5194B1E9533E1008BE58E /* MBMLFontFunctions.m in Sources */,
-				3BA518E01E9533E1008BE58E /* MBExpressionError.m in Sources */,
-				3BA519231E9533E1008BE58E /* MBMLMathGroupingToken.m in Sources */,
-				3BA518EC1E9533E1008BE58E /* MBMLFunctionCallToken.m in Sources */,
-				3BA5195F1E9533E1008BE58E /* MBVariableSpace.m in Sources */,
-				3BA519041E9533E1008BE58E /* MBMLVariableReferenceToken.m in Sources */,
-				3BA518F21E9533E1008BE58E /* MBMLKeywordMatchingToken.m in Sources */,
-				3BA518FE1E9533E1008BE58E /* MBMLParameterDelimiterToken.m in Sources */,
-				3BA5190B1E9533E1008BE58E /* MBMLBooleanGroupingToken.m in Sources */,
-				3BA5193B1E9533E1008BE58E /* MBMLLogicFunctions.m in Sources */,
-				3BA518F81E9533E1008BE58E /* MBMLNumericLiteralToken.m in Sources */,
-				3BA519131E9533E1008BE58E /* MBMLEqualityTestToken.m in Sources */,
-				3BA519191E9533E1008BE58E /* MBMLInequalityTestToken.m in Sources */,
-				3BA519291E9533E1008BE58E /* MBMLMultiplicationOperatorToken.m in Sources */,
-				3BA5195B1E9533E1008BE58E /* MBScopedVariables.m in Sources */,
-				3BA519501E9533E1008BE58E /* MBDataEnvironmentConstants.m in Sources */,
-				3BA519411E9533E1008BE58E /* MBMLResourceFunctions.m in Sources */,
-				3BA5190F1E9533E1008BE58E /* MBMLBooleanOperatorToken.m in Sources */,
-				3BA519091E9533E1008BE58E /* MBMLBooleanAndOperatorToken.m in Sources */,
-				3BA518D01E9533E1008BE58E /* MBAttributeValidator.m in Sources */,
-				3BA518DC1E9533E1008BE58E /* MBExpression.m in Sources */,
-				3BA519021E9533E1008BE58E /* MBMLParseToken.m in Sources */,
-				3BA519311E9533E1008BE58E /* MBMLDateFunctions.m in Sources */,
-				3BA5193F1E9533E1008BE58E /* MBMLRegexFunctions.m in Sources */,
-				3BA519521E9533E1008BE58E /* MBDataEnvironmentModule.m in Sources */,
-				3BA5193D1E9533E1008BE58E /* MBMLMathFunctions.m in Sources */,
-				3BA519371E9533E1008BE58E /* MBMLEnvironmentFunctions.m in Sources */,
-				3BA519431E9533E1008BE58E /* MBMLRuntimeFunctions.m in Sources */,
-				3BA5192B1E9533E1008BE58E /* MBMLSubtractionOperatorToken.m in Sources */,
-				3BA5191B1E9533E1008BE58E /* MBMLLessThanEqualsTestToken.m in Sources */,
-				3BA519591E9533E1008BE58E /* TypeCoercionSupport.m in Sources */,
-				3BA519451E9533E1008BE58E /* MBMLStringFunctions.m in Sources */,
-				3BA519391E9533E1008BE58E /* MBMLFileFunctions.m in Sources */,
+				3B3B9ED11E960063005AB4DE /* MBMLFontFunctions.m in Sources */,
+				3B3B9E991E960045005AB4DE /* MBMLDebugFunctions.m in Sources */,
+				3B3B9E4C1E960045005AB4DE /* MBExpressionGrammar.m in Sources */,
+				3B3B9E831E960045005AB4DE /* MBMLLessThanTestToken.m in Sources */,
+				3B3B9E3E1E960045005AB4DE /* MBEnvironmentLoader.m in Sources */,
+				3B3B9EBA1E960045005AB4DE /* MBPlatform.m in Sources */,
+				3B3B9E601E960045005AB4DE /* MBMLObjectReferenceToken.m in Sources */,
+				3B3B9E561E960045005AB4DE /* MBMLIgnorableWhitespaceToken.m in Sources */,
+				3B3B9E661E960045005AB4DE /* MBMLParameterGroupingToken.m in Sources */,
+				3B3B9E441E960045005AB4DE /* MBExpressionCache.m in Sources */,
+				3B3B9E541E960045005AB4DE /* MBMLGroupingToken.m in Sources */,
+				3B3B9E8D1E960045005AB4DE /* MBMLModuloOperatorToken.m in Sources */,
+				3B3B9E931E960045005AB4DE /* MBMLCollectionFunctions.m in Sources */,
+				3B3B9E871E960045005AB4DE /* MBMLDivisionOperatorToken.m in Sources */,
+				3B3B9EBE1E960045005AB4DE /* TypeCoercionSupport.m in Sources */,
+				3B3B9EBC1E960045005AB4DE /* MBStringConversions.m in Sources */,
+				3B3B9E851E960045005AB4DE /* MBMLAdditionOperatorToken.m in Sources */,
+				3B3B9ED31E960063005AB4DE /* MBMLGeometryFunctions.m in Sources */,
+				3B3B9E6C1E960045005AB4DE /* MBMLWhitespaceToken.m in Sources */,
+				3B3B9E5A1E960045005AB4DE /* MBMLLiteralToken.m in Sources */,
+				3B3B9E3A1E960045005AB4DE /* MBDataModel.m in Sources */,
+				3B3B9E5C1E960045005AB4DE /* MBMLMathExpressionToken.m in Sources */,
+				3B3B9E731E960045005AB4DE /* MBMLBooleanNegationToken.m in Sources */,
+				3B3B9E7D1E960045005AB4DE /* MBMLGreaterThanTestToken.m in Sources */,
+				3B3B9EC01E960045005AB4DE /* MBScopedVariables.m in Sources */,
+				3B3B9E7B1E960045005AB4DE /* MBMLGreaterThanEqualsTestToken.m in Sources */,
+				3B3B9E951E960045005AB4DE /* MBMLDataProcessingFunctions.m in Sources */,
+				3B3B9E4E1E960045005AB4DE /* MBExpressionTokenizer.m in Sources */,
+				3B3B9E771E960045005AB4DE /* MBMLBooleanOrOperatorToken.m in Sources */,
+				3B3B9E401E960045005AB4DE /* MBEvents+DataLoading.m in Sources */,
+				3B3B9EC21E960045005AB4DE /* MBVariableDeclaration.m in Sources */,
+				3B3B9E621E960045005AB4DE /* MBMLObjectSubreferenceToken.m in Sources */,
+				3B3B9E381E960045005AB4DE /* MBConditionalDeclaration.m in Sources */,
+				3B3B9E9B1E960045005AB4DE /* MBMLEncodingFunctions.m in Sources */,
+				3B3B9EAD1E960045005AB4DE /* MBMLFunction.m in Sources */,
+				3B3B9E501E960045005AB4DE /* MBMLEscapeSequenceToken.m in Sources */,
+				3B3B9E8B1E960045005AB4DE /* MBMLMathOperatorToken.m in Sources */,
+				3B3B9E3C1E960045005AB4DE /* MBEnvironment.m in Sources */,
+				3B3B9ECF1E960063005AB4DE /* MBDevice.m in Sources */,
+				3B3B9E481E960045005AB4DE /* MBExpressionExtensions.m in Sources */,
+				3B3B9E461E960045005AB4DE /* MBExpressionError.m in Sources */,
+				3B3B9E891E960045005AB4DE /* MBMLMathGroupingToken.m in Sources */,
+				3B3B9E521E960045005AB4DE /* MBMLFunctionCallToken.m in Sources */,
+				3B3B9EC41E960045005AB4DE /* MBVariableSpace.m in Sources */,
+				3B3B9E6A1E960045005AB4DE /* MBMLVariableReferenceToken.m in Sources */,
+				3B3B9E581E960045005AB4DE /* MBMLKeywordMatchingToken.m in Sources */,
+				3B3B9E641E960045005AB4DE /* MBMLParameterDelimiterToken.m in Sources */,
+				3B3B9E711E960045005AB4DE /* MBMLBooleanGroupingToken.m in Sources */,
+				3B3B9EA11E960045005AB4DE /* MBMLLogicFunctions.m in Sources */,
+				3B3B9E5E1E960045005AB4DE /* MBMLNumericLiteralToken.m in Sources */,
+				3B3B9E791E960045005AB4DE /* MBMLEqualityTestToken.m in Sources */,
+				3B3B9E7F1E960045005AB4DE /* MBMLInequalityTestToken.m in Sources */,
+				3B3B9E8F1E960045005AB4DE /* MBMLMultiplicationOperatorToken.m in Sources */,
+				3B3B9EB61E960045005AB4DE /* MBDataEnvironmentConstants.m in Sources */,
+				3B3B9EA71E960045005AB4DE /* MBMLResourceFunctions.m in Sources */,
+				3B3B9E751E960045005AB4DE /* MBMLBooleanOperatorToken.m in Sources */,
+				3B3B9E6F1E960045005AB4DE /* MBMLBooleanAndOperatorToken.m in Sources */,
+				3B3B9E361E960045005AB4DE /* MBAttributeValidator.m in Sources */,
+				3B3B9E421E960045005AB4DE /* MBExpression.m in Sources */,
+				3B3B9E681E960045005AB4DE /* MBMLParseToken.m in Sources */,
+				3B3B9E971E960045005AB4DE /* MBMLDateFunctions.m in Sources */,
+				3B3B9EA51E960045005AB4DE /* MBMLRegexFunctions.m in Sources */,
+				3B3B9EB81E960045005AB4DE /* MBDataEnvironmentModule.m in Sources */,
+				3B3B9EA31E960045005AB4DE /* MBMLMathFunctions.m in Sources */,
+				3B3B9E9D1E960045005AB4DE /* MBMLEnvironmentFunctions.m in Sources */,
+				3B3B9EA91E960045005AB4DE /* MBMLRuntimeFunctions.m in Sources */,
+				3B3B9E911E960045005AB4DE /* MBMLSubtractionOperatorToken.m in Sources */,
+				3B3B9E811E960045005AB4DE /* MBMLLessThanEqualsTestToken.m in Sources */,
+				3B3B9EAB1E960045005AB4DE /* MBMLStringFunctions.m in Sources */,
+				3B3B9E9F1E960045005AB4DE /* MBMLFileFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
