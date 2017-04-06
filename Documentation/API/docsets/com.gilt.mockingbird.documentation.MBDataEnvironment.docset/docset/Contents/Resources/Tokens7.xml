@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBDynamicVariableDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBDynamicVariableDeclaration</TokenIdentifier>
+			<Abstract type="html">An MBVariableDeclaration that represents a dynamic variable.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDynamicVariableDeclaration/setExpression:</TokenIdentifier>
+			<Abstract type="html">This property returns the Mockingbird expression that will provide the
+    variable&apos;s value when it is requested. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDynamicVariableDeclaration/expression</TokenIdentifier>
+			<Abstract type="html">This property returns the Mockingbird expression that will provide the
+    variable&apos;s value when it is requested. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDynamicVariableDeclaration/expression</TokenIdentifier>
+			<Abstract type="html">This property returns the Mockingbird expression that will provide the
+    variable&apos;s value when it is requested. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *expression</Declaration>
+			
+			
+			<Anchor>//api/name/expression</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

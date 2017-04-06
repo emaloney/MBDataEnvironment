@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLFunction.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLFunction</TokenIdentifier>
+			<Abstract type="html">Represents an Objective-C method that is exposed to the Mockingbird environment
+as an MBML function.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+            
+			
+			<NodeRef refid="22"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/setName:</TokenIdentifier>
+			<Abstract type="html">Returns the name of the function. A function&apos;s name determines how it is
+invoked from within an MBML expression.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/name</TokenIdentifier>
+			<Abstract type="html">Returns the name of the function. A function&apos;s name determines how it is
+invoked from within an MBML expression.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBMLFunction/name</TokenIdentifier>
+			<Abstract type="html">Returns the name of the function. A function&apos;s name determines how it is
+invoked from within an MBML expression.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/setInputType:</TokenIdentifier>
+			<Abstract type="html">Returns the input type of the function. The input type determines the
+format of the parameters (if any) expected by the function.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBMLFunctionInputType inputType</Declaration>
+			
+			
+			<Anchor>//api/name/inputType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/inputType</TokenIdentifier>
+			<Abstract type="html">Returns the input type of the function. The input type determines the
+format of the parameters (if any) expected by the function.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBMLFunctionInputType inputType</Declaration>
+			
+			
+			<Anchor>//api/name/inputType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBMLFunction/inputType</TokenIdentifier>
+			<Abstract type="html">Returns the input type of the function. The input type determines the
+format of the parameters (if any) expected by the function.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBMLFunctionInputType inputType</Declaration>
+			
+			
+			<Anchor>//api/name/inputType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/setOutputType:</TokenIdentifier>
+			<Abstract type="html">Returns the output type of the function. Functions return either an object
+or no output.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBMLFunctionOutputType outputType</Declaration>
+			
+			
+			<Anchor>//api/name/outputType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/outputType</TokenIdentifier>
+			<Abstract type="html">Returns the output type of the function. Functions return either an object
+or no output.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBMLFunctionOutputType outputType</Declaration>
+			
+			
+			<Anchor>//api/name/outputType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBMLFunction/outputType</TokenIdentifier>
+			<Abstract type="html">Returns the output type of the function. Functions return either an object
+or no output.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBMLFunctionOutputType outputType</Declaration>
+			
+			
+			<Anchor>//api/name/outputType</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/initWithName:inputType:outputType:implementingClass:methodSelector:</TokenIdentifier>
+			<Abstract type="html">Initializes a new MBMLFunction instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>- (nullable instancetype)initWithName:(nonnull NSString *)name inputType:(MBMLFunctionInputType)inputType outputType:(MBMLFunctionOutputType)outputType implementingClass:(nonnull Class)cls methodSelector:(nonnull SEL)selector</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the function.</Abstract>
+				</Parameter><Parameter>
+					<Name>inputType</Name>
+					<Abstract type="html">The function&apos;s input type.</Abstract>
+				</Parameter><Parameter>
+					<Name>outputType</Name>
+					<Abstract type="html">The function&apos;s output type.</Abstract>
+				</Parameter><Parameter>
+					<Name>cls</Name>
+					<Abstract type="html">The implementing class of the function.</Abstract>
+				</Parameter><Parameter>
+					<Name>selector</Name>
+					<Abstract type="html">The selector of the implementing method.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">self</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithName:inputType:outputType:implementingClass:methodSelector:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:countIs:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+doesn&apos;t contain the exact number of parameters expected.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)validateParameter:(nonnull NSArray *)params countIs:(NSUInteger)expectedCnt error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>expectedCnt</Name>
+					<Abstract type="html">The exact number of parameters expected by the function.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The number of parameters contained in the array, or 0 if
+            parameter validation fails.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:countIs:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:countIsAtLeast:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+contains fewer than the expected number of parameters.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)validateParameter:(nonnull NSArray *)params countIsAtLeast:(NSUInteger)expectedCnt error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>expectedCnt</Name>
+					<Abstract type="html">The minimum number of parameters expected by the
+            function.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The number of parameters contained in the array, or 0 if
+            parameter validation fails.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:countIsAtLeast:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:countIsAtMost:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+contains more than the expected number of parameters.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)validateParameter:(nonnull NSArray *)params countIsAtMost:(NSUInteger)expectedCnt error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>expectedCnt</Name>
+					<Abstract type="html">The maximum number of parameters expected by the
+            function.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The number of parameters contained in the array, or 0 if
+            parameter validation fails.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:countIsAtMost:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:countIsAtLeast:andAtMost:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that it contains the
+expected number of parameters. Validation will fail if the parameter list
+contains fewer than or more than the expected number of parameters.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)validateParameter:(nonnull NSArray *)params countIsAtLeast:(NSUInteger)minCnt andAtMost:(NSUInteger)maxCnt error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>minCnt</Name>
+					<Abstract type="html">The minimum number of parameters expected by the
+            function.</Abstract>
+				</Parameter><Parameter>
+					<Name>maxCnt</Name>
+					<Abstract type="html">The maximum number of parameters expected by the
+            function.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The number of parameters contained in the array, or 0 if
+            parameter validation fails.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:countIsAtLeast:andAtMost:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:indexIsInRange:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that a given index is
+within range for the array. Validation will fail if the array index is
+greater than the last index in the array.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (NSUInteger)validateParameter:(nonnull NSArray *)params indexIsInRange:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index that&apos;s expected to be within range for the
+            parameter array.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The number of parameters contained in the array, or 0 if
+            parameter validation fails.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:indexIsInRange:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:objectAtIndex:isKindOfClass:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that an object at a
+given array index is of an expected class. Validation will fail if the
+parameter at that array index is not a kind of the expected class.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable id)validateParameter:(nonnull NSArray *)params objectAtIndex:(NSUInteger)idx isKindOfClass:(nonnull Class)cls error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.</Abstract>
+				</Parameter><Parameter>
+					<Name>cls</Name>
+					<Abstract type="html">The expected class of the parameter at the given array index.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter at the given array index is
+            returned. If validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:objectAtIndex:isKindOfClass:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:objectAtIndex:isOneKindOfClass:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that an object at a
+given array index is among a list of expected classes. Validation will fail
+if the parameter at the specified index is not a kind of one of the expected
+classes.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Class)validateParameter:(nonnull NSArray *)params objectAtIndex:(NSUInteger)idx isOneKindOfClass:(nonnull NSArray *)classes error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.</Abstract>
+				</Parameter><Parameter>
+					<Name>classes</Name>
+					<Abstract type="html">An array of classes against which to validate the parameter
+            at the specified index. Validation succeeds if the parameter is
+            an instance of one of those classes.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter at the given array index is
+            returned. If validation fails, nil is returned.
+  </Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:objectAtIndex:isOneKindOfClass:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:isStringAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that an object at a
+given array index is a string. Validation will fail if the parameter at the
+specified index is not an NSString instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSString *)validateParameter:(nonnull NSArray *)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.
+  </Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the string at the given array index is
+            returned. If validation fails, nil is returned.
+  </Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:isStringAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:containsNumberAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that an object at a
+given array index is a number. Validation will fail if the parameter at the
+specified index is not a numeric value.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDecimalNumber *)validateParameter:(nonnull NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.
+  </Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the number at the given array index is
+            returned. If validation fails, nil is returned.
+  </Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:containsNumberAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:isArrayAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that an object at a
+given array index is an array. Validation will fail if the parameter at the
+specified index is not an NSArray instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray *)validateParameter:(nonnull NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.
+  </Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the array at the given array index is
+            returned. If validation fails, nil is returned.
+  </Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:isArrayAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:isDictionaryAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s parameter list array to ensure that an object at a
+given array index is a dictionary. Validation will fail if the parameter at the
+specified index is not an NSDictionary instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDictionary *)validateParameter:(nonnull NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.
+  </Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the dictionary at the given array index is
+            returned. If validation fails, nil is returned.
+  </Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:isDictionaryAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:isKindOfClass:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure that the object is an instance
+of an expected class. Validation will fail if the parameter is not a kind of
+the expected class.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable id)validateParameter:(nonnull id)param isKindOfClass:(nonnull Class)cls error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>cls</Name>
+					<Abstract type="html">The expected class of the input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter object is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:isKindOfClass:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:isOneKindOfClass:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure that the object&apos;s class is
+among a list of expected classes. Validation will fail if the is not a kind
+of one of the expected classes.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Class)validateParameter:(nonnull id)param isOneKindOfClass:(nonnull NSArray *)classes error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>classes</Name>
+					<Abstract type="html">An array of classes against which to validate the parameter.
+            Validation succeeds if the parameter is an instance of one of those
+            classes.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter object is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:isOneKindOfClass:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameter:respondsToSelector:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure that the object responds
+to the provided selector. Validation will fail if the object does not
+respond to that selector.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable id&lt;NSObject&gt;)validateParameter:(nonnull id&lt;NSObject&gt;)param respondsToSelector:(nonnull SEL)selector error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>selector</Name>
+					<Abstract type="html">The selector to test against the input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter object is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameter:respondsToSelector:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameterIsString:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure that it is a string.
+Validation will fail if the parameter is not an NSString instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSString *)validateParameterIsString:(nonnull id)param error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter string is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameterIsString:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameterContainsNumber:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure it contains a numeric value.
+Validation will fail if the parameter is not a number.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDecimalNumber *)validateParameterContainsNumber:(nonnull id)param error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter number is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameterContainsNumber:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameterIsArray:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure it is an array.
+Validation will fail if the parameter is not an NSArray instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray *)validateParameterIsArray:(nonnull id)param error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter array is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameterIsArray:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateParameterIsDictionary:error:</TokenIdentifier>
+			<Abstract type="html">Validates a function&apos;s input parameter to ensure it is a dictionary.
+Validation will fail if the parameter is not an NSDictionary instance.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDictionary *)validateParameterIsDictionary:(nonnull id)param error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>param</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the parameter dictionary is returned. If
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateParameterIsDictionary:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:isStringAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields an NSString when evaluated.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSString *)validateExpression:(nonnull NSArray *)params isStringAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the string resulting from evaluating the
+            expression at the specified parameter index is returned. If 
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateExpression:isStringAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:containsNumberAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields a numeric value when evaluated.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDecimalNumber *)validateExpression:(nonnull NSArray *)params containsNumberAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the number resulting from evaluating the
+            expression at the specified parameter index is returned. If 
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateExpression:containsNumberAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:isArrayAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields an NSArray when evaluated.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSArray *)validateExpression:(nonnull NSArray *)params isArrayAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the array resulting from evaluating the
+            expression at the specified parameter index is returned. If 
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateExpression:isArrayAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFunction/validateExpression:isDictionaryAtIndex:error:</TokenIdentifier>
+			<Abstract type="html">Validates an expression parameter list to ensure that the expression at the
+specified array index yields an NSDictionary when evaluated.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSDictionary *)validateExpression:(nonnull NSArray *)params isDictionaryAtIndex:(NSUInteger)idx error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">An array containing the function&apos;s input parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>idx</Name>
+					<Abstract type="html">The array index of the parameter being validated.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if parameter validation fails. Note that
+            this must not be a nil value. If a previous validation error
+            occurred and *errPtr already contains an error object, further
+            parameter validation will not be performed.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">If validation succeeds, the dictionary resulting from evaluating
+            the expression at the specified parameter index is returned. If 
+            validation fails, nil is returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateExpression:isDictionaryAtIndex:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/executeWithInput:error:</TokenIdentifier>
+			<Abstract type="html">Called by the expression engine to execute the function.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)executeWithInput:(nullable id)input error:(MBMLFunctionErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The input parameter(s) for the function.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">A memory location where a pointer to an MBMLFunctionError
+            instance will be placed if function execution fails.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function&apos;s return value. nil is returned if an error occurred
+            while executing the function.</Abstract></ReturnValue>
+			<Anchor>//api/name/executeWithInput:error:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBMLFunction/functionDescription</TokenIdentifier>
+			<Abstract type="html">Returns a human-readable description of the receiver.</Abstract>
+			<DeclaredIn>MBMLFunction.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSString *)functionDescription</Declaration>
+			
+			
+			<Anchor>//api/name/functionDescription</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

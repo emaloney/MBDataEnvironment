@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBMLEnvironmentFunctions Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MBDataEnvironment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/mbmlFileIsLoaded:">+ mbmlFileIsLoaded:</option>
+		
+		<option value="//api/name/mbmlLoadedFiles">+ mbmlLoadedFiles</option>
+		
+		<option value="//api/name/mbmlLoadedPaths">+ mbmlLoadedPaths</option>
+		
+		<option value="//api/name/mbmlPathIsLoaded:">+ mbmlPathIsLoaded:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBMLEnvironmentFunctions Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MBMLEnvironmentFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions for accessing Mockingbird runtime
+environment information.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/mbmlLoadedPaths" title="mbmlLoadedPaths"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mbmlLoadedPaths">+&nbsp;mbmlLoadedPaths</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of the full pathnames of the MBML files that have been loaded
+into the current Mockingbird environment.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray *)mbmlLoadedPaths</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array containing the paths of the files that have been loaded
+            into the current environment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^mbmlLoadedPaths()
+</code></pre>
+
+<p>returns an array containing the full pathnames of the files that have already
+been loaded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEnvironmentFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mbmlLoadedFiles" title="mbmlLoadedFiles"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mbmlLoadedFiles">+&nbsp;mbmlLoadedFiles</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an array of the names (i.e., the <code>lastPathComponent</code>s of the file
+paths) for the files that have been loaded into the current Mockingbird
+environment.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray *)mbmlLoadedFiles</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An array containing the names of the files that have been loaded
+            into the current environment.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts no parameters.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^mbmlLoadedFiles()
+</code></pre>
+
+<p>returns an array containing the file names of the files that have already been
+loaded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEnvironmentFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mbmlPathIsLoaded:" title="mbmlPathIsLoaded:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mbmlPathIsLoaded:">+&nbsp;mbmlPathIsLoaded:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether an MBML file with the given pathname has been loaded into
+the current Mockingbird environment.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSNumber *)mbmlPathIsLoaded:(NSString *)<em>pathName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pathName</code></th>
+						<td><p>The full pathname of the file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>@YES</code> if the specified file has been loaded into the current
+            environment, <code>@NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the full path of the file being tested.</p>
+
+<h4>Expression usage</h4>
+
+<p>Assume <code>$path</code> evaluates to the full file path of the initial <code>manifest.xml</code>
+file. The expression:</p>
+
+<pre><code>^mbmlPathIsLoaded($path)
+</code></pre>
+
+<p>would return <code>@YES</code> if the path represented by the expression <code>$path</code>
+has already been loaded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEnvironmentFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mbmlFileIsLoaded:" title="mbmlFileIsLoaded:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mbmlFileIsLoaded:">+&nbsp;mbmlFileIsLoaded:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines whether a given MBML file has been loaded into the current
+Mockingbird environment.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSNumber *)mbmlFileIsLoaded:(NSString *)<em>fileName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fileName</code></th>
+						<td><p>The name of the file.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>@YES</code> if the specified file has been loaded into the current
+            environment, <code>@NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter: a string expression
+yielding the file name (i.e., the <code>lastPathComponent</code>) of the file being
+tested.</p>
+
+<h4>Expression usage</h4>
+
+<p>The expression:</p>
+
+<pre><code>^mbmlFileIsLoaded(manifest.xml)
+</code></pre>
+
+<p>would return a boolean <code>YES</code> if any file named <code>manifest.xml</code> (at any path)
+has already been loaded.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLEnvironmentFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBPlatform.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBPlatform</TokenIdentifier>
+			<Abstract type="html">The MBPlatform singleton provides a platform-independent mechanism for
+accessing information about the current execution environment.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setPlatformType:</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a Mac OS X system; YES if it
+is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBPlatformType platformType</Declaration>
+			
+			
+			<Anchor>//api/name/platformType</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/platformType</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a Mac OS X system; YES if it
+is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBPlatformType platformType</Declaration>
+			
+			
+			<Anchor>//api/name/platformType</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/platformType</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a Mac OS X system; YES if it
+is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBPlatformType platformType</Declaration>
+			
+			
+			<Anchor>//api/name/platformType</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setPlatformName:</TokenIdentifier>
+			<Abstract type="html">Returns a human-readable string containing the name of the platform on
+which the code is running.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *platformName</Declaration>
+			
+			
+			<Anchor>//api/name/platformName</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/platformName</TokenIdentifier>
+			<Abstract type="html">Returns a human-readable string containing the name of the platform on
+which the code is running.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *platformName</Declaration>
+			
+			
+			<Anchor>//api/name/platformName</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/platformName</TokenIdentifier>
+			<Abstract type="html">Returns a human-readable string containing the name of the platform on
+which the code is running.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *platformName</Declaration>
+			
+			
+			<Anchor>//api/name/platformName</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setIsMacOS:</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a macOS system; YES if it
+    is, NO otherwise. </Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isMacOS</Declaration>
+			
+			
+			<Anchor>//api/name/isMacOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/isMacOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a macOS system; YES if it
+    is, NO otherwise. </Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isMacOS</Declaration>
+			
+			
+			<Anchor>//api/name/isMacOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/isMacOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a macOS system; YES if it
+    is, NO otherwise. </Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isMacOS</Declaration>
+			
+			
+			<Anchor>//api/name/isMacOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setIsIOS:</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an iOS system; YES if it
+    is, NO otherwise. </Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isIOS</Declaration>
+			
+			
+			<Anchor>//api/name/isIOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/isIOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an iOS system; YES if it
+    is, NO otherwise. </Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isIOS</Declaration>
+			
+			
+			<Anchor>//api/name/isIOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/isIOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an iOS system; YES if it
+    is, NO otherwise. </Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isIOS</Declaration>
+			
+			
+			<Anchor>//api/name/isIOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setIsTVOS:</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an Apple TV (tvOS) system;
+YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isTVOS</Declaration>
+			
+			
+			<Anchor>//api/name/isTVOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/isTVOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an Apple TV (tvOS) system;
+YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isTVOS</Declaration>
+			
+			
+			<Anchor>//api/name/isTVOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/isTVOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an Apple TV (tvOS) system;
+YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isTVOS</Declaration>
+			
+			
+			<Anchor>//api/name/isTVOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setIsWatchOS:</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an Apple Watch (watchOS) system;
+YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isWatchOS</Declaration>
+			
+			
+			<Anchor>//api/name/isWatchOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/isWatchOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an Apple Watch (watchOS) system;
+YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isWatchOS</Declaration>
+			
+			
+			<Anchor>//api/name/isWatchOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/isWatchOS</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on an Apple Watch (watchOS) system;
+YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isWatchOS</Declaration>
+			
+			
+			<Anchor>//api/name/isWatchOS</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/setIsUIKit:</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a UIKit-based system such as
+an iPhone, iPad or Apple TV; YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isUIKit</Declaration>
+			
+			
+			<Anchor>//api/name/isUIKit</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBPlatform/isUIKit</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a UIKit-based system such as
+an iPhone, iPad or Apple TV; YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isUIKit</Declaration>
+			
+			
+			<Anchor>//api/name/isUIKit</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBPlatform/isUIKit</TokenIdentifier>
+			<Abstract type="html">Determines whether the code is running on a UIKit-based system such as
+an iPhone, iPad or Apple TV; YES if it is, NO otherwise.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isUIKit</Declaration>
+			
+			
+			<Anchor>//api/name/isUIKit</Anchor>
+            <NodeRef refid="32"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

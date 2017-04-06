@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBMLLogicFunctions Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MBDataEnvironment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/ifOperator:">+ ifOperator:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBMLLogicFunctions Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MBMLLogicFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML logic functions.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/ifOperator:" title="ifOperator:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ifOperator:">+&nbsp;ifOperator:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Implements an <code>if</code> operator usable within Mockingbird expressions.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)ifOperator:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>an array containing the input parameters for the function</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of the <code>if</code> operator.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts between one and three input expressions:</p>
+
+<ul>
+<li><p>The first parameter is the <em>conditional expression</em>, a Mockingbird
+ expression that will be evaluated in a boolean context. If only this
+ parameter is provided and it evaluates to <code>true</code>, the result of evaluating
+ the <em>conditional expression</em> in the object context will be returned, while
+<code>nil</code> is returned if the single parameter evaluates to <code>false</code>.</p></li>
+<li><p>An optional <em>true return value</em>, which is returned by the function
+ if the conditional evaluates to <code>true</code>.</p></li>
+<li><p>An optional <em>false return value</em>, which is returned if the conditional
+ evaluates to <code>false</code>. If this parameter is omitted and the conditional
+ evaluates to <code>false</code>, <code>nil</code> is returned.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<p><strong>Note:</strong> This function is exposed to the Mockingbird environment with a
+name that differs from that of its implementing method:</p>
+
+<pre><code> ^if($year -LT 2015|Past|Present or future?)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>Past</code>&rdquo; if the
+conditional expression <code>$year -LT 2015</code> evaluates to
+<code>true</code>; otherwise, the string &ldquo;<code>Present or future?</code>&rdquo; is returned.</p>
+
+<p>In the following expression:</p>
+
+<pre><code> ^if($year -EQ 2015|This Year)
+</code></pre>
+
+<p>the string &ldquo;<code>This Year</code>&rdquo; is returned if <code>$year</code> equals <code>2015</code>; if <code>$year</code>
+is any other value, <code>nil</code> is returned.</p>
+
+<p>Finally, assume <code>$cartItems</code> refers to an array:</p>
+
+<pre><code> ^if($cartItems.count)
+</code></pre>
+
+<p>if <code>$cartItems.count</code> evaluates to <code>true</code> in a boolean context (i.e.,
+if <code>$cartItems.count</code> is non-zero), the object value of <code>$cartItems.count</code> is
+returned. Otherwise, if <code>$cartItems.count</code> is <code>0</code>, <code>nil</code> is returned.</p>
+
+<p>So, if <code>$cartItems</code> contains <code>7</code> items, the expression <code>^if($cartItems.count)</code>
+would yield the result <code>7</code>. But if the array containeds no items, <code>nil</code> would
+be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLLogicFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

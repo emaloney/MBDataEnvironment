@@ -1,0 +1,2030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBDataModel.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBDataModel</TokenIdentifier>
+			<Abstract type="html">An implementation of a generic class representing a node in a data model.
+Each data model instance contains attributes and related objects that are
+typically populated from XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/dataModelFromXML:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new data model populated with the contents of the
+passed-in XML element. Attribute values will be set from the attributes of
+the XML element, and further object relationships may be established by
+processing the children of the element.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)dataModelFromXML:(nonnull RXMLElement *)xml</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xml</Name>
+					<Abstract type="html">The XML to use for populating the data model</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dataModelFromXML:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/init</TokenIdentifier>
+			<Abstract type="html">Default initializer; returns an empty data model instance.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)init</Declaration>
+			
+			
+			<Anchor>//api/name/init</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/initWithXML:</TokenIdentifier>
+			<Abstract type="html">Populates the receiver with the data model inherent in the provided
+XML element. Attribute values will be set from the attributes of the XML
+element, and further object relationships may be established by processing
+the children of the element.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)initWithXML:(nonnull RXMLElement *)xml</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xml</Name>
+					<Abstract type="html">The XML to use for populating the data model</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithXML:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/initWithAttributes:</TokenIdentifier>
+			<Abstract type="html">For each key/value pair contained in the passed-in dictionary, a
+corresponding attribute name and value will be set on the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull instancetype)initWithAttributes:(nonnull NSDictionary *)attrs</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrs</Name>
+					<Abstract type="html">A dictionary containing the attribute names
+            and values to use for initializing the data model object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithAttributes:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/copyWithZone:</TokenIdentifier>
+			<Abstract type="html">Returns a copy of the receiver. Since all MBDataModel instances are
+mutable, this method simply calls mutableCopyWithZone:.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull id)copyWithZone:(nullable NSZone *)zone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zone</Name>
+					<Abstract type="html">Identifies a memory zone to use for allocating any new
+            object instances. If nil, the default zone returned by
+            NSDefaultMallocZone() is used.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/copyWithZone:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/mutableCopyWithZone:</TokenIdentifier>
+			<Abstract type="html">Returns a copy of the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull id)mutableCopyWithZone:(nullable NSZone *)zone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>zone</Name>
+					<Abstract type="html">Identifies a memory zone to use for allocating any new
+            object instances. If nil, the default zone returned by
+            NSDefaultMallocZone() is used.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/mutableCopyWithZone:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/cloneDataModel:</TokenIdentifier>
+			<Abstract type="html">Turns the receiver into a clone of the passed-in data model. Any attributes
+and relatives held by the receiver are thrown away, and then the receiver
+is configured to contain all the same attributes and relatives as
+cloneFrom.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)cloneDataModel:(nonnull MBDataModel *)cloneFrom</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cloneFrom</Name>
+					<Abstract type="html">The data model to clone.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cloneDataModel:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/cloneDataModel:withZone:</TokenIdentifier>
+			<Abstract type="html">Turns the receiver into a clone of the passed-in data model. Any attributes
+and relatives held by the receiver are thrown away, and then the receiver
+is configured to contain all the same attributes and relatives as
+cloneFrom.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)cloneDataModel:(nonnull MBDataModel *)cloneFrom withZone:(nullable NSZone *)zone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cloneFrom</Name>
+					<Abstract type="html">The data model to clone.</Abstract>
+				</Parameter><Parameter>
+					<Name>zone</Name>
+					<Abstract type="html">The NSZone to use for any objects that need to be copied
+            as a result of the cloning process. If nil, the default zone 
+            returned by NSDefaultMallocZone() is used.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/cloneDataModel:withZone:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/poseAsClass:</TokenIdentifier>
+			<Abstract type="html">Returns a new data model instance of the specified class that contains
+the exact same attributes and relatives as the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)poseAsClass:(nonnull Class)cls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cls</Name>
+					<Abstract type="html">The class to pose as.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new data model instance of type cls containing the same
+            data model attributes and related objects as the receiver, or
+            nil if cls is not a type of MBDataModel class.</Abstract></ReturnValue>
+			<Anchor>//api/name/poseAsClass:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/xmlFromFile:error:</TokenIdentifier>
+			<Abstract type="html">A convenience method for parsing an XML document from a file.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull RXMLElement *)xmlFromFile:(nonnull NSString *)filePath error:(NSErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The path of the XML file to be processed.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
+            set to an NSError instance indicating the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An object representing the top-level element of the XML, or nil
+            if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/xmlFromFile:error:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/xmlFromData:error:</TokenIdentifier>
+			<Abstract type="html">A convenience method for parsing an XML document from an NSData instance.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull RXMLElement *)xmlFromData:(nonnull NSData *)xmlData error:(NSErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xmlData</Name>
+					<Abstract type="html">The XML data to be processed.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
+            set to an NSError instance indicating the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An object representing the top-level element of the XML, or nil
+            if an error occurred.</Abstract></ReturnValue>
+			<Anchor>//api/name/xmlFromData:error:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/amendDataModelWithXML:</TokenIdentifier>
+			<Abstract type="html">Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)amendDataModelWithXML:(nonnull RXMLElement *)xml</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xml</Name>
+					<Abstract type="html">The XML element to use for amending the data model.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/amendDataModelWithXML:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/amendDataModelWithXMLFromFile:</TokenIdentifier>
+			<Abstract type="html">Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(nonnull NSString *)filePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The path of the file containing the XML to process.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the XML file was processed successfully; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/amendDataModelWithXMLFromFile:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/amendDataModelWithXMLFromFile:error:</TokenIdentifier>
+			<Abstract type="html">Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)amendDataModelWithXMLFromFile:(nonnull NSString *)filePath error:(NSErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The path of the file containing the XML to process.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
+            set to an NSError instance indicating the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the XML file was processed successfully; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/amendDataModelWithXMLFromFile:error:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/amendDataModelWithXMLFromData:</TokenIdentifier>
+			<Abstract type="html">Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(nonnull NSData *)xmlData</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xmlData</Name>
+					<Abstract type="html">An NSData instance containing the XML to process.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the XML data was processed successfully; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/amendDataModelWithXMLFromData:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/amendDataModelWithXMLFromData:error:</TokenIdentifier>
+			<Abstract type="html">Amends the data model by overlaying attributes and potentially adding
+relatives to the receiver based on the contents of the passed-in XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)amendDataModelWithXMLFromData:(nonnull NSData *)xmlData error:(NSErrorPtrPtr)errPtr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xmlData</Name>
+					<Abstract type="html">An NSData instance containing the XML to process.</Abstract>
+				</Parameter><Parameter>
+					<Name>errPtr</Name>
+					<Abstract type="html">If non-nil and an error occurs, *errPtr will be
+            set to an NSError instance indicating the error.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the XML data was processed successfully; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/amendDataModelWithXMLFromData:error:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addAttributesFromXML:</TokenIdentifier>
+			<Abstract type="html">For each attribute value of the passed-in XML element, a corresponding
+attribute will be set on the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addAttributesFromXML:(nonnull RXMLElement *)xml</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xml</Name>
+					<Abstract type="html">The XML element to process.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addAttributesFromXML:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addAttributesFromDictionary:</TokenIdentifier>
+			<Abstract type="html">For each key/value pair contained in the passed-in dictionary, a corresponding
+attribute will be set on the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addAttributesFromDictionary:(nonnull NSDictionary *)dict</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dict</Name>
+					<Abstract type="html">The dictionary containing the attributes values to be set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addAttributesFromDictionary:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/overlayAttributesFromDictionary:</TokenIdentifier>
+			<Abstract type="html">For each attribute key contained in the passed-in dictionary, the receiver
+will be checked for an attribute having the same name. If the receiver has
+no attribute with that name, the corresponding key/value pair in the
+dictionary will be set on the receiver. Existing attributes will not be
+overwritten.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)overlayAttributesFromDictionary:(nonnull NSDictionary *)dict</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dict</Name>
+					<Abstract type="html">The dictionary containing the attributes values to overlay.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/overlayAttributesFromDictionary:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/populateDataModelFromXML:</TokenIdentifier>
+			<Abstract type="html">Adds related objects, if appropriate, for each XML element contained in
+the passed-in element. The default implementation creates MBDataModel
+objects to represent the structure of the contained XML elements, and
+adds them as related objects to the receiver using the default relation
+type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)populateDataModelFromXML:(nonnull RXMLElement *)container</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose child elements will be used
+            to populate the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/populateDataModelFromXML:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/dataModelDidLoad</TokenIdentifier>
+			<Abstract type="html">Called to notify the data model that it has been loaded or instantiated.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)dataModelDidLoad</Declaration>
+			
+			
+			<Anchor>//api/name/dataModelDidLoad</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/didAmendDataModelWithXMLFromFile:</TokenIdentifier>
+			<Abstract type="html">Called to notify the data model that it has been amended using the contents
+of the given file.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)didAmendDataModelWithXMLFromFile:(nonnull NSString *)filePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The path of the file whose XML was loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didAmendDataModelWithXMLFromFile:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/dataEntityName</TokenIdentifier>
+			<Abstract type="html">The entity name used to represent instances of the receiver&apos;s class. Used
+for the XML tag in simulated XML output when the xmlTagName method would
+return nil.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSString *)dataEntityName</Declaration>
+			
+			
+			<Anchor>//api/name/dataEntityName</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setXmlTagName:</TokenIdentifier>
+			<Abstract type="html">If the receiver was created from an XML element, this method returns the name
+of the XML tag from which it originated.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *xmlTagName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The XML tag name used to create the receiver, or nil if
+            the receiver was not created from XML.</Abstract></ReturnValue>
+			<Anchor>//api/name/xmlTagName</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/xmlTagName</TokenIdentifier>
+			<Abstract type="html">If the receiver was created from an XML element, this method returns the name
+of the XML tag from which it originated.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *xmlTagName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The XML tag name used to create the receiver, or nil if
+            the receiver was not created from XML.</Abstract></ReturnValue>
+			<Anchor>//api/name/xmlTagName</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDataModel/xmlTagName</TokenIdentifier>
+			<Abstract type="html">If the receiver was created from an XML element, this method returns the name
+of the XML tag from which it originated.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *xmlTagName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The XML tag name used to create the receiver, or nil if
+            the receiver was not created from XML.</Abstract></ReturnValue>
+			<Anchor>//api/name/xmlTagName</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setSimulatedXML:</TokenIdentifier>
+			<Abstract type="html">Returns a string containing a simulated XML representation of the receiver&apos;s
+attributes and related objects. This method works even if the receiver was not
+populated from XML in the first place.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</Declaration>
+			
+			
+			<Anchor>//api/name/simulatedXML</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/simulatedXML</TokenIdentifier>
+			<Abstract type="html">Returns a string containing a simulated XML representation of the receiver&apos;s
+attributes and related objects. This method works even if the receiver was not
+populated from XML in the first place.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</Declaration>
+			
+			
+			<Anchor>//api/name/simulatedXML</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDataModel/simulatedXML</TokenIdentifier>
+			<Abstract type="html">Returns a string containing a simulated XML representation of the receiver&apos;s
+attributes and related objects. This method works even if the receiver was not
+populated from XML in the first place.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *simulatedXML</Declaration>
+			
+			
+			<Anchor>//api/name/simulatedXML</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setDebuggingXML:</TokenIdentifier>
+			<Abstract type="html">Provides simulated XML output similar to that of the simulatedXML property,
+but with XML comments added that describe the relation type of any related
+objects.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</Declaration>
+			
+			
+			<Anchor>//api/name/debuggingXML</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/debuggingXML</TokenIdentifier>
+			<Abstract type="html">Provides simulated XML output similar to that of the simulatedXML property,
+but with XML comments added that describe the relation type of any related
+objects.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</Declaration>
+			
+			
+			<Anchor>//api/name/debuggingXML</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDataModel/debuggingXML</TokenIdentifier>
+			<Abstract type="html">Provides simulated XML output similar to that of the simulatedXML property,
+but with XML comments added that describe the relation type of any related
+objects.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, readonly) NSString *debuggingXML</Declaration>
+			
+			
+			<Anchor>//api/name/debuggingXML</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/requiredAttributes</TokenIdentifier>
+			<Abstract type="html">Returns the set of attributes required by the receiving class (and not any
+superclass or subclass).</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSSet *)requiredAttributes</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that no
+            attributes are explicitly required.</Abstract></ReturnValue>
+			<Anchor>//api/name/requiredAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/supportedAttributes</TokenIdentifier>
+			<Abstract type="html">Returns the set of attributes supported by the receiving class (and not any
+superclass or subclass).</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSSet *)supportedAttributes</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that no
+            attributes are explicitly supported. </Abstract></ReturnValue>
+			<Anchor>//api/name/supportedAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/unsupportedAttributes</TokenIdentifier>
+			<Abstract type="html">Returns the set of attributes that are supported by one of the receiving
+class&apos;s superclasses but are unsupported by the receiving class.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nullable NSSet *)unsupportedAttributes</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that no
+            attributes are explicitly unsupported.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsupportedAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/implementingClassAttributeName</TokenIdentifier>
+			<Abstract type="html">Returns the name of an attribute that specifies an alternate implementing
+class for the data model object, allowing external classes to participate
+in attribute validation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)implementingClassAttributeName</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default implementation returns nil, indicating that the
+            receiver will not consult an external class for determining
+            which data model attributes are valid.</Abstract></ReturnValue>
+			<Anchor>//api/name/implementingClassAttributeName</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/requiredAttributes</TokenIdentifier>
+			<Abstract type="html">Returns the names of the attributes that are required by the receiver in
+order to pass validation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSSet *)requiredAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/requiredAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/ignoredAttributes</TokenIdentifier>
+			<Abstract type="html">Returns the names of the attributes that will ignored by the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSSet *)ignoredAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/ignoredAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/deprecateAttribute:inFavorOf:</TokenIdentifier>
+			<Abstract type="html">Marks an attribute as being deprecated in favor of another attribute. This
+mechanism is used to rename an attribute while still maintaining backwards
+compatibility with existing code.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)deprecateAttribute:(nonnull NSString *)deprecatedAttribute inFavorOf:(nonnull NSString *)newAttribute</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>deprecatedAttribute</Name>
+					<Abstract type="html">The name of the deprecated attribute.</Abstract>
+				</Parameter><Parameter>
+					<Name>newAttribute</Name>
+					<Abstract type="html">The name of the attribute to use instead of
+            deprecatedAttribute.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deprecateAttribute:inFavorOf:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/validateDataModel</TokenIdentifier>
+			<Abstract type="html">Attempts to validate the data model using the receiver as the root node.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)validateDataModel</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver&apos;s data model is valid; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateDataModel</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/validateDataModelIfNeeded</TokenIdentifier>
+			<Abstract type="html">If the data model is marked as needing validation, this method returns the
+result of calling validateDataModel; otherwise, this method returns the
+result of calling isDataModelValid.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)validateDataModelIfNeeded</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver&apos;s data model is valid; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateDataModelIfNeeded</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/validateAttributes</TokenIdentifier>
+			<Abstract type="html">Asks the receiver to validate its data model attributes (but not any related
+objects).</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)validateAttributes</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver&apos;s attributes are valid; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/validateAsRelativeOf:relatedBy:dataModelRoot:</TokenIdentifier>
+			<Abstract type="html">Called by validateDataModel to attempt to validate a member of a larger data
+model.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)validateAsRelativeOf:(nullable MBDataModel *)relative relatedBy:(nullable NSString *)relationType dataModelRoot:(nonnull MBDataModel *)root</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relative</Name>
+					<Abstract type="html">If the receiver is being validated as a relative of
+            another data model object, this parameter will contain the
+            relative. This parameter will be nil if the receiver is the
+            root node of the data model.</Abstract>
+				</Parameter><Parameter>
+					<Name>relationType</Name>
+					<Abstract type="html">If the receiver is being validated as a relative of
+            another data model object, this parameter will contain the name of
+            the relation type by which the receiver is related to relative.
+            This parameter will be nil if the receiver is the root node of
+            the data model.</Abstract>
+				</Parameter><Parameter>
+					<Name>root</Name>
+					<Abstract type="html">If the receiver is being validated as a relative of another
+            data model object, this parameter will contain the root node of the
+            data model (in other words, the original receiver of the call to
+            validateDataModel. If the receiver is the root node of the data
+            model being validated, this parameter will equal self.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the receiver&apos;s data model is valid; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/validateAsRelativeOf:relatedBy:dataModelRoot:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/markDataModelNeedsValidation</TokenIdentifier>
+			<Abstract type="html">This method is called to mark the receiver as needing validation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)markDataModelNeedsValidation</Declaration>
+			
+			
+			<Anchor>//api/name/markDataModelNeedsValidation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/doesDataModelNeedValidation</TokenIdentifier>
+			<Abstract type="html">Returns YES if the receiver needs data model validation, NO otherwise.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)doesDataModelNeedValidation</Declaration>
+			
+			
+			<Anchor>//api/name/doesDataModelNeedValidation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/markDataModelInvalid</TokenIdentifier>
+			<Abstract type="html">This method is called to mark the receiver&apos;s data model as invalid.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)markDataModelInvalid</Declaration>
+			
+			
+			<Anchor>//api/name/markDataModelInvalid</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/isDataModelValid</TokenIdentifier>
+			<Abstract type="html">Returns YES if the receiver&apos;s most recent validation attempt succeeded
+and if the receiver is not marked as needing validation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isDataModelValid</Declaration>
+			
+			
+			<Anchor>//api/name/isDataModelValid</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/objectAttributes</TokenIdentifier>
+			<Abstract type="html">Returns a copy of the receiver&apos;s attribute values.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSDictionary *)objectAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/objectAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addAttributesToDictionary:</TokenIdentifier>
+			<Abstract type="html">Adds the receiver&apos;s attributes to the passed-in NSMutableDictionary.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addAttributesToDictionary:(nonnull NSMutableDictionary *)dict</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dict</Name>
+					<Abstract type="html">The dictionary to which the receiver&apos;s attribute names
+            and values will be added.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addAttributesToDictionary:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setContent:</TokenIdentifier>
+			<Abstract type="html">Represents the content of this data model object. When the data model is
+populated from an XML element containing text content, this property will
+contain an NSString with that text.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) id content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/content</TokenIdentifier>
+			<Abstract type="html">Represents the content of this data model object. When the data model is
+populated from an XML element containing text content, this property will
+contain an NSString with that text.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) id content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDataModel/content</TokenIdentifier>
+			<Abstract type="html">Represents the content of this data model object. When the data model is
+populated from an XML element containing text content, this property will
+contain an NSString with that text.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) id content</Declaration>
+			
+			
+			<Anchor>//api/name/content</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setHasStringContent:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the value of the content property is an NSString, and if
+that string contains at least one non-whitespace character.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL hasStringContent</Declaration>
+			
+			
+			<Anchor>//api/name/hasStringContent</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/hasStringContent</TokenIdentifier>
+			<Abstract type="html">Returns YES if the value of the content property is an NSString, and if
+that string contains at least one non-whitespace character.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL hasStringContent</Declaration>
+			
+			
+			<Anchor>//api/name/hasStringContent</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDataModel/hasStringContent</TokenIdentifier>
+			<Abstract type="html">Returns YES if the value of the content property is an NSString, and if
+that string contains at least one non-whitespace character.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL hasStringContent</Declaration>
+			
+			
+			<Anchor>//api/name/hasStringContent</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/countAttributes</TokenIdentifier>
+			<Abstract type="html">Returns the number of attributes that currently have values set on the
+receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)countAttributes</Declaration>
+			
+			
+			<Anchor>//api/name/countAttributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/attributeNames</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSStrings containing the names of the attributes
+that currently have values set on the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSArray *)attributeNames</Declaration>
+			
+			
+			<Anchor>//api/name/attributeNames</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/hasAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the receiver has an attribute with the specified name,
+NO otherwise.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)hasAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute to check.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/hasAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/valueOfAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns the value of the attribute with the specified name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)valueOfAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName. May be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/valueOfAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/stringValueOfAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns the string value of the attribute with the specified name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)stringValueOfAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSString. May be
+            nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringValueOfAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/numberValueOfAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns the numeric value of the attribute with the specified name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSDecimalNumber *)numberValueOfAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSNumber. May be
+            nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/numberValueOfAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/booleanValueOfAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns the boolean value of the attribute with the specified name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)booleanValueOfAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as a BOOL.</Abstract></ReturnValue>
+			<Anchor>//api/name/booleanValueOfAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/integerValueOfAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns the NSInteger value of the attribute with the specified name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)integerValueOfAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as an NSInteger.</Abstract></ReturnValue>
+			<Anchor>//api/name/integerValueOfAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/doubleValueOfAttribute:</TokenIdentifier>
+			<Abstract type="html">Returns the double value of the attribute with the specified name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (double)doubleValueOfAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute attrName as a double.</Abstract></ReturnValue>
+			<Anchor>//api/name/doubleValueOfAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/objectForKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Provides access to data model attribute values using the Objective-C keyed
+subscripting notation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)objectForKeyedSubscript:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The value of the attribute with the name attrName. May be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setObject:forKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Allows setting data model attribute values using the Objective-C keyed
+subscripting notation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)setObject:(nonnull id)obj forKeyedSubscript:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract type="html">The new value for the attribute.</Abstract>
+				</Parameter><Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is to be set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setObject:forKeyedSubscript:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsObject:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+object context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.
+            May be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsObject:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsObject:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+object context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)attrName defaultValue:(nullable id)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">The value to return if the receiver has no attribute named
+            attrName, or if expression evaluation failed for some reason.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression,
+            or def if evaluation failed.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsObject:defaultValue:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsString:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+string context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.
+            May be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsString:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsString:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+string context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)attrName defaultValue:(nullable NSString *)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">The value to return if the receiver has no attribute named
+            attrName, or if expression evaluation failed for some reason.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression,
+            or def if evaluation failed.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsString:defaultValue:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsNumber:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+numeric context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsNumber:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsNumber:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+numeric context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)attrName defaultValue:(nullable NSDecimalNumber *)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">The value to return if the receiver has no attribute named
+            attrName, or if expression evaluation failed for some reason.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression,
+            or def if evaluation failed.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsNumber:defaultValue:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsBoolean:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+boolean context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsBoolean:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/evaluateAsBoolean:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Interprets the value of the given attribute as an NSString containing an
+expression, and returns the result of evaluating that expression in the
+boolean context.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)attrName defaultValue:(BOOL)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value will be evaluated
+            as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">The value to return if the receiver has no attribute named
+            attrName, or if expression evaluation failed for some reason.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value of attrName as an expression,
+            or def if evaluation failed.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsBoolean:defaultValue:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setAttribute:forName:</TokenIdentifier>
+			<Abstract type="html">Sets a data model attribute value.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)setAttribute:(nullable id)attrVal forName:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrVal</Name>
+					<Abstract type="html">The new value of the attribute. If nil, any existing
+            value for attrName will be removed from the receiver.</Abstract>
+				</Parameter><Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is being set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAttribute:forName:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setBooleanAttribute:forName:</TokenIdentifier>
+			<Abstract type="html">Sets a boolean data model attribute value.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)setBooleanAttribute:(BOOL)attrVal forName:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrVal</Name>
+					<Abstract type="html">The new value of the attribute.</Abstract>
+				</Parameter><Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is being set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setBooleanAttribute:forName:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setIntegerAttribute:forName:</TokenIdentifier>
+			<Abstract type="html">Sets a boolean data model attribute value.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)setIntegerAttribute:(NSInteger)attrVal forName:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrVal</Name>
+					<Abstract type="html">The new value of the attribute.</Abstract>
+				</Parameter><Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is being set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setIntegerAttribute:forName:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setDoubleAttribute:forName:</TokenIdentifier>
+			<Abstract type="html">Sets a double data model attribute value.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)setDoubleAttribute:(double)attrVal forName:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrVal</Name>
+					<Abstract type="html">The new value of the attribute.</Abstract>
+				</Parameter><Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute whose value is being set.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDoubleAttribute:forName:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/renameAttribute:to:</TokenIdentifier>
+			<Abstract type="html">Renames an attribute, moving the value from the old attribute name to the
+new name.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)renameAttribute:(nonnull NSString *)oldName to:(nonnull NSString *)newName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>oldName</Name>
+					<Abstract type="html">The name of the attribute to rename to newName.</Abstract>
+				</Parameter><Parameter>
+					<Name>newName</Name>
+					<Abstract type="html">The new name for the attribute currently known as oldName.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/renameAttribute:to:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/removeAttribute:</TokenIdentifier>
+			<Abstract type="html">Removes the specified attribute from the receiver.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAttribute:(nonnull NSString *)attrName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>attrName</Name>
+					<Abstract type="html">The name of the attribute to remove from the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeAttribute:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBDataModel/defaultRelationType</TokenIdentifier>
+			<Abstract type="html">Returns the name of the default relation used by the class.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSString *)defaultRelationType</Declaration>
+			
+			
+			<Anchor>//api/name/defaultRelationType</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/currentRelationTypes</TokenIdentifier>
+			<Abstract type="html">Returns an array of NSStrings containing the names of each relation type
+for which there is currently at least one related object.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)currentRelationTypes</Declaration>
+			
+			
+			<Anchor>//api/name/currentRelationTypes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/countRelatives</TokenIdentifier>
+			<Abstract type="html">Returns the count of all related objects in the data model.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)countRelatives</Declaration>
+			
+			
+			<Anchor>//api/name/countRelatives</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/countRelativesWithRelationType:</TokenIdentifier>
+			<Abstract type="html">Returns the count of the related objects in the data model that
+have the specified relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)countRelativesWithRelationType:(nonnull NSString *)relation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The relation type whose relatives are to
+            be counted.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/countRelativesWithRelationType:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/countRelativesWithDefaultRelation</TokenIdentifier>
+			<Abstract type="html">Returns the count of the related objects in the data model that
+have the default relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)countRelativesWithDefaultRelation</Declaration>
+			
+			
+			<Anchor>//api/name/countRelativesWithDefaultRelation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/setContainingRelative:</TokenIdentifier>
+			<Abstract type="html">The containing data model relative (if any) of the receiver. Will be set if
+the receiver was added as a relative to another data model instance.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</Declaration>
+			
+			
+			<Anchor>//api/name/containingRelative</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/containingRelative</TokenIdentifier>
+			<Abstract type="html">The containing data model relative (if any) of the receiver. Will be set if
+the receiver was added as a relative to another data model instance.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</Declaration>
+			
+			
+			<Anchor>//api/name/containingRelative</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBDataModel/containingRelative</TokenIdentifier>
+			<Abstract type="html">The containing data model relative (if any) of the receiver. Will be set if
+the receiver was added as a relative to another data model instance.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, weak) MBDataModel *containingRelative</Declaration>
+			
+			
+			<Anchor>//api/name/containingRelative</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/allRelatives</TokenIdentifier>
+			<Abstract type="html">Returns all MBDataModel objects related to the receiver regardless of
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)allRelatives</Declaration>
+			
+			<ReturnValue><Abstract type="html">An NSArray containing the relatives. If there are no relatives,
+            an empty array—not nil—will be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/allRelatives</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/relativesWithRelationType:</TokenIdentifier>
+			<Abstract type="html">Returns all MBDataModel objects related to the receiver by the specified
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)relativesWithRelationType:(nonnull NSString *)relation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The name of the relation type for which the related objects
+            will be returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSArray containing the relatives. If there are no relatives,
+            an empty array—not nil—will be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/relativesWithRelationType:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/relativesWithDefaultRelation</TokenIdentifier>
+			<Abstract type="html">Returns all MBDataModel objects related to the receiver by the default
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)relativesWithDefaultRelation</Declaration>
+			
+			<ReturnValue><Abstract type="html">An NSArray containing the relatives. If there are no relatives,
+            an empty array—not nil—will be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/relativesWithDefaultRelation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/firstRelativeWithDefaultRelation</TokenIdentifier>
+			<Abstract type="html">Returns the first MBDataModel related to the receiver by the default
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable MBDataModel *)firstRelativeWithDefaultRelation</Declaration>
+			
+			<ReturnValue><Abstract type="html">The first relative, or nil if there isn&apos;t one.</Abstract></ReturnValue>
+			<Anchor>//api/name/firstRelativeWithDefaultRelation</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/firstRelativeWithRelationType:</TokenIdentifier>
+			<Abstract type="html">Returns the first MBDataModel related to the receiver by the specified
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable MBDataModel *)firstRelativeWithRelationType:(nonnull NSString *)relation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The name of the relation type for which the first related
+            object will be returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The first relative, or nil if there isn&apos;t one.</Abstract></ReturnValue>
+			<Anchor>//api/name/firstRelativeWithRelationType:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelative:</TokenIdentifier>
+			<Abstract type="html">Relates the passed-in data model object to the receiver using the default
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelative:(nonnull MBDataModel *)relative</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relative</Name>
+					<Abstract type="html">The data model object to add as a relative to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelative:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelative:withRelationType:</TokenIdentifier>
+			<Abstract type="html">Relates the passed-in data model object to the receiver using the specified
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelative:(nonnull MBDataModel *)relative withRelationType:(nonnull NSString *)relation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relative</Name>
+					<Abstract type="html">The data model object to add as a relative to the receiver.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The name of the relation type by which relative will be
+            added to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelative:withRelationType:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelatives:</TokenIdentifier>
+			<Abstract type="html">Each MBDataModel returned by the enumeration is added to the receiver as
+a relative using the default relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelatives:(nonnull NSObject&lt;NSFastEnumeration&gt; *)relatives</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relatives</Name>
+					<Abstract type="html">An enumeration of MBDataModel instances to add as
+            relatives to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelatives:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelatives:withRelationType:</TokenIdentifier>
+			<Abstract type="html">Each MBDataModel returned by the enumeration is added to the receiver as
+a relative using the specified relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelatives:(nonnull NSObject&lt;NSFastEnumeration&gt; *)relatives withRelationType:(nonnull NSString *)relation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relatives</Name>
+					<Abstract type="html">An enumeration of MBDataModel instances to add as
+            relatives to the receiver.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The name of the relation type by which the relatives will
+            be added to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelatives:withRelationType:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:forElement:</TokenIdentifier>
+			<Abstract type="html">Creates a data model object of the given class from the specified XML
+element, and adds it to the receiver as a relative using the XML tag name
+of the element as the relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forElement:(nonnull RXMLElement *)element</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>element</Name>
+					<Abstract type="html">The XML element that will be used to populate the
+            newly-created data model object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:forElement:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:withRelationType:forElement:</TokenIdentifier>
+			<Abstract type="html">Creates a data model object of the given class from the specified XML
+element, and adds it to the receiver as a relative using the specified
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forElement:(nonnull RXMLElement *)element</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The relation type to use for adding the newly-created
+            data model object to the receiver. If nil, the receiver&apos;s
+            default relation type is used.</Abstract>
+				</Parameter><Parameter>
+					<Name>element</Name>
+					<Abstract type="html">The XML element that will be used to populate the
+            newly-created data model object.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:withRelationType:forElement:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:forFirstChildOf:havingTag:</TokenIdentifier>
+			<Abstract type="html">Creates a data model object of the given class from the first child
+element of the passed-in XML having the given XML tag, and adds it to the
+receiver as a relative using tagName as the relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forFirstChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose first child element having
+            the tag name tagName will be used to populate the newly-created
+            data model object.</Abstract>
+				</Parameter><Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The tag name of the first child element of container to
+            use for populating the newly-created data model object. </Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:forFirstChildOf:havingTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:</TokenIdentifier>
+			<Abstract type="html">Creates a data model object of the given class from the first child
+element of the passed-in XML having the given XML tag, and adds it to the
+receiver as a relative using relation as the relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forFirstChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The relation type to use for adding the newly-created
+            data model object as a relative to the receiver. If nil, the
+            receiver&apos;s default relation type is used.</Abstract>
+				</Parameter><Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose first child element having
+            the tag name tagName will be used to populate the newly-created
+            data model object.</Abstract>
+				</Parameter><Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The tag name of the first child element of container to
+            use for populating the newly-created data model object. </Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:withRelationType:forFirstChildOf:havingTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:forEachChildOf:</TokenIdentifier>
+			<Abstract type="html">Constructs a data model object of the given class for each child element of
+the passed-in XML. Each data model object instantiated is added to the receiver
+as a relative using the default relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forEachChildOf:(nonnull RXMLElement *)container</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose child elements will be used to
+            populate any newly-created data model objects.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:forEachChildOf:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:withRelationType:forEachChildOf:</TokenIdentifier>
+			<Abstract type="html">Constructs a data model object of the given class for each child element of
+the passed-in XML. Each data model object instantiated is added to the receiver
+as a relative using the specified relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forEachChildOf:(nonnull RXMLElement *)container</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The relation type to use for adding the newly-created
+            data model object as a relative to the receiver. If nil, the
+            receiver&apos;s default relation type is used.</Abstract>
+				</Parameter><Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose child elements will be used to
+            populate any newly-created data model objects.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:withRelationType:forEachChildOf:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:forEachChildOf:havingTag:</TokenIdentifier>
+			<Abstract type="html">Constructs a data model object of the given class for each child element of
+the passed-in XML that has the specified tag name. Each data model object
+instantiated is added to the receiver as a relative using tagName as the
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls forEachChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose child elements will be used to
+            populate any newly-created data model objects.</Abstract>
+				</Parameter><Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The tag name of the child elements of container to
+            use for populating any newly-created data model objects. </Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:forEachChildOf:havingTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/addRelativeOfClass:withRelationType:forEachChildOf:havingTag:</TokenIdentifier>
+			<Abstract type="html">Constructs a data model object of the given class for each child element of
+the passed-in XML that has the specified tag name. Each data model object
+instantiated is added to the receiver as a relative using relation as the
+relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)addRelativeOfClass:(nonnull Class)relCls withRelationType:(nullable NSString *)relation forEachChildOf:(nonnull RXMLElement *)container havingTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relCls</Name>
+					<Abstract type="html">The class of MBDataModel to create.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The relation type to use for adding the newly-created
+            data model object as a relative to the receiver. If nil, the
+            receiver&apos;s default relation type is used.</Abstract>
+				</Parameter><Parameter>
+					<Name>container</Name>
+					<Abstract type="html">The XML element whose child elements will be used to
+            populate any newly-created data model objects.</Abstract>
+				</Parameter><Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The tag name of the child elements of container to
+            use for populating any newly-created data model objects. </Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRelativeOfClass:withRelationType:forEachChildOf:havingTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/relationTypeForTag:</TokenIdentifier>
+			<Abstract type="html">Returns the relation type to use when automatically creating related data
+objects from XML.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)relationTypeForTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The XML tag name for which the relation type is desired.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The relation type. Implementations may return nil if they do
+            not support the specified tag name.</Abstract></ReturnValue>
+			<Anchor>//api/name/relationTypeForTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/shouldAutomaticallyAddRelativeOfType:fromTag:</TokenIdentifier>
+			<Abstract type="html">Determines whether the receiver should attempt to add an automatically-created
+related object for the given relation type.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)shouldAutomaticallyAddRelativeOfType:(nonnull NSString *)relationType fromTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relationType</Name>
+					<Abstract type="html">The relation type.</Abstract>
+				</Parameter><Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The XML tag name for which the related object may be
+            created.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if a relative should be automatically added for the given
+            relation type; NO otherwise. The default implementation returns
+            YES.</Abstract></ReturnValue>
+			<Anchor>//api/name/shouldAutomaticallyAddRelativeOfType:fromTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/implementingClassForRelativeOfType:fromTag:</TokenIdentifier>
+			<Abstract type="html">Called to query the implementation to determine the Class that should be used
+for instances of related objects that are created automatically from XML by the
+MBDataModel superclass.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (nullable Class)implementingClassForRelativeOfType:(nonnull NSString *)relationType fromTag:(nonnull NSString *)tagName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relationType</Name>
+					<Abstract type="html">The relation type.</Abstract>
+				</Parameter><Parameter>
+					<Name>tagName</Name>
+					<Abstract type="html">The XML tag name for which the related object is being
+            created.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The Class to create for the related object, or nil if the
+            receiver does not support the specified relation type. If a 
+            non-nil value is returned, the class must be a type of
+            MBDataModel. The default implementation returns 
+            [&lt;code&gt;MBDataModel class&lt;/code&gt;].</Abstract></ReturnValue>
+			<Anchor>//api/name/implementingClassForRelativeOfType:fromTag:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/removeRelative:</TokenIdentifier>
+			<Abstract type="html">Removes from the receiver all instances of the given relative from any relation
+type in which it occurs.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)removeRelative:(nonnull MBDataModel *)relative</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relative</Name>
+					<Abstract type="html">The data model relative to remove.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRelative:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/removeRelative:withRelationType:</TokenIdentifier>
+			<Abstract type="html">Removes from the receiver any instance of the given relative from the
+specified relation.</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)removeRelative:(nonnull MBDataModel *)relative withRelationType:(nonnull NSString *)relation</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relative</Name>
+					<Abstract type="html">The data model relative to remove.</Abstract>
+				</Parameter><Parameter>
+					<Name>relation</Name>
+					<Abstract type="html">The name of the relation type for which relative should
+            be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRelative:withRelationType:</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBDataModel/dataModelDidAddOrRemoveRelatives</TokenIdentifier>
+			<Abstract type="html">Notifies the receiver that one or more relatives have been added or removed</Abstract>
+			<DeclaredIn>MBDataModel.h</DeclaredIn>
+			
+			<Declaration>- (void)dataModelDidAddOrRemoveRelatives</Declaration>
+			
+			
+			<Anchor>//api/name/dataModelDidAddOrRemoveRelatives</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MBPlatformType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MBPlatformType</TokenIdentifier>
+			<Abstract type="html">The possible operating system types on which this code could run.</Abstract>
+			<DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+			
+			<NodeRef refid="49"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBPlatformTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The platform is not known.</Abstract>
+            <Declaration>MBPlatformTypeUnknown</Declaration>
+            
+            <DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBPlatformTypeMacOS</TokenIdentifier>
+            <Abstract type="html">The platform runs macOS.</Abstract>
+            <Declaration>MBPlatformTypeMacOS</Declaration>
+            
+            <DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBPlatformTypeIOS</TokenIdentifier>
+            <Abstract type="html">The platform runs iOS.</Abstract>
+            <Declaration>MBPlatformTypeIOS</Declaration>
+            
+            <DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBPlatformTypeTVOS</TokenIdentifier>
+            <Abstract type="html">The platform runs tvOS.</Abstract>
+            <Declaration>MBPlatformTypeTVOS</Declaration>
+            
+            <DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBPlatformTypeWatchOS</TokenIdentifier>
+            <Abstract type="html">The platform runs watchOS.</Abstract>
+            <Declaration>MBPlatformTypeWatchOS</Declaration>
+            
+            <DeclaredIn>MBPlatform.h</DeclaredIn>
+            
+            <NodeRef refid="49"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

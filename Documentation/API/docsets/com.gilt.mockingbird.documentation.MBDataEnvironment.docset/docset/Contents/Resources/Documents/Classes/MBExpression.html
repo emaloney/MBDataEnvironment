@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBExpression Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MBDataEnvironment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/asArray:">+ asArray:</option>
+		
+		<option value="//api/name/asArray:error:">+ asArray:error:</option>
+		
+		<option value="//api/name/asArray:inVariableSpace:error:">+ asArray:inVariableSpace:error:</option>
+		
+		<option value="//api/name/asBoolean:">+ asBoolean:</option>
+		
+		<option value="//api/name/asBoolean:defaultValue:">+ asBoolean:defaultValue:</option>
+		
+		<option value="//api/name/asBoolean:error:">+ asBoolean:error:</option>
+		
+		<option value="//api/name/asBoolean:inVariableSpace:defaultValue:error:">+ asBoolean:inVariableSpace:defaultValue:error:</option>
+		
+		<option value="//api/name/asNumber:">+ asNumber:</option>
+		
+		<option value="//api/name/asNumber:defaultValue:">+ asNumber:defaultValue:</option>
+		
+		<option value="//api/name/asNumber:error:">+ asNumber:error:</option>
+		
+		<option value="//api/name/asNumber:inVariableSpace:defaultValue:error:">+ asNumber:inVariableSpace:defaultValue:error:</option>
+		
+		<option value="//api/name/asObject:">+ asObject:</option>
+		
+		<option value="//api/name/asObject:defaultValue:">+ asObject:defaultValue:</option>
+		
+		<option value="//api/name/asObject:error:">+ asObject:error:</option>
+		
+		<option value="//api/name/asObject:inVariableSpace:defaultValue:error:">+ asObject:inVariableSpace:defaultValue:error:</option>
+		
+		<option value="//api/name/asString:">+ asString:</option>
+		
+		<option value="//api/name/asString:defaultValue:">+ asString:defaultValue:</option>
+		
+		<option value="//api/name/asString:error:">+ asString:error:</option>
+		
+		<option value="//api/name/asString:inVariableSpace:defaultValue:error:">+ asString:inVariableSpace:defaultValue:error:</option>
+		
+		<option value="//api/name/booleanFromValue:">+ booleanFromValue:</option>
+		
+		<option value="//api/name/compareLeftValue:againstRightValue:">+ compareLeftValue:againstRightValue:</option>
+		
+		<option value="//api/name/numberFromValue:">+ numberFromValue:</option>
+		
+		<option value="//api/name/stringFromBoolean:">+ stringFromBoolean:</option>
+		
+		<option value="//api/name/value:isEqualTo:">+ value:isEqualTo:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBExpression Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MBExpression.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is responsible for evaluating Mockingbird expressions.</p>
+
+<p>See the documentation for the Mockingbird Data Environment for information
+on how to construct valid expressions.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Evaluating expressions as strings" name="task_Evaluating expressions as strings"></a>
+						<h2 class="task-title">Evaluating expressions as strings</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/asString:" title="asString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asString:">+&nbsp;asString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>string context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asString:error:" title="asString:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asString:error:">+&nbsp;asString:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>string context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asString:defaultValue:" title="asString:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asString:defaultValue:">+&nbsp;asString:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>string context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em> defaultValue:(nullable NSString *)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asString:inVariableSpace:defaultValue:error:" title="asString:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asString:inVariableSpace:defaultValue:error:">+&nbsp;asString:inVariableSpace:defaultValue:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>string context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSString *)asString:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(nullable NSString *)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>space</code></th>
+						<td><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Evaluating expressions as objects with string interpolation" name="task_Evaluating expressions as objects with string interpolation"></a>
+						<h2 class="task-title">Evaluating expressions as objects with string interpolation</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/asObject:" title="asObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asObject:">+&nbsp;asObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values from within an expression without them being concatenated into a
+single string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asObject:error:" title="asObject:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asObject:error:">+&nbsp;asObject:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values from within an expression without them being concatenated into a
+single string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asObject:defaultValue:" title="asObject:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asObject:defaultValue:">+&nbsp;asObject:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em> defaultValue:(nullable id)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values from within an expression without them being concatenated into a
+single string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asObject:inVariableSpace:defaultValue:error:" title="asObject:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asObject:inVariableSpace:defaultValue:error:">+&nbsp;asObject:inVariableSpace:defaultValue:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em>. String interpolation
+may be used if the expression references more than one value.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable id)asObject:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(nullable id)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>space</code></th>
+						<td><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an object.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If an expression contains a reference to only a single value (and does not
+also contain any text literals), the return value will be whatever <code>NSObject</code>
+instance is referenced by the expression.</p>
+
+<p>String interpolation only applies when an expression references more than one
+value, eg. &ldquo;<code>Hello $firstName! I haven't seen you since $lastTime.</code>&rdquo;</p>
+
+<p>With string interpolation, if an expression contains references to multiple
+discrete values or if it contains one or more text literals, those values are
+coerced into strings and concatenated before being returned as a single
+<code>NSString</code> instance.</p>
+
+<p>If you know you&rsquo;ll be using an object expression that will result in string
+interpolation being used, consider using the <a href="#//api/name/asString:"><code>asString:</code></a> method variants
+instead.</p>
+
+<p>You can also use one of the <a href="#//api/name/asArray:"><code>asArray:</code></a> method variants to retrieve multiple
+values from within an expression without them being concatenated into a
+single string.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Evaluating expressions as objects without string interpolation" name="task_Evaluating expressions as objects without string interpolation"></a>
+						<h2 class="task-title">Evaluating expressions as objects without string interpolation</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/asArray:" title="asArray:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asArray:">+&nbsp;asArray:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em> without using string
+interpolation. Discrete values within the expression are returned as items in
+an array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)asArray:(nonnull NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an array of
+            objects.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An expression may contain zero or more literal values and inner expressions;
+this method gathers any individual literals and inner expression values
+encountered while evaluating the passed-in expression, and returns an
+<code>NSArray</code> containing the results.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asArray:error:" title="asArray:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asArray:error:">+&nbsp;asArray:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em> without using string
+interpolation. Discrete values within the expression are returned as items in
+an array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)asArray:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an array of
+            objects.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An expression may contain zero or more literal values and inner expressions;
+this method gathers any individual literals and inner expression values
+encountered while evaluating the passed-in expression, and returns an
+<code>NSArray</code> containing the results.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asArray:inVariableSpace:error:" title="asArray:inVariableSpace:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asArray:inVariableSpace:error:">+&nbsp;asArray:inVariableSpace:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>object context</em> without using string
+interpolation. Discrete values within the expression are returned as items in
+an array.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSArray *)asArray:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>space</code></th>
+						<td><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as an array of
+            objects.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>An expression may contain zero or more literal values and inner expressions;
+this method gathers any individual literals and inner expression values
+encountered while evaluating the passed-in expression, and returns an
+<code>NSArray</code> containing the results.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Evaluating expressions as numeric values" name="task_Evaluating expressions as numeric values"></a>
+						<h2 class="task-title">Evaluating expressions as numeric values</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/asNumber:" title="asNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asNumber:">+&nbsp;asNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Mathematical expressions may be used in the numeric context.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asNumber:error:" title="asNumber:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asNumber:error:">+&nbsp;asNumber:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Mathematical expressions may be used in the numeric context.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asNumber:defaultValue:" title="asNumber:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asNumber:defaultValue:">+&nbsp;asNumber:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em> defaultValue:(nullable NSDecimalNumber *)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Mathematical expressions may be used in the numeric context.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asNumber:inVariableSpace:defaultValue:error:" title="asNumber:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asNumber:inVariableSpace:defaultValue:error:">+&nbsp;asNumber:inVariableSpace:defaultValue:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>numeric context</em>, coercing the result
+into a number if necessary (and possible).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)asNumber:(nonnull NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(nullable NSDecimalNumber *)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>space</code></th>
+						<td><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if the method would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a numeric
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Mathematical expressions may be used in the numeric context.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Evaluating expressions as boolean values" name="task_Evaluating expressions as boolean values"></a>
+						<h2 class="task-title">Evaluating expressions as boolean values</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/asBoolean:" title="asBoolean:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asBoolean:">+&nbsp;asBoolean:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asBoolean:error:" title="asBoolean:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asBoolean:error:">+&nbsp;asBoolean:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asBoolean:defaultValue:" title="asBoolean:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asBoolean:defaultValue:">+&nbsp;asBoolean:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em> defaultValue:(BOOL)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if there was a problem evaluating
+            <code>expr</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/asBoolean:inVariableSpace:defaultValue:error:" title="asBoolean:inVariableSpace:defaultValue:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/asBoolean:inVariableSpace:defaultValue:error:">+&nbsp;asBoolean:inVariableSpace:defaultValue:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Evaluates the given expression in the <em>boolean context</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)asBoolean:(nullable NSString *)<em>expr</em> inVariableSpace:(nonnull MBVariableSpace *)<em>space</em> defaultValue:(BOOL)<em>def</em> error:(MBExpressionErrorPtrPtr)<em>errPtr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>expr</code></th>
+						<td><p>The expression to evaluate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>space</code></th>
+						<td><p>The <a href="../Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a> instance to use for evaluating the
+            expression. This allows the use of variable spaces other than
+            the instance associated with the active <a href="../Classes/MBEnvironment.html"><code>MBEnvironment</code></a>. Must not
+            be <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default return value to use if there was a problem evaluating
+            <code>expr</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errPtr</code></th>
+						<td><p>An optional pointer to a memory location for storing an
+            <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance. If this parameter is non-<code>nil</code>
+            and an error occurs during evaluation, <code>*errPtr</code> will be updated
+            to point to an <a href="../Classes/MBExpressionError.html"><code>MBExpressionError</code></a> instance describing the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the expression <code>expr</code> as a boolean
+            expression.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Value type coercion" name="task_Value type coercion"></a>
+						<h2 class="task-title">Value type coercion</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/booleanFromValue:" title="booleanFromValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/booleanFromValue:">+&nbsp;booleanFromValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Exposes the mechanism the expression evaluator uses for coercing arbitrary
+object values into booleans.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)booleanFromValue:(nullable id)<em>val</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>val</code></th>
+						<td><p>The object to interpret as a boolean</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The boolean representation of <code>val</code></p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringFromBoolean:" title="stringFromBoolean:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringFromBoolean:">+&nbsp;stringFromBoolean:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Exposes the mechanism the expression evaluator uses for representing boolean
+values as strings.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)stringFromBoolean:(BOOL)<em>val</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>val</code></th>
+						<td><p>The boolean value</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The string representation of <code>val</code>; either <code>kMBMLBooleanStringTrue</code>
+            or <code>kMBMLBooleanStringFalse</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/numberFromValue:" title="numberFromValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/numberFromValue:">+&nbsp;numberFromValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Exposes the mechanism the expression evaluator uses for coercing arbitrary
+object values into numbers.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (nullable NSDecimalNumber *)numberFromValue:(nullable id)<em>val</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>val</code></th>
+						<td><p>The object to interpret as a number</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>If <code>val</code> can be interpreted as a number, the return value is an
+            <code>NSDecimalNumber</code> containing that number. If <code>val</code> cannot be
+            interpreted as a number, or if the resulting number is equal to
+            <code>[</code><code>NSNumber notANumber</code><code>]</code>, <code>nil</code> will be returned.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Comparing values" name="task_Comparing values"></a>
+						<h2 class="task-title">Comparing values</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/value:isEqualTo:" title="value:isEqualTo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/value:isEqualTo:">+&nbsp;value:isEqualTo:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Exposes the mechanism the expression evaluator uses for determining if two
+objects have equal values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)value:(nullable id)<em>lValue</em> isEqualTo:(nullable id)<em>rValue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lValue</code></th>
+						<td><p>The left value of the comparison</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rValue</code></th>
+						<td><p>The right value of the comparison</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The return value of <code>[</code><code>lValue isEqual:rValue</code><code>]</code> if
+            <code>lValue</code> and <code>rValue</code> are of the same type. Otherwise, falls back on
+            <code>[MBExpression compareLeftValue:lValue againstRightValue:rValue]</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/compareLeftValue:againstRightValue:" title="compareLeftValue:againstRightValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/compareLeftValue:againstRightValue:">+&nbsp;compareLeftValue:againstRightValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Exposes the mechanism the expression evaluator uses to determine the relative
+order of two object values.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSComparisonResult)compareLeftValue:(nullable id)<em>lValue</em> againstRightValue:(nullable id)<em>rValue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lValue</code></th>
+						<td><p>The left value of the comparison</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rValue</code></th>
+						<td><p>The right value of the comparison</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>NSOrderedAscending</code> if <code>lValue</code> is less than <code>rValue</code>;
+            <code>NSOrderedDescending</code> if <code>lValue</code> is greater than <code>rValue</code>;
+            <code>NSOrderedSame</code> if <code>lValue</code> is equal to <code>rValue</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpression.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

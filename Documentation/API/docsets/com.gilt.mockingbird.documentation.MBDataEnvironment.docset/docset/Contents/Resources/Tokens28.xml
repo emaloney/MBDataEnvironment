@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLResourceFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLResourceFunctions</TokenIdentifier>
+			<Abstract type="html">This class implements MBML functions for obtaining information about
+NSBundle resources.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForMainBundle</TokenIdentifier>
+			<Abstract type="html">Determines the directory containing the resources for the main NSBundle.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForMainBundle</Declaration>
+			
+			<ReturnValue><Abstract type="html">The directory containing the main bundle&apos;s resource files, or
+            nil if it couldn&apos;t be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/directoryForMainBundle</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForBundleWithIdentifier:</TokenIdentifier>
+			<Abstract type="html">Determines the directory containing the resources for the NSBundle with the
+specified bundle identifier.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForBundleWithIdentifier:(NSString *)bundleID</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>bundleID</Name>
+					<Abstract type="html">The bundle identifier.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The directory containing the resources for the NSBundle with the
+            identifier bundleID, or nil if it couldn&apos;t be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/directoryForBundleWithIdentifier:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLResourceFunctions/directoryForClassBundle:</TokenIdentifier>
+			<Abstract type="html">Determines the directory containing the resources for the NSBundle associated
+with the specified class.</Abstract>
+			<DeclaredIn>MBMLResourceFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)directoryForClassBundle:(NSString *)className</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The directory containing the resources for the NSBundle associated
+            with the class className, or nil if it couldn&apos;t be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/directoryForClassBundle:</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

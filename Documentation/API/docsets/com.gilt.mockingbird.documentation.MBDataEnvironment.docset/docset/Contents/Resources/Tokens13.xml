@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBExpressionError.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBExpressionError</TokenIdentifier>
+			<Abstract type="html">Represents errors that can occur during MBExpression parsing and evaluation.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setMessage:</TokenIdentifier>
+			<Abstract type="html">Returns a message explaining the error.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/message</TokenIdentifier>
+			<Abstract type="html">Returns a message explaining the error.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/message</TokenIdentifier>
+			<Abstract type="html">Returns a message explaining the error.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *message</Declaration>
+			
+			
+			<Anchor>//api/name/message</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setCausedByError:</TokenIdentifier>
+			<Abstract type="html">If the receiver was caused by an underlying NSError, this property will
+    contain the original error. Otherwise, nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSError *causedByError</Declaration>
+			
+			
+			<Anchor>//api/name/causedByError</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/causedByError</TokenIdentifier>
+			<Abstract type="html">If the receiver was caused by an underlying NSError, this property will
+    contain the original error. Otherwise, nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSError *causedByError</Declaration>
+			
+			
+			<Anchor>//api/name/causedByError</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/causedByError</TokenIdentifier>
+			<Abstract type="html">If the receiver was caused by an underlying NSError, this property will
+    contain the original error. Otherwise, nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSError *causedByError</Declaration>
+			
+			
+			<Anchor>//api/name/causedByError</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setCausedByException:</TokenIdentifier>
+			<Abstract type="html">If the receiver was caused by an underlying NSException, this property
+    will contain the original exception. Otherwise, nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSException *causedByException</Declaration>
+			
+			
+			<Anchor>//api/name/causedByException</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/causedByException</TokenIdentifier>
+			<Abstract type="html">If the receiver was caused by an underlying NSException, this property
+    will contain the original exception. Otherwise, nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSException *causedByException</Declaration>
+			
+			
+			<Anchor>//api/name/causedByException</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/causedByException</TokenIdentifier>
+			<Abstract type="html">If the receiver was caused by an underlying NSException, this property
+    will contain the original exception. Otherwise, nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSException *causedByException</Declaration>
+			
+			
+			<Anchor>//api/name/causedByException</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setAdditionalErrors:</TokenIdentifier>
+			<Abstract type="html">Returns an array of MBExpressionErrors related to the receiver. May
+    be nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</Declaration>
+			
+			
+			<Anchor>//api/name/additionalErrors</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/additionalErrors</TokenIdentifier>
+			<Abstract type="html">Returns an array of MBExpressionErrors related to the receiver. May
+    be nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</Declaration>
+			
+			
+			<Anchor>//api/name/additionalErrors</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/additionalErrors</TokenIdentifier>
+			<Abstract type="html">Returns an array of MBExpressionErrors related to the receiver. May
+    be nil. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSArray *additionalErrors</Declaration>
+			
+			
+			<Anchor>//api/name/additionalErrors</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setValue:</TokenIdentifier>
+			<Abstract type="html">Stores an arbitrary value related to the error.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/value</TokenIdentifier>
+			<Abstract type="html">Stores an arbitrary value related to the error.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/value</TokenIdentifier>
+			<Abstract type="html">Stores an arbitrary value related to the error.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) id value</Declaration>
+			
+			
+			<Anchor>//api/name/value</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingExpression:</TokenIdentifier>
+			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *offendingExpression</Declaration>
+			
+			
+			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingExpression</TokenIdentifier>
+			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *offendingExpression</Declaration>
+			
+			
+			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingExpression</TokenIdentifier>
+			<Abstract type="html">Stores a reference to the MBML expression in which the error occurred.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) NSString *offendingExpression</Declaration>
+			
+			
+			<Anchor>//api/name/offendingExpression</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/setOffendingToken:</TokenIdentifier>
+			<Abstract type="html">Stores a reference to an MBMLParseToken involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    offendingExpression. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/offendingToken</TokenIdentifier>
+			<Abstract type="html">Stores a reference to an MBMLParseToken involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    offendingExpression. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBExpressionError/offendingToken</TokenIdentifier>
+			<Abstract type="html">Stores a reference to an MBMLParseToken involved in the error, which
+    is useful for pinpointing the problematic portion of the 
+    offendingExpression. </Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong) MBMLParseToken *offendingToken</Declaration>
+			
+			
+			<Anchor>//api/name/offendingToken</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithMessage:</TokenIdentifier>
+			<Abstract type="html">Creates a new MBExpressionError instance containing the specified message.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The error message.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new MBExpressionError.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithMessage:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithMessage:error:</TokenIdentifier>
+			<Abstract type="html">Creates a new MBExpressionError instance to represent an underlying
+NSError.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)msg error:(nullable NSError *)nsErr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The error message.</Abstract>
+				</Parameter><Parameter>
+					<Name>nsErr</Name>
+					<Abstract type="html">The NSError instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new MBExpressionError.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithMessage:error:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithMessage:exception:</TokenIdentifier>
+			<Abstract type="html">Creates a new MBExpressionError instance to represent an underlying
+NSException.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)errorWithMessage:(nonnull NSString *)msg exception:(nullable NSException *)ex</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">The error message.</Abstract>
+				</Parameter><Parameter>
+					<Name>ex</Name>
+					<Abstract type="html">The NSException instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new MBExpressionError.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithMessage:exception:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithFormat:</TokenIdentifier>
+			<Abstract type="html">Creates a new MBExpressionError instance containing a message constructed
+from the specified format string and parameters.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)errorWithFormat:(nonnull NSString *)format, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>format</Name>
+					<Abstract type="html">The format for the error message, followed by zero or more
+            format parameters.</Abstract>
+				</Parameter><Parameter>
+					<Name>...</Name>
+					<Abstract type="html">A variable argument list of zero or more values referenced
+            within the format string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new MBExpressionError.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithFormat:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithError:</TokenIdentifier>
+			<Abstract type="html">Creates a new MBExpressionError instance to represent an underlying
+NSError.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)errorWithError:(nonnull NSError *)nsErr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>nsErr</Name>
+					<Abstract type="html">The NSError instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new MBExpressionError.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithError:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBExpressionError/errorWithException:</TokenIdentifier>
+			<Abstract type="html">Creates a new MBExpressionError instance to represent an underlying
+NSException.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)errorWithException:(nonnull NSException *)ex</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ex</Name>
+					<Abstract type="html">The NSException instance.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A new MBExpressionError.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithException:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/logOutput</TokenIdentifier>
+			<Abstract type="html">Returns a string containing the output that would be written to the console
+if log were to be called.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSString *)logOutput</Declaration>
+			
+			<ReturnValue><Abstract type="html">The log output.</Abstract></ReturnValue>
+			<Anchor>//api/name/logOutput</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/log</TokenIdentifier>
+			<Abstract type="html">Logs the error to the console.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)log</Declaration>
+			
+			
+			<Anchor>//api/name/log</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/reportErrorTo:</TokenIdentifier>
+			<Abstract type="html">Reports the receiving error. The behavior of reporting depends on the contents
+of the reportTo parameter:</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)reportErrorTo:(MBExpressionErrorPtrPtr)reportTo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>reportTo</Name>
+					<Abstract type="html">Determines where the receiver will be reported.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/reportErrorTo:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/reportErrorTo:suppressLog:</TokenIdentifier>
+			<Abstract type="html">Reports the receiving error. The behavior of reporting depends on the contents
+of the reportTo parameter:</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)reportErrorTo:(MBExpressionErrorPtrPtr)reportTo suppressLog:(BOOL)suppressLog</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>reportTo</Name>
+					<Abstract type="html">Determines where the receiver will be reported.</Abstract>
+				</Parameter><Parameter>
+					<Name>suppressLog</Name>
+					<Abstract type="html">If YES, calling this method will not result in a
+            message being logged to the console.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/reportErrorTo:suppressLog:</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/errorReported</TokenIdentifier>
+			<Abstract type="html">Determines if an error has been reported since the last time the
+clearErrorReported method was called.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)errorReported</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if an error has been reported, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/errorReported</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/clearErrorReported</TokenIdentifier>
+			<Abstract type="html">Clears the flag returned by errorReported so that subsequent calls to
+errorReported return NO until the next time the receiver&apos;s reportErrorTo
+method is called.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (void)clearErrorReported</Declaration>
+			
+			
+			<Anchor>//api/name/clearErrorReported</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBExpressionError/lastErrorReported</TokenIdentifier>
+			<Abstract type="html">Returns the MBExpressionError most recently reported to the receiver, or
+nil if there isn&apos;t one.</Abstract>
+			<DeclaredIn>MBExpressionError.h</DeclaredIn>
+			
+			<Declaration>- (nullable MBExpressionError *)lastErrorReported</Declaration>
+			
+			<ReturnValue><Abstract type="html">The most recently reported error.</Abstract></ReturnValue>
+			<Anchor>//api/name/lastErrorReported</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

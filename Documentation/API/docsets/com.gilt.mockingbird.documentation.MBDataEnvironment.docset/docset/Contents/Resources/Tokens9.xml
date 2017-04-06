@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBEnvironmentLoader.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBEnvironmentLoader</TokenIdentifier>
+			<Abstract type="html">Instances of the MBEnvironmentLoader class are used to parse MBML tags when
+loading an MBEnvironment.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+            
+			
+			<NodeRef refid="9"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/setIsActive:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the receiver is associated with the active environment.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/isActive</TokenIdentifier>
+			<Abstract type="html">Returns YES if the receiver is associated with the active environment.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironmentLoader/isActive</TokenIdentifier>
+			<Abstract type="html">Returns YES if the receiver is associated with the active environment.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/acceptedTagNames</TokenIdentifier>
+			<Abstract type="html">Returns the names of the XML tags accepted by the receiver.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)acceptedTagNames</Declaration>
+			
+			
+			<Anchor>//api/name/acceptedTagNames</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/parseElement:forMatch:</TokenIdentifier>
+			<Abstract type="html">Asks the receiver to parse MBML represented by the passed-in XML element.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)parseElement:(nonnull RXMLElement *)mbml forMatch:(nonnull NSString *)match</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mbml</Name>
+					<Abstract type="html">The MBML element.</Abstract>
+				</Parameter><Parameter>
+					<Name>match</Name>
+					<Abstract type="html">The criterion that caused the match. Normally this is the
+            XML tag name, but in the case of a wildcard match, it will be &quot;*&quot;.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the element was recognized and successfully parsed; NO
+            otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseElement:forMatch:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentWillLoad:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver the receiver that the environment loading is
+about to begin.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentWillLoad:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance being loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentWillLoad:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentDidLoad:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver that the environment loading has finished.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentDidLoad:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance that was loaded.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentDidLoad:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentLoadFailed:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver that the environment loading was stopped due
+to an error.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentLoadFailed:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance that failed to load.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentLoadFailed:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentWillActivate:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver that the environment is about to become active.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentWillActivate:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance that will activate.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentWillActivate:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentDidActivate:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver that the environment became active.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentDidActivate:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance that activated.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentDidActivate:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentWillDeactivate:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver that the environment is about to be deactived.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentWillDeactivate:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance that will deactivate.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentWillDeactivate:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironmentLoader/environmentDidDeactivate:</TokenIdentifier>
+			<Abstract type="html">Called to notify the receiver that the environment was deactived.</Abstract>
+			<DeclaredIn>MBEnvironmentLoader.h</DeclaredIn>
+			
+			<Declaration>- (void)environmentDidDeactivate:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment instance that deactivated.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/environmentDidDeactivate:</Anchor>
+            <NodeRef refid="9"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

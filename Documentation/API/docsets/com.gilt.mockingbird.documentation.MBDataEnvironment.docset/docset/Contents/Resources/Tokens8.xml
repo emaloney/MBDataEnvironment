@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBEnvironment.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBEnvironment</TokenIdentifier>
+			<Abstract type="html">The MBEnvironment class contains the state of the Mockingbird Data
+Environment.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+            
+			
+			<NodeRef refid="8"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/instance</TokenIdentifier>
+			<Abstract type="html">Retrieves the MBEnvironment instance representing the currently-active
+environment.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)instance</Declaration>
+			
+			<ReturnValue><Abstract type="html">The currently-active environment.</Abstract></ReturnValue>
+			<Anchor>//api/name/instance</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/setEnvironment:</TokenIdentifier>
+			<Abstract type="html">Sets the active MBEnvironment instance. The active environment supplies
+the MBVariableSpace instance used to evaluate expressions by default.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)setEnvironment:(nullable MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment to set as the active environment.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The previously-active MBEnvironment instance, if any.</Abstract></ReturnValue>
+			<Anchor>//api/name/setEnvironment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/pushEnvironment:</TokenIdentifier>
+			<Abstract type="html">Sets the active MBEnvironment instance by pushing a new environment
+onto the environment stack.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (void)pushEnvironment:(nonnull MBEnvironment *)env</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>env</Name>
+					<Abstract type="html">The MBEnvironment to set as the active environment.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/pushEnvironment:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/popEnvironment</TokenIdentifier>
+			<Abstract type="html">Sets the active MBEnvironment instance by popping it from the environment
+stack.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)popEnvironment</Declaration>
+			
+			<ReturnValue><Abstract type="html">The newly-active environment.</Abstract></ReturnValue>
+			<Anchor>//api/name/popEnvironment</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/peekEnvironment</TokenIdentifier>
+			<Abstract type="html">Returns (but does not remove) the MBEnvironment instance at the top of the
+environment stack. This is the environment that would become active if
+popEnvironment were called.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)peekEnvironment</Declaration>
+			
+			<ReturnValue><Abstract type="html">The environment at the top of the environment stack, or nil if
+            there is nothing in the stack.</Abstract></ReturnValue>
+			<Anchor>//api/name/peekEnvironment</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadDefaultEnvironment</TokenIdentifier>
+			<Abstract type="html">Loads a new default environment, bypassing any manifest.xml file that might
+exist in the application&apos;s resources. The default environment is the
+environment that exists before any manifest file is processed.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadDefaultEnvironment</Declaration>
+			
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadDefaultEnvironment</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifest</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest.xml file found in the
+application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadFromManifest</Declaration>
+			
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifest</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestWithSearchDirectory:</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest.xml file found in the
+specified search directory or in the application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadFromManifestWithSearchDirectory:(nonnull NSString *)dirPath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dirPath</Name>
+					<Abstract type="html">The path of a directory that will be searched when
+            trying to locate the manifest and other MBML files. This directory
+            will be the first one searched when MBML files are referenced. If
+            a given file doesn&apos;t exist in dirPath, the resourceSearchBundles
+            will then be searched.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifestWithSearchDirectory:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestFile:</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest file with the given name
+found in the application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadFromManifestFile:(nonnull NSString *)manifestName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestName</Name>
+					<Abstract type="html">The name of the manifest file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifestFile:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestFile:withSearchDirectory:</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest file with the given name
+found in the specified search directory or in the application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull instancetype)loadFromManifestFile:(nonnull NSString *)manifestName withSearchDirectory:(nullable NSString *)dirPath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestName</Name>
+					<Abstract type="html">The name of the manifest file.</Abstract>
+				</Parameter><Parameter>
+					<Name>dirPath</Name>
+					<Abstract type="html">The path of a directory that will be searched when
+            trying to locate the manifest and other MBML files. This directory
+            will be the first one searched when MBML files are referenced. If
+            a given file doesn&apos;t exist in dirPath, the resourceSearchBundles
+            will then be searched.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifestFile:withSearchDirectory:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestWithSearchDirectories:</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest.xml file found in the
+specified search directories or in the application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadFromManifestWithSearchDirectories:(nullable NSArray *)dirPaths</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dirPaths</Name>
+					<Abstract type="html">An array containing the paths of directories that will be
+            searched when trying to locate the manifest and other MBML files. 
+            These directories will be searched first (and in the order specified
+            by dirPaths) when MBML files are referenced. If a given file can&apos;t
+            be found in the any of the directories specified by dirPaths,
+            the resourceSearchBundles will then be searched.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifestWithSearchDirectories:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/loadFromManifestFile:withSearchDirectories:</TokenIdentifier>
+			<Abstract type="html">Loads a new environment by processing the manifest file with the given name
+found in the specified search directories or in the application&apos;s resources.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable instancetype)loadFromManifestFile:(nullable NSString *)manifestName withSearchDirectories:(nullable NSArray *)dirPaths</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manifestName</Name>
+					<Abstract type="html">The name of the manifest file.</Abstract>
+				</Parameter><Parameter>
+					<Name>dirPaths</Name>
+					<Abstract type="html">An array containing the paths of directories that will be
+            searched when trying to locate the manifest and other MBML files. 
+            These directories will be searched first (and in the order specified
+            by dirPaths) when MBML files are referenced. If a given file can&apos;t
+            be found in the any of the directories specified by dirPaths,
+            the resourceSearchBundles will then be searched.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The newly-loaded, now-active MBEnvironment instance, or nil
+            if the environment could not be loaded.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadFromManifestFile:withSearchDirectories:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/addSearchDirectory:</TokenIdentifier>
+			<Abstract type="html">Adds the specified directory path to the list of search directories.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (void)addSearchDirectory:(nonnull NSString *)dirPath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dirPath</Name>
+					<Abstract type="html">The path of a directory that to be searched when trying to
+            locate MBML files.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addSearchDirectory:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/addSearchDirectories:</TokenIdentifier>
+			<Abstract type="html">Adds the specified directory paths to the list of search directories.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (void)addSearchDirectories:(nonnull NSArray *)dirPaths</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dirPaths</Name>
+					<Abstract type="html">An array containing the paths of directories to be
+            searched when trying to locate MBML files.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addSearchDirectories:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/loadMBMLFile:</TokenIdentifier>
+			<Abstract type="html">Attempts to load the specified MBML file.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)loadMBMLFile:(nonnull NSString *)fileName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileName</Name>
+					<Abstract type="html">The name of the MBML file to load. Note that this is not
+            a path name. MBML file loading follows a specific search order
+            that allows files to reference each other by name without
+            knowing precisely where they&apos;re located.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if fileName was loaded successfully; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/loadMBMLFile:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/addResourceSearchBundle:</TokenIdentifier>
+			<Abstract type="html">Adds the specified bundle as one that will be consulted whenever an
+environment attempts to find a resource such as an MBML file.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (void)addResourceSearchBundle:(nonnull NSBundle *)bundle</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>bundle</Name>
+					<Abstract type="html">An NSBundle instance that should be searched when
+            attempting to find resources.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addResourceSearchBundle:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/resourceSearchBundles</TokenIdentifier>
+			<Abstract type="html">Returns the NSBundle instances that will be consulted whenever an
+environment attempts to find a resource such as an MBML file.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)resourceSearchBundles</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of NSBundles. Will never be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/resourceSearchBundles</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/setIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Returns YES if the environment is loaded; NO otherwise.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) BOOL isLoaded</Declaration>
+			
+			
+			<Anchor>//api/name/isLoaded</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/isLoaded</TokenIdentifier>
+			<Abstract type="html">Returns YES if the environment is loaded; NO otherwise.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) BOOL isLoaded</Declaration>
+			
+			
+			<Anchor>//api/name/isLoaded</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironment/isLoaded</TokenIdentifier>
+			<Abstract type="html">Returns YES if the environment is loaded; NO otherwise.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign, readonly) BOOL isLoaded</Declaration>
+			
+			
+			<Anchor>//api/name/isLoaded</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/setManifestFilePath:</TokenIdentifier>
+			<Abstract type="html">If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&apos;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the loadDefaultEnvironment method), this value will be nil. </Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestFilePath</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/manifestFilePath</TokenIdentifier>
+			<Abstract type="html">If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&apos;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the loadDefaultEnvironment method), this value will be nil. </Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestFilePath</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironment/manifestFilePath</TokenIdentifier>
+			<Abstract type="html">If the environment was loaded using a manifest file, this property will
+    return the path of the manifest file. If the environment isn&apos;t loaded
+    or if the environment was loaded without using a manifest file (such as
+    through the loadDefaultEnvironment method), this value will be nil. </Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, strong, readonly) NSString *manifestFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/manifestFilePath</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/setMbmlPathsLoaded:</TokenIdentifier>
+			<Abstract type="html">This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. </Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
+			
+			
+			<Anchor>//api/name/mbmlPathsLoaded</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlPathsLoaded</TokenIdentifier>
+			<Abstract type="html">This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. </Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
+			
+			
+			<Anchor>//api/name/mbmlPathsLoaded</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBEnvironment/mbmlPathsLoaded</TokenIdentifier>
+			<Abstract type="html">This property contains the paths of the MBML files that have been loaded
+    by the environment thusfar. </Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>@property (nonnull, nonatomic, copy, readonly) NSArray *mbmlPathsLoaded</Declaration>
+			
+			
+			<Anchor>//api/name/mbmlPathsLoaded</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlPathIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Determines if an MBML file with a specific path has been loaded by the
+receiver.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)mbmlPathIsLoaded:(nonnull NSString *)filePath</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filePath</Name>
+					<Abstract type="html">The path of the file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the environment has loaded an MBML file at the path
+            filePath; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlPathIsLoaded:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/mbmlFileIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Determines if an MBML file with a specific name has been loaded by the
+receiver.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)mbmlFileIsLoaded:(nonnull NSString *)fileName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileName</Name>
+					<Abstract type="html">The filename, also known as the last path component.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the environment has loaded an MBML file with the given
+            name; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlFileIsLoaded:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/addSupportedLibraryClassPrefix:</TokenIdentifier>
+			<Abstract type="html">Allows the loading of environment classes from libraries whose class names
+begin with the specified prefix.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (void)addSupportedLibraryClassPrefix:(nonnull NSString *)prefix</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>prefix</Name>
+					<Abstract type="html">The class prefix Mockingbird should support for dynamic
+            class loading.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addSupportedLibraryClassPrefix:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/supportedLibraryClassPrefixes</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the class prefixes that will be searched
+when attempting to load environment classes.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)supportedLibraryClassPrefixes</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array of strings containing the supported class prefixes.
+            Will never be nil and will always contain at least one value,
+            the string &quot;MB&quot;.</Abstract></ReturnValue>
+			<Anchor>//api/name/supportedLibraryClassPrefixes</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/libraryClassForName:</TokenIdentifier>
+			<Abstract type="html">Uses the supportedClassPrefixes to find an available Class that implements
+the class with the specified name.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nullable Class)libraryClassForName:(nonnull NSString *)className</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>className</Name>
+					<Abstract type="html">The class name for which a Class is sought.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A Class for className, if a class exists among the supported
+            class prefixes, or without any prefix. Returns nil if no class
+            could be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/libraryClassForName:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/enableModuleClass:</TokenIdentifier>
+			<Abstract type="html">Enables the MBModule represented by the specified class. When new
+MBEnvironment instances are created, they will gain support for the
+features added by the module implementation.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (BOOL)enableModuleClass:(nonnull Class)cls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cls</Name>
+					<Abstract type="html">The implementing class of the MBModule to enable.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if cls represents an MBModule that is now enabled. Will
+            be NO if cls does not conform to MBModule.</Abstract></ReturnValue>
+			<Anchor>//api/name/enableModuleClass:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBEnvironment/enabledModuleClasses</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the MBModule classes that will be enabled for all
+newly-created environments. Note when a given environment instance is loaded,
+additional modules not included in this array may be enabled through the
+manifest file.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>+ (nonnull NSArray *)enabledModuleClasses</Declaration>
+			
+			<ReturnValue><Abstract type="html">The currently-enabled modules. Will always contain at least one
+            item, because MBDataEnvironmentModule is always enabled.</Abstract></ReturnValue>
+			<Anchor>//api/name/enabledModuleClasses</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/enabledModuleClasses</TokenIdentifier>
+			<Abstract type="html">Returns an array of Classes representing the MBModules enabled in the
+receiver.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)enabledModuleClasses</Declaration>
+			
+			<ReturnValue><Abstract type="html">The modules enabled in the receiving environment. Will always
+            contain at least one item, because MBDataEnvironmentModule is
+            always enabled. Additional modules may also be enabled through the
+            manifest file.</Abstract></ReturnValue>
+			<Anchor>//api/name/enabledModuleClasses</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentLoaders</TokenIdentifier>
+			<Abstract type="html">Returns an array of MBEnvironmentLoader instances representing the
+environment loaders consulted when the receiving environment is loaded.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSArray *)environmentLoaders</Declaration>
+			
+			<ReturnValue><Abstract type="html">The environment loaders used by the receiver. Will never be nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/environmentLoaders</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBEnvironment/environmentLoaderOfClass:</TokenIdentifier>
+			<Abstract type="html">Returns the first MBEnvironmentLoader instance known to the receiver that
+is an instance of the given class.</Abstract>
+			<DeclaredIn>MBEnvironment.h</DeclaredIn>
+			
+			<Declaration>- (nullable MBEnvironmentLoader *)environmentLoaderOfClass:(nonnull Class)cls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>cls</Name>
+					<Abstract type="html">The class for which an implementing MBEnvironmentLoader
+            instance is sought.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The first MBEnvironmentLoader representing an instance of cls.
+            Will be nil if no such environment loader was found.</Abstract></ReturnValue>
+			<Anchor>//api/name/environmentLoaderOfClass:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBDataEnvironment Reference</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="index.html">MBDataEnvironment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="hierarchy.html">Hierarchy</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBDataEnvironment Reference</h1>
+
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<p>The Mockingbird Data Environment builds upon <a href="https://github.com/emaloney/MBToolbox">the Mockingbird Toolbox</a> to provide a dynamic data processing engine for iOS, macOS, tvOS and watchOS applications.</p>
+
+<p>The Mockingbird Data Environment allows arbitrary data models and object graphs to be assigned <em>names</em> and stored in a <em>variable space</em> from which values can be extracted using <em>expressions</em>.</p>
+
+<p>The Mockingbird Data Environment is particularly suited for building applications that can adapt to changes in server-side data models.</p>
+
+<ul>
+<li><a href="#integrating-with-your-project">Adding the Mockingbird Data Environment to your project</a></li>
+<li><a href="#initializing-the-mockingbird-data-environment">Using the Mockingbird Data Environment</a></li>
+<li><a href="#table-of-contents">Table of contents</a></li>
+</ul>
+
+
+<h2>About the Mockingbird Data Environment</h2>
+
+<p>It is a common scenario for app publishers to have a population of users running old versions. Sometimes, users are stuck on old versions because the latest requires an operating system newer than their hardware will support. Such users won&rsquo;t be running your latest app until they buy a new machine, if they ever do.</p>
+
+<p>For some types of apps, this isn&rsquo;t a big problem. But for apps that must communicate with network-based services, having a wide variety of old versions out in the wild makes it difficult to evolve and maintain your services.</p>
+
+<p>Eventually, you will be faced with accepting one of these tradeoffs:</p>
+
+<ul>
+<li><p>Do you drop support for old versions, knowing that there&rsquo;s a risk of severing valuable relationships with some of your users?</p></li>
+<li><p>Do you take on the expense and difficulty of maintaining and operating a growing number of legacy backend services over time?</p></li>
+<li><p>Or do you resign yourself to never evolving your backend systems—or doing it much more slowly than you&rsquo;d like?</p></li>
+</ul>
+
+
+<p>The purpose of the Mockingbird Data Environment is to free you from having to make these compromises.</p>
+
+<h4>The Root of the Problem</h4>
+
+<p>The way applications are typically architected, the client application and the server must both agree in advance on the data schema that will be used to communicate. On the client side, native code is written that implements the logic of extracting meaningful information from the data sent by the server.</p>
+
+<p>The problem with this architecture is that <em>both</em> the client <em>and</em> the server require intimate knowledge of the data schema.</p>
+
+<p>Some have attempted to address this with solutions that automatically generate client code from data schemas. While this is undoubtedly convenient and time-saving, the original problem remains: the knowledge of the data format must be <em>compiled in</em> to the client application and therefore can&rsquo;t be changed once the app has been released. You&rsquo;re still going to end up with some users running very old app versions that will want to communicate with your services.</p>
+
+<p>Ideally, there would be only <em>one</em> place where knowledge of a data model would need to live. The long tail of legacy applications gives us a compelling reason to avoid having that knowledge hard-coded into the client, so we should look to a server-driven solution.</p>
+
+<p>If you think about what a client application really needs to know, it&rsquo;s not the details of the data structure sent by the server, it&rsquo;s specific bits of information embedded within that data structure. The data structure is merely a byproduct of the application&rsquo;s need to communicate with the server.</p>
+
+<p>An app might be interested in a product list, for example, but the fact that the product list is assembled from data three levels down in a particular JSON structure is incidental.</p>
+
+<h4>The Solution</h4>
+
+<p>The Mockingbird Data Environment allows you to build apps where the server can host the logic required to navigate the data structures it returns. Services can return a data model and also a set of <em>expressions</em> used to extract meaningful information from that data model.</p>
+
+<p>Essentially, the server&rsquo;s response tells the client application two things: &ldquo;<em>Here&rsquo;s a data structure containing the information you need, and here&rsquo;s how you pick out the parts that are relevant to you.</em>&rdquo;</p>
+
+<p>Because everything is hosted on the server—both the data model and the knowledge of how to interpret that data model—every installed copy of your app can automatically adapt to new data models whenever you choose to deploy them.</p>
+
+<p>You won&rsquo;t need to resubmit your app for review every time you change how your services communicate, and you won&rsquo;t need to run multiple versions of your backend to support legacy versions of your app.</p>
+
+<p>Let the Mockingbird Data Environment decouple your native code from the details of your server-side data, and you can evolve your services on your own schedule while long-forgotten versions of your app will just keep on working.</p>
+
+<blockquote><p>This technique was discussed in more detail at the <a href="http://www.meetup.com/iOSoho/events/181963632/">iOSoho Developer&rsquo;s Symposium</a> meetup on August 11th, 2014. (<a href="http://tech.gilt.com/post/94663143169/handling-changes-to-your-server-side-data-model">Slides available at the Gilt Tech blog</a>.)</p></blockquote>
+
+<h2>Table of Contents</h2>
+
+<ol>
+<li><a href="#initializing-the-mockingbird-data-environment">Initializing the Mockingbird Data Environment</a></li>
+<li><a href="#an-introduction-to-mockingbird-expressions">An Introduction to Mockingbird Expressions</a></li>
+<li> <a href="#evaluating-expressions">Evaluating Expressions</a>
+
+<ol>
+<li><a href="#string-expressions">String Expressions</a></li>
+<li><a href="#object-expressions">Object Expressions</a></li>
+<li><a href="#numeric-expressions">Numeric Expressions</a></li>
+<li><a href="#boolean-expressions">Boolean Expressions</a></li>
+<li><a href="#expression-contexts">Expression Contexts</a></li>
+<li> <a href="#forcing-a-numeric-context">Forcing a Numeric Context</a></li>
+<li> <a href="#forcing-a-boolean-context">Forcing a Boolean Context</a></li>
+<li> <a href="#quoting">Quoting</a></li>
+<li> <a href="#escape-sequences">Escape Sequences</a></li>
+<li><a href="#additional-variable-reference-notations">Additional Variable Reference Notations</a></li>
+<li> <a href="#curly-brace-notation">Curly-Brace Notation</a></li>
+<li> <a href="#bracket-notation">Bracket Notation</a></li>
+<li> <a href="#parentheses-notation">Parentheses Notation</a></li>
+<li><a href="#variable-notation-summary">Variable Notation Summary</a></li>
+</ol>
+</li>
+<li> <a href="#mbml-functions">MBML Functions</a></li>
+<li> <a href="#debugging-expressions">Debugging Expressions</a>
+
+<ol>
+<li><a href="#mbml-functions-for-debugging">MBML Functions for Debugging</a></li>
+<li><a href="#evaluating-expressions-in-the-xcode-debugger">Evaluating Expressions in the Xcode Debugger</a></li>
+</ol>
+</li>
+<li><a href="#an-introduction-to-mbml-files">An Introduction to MBML Files</a></li>
+<li> <a href="#the-manifest-file">The Manifest File</a></li>
+<li> <a href="#the-structure-of-an-mbml-file">The Structure of an MBML File</a></li>
+<li> <a href="#types-of-mbml-declarations">Types of MBML declarations</a>
+
+<ol>
+<li><a href="#includes">Includes</a></li>
+<li><a href="#variables">Variables</a></li>
+<li> <a href="#concrete-variables">Concrete Variables</a></li>
+<li> <a href="#singleton-variables">Singleton Variables</a></li>
+<li> <a href="#dynamic-variables">Dynamic Variables</a></li>
+<li><a href="#functions">Functions</a></li>
+</ol>
+</li>
+<li><a href="#further-reading">Further Reading</a></li>
+<li><a href="#additional-resources">Additional Resources</a></li>
+</ol>
+
+
+<h2>Initializing the Mockingbird Data Environment</h2>
+
+<p>Before making use of the Mockingbird Data Environment, your application first loads an <a href="Classes/MBEnvironment.html"><code>MBEnvironment</code></a> instance.</p>
+
+<p>The easiest way to do this is to load the <em>default environment</em>:</p>
+
+<p><code>objc
+[MBEnvironment loadDefaultEnvironment];
+</code></p>
+
+<p>The default environment contains everything you need to get started using the Mockingbird Data Environment.</p>
+
+<p>You can also provide your own <em>manifest file</em> that contains additional declarations allowing you to customize the initial state of the environment when it is loaded.</p>
+
+<p>The manifest is an XML file (typically named <code>manifest.xml</code>) that contains MBML markup for customizing and configuring the Mockingbird environment.</p>
+
+<blockquote><p>MBML is an XML document format whose name stands for <strong>M</strong>ocking<strong>b</strong>ird <strong>M</strong>arkup <strong>L</strong>anguage. The format is described in <strong><a href="#an-introduction-to-mbml-files">An Introduction to MBML Files</a></strong> below.</p></blockquote>
+
+<p>If your application provides a <code>manifest.xml</code> file in its resources, instead of calling <code>loadDefaultEnvironment</code>, you could load the environment using:</p>
+
+<p><code>objc
+[MBEnvironment loadFromManifest];
+</code></p>
+
+<p>Once an environment is loaded, you can start populating the <em>variable space</em> with data and use <em>expressions</em> to interact with that data.</p>
+
+<h2>An Introduction to Mockingbird Expressions</h2>
+
+<p>Mockingbird expressions are strings containing zero or more <em>literals</em> or <em>expression tokens</em>.</p>
+
+<p>Depending on the context, Mockingbird expressions can contain:</p>
+
+<ul>
+<li>text literals</li>
+<li>numeric literals</li>
+<li>references to variables of any Objective-C type</li>
+<li>basic math expressions</li>
+<li>boolean logic expressions</li>
+<li>function calls</li>
+</ul>
+
+
+<p>The process of resolving an expression to yield the specific value(s) it references is called <em>evaluation</em>. During evaluation, literals are passed through untouched, but any expression tokens encountered are replaced with the values they represent at evaluation time.</p>
+
+<p>The primary API for evaluating expressions is through several <a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBExpression.html"><code>MBExpression</code> class methods</a>:</p>
+
+<table>
+<thead>
+<tr>
+<th>Expressions yielding</th>
+<th>are evaluating using</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NSString</code></td>
+<td><code>asString:</code></td>
+</tr>
+<tr>
+<td><code>NSNumber</code></td>
+<td><code>asNumber:</code></td>
+</tr>
+<tr>
+<td><code>BOOL</code></td>
+<td><code>asBoolean:</code></td>
+</tr>
+<tr>
+<td><code>id</code> or <code>NSObject</code></td>
+<td><code>asObject:</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<p>One possible use of a Mockingbird expression is to perform string replacement when populating user interface views, such as <code>UILabel</code>s:</p>
+
+<p><code>objc
+    UILabel* greeting = // created elsewhere
+    greeting.text = [MBExpression asString:@"Hello, $userName!"];
+</code></p>
+
+<p>In the code above, the <code>text</code> property of the <code>greeting</code> label will be set to the result of evaluating the <em>string expression</em> <code>Hello, $userName!</code>.</p>
+
+<p>This particular expression consists of three parts: a text literal (&ldquo;<code>Hello,</code>&rdquo;) followed by a reference to the Mockingbird variable <code>userName</code>, followed by another text literal (&ldquo;<code>!</code>&rdquo;).</p>
+
+<p>When the expression is evaluated, the &ldquo;<code>$userName</code>&rdquo; portion of the expression is replaced by the value of the <code>userName</code> variable in the active <em>variable space</em>.</p>
+
+<p>If the value of <code>userName</code> is &ldquo;<code>Cooper</code>&rdquo;, then the label would display the text &ldquo;<code>Hello, Cooper!</code>&rdquo;.</p>
+
+<blockquote><p>In this documentation, the notation <code>$variableName</code> can be read as either &ldquo;the variable named <em>variableName</em> in the active variable space,&rdquo; or &ldquo;a reference to the value of the variable named <em>variableName</em> in the active variable space,&rdquo; depending on the context.</p></blockquote>
+
+<h4>The Variable Space</h4>
+
+<p>The <em>variable space</em> is where Mockingbird variable values are stored.</p>
+
+<p>Any native runtime object instance can be stored in the Mockingbird variable space. When an object is stored in the variable space, it is associated with a <em>variable name</em> and is considered a <em>variable value</em>.</p>
+
+<p>In Objective-C, variable values can be exposed to the variable space using the keyed subscripting notation:</p>
+
+<p><code>objc
+[MBVariableSpace instance][@"cats"] = @[@"Barrett", @"Duncan", @"Gabby"];
+</code></p>
+
+<p>The code above associates <code>$cats</code> with an <code>NSArray</code> containing three items (the strings &ldquo;<code>Barrett</code>&rdquo;, &ldquo;<code>Duncan</code>&rdquo; and &ldquo;<code>Gabby</code>&rdquo;).</p>
+
+<p>You can also use an MBML manifest file to pre-populate the variable space when the environment is loaded. Using a manifest file allows you to avoid needing to programmatically populate the variable space with common values every time your application is launched.</p>
+
+<p>To ensure that the Mockingbird environment always has the same values for <code>$cats</code>, you could add this <em>variable declaration</em> in the manifest:</p>
+
+<p><code>xml
+&lt;Var name="cats" type="list" mutable="F"&gt;
+    &lt;Var literal="Barrett"/&gt;
+    &lt;Var literal="Duncan"/&gt;
+    &lt;Var literal="Gabby"/&gt;
+&lt;/Var&gt;
+</code></p>
+
+<blockquote><p>The <code>mutable="F"</code> attribute ensures that <code>$cats</code> can&rsquo;t be overwritten by another value during runtime. It does not guarantee the immutability of the underlying object instance, however.</p></blockquote>
+
+<p>See <strong><a href="#the-manifest-file">The Manifest File</a></strong> below for more information on manifest files.</p>
+
+<h4>Variable References</h4>
+
+<p>The most basic non-literal expression form is a <em>simple variable reference</em>, where the variable name is prefixed with a dollar sign:</p>
+
+<p><code>
+$cats
+</code></p>
+
+<p>When an object is made available through the variable space, not only does the object instance itself become accessible using an expression, so do its properties, any values addressable using key-value coding (KVC), and—if the object in question is an array or dictionary—its contents.</p>
+
+<p>You can access these sub-values through <em>variable subreferences</em>, which can take one of two forms: dot accessors and bracket accessors.</p>
+
+<h5>Dot Accessors</h5>
+
+<p>You can use the <em>dot accessor</em> to access the value of an object property or KVC value. For example, to determine the number of objects in the <code>$cats</code> array, you would use the expression:</p>
+
+<p><code>
+$cats.count
+</code></p>
+
+<p>When that expression is evaluated, the Mockingbird expression engine accesses the <code>count</code> property of the underlying <code>NSArray</code> value of <code>$cats</code>, and returns that value. In this example, the value of <code>$cats.count</code> would be an <code>NSNumber</code> containing the integer value <code>3</code>.</p>
+
+<blockquote><p>The Mockingbird expression engine doesn&rsquo;t handle <em>primitives</em> (non-objects) directly. As a result, primitive types are wrapped in their equivalent Cocoa class. <code>NSUInteger</code> and <code>BOOL</code>, for example, are wrapped in <code>NSNumber</code> instances.</p></blockquote>
+
+<h5>Bracket Accessors</h5>
+
+<p>To access items contained in an array or dictionary, you use the <em>bracket accessor</em>:</p>
+
+<p><code>
+$cats[1]
+</code></p>
+
+<p>The expression above would yield the object at index <code>1</code> of the <code>$cats</code> array. Because array indexes are zero-based, this is actually the second item in the array: the string &ldquo;<code>Duncan</code>&rdquo;.</p>
+
+<blockquote><p>An expression referencing an out-of-bounds array index will yield the value <code>nil</code>.</p></blockquote>
+
+<p>Subreferences can also be chained together:</p>
+
+<p><code>
+$cats[1].length
+</code></p>
+
+<p>This expression yields the value of the <code>length</code> property of the object at index <code>1</code> of the <code>$cats</code> array.</p>
+
+<p>In this example, the value yielded would be the number <code>6</code>, which is the length of the string &ldquo;<code>Duncan</code>&rdquo;.</p>
+
+<p>The bracket accessor works similarly for dictionaries. For example:</p>
+
+<p><code>objc
+[MBVariableSpace instance][@"catGenders"] = @{@"Barrett": @"female",
+                                              @"Duncan":  @"male",
+                                              @"Gabby":   @"female"}];
+</code></p>
+
+<p>In the code above, we&rsquo;ve created a dictionary containing a mapping of cat names to genders, and we&rsquo;ve associated it with the variable <code>$catGenders</code>.</p>
+
+<p>To access the gender of any specific cat, we could use the bracket notation to yield the value associated with the given dictionary key:</p>
+
+<p><code>
+$catGenders[Barrett]
+</code></p>
+
+<p>This expression yields the string &ldquo;<code>female</code>&rdquo;.</p>
+
+<h3>Evaluating Expressions</h3>
+
+<p>Depending on the data you have in the variable space and how you need to use it, the <a href="Classes/MBExpression.html"><code>MBExpression</code></a> class provides several methods to evaluate expressions according to one of the following <em>expression types</em>:</p>
+
+<h4>String Expressions</h4>
+
+<p>If you&rsquo;re evaluating an expression that you expect to yield a string, you should use one of the <code>asString:</code> class methods provided by <a href="Classes/MBExpression.html"><code>MBExpression</code></a>:</p>
+
+<p><code>objc
+NSString* gender = [MBExpression asString:@"$catGenders[Barrett]"];
+</code></p>
+
+<p>This evaluates the expression <code>$catGenders[Barrett]</code> as a string, ensuring that the return value will either be an <code>NSString</code> or <code>nil</code>.</p>
+
+<p>In this particular case, the <code>NSString</code> variable <code>gender</code> would contain the value &ldquo;<code>female</code>&rdquo;.</p>
+
+<blockquote><p>If the underlying object isn&rsquo;t an <code>NSString</code> instance, a reasonable attempt will be made to coerce the value into a string.</p></blockquote>
+
+<h5>String Interpolation</h5>
+
+<p>When writing string expressions, you can include <em>text literals</em> within your expression. You can think of a text literal as an expression whose result is the same as its original form.</p>
+
+<p>When a string expression is evaluated, any text literals contained within the expression are returned as-is, while any variable references will be evaluated and replaced with their resulting values. This is called <em>string interpolation</em>.</p>
+
+<p>For example, consider the expression:</p>
+
+<p><code>objc
+NSString* barrett = [MBExpression asString:@"Barrett is a $catGenders[Barrett] cat."];
+</code></p>
+
+<p>Here, the strings &ldquo;<code>Barrett is a</code>&rdquo; and &ldquo;<code>cat.</code>&rdquo; are text literals, while &ldquo;<code>$catGenders[Barrett]</code>&rdquo; is a variable reference.</p>
+
+<p>Because the string &ldquo;<code>$catGenders[Barrett]</code>&rdquo; represents a variable reference, it gets replaced with its underlying value; in this case, the string &ldquo;<code>female</code>&rdquo;.</p>
+
+<p>The resulting value of the <code>NSString</code> variable <code>barrett</code> is &ldquo;<code>Barrett is a female cat.</code>&rdquo;</p>
+
+<h4>Object Expressions</h4>
+
+<p>If you have, say, an <code>NSArray</code> or an <code>NSDictionary</code> in the variable space (as is the case with <code>$catGenders</code>), you can retrieve the underlying object value using an <em>object expression</em>:</p>
+
+<p><code>objc
+NSDictionary* genders = [MBExpression asObject:@"$catGenders"];
+</code></p>
+
+<p>The <code>NSDictionary</code> variable <code>genders</code> now references the same value as <code>$catGenders</code>.</p>
+
+<blockquote><p>Because the <code>asObject:</code> method returns the generic object type <code>id</code>, it is the responsibility of the caller to know the type of object returned, or to do proper type checking before use.</p></blockquote>
+
+<h4>Numeric Expressions</h4>
+
+<p>To retrieve the value of a numeric variable, or to perform a mathematical calculation, you can evaluate an expression <em>as a number</em>:</p>
+
+<p><code>objc
+NSNumber* five = [MBExpression asNumber:@"5"];
+five = [MBExpression asNumber:@"2 + 3"];
+five = [MBExpression asNumber:@"8 - 3"];
+five = [MBExpression asNumber:@"10 / 2"];
+five = [MBExpression asNumber:@"2.5 * 2"];
+five = [MBExpression asNumber:@"((5 * 2) - 5)"];
+</code></p>
+
+<p>All of the expressions above yield an <code>NSNumber</code> containing the value <code>5</code>.</p>
+
+<p>As you can see, numeric expressions can contain basic math expressions. The <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and <code>%</code> (modulo) operators are supported. Operators must be separated from surrounding tokens with at least one space character.</p>
+
+<blockquote><p>By default, C language order is used when evaluating math operators. Parenthetical groupings can be used to ensure specific evaluation order.</p></blockquote>
+
+<p>Evaluating an expression as a number also handles converting Mockingbird variable values to numbers. Here, the <code>NSNumber</code> variable <code>val</code> will contain the integer value <code>5</code>:</p>
+
+<p><code>objc
+[MBVariableSpace instance][@"five"] = @(5);
+NSNumber* val = [MBExpression asNumber:@"$five"];
+</code></p>
+
+<p>In the code above, the <code>@(5)</code> notation ensures that the Mockingbird variable is set to an <code>NSNumber</code> instance. However, the object instance that underlies a Mockingbird variable doesn&rsquo;t need to be an <code>NSNumber</code> in order for an expression to be evaluated numerically.</p>
+
+<p>In the code below, we&rsquo;re setting the Mockingbird variable named <code>five</code> to an <code>NSString</code> containing the text &ldquo;<code>5</code>&rdquo;:</p>
+
+<p><code>objc
+[MBVariableSpace instance][@"five"] = @"5";
+NSNumber* val = [MBExpression asNumber:@"$five"];
+</code></p>
+
+<p>Because the Mockingbird expression engine will attempt to convert the value of a non-<code>NSNumber</code> into an <code>NSNumber</code>, <code>val</code> will contain the integer value <code>5</code>.</p>
+
+<h4>Boolean Expressions</h4>
+
+<p>When an expression is evaluated in a <em>boolean context</em>, the Mockingbird expression engine recognizes an additional set of operators and comparators to make boolean logic possible:</p>
+
+<table>
+<thead>
+<tr>
+<th>Boolean operator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>lVal</em> <code>-AND</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>&amp;&amp;</code> <em>rVal</em> </td>
+<td> The <strong>logical and</strong> operator; evaluates <em>lVal</em> as a boolean expression and, if it is <code>true</code>, evaluates <em>rVal</em> as a boolean expression. The operator evaluates to <code>true</code> if and only if both <em>lVal</em> and <em>rVal</em> are <code>true</code>.</td>
+</tr>
+<tr>
+<td><em>lVal</em> <code>-OR</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> `</td>
+<td>|<code> *rVal* | The **logical or** operator; evaluates *lVal* and *rVal* as boolean expressions. The operator evaluates to</code>true<code>if either *lVal* or *rVal* are</code>true`.</td>
+</tr>
+<tr>
+<td><code>!</code><em>rVal</em> </td>
+<td> The <strong>logical not</strong> operator; evaluates <em>rVal</em> as a boolean expression and negates that value. The operator evaluates to <code>true</code> when <em>rVal</em> evaluates to <code>false</code> and vice-versa.</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Boolean operators can be combined into compound forms:</p>
+
+<p><code>objc
+MBVariableSpace* vars = [MBVariableSpace instance];
+vars[@"catName"] = @"Barrett";
+BOOL isFemale = [MBExpression asBoolean:@"$catName -AND $catGenders[$catName] -AND $catGenders[$catName] == female"];
+</code></p>
+
+<p>In this example, the <code>BOOL</code> variable <code>isFemale</code> would hold the value <code>YES</code>.</p>
+
+<blockquote><p>Parenthetical grouping can also be used within boolean expressions to ensure specific evaluation order.</p></blockquote>
+
+<p>In addition to the expected boolean operators, a number of boolean comparators are supported as well.</p>
+
+<p>Comparators rely on the standard <code>isEqual:</code> and <code>compare:</code> methods for their work, but not exclusively. In some cases, type coercion may occur (for example, when comparing an <code>NSString</code> to an <code>NSNumber</code>).</p>
+
+<table>
+<thead>
+<tr>
+<th>Boolean comparator</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>lVal</em> <code>-EQ</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>==</code> <em>rVal</em> </td>
+<td> The <strong>equal to</strong> comparator. The operator evaluates to <code>true</code> when <em>lVal</em> and <em>rVal</em> are considered equivalent.</td>
+</tr>
+<tr>
+<td><em>lVal</em> <code>-NE</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>!=</code> <em>rVal</em> </td>
+<td> The <strong>not equal to</strong> comparator. The operator evaluates to <code>true</code> when <em>lVal</em> and <em>rVal</em> are not considered equivalent.</td>
+</tr>
+<tr>
+<td><em>lVal</em> <code>-LT</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>&lt;</code> <em>rVal</em> </td>
+<td> The <strong>less than</strong> comparator. Evaluates to <code>true</code> when <em>lVal</em> is considered less than <em>rVal</em>.</td>
+</tr>
+<tr>
+<td><em>lVal</em> <code>-LTE</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>&lt;=</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>=&lt;</code> <em>rVal</em> </td>
+<td> The <strong>less than or equal to</strong> comparator. Evaluates to <code>true</code> when <em>lVal</em> is considered less than or equal to <em>rVal</em>.</td>
+</tr>
+<tr>
+<td><em>lVal</em> <code>-GT</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>&gt;</code> <em>rVal</em> </td>
+<td> The <strong>greater than</strong> comparator. Evaluates to <code>true</code> when <em>lVal</em> is considered greater than <em>rVal</em>.</td>
+</tr>
+<tr>
+<td><em>lVal</em> <code>-GTE</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>&gt;=</code> <em>rVal</em> <strong>or</strong> <em>lVal</em> <code>=&gt;</code> <em>rVal</em> </td>
+<td> The <strong>greater than or equal to</strong> comparator. Evaluates to <code>true</code> when <em>lVal</em> is considered greater than or equal to <em>rVal</em>.</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>For example:</p>
+
+<p><code>objc
+BOOL hasThreeCats = [MBExpression asBoolean:@"$cats.count == 3"];
+BOOL hasAnyCats = [MBExpression asBoolean:@"$cats.count -GTE 1"];
+BOOL theCatLady = [MBExpression asBoolean:@"!($cats.count -LT 7)"];
+</code></p>
+
+<p>Here, <code>hasThreeCats</code> would be <code>YES</code>, <code>hasAnyCats</code> would also be <code>YES</code>, and <code>theCatLady</code> would be <code>NO</code>.</p>
+
+<p>Finally, two boolean literals can be used in a boolean expression context:</p>
+
+<table>
+<thead>
+<tr>
+<th>Boolean literal</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T</code> </td>
+<td> A boolean <code>true</code> (or <code>YES</code>)</td>
+</tr>
+<tr>
+<td><code>F</code> </td>
+<td> A boolean <code>false</code> (or <code>NO</code>)</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>These values work as you might expect:</p>
+
+<p><code>objc
+BOOL tValue = [MBExpression asBoolean:@"T"];
+BOOL fValue = [MBExpression asBoolean:@"F"];
+</code></p>
+
+<p>The variable <code>tValue</code> will be <code>YES</code>, and <code>fValue</code> will be <code>NO</code>.</p>
+
+<p>This allows you to store a boolean value in a string, and have it evaluate as the intended boolean value:</p>
+
+<p>```objc
+[MBVariableSpace instance][@&ldquo;featureFlag&rdquo;] = @&ldquo;T&rdquo;;</p>
+
+<p>// somewhere later on&hellip;</p>
+
+<p>if ([MBExpression asBoolean:@&ldquo;$featureFlag&rdquo;]) {
+    // do something awesome with our great new feature
+}
+```</p>
+
+<h4>Expression Contexts</h4>
+
+<p>The four expression types—<em>string</em>, <em>object</em>, <em>numeric</em> and <em>boolean</em>—all handle their input and output differently. Therefore, an expression evaluated in a <em>string context</em> may yield a different result from the same expression evaluated in a <em>boolean context</em>. Likewise, an expression that&rsquo;s valid in a <em>numeric context</em> might not be valid in any other context.</p>
+
+<p>For example, tokens like <code>-EQ</code>, <code>-LTE</code>, <code>-GT</code>, etc. are only valid in a boolean expression context. When encountered outside of a boolean context, the expression engine will treat those values as text literals.</p>
+
+<blockquote><p>If you&rsquo;ve got an expression that&rsquo;s not behaving as you expect, double-check that the expression context is what you assume it is. See <a href="#debugging-expressions"><strong>Debugging Expressions</strong></a> below for additional tips on diagnosing problematic expressions.</p></blockquote>
+
+<p>Sometimes, you might want to mix contexts. For example, you might want to display a string in a <code>UILabel</code> that includes a mathematical calculation. Or you might want to display a message that contains some conditional text within it.</p>
+
+<h5>Forcing a Numeric Context</h5>
+
+<p>You can embed a numeric expression within any other expression context using the notation: <strong><code>#(</code></strong> <em>numeric expression</em> <strong><code>)</code></strong>.</p>
+
+<p>For example:</p>
+
+<p><code>objc
+[MBExpression asString:@"There are #(10 - 3) days in the week."];
+</code></p>
+
+<p>This expression consists of three components: the text literal &ldquo;<code>There are</code>&rdquo;, then the numeric expression <code>#(10 - 3)</code>, followed by another text literal: &ldquo;<code>days in the week.</code>&rdquo;.</p>
+
+<p>As usual, the text literals are returned as-is, but the numeric expression is evaluated as such, resulting in the value <code>7</code>. So, the expression above would return the string <code>"There are 7 days in the week."</code></p>
+
+<h5>Forcing a Boolean Context</h5>
+
+<p>You can evaluate a boolean expression within a non-boolean context using the notation: <strong><code>^if(</code></strong> <em>boolean expression</em> <strong><code>|</code></strong> <em>true result</em> [ <strong><code>|</code></strong> <em>false result</em> ] <strong><code>)</code></strong>.</p>
+
+<p>When this notation is encountered, <em>boolean expression</em> is evaluated in the boolean context, and based on the result, either <em>true result</em> or <em>false result</em> is returned.</p>
+
+<p><code>objc
+[MBExpression asString:@"You ^if($user.isAdmin|have|do not have) admin privileges"];
+</code></p>
+
+<p>The value yielded by the expression above depends on the <em>boolean context value</em> of <code>$user.isAdmin</code>. If it evaluates to <code>true</code>, the return value will be &ldquo;<code>You have admin privileges</code>&rdquo;; otherwise, it will be &ldquo;<code>You do not have admin privileges</code>&rdquo;.</p>
+
+<p>Because either <em>true result</em> or <em>false result</em> can be empty strings, the expression above could be rewritten slightly more succinctly while achieving the same result:</p>
+
+<p><code>objc
+[MBExpression asString:@"You ^if($user.isAdmin||do not )have admin privileges"];
+</code></p>
+
+<p>Which is also the logical equivalent of:</p>
+
+<p><code>objc
+[MBExpression asString:@"You ^if(!$user.isAdmin|do not |)have admin privileges"];
+</code></p>
+
+<p>Because the entire <em>false result</em> clause is optional, the expression above can be shortened by one more character by removing the last pipe:</p>
+
+<p><code>objc
+[MBExpression asString:@"You ^if(!$user.isAdmin|do not )have admin privileges"];
+</code></p>
+
+<blockquote><p>When string interpolation is being used, a <code>nil</code> value within an expression is treated as an empty string.</p></blockquote>
+
+<h5>Quoting</h5>
+
+<p>In some cases, an expression may contain characters that you don&rsquo;t want to be recognized as part of an expression.</p>
+
+<p>For example, consider this string expression:</p>
+
+<p><code>
+It will cost $total for your $quantity tickets to the Ke$ha concert
+</code></p>
+
+<p>The <code>$</code> character signals the beginning of a variable reference, so while <code>$total</code> and <code>$quantity</code> are correctly recognized as variables, the text &ldquo;<code>$ha</code>&rdquo; in the name &ldquo;<code>Ke$ha</code>&rdquo; will be incorrectly interpreted as a variable reference.</p>
+
+<p>Assuming there is no value for <code>$ha</code>, the expression will yield a string that ends in &ldquo;<code>Ke concert</code>&rdquo; instead of the intended &ldquo;<code>Ke$ha concert</code>&rdquo;.</p>
+
+<p>To avoid this problem, you can use <em>quoting</em> to ensure that portions of your expression are not evaluated.</p>
+
+<p>To quote a range of text within an expression, use the notation <strong><code>^q(</code></strong> <em>text to quote</em> <strong><code>)</code></strong>. The text that appears within the parentheses is treated as a text literal and returned as-is when the expression containing the quote is evaluated.</p>
+
+<p>Here&rsquo;s how quoting can be used to fix the expression above:
+<code>
+It will cost $total for your $quantity tickets to the ^q(Ke$ha) concert
+</code></p>
+
+<p>When this expression is evaluated, the string returned will correctly contain the text &ldquo;<code>Ke$ha</code>&rdquo; instead of just &ldquo;<code>Ke</code>&rdquo;.</p>
+
+<h5>Escape Sequences</h5>
+
+<p>A technique similar to quoting is to use <em>escape sequences</em> to represent a character that can&rsquo;t be represented by itself.</p>
+
+<p>For example, the string &ldquo;<code>$$</code>&rdquo; is an escape sequence representing the dollar-sign character <code>$</code>. Just as quoting was used to ensure that &ldquo;<code>Ke$ha</code>&rdquo; was handled correctly, this escape sequence could also be used:</p>
+
+<p><code>
+It will cost $total for your $quantity tickets to the Ke$$ha concert
+</code></p>
+
+<p>The following escape sequences are supported:</p>
+
+<table>
+<thead>
+<tr>
+<th>Escape sequence</th>
+<th>represents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$$</code></td>
+<td><code>$</code></td>
+</tr>
+<tr>
+<td><code>##</code></td>
+<td><code>#</code></td>
+</tr>
+<tr>
+<td><code>^^</code></td>
+<td><code>^</code></td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>newline character</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>tab character</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>Additional Variable Reference Notations</h4>
+
+<p>So far, we&rsquo;ve seen one form of variable reference, the <em>simple variable reference</em>. This notation can be used only when the variable name is considered an <em>identifier</em>. Identifiers are names that are constructed as follows:</p>
+
+<ul>
+<li><p>The first character can be an uppercase (<code>A-Z</code>) or lowercase (<code>a-z</code>) alphabet character or an underscore (<code>_</code>).</p></li>
+<li><p>Subsequent characters can be uppercase (<code>A-Z</code>) or lowercase (<code>a-z</code>) alphabet characters, numeric (<code>0-9</code>) digits, underscores (<code>_</code>), hyphens (<code>-</code>), or colons (<code>:</code>).</p></li>
+</ul>
+
+
+<p>In some cases, the simple notation can&rsquo;t be used to reference a given variable because the name of the variable is not a valid identifier.</p>
+
+<p>In other cases, you may want to ensure that the parser recognizes a boundary between a variable name and a literal or another expression.</p>
+
+<p>Additional variable reference notations are provided for these situations.</p>
+
+<h5>Curly-Brace Notation</h5>
+
+<p>The curly-brace variable reference notation can be used to prevent the expression engine from interpreting characters following a variable reference as being part of the reference itself. The notation is used by surrounding the variable name with curly braces.</p>
+
+<p>The curly-brace notation is similar to the simple notation in that it only accepts variable names that are also valid identifiers. The expressions <code>$userName</code> and <code>${userName}</code> both refer to the same variable, but they cause the expression evaluator to treat the characters following the variable reference differently.</p>
+
+<p>Let&rsquo;s say you have a variable <code>$lastName</code> that contains a person&rsquo;s surname, and you want to construct a message such as &ldquo;How are the Butterfields doing?&rdquo; that refers to the surname in the plural form.</p>
+
+<p>You couldn&rsquo;t use the unquoted notation (eg., &ldquo;<code>How are the $lastNames doing?</code>&rdquo;) because the <code>s</code> that follows <code>$lastName</code> would be interpreted as part of the variable name. Instead of referencing the variable <code>$lastName</code> followed by the character literal <code>s</code>, the expression actually references an entirely different variable: <code>$lastNames</code>.</p>
+
+<p>The curly-brace notation allows you to separate the variable reference from any surrounding text that should be considered a literal. Using this notation, the expression can be written as:</p>
+
+<p><code>
+How are the ${lastName}s doing?
+</code></p>
+
+<p>This expression will be interpreted as the text literal &ldquo;<code>How are the</code>&rdquo; followed by the value of <code>$lastName</code>, followed by another text literal, &ldquo;<code>s doing?</code>&rdquo;.</p>
+
+<h5>Bracket Notation</h5>
+
+<p>The bracket variable reference notation can be used to access Mockingbird variables whose names aren&rsquo;t valid identifiers.</p>
+
+<p>For example, the space character and the dollar sign (<code>$</code>) are not valid identifier characters. Normally, when a space is encountered while interpreting a variable name, the expression engine assumes that the space signals the end of the variable name. When a dollar sign is encountered within an expression, the expression engine assumes it signals the beginning of a new variable reference.</p>
+
+<p>Because Mockingbird variable names don&rsquo;t <em>have</em> to be identifiers, the bracket notation exists to allow access to variables whose names aren&rsquo;t identifiers.</p>
+
+<p>Let&rsquo;s say your application connects to a backend system that introduces a Mockingbird variable named <code>total $</code>. You could reference the value of this variable with the expression:</p>
+
+<p><code>
+$[total $]
+</code></p>
+
+<p>Using the bracket notation allows subreferences after the closing bracket. Assuming the variable <code>total $</code> is a string, the following expression would yield the length of that string:</p>
+
+<p><code>
+$[total $].length
+</code></p>
+
+<h5>Parentheses Notation</h5>
+
+<p>As with the bracket notation, the parentheses variable reference notation can be used to access Mockingbird variables whose names aren&rsquo;t valid identifiers. And like the curly-brace notation, the parentheses notation prevents the expression engine from misconstruing adjacent characters as being part of the variable reference.</p>
+
+<p>To see the difference, consider these two expressions:</p>
+
+<p><code>
+$[total $].length
+$(total $).length
+</code></p>
+
+<p>The top expression uses the bracket notation, which allows subreferences after the closing bracket. The bottom expression uses the parentheses notation, which does not allow subreferences.</p>
+
+<p>Because subreferences are not allowed by the parentheses notation, any text that appears after the closing parenthesis will be considered the start of a new statement. In this case, because &ldquo;<code>.length</code>&rdquo; is not a valid expression of any kind, it is interpreted as a text literal.</p>
+
+<p>So while <code>$[total $].length</code> will yield the value of the <code>length</code> property of <code>total $</code>, <code>$(total $).length</code> will yield the value of  <code>total $</code> followed by the text literal &ldquo;<code>.length</code>&rdquo;.</p>
+
+<h4>Variable Notation Summary</h4>
+
+<table>
+<thead>
+<tr>
+<th>Notation</th>
+<th>Variable Name</th>
+<th>Example</th>
+<th>Example With Subreference</th>
+<th>Follow-on Subreferences</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>simple</td>
+<td>must be an identifier</td>
+<td><code>$variableName</code></td>
+<td><code>$string.length</code></td>
+<td>allowed</td>
+</tr>
+<tr>
+<td>curly-brace</td>
+<td>must be an identifier</td>
+<td><code>${variableName}</code></td>
+<td><code>${string.length}</code></td>
+<td>not recognized</td>
+</tr>
+<tr>
+<td>bracket</td>
+<td>can contain any character except <code>[</code> or <code>]</code></td>
+<td><code>$[variable name]</code></td>
+<td><code>$[a string].length</code></td>
+<td>allowed</td>
+</tr>
+<tr>
+<td>parentheses</td>
+<td>can contain any character except <code>(</code> or <code>)</code></td>
+<td><code>$(variable name)</code></td>
+<td>not possible</td>
+<td>not recognized</td>
+</tr>
+</tbody>
+</table>
+
+
+<h4>MBML Functions</h4>
+
+<p>MBML functions allow native Objective-C code to be called from within Mockingbird expressions. Functions can take zero or more input parameters, and they may return an object instance as a result.</p>
+
+<p>When an expression containing a function call is evaluated, the method that implements the function is executed, and the value returned by that method (if any) is yielded by the function. Values returned by function implementations can then be manipulated further within an expression.</p>
+
+<p>Function calls begin with a caret character (<code>^</code>), followed by the name of the function, and end in a list of zero or more pipe-separated parameters surrounded by parentheses.</p>
+
+<p>For example, to call a function that creates an array, you could write:</p>
+
+<p><code>
+^array(pizza|pasta|sushi|lobster)
+</code></p>
+
+<p>If this notation looks familiar, it&rsquo;s because you&rsquo;ve already encountered two functions—<code>^if()</code> and <code>^q()</code>—in the documentation above.</p>
+
+<p>In this example, the <code>^array()</code> function returns an <code>NSArray</code> containing four items: the strings &ldquo;<code>pizza</code>&rdquo;, &ldquo;<code>pasta</code>&rdquo;, &ldquo;<code>sushi</code>&rdquo; and &ldquo;<code>lobster</code>&rdquo;.</p>
+
+<p>Subreferences can be used with the return value of functions in the same way that they can with variable references:</p>
+
+<p><code>
+^array(pizza|pasta|sushi|lobster)[3]
+</code></p>
+
+<p>This expression yields the value &ldquo;<code>lobster</code>&rdquo;.</p>
+
+<p>The Mockingbird Data Environment ships with nearly 200 functions built in, and more can be added through <code>MBModule</code>s or by implementing them yourself.</p>
+
+<p>The list of included functions can be seen in <a href="https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml">the <code>MBDataEnvironmentModule.xml</code> file</a>; they are declared using the <code>&lt;Function&gt;</code> tag.</p>
+
+<p>The functions themselves are documented within their implementing classes:</p>
+
+<ul>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLCollectionFunctions.html"><code>MBMLCollectionFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDataProcessingFunctions.html"><code>MBMLDataProcessingFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDateFunctions.html"><code>MBMLDateFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDebugFunctions.html"><code>MBMLDebugFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEncodingFunctions.html"><code>MBMLEncodingFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLEnvironmentFunctions.html"><code>MBMLEnvironmentFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFileFunctions.html"><code>MBMLFileFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFontFunctions.html"><code>MBMLFontFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLGeometryFunctions.html"><code>MBMLGeometryFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLLogicFunctions.html"><code>MBMLLogicFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLMathFunctions.html"><code>MBMLMathFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRegexFunctions.html"><code>MBMLRegexFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLResourceFunctions.html"><code>MBMLResourceFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLRuntimeFunctions.html"><code>MBMLRuntimeFunctions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLStringFunctions.html"><code>MBMLStringFunctions</code></a></li>
+</ul>
+
+
+<p>To learn how MBML functions are implemented, see <a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html">the <code>MBMLFunction</code> class documentation</a></p>
+
+<h3>Debugging Expressions</h3>
+
+<p>When faced with an expression that isn&rsquo;t behaving as you expect, first check your application&rsquo;s console log. When unhandled expression errors occur, information will be written to the console describing the problem.</p>
+
+<p>If that doesn&rsquo;t help, you may need to delve further. The Mockingbird Data Environment comes with several tools to help you debug.</p>
+
+<h4>MBML Functions for Debugging</h4>
+
+<p>The <a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLDebugFunctions.html"><code>MBMLDebugFunctions</code></a> class provides MBML functions useful for debugging expressions.</p>
+
+<p>Some of these are <em>pass-through</em> functions that allow you to wrap an expression (or a portion thereof) in a function call that writes debugging information to the console, but does not otherwise interfere with the expression in which its used. These types of functions can be inserted at variable reference or subreference boundaries in an expression without affecting the expression&rsquo;s result.</p>
+
+<p>Consider the expression:</p>
+
+<p><code>
+$dictionary[$key].propertyValue.anotherValue[$arrayIndex]
+</code></p>
+
+<p>If this expression were not returning the expected result, there are a number of possible reasons why. Perhaps <code>$dictionary</code>, <code>$key</code> or <code>$index</code> has an unexpected value. Or maybe the <code>.propertyValue</code> or <code>.anotherValue</code> subreferences are returning <code>nil</code>.</p>
+
+<h5>^log(&hellip;)</h5>
+
+<p>To inspect the innards of an expression, you could wrap some or all of it in one or more calls to <code>^log()</code>.</p>
+
+<p>The <code>^log()</code> function accepts an object expression as a parameter. When invoked, the function logs debugging information to the console, showing the input expression and the value it yields when evaluated. The function then returns that value.</p>
+
+<p>Here, four portions of the expression above are wrapped in calls to <code>^log()</code>:</p>
+
+<p><code>
+^log(^log($dictionary)[^log($key)]).propertyValue.anotherValue[^log($arrayIndex)]
+</code></p>
+
+<p>When this expression is evaluated, each call to <code>^log()</code> will result in debugging information being written to the console:</p>
+
+<ul>
+<li><p>First, <code>^log($dictionary)</code> will print the value of <code>$dictionary</code>.</p></li>
+<li><p>If <code>$dictionary</code> is non-<code>nil</code>, <code>^log($key)</code> will then print debugging information for <code>$key</code>.</p></li>
+<li><p>Next, <code>^log(^log($dictionary)[^log($key)])</code> will print information for  <code>$dictionary[$key]</code> to the console (because the contained <code>^log()</code> calls are pass-throughs, they can be ignored).</p></li>
+<li><p>Finally, if no intermediate values in the expression are <code>nil</code>, <code>^log($arrayIndex)</code> will print the value of <code>$arrayIndex</code>.</p></li>
+</ul>
+
+
+<h5>^test(&hellip;)</h5>
+
+<p>The <code>^test()</code> function is similar to <code>^log()</code> except that it accepts a boolean expression and returns the result of evaluating that expression in the boolean context.</p>
+
+<p>This function is ideal for testing portions of boolean expressions. It can be used as follows:</p>
+
+<p><code>
+^test($Network.isWifiConnected) -AND ^test($Device.isRetina)
+</code></p>
+
+<p>When the expression above is evaluated, debugging information for the boolean expression <code>$Network.isWifiConnected</code> will be logged to the console. If <code>$Network.isWifiConnected</code> evaluates to <code>true</code>, debugging information for <code>$Device.isRetina</code> will also be logged.</p>
+
+<blockquote><p>Because the boolean <code>-AND</code> operator is short-circuiting, the right operand is only evaluated if the left operand evaluates to <code>true</code>.</p></blockquote>
+
+<h5>^debugBreak(&hellip;)</h5>
+
+<p>When <code>MBDataEnvironment</code> is compiled as part of a <code>DEBUG</code> build, the <code>^debugBreak()</code> function is available.</p>
+
+<p>When evaluating an expression containing a call to <code>^debugBreak()</code>, if the code is running within Xcode, a debug breakpoint will be triggered, landing you at the debugger&rsquo;s command prompt. From there, you can <a href="#evaluating-expressions-in-the-xcode-debugger">evaluate expressions by typing commands in the debugger</a>.</p>
+
+<p>The <code>^debugBreak()</code> function takes an input message that is logged to the console before breaking into the debugger.</p>
+
+<blockquote><p><strong>Important:</strong> If <code>^debugBreak()</code> is called in a <code>DEBUG</code> build when the application is <em>not</em> running in the Xcode debugger, the application will crash.</p></blockquote>
+
+<h5>^tokenize(&hellip;)</h5>
+
+<p>The <code>^tokenize()</code> function tokenizes the input expression in the object context and prints the resulting tokens to the console.</p>
+
+<p>Tokenization shows you how your expressions are being interpreted by Mockingbird.</p>
+
+<p>For example:</p>
+
+<p><code>
+^tokenize(This $aint.no ^party())
+</code></p>
+
+<p>The expression above would result in console output similar to:</p>
+
+<p><code>
+--&gt; Tokens for object expression "This $aint.no ^party()":
+&lt;MBMLLiteralToken@0x7f8ac03aaea0: "This " {0, 5}&gt;
+&lt;MBMLVariableReferenceToken@0x7f8abce042a0: "$aint" {5, 5}&gt; containing 1 token:
+    0: &lt;MBMLObjectSubreferenceToken@0x7f8ac0670a00: ".no" {10, 3}&gt;
+&lt;MBMLLiteralToken@0x7f8ac036f4a0: " " {13, 1}&gt;
+&lt;MBMLFunctionCallToken@0x7f8ac0645bb0: "^party()" {14, 8}&gt;
+</code></p>
+
+<p>As with <code>^log()</code> and <code>^test()</code>, this function can be used to wrap some or all of a larger expression.</p>
+
+<h5>^tokenizeBoolean(&hellip;)</h5>
+
+<p>The <code>^tokenizeBoolean()</code> function is similar to <code>^tokenize()</code> but it accepts a boolean expression as an input parameter.</p>
+
+<p><code>
+^tokenizeBoolean(This != ^party())
+</code></p>
+
+<p>The expression above would result in console output similar to:</p>
+
+<p><code>
+--&gt; Tokens for boolean expression "This != ^party()":
+&lt;MBMLInequalityTestToken@0x7fa93fb5fbe0: "!=" {5, 2}&gt; containing 2 tokens:
+    0: &lt;MBMLLiteralToken@0x7fa93fb45970: "This" {0, 4}&gt;
+    1: &lt;MBMLFunctionCallToken@0x7fa93fb4af80: "^party()" {8, 8}&gt;
+</code></p>
+
+<h5>^tokenizeMath(&hellip;)</h5>
+
+<p>The <code>^tokenizeMath()</code> function tokenizes math expressions but otherwise works like <code>^tokenize()</code> and <code>^tokenizeBoolean()</code>:</p>
+
+<p><code>
+^tokenizeMath(($user.firstName.length + $user.lastName.length) + 1)
+</code></p>
+
+<p>The expression above would result in console output similar to:</p>
+
+<p><code>
+--&gt; Tokens for math expression "($user.firstName.length + $user.lastName.length) + 1":
+&lt;MBMLAdditionOperatorToken@0x7fa940048b70: "+" {49, 1}&gt; containing 2 tokens:
+    0: &lt;MBMLMathGroupingToken@0x7fa9400a87d0: "($user.firstName.length + $user.lastName.length)" {0, 48}&gt; containing 1 token:
+        0: &lt;MBMLAdditionOperatorToken@0x7fa93ae86fd0: "+" {23, 1}&gt; containing 2 tokens:
+            0: &lt;MBMLVariableReferenceToken@0x7fa93faf9400: "$user" {0, 5}&gt; containing 2 tokens:
+                0: &lt;MBMLObjectSubreferenceToken@0x7fa940049ac0: ".firstName" {5, 10}&gt;
+                1: &lt;MBMLObjectSubreferenceToken@0x7fa93fae4340: ".length" {15, 7}&gt;
+            1: &lt;MBMLVariableReferenceToken@0x7fa93aeb8f70: "$user" {25, 5}&gt; containing 2 tokens:
+                0: &lt;MBMLObjectSubreferenceToken@0x7fa93aea8d90: ".lastName" {30, 9}&gt;
+                1: &lt;MBMLObjectSubreferenceToken@0x7fa93fa52f60: ".length" {39, 7}&gt;
+    1: &lt;MBMLNumericLiteralToken@0x7fa94007d100: "1" {51, 1}&gt;
+</code></p>
+
+<h4>Evaluating Expressions in the Xcode Debugger</h4>
+
+<p>The ability to interactively evaluate expressions from within the debugger can be added to Xcode using the <code>.lldbinit</code> file provided as part of the Mockingbird Data Environment.</p>
+
+<p>LLDB is the debugger used by Xcode, and it can be extended by adding commands to an <code>.lldbinit</code> file in your home directory.</p>
+
+<p>To be able to evaluate expressions in the debugger, copy <a href="https://rawgit.com/emaloney/MBDataEnvironment/blob/master/.lldbinit">the <code>.lldbinit</code> file</a> that comes with this project into your home directory. (Or, if you already have an <code>.lldbinit</code> file, you can add the entries from our <code>.lldbinit</code> file to yours.)</p>
+
+<p>Then, restart your application&rsquo;s debugging session, and any time you&rsquo;re at the <code>(lldb)</code> prompt in Xcode, you can use the following commands to evaluate expressions:</p>
+
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Name</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pe</code></td>
+<td><strong>p</strong>rint <strong>e</strong>xpression</td>
+<td>evaluates an object expression and prints the result</td>
+<td><code>pe $user</code></td>
+</tr>
+<tr>
+<td><code>pec</code></td>
+<td><strong>p</strong>rint <strong>e</strong>xpression <strong>c</strong>lass</td>
+<td>evaluates an object expression and prints the resulting class</td>
+<td><code>pec $user.guid</code></td>
+</tr>
+<tr>
+<td><code>pse</code></td>
+<td><strong>p</strong>rint <strong>s</strong>tring <strong>e</strong>xpression</td>
+<td>evaluates a string expression and prints the result</td>
+<td><code>pse Hello, $user.lastName!</code></td>
+</tr>
+<tr>
+<td><code>pbe</code></td>
+<td><strong>p</strong>rint <strong>b</strong>oolean <strong>e</strong>xpression</td>
+<td>evaluates a boolean expression and prints the result</td>
+<td><code>pbe $user.isLoggedIn</code></td>
+</tr>
+<tr>
+<td><code>pne</code></td>
+<td><strong>p</strong>rint <strong>n</strong>umeric <strong>e</strong>xpression</td>
+<td>evaluates a numeric or math expression and prints the result</td>
+<td><code>pne (50 % 3)</code></td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>An Introduction to MBML Files</h2>
+
+<p>The state of the <code>MBEnvironment</code> can be modified through the use of MBML files.</p>
+
+<p>MBML is an XML-based document format that provides a mechanism for declaring new variable values, functions, and other state. If there are certain variables or functions that you always want present in the environment, you can declare them in MBML.</p>
+
+<h3>The Manifest File</h3>
+
+<p>If you include a <code>manifest.xml</code> file in your application&rsquo;s main resource bundle, you can use it to configure the initial state of the environment. You would simply load the environment using the method:</p>
+
+<p><code>objc
+[MBEnvironment loadFromManifest];
+</code></p>
+
+<p>Additional <code>loadFromManifest...</code> method variants exist to allow you to store your manifest file elsewhere or name it something other than <code>manifest.xml</code>.</p>
+
+<h3>The Structure of an MBML File</h3>
+
+<p>The outermost XML tag in an MBML document is the <code>&lt;MBML&gt;</code> tag. Contained within this tag are <em>declarations</em> of various types. The structure of the document is:</p>
+
+<p>```xml
+<MBML modules="..."></p>
+
+<pre><code>&lt;!-- declarations --&gt;
+</code></pre>
+
+<p></MBML>
+```</p>
+
+<p>The <code>modules</code> attribute is optional. If present, the attribute&rsquo;s value may be a comma-separated list of classes conforming to <a href="https://rawgit.com/emaloney/MBToolbox/master/Documentation/html/Protocols/MBModule.html">the <code>MBModule</code> protocol</a>. Modules provide additional functionality to the Mockingbird Data Environment and are loaded loaded along with the environment.</p>
+
+<p>Modules can hook into the MBML parsing process, allowing new tags to be introduced to the language. For example, <a href="https://github.com/emaloney/MBEventHandling">the MBEventHandling project</a> adds the ability to listen for <code>NSNotification</code> events and perform actions in response. The <em>listeners</em> and <em>actions</em> are declared through MBML tags that have been added by the <code>MBEventHandlingModule</code>.</p>
+
+<p>To include this module, the <code>MBEventHandling</code> code would need to be linked to your application, typically by including it in your <code>Podfile</code>. Then, you can specify the module in the manifest file&rsquo;s opening <code>&lt;MBML&gt;</code> tag:</p>
+
+<p><code>xml
+&lt;MBML modules="MBEventHandlingModule"&gt;
+</code></p>
+
+<p>When the manifest containing this declaration is loaded, <code>MBEventHandling</code> functionality will be available in the environment.</p>
+
+<h3>Types of MBML declarations</h3>
+
+<p>While any included modules may introduce additional MBML declarations, by itself, the Mockingbird Data Environment provides the ability to declare:</p>
+
+<ul>
+<li><p><em>Includes</em> — The manifest file is so named because in a larger application, it&rsquo;s considered a best practice to break discrete parts of the application into separate MBML files that are <em>included</em> from the manifest. Include declarations specify the MBML files that should be loaded when the environment itself is loaded.</p></li>
+<li><p><em>Variables</em> — Values for Mockingbird variables can be set in MBML.</p></li>
+<li><p><em>Functions</em> — The capabilities of Mockingbird expressions can be extended by introducing new MBML functions.</p></li>
+</ul>
+
+
+<h4>Includes</h4>
+
+<p>An MBML file can <em>include</em> another file. When a file is included, any declarations in that file are processed as though they were declared in the including file at the point where the <code>&lt;Include&gt;</code> tag was encountered.</p>
+
+<p>The <code>&lt;Include&gt;</code> tag requires the <code>file</code> attribute and accepts an optional <code>if</code> attribute:</p>
+
+<ul>
+<li><p>The <code>file</code> attribute specifies the name of the MBML file being included.</p></li>
+<li><p>If present, the value of the <code>if</code> attribute will be evaluated as a boolean expression, and the specified file will be included only if the expression evaluates to <code>true</code>.</p></li>
+</ul>
+
+
+<p>For example:</p>
+
+<p><code>xml
+&lt;Include file="onboarding.xml" if="$isFirstLaunch"/&gt;
+&lt;Include file="landing.xml"/&gt;
+</code></p>
+
+<p>According to the declarations above, the <code>onboarding.xml</code> file will be included only if <code>$isFirstLaunch</code> evaluates to <code>true</code> in a boolean context, while the <code>landing.xml</code> file is included unconditionally. Further, if <code>onboarding.xml</code> is included, any declarations it contains will be processed before any declarations from <code>landing.xml</code>.</p>
+
+<blockquote><p><code>&lt;Include&gt;</code> tags are always processed <em>before</em> any other declarations in an MBML file.</p></blockquote>
+
+<h4>Variables</h4>
+
+<p>The <code>&lt;Var&gt;</code> tag is used to declare values for Mockingbird variables.</p>
+
+<p>Three types of variable declarations are possible:</p>
+
+<ul>
+<li><p><em>Concrete</em> — A <em>variable name</em> is associated with an Objective-C object instance, which represents the concrete variable&rsquo;s <em>value</em>. A concrete variable&rsquo;s initial value is set when its declaration is processed.</p></li>
+<li><p><em>Singleton</em> — A <em>variable name</em> is associated with a class method that returns a singleton object instance. The object returned by that method represents the singleton variable&rsquo;s <em>value</em>. A singleton variable&rsquo;s value is set once, when its declaration is processed.</p></li>
+<li><p><em>Dynamic</em> — A <em>variable name</em> is associated with a Mockingbird expression. Whenever the variable is referenced, the associated expression is evaluated, and the value it yields represents the dynamic variable&rsquo;s <em>value</em>.</p></li>
+</ul>
+
+
+<h5>Concrete Variables</h5>
+
+<p>The <code>&lt;Var&gt;</code> tag provides support for specifying explicit values for types such as <code>NSString</code>s, <code>NSNumber</code>s, <code>NSArray</code>s, <code>NSDictionary</code>s and <code>BOOL</code>s.</p>
+
+<p>Additional types can also be created using MBML functions, and values from other sources can be referenced through Mockingbird expressions.</p>
+
+<h6>Text Literals</h6>
+
+<p>Concrete text literals can be specified using the <code>literal</code> attribute. Within a literal, expressions are not evaluated, so there&rsquo;s no need to perform any escaping:</p>
+
+<p><code>xml
+&lt;Var name="currency" literal="$USD"/&gt;
+</code></p>
+
+<p>The declaration above sets <code>$currency</code> to an <code>NSString</code> containing &ldquo;<code>$USD</code>&rdquo;.</p>
+
+<h6>Expression Values</h6>
+
+<p>If literals won&rsquo;t suffice, you can use the <code>value</code> attribute along with an object expression that will be evaluated when the declaration is processed. The variable&rsquo;s value is set to the value yielded by the expression.</p>
+
+<p><code>xml
+&lt;Var name="price" value="#(99.99)"/&gt;
+&lt;Var name="priceLabel" value="${currency}${price}"/&gt;
+&lt;Var name="appLaunchTime" value="^currentTime()"/&gt;
+</code></p>
+
+<p>The value in the first line above is wrapped in the <code>#(</code> &hellip; <code>)</code> notation, so it is evaluated as a numeric expression. As a result, <code>$price</code> is set to an <code>NSNumber</code> containing the value <code>99.99</code>.</p>
+
+<p>In the second line, the <code>value</code> attribute contains an expression referencing two values: <code>${currency}</code> and <code>${price}</code>. Whenever more than one value is referenced at the top level of an expression, string interpolation is used, so the resulting value will be an <code>NSString</code>. In this case, the value yielded is &ldquo;<code>$USD99.99</code>&rdquo;.</p>
+
+<p>The third line shows <code>$appLaunchTime</code> being set to the value returned by the <code>^currentTime()</code> function, which will be an <code>NSDate</code>.</p>
+
+<blockquote><p><code>&lt;Var&gt;</code> tags are always processed from the top of the document down. As a result, a <code>&lt;Var&gt;</code> declaration can <em>only</em> reference values declared above it or in any included file (because includes are processed first). Attempts to reference variables whose declarations haven&rsquo;t yet been processed will fail.</p></blockquote>
+
+<h6>Boolean Values</h6>
+
+<p>Variables can be declared with boolean values using the <code>boolean</code> attribute:</p>
+
+<p><code>xml
+&lt;Var name="useLargeImageSizes" boolean="$Network.isWifiConnected -AND $Device.isRetina"/&gt;
+</code></p>
+
+<p>The <code>boolean</code> attribute&rsquo;s value is evaluated as a boolean expression, and the result is used as the variable&rsquo;s value.</p>
+
+<p>In the example above, <code>$useLargeImageSizes</code> would be set to <code>true</code> if and only if <code>$Network.isWifiConnected</code> and <code>$Device.isRetina</code> both evaluate to <code>true</code>.</p>
+
+<blockquote><p>In an actual application, <code>$useLargeImageSizes</code> should be declared as a <em>dynamic variable</em>, not a <em>concrete variable</em>. See the <a href="#dynamic-variables"><strong>Dynamic Variables</strong></a> section below for an explanation why.</p></blockquote>
+
+<h6>Array Values</h6>
+
+<p>Arrays can be declared using the <code>type="list"</code> attribute. One such use might be to declare a list of U.S. states:</p>
+
+<p><code>xml
+&lt;Var name="states" type="list" mutable="F"&gt;
+    &lt;Var literal="Alabama"/&gt;
+    &lt;Var literal="Alaska"/&gt;
+    &lt;Var literal="Arizona"/&gt;
+    ...
+&lt;/Var&gt;
+</code></p>
+
+<p>The declaration above results in an <code>NSArray</code> containing the text literals specified. Notice that the inner <code>&lt;Var&gt;</code> tags do not take a <code>name</code> attribute, because an array is simply a list of unnamed values.</p>
+
+<h6>Dictionary Values</h6>
+
+<p>Mappings—which are <code>NSDictionary</code> instances—can be declared similarly, using the <code>type="map"</code> attribute. This declaration shows a mapping between state names and their corresponding postal codes:</p>
+
+<p><code>xml
+&lt;Var name="statesToPostalCodes" type="map" mutable="F"&gt;
+    &lt;Var name="Alabama" literal="AL"/&gt;
+    &lt;Var name="Alaska"  literal="AK"/&gt;
+    &lt;Var name="Arizona" literal="AZ"/&gt;
+    ...
+&lt;/Var&gt;
+</code></p>
+
+<p>In the resulting <code>NSDictionary</code>, the value of the <code>name</code> attribute specifies the <em>dictionary key</em> while the value of the <code>literal</code> attribute specifies the associated <em>dictionary value</em>.</p>
+
+<blockquote><p>Although shown above with only <code>literal</code> attributes, the nested <code>&lt;Var&gt;</code>s within a list or map can also take either a <code>boolean</code> or a <code>value</code> attribute instead.</p></blockquote>
+
+<h5>Singleton Variables</h5>
+
+<p>You can use the <code>&lt;Var&gt;</code> declaration with a <code>type="singleton"</code> attribute to expose singleton object instances to the variable space.</p>
+
+<p>The singleton declaration requires a <code>class</code> attribute that specifies the name of the class vending the singleton, and a <code>method</code> attribute that specifies the name of a (no-argument) class method that returns the singleton instance.</p>
+
+<p><code>xml
+&lt;Var name="UIApplication" type="singleton" class="UIApplication" method="sharedApplication"/&gt;
+</code></p>
+
+<p>The declaration above, which can be found in <a href="https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml">the <code>MBDataEnvironmentModule.xml</code> file</a>, exposes the value returned by the method <code>[UIApplication sharedApplication]</code> through the variable <code>$UIApplication</code>.</p>
+
+<p>Because the value of the singleton variable is set when the <code>&lt;Var&gt;</code> tag is processed, this type of variable declaration should only be used for true singletons, which must behave as follows:</p>
+
+<ul>
+<li><p>The singleton instance is expected to exist for the lifetime of the running application.</p></li>
+<li><p>The value returned by the singleton accessor method must never change during the lifetime of the application.</p></li>
+</ul>
+
+
+<h5>Dynamic Variables</h5>
+
+<p>Dynamic variables associate an <em>expression</em> with a variable name rather than a specific <em>value</em>. When a dynamic variable is referenced, Mockingbird evaluates the associated expression, and the value yielded by that expression becomes the value yielded by the dynamic variable.</p>
+
+<p>In the Concrete Variables section on <a href="#boolean-values"><strong>Boolean Values</strong></a> above, we saw the following declaration for <code>$useLargeImageSizes</code>:</p>
+
+<p><code>xml
+&lt;Var name="useLargeImageSizes" boolean="$Network.isWifiConnected -AND $Device.isRetina"/&gt;
+</code></p>
+
+<p>Because this declaration is not dynamic, <code>$useLargeImageSizes</code> is set when the <code>&lt;Var&gt;</code> tag is processed. The value of <code>$useLargeImageSizes</code> will therefore always reflect whatever the value of <code>$Network.isWifiConnected</code> was when the MBML was first loaded.</p>
+
+<p>What we want is for <code>$useLargeImageSizes</code> to always reflect the <em>current</em> value of <code>$Network.isWifiConnected</code>. To do that, we would simply declare <code>$useLargeImageSizes</code> as a <em>dynamic variable</em>:</p>
+
+<p><code>xml
+&lt;Var name="useLargeImageSizes" type="dynamic" boolean="$Network.isWifiConnected -AND $Device.isRetina"/&gt;
+</code></p>
+
+<p>To understand the difference between concrete variables and dynamic variables, consider these two declarations:</p>
+
+<p><code>xml
+&lt;Var name="inThePast" value="^currentTime()"/&gt;
+&lt;Var name="alwaysNow" type="dynamic" value="^currentTime()"/&gt;
+</code></p>
+
+<p>These declarations both associate a variable name with the <code>NSDate</code> returned by the <code>^currentTime()</code> function.</p>
+
+<p>However, the concrete declaration of <code>$inThePast</code> ensures that the expression contained in the <code>value</code> attribute is evaluated just once, when the variable is declared. Unless the underlying value is explicitly changed, any time <code>$inThePast</code> is referenced, the value will be the same as it was when the declaration was originally processed.</p>
+
+<p>The <code>$alwaysNow</code> variable works differently: the expression contained in the <code>value</code> attribute is evaluated whenever <code>$alwaysNow</code> is referenced. So the value of <code>$alwaysNow</code> will always yield an <code>NSDate</code> that was freshly fetched from a call to the <code>^currentTime()</code> function.</p>
+
+<h4>Functions</h4>
+
+<p>MBML functions are declared using the <code>&lt;Function&gt;</code> tag. Here are some examples taken from <a href="https://rawgit.com/emaloney/MBDataEnvironment/blob/master/Resources/MBDataEnvironmentModule.xml">the <code>MBDataEnvironmentModule.xml</code> file</a>:</p>
+
+<p><code>xml
+&lt;Function class="MBMLCollectionFunctions" name="mutableCopy" method="mutableCopyOf" input="object"/&gt;
+&lt;Function class="MBMLDataProcessingFunctions" name="filter" input="pipedExpressions"/&gt;
+&lt;Function class="MBMLDateFunctions" name="currentTime" input="none"/&gt;
+&lt;Function class="MBMLStringFunctions" name="q" input="raw"/&gt;
+</code></p>
+
+<p>Declaring and implementing MBML functions is beyond the scope of this document. For details on the <code>&lt;Function&gt;</code> declaration and how it can be used, see the documentation for <a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html">the <code>MBMLFunction</code> class</a>.</p>
+
+<h2>Further Reading</h2>
+
+<p>If you&rsquo;d like to learn more about how the Mockingbird Data Environment works, a good place to start would be the API documentation for the following classes:</p>
+
+<ul>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBVariableSpace.html"><code>MBVariableSpace</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBEnvironment.html"><code>MBEnvironment</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBExpression.html"><code>MBExpression</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBDataModel.html"><code>MBDataModel</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBMLFunction.html"><code>MBMLFunction</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBStringConversions.html"><code>MBStringConversions</code></a></li>
+<li><a href="https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/html/Classes/MBScopedVariables.html"><code>MBScopedVariables</code></a></li>
+</ul>
+
+
+<p>And, of course, feel free to delve into <a href="https://github.com/emaloney/MBDataEnvironment/tree/master/Code">the code</a>!</p>
+
+<h2>Additional Resources</h2>
+
+<p>For XML parsing, the Mockingbird Data Environment uses <a href="https://github.com/emaloney/RaptureXML">a custom fork</a> of <a href="https://github.com/ZaBlanc/RaptureXML">the RaptureXML project</a> created by <a href="https://github.com/ZaBlanc">John Blanco</a>.</p>
+						
+						
+					</div>
+					
+
+					<div class="index-container">
+						
+
+						
+						<div class="index-column">
+							<h2 class="index-title">Class References</h2>
+							<ul>
+								
+								<li><a href="Classes/MBAttributeValidator.html">MBAttributeValidator</a></li>
+								
+								<li><a href="Classes/MBConcreteVariableDeclaration.html">MBConcreteVariableDeclaration</a></li>
+								
+								<li><a href="Classes/MBConditionalDeclaration.html">MBConditionalDeclaration</a></li>
+								
+								<li><a href="Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a></li>
+								
+								<li><a href="Classes/MBDataModel.html">MBDataModel</a></li>
+								
+								<li><a href="Classes/MBDevice.html">MBDevice</a></li>
+								
+								<li><a href="Classes/MBDynamicVariableDeclaration.html">MBDynamicVariableDeclaration</a></li>
+								
+								<li><a href="Classes/MBEnvironment.html">MBEnvironment</a></li>
+								
+								<li><a href="Classes/MBEnvironmentLoader.html">MBEnvironmentLoader</a></li>
+								
+								<li><a href="Classes/MBEvaluationError.html">MBEvaluationError</a></li>
+								
+								<li><a href="Classes/MBExpression.html">MBExpression</a></li>
+								
+								<li><a href="Classes/MBExpressionCache.html">MBExpressionCache</a></li>
+								
+								<li><a href="Classes/MBExpressionError.html">MBExpressionError</a></li>
+								
+								<li><a href="Classes/MBMLCollectionFunctions.html">MBMLCollectionFunctions</a></li>
+								
+								<li><a href="Classes/MBMLDataProcessingFunctions.html">MBMLDataProcessingFunctions</a></li>
+								
+								<li><a href="Classes/MBMLDateFunctions.html">MBMLDateFunctions</a></li>
+								
+								<li><a href="Classes/MBMLDebugFunctions.html">MBMLDebugFunctions</a></li>
+								
+								<li><a href="Classes/MBMLEncodingFunctions.html">MBMLEncodingFunctions</a></li>
+								
+								<li><a href="Classes/MBMLEnvironmentFunctions.html">MBMLEnvironmentFunctions</a></li>
+								
+								<li><a href="Classes/MBMLFileFunctions.html">MBMLFileFunctions</a></li>
+								
+								<li><a href="Classes/MBMLFontFunctions.html">MBMLFontFunctions</a></li>
+								
+								<li><a href="Classes/MBMLFunction.html">MBMLFunction</a></li>
+								
+								<li><a href="Classes/MBMLFunctionError.html">MBMLFunctionError</a></li>
+								
+								<li><a href="Classes/MBMLGeometryFunctions.html">MBMLGeometryFunctions</a></li>
+								
+								<li><a href="Classes/MBMLLogicFunctions.html">MBMLLogicFunctions</a></li>
+								
+								<li><a href="Classes/MBMLMathFunctions.html">MBMLMathFunctions</a></li>
+								
+								<li><a href="Classes/MBMLRegexFunctions.html">MBMLRegexFunctions</a></li>
+								
+								<li><a href="Classes/MBMLResourceFunctions.html">MBMLResourceFunctions</a></li>
+								
+								<li><a href="Classes/MBMLRuntimeFunctions.html">MBMLRuntimeFunctions</a></li>
+								
+								<li><a href="Classes/MBMLStringFunctions.html">MBMLStringFunctions</a></li>
+								
+								<li><a href="Classes/MBParseError.html">MBParseError</a></li>
+								
+								<li><a href="Classes/MBPlatform.html">MBPlatform</a></li>
+								
+								<li><a href="Classes/MBScopedVariables.html">MBScopedVariables</a></li>
+								
+								<li><a href="Classes/MBSingletonVariableDeclaration.html">MBSingletonVariableDeclaration</a></li>
+								
+								<li><a href="Classes/MBStringConversions.html">MBStringConversions</a></li>
+								
+								<li><a href="Classes/MBVariableDeclaration.html">MBVariableDeclaration</a></li>
+								
+								<li><a href="Classes/MBVariableSpace.html">MBVariableSpace</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							
+							<h2 class="index-title">Protocol References</h2>
+							<ul>
+								
+								<li><a href="Protocols/MBNumericPrimitiveAccessors.html">MBNumericPrimitiveAccessors</a></li>
+								
+							</ul>
+							
+
+							
+							<h2 class="index-title">Constant References</h2>
+							<ul>
+								
+									<li><a href="Constants/MBConcreteVariableType.html">MBConcreteVariableType</a></li>
+								
+									<li><a href="Constants/MBExpressionCacheSerialization.html">MBExpressionCacheSerialization</a></li>
+								
+									<li><a href="Constants/MBMLFunctionInputType.html">MBMLFunctionInputType</a></li>
+								
+									<li><a href="Constants/MBMLFunctionOutputType.html">MBMLFunctionOutputType</a></li>
+								
+									<li><a href="Constants/MBPlatformType.html">MBPlatformType</a></li>
+								
+									<li><a href="Constants/MBTableViewCellSelectionStyle.html">MBTableViewCellSelectionStyle</a></li>
+								
+							</ul>
+							
+
+							
+							<h2 class="index-title">Category References</h2>
+							<ul>
+								
+								<li><a href="Categories/MBEvents+DataLoading.html">MBEvents(DataLoading)</a></li>
+								
+								<li><a href="Categories/NSDictionary+MBExpression.html">NSDictionary(MBExpression)</a></li>
+								
+								<li><a href="Categories/NSNull+MBNumericPrimitiveAccessors.html">NSNull(MBNumericPrimitiveAccessors)</a></li>
+								
+								<li><a href="Categories/NSNull+NSFastEnumeration.html">NSNull(NSFastEnumeration)</a></li>
+								
+								<li><a href="Categories/NSString+MBExpression.html">NSString(MBExpression)</a></li>
+								
+								<li><a href="Categories/NSString+MBNumericPrimitiveAccessors.html">NSString(MBNumericPrimitiveAccessors)</a></li>
+								
+							</ul>
+							
+						</div>
+						
+					</div>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="js/script.js"></script>
+</body>
+</html>

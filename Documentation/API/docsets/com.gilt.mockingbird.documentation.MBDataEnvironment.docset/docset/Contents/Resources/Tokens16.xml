@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLDateFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLDateFunctions</TokenIdentifier>
+			<Abstract type="html">This class contains a set of MBML functions and supporting methods that provide
+date manipulation tools.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="16"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/defaultDateParsingFormat</TokenIdentifier>
+			<Abstract type="html">Returns the date parsing format used by default.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)defaultDateParsingFormat</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default date parsing format string.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultDateParsingFormat</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/defaultDateParsingLocale</TokenIdentifier>
+			<Abstract type="html">Returns the date parsing locale used by default.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSLocale *)defaultDateParsingLocale</Declaration>
+			
+			<ReturnValue><Abstract type="html">The default date parsing locale.</Abstract></ReturnValue>
+			<Anchor>//api/name/defaultDateParsingLocale</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatDate:withStyle:usingTimeZone:</TokenIdentifier>
+			<Abstract type="html">Returns a date-formatted string using the specified formatter style.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)formatDate:(NSDate *)d8 withStyle:(NSDateFormatterStyle)style usingTimeZone:(NSTimeZone *)timeZone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>d8</Name>
+					<Abstract type="html">The NSDate to format.</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">The NSDateFormatterStyle to use for formatting the date.</Abstract>
+				</Parameter><Parameter>
+					<Name>timeZone</Name>
+					<Abstract type="html">The NSTimeZone to use for the output.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the formatted date.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatDate:withStyle:usingTimeZone:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatTime:withStyle:</TokenIdentifier>
+			<Abstract type="html">Returns a time-formatted string using the specified formatter style.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)formatTime:(NSDate *)d8 withStyle:(NSDateFormatterStyle)style</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>d8</Name>
+					<Abstract type="html">The NSDate to format.</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">The NSDateFormatterStyle to use for formatting the time.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the formatted time.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatTime:withStyle:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatDateTime:withStyle:</TokenIdentifier>
+			<Abstract type="html">Returns a date/time-formatted string using the specified formatter style.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)formatDateTime:(NSDate *)d8 withStyle:(NSDateFormatterStyle)style</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>d8</Name>
+					<Abstract type="html">The NSDate to format.</Abstract>
+				</Parameter><Parameter>
+					<Name>style</Name>
+					<Abstract type="html">The NSDateFormatterStyle to use for formatting the
+            date/time.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A string containing the formatted date/time.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatDateTime:withStyle:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/parseDate:fromLocale:usingFormat:</TokenIdentifier>
+			<Abstract type="html">Attempts to parse an NSDate from a string using the specified date format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSDate *)parseDate:(NSString *)str fromLocale:(NSLocale *)locale usingFormat:(NSString *)dateFormat</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The date string to parse.</Abstract>
+				</Parameter><Parameter>
+					<Name>locale</Name>
+					<Abstract type="html">The locale of the input string str. If nil, the value
+            str is assumed to be in the device&apos;s current locale.</Abstract>
+				</Parameter><Parameter>
+					<Name>dateFormat</Name>
+					<Abstract type="html">A date format string as accepted by NSDateFormatter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSDate representing the parsed date string, or nil if there
+            was an error parsing the string.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseDate:fromLocale:usingFormat:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/parseDate:</TokenIdentifier>
+			<Abstract type="html">Attempts to parse an NSDate from a string in the locale
+defaultDateParsingLocale using the date format returned by the
+method defaultDateParsingFormat.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSDate *)parseDate:(NSString *)str</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract type="html">The date string to parse.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSDate representing the parsed date string, or nil if there
+            was an error parsing the string.</Abstract></ReturnValue>
+			<Anchor>//api/name/parseDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/currentTime</TokenIdentifier>
+			<Abstract type="html">Returns an NSDate representing the current date and time.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSDate *)currentTime</Declaration>
+			
+			<ReturnValue><Abstract type="html">An NSDate instance representing the present time.</Abstract></ReturnValue>
+			<Anchor>//api/name/currentTime</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsSince:</TokenIdentifier>
+			<Abstract type="html">Returns the number of seconds that have elapsed since the given time in
+the past.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsUntil:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)secondsSince:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber instance containing the number of seconds since
+            the input date; if the input date is in the future, the return
+            value will be negative.</Abstract></ReturnValue>
+			<Anchor>//api/name/secondsSince:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsUntil:</TokenIdentifier>
+			<Abstract type="html">Returns the number of seconds between the present time and the given time
+in the future.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/secondsSince:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)secondsUntil:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber instance containing the number of seconds until
+            the input date; if the input date is in the past, the return
+            value will be negative.</Abstract></ReturnValue>
+			<Anchor>//api/name/secondsUntil:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/unixTimestampToDate:</TokenIdentifier>
+			<Abstract type="html">Converts a UNIX timestamp into an NSDate.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/dateToUnixTimestamp:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)unixTimestampToDate:(id)timestamp</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>timestamp</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSDate instance containing the date representation of given
+            timestamp.</Abstract></ReturnValue>
+			<Anchor>//api/name/unixTimestampToDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/dateToUnixTimestamp:</TokenIdentifier>
+			<Abstract type="html">Returns the UNIX timestamp representation of a given NSDate.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/unixTimestampToDate:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)dateToUnixTimestamp:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber instance containing the UNIX timestamp
+            representation of the input date.</Abstract></ReturnValue>
+			<Anchor>//api/name/dateToUnixTimestamp:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/addSecondsToDate:</TokenIdentifier>
+			<Abstract type="html">Returns an NSDate representing the given date plus the specified number
+of seconds.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)addSecondsToDate:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The adjusted date.
+  </Abstract></ReturnValue>
+			<Anchor>//api/name/addSecondsToDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatTimeUntil:</TokenIdentifier>
+			<Abstract type="html">Returns a string representation of the time remaining until the given date.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatTimeUntil:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSString instance containing the time until the input date.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatTimeUntil:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and a format string, and returns a string representation of the
+date in the specified format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatDate:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatSortableDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the format
+&quot;YYYY-MM-dd HH:mm:ss&quot;. This format ensures allows dates to be sorted using
+simple string sorting.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatSortableDate:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatSortableDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatShortDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterShortStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatShortDate:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatShortDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatMediumDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterMediumStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatMediumDate:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatMediumDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatLongDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatLongDate:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatLongDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatFullDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterFullStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatFullDate:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatFullDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatShortTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterShortStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatShortTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatShortTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatMediumTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterMediumStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatMediumTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatMediumTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatLongTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatLongTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatLongTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatFullTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterFullStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatFullTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatFullTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatShortDateTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterShortStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatShortDateTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date/time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatShortDateTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatMediumDateTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterMediumStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatMediumDateTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date/time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatMediumDateTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatLongDateTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatLongDateTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date/time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatLongDateTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/formatFullDateTime:</TokenIdentifier>
+			<Abstract type="html">Accepts a date and returns a date string formatted using the
+NSDateFormatterLongStyle format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)formatFullDateTime:(id)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">The function&apos;s input parameter.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The date/time-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/formatFullDateTime:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDate:</TokenIdentifier>
+			<Abstract type="html">Accepts a date-formatted string and converts it into a date string of
+another format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDateWithLocale:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)reformatDate:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/reformatDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDateWithLocale:</TokenIdentifier>
+			<Abstract type="html">Accepts a date-formatted input string—along with a locale specification for
+that input string—and converts the input into a date string of another format.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/reformatDate:</TokenIdentifier>
+		
+	</RelatedTokens>
+	
+			<Declaration>+ (id)reformatDateWithLocale:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A date-formatted string.</Abstract></ReturnValue>
+			<Anchor>//api/name/reformatDateWithLocale:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/mbmlParseDate:</TokenIdentifier>
+			<Abstract type="html">Attempts to construct an NSDate instance by parsing a string.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)mbmlParseDate:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSDate representing the parsed date.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlParseDate:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDateFunctions/timeZoneOffset</TokenIdentifier>
+			<Abstract type="html">Returns the offset, in minutes, between the current time zone and UTC.</Abstract>
+			<DeclaredIn>MBMLDateFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSNumber *)timeZoneOffset</Declaration>
+			
+			<ReturnValue><Abstract type="html">The time zone offset.</Abstract></ReturnValue>
+			<Anchor>//api/name/timeZoneOffset</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

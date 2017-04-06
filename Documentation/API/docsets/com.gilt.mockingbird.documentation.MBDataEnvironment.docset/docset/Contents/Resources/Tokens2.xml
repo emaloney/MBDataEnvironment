@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBConcreteVariableDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBConcreteVariableDeclaration</TokenIdentifier>
+			<Abstract type="html">An MBVariableDeclaration that represents a concrete variable. Concrete
+variables are those whose values are NSObject instances stored in the
+MBVariableSpace.</Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setDeclaredType:</TokenIdentifier>
+			<Abstract type="html">Returns an MBConcreteVariableType value indicating the variable&apos;s type
+    as declared by the type=&quot;type&quot; attribute in MBML.
+    Defaults to MBConcreteVariableTypeSimple if no type attribute is
+    specified. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBConcreteVariableType declaredType</Declaration>
+			
+			
+			<Anchor>//api/name/declaredType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/declaredType</TokenIdentifier>
+			<Abstract type="html">Returns an MBConcreteVariableType value indicating the variable&apos;s type
+    as declared by the type=&quot;type&quot; attribute in MBML.
+    Defaults to MBConcreteVariableTypeSimple if no type attribute is
+    specified. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBConcreteVariableType declaredType</Declaration>
+			
+			
+			<Anchor>//api/name/declaredType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/declaredType</TokenIdentifier>
+			<Abstract type="html">Returns an MBConcreteVariableType value indicating the variable&apos;s type
+    as declared by the type=&quot;type&quot; attribute in MBML.
+    Defaults to MBConcreteVariableTypeSimple if no type attribute is
+    specified. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) MBConcreteVariableType declaredType</Declaration>
+			
+			
+			<Anchor>//api/name/declaredType</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setDeclaredValue:</TokenIdentifier>
+			<Abstract type="html">Returns the variable value as it was originally declared in MBML. Note
+    that this may not necessarily be the same as the current value. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) id declaredValue</Declaration>
+			
+			
+			<Anchor>//api/name/declaredValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/declaredValue</TokenIdentifier>
+			<Abstract type="html">Returns the variable value as it was originally declared in MBML. Note
+    that this may not necessarily be the same as the current value. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) id declaredValue</Declaration>
+			
+			
+			<Anchor>//api/name/declaredValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/declaredValue</TokenIdentifier>
+			<Abstract type="html">Returns the variable value as it was originally declared in MBML. Note
+    that this may not necessarily be the same as the current value. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) id declaredValue</Declaration>
+			
+			
+			<Anchor>//api/name/declaredValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setIsLiteralValue:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the receiver represents a literal value. Literal values
+    are not evaluated as expressions when they are set. In MBML, a literal
+    value is specified using the literal=&quot;expr&quot; attribute
+    where expr is an arbitrary text string. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLiteralValue</Declaration>
+			
+			
+			<Anchor>//api/name/isLiteralValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/isLiteralValue</TokenIdentifier>
+			<Abstract type="html">Indicates whether the receiver represents a literal value. Literal values
+    are not evaluated as expressions when they are set. In MBML, a literal
+    value is specified using the literal=&quot;expr&quot; attribute
+    where expr is an arbitrary text string. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLiteralValue</Declaration>
+			
+			
+			<Anchor>//api/name/isLiteralValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/isLiteralValue</TokenIdentifier>
+			<Abstract type="html">Indicates whether the receiver represents a literal value. Literal values
+    are not evaluated as expressions when they are set. In MBML, a literal
+    value is specified using the literal=&quot;expr&quot; attribute
+    where expr is an arbitrary text string. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isLiteralValue</Declaration>
+			
+			
+			<Anchor>//api/name/isLiteralValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setIsBooleanValue:</TokenIdentifier>
+			<Abstract type="html">Indicates whether the receiver represents a boolean value. Boolean values
+    are evaluated as boolean expressions when they are set. In MBML, a boolean
+    value is specified using the boolean=&quot;expr&quot; attribute
+    where expr is an Mockingbird expression evaluated in a boolean context. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isBooleanValue</Declaration>
+			
+			
+			<Anchor>//api/name/isBooleanValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/isBooleanValue</TokenIdentifier>
+			<Abstract type="html">Indicates whether the receiver represents a boolean value. Boolean values
+    are evaluated as boolean expressions when they are set. In MBML, a boolean
+    value is specified using the boolean=&quot;expr&quot; attribute
+    where expr is an Mockingbird expression evaluated in a boolean context. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isBooleanValue</Declaration>
+			
+			
+			<Anchor>//api/name/isBooleanValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/isBooleanValue</TokenIdentifier>
+			<Abstract type="html">Indicates whether the receiver represents a boolean value. Boolean values
+    are evaluated as boolean expressions when they are set. In MBML, a boolean
+    value is specified using the boolean=&quot;expr&quot; attribute
+    where expr is an Mockingbird expression evaluated in a boolean context. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isBooleanValue</Declaration>
+			
+			
+			<Anchor>//api/name/isBooleanValue</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/setUserDefaultsName:</TokenIdentifier>
+			<Abstract type="html">If the receiver is bound to an NSUserDefaults value, this property
+    returns the name of the value (also known as the key) within the
+    NSUserDefaults&apos;s standardUserDefaults. Will be nil is there is
+    no NSUserDefaults value associated with the receiver. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/userDefaultsName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConcreteVariableDeclaration/userDefaultsName</TokenIdentifier>
+			<Abstract type="html">If the receiver is bound to an NSUserDefaults value, this property
+    returns the name of the value (also known as the key) within the
+    NSUserDefaults&apos;s standardUserDefaults. Will be nil is there is
+    no NSUserDefaults value associated with the receiver. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/userDefaultsName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConcreteVariableDeclaration/userDefaultsName</TokenIdentifier>
+			<Abstract type="html">If the receiver is bound to an NSUserDefaults value, this property
+    returns the name of the value (also known as the key) within the
+    NSUserDefaults&apos;s standardUserDefaults. Will be nil is there is
+    no NSUserDefaults value associated with the receiver. </Abstract>
+			<DeclaredIn>MBVariableDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *userDefaultsName</Declaration>
+			
+			
+			<Anchor>//api/name/userDefaultsName</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

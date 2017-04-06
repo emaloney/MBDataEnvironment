@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLFontFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLFontFunctions</TokenIdentifier>
+			<Abstract type="html">This class implements MBML functions for accessing information about the
+fonts available at runtime.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/fontFamilyNames</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the available font family names.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fontFamilyNames</Declaration>
+			
+			<ReturnValue><Abstract type="html">The names of the available font families.</Abstract></ReturnValue>
+			<Anchor>//api/name/fontFamilyNames</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/fontNamesForFamilyName:</TokenIdentifier>
+			<Abstract type="html">Returns an array containing the available UIFont names given a font family
+name.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fontNamesForFamilyName:(NSString *)familyName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>familyName</Name>
+					<Abstract type="html">The function&apos;s input parameter, the font family name.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The names of the fonts available in the given font family.</Abstract></ReturnValue>
+			<Anchor>//api/name/fontNamesForFamilyName:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/fontWithNameAndSize:</TokenIdentifier>
+			<Abstract type="html">Returns a UIFont instance for the given font name and size.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)fontWithNameAndSize:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The requested UIFont, or nil if it couldn&apos;t be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/fontWithNameAndSize:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/stringWidth:</TokenIdentifier>
+			<Abstract type="html">Calculates the width of a string given a specific font and size.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)stringWidth:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The width of text.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringWidth:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/sizeOfTextWithFont:</TokenIdentifier>
+			<Abstract type="html">Measures the size of width and height needed to render text in a given font.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)sizeOfTextWithFont:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The size of the text in the given font, as a comma-separated string.</Abstract></ReturnValue>
+			<Anchor>//api/name/sizeOfTextWithFont:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLFontFunctions/linesNeededToDrawText:</TokenIdentifier>
+			<Abstract type="html">Calculates the number of text lines required to fully display a string
+constrained to a specific width.</Abstract>
+			<DeclaredIn>MBMLFontFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)linesNeededToDrawText:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The number of lines needed to draw the text.</Abstract></ReturnValue>
+			<Anchor>//api/name/linesNeededToDrawText:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

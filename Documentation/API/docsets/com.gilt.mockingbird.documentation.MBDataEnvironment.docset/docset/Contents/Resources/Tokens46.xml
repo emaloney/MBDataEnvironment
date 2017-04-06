@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/MBExpressionCacheSerialization.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/MBExpressionCacheSerialization</TokenIdentifier>
+			<Abstract type="html">Specifies the serialization behavior for the MBExpressionCache.</Abstract>
+			<DeclaredIn>MBExpressionCache.h</DeclaredIn>
+            
+			
+			<NodeRef refid="46"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBExpressionCacheSerializationNone</TokenIdentifier>
+            <Abstract type="html">The cache will not serialize any changes to the filesystem. This is
+        the default value of the MBExpressionCache&apos;s cacheSerialization 
+        property. </Abstract>
+            <Declaration>MBExpressionCacheSerializationNone</Declaration>
+            
+            <DeclaredIn>MBExpressionCache.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBExpressionCacheSerializationOptimizeForLaunch</TokenIdentifier>
+            <Abstract type="html">The cache will serialize only those changes occurring within a given
+        period of time after application launch. Cache files will be smaller. </Abstract>
+            <Declaration>MBExpressionCacheSerializationOptimizeForLaunch</Declaration>
+            
+            <DeclaredIn>MBExpressionCache.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MBExpressionCacheSerializationOptimizeForPerformance</TokenIdentifier>
+            <Abstract type="html">The cache will periodically serialize changes to the filesystem.
+        Over time, the cache will grow to encompass all expressions
+        encountered at runtime, making expression evaluation quicker. 
+        Cache files will be larger, however, which can affect application
+        launch times in extreme cases. </Abstract>
+            <Declaration>MBExpressionCacheSerializationOptimizeForPerformance</Declaration>
+            
+            <DeclaredIn>MBExpressionCache.h</DeclaredIn>
+            
+            <NodeRef refid="46"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

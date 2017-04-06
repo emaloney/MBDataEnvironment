@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBConditionalDeclaration.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBConditionalDeclaration</TokenIdentifier>
+			<Abstract type="html">A data model representing a conditional declaration.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConditionalDeclaration/setIfCondition:</TokenIdentifier>
+			<Abstract type="html">Returns the if condition associated with the receiver, a boolean
+expression indicating whether the variable declaration should be processed.
+contents of the if=&quot;...&quot; attribute.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *ifCondition</Declaration>
+			
+			
+			<Anchor>//api/name/ifCondition</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConditionalDeclaration/ifCondition</TokenIdentifier>
+			<Abstract type="html">Returns the if condition associated with the receiver, a boolean
+expression indicating whether the variable declaration should be processed.
+contents of the if=&quot;...&quot; attribute.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *ifCondition</Declaration>
+			
+			
+			<Anchor>//api/name/ifCondition</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConditionalDeclaration/ifCondition</TokenIdentifier>
+			<Abstract type="html">Returns the if condition associated with the receiver, a boolean
+expression indicating whether the variable declaration should be processed.
+contents of the if=&quot;...&quot; attribute.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nullable, nonatomic, readonly) NSString *ifCondition</Declaration>
+			
+			
+			<Anchor>//api/name/ifCondition</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConditionalDeclaration/setShouldDeclare:</TokenIdentifier>
+			<Abstract type="html">Determines whether the variable declaration should proceed. This returns
+YES if the ifCondition is nil or if the ifCondition evaluates
+to YES in a boolean context. Otherwise, returns NO, indicating that
+the variable declaration will be ignored.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL shouldDeclare</Declaration>
+			
+			
+			<Anchor>//api/name/shouldDeclare</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBConditionalDeclaration/shouldDeclare</TokenIdentifier>
+			<Abstract type="html">Determines whether the variable declaration should proceed. This returns
+YES if the ifCondition is nil or if the ifCondition evaluates
+to YES in a boolean context. Otherwise, returns NO, indicating that
+the variable declaration will be ignored.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL shouldDeclare</Declaration>
+			
+			
+			<Anchor>//api/name/shouldDeclare</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MBConditionalDeclaration/shouldDeclare</TokenIdentifier>
+			<Abstract type="html">Determines whether the variable declaration should proceed. This returns
+YES if the ifCondition is nil or if the ifCondition evaluates
+to YES in a boolean context. Otherwise, returns NO, indicating that
+the variable declaration will be ignored.</Abstract>
+			<DeclaredIn>MBConditionalDeclaration.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL shouldDeclare</Declaration>
+			
+			
+			<Anchor>//api/name/shouldDeclare</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

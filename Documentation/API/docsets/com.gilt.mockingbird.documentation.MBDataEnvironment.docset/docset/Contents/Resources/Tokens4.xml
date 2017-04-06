@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBDataEnvironmentModule.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBDataEnvironmentModule</TokenIdentifier>
+			<Abstract type="html">The MBDataEnvironmentModule class is an MBModule implementation that
+represents the Mockingbird Data Environment itself.</Abstract>
+			<DeclaredIn>MBDataEnvironmentModule.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

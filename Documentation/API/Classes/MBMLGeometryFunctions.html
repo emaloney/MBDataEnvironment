@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>MBMLGeometryFunctions Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MBDataEnvironment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/insetRect:">+ insetRect:</option>
+		
+		<option value="//api/name/insetRectBottom:">+ insetRectBottom:</option>
+		
+		<option value="//api/name/insetRectLeft:">+ insetRectLeft:</option>
+		
+		<option value="//api/name/insetRectRight:">+ insetRectRight:</option>
+		
+		<option value="//api/name/insetRectTop:">+ insetRectTop:</option>
+		
+		<option value="//api/name/pointX:">+ pointX:</option>
+		
+		<option value="//api/name/pointY:">+ pointY:</option>
+		
+		<option value="//api/name/rectHeight:">+ rectHeight:</option>
+		
+		<option value="//api/name/rectOrigin:">+ rectOrigin:</option>
+		
+		<option value="//api/name/rectSize:">+ rectSize:</option>
+		
+		<option value="//api/name/rectWidth:">+ rectWidth:</option>
+		
+		<option value="//api/name/rectX:">+ rectX:</option>
+		
+		<option value="//api/name/rectY:">+ rectY:</option>
+		
+		<option value="//api/name/sizeHeight:">+ sizeHeight:</option>
+		
+		<option value="//api/name/sizeWidth:">+ sizeWidth:</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">MBMLGeometryFunctions Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>MBMLGeometryFunctions.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class implements MBML functions for working with geometric values.</p>
+
+<p>These functions are exposed to the Mockingbird environment via
+<code>&lt;Function ... /&gt;</code> declarations in the <code><a href="../Classes/MBDataEnvironmentModule.html">MBDataEnvironmentModule</a>.xml</code>
+file.</p>
+
+<p>For more information on MBML functions, see the <a href="../Classes/MBMLFunction.html"><code>MBMLFunction</code></a> class.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Accessing components of rectangles" name="task_Accessing components of rectangles"></a>
+						<h2 class="task-title">Accessing components of rectangles</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/rectOrigin:" title="rectOrigin:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectOrigin:">+&nbsp;rectOrigin:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the origin point of the given rectangle, as a comma-separated string
+in the format &ldquo;<em><code>x</code></em><code>,</code><em><code>y</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rectOrigin:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the origin point of the rectangle expressed
+            as a comma-separated string.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^rectOrigin(10,20,80,90)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>10,20</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rectSize:" title="rectSize:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectSize:">+&nbsp;rectSize:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the size of the given rectangle, as a comma-separated string
+in the format &ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rectSize:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the size of the rectangle expressed
+            as a comma-separated string.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^rectSize(10,20,80,90)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>80,90</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rectX:" title="rectX:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectX:">+&nbsp;rectX:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the <em>x</em> coordinate of the given rectangle&rsquo;s
+origin point.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rectX:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the <em>x</em> coordinate of the rectangle&rsquo;s origin.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^rectX(10,20,80,90)
+</code></pre>
+
+<p>The expression above would return the value <code>10</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rectY:" title="rectY:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectY:">+&nbsp;rectY:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the <em>y</em> coordinate of the given rectangle&rsquo;s
+origin point.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rectY:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the <em>y</em> coordinate of the rectangle&rsquo;s origin.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^rectY(10,20,80,90)
+</code></pre>
+
+<p>The expression above would return the value <code>20</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rectWidth:" title="rectWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectWidth:">+&nbsp;rectWidth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the width of the given rectangle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rectWidth:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the width of the rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^rectWidth(10,20,80,90)
+</code></pre>
+
+<p>The expression above would return the value <code>80</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/rectHeight:" title="rectHeight:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rectHeight:">+&nbsp;rectHeight:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the height of the given rectangle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)rectHeight:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the height of the rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^rectHeight(10,20,80,90)
+</code></pre>
+
+<p>The expression above would return the value <code>90</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Adjusting rectangles" name="task_Adjusting rectangles"></a>
+						<h2 class="task-title">Adjusting rectangles</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/insetRect:" title="insetRect:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insetRect:">+&nbsp;insetRect:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjusts the given rectangle by applying the specified insets to each edge,
+and returns the resulting rectangle as a comma-separated string in the
+format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)insetRect:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A string containing the adjusted rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated object expressions as
+parameters: the <em>source rectangle</em> and the <em>edge insets</em>.</p>
+
+<p>The <em>source rectangle</em> expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+</ul>
+
+
+<p>The <em>edge insets</em> expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format
+ &ldquo;<em><code>topInset</code></em><code>,</code><em><code>leftInset</code></em><code>,</code><em><code>bottomInset</code></em><code>,</code><em><code>rightInset</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a
+ <code>UIEdgeInsets</code> value.</p></li>
+</ul>
+
+
+<p>Any other value for either input parameter is considered an error.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code> ^insetRect(10,10,100,100|-5,-5,15,15)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>5,5,90,90</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insetRectTop:" title="insetRectTop:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insetRectTop:">+&nbsp;insetRectTop:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjusts the given rectangle by applying an inset to the top edge, and
+returns the resulting rectangle as a comma-separated string in the format
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)insetRectTop:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A string containing the adjusted rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated expressions as
+parameters: the <em>source rectangle</em> and the <em>inset amount</em>.</p>
+
+<p>The <em>source rectangle</em> expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+ value.</p></li>
+</ul>
+
+
+<p>The <em>inset amount</em> is interpreted as a numeric expression indicating the
+amount by which the edge of the <em>source rectangle</em> will be adjusted.</p>
+
+<p>A negative <em>inset amount</em> makes the rectangle taller by moving the top edge
+upwards; a positive value makes the rectangle shorter by lowering the top edge.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code> ^insetRectTop(10,10,100,100|-5)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>10,5,100,105</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insetRectLeft:" title="insetRectLeft:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insetRectLeft:">+&nbsp;insetRectLeft:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjusts the given rectangle by applying an inset to the left edge, and
+returns the resulting rectangle as a comma-separated string in the format
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)insetRectLeft:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A string containing the adjusted rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated expressions as
+parameters: the <em>source rectangle</em> and the <em>inset amount</em>.</p>
+
+<p>The <em>source rectangle</em> expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+value.</p></li>
+</ul>
+
+
+<p>The <em>inset amount</em> is interpreted as a numeric expression indicating the
+amount by which the edge of the <em>source rectangle</em> will be adjusted.</p>
+
+<p>A negative <em>inset amount</em> makes the rectangle wider by moving the left edge
+further leftwards; a positive value makes the rectangle narrower by moving the
+left edge rightwards.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code> ^insetRectLeft(50,50,50,50|25)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>75,50,25,50</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insetRectBottom:" title="insetRectBottom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insetRectBottom:">+&nbsp;insetRectBottom:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjusts the given rectangle by applying an inset to the bottom edge, and
+returns the resulting rectangle as a comma-separated string in the format
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)insetRectBottom:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A string containing the adjusted rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated expressions as
+parameters: the <em>source rectangle</em> and the <em>inset amount</em>.</p>
+
+<p>The <em>source rectangle</em> expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+value.</p></li>
+</ul>
+
+
+<p>The <em>inset amount</em> is interpreted as a numeric expression indicating the
+amount by which the edge of the <em>source rectangle</em> will be adjusted.</p>
+
+<p>A negative <em>inset amount</em> makes the rectangle taller by moving the bottom
+edge downwards; a positive value makes the rectangle shorter by raising the
+bottom edge.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code> ^insetRectBottom(20,20,100,100|25)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>20,20,100,75</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/insetRectRight:" title="insetRectRight:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/insetRectRight:">+&nbsp;insetRectRight:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adjusts the given rectangle by applying an inset to the right edge, and
+returns the resulting rectangle as a comma-separated string in the format
+&ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)insetRectRight:(NSArray *)<em>params</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>params</code></th>
+						<td><p>The function&rsquo;s input parameters.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>A string containing the adjusted rectangle.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts two pipe-separated expressions as
+parameters: the <em>source rectangle</em> and the <em>inset amount</em>.</p>
+
+<p>The <em>source rectangle</em> expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+string in the format &ldquo;<em><code>origin-x</code></em><code>,</code><em><code>origin-y</code></em><code>,</code><em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGRect</code>
+value.</p></li>
+</ul>
+
+
+<p>The <em>inset amount</em> is interpreted as a numeric expression indicating the
+amount by which the edge of the <em>source rectangle</em> will be adjusted.</p>
+
+<p>A negative <em>inset amount</em> makes the rectangle larger by moving the right
+edge further rightwards; a positive value makes the rectangle smaller by
+moving the right edge leftwards.</p>
+
+<h4>Expression usage</h4>
+
+<pre><code> ^insetRectRight(10,10,50,50|-10)
+</code></pre>
+
+<p>The expression above would return the string &ldquo;<code>10,10,60,50</code>&rdquo;.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Accessing the width and height components of sizes" name="task_Accessing the width and height components of sizes"></a>
+						<h2 class="task-title">Accessing the width and height components of sizes</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/sizeWidth:" title="sizeWidth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sizeWidth:">+&nbsp;sizeWidth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the width component of the given size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)sizeWidth:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the width component of the given size.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGSize</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^sizeWidth(10,20)
+</code></pre>
+
+<p>The expression above would return the value <code>10</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sizeHeight:" title="sizeHeight:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sizeHeight:">+&nbsp;sizeHeight:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the height component of the given size.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)sizeHeight:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the height component of the given size.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>width</code></em><code>,</code><em><code>height</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGSize</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^sizeHeight(10,20)
+</code></pre>
+
+<p>The expression above would return the value <code>20</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Accessing the x and y coordinates of points" name="task_Accessing the x and y coordinates of points"></a>
+						<h2 class="task-title">Accessing the x and y coordinates of points</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/pointX:" title="pointX:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pointX:">+&nbsp;pointX:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the <em>x</em> coordinate of the given point.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)pointX:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the <em>x</em> coordinate of the given point.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>x</code></em><code>,</code><em><code>y</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGPoint</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code>^pointX(10,20)
+</code></pre>
+
+<p>The expression above would return the value <code>10</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pointY:" title="pointY:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pointY:">+&nbsp;pointY:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <code>NSNumber</code> containing the <em>y</em> coordinate of the given point.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (id)pointY:(id)<em>param</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>param</code></th>
+						<td><p>The function&rsquo;s input parameter.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The function result, the <em>y</em> coordinate of the given point.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This Mockingbird function accepts a single parameter, an object expression
+that&rsquo;s expected to yield an <code>NSString</code> or an <code>NSValue</code> instance. This
+expression is interpreted as follows:</p>
+
+<ul>
+<li><p>If the expression yields a string, it is expected to be a comma-separated
+ string in the format &ldquo;<em><code>x</code></em><code>,</code><em><code>y</code></em>&rdquo;.</p></li>
+<li><p>If the expression yields an <code>NSValue</code>, it is expected to contain a <code>CGPoint</code>
+ value.</p></li>
+<li><p>All other cases are considered errors.</p></li>
+</ul>
+
+
+<h4>Expression usage</h4>
+
+<pre><code> ^pointY(10,20)
+</code></pre>
+
+<p>The expression above would return the value <code>20</code>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBMLGeometryFunctions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

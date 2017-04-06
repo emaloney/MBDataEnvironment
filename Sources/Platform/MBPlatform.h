@@ -13,13 +13,22 @@
 /******************************************************************************/
 
 /*!
- An `enum` containing the possible platform types on which this code could run.
+ The possible operating system types on which this code could run.
  */
 typedef NS_ENUM(NSUInteger, MBPlatformType) {
+    /*! The platform is not known. */
     MBPlatformTypeUnknown   = 0,
+
+    /*! The platform runs macOS. */
     MBPlatformTypeMacOS     = 1,
+
+    /*! The platform runs iOS. */
     MBPlatformTypeIOS       = 2,
+
+    /*! The platform runs tvOS. */
     MBPlatformTypeTVOS      = 3,
+
+    /*! The platform runs watchOS. */
     MBPlatformTypeWatchOS   = 4
 };
 

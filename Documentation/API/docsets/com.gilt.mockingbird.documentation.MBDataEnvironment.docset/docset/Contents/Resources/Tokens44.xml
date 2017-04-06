@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/MBNumericPrimitiveAccessors.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/MBNumericPrimitiveAccessors</TokenIdentifier>
+			<Abstract type="html">This is the base protocol that will be adopted by our NSString and NSNull
+extensions to ensure proper KVC type coercion on 64-bit processors.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+            
+			
+			<NodeRef refid="44"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/charValue</TokenIdentifier>
+			<Abstract type="html">Returns the char value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (char)charValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a char.</Abstract></ReturnValue>
+			<Anchor>//api/name/charValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedCharValue</TokenIdentifier>
+			<Abstract type="html">Returns the unsigned char value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned char)unsignedCharValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an unsigned char.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsignedCharValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/shortValue</TokenIdentifier>
+			<Abstract type="html">Returns the short value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (short)shortValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a short.</Abstract></ReturnValue>
+			<Anchor>//api/name/shortValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedShortValue</TokenIdentifier>
+			<Abstract type="html">Returns the unsigned short value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned short)unsignedShortValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an unsigned short.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsignedShortValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/intValue</TokenIdentifier>
+			<Abstract type="html">Returns the int value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (int)intValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a int.</Abstract></ReturnValue>
+			<Anchor>//api/name/intValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedIntValue</TokenIdentifier>
+			<Abstract type="html">Returns the unsigned int value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned int)unsignedIntValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an unsigned int.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsignedIntValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/longValue</TokenIdentifier>
+			<Abstract type="html">Returns the long value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (long)longValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a long.</Abstract></ReturnValue>
+			<Anchor>//api/name/longValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedLongValue</TokenIdentifier>
+			<Abstract type="html">Returns the unsigned long value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned long)unsignedLongValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an unsigned long.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsignedLongValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/longLongValue</TokenIdentifier>
+			<Abstract type="html">Returns the long long value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (long long)longLongValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a long long.</Abstract></ReturnValue>
+			<Anchor>//api/name/longLongValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedLongLongValue</TokenIdentifier>
+			<Abstract type="html">Returns the unsigned long long value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (unsigned long long)unsignedLongLongValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an unsigned long long.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsignedLongLongValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/floatValue</TokenIdentifier>
+			<Abstract type="html">Returns the float value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (float)floatValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a float.</Abstract></ReturnValue>
+			<Anchor>//api/name/floatValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/doubleValue</TokenIdentifier>
+			<Abstract type="html">Returns the double value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (double)doubleValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a double.</Abstract></ReturnValue>
+			<Anchor>//api/name/doubleValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/boolValue</TokenIdentifier>
+			<Abstract type="html">Returns the BOOL value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)boolValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as a BOOL.</Abstract></ReturnValue>
+			<Anchor>//api/name/boolValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/integerValue</TokenIdentifier>
+			<Abstract type="html">Returns the NSInteger value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)integerValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an NSInteger.</Abstract></ReturnValue>
+			<Anchor>//api/name/integerValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/unsignedIntegerValue</TokenIdentifier>
+			<Abstract type="html">Returns the NSUInteger value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)unsignedIntegerValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an NSUInteger.</Abstract></ReturnValue>
+			<Anchor>//api/name/unsignedIntegerValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/MBNumericPrimitiveAccessors/stringValue</TokenIdentifier>
+			<Abstract type="html">Returns the NSString value equivalent of the receiver.</Abstract>
+			<DeclaredIn>TypeCoercionSupport.h</DeclaredIn>
+			
+			<Declaration>- (nonnull NSString *)stringValue</Declaration>
+			
+			<ReturnValue><Abstract type="html">The value of the receiver as an NSString.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringValue</Anchor>
+            <NodeRef refid="44"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

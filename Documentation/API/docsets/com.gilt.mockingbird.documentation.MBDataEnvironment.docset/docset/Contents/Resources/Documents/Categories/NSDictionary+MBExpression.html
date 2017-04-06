@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NSDictionary(MBExpression) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">MBDataEnvironment </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Gilt Groupe</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/evaluateAsBoolean:">- evaluateAsBoolean:</option>
+		
+		<option value="//api/name/evaluateAsBoolean:defaultValue:">- evaluateAsBoolean:defaultValue:</option>
+		
+		<option value="//api/name/evaluateAsNumber:">- evaluateAsNumber:</option>
+		
+		<option value="//api/name/evaluateAsNumber:defaultValue:">- evaluateAsNumber:defaultValue:</option>
+		
+		<option value="//api/name/evaluateAsObject:">- evaluateAsObject:</option>
+		
+		<option value="//api/name/evaluateAsObject:defaultValue:">- evaluateAsObject:defaultValue:</option>
+		
+		<option value="//api/name/evaluateAsString:">- evaluateAsString:</option>
+		
+		<option value="//api/name/evaluateAsString:defaultValue:">- evaluateAsString:defaultValue:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NSDictionary(MBExpression) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>MBExpressionExtensions.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This <code>NSDictionary</code> class category adds method for evaluating expressions
+using values contained in an <code>NSDictionary</code>.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/evaluateAsObject:" title="evaluateAsObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsObject:">&ndash;&nbsp;evaluateAsObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as an object expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)evaluateAsObject:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asObject:"><code>[MBExpression asObject:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsObject:defaultValue:" title="evaluateAsObject:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsObject:defaultValue:">&ndash;&nbsp;evaluateAsObject:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as an object expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable id)evaluateAsObject:(nonnull NSString *)<em>key</em> defaultValue:(nullable id)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default value to be returned if expression evaluation would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression, or <code>def</code> if <code>nil</code> would otherwise be returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asObject:defaultValue:"><code>[MBExpression asObject:defaultValue:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsString:" title="evaluateAsString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsString:">&ndash;&nbsp;evaluateAsString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as a string expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)evaluateAsString:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asString:"><code>[MBExpression asString:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsString:defaultValue:" title="evaluateAsString:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsString:defaultValue:">&ndash;&nbsp;evaluateAsString:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as a string expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSString *)evaluateAsString:(nonnull NSString *)<em>key</em> defaultValue:(nullable NSString *)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default value to be returned if expression evaluation would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression, or <code>def</code> if <code>nil</code> would otherwise be returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asString:defaultValue:"><code>[MBExpression asString:defaultValue:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsNumber:" title="evaluateAsNumber:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsNumber:">&ndash;&nbsp;evaluateAsNumber:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as a numeric expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asNumber:"><code>[MBExpression asNumber:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsNumber:defaultValue:" title="evaluateAsNumber:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsNumber:defaultValue:">&ndash;&nbsp;evaluateAsNumber:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as a numeric expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)<em>key</em> defaultValue:(nullable NSDecimalNumber *)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default value to be returned if expression evaluation would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression, or <code>def</code> if <code>nil</code> would otherwise be returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asNumber:defaultValue:"><code>[MBExpression asNumber:defaultValue:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsBoolean:" title="evaluateAsBoolean:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsBoolean:">&ndash;&nbsp;evaluateAsBoolean:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as a boolean expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(nonnull NSString *)<em>key</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asBoolean:"><code>[MBExpression asBoolean:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/evaluateAsBoolean:defaultValue:" title="evaluateAsBoolean:defaultValue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/evaluateAsBoolean:defaultValue:">&ndash;&nbsp;evaluateAsBoolean:defaultValue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Takes the value associated with the receiver&rsquo;s <code>key</code> and attempts to
+evaluate that value as a boolean expression.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)evaluateAsBoolean:(nonnull NSString *)<em>key</em> defaultValue:(BOOL)<em>def</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>key</code></th>
+						<td><p>The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>def</code></th>
+						<td><p>A default value to be returned if expression evaluation would
+            otherwise return <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The result of evaluating the value associated with <code>key</code> as
+            an expression, or <code>def</code> if <code>nil</code> would otherwise be returned.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the value associated with <code>key</code> is not an <code>NSString</code>, the value&rsquo;s
+<code>description</code> method will be invoked to convert it into a string before it is
+evaluated as an expression.</p>
+
+<p>Equivalent to passing the value associated with <code>key</code> as the parameter to
+the <a href="../Classes/MBExpression.html#//api/name/asBoolean:defaultValue:"><code>[MBExpression asBoolean:defaultValue:]</code></a> method.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBExpressionExtensions.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

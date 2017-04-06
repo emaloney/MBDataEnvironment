@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLDebugFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLDebugFunctions</TokenIdentifier>
+			<Abstract type="html">This class implements MBML functions useful for debugging.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/log:</TokenIdentifier>
+			<Abstract type="html">Evaluates the passed-in expression in the object context, logs the result
+to the console, and then returns the result.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)log:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to be evaluated. Both expr and the result of
+            evaluating expr will be logged to the console.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/log:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/test:</TokenIdentifier>
+			<Abstract type="html">Evaluates the passed-in expression in the boolean context, logs the result
+to the console, and then returns the result.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)test:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to be evaluated. Both expr and the result of
+            evaluating expr will be logged to the console.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/test:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/dump:</TokenIdentifier>
+			<Abstract type="html">Evaluates the passed-in expression in the object context, logs the result
+to the console, and then returns the string description of the result.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)dump:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to be evaluated. Both expr and the result of
+            evaluating expr will be logged to the console.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating `expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/dump:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/debugBreak:</TokenIdentifier>
+			<Abstract type="html">Triggers a debug breakpoint when called in a debug build. This allows the
+developer to trap execution at a specific point during expression
+evaluation.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)debugBreak:(NSString *)input</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>input</Name>
+					<Abstract type="html">An arbitrary expression to be logged to the console before
+            the breakpoint is triggered.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The input.</Abstract></ReturnValue>
+			<Anchor>//api/name/debugBreak:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenize:</TokenIdentifier>
+			<Abstract type="html">Tokenizes an object expression and logs the resulting parse tokens to
+the console.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)tokenize:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to tokenize.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The expression expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/tokenize:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenizeBoolean:</TokenIdentifier>
+			<Abstract type="html">Tokenizes a boolean expression and logs the resulting parse tokens to
+the console.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)tokenizeBoolean:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to tokenize.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The expression expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/tokenizeBoolean:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/tokenizeMath:</TokenIdentifier>
+			<Abstract type="html">Tokenizes a math expression and logs the resulting parse tokens to
+the console.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSString *)tokenizeMath:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to tokenize.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The expression expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/tokenizeMath:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/bench:</TokenIdentifier>
+			<Abstract type="html">Benchmarks an object expression by measuring the time it takes to evaluate
+and logging the resulting time to the console.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)bench:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to benchmark.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The expression expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/bench:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/benchBool:</TokenIdentifier>
+			<Abstract type="html">Benchmarks a boolean expression by measuring the time it takes to evaluate
+and logging the resulting time to the console.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)benchBool:(NSString *)expr</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expr</Name>
+					<Abstract type="html">The expression to benchmark.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The expression expr.</Abstract></ReturnValue>
+			<Anchor>//api/name/benchBool:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/repeat:</TokenIdentifier>
+			<Abstract type="html">Repeatedly evaluates an object expression a given number of times.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)repeat:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
+			<Anchor>//api/name/repeat:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/repeatBool:</TokenIdentifier>
+			<Abstract type="html">Repeatedly evaluates a boolean expression a given number of times.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)repeatBool:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
+			<Anchor>//api/name/repeatBool:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLDebugFunctions/deprecateVariableInFavorOf:</TokenIdentifier>
+			<Abstract type="html">Issues a deprecation warning to the console for the MBML variable with the
+given name.</Abstract>
+			<DeclaredIn>MBMLDebugFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)deprecateVariableInFavorOf:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The preferred variable name.</Abstract></ReturnValue>
+			<Anchor>//api/name/deprecateVariableInFavorOf:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

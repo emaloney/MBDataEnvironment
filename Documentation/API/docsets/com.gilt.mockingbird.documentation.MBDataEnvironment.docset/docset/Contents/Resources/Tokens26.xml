@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLMathFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLMathFunctions</TokenIdentifier>
+			<Abstract type="html">This class implements MBML functions for performing mathematical operations.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/mod:</TokenIdentifier>
+			<Abstract type="html">Performs an integer modulo operation on a dividend and a divisor.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)mod:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the result.</Abstract></ReturnValue>
+			<Anchor>//api/name/mod:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/modFloat:</TokenIdentifier>
+			<Abstract type="html">Performs a floating-point modulo operation on a dividend and a divisor.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)modFloat:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing the result.</Abstract></ReturnValue>
+			<Anchor>//api/name/modFloat:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/percent:</TokenIdentifier>
+			<Abstract type="html">Formats a string to display a human-readable percentage.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)percent:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSString containing the result.</Abstract></ReturnValue>
+			<Anchor>//api/name/percent:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/ceil:</TokenIdentifier>
+			<Abstract type="html">Returns the ceiling of a numeric value; that is, the smallest integral value
+greater than or equal to the specified value. This can be thought of as
+&quot;rounding up.&quot;</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)ceil:(id)number</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>number</Name>
+					<Abstract type="html">The input value.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The ceiling of the input value.</Abstract></ReturnValue>
+			<Anchor>//api/name/ceil:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/floor:</TokenIdentifier>
+			<Abstract type="html">Returns the floor of a numeric value; that is, the largest integral value
+less than or equal to the specified value. This can be thought of as &quot;rounding
+down.&quot;</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)floor:(id)number</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>number</Name>
+					<Abstract type="html">The input value.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The floor of the input value.</Abstract></ReturnValue>
+			<Anchor>//api/name/floor:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/round:</TokenIdentifier>
+			<Abstract type="html">Rounds a numeric value to the nearest integral value. Values halfway between
+the nearest integrals are rounded away from zero.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)round:(id)number</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>number</Name>
+					<Abstract type="html">The input value.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The floor of the input value.</Abstract></ReturnValue>
+			<Anchor>//api/name/round:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/max:</TokenIdentifier>
+			<Abstract type="html">Returns the greater of two numeric values.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)max:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The lesser value of the two input parameters.</Abstract></ReturnValue>
+			<Anchor>//api/name/max:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/min:</TokenIdentifier>
+			<Abstract type="html">Returns the lesser of two numeric values.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)min:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The lesser value of the two input parameters.</Abstract></ReturnValue>
+			<Anchor>//api/name/min:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/randomPercent</TokenIdentifier>
+			<Abstract type="html">Returns a random percentage. Possible values range from 0.0 to 1.0,
+inclusive.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)randomPercent</Declaration>
+			
+			<ReturnValue><Abstract type="html">An NSNumber containing a random percentage.</Abstract></ReturnValue>
+			<Anchor>//api/name/randomPercent</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/random:</TokenIdentifier>
+			<Abstract type="html">Returns a random integer within a specified range.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)random:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An NSNumber containing a random integer value between
+             minimum value and maximum value, inclusive.</Abstract></ReturnValue>
+			<Anchor>//api/name/random:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLMathFunctions/arrayFilledWithIntegers:</TokenIdentifier>
+			<Abstract type="html">Creates an array filled with NSNumbers containing integers created
+according to a simple step pattern.</Abstract>
+			<DeclaredIn>MBMLMathFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (id)arrayFilledWithIntegers:(NSArray *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">The function&apos;s input parameters.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The function result.</Abstract></ReturnValue>
+			<Anchor>//api/name/arrayFilledWithIntegers:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MBMLEnvironmentFunctions.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MBMLEnvironmentFunctions</TokenIdentifier>
+			<Abstract type="html">This class implements MBML functions for accessing Mockingbird runtime
+environment information.</Abstract>
+			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlLoadedPaths</TokenIdentifier>
+			<Abstract type="html">Returns an array of the full pathnames of the MBML files that have been loaded
+into the current Mockingbird environment.</Abstract>
+			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)mbmlLoadedPaths</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array containing the paths of the files that have been loaded
+            into the current environment.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlLoadedPaths</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlLoadedFiles</TokenIdentifier>
+			<Abstract type="html">Returns an array of the names (i.e., the lastPathComponents of the file
+paths) for the files that have been loaded into the current Mockingbird
+environment.</Abstract>
+			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSArray *)mbmlLoadedFiles</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array containing the names of the files that have been loaded
+            into the current environment.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlLoadedFiles</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlPathIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Determines whether an MBML file with the given pathname has been loaded into
+the current Mockingbird environment.</Abstract>
+			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSNumber *)mbmlPathIsLoaded:(NSString *)pathName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pathName</Name>
+					<Abstract type="html">The full pathname of the file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if the specified file has been loaded into the current
+            environment, @NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlPathIsLoaded:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/MBMLEnvironmentFunctions/mbmlFileIsLoaded:</TokenIdentifier>
+			<Abstract type="html">Determines whether a given MBML file has been loaded into the current
+Mockingbird environment.</Abstract>
+			<DeclaredIn>MBMLEnvironmentFunctions.h</DeclaredIn>
+			
+			<Declaration>+ (NSNumber *)mbmlFileIsLoaded:(NSString *)fileName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileName</Name>
+					<Abstract type="html">The name of the file.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">@YES if the specified file has been loaded into the current
+            environment, @NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/mbmlFileIsLoaded:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

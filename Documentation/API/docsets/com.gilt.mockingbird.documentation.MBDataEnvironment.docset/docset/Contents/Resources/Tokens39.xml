@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSDictionary+MBExpression.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSDictionary(MBExpression)</TokenIdentifier>
+			<Abstract type="html">This NSDictionary class category adds method for evaluating expressions
+using values contained in an NSDictionary.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+            
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsObject:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as an object expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsObject:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsObject:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as an object expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (nullable id)evaluateAsObject:(nonnull NSString *)key defaultValue:(nullable id)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">A default value to be returned if expression evaluation would
+            otherwise return nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression, or def if nil would otherwise be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsObject:defaultValue:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsString:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as a string expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsString:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsString:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as a string expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSString *)evaluateAsString:(nonnull NSString *)key defaultValue:(nullable NSString *)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">A default value to be returned if expression evaluation would
+            otherwise return nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression, or def if nil would otherwise be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsString:defaultValue:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsNumber:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as a numeric expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsNumber:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsNumber:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as a numeric expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (nullable NSDecimalNumber *)evaluateAsNumber:(nonnull NSString *)key defaultValue:(nullable NSDecimalNumber *)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">A default value to be returned if expression evaluation would
+            otherwise return nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression, or def if nil would otherwise be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsNumber:defaultValue:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsBoolean:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as a boolean expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsBoolean:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSDictionary/evaluateAsBoolean:defaultValue:</TokenIdentifier>
+			<Abstract type="html">Takes the value associated with the receiver&apos;s key and attempts to
+evaluate that value as a boolean expression.</Abstract>
+			<DeclaredIn>MBExpressionExtensions.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)evaluateAsBoolean:(nonnull NSString *)key defaultValue:(BOOL)def</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">The key in the receiving dictionary whose associated
+            value should be evaluated as an expression.</Abstract>
+				</Parameter><Parameter>
+					<Name>def</Name>
+					<Abstract type="html">A default value to be returned if expression evaluation would
+            otherwise return nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The result of evaluating the value associated with key as
+            an expression, or def if nil would otherwise be returned.</Abstract></ReturnValue>
+			<Anchor>//api/name/evaluateAsBoolean:defaultValue:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
