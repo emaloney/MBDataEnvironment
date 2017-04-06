@@ -131,10 +131,10 @@ Then, use the `carthage` command to [update your dependencies](https://github.co
 
 Finally, you’ll need to [integrate MBDataEnvironment into your project](https://github.com/emaloney/MBDataEnvironment/blob/master/INTEGRATION.md) in order to use [the API](https://rawgit.com/emaloney/MBDataEnvironment/master/Documentation/API/index.html) it provides.
 
-Once successfully integrated, just add the following `import` statement to any Swift file where you want to use MBDataEnvironment:
+Once successfully integrated, just add the following `import` statement to any Objective-C file where you want to use MBDataEnvironment:
 
-```swift
-import MBDataEnvironment
+```objc
+@import MBDataEnvironment;
 ```
 
 See [the Integration document](https://github.com/emaloney/MBDataEnvironment/blob/master/INTEGRATION.md) for additional details on integrating MBDataEnvironment into your project.
