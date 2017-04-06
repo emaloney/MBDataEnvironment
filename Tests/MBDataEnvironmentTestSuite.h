@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <MBToolbox/MBAvailability.h>
 #import <MBDataEnvironment/MBVariableSpace.h>
 #import <MBDataEnvironment/MBExpression.h>
 #import <MBDataEnvironment/MBExpressionExtensions.h>

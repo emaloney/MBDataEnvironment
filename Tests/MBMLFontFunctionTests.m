@@ -8,6 +8,8 @@
 
 #import "MBDataEnvironmentTestSuite.h"
 
+#if MB_BUILD_UIKIT
+
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLFontFunctionTests class
@@ -182,3 +184,5 @@
 }
 
 @end
+
+#endif

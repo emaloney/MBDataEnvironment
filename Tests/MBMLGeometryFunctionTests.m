@@ -8,6 +8,8 @@
 
 #import "MBDataEnvironmentTestSuite.h"
 
+#if MB_BUILD_UIKIT
+
 /******************************************************************************/
 #pragma mark -
 #pragma mark MBMLGeometryFunctionTests class
@@ -286,3 +288,5 @@
 }
 
 @end
+
+#endif
