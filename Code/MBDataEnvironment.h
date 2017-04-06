@@ -13,13 +13,14 @@
 #else
 
 #import <Foundation/Foundation.h>
-#import <MBToolbox/MBToolbox.h>
 
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
 #import <UIKit/UIKit.h>
-#else
+#elif MB_BUILD_MACOS
 #import <AppKit/AppKit.h>
 #endif
+
+#import <MBToolbox/MBToolbox.h>
 
 //! Project version number for MBDataEnvironment.
 FOUNDATION_EXPORT double MBDataEnvironmentVersionNumber;
@@ -32,15 +33,13 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 //       included from within code in the Mockingbird Data Environment itself.
 //
 
-#if MB_BUILD_IOS
-#import <MBDataEnvironment/MBDevice.h>
-#import <MBDataEnvironment/MBMLFontFunctions.h>
-#import <MBDataEnvironment/MBMLGeometryFunctions.h>
-#endif
-
 // import the public headers
+
 #import <MBDataEnvironment/MBAttributeValidator.h>
+#import <MBDataEnvironment/MBDataEnvironmentConstants.h>
+#import <MBDataEnvironment/MBDataEnvironmentModule.h>
 #import <MBDataEnvironment/MBDataModel.h>
+#import <MBDataEnvironment/MBDevice.h>
 #import <MBDataEnvironment/MBEnvironment.h>
 #import <MBDataEnvironment/MBEnvironmentLoader.h>
 #import <MBDataEnvironment/MBEvents+DataLoading.h>
@@ -55,21 +54,21 @@ FOUNDATION_EXPORT const unsigned char MBDataEnvironmentVersionString[];
 #import <MBDataEnvironment/MBMLEncodingFunctions.h>
 #import <MBDataEnvironment/MBMLEnvironmentFunctions.h>
 #import <MBDataEnvironment/MBMLFileFunctions.h>
+#import <MBDataEnvironment/MBMLFontFunctions.h>
+#import <MBDataEnvironment/MBMLFunction.h>
+#import <MBDataEnvironment/MBMLGeometryFunctions.h>
 #import <MBDataEnvironment/MBMLLogicFunctions.h>
 #import <MBDataEnvironment/MBMLMathFunctions.h>
 #import <MBDataEnvironment/MBMLRegexFunctions.h>
 #import <MBDataEnvironment/MBMLResourceFunctions.h>
 #import <MBDataEnvironment/MBMLRuntimeFunctions.h>
 #import <MBDataEnvironment/MBMLStringFunctions.h>
-#import <MBDataEnvironment/MBMLFunction.h>
-#import <MBDataEnvironment/MBDataEnvironmentConstants.h>
-#import <MBDataEnvironment/MBDataEnvironmentModule.h>
 #import <MBDataEnvironment/MBPlatform.h>
-#import <MBDataEnvironment/MBStringConversions.h>
-#import <MBDataEnvironment/TypeCoercionSupport.h>
 #import <MBDataEnvironment/MBScopedVariables.h>
+#import <MBDataEnvironment/MBStringConversions.h>
 #import <MBDataEnvironment/MBVariableDeclaration.h>
 #import <MBDataEnvironment/MBVariableSpace.h>
+#import <MBDataEnvironment/TypeCoercionSupport.h>
 
 #endif
 

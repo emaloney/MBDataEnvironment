@@ -6,6 +6,10 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBAvailability.h>
+
+#if MB_BUILD_UIKIT
+
 #import <Foundation/Foundation.h>
 
 /******************************************************************************/
@@ -499,3 +503,5 @@
 + (id) pointY:(id)param;
 
 @end
+
+#endif

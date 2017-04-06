@@ -7,6 +7,9 @@
 //
 
 #import "MBDevice.h"
+
+#if MB_BUILD_UIKIT
+
 #import "MBStringConversions.h"
 #import "MBDataEnvironmentConstants.h"
 
@@ -71,6 +74,8 @@ MBImplementSingleton()
     return [self osVersionComponents][2];
 }
 
+#if MB_BUILD_IOS
+
 - (nonnull NSString*) currentOrientation
 {
     return ([self isLandscape] ? kMBInterfaceOrientationLandscape : kMBInterfaceOrientationPortrait);
@@ -85,6 +90,7 @@ MBImplementSingleton()
 {
     return UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
 }
+#endif
 
 - (nonnull NSNumber*) screenScale
 {
@@ -98,12 +104,13 @@ MBImplementSingleton()
 
 - (CGSize) _screenSize
 {
-    if ([self isPortrait]) {
-        return [UIScreen mainScreen].bounds.size;
-    } else {
-        CGSize size = [UIScreen mainScreen].bounds.size;
-        return (CGSize){size.height, size.width};  // flip width & height in landscape
+    CGSize size = [UIScreen mainScreen].bounds.size;
+#if MB_BUILD_IOS
+    if ([self isLandscape]) {
+        size = (CGSize){size.height, size.width};  // flip width & height in landscape
     }
+#endif
+    return size;
 }
 
 - (nonnull NSNumber*) screenWidth
@@ -138,3 +145,5 @@ MBImplementSingleton()
 }
 
 @end
+
+#endif

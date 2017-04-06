@@ -6,9 +6,12 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
+#import "MBMLGeometryFunctions.h"
+
+#if MB_BUILD_UIKIT
+
 #import <MBToolbox/MBModuleLogMacros.h>
 
-#import "MBMLGeometryFunctions.h"
 #import "MBMLFunction.h"
 #import "MBExpressionError.h"
 #import "MBStringConversions.h"
@@ -264,3 +267,5 @@
 }
 
 @end
+
+#endif

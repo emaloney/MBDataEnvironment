@@ -6,7 +6,9 @@
 //  Copyright (c) 2010 Gilt Groupe. All rights reserved.
 //
 
-@import Foundation;
+#import <MBToolbox/MBAvailability.h>
+
+#if MB_BUILD_UIKIT
 
 #import <MBToolbox/MBSingleton.h>
 
@@ -84,6 +86,8 @@
 /*!    @name Screen orientation information                                   */
 /*----------------------------------------------------------------------------*/
 
+#if MB_BUILD_IOS
+
 /*! Returns the string "`portrait`" or "`landscape`" depending on the current
     orientation of the device. */
 @property(nonnull, nonatomic, readonly) NSString* currentOrientation;
@@ -93,6 +97,8 @@
 
 /*! Returns `YES` if the device is currently in landscape orientation. */
 @property(nonatomic, readonly) BOOL isLandscape;
+
+#endif
 
 /*----------------------------------------------------------------------------*/
 #pragma mark Screen resolution information
@@ -124,3 +130,5 @@
 @property(nonnull, nonatomic, readonly) NSString* screenSizeLandscape;
 
 @end
+
+#endif

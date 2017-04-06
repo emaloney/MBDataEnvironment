@@ -33,11 +33,11 @@ NSString* const kMBMLDateFormatterMediumStyle               = @"medium";
 NSString* const kMBMLDateFormatterLongStyle                 = @"long";
 NSString* const kMBMLDateFormatterFullStyle                 = @"full";
 
-#if MB_BUILD_IOS
-
 NSString* const kMBMLTextAlignmentLeft                      = @"left";
 NSString* const kMBMLTextAlignmentCenter                    = @"center";
 NSString* const kMBMLTextAlignmentRight                     = @"right";
+
+#if MB_BUILD_UIKIT
 
 NSString* const kMBMLScrollViewIndicatorStyleDefault        = @"default";
 NSString* const kMBMLScrollViewIndicatorStyleBlack          = @"black";
@@ -75,7 +75,10 @@ NSString* const kMBMLTableViewCellSelectionStyleGradient    = @"gradient";
 
 NSString* const kMBMLTableViewCellAccessoryNone                     = @"none";
 NSString* const kMBMLTableViewCellAccessoryDisclosureIndicator      = @"disclosureIndicator";
+#if MB_BUILD_IOS
 NSString* const kMBMLTableViewCellAccessoryDetailDisclosureButton   = @"detailDisclosureButton";
+NSString* const kMBMLTableViewCellAccessoryDetailButton             = @"detailButton";
+#endif
 NSString* const kMBMLTableViewCellAccessoryCheckmark                = @"checkmark";
 
 NSString* const kMBMLTableViewRowAnimationNone              = @"none";
@@ -114,9 +117,11 @@ NSString* const kMBMLViewAnimationOptionTransitionFlipFromTop       = @"transiti
 NSString* const kMBMLViewAnimationOptionTransitionFlipFromBottom	= @"transitionFlipFromBottom";
 
 NSString* const kMBMLModalTransitionStyleCoverVertical      = @"coverVertical";
+#if MB_BUILD_IOS
 NSString* const kMBMLModalTransitionStyleFlipHorizontal     = @"flipHorizontal";
-NSString* const kMBMLModalTransitionStyleCrossDissolve      = @"crossDissolve";
 NSString* const kMBMLModalTransitionStylePartialCurl        = @"partialCurl";
+#endif
+NSString* const kMBMLModalTransitionStyleCrossDissolve      = @"crossDissolve";
 
 NSString* const kMBMLViewContentModeScaleToFill             = @"scaleToFill";
 NSString* const kMBMLViewContentModeScaleAspectFit          = @"aspectFit";
@@ -336,7 +341,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([obj isKindOfClass:[NSString class]]) {
         return [self pointFromString:obj error:errPtr];
     }
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
     else if ([obj isKindOfClass:[NSValue class]]) {
         NSValue* value = (NSValue*)obj;
         if (!strcmp([value objCType], @encode(CGPoint))) {
@@ -439,7 +444,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([obj isKindOfClass:[NSString class]]) {
         return [self sizeFromString:obj error:errPtr];
     }
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
     else if ([obj isKindOfClass:[NSValue class]]) {
         NSValue* value = (NSValue*)obj;
         if (!strcmp([value objCType], @encode(CGSize))) {
@@ -521,7 +526,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([obj isKindOfClass:[NSString class]]) {
         return [self rectFromString:obj error:errPtr];
     }
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
     else if ([obj isKindOfClass:[NSValue class]]) {
         NSValue* value = (NSValue*)obj;
         if (!strcmp([value objCType], @encode(CGRect))) {
@@ -556,6 +561,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
 {
     return [NSString stringWithFormat:@"%g,%g,%g,%g", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height];
 }
+
+#if !MB_BUILD_WATCHOS
 
 /******************************************************************************/
 #pragma mark NSLineBreakMode conversions
@@ -606,6 +613,51 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
+
+/******************************************************************************/
+#pragma mark NSTextAlignment conversions
+/******************************************************************************/
+
++ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr
+{
+    return [self textAlignmentFromString:alignStr error:nil];
+}
+
++ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSErrorPtrPtr)errPtr
+{
+    MBLogDebugTrace();
+
+    if ([kMBMLTextAlignmentLeft isEqualToString:alignStr]) {
+        return NSTextAlignmentLeft;
+    }
+    else if ([kMBMLTextAlignmentCenter isEqualToString:alignStr]) {
+        return NSTextAlignmentCenter;
+    }
+    else if ([kMBMLTextAlignmentRight isEqualToString:alignStr]) {
+        return NSTextAlignmentRight;
+    }
+    else {
+        [self _reportCouldNotParse:alignStr
+                                as:MBStringify(NSTextAlignment)
+               expectingValueAmong:@[kMBMLTextAlignmentLeft, kMBMLTextAlignmentCenter, kMBMLTextAlignmentRight]
+                                to:errPtr];
+
+    }
+    return NSTextAlignmentLeft;         // default to left
+}
+
++ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr
+{
+    NSError* err = nil;
+    NSTextAlignment val = [self textAlignmentFromString:[expr evaluateAsString] error:&err];
+    if (err) {
+        [self _logError:err fromExpression:expr];
+    }
+    return val;
+}
+
+#endif
+
 /******************************************************************************/
 #pragma mark NSDateFormatterStyle conversions
 /******************************************************************************/
@@ -652,50 +704,7 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
-#if MB_BUILD_IOS
-
-
-/******************************************************************************/
-#pragma mark NSTextAlignment conversions
-/******************************************************************************/
-
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr
-{
-    return [self textAlignmentFromString:alignStr error:nil];
-}
-
-+ (NSTextAlignment) textAlignmentFromString:(NSString*)alignStr error:(NSErrorPtrPtr)errPtr
-{
-    MBLogDebugTrace();
-
-    if ([kMBMLTextAlignmentLeft isEqualToString:alignStr]) {
-        return NSTextAlignmentLeft;
-    }
-    else if ([kMBMLTextAlignmentCenter isEqualToString:alignStr]) {
-        return NSTextAlignmentCenter;
-    }
-    else if ([kMBMLTextAlignmentRight isEqualToString:alignStr]) {
-        return NSTextAlignmentRight;
-    }
-    else {
-        [self _reportCouldNotParse:alignStr
-                                as:MBStringify(NSTextAlignment)
-               expectingValueAmong:@[kMBMLTextAlignmentLeft, kMBMLTextAlignmentCenter, kMBMLTextAlignmentRight]
-                                to:errPtr];
-
-    }
-    return NSTextAlignmentLeft;         // default to left
-}
-
-+ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr
-{
-    NSError* err = nil;
-    NSTextAlignment val = [self textAlignmentFromString:[expr evaluateAsString] error:&err];
-    if (err) {
-        [self _logError:err fromExpression:expr];
-    }
-    return val;
-}
+#if MB_BUILD_UIKIT
 
 /******************************************************************************/
 #pragma mark UIOffset conversions
@@ -940,6 +949,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
+#if MB_BUILD_IOS
+
 /******************************************************************************/
 #pragma mark UIActivityIndicatorViewStyle conversions
 /******************************************************************************/
@@ -979,6 +990,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     }
     return val;
 }
+
+#endif
 
 /******************************************************************************/
 #pragma mark UIButtonType conversions
@@ -1207,16 +1220,27 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     else if ([str isEqualToString:kMBMLTableViewCellAccessoryDisclosureIndicator]) {
         return UITableViewCellAccessoryDisclosureIndicator;
     }
+#if MB_BUILD_IOS
     else if ([str isEqualToString:kMBMLTableViewCellAccessoryDetailDisclosureButton]) {
         return UITableViewCellAccessoryDetailDisclosureButton;
     }
+    else if ([str isEqualToString:kMBMLTableViewCellAccessoryDetailButton]) {
+        return UITableViewCellAccessoryDetailButton;
+    }
+#endif
     else if ([str isEqualToString:kMBMLTableViewCellAccessoryCheckmark]) {
         return UITableViewCellAccessoryCheckmark;
     }
     else {
         [self _reportCouldNotParse:str
                                 as:MBStringify(UITableViewCellAccessoryType)
-               expectingValueAmong:@[kMBMLTableViewCellAccessoryNone, kMBMLTableViewCellAccessoryDisclosureIndicator, kMBMLTableViewCellAccessoryDetailDisclosureButton, kMBMLTableViewCellAccessoryCheckmark]
+               expectingValueAmong:@[kMBMLTableViewCellAccessoryNone,
+                                     kMBMLTableViewCellAccessoryDisclosureIndicator,
+#if MB_BUILD_IOS
+                                     kMBMLTableViewCellAccessoryDetailDisclosureButton,
+                                     kMBMLTableViewCellAccessoryDetailButton,
+#endif
+                                     kMBMLTableViewCellAccessoryCheckmark]
                                 to:errPtr];
     }
     
@@ -1443,19 +1467,26 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     if ([str isEqualToString:kMBMLModalTransitionStyleCoverVertical]) {
         return UIModalTransitionStyleCoverVertical;
     }
+#if MB_BUILD_IOS
     else if ([str isEqualToString:kMBMLModalTransitionStyleFlipHorizontal]) {
         return UIModalTransitionStyleFlipHorizontal;
-    }
-    else if ([str isEqualToString:kMBMLModalTransitionStyleCrossDissolve]) {
-        return UIModalTransitionStyleCrossDissolve;
     }
     else if ([str isEqualToString:kMBMLModalTransitionStylePartialCurl]) {
         return UIModalTransitionStylePartialCurl;
     }
+#endif
+    else if ([str isEqualToString:kMBMLModalTransitionStyleCrossDissolve]) {
+        return UIModalTransitionStyleCrossDissolve;
+    }
     else {
         [self _reportCouldNotParse:str
                                 as:MBStringify(UIModalTransitionStyle)
-               expectingValueAmong:@[kMBMLModalTransitionStyleCoverVertical, kMBMLModalTransitionStyleFlipHorizontal, kMBMLModalTransitionStyleCrossDissolve, kMBMLModalTransitionStylePartialCurl]
+               expectingValueAmong:@[kMBMLModalTransitionStyleCoverVertical,
+#if MB_BUILD_IOS
+                                     kMBMLModalTransitionStyleFlipHorizontal,
+                                     kMBMLModalTransitionStylePartialCurl,
+#endif
+                                     kMBMLModalTransitionStyleCrossDissolve]
                                 to:errPtr];
     }
     
@@ -1542,6 +1573,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
+#if MB_BUILD_IOS
+
 /******************************************************************************/
 #pragma mark UIBarStyle conversions
 /******************************************************************************/
@@ -1584,6 +1617,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     }
     return val;
 }
+
+#endif
 
 /******************************************************************************/
 #pragma mark UIBarButtonSystemItem conversions
@@ -1729,6 +1764,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     return val;
 }
 
+#if MB_BUILD_IOS
+
 /******************************************************************************/
 #pragma mark UIStatusBarAnimation conversions
 /******************************************************************************/
@@ -1805,6 +1842,8 @@ NSString* const kMBMLPopoverArrowDirectionAny               = @"any";
     }
     return val;
 }
+
+#endif
 
 /******************************************************************************/
 #pragma mark UIPopoverArrowDirection conversions

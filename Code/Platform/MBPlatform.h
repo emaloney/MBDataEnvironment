@@ -17,20 +17,19 @@
  */
 typedef NS_ENUM(NSUInteger, MBPlatformType) {
     MBPlatformTypeUnknown   = 0,
-    MBPlatformTypeOSX       = 1,
+    MBPlatformTypeMacOS     = 1,
     MBPlatformTypeIOS       = 2,
-    MBPlatformTypeAppleTV   = 3,
+    MBPlatformTypeTVOS      = 3,
     MBPlatformTypeWatchOS   = 4
 };
 
 /******************************************************************************/
 #pragma mark Constants
 /******************************************************************************/
-
 extern NSString* const __nonnull kMBPlatformUnknown;        // returned by `platformName` when `platformType == MBPlatformTypeUnknown`
-extern NSString* const __nonnull kMBPlatformOSX;            // returned by `platformName` when `platformType == MBPlatformTypeOSX`
+extern NSString* const __nonnull kMBPlatformMacOS;          // returned by `platformName` when `platformType == MBPlatformTypeOSX`
 extern NSString* const __nonnull kMBPlatformIOS;            // returned by `platformName` when `platformType == MBPlatformTypeIOS`
-extern NSString* const __nonnull kMBPlatformAppleTV;        // returned by `platformName` when `platformType == MBPlatformTypeAppleTV`
+extern NSString* const __nonnull kMBPlatformTVOS;           // returned by `platformName` when `platformType == MBPlatformTypeAppleTV`
 extern NSString* const __nonnull kMBPlatformWatchOS;        // returned by `platformName` when `platformType == MBPlatformTypeWatchOS`
 
 /******************************************************************************/

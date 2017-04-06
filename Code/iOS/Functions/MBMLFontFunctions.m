@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
+#import "MBMLFontFunctions.h"
+
+#if MB_BUILD_UIKIT
+
 #import <MBToolbox/MBToolbox.h>
 
-#import "MBMLFontFunctions.h"
 #import "MBExpressionError.h"
 #import "MBMLFunction.h"
 #import "MBStringConversions.h"
@@ -164,3 +167,6 @@
 }
 
 @end
+
+#endif
+

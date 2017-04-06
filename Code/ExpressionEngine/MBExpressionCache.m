@@ -185,7 +185,7 @@ MBImplementSingleton();
         
         NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
 
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
         // when a memory warning occurs, we clear the cache
         [nc addObserver:self
                selector:@selector(memoryWarning:)
@@ -256,7 +256,7 @@ MBImplementSingleton();
 #pragma mark Memory management
 /******************************************************************************/
 
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
 
 - (void) memoryWarning:(id)sender
 {

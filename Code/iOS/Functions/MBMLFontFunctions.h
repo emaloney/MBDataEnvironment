@@ -6,6 +6,10 @@
 //  Copyright (c) 2013 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBAvailability.h>
+
+#if MB_BUILD_UIKIT
+
 #import <Foundation/Foundation.h>
 
 /******************************************************************************/
@@ -249,3 +253,5 @@
 + (id) linesNeededToDrawText:(NSArray*)params;
 
 @end
+
+#endif

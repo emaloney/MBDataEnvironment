@@ -8,13 +8,14 @@
 
 #import <MBToolbox/MBAvailability.h>
 
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
 #import <UIKit/UIKit.h>
-#else
+#elif MB_BUILD_MACOS
 #import <AppKit/AppKit.h>
 #endif
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #import <MBToolbox/NSError+MBToolbox.h>
 
@@ -22,7 +23,7 @@
 #pragma mark Types
 /******************************************************************************/
 
-#if MB_BUILD_IOS
+#if MB_BUILD_UIKIT
 
 /*!
  Extends `UITableViewCellSelectionStyle` by providing a value representing
@@ -67,12 +68,12 @@ extern NSString* const __nonnull kMBMLDateFormatterMediumStyle;                 
 extern NSString* const __nonnull kMBMLDateFormatterLongStyle;                   // @"long" for NSDateFormatterLongStyle
 extern NSString* const __nonnull kMBMLDateFormatterFullStyle;                   // @"full" for NSDateFormatterFullStyle
 
-#if MB_BUILD_IOS
-
 // NSTextAlignment
 extern NSString* const __nonnull kMBMLTextAlignmentLeft;                        // @"left" for NSTextAlignmentLeft
 extern NSString* const __nonnull kMBMLTextAlignmentCenter;                      // @"center" for NSTextAlignmentCenter
 extern NSString* const __nonnull kMBMLTextAlignmentRight;                       // @"right" for NSTextAlignmentRight
+
+#if MB_BUILD_UIKIT
 
 // UIScrollViewIndicatorStyle
 extern NSString* const __nonnull kMBMLScrollViewIndicatorStyleDefault;          // @"default" for UIScrollViewIndicatorStyleDefault
@@ -119,6 +120,7 @@ extern NSString* const __nonnull kMBMLTableViewCellSelectionStyleGradient;      
 extern NSString* const __nonnull kMBMLTableViewCellAccessoryNone;                       // @"none" for UITableViewCellAccessoryNone
 extern NSString* const __nonnull kMBMLTableViewCellAccessoryDisclosureIndicator;        // @"disclosureIndicator" for UITableViewCellAccessoryDisclosureIndicator
 extern NSString* const __nonnull kMBMLTableViewCellAccessoryDetailDisclosureButton;     // @"detailDisclosureButton" for UITableViewCellAccessoryDetailDisclosureButton
+extern NSString* const __nonnull kMBMLTableViewCellAccessoryDetailButton;               // @"detailButton" for UITableViewCellAccessoryDetailButton
 extern NSString* const __nonnull kMBMLTableViewCellAccessoryCheckmark;                  // @"checkmark" for UITableViewCellAccessoryCheckmark
 
 // UITableViewRowAnimation
@@ -161,9 +163,11 @@ extern NSString* const __nonnull kMBMLViewAnimationOptionTransitionFlipFromBotto
 
 // UIModalTransitionStyle 
 extern NSString* const __nonnull kMBMLModalTransitionStyleCoverVertical;        // @"coverVertical" for UIModalTransitionStyleCoverVertical
+#if MB_BUILD_IOS
 extern NSString* const __nonnull kMBMLModalTransitionStyleFlipHorizontal;       // @"flipHorizontal" for UIModalTransitionStyleFlipHorizontal
-extern NSString* const __nonnull kMBMLModalTransitionStyleCrossDissolve;        // @"crossDissolve" for UIModalTransitionStyleCrossDissolve
 extern NSString* const __nonnull kMBMLModalTransitionStylePartialCurl;          // @"partialCurl" for UIModalTransitionStylePartialCurl
+#endif
+extern NSString* const __nonnull kMBMLModalTransitionStyleCrossDissolve;        // @"crossDissolve" for UIModalTransitionStyleCrossDissolve
 
 // UIViewContentMode
 extern NSString* const __nonnull kMBMLViewContentModeScaleToFill;               // @"scaleToFill" for UIViewContentModeScaleToFill
@@ -667,6 +671,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  */
 + (BOOL) parseString:(nonnull NSString*)rectStr asRect:(nonnull out CGRect*)rectPtr;
 
+#if !MB_BUILD_WATCHOS
+
 /*----------------------------------------------------------------------------*/
 #pragma mark NSLineBreakMode conversions
 /*!    @name NSLineBreakMode conversions                                      */
@@ -733,6 +739,67 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
 + (NSLineBreakMode) lineBreakModeFromExpression:(nonnull NSString*)expr;
 
 /*----------------------------------------------------------------------------*/
+#pragma mark NSTextAlignment conversions
+/*!    @name NSTextAlignment conversions                                      */
+/*----------------------------------------------------------------------------*/
+
+/*!
+ Attempts to interpret a string as an `NSTextAlignment` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
+ * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
+ * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
+
+ @param     str The string to interpret.
+
+ @return    The `NSTextAlignment` value that corresponds with `str`.
+ Returns `NSTextAlignmentLeft` and logs an error to the
+ console if `str` isn't recognized.
+ */
++ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str;
+
+/*!
+ Attempts to interpret a string as an `NSTextAlignment` value.
+
+ The following string constants show the accepted inputs, along with their
+ corresponding values:
+
+ * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
+ * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
+ * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
+
+ @param     str The string to interpret.
+
+ @param     errPtr An optional pointer to a memory location for storing an
+ `NSError` instance in the event of a problem interpreting `str`.
+ If non-`nil` and an error occurs, `*errPtr` will be set to an
+ `NSError` instance indicating the error.
+
+ @return    The `NSTextAlignment` value that corresponds with `str`.
+ Returns `NSTextAlignmentLeft` if `str` isn't
+ recognized.
+ */
++ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
+
+/*!
+ Evaluates a string expression and attempts to interpret the result as an
+ `NSTextAlignment` value using the `textAlignmentFromString:` method.
+
+ @param     expr The expression whose result will be interpreted.
+
+ @return    The `NSTextAlignment` value that corresponds with the
+ result of evaluating `expr` as a string. Returns
+ `NSTextAlignmentLeft` and logs an error to the
+ console if the expression result couldn't be interpreted.
+ */
++ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr;
+
+#endif
+
+/*----------------------------------------------------------------------------*/
 #pragma mark NSDateFormatterStyle conversions
 /*!    @name NSDateFormatterStyle conversions                                 */
 /*----------------------------------------------------------------------------*/
@@ -796,66 +863,7 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  */
 + (NSDateFormatterStyle) dateFormatterStyleFromExpression:(nonnull NSString*)expr;
 
-#if MB_BUILD_IOS
-
-/*----------------------------------------------------------------------------*/
-#pragma mark NSTextAlignment conversions
-/*!    @name NSTextAlignment conversions                                      */
-/*----------------------------------------------------------------------------*/
-
-/*!
- Attempts to interpret a string as an `NSTextAlignment` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
- * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
- * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
-
- @param     str The string to interpret.
-
- @return    The `NSTextAlignment` value that corresponds with `str`.
- Returns `NSTextAlignmentLeft` and logs an error to the
- console if `str` isn't recognized.
- */
-+ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str;
-
-/*!
- Attempts to interpret a string as an `NSTextAlignment` value.
-
- The following string constants show the accepted inputs, along with their
- corresponding values:
-
- * `kMBMLTextAlignmentLeft` ("**`left`**") → `NSTextAlignmentLeft`
- * `kMBMLTextAlignmentCenter` ("**`center`**") → `NSTextAlignmentCenter`
- * `kMBMLTextAlignmentRight` ("**`right`**") → `NSTextAlignmentRight`
-
- @param     str The string to interpret.
-
- @param     errPtr An optional pointer to a memory location for storing an
- `NSError` instance in the event of a problem interpreting `str`.
- If non-`nil` and an error occurs, `*errPtr` will be set to an
- `NSError` instance indicating the error.
-
- @return    The `NSTextAlignment` value that corresponds with `str`.
- Returns `NSTextAlignmentLeft` if `str` isn't
- recognized.
- */
-+ (NSTextAlignment) textAlignmentFromString:(nonnull NSString*)str error:(NSErrorPtrPtr)errPtr;
-
-/*!
- Evaluates a string expression and attempts to interpret the result as an
- `NSTextAlignment` value using the `textAlignmentFromString:` method.
-
- @param     expr The expression whose result will be interpreted.
-
- @return    The `NSTextAlignment` value that corresponds with the
- result of evaluating `expr` as a string. Returns
- `NSTextAlignmentLeft` and logs an error to the
- console if the expression result couldn't be interpreted.
- */
-+ (NSTextAlignment) textAlignmentFromExpression:(nonnull NSString*)expr;
+#if MB_BUILD_UIKIT
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIOffset conversions
@@ -1187,6 +1195,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  */
 + (UIScrollViewIndicatorStyle) scrollViewIndicatorStyleFromExpression:(nonnull NSString*)expr;
 
+#if MB_BUILD_IOS
+
 /*----------------------------------------------------------------------------*/
 #pragma mark UIActivityIndicatorViewStyle conversions
 /*!    @name UIActivityIndicatorViewStyle conversions                         */
@@ -1246,6 +1256,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  console if the expression result couldn't be interpreted.
  */
 + (UIActivityIndicatorViewStyle) activityIndicatorViewStyleFromExpression:(nonnull NSString*)expr;
+
+#endif
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIButtonType conversions
@@ -1994,6 +2006,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  */
 + (UIViewContentMode) viewContentModeFromExpression:(nonnull NSString*)expr;
 
+#if MB_BUILD_IOS
+
 /*----------------------------------------------------------------------------*/
 #pragma mark UIBarStyle conversions
 /*!    @name UIBarStyle conversions                                           */
@@ -2054,6 +2068,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
             if the expression result couldn't be interpreted.
  */
 + (UIBarStyle) barStyleFromExpression:(nonnull NSString*)expr;
+
+#endif
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIBarButtonSystemItem conversions
@@ -2215,6 +2231,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
  */
 + (UIBarButtonItemStyle) barButtonItemStyleFromExpression:(nonnull NSString*)expr;
 
+#if MB_BUILD_IOS
+
 /*----------------------------------------------------------------------------*/
 #pragma mark UIStatusBarStyle conversions
 /*!    @name UIStatusBarStyle conversions                                     */
@@ -2330,6 +2348,8 @@ extern NSString* const __nonnull kMBMLPopoverArrowDirectionAny;                 
             if the expression result couldn't be interpreted.
  */
 + (UIStatusBarAnimation) statusBarAnimationFromExpression:(nonnull NSString*)expr;
+
+#endif
 
 /*----------------------------------------------------------------------------*/
 #pragma mark UIPopoverArrowDirection conversions

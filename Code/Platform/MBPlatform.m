@@ -15,9 +15,9 @@
 /******************************************************************************/
 
 NSString* const kMBPlatformUnknown  = @"unknown";
-NSString* const kMBPlatformOSX      = @"Mac OS X";
+NSString* const kMBPlatformMacOS    = @"macOS";
 NSString* const kMBPlatformIOS      = @"iOS";
-NSString* const kMBPlatformAppleTV  = @"Apple TV";
+NSString* const kMBPlatformTVOS     = @"tvOS";
 NSString* const kMBPlatformWatchOS  = @"watchOS";
 
 /******************************************************************************/
@@ -31,12 +31,14 @@ MBImplementSingleton();
 
 - (MBPlatformType) platformType
 {
-#if MB_BUILD_OSX
-    return MBPlatformTypeOSX;
-#elif MB_BUILD_WATCH
-    return kMBPlatformWatchOS;
-#elif MB_BUILD_IOS
+#if MB_BUILD_IOS
     return MBPlatformTypeIOS;
+#elif MB_BUILD_MACOS
+    return MBPlatformTypeMacOS;
+#elif MB_BUILD_TVOS
+    return MBPlatformTypeTVOS;
+#elif MB_BUILD_WATCHOS
+    return MBPlatformTypeWatchOS;
 #else
     // support for MBPlatformTypeAppleTV is pending
     return MBPlatformTypeUnknown;
@@ -47,16 +49,16 @@ MBImplementSingleton();
 {
     switch (self.platformType) {
         case MBPlatformTypeUnknown:     return kMBPlatformUnknown;
-        case MBPlatformTypeOSX:         return kMBPlatformOSX;
+        case MBPlatformTypeMacOS:       return kMBPlatformMacOS;
         case MBPlatformTypeIOS:         return kMBPlatformIOS;
-        case MBPlatformTypeAppleTV:     return kMBPlatformAppleTV;
+        case MBPlatformTypeTVOS:        return kMBPlatformTVOS;
         case MBPlatformTypeWatchOS:     return kMBPlatformWatchOS;
     }
 }
 
 - (BOOL) isOSX
 {
-    return self.platformType == MBPlatformTypeOSX;
+    return self.platformType == MBPlatformTypeMacOS;
 }
 
 - (BOOL) isIOS
@@ -66,7 +68,7 @@ MBImplementSingleton();
 
 - (BOOL) isAppleTV
 {
-    return self.platformType == MBPlatformTypeAppleTV;
+    return self.platformType == MBPlatformTypeTVOS;
 }
 
 - (BOOL) isWatchOS
