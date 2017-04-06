@@ -1,5 +1,3 @@
-# Mockingbird Data Environment
-
 The Mockingbird Data Environment builds upon [the Mockingbird Toolbox](https://github.com/emaloney/MBToolbox) to provide a dynamic data processing engine for iOS, macOS, tvOS and watchOS applications.
 
 The Mockingbird Data Environment allows arbitrary data models and object graphs to be assigned *names* and stored in a *variable space* from which values can be extracted using *expressions*.
