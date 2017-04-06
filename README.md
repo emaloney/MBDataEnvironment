@@ -124,7 +124,7 @@ The simplest way to integrate MBDataEnvironment is with the [Carthage](https://g
 First, add this line to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
 ```
-github "emaloney/MBDataEnvironment" ~> 2.2.0
+github "emaloney/MBDataEnvironment" ~> 3.0.0
 ```
 
 Then, use the `carthage` command to [update your dependencies](https://github.com/Carthage/Carthage#upgrading-frameworks).
