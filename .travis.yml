@@ -7,6 +7,7 @@ git:
   submodules: false
 
 before_install:
+  - sudo systemsetup -settimezone America/New_York
   - git submodule update --init
 
 install:
