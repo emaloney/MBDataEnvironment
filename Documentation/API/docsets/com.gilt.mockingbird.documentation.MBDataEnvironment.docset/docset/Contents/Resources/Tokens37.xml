@@ -161,6 +161,43 @@ will be restored.)</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableIsStack:</TokenIdentifier>
+			<Abstract type="html">Determines if the variable with the given name is a stack variable.</Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)variableIsStack:(nonnull NSString *)varName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>varName</Name>
+					<Abstract type="html">The name of the variable.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if varName represents a stack variable; NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/variableIsStack:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/variableStackDepth:</TokenIdentifier>
+			<Abstract type="html">Returns the stack depth of the given variable.</Abstract>
+			<DeclaredIn>MBVariableSpace.h</DeclaredIn>
+			
+			<Declaration>- (NSUInteger)variableStackDepth:(nonnull NSString *)varName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>varName</Name>
+					<Abstract type="html">The name of the variable whose stack depth is sought.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The stack depth of the variable varName. A depth of 0 (zero)
+            indicates that the variable is not a stack variable (i.e., 
+            variableIsStack: would return NO and popVariable: would
+            fail).</Abstract></ReturnValue>
+			<Anchor>//api/name/variableStackDepth:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/MBVariableSpace/setMapVariable:mapKey:value:</TokenIdentifier>
 			<Abstract type="html">Sets the value of a given key for the type=&quot;map&quot; variable with the specified
 name. (This method will also operate on any variable whose value is of type

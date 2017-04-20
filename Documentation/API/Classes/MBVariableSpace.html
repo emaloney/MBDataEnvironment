@@ -102,6 +102,10 @@
 		
 		<option value="//api/name/variableAsString:defaultValue:">- variableAsString:defaultValue:</option>
 		
+		<option value="//api/name/variableIsStack:">- variableIsStack:</option>
+		
+		<option value="//api/name/variableStackDepth:">- variableStackDepth:</option>
+		
 	</optgroup>
 	
 	
@@ -623,6 +627,139 @@ will be restored.)</p>
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>If there are no stack values for the variable, an error will be logged to
 the console.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBVariableSpace.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/variableIsStack:" title="variableIsStack:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/variableIsStack:">&ndash;&nbsp;variableIsStack:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines if the variable with the given name is a stack variable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)variableIsStack:(nonnull NSString *)<em>varName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>varName</code></th>
+						<td><p>The name of the variable.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>YES</code> if <code>varName</code> represents a stack variable; <code>NO</code> otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A stack variable is one for which you can successfully issue a <a href="#//api/name/popVariable:"><code>popVariable:</code></a>
+request. Such a variable has had its value populated by <a href="#//api/name/pushVariable:value:"><code>pushVariable:value:</code></a>
+at least one more time than a corresponding <a href="#//api/name/popVariable:"><code>popVariable:</code></a> has been issued.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">MBVariableSpace.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/variableStackDepth:" title="variableStackDepth:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/variableStackDepth:">&ndash;&nbsp;variableStackDepth:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the stack depth of the given variable.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)variableStackDepth:(nonnull NSString *)<em>varName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>varName</code></th>
+						<td><p>The name of the variable whose stack depth is sought.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The stack depth of the variable <code>varName</code>. A depth of <code>0</code> (zero)
+            indicates that the variable is not a stack variable (i.e.,
+            <a href="#//api/name/variableIsStack:"><code>variableIsStack:</code></a> would return <code>NO</code> and <a href="#//api/name/popVariable:"><code>popVariable:</code></a> would
+            fail).</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The stack depth indicates the number of distinct values that are &ldquo;hidden below&rdquo;
+the variable&rsquo;s current value. The stack depth therefore also represents the
+number of times <a href="#//api/name/popVariable:"><code>popVariable:</code></a> can be successfully called for the variable.</p>
 			</div>
 			
 
@@ -1464,7 +1601,7 @@ Mockingbird variable with the given <code>NSUserDefaults</code> key name.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-06</p>
+						<p class="copyright">Copyright &copy; 2017 Gilt Groupe. All rights reserved. Updated: 2017-04-20</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
