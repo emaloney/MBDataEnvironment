@@ -394,6 +394,22 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     return popVal;
 }
 
+- (BOOL) variableIsStack:(nonnull NSString*)varName
+{
+    MBLogVerboseTrace();
+
+    NSMutableArray* stack = _variableStack[varName];
+    return stack && stack.count > 0;
+}
+
+- (NSUInteger) variableStackDepth:(nonnull NSString*)varName
+{
+    MBLogVerboseTrace();
+
+    NSMutableArray* stack = _variableStack[varName];
+    return stack ? stack.count : 0;
+}
+
 /******************************************************************************/
 #pragma mark Constructing variable-related names
 /******************************************************************************/

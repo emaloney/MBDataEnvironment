@@ -164,6 +164,35 @@ extern NSString* const __nonnull kMBVariableSpaceDidDeclareFunctionEvent;
 - (nullable id) popVariable:(nonnull NSString*)varName;
 
 /*!
+ Determines if the variable with the given name is a stack variable.
+ 
+ A stack variable is one for which you can successfully issue a `popVariable:`
+ request. Such a variable has had its value populated by `pushVariable:value:`
+ at least one more time than a corresponding `popVariable:` has been issued.
+
+ @param     varName The name of the variable.
+
+ @return    `YES` if `varName` represents a stack variable; `NO` otherwise.
+ */
+- (BOOL) variableIsStack:(nonnull NSString*)varName;
+
+/*!
+ Returns the stack depth of the given variable.
+ 
+ The stack depth indicates the number of distinct values that are "hidden below"
+ the variable's current value. The stack depth therefore also represents the
+ number of times `popVariable:` can be successfully called for the variable.
+ 
+ @param     varName The name of the variable whose stack depth is sought.
+ 
+ @return    The stack depth of the variable `varName`. A depth of `0` (zero)
+            indicates that the variable is not a stack variable (i.e., 
+            `variableIsStack:` would return `NO` and `popVariable:` would
+            fail).
+ */
+- (NSUInteger) variableStackDepth:(nonnull NSString*)varName;
+
+/*!
  Sets the value of a given key for the `type="map"` variable with the specified
  name. (This method will also operate on any variable whose value is of type
  `NSDictionary`.)
