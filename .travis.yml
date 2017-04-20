@@ -35,4 +35,3 @@ after_failure:
   - test -f "MBDataEnvironment-tvOS-test.log" && tail -n 2500 "MBDataEnvironment-tvOS-test.log"
   - test -f "MBDataEnvironment-tvOS-test.log" && LINE_BEFORE=`cat "MBDataEnvironment-tvOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "MBDataEnvironment-tvOS-test.log" | tail -n 1` && cat "$LOG_FILE"
   - test -f "MBDataEnvironment-watchOS-build.log" && tail -n 2500 "MBDataEnvironment-watchOS-build.log"
-
