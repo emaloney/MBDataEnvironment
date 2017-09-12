@@ -498,21 +498,17 @@
     MBLogInfoTrace();
 
     //
-    // I am not really sure why we get ', ' instead of ' at ' as the
-    // date/time separator on macOS, but we do...
+    // I am not really sure why we can get either ', ' or ' at ' as the
+    // date/time separator on some platforms, but we do, so accept both
     //
-#if MB_BUILD_MACOS
-    NSString* expectedResult = @"Jan 26, 2012, 10:58:19 AM";
-#else
-    NSString* expectedResult = @"Jan 26, 2012 at 10:58:19 AM";
-#endif
+    NSArray<NSString*>* acceptedResults = @[@"Jan 26, 2012, 10:58:19 AM",
+                                            @"Jan 26, 2012 at 10:58:19 AM"];
 
     //
     // test expected successes
     //
-    [self _performDateFormatTest:@"formatMediumDateTime"
-                           input:@"Thu, 26 Jan 2012 15:58:19 UTC"
-                       expecting:expectedResult];
+    NSString* dateStr = [MBExpression asString:@"^formatMediumDateTime(Thu, 26 Jan 2012 15:58:19 UTC)"];
+    XCTAssert([acceptedResults containsObject:dateStr], @"Test of formatMediumDateTime failed (note, date tests may only work in US locale in EST timezone)");
 
     //
     // test expected failures
