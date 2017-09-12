@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Gilt Groupe. All rights reserved.
 //
 
+#import <MBToolbox/MBAvailability.h>
 #import "MBDataEnvironmentTestSuite.h"
 
 /******************************************************************************/
@@ -497,11 +498,21 @@
     MBLogInfoTrace();
 
     //
+    // I am not really sure why we get ', ' instead of ' at ' as the
+    // date/time separator on macOS, but we do...
+    //
+#if MB_BUILD_MACOS
+    NSString* expectedResult = @"Jan 26, 2012, 10:58:19 AM";
+#else
+    NSString* expectedResult = @"Jan 26, 2012 at 10:58:19 AM";
+#endif
+
+    //
     // test expected successes
     //
     [self _performDateFormatTest:@"formatMediumDateTime"
                            input:@"Thu, 26 Jan 2012 15:58:19 UTC"
-                       expecting:@"Jan 26, 2012, 10:58:19 AM"];
+                       expecting:expectedResult];
 
     //
     // test expected failures
