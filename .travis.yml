@@ -1,6 +1,11 @@
 language: objective-c
 xcode_workspace: MBDataEnvironment.xcworkspace
-osx_image: xcode8.3
+os: osx
+osx_image: xcode9
+
+branches:
+  only:
+    - master
 
 git:
   depth: 1

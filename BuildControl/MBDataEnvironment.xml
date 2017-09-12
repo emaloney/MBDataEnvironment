@@ -7,6 +7,7 @@
 	<Var name="project:bundlePrefix" literal="com.gilt.mockingbird"/>
 	<Var name="project:language" literal="ObjC"/>
 	<Var name="project:grouping" literal="Mockingbird"/>
+	<Var name="project:skeleton" literal="none"/>
 
 	<Var name="project:description:formats" type="map">
 		<Var name="text">The Mockingbird Data Environment builds upon the Mockingbird Toolbox to provide a dynamic data processing engine for iOS, macOS, tvOS and watchOS applications.
