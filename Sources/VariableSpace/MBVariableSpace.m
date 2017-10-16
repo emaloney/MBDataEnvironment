@@ -249,7 +249,7 @@ NSString* const kMBVariableSpaceXMLTagFunction              = @"Function";
     MBLogVerboseTrace();
 
     if ([self isReadOnlyVariable:varName]) {
-        MBLogError(@"Attempted to set value for immutable map variable named %@", varName);
+        MBLogError(@"Attempted to set a map value for key \"%@\" in the immutable variable \"%@\"", key, varName);
         return;
     }
 
